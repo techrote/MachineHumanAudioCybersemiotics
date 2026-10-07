@@ -1,21 +1,23 @@
 # Kickoff prompts
 
-## First task
+## Next research task after R001 acceptance
 
 Paste into a fresh worker with access to this repository:
 
 ```text
-Work in techrote/MachineHumanAudioCybersemiotics on #1 / MHAC-R001.
-Reconcile live main, the complete issue and comments, branches/PRs and CI.
+Work in techrote/MachineHumanAudioCybersemiotics on #2 / MHAC-R002.
+Verify #1's actual merged implementation and post-merge checks, then reconcile
+live main, the complete #2 issue and comments, branches/PRs and CI.
 Read AGENTS.md, RAG.md, docs/PROGRAMME.md, docs/AGENT_RUNBOOK.md and all
-issue-specific authorities. Implement the research registries, validators
-and reproducible CI within the issue's scope. Do not begin the literature
-review or write research findings. Use high reasoning effort; disjoint
+issue-specific authorities. Recover the actual preserved R002 methodology,
+quantitative and novelty prepasses; treat them as preparations, not protocol
+acceptance. Complete the pilot, overlap audit and two-track protocol within
+the issue's scope before production searches. Use high reasoning effort; disjoint
 subagent work and read-only critique are permitted. Complete tests,
 documentation, PR, review fixes, successful final-head checks, squash merge
 and post-merge verification. Never bypass checks/approvals or fabricate
 research evidence. Record true blockers and an exact checkpoint. Report
-merge/check evidence and whether #2 is dependency-ready.
+merge/check evidence and whether #3/#4/#5 are dependency-ready.
 ```
 
 ## Continue the programme

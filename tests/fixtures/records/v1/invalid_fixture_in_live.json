@@ -1,0 +1,78 @@
+{
+  "contract": "mhac-records/1",
+  "dataset_kind": "live",
+  "records": [
+    {
+      "id": "SRC-A",
+      "issue": 1,
+      "kind": "source",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:01Z",
+          "basis": [],
+          "data": {
+            "access_at": "2000-01-01T00:00:01Z",
+            "access_reason": "The synthetic text is supplied with the fixture.",
+            "access_status": "full_text_available",
+            "authors": [
+              {
+                "name": "Fictional Fixture Author",
+                "role": "author"
+              }
+            ],
+            "edition": {
+              "reason": "Original fictional fixture text; no published edition",
+              "state": "not_applicable"
+            },
+            "family_links": [],
+            "identifiers": [],
+            "language": {
+              "state": "known",
+              "value": "en"
+            },
+            "manifestations": [
+              {
+                "coordinate": "file_page_1based",
+                "extent": 3,
+                "fixture_path": "sources/report_A.txt",
+                "id": "text-v1",
+                "sha256": "a150186a4f5dc6bb0f798b831d6f3735a2de9276aa2728dcce1d0b9130a6083c"
+              }
+            ],
+            "metadata_evidence": [
+              "Metadata stipulated by the synthetic fixture generator, not verified bibliographic metadata."
+            ],
+            "metadata_status": "candidate",
+            "publication_date": {
+              "reason": "Synthetic report",
+              "state": "not_applicable"
+            },
+            "rights": {
+              "evidence": {
+                "reason": "No real third-party work or rights decision is represented",
+                "state": "unknown"
+              },
+              "reason": "Synthetic authored fixture, no third-party source or licence decision",
+              "status": "unknown"
+            },
+            "source_type": "report",
+            "title": "SYNTHETIC report A; not a real publication",
+            "validity": "active"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    }
+  ],
+  "release_claims": [],
+  "release_requirements": [],
+  "research_state": "in_progress",
+  "stage_gates": []
+}

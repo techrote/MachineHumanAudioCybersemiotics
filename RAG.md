@@ -36,4 +36,4 @@ Read the necessary complete source range, not disconnected snippets. Include edi
 
 ## Current state
 
-Bootstrap only. No completed systematic search, frozen protocol, included study set, full Brier reconstruction, meta-analysis, manuscript, external review or participant evaluation is asserted. Run the validator to check repository structure; check the live issues and recorded acceptance evidence to assess research progress.
+The MHAC-R001 record infrastructure is implemented; [live evidence](research/registry/README.md) remains explicitly not_started. No completed systematic search, frozen protocol, included study set, full Brier reconstruction, meta-analysis, manuscript, external review or participant evaluation is asserted. Run the validator for repository/record integrity; check the live issues and recorded merge/acceptance evidence before advancing the research. The [implementation record](docs/R001_IMPLEMENTATION.md) explains the prepass migration and remaining scientific boundaries.

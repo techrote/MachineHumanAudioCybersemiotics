@@ -4,7 +4,7 @@
 
 ## Status and implementation boundary
 
-This document specifies the record system MHAC-R001 must implement. The bootstrap provides `programme.json`, document/link checks and test scaffolding only. Do not imply that the full schemas, transition checks, evidence-flow export or citation validator already exist.
+The v1 record system implements this contract through the [executable field dictionary](../schemas/README.md), canonical [live manifest](../research/registry/README.md), and [offline validator](VALIDATION.md). The bootstrap's programme, document/link and JSON checks remain in place. Live evidence is explicitly not_started; infrastructure implementation does not establish research acceptance.
 
 Prefer versioned UTF-8 JSON records with human-readable generated Markdown/CSV views. Use one stable record per file or bounded issue/source shards to reduce merge collisions. Canonical records have one owner; generated aggregates are rebuilt, not independently edited. Avoid a database/vector service unless a demonstrated need justifies its additional reproducibility cost.
 
@@ -31,7 +31,7 @@ Prefer versioned UTF-8 JSON records with human-readable generated Markdown/CSV v
 
 Each record needs schema version, unique stable ID, record type, creation/update date, originating issue, actor, source or basis, factual status, and synthetic flag. Use explicit unknown/not-reported/not-applicable values with reasons instead of made-up zeros or default certainty. Distinguish publication date, access date, actual reading date and review date. IDs are stable across corrected metadata; merge aliases with history rather than recycling IDs.
 
-Suggested prefixes: `SRC`, `SRCH`, `HIT`, `SCR`, `STUDY`, `EXP`, `SAMPLE`, `TX`, `EX`, `APP`, `CLM`, `REQ`, `TEST`, `AMD`, `AID`, `HG`. Prefixes do not by themselves validate meaning. Define exact field types and transitions in schemas and tests in #1.
+The v1 prefixes are `SRC`, `SRCH`, `HIT`, `SCR`, `STUDY`, `EXP`, `SAMPLE`, `TX`, `EX`, `APP`, `CLM`, `REQ`, `TEST`, `AMD`, `AID`, `HG`. Prefixes do not by themselves validate meaning. Exact field types, closed variants and permitted transitions are defined in [schemas/v1.py](../schemas/v1.py), its dictionary and the schema/graph tests.
 
 ## Separate statuses
 

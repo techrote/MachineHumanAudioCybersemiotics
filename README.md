@@ -2,7 +2,7 @@
 
 Foundational research for explicit machine–human audio communication: information, contextual state, uncertainty, urgency and action without dependence on performed human emotion.
 
-**Current status: research programme bootstrapped; research not yet executed.** The seed reading list is not a reviewed corpus. Green CI means repository integrity, not scientific validity or effective human communication.
+**Current status: the MHAC-R001 record pipeline is implemented; live research remains not_started.** The seed reading list is not a reviewed corpus. Green CI means repository and record integrity, not scientific validity or effective human communication. See the [implementation record](docs/R001_IMPLEMENTATION.md) and live issue/PR acceptance evidence.
 
 ## Start here
 
@@ -14,6 +14,8 @@ Foundational research for explicit machine–human audio communication: informat
 | [Agent instructions](AGENTS.md) | Scope, evidence integrity and execution rules. |
 | [Research protocol](docs/RESEARCH_PROTOCOL.md) | Questions, review design and protocol-freeze requirements. |
 | [Seed sources](docs/SEED_SOURCES.md) | Initial discovery leads and methodology references, with access caveats. |
+| [Record schemas](schemas/README.md) | Exact v1 record fields, revisions and lifecycle contracts. |
+| [Validation](docs/VALIDATION.md) | Offline commands, provenance/citation checks, exports and honest limits. |
 | [Paper plan](docs/PAPER_PLAN.md) | Extended dossier, applied paper and reproducible research package. |
 
 ## Research objective
@@ -28,16 +30,22 @@ The intended system is linguistically intelligible but perceptually non-human. S
 
 ## Execution
 
-Start with [#1 — MHAC-R001](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1), then [#2 — MHAC-R002](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2). After the protocol is accepted, #3/#4/#5 may run in parallel. The full graph is in the programme. Issues #1–#18 form the internal foundational-research programme; #19 and #20 are separately gated external-review and real-participant extensions.
+Verify the actual merge and post-merge checks for [#1 — MHAC-R001](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1) before starting [#2 — MHAC-R002](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2). After the protocol is accepted, #3/#4/#5 may run in parallel. The full graph is in the programme. Issues #1–#18 form the internal foundational-research programme; #19 and #20 are separately gated external-review and real-participant extensions.
 
 From the repository root, using Python 3.11 or newer:
 
 ```sh
 python -m unittest discover -s tests -v
 python tools/validate.py
+python -m tools.build_record_fixtures --check
 ```
 
-The bootstrap checks only programme structure, required documents, local Markdown file targets and JSON syntax. MHAC-R001 adds the research-record validators and stage gates; those are not already implemented.
+The validator retains the bootstrap checks and adds all sixteen record schemas,
+typed revision references, reading/provenance checks, correction propagation,
+evidence counts, citation bindings and deterministic exports. History comparison
+uses an explicit prior snapshot or locally available accepted Git SHA; CI supplies
+the actual base. The synthetic worked example contains a deliberate extraction
+error that passes structure, demonstrating why source fidelity still needs review.
 
 ## Boundaries
 

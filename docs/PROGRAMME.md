@@ -71,4 +71,4 @@ Issues can be split into bounded implementation PRs when necessary. Use `Refs` u
 
 ## First ready work
 
-After the bootstrap PR is merged and its checks succeed: #1 only. #2 follows #1. The first three-way parallel wave is #3/#4/#5, not before the protocol. No GPU, physical hardware, paid service or participant recruitment is needed to start.
+MHAC-R001's [record infrastructure](R001_IMPLEMENTATION.md) is implemented in this tree. After its actual PR merge and successful post-merge checks are verified, #2 is the next task. Research state remains not_started. The first three-way parallel wave is #3/#4/#5 after protocol acceptance. No GPU, physical hardware, paid service or participant recruitment is needed to start.

@@ -2,7 +2,7 @@
 
 [Data contract](../../docs/DATA_MODEL.md) · [Integrity](../../docs/RESEARCH_INTEGRITY.md)
 
-These are field prompts, not schema-validated real records. MHAC-R001 implements the machine-readable contract and fixtures. Do not copy blank templates into live registers and mark them complete.
+These field prompts supplement the implemented [v1 machine-readable contract](../../schemas/README.md) and [synthetic worked examples](../../tests/fixtures/records/v1/README.md). They are not real records. Do not copy blank templates into live registers and mark them complete.
 
 ## Source note
 
