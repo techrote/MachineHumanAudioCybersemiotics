@@ -1,0 +1,2503 @@
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/DECISIONS.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/DECISIONS.md
+new file mode 100644
+index 0000000..9ca959f
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/DECISIONS.md
+@@ -0,0 +1,228 @@
++# Quantitative decision table
++
++Original proposed policy, not a frozen protocol. Source IDs resolve in SOURCES.md. `COMMON` refers to EXTRACTION_CONTRACT.md. JSON and CSV contain the same 14 decisions in machine-readable form.
++
++## D01 — Recognition: correctly map the cue/message on the first attempt at a specified exposure level
++
++**Effect measure:** Proposed default: marginal risk difference / difference in participant-average accuracy, percentage points; log RR or marginal log OR only in separate prespecified compatible cells.
++
++**Required extraction:** Joint COMMON fields plus number/identity of alternatives, scoring, confusion matrix if available, first-attempt denominator, per-participant proportions or adjusted marginal contrast+SE.
++
++**Design compatibility:** Parallel and paired designs only with equivalent exposure and estimand and design-correct variances; item-generalization scope must match.
++
++**Missing variance or correlation:** Recover valid paired/model SE; one binary event per person needs joint table; repeated trials need participant-aware uncertainty, not binomial n=trials.
++
++**Multiplicity:** Retain cue-specific outcomes; select a prespecified exemplar or average an explicitly defined interchangeable cue set using V.
++
++**Do not pool when:** Different meanings, chance levels or task policies; incompatible first-attempt/any-attempt success; conditional versus marginal OR; missing valid SE cannot enter inverse-variance pool.
++
++**Sources:** M01 M03 M07.
++
++## D02 — Correct action by a task-relevant deadline
++
++**Effect measure:** Marginal risk difference in correct action by deadline; error/omission categories separately; no automatic conversion to recognition.
++
++**Required extraction:** Action definition, hazard/context, deadline origin/value, first/final action, corrections/replays, denominator, misses/technical loss and analysis contrast.
++
++**Design compatibility:** Same action opportunity, deadline and permitted repair policy; bundled interfaces remain bundled effects.
++
++**Missing variance or correlation:** Unknown failures are not silently successes or deleted trials; use outcome/missingness sensitivity separately.
++
++**Multiplicity:** Primary candidate within each task cell; other action definitions retained as secondary.
++
++**Do not pool when:** Recognition-only keypress used as a proxy for real action; different deadline/repair policies; unsafe transfer from lab to real deployment.
++
++**Sources:** M08 M01.
++
++## D03 — Detection/discrimination versus identifying a message
++
++**Effect measure:** Keep hit/false-alarm rates or specified sensitivity measure distinct from n-way recognition accuracy.
++
++**Required extraction:** Signal/noise opportunities, decision criterion, false alarms, response options, sensitivity formula and zero-cell handling.
++
++**Design compatibility:** Same signal-detection task and measure; discrimination does not identify semantic action.
++
++**Missing variance or correlation:** No d-prime reconstruction from percent correct alone without justified design mapping.
++
++**Multiplicity:** Multiple sensitivity/criterion measures remain labelled; do not choose largest effect.
++
++**Do not pool when:** Missing false-alarm opportunities; differing detection and message-selection questions.
++
++**Sources:** M01 M03.
++
++## D04 — Response time for a clearly defined response population
++
++**Effect measure:** Raw arithmetic mean difference in ms; separate mean-log contrast (exp gives ratio of geometric means); retain medians/quantiles as different summaries.
++
++**Required extraction:** Clock onset/offset, sound duration, response event, correct/error inclusion, deadline/censoring, trimming/winsorization, means/SD or valid model contrast.
++
++**Design compatibility:** Same clock, event, transformations and inclusion policy; post-onset and post-offset times not interchangeable without a justified conversion.
++
++**Missing variance or correlation:** Recover paired SE or SDdiff; sensitivity in within-person r; no universal median-to-mean conversion.
++
++**Multiplicity:** One prespecified timing endpoint per cell or explicit joint model; accuracy remains visible.
++
++**Do not pool when:** Correct-only versus all attempts; speed emphasis differs; unknown trimming; no failure outcome alongside selected successful RT.
++
++**Sources:** M02 M07 M11 M08.
++
++## D05 — Performance after fixed training dose
++
++**Effect measure:** Accuracy/action or latency contrast at prespecified training dose, not a training-efficiency effect.
++
++**Required extraction:** Training duration/trials, feedback, criterion, exposures, immediate assessment point, randomized training/interface factors.
++
++**Design compatibility:** Equal-dose comparisons answer a different question from training to equal criterion.
++
++**Missing variance or correlation:** Unknown prior exposure or dose prevents alignment; missing dispersion handled within the actual outcome family.
++
++**Multiplicity:** Prespecified immediate post-dose window; all learning blocks retained but not independent.
++
++**Do not pool when:** Different doses pooled as equivalent; within-group pre/post change mistaken for an interface contrast.
++
++**Sources:** M03 M08.
++
++## D06 — Training burden to reach a criterion
++
++**Effect measure:** Time/trials-to-criterion; success probability within training budget; censored time-to-event only with appropriate model.
++
++**Required extraction:** Criterion, ceiling, stopping rule, feedback, unsuccessful learners, censoring, practice schedule, metric.
++
++**Design compatibility:** Common criterion and budget; distinguish total elapsed time from trial counts.
++
++**Missing variance or correlation:** Do not omit non-learners or assign them mean successful time; no variance borrowing across unlike criteria.
++
++**Multiplicity:** Learning curves/blocks need covariance or separate displays; do not pick steepest interval.
++
++**Do not pool when:** Different mastery thresholds; training time only among successful learners; incompatible time-to-event/count measures.
++
++**Sources:** M08 M03.
++
++## D07 — Delayed retention level versus loss from immediate performance
++
++**Effect measure:** Delayed outcome contrast OR between-interface difference in retention change; never merge these estimands.
++
++**Required extraction:** Exact delay, interim exposures/retraining, immediate baseline, attrition, 4-condition/time covariance or reported change contrast+SE.
++
++**Design compatibility:** Same delay regime, training and retest policy; randomized between-interface contrast distinct from single-arm forgetting.
++
++**Missing variance or correlation:** For change contrast use c-Sigma-c transpose; two correlations alone generally insufficient for four measurements.
++
++**Multiplicity:** Predeclare delay windows; separate windows are correlated results, not extra studies.
++
++**Do not pool when:** 24-hour and multiweek retention treated identical; relearning counted as unaided retention; missing change covariance.
++
++**Sources:** M01 M03.
++
++## D08 — Workload or effort during/after the task
++
++**Effect measure:** Raw scale mean difference for same instrument/version/scoring; carefully specified SMD only for same construct across defensible instruments.
++
++**Required extraction:** Instrument/version, raw/weighted TLX, overall/subscale, range/direction, timing, task duration, participant SD/model contrast.
++
++**Design compatibility:** Same workload construct and scoring; subjective performance subscale is not observed action accuracy.
++
++**Missing variance or correlation:** Missing scale dispersion does not justify assigning an SD; sensitivity only with comparable instrument evidence.
++
++**Multiplicity:** Overall and subscales not separate independent confirmations; secondary families retain full results.
++
++**Do not pool when:** Preference/annoyance/human-likeness substituted for workload; raw/weighted TLX or subscales declared equivalent without rationale.
++
++**Sources:** M10 M07.
++
++## D09 — Repeated measures / crossover / repeated trial comparisons
++
++**Effect measure:** Prefer design-adjusted marginal contrast with SE; raw MD when common units; outcome-standardized g only with explicit denominator.
++
++**Required extraction:** Participant pairing, sequence allocation, period/order/carryover, SDdiff or r, model/covariates, units/trials/items, missing pairs.
++
++**Design compatibility:** Combine with parallel estimates only after exposure/period compatibility; otherwise stratify.
++
++**Missing variance or correlation:** SDdiff squared = SDa squared + SDc squared - 2r SDa SDc; justified grid, not default r=.5; model covariance preferred.
++
++**Multiplicity:** Repeated blocks/items do not increase independent participant n; all-pairwise contrasts may be linearly dependent.
++
++**Do not pool when:** Unmodelled carryover/learning; trial count used as participant count; paired d_z pooled with between-subject g.
++
++**Sources:** M01 M02 M07.
++
++## D10 — Shared controls and multiple cue contrasts
++
++**Effect measure:** One prespecified pair; compatible arm/contrast aggregation with a declared target; or full sampling covariance multivariate model.
++
++**Required extraction:** Arm IDs/counts/SDs and contrast coefficient vectors; participant overlap; outcomes/timepoints; covariance basis.
++
++**Design compatibility:** Independent arms sharing C: cov(A-C,B-C)=var(C); same people in all arms requires full covariance algebra.
++
++**Missing variance or correlation:** Unknown covariances: report feasible/judged sensitivity; simple control-splitting is an approximation, not paired-data repair.
++
++**Multiplicity:** Use independent contrast basis if A-B=(A-C)-(B-C); no redundant 3-contrast precision gain.
++
++**Do not pool when:** Combining genuinely different cue families merely to avoid dependence; missing identifiable independent units.
++
++**Sources:** M02 M12.
++
++## D11 — Multiple publications or partially overlapping samples
++
++**Effect measure:** One canonical result per quantity; updated/corrected report may supersede, not average with, its predecessor.
++
++**Required extraction:** Publication family, study/experiment/sample IDs, overlap fractions/status, result IDs, corrections, conflicting values and locators.
++
++**Design compatibility:** Cluster independent overlap components, not publication titles; same experiment reported twice is no new sample.
++
++**Missing variance or correlation:** Unresolved duplicate status: most credible prespecified canonical result plus alternate-report sensitivity; leave unresolved conflict explicit.
++
++**Multiplicity:** Link complementary results but do not add N; do not use review and primary study as independent observations.
++
++**Do not pool when:** Same sample masquerades as independent study; unknown material overlap prevents credible covariance/cluster definition.
++
++**Sources:** M06 M12.
++
++## D12 — Missing variance, sparse outcomes and incompatible effect scales
++
++**Effect measure:** Recover exact design-correct SE from CI/test; else descriptive estimate; SMD, OR, RR, RD remain distinct unless justified conversion.
++
++**Required extraction:** CI level, df, exact paired t or one-df contrast F, variance type, zeros, model link, adjustments, unit and derivation.
++
++**Design compatibility:** A test for the actual contrast may inform SE; omnibus ANOVA p or significance threshold cannot recover it.
++
++**Missing variance or correlation:** No zero SD/SE substitution, no universal continuity correction; zero events/no variance may require another valid likelihood or non-pool; imputation flagged and sensitivity/exclusion repeated.
++
++**Multiplicity:** No result selection based on whether variance or significance is convenient.
++
++**Do not pool when:** Only p<.05; unspecified SE type; no defensible reconstruction; OR versus RR conflated; SDdiff used as common-scale standardizer.
++
++**Sources:** M01 M02 M07.
++
++## D13 — Across-study synthesis or structured non-pooling
++
++**Effect measure:** Pool only within synthesis cell and valid independence model; otherwise labelled per-sample effects and uncertainty, no summary diamond.
++
++**Required extraction:** Synthesis key, included and omitted records, reason codes, bias/transfer appraisal, assumptions, confidence limits, number of independent components.
++
++**Design compatibility:** Small corpus: prespecified single effect or justified within-sample aggregation; random-effects option not a compatibility repair.
++
++**Missing variance or correlation:** Show estimates with missing CI labelled not estimable; covariance-sensitive conclusions remain conditional.
++
++**Multiplicity:** No significance vote counting; subgroup/moderator and selective outcome analyses not driven by results.
++
++**Do not pool when:** Construct/design incompatibility; unresolvable overlap; sparse independent samples for requested inference; serious bias; selected-outcome coverage.
++
++**Sources:** M03 M04 M05 M09.
++
++## D14 — Inferential multiplicity and dependence-aware models
++
++**Effect measure:** Descriptive marginal intervals unless a confirmatory family and adjustment were prespecified; no universal omnibus audio score.
++
++**Required extraction:** Primary endpoint/cue/time hierarchy, all attempted analyses, family definition, adjustment, independent cluster count, df/leverage for robust model.
++
++**Design compatibility:** CR2/Satterthwaite with explicit overlap-component clusters is a conditional future option, not a substitute for compatible outcomes.
++
++**Missing variance or correlation:** Unknown V still needs working assumptions and sensitivity; random intercept alone does not supply sampling covariance.
++
++**Multiplicity:** Prefer limited preregistered contrasts; a multi-outcome estimate is not evidence all endpoints improve; no p-based prioritization.
++
++**Do not pool when:** Too few independent clusters or unstable df/leverage; unidentified variance components; model changes chosen for a desired conclusion.
++
++**Sources:** M03 M12 M13.
++
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/EXTRACTION_CONTRACT.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/EXTRACTION_CONTRACT.md
+new file mode 100644
+index 0000000..fd85cf6
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/EXTRACTION_CONTRACT.md
+@@ -0,0 +1,56 @@
++# Proposed quantitative extraction extension
++
++**Draft interface to #1, not replacement schemas.** Extend the existing empirical extraction and identity records specified in `docs/DATA_MODEL.md`. Local field names below are proposals; preserve that workstream's accepted IDs, common provenance and lifecycle. A structurally valid extraction does not establish source fidelity or causal identification.
++
++## COMMON fields needed before numerical synthesis
++
++| Field group | Required content and why |
++|---|---|
++| Identity | Publication ID/version; study, experiment, sample, arm, cue, outcome, timepoint and canonical-result IDs; publication family; overlap component and known/possible/absent overlap, with evidence. Distinguish observed, randomized and analysed participant counts. |
++| Provenance | Source locator including table/row/column or model/contrast; input record/version; reported versus derived value; transformation/formula/version; extractor and verification scope; explicit synthetic flag; correction/supersession lineage. |
++| Population | Language proficiency, hearing criteria, experience, age/context restrictions; exclusions and attrition. A student's learned lab mapping is not silently transported to expert safety action. |
++| Intervention/comparator | Actual sound exemplars and family labels, semantics/action mapping, number of response alternatives, voice/lexical content, duration and level, training/feedback, environment and distractors; identify matched component comparison versus bundled interface comparison. |
++| Design | Randomization unit, parallel/paired/crossover/factorial/observational, sequence/period/counterbalance, practice/order adjustment, participants per arm/pair, trials/items per person, repeated blocks and item reuse, missing pairs. |
++| Estimand key | Population; task; treatment/comparator; outcome operationalization; training/exposure; delay/window; failure/repair/replay policy; analysis population; effect scale and standardizer; participant versus trial weighting; marginal versus conditional interpretation. |
++| Estimate | Signed contrast orientation, units, mean/proportion/log quantity, dispersion type (SD, SE, CI), CI level and df, n associated with that variance, baseline/comparator risk for binary interpretation, model link and covariates. Retain original and transformed values. |
++| Dependence | SDdiff or paired t/CI; within-person outcome correlation; covariance of estimated contrasts separately; arm mean covariance or joint binary table; repeated-time covariance; shared-control ID; whether adjusted SE already accounts for repetition; assumptions and source of each covariance. |
++| Outcome events versus missing data | Wrong action, omission, timeout, repeated request, correction, training failure and technical logging loss separately. Record whether an event is scored failure, observed as its own outcome, censored or genuinely unobserved. |
++| Selection/multiplicity | All eligible outcomes/contrasts/timepoints; prespecified synthesis membership; primary/secondary status; selection/aggregation rule and weights; reason for excluded contribution; whether interval is marginal or simultaneous. |
++| Appraisal/transport | Randomization/measurement/selection issues, confounding, outcome reporting coverage, accessibility, material task differences, bias rationale and downstream claim boundary. Do not reduce all domains to one numeric score. |
++
++## Minimal machine-readable boundary for a future extraction
++
++```json
++{
++  "canonical_result_id": "assigned-by-R001",
++  "sample_id": "assigned-by-R001",
++  "overlap_component_id": "resolved-before-synthesis",
++  "estimand_key": {
++    "outcome_family": "correct_action",
++    "summary": "marginal_risk_difference",
++    "time_origin": "audio_onset",
++    "deadline_ms": null,
++    "deadline_status": "not_reported",
++    "exposure_policy": "fixed_dose",
++    "failure_policy": "wrong_or_late_is_failure",
++    "repair_policy": "not_reported"
++  },
++  "estimate": {"value": null, "unit": "probability_difference", "status": "not_extracted"},
++  "variance": {"value": null, "status": "not_reported", "basis_ids": []},
++  "dependence": {"within_person_r": null, "contrast_covariance_ids": [], "status": "unresolved"},
++  "synthesis_status": "not_ready",
++  "synthetic": true
++}
++```
++
++This is an illustrative field shape, **not a schema-valid live source record**. A missing deadline or repair policy would block the corresponding narrowly defined synthesis; null does not mean zero or no repair. Fixtures remain under tests, never a live evidence register.
++
++## Validation split
++
++Schema-level checks cover types, finite estimates, positive SD/SE where applicable, probability/count ranges, metric/units, mutually exclusive variance states, and explicit missing reasons. Cross-record checks cover valid IDs, duplicate/correction precedence, overlap components, result membership, compatible estimand keys, independent counts and covariance dimensions/positive semidefiniteness. Source review verifies that IDs actually refer to the same people, scales mean what they claim, and published model uncertainty handles the design. Scientific review judges exchangeability, causal interpretation, missingness assumptions and generalization. None of those last judgments follows from passing JSON tests.
++
++## Specific mathematical safeguards
++
++A success count cannot exceed its corresponding denominator. Repeated trials cannot be substituted for independent people. Variance and correlation fields must distinguish the correlation of person-level outcomes from the correlation of estimated contrasts. Before applying a covariance matrix, check orientation, labels, diagonal agreement with squared SEs, symmetry and positive semidefiniteness. A singular matrix can describe exact contrast redundancy and must not be made invertible by silently adding an arbitrary ridge. Aggregate with a stated contrast vector or use a nonredundant basis.
++
++A correction replaces the eligible version of a result, preserves the old extraction as superseded, invalidates its derived covariance/aggregate and triggers regeneration. Conflicting reports are not averaged to manufacture agreement. The small rehearsal canonicalizer tests exact duplicate IDs only; it does not implement the complete #1 identity or correction graph.
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/FINDINGS.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/FINDINGS.md
+new file mode 100644
+index 0000000..e4fd2b6
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/FINDINGS.md
+@@ -0,0 +1,138 @@
++# Quantitative-methods prepass findings
++
++**Issue:** MHAC-R002 / #2. **Assessed main:** `796151a33ec7a1acc026b239fe5c883312ebf40b`. **Status:** analytical contribution, not protocol freeze, empirical synthesis, superiority ranking or #1 infrastructure acceptance. The 14-row decision table, extraction contract and proposed clauses accompany this report. Sources and exact reading limits are in SOURCES.md.
++
++## What remains to be decided, and what this prepass resolves
++
++The current synthesis instructions already reject pooling incompatible constructs and double-counting samples. They do not yet identify a quantitative target, selection hierarchy, covariance procedure or operational non-pooling rule. This prepass proposes those rules without revisiting the access status of the existing auditory-alert review. Prior methodology packets were not available locally; retrieved summaries were used only to identify the deferred statistical scope. No empirical audio-effect estimates informed the fixtures or policy choices.
++
++The main proposed decision is to organize synthesis around the **question actually estimated**, not the sound-family label or the availability of an effect size. A short sound can yield a quick recognition response, incorrect action, expensive training and poor retention simultaneously. Those are separate questions. A project-level preference or a broad term such as comprehension cannot make their standardized effects commensurable.
++
++## Outcome questions that must remain distinct
++
++| Family | Question to identify | Important non-equivalence |
++|---|---|---|
++| Recognition | Does the listener correctly map the message after the stated exposure? | Detection, first-attempt recognition, success after replay and action execution are not the same endpoint. |
++| Action | Is the required response appropriate, within the relevant deadline and allowed repair policy? | A label-selection keypress does not by itself establish situated action; wrong, omitted and late actions matter. |
++| Latency | How long until which event, from which clock origin, among which responses? | Correct-only RT, all-response RT and time to eventual correction select different outcomes/populations. |
++| Training | What performance follows a fixed training budget, or what budget is needed for mastery? | Equal training dose versus equal final mastery answers different questions; unsuccessful learners cannot disappear. |
++| Retention | What persists after a specified delay and intervening exposure? | Delayed level, decrement from immediate performance and relearning burden are distinct. |
++| Workload | What subjectively rated demand/effort occurs under a specified task and instrument? | Preference, annoyance, perceived urgency and observed errors are not workload proxies; TLX overall/subscales/scoring differ. |
++
++These are original operational proposals informed by the estimand framework [M08], synthesis grouping guidance [M03], speed–accuracy methods [M11], and the instrument owner's workload definition [M10]. No universal audio-family ordering follows from them.
++
++A useful synthesis key is `(population, task/semantics, A:C interface, exposure/training, outcome/event, timing, failure/repair policy, summary/scale, analysis unit, design constraints)`. Whether mean latency includes the acoustic message itself is especially important for brief interfaces: subtracting sound duration changes the question from end-to-end response burden to post-stimulus processing, and cannot automatically be done for every observation. Likewise an A:C comparison with different wording and training is a package comparison, not an isolated acoustic-style effect.
++
++## Two correlations with opposite roles
++
++For n paired participants, let A and C be participant-level measurements. A raw mean difference has
++
++`Var(mean(A-C)) = (sA² + sC² - 2 r_person sA sC) / n`.
++
++By contrast, for estimated contrasts y and prespecified weights a,
++
++`Var(a'y) = a' V a = sum(a_i² Var(y_i)) + 2 sum(i<j)(a_i a_j Cov(y_i,y_j))`.
++
++Positive pairing may reduce a contrast SE, while positive correlation between contrasts increases an average's SE. Treating either correlation as the other is a substantive error. A pairing correlation cannot generally populate the contrast-covariance matrix. [M01, M02; algebraic application]
++
++When A, B and C are independent arm means, `Cov(A-C, B-C)=Var(C)`. When the same participants receive all conditions, it becomes `Cov(A,B)-Cov(A,C)-Cov(C,B)+Var(C)`. More generally, with condition covariance Sigma and contrast matrix C, `V = C Sigma C'`. This linear formula applies to raw mean/linear contrasts; nonlinear effect measures such as log odds ratios or standardized mean differences need their own delta-method/model covariance, not this raw-MD formula copied unchanged. Contrast orientation changes covariance signs. A-B equals (A-C)-(B-C), so retaining all three does not create a third independent contrast. Exact redundancy may make V singular; use an identified contrast basis or aggregate, not an arbitrary numerical ridge.
++
++## Worked synthetic example: precision lost to false independence
++
++The fixture is authored summary data, **not real participants or a simulation calibrated from audio evidence**. It stipulates three disjoint sample IDs and three interchangeable cue exemplars within each. Each contrast is an A-minus-C first-attempt recognition difference in percentage points, with supplied SE=2. There is no claim that those SEs were estimated from the nominal participant counts.
++
++| Synthetic sample | Cue 1 | Cue 2 | Cue 3 | Equal-cue sample mean |
++|---|---:|---:|---:|---:|
++| S1 | 4 | 5 | 6 | 5 |
++| S2 | 1 | 2 | 3 | 2 |
++| S3 | -2 | -1 | 0 | -1 |
++
++The illustrative target is the equal-weight average of these **three specified sample-population effects**, each with an equal mixture of these three cues. It is a finite target, not the mean of a superpopulation of studies. Equal sample and cue counts keep the point estimate at 2, isolating the precision error. Different sample effects do not invalidate a fixed finite weighted target; they do invalidate unqualified generalization to a common universal effect.
++
++The deliberately incorrect independence calculation uses nine independent observations:
++
++`mean = 18/9 = 2; Var_naive = 9×4 / 9² = 4/9; SE_naive = 0.666667`.
++
++Under a stipulated within-sample compound-symmetric *contrast* correlation rho, each 3×3 block has diagonal 4 and off-diagonal 4rho. For one sample:
++
++`Var(sample mean) = (3×4 + 6×4rho)/9 = (4/3)(1+2rho)`.
++
++For the average of three independent sample means:
++
++`Var(target estimate) = (4/9)(1+2rho)`.
++
++Thus rho=.6 gives `Var=44/45=0.977778`, `SE=0.988826`. False independence gives **2.2 times too much inverse-variance precision**, or an SE that must increase by **48.3%** to account for this stipulated covariance. The phrase “48.3%” compares corrected SE with naive SE; equivalently the naive SE is 32.6% smaller than the corrected SE.
++
++| Assumed contrast rho | SE | Conditional normal 95% interval | Correct variance / naive variance |
++|---:|---:|---:|---:|
++| -0.25 | 0.4714 | 1.0761 to 2.9239 | 0.5 |
++| 0 | 0.6667 | 0.6934 to 3.3066 | 1.0 |
++| 0.25 | 0.8165 | 0.3997 to 3.6003 | 1.5 |
++| 0.50 | 0.9428 | 0.1521 to 3.8479 | 2.0 |
++| 0.60 | 0.9888 | 0.0619 to 3.9381 | 2.2 |
++| 0.75 | 1.0541 | -0.0660 to 4.0660 | 2.5 |
++| 0.90 | 1.1155 | -0.1864 to 4.1864 | 2.8 |
++| 1.00 | 1.1547 | -0.2632 to 4.2632 | 3.0 |
++
++All intervals here use the normal quantile and **condition on the supplied variances and the chosen rho**. They are not random-effects intervals, account for neither variance-estimation uncertainty nor study-population sampling, and cannot validate small-k HKSJ/RVE performance. Whether an illustrative interval crosses zero is not an empirical finding or a correlation-selection rule. No one rho is asserted to be the unknown true value.
++
++For a three-contrast equicorrelation matrix, mathematical feasibility requires `-1/2 <= rho <= 1`. The negative scenario is a stress test, not a substantive assertion about expected audio data. Real designs require source-informed bounds and a valid covariance matrix; arbitrary pairwise correlations need not form one. The singular endpoints can still be aggregated because no matrix inverse is used.
++
++## Non-pooled alternative and repeated reports
++
++`synthetic-results/NONPOOLED.md` and `nonpooled.csv` display all nine contrasts with their marginal intervals, grouped by sample, with no overall diamond or vote count. Each row has SE=2 and interval estimate ±3.919928. This makes the S1/S2/S3 differences visible instead of allowing a headline mean to conceal them. Nominal sample sizes are repeated labels, not additive independent n within a sample.
++
++The raw fixture also includes three identical results from a second report of S1. A deliberately incorrect 12-row analysis yields `mean=2.75`, `SE=sqrt(1/3)=0.577350`: a duplicated favourable sample changes both weighting and apparent precision. Canonicalization removes exactly those three repeated-result rows, restoring nine results and three sample identities. A conflicting repeated result is rejected, not averaged. This is a minimal test of result identity, not a replacement for source-grounded publication/sample reconciliation. [M06]
++
++## Second synthetic design: shared independent-arm control
++
++A, B and C have independent n=20 arms, SD=100 ms, and means 620, 640 and 650 ms. Each arm mean variance is 500. Contrasts A-C=-30 and B-C=-10 each have variance 1000, but their covariance is 500 because they reuse C.
++
++The equally weighted contrast-mixture estimate is -20 ms. False independence gives variance `(1000+1000)/4=500`, SE=22.3607. The correct covariance-aware variance is `(1000+1000+2×500)/4=750`, SE=27.3861. This target is a deliberately defined 50:50 mixture of A:C and B:C effects; it is not legitimate merely because the two arms both happen to be called non-speech. Here rho=.5 is derived from the stipulated arm design, not guessed.
++
++## Third synthetic design: missing pairing correlation
++
++The separate paired-RT fixture has n=25, means 620 and 650 ms and SDs 100 and 110 ms. Its mean difference is -30 ms throughout. At within-person r=0, its variance is 884 and SE=29.7321; at r=.5, variance=444 and SE=21.0713; at r=.9, variance=92 and SE=9.5917. A negative stress scenario and additional positive values are in the CSV. These are different from the main contrast-rho grid. Recovering a reported paired contrast SE would eliminate this particular missing-correlation problem; there is no reason to impute r again once that SE is available. [M02]
++
++## Fourth synthetic design: paired binary margins do not identify precision
++
++For one binary result per paired participant, the 40-person joint table is: both correct a=24; A-only correct b=10; C-only correct c=2; neither correct d=4. Marginal success probabilities are .85 and .65, giving RD=.20. For D in {-1,0,1}, the unbiased sample-variance estimate of the mean difference is
++
++`Var(RD) = [ (b+c)/n - RD² ] / (n-1) = (.30-.04)/39 = 1/150`.
++
++SE=0.081650, or 8.165 percentage points. The script independently checks this formula by enumerating the 40 **synthetic** difference values; it is not trial-level evidence.
++
++Keeping only the same margins, possible values of a run from 20 to 26. Enumerating all seven feasible joint tables leaves RD=.20 but changes variance from `.16/39` to `.46/39`, and SE from **0.064051 to 0.108604**. These are logical joint-table bounds, not a 95% interval or a probability distribution over correlations. The raw margins alone do not identify which SE is correct. The simple normal interval is an algebra demonstration; sparse real paired outcomes may require a different inferential procedure. Marginal and matched conditional odds ratios also target different summaries and should not be silently substituted.
++
++## Retention/change covariance and unit-of-analysis risks
++
++A difference in retention changes, `(A_delayed-A_immediate)-(C_delayed-C_immediate)`, has contrast vector `(1,-1,-1,1)` if the measurement order follows that expression. Its variance is c'Sigma c, involving all relevant repeated-measurement covariances. A single pre/post correlation cannot generally identify it. Reported design-valid contrast SEs are valuable; otherwise show dependence sensitivity or keep delayed levels and changes separated.
++
++Trials, cues, blocks and reports can all multiply rows while leaving the number of independent participants unchanged. With unequal trial counts, participant-average accuracy differs from a trial-weighted mean. With a fixed small stimulus set, a participant-only SE does not establish generalization to a new population of sound exemplars. The extraction must retain item identity and generalization scope rather than pretending the nominal trial count addresses both sources of variation. [M01; application to audio tasks]
++
++## What to pool, and what not to pool
++
++Use the 14-row DECISIONS/JSON/CSV table for implementation. First establish a meaningful synthesis cell; next resolve duplicate and overlap identities; next identify the effect and design-valid uncertainty; then use a prespecified single result, a justified covariance-aware aggregate or an adequate multivariate model. Missing variance excludes a result from inverse-variance pooling, not from the review. Uncertain overlap cannot be repaired by relabelling publications as independent clusters.
++
++A random intercept represents variation in true effects; it does not reconstruct omitted sampling covariance from shared participants or controls. A future working V plus `rma.mv` and CR2/Satterthwaite inference is a possible route, subject to enough independent overlap components and diagnostics. The official package guidance was inspected; **no R model or robust estimator was fitted here**. With three synthetic samples, a bespoke complex model would add a misleading appearance of sophistication. [M12, M13]
++
++For the forthcoming protocol, PROPOSED_PROTOCOL.md offers a conservative primary non-pooling route below five independent components, REML plus explicitly specified conservative HKSJ for otherwise eligible cells, and a separate guarded robust-model option. These cut-offs and modifications are proposed operational safeguards, not established sufficiency guarantees. They need review before freezing; this packet's exact algebra remains useful without adopting them.
++
++## Non-pooling is a deliverable, not a missing analysis
++
++SWiM is a reporting checklist, not proof that a synthesis method is valid. The proposed implementation maps items1–2 to the synthesis key and metric; items3–4 to declared aggregation/selection or non-pooling; items5–6 to heterogeneity and appraisal/uncertainty reasoning; items7–8 to grouped estimates with identifiable contributing samples; item9 to explicit precision, design and transfer limits. We inspected the checklist's two pages, not the full explanation paper. [M09]
++
++A non-pooled cell should show the eligible set, actual contributors, missing uncertainty and omitted-contribution reasons, not only favourable estimates. Magnitude, direction, uncertainty and conditions can be compared without counting significant studies. Absence of a precise pooled result is not proof of no effect. Where direction-only information is all that survives, its lost magnitude and precision must be acknowledged, and dependent rows cannot be treated as independent votes. [M05]
++
++## Implementation sequence and remaining choices
++
++| Order | Intended paths / action | Acceptance connection |
++|---|---|---|
++| 1 | Preserve this additive prepass and fixture under the named research/protocol and tests/fixtures paths. | Actual methods basis and reproducible calculations available without a freeze. |
++| 2 | Reconcile EXTRACTION_CONTRACT with #1 empirical/identity schemas and correction graph; add relevant cross-record tests there. | Independent units, missingness and source identity become representable. |
++| 3 | Pilot the synthesis-key and 14 decisions on heterogeneous, actually read sources; include negative/incompatible cases. | Establish operational effect/eligibility rules without favourable-outcome selection. |
++| 4 | Resolve concrete windows, training/exposure, action deadlines, standardizer and meaningful-effect criteria; review proposed k/df/inference safeguards. | Quantitative estimands and pooling/non-pooling rules ready for freeze. |
++| 5 | Add the accepted clauses to the executable protocol through its owner; log exposure/amendments. Leave original draft labelled. | No silent freeze or overwriting theoretical-method rules. |
++| 6 | Later #9/#10 implement extraction, analysis and verified library-based inference; retain source-fidelity review separately. | Empirical calculations and conclusions trace actual evidence, not this synthetic fixture. |
++
++No existing schema, validator, workflow, RAG authority, programme status or protocol-freeze flag is replaced by this patch. The proposed extra tools/tests are disjoint filenames within #1's broader owned directories and require integrator coordination before publication. The task used one assistant with local self-checks; it is not independent human statistical review. All source and software reading scopes are explicit; no inaccessible text was inferred.
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/PROPOSED_PROTOCOL.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/PROPOSED_PROTOCOL.md
+new file mode 100644
+index 0000000..0f98cf2
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/PROPOSED_PROTOCOL.md
+@@ -0,0 +1,67 @@
++# Proposed quantitative protocol clauses
++
++**PROPOSED — NOT FROZEN.** Contribution to MHAC-R002 / #2 assessed against `796151a33ec7a1acc026b239fe5c883312ebf40b`, 2026-10-04. These clauses may be integrated after the heterogeneous pilot and #1 identity/extraction interface are reconciled. They do not freeze the protocol, change the literature cut-off, register a study, claim independent human review, or authorize participants. Method source IDs resolve in SOURCES.md. Thresholds below are explicit conservative project proposals, not universal methodological laws.
++
++## Estimand and synthesis membership
++
++For every proposed quantitative synthesis we will write a synthesis-specific question before inspecting the direction, statistical significance or relative size of its extracted effects. Its key will identify population, task and semantic content, intervention/comparator, training and exposure policy, outcome and response event, time origin/window, treatment of failures/replays/repair, population summary, effect scale, analysis unit and relevant design constraints. A shared cue-family name is insufficient to establish membership. [M01, M03, M08]
++
++A comparison that simultaneously changes sound family, wording, mapping, duration or training will be described as a comparison of interface packages. We will not attribute that package effect to sound style alone. Effects of a manipulated component require a design that isolates that component or an explicitly qualified causal analysis. The project's preferred aesthetic is not an eligibility or weighting criterion.
++
++We will analyse recognition, correct action, latency, training burden, retention and workload as separate outcome families. First-attempt recognition is not appropriate action; perceived urgency and preference are not objective performance. We will not construct a single total-performance score by averaging standardized outcomes. Total interpretive effort remains a multidimensional framing unless a separately justified utility/measurement model is specified before analysis. [M03, M10, M11; original project application]
++
++## Outcome-specific definitions and effect measures
++
++For comparable recognition and action tasks, our proposed primary scale is a marginal risk difference, reported in percentage points. Participant-average accuracy and trial-weighted probability are distinct when trial counts differ; the target weighting will be explicit. A design-valid marginal model contrast or contrast of participant means is preferred to a count that treats repeated trials as independent. Risk ratios and odds ratios may be synthesized in separate compatible cells when those are the identified reported estimands; conditional model odds ratios will not be silently relabelled marginal effects. Detection/false-alarm or sensitivity results remain separate from semantic recognition. [M01; D01–D03]
++
++For action questions, the proposed primary endpoint is appropriate action within the cell's specified deadline and repair policy, with wrong actions, omissions and lateness retained as outcomes. The actual deadline must be justified by the task rather than imposed across unrelated domains. A technical recording loss is missing data, not automatically an action failure. Success after a replay or correction is not first-attempt success. Where source data cannot identify the chosen endpoint, the source remains in the evidence map under its actual endpoint rather than being forced into this synthesis. [M08; project adaptation]
++
++Latency will be identified by clock origin (e.g. sound onset versus sound offset), response event, units, correct/error inclusion and trimming/censoring policy. Arithmetic mean differences in milliseconds, mean-log differences, median differences and other quantiles are not interchangeable. Exponentiating a mean-log difference gives a ratio of geometric means, not a ratio of arithmetic means. Correct-only latency will be explicitly labelled a selected-response estimand and presented alongside accuracy/failure rates; it will not establish an unconditional processing advantage. We will not add an inverse-efficiency composite after seeing an apparent speed–accuracy tradeoff. [M07, M11; D04]
++
++Fixed-dose learning performance, cost to reach a mastery criterion and delayed retention will be analysed separately. Training-to-criterion contrasts must retain non-learners and the training ceiling. Delayed performance level and loss from immediate performance are different estimands. Retention windows must specify exact delay ranges and interim practice/retraining. A cross-interface retention-change estimate requires the appropriate covariance of all contributing measurements or a directly reported design-valid contrast and SE. [M03, M08; D05–D07]
++
++Workload synthesis will retain instrument, version, raw versus weighted scoring, overall versus subscale, direction, task and measurement time. Raw mean differences are preferred for the same instrument/scoring. A standardized mean difference is permitted only for defensibly common constructs measured differently, not to combine workload with accuracy or preference. Weighted TLX, unweighted TLX and individual subscales will not initially be declared equivalent. [M07, M10; D08]
++
++## Effect standardization and design compatibility
++
++We will use raw mean differences when common units have a defensible common interpretation. When standardization is necessary, we will name its denominator and small-sample correction, preserve enough source information to reconstruct it, and use a variance formula appropriate to the design. A paired effect standardized by the SD of within-person differences (d_z) will not be pooled unchanged with between-person outcome-standardized g. The pilot must establish the exact common standardizer before a mixed-design SMD synthesis is enabled; otherwise those results remain separated. [M02, M07]
++
++Parallel and repeated-measures studies are not automatically incompatible, but they must target the same exposure/learning/period question. We will prefer reported design-adjusted contrasts and uncertainty that account for pairing, repeated trials and relevant period/order effects. Training carryover may make an audio crossover fundamentally different from a first-exposure parallel comparison. We will not choose only first-period data in response to a favourable or unfavourable carryover test; any first-period restriction must be prespecified or recorded as an exposed amendment with sensitivity analysis. Non-randomized comparisons will be distinguished and not treated as randomized causal effects. [M01, M02]
++
++## Dependence and duplicate-report handling
++
++Publication, study, experiment, sample and result identities will be reconciled before determining the number of independent contributions. Multiple reports of one result contribute provenance, not extra observations. Complementary outcomes are retained with their common sample identity. A correction supersedes the eligible extraction and invalidates dependent outputs rather than being averaged with the previous value. Unresolved conflicting values or material sample overlap will be flagged and excluded from the affected primary numerical synthesis until a defensible resolution or bounded sensitivity is available. [M06; #1 interface]
++
++Our default small-corpus strategy is one prespecified effect per independent sample and synthesis cell, or an explicitly justified within-sample aggregate. The same sample may contribute to distinct separately analysed outcome families, but those families do not become independent confirmations; a joint comparison requires cross-outcome dependence handling. Selection follows the declared task/outcome/time/exemplar hierarchy and design validity, not significance, magnitude or apparent precision. Other eligible estimates remain visible in the non-pooled display. We will aggregate only measurements that estimate a declared common target or a deliberately defined mixture, with weights stated before results selection. Within-sample variance is a'Va, not the average of squared SEs divided by an invented independent count. [M03, M12]
++
++For independent arms sharing a control, covariance of two raw mean contrasts is the variance of that shared control mean, with signs determined by the contrast vectors. When conditions share participants, all relevant condition covariances are needed. All pairwise contrasts from three conditions are not three independent pieces of information; we will use a nonredundant basis or a valid aggregate. Combining genuinely different cue families merely to eliminate dependence changes the question and is not permitted. Approximate shared-control splitting will not be the default and will not be used to repair repeated-measures designs. [M02; explicit covariance derivation in FINDINGS.md]
++
++## Missing uncertainty, correlations and observations
++
++We will distinguish uncertainty not reported, not recoverable, and genuinely zero by design; missing SD/SE will never be replaced by zero. Valid SE recovery may use a CI with its confidence level and degrees of freedom, a test for the actual contrast or SD of paired differences. An omnibus ANOVA p-value, a threshold such as p<.05 or an unlabelled error bar is insufficient. Reported adjusted uncertainty will not be adjusted for pairing a second time. [M01, M02]
++
++Person-level within-condition correlations and correlations between estimated contrasts are different quantities. The former can reduce the variance of a difference; positive covariance between contrasts increases the variance of their average. Each required covariance will have a source, direct calculation or explicitly labelled assumption. Where it is unavailable, we will first use a reported paired/model contrast or existing accessible supplementary data, then examine justified sensitivity ranges and matrix feasibility. No single assumed correlation, including 0 or 0.5, will be presented as observed. A sensitivity grid is not a confidence interval for an unknown correlation. [M02, M12; derivation]
++
++For paired binary data we will use the joint table or valid marginal contrast uncertainty; where only margins exist, feasible joint-table bounds may identify a variance range. Marginal counts alone generally do not identify paired precision. Borrowed SDs or correlations require an identified comparable source, an exclusion sensitivity and explicit assumption provenance. Persistent lack of a defensible variance precludes inverse-variance pooling but does not remove the source from the evidence map. Sparse or all-zero events require a prespecified suitable method or non-pooling, not a universal arbitrary continuity correction. [M01; synthetic binary derivation]
++
++We will record the number and reason for missing participants/trials and distinguish this from omissions, timeouts and training failure. Correct-only analysis does not define a population that would succeed under both interfaces. Errors may be competing outcomes rather than independently censored observations; time-to-correct analyses require their own event and censoring assumptions. We will not infer those assumptions from the presence of a survival-model label. [M08; original HCI adaptation]
++
++## Across-sample pooling and statistical inference
++
++Compatibility, independent information, identified uncertainty and bias/coverage will determine eligibility before any heterogeneity test. A random-effects model cannot repair different constructs or biased outcome selection. For the primary protocol we propose non-pooled presentation for cells with fewer than five independent sample/overlap components; this is a conservative project safeguard, not a claim that five guarantees adequacy. A separately justified finite-target average may be shown as such, without population-generalization language. [M03–M05]
++
++For eligible cells with at least five independent contributions, the proposed default is a random-effects mean with REML heterogeneity estimation and a conservative modified HKSJ interval, using t(k-1) and inflating the conventional inverse-total-variance SE by sqrt(max(1,q)), where q = sum[w_i (y_i - mu_hat)^2]/(k-1), w_i = 1/(v_i + tau_hat^2), and mu_hat = sum(w_i y_i)/sum(w_i). We will report k, the exact implementation/version and weighting, individual estimates, estimated heterogeneity and sensitivity to the unmodified HKSJ interval and dependence assumptions. This specification must receive known-answer implementation tests before empirical use; it is not implemented by the small algebraic fixture here. Prediction intervals will be withheld or strongly qualified where between-study prediction is poorly identified. No heterogeneity p-value determines whether to switch models. [M04, M15; adoption of the conservative modification is a proposed project choice]
++
++A future multivariate/multilevel analysis must specify the sampling covariance V separately from the random effects for variation in true effects. Robust variance inference is a possible supplement, not a way to ignore duplicate identities or incompatible endpoints. We propose considering CR2/Satterthwaite inference only with at least ten independent overlap components, coefficient-specific df of at least four, and acceptable leverage/identifiability diagnostics; this is an intentionally conservative screening rule, not a universal validity threshold. Failing it triggers aggregation/selection or non-pooling. The three-sample rehearsal does not estimate robust or random-effects models. [M12, M13]
++
++## Multiplicity, sensitivity and non-pooled synthesis
++
++We will retain the declared primary outcome and cue/time hierarchy, all eligible results, and any deviations. Intervals are marginal descriptive intervals unless a confirmatory family and simultaneous inference method were prespecified. No universal superiority claim will be inferred from several unadjusted favourable contrasts. Confirmatory multiple-comparison families and adjustments, if needed, will be fixed before those tests; this evidence-map prepass does not create such a family. Moderator, publication-bias and exploratory subgroup analyses require adequate independent data and a separate justified specification. [M03; project policy]
++
++When pooling is not justified, we will display each independent sample with its linked contrasts, estimate, uncertainty or explicit missing-uncertainty label, design, training/delay and risk-of-bias/transfer caveats. We will explain the grouping, prioritization and non-pooling reason. We will compare magnitude and uncertainty without counting statistical significance as votes, presenting a silent overall diamond or interpreting inconclusiveness as no effect. Dependent rows are not independent votes. Distributional summaries, if used, will explicitly describe their weighting/unit and will not be called a pooled mean. [M05, M09]
++
++Reasons will be coded as one or more of: `CONSTRUCT`, `TASK_OR_EXPOSURE`, `CLOCK_OR_FAILURE_POLICY`, `EFFECT_SCALE`, `DESIGN_OR_CARRYOVER`, `UNKNOWN_VARIANCE`, `UNKNOWN_DEPENDENCE`, `DUPLICATE_CONFLICT`, `SPARSE_INDEPENDENT_INFORMATION`, `SELECTION_OR_BIAS`, `INSUFFICIENT_COVERAGE`. Correlation sensitivity, missingness sensitivity and design/appraisal exclusions will be reported separately. We will not choose the correlation or analytic subset that produces a preferred conclusion.
++
++## Remaining integration choices before any freeze
++
++The pilot must settle concrete population/task cells, exposure levels, retention windows, outcome-specific deadlines, acceptable replay/repair policies, useful effect thresholds and the final common SMD standardizer where necessary. The proposed k/df safeguards and modified-HKSJ option require statistical review and versioned implementation tests. #1 must supply accepted identity/overlap/correction fields; independent overlap components require source-grounded judgment, not inferred publication counts. No primary outcome hierarchy or methodological amendment is to be silently installed by applying this additive prepass patch.
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/README.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/README.md
+new file mode 100644
+index 0000000..dba8e18
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/README.md
+@@ -0,0 +1,20 @@
++# MHAC-R002 quantitative-methods prepass
++
++**Draft analytical contribution — not protocol freeze or empirical findings.** Assessed repository commit: `796151a33ec7a1acc026b239fe5c883312ebf40b`. Date: 2026-10-04. Refs #2; this does not close it.
++
++## Read the work
++
++[Findings and worked calculations](FINDINGS.md) explain the estimands, dependence and sensitivity results. [Proposed protocol wording](PROPOSED_PROTOCOL.md) supplies concrete clauses and remaining pilot decisions. [Decision table](DECISIONS.md) gives 14 operational decisions, also as [JSON](decision_table.json) and [CSV](decision_table.csv). [Extraction contract](EXTRACTION_CONTRACT.md) defines the interface to #1 without replacing its schemas. [Sources](SOURCES.md) and [source ledger](sources.json) give exact locators, access and actual reading extent.
++
++## Inspect the actual results
++
++[Results JSON](synthetic-results/results.json), [correlation sensitivity](synthetic-results/contrast_sensitivity.csv), [paired RT sensitivity](synthetic-results/paired_rt_sensitivity.csv), and [non-pooled display](synthetic-results/NONPOOLED.md) are generated from the explicitly synthetic fixture under `tests/fixtures/mhac_r002_quant/`. No source papers or restricted participant data are bundled.
++
++## Reproduce from repository root
++
++```sh
++python tools/mhac_r002_quant_prepass.py
++python -m unittest discover -s tests -p 'test_mhac_r002_quant_prepass.py' -v
++```
++
++Python 3.11+; standard library only. The actual tested runtime is recorded in the packet verification metadata. No network, R, GPU, paid service or participants are required. The prototype guards synthetic input and tests a limited family of covariance calculations; it is not a general empirical meta-analysis library or #1 validator. The full bootstrap suite was not run locally because no complete repository checkout was available.
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/SOURCES.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/SOURCES.md
+new file mode 100644
+index 0000000..6ab9c1c
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/SOURCES.md
+@@ -0,0 +1,125 @@
++# Primary methods sources and reading limits
++
++Targeted methods consultation, not an exhaustive methodology review. Source identifiers are local to this prepass, not replacements for #1 registry IDs. All accesses were on 2026-10-04. Source text/figures are not redistributed. Web-hosted software documentation is unpinned; production analysis must pin package versions and archive the chosen method specification.
++
++## M01 — Cochrane Handbook v6.5 (2024), Chapter 6: Choosing effect measures and computing estimates of effect
++
++Source: https://training.cochrane.org/handbook/current/chapter-06
++
++Locator: 6.1.2.2; 6.2.1–6.2.9; 6.3; 6.4.1. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Effect of interest versus scale; participant/trial units; paired/clustered data; extraction of suitable contrast uncertainty.
++
++## M02 — Cochrane Handbook v6.5 (2024), Chapter 23: Including variants on randomized trials
++
++Source: https://training.cochrane.org/handbook/current/chapter-23
++
++Locator: 23.2.3–23.2.4; 23.2.7–23.2.7.4; 23.3.4–23.3.5. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Paired effects and correlation sensitivity; carryover/period issues; shared-control options.
++
++## M03 — Cochrane Handbook v6.5 (2024), Chapter 9: Preparing for synthesis
++
++Source: https://training.cochrane.org/handbook/current/chapter-09
++
++Locator: 9.1; 9.3.2–9.3.4, especially 9.3.3 and Table 9.3.c. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Synthesis-specific questions; prespecified selection or aggregation of interchangeable measurements; document grouping changes.
++
++## M04 — Cochrane Handbook v6.5 (2024), Chapter 10: Analysing data and undertaking meta-analyses
++
++Source: https://training.cochrane.org/handbook/current/chapter-10
++
++Locator: 10.3; 10.10.3–10.10.4, particularly 10.10.4.3–10.10.4.5. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Random effects does not cure incompatible questions; uncertainty and prediction limitations with few studies; REML/HKSJ considerations.
++
++## M05 — Cochrane Handbook v6.5 (2024), Chapter 12: Other synthesis methods
++
++Source: https://training.cochrane.org/handbook/current/chapter-12
++
++Locator: 12.2.1–12.2.2.1; chapter key points. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Structured non-pooled synthesis; summary distributions without falsely precise pooled means; reject significance vote counting.
++
++## M06 — Cochrane Handbook v6.5 (2024), Chapter 5: Collecting data
++
++Source: https://training.cochrane.org/handbook/current/chapter-05
++
++Locator: 5.2.1: Studies (not reports) as the unit of interest. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Link multiple reports; preserve secondary details without counting the same study twice.
++
++## M07 — Lakens (2013), Calculating and reporting effect sizes to facilitate cumulative science
++
++Source: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2013.00863/full
++
++Locator: Sections on standardized mean differences in within-subjects designs; Table 1; DOI 10.3389/fpsyg.2013.00863. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Specify the denominator: d_z, d_av and between-groups d/g are not interchangeable. Small-sample correction does not erase that distinction.
++
++## M08 — ICH E9(R1) addendum (2019), estimands and sensitivity analysis
++
++Source: https://database.ich.org/sites/default/files/E9-R1_Step4_Guideline_2019_1203.pdf
++
++Locator: A.3.2 principal-stratum paragraph; A.3.3–A.3.4; printed pp.9–10, zero-based PDF pages10–11. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Treatment, population, variable, event strategy and population summary define the question. Adapting this clinical planning framework to HCI is our proposal, not an ICH compliance claim.
++
++## M09 — Campbell et al. (2020), SWiM checklist accompanying Synthesis without meta-analysis in systematic reviews
++
++Source: https://www.equator-network.org/wp-content/uploads/2020/01/Synthesis-without-Meta-analysis-SWiM-Checklist.pdf
++
++Locator: Checklist pp.1–2, items1–9; both page images inspected; parent article DOI 10.1136/bmj.l6890. Reading: `full_item_read`; access: `full_text_available`.
++
++The two-page checklist was read, not the complete BMJ explanation article. Map grouping, metric, method, prioritization, heterogeneity, certainty, presentation, results and limits.
++
++## M10 — NASA, NASA Task Load Index (TLX), official instrument overview
++
++Source: https://www.nasa.gov/human-systems-integration-division/nasa-task-load-index-tlx/
++
++Locator: Heading NASA Task Load Index (TLX), first two paragraphs and six subscale list; page marked historical reference. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Subjective multidimensional workload; weighted overall score and six subscales. This overview does not establish interchangeability of raw/weighted scores or other workload instruments.
++
++## M11 — Heitz (2014), The speed-accuracy tradeoff: history, physiology, methodology, and behavior
++
++Source: https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full
++
++Locator: SAT methodology: experimental manipulations and analysis techniques, opening paragraph; SAT manipulations / Verbal instructions; DOI 10.3389/fnins.2014.00150. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++A single speed/accuracy operating point mixes task demands and decision strategy. Preserve both outcomes and task instructions.
++
++## M12 — metafor, Some Recommended Practices, official package documentation
++
++Source: https://wviechtb.github.io/metafor/reference/misc-recs.html
++
++Locator: Dependent estimates workflow: construct V, rma.mv, robust with clubSandwich; footnote on low degrees of freedom. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++Sampling covariance and true-effect heterogeneity are separate modelling layers; robust inference follows a stated working model.
++
++## M13 — clubSandwich, Meta-analysis with cluster-robust variance estimation, official author documentation
++
++Source: https://jepusto.github.io/clubSandwich/articles/meta-analysis-with-CRVE.html
++
++Locator: Multilevel meta-analysis example, coef_test with CR2; coefficient-specific Satterthwaite df and explicit cluster note. Reading: `selected_ranges_read`; access: `full_text_available`.
++
++CR2 and coefficient-specific degrees of freedom; explicitly choose the independent cluster. This software was inspected, not installed or executed here.
++
++## M14 — Pustejovsky and Tipton (2022), Meta-analysis with Robust Variance Estimation: Expanding the Range of Working Models
++
++Source: https://link.springer.com/article/10.1007/s11121-021-01246-3
++
++Locator: Publisher abstract only; Prevention Science 23,425–438; online 2021; DOI 10.1007/s11121-021-01246-3. Reading: `abstract_only_read`; access: `abstract_only`.
++
++Background lead only. Full paper not read; detailed operational recommendations in this packet rely on M12/M13, not an inferred full-paper reading.
++
++## Prior methodology findings
++
++Retrieved prior-chat orientation describes 1A/1B/1C1 work on RQ-to-method mapping, record families, reporting-versus-conduct distinctions and CIS adaptation, while deferring statistical/non-pooling rules. Their original packets are not mounted in this task workspace and were not re-opened or hash-verified. These summaries therefore informed scope only, not source claims or numerical assumptions. Current assessed repository authorities independently require the unresolved quantitative decisions. The auditory-review access investigation was not repeated.
++
++## M15 — Röver, Knapp and Friede (2015)
++
++Source: https://link.springer.com/article/10.1186/s12874-015-0091-1
++
++Locator: Methods / Parameter estimation and Confidence intervals and tests, equations(5)–(11); Conclusions paragraphs1–3. Full text available; selected ranges read. The inspected equations define inverse-total-variance weighting, q, and q*=max(1,q). The modification can be conservative with few studies; it is not a universal guarantee. The article, not its arXiv version, is the basis used here.
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/decision_table.csv b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/decision_table.csv
+new file mode 100644
+index 0000000..7bbc140
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/decision_table.csv
+@@ -0,0 +1,15 @@
++id,question,effect_measure,required_extraction,design_compatibility,missing_variance_or_correlation,multiplicity,do_not_pool_when,sources
++D01,Recognition: correctly map the cue/message on the first attempt at a specified exposure level,"Proposed default: marginal risk difference / difference in participant-average accuracy, percentage points; log RR or marginal log OR only in separate prespecified compatible cells","Joint COMMON fields plus number/identity of alternatives, scoring, confusion matrix if available, first-attempt denominator, per-participant proportions or adjusted marginal contrast+SE",Parallel and paired designs only with equivalent exposure and estimand and design-correct variances; item-generalization scope must match,"Recover valid paired/model SE; one binary event per person needs joint table; repeated trials need participant-aware uncertainty, not binomial n=trials",Retain cue-specific outcomes; select a prespecified exemplar or average an explicitly defined interchangeable cue set using V,"Different meanings, chance levels or task policies; incompatible first-attempt/any-attempt success; conditional versus marginal OR; missing valid SE cannot enter inverse-variance pool",M01 M03 M07
++D02,Correct action by a task-relevant deadline,Marginal risk difference in correct action by deadline; error/omission categories separately; no automatic conversion to recognition,"Action definition, hazard/context, deadline origin/value, first/final action, corrections/replays, denominator, misses/technical loss and analysis contrast","Same action opportunity, deadline and permitted repair policy; bundled interfaces remain bundled effects",Unknown failures are not silently successes or deleted trials; use outcome/missingness sensitivity separately,Primary candidate within each task cell; other action definitions retained as secondary,Recognition-only keypress used as a proxy for real action; different deadline/repair policies; unsafe transfer from lab to real deployment,M08 M01
++D03,Detection/discrimination versus identifying a message,Keep hit/false-alarm rates or specified sensitivity measure distinct from n-way recognition accuracy,"Signal/noise opportunities, decision criterion, false alarms, response options, sensitivity formula and zero-cell handling",Same signal-detection task and measure; discrimination does not identify semantic action,No d-prime reconstruction from percent correct alone without justified design mapping,Multiple sensitivity/criterion measures remain labelled; do not choose largest effect,Missing false-alarm opportunities; differing detection and message-selection questions,M01 M03
++D04,Response time for a clearly defined response population,Raw arithmetic mean difference in ms; separate mean-log contrast (exp gives ratio of geometric means); retain medians/quantiles as different summaries,"Clock onset/offset, sound duration, response event, correct/error inclusion, deadline/censoring, trimming/winsorization, means/SD or valid model contrast","Same clock, event, transformations and inclusion policy; post-onset and post-offset times not interchangeable without a justified conversion",Recover paired SE or SDdiff; sensitivity in within-person r; no universal median-to-mean conversion,One prespecified timing endpoint per cell or explicit joint model; accuracy remains visible,Correct-only versus all attempts; speed emphasis differs; unknown trimming; no failure outcome alongside selected successful RT,M02 M07 M11 M08
++D05,Performance after fixed training dose,"Accuracy/action or latency contrast at prespecified training dose, not a training-efficiency effect","Training duration/trials, feedback, criterion, exposures, immediate assessment point, randomized training/interface factors",Equal-dose comparisons answer a different question from training to equal criterion,Unknown prior exposure or dose prevents alignment; missing dispersion handled within the actual outcome family,Prespecified immediate post-dose window; all learning blocks retained but not independent,Different doses pooled as equivalent; within-group pre/post change mistaken for an interface contrast,M03 M08
++D06,Training burden to reach a criterion,Time/trials-to-criterion; success probability within training budget; censored time-to-event only with appropriate model,"Criterion, ceiling, stopping rule, feedback, unsuccessful learners, censoring, practice schedule, metric",Common criterion and budget; distinguish total elapsed time from trial counts,Do not omit non-learners or assign them mean successful time; no variance borrowing across unlike criteria,Learning curves/blocks need covariance or separate displays; do not pick steepest interval,Different mastery thresholds; training time only among successful learners; incompatible time-to-event/count measures,M08 M03
++D07,Delayed retention level versus loss from immediate performance,Delayed outcome contrast OR between-interface difference in retention change; never merge these estimands,"Exact delay, interim exposures/retraining, immediate baseline, attrition, 4-condition/time covariance or reported change contrast+SE","Same delay regime, training and retest policy; randomized between-interface contrast distinct from single-arm forgetting",For change contrast use c-Sigma-c transpose; two correlations alone generally insufficient for four measurements,"Predeclare delay windows; separate windows are correlated results, not extra studies",24-hour and multiweek retention treated identical; relearning counted as unaided retention; missing change covariance,M01 M03
++D08,Workload or effort during/after the task,Raw scale mean difference for same instrument/version/scoring; carefully specified SMD only for same construct across defensible instruments,"Instrument/version, raw/weighted TLX, overall/subscale, range/direction, timing, task duration, participant SD/model contrast",Same workload construct and scoring; subjective performance subscale is not observed action accuracy,Missing scale dispersion does not justify assigning an SD; sensitivity only with comparable instrument evidence,Overall and subscales not separate independent confirmations; secondary families retain full results,Preference/annoyance/human-likeness substituted for workload; raw/weighted TLX or subscales declared equivalent without rationale,M10 M07
++D09,Repeated measures / crossover / repeated trial comparisons,Prefer design-adjusted marginal contrast with SE; raw MD when common units; outcome-standardized g only with explicit denominator,"Participant pairing, sequence allocation, period/order/carryover, SDdiff or r, model/covariates, units/trials/items, missing pairs",Combine with parallel estimates only after exposure/period compatibility; otherwise stratify,"SDdiff squared = SDa squared + SDc squared - 2r SDa SDc; justified grid, not default r=.5; model covariance preferred",Repeated blocks/items do not increase independent participant n; all-pairwise contrasts may be linearly dependent,Unmodelled carryover/learning; trial count used as participant count; paired d_z pooled with between-subject g,M01 M02 M07
++D10,Shared controls and multiple cue contrasts,One prespecified pair; compatible arm/contrast aggregation with a declared target; or full sampling covariance multivariate model,Arm IDs/counts/SDs and contrast coefficient vectors; participant overlap; outcomes/timepoints; covariance basis,"Independent arms sharing C: cov(A-C,B-C)=var(C); same people in all arms requires full covariance algebra","Unknown covariances: report feasible/judged sensitivity; simple control-splitting is an approximation, not paired-data repair",Use independent contrast basis if A-B=(A-C)-(B-C); no redundant 3-contrast precision gain,Combining genuinely different cue families merely to avoid dependence; missing identifiable independent units,M02 M12
++D11,Multiple publications or partially overlapping samples,"One canonical result per quantity; updated/corrected report may supersede, not average with, its predecessor","Publication family, study/experiment/sample IDs, overlap fractions/status, result IDs, corrections, conflicting values and locators","Cluster independent overlap components, not publication titles; same experiment reported twice is no new sample",Unresolved duplicate status: most credible prespecified canonical result plus alternate-report sensitivity; leave unresolved conflict explicit,Link complementary results but do not add N; do not use review and primary study as independent observations,Same sample masquerades as independent study; unknown material overlap prevents credible covariance/cluster definition,M06 M12
++D12,"Missing variance, sparse outcomes and incompatible effect scales","Recover exact design-correct SE from CI/test; else descriptive estimate; SMD, OR, RR, RD remain distinct unless justified conversion","CI level, df, exact paired t or one-df contrast F, variance type, zeros, model link, adjustments, unit and derivation",A test for the actual contrast may inform SE; omnibus ANOVA p or significance threshold cannot recover it,"No zero SD/SE substitution, no universal continuity correction; zero events/no variance may require another valid likelihood or non-pool; imputation flagged and sensitivity/exclusion repeated",No result selection based on whether variance or significance is convenient,Only p<.05; unspecified SE type; no defensible reconstruction; OR versus RR conflated; SDdiff used as common-scale standardizer,M01 M02 M07
++D13,Across-study synthesis or structured non-pooling,"Pool only within synthesis cell and valid independence model; otherwise labelled per-sample effects and uncertainty, no summary diamond","Synthesis key, included and omitted records, reason codes, bias/transfer appraisal, assumptions, confidence limits, number of independent components",Small corpus: prespecified single effect or justified within-sample aggregation; random-effects option not a compatibility repair,Show estimates with missing CI labelled not estimable; covariance-sensitive conclusions remain conditional,No significance vote counting; subgroup/moderator and selective outcome analyses not driven by results,Construct/design incompatibility; unresolvable overlap; sparse independent samples for requested inference; serious bias; selected-outcome coverage,M03 M04 M05 M09
++D14,Inferential multiplicity and dependence-aware models,Descriptive marginal intervals unless a confirmatory family and adjustment were prespecified; no universal omnibus audio score,"Primary endpoint/cue/time hierarchy, all attempted analyses, family definition, adjustment, independent cluster count, df/leverage for robust model","CR2/Satterthwaite with explicit overlap-component clusters is a conditional future option, not a substitute for compatible outcomes",Unknown V still needs working assumptions and sensitivity; random intercept alone does not supply sampling covariance,Prefer limited preregistered contrasts; a multi-outcome estimate is not evidence all endpoints improve; no p-based prioritization,Too few independent clusters or unstable df/leverage; unidentified variance components; model changes chosen for a desired conclusion,M03 M12 M13
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/decision_table.json b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/decision_table.json
+new file mode 100644
+index 0000000..b839dde
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/decision_table.json
+@@ -0,0 +1,220 @@
++[
++  {
++    "id": "D01",
++    "question": "Recognition: correctly map the cue/message on the first attempt at a specified exposure level",
++    "effect_measure": "Proposed default: marginal risk difference / difference in participant-average accuracy, percentage points; log RR or marginal log OR only in separate prespecified compatible cells",
++    "required_extraction": "Joint COMMON fields plus number/identity of alternatives, scoring, confusion matrix if available, first-attempt denominator, per-participant proportions or adjusted marginal contrast+SE",
++    "design_compatibility": "Parallel and paired designs only with equivalent exposure and estimand and design-correct variances; item-generalization scope must match",
++    "missing_variance_or_correlation": "Recover valid paired/model SE; one binary event per person needs joint table; repeated trials need participant-aware uncertainty, not binomial n=trials",
++    "multiplicity": "Retain cue-specific outcomes; select a prespecified exemplar or average an explicitly defined interchangeable cue set using V",
++    "do_not_pool_when": "Different meanings, chance levels or task policies; incompatible first-attempt/any-attempt success; conditional versus marginal OR; missing valid SE cannot enter inverse-variance pool",
++    "sources": [
++      "M01",
++      "M03",
++      "M07"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D02",
++    "question": "Correct action by a task-relevant deadline",
++    "effect_measure": "Marginal risk difference in correct action by deadline; error/omission categories separately; no automatic conversion to recognition",
++    "required_extraction": "Action definition, hazard/context, deadline origin/value, first/final action, corrections/replays, denominator, misses/technical loss and analysis contrast",
++    "design_compatibility": "Same action opportunity, deadline and permitted repair policy; bundled interfaces remain bundled effects",
++    "missing_variance_or_correlation": "Unknown failures are not silently successes or deleted trials; use outcome/missingness sensitivity separately",
++    "multiplicity": "Primary candidate within each task cell; other action definitions retained as secondary",
++    "do_not_pool_when": "Recognition-only keypress used as a proxy for real action; different deadline/repair policies; unsafe transfer from lab to real deployment",
++    "sources": [
++      "M08",
++      "M01"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D03",
++    "question": "Detection/discrimination versus identifying a message",
++    "effect_measure": "Keep hit/false-alarm rates or specified sensitivity measure distinct from n-way recognition accuracy",
++    "required_extraction": "Signal/noise opportunities, decision criterion, false alarms, response options, sensitivity formula and zero-cell handling",
++    "design_compatibility": "Same signal-detection task and measure; discrimination does not identify semantic action",
++    "missing_variance_or_correlation": "No d-prime reconstruction from percent correct alone without justified design mapping",
++    "multiplicity": "Multiple sensitivity/criterion measures remain labelled; do not choose largest effect",
++    "do_not_pool_when": "Missing false-alarm opportunities; differing detection and message-selection questions",
++    "sources": [
++      "M01",
++      "M03"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D04",
++    "question": "Response time for a clearly defined response population",
++    "effect_measure": "Raw arithmetic mean difference in ms; separate mean-log contrast (exp gives ratio of geometric means); retain medians/quantiles as different summaries",
++    "required_extraction": "Clock onset/offset, sound duration, response event, correct/error inclusion, deadline/censoring, trimming/winsorization, means/SD or valid model contrast",
++    "design_compatibility": "Same clock, event, transformations and inclusion policy; post-onset and post-offset times not interchangeable without a justified conversion",
++    "missing_variance_or_correlation": "Recover paired SE or SDdiff; sensitivity in within-person r; no universal median-to-mean conversion",
++    "multiplicity": "One prespecified timing endpoint per cell or explicit joint model; accuracy remains visible",
++    "do_not_pool_when": "Correct-only versus all attempts; speed emphasis differs; unknown trimming; no failure outcome alongside selected successful RT",
++    "sources": [
++      "M02",
++      "M07",
++      "M11",
++      "M08"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D05",
++    "question": "Performance after fixed training dose",
++    "effect_measure": "Accuracy/action or latency contrast at prespecified training dose, not a training-efficiency effect",
++    "required_extraction": "Training duration/trials, feedback, criterion, exposures, immediate assessment point, randomized training/interface factors",
++    "design_compatibility": "Equal-dose comparisons answer a different question from training to equal criterion",
++    "missing_variance_or_correlation": "Unknown prior exposure or dose prevents alignment; missing dispersion handled within the actual outcome family",
++    "multiplicity": "Prespecified immediate post-dose window; all learning blocks retained but not independent",
++    "do_not_pool_when": "Different doses pooled as equivalent; within-group pre/post change mistaken for an interface contrast",
++    "sources": [
++      "M03",
++      "M08"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D06",
++    "question": "Training burden to reach a criterion",
++    "effect_measure": "Time/trials-to-criterion; success probability within training budget; censored time-to-event only with appropriate model",
++    "required_extraction": "Criterion, ceiling, stopping rule, feedback, unsuccessful learners, censoring, practice schedule, metric",
++    "design_compatibility": "Common criterion and budget; distinguish total elapsed time from trial counts",
++    "missing_variance_or_correlation": "Do not omit non-learners or assign them mean successful time; no variance borrowing across unlike criteria",
++    "multiplicity": "Learning curves/blocks need covariance or separate displays; do not pick steepest interval",
++    "do_not_pool_when": "Different mastery thresholds; training time only among successful learners; incompatible time-to-event/count measures",
++    "sources": [
++      "M08",
++      "M03"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D07",
++    "question": "Delayed retention level versus loss from immediate performance",
++    "effect_measure": "Delayed outcome contrast OR between-interface difference in retention change; never merge these estimands",
++    "required_extraction": "Exact delay, interim exposures/retraining, immediate baseline, attrition, 4-condition/time covariance or reported change contrast+SE",
++    "design_compatibility": "Same delay regime, training and retest policy; randomized between-interface contrast distinct from single-arm forgetting",
++    "missing_variance_or_correlation": "For change contrast use c-Sigma-c transpose; two correlations alone generally insufficient for four measurements",
++    "multiplicity": "Predeclare delay windows; separate windows are correlated results, not extra studies",
++    "do_not_pool_when": "24-hour and multiweek retention treated identical; relearning counted as unaided retention; missing change covariance",
++    "sources": [
++      "M01",
++      "M03"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D08",
++    "question": "Workload or effort during/after the task",
++    "effect_measure": "Raw scale mean difference for same instrument/version/scoring; carefully specified SMD only for same construct across defensible instruments",
++    "required_extraction": "Instrument/version, raw/weighted TLX, overall/subscale, range/direction, timing, task duration, participant SD/model contrast",
++    "design_compatibility": "Same workload construct and scoring; subjective performance subscale is not observed action accuracy",
++    "missing_variance_or_correlation": "Missing scale dispersion does not justify assigning an SD; sensitivity only with comparable instrument evidence",
++    "multiplicity": "Overall and subscales not separate independent confirmations; secondary families retain full results",
++    "do_not_pool_when": "Preference/annoyance/human-likeness substituted for workload; raw/weighted TLX or subscales declared equivalent without rationale",
++    "sources": [
++      "M10",
++      "M07"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D09",
++    "question": "Repeated measures / crossover / repeated trial comparisons",
++    "effect_measure": "Prefer design-adjusted marginal contrast with SE; raw MD when common units; outcome-standardized g only with explicit denominator",
++    "required_extraction": "Participant pairing, sequence allocation, period/order/carryover, SDdiff or r, model/covariates, units/trials/items, missing pairs",
++    "design_compatibility": "Combine with parallel estimates only after exposure/period compatibility; otherwise stratify",
++    "missing_variance_or_correlation": "SDdiff squared = SDa squared + SDc squared - 2r SDa SDc; justified grid, not default r=.5; model covariance preferred",
++    "multiplicity": "Repeated blocks/items do not increase independent participant n; all-pairwise contrasts may be linearly dependent",
++    "do_not_pool_when": "Unmodelled carryover/learning; trial count used as participant count; paired d_z pooled with between-subject g",
++    "sources": [
++      "M01",
++      "M02",
++      "M07"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D10",
++    "question": "Shared controls and multiple cue contrasts",
++    "effect_measure": "One prespecified pair; compatible arm/contrast aggregation with a declared target; or full sampling covariance multivariate model",
++    "required_extraction": "Arm IDs/counts/SDs and contrast coefficient vectors; participant overlap; outcomes/timepoints; covariance basis",
++    "design_compatibility": "Independent arms sharing C: cov(A-C,B-C)=var(C); same people in all arms requires full covariance algebra",
++    "missing_variance_or_correlation": "Unknown covariances: report feasible/judged sensitivity; simple control-splitting is an approximation, not paired-data repair",
++    "multiplicity": "Use independent contrast basis if A-B=(A-C)-(B-C); no redundant 3-contrast precision gain",
++    "do_not_pool_when": "Combining genuinely different cue families merely to avoid dependence; missing identifiable independent units",
++    "sources": [
++      "M02",
++      "M12"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D11",
++    "question": "Multiple publications or partially overlapping samples",
++    "effect_measure": "One canonical result per quantity; updated/corrected report may supersede, not average with, its predecessor",
++    "required_extraction": "Publication family, study/experiment/sample IDs, overlap fractions/status, result IDs, corrections, conflicting values and locators",
++    "design_compatibility": "Cluster independent overlap components, not publication titles; same experiment reported twice is no new sample",
++    "missing_variance_or_correlation": "Unresolved duplicate status: most credible prespecified canonical result plus alternate-report sensitivity; leave unresolved conflict explicit",
++    "multiplicity": "Link complementary results but do not add N; do not use review and primary study as independent observations",
++    "do_not_pool_when": "Same sample masquerades as independent study; unknown material overlap prevents credible covariance/cluster definition",
++    "sources": [
++      "M06",
++      "M12"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D12",
++    "question": "Missing variance, sparse outcomes and incompatible effect scales",
++    "effect_measure": "Recover exact design-correct SE from CI/test; else descriptive estimate; SMD, OR, RR, RD remain distinct unless justified conversion",
++    "required_extraction": "CI level, df, exact paired t or one-df contrast F, variance type, zeros, model link, adjustments, unit and derivation",
++    "design_compatibility": "A test for the actual contrast may inform SE; omnibus ANOVA p or significance threshold cannot recover it",
++    "missing_variance_or_correlation": "No zero SD/SE substitution, no universal continuity correction; zero events/no variance may require another valid likelihood or non-pool; imputation flagged and sensitivity/exclusion repeated",
++    "multiplicity": "No result selection based on whether variance or significance is convenient",
++    "do_not_pool_when": "Only p<.05; unspecified SE type; no defensible reconstruction; OR versus RR conflated; SDdiff used as common-scale standardizer",
++    "sources": [
++      "M01",
++      "M02",
++      "M07"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D13",
++    "question": "Across-study synthesis or structured non-pooling",
++    "effect_measure": "Pool only within synthesis cell and valid independence model; otherwise labelled per-sample effects and uncertainty, no summary diamond",
++    "required_extraction": "Synthesis key, included and omitted records, reason codes, bias/transfer appraisal, assumptions, confidence limits, number of independent components",
++    "design_compatibility": "Small corpus: prespecified single effect or justified within-sample aggregation; random-effects option not a compatibility repair",
++    "missing_variance_or_correlation": "Show estimates with missing CI labelled not estimable; covariance-sensitive conclusions remain conditional",
++    "multiplicity": "No significance vote counting; subgroup/moderator and selective outcome analyses not driven by results",
++    "do_not_pool_when": "Construct/design incompatibility; unresolvable overlap; sparse independent samples for requested inference; serious bias; selected-outcome coverage",
++    "sources": [
++      "M03",
++      "M04",
++      "M05",
++      "M09"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  },
++  {
++    "id": "D14",
++    "question": "Inferential multiplicity and dependence-aware models",
++    "effect_measure": "Descriptive marginal intervals unless a confirmatory family and adjustment were prespecified; no universal omnibus audio score",
++    "required_extraction": "Primary endpoint/cue/time hierarchy, all attempted analyses, family definition, adjustment, independent cluster count, df/leverage for robust model",
++    "design_compatibility": "CR2/Satterthwaite with explicit overlap-component clusters is a conditional future option, not a substitute for compatible outcomes",
++    "missing_variance_or_correlation": "Unknown V still needs working assumptions and sensitivity; random intercept alone does not supply sampling covariance",
++    "multiplicity": "Prefer limited preregistered contrasts; a multi-outcome estimate is not evidence all endpoints improve; no p-based prioritization",
++    "do_not_pool_when": "Too few independent clusters or unstable df/leverage; unidentified variance components; model changes chosen for a desired conclusion",
++    "sources": [
++      "M03",
++      "M12",
++      "M13"
++    ],
++    "status": "proposed_protocol_policy_not_frozen"
++  }
++]
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/sources.json b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/sources.json
+new file mode 100644
+index 0000000..9597541
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/sources.json
+@@ -0,0 +1,212 @@
++[
++  {
++    "id": "M01",
++    "title": "Cochrane Handbook v6.5 (2024), Chapter 6: Choosing effect measures and computing estimates of effect",
++    "url": "https://training.cochrane.org/handbook/current/chapter-06",
++    "locator": "6.1.2.2; 6.2.1–6.2.9; 6.3; 6.4.1",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Effect of interest versus scale; participant/trial units; paired/clustered data; extraction of suitable contrast uncertainty.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M02",
++    "title": "Cochrane Handbook v6.5 (2024), Chapter 23: Including variants on randomized trials",
++    "url": "https://training.cochrane.org/handbook/current/chapter-23",
++    "locator": "23.2.3–23.2.4; 23.2.7–23.2.7.4; 23.3.4–23.3.5",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Paired effects and correlation sensitivity; carryover/period issues; shared-control options.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M03",
++    "title": "Cochrane Handbook v6.5 (2024), Chapter 9: Preparing for synthesis",
++    "url": "https://training.cochrane.org/handbook/current/chapter-09",
++    "locator": "9.1; 9.3.2–9.3.4, especially 9.3.3 and Table 9.3.c",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Synthesis-specific questions; prespecified selection or aggregation of interchangeable measurements; document grouping changes.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M04",
++    "title": "Cochrane Handbook v6.5 (2024), Chapter 10: Analysing data and undertaking meta-analyses",
++    "url": "https://training.cochrane.org/handbook/current/chapter-10",
++    "locator": "10.3; 10.10.3–10.10.4, particularly 10.10.4.3–10.10.4.5",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Random effects does not cure incompatible questions; uncertainty and prediction limitations with few studies; REML/HKSJ considerations.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M05",
++    "title": "Cochrane Handbook v6.5 (2024), Chapter 12: Other synthesis methods",
++    "url": "https://training.cochrane.org/handbook/current/chapter-12",
++    "locator": "12.2.1–12.2.2.1; chapter key points",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Structured non-pooled synthesis; summary distributions without falsely precise pooled means; reject significance vote counting.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M06",
++    "title": "Cochrane Handbook v6.5 (2024), Chapter 5: Collecting data",
++    "url": "https://training.cochrane.org/handbook/current/chapter-05",
++    "locator": "5.2.1: Studies (not reports) as the unit of interest",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Link multiple reports; preserve secondary details without counting the same study twice.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M07",
++    "title": "Lakens (2013), Calculating and reporting effect sizes to facilitate cumulative science",
++    "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2013.00863/full",
++    "locator": "Sections on standardized mean differences in within-subjects designs; Table 1; DOI 10.3389/fpsyg.2013.00863",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Specify the denominator: d_z, d_av and between-groups d/g are not interchangeable. Small-sample correction does not erase that distinction.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M08",
++    "title": "ICH E9(R1) addendum (2019), estimands and sensitivity analysis",
++    "url": "https://database.ich.org/sites/default/files/E9-R1_Step4_Guideline_2019_1203.pdf",
++    "locator": "A.3.2 principal-stratum paragraph; A.3.3–A.3.4; printed pp.9–10, zero-based PDF pages10–11",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Treatment, population, variable, event strategy and population summary define the question. Adapting this clinical planning framework to HCI is our proposal, not an ICH compliance claim.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M09",
++    "title": "Campbell et al. (2020), SWiM checklist accompanying Synthesis without meta-analysis in systematic reviews",
++    "url": "https://www.equator-network.org/wp-content/uploads/2020/01/Synthesis-without-Meta-analysis-SWiM-Checklist.pdf",
++    "locator": "Checklist pp.1–2, items1–9; both page images inspected; parent article DOI 10.1136/bmj.l6890",
++    "access": "full_text_available",
++    "reading": "full_item_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "The two-page checklist was read, not the complete BMJ explanation article. Map grouping, metric, method, prioritization, heterogeneity, certainty, presentation, results and limits.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M10",
++    "title": "NASA, NASA Task Load Index (TLX), official instrument overview",
++    "url": "https://www.nasa.gov/human-systems-integration-division/nasa-task-load-index-tlx/",
++    "locator": "Heading NASA Task Load Index (TLX), first two paragraphs and six subscale list; page marked historical reference",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Subjective multidimensional workload; weighted overall score and six subscales. This overview does not establish interchangeability of raw/weighted scores or other workload instruments.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M11",
++    "title": "Heitz (2014), The speed-accuracy tradeoff: history, physiology, methodology, and behavior",
++    "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2014.00150/full",
++    "locator": "SAT methodology: experimental manipulations and analysis techniques, opening paragraph; SAT manipulations / Verbal instructions; DOI 10.3389/fnins.2014.00150",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "A single speed/accuracy operating point mixes task demands and decision strategy. Preserve both outcomes and task instructions.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M12",
++    "title": "metafor, Some Recommended Practices, official package documentation",
++    "url": "https://wviechtb.github.io/metafor/reference/misc-recs.html",
++    "locator": "Dependent estimates workflow: construct V, rma.mv, robust with clubSandwich; footnote on low degrees of freedom",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Sampling covariance and true-effect heterogeneity are separate modelling layers; robust inference follows a stated working model.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M13",
++    "title": "clubSandwich, Meta-analysis with cluster-robust variance estimation, official author documentation",
++    "url": "https://jepusto.github.io/clubSandwich/articles/meta-analysis-with-CRVE.html",
++    "locator": "Multilevel meta-analysis example, coef_test with CR2; coefficient-specific Satterthwaite df and explicit cluster note",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "CR2 and coefficient-specific degrees of freedom; explicitly choose the independent cluster. This software was inspected, not installed or executed here.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M14",
++    "title": "Pustejovsky and Tipton (2022), Meta-analysis with Robust Variance Estimation: Expanding the Range of Working Models",
++    "url": "https://link.springer.com/article/10.1007/s11121-021-01246-3",
++    "locator": "Publisher abstract only; Prevention Science 23,425–438; online 2021; DOI 10.1007/s11121-021-01246-3",
++    "access": "abstract_only",
++    "reading": "abstract_only_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Background lead only. Full paper not read; detailed operational recommendations in this packet rely on M12/M13, not an inferred full-paper reading.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  },
++  {
++    "id": "M15",
++    "title": "Röver, Knapp and Friede (2015), Hartung-Knapp-Sidik-Jonkman approach and its modification for random-effects meta-analysis with few studies",
++    "url": "https://link.springer.com/article/10.1186/s12874-015-0091-1",
++    "locator": "Methods: Parameter estimation and Confidence intervals and tests, equations(5)–(11); Conclusions paragraphs1–3; BMC Medical Research Methodology15:99",
++    "access": "full_text_available",
++    "reading": "selected_ranges_read",
++    "verification": "agent_checked_selected_scope; no independent human review",
++    "access_date": "2026-10-04",
++    "basis": "Defines inverse-total-variance weights, HKSJ scale q and modification q*=max(1,q). Its potential conservatism is a trade-off, not a guarantee for every sparse synthesis.",
++    "synthetic": false,
++    "record_status": "prepass_source_ledger_not_live_registry",
++    "rights": "bibliographic metadata and original notes only; source files not redistributed"
++  }
++]
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/NONPOOLED.md b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/NONPOOLED.md
+new file mode 100644
+index 0000000..2d540a1
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/NONPOOLED.md
+@@ -0,0 +1,15 @@
++# Synthetic non-pooled display
++
++No empirical participants or audio-style findings. Estimates are percentage-point recognition differences A minus C. Each sample reuses the same people for its three cues. Intervals are marginal, not simultaneous. No overall summary or significance votes.
++
++| Sample | Cue | Participants (not additive within sample) | Estimate | Conditional 95% interval |
++|---|---|---:|---:|---:|
++| SYN-SAMPLE-1 | SYN-EXEMPLAR-1 | 40 | 4.00 | 0.08 to 7.92 |
++| SYN-SAMPLE-1 | SYN-EXEMPLAR-2 | 40 | 5.00 | 1.08 to 8.92 |
++| SYN-SAMPLE-1 | SYN-EXEMPLAR-3 | 40 | 6.00 | 2.08 to 9.92 |
++| SYN-SAMPLE-2 | SYN-EXEMPLAR-1 | 40 | 1.00 | -2.92 to 4.92 |
++| SYN-SAMPLE-2 | SYN-EXEMPLAR-2 | 40 | 2.00 | -1.92 to 5.92 |
++| SYN-SAMPLE-2 | SYN-EXEMPLAR-3 | 40 | 3.00 | -0.92 to 6.92 |
++| SYN-SAMPLE-3 | SYN-EXEMPLAR-1 | 40 | -2.00 | -5.92 to 1.92 |
++| SYN-SAMPLE-3 | SYN-EXEMPLAR-2 | 40 | -1.00 | -4.92 to 2.92 |
++| SYN-SAMPLE-3 | SYN-EXEMPLAR-3 | 40 | 0.00 | -3.92 to 3.92 |
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/contrast_sensitivity.csv b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/contrast_sensitivity.csv
+new file mode 100644
+index 0000000..87c8e30
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/contrast_sensitivity.csv
+@@ -0,0 +1,9 @@
++rho,estimate,variance,se,lower_95,upper_95,variance_ratio_to_false_independence,se_ratio_to_false_independence
++-0.25,2.0,0.2222222222222222,0.4714045207910317,1.076064117100215,2.923935882899785,0.5,0.7071067811865476
++0,2.0,0.4444444444444444,0.6666666666666666,0.6933573436399643,3.3066426563600357,1.0,1.0
++0.25,2.0,0.6666666666666666,0.816496580927726,0.39969610788156373,3.6003038921184363,1.5,1.2247448713915892
++0.5,2.0,0.8888888888888888,0.9428090415820634,0.15212823420042998,3.84787176579957,2.0,1.4142135623730951
++0.6,2.0,0.9777777777777774,0.9888264649460882,0.06193574174560945,3.9380642582543905,2.1999999999999993,1.4832396974191324
++0.75,2.0,1.1111111111111112,1.0540925533894598,-0.06598344101520492,4.065983441015205,2.5000000000000004,1.5811388300841898
++0.9,2.0,1.2444444444444445,1.1155467020454342,-0.18643135908148523,4.186431359081485,2.8000000000000003,1.6733200530681513
++1,2.0,1.3333333333333333,1.1547005383792515,-0.26317146815234294,4.263171468152343,3.0,1.7320508075688772
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/nonpooled.csv b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/nonpooled.csv
+new file mode 100644
+index 0000000..398528a
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/nonpooled.csv
+@@ -0,0 +1,10 @@
++synthetic,report_id,sample_id,canonical_result_id,cue_id,n_participants,estimate,se,lower_95,upper_95
++True,SYN-PUB-1,SYN-SAMPLE-1,SYN-RESULT-1-1,SYN-EXEMPLAR-1,40,4.0,2.0,0.08007203091989279,7.919927969080107
++True,SYN-PUB-1,SYN-SAMPLE-1,SYN-RESULT-1-2,SYN-EXEMPLAR-2,40,5.0,2.0,1.0800720309198928,8.919927969080106
++True,SYN-PUB-1,SYN-SAMPLE-1,SYN-RESULT-1-3,SYN-EXEMPLAR-3,40,6.0,2.0,2.080072030919893,9.919927969080106
++True,SYN-PUB-2,SYN-SAMPLE-2,SYN-RESULT-2-1,SYN-EXEMPLAR-1,40,1.0,2.0,-2.919927969080107,4.919927969080107
++True,SYN-PUB-2,SYN-SAMPLE-2,SYN-RESULT-2-2,SYN-EXEMPLAR-2,40,2.0,2.0,-1.9199279690801072,5.919927969080107
++True,SYN-PUB-2,SYN-SAMPLE-2,SYN-RESULT-2-3,SYN-EXEMPLAR-3,40,3.0,2.0,-0.9199279690801072,6.919927969080107
++True,SYN-PUB-3,SYN-SAMPLE-3,SYN-RESULT-3-1,SYN-EXEMPLAR-1,40,-2.0,2.0,-5.919927969080107,1.9199279690801072
++True,SYN-PUB-3,SYN-SAMPLE-3,SYN-RESULT-3-2,SYN-EXEMPLAR-2,40,-1.0,2.0,-4.919927969080107,2.919927969080107
++True,SYN-PUB-3,SYN-SAMPLE-3,SYN-RESULT-3-3,SYN-EXEMPLAR-3,40,0.0,2.0,-3.919927969080107,3.919927969080107
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/paired_rt_sensitivity.csv b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/paired_rt_sensitivity.csv
+new file mode 100644
+index 0000000..27b2351
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/paired_rt_sensitivity.csv
+@@ -0,0 +1,8 @@
++r_within_person,estimate,variance,se,lower_95,upper_95
++-0.25,-30.0,1104.0,33.2264954516723,-95.1227344177616,35.122734417761606
++0,-30.0,884.0,29.732137494637012,-88.27391867288148,28.273918672881486
++0.25,-30.0,664.0,25.768197453450252,-80.50473895527921,20.504738955279215
++0.5,-30.0,444.0,21.071307505705477,-71.29900381835125,11.299003818351245
++0.75,-30.0,224.0,14.966629547095765,-59.334054882260716,-0.6659451177392874
++0.9,-30.0,92.0,9.591663046625438,-48.799314123229586,-11.200685876770414
++0.95,-30.0,48.0,6.928203230275509,-43.57902880891406,-16.420971191085943
+diff --git a/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/results.json b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/results.json
+new file mode 100644
+index 0000000..ccb40d9
+--- /dev/null
++++ b/research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results/results.json
+@@ -0,0 +1,662 @@
++{
++  "schema_version": 1,
++  "synthetic": true,
++  "empirical_claim": false,
++  "target": "Equal-weight mean of three specified sample-specific effects, each averaging three explicitly interchangeable cue exemplars. Finite specified target, not generalization to a distribution of studies.",
++  "interval_method": "normal conditional on supplied variances; not random-effects inference",
++  "unique_contrasts": 9,
++  "independent_samples": 3,
++  "duplicate_reports_removed": [
++    "SYN-PUB-1-REPEAT:SYN-RESULT-1-1",
++    "SYN-PUB-1-REPEAT:SYN-RESULT-1-2",
++    "SYN-PUB-1-REPEAT:SYN-RESULT-1-3"
++  ],
++  "naive_independent_rows": {
++    "estimate": 2.0,
++    "variance": 0.4444444444444444,
++    "se": 0.6666666666666666,
++    "lower_95": 0.6933573436399643,
++    "upper_95": 3.3066426563600357
++  },
++  "contrast_correlation_sensitivity": [
++    {
++      "estimate": 2.0,
++      "variance": 0.2222222222222222,
++      "se": 0.4714045207910317,
++      "lower_95": 1.076064117100215,
++      "upper_95": 2.923935882899785,
++      "rho": -0.25,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 0.6666666666666666,
++          "se": 0.816496580927726,
++          "lower_95": 3.3996961078815637,
++          "upper_95": 6.600303892118436
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 0.6666666666666666,
++          "se": 0.816496580927726,
++          "lower_95": 0.39969610788156373,
++          "upper_95": 3.6003038921184363
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 0.6666666666666666,
++          "se": 0.816496580927726,
++          "lower_95": -2.6003038921184363,
++          "upper_95": 0.6003038921184363
++        }
++      },
++      "variance_ratio_to_false_independence": 0.5,
++      "se_ratio_to_false_independence": 0.7071067811865476
++    },
++    {
++      "estimate": 2.0,
++      "variance": 0.4444444444444444,
++      "se": 0.6666666666666666,
++      "lower_95": 0.6933573436399643,
++      "upper_95": 3.3066426563600357,
++      "rho": 0,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 1.3333333333333333,
++          "se": 1.1547005383792515,
++          "lower_95": 2.736828531847657,
++          "upper_95": 7.263171468152343
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 1.3333333333333333,
++          "se": 1.1547005383792515,
++          "lower_95": -0.26317146815234294,
++          "upper_95": 4.263171468152343
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 1.3333333333333333,
++          "se": 1.1547005383792515,
++          "lower_95": -3.263171468152343,
++          "upper_95": 1.263171468152343
++        }
++      },
++      "variance_ratio_to_false_independence": 1.0,
++      "se_ratio_to_false_independence": 1.0
++    },
++    {
++      "estimate": 2.0,
++      "variance": 0.6666666666666666,
++      "se": 0.816496580927726,
++      "lower_95": 0.39969610788156373,
++      "upper_95": 3.6003038921184363,
++      "rho": 0.25,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 2.0,
++          "se": 1.4142135623730951,
++          "lower_95": 2.228192351300645,
++          "upper_95": 7.771807648699355
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 2.0,
++          "se": 1.4142135623730951,
++          "lower_95": -0.771807648699355,
++          "upper_95": 4.771807648699355
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 2.0,
++          "se": 1.4142135623730951,
++          "lower_95": -3.771807648699355,
++          "upper_95": 1.771807648699355
++        }
++      },
++      "variance_ratio_to_false_independence": 1.5,
++      "se_ratio_to_false_independence": 1.2247448713915892
++    },
++    {
++      "estimate": 2.0,
++      "variance": 0.8888888888888888,
++      "se": 0.9428090415820634,
++      "lower_95": 0.15212823420042998,
++      "upper_95": 3.84787176579957,
++      "rho": 0.5,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 2.6666666666666665,
++          "se": 1.632993161855452,
++          "lower_95": 1.7993922157631275,
++          "upper_95": 8.200607784236873
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 2.6666666666666665,
++          "se": 1.632993161855452,
++          "lower_95": -1.2006077842368725,
++          "upper_95": 5.2006077842368725
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 2.6666666666666665,
++          "se": 1.632993161855452,
++          "lower_95": -4.2006077842368725,
++          "upper_95": 2.2006077842368725
++        }
++      },
++      "variance_ratio_to_false_independence": 2.0,
++      "se_ratio_to_false_independence": 1.4142135623730951
++    },
++    {
++      "estimate": 2.0,
++      "variance": 0.9777777777777774,
++      "se": 0.9888264649460882,
++      "lower_95": 0.06193574174560945,
++      "upper_95": 3.9380642582543905,
++      "rho": 0.6,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 2.9333333333333327,
++          "se": 1.7126976771553504,
++          "lower_95": 1.643174236370105,
++          "upper_95": 8.356825763629896
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 2.9333333333333327,
++          "se": 1.7126976771553504,
++          "lower_95": -1.356825763629895,
++          "upper_95": 5.356825763629895
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 2.9333333333333327,
++          "se": 1.7126976771553504,
++          "lower_95": -4.356825763629895,
++          "upper_95": 2.356825763629895
++        }
++      },
++      "variance_ratio_to_false_independence": 2.1999999999999993,
++      "se_ratio_to_false_independence": 1.4832396974191324
++    },
++    {
++      "estimate": 2.0,
++      "variance": 1.1111111111111112,
++      "se": 1.0540925533894598,
++      "lower_95": -0.06598344101520492,
++      "upper_95": 4.065983441015205,
++      "rho": 0.75,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 3.333333333333333,
++          "se": 1.8257418583505536,
++          "lower_95": 1.4216117125656869,
++          "upper_95": 8.578388287434313
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 3.333333333333333,
++          "se": 1.8257418583505536,
++          "lower_95": -1.5783882874343131,
++          "upper_95": 5.578388287434313
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 3.333333333333333,
++          "se": 1.8257418583505536,
++          "lower_95": -4.578388287434313,
++          "upper_95": 2.578388287434313
++        }
++      },
++      "variance_ratio_to_false_independence": 2.5000000000000004,
++      "se_ratio_to_false_independence": 1.5811388300841898
++    },
++    {
++      "estimate": 2.0,
++      "variance": 1.2444444444444445,
++      "se": 1.1155467020454342,
++      "lower_95": -0.18643135908148523,
++      "upper_95": 4.186431359081485,
++      "rho": 0.9,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 3.733333333333333,
++          "se": 1.9321835661585918,
++          "lower_95": 1.2129897988089962,
++          "upper_95": 8.787010201191004
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 3.733333333333333,
++          "se": 1.9321835661585918,
++          "lower_95": -1.7870102011910038,
++          "upper_95": 5.787010201191004
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 3.733333333333333,
++          "se": 1.9321835661585918,
++          "lower_95": -4.787010201191004,
++          "upper_95": 2.787010201191004
++        }
++      },
++      "variance_ratio_to_false_independence": 2.8000000000000003,
++      "se_ratio_to_false_independence": 1.6733200530681513
++    },
++    {
++      "estimate": 2.0,
++      "variance": 1.3333333333333333,
++      "se": 1.1547005383792515,
++      "lower_95": -0.26317146815234294,
++      "upper_95": 4.263171468152343,
++      "rho": 1,
++      "independent_samples": 3,
++      "sample_estimates": {
++        "SYN-SAMPLE-1": {
++          "estimate": 5.0,
++          "variance": 4.0,
++          "se": 2.0,
++          "lower_95": 1.0800720309198928,
++          "upper_95": 8.919927969080106
++        },
++        "SYN-SAMPLE-2": {
++          "estimate": 2.0,
++          "variance": 4.0,
++          "se": 2.0,
++          "lower_95": -1.9199279690801072,
++          "upper_95": 5.919927969080107
++        },
++        "SYN-SAMPLE-3": {
++          "estimate": -1.0,
++          "variance": 4.0,
++          "se": 2.0,
++          "lower_95": -4.919927969080107,
++          "upper_95": 2.919927969080107
++        }
++      },
++      "variance_ratio_to_false_independence": 3.0,
++      "se_ratio_to_false_independence": 1.7320508075688772
++    }
++  ],
++  "nonpooled": [
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 4.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": 0.08007203091989279,
++      "upper_95": 7.919927969080107
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 5.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": 1.0800720309198928,
++      "upper_95": 8.919927969080106
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 6.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": 2.080072030919893,
++      "upper_95": 9.919927969080106
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-2",
++      "study_id": "SYN-STUDY-2",
++      "sample_id": "SYN-SAMPLE-2",
++      "canonical_result_id": "SYN-RESULT-2-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 1.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S2/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": -2.919927969080107,
++      "upper_95": 4.919927969080107
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-2",
++      "study_id": "SYN-STUDY-2",
++      "sample_id": "SYN-SAMPLE-2",
++      "canonical_result_id": "SYN-RESULT-2-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 2.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S2/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": -1.9199279690801072,
++      "upper_95": 5.919927969080107
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-2",
++      "study_id": "SYN-STUDY-2",
++      "sample_id": "SYN-SAMPLE-2",
++      "canonical_result_id": "SYN-RESULT-2-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 3.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S2/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": -0.9199279690801072,
++      "upper_95": 6.919927969080107
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-3",
++      "study_id": "SYN-STUDY-3",
++      "sample_id": "SYN-SAMPLE-3",
++      "canonical_result_id": "SYN-RESULT-3-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": -2.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S3/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": -5.919927969080107,
++      "upper_95": 1.9199279690801072
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-3",
++      "study_id": "SYN-STUDY-3",
++      "sample_id": "SYN-SAMPLE-3",
++      "canonical_result_id": "SYN-RESULT-3-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": -1.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S3/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": -4.919927969080107,
++      "upper_95": 2.919927969080107
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-3",
++      "study_id": "SYN-STUDY-3",
++      "sample_id": "SYN-SAMPLE-3",
++      "canonical_result_id": "SYN-RESULT-3-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 0.0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S3/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant",
++      "variance": 4.0,
++      "lower_95": -3.919927969080107,
++      "upper_95": 3.919927969080107
++    }
++  ],
++  "paired_rt_sensitivity": [
++    {
++      "r_within_person": -0.25,
++      "estimate": -30.0,
++      "variance": 1104.0,
++      "se": 33.2264954516723,
++      "lower_95": -95.1227344177616,
++      "upper_95": 35.122734417761606
++    },
++    {
++      "r_within_person": 0,
++      "estimate": -30.0,
++      "variance": 884.0,
++      "se": 29.732137494637012,
++      "lower_95": -88.27391867288148,
++      "upper_95": 28.273918672881486
++    },
++    {
++      "r_within_person": 0.25,
++      "estimate": -30.0,
++      "variance": 664.0,
++      "se": 25.768197453450252,
++      "lower_95": -80.50473895527921,
++      "upper_95": 20.504738955279215
++    },
++    {
++      "r_within_person": 0.5,
++      "estimate": -30.0,
++      "variance": 444.0,
++      "se": 21.071307505705477,
++      "lower_95": -71.29900381835125,
++      "upper_95": 11.299003818351245
++    },
++    {
++      "r_within_person": 0.75,
++      "estimate": -30.0,
++      "variance": 224.0,
++      "se": 14.966629547095765,
++      "lower_95": -59.334054882260716,
++      "upper_95": -0.6659451177392874
++    },
++    {
++      "r_within_person": 0.9,
++      "estimate": -30.0,
++      "variance": 92.0,
++      "se": 9.591663046625438,
++      "lower_95": -48.799314123229586,
++      "upper_95": -11.200685876770414
++    },
++    {
++      "r_within_person": 0.95,
++      "estimate": -30.0,
++      "variance": 48.0,
++      "se": 6.928203230275509,
++      "lower_95": -43.57902880891406,
++      "upper_95": -16.420971191085943
++    }
++  ],
++  "shared_control": {
++    "covariance_matrix": [
++      [
++        1000.0,
++        500.0
++      ],
++      [
++        500.0,
++        1000.0
++      ]
++    ],
++    "mean_differences": [
++      -30,
++      -10
++    ],
++    "false_independence": {
++      "estimate": -20.0,
++      "variance": 500.0,
++      "se": 22.360679774997898,
++      "lower_95": -63.82612702882907,
++      "upper_95": 23.82612702882907
++    },
++    "covariance_aware": {
++      "estimate": -20.0,
++      "variance": 750.0,
++      "se": 27.386127875258307,
++      "lower_95": -73.6758243115147,
++      "upper_95": 33.6758243115147
++    }
++  },
++  "paired_binary": {
++    "observed_joint_table": {
++      "a": 24,
++      "b": 10,
++      "c": 2,
++      "d": 4
++    },
++    "actual": {
++      "estimate": 0.2,
++      "variance": 0.006666666666666667,
++      "se": 0.08164965809277261,
++      "lower_95": 0.03996961078815636,
++      "upper_95": 0.36003038921184366
++    },
++    "same_margins_feasible_joint_tables": [
++      {
++        "joint_table": {
++          "a": 20,
++          "b": 14,
++          "c": 6,
++          "d": 0
++        },
++        "estimate": 0.2,
++        "variance": 0.011794871794871794,
++        "se": 0.10860419786947369,
++        "lower_95": -0.012860316394030041,
++        "upper_95": 0.4128603163940301
++      },
++      {
++        "joint_table": {
++          "a": 21,
++          "b": 13,
++          "c": 5,
++          "d": 1
++        },
++        "estimate": 0.2,
++        "variance": 0.010512820512820514,
++        "se": 0.10253204627247285,
++        "lower_95": -0.0009591179552410345,
++        "upper_95": 0.4009591179552411
++      },
++      {
++        "joint_table": {
++          "a": 22,
++          "b": 12,
++          "c": 4,
++          "d": 2
++        },
++        "estimate": 0.2,
++        "variance": 0.00923076923076923,
++        "se": 0.09607689228305227,
++        "lower_95": 0.011692751378683364,
++        "upper_95": 0.38830724862131666
++      },
++      {
++        "joint_table": {
++          "a": 23,
++          "b": 11,
++          "c": 3,
++          "d": 3
++        },
++        "estimate": 0.2,
++        "variance": 0.007948717948717947,
++        "se": 0.08915558282417287,
++        "lower_95": 0.0252582686439434,
++        "upper_95": 0.3747417313560566
++      },
++      {
++        "joint_table": {
++          "a": 24,
++          "b": 10,
++          "c": 2,
++          "d": 4
++        },
++        "estimate": 0.2,
++        "variance": 0.006666666666666667,
++        "se": 0.08164965809277261,
++        "lower_95": 0.03996961078815636,
++        "upper_95": 0.36003038921184366
++      },
++      {
++        "joint_table": {
++          "a": 25,
++          "b": 9,
++          "c": 1,
++          "d": 5
++        },
++        "estimate": 0.2,
++        "variance": 0.005384615384615384,
++        "se": 0.07337993857053428,
++        "lower_95": 0.056177963213991294,
++        "upper_95": 0.34382203678600876
++      },
++      {
++        "joint_table": {
++          "a": 26,
++          "b": 8,
++          "c": 0,
++          "d": 6
++        },
++        "estimate": 0.2,
++        "variance": 0.0041025641025641026,
++        "se": 0.06405126152203486,
++        "lower_95": 0.07446183425245556,
++        "upper_95": 0.32553816574754446
++      }
++    ]
++  },
++  "incorrect_duplicate_publication_analysis": {
++    "estimate": 2.75,
++    "variance": 0.3333333333333333,
++    "se": 0.5773502691896257,
++    "lower_95": 1.6184142659238285,
++    "upper_95": 3.8815857340761717
++  }
++}
+diff --git a/tests/fixtures/mhac_r002_quant/README.md b/tests/fixtures/mhac_r002_quant/README.md
+new file mode 100644
+index 0000000..d771778
+--- /dev/null
++++ b/tests/fixtures/mhac_r002_quant/README.md
+@@ -0,0 +1,7 @@
++# Explicitly synthetic quantitative-methods fixture
++
++No empirical observations. The JSON contains authored estimates and supplied standard errors, not generated or observed participant measurements. The nominal participant counts label independent-unit structure only; they do not estimate the supplied variances.
++
++Three disjoint samples each provide three same-question cue contrasts. A fourth publication repeats S1 exactly. The canonicalizer drops only those three repeated-result rows. A separate paired-RT example varies within-person correlation; an independent-three-arm example derives the shared-control covariance; a binary paired example enumerates feasible joint tables at fixed margins. Their units and estimands are separate and they are not pooled together.
++
++All correlation-grid values are scenario assumptions except the covariance derived from the independent-arm fixture. No draw seed is needed: all calculations are deterministic. Negative controls are constructed explicitly by the unit tests, including live-data contamination, conflicting duplicate results, invalid correlation matrices and false independence. Successful tests are numerical/structural checks, not evidence an audio interface works.
+diff --git a/tests/fixtures/mhac_r002_quant/fixture.json b/tests/fixtures/mhac_r002_quant/fixture.json
+new file mode 100644
+index 0000000..6d36a75
+--- /dev/null
++++ b/tests/fixtures/mhac_r002_quant/fixture.json
+@@ -0,0 +1,243 @@
++{
++  "schema_version": 1,
++  "synthetic": true,
++  "empirical_claim": false,
++  "origin": "Authored deterministic summary fixtures; no random draws, no observed people, no empirical parameter calibration.",
++  "target": "Equal-weight mean of three specified sample-specific effects, each averaging three explicitly interchangeable cue exemplars. Finite specified target, not generalization to a distribution of studies.",
++  "independence_basis": "SYN-SAMPLE-1/2/3 stipulated disjoint; three cue contrasts within each sample share participants. No cross-sample overlap.",
++  "contrast_rho_grid": [
++    -0.25,
++    0,
++    0.25,
++    0.5,
++    0.6,
++    0.75,
++    0.9,
++    1
++  ],
++  "contrasts": [
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 4,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 5,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 6,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-2",
++      "study_id": "SYN-STUDY-2",
++      "sample_id": "SYN-SAMPLE-2",
++      "canonical_result_id": "SYN-RESULT-2-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 1,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S2/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-2",
++      "study_id": "SYN-STUDY-2",
++      "sample_id": "SYN-SAMPLE-2",
++      "canonical_result_id": "SYN-RESULT-2-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 2,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S2/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-2",
++      "study_id": "SYN-STUDY-2",
++      "sample_id": "SYN-SAMPLE-2",
++      "canonical_result_id": "SYN-RESULT-2-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 3,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S2/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-3",
++      "study_id": "SYN-STUDY-3",
++      "sample_id": "SYN-SAMPLE-3",
++      "canonical_result_id": "SYN-RESULT-3-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": -2,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S3/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-3",
++      "study_id": "SYN-STUDY-3",
++      "sample_id": "SYN-SAMPLE-3",
++      "canonical_result_id": "SYN-RESULT-3-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": -1,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S3/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-3",
++      "study_id": "SYN-STUDY-3",
++      "sample_id": "SYN-SAMPLE-3",
++      "canonical_result_id": "SYN-RESULT-3-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 0,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S3/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1-REPEAT",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-1",
++      "cue_id": "SYN-EXEMPLAR-1",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 4,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C1; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1-REPEAT",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-2",
++      "cue_id": "SYN-EXEMPLAR-2",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 5,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C2; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    },
++    {
++      "synthetic": true,
++      "report_id": "SYN-PUB-1-REPEAT",
++      "study_id": "SYN-STUDY-1",
++      "sample_id": "SYN-SAMPLE-1",
++      "canonical_result_id": "SYN-RESULT-1-3",
++      "cue_id": "SYN-EXEMPLAR-3",
++      "estimand_id": "SYN-RECOGNITION-FIRST-ATTEMPT-FIXED-DOSE",
++      "estimate": 6,
++      "se": 2.0,
++      "n_participants": 40,
++      "unit": "percentage_points",
++      "source_locator": "Authored synthetic summary row S1/C3; not a publication",
++      "variance_status": "supplied_synthetic_constant"
++    }
++  ],
++  "paired_rt": {
++    "synthetic": true,
++    "n": 25,
++    "mean_a_ms": 620,
++    "mean_c_ms": 650,
++    "sd_a_ms": 100,
++    "sd_c_ms": 110,
++    "r_grid": [
++      -0.25,
++      0,
++      0.25,
++      0.5,
++      0.75,
++      0.9,
++      0.95
++    ]
++  },
++  "shared_control": {
++    "synthetic": true,
++    "a": {
++      "n": 20,
++      "mean": 620,
++      "sd": 100
++    },
++    "b": {
++      "n": 20,
++      "mean": 640,
++      "sd": 100
++    },
++    "c": {
++      "n": 20,
++      "mean": 650,
++      "sd": 100
++    },
++    "unit": "milliseconds",
++    "design": "Three disjoint randomized arms; A-C and B-C share control C."
++  },
++  "paired_binary": {
++    "a": 24,
++    "b": 10,
++    "c": 2,
++    "d": 4
++  }
++}
+diff --git a/tests/test_mhac_r002_quant_prepass.py b/tests/test_mhac_r002_quant_prepass.py
+new file mode 100644
+index 0000000..7adfd24
+--- /dev/null
++++ b/tests/test_mhac_r002_quant_prepass.py
+@@ -0,0 +1,113 @@
++"""Known-answer and deliberate-defect checks; not scientific validation."""
++from __future__ import annotations
++import copy
++import importlib.util
++import json
++import math
++from pathlib import Path
++import unittest
++
++ROOT = Path(__file__).resolve().parents[1]
++spec = importlib.util.spec_from_file_location("quant", ROOT / "tools/mhac_r002_quant_prepass.py")
++assert spec and spec.loader
++q = importlib.util.module_from_spec(spec)
++spec.loader.exec_module(q)
++
++class QuantitativePrepassTests(unittest.TestCase):
++    def setUp(self):
++        self.data = json.loads((ROOT / "tests/fixtures/mhac_r002_quant/fixture.json").read_text())
++        self.rows, _ = q.canonicalize(self.data["contrasts"])
++
++    def test_known_main_answer(self):
++        got = q.fixed_target(self.rows, .6)
++        self.assertAlmostEqual(got["estimate"], 2)
++        self.assertAlmostEqual(got["variance"], 44/45)
++        self.assertAlmostEqual(got["se"], math.sqrt(44/45))
++
++    def test_independence_limit(self):
++        got = q.build(self.data)
++        zero = next(s for s in got["contrast_correlation_sensitivity"] if s["rho"] == 0)
++        self.assertAlmostEqual(zero["variance"], 4/9)
++        self.assertAlmostEqual(zero["se"], got["naive_independent_rows"]["se"])
++
++    def test_false_independence_defect_is_detected(self):
++        correct = q.fixed_target(self.rows, .6)["variance"]
++        defective = 4/9
++        self.assertNotAlmostEqual(correct, defective)
++        self.assertAlmostEqual(correct / defective, 2.2)
++
++    def test_duplicate_defect_detected_and_deduplicated(self):
++        result = q.build(self.data)
++        self.assertEqual(result["unique_contrasts"], 9)
++        self.assertEqual(len(result["duplicate_reports_removed"]), 3)
++        self.assertAlmostEqual(result["incorrect_duplicate_publication_analysis"]["estimate"], 2.75)
++        self.assertAlmostEqual(result["naive_independent_rows"]["estimate"], 2)
++
++    def test_conflicting_duplicate_rejected(self):
++        self.data["contrasts"][-1]["estimate"] += 1
++        with self.assertRaisesRegex(ValueError, "conflicting repeated report"):
++            q.build(self.data)
++
++    def test_live_data_rejected(self):
++        self.data["contrasts"][0]["synthetic"] = False
++        with self.assertRaisesRegex(ValueError, "synthetic"):
++            q.build(self.data)
++
++    def test_mixed_estimand_rejected(self):
++        self.rows[0]["estimand_id"] = "workload_is_not_accuracy"
++        with self.assertRaises(ValueError): q.fixed_target(self.rows, .5)
++
++    def test_invalid_correlation_matrix_rejected(self):
++        for r in (-.51, 1.01, float("nan")):
++            with self.assertRaises(ValueError): q.covariance([2, 2, 2], r)
++
++    def test_psd_endpoints_no_inverse_needed(self):
++        self.assertAlmostEqual(q.linear_variance([1/3]*3, q.covariance([2]*3, 1)), 4)
++        self.assertAlmostEqual(q.linear_variance([1/3]*3, q.covariance([2]*3, -.5)), 0)
++
++    def test_asymmetric_or_negative_variance_rejected(self):
++        with self.assertRaises(ValueError): q.linear_variance([.5,.5], [[1,2],[0,1]])
++        with self.assertRaises(ValueError): q.interval(0,-1)
++
++    def test_pairing_variance_and_direction(self):
++        a = q.paired_md(620,650,100,110,25,.5)
++        b = q.paired_md(620,650,100,110,25,0)
++        self.assertAlmostEqual(a["estimate"],-30)
++        self.assertAlmostEqual(a["variance"],444)
++        self.assertLess(a["variance"],b["variance"])
++
++    def test_shared_control_algebra(self):
++        r = q.build(self.data)["shared_control"]
++        self.assertEqual(r["covariance_matrix"], [[1000,500],[500,1000]])
++        self.assertAlmostEqual(r["covariance_aware"]["variance"],750)
++        self.assertAlmostEqual(r["false_independence"]["variance"],500)
++
++    def test_paired_binary_from_individual_differences(self):
++        differences = [0]*24 + [1]*10 + [-1]*2 + [0]*4
++        mu = sum(differences)/40
++        variance = sum((x-mu)**2 for x in differences)/(39*40)
++        result = q.paired_binary(24,10,2,4)
++        self.assertAlmostEqual(result["estimate"],.2)
++        self.assertAlmostEqual(result["variance"],1/150)
++        self.assertAlmostEqual(result["variance"],variance)
++
++    def test_binary_frechet_bounds(self):
++        result = q.build(self.data)["paired_binary"]["same_margins_feasible_joint_tables"]
++        self.assertEqual(len(result),7)
++        self.assertAlmostEqual(min(x["variance"] for x in result),.16/39)
++        self.assertAlmostEqual(max(x["variance"] for x in result),.46/39)
++        self.assertTrue(all(math.isclose(x["estimate"],.2) for x in result))
++
++    def test_binary_bad_counts_rejected(self):
++        with self.assertRaises(ValueError): q.paired_binary(24,-1,2,4)
++        with self.assertRaises(ValueError): q.paired_binary(24,1.5,2,4)
++
++    def test_nonpooled_not_missing_or_duplicated(self):
++        result = q.build(self.data)
++        self.assertEqual(len(result["nonpooled"]),9)
++        self.assertEqual(len({r["sample_id"] for r in result["nonpooled"]}),3)
++
++    def test_deterministic(self):
++        self.assertEqual(q.build(self.data), q.build(copy.deepcopy(self.data)))
++
++if __name__ == "__main__": unittest.main()
+diff --git a/tools/mhac_r002_quant_prepass.py b/tools/mhac_r002_quant_prepass.py
+new file mode 100644
+index 0000000..844814d
+--- /dev/null
++++ b/tools/mhac_r002_quant_prepass.py
+@@ -0,0 +1,247 @@
++"""MHAC-R002 synthetic quantitative-methods rehearsal, NOT empirical evidence.
++
++Python 3.11+, standard library only. Deterministic algebra; no simulated people.
++The main target is a fixed equal-weight average of specified sample/cue effects,
++not a random-effects population mean. Sampling variances are supplied synthetic
++constants; normal intervals are conditional illustrations, not small-k inference.
++"""
++from __future__ import annotations
++
++import argparse
++import csv
++import json
++import math
++from pathlib import Path
++from statistics import NormalDist
++from typing import Any
++
++Z = NormalDist().inv_cdf(0.975)
++ROOT = Path(__file__).resolve().parents[1]
++FIXTURE = ROOT / "tests/fixtures/mhac_r002_quant/fixture.json"
++OUT = ROOT / "research/protocol/prepasses/MHAC-R002-quantitative-2026-10-04/synthetic-results"
++
++
++def number(x: Any, label: str) -> float:
++    if isinstance(x, bool) or not isinstance(x, (int, float)) or not math.isfinite(x):
++        raise ValueError(f"{label}: finite number required")
++    return float(x)
++
++
++def interval(estimate: float, variance: float) -> dict[str, float]:
++    estimate, variance = number(estimate, "estimate"), number(variance, "variance")
++    if variance < 0:
++        raise ValueError("negative variance")
++    se = math.sqrt(variance)
++    return {"estimate": estimate, "variance": variance, "se": se,
++            "lower_95": estimate - Z * se, "upper_95": estimate + Z * se}
++
++
++def covariance(ses: list[float], rho: float) -> list[list[float]]:
++    """Compound-symmetry *contrast* correlation, not within-person pairing r.
++
++    Supports singular positive-semidefinite endpoints because aggregation does
++    not invert V. The lower bound is exact for this chosen working structure.
++    """
++    if not ses:
++        raise ValueError("no standard errors")
++    ses = [number(s, "se") for s in ses]
++    if any(s <= 0 for s in ses):
++        raise ValueError("standard errors must be positive")
++    rho = number(rho, "rho")
++    lower = -1 / (len(ses) - 1) if len(ses) > 1 else -1
++    if not lower <= rho <= 1:
++        raise ValueError("correlation matrix is not positive semidefinite")
++    return [[a * b * (1 if i == j else rho)
++             for j, b in enumerate(ses)] for i, a in enumerate(ses)]
++
++
++def linear_variance(weights: list[float], v: list[list[float]]) -> float:
++    n = len(weights)
++    if n == 0 or len(v) != n or any(len(row) != n for row in v):
++        raise ValueError("dimensions disagree")
++    weights = [number(w, "weight") for w in weights]
++    v = [[number(x, "covariance") for x in row] for row in v]
++    if any(not math.isclose(v[i][j], v[j][i], abs_tol=1e-12)
++           for i in range(n) for j in range(n)):
++        raise ValueError("asymmetric covariance matrix")
++    result = math.fsum(weights[i] * v[i][j] * weights[j]
++                       for i in range(n) for j in range(n))
++    if result < -1e-10:
++        raise ValueError("negative variance of linear contrast")
++    return max(0.0, result)
++
++
++def aggregate(rows: list[dict[str, Any]], rho: float) -> dict[str, float]:
++    if not rows:
++        raise ValueError("empty aggregation")
++    keys = {(r["sample_id"], r["estimand_id"]) for r in rows}
++    if len(keys) != 1:
++        raise ValueError("aggregation crosses sample or estimand")
++    w = [1 / len(rows)] * len(rows)
++    y = math.fsum(number(r["estimate"], "estimate") for r in rows) / len(rows)
++    v = covariance([r["se"] for r in rows], rho)
++    return interval(y, linear_variance(w, v))
++
++
++def canonicalize(rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
++    """Exact duplicate publication results add provenance, not observations.
++
++    Not a general identity resolver: canonical result IDs must be established
++    upstream. Conflicting values are rejected, never averaged or silently picked.
++    """
++    found: dict[str, dict[str, Any]] = {}
++    duplicates: list[str] = []
++    fields = ("sample_id", "estimand_id", "cue_id", "estimate", "se", "n_participants")
++    for row in rows:
++        if row.get("synthetic") is not True:
++            raise ValueError("only explicitly synthetic rows permitted")
++        if not isinstance(row.get("canonical_result_id"), str) or not row["canonical_result_id"]:
++            raise ValueError("missing canonical result ID")
++        number(row["estimate"], "estimate")
++        if number(row["se"], "se") <= 0:
++            raise ValueError("nonpositive standard error")
++        if type(row["n_participants"]) is not int or row["n_participants"] <= 1:
++            raise ValueError("invalid participant count")
++        key = row["canonical_result_id"]
++        if key in found:
++            if any(found[key][f] != row[f] for f in fields):
++                raise ValueError(f"conflicting repeated report: {key}")
++            duplicates.append(row["report_id"] + ":" + key)
++        else:
++            found[key] = dict(row)
++    return list(found.values()), duplicates
++
++
++def fixed_target(rows: list[dict[str, Any]], rho: float) -> dict[str, Any]:
++    """Equal weights within sample, then equal weights across independent samples."""
++    if len({r["estimand_id"] for r in rows}) != 1:
++        raise ValueError("incompatible estimands")
++    groups: dict[str, list[dict[str, Any]]] = {}
++    for row in rows:
++        groups.setdefault(row["sample_id"], []).append(row)
++    summaries = {s: aggregate(rs, rho) for s, rs in sorted(groups.items())}
++    k = len(summaries)
++    if not k:
++        raise ValueError("no samples")
++    result: dict[str, Any] = interval(
++        math.fsum(s["estimate"] for s in summaries.values()) / k,
++        math.fsum(s["variance"] for s in summaries.values()) / k**2)
++    result.update({"rho": rho, "independent_samples": k, "sample_estimates": summaries})
++    return result
++
++
++def paired_md(mean_a: float, mean_c: float, sd_a: float, sd_c: float,
++              n: int, r: float) -> dict[str, float]:
++    if type(n) is not int or n < 2:
++        raise ValueError("at least two paired participants required")
++    r = number(r, "pairing r")
++    if not -1 <= r <= 1:
++        raise ValueError("invalid pairing correlation")
++    sd_a, sd_c = number(sd_a, "sd_a"), number(sd_c, "sd_c")
++    if sd_a < 0 or sd_c < 0:
++        raise ValueError("negative standard deviation")
++    v = (sd_a**2 + sd_c**2 - 2 * r * sd_a * sd_c) / n
++    return interval(number(mean_a, "mean_a") - number(mean_c, "mean_c"), max(0.0, v))
++
++
++def paired_binary(a: int, b: int, c: int, d: int) -> dict[str, float]:
++    """One binary outcome per paired participant; b=A-only, c=C-only success.
++
++    Uses unbiased sample variance of D in {-1,0,1}, divided by n. Normal intervals
++    are illustrative; sparse real tables require suitable small-sample methods.
++    """
++    if any(type(x) is not int or x < 0 for x in (a, b, c, d)):
++        raise ValueError("joint counts must be nonnegative integers")
++    n = a + b + c + d
++    if n < 2:
++        raise ValueError("at least two participants required")
++    rd = (b - c) / n
++    return interval(rd, ((b + c) / n - rd**2) / (n - 1))
++
++
++def build(fixture: dict[str, Any]) -> dict[str, Any]:
++    if fixture.get("synthetic") is not True:
++        raise ValueError("synthetic-only fixture required")
++    rows, duplicates = canonicalize(fixture["contrasts"])
++    if len({r["estimand_id"] for r in rows}) != 1:
++        raise ValueError("mixed questions in main fixture")
++    naive = interval(math.fsum(r["estimate"] for r in rows) / len(rows),
++                     math.fsum(r["se"]**2 for r in rows) / len(rows)**2)
++    # Equal m in this fixture makes naive row mean identical to the target mean.
++    counts = [sum(r["sample_id"] == s for r in rows) for s in {r["sample_id"] for r in rows}]
++    if len(set(counts)) != 1:
++        raise ValueError("main precision-isolation demonstration requires balanced cue counts")
++    sensitivities = []
++    for rho in fixture["contrast_rho_grid"]:
++        result = fixed_target(rows, rho)
++        result["variance_ratio_to_false_independence"] = result["variance"] / naive["variance"]
++        result["se_ratio_to_false_independence"] = result["se"] / naive["se"]
++        sensitivities.append(result)
++    nonpooled = [{**r, **interval(r["estimate"], r["se"]**2)} for r in rows]
++    p = fixture["paired_rt"]
++    paired = [{"r_within_person": r, **paired_md(p["mean_a_ms"], p["mean_c_ms"],
++               p["sd_a_ms"], p["sd_c_ms"], p["n"], r)} for r in p["r_grid"]]
++    sc = fixture["shared_control"]
++    arm_variances = {arm: sc[arm]["sd"]**2 / sc[arm]["n"] for arm in ("a", "b", "c")}
++    va, vb, vc = (arm_variances[s] for s in ("a", "b", "c"))
++    y1, y2 = (sc[s]["mean"] - sc["c"]["mean"] for s in ("a", "b"))
++    v = [[va + vc, vc], [vc, vb + vc]]
++    shared = {"covariance_matrix": v, "mean_differences": [y1, y2],
++              "false_independence": interval((y1 + y2) / 2, (v[0][0] + v[1][1]) / 4),
++              "covariance_aware": interval((y1 + y2) / 2, linear_variance([.5, .5], v))}
++    bi = fixture["paired_binary"]
++    actual = paired_binary(**bi)
++    n = sum(bi.values()); successes_a = bi["a"] + bi["b"]; successes_c = bi["a"] + bi["c"]
++    feasible = []
++    for a in range(max(0, successes_a + successes_c - n), min(successes_a, successes_c) + 1):
++        table = {"a": a, "b": successes_a - a, "c": successes_c - a,
++                 "d": n - successes_a - successes_c + a}
++        feasible.append({"joint_table": table, **paired_binary(**table)})
++    raw = fixture["contrasts"]
++    bad_duplicate = interval(math.fsum(r["estimate"] for r in raw) / len(raw),
++                             math.fsum(r["se"]**2 for r in raw) / len(raw)**2)
++    return {"schema_version": 1, "synthetic": True, "empirical_claim": False,
++            "target": fixture["target"], "interval_method": "normal conditional on supplied variances; not random-effects inference",
++            "unique_contrasts": len(rows), "independent_samples": len(counts),
++            "duplicate_reports_removed": duplicates, "naive_independent_rows": naive,
++            "contrast_correlation_sensitivity": sensitivities, "nonpooled": nonpooled,
++            "paired_rt_sensitivity": paired, "shared_control": shared,
++            "paired_binary": {"observed_joint_table": bi, "actual": actual,
++                              "same_margins_feasible_joint_tables": feasible},
++            "incorrect_duplicate_publication_analysis": bad_duplicate}
++
++
++def write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> None:
++    with path.open("w", encoding="utf-8", newline="") as handle:
++        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
++        writer.writeheader(); writer.writerows(rows)
++
++
++def main(argv: list[str] | None = None) -> int:
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--fixture", type=Path, default=FIXTURE)
++    parser.add_argument("--out", type=Path, default=OUT)
++    args = parser.parse_args(argv)
++    try:
++        data = json.loads(args.fixture.read_text(encoding="utf-8"))
++        result = build(data)
++        args.out.mkdir(parents=True, exist_ok=True)
++        (args.out / "results.json").write_text(json.dumps(result, indent=2, allow_nan=False) + "\n", encoding="utf-8")
++        write_csv(args.out / "contrast_sensitivity.csv", result["contrast_correlation_sensitivity"],
++                  ["rho", "estimate", "variance", "se", "lower_95", "upper_95", "variance_ratio_to_false_independence", "se_ratio_to_false_independence"])
++        write_csv(args.out / "nonpooled.csv", result["nonpooled"],
++                  ["synthetic", "report_id", "sample_id", "canonical_result_id", "cue_id", "n_participants", "estimate", "se", "lower_95", "upper_95"])
++        write_csv(args.out / "paired_rt_sensitivity.csv", result["paired_rt_sensitivity"],
++                  ["r_within_person", "estimate", "variance", "se", "lower_95", "upper_95"])
++        lines = ["# Synthetic non-pooled display", "", "No empirical participants or audio-style findings. Estimates are percentage-point recognition differences A minus C. Each sample reuses the same people for its three cues. Intervals are marginal, not simultaneous. No overall summary or significance votes.", "", "| Sample | Cue | Participants (not additive within sample) | Estimate | Conditional 95% interval |", "|---|---|---:|---:|---:|"]
++        for r in result["nonpooled"]:
++            lines.append(f'| {r["sample_id"]} | {r["cue_id"]} | {r["n_participants"]} | {r["estimate"]:.2f} | {r["lower_95"]:.2f} to {r["upper_95"]:.2f} |')
++        (args.out / "NONPOOLED.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
++        print(f'OK: {result["unique_contrasts"]} synthetic contrasts, {result["independent_samples"]} independent synthetic samples; {len(result["duplicate_reports_removed"])} repeated-report rows removed.')
++        return 0
++    except (ValueError, OSError, KeyError, TypeError) as exc:
++        parser.exit(1, f"FAIL: {exc}\n")
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
