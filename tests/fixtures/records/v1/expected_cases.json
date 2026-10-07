@@ -1,0 +1,66 @@
+[
+  {
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_before",
+    "previous": null
+  },
+  {
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_correction_pending",
+    "previous": "valid_before"
+  },
+  {
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_corrected",
+    "previous": "valid_correction_pending"
+  },
+  {
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_source_invalidated",
+    "previous": "valid_corrected"
+  },
+  {
+    "context": "live",
+    "exit": 0,
+    "name": "valid_empty_live",
+    "previous": null
+  },
+  {
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_all_families",
+    "previous": null
+  },
+  {
+    "code": "CONTAMINATION",
+    "context": "live",
+    "exit": 1,
+    "name": "invalid_fixture_in_live",
+    "previous": null
+  },
+  {
+    "code": "EMPTY_COMPLETION",
+    "context": "live",
+    "exit": 1,
+    "name": "invalid_empty_complete",
+    "previous": null
+  },
+  {
+    "code": "STALE_RELEASE",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_stale_claim_export",
+    "previous": null
+  },
+  {
+    "code": "UNREAD_LOCATOR",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_unread_locator",
+    "previous": null
+  }
+]

@@ -1,0 +1,1266 @@
+{
+  "contract": "mhac-records/1",
+  "dataset_kind": "fixture",
+  "records": [
+    {
+      "id": "SRC-A",
+      "issue": 1,
+      "kind": "source",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:01Z",
+          "basis": [],
+          "data": {
+            "access_at": "2000-01-01T00:00:01Z",
+            "access_reason": "The synthetic text is supplied with the fixture.",
+            "access_status": "full_text_available",
+            "authors": [
+              {
+                "name": "Fictional Fixture Author",
+                "role": "author"
+              }
+            ],
+            "edition": {
+              "reason": "Original fictional fixture text; no published edition",
+              "state": "not_applicable"
+            },
+            "family_links": [],
+            "identifiers": [],
+            "language": {
+              "state": "known",
+              "value": "en"
+            },
+            "manifestations": [
+              {
+                "coordinate": "file_page_1based",
+                "extent": 3,
+                "fixture_path": "sources/report_A.txt",
+                "id": "text-v1",
+                "sha256": "a150186a4f5dc6bb0f798b831d6f3735a2de9276aa2728dcce1d0b9130a6083c"
+              }
+            ],
+            "metadata_evidence": [
+              "Metadata stipulated by the synthetic fixture generator, not verified bibliographic metadata."
+            ],
+            "metadata_status": "candidate",
+            "publication_date": {
+              "reason": "Synthetic report",
+              "state": "not_applicable"
+            },
+            "rights": {
+              "evidence": {
+                "reason": "No real third-party work or rights decision is represented",
+                "state": "unknown"
+              },
+              "reason": "Synthetic authored fixture, no third-party source or licence decision",
+              "status": "unknown"
+            },
+            "source_type": "report",
+            "title": "SYNTHETIC report A; not a real publication",
+            "validity": "active"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "SRC-B",
+      "issue": 1,
+      "kind": "source",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:02Z",
+          "basis": [],
+          "data": {
+            "access_at": "2000-01-01T00:00:02Z",
+            "access_reason": "The synthetic text is supplied with the fixture.",
+            "access_status": "full_text_available",
+            "authors": [
+              {
+                "name": "Fictional Fixture Author",
+                "role": "author"
+              }
+            ],
+            "edition": {
+              "reason": "Original fictional fixture text; no published edition",
+              "state": "not_applicable"
+            },
+            "family_links": [],
+            "identifiers": [],
+            "language": {
+              "state": "known",
+              "value": "en"
+            },
+            "manifestations": [
+              {
+                "coordinate": "file_page_1based",
+                "extent": 4,
+                "fixture_path": "sources/report_B.txt",
+                "id": "text-v1",
+                "sha256": "4b6977cdab4532305c243150f06b108c95006878f465e0c662090cb2804e34f4"
+              }
+            ],
+            "metadata_evidence": [
+              "Metadata stipulated by the synthetic fixture generator, not verified bibliographic metadata."
+            ],
+            "metadata_status": "candidate",
+            "publication_date": {
+              "reason": "Synthetic report",
+              "state": "not_applicable"
+            },
+            "rights": {
+              "evidence": {
+                "reason": "No real third-party work or rights decision is represented",
+                "state": "unknown"
+              },
+              "reason": "Synthetic authored fixture, no third-party source or licence decision",
+              "status": "unknown"
+            },
+            "source_type": "report",
+            "title": "SYNTHETIC report B; not a real publication",
+            "validity": "active"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "STUDY-ONE",
+      "issue": 1,
+      "kind": "study",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:03Z",
+          "basis": [],
+          "data": {
+            "identity_basis": "The synthetic story stipulates one study; not an inference about real reports.",
+            "identity_locators": [],
+            "identity_status": "fixture_asserted_same",
+            "publications": [
+              {
+                "id": "SRC-A",
+                "rev": 1
+              },
+              {
+                "id": "SRC-B",
+                "rev": 1
+              }
+            ],
+            "scope": "One fictional paired-task study, represented by two fictional reports."
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "SAMPLE-ONE",
+      "issue": 1,
+      "kind": "sample",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:04Z",
+          "basis": [],
+          "data": {
+            "missingness": {
+              "reason": "No real observations or missingness data exist",
+              "state": "not_reported"
+            },
+            "n": 24,
+            "overlap": [],
+            "population": "Fictional sample; no participants recruited",
+            "recruitment": {
+              "reason": "No actual recruitment; synthetic source does not specify a recruitment method",
+              "state": "not_reported"
+            },
+            "status": "provisional",
+            "uncertainty": "No inference about real sample identity"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "EXP-ONE",
+      "issue": 1,
+      "kind": "experiment",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:05Z",
+          "basis": [],
+          "data": {
+            "assignment": "Not specified in the fictional reports; no randomization claim is made.",
+            "conditions": [
+              "coded_alert",
+              "control"
+            ],
+            "dependence": {
+              "correlation": {
+                "reason": "Not specified by synthetic reports",
+                "state": "unknown"
+              },
+              "relation": "shared_sample"
+            },
+            "outcomes": {
+              "accuracy": {
+                "contrast": "coded_alert minus control",
+                "unit": "percentage_points"
+              },
+              "latency": {
+                "contrast": "coded_alert minus control",
+                "unit": "ms"
+              }
+            },
+            "report_label": "One fictional paired comparison",
+            "sample_refs": [
+              {
+                "id": "SAMPLE-ONE",
+                "rev": 1
+              }
+            ],
+            "status": "extracted",
+            "study_ref": {
+              "id": "STUDY-ONE",
+              "rev": 1
+            }
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "AID-READ-A",
+      "issue": 1,
+      "kind": "assistance",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:06Z",
+          "basis": [
+            {
+              "id": "SRC-A",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "access_at_read": "full_text_available",
+            "independence": "Fictional agent attestation; not independent human review or actual source reading.",
+            "manifestation_id": "text-v1",
+            "method": "Synthetic attestation, not real literature reading",
+            "performed_at": {
+              "state": "known",
+              "value": "2000-01-01T00:00:06Z"
+            },
+            "ranges": [
+              [
+                1,
+                3
+              ]
+            ],
+            "reading_status": "full_item_read",
+            "source_ref": {
+              "id": "SRC-A",
+              "rev": 1
+            },
+            "status": "performed",
+            "subtype": "reading"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "AID-READ-B",
+      "issue": 1,
+      "kind": "assistance",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:07Z",
+          "basis": [
+            {
+              "id": "SRC-B",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "access_at_read": "full_text_available",
+            "independence": "Fictional agent attestation; not independent human review or actual source reading.",
+            "manifestation_id": "text-v1",
+            "method": "Synthetic attestation, not real literature reading",
+            "performed_at": {
+              "state": "known",
+              "value": "2000-01-01T00:00:07Z"
+            },
+            "ranges": [
+              [
+                1,
+                2
+              ]
+            ],
+            "reading_status": "selected_ranges_read",
+            "source_ref": {
+              "id": "SRC-B",
+              "rev": 1
+            },
+            "status": "performed",
+            "subtype": "reading"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "EX-LAT",
+      "issue": 1,
+      "kind": "extraction",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:08Z",
+          "basis": [
+            {
+              "id": "SRC-A",
+              "rev": 1
+            },
+            {
+              "id": "AID-READ-A",
+              "rev": 1
+            },
+            {
+              "id": "EXP-ONE",
+              "rev": 1
+            },
+            {
+              "id": "SAMPLE-ONE",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "conditions": [
+              "coded_alert",
+              "control"
+            ],
+            "contrast": "coded_alert minus control",
+            "dependence": {
+              "correlation": {
+                "reason": "Not specified by synthetic reports",
+                "state": "unknown"
+              },
+              "relation": "shared_sample"
+            },
+            "derivation": {
+              "reason": "Direct fictional transcription; no computed estimate",
+              "state": "not_applicable"
+            },
+            "dispersion": {
+              "reason": "Absent in synthetic passage",
+              "state": "not_reported"
+            },
+            "experiment_ref": {
+              "id": "EXP-ONE",
+              "rev": 1
+            },
+            "field_locators": {
+              "dispersion": {
+                "cell": "latency",
+                "coordinate": "file_page_1based",
+                "end": 2,
+                "manifestation_id": "text-v1",
+                "printed_label": "102",
+                "section": "Results",
+                "start": 2,
+                "table": "1"
+              },
+              "n": {
+                "coordinate": "file_page_1based",
+                "end": 1,
+                "manifestation_id": "text-v1",
+                "start": 1
+              },
+              "value": {
+                "cell": "latency",
+                "coordinate": "file_page_1based",
+                "end": 2,
+                "manifestation_id": "text-v1",
+                "printed_label": "102",
+                "section": "Results",
+                "start": 2,
+                "table": "1"
+              }
+            },
+            "locator": {
+              "cell": "latency",
+              "coordinate": "file_page_1based",
+              "end": 2,
+              "manifestation_id": "text-v1",
+              "printed_label": "102",
+              "section": "Results",
+              "start": 2,
+              "table": "1"
+            },
+            "missingness": {
+              "reason": "No real observations or missingness data exist",
+              "state": "not_reported"
+            },
+            "n": 24,
+            "note": "Initial latency extraction deliberately wrong: 8 versus 80 in synthetic source; schema does not read for entailment.",
+            "outcome": "latency",
+            "population": "Fictional sample; no participants recruited",
+            "reading_ref": {
+              "id": "AID-READ-A",
+              "rev": 1
+            },
+            "sample_ref": {
+              "id": "SAMPLE-ONE",
+              "rev": 1
+            },
+            "scope": "complete_report",
+            "source_ref": {
+              "id": "SRC-A",
+              "rev": 1
+            },
+            "status": "extracted",
+            "stimuli": {
+              "reason": "Not specified in the synthetic passage",
+              "state": "not_reported"
+            },
+            "task": "Fictional paired task",
+            "timepoint": "not specified in synthetic text",
+            "training": {
+              "reason": "Not specified in the synthetic passage",
+              "state": "not_reported"
+            },
+            "unit": "ms",
+            "value": 8.0
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        },
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:19Z",
+          "basis": [
+            {
+              "id": "SRC-A",
+              "rev": 1
+            },
+            {
+              "id": "AID-READ-A",
+              "rev": 1
+            },
+            {
+              "id": "EXP-ONE",
+              "rev": 1
+            },
+            {
+              "id": "SAMPLE-ONE",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "conditions": [
+              "coded_alert",
+              "control"
+            ],
+            "contrast": "coded_alert minus control",
+            "dependence": {
+              "correlation": {
+                "reason": "Not specified by synthetic reports",
+                "state": "unknown"
+              },
+              "relation": "shared_sample"
+            },
+            "derivation": {
+              "reason": "Direct fictional transcription; no computed estimate",
+              "state": "not_applicable"
+            },
+            "dispersion": {
+              "reason": "Absent in synthetic passage",
+              "state": "not_reported"
+            },
+            "experiment_ref": {
+              "id": "EXP-ONE",
+              "rev": 1
+            },
+            "field_locators": {
+              "dispersion": {
+                "cell": "latency",
+                "coordinate": "file_page_1based",
+                "end": 2,
+                "manifestation_id": "text-v1",
+                "printed_label": "102",
+                "section": "Results",
+                "start": 2,
+                "table": "1"
+              },
+              "n": {
+                "coordinate": "file_page_1based",
+                "end": 1,
+                "manifestation_id": "text-v1",
+                "start": 1
+              },
+              "value": {
+                "cell": "latency",
+                "coordinate": "file_page_1based",
+                "end": 2,
+                "manifestation_id": "text-v1",
+                "printed_label": "102",
+                "section": "Results",
+                "start": 2,
+                "table": "1"
+              }
+            },
+            "locator": {
+              "cell": "latency",
+              "coordinate": "file_page_1based",
+              "end": 2,
+              "manifestation_id": "text-v1",
+              "printed_label": "102",
+              "section": "Results",
+              "start": 2,
+              "table": "1"
+            },
+            "missingness": {
+              "reason": "No real observations or missingness data exist",
+              "state": "not_reported"
+            },
+            "n": 24,
+            "note": "Corrected transcription to 80 ms; original 8 ms preserved as revision 1.",
+            "outcome": "latency",
+            "population": "Fictional sample; no participants recruited",
+            "reading_ref": {
+              "id": "AID-READ-A",
+              "rev": 1
+            },
+            "sample_ref": {
+              "id": "SAMPLE-ONE",
+              "rev": 1
+            },
+            "scope": "complete_report",
+            "source_ref": {
+              "id": "SRC-A",
+              "rev": 1
+            },
+            "status": "extracted",
+            "stimuli": {
+              "reason": "Not specified in the synthetic passage",
+              "state": "not_reported"
+            },
+            "task": "Fictional paired task",
+            "timepoint": "not specified in synthetic text",
+            "training": {
+              "reason": "Not specified in the synthetic passage",
+              "state": "not_reported"
+            },
+            "unit": "ms",
+            "value": 80.0
+          },
+          "factual_status": "synthetic",
+          "rev": 2
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "EX-ACC",
+      "issue": 1,
+      "kind": "extraction",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:09Z",
+          "basis": [
+            {
+              "id": "SRC-B",
+              "rev": 1
+            },
+            {
+              "id": "AID-READ-B",
+              "rev": 1
+            },
+            {
+              "id": "EXP-ONE",
+              "rev": 1
+            },
+            {
+              "id": "SAMPLE-ONE",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "conditions": [
+              "coded_alert",
+              "control"
+            ],
+            "contrast": "coded_alert minus control",
+            "dependence": {
+              "correlation": {
+                "reason": "Not specified by synthetic reports",
+                "state": "unknown"
+              },
+              "relation": "shared_sample"
+            },
+            "derivation": {
+              "reason": "Direct fictional transcription; no computed estimate",
+              "state": "not_applicable"
+            },
+            "dispersion": {
+              "reason": "Absent in synthetic passage",
+              "state": "not_reported"
+            },
+            "experiment_ref": {
+              "id": "EXP-ONE",
+              "rev": 1
+            },
+            "field_locators": {
+              "dispersion": {
+                "cell": "accuracy",
+                "coordinate": "file_page_1based",
+                "end": 2,
+                "manifestation_id": "text-v1",
+                "printed_label": "202",
+                "section": "Results",
+                "start": 2,
+                "table": "2"
+              },
+              "n": {
+                "coordinate": "file_page_1based",
+                "end": 1,
+                "manifestation_id": "text-v1",
+                "start": 1
+              },
+              "value": {
+                "cell": "accuracy",
+                "coordinate": "file_page_1based",
+                "end": 2,
+                "manifestation_id": "text-v1",
+                "printed_label": "202",
+                "section": "Results",
+                "start": 2,
+                "table": "2"
+              }
+            },
+            "locator": {
+              "cell": "accuracy",
+              "coordinate": "file_page_1based",
+              "end": 2,
+              "manifestation_id": "text-v1",
+              "printed_label": "202",
+              "section": "Results",
+              "start": 2,
+              "table": "2"
+            },
+            "missingness": {
+              "reason": "No real observations or missingness data exist",
+              "state": "not_reported"
+            },
+            "n": 24,
+            "note": "Bounded selected-passage extraction, not full empirical appraisal.",
+            "outcome": "accuracy",
+            "population": "Fictional sample; no participants recruited",
+            "reading_ref": {
+              "id": "AID-READ-B",
+              "rev": 1
+            },
+            "sample_ref": {
+              "id": "SAMPLE-ONE",
+              "rev": 1
+            },
+            "scope": "bounded",
+            "source_ref": {
+              "id": "SRC-B",
+              "rev": 1
+            },
+            "status": "extracted",
+            "stimuli": {
+              "reason": "Not specified in the synthetic passage",
+              "state": "not_reported"
+            },
+            "task": "Fictional paired task",
+            "timepoint": "not specified in synthetic text",
+            "training": {
+              "reason": "Not specified in the synthetic passage",
+              "state": "not_reported"
+            },
+            "unit": "percentage_points",
+            "value": 5.0
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "APP-LAT",
+      "issue": 1,
+      "kind": "appraisal",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:10Z",
+          "basis": [
+            {
+              "id": "EX-LAT",
+              "rev": 1
+            },
+            {
+              "id": "SRC-A",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "criterion": "Record whether the fictional report supplies dispersion.",
+            "domain": "reporting_completeness",
+            "evidence": [
+              {
+                "locator": {
+                  "coordinate": "file_page_1based",
+                  "end": 2,
+                  "manifestation_id": "text-v1",
+                  "section": "Results",
+                  "start": 2,
+                  "table": "1"
+                },
+                "source_ref": {
+                  "id": "SRC-A",
+                  "rev": 1
+                }
+              }
+            ],
+            "judgment": "limited",
+            "rationale": "Synthetic dispersion absent; no pooled estimate justified.",
+            "status": "checked",
+            "target_ref": {
+              "id": "EX-LAT",
+              "rev": 1
+            },
+            "tool_version": {
+              "reason": "No appraisal instrument is applied in the fictional example",
+              "state": "not_applicable"
+            },
+            "uncertainty": "A fictional reporting-completeness example, not a scientific appraisal."
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "AID-CHECK-LAT",
+      "issue": 1,
+      "kind": "assistance",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:11Z",
+          "basis": [
+            {
+              "id": "EX-LAT",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "artifact": "Synthetic attestation only; initial LAT check deliberately fails to notice transcription error.",
+            "independence": "Fictional agent attestation; not independent human review or actual source reading.",
+            "outcome": "pass",
+            "performed_at": {
+              "state": "known",
+              "value": "2000-01-01T00:00:11Z"
+            },
+            "scope": "source_fidelity",
+            "status": "performed",
+            "subtype": "review",
+            "target_refs": [
+              {
+                "id": "EX-LAT",
+                "rev": 1
+              }
+            ],
+            "verification": "agent_checked"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "CLM-LAT",
+      "issue": 1,
+      "kind": "claim",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:12Z",
+          "basis": [
+            {
+              "id": "EX-LAT",
+              "rev": 1
+            },
+            {
+              "id": "APP-LAT",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "appraisal_refs": [
+              {
+                "id": "APP-LAT",
+                "rev": 1
+              }
+            ],
+            "argument": {
+              "inference_steps": [
+                "Keep the claim bounded to the fictional report and the declared claim class."
+              ],
+              "premises": [
+                "The pinned fictional extraction is the stated basis; it is not real evidence."
+              ],
+              "revision_criterion": "Reopen when a pinned extraction, appraisal or source changes."
+            },
+            "boundaries": "One fictional study; no real evidence; outcomes are not independent replications.",
+            "class": "empirical_finding",
+            "counterarguments": "Unknown dispersion/covariance and incomplete companion reading.",
+            "evidence_refs": [
+              {
+                "id": "EX-LAT",
+                "rev": 1
+              }
+            ],
+            "lifecycle": "proposed",
+            "review_refs": [],
+            "statement": "SYNTHETIC: response-time difference reported as 8 ms.",
+            "uncertainty": "No quantitative certainty assertion"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        },
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:13Z",
+          "basis": [
+            {
+              "id": "EX-LAT",
+              "rev": 1
+            },
+            {
+              "id": "APP-LAT",
+              "rev": 1
+            },
+            {
+              "id": "AID-CHECK-LAT",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "appraisal_refs": [
+              {
+                "id": "APP-LAT",
+                "rev": 1
+              }
+            ],
+            "argument": {
+              "inference_steps": [
+                "Keep the claim bounded to the fictional report and the declared claim class."
+              ],
+              "premises": [
+                "The pinned fictional extraction is the stated basis; it is not real evidence."
+              ],
+              "revision_criterion": "Reopen when a pinned extraction, appraisal or source changes."
+            },
+            "boundaries": "One fictional study; no real evidence; outcomes are not independent replications.",
+            "class": "empirical_finding",
+            "counterarguments": "Unknown dispersion/covariance and incomplete companion reading.",
+            "evidence_refs": [
+              {
+                "id": "EX-LAT",
+                "rev": 1
+              }
+            ],
+            "lifecycle": "source_checked",
+            "review_refs": [
+              {
+                "id": "AID-CHECK-LAT",
+                "rev": 1
+              }
+            ],
+            "statement": "SYNTHETIC: response-time difference reported as 8 ms.",
+            "uncertainty": "No quantitative certainty assertion"
+          },
+          "factual_status": "synthetic",
+          "rev": 2
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "AID-CHECK-ACC",
+      "issue": 1,
+      "kind": "assistance",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:14Z",
+          "basis": [
+            {
+              "id": "EX-ACC",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "artifact": "Synthetic attestation only; initial LAT check deliberately fails to notice transcription error.",
+            "independence": "Fictional agent attestation; not independent human review or actual source reading.",
+            "outcome": "pass",
+            "performed_at": {
+              "state": "known",
+              "value": "2000-01-01T00:00:14Z"
+            },
+            "scope": "source_fidelity",
+            "status": "performed",
+            "subtype": "review",
+            "target_refs": [
+              {
+                "id": "EX-ACC",
+                "rev": 1
+              }
+            ],
+            "verification": "agent_checked"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "CLM-ACC",
+      "issue": 1,
+      "kind": "claim",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:15Z",
+          "basis": [
+            {
+              "id": "EX-ACC",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "appraisal_refs": [],
+            "argument": {
+              "inference_steps": [
+                "Keep the claim bounded to the fictional report and the declared claim class."
+              ],
+              "premises": [
+                "The pinned fictional extraction is the stated basis; it is not real evidence."
+              ],
+              "revision_criterion": "Reopen when a pinned extraction, appraisal or source changes."
+            },
+            "boundaries": "One fictional study; no real evidence; outcomes are not independent replications.",
+            "class": "source_claim",
+            "counterarguments": "Unknown dispersion/covariance and incomplete companion reading.",
+            "evidence_refs": [
+              {
+                "id": "EX-ACC",
+                "rev": 1
+              }
+            ],
+            "lifecycle": "proposed",
+            "review_refs": [],
+            "statement": "SYNTHETIC: selected passage reports accuracy difference of 5 percentage points.",
+            "uncertainty": "No quantitative certainty assertion"
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        },
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:16Z",
+          "basis": [
+            {
+              "id": "EX-ACC",
+              "rev": 1
+            },
+            {
+              "id": "AID-CHECK-ACC",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "appraisal_refs": [],
+            "argument": {
+              "inference_steps": [
+                "Keep the claim bounded to the fictional report and the declared claim class."
+              ],
+              "premises": [
+                "The pinned fictional extraction is the stated basis; it is not real evidence."
+              ],
+              "revision_criterion": "Reopen when a pinned extraction, appraisal or source changes."
+            },
+            "boundaries": "One fictional study; no real evidence; outcomes are not independent replications.",
+            "class": "source_claim",
+            "counterarguments": "Unknown dispersion/covariance and incomplete companion reading.",
+            "evidence_refs": [
+              {
+                "id": "EX-ACC",
+                "rev": 1
+              }
+            ],
+            "lifecycle": "source_checked",
+            "review_refs": [
+              {
+                "id": "AID-CHECK-ACC",
+                "rev": 1
+              }
+            ],
+            "statement": "SYNTHETIC: selected passage reports accuracy difference of 5 percentage points.",
+            "uncertainty": "No quantitative certainty assertion"
+          },
+          "factual_status": "synthetic",
+          "rev": 2
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "CLM-HYP",
+      "issue": 1,
+      "kind": "claim",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:17Z",
+          "basis": [
+            {
+              "id": "EX-LAT",
+              "rev": 1
+            }
+          ],
+          "data": {
+            "appraisal_refs": [],
+            "argument": {
+              "inference_steps": [
+                "Keep the claim bounded to the fictional report and the declared claim class."
+              ],
+              "premises": [
+                "The pinned fictional extraction is the stated basis; it is not real evidence."
+              ],
+              "revision_criterion": "Reopen when a pinned extraction, appraisal or source changes."
+            },
+            "boundaries": "Untested",
+            "class": "design_hypothesis",
+            "counterarguments": "No real data",
+            "evidence_refs": [
+              {
+                "id": "EX-LAT",
+                "rev": 1
+              }
+            ],
+            "lifecycle": "proposed",
+            "mechanism": "The fictional contrast might transfer to a different task; this is untested.",
+            "review_refs": [],
+            "statement": "SYNTHETIC hypothesis: test whether the contrast transfers to a new task.",
+            "test_plan": "Prepare a prospective protocol and obtain actual authorization before any real study.",
+            "uncertainty": "Unvalidated",
+            "variables": [
+              "response_time_ms",
+              "task"
+            ]
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "REQ-TIMING",
+      "issue": 1,
+      "kind": "requirement",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:18Z",
+          "basis": [
+            {
+              "id": "CLM-LAT",
+              "rev": 2
+            }
+          ],
+          "data": {
+            "claim_refs": [
+              {
+                "id": "CLM-LAT",
+                "rev": 2
+              }
+            ],
+            "class": "design_hypothesis",
+            "conditions": [
+              "Fictional paired task"
+            ],
+            "mechanism": "Vary timing to investigate the fictional response-time contrast.",
+            "result_refs": [],
+            "revision_criterion": "Reassess when latency extraction or source changes.",
+            "risks": [
+              "No real evidence establishes task transfer."
+            ],
+            "scope": "Variable selection for a fictional alert comparison",
+            "statement": "SYNTHETIC: inspect timing as an experimental variable, not a validated design requirement.",
+            "status": "proposed",
+            "test_refs": [],
+            "variables": [
+              "timing_ms"
+            ]
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    },
+    {
+      "id": "AMD-FIX-LAT",
+      "issue": 1,
+      "kind": "amendment",
+      "revisions": [
+        {
+          "actor": {
+            "id": "SYNTHETIC-AGENT",
+            "kind": "agent"
+          },
+          "at": "2000-01-01T00:00:20Z",
+          "basis": [],
+          "data": {
+            "kind": "extraction_correction",
+            "materiality": "material",
+            "prior_exposure": "The fictional initial result had already been used by a claim and requirement.",
+            "reason": "Synthetic rereading finds dropped zero (8 -> 80 ms).",
+            "replacement_refs": [
+              {
+                "id": "EX-LAT",
+                "rev": 2
+              }
+            ],
+            "required_rework": "Reappraise EX-LAT; revise claim and requirement; do not silently retarget.",
+            "status": "applied",
+            "target_refs": [
+              {
+                "id": "EX-LAT",
+                "rev": 1
+              }
+            ],
+            "verification": "The correction or invalidation is stipulated by the synthetic fixture; no real notice or recheck exists."
+          },
+          "factual_status": "synthetic",
+          "rev": 1
+        }
+      ],
+      "schema_version": 1,
+      "synthetic": true
+    }
+  ],
+  "release_claims": [
+    {
+      "id": "CLM-LAT",
+      "rev": 2
+    }
+  ],
+  "release_requirements": [],
+  "research_state": "in_progress",
+  "stage_gates": []
+}

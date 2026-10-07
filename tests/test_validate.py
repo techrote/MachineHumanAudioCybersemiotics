@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import copy
+from contextlib import redirect_stdout
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -10,6 +12,8 @@ import unittest
 from tools.validate import (REPOSITORY, REQUIRED, ValidationError, main,
                             markdown_targets, read_json, validate_programme,
                             validate_repository)
+from tools.evidence_flow import render_exports
+from tools.records import empty_dataset, validate_dataset
 
 
 def example() -> dict:
@@ -125,6 +129,21 @@ class RepositoryTests(unittest.TestCase):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text("# Fixture\n", encoding="utf-8")
         (self.root / "programme.json").write_text(json.dumps(example()), encoding="utf-8")
+        registry = self.root / "research/registry"
+        (registry / "state.json").write_text(json.dumps({
+            **{k: v for k, v in empty_dataset().items() if k != "records"},
+            "record_roots": ["research/registry/records"],
+            "bibliography": "research/registry/bibliography.json",
+            "citation_manifests": [], "exports": "research/registry/generated",
+        }), encoding="utf-8")
+        (registry / "bibliography.json").write_text(
+            '{"schema_version": 1, "entries": []}', encoding="utf-8")
+        generated = registry / "generated"
+        generated.mkdir()
+        empty = empty_dataset()
+        for name, content in render_exports(empty, validate_dataset(
+                empty, expected_kind="live", root=self.root)).items():
+            (generated / name).write_text(content, encoding="utf-8")
 
     def test_valid_repository(self):
         validate_repository(self.root)
@@ -161,6 +180,31 @@ class RepositoryTests(unittest.TestCase):
         with self.assertRaises(ValidationError):
             read_json(path)
 
+    def test_nonstandard_json_numbers_fail_closed(self):
+        path = self.root / "nonfinite.json"
+        for token in ("NaN", "Infinity", "-Infinity", "1e999", "-1e999"):
+            path.write_text('{"value": ' + token + '}', encoding="utf-8")
+            with self.subTest(token=token), self.assertRaises(ValidationError):
+                read_json(path)
+
+    def test_missing_registry_cannot_revert_to_bootstrap_validation(self):
+        (self.root / "research/registry/state.json").unlink()
+        with self.assertRaises(ValidationError):
+            validate_repository(self.root)
+
+    def test_generated_directory_cannot_hide_unvalidated_records(self):
+        (self.root / "research/registry/generated/SRC-HIDDEN.json").write_text(
+            '{"id":"SRC-HIDDEN","kind":"source","revisions":[]}', encoding="utf-8")
+        with self.assertRaisesRegex(ValidationError, "UNEXPECTED_EXPORT"):
+            validate_repository(self.root)
+
+    def test_changed_generated_counts_are_rejected_without_silent_rebuild(self):
+        path = self.root / "research/registry/generated/evidence-flow.csv"
+        path.write_text("measure,count\\npublications,99\\n", encoding="utf-8")
+        with self.assertRaisesRegex(ValidationError, "STALE_EXPORT"):
+            validate_repository(self.root)
+        self.assertIn("99", path.read_text(encoding="utf-8"))
+
     def test_missing_authority(self):
         data = example()
         data["tasks"][0]["docs"] = ["absent.md"]
@@ -170,10 +214,12 @@ class RepositoryTests(unittest.TestCase):
 
     def test_cli_failure_code(self):
         (self.root / "RAG.md").unlink()
-        self.assertEqual(main(["--root", str(self.root)]), 1)
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(main(["--root", str(self.root)]), 1)
 
     def test_cli_success_code(self):
-        self.assertEqual(main(["--root", str(self.root)]), 0)
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(main(["--root", str(self.root)]), 0)
 
     def test_target_extraction(self):
         self.assertEqual(markdown_targets("[local](docs/a.md#section) ![img](img.png)"),
