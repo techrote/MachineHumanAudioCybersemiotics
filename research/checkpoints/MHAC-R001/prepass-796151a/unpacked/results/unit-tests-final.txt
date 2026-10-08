@@ -1,0 +1,77 @@
+OK: bootstrap repository integrity. Scientific validity and research-completion gates are not evaluated.
+test_boolean_is_not_revision (test_records_prepass.RecordTests.test_boolean_is_not_revision) ... ok
+test_changed_claim_does_not_inherit_internal_audit (test_records_prepass.RecordTests.test_changed_claim_does_not_inherit_internal_audit) ... ok
+test_cli_invalid_bounded_finding (test_records_prepass.RecordTests.test_cli_invalid_bounded_finding) ... ok
+test_cli_invalid_class_promotion (test_records_prepass.RecordTests.test_cli_invalid_class_promotion) ... ok
+test_cli_invalid_complete_fixture (test_records_prepass.RecordTests.test_cli_invalid_complete_fixture) ... ok
+test_cli_invalid_cycle (test_records_prepass.RecordTests.test_cli_invalid_cycle) ... ok
+test_cli_invalid_dangling (test_records_prepass.RecordTests.test_cli_invalid_dangling) ... ok
+test_cli_invalid_duplicate_id (test_records_prepass.RecordTests.test_cli_invalid_duplicate_id) ... ok
+test_cli_invalid_empty_complete (test_records_prepass.RecordTests.test_cli_invalid_empty_complete) ... ok
+test_cli_invalid_fake_human (test_records_prepass.RecordTests.test_cli_invalid_fake_human) ... ok
+test_cli_invalid_false_full_extraction (test_records_prepass.RecordTests.test_cli_invalid_false_full_extraction) ... ok
+test_cli_invalid_false_full_reading (test_records_prepass.RecordTests.test_cli_invalid_false_full_reading) ... ok
+test_cli_invalid_fixture_flag (test_records_prepass.RecordTests.test_cli_invalid_fixture_flag) ... ok
+test_cli_invalid_fixture_in_live (test_records_prepass.RecordTests.test_cli_invalid_fixture_in_live) ... ok
+test_cli_invalid_history_delete (test_records_prepass.RecordTests.test_cli_invalid_history_delete) ... ok
+test_cli_invalid_history_rewrite (test_records_prepass.RecordTests.test_cli_invalid_history_rewrite) ... ok
+test_cli_invalid_identity_link (test_records_prepass.RecordTests.test_cli_invalid_identity_link) ... ok
+test_cli_invalid_lifecycle_jump (test_records_prepass.RecordTests.test_cli_invalid_lifecycle_jump) ... ok
+test_cli_invalid_missing_basis (test_records_prepass.RecordTests.test_cli_invalid_missing_basis) ... ok
+test_cli_invalid_n (test_records_prepass.RecordTests.test_cli_invalid_n) ... ok
+test_cli_invalid_no_source_check (test_records_prepass.RecordTests.test_cli_invalid_no_source_check) ... ok
+test_cli_invalid_old_revision_check (test_records_prepass.RecordTests.test_cli_invalid_old_revision_check) ... ok
+test_cli_invalid_reading_source (test_records_prepass.RecordTests.test_cli_invalid_reading_source) ... ok
+test_cli_invalid_reading_status (test_records_prepass.RecordTests.test_cli_invalid_reading_status) ... ok
+test_cli_invalid_source_invalidation_export (test_records_prepass.RecordTests.test_cli_invalid_source_invalidation_export) ... ok
+test_cli_invalid_stale_claim_export (test_records_prepass.RecordTests.test_cli_invalid_stale_claim_export) ... ok
+test_cli_invalid_stale_requirement_export (test_records_prepass.RecordTests.test_cli_invalid_stale_requirement_export) ... ok
+test_cli_invalid_study_count (test_records_prepass.RecordTests.test_cli_invalid_study_count) ... ok
+test_cli_invalid_unit (test_records_prepass.RecordTests.test_cli_invalid_unit) ... ok
+test_cli_invalid_unread_locator (test_records_prepass.RecordTests.test_cli_invalid_unread_locator) ... ok
+test_cli_valid_before (test_records_prepass.RecordTests.test_cli_valid_before) ... ok
+test_cli_valid_corrected (test_records_prepass.RecordTests.test_cli_valid_corrected) ... ok
+test_cli_valid_correction_pending (test_records_prepass.RecordTests.test_cli_valid_correction_pending) ... ok
+test_cli_valid_empty_live (test_records_prepass.RecordTests.test_cli_valid_empty_live) ... ok
+test_cli_valid_source_invalidated (test_records_prepass.RecordTests.test_cli_valid_source_invalidated) ... ok
+test_correction_propagates_without_changing_independent_counts (test_records_prepass.RecordTests.test_correction_propagates_without_changing_independent_counts) ... ok
+test_fixture_rebuild_is_byte_identical (test_records_prepass.RecordTests.test_fixture_rebuild_is_byte_identical) ... ok
+test_full_access_does_not_imply_full_reading (test_records_prepass.RecordTests.test_full_access_does_not_imply_full_reading) ... ok
+test_internal_audit_binds_exact_claim_payload (test_records_prepass.RecordTests.test_internal_audit_binds_exact_claim_payload) ... ok
+test_malformed_json_cli_is_nonzero_machine_readable (test_records_prepass.RecordTests.test_malformed_json_cli_is_nonzero_machine_readable) ... ok
+test_outside_working_directory_cli (test_records_prepass.RecordTests.test_outside_working_directory_cli) ... ok
+test_source_hashes_identify_actual_synthetic_bytes (test_records_prepass.RecordTests.test_source_hashes_identify_actual_synthetic_bytes) ... ok
+test_unrelated_internal_audit_does_not_promote (test_records_prepass.RecordTests.test_unrelated_internal_audit_does_not_promote) ... ok
+test_wrong_extraction_can_pass_structure_before_source_fidelity_check (test_records_prepass.RecordTests.test_wrong_extraction_can_pass_structure_before_source_fidelity_check) ... ok
+test_bad_phase_and_gate_types (test_validate.ProgrammeTests.test_bad_phase_and_gate_types) ... ok
+test_bad_repo (test_validate.ProgrammeTests.test_bad_repo) ... ok
+test_bad_schema (test_validate.ProgrammeTests.test_bad_schema) ... ok
+test_boolean_is_not_issue_number (test_validate.ProgrammeTests.test_boolean_is_not_issue_number) ... ok
+test_cycle (test_validate.ProgrammeTests.test_cycle) ... ok
+test_duplicate_dependency (test_validate.ProgrammeTests.test_duplicate_dependency) ... ok
+test_duplicate_id (test_validate.ProgrammeTests.test_duplicate_id) ... ok
+test_duplicate_issue (test_validate.ProgrammeTests.test_duplicate_issue) ... ok
+test_empty_programme (test_validate.ProgrammeTests.test_empty_programme) ... ok
+test_human_gate_mismatch (test_validate.ProgrammeTests.test_human_gate_mismatch) ... ok
+test_invalid_id (test_validate.ProgrammeTests.test_invalid_id) ... ok
+test_missing_dependency (test_validate.ProgrammeTests.test_missing_dependency) ... ok
+test_missing_docs (test_validate.ProgrammeTests.test_missing_docs) ... ok
+test_self_dependency (test_validate.ProgrammeTests.test_self_dependency) ... ok
+test_valid (test_validate.ProgrammeTests.test_valid) ... ok
+test_broken_local_link (test_validate.RepositoryTests.test_broken_local_link) ... ok
+test_cli_failure_code (test_validate.RepositoryTests.test_cli_failure_code) ... FAIL: Missing required file: RAG.md
+ok
+test_cli_success_code (test_validate.RepositoryTests.test_cli_success_code) ... ok
+test_duplicate_json_key (test_validate.RepositoryTests.test_duplicate_json_key) ... ok
+test_external_links_and_fenced_examples (test_validate.RepositoryTests.test_external_links_and_fenced_examples) ... ok
+test_invalid_json (test_validate.RepositoryTests.test_invalid_json) ... ok
+test_link_escape (test_validate.RepositoryTests.test_link_escape) ... ok
+test_missing_authority (test_validate.RepositoryTests.test_missing_authority) ... ok
+test_missing_required_file (test_validate.RepositoryTests.test_missing_required_file) ... ok
+test_target_extraction (test_validate.RepositoryTests.test_target_extraction) ... ok
+test_valid_repository (test_validate.RepositoryTests.test_valid_repository) ... ok
+
+----------------------------------------------------------------------
+Ran 70 tests in 20.551s
+
+OK

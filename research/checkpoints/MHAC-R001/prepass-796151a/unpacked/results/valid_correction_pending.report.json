@@ -1,0 +1,61 @@
+{
+  "contract": "mhac-r001-prepass/1",
+  "counts": {
+    "experiments": 1,
+    "outcomes": 2,
+    "publications": 2,
+    "samples": 1,
+    "shared_sample_groups": 1,
+    "studies": 1
+  },
+  "dataset_kind": "fixture",
+  "latest_stale_ids": [
+    "AID-CHECK-LAT",
+    "APP-LAT",
+    "CLM-HYP",
+    "CLM-LAT",
+    "REQ-TIMING"
+  ],
+  "not_evaluated": [
+    "source_fidelity",
+    "scientific_validity",
+    "independence_of_real_people",
+    "unknown_between_sample_overlap",
+    "full_search_flow",
+    "research_completion",
+    "all_R001_record_schemas"
+  ],
+  "release_context": "simulation_only",
+  "research_state": "in_progress",
+  "stale_revisions": [
+    {
+      "id": "AID-CHECK-LAT",
+      "rev": 1
+    },
+    {
+      "id": "APP-LAT",
+      "rev": 1
+    },
+    {
+      "id": "CLM-HYP",
+      "rev": 1
+    },
+    {
+      "id": "CLM-LAT",
+      "rev": 1
+    },
+    {
+      "id": "CLM-LAT",
+      "rev": 2
+    },
+    {
+      "id": "EX-LAT",
+      "rev": 1
+    },
+    {
+      "id": "REQ-TIMING",
+      "rev": 1
+    }
+  ],
+  "structural_result": "pass"
+}

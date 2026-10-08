@@ -1,0 +1,119 @@
+{
+  "assessed_commit": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "assessed_tree": "40afaeebb1801fd8adf1417a8da7523bff014d9f",
+  "assessment_date_utc": "2026-10-04",
+  "branches_observed": [
+    "main",
+    "bootstrap/research-programme"
+  ],
+  "files": [
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "aadf65132f52b7792bedea5298bbaad4e687be12",
+      "repository_path": "AGENTS.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/AGENTS.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "f197da25c50c7cd62ffb13e98cfd543a319a5e5e",
+      "repository_path": "RAG.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/RAG.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "5f7bab2ca391d8ac90ce6bd1c762e210783afef4",
+      "repository_path": "docs/PROGRAMME.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/docs/PROGRAMME.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "7f6895a93a83f6f291141051f70a997f084e5eac",
+      "repository_path": "docs/AGENT_RUNBOOK.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/docs/AGENT_RUNBOOK.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "ef36ca2e078d7bb676cf90f5c52a65a5149db68b",
+      "repository_path": "docs/DATA_MODEL.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/docs/DATA_MODEL.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "888d80ef6df5ad20feb9cba8ff0a21c26cd601ad",
+      "repository_path": "docs/VALIDATION.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/docs/VALIDATION.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "c964f41fd9f4eaf64491c97c941ed3c958a3f528",
+      "repository_path": "docs/RESEARCH_INTEGRITY.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/docs/RESEARCH_INTEGRITY.md"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "457e6fa5756891b8f0c08c8dcc925e468d327f89",
+      "repository_path": "research/templates/README.md",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/research/templates/README.md"
+    },
+    {
+      "blob_verified": true,
+      "local_git_blob_sha1": "bfdf22e230bf29a670513e52b9017e7a21bc2204",
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "bfdf22e230bf29a670513e52b9017e7a21bc2204",
+      "repository_path": "tools/validate.py",
+      "retained_local": true,
+      "sha256": "dddc3bbeb193599f5f54bf9349ccbe325ab604a3ebb8ea0a4e613359b26470cf",
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/tools/validate.py"
+    },
+    {
+      "blob_verified": true,
+      "local_git_blob_sha1": "046e0518dab78695436f4fef4931d3b853ad2976",
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "046e0518dab78695436f4fef4931d3b853ad2976",
+      "repository_path": "tests/test_validate.py",
+      "retained_local": true,
+      "sha256": "af0a3555289659c953d39b2b2a37d75e1e69023cfd38ced32aced8acb201760d",
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/tests/test_validate.py"
+    },
+    {
+      "read_scope": "complete text via GitHub connector",
+      "reported_git_blob_sha1": "16932bc8d74b4c4bbbccf86403991df2aae694aa",
+      "repository_path": ".github/workflows/research-ci.yml",
+      "retained_local": false,
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/796151a33ec7a1acc026b239fe5c883312ebf40b/.github/workflows/research-ci.yml"
+    }
+  ],
+  "historical_check": {
+    "check_id": 111438425947,
+    "conclusion": "success",
+    "head_sha": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+    "name": "repository-integrity",
+    "run_id": 37203031661
+  },
+  "issue": {
+    "comment_id": 5980048260,
+    "comments_read": 1,
+    "issue_url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1",
+    "number": 1,
+    "state": "open",
+    "updated_at": "2026-10-04T12:43:38Z"
+  },
+  "limitations": [
+    "Only two source files retained and blob-verified locally; other authority text was read, not retained as exact bytes.",
+    "Direct git clone failed: Could not resolve host: github.com. Connector reads succeeded.",
+    "No full-checkout validation, new remote CI, real source-fidelity review, real evidence or issue completion."
+  ],
+  "open_prs_observed": 0,
+  "registry_present_in_assessed_tree": false,
+  "remote_mutations": [],
+  "repository": "techrote/MachineHumanAudioCybersemiotics",
+  "schemas_present_in_assessed_tree": false
+}

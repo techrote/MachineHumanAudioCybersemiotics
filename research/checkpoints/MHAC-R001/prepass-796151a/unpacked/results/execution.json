@@ -1,0 +1,928 @@
+{
+  "all_expected_results": true,
+  "cases": [
+    {
+      "actual_exit": 0,
+      "case": "valid_before",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/valid_before.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": null,
+      "expected_exit": 0,
+      "matched": true,
+      "report": {
+        "contract": "mhac-r001-prepass/1",
+        "counts": {
+          "experiments": 1,
+          "outcomes": 2,
+          "publications": 2,
+          "samples": 1,
+          "shared_sample_groups": 1,
+          "studies": 1
+        },
+        "dataset_kind": "fixture",
+        "latest_stale_ids": [],
+        "not_evaluated": [
+          "source_fidelity",
+          "scientific_validity",
+          "independence_of_real_people",
+          "unknown_between_sample_overlap",
+          "full_search_flow",
+          "research_completion",
+          "all_R001_record_schemas"
+        ],
+        "release_context": "simulation_only",
+        "research_state": "in_progress",
+        "stale_revisions": [],
+        "structural_result": "pass"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 0,
+      "case": "valid_correction_pending",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/valid_correction_pending.json",
+        "--dataset-kind",
+        "fixture",
+        "--previous",
+        "tests/fixtures/mhac_r001/valid_before.json"
+      ],
+      "expected_code": null,
+      "expected_exit": 0,
+      "matched": true,
+      "report": {
+        "contract": "mhac-r001-prepass/1",
+        "counts": {
+          "experiments": 1,
+          "outcomes": 2,
+          "publications": 2,
+          "samples": 1,
+          "shared_sample_groups": 1,
+          "studies": 1
+        },
+        "dataset_kind": "fixture",
+        "latest_stale_ids": [
+          "AID-CHECK-LAT",
+          "APP-LAT",
+          "CLM-HYP",
+          "CLM-LAT",
+          "REQ-TIMING"
+        ],
+        "not_evaluated": [
+          "source_fidelity",
+          "scientific_validity",
+          "independence_of_real_people",
+          "unknown_between_sample_overlap",
+          "full_search_flow",
+          "research_completion",
+          "all_R001_record_schemas"
+        ],
+        "release_context": "simulation_only",
+        "research_state": "in_progress",
+        "stale_revisions": [
+          {
+            "id": "AID-CHECK-LAT",
+            "rev": 1
+          },
+          {
+            "id": "APP-LAT",
+            "rev": 1
+          },
+          {
+            "id": "CLM-HYP",
+            "rev": 1
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 1
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 2
+          },
+          {
+            "id": "EX-LAT",
+            "rev": 1
+          },
+          {
+            "id": "REQ-TIMING",
+            "rev": 1
+          }
+        ],
+        "structural_result": "pass"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 0,
+      "case": "valid_corrected",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/valid_corrected.json",
+        "--dataset-kind",
+        "fixture",
+        "--previous",
+        "tests/fixtures/mhac_r001/valid_correction_pending.json"
+      ],
+      "expected_code": null,
+      "expected_exit": 0,
+      "matched": true,
+      "report": {
+        "contract": "mhac-r001-prepass/1",
+        "counts": {
+          "experiments": 1,
+          "outcomes": 2,
+          "publications": 2,
+          "samples": 1,
+          "shared_sample_groups": 1,
+          "studies": 1
+        },
+        "dataset_kind": "fixture",
+        "latest_stale_ids": [],
+        "not_evaluated": [
+          "source_fidelity",
+          "scientific_validity",
+          "independence_of_real_people",
+          "unknown_between_sample_overlap",
+          "full_search_flow",
+          "research_completion",
+          "all_R001_record_schemas"
+        ],
+        "release_context": "simulation_only",
+        "research_state": "in_progress",
+        "stale_revisions": [
+          {
+            "id": "AID-CHECK-LAT",
+            "rev": 1
+          },
+          {
+            "id": "APP-LAT",
+            "rev": 1
+          },
+          {
+            "id": "CLM-HYP",
+            "rev": 1
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 1
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 2
+          },
+          {
+            "id": "EX-LAT",
+            "rev": 1
+          },
+          {
+            "id": "REQ-TIMING",
+            "rev": 1
+          }
+        ],
+        "structural_result": "pass"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 0,
+      "case": "valid_source_invalidated",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/valid_source_invalidated.json",
+        "--dataset-kind",
+        "fixture",
+        "--previous",
+        "tests/fixtures/mhac_r001/valid_corrected.json"
+      ],
+      "expected_code": null,
+      "expected_exit": 0,
+      "matched": true,
+      "report": {
+        "contract": "mhac-r001-prepass/1",
+        "counts": {
+          "experiments": 1,
+          "outcomes": 2,
+          "publications": 2,
+          "samples": 1,
+          "shared_sample_groups": 1,
+          "studies": 1
+        },
+        "dataset_kind": "fixture",
+        "latest_stale_ids": [
+          "AID-CHECK-LAT",
+          "AID-READ-A",
+          "APP-LAT",
+          "CLM-HYP",
+          "CLM-LAT",
+          "EX-LAT",
+          "REQ-TIMING",
+          "SRC-A"
+        ],
+        "not_evaluated": [
+          "source_fidelity",
+          "scientific_validity",
+          "independence_of_real_people",
+          "unknown_between_sample_overlap",
+          "full_search_flow",
+          "research_completion",
+          "all_R001_record_schemas"
+        ],
+        "release_context": "simulation_only",
+        "research_state": "in_progress",
+        "stale_revisions": [
+          {
+            "id": "AID-CHECK-LAT",
+            "rev": 1
+          },
+          {
+            "id": "AID-CHECK-LAT",
+            "rev": 2
+          },
+          {
+            "id": "AID-READ-A",
+            "rev": 1
+          },
+          {
+            "id": "APP-LAT",
+            "rev": 1
+          },
+          {
+            "id": "APP-LAT",
+            "rev": 2
+          },
+          {
+            "id": "CLM-HYP",
+            "rev": 1
+          },
+          {
+            "id": "CLM-HYP",
+            "rev": 2
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 1
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 2
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 3
+          },
+          {
+            "id": "CLM-LAT",
+            "rev": 4
+          },
+          {
+            "id": "EX-LAT",
+            "rev": 1
+          },
+          {
+            "id": "EX-LAT",
+            "rev": 2
+          },
+          {
+            "id": "REQ-TIMING",
+            "rev": 1
+          },
+          {
+            "id": "REQ-TIMING",
+            "rev": 2
+          },
+          {
+            "id": "SRC-A",
+            "rev": 1
+          }
+        ],
+        "structural_result": "pass"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 0,
+      "case": "valid_empty_live",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/valid_empty_live.json",
+        "--dataset-kind",
+        "live"
+      ],
+      "expected_code": null,
+      "expected_exit": 0,
+      "matched": true,
+      "report": {
+        "contract": "mhac-r001-prepass/1",
+        "counts": {
+          "experiments": 0,
+          "outcomes": 0,
+          "publications": 0,
+          "samples": 0,
+          "shared_sample_groups": 0,
+          "studies": 0
+        },
+        "dataset_kind": "live",
+        "latest_stale_ids": [],
+        "not_evaluated": [
+          "source_fidelity",
+          "scientific_validity",
+          "independence_of_real_people",
+          "unknown_between_sample_overlap",
+          "full_search_flow",
+          "research_completion",
+          "all_R001_record_schemas"
+        ],
+        "release_context": "live",
+        "research_state": "not_started",
+        "stale_revisions": [],
+        "structural_result": "pass"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_duplicate_id",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_duplicate_id.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "DUPLICATE_ID",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "DUPLICATE_ID: SRC-A",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_dangling",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_dangling.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "DANGLING_REFERENCE",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "DANGLING_REFERENCE: ('SRC-MISSING', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_reading_status",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_reading_status.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "STATUS",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "STATUS: ('AID-READ-B', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_false_full_reading",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_false_full_reading.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "FALSE_FULL_READING",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "FALSE_FULL_READING: ('AID-READ-B', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_unread_locator",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_unread_locator.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "UNREAD_LOCATOR",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "UNREAD_LOCATOR: ('EX-ACC', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_reading_source",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_reading_source.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "READING_SOURCE",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "READING_SOURCE: ('EX-ACC', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_false_full_extraction",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_false_full_extraction.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "FALSE_FULL_EXTRACTION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "FALSE_FULL_EXTRACTION: ('EX-ACC', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_identity_link",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_identity_link.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "IDENTITY_LINK",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "IDENTITY_LINK: ('EX-ACC', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_unit",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_unit.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "OUTCOME_UNIT",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "OUTCOME_UNIT: ('EX-LAT', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_n",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_n.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "OUTCOME_N",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "OUTCOME_N: ('EX-LAT', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_missing_basis",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_missing_basis.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "MISSING_BASIS",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "MISSING_BASIS: ('EX-LAT', 1) omits {'id': 'AID-READ-A', 'rev': 1}",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_cycle",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_cycle.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "DEPENDENCY_CYCLE",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "DEPENDENCY_CYCLE: ('EX-LAT', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_fixture_flag",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_fixture_flag.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "CONTAMINATION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "CONTAMINATION: SRC-A",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_fixture_in_live",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_fixture_in_live.json",
+        "--dataset-kind",
+        "live"
+      ],
+      "expected_code": "CONTAMINATION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "CONTAMINATION: SRC-A",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_class_promotion",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_class_promotion.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "CLASS_PROMOTION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "CLASS_PROMOTION: Create a new claim ID; do not relabel CLM-LAT",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_bounded_finding",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_bounded_finding.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "UNSUPPORTED_FINDING",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "UNSUPPORTED_FINDING: Requires exact appraisal and complete-report coverage in this prototype",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_no_source_check",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_no_source_check.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "UNSUPPORTED_PROMOTION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "UNSUPPORTED_PROMOTION: Missing revision-specific source checks",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_old_revision_check",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_old_revision_check.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "UNSUPPORTED_PROMOTION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "UNSUPPORTED_PROMOTION: Missing revision-specific source checks",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_stale_claim_export",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_stale_claim_export.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "STALE_RELEASE",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "STALE_RELEASE: ('CLM-LAT', 2)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_stale_requirement_export",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_stale_requirement_export.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "STALE_REQUIREMENT",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "STALE_REQUIREMENT: ('REQ-TIMING', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_study_count",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_study_count.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "COUNT_MISMATCH",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "COUNT_MISMATCH: Expected {'publications': 2, 'studies': 1, 'experiments': 1, 'samples': 1, 'outcomes': 2, 'shared_sample_groups': 1}",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_history_rewrite",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_history_rewrite.json",
+        "--dataset-kind",
+        "fixture",
+        "--previous",
+        "tests/fixtures/mhac_r001/valid_before.json"
+      ],
+      "expected_code": "HISTORY",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "HISTORY: Rewrote retained revisions of EX-LAT",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_history_delete",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_history_delete.json",
+        "--dataset-kind",
+        "fixture",
+        "--previous",
+        "tests/fixtures/mhac_r001/valid_before.json"
+      ],
+      "expected_code": "HISTORY",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "HISTORY: Deleted record CLM-HYP",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_fake_human",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_fake_human.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "FALSE_HUMAN_REVIEW",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "FALSE_HUMAN_REVIEW: ('AID-CHECK-LAT', 1)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_source_invalidation_export",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_source_invalidation_export.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "STALE_RELEASE",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "STALE_RELEASE: ('CLM-LAT', 4)",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_empty_complete",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_empty_complete.json",
+        "--dataset-kind",
+        "live"
+      ],
+      "expected_code": "EMPTY_COMPLETION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "EMPTY_COMPLETION: Empty evidence is only valid as not_started",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_complete_fixture",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_complete_fixture.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "COMPLETION_NOT_IMPLEMENTED",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "COMPLETION_NOT_IMPLEMENTED: This prototype cannot grant research completion",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    },
+    {
+      "actual_exit": 1,
+      "case": "invalid_lifecycle_jump",
+      "command": [
+        "python",
+        "-m",
+        "tools.validate_records_prepass",
+        "tests/fixtures/mhac_r001/invalid_lifecycle_jump.json",
+        "--dataset-kind",
+        "fixture"
+      ],
+      "expected_code": "TRANSITION",
+      "expected_exit": 1,
+      "matched": true,
+      "report": {
+        "error": "TRANSITION: CLM-LAT: proposed -> externally_reviewed",
+        "structural_result": "fail"
+      },
+      "stderr": ""
+    }
+  ],
+  "network_required": false,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "scope": "26 retained bootstrap unit tests plus prepass tests; NOT full-checkout validation or CI",
+  "unit_test_exit": 0
+}

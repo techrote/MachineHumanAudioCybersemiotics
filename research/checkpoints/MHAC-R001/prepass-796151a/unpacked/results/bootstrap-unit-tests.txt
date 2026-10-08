@@ -1,0 +1,33 @@
+test_bad_phase_and_gate_types (test_validate.ProgrammeTests.test_bad_phase_and_gate_types) ... ok
+test_bad_repo (test_validate.ProgrammeTests.test_bad_repo) ... ok
+test_bad_schema (test_validate.ProgrammeTests.test_bad_schema) ... ok
+test_boolean_is_not_issue_number (test_validate.ProgrammeTests.test_boolean_is_not_issue_number) ... ok
+test_cycle (test_validate.ProgrammeTests.test_cycle) ... ok
+test_duplicate_dependency (test_validate.ProgrammeTests.test_duplicate_dependency) ... ok
+test_duplicate_id (test_validate.ProgrammeTests.test_duplicate_id) ... ok
+test_duplicate_issue (test_validate.ProgrammeTests.test_duplicate_issue) ... ok
+test_empty_programme (test_validate.ProgrammeTests.test_empty_programme) ... ok
+test_human_gate_mismatch (test_validate.ProgrammeTests.test_human_gate_mismatch) ... ok
+test_invalid_id (test_validate.ProgrammeTests.test_invalid_id) ... ok
+test_missing_dependency (test_validate.ProgrammeTests.test_missing_dependency) ... ok
+test_missing_docs (test_validate.ProgrammeTests.test_missing_docs) ... ok
+test_self_dependency (test_validate.ProgrammeTests.test_self_dependency) ... ok
+test_valid (test_validate.ProgrammeTests.test_valid) ... ok
+test_broken_local_link (test_validate.RepositoryTests.test_broken_local_link) ... ok
+test_cli_failure_code (test_validate.RepositoryTests.test_cli_failure_code) ... FAIL: Missing required file: RAG.md
+ok
+test_cli_success_code (test_validate.RepositoryTests.test_cli_success_code) ... ok
+test_duplicate_json_key (test_validate.RepositoryTests.test_duplicate_json_key) ... ok
+test_external_links_and_fenced_examples (test_validate.RepositoryTests.test_external_links_and_fenced_examples) ... ok
+test_invalid_json (test_validate.RepositoryTests.test_invalid_json) ... ok
+test_link_escape (test_validate.RepositoryTests.test_link_escape) ... ok
+test_missing_authority (test_validate.RepositoryTests.test_missing_authority) ... ok
+test_missing_required_file (test_validate.RepositoryTests.test_missing_required_file) ... ok
+test_target_extraction (test_validate.RepositoryTests.test_target_extraction) ... ok
+test_valid_repository (test_validate.RepositoryTests.test_valid_repository) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.020s
+
+OK
+OK: bootstrap repository integrity. Scientific validity and research-completion gates are not evaluated.

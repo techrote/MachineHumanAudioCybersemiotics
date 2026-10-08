@@ -1,0 +1,86 @@
+{
+  "record_families": [
+    {
+      "family": "Source/publication / SRC",
+      "fields_relationships": "Exact title; author/editor roles; publication date precision; source type; language; edition/version; verified/unverified identifiers with metadata evidence; family/version/alias links; manifestations; metadata, access and rights observations. Reading is derived from AID sessions, not presumed from access.",
+      "lifecycle": "Metadata candidate -> verified/conflict -> resolved revision. Access is a dated observation, not a one-way ladder. Source validity is separate from access."
+    },
+    {
+      "family": "Search run / SRCH",
+      "fields_relationships": "Lane, exact protocol revision, pilot/production/update, platform/interface, query, filters, coverage window, actual run dates, pagination, raw reported count, retrieved hit count, export location/hash, failures and completion boundary.",
+      "lifecycle": "planned -> running -> completed/partial/failed; rerun gets a new run ID, not revised historical hit counts."
+    },
+    {
+      "family": "Search hit / HIT",
+      "fields_relationships": "Search-run pin; original raw record ordinal and metadata; returned identifiers; resolution state; canonical SRC pin or explicit unresolved reason; dedup/adjudication history. Multiple hits may map to one publication.",
+      "lifecycle": "unresolved -> resolved/duplicate/unresolvable; new resolution revision keeps raw occurrence."
+    },
+    {
+      "family": "Screening / SCR",
+      "fields_relationships": "Source pin; stage; rule/protocol revision; decision and reason; actual actor; reading/access references; verification/adjudication; decision supersession. One current decision per source/stage/protocol scope after adjudication.",
+      "lifecycle": "pending -> include/exclude/awaiting_text/uncertain; amend/reopen through new revision, never overwrite. Abstract screening is not full-text screening."
+    },
+    {
+      "family": "Study / STUDY",
+      "fields_relationships": "Source/report links (many-to-many); identity decision and locators; scope; unresolved same-study hypotheses and alias history. Not itself a publication or necessarily an independent sample.",
+      "lifecycle": "unresolved/provisional -> resolved; merge via retained alias, split with amendment and reassignment history."
+    },
+    {
+      "family": "Reported experiment / EXP",
+      "fields_relationships": "Study pin; report-specific experiment label; sample refs; condition keys; assignment/crossover/repeated-measures structure; outcome definitions, contrast/timepoint keys and units.",
+      "lifecycle": "provisional -> extracted -> checked; corrections by new revision. This is an observed literature experiment, NOT an authorized new study protocol."
+    },
+    {
+      "family": "Sample / SAMPLE",
+      "fields_relationships": "Recruitment/cohort identity; population; dates; counts/missingness; sample/subset/shared-control relations and supporting locators; overlap known/unknown. One sample can participate in several experiments/studies. No personal participant IDs in public records.",
+      "lifecycle": "provisional -> checked, with uncertainty retained. Unknown overlap is not independence."
+    },
+    {
+      "family": "Theoretical extraction / TX",
+      "fields_relationships": "Source/manifestation/locator and reading pins; source assertion and definitions; premises; inference; context; objections; separate interpretation; RQ relation and coverage limits.",
+      "lifecycle": "draft -> extracted -> source_checked; disputed/corrected via amendment."
+    },
+    {
+      "family": "Empirical extraction / EX",
+      "fields_relationships": "Experiment/sample/outcome/condition/contrast/timepoint identifiers; source locator for each reported datum; estimate/units/n/dispersion; task/stimuli/training/population; missingness; dependence; reading coverage profile; derivation inputs/formula/version/assumptions where derived.",
+      "lifecycle": "draft -> extracted -> source_checked; old revisions retained, corrections invalidate dependants. Repeated reporting of one outcome is not a new outcome identity."
+    },
+    {
+      "family": "Appraisal / APP",
+      "fields_relationships": "Exact target revision; domain/criterion/tool version; judgment; evidence locators; rationale; assessor; uncertainty. No universal forced scalar score. Multiple domains/assessors may target the same extraction.",
+      "lifecycle": "proposed -> checked/disputed -> revised; an appraisal does not silently follow a corrected target."
+    },
+    {
+      "family": "Claim / CLM",
+      "fields_relationships": "Immutable class; exact statement; typed evidence/argument refs; premises and inference; boundaries; counterarguments; uncertainty; revision criterion; review refs; lifecycle.",
+      "lifecycle": "proposed -> source_checked -> internally_audited -> externally_reviewed; rework can return to proposed/source_checked; superseded/withdrawn terminal except explicit successor."
+    },
+    {
+      "family": "Design requirement / REQ",
+      "fields_relationships": "Requirement class; state/communication scope; exact claim refs; mechanism; conditions; risks; proposed tests; operational variables and rejection/revision criterion.",
+      "lifecycle": "proposed -> specified -> internally_checked; evidence-supported status requires referenced actual results, not protocol readiness. superseded/rejected retained."
+    },
+    {
+      "family": "Experiment protocol / TEST",
+      "fields_relationships": "Hypotheses; estimands; outcomes; manipulations/checks; sampling/randomization; analysis/exclusions; ethics/privacy; readiness/HG refs; prospective versus retrospective exposure.",
+      "lifecycle": "draft -> internally_checked -> readiness_blocked/ready_for_authorized_execution. A prepared or synthetic protocol never becomes a real empirical result."
+    },
+    {
+      "family": "Amendment / AMD",
+      "fields_relationships": "Kind; old/new artifact or rule pins; actual date; reason; prior exposure; affected scope; materiality; required rework; verification/disposition. Derived impact list is rebuilt from graph, not an independently editable truth.",
+      "lifecycle": "proposed -> applied -> verified; rescission/reinstatement needs a later explicit record and new checking."
+    },
+    {
+      "family": "Assistance/review / AID",
+      "fields_relationships": "Discriminator reading, source_check, internal_audit, external_feedback or assistance; actor/tool/model; task/date; exact input/output pins; permitted artifact reference; observed result; actual scope; independence declaration/limits. Reading sessions add manifestation and ranges.",
+      "lifecycle": "planned -> performed/failed; verification is an actual scoped observation, not a record-class promotion."
+    },
+    {
+      "family": "Human gate / HG",
+      "fields_relationships": "Need/reason; remedies tried; owner action; evidence reference; completion signal; stop condition; status; authorized human actor. Private evidence stays in controlled storage; public metadata does not expose it.",
+      "lifecycle": "proposed -> waiting -> satisfied/declined/blocked; reopening requires recorded reason. A model must not manufacture satisfaction."
+    }
+  ],
+  "schema_approach": "versioned stdlib Python schema functions; no JSON Schema compliance claim",
+  "status": "proposed_dictionary_not_executable_schema"
+}

@@ -1,0 +1,233 @@
+[
+  {
+    "code": null,
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_before",
+    "previous": null
+  },
+  {
+    "code": null,
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_correction_pending",
+    "previous": "valid_before"
+  },
+  {
+    "code": null,
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_corrected",
+    "previous": "valid_correction_pending"
+  },
+  {
+    "code": null,
+    "context": "fixture",
+    "exit": 0,
+    "name": "valid_source_invalidated",
+    "previous": "valid_corrected"
+  },
+  {
+    "code": null,
+    "context": "live",
+    "exit": 0,
+    "name": "valid_empty_live",
+    "previous": null
+  },
+  {
+    "code": "DUPLICATE_ID",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_duplicate_id",
+    "previous": null
+  },
+  {
+    "code": "DANGLING_REFERENCE",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_dangling",
+    "previous": null
+  },
+  {
+    "code": "STATUS",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_reading_status",
+    "previous": null
+  },
+  {
+    "code": "FALSE_FULL_READING",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_false_full_reading",
+    "previous": null
+  },
+  {
+    "code": "UNREAD_LOCATOR",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_unread_locator",
+    "previous": null
+  },
+  {
+    "code": "READING_SOURCE",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_reading_source",
+    "previous": null
+  },
+  {
+    "code": "FALSE_FULL_EXTRACTION",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_false_full_extraction",
+    "previous": null
+  },
+  {
+    "code": "IDENTITY_LINK",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_identity_link",
+    "previous": null
+  },
+  {
+    "code": "OUTCOME_UNIT",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_unit",
+    "previous": null
+  },
+  {
+    "code": "OUTCOME_N",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_n",
+    "previous": null
+  },
+  {
+    "code": "MISSING_BASIS",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_missing_basis",
+    "previous": null
+  },
+  {
+    "code": "DEPENDENCY_CYCLE",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_cycle",
+    "previous": null
+  },
+  {
+    "code": "CONTAMINATION",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_fixture_flag",
+    "previous": null
+  },
+  {
+    "code": "CONTAMINATION",
+    "context": "live",
+    "exit": 1,
+    "name": "invalid_fixture_in_live",
+    "previous": null
+  },
+  {
+    "code": "CLASS_PROMOTION",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_class_promotion",
+    "previous": null
+  },
+  {
+    "code": "UNSUPPORTED_FINDING",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_bounded_finding",
+    "previous": null
+  },
+  {
+    "code": "UNSUPPORTED_PROMOTION",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_no_source_check",
+    "previous": null
+  },
+  {
+    "code": "UNSUPPORTED_PROMOTION",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_old_revision_check",
+    "previous": null
+  },
+  {
+    "code": "STALE_RELEASE",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_stale_claim_export",
+    "previous": null
+  },
+  {
+    "code": "STALE_REQUIREMENT",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_stale_requirement_export",
+    "previous": null
+  },
+  {
+    "code": "COUNT_MISMATCH",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_study_count",
+    "previous": null
+  },
+  {
+    "code": "HISTORY",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_history_rewrite",
+    "previous": "valid_before"
+  },
+  {
+    "code": "HISTORY",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_history_delete",
+    "previous": "valid_before"
+  },
+  {
+    "code": "FALSE_HUMAN_REVIEW",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_fake_human",
+    "previous": null
+  },
+  {
+    "code": "STALE_RELEASE",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_source_invalidation_export",
+    "previous": null
+  },
+  {
+    "code": "EMPTY_COMPLETION",
+    "context": "live",
+    "exit": 1,
+    "name": "invalid_empty_complete",
+    "previous": null
+  },
+  {
+    "code": "COMPLETION_NOT_IMPLEMENTED",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_complete_fixture",
+    "previous": null
+  },
+  {
+    "code": "TRANSITION",
+    "context": "fixture",
+    "exit": 1,
+    "name": "invalid_lifecycle_jump",
+    "previous": null
+  }
+]
