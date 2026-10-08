@@ -10,6 +10,7 @@ Foundational research for explicit machine–human audio communication: informat
 |---|---|
 | [RAG.md](RAG.md) | Authority map, reading routes and evidence boundaries. |
 | [Programme](docs/PROGRAMME.md) | Twenty dependency-linked issues, parallel lanes and completion gates. |
+| [Preserved prepasses](docs/PREPASS_CHECKPOINTS.md) | Complete original packets, publication identities and remaining acceptance boundaries. |
 | [KICKOFF.md](KICKOFF.md) | Paste-ready first-task and programme-continuation prompts. |
 | [Agent instructions](AGENTS.md) | Scope, evidence integrity and execution rules. |
 | [Research protocol](docs/RESEARCH_PROTOCOL.md) | Questions, review design and protocol-freeze requirements. |
