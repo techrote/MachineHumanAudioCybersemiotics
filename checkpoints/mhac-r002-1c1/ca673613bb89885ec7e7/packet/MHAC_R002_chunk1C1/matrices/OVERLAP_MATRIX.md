@@ -1,0 +1,30 @@
+# Single-comparator overlap matrix — limited access
+
+[Checkpoint](../CHECKPOINT.md) · [Full CSV](OVERLAP_MATRIX.csv) · [Coverage](COVERAGE_UNKNOWNS.md) · [Redundancy memo](../findings/REDUNDANCY_AND_CANDIDATES.md)
+
+**All substantive overlap classifications remain unassessed.** The matrix preserves the actual six-RQ routing from the verified 1A packet and the provisional decision IDs from the verified final 1B packet. It does not simulate reading unavailable methods/results. The accessible comparator basis is its institutional and author bibliography entry, not a reviewed abstract or manuscript.
+
+| rq | question | observation | project_interpretation | prior_decision_locators | evidence_needed |
+|---|---|---|---|---|---|
+| RQ1 | What does cybersemiotics claim about information, meaning, observers and communication, and how does Brier's account develop? | Question focus differs from the title-declared comparative-alert topic; treatment in the review cannot be checked. | Brier-specific reconstruction may still be redundant with cybersemiotics literature; no new contribution follows from this comparator. | 1B C01–C04/C06–C08; 1A RQ1 | Introduction/theory/discussion plus separately scoped primary Brier sources later |
+| RQ2 | What does it add relative to competing explanations, and where are alternatives stronger or more economical? | Not assessable from the title: no review argument or competing explanation has been inspected. | New terminology alone is not an explanatory advance; semiotic engineering may already address the proposed distinctions. | 1B C03/C05–C08; 1A RQ2 | Comparator discussion and later de Souza primary chapters, with explicit common explanatory target |
+| RQ3 | What is known about comprehension, action, learning, retention and workload for speech and non-speech audio? | Direct title-level overlap: the comparator names auditory icons, earcons, spearcons and speech for brief human–machine alerts. Specific outcomes and eligibility unknown. | A second generic comparison or ranking of these cue families has a strong duplication risk; actual redundancy cannot yet be established. | 1B P03/P04/P06/P07/P09; S06/S09; 1A RQ3 | Complete comparator search/eligibility/outcome/synthesis methods and relevant results/tables |
+| RQ4 | How should source, certainty, hazard, consequence, urgency, persistence and action remain distinct? | The title does not expose certainty, urgency, hazard, source identity, requested action or lifecycle coverage. Do not infer omission. | A narrower extension is only a possibility; the review or its component studies may already address these constructs. | 1B P06/P09/C06 and adaptation certainty distinctions; 1A RQ4 | Comparator construct definitions/discussion; later primary message-semantic/action evidence |
+| RQ5 | Which functions can be retained without performing human emotion, with what trade-offs? | Speech/non-speech labels overlap at title level, but perceived identity, performed emotion and listener affect are unassessed. | Non-speech cannot be equated with perceptually non-human output or absence of affect; preference is not a finding. | 1B P06/P09/P10/C06; 1A RQ5 | Stimulus definitions, outcome measures and discussion; later matched-content human-likeness/affect comparisons |
+| RQ6 | What design contracts and evaluation criteria follow, and what would cause revision? | Whether the comparator supplies design recommendations or revision criteria is unknown. | Restating existing recommendations with new labels or a schema would be repackaging rather than a demonstrated research contribution. | 1B P01/S01/C04/C07; 1A RQ6 | Comparator recommendations and limitations; accepted evidence-to-requirement reasoning and de Souza comparison later |
+
+## Classification result
+
+**Already addressed:** no source-level cells can be certified yet. **Potential narrower extension:** RQ3/RQ4/RQ5 contain candidate distinctions, not verified gaps. **Genuinely different:** RQ1 has a different stated focus from the title, but neither the review's full scope nor novelty across other literature is established. **Cannot yet assess:** all substantive cells await the comparator body.
+
+The RQ3 title-level match is positive evidence of a topic-overlap risk, not evidence of a particular outcome result. By contrast, a term missing from an article title is not evidence that the article did not cover it. Search previews and prior project preference do not fill missing cells.
+
+## Prior methodological decisions carried forward
+
+P01/S01 keep reporting guidance separate from conduct and quality. P03/S09 keep reports, studies and samples distinct. P06 keeps outcome definitions and changes visible; P09 separates evidence certainty from message confidence/urgency. S10 and C04 make the project-specific search-rationale and exact-locator requirements explicit adaptations. C06/C07 prevent conflating source argument, our interpretation, a design hypothesis and interpretive reproducibility. These are **reused 1B findings, not newly reread or independently validated anchors**.
+
+No eligibility, codebook, search string, synthesis rule or protocol amendment was applied. If later reading motivates change, use the 1B change-impact distinctions: eligibility/search changes may require backfill/rescreening; extraction changes may require recoding; analysis changes may require reanalysis. None happens merely because a candidate contribution is attractive.
+
+## Source and packet locators
+
+Comparator metadata: [institutional entry](https://www.lafayette.edu/our-faculty/people/michael-a-nees/) and [author RECENT entry](https://michael-nees.squarespace.com/publications). Prior matrices are preserved as exact copies in [1A RQ CSV](../prior_material/1A/matrices/RQ_METHOD_MATRIX.csv) and [1B decision CSV](../prior_material/1B/matrices/SOURCE_TO_DECISION.csv). Full prior notes, including the adaptation memo, remain inside the unchanged embedded 1B ZIP, which contains the unchanged 1A ZIP.

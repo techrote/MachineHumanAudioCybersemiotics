@@ -1,0 +1,37 @@
+[
+  {
+    "packet": "1A",
+    "original_member": "MHAC_R002_chunk1A/matrices/RQ_METHOD_MATRIX.csv",
+    "local_copy": "prior_material/1A/matrices/RQ_METHOD_MATRIX.csv",
+    "sha256": "156683fee04284f39d71401f66c9131c18d345ddd0a02e37c98a29e8a6835d53",
+    "byte_equal": true
+  },
+  {
+    "packet": "1A",
+    "original_member": "MHAC_R002_chunk1A/matrices/RECORD_AVAILABILITY.csv",
+    "local_copy": "prior_material/1A/matrices/RECORD_AVAILABILITY.csv",
+    "sha256": "c06218a724d2a0b8a8f35619e68955bb085949fca54f53a7e13dc36f0cca6447",
+    "byte_equal": true
+  },
+  {
+    "packet": "1B",
+    "original_member": "MHAC_R002_chunk1B/matrices/SOURCE_TO_DECISION.csv",
+    "local_copy": "prior_material/1B/matrices/SOURCE_TO_DECISION.csv",
+    "sha256": "2a4435664a2049051bb0fdd7664c3f2accf63cef5f6fab3a11fc345e949137ca",
+    "byte_equal": true
+  },
+  {
+    "packet": "1B",
+    "original_member": "MHAC_R002_chunk1B/matrices/DEFERRED_GUIDANCE.csv",
+    "local_copy": "prior_material/1B/matrices/DEFERRED_GUIDANCE.csv",
+    "sha256": "4be6ab52e8f18c03cb114658ef936d63dec9cc3c3ecb107dd77c88e5950a880d",
+    "byte_equal": true
+  },
+  {
+    "packet": "1B",
+    "original_member": "MHAC_R002_chunk1B/provenance/READING_COVERAGE.csv",
+    "local_copy": "prior_material/1B/provenance/READING_COVERAGE.csv",
+    "sha256": "093e3316a78cdc3515745d4c44ba8ff8f109c286bff7dca64a57c6f9f5b0ae3b",
+    "byte_equal": true
+  }
+]

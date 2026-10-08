@@ -1,0 +1,68 @@
+{
+  "observation_kind": "Normalized notes of complete returned connector responses; not raw API export or atomic snapshot",
+  "main": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "historical_bootstrap_head": "131996f6ff8ef9337873f673cb9e6fbf76488053",
+  "branches": [
+    {
+      "name": "main",
+      "sha": "796151a33ec7a1acc026b239fe5c883312ebf40b"
+    },
+    {
+      "name": "bootstrap/research-programme",
+      "sha": "131996f6ff8ef9337873f673cb9e6fbf76488053"
+    }
+  ],
+  "issue_delta_since": "2026-10-04T15:53:27Z",
+  "issue_delta_all_states": [],
+  "issue_delta_pagination": "first page, per_page=100; zero entries returned",
+  "open_prs": [],
+  "open_pr_pagination": "first page, per_page=100; zero entries returned",
+  "direct_issue_bodies_comments_refetched": false,
+  "ci_refetched": false,
+  "ownership_announced": false,
+  "scope": "No relevant published change visible; inherited acceptance assessment retained, not freshly re-audited.",
+  "sources": [
+    {
+      "url": "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/branches?per_page=100",
+      "tool_ref": "turn48file0"
+    },
+    {
+      "url": "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/issues?state=all&since=2026-10-04T15:53:27Z&per_page=100",
+      "tool_ref": "turn49file0"
+    },
+    {
+      "url": "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/pulls?state=open&per_page=100",
+      "tool_ref": "turn55file0"
+    }
+  ],
+  "authority_files": [
+    {
+      "path": "AGENTS.md",
+      "git_blob_sha": "aadf65132f52b7792bedea5298bbaad4e687be12",
+      "tool_ref": "turn50file0"
+    },
+    {
+      "path": "docs/AGENT_RUNBOOK.md",
+      "git_blob_sha": "7f6895a93a83f6f291141051f70a997f084e5eac",
+      "tool_ref": "turn51file0"
+    },
+    {
+      "path": "docs/SEED_SOURCES.md",
+      "git_blob_sha": "905aa3938bad2effcceb3391158a581b5c5c89ba",
+      "tool_ref": "turn52file0"
+    },
+    {
+      "path": "docs/SEARCH_STRATEGY.md",
+      "git_blob_sha": "b14275246f8e291faeef246129ad38f2c264952c",
+      "tool_ref": "turn53file0"
+    },
+    {
+      "path": "docs/RESEARCH_PROTOCOL.md",
+      "git_blob_sha": "b180fcff00cc7a3cf5abdf3ae3211d28d814e47e",
+      "tool_ref": "turn54file0"
+    }
+  ],
+  "time_note": "Observed during this chunk; per-tool UTC times were not separately captured. Session command timestamps are retained.",
+  "complete_git_tree": false,
+  "unpublished_workers": "unknown"
+}

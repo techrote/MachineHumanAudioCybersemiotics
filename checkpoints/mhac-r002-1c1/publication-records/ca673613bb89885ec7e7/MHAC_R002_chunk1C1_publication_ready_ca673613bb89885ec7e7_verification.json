@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "package_status": "LOCAL_CHECKPOINT_READY",
+  "zip_filename": "MHAC_R002_chunk1C1_publication_ready_ca673613bb89885ec7e7.zip",
+  "zip_bytes": 1084190,
+  "zip_sha256": "90244465f1fe18ecc6b5ac27201836a068cf0938e094553817c7ebd51a3d1119",
+  "zip_members": 65,
+  "zip_crc_all_pass": true,
+  "zip_member_bytes_equal_prepared_files": true,
+  "verification_after_actual_zip_extraction": {
+    "status": "PASS",
+    "scope": "Offline archive/Git transport integrity only; not research acceptance or remote publication.",
+    "outer_files_hashed": 64,
+    "saved_files": 49,
+    "historical_files": 41,
+    "historical_manifest_hashes": 112,
+    "bundle_sha256": "4bf56d8cad4157f902b48484b606dfad635ff304acd1be7eaab8251b678f28f6",
+    "commit": "3ae79ab787f9ea0fbd13d41e0fbfc8022e92b252",
+    "git_base_prerequisite": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+    "remote_writes": 0,
+    "research_code_executed": false,
+    "git_verification": {
+      "bundle_import": "PASS",
+      "saved_blobs_byte_verified": 49,
+      "unchanged_original_source_identities": 27,
+      "changes_outside_checkpoint": 0,
+      "verification_fixture": "Exact base commit/tree metadata only; no full source checkout or source-history fsck."
+    }
+  },
+  "bundle_sha256": "4bf56d8cad4157f902b48484b606dfad635ff304acd1be7eaab8251b678f28f6",
+  "local_commit": "3ae79ab787f9ea0fbd13d41e0fbfc8022e92b252",
+  "branch_for_later_publication": "checkpoint/mhac-r002-1c1-ca673613bb89885ec7e7",
+  "saved_directory": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7",
+  "remote_writes": 0,
+  "remote_checkpoint_publication_performed": false,
+  "research_status": "PARTIAL"
+}

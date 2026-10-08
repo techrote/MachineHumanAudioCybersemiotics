@@ -1,0 +1,50 @@
+{
+  "scope": "Current preservation/transport checks only. Not scientific validation or a rerun of historical tests.",
+  "archives": [
+    {
+      "packet": "1C1",
+      "archive_sha256": "81d87fb306d542aa2013b25c05776088838ee7de5ab14726d9d25e57991439fc",
+      "archive_bytes": 283668,
+      "members": 37,
+      "manifest_records_verified": 36,
+      "manifest_sha256": "b0784da3a55b9d985d98e70a2643ef1e7181635282746e830554a0b157b3572c",
+      "exact_inventory": true,
+      "crc_all_pass": true,
+      "all_manifest_hashes_match": true
+    },
+    {
+      "packet": "1B",
+      "archive_sha256": "d2c89ead12ab89e4bb551d4dbb4ff3cfeacbc1b2f7a3490399e22faf56e5176f",
+      "archive_bytes": 219338,
+      "members": 33,
+      "manifest_records_verified": 32,
+      "manifest_sha256": "7bfe51b5e905c7eeebdf9eed7ab38cb049631ca180fc739565f12cd269a50e10",
+      "exact_inventory": true,
+      "crc_all_pass": true,
+      "all_manifest_hashes_match": true
+    },
+    {
+      "packet": "1A",
+      "archive_sha256": "d515cbebf715bb3f4473663b10217ba61b7770f607f7849ec8f9fe667fac63da",
+      "archive_bytes": 129557,
+      "members": 45,
+      "manifest_records_verified": 44,
+      "manifest_sha256": "16b147a5c19ca26db38824f500a6b666280002f7954dbe62f3460043c2c27771",
+      "exact_inventory": true,
+      "crc_all_pass": true,
+      "all_manifest_hashes_match": true
+    }
+  ],
+  "all_three_receipts_agree": true,
+  "standalone_checkpoint_byte_identical": true,
+  "selected_prior_csv_copies_byte_identical": 5,
+  "source_base_agreement": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "receipt_git_blob_sha1": "8003ae1cb475c85bb46322be2ac9c549c56a0ca7",
+  "decoded_text_members_including_nested_packets": 113,
+  "known_secret_pattern_hits": [],
+  "privacy_review_limit": "Inventory and common-key-pattern screening, not an exhaustive security audit. Archives contain project notes, scripts, manifests and nested packets; no primary comparator text is present.",
+  "research_tests_executed": 0,
+  "archived_scripts_executed": 0,
+  "source_retrieval_retries": 0,
+  "new_research_evidence_generated": false
+}

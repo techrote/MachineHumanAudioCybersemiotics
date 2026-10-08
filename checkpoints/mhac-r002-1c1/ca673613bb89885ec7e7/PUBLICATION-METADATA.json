@@ -1,0 +1,32 @@
+{
+  "repository": "techrote/MachineHumanAudioCybersemiotics",
+  "source_chat": "MHAC-1A-Establish MHAC Scope",
+  "chunk": "MHAC-R002 / 1C1",
+  "publication_kind": "Local checkpoint preparation, not remote publication or research acceptance",
+  "assessed_source_commit": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "source_root_tree": "40afaeebb1801fd8adf1417a8da7523bff014d9f",
+  "payload_id": "ca673613bb89885ec7e7",
+  "payload_id_derivation": "First 20 lowercase hex digits of SHA-256 of ORIGINAL-PAYLOAD.sha256; records sorted by UTF-8 relative path; exact hash + two spaces + path + LF. Publication metadata is excluded to prevent recursion and timestamp-dependent identity.",
+  "payload_identity_sha256": "ca673613bb89885ec7e754fb2677714f77331bb62b478099470946d3e1ee5864",
+  "proposed_branch": "checkpoint/mhac-r002-1c1-ca673613bb89885ec7e7",
+  "saved_directory": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7",
+  "bundle_is_incremental": true,
+  "required_existing_git_commit": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "substantive_status": "PARTIAL",
+  "primary_comparator_sections_read_historically": 0,
+  "research_tests_run_in_1C1_historically": 0,
+  "research_tests_run_during_this_preparation": 0,
+  "remote_writes_during_this_preparation": 0,
+  "protocol_frozen": false,
+  "research_accepted": false,
+  "historical_orphan_receipt_blob": "8003ae1cb475c85bb46322be2ac9c549c56a0ca7",
+  "historical_input_files": 41,
+  "prepared_utc": "2026-10-04T19:43:01.262839+00:00",
+  "exclusions": [],
+  "retained_prior_packets": [
+    "1B",
+    "1A (nested inside 1B)"
+  ],
+  "missing_input_for_future_research": "Lawful readable comparator full text. Not a missing checkpoint artifact.",
+  "remaining_publication_action": "Reconcile live destination; import this incremental bundle into an isolated repository that already contains the exact base; verify locally; create only the named non-default branch with no force; read back remote ref/tree/blobs. Stop on write restriction. No research, PR, merge, issue, queue or workflow mutation."
+}

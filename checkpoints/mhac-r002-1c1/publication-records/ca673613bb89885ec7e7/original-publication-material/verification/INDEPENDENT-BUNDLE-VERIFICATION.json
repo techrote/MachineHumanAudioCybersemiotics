@@ -1,0 +1,372 @@
+{
+  "status": "PASS",
+  "scope": "Incremental bundle format, contained Git objects, exact additive tree and checkpoint bytes after isolated local unbundle. Not remote reachability, scientific validity or full prerequisite repository validation.",
+  "bundle_verify": {
+    "exit_code": 0,
+    "stdout": "The bundle contains this ref:\n3ae79ab787f9ea0fbd13d41e0fbfc8022e92b252 refs/heads/checkpoint/mhac-r002-1c1-ca673613bb89885ec7e7\nThe bundle requires this ref:\n796151a33ec7a1acc026b239fe5c883312ebf40b \nThe bundle uses this hash algorithm: sha1\n",
+    "stderr": "/mnt/data/mhac_1c1_publication_build/package/MHAC_R002_chunk1C1_publication.bundle is okay\n"
+  },
+  "independent_unbundle": {
+    "exit_code": 0,
+    "stdout": "3ae79ab787f9ea0fbd13d41e0fbfc8022e92b252 refs/heads/checkpoint/mhac-r002-1c1-ca673613bb89885ec7e7\n"
+  },
+  "verify_pack_exit_code": 0,
+  "packed_objects_verified": 71,
+  "source_commit_metadata_git_identity_verified": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "source_root_tree_identity_verified": "40afaeebb1801fd8adf1417a8da7523bff014d9f",
+  "base_source_path_mode_blob_identities_retained": 27,
+  "added_checkpoint_files": 49,
+  "changes_outside_checkpoint": 0,
+  "single_parent_confirmed": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "local_commit": "3ae79ab787f9ea0fbd13d41e0fbfc8022e92b252",
+  "files": [
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/.gitattributes",
+      "bytes": 28,
+      "sha256": "e23e4221d9e8826b1bd286adaae4a884edb9ff6da67b43231b133de69ea85ef2",
+      "git_blob_sha1": "9c095a272292d8f037ba272f0f52bb5b12feea5b",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/ORIGINAL-PAYLOAD.sha256",
+      "bytes": 5072,
+      "sha256": "ca673613bb89885ec7e754fb2677714f77331bb62b478099470946d3e1ee5864",
+      "git_blob_sha1": "f617c0ef307eeb606155cebf59ba479cfb84afab",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/PREPUBLICATION-VERIFICATION.json",
+      "bytes": 2096,
+      "sha256": "575496eae488204dab1ba59f4cb62ebb603951d805746861fdc2e956e5142004",
+      "git_blob_sha1": "af607f54238e4ff554fe3a854298a510215c4313",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/PUBLICATION-METADATA.json",
+      "bytes": 2051,
+      "sha256": "3e36ff5f2c6f769e68bcd1135b90598a22cc29a619afed5c1a0ee92d6724de4d",
+      "git_blob_sha1": "55141f1b5655c96b0c814fc9093335c644d26c1d",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/RESTORE-MAP.json",
+      "bytes": 14595,
+      "sha256": "587abe85dce3fa30ee63c5e7a60aee90716bfc2dde0a8ea9036ad94f430808e8",
+      "git_blob_sha1": "43bd79db9d0d34abc3bf24444c6c749c93297615",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/SAVE-README.md",
+      "bytes": 6847,
+      "sha256": "2542299461deff711ee4fc98d1d218f600358fc04bde2d32569e566d42c3167d",
+      "git_blob_sha1": "61f1786f293f502cdbfdb89c76c1c859ab207c15",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/SAVED-PAYLOAD.sha256",
+      "bytes": 5694,
+      "sha256": "241cdcb47b7e15aa8a866eb9a896da332b928daeb9d60bcde1f0a597c8554e84",
+      "git_blob_sha1": "9f2a78301f8b1d87097e388f094043d1f77e5197",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/SOURCE-BASE-VERIFICATION.json",
+      "bytes": 940,
+      "sha256": "bac50a45e145c10ee1a34f6acd435e2bb8542441a4c9ac3602a61e3ec183f906",
+      "git_blob_sha1": "fb8441891a334326c81336da1a8ad5b85c75e2c1",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/history/MHAC_1C1_PUBLICATION_PROGRESS_2026-10-04.md",
+      "bytes": 6171,
+      "sha256": "65a26aa61d0f02468111aa6621a1fe14e282a00225d020b0233c8cd3fbe53936",
+      "git_blob_sha1": "bab3270f72f55557ebfe1c1143246e11e5f1c1c6",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/originals/CHECKPOINT.md",
+      "bytes": 8673,
+      "sha256": "cb59cbbcb6cc8f92ffc1599a7d33e5d9c9fe535f7bfd85aa722042471688abc1",
+      "git_blob_sha1": "d1e9324eb9d09f02750fb2351f66873df5cf54f0",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/originals/MHAC_R002_chunk1C1_archive_verification.json",
+      "bytes": 2038,
+      "sha256": "52f2efd4ee7eb72099ff03e46fb9690419cfd71126724bcf99d98e7befc6f953",
+      "git_blob_sha1": "8003ae1cb475c85bb46322be2ac9c549c56a0ca7",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/originals/MHAC_R002_chunk1C1_packet_2026-10-04.zip",
+      "bytes": 283668,
+      "sha256": "81d87fb306d542aa2013b25c05776088838ee7de5ab14726d9d25e57991439fc",
+      "git_blob_sha1": "5c97a8644a016a4fa44361fc7810b328cfe3c2a5",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/CHECKPOINT.md",
+      "bytes": 8673,
+      "sha256": "cb59cbbcb6cc8f92ffc1599a7d33e5d9c9fe535f7bfd85aa722042471688abc1",
+      "git_blob_sha1": "d1e9324eb9d09f02750fb2351f66873df5cf54f0",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/README.md",
+      "bytes": 4123,
+      "sha256": "96a72186fc5dde625cb9e4992e9227f7d47414f054fc99d89f4bf7719b25f37e",
+      "git_blob_sha1": "22beaa9858ed18b9b7fe553c6681b30e86f68a21",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/SHA256SUMS",
+      "bytes": 3587,
+      "sha256": "b0784da3a55b9d985d98e70a2643ef1e7181635282746e830554a0b157b3572c",
+      "git_blob_sha1": "eb2082f7ad6e6f1e45efc714b88f207345c1fd62",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/SOURCE_AUTHORITY_MANIFEST.csv",
+      "bytes": 5969,
+      "sha256": "1e4d6671f61e683418f72678f228ca4dd6dff1ce99eb424a4fc0bed5597c0a9b",
+      "git_blob_sha1": "c03367537d218dbbc81ebecdf91694f90bc3ddcc",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/findings/ACCESS_BOUNDARY.md",
+      "bytes": 1136,
+      "sha256": "993368031bc2300c6fdaa93405a0d9fa6f76f396bdeb78482643a99ffbb6a224",
+      "git_blob_sha1": "ee41505ab47e4c8bfa363114897b3b8bf0e743e9",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/findings/ENTRY_RECONCILIATION.md",
+      "bytes": 3311,
+      "sha256": "da118143dbe8aadd52925483f86ce124a16eacf8d9df93fa167860472e6fed71",
+      "git_blob_sha1": "a2e849b516ba7388e2f08acead42ced07a7c0164",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/findings/NEXT_COMPARISON_INPUTS.md",
+      "bytes": 3424,
+      "sha256": "026e98a68eaf22a060ac81ba534bfa796a00154d1f9c00ccc0610b80888e2035",
+      "git_blob_sha1": "1ae17096493a7ec39733a4ac7498b06720ae1ebc",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/findings/REDUNDANCY_AND_CANDIDATES.md",
+      "bytes": 4755,
+      "sha256": "ff243bf9ed8d2581f5fd521c6253f24b081a937ffc9168c34623ca3d66b63512",
+      "git_blob_sha1": "4294385ff3dc676449a7007d891c5f2f0e4f2768",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/inputs/MHAC_R002_chunk1B_archive_verification.json",
+      "bytes": 1455,
+      "sha256": "5a399c07a7a8b18fa9557f7bfdee7bb1f43e81c8f43fc99c3c4f043b8092101f",
+      "git_blob_sha1": "3513274e6d2cd999ffb7da3aa5a59659985ff767",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/inputs/MHAC_R002_chunk1B_packet_2026-10-04.zip",
+      "bytes": 219338,
+      "sha256": "d2c89ead12ab89e4bb551d4dbb4ff3cfeacbc1b2f7a3490399e22faf56e5176f",
+      "git_blob_sha1": "b510f00cd2add912d44f33b6b86efdc36a82188a",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/logs/COMMANDS_AND_RESULTS.md",
+      "bytes": 6146,
+      "sha256": "51dc4637342c767448c3bbfb36e4188224e5d11bc1b128ec5c6efe6afcbfcc83",
+      "git_blob_sha1": "d6e5063e3d3578f86db8e4935328390dc8f14f06",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/logs/CONTENT_REVIEW.md",
+      "bytes": 1838,
+      "sha256": "8b845a707a0ec74e0a676c394296a15f999b9d1e012931d37868cb1430804bca",
+      "git_blob_sha1": "d3f9aac91bf64b1ec9df591ca0b21fb1343317b6",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/matrices/CANDIDATE_QUESTIONS.csv",
+      "bytes": 2701,
+      "sha256": "1ce45e3fb07378f7fe6e8720d53988bae381bdf64d27ea2c5d090cda43786c7e",
+      "git_blob_sha1": "36795397f28aa0fc9b46b26bf89e88c12bd9953a",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/matrices/COVERAGE_UNKNOWNS.csv",
+      "bytes": 4408,
+      "sha256": "caba472d0f5edd5ceee190f930cebaacb10f540b66532b7f370950e96aa0954c",
+      "git_blob_sha1": "86e4fa0bf60e1ecfae9fc5abbff53bf873725892",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/matrices/COVERAGE_UNKNOWNS.md",
+      "bytes": 4695,
+      "sha256": "81511ab9461eb20e7c619b6154aae4e0a28ae9ce0253b4dcdb7d8c49271224b8",
+      "git_blob_sha1": "6ae57fc1ba07ed618f633ceb9d2ebc19710843d7",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/matrices/OVERLAP_MATRIX.csv",
+      "bytes": 5517,
+      "sha256": "c0cd7891a48fe68299b647a6cd310fda5633f5d5f47282c8d35384c08ed6f023",
+      "git_blob_sha1": "e01ac93a4510f4ebf8b264492109a77e9aed0564",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/matrices/OVERLAP_MATRIX.md",
+      "bytes": 5985,
+      "sha256": "27c536850fc024ebfcb6c4a3dcc618a6952a1a2a15fa620cc84cf53d5ace7f32",
+      "git_blob_sha1": "95c2f3c3aa76b29bcdd705314dbe7b3444962193",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/prior_material/1A/matrices/RECORD_AVAILABILITY.csv",
+      "bytes": 7721,
+      "sha256": "c06218a724d2a0b8a8f35619e68955bb085949fca54f53a7e13dc36f0cca6447",
+      "git_blob_sha1": "fd796c3b261d9439d188b67c47722fc289338347",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/prior_material/1A/matrices/RQ_METHOD_MATRIX.csv",
+      "bytes": 9798,
+      "sha256": "156683fee04284f39d71401f66c9131c18d345ddd0a02e37c98a29e8a6835d53",
+      "git_blob_sha1": "38fdff35fcb1863bd969645c49810c986540a816",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/prior_material/1B/matrices/DEFERRED_GUIDANCE.csv",
+      "bytes": 4441,
+      "sha256": "4be6ab52e8f18c03cb114658ef936d63dec9cc3c3ecb107dd77c88e5950a880d",
+      "git_blob_sha1": "cc5ca26f8a785f86966ba63274fdc50cb6820efb",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/prior_material/1B/matrices/SOURCE_TO_DECISION.csv",
+      "bytes": 21092,
+      "sha256": "2a4435664a2049051bb0fdd7664c3f2accf63cef5f6fab3a11fc345e949137ca",
+      "git_blob_sha1": "e7aaf8f6b227cea9e87e993c2523c126adb7c3b5",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/prior_material/1B/provenance/READING_COVERAGE.csv",
+      "bytes": 2307,
+      "sha256": "093e3316a78cdc3515745d4c44ba8ff8f109c286bff7dca64a57c6f9f5b0ae3b",
+      "git_blob_sha1": "9d64980bc0a8a8551dadd6e82b681e4490d6a808",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/ACCESS_BUDGET.json",
+      "bytes": 750,
+      "sha256": "32aa51f49a4304b8173ba5a27786790eb3567019702abf84c089c5b5e08a8f36",
+      "git_blob_sha1": "bf9572db2b879574913eacc58eeba00d83d9a83b",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/ACCESS_LEDGER.csv",
+      "bytes": 2743,
+      "sha256": "70c77a0597c77a8d8027a9603e18961ed7df949232b47f5a3ff107a7216445b5",
+      "git_blob_sha1": "3361357b8358e610381d5fff54ae641c0742975f",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/ASSISTANCE_AND_LIMITS.json",
+      "bytes": 1248,
+      "sha256": "4034cd8d6ee60ca46fa3c56efebb24fc3439e472510a5f1d5051e5082653c45d",
+      "git_blob_sha1": "66dd3e5dd0b97681ff92645d92dfc23845508807",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/INPUT_HASH_VERIFICATION.json",
+      "bytes": 801,
+      "sha256": "e248ac1fe6463b0ab4433b1dce108c1a5bb8d0c560612c1ef769041297a57c54",
+      "git_blob_sha1": "fbe25245f64e8fc9c25b642414581d227c92c82a",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/INPUT_IDENTITY_CHECK.json",
+      "bytes": 214,
+      "sha256": "0e7ccebe74eeb8969b944218ece41c84ac13b0aa5c8dc4a000b3d91690d8b02c",
+      "git_blob_sha1": "5edfb25a50907eedcabfb3505b59fbac77b968f2",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/PRIOR_COPY_IDENTITIES.json",
+      "bytes": 1404,
+      "sha256": "143e7ff694fc79845593961fcdf1eaf9bb9f860913d7962803e908297cdf710b",
+      "git_blob_sha1": "4345f6635c63f63d38980ba02de32356bdeb60c6",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/READING_COVERAGE.csv",
+      "bytes": 1352,
+      "sha256": "84a02f9c7a33a11d88cf23cdbee97bff9589064eb88e68173d87fba94d56be13",
+      "git_blob_sha1": "3efdbc1ed14a5f5d8581499c89dd27ebcf4cc23a",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/READING_COVERAGE.md",
+      "bytes": 1629,
+      "sha256": "b0e6f39cf7ee2bfca13bd62a334e598c71e64bc63d52d99e1480e9cf0f73d1e5",
+      "git_blob_sha1": "a0046bcf0b53ce9851725d8d15df46b65a0da6f5",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/REMOTE_REFRESH.json",
+      "bytes": 2450,
+      "sha256": "e9d2d7e0f26105c5f66e4a2efb7a409e7f0553df7bf3eb9c542d1bf6eb531375",
+      "git_blob_sha1": "ba248010faba1f9e022e37064b072a93319df0f6",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/provenance/SESSION_START.json",
+      "bytes": 110,
+      "sha256": "f629cac76bb087e5d96592545eaf92d82a477a84f25c73ca19d7f9e68d8c60ef",
+      "git_blob_sha1": "dc2ccb4e2621fc23e32f3d2392ba0fd80e4b0cc4",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/readings/COMPARATOR_IDENTITY.json",
+      "bytes": 2389,
+      "sha256": "54dec1512c9298d94958e006968f0cf3bd1fdf2e5059abd61612463eca2fb70c",
+      "git_blob_sha1": "77b1b6ef39f46ba24aabf055bab617b121031da5",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/readings/NEES_LIEBMAN_2023.md",
+      "bytes": 4386,
+      "sha256": "b3bd838c7a475602cdc85ef8d95f87889fea5c535a98137253c5211b4d711fbe",
+      "git_blob_sha1": "bd726c598b90d20ac543dcb4e774d3401693abcb",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/scripts/package_packet.py",
+      "bytes": 3047,
+      "sha256": "f951911248a1138d2e8ee51cd153a88cf76928d6ccfa1e7ebf0267eadce45710",
+      "git_blob_sha1": "c73bc15d9edfa5bceffdd7f113116ab4fab7d5c7",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/scripts/verify_inputs.py",
+      "bytes": 1698,
+      "sha256": "968d919f9ec0a6b628bdbadaf893619cd105abbf6be897b97544a08d7e709ee6",
+      "git_blob_sha1": "0c4e7c9c3104688f6132fd44fe9894257abeeba5",
+      "imported_bytes_match": true
+    },
+    {
+      "path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/packet/MHAC_R002_chunk1C1/scripts/verify_packet.py",
+      "bytes": 5420,
+      "sha256": "7652e411e5b6c9c3f4e5ead15d436eadaac6542ea4e81f28e128f7c75d8d21e8",
+      "git_blob_sha1": "aa5dfd575721d926b93e96d0ba59bc18673c0af8",
+      "imported_bytes_match": true
+    }
+  ],
+  "external_base_prerequisite": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "prerequisite_source_blob_bytes_not_bundled": true,
+  "full_repository_fsck_claimed": false,
+  "research_tests_run": 0,
+  "remote_writes": 0
+}

@@ -1,0 +1,27 @@
+{
+  "task": "MHAC-R002 chunk1C1 first comparator overlap audit",
+  "status": "PARTIAL",
+  "actor": "ChatGPT assistant; no independent human reviewer",
+  "tools_used": [
+    "GitHub connector read actions",
+    "web open/click/search",
+    "container CPU-only Python/file operations"
+  ],
+  "subagents_used": false,
+  "prior_exposure": "Actual1A/1B packets, their reported three-anchor findings, repository instructions, project preference; incidental comparator search-preview text encountered but not accepted as primary reading.",
+  "primary_comparator_body_read": false,
+  "reported_vs_verified": "Bibliographic identity verified against author/institution; title-declared scope reported; overlap/contribution questions interpreted provisionally; source-body claims remain unknown.",
+  "local_output_not_registry": true,
+  "new_schema_created": false,
+  "repository_tests_run": 0,
+  "native_gpu_usb_resources_used": false,
+  "sibling_repositories_read_or_written": false,
+  "remote_writes": 0,
+  "humagent_updates": 0,
+  "external_primary_text_in_packet": false,
+  "complete_git_tree": false,
+  "method_compliance_claimed": false,
+  "novelty_claimed": false,
+  "full_R002_complete": false,
+  "recorded_utc": "2026-10-04T16:29:33.217809+00:00"
+}

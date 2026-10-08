@@ -1,0 +1,39 @@
+{
+  "kind": "Normalized observations of read-only source/destination verification during local package preparation, not a raw API export or acceptance audit",
+  "repository": "techrote/MachineHumanAudioCybersemiotics",
+  "source_commit": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "source_tree": "40afaeebb1801fd8adf1417a8da7523bff014d9f",
+  "visible_heads": [
+    {
+      "ref": "refs/heads/main",
+      "sha": "796151a33ec7a1acc026b239fe5c883312ebf40b"
+    },
+    {
+      "ref": "refs/heads/bootstrap/research-programme",
+      "sha": "131996f6ff8ef9337873f673cb9e6fbf76488053"
+    }
+  ],
+  "checkpoint_prefix_ref_seen": false,
+  "exact_destination_absent_at_observation": true,
+  "base_tree_exact_directory_absent": true,
+  "read_only_api_sources": [
+    "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/git/commits/796151a33ec7a1acc026b239fe5c883312ebf40b",
+    "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/git/refs/heads",
+    "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/git/trees/40afaeebb1801fd8adf1417a8da7523bff014d9f?recursive=1"
+  ],
+  "source_tree_truncated": false,
+  "all_parent_files": 27,
+  "all_parent_tree_objects_verified": 8,
+  "instructions_and_workflow": "Previously returned AGENTS.md and docs/AGENT_RUNBOOK.md remain at the identical immutable base; their blob IDs were confirmed in the live tree. User checkpoint-only instructions override end-to-end research/merge defaults.",
+  "workflow": {
+    "path": ".github/workflows/research-ci.yml",
+    "git_blob_sha1": "16932bc8d74b4c4bbbccf86403991df2aae694aa",
+    "retained_complete_read": "push branches [main], pull_request, workflow_dispatch; hosted ubuntu-24.04 integrity job. No checkpoint-branch push trigger in this file.",
+    "monitoring_or_dispatch": false
+  },
+  "local_network_limit": "Direct git clone failed with exit 128: Could not resolve host: github.com. The binary archive-download route did not yield a file. No clone/research retrieval retry loop was used.",
+  "base_metadata_assembly": "Base commit raw bytes are reconstructed solely from the exact returned commit headers, signature and message and match the immutable Git SHA-1. Eight source tree object identities constructed from the retained path/mode/blob inventory match the live Git tree. Source file bodies absent from the packet were not reconstructed.",
+  "scope_limit": "Only the immutable base, visible destination refs, archive transport and Git object packaging were verified. No complete source checkout, source scientific review, CI acceptance or remote checkpoint is asserted.",
+  "prior_chat_orientation": "The retrieved final 1C1 handoff agreed on PARTIAL status and the primary-text access limit. No prior-chat content was substituted for artifact bytes.",
+  "remote_mutations_this_preparation": 0
+}

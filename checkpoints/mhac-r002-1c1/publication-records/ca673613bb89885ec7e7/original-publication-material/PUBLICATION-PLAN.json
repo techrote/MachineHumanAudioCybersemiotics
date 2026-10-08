@@ -1,0 +1,50 @@
+{
+  "repository": "techrote/MachineHumanAudioCybersemiotics",
+  "payload_id": "ca673613bb89885ec7e7",
+  "payload_identity_sha256": "ca673613bb89885ec7e754fb2677714f77331bb62b478099470946d3e1ee5864",
+  "branch": "checkpoint/mhac-r002-1c1-ca673613bb89885ec7e7",
+  "directory": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7",
+  "commit": "3ae79ab787f9ea0fbd13d41e0fbfc8022e92b252",
+  "tree": "e58c33056e95365922f20fab377abe06bbe8fc1a",
+  "parent": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+  "base_tree": "40afaeebb1801fd8adf1417a8da7523bff014d9f",
+  "payload_tree": "70a7c5af3e7eb5bcd340052be578832e81d0281a",
+  "bundle": "MHAC_R002_chunk1C1_publication.bundle",
+  "bundle_sha256": "4bf56d8cad4157f902b48484b606dfad635ff304acd1be7eaab8251b678f28f6",
+  "bundle_bytes": 452161,
+  "historical_files": 41,
+  "saved_files": 49,
+  "new_git_objects": 70,
+  "prepared_utc": "2026-10-04T19:43:01.262839+00:00",
+  "status": "LOCAL_CHECKPOINT_READY",
+  "remote_publication_performed": false,
+  "substantive_research_status": "PARTIAL",
+  "bundle_format": "Git bundle v2, incremental, Git object format sha1",
+  "bundle_prerequisite": {
+    "commit": "796151a33ec7a1acc026b239fe5c883312ebf40b",
+    "tree": "40afaeebb1801fd8adf1417a8da7523bff014d9f",
+    "must_already_exist_in_import_repository": true,
+    "complete_original_source_contents_bundled": false
+  },
+  "payload_root": "payload/checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7",
+  "checksum_layers": {
+    "bundle_file": "SHA-256 of exact bundle bytes",
+    "historical_payload": "ORIGINAL-PAYLOAD.sha256 in saved checkpoint directory",
+    "saved_directory": "SAVED-PAYLOAD.sha256 in saved checkpoint directory",
+    "outer_package_contents": "SHA256SUMS at package root, excludes only itself",
+    "final_zip": "SHA-256 sidecar distributed outside ZIP to avoid self-reference"
+  },
+  "orphan_receipt": {
+    "git_blob_sha1": "8003ae1cb475c85bb46322be2ac9c549c56a0ca7",
+    "content_sha256": "52f2efd4ee7eb72099ff03e46fb9690419cfd71126724bcf99d98e7befc6f953",
+    "saved_path": "checkpoints/mhac-r002-1c1/ca673613bb89885ec7e7/originals/MHAC_R002_chunk1C1_archive_verification.json",
+    "reachable_in_local_commit": true,
+    "remote_reachability_not_asserted": true
+  },
+  "new_commit_signature": "Unsigned; generic local packaging identity, not an impersonation of the repository owner.",
+  "restore_instruction": "Import into an isolated repository containing the exact base; do not attempt to clone the incremental bundle alone. All checkpoint files are also independently available under payload/.",
+  "no_research_rerun": true,
+  "missing_prior_packet_dependencies": [],
+  "omitted_from_bundle": "Unchanged original Git base source objects/history, referenced by the explicit verified prerequisite. Not missing checkpoint work.",
+  "next_step": "Separately publish only this checkpoint branch after live destination reconciliation, then verify remote ref/parent/tree and every saved blob. Do not merge or activate the archived work."
+}

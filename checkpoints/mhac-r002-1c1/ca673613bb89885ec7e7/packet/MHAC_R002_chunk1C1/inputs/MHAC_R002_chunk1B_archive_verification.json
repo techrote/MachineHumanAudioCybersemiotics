@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-04T15:54:27.387454+00:00",
+  "archive_filename": "MHAC_R002_chunk1B_packet_2026-10-04.zip",
+  "archive_sha256": "d2c89ead12ab89e4bb551d4dbb4ff3cfeacbc1b2f7a3490399e22faf56e5176f",
+  "archive_bytes": 219338,
+  "archive_top_directory": "MHAC_R002_chunk1B",
+  "members": 33,
+  "member_inventory_exact": true,
+  "zip_crc_all_pass": true,
+  "all_members_read_and_equal_local_payload": true,
+  "uncompressed_bytes_read": 349208,
+  "manifest_sha256": "7bfe51b5e905c7eeebdf9eed7ab38cb049631ca180fc739565f12cd269a50e10",
+  "packet_verifier": {
+    "status": "PASS",
+    "scope": "Packet transport/syntax/internal consistency only; NOT research, registry, source-fidelity or scientific acceptance",
+    "packet_files": 33,
+    "hashed_payload_files": 32,
+    "manifest_excludes_itself": true,
+    "utf8_files": 32,
+    "json_files": 7,
+    "csv_files": 5,
+    "python_files_parsed": 6,
+    "local_markdown_links_checked": 49,
+    "decision_rows": 28,
+    "deferred_packages": 6,
+    "source_objects": 5,
+    "distinct_screenshot_pages": 15,
+    "original_1A_nested_archive": {
+      "status": "PASS",
+      "members": 45,
+      "verified_hashes": 44,
+      "original_archive_sha256_matches": true
+    },
+    "repository_tests_run": 0,
+    "external_source_byte_hashes_verified": 0
+  },
+  "limitations": "No external source byte pin, complete Git tree, methodology compliance or scientific acceptance is asserted."
+}
