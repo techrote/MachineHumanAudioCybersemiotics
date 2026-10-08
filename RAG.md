@@ -17,6 +17,7 @@ This file routes workers to the smallest relevant authoritative set. It is not a
 |---|---|
 | Infrastructure or records | [Data model](docs/DATA_MODEL.md) → [record templates](research/templates/README.md). |
 | Protocol and novelty | [Protocol](docs/RESEARCH_PROTOCOL.md) → [search strategy](docs/SEARCH_STRATEGY.md) → [synthesis method](docs/SYNTHESIS_METHOD.md). |
+| Prepass or checkpoint reconciliation | [Preserved prepasses](docs/PREPASS_CHECKPOINTS.md) → immutable original packet and preservation record → live issue/PR acceptance. |
 | Finding sources | [Search strategy](docs/SEARCH_STRATEGY.md) → [seed sources](docs/SEED_SOURCES.md) → actual source/access records. |
 | Critical reading and evidence synthesis | [Synthesis method](docs/SYNTHESIS_METHOD.md) → frozen protocol → selected corpus/extractions. |
 | Design derivation | [Project foundations](docs/PROJECT_FOUNDATIONS.md) → accepted claim register and synthesis. |
