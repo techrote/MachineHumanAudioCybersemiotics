@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R003-B16-07",
+  "issue": 3,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRCH-R003-B16",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-2021-VIDALES-BRIER-EDS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 7,
+        "raw_metadata": "mitpressbookstore.mit.edu | https://mitpressbookstore.mit.edu/book/9783030527457",
+        "resolution_reason": "The URL carries this publication's persistent identifier or ISBN; the page itself was not opened.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://mitpressbookstore.mit.edu/book/9783030527457"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R003-B16",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-BRIER-2021-VIDALES-BRIER-EDS",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

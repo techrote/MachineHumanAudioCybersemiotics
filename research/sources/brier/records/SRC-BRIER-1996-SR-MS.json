@@ -1,0 +1,83 @@
+{
+  "id": "SRC-BRIER-1996-SR-MS",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRC-BRIER-1996-SR",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Manuscript text visible on the author's academia.edu profile; read only through WebFetch paraphrase (first 100000 of 107318 characters). No bytes retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Author manuscript labelled 'shortend version 21 Marts 1996. 9896 words'; Festschrift contribution for Heinz von Foerster"
+        },
+        "family_links": [
+          {
+            "reason": "Author manuscript of the Systems Research article; differences from the published version are unknown.",
+            "relation": "version_of",
+            "source_ref": {
+              "id": "SRC-BRIER-1996-SR",
+              "rev": 1
+            }
+          }
+        ],
+        "identifiers": [
+          {
+            "provenance": "Fetched 2026-10-13 (ledger row 27)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.academia.edu/10056952/From_Second_order_Cybernetics_to_Cybersemiotics_A_Semiotic_Re_entry_into_the_Second_order_Cybernetics_of_Heinz_von_Foerster"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Version note, author affiliation (Royal School of Librarianship, Aalborg Branch) and title reported from the hosted text by the fetch tool."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1996-03-21"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "preprint",
+        "title": "From Second-order Cybernetics to Cybersemiotics: A Semiotic Re-entry into the Second-order Cybernetics of Heinz von Foerster",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,95 @@
+{
+  "id": "SRC-BRIER-2021-CH2",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRC-BRIER-2019-TJES",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-2021-VIDALES-BRIER-EDS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Subscription chapter; not accessed.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Chapter 2, pp. 17-31, in Vidales and Brier (eds) 2021"
+        },
+        "family_links": [
+          {
+            "reason": "Candidate relation: identical title to the 2019 open-access article; texts not compared.",
+            "relation": "version_of",
+            "source_ref": {
+              "id": "SRC-BRIER-2019-TJES",
+              "rev": 1
+            }
+          },
+          {
+            "reason": "Chapter of the edited volume.",
+            "relation": "companion_of",
+            "source_ref": {
+              "id": "SRC-BRIER-2021-VIDALES-BRIER-EDS",
+              "rev": 1
+            }
+          }
+        ],
+        "identifiers": [
+          {
+            "provenance": "Chapter DOI pattern of the volume; chapter 2 page not opened",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1007/978-3-030-52746-4_2"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Title, sole author and pages from the Springer table of contents (ledger row 8)."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2021"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Cybersemiotic Systemic and Semiotical Based Transdisciplinarity",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

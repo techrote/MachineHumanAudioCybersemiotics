@@ -1,0 +1,69 @@
+{
+  "id": "SRC-BRIER-REC-ANKER-2012",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Review text behind a paywall.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Anker, Kathrine Elizabeth",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "reason": "Journal name, volume and pages not shown on the visible page",
+          "state": "unknown"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "From the de Gruyter URL; not printed on the visible page (ledger row 10)",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1515/sem-2012-0085"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Reviewer, title and print/online dates reported from the publisher page; journal identity inferred only from the DOI prefix."
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2012-10-11"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "review",
+        "title": "Review of Søren Brier's (2008) Cybersemiotics: Why information is not enough",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

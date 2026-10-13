@@ -1,0 +1,69 @@
+{
+  "id": "SRC-BRIER-2010-INFOCOMP",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "CBS record links an external PDF (idt.mdh.se) that was not fetched.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "In Burgin and Dodig-Crnkovic (eds), Information and Computation, World Scientific Series in Information Studies vol. 2, pp. 1-36"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "CBS research portal record fetched 2026-10-13 (ledger row 22)",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9789814295475"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "CBS record gives 2010 and pages 1-36; the PhilPapers record of the book gives 2011 (ledger rows 22-23). Brier's own reference list gives 2010."
+        ],
+        "metadata_status": "conflict",
+        "publication_date": {
+          "state": "known",
+          "value": "2010"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Cybersemiotics and the Question of Knowledge",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

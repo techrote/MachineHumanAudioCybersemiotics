@@ -1,0 +1,69 @@
+{
+  "id": "SRCH-R003-B16",
+  "issue": 3,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "boundary": "Brier-lane run B-16 (Follow-up: HCI chapter page, 2009 article, critique search, co-authored 2013 article). Channel C8 discovery under protocol v1: titles and URLs only, not a bibliographic database search; times are batch-window bounds.",
+        "coverage": {
+          "end": {
+            "reason": "The engine does not state its index coverage",
+            "state": "unknown"
+          },
+          "start": {
+            "reason": "The engine does not state its index coverage",
+            "state": "unknown"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/brier/exports/BRIER-WEBSEARCH-2026-10-13.json",
+            "sha256": "9dfe90ca2d856c031bf4fead10ee16544a8e84b7117bd69dc748312f4133e530"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "No user-set filters; tool default US-only results"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T01:53:19Z"
+        },
+        "interface": "WebSearch tool, standard mode, US-only results",
+        "lane": "brier",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "One page of top results only; the tool exposes no further pages."
+        },
+        "platform": "General web search engine via the agent's WebSearch tool (protocol channel C8)",
+        "protocol_version": "v1",
+        "query": "critique of cybersemiotics Brier objections constructivism autopoiesis Luhmann",
+        "reported_count": {
+          "reason": "The engine reports no total hit count",
+          "state": "not_reported"
+        },
+        "retrieved_count": 10,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T01:52:59Z"
+        },
+        "status": "partial"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

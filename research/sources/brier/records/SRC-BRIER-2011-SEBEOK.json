@@ -1,0 +1,62 @@
+{
+  "id": "SRC-BRIER-2011-SEBEOK",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Located only as a citation.",
+        "access_status": "not_attempted",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "In Deely, Kull and Petrilli (eds), Semiotics Continues to Astonish, Mouton de Gruyter, pp. 41-84 (as cited by Brier)"
+        },
+        "family_links": [],
+        "identifiers": [],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Listed in Brier's own reference list in the Studia kulturoznawcze 2015 article and/or the Green Letters 2015 accepted manuscript, read through WebFetch on 2026-10-13 (ledger rows 20, 28); not checked against the publication itself."
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2011"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Ethology and the Sebeokian way from Zoosemiotics to Cyber(bio)semiotics",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,69 @@
+{
+  "id": "SRC-BRIER-REC-COBLEY-2010-SIGNS",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Review article read through WebFetch paraphrase with page-level outline. No bytes retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Cobley, Paul",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Signs 3:69-107 (ISSN 1902-8822); review article of Brier (2008)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Fetched 2026-10-13 (ledger row 12)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://tidsskrift.dk/signs/article/download/26861/23621"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Author, title, journal, volume, pages and ISSN reported from the article file by the fetch tool."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2010"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "review",
+        "title": "Second-order thinking, first-class reasoning",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
