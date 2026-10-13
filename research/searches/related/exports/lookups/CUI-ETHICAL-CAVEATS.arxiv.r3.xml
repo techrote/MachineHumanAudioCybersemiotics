@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/IfKkJ14p5HDyFjVdREoqQTIQFTU</id>
+  <title>arXiv Query: search_query=&amp;id_list=2401.14746&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-13T07:06:35Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2401.14746" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.14746v1</id>
+    <title>Listening to the Voices: Describing Ethical Caveats of Conversational User Interfaces According to Experts and Frequent Users</title>
+    <updated>2024-01-26T10:10:05Z</updated>
+    <link href="https://arxiv.org/abs/2401.14746v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.14746v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Advances in natural language processing and understanding have led to a rapid growth in the popularity of conversational user interfaces (CUIs). While CUIs introduce novel benefits, they also yield risks that may exploit people's trust. Although research looking at unethical design deployed through graphical user interfaces (GUIs) established a thorough understanding of so-called dark patterns, there is a need to continue this discourse within the CUI community to understand potentially problematic interactions. Addressing this gap, we interviewed 27 participants from three cohorts: researchers, practitioners, and frequent users of CUIs. Applying thematic analysis, we construct five themes reflecting each cohort's insights about ethical design challenges and introduce the CUI Expectation Cycle, bridging system capabilities and user expectations while considering each theme's ethical caveats. This research aims to inform future development of CUIs to consider ethical constraints while adopting a human-centred approach.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-26T10:10:05Z</published>
+    <arxiv:comment>18 pages; 4 tables; and 1 figure. This is the author's version and pre-print of the work. It is posted here for your personal use. Not for redistribution. The definitive Version of Record will be published in Proceedings of the CHI Conference on Human Factors in Computing Systems (CHI '24), May 11--16, 2024, Honolulu, HI, USA, https://doi.org/https://doi.org/10.1145/3613904.3642542</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Thomas Mildner</name>
+    </author>
+    <author>
+      <name>Orla Cooney</name>
+    </author>
+    <author>
+      <name>Anna-Maria Meck</name>
+    </author>
+    <author>
+      <name>Marion Bartl</name>
+    </author>
+    <author>
+      <name>Gian-Luca Savino</name>
+    </author>
+    <author>
+      <name>Philip R. Doyle</name>
+    </author>
+    <author>
+      <name>Diego Garaialde</name>
+    </author>
+    <author>
+      <name>Leigh Clark</name>
+    </author>
+    <author>
+      <name>John Sloan</name>
+    </author>
+    <author>
+      <name>Nina Wenig</name>
+    </author>
+    <author>
+      <name>Rainer Malaka</name>
+    </author>
+    <author>
+      <name>Jasmin Niess</name>
+    </author>
+    <arxiv:doi>10.1145/3613904.3642542</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3613904.3642542" title="doi"/>
+  </entry>
+</feed>

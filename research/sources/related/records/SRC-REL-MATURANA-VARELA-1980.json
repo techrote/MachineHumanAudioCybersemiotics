@@ -1,0 +1,80 @@
+{
+  "id": "SRC-REL-MATURANA-VARELA-1980",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Chapter metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Maturana, Humberto R.",
+            "role": "author"
+          },
+          {
+            "name": "Varela, Francisco J.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "D. Reidel, 1980, Boston Studies in the Philosophy of Science (series named in the Crossref chapter records)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup MATURANA-VARELA-1980 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9789027710161"
+          },
+          {
+            "provenance": "Book-level prefix of chapter DOIs ..._12 and ..._13 in the Crossref lookup",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1007/978-94-009-8947-4"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref chapter records 'Diversity of Autopoiesis' (pp. 96-111) and 'Presence of Autopoiesis' by Maturana and Varela, 1980, in Boston Studies",
+          "Book title as cited by Brier (BRL entries)"
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "1980"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Autopoiesis and Cognition: The Realization of the Living",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

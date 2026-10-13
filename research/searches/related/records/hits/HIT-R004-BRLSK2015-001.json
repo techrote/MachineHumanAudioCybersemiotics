@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R004-BRLSK2015-001",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "that an all-encompassing explanation of the conscious meaningful human com- munication process cannot be provided from any of the corners of the model. When we cannot reduce our scientific explanations to one grand story, we just have to juggle with all four at the same time – as we do in our own lives, daily! But doing so is only possible in a transdisciplinary framework that integrates se- miotics and systems. By erecting this framework, I hope to expand the dialogue between sciences, the humanities, the social sciences and philosophy, and the existential quest to broaden our concept of reason by finding common frames for the open, interactive and systematic pursuits of knowledge and meaning. Acknowledgements A special thanks to Don Favareau for improving the clarity of my thought and the English expression of my arguments in this paper in such a kind way. References",
+        "resolution_reason": "Brier reference entry not matched to an R004 source record.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

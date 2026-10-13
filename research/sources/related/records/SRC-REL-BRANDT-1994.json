@@ -1,0 +1,75 @@
+{
+  "id": "SRC-REL-BRANDT-1994",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Brandt, Per Aage",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "In The Computer as Medium, Cambridge University Press, pp. 128-140 (editors not in the lookup)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Round-4 lookup MEANING-AND-MACHINE result 1, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1017/cbo9780511720369.008"
+          },
+          {
+            "provenance": "Round-4 lookup MEANING-AND-MACHINE result 1, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9780521419956"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref chapter record (round-4 lookup)"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1994-03-25"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Meaning and the machine: Toward a semiotics of interaction",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,77 @@
+{
+  "id": "SRC-REL-HERMANN-2008",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:46:27Z",
+        "access_reason": "ICAD PDF fetched and hashed; abstract, introduction and definition read. Bytes not committed.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Hermann, Thomas",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the 14th International Conference on Auditory Display, Paris, 24-27 June 2008"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Fetched (ledger row 16)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [
+          {
+            "coordinate": "file_page_1based",
+            "extent": 8,
+            "id": "ICAD-PDF",
+            "location": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf",
+            "sha256": "7a07958fe2d4e1cc12e2fca76d45df3602def7d06536054fdd31fe41e358365a"
+          }
+        ],
+        "metadata_evidence": [
+          "Title, author, affiliation and venue printed in the file"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2008-06"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Taxonomy and Definitions for Sonification and Auditory Display",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

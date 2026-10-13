@@ -1,0 +1,45 @@
+{
+  "id": "HIT-R004-BRLIR2013-009",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-BARBIERI-2008",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 9,
+        "raw_metadata": "Barbieri, M. (2008). Biosemiotics: A new understanding of life. Naturwissenschaften, 95, 577- 599. Barbieri , M. (2011). Origin and evolution of the brain. Biosemiotics, 4, 369-399.",
+        "resolution_reason": "Entry names this work (author, year, title); the edition Brier cites may differ (see the source record).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-BARBIERI-2008",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

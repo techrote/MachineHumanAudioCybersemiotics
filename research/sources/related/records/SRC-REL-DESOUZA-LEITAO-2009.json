@@ -1,0 +1,85 @@
+{
+  "id": "SRC-REL-DESOUZA-LEITAO-2009",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "de Souza, Clarisse Sieckenius",
+            "role": "author"
+          },
+          {
+            "name": "Leitão, Carla Faria",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Synthesis Lectures on Human-Centered Informatics (Morgan & Claypool 2009; now Springer)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup DESOUZA-LEITAO-2009 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9783031010576"
+          },
+          {
+            "provenance": "Lookup DESOUZA-LEITAO-2009 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9783031021855"
+          },
+          {
+            "provenance": "Book-level prefix of the chapter DOIs in the lookup",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1007/978-3-031-02185-5"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref chapter records 'Semiotic Engineering Methods' (pp. 23-48) and 'Lessons Learned with Semiotic Engineering Methods'"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2009"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Semiotic Engineering Methods for Scientific Research in HCI",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

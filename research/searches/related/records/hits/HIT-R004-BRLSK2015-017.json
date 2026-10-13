@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R004-BRLSK2015-017",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 17,
+        "raw_metadata": "Brier, S., Joslyn, C. (2013). What Does It Take to Produce Interpretation? Informa- tional, Peircean, and Code-Semiotic Views on Biosemiotics, Biosemiotics, 6(1), pp. 143–159. Cantwell Smith, B. (1996). The Origin of Object. Cambridge: The MIT Press. Cantwell Smith, B. (1996b). http://www.ageofsignificance.org/people/bcsmith/print/ smith-godapprox4.pdf [19.11.2014].",
+        "resolution_reason": "Brier reference entry not matched to an R004 source record.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

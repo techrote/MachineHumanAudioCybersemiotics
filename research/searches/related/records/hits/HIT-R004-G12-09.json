@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-G12-09",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G12",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 9,
+        "raw_metadata": "Please use this identifier to cite or link to this item: | https://repositorio-aberto.up.pt/handle/10216/165151?mode=full",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repositorio-aberto.up.pt/handle/10216/165151?mode=full"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G12",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

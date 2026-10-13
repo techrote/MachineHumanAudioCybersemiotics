@@ -1,0 +1,77 @@
+{
+  "id": "SRC-REL-TRAUM-CONTRIB",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T07:07:45Z",
+        "access_reason": "Author-hosted PDF fetched and hashed; all argument sections read. Bytes not committed.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Traum, David R.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "reason": "Short paper; venue not printed in the file",
+          "state": "unknown"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Fetched 2026-10-13 (ledger row 37)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://people.ict.usc.edu/~traum/Papers/traum98clark.pdf"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [
+          {
+            "coordinate": "file_page_1based",
+            "extent": 6,
+            "id": "AUTHOR-PDF",
+            "location": "https://people.ict.usc.edu/~traum/Papers/traum98clark.pdf",
+            "sha256": "7e8fb773e84c0c738f4195f3f442c4f47d779a9f941810c131faf8b3fb9626c1"
+          }
+        ],
+        "metadata_evidence": [
+          "Title, author and affiliation (UMIACS, University of Maryland) printed on PDF p. 1"
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "reason": "No date or venue printed in the file; the file name on the author's site contains '98'",
+          "state": "unknown"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "other",
+        "title": "On Clark and Schaefer’s Contribution Model and its applicability to Human-Computer Collaboration",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

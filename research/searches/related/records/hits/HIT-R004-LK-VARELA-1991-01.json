@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-LK-VARELA-1991-01",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-VARELA-1991",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "L' inscription corporelle de l'esprit | Francisco J. Varela | 1991 | /works/OL4083350W",
+        "resolution_reason": "Returned by the lookup but not the adjudicated match.",
+        "returned_identifiers": [
+          {
+            "scheme": "other",
+            "value": "Open Library /works/OL4083350W"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-VARELA-1991",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

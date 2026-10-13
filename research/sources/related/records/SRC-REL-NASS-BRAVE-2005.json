@@ -1,0 +1,74 @@
+{
+  "id": "SRC-REL-NASS-BRAVE-2005",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Nass, Clifford",
+            "role": "author"
+          },
+          {
+            "name": "Brave, Scott",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "MIT Press, 2005"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup NASS-BRAVE-2005 (openlibrary-ta) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL5738442W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work record (2005)",
+          "Crossref holds 2006 reviews naming the book (lookup NASS-BRAVE-2005)"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2005"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Wired for Speech: How Voice Activates and Advances the Human-Computer Relationship",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

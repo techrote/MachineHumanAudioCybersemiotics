@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-LK-BATESON-1972-01",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-BATESON-1972",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-BATESON-1972",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "Steps to an ecology of mind | Gregory Bateson | 1972 | /works/OL486424W",
+        "resolution_reason": "Adjudicated match: title, author and year agree with the source record (R004 source map).",
+        "returned_identifiers": [
+          {
+            "scheme": "other",
+            "value": "Open Library /works/OL486424W"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-BATESON-1972",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-BATESON-1972",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

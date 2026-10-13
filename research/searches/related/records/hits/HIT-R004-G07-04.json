@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-G07-04",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G07",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-2015-PBMB",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "Can Biosemiotics be a “Science” if its Purpose is to be a Bridge between the Natural, Social and Human Sciences? | https://research.cbs.dk/en/publications/can-biosemiotics-be-a-science-if-its-purpose-is-to-be-a-bridge-be-2/",
+        "resolution_reason": "Title or stable identifier in the result matches the source record; the page itself was opened only where the access ledger says so.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://research.cbs.dk/en/publications/can-biosemiotics-be-a-science-if-its-purpose-is-to-be-a-bridge-be-2/"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G07",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-BRIER-2015-PBMB",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

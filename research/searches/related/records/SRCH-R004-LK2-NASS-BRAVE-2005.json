@@ -1,0 +1,69 @@
+{
+  "id": "SRCH-R004-LK2-NASS-BRAVE-2005",
+  "issue": 4,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "boundary": "Identity lookup for R004 candidate NASS-BRAVE-2005; file research/searches/related/exports/lookups/NASS-BRAVE-2005.openlibrary-ta.r2.json (sha256 827fa81a1112b520ce8812e35d5d35f042db4f334765db4b00d936449a345d96).",
+        "coverage": {
+          "end": {
+            "reason": "Known-item lookup",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "Known-item lookup",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/related/exports/lookups/MANIFEST.json",
+            "sha256": "817499d25ddc0a0429b72fa61c8389f185461997f217db6d67d3719f851bbbfd"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "limit=5"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T06:45:27Z"
+        },
+        "interface": "HTTPS request from the workspace shell; response kept unchanged",
+        "lane": "related",
+        "mode": "production",
+        "pagination": {
+          "complete": true,
+          "detail": "Known-item lookup: only the top results were requested and all returned items are recorded."
+        },
+        "platform": "Open Library search API (title and author fields)",
+        "protocol_version": "v1",
+        "query": "Wired for speech|Clifford Nass",
+        "reported_count": {
+          "reason": "Total-results count not used for a known-item lookup",
+          "state": "not_reported"
+        },
+        "retrieved_count": 2,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T06:45:27Z"
+        },
+        "status": "completed"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

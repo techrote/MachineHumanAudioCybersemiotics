@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-G03-06",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G03",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-MULLER-2014",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 6,
+        "raw_metadata": "Which symbol grounding problem should we try to solve? | https://cris.fau.de/publications/276957947",
+        "resolution_reason": "Title or stable identifier in the result matches the source record; the page itself was opened only where the access ledger says so.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://cris.fau.de/publications/276957947"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G03",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-MULLER-2014",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

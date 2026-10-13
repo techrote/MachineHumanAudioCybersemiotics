@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R004-BRLGL2015AM-001",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLGL2015AM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "Thus, in this transdisciplinary frame for interdisciplinarity, the sign process carrying the information content is viewed as transcending the division between nature and culture, between the natural sciences, the life sciences, the social sciences, and the humanities, and between phenomena that are exterior and those that are interior to human consciousness. We have moved from a mechanical idea of the ‘Cosmos’ to a self-organised evolutionary super-system. Though the combination of thermodynamics and the info-computational paradigms attempts to naturalize information computations to an ‘Infos’, but now we have started to move towards a ‘Semios’, that through a physio-semiotic cosmogony is encompassing and integrating the former understandings of matter and information in to a cybersemiotic view. References",
+        "resolution_reason": "Brier reference entry not matched to an R004 source record.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLGL2015AM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

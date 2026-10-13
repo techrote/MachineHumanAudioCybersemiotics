@@ -1,0 +1,77 @@
+{
+  "id": "SRC-REL-ATKIN-SEP",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:46:27Z",
+        "access_reason": "Entry fetched and hashed; sections 1.3, 4.2 and 4.3 read. Bytes not committed.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Atkin, Albert",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Stanford Encyclopedia of Philosophy entry; first published 13 Oct 2006, substantive revision 4 Aug 2022"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Fetched 2026-10-13 (R004 ledger row 11)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://plato.stanford.edu/entries/peirce-semiotics/"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [
+          {
+            "coordinate": "html_paragraph_1based",
+            "extent": 73,
+            "id": "SEP-2026-10-13",
+            "location": "https://plato.stanford.edu/entries/peirce-semiotics/",
+            "sha256": "5719f471e32f77b07781786663c506b2a22c762b69544cfe716ea5251fce08b8"
+          }
+        ],
+        "metadata_evidence": [
+          "Page metadata and header read from the fetched page"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2006-10-13"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "web",
+        "title": "Peirce's Theory of Signs",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R004-BRLIR2013-102",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 102,
+        "raw_metadata": "McGinn, C. (2000). The mysterious flame: Conscious minds in a material world. London: Basic Books.",
+        "resolution_reason": "Brier reference entry not matched to an R004 source record.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

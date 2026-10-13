@@ -1,0 +1,45 @@
+{
+  "id": "HIT-R004-BRLSK2015-077",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-WIENER-1948",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 77,
+        "raw_metadata": "Wiener, N. (1963). Cybernetics: Or, Control and Communication in the Animal and the Machine. Cambridge, Mass.: The MIT Press. Summary Since the critique of the logical positivists’ unity of science for being too reductionist to be transdisciplinary, most scientists have abandoned this model. But other candidates have emerged. The first was evolutionary system science and cybernetics, which was instrumental in producing the new information science supporting the development of cognitive science, with computation as the central process. But the new info-com- putational transdisciplinary framework still lacks a phenomenological and hermeneu- tical foundation just as system science and cybernetics did. Peircean semiotics has this foundation and includes a theory of information and has a transdisciplinary scope, but lacks the self-organization theory developed in autopoiesis theory, which Luhmann uses in his new communicatively based system theory. Cybersemiotics integrates Peirce and Luhmann’s paradigms into a new transdisciplinary framework encompass- ing the theory of mind as embodied, extended, enacted and embedded. Słowa kluczowe: transdyscyplinarność, cybersemiotyka, paradygmat informatyczno- -obliczeniowy, semiotyka Peirce’owska, teoria systemu Luhmanna, biosemiotyka, teo- ria umysłu 4E Keywords: transdisciplinarity, cybersemiotics, info-computational paradigm, Peircean semiotics, Luhmann’s system theory, biosemiotics, 4E Theory of mind",
+        "resolution_reason": "Entry names this work (author, year, title); the edition Brier cites may differ (see the source record).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-WIENER-1948",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

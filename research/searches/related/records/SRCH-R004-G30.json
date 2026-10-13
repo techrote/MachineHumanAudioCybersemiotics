@@ -1,0 +1,69 @@
+{
+  "id": "SRCH-R004-G30",
+  "issue": 4,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "boundary": "Track G negative search for the human-factors cluster (protocol v1 §7.3 negative case). Discovery only; no coverage is claimed.",
+        "coverage": {
+          "end": {
+            "reason": "The engine does not state its index coverage",
+            "state": "unknown"
+          },
+          "start": {
+            "reason": "The engine does not state its index coverage",
+            "state": "unknown"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/related/exports/RELATED-WEBSEARCH-2026-10-13.json",
+            "sha256": "1346eebd0cb7f95a59057266b06fcd99a38d57e99f39ee7c78d343be4a62ed98"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "No user-set filters; tool default US-only results"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T07:09:57Z"
+        },
+        "interface": "WebSearch tool, standard mode, US-only results",
+        "lane": "related",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "One page of top results only."
+        },
+        "platform": "General web search engine via the agent's WebSearch tool",
+        "protocol_version": "v1",
+        "query": "speech versus tonal auditory warnings comparison response time evidence",
+        "reported_count": {
+          "reason": "The engine reports no total hit count",
+          "state": "not_reported"
+        },
+        "retrieved_count": 9,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T07:09:43Z"
+        },
+        "status": "partial"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

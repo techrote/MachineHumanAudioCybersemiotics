@@ -1,0 +1,836 @@
+{
+  "id": "AID-R004-RELATED-CORPUS",
+  "issue": 4,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRC-BRIER-2013-IR",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-BRIER-2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-2015-GL-AM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/searches/related/exports/RELATED-WEBSEARCH-2026-10-13.json",
+          "research/searches/related/exports/lookups/MANIFEST.json",
+          "research/searches/related/exports/BRIER-REFLISTS-R004.json",
+          "research/searches/related/exports/ACCESS-LEDGER-R004-2026-10-13.csv",
+          "research/sources/related/SOURCE-MAP-R004.csv",
+          "research/sources/related/BRIER-CITED-AUTHORS-R004.csv",
+          "research/sources/related/CONCEPT-MAP-R004.csv",
+          "research/sources/related/README.md"
+        ],
+        "independence": "Single executing agent. Not a human check and not independent of the work it describes.",
+        "input_refs": [
+          {
+            "id": "SRC-BRIER-2013-IR",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-BRIER-2015",
+            "rev": 1
+          },
+          {
+            "id": "SRC-BRIER-2015-GL-AM",
+            "rev": 1
+          }
+        ],
+        "limitations": "Single agent; purposive sampling only; most sources identified but not read; no human check. Concept-map correspondences are the agent's hypotheses for #8, not findings.",
+        "output_refs": [
+          {
+            "id": "SRC-REL-ATKIN-SEP",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-AUDITORY-SIGNS-REVIEW",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-AYLETT-2019",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BANSAL-2024",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BARBIERI-2008",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BATESON-1972",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BECKER-2025",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BRANDT-1994",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-BRENNAN-HULTEEN-1995",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-CLARK-1996",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-CLARK-BRENNAN-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-CLARK-FISCHER-2022",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-CLARK-SCHAEFER-1989",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-DEJESUS-2015",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-DESOUZA-1993",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-DESOUZA-LEITAO-2009",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-EDWORTHY-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-EDWORTHY-HELLIER-2006",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-EPLEY-2007",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-FERRARIO-2026",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-FLORIDI-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-FOERSTER-1984",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-FOERSTER-2003",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-GAVER-1986",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-GAVER-1993",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-HARNAD-1990",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-HELLIER-1993",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-HERMANN-2008",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-HOFFMEYER-1996",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-JEKOSCH-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-KOLCHINSKY-WOLPERT-2018",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-KOLCHINSKY-WOLPERT-2018-ARXIV",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-KUHNE-2020",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-KULL-2009",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-LUHMANN-1995",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MATURANA-1988A",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MATURANA-1988B",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MATURANA-VARELA-1980",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MILDNER-2024",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MINGERS-2002",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MOORE-2019",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MORI-2012",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MULLER-2014",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-MURPHY-2006",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-NASS-1994",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-NASS-BRAVE-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-NSS-USE-SCENARIO",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-OSWALD-2012",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-OZCAN-2012",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-PARMENTIER-2009",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-PEIRCE-CP",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-PEIRCE-EP2",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-PEIRCE-W",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-PICARD-1997",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-PRATES-2000",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-ROMEO-2023",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-ROMEO-2025",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SANZSEGURA-2022",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SANZSEGURA-2024",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SCHEGLOFF-1977",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SCOTT-2004",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SEABORN-2021",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SHANNON-1948",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SHANNON-WEAVER-1949",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SHORT-2007",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-SPENCER-BROWN-1969",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-TADDEO-FLORIDI-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-TRAUM-CONTRIB",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-TUURI-EEROLA-2012",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-VARELA-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-VICENTE-RASMUSSEN-1992",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-WICKENS-2002",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-WIENER-1948",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-ZHOU-2025",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G01",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G02",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G03",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G04",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G05",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G06",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G07",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G08",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G09",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G10",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G11",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G12",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G13",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G14",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G15",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G16",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G17",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G18",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G19",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G20",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G21",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G22",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G23",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G24",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G25",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G26",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G27",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G28",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G29",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G30",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-G31",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-PEIRCE-CP",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-PEIRCE-EP2",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-PEIRCE-W",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SHORT-2007",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-LUHMANN-1995",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-MATURANA-VARELA-1980",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-MATURANA-1988",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-BATESON-1972",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-FOERSTER-1984",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-FOERSTER-2003",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-WIENER-1961",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SPENCER-BROWN-1969",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SHANNON-1948",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SHANNON-WEAVER-1949",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-HOFFMEYER-1996",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-KULL-2009",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-BARBIERI-2008",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-DESOUZA-1993",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-PRATES-2000",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-DESOUZA-LEITAO-2009",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-CLARK-BRENNAN-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-CLARK-SCHAEFER-1989",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-CLARK-1996",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SCHEGLOFF-1977",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-BRENNAN-HULTEEN-1995",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-HARNAD-1990",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-TADDEO-FLORIDI-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-FLORIDI-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-KOLCHINSKY-WOLPERT-2018",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-EDWORTHY-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-HELLIER-1993",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-EDWORTHY-HELLIER-2006",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-VICENTE-RASMUSSEN-1992",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-WICKENS-2002",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-GAVER-1986",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-GAVER-1993",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-BLATTNER-1989",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-IJDESIGN-ALARM-FRAMEWORK",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-NASS-1994",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-NASS-BRAVE-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-EPLEY-2007",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-MORI-2012",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SEABORN-2021",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-CLARK-FISCHER-2023",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-MOORE-2017",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-KUHNE-2020",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-VARELA-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-PICARD-1997",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-MINGERS-2002",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-SCOTT-2004",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-NSAS-ICAD",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-REVIEW-AUDITORY-SIGNS-ICAD",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-JEKOSCH-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-TUURI-EEROLA-2012",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-HERMANN-2008",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK-OZCAN-2008",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-LUHMANN-1995",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-FOERSTER-1984",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-PICARD-1997",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-SPENCER-BROWN-1969",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-SHANNON-WEAVER-1949",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-VARELA-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-NASS-BRAVE-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-CLARK-1996",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-SHORT-2007",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK2-MOORE-2017",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-VOICE-NATURALNESS-TRUST",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-VOICE-REPAIR-TRUST",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-THIRD-ORDER-CYBERNETICS",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-WHICH-SGP",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-CODE-BIOLOGY-OPERATIONAL",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-CODES-NOT-SUFFICIENT",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-PEIRCEAN-LISTENING",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-NSS-USE-SCENARIO",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-SOUND-DRIVEN-DESIGN",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-HAC-CHALLENGES",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-CUI-ETHICAL-CAVEATS",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK3-ANTHRO-LLM-ETHICS",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK4-SEMIOTICA-2009-070",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK4-MEANING-AND-MACHINE",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-LK4-AUTOPOIETIC-ENACTIVISM",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-BRLIR2013",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-BRLSK2015",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R004-BRLGL2015AM",
+            "rev": 1
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-10-13T07:20:54Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Build the Track G related-theory corpus under protocol v1 §7: trace Brier's dependencies from his own reference lists, identify comparator, reception and auditory-semiotics sources, verify identity with Crossref and Open Library, run negative-case searches, fetch lawful open copies of key comparators, and map concepts for #8.",
+        "verification_steps": [
+          "Every identifier comes from a retained Crossref or Open Library response, a fetched page or the source file itself; DOIs were not typed from memory.",
+          "Lookup responses were adjudicated by title, author and year; mismatches and conflicts are kept as candidate or conflict status.",
+          "Reading statements in the memo are limited to the passages listed as read for each source; everything else is marked as not read."
+        ]
+      },
+      "factual_status": "researcher_interpretation",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
