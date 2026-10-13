@@ -2,7 +2,7 @@
 
 [Authority index](../RAG.md) · [Programme](../docs/PROGRAMME.md) · [Data contract](../docs/DATA_MODEL.md) · [Templates](templates/README.md)
 
-**Not started.** This bootstrap contains a plan and templates, not a reviewed corpus, registered protocol or completed research. The owners below create directories as their issues execute; missing future outputs must not be imagined from this map.
+**In progress: protocol v1 frozen (2026-10-13); no production corpus.** The [protocol](protocol/README.md), [novelty audit](novelty/README.md) and [pilot searches](searches/pilot/README.md) exist. There is no reviewed corpus, external registration or completed research. The owners below create directories as their issues execute; missing future outputs must not be imagined from this map.
 
 | Planned path | Owner and purpose |
 |---|---|

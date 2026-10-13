@@ -1,0 +1,77 @@
+{
+  "id": "SRC-NOV-VALENTE-2009",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:17:51Z",
+        "access_reason": "The fetched page returned the abstract and article metadata only.",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Valente, L.",
+            "role": "author"
+          },
+          {
+            "name": "de Souza, C. S.",
+            "role": "author"
+          },
+          {
+            "name": "Feijó, B.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Journal of the Brazilian Computer Society 15:45-58"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Shown on the open-access publisher page fetched 2026-10-13 (ledger row 27)",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/BF03192576"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Authors, title, journal, volume, pages, year and DOI reported from the publisher page by the fetch tool on 2026-10-13."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2009"
+        },
+        "rights": {
+          "evidence": {
+            "state": "known",
+            "value": "Licence statement on the SpringerOpen article page, read through WebFetch on 2026-10-13"
+          },
+          "reason": "Publisher page states a Creative Commons Attribution 2.0 licence.",
+          "status": "redistribution_permitted"
+        },
+        "source_type": "article",
+        "title": "Turn off the graphics: designing non-visual interfaces for mobile phone games",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

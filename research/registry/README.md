@@ -1,7 +1,8 @@
 # Live research registry
 
-The canonical live state is explicitly **not_started**. There are no live source,
-study, extraction or claim records. Synthetic examples are kept in
+The canonical live state is **in_progress**. Live records are limited to MHAC-R002's
+method sources, novelty comparators, pilot search runs and occurrences, assistance
+events and one waiting human gate. There are no study, extraction or claim records. Synthetic examples are kept in
 [tests/fixtures/records/v1](../../tests/fixtures/records/v1/README.md).
 
 The manifest declares canonical record roots, selected current claims and

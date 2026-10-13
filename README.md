@@ -2,7 +2,7 @@
 
 Foundational research for explicit machine–human audio communication: information, contextual state, uncertainty, urgency and action without dependence on performed human emotion.
 
-**Current status: the MHAC-R001 record pipeline is implemented; live research remains not_started.** The seed reading list is not a reviewed corpus. Green CI means repository and record integrity, not scientific validity or effective human communication. See the [implementation record](docs/R001_IMPLEMENTATION.md) and live issue/PR acceptance evidence.
+**Current status: the MHAC-R001 record pipeline is implemented and MHAC-R002 froze research protocol v1 on 2026-10-13; live research is `in_progress` with pilot, method-source and novelty-audit records only.** No production search, included study set or finding exists yet. The seed reading list is not a reviewed corpus. Green CI means repository and record integrity, not scientific validity or effective human communication. See the [implementation record](docs/R001_IMPLEMENTATION.md) and live issue/PR acceptance evidence.
 
 ## Start here
 
@@ -13,7 +13,9 @@ Foundational research for explicit machine–human audio communication: informat
 | [Preserved prepasses](docs/PREPASS_CHECKPOINTS.md) | Complete original packets, publication identities and remaining acceptance boundaries. |
 | [KICKOFF.md](KICKOFF.md) | Paste-ready first-task and programme-continuation prompts. |
 | [Agent instructions](AGENTS.md) | Scope, evidence integrity and execution rules. |
-| [Research protocol](docs/RESEARCH_PROTOCOL.md) | Questions, review design and protocol-freeze requirements. |
+| [Frozen protocol v1](research/protocol/README.md) | Executable two-track protocol, analysis plan, glossary, pilot report and freeze record (internal, not preregistered). |
+| [Novelty audit](research/novelty/README.md) | Source-bounded overlap matrix against existing reviews and semiotic accounts. |
+| [Protocol instructions](docs/RESEARCH_PROTOCOL.md) | Questions, review design and protocol-freeze requirements the frozen protocol implements. |
 | [Seed sources](docs/SEED_SOURCES.md) | Initial discovery leads and methodology references, with access caveats. |
 | [Record schemas](schemas/README.md) | Exact v1 record fields, revisions and lifecycle contracts. |
 | [Validation](docs/VALIDATION.md) | Offline commands, provenance/citation checks, exports and honest limits. |
@@ -31,7 +33,7 @@ The intended system is linguistically intelligible but perceptually non-human. S
 
 ## Execution
 
-Verify the actual merge and post-merge checks for [#1 — MHAC-R001](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1) before starting [#2 — MHAC-R002](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2). After the protocol is accepted, #3/#4/#5 may run in parallel. The full graph is in the programme. Issues #1–#18 form the internal foundational-research programme; #19 and #20 are separately gated external-review and real-participant extensions.
+[#1 — MHAC-R001](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1) is accepted and [#2 — MHAC-R002](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2) froze [protocol v1](research/protocol/PROTOCOL-v1.md). Verify #2's merge and post-merge checks on the issue before starting #3/#4/#5, which may then run in parallel. Database searching for #5 is gated on [owner access](research/protocol/gates/HG-R002-DATABASE-ACCESS.md); the protocol declares a fallback. The full graph is in the programme. Issues #1–#18 form the internal foundational-research programme; #19 and #20 are separately gated external-review and real-participant extensions.
 
 From the repository root, using Python 3.11 or newer:
 

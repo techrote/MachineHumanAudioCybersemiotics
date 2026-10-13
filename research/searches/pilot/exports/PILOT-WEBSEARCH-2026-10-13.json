@@ -1,0 +1,580 @@
+{
+  "schema": "mhac-r002-websearch-log/1",
+  "issue": 2,
+  "status": "pilot and discovery log; not a production database export",
+  "tool": "WebSearch tool available to the executing Claude agent in a claude.ai cloud session. General web search engine, US-only, 'standard' or 'extended' mode. Each call returns result titles and URLs only (at most about ten), no total hit count, no abstracts, no pagination control and no documented ranking or personalization settings.",
+  "transcription": "Titles and URLs are transcribed exactly as the tool returned them, in returned order. Some returned titles are page labels, hostnames or URL fragments rather than bibliographic titles; they are kept unchanged. No result was added from memory.",
+  "clock": "Times are readings of the workspace shell clock (UTC) taken immediately before and after each batch; individual calls were not separately timestamped. Batch windows are therefore bounds, not per-query run times.",
+  "batches": [
+    {
+      "batch": "N",
+      "purpose": "Comparator access discovery for Nees and Liebman (2023); not a lane search",
+      "window_start": "2026-10-13T00:50:16Z",
+      "window_end": "2026-10-13T01:06:04Z",
+      "window_note": "Bounded by the repository checkout file time (00:50:16 UTC) and the first open-metadata API probe (01:06:04 UTC, proxy failure record). N1 preceded the failed shell download attempt recorded by the proxy at 00:51:53 UTC.",
+      "runs": [
+        {
+          "label": "N1",
+          "mode": "standard",
+          "query": "Nees Liebman 2023 auditory icons earcons spearcons speech systematic review meta-analysis brief audio alerts PsyArXiv",
+          "results": [
+            {"ordinal": 1, "title": "Everything We Hear: Towards Tackling Misinformation in Podcasts", "url": "https://arxiv.org/pdf/2408.00292"},
+            {"ordinal": 2, "title": "Library / paper", "url": "https://sonicfield.org/library/auditory-icons-earcons-spearcons-and-speech-a-systematic-review-and-meta-analysi"},
+            {"ordinal": 3, "title": "ldr.lafayette.edu", "url": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"},
+            {"ordinal": 4, "title": "WSCoach: Wearable Real-time Auditory Feedback for Reducing Unwanted Words in Daily Communication", "url": "https://arxiv.org/pdf/2507.04238"},
+            {"ordinal": 5, "title": "The Impact of Different Types of Auditory Warnings on Working Memory", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8916232/"},
+            {"ordinal": 6, "title": "Library / paper", "url": "https://labs.sonicfield.org/library/auditory-icons-earcons-spearcons-and-speech-a-systematic-review-and-meta-analysi"},
+            {"ordinal": 7, "title": "ORIGINAL RESEARCH article", "url": "https://frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/full"},
+            {"ordinal": 8, "title": "www.frontiersin.org", "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/pdf"},
+            {"ordinal": 9, "title": "Spearcons: speech-based earcons improve navigation performance in auditory menus", "url": "https://repository.gatech.edu/entities/publication/ad27273b-db94-4caf-9b43-9b46ef6098e9"}
+          ]
+        },
+        {
+          "label": "N2",
+          "mode": "standard",
+          "query": "\"brief audio alerts\" Nees Liebman psyarxiv preprint",
+          "results": [
+            {"ordinal": 1, "title": "ldr.lafayette.edu", "url": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"},
+            {"ordinal": 2, "title": "WSCoach: Wearable Real-time Auditory Feedback for Reducing Unwanted Words in Daily Communication", "url": "https://arxiv.org/pdf/2507.04238"},
+            {"ordinal": 3, "title": "Invisible acoustic safe", "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11631307"},
+            {"ordinal": 4, "title": "Invisible acoustic safe", "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/12555448"},
+            {"ordinal": 5, "title": "Library / paper", "url": "https://sonicfield.org/library/auditory-icons-earcons-spearcons-and-speech-a-systematic-review-and-meta-analysi"},
+            {"ordinal": 6, "title": "Library / paper", "url": "https://labs.sonicfield.org/library/auditory-icons-earcons-spearcons-and-speech-a-systematic-review-and-meta-analysi"},
+            {"ordinal": 7, "title": "cicc.gatech.edu", "url": "https://cicc.gatech.edu/?p=698"},
+            {"ordinal": 8, "title": "Library / paper", "url": "https://sonicfield.org/library/speech-nonspeech-audio-and-visual-interruptions-of-a-tracking-task-a-replication-Nees-2024"},
+            {"ordinal": 9, "title": "www.frontiersin.org", "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2018.01206/epub"}
+          ]
+        },
+        {
+          "label": "N3",
+          "mode": "extended",
+          "query": "osf.io psyarxiv Nees \"Auditory icons, earcons, spearcons, and speech\"",
+          "results": [
+            {"ordinal": 1, "title": "Auditory Icons, Earcons, Spearcons, and Speech: A Systematic Review and Meta-Analysis of Brief Audio Alerts in Human-Machine Interfaces: Auditory Perception & Cognition: Vol 6, No 3-4", "url": "https://www.tandfonline.com/doi/abs/10.1080/25742442.2023.2219201"},
+            {"ordinal": 2, "title": "(PDF) Auditory Icons, Earcons, Spearcons, and Speech: A Systematic Review and Meta-Analysis of Brief Audio Alerts in Human-Machine Interfaces", "url": "https://www.researchgate.net/publication/371527094_Auditory_Icons_Earcons_Spearcons_and_Speech_A_Systematic_Review_and_Meta-Analysis_of_Brief_Audio_Alerts_in_Human-Machine_Interfaces"},
+            {"ordinal": 3, "title": "(PDF) Auditory icons, earcons, spearcons, and speech: A systematic review and meta-analysis of brief audio alerts in human-machine interfaces", "url": "https://www.academia.edu/94454696/Auditory_icons_earcons_spearcons_and_speech_A_systematic_review_and_meta_analysis_of_brief_audio_alerts_in_human_machine_interfaces"},
+            {"ordinal": 4, "title": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus - Bruce N. Walker, Jeffrey Lindsay, Amanda Nance, Yoko Nakano, Dianne K. Palladino, Tilman Dingler, Myounghoon Jeon, 2013", "url": "https://journals.sagepub.com/doi/10.1177/0018720812450587"},
+            {"ordinal": 5, "title": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus - Bruce N. Walker, Jeffrey Lindsay, Amanda Nance, Yoko Nakano, Dianne K. Palladino, Tilman Dingler, Myounghoon Jeon, 2013", "url": "https://doi.org/10.1177/0018720812450587"},
+            {"ordinal": 6, "title": "Auditory Icons, Earcons, and Speech", "url": "https://hearinghealthmatters.org/waynesworld/2023/auditory-icons-earcons-speech/"},
+            {"ordinal": 7, "title": "(PDF) LEARNABILTIY OF SOUND CUES FOR ENVIRONMENTAL FEATURES: AUDITORY ICONS, EARCONS, SPEARCONS, AND SPEECH", "url": "https://www.researchgate.net/publication/238494483_LEARNABILTIY_OF_SOUND_CUES_FOR_ENVIRONMENTAL_FEATURES_AUDITORY_ICONS_EARCONS_SPEARCONS_AND_SPEECH"},
+            {"ordinal": 8, "title": "Michael A Nees Publications — Michael A. Nees, Department of Psychology, Lafayette College", "url": "http://michaelanees.com/publications"},
+            {"ordinal": 9, "title": "Learnabiltiy of Sound Cues for Environmental Features: Auditory Icons, Earcons, Spearcons, and Speech", "url": "https://repository.gatech.edu/entities/publication/8cf42420-1aaf-4a59-9ccb-7c7458346a9d"}
+          ]
+        },
+        {
+          "label": "N4",
+          "mode": "standard",
+          "query": "\"g68f5\" psyarxiv",
+          "results": [
+            {"ordinal": 1, "title": "PsyArXiv", "url": "https://en.wikipedia.org/wiki/PsyArXiv"},
+            {"ordinal": 2, "title": "Libraries, University of Nebraska-Lincoln", "url": "https://digitalcommons.unl.edu/libphilprac/5870"},
+            {"ordinal": 3, "title": "library.ceu.edu", "url": "https://library.ceu.edu/?p=1700"},
+            {"ordinal": 4, "title": "guides.library.duke.edu", "url": "https://guides.library.duke.edu/c.php?g=289294"},
+            {"ordinal": 5, "title": "2016 - present", "url": "https://www.library.ucsb.edu/psyarxiv"},
+            {"ordinal": 6, "title": "preventive mental health care a complex systems framework for amb", "url": "https://researchers.mq.edu.au/en/publications/preventive-mental-health-care-a-complex-systems-framework-for-amb/"},
+            {"ordinal": 7, "title": "PsyArXiv preprints: a free preprint service for the psychological sciences", "url": "https://heibib.ub.uni-heidelberg.de/search/Record/1885367295?lng=de"},
+            {"ordinal": 8, "title": "osf io 2", "url": "https://parse.gl/brands/osf-io-2"},
+            {"ordinal": 9, "title": "unravelling the effects of empathy on social bonding following in", "url": "https://pure.royalholloway.ac.uk/en/publications/unravelling-the-effects-of-empathy-on-social-bonding-following-in/"},
+            {"ordinal": 10, "title": "older adults experiences of taking up a new community based leisu", "url": "https://researchportal.hw.ac.uk/en/publications/older-adults-experiences-of-taking-up-a-new-community-based-leisu/"}
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "M",
+      "purpose": "Methodological guidance discovery for deferred 1B packages D01-D06; not a lane search",
+      "window_start": "2026-10-13T01:06:04Z",
+      "window_end": "2026-10-13T01:14:08Z",
+      "window_note": "Bounded by the open-metadata API probe (proxy record) and the shell reading taken before the pilot batch.",
+      "runs": [
+        {
+          "label": "M1",
+          "mode": "standard",
+          "query": "PRISMA-P 2015 statement Moher Systematic Reviews 4:1 preferred reporting items protocols",
+          "results": [
+            {"ordinal": 1, "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement", "url": "https://docs.edtechhub.org/lib/J9LFRERT"},
+            {"ordinal": 2, "title": "Preferred reporting items for systematic review and meta-analysis protocols (prisma-p) 2015 statement", "url": "https://docs.edtechhub.org/lib/5CND5AP6"},
+            {"ordinal": 3, "title": "systematicreviewsjournal.biomedcentral.com", "url": "https://systematicreviewsjournal.biomedcentral.com/track/pdf/10.1186/2046-4053-4-1"},
+            {"ordinal": 4, "title": "escholarship.org", "url": "https://escholarship.org/content/qt1mg690pv/qt1mg690pv.pdf"},
+            {"ordinal": 5, "title": "researchonline.lshtm.ac.uk", "url": "https://researchonline.lshtm.ac.uk/2115619"},
+            {"ordinal": 6, "title": "preferred reporting items systematic reveiw and meta analysis protocols prisma p 2015", "url": "https://www.rti.org/publication/preferred-reporting-items-systematic-reveiw-and-meta-analysis-protocols-prisma-p-2015"},
+            {"ordinal": 7, "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement", "url": "https://research.regionh.dk/da/publications/preferred-reporting-items-for-systematic-review-and-meta-analysis/"},
+            {"ordinal": 8, "title": "4. SystematicReview", "url": "https://www.santamarcelina.edu.br/faculdade/saopaulo/wp-content/uploads/sites/4/2023/10/4.-SystematicReview.pdf"},
+            {"ordinal": 9, "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement", "url": "https://ruor.uottawa.ca/items/acc37601-94d2-4a41-9e48-a9b625c814bb"},
+            {"ordinal": 10, "title": "acc37601 94d2 4a41 9e48 a9b625c814bb", "url": "https://ruor.uottawa.ca/signposting/describedby/acc37601-94d2-4a41-9e48-a9b625c814bb"}
+          ]
+        },
+        {
+          "label": "M2",
+          "mode": "standard",
+          "query": "Campbell 2020 BMJ synthesis without meta-analysis SWiM reporting guideline l6890",
+          "results": [
+            {"ordinal": 1, "title": "Synthesis without meta-analysis (SWiM) in systematic reviews: reporting guideline", "url": "https://eprints.whiterose.ac.uk/id/eprint/156306"},
+            {"ordinal": 2, "title": "Synthesis without meta-analysis (SWiM) in systematic reviews:reporting guideline", "url": "https://eprints.whiterose.ac.uk/156306"},
+            {"ordinal": 3, "title": "eprints.gla.ac.uk", "url": "https://eprints.gla.ac.uk/199794"},
+            {"ordinal": 4, "title": "Synthesis without meta-analysis (SWiM) in systematic reviews: reporting guideline", "url": "https://gh.bmj.com/lookup/ijlink/YTozOntzOjQ6InBhdGgiO3M6MTQ6Ii9sb29rdXAvaWpsaW5rIjtzOjU6InF1ZXJ5IjthOjQ6e3M6ODoibGlua1R5cGUiO3M6NDoiRlVMTCI7czoxMToiam91cm5hbENvZGUiO3M6MzoiYm1qIjtzOjU6InJlc2lkIjtzOjE3OiIzNjgvamFuMTZfMy9sNjg5MCI7czo0OiJhdG9tIjtzOjIzOiIvYm1qZ2gvNy83L2UwMDkzMzAuYXRvbSI7fXM6ODoiZnJhZ21lbnQiO3M6MDoiIjt9"},
+            {"ordinal": 5, "title": "Journal article", "url": "https://ora.ox.ac.uk/objects/uuid:5587fb7d-ab83-47f4-9b70-1d644c94d246"},
+            {"ordinal": 6, "title": "UCL Discovery Stage", "url": "https://discovery-pp.ucl.ac.uk/id/eprint/10092670"},
+            {"ordinal": 7, "title": "Enhancing the QUAlity and Transparency Of health Research", "url": "https://www.equator-network.org/reporting-guidelines/synthesis-without-meta-analysis-swim-in-systematic-reviews-reporting-guideline/"},
+            {"ordinal": 8, "title": "Enhancing the QUAlity and Transparency Of health Research", "url": "https://www.equator-network.org/?p=18424"},
+            {"ordinal": 9, "title": "eprints.whiterose.ac.uk", "url": "https://eprints.whiterose.ac.uk/id/document/1812309"},
+            {"ordinal": 10, "title": "discovery-pp.ucl.ac.uk", "url": "https://discovery-pp.ucl.ac.uk/10092670/1/bmj.l6890.full.pdf"}
+          ]
+        },
+        {
+          "label": "M3",
+          "mode": "standard",
+          "query": "RAISE responsible use of AI in evidence synthesis recommendations 2025 Cochrane Campbell JBI position statement",
+          "results": [
+            {"ordinal": 1, "title": "Position statement on artificial intelligence (AI) use in evidence synthesis across Cochrane, the Campbell Collaboration, JBI, and the Collaboration for Environmental Evidence 2025", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12594113/"},
+            {"ordinal": 2, "title": "Position Statement on Artificial Intelligence (AI) Use in Evidence Synthesis Across Cochrane, the Campbell Collaboration, JBI, and the Collaboration for Environmental Evidence 2025", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12603384/"},
+            {"ordinal": 3, "title": "Position statement on artificial intelligence (AI) use in evidence synthesis across Cochrane, the Campbell Collaboration, JBI and the Collaboration for Environmental Evidence 2025", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12577299/"},
+            {"ordinal": 4, "title": "position statement on ai use in evidence synthesis", "url": "https://www.sei.org/publications/position-statement-on-ai-use-in-evidence-synthesis/"},
+            {"ordinal": 5, "title": "pmc.ncbi.nlm.nih.gov", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12594113/"},
+            {"ordinal": 6, "title": "Déclaration de positionnement sur l'utilisation de l'intelligence artificielle dans la synthèse des données probantes", "url": "https://france.cochrane.org/news/declaration-de-positionnement-sur-lutilisation-de-lintelligence-artificielle-dans-la-synthese"},
+            {"ordinal": 7, "title": "www.sei.org", "url": "https://www.sei.org/?p=208079"},
+            {"ordinal": 8, "title": "global evidence leaders mandate responsible ai use", "url": "https://jbi.global/news/article/global-evidence-leaders-mandate-responsible-ai-use"},
+            {"ordinal": 9, "title": "<resource xmlns:datacite=\"http://datacite.org/schema/kernel-4\">", "url": "https://door.donau-uni.ac.at/api/object/o:6047/datacite?format=xml"}
+          ]
+        },
+        {
+          "label": "M4",
+          "mode": "standard",
+          "query": "Guidance for producing a Campbell evidence and gap map White 2020 Campbell Systematic Reviews",
+          "results": [
+            {"ordinal": 1, "title": "Guidance for producing a Campbell evidence and gap map", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8356343/"},
+            {"ordinal": 2, "title": "Campbell Systematic Reviews (Dec 2020)", "url": "https://doaj.org/article/ad3826238c2643708289781ada57218b"},
+            {"ordinal": 3, "title": "Guidance for producing a Campbell evidence and gap map", "url": "https://journals.sagepub.com/doi/abs/10.1002/cl2.1125"},
+            {"ordinal": 4, "title": "IDEAS home Printed from https://ideas.repec.org/a/wly/camsys/v16y2020i4ne1125.html", "url": "https://ideas.repec.org/a/wly/camsys/v16y2020i4ne1125.html"},
+            {"ordinal": 5, "title": "sage.cnpereading.com", "url": "https://sage.cnpereading.com/doi/10.1002/cl2.1125"},
+            {"ordinal": 6, "title": "White etal 2020 Guidance for producing a Campbell evidence and gap map", "url": "https://lshtm-eprints-repo-prod.lshtm-eprints.cdl.cosector.com/4674958/1/White-etal-2020-Guidance-for-producing-a-Campbell-evidence-and-gap-map.pdf"},
+            {"ordinal": 7, "title": "PROTOCOL: Methods used in the development, production and updating of evidence and gap maps: A scoping review", "url": "https://core.ac.uk/works/155076975"},
+            {"ordinal": 8, "title": "Campbell Systematic Reviews (Jun 2024)", "url": "https://doaj.org/article/0691e071c5304ed5a38dca6f56125389"},
+            {"ordinal": 9, "title": "Accelerate Literature Icon", "url": "https://discovery.researcher.life/article/protocol-health-visiting-interventions-with-0-u20135-year-olds-and-their-families-an-evidence-and-gap-map/448de42dda3334b59e508730c8b29d53"}
+          ]
+        },
+        {
+          "label": "M5",
+          "mode": "standard",
+          "query": "PRESS Peer Review of Electronic Search Strategies 2015 guideline statement McGowan",
+          "results": [
+            {"ordinal": 1, "title": "CP0015 PRESS Update Report 2016", "url": "https://www.cda-amc.ca/sites/default/files/pdf/CP0015_PRESS_Update_Report_2016.pdf"},
+            {"ordinal": 2, "title": "PRESS 2015: checklist for search strategies", "url": "https://kib.ki.se/en/node/1317"},
+            {"ordinal": 3, "title": "PRESS Peer Review of Electronic Search Strategies: 2015 Guideline Explanation and Elaboration", "url": "https://www.cda-amc.ca/node/92248"},
+            {"ordinal": 4, "title": "press 2015 peer review of search strategies", "url": "https://casrai.org/guides/press-2015-peer-review-of-search-strategies"},
+            {"ordinal": 5, "title": "edisciplinas.usp.br", "url": "https://edisciplinas.usp.br/mod/resource/view.php?id=4599384"},
+            {"ordinal": 6, "title": "www.bibsonomy.org", "url": "https://www.bibsonomy.org/bibtex/1e767ec219d206610313dc26664d708e?lang=en"},
+            {"ordinal": 7, "title": "www.cda-amc.ca", "url": "https://www.cda-amc.ca/node/127696"},
+            {"ordinal": 8, "title": "www.cadth.ca", "url": "https://www.cadth.ca/node/127696"},
+            {"ordinal": 9, "title": "ESMIG current leadership", "url": "https://connect.ala.org/acrl/discussion/new-incoming-convener-and-upcoming-session-where-we-will-peer-reviewing-a-search-strategy-using-press"},
+            {"ordinal": 10, "title": "checklist searches for editors cochrane work", "url": "https://work.cochrane.org/sites/work.cochrane.org/files/public/uploads/checklist_searches_for_editors_cochrane_work.pdf"}
+          ]
+        },
+        {
+          "label": "M6",
+          "mode": "standard",
+          "query": "Cochrane Handbook chapter 11 network meta-analysis transitivity undertaking",
+          "results": [
+            {"ordinal": 1, "title": "training.cochrane.org", "url": "https://training.cochrane.org/ch11"},
+            {"ordinal": 2, "title": "Chapter 11: Undertaking network meta-analyses", "url": "https://boris.unibe.ch/142854"},
+            {"ordinal": 3, "title": "chapter 11", "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-11"},
+            {"ordinal": 4, "title": "E4 L%20Key%20assumptions%20in%20indirect%20comparisons%20and%20network%20meta analyses", "url": "https://methods.cochrane.org/sites/methods.cochrane.org.cmi/files/public/uploads/E4-L%20Key%20assumptions%20in%20indirect%20comparisons%20and%20network%20meta-analyses.pdf"},
+            {"ordinal": 5, "title": "cochrane handbook for systematic reviews of interventions 13194920", "url": "https://antiqua-online.e-bookshelf.de/cochrane-handbook-for-systematic-reviews-of-interventions-13194920.html"},
+            {"ordinal": 6, "title": "Media 1068064 smxx", "url": "https://www6.gla.ac.uk/media/Media_1068064_smxx.pdf"},
+            {"ordinal": 7, "title": "boris.unibe.ch", "url": "https://boris.unibe.ch/view/publisher/Cochrane.html"},
+            {"ordinal": 8, "title": "Media 1068064 smxx", "url": "https://www.alumni.gla.ac.uk/media/Media_1068064_smxx.pdf"},
+            {"ordinal": 9, "title": "Article type", "url": "https://abstracts.cochrane.org/2015-vienna/characteristics-network-meta-analysis-reviews-cochrane"}
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "P1",
+      "purpose": "Labelled pilot queries across the Brier, related-theory and auditory lanes",
+      "window_start": "2026-10-13T01:14:08Z",
+      "window_end": "2026-10-13T01:14:31Z",
+      "window_note": "Shell clock readings taken immediately before the first and after the last call of this batch.",
+      "runs": [
+        {
+          "label": "P-B1",
+          "lane": "brier",
+          "mode": "standard",
+          "query": "cybersemiotics Brier",
+          "results": [
+            {"ordinal": 1, "title": "Introduction to Cybersemiotics: A Transdisciplinary Perspective, Carlos VidalesSøren Brier (ed.)(2021)", "url": "https://incom.uab.cat/portalcom/?p=54572"},
+            {"ordinal": 2, "title": "Transdisciplinarity seen through Information, Communication, Computation, (Inter-)Action and Cognition", "url": "https://arxiv.org/pdf/1604.04711"},
+            {"ordinal": 3, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/view/26864"},
+            {"ordinal": 4, "title": "link.springer.com", "url": "https://link.springer.com/book/10.1007/978-3-030-52746-4"},
+            {"ordinal": 5, "title": "www-users.york.ac.uk", "url": "https://www-users.york.ac.uk/~ss44/books/pages/b/SorenBrier.htm"},
+            {"ordinal": 6, "title": "megabooks.sk", "url": "https://megabooks.sk/en/p/13029158/2178094/cybersemiotics"},
+            {"ordinal": 7, "title": "www.springer.com", "url": "https://www.springer.com/book/9783030527464"},
+            {"ordinal": 8, "title": "Cybersemiotics: A Semiotic-systemic Transdisciplinary", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/45591012/s_ren_brier_cybersemiotics_a_semiotic_systemic_publishersversion.pdf"},
+            {"ordinal": 9, "title": "oeaw.ac.at", "url": "https://oeaw.ac.at/resources/Record/9781442687813"},
+            {"ordinal": 10, "title": "akademika.no", "url": "https://akademika.no/dokumentar-og-fakta/kunst-og-kultur/cybersemiotics/9781442626362"}
+          ]
+        },
+        {
+          "label": "P-B2",
+          "lane": "brier",
+          "mode": "standard",
+          "query": "cybersemiotics critique criticism limitations",
+          "results": [
+            {"ordinal": 1, "title": "introduction to cybersemiotics a transdisciplinary perspective 14101954", "url": "https://kohlibri.e-bookshelf.de/introduction-to-cybersemiotics-a-transdisciplinary-perspective-14101954.html"},
+            {"ordinal": 2, "title": "link.springer.com", "url": "https://link.springer.com/book/10.1007/978-3-030-52746-4"},
+            {"ordinal": 3, "title": "www.springer.com", "url": "https://www.springer.com/book/9783030527464"},
+            {"ordinal": 4, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"},
+            {"ordinal": 5, "title": "Introduction to Cybersemiotics: A Transdisciplinary Perspective, Carlos VidalesSøren Brier (ed.)(2021)", "url": "https://incom.uab.cat/portalcom/?p=54572"},
+            {"ordinal": 6, "title": "Entropy (Sep 2010)", "url": "https://doaj.org/article/4ed5ffbf26e546fdaec0d519336baf36"},
+            {"ordinal": 7, "title": "mitpressbookstore.mit.edu", "url": "https://mitpressbookstore.mit.edu/book/9783030527488"},
+            {"ordinal": 8, "title": "mitpressbookstore.mit.edu", "url": "https://mitpressbookstore.mit.edu/book/9783030527457"},
+            {"ordinal": 9, "title": "obalkyknih.cz", "url": "https://obalkyknih.cz/file/toc/692621/pdf"}
+          ]
+        },
+        {
+          "label": "P-B3",
+          "lane": "brier",
+          "mode": "standard",
+          "query": "Brier \"Cybersemiotics: Why Information Is Not Enough\" University of Toronto Press 2008",
+          "results": [
+            {"ordinal": 1, "title": "www-users.york.ac.uk", "url": "https://www-users.york.ac.uk/~ss44/books/pages/b/SorenBrier.htm"},
+            {"ordinal": 2, "title": "49thshelf.com", "url": "https://49thshelf.com/Books/C/Cybersemiotics3"},
+            {"ordinal": 3, "title": "revistas.pucsp.br", "url": "https://revistas.pucsp.br/index.php/teccogs/article/download/52904/34713/157589"},
+            {"ordinal": 4, "title": "oeaw.ac.at", "url": "https://oeaw.ac.at/resources/Record/9781442687813"},
+            {"ordinal": 5, "title": "Cybersemiotics : why information is not enough! / Søren Brier. why information is not enough! /", "url": "https://vufind.lboro.ac.uk/Record/508220/Description"},
+            {"ordinal": 6, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"},
+            {"ordinal": 7, "title": "Cybersemiotics : why information is not enough! / Søren Brier. why information is not enough! /", "url": "https://vufind.lboro.ac.uk/Record/508220/Details"},
+            {"ordinal": 8, "title": "Cybersemiotics : why information is not enough! / Søren Brier. why information is not enough! /", "url": "https://vufind.lboro.ac.uk/Record/508220"},
+            {"ordinal": 9, "title": "Number of the records: 1", "url": "https://library.upol.cz/arl-upol/en/detail-upol_us_cat-0342454-Cybersemiotics/?disprec=1"},
+            {"ordinal": 10, "title": "Cybersemiotics : why information is not enough! / Søren Brier. why information is not enough! /", "url": "https://vufind.lboro.ac.uk/Record/508220/Similar"}
+          ]
+        },
+        {
+          "label": "P-B4",
+          "lane": "brier",
+          "mode": "standard",
+          "query": "cybersemiotics human-computer interaction interface design sound",
+          "results": [
+            {"ordinal": 1, "title": "DESIGN GUIDELINES FOR THE USE OF AUDIO CUES IN COMPUTER INTERFACES", "url": "https://trid.trb.org/View/392538"},
+            {"ordinal": 2, "title": "DESIGN GUIDELINES FOR THE USE OF AUDIO CUES IN COMPUTER INTERFACES", "url": "https://trid.trb.org/view.aspx?id=392538"},
+            {"ordinal": 3, "title": "A semiotic analysis of sounds in personal computers: Toward a semiotic model of human-computer interaction", "url": "https://www.degruyterbrill.com/document/doi/10.1515/semi.2010.060/pdf"},
+            {"ordinal": 4, "title": "arxiv.org", "url": "https://arxiv.org/html/2404.03894v1"},
+            {"ordinal": 5, "title": "www.arxiv.org", "url": "https://www.arxiv.org/pdf/2404.03894"},
+            {"ordinal": 6, "title": "uni-bielefeld.de", "url": "https://www.techfak.uni-bielefeld.de/ags/wbski/GW2009/page6/abstracts/Tuuri.pdf"},
+            {"ordinal": 7, "title": "Screen-Based Musical Interfaces as Semiotic Machines", "url": "https://nime.org/proc/nime2006_magnusson/"},
+            {"ordinal": 8, "title": "Semiotics and Human-Computer Interaction (since 1980)", "url": "https://www.nadin.ws/?p=61"},
+            {"ordinal": 9, "title": "florian goeschke", "url": "https://www.fabulationforfuture.net/florian-goeschke/"}
+          ]
+        },
+        {
+          "label": "P-R1",
+          "lane": "related",
+          "mode": "standard",
+          "query": "semiotic engineering de Souza communicability human-computer interaction",
+          "results": [
+            {"ordinal": 1, "title": "The Semiotic Engineering of Human-Computer Interaction", "url": "https://tenlong.com.tw/products/9780262527095"},
+            {"ordinal": 2, "title": "librarycatalog.ecu.edu", "url": "https://librarycatalog.ecu.edu/catalog/4273866"},
+            {"ordinal": 3, "title": "> Skip to content", "url": "https://www.penguin.com.au/books/the-semiotic-engineering-of-human-computer-interaction-9780262527095"},
+            {"ordinal": 4, "title": "The Semiotic Engineering of Human-Computer Interaction", "url": "https://penguinrandomhouse.ca/books/655169/the-semiotic-engineering-of-human-computer-interaction-by-clarisse-sieckenius-de-souza/9780262527095"},
+            {"ordinal": 5, "title": "The Semiotic Engineering of Human-Computer Interaction (Acting with Technology)", "url": "https://mitpressbookstore.mit.edu/book/9780262527095"},
+            {"ordinal": 6, "title": "Semiotic engineering methods for scientific research in HCI", "url": "https://ebook.library.uitm.edu.my/Record/3409/Description"},
+            {"ordinal": 7, "title": "The Semiotic Engineering of Human-Computer Interaction", "url": "https://massivebookshop.com/products/9780262527095"},
+            {"ordinal": 8, "title": "link.springer.com", "url": "https://link.springer.com/10.1007/978-3-031-02185-5"},
+            {"ordinal": 9, "title": "bookculture.com", "url": "https://bookculture.com/book/9780262527095"},
+            {"ordinal": 10, "title": "www.springer.com", "url": "https://www.springer.com/book/9783031010576"}
+          ]
+        },
+        {
+          "label": "P-R2",
+          "lane": "related",
+          "mode": "standard",
+          "query": "semiotics of sonification auditory display Peirce icon index symbol",
+          "results": [
+            {"ordinal": 1, "title": "Unleashing the Power of Sound: Revisiting the Physics of Notations for Modelling with auditory symbols", "url": "https://arxiv.org/pdf/2304.08654"},
+            {"ordinal": 2, "title": "Ways of Listening and Modes of Being: Electroacoustic Auditory Display", "url": "https://arxiv.org/pdf/1311.5880"},
+            {"ordinal": 3, "title": "Peircean Semiotics and Sound", "url": "https://researchcatalogue.net/view/94638/208625"},
+            {"ordinal": 4, "title": "Document Type", "url": "https://digitalcommons.mtu.edu/cls-fp/87"},
+            {"ordinal": 5, "title": "A semiotic analysis of sounds in personal computers: Toward a semiotic model of human-computer interaction", "url": "https://www.degruyterbrill.com/document/doi/10.1515/semi.2010.060/pdf"},
+            {"ordinal": 6, "title": "Taylor ICAD2017rev", "url": "https://stephenandrewtaylor.net/Taylor_ICAD2017rev.pdf"},
+            {"ordinal": 7, "title": "iris.unige.it", "url": "https://iris.unige.it/handle/11567/982895"},
+            {"ordinal": 8, "title": "Three paradigms of iconicity research in language and literature", "url": "https://www.degruyterbrill.com/document/doi/10.1075/ill.14.01not/html"},
+            {"ordinal": 9, "title": "iris.unipv.it", "url": "https://iris.unipv.it/handle/11571/119056"}
+          ]
+        },
+        {
+          "label": "P-R3",
+          "lane": "related",
+          "mode": "standard",
+          "query": "common ground grounding repair human-machine communication voice assistant",
+          "results": [
+            {"ordinal": 1, "title": "A Context Alignment Pre-processor for Enhancing the Coherence of Human-LLM Dialog", "url": "https://arxiv.org/pdf/2603.16052"},
+            {"ordinal": 2, "title": "Look at Me When I Talk to You: A Video Dataset to Enable Voice Assistants to Recognize Errors", "url": "https://arxiv.org/pdf/2104.07153"},
+            {"ordinal": 3, "title": "s12193 021 00366 y", "url": "https://link.springer.com/article/10.1007/s12193-021-00366-y"},
+            {"ordinal": 4, "title": "escholarship.org", "url": "https://escholarship.org/uc/item/3dz9x76g"},
+            {"ordinal": 5, "title": "datalearner.com", "url": "https://datalearner.com/academic/journal-papers/0747-5632/volumes-and-issues/170/paper-detail/35828"},
+            {"ordinal": 6, "title": "Grounding in Multi-modal Task-Oriented Collaboration", "url": "https://tecfa.unige.ch/tecfa/research/cscps/euroaied/murder-4.html"},
+            {"ordinal": 7, "title": "www.dfki.de", "url": "https://www.dfki.de/web/forschung/projekte-publikationen/publikation/15981"},
+            {"ordinal": 8, "title": "escholarship.org", "url": "https://escholarship.org/content/qt3dz9x76g/qt3dz9x76g.pdf"},
+            {"ordinal": 9, "title": "Grounding in Dialogue", "url": "https://insertchat.com/glossary/grounding-in-dialogue"},
+            {"ordinal": 10, "title": "Published In", "url": "https://pdxscholar.library.pdx.edu/ling_fac/79"}
+          ]
+        },
+        {
+          "label": "P-R4",
+          "lane": "related",
+          "mode": "standard",
+          "query": "semantic information agency Kolchinsky Wolpert",
+          "results": [
+            {"ordinal": 1, "title": "Semantic Information in a model of Resource Gathering Agents", "url": "https://arxiv.org/pdf/2304.03286"},
+            {"ordinal": 2, "title": "pmc.ncbi.nlm.nih.gov", "url": "https://pmc.ncbi.nlm.nih.gov/articles/pmid/30443338"},
+            {"ordinal": 3, "title": "par.nsf.gov", "url": "https://par.nsf.gov/servlets/purl/10111258"},
+            {"ordinal": 4, "title": "Semantic information, agency, and nonequilibrium statistical physics", "url": "https://comdig.cssociety.org/2018/06/26/semantic-information-agency-and-nonequilibrium-statistical-physics/"},
+            {"ordinal": 5, "title": "Semantic information, agency, & physics", "url": "https://comdig.cssociety.org/2018/10/28/semantic-information-agency-physics/"},
+            {"ordinal": 6, "title": "Semantic information, autonomous agency, and nonequilibrium statistical physics", "url": "https://ar5iv.labs.arxiv.org/html/1806.08053"},
+            {"ordinal": 7, "title": "lesswrong.com", "url": "https://lesswrong.com/posts/RmEeXbvrmakRubTzN"},
+            {"ordinal": 8, "title": "comdig.cssociety.org", "url": "https://comdig.cssociety.org/author/cxdig/page/107/"},
+            {"ordinal": 9, "title": "Causal Leverage Density: A General Approach to Semantic Information", "url": "https://arxiv.org/html/2407.07335v1"},
+            {"ordinal": 10, "title": "re.public.polimi.it", "url": "https://re.public.polimi.it/handle/11311/1272503"}
+          ]
+        },
+        {
+          "label": "P-A1",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "earcons auditory icons spearcons comprehension learning experiment",
+          "results": [
+            {"ordinal": 1, "title": "cs.auckland.ac.nz", "url": "https://cs.auckland.ac.nz/compsci705s1c/exams/SeminarReports/wliu080FinalSeminarReport.pdf"},
+            {"ordinal": 2, "title": "Learnabiltiy of Sound Cues for Environmental Features: Auditory Icons, Earcons, Spearcons, and Speech", "url": "https://repository.gatech.edu/entities/publication/8cf42420-1aaf-4a59-9ccb-7c7458346a9d"},
+            {"ordinal": 3, "title": "ORIGINAL RESEARCH article", "url": "https://frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/full"},
+            {"ordinal": 4, "title": "pmc.ncbi.nlm.nih.gov", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8916232"},
+            {"ordinal": 5, "title": "accessibleoceans.whoi.edu", "url": "https://accessibleoceans.whoi.edu/?p=1072"},
+            {"ordinal": 6, "title": "bibsonomy.org", "url": "https://Bibsonomy.org/bibtex/152e35b3c27196fae1f0724c7baa9b9be"},
+            {"ordinal": 7, "title": "www.frontiersin.org", "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/pdf"},
+            {"ordinal": 8, "title": "monitoring vital signs with time compressed speech", "url": "https://experts.arizona.edu/en/publications/monitoring-vital-signs-with-time-compressed-speech/"},
+            {"ordinal": 9, "title": "Monitoring vital signs with time-compressed speech", "url": "https://scholars.ln.edu.hk/en/publications/monitoring-vital-signs-with-time-compressed-speech/"}
+          ]
+        },
+        {
+          "label": "P-A2",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "auditory warnings perceived urgency hazard severity mapping",
+          "results": [
+            {"ordinal": 1, "title": "490a7d41 1afe 4f39 a9a2 244c6314c7b7", "url": "https://uwspace.uwaterloo.ca/signposting/describedby/490a7d41-1afe-4f39-a9a2-244c6314c7b7"},
+            {"ordinal": 2, "title": "user.engineering.uiowa.edu", "url": "https://user.engineering.uiowa.edu/~csl/publications/pdf/leewiese04.pdf"},
+            {"ordinal": 3, "title": "on using psychophysical techniques to achieve urgency mapping in", "url": "https://researchportal.plymouth.ac.uk/en/publications/on-using-psychophysical-techniques-to-achieve-urgency-mapping-in-/"},
+            {"ordinal": 4, "title": "490a7d41 1afe 4f39 a9a2 244c6314c7b7", "url": "https://uwspace.uwaterloo.ca/items/490a7d41-1afe-4f39-a9a2-244c6314c7b7"},
+            {"ordinal": 5, "title": "An Exploration of Tactile Warning Design Based on Perceived Urgency", "url": "https://uwspace.uwaterloo.ca/items/490a7d41-1afe-4f39-a9a2-244c6314c7b7/full"},
+            {"ordinal": 6, "title": "jcaa.caa-aca.ca", "url": "https://jcaa.caa-aca.ca/index.php/jcaa/article/download/1391/1134/1524"},
+            {"ordinal": 7, "title": "An Exploration of Tactile Warning Design Based on Perceived Urgency", "url": "https://uwspace.uwaterloo.ca/handle/10012/7333"},
+            {"ordinal": 8, "title": "An Exploration of Tactile Warning Design Based on Perceived Urgency", "url": "https://uwspace.uwaterloo.ca/handle/10012/7333?show=full"},
+            {"ordinal": 9, "title": "OLB PM 17315851", "url": "https://ngdc.cncb.ac.cn/openlb/publication/OLB-PM-17315851"},
+            {"ordinal": 10, "title": "pubs.lib.uiowa.edu", "url": "https://pubs.lib.uiowa.edu/driving/article/28067/galley/136359/view"}
+          ]
+        },
+        {
+          "label": "P-A3",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "synthetic speech warning human-like versus robotic voice trust compliance alerts",
+          "results": [
+            {"ordinal": 1, "title": "Natural vs. Artificial speech (Bruce Walker )", "url": "https://auditory.org/postings/1999/206.html"},
+            {"ordinal": 2, "title": "The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction", "url": "https://research.chalmers.se/publication/546010"},
+            {"ordinal": 3, "title": "2024 2025 RuijvenLvanLee", "url": "https://theses.liacs.nl/pdf/2024-2025-RuijvenLvanLee.pdf"},
+            {"ordinal": 4, "title": "api.crossref.org", "url": "https://api.crossref.org/works/10.1145%2F3706066"},
+            {"ordinal": 5, "title": "The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction", "url": "https://research.chalmers.se/en/publication/546010"},
+            {"ordinal": 6, "title": "The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction", "url": "https://researchportal.hw.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/"},
+            {"ordinal": 7, "title": "the effect of voice and repair strategy on trust formation and re", "url": "https://research.manchester.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/"},
+            {"ordinal": 8, "title": "[Date Prev][Date Next][Thread Prev][Thread Next][Date Index][Thread Index]", "url": "https://auditory.org/mhonarc/1999/msg00204.html"},
+            {"ordinal": 9, "title": "Computers in Human Behavior Reports (Aug 2025)", "url": "https://doaj.org/article/347460ae52be4188b9a35f1085f74052"},
+            {"ordinal": 10, "title": "Українська правда", "url": "https://mezha.ua/en/news/ai-voice-recognition-315173/amp/"}
+          ]
+        },
+        {
+          "label": "P-A4",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "sonification of uncertainty auditory display evaluation",
+          "results": [
+            {"ordinal": 1, "title": "Sounds Uncertain: Exploring the Affective Aspects of Sonification for Uncertainty Visualization", "url": "https://arxiv.org/pdf/2608.18680"},
+            {"ordinal": 2, "title": "Bearman paper", "url": "https://ueaeprints.uea.ac.uk/33330/1/Bearman_paper.pdf"},
+            {"ordinal": 3, "title": "arxiv.org", "url": "https://arxiv.org/abs/2505.14379v1"},
+            {"ordinal": 4, "title": "Sonifying data uncertainty with sound dimensions", "url": "https://figshare.com/articles/Sonifying_data_uncertainty_with_sound_dimensions/6973733"},
+            {"ordinal": 5, "title": "Using Sound to Represent Uncertainty in Spatial Data", "url": "https://ueaeprints.uea.ac.uk/52676/"},
+            {"ordinal": 6, "title": "Using Sound to Represent Uncertainty in Spatial Data", "url": "https://ueaeprints.uea.ac.uk/id/eprint/52676"},
+            {"ordinal": 7, "title": "Two Empirical Studies on Audiovisual Semiotics of Uncertainty", "url": "https://arxiv.org/html/2505.14379v1"},
+            {"ordinal": 8, "title": "sinoxiv.napstic.cn", "url": "https://sinoxiv.napstic.cn/article/24710214"},
+            {"ordinal": 9, "title": "2505.14379 zh 1751389876", "url": "https://arxivlens.com/zh/paper/2505.14379-zh-1751389876"}
+          ]
+        },
+        {
+          "label": "P-A5",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "auditory alerts learnability retention long-term training earcons speech",
+          "results": [
+            {"ordinal": 1, "title": "Learning and retention of auditory warnings", "url": "https://repository.gatech.edu/entities/publication/d1b12e8f-665d-4ecf-9536-3131f8191553"},
+            {"ordinal": 2, "title": "Learnabiltiy of Sound Cues for Environmental Features: Auditory Icons, Earcons, Spearcons, and Speech", "url": "https://repository.gatech.edu/entities/publication/8cf42420-1aaf-4a59-9ccb-7c7458346a9d"},
+            {"ordinal": 3, "title": "chi11 mcgee1", "url": "https://www.cs.stir.ac.uk/~kjt/research/match/resources/documents/chi11-mcgee1.pdf"},
+            {"ordinal": 4, "title": "e3febb4c 5a7f 4052 a4ba 20c284a0e669", "url": "https://repository.gatech.edu/entities/publication/e3febb4c-5a7f-4052-a4ba-20c284a0e669"},
+            {"ordinal": 5, "title": "Auditory Icon and Earcon Mobile Service Notifications: Intuitiveness, Learnability, Memorability and Preference", "url": "https://researchportal.bath.ac.uk/en/publications/auditory-icon-and-earcon-mobile-service-notifications-intuitivene/"},
+            {"ordinal": 6, "title": "eprints.gla.ac.uk", "url": "https://eprints.gla.ac.uk/3250"},
+            {"ordinal": 7, "title": "eprints.gla.ac.uk", "url": "https://eprints.gla.ac.uk/3247"},
+            {"ordinal": 8, "title": "core.ac.uk", "url": "https://core.ac.uk/works/407645"},
+            {"ordinal": 9, "title": "learning and retention associations between auditory icons and denotative referents", "url": "https://swov.nl/nl/publicatie/learning-and-retention-associations-between-auditory-icons-and-denotative-referents"},
+            {"ordinal": 10, "title": "cough once danger icons versus abstract warnings informative alerts civil aviation", "url": "https://swov.nl/nl/publicatie/cough-once-danger-icons-versus-abstract-warnings-informative-alerts-civil-aviation"}
+          ]
+        },
+        {
+          "label": "P-A6",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "systematic review auditory displays alarms warnings notifications",
+          "results": [
+            {"ordinal": 1, "title": "Design Considerations for Auditory Alarms in the Process Industry: A Systematic Literature Review", "url": "https://openarchive.usn.no/usn-xmlui/handle/11250/2764585"},
+            {"ordinal": 2, "title": "ldr.lafayette.edu", "url": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"},
+            {"ordinal": 3, "title": "pmc.ncbi.nlm.nih.gov", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"},
+            {"ordinal": 4, "title": "openarchive.usn.no", "url": "https://openarchive.usn.no/usn-xmlui/handle/11250/2764585?show=full"},
+            {"ordinal": 5, "title": "imsear.searo.who.int", "url": "https://imsear.searo.who.int/handle/123456789/122170"},
+            {"ordinal": 6, "title": "979122d5 53f0 48c0 b115 1f945deca18f", "url": "https://imsear.searo.who.int/signposting/describedby/979122d5-53f0-48c0-b115-1f945deca18f"},
+            {"ordinal": 7, "title": "In-Vehicle Auditory Alerts Literature Review", "url": "https://rosap.ntl.bts.gov/view/dot/60401"},
+            {"ordinal": 8, "title": "caa-aca.ca", "url": "https://jcaa.caa-aca.ca/index.php/jcaa/article/download/1147/880/1270"},
+            {"ordinal": 9, "title": "about.uq.edu.au", "url": "https://about.uq.edu.au/experts-publication/1076/4748?page=1"},
+            {"ordinal": 10, "title": "auditory warnings in noisy environments", "url": "https://researchportal.plymouth.ac.uk/en/publications/auditory-warnings-in-noisy-environments/"}
+          ]
+        },
+        {
+          "label": "P-A7",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "auditory icons versus speech warnings no significant difference response time accuracy",
+          "results": [
+            {"ordinal": 1, "title": "선박 경보관리 시스템의 경보음에 대한 평가 연구", "url": "https://kriso.re.kr/sciwatch/handle/2021.sw.kriso/5809?mode=full"},
+            {"ordinal": 2, "title": "Papers by Sarah Isherwood", "url": "https://leeds.academia.edu/SarahIsherwood"},
+            {"ordinal": 3, "title": "선교내에서 청각경보음의 유형이 반응속도와 정확성에 미치는 영향", "url": "https://www.kriso.re.kr/sciwatch/handle/2021.sw.kriso/1202?mode=full"},
+            {"ordinal": 4, "title": "Cited 0 time in", "url": "https://www.kriso.re.kr/sciwatch/handle/2021.sw.kriso/5638?mode=full"},
+            {"ordinal": 5, "title": "ldr.lafayette.edu", "url": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"},
+            {"ordinal": 6, "title": "Detailed Information", "url": "https://kriso.re.kr/sciwatch/handle/2021.sw.kriso/1202"},
+            {"ordinal": 7, "title": "use auditory icons emergency warnings evaluation within vehicle collision avoidance", "url": "https://swov.nl/nl/publicatie/use-auditory-icons-emergency-warnings-evaluation-within-vehicle-collision-avoidance"},
+            {"ordinal": 8, "title": "use auditory icons emergency warnings evaluation within vehicle collision avoidance", "url": "https://swov.nl/en/publicatie/use-auditory-icons-emergency-warnings-evaluation-within-vehicle-collision-avoidance"},
+            {"ordinal": 9, "title": "www.dcs.gla.ac.uk", "url": "https://www.dcs.gla.ac.uk/~stephen/generalearcons/generalearcons3.shtml"},
+            {"ordinal": 10, "title": "CrossRef citations to date", "url": "https://informahealthcare.com/doi/full/10.1080/001401399185108"}
+          ]
+        },
+        {
+          "label": "P-A8",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "akustische Warnsignale Verständlichkeit Sprachwarnung Earcons Studie",
+          "results": [
+            {"ordinal": 1, "title": "The Impact of Different Types of Auditory Warnings on Working Memory", "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8916232/"},
+            {"ordinal": 2, "title": "phaidra.kug.ac.at", "url": "https://phaidra.kug.ac.at/open/o:76982"},
+            {"ordinal": 3, "title": "Frontiers in Psychology (Feb 2022)", "url": "https://doaj.org/article/b508210105d842cb9119d3d4ba341f99"},
+            {"ordinal": 4, "title": "Promoting excellence in mobility engineering", "url": "https://go.fisita.com/store/papers/FISITA2010/F2010D033"},
+            {"ordinal": 5, "title": "www.frontiersin.org", "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/pdf"},
+            {"ordinal": 6, "title": "DGM2016 Huber Czedik Reuter", "url": "https://homepage.univie.ac.at/christoph.reuter/unterwegs/DGM2016_Huber_Czedik_Reuter.pdf"},
+            {"ordinal": 7, "title": "Investigating the effect of earcon and speech variables on hybrid auditory alerts at rail crossings", "url": "https://repository.gatech.edu/entities/publication/146bfb5a-62dc-4f01-879d-3ad9b9e5ca9a"},
+            {"ordinal": 8, "title": "ORIGINAL RESEARCH article", "url": "https://frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/full"},
+            {"ordinal": 9, "title": "use auditory icons emergency warnings evaluation within vehicle collision avoidance", "url": "https://swov.nl/en/publicatie/use-auditory-icons-emergency-warnings-evaluation-within-vehicle-collision-avoidance"}
+          ]
+        },
+        {
+          "label": "P-A1X",
+          "lane": "auditory",
+          "mode": "extended",
+          "query": "earcons auditory icons spearcons comprehension learning experiment",
+          "results": [
+            {"ordinal": 1, "title": "Auditory Icons Research Papers - Academia.edu", "url": "https://www.academia.edu/Documents/in/Auditory_Icons"},
+            {"ordinal": 2, "title": "[PDF] SPEARCONS: SPEECH-BASED EARCONS IMPROVE NAVIGATION PERFORMANCE IN AUDITORY MENUS", "url": "https://www.semanticscholar.org/paper/SPEARCONS:-SPEECH-BASED-EARCONS-IMPROVE-NAVIGATION-Walker-Nance/d19e455da766abca8dd529d76f8be663ad7f70c1"},
+            {"ordinal": 3, "title": "auditory icons, earcons, spearcons", "url": "https://www.icad.org/Proceedings/2008/DinglerLindsay2008.pdf"},
+            {"ordinal": 4, "title": "(PDF) Examining the Learnability of Auditory Displays: Music, Earcons, Spearcons, and Lyricons", "url": "https://www.researchgate.net/publication/329329988_Examining_the_Learnability_of_Auditory_Displays_Music_Earcons_Spearcons_and_Lyricons"},
+            {"ordinal": 5, "title": "(PDF) Learnabiltiy of Sound Cues for Environmental Features: Auditory Icons, Earcons, Spearcons, and Speech", "url": "https://www.academia.edu/91880739/Learnabiltiy_of_Sound_Cues_for_Environmental_Features_Auditory_Icons_Earcons_Spearcons_and_Speech"},
+            {"ordinal": 6, "title": "(PDF) LEARNABILTIY OF SOUND CUES FOR ENVIRONMENTAL FEATURES: AUDITORY ICONS, EARCONS, SPEARCONS, AND SPEECH", "url": "https://www.researchgate.net/publication/238494483_LEARNABILTIY_OF_SOUND_CUES_FOR_ENVIRONMENTAL_FEATURES_AUDITORY_ICONS_EARCONS_SPEARCONS_AND_SPEECH"},
+            {"ordinal": 7, "title": "accessibleoceans.whoi.edu", "url": "https://accessibleoceans.whoi.edu/?p=1072"},
+            {"ordinal": 8, "title": "ORIGINAL RESEARCH article", "url": "https://frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/full"},
+            {"ordinal": 9, "title": "pmc.ncbi.nlm.nih.gov", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8916232"}
+          ]
+        },
+        {
+          "label": "P-A9",
+          "lane": "auditory",
+          "mode": "standard",
+          "query": "anthropomorphic voice emotional prosody machine alerts listener affect versus neutral synthetic voice",
+          "results": [
+            {"ordinal": 1, "title": "Emotive advisory system and method", "url": "https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/9811935"},
+            {"ordinal": 2, "title": "Applied Sciences (Apr 2021)", "url": "https://doaj.org/article/165a015072564a15a2cafad24b2df48d"},
+            {"ordinal": 3, "title": "journalpub.escholarship.org", "url": "https://journalpub.escholarship.org/cognitivesciencesociety/article/49426/galley/37388/download"},
+            {"ordinal": 4, "title": "Do Prosody and Embodiment Influence the Perceived Naturalness", "url": "https://vr.rwth-aachen.de/media/papers/204/Ehret_TAP2021_opt.pdf"},
+            {"ordinal": 5, "title": "www.ioa.org.uk", "url": "https://www.ioa.org.uk/system/files/publications/IR%20MURRAY%20JL%20ARNOTT%20EA%20ROHWER%20MODELLING%20VOCAL%20EMOTION%20EFFECTS%20IN%20SYNTHETIC%20SPEECH%20TO%20I.pdf"},
+            {"ordinal": 6, "title": "www.vr.rwth-aachen.de", "url": "https://www.vr.rwth-aachen.de/publication/02204"},
+            {"ordinal": 7, "title": "par.nsf.gov", "url": "https://par.nsf.gov/servlets/purl/10275345"},
+            {"ordinal": 8, "title": "www.vci.rwth-aachen.de", "url": "https://www.vci.rwth-aachen.de/publication/02204"},
+            {"ordinal": 9, "title": "Emotional Synthesis", "url": "https://www3.pd.istc.cnr.it/piero/FESTIVAL/home/emotions.htm"}
+          ]
+        }
+      ]
+    },
+    {
+      "batch": "P2",
+      "purpose": "Follow-up pilot queries for the overlap audit after P1 revealed semiotic-engineering and cybersemiotic-pragmatics leads",
+      "window_start": "2026-10-13T01:14:31Z",
+      "window_end": "2026-10-13T01:17:51Z",
+      "window_note": "Bounded by the P1 closing shell reading and the next shell reading.",
+      "runs": [
+        {
+          "label": "P-R5",
+          "lane": "related",
+          "mode": "standard",
+          "query": "de Souza semiotic engineering metacommunication template designer's deputy communicability evaluation method",
+          "results": [
+            {"ordinal": 1, "title": "librarycatalog.ecu.edu", "url": "https://librarycatalog.ecu.edu/catalog/4273866"},
+            {"ordinal": 2, "title": "www.unicamp.br", "url": "https://www.unicamp.br/~ihc99/Ihc99/AtasIHC99/art28.pdf"},
+            {"ordinal": 3, "title": "www.springer.com", "url": "https://www.springer.com/book/9783031010576"},
+            {"ordinal": 4, "title": "ibs.it", "url": "https://ibs.it/semiotic-engineering-methods-for-scientific-libro-inglese-sickenius-de-souza-carla-faria-leitao/e/9781598299441"},
+            {"ordinal": 5, "title": "Semiotic engineering methods for scientific research in HCI", "url": "https://ebook.library.uitm.edu.my/Record/3409/Description"},
+            {"ordinal": 6, "title": "link.springer.com", "url": "https://link.springer.com/10.1007/978-3-031-02185-5"},
+            {"ordinal": 7, "title": "Semiotic engineering methods for scientific research in HCI:", "url": "https://search.ub.tum.de/vufind/Record/DE-604.BV044683155"},
+            {"ordinal": 8, "title": "unpaywall.org", "url": "https://unpaywall.org/10.1145%2F3472301.3484368"},
+            {"ordinal": 9, "title": "Semiotic engineering methods for scientific research in HCI", "url": "https://ebook.library.uitm.edu.my/Record/3409/TOC"},
+            {"ordinal": 10, "title": "www.maxwell.vrac.puc-rio.br", "url": "https://www.maxwell.vrac.puc-rio.br/15340/15340_3.PDF"}
+          ]
+        },
+        {
+          "label": "P-R6",
+          "lane": "related",
+          "mode": "standard",
+          "query": "semiotic engineering sound auditory interface accessibility blind users communicability",
+          "results": [
+            {"ordinal": 1, "title": "Unleashing the Power of Sound: Revisiting the Physics of Notations for Modelling with auditory symbols", "url": "https://arxiv.org/pdf/2304.08654"},
+            {"ordinal": 2, "title": "DESIGN FOUNDATIONS FOR CONTENT-RICH ACOUSTIC INTERFACES: INVESTIGATING AUDEMES AS REFERENTIAL NON-SPEECH AUDIO CUES", "url": "https://scholarworks.indianapolis.iu.edu/items/95b01b07-be28-4b0d-94f7-70c2b42669c7/full"},
+            {"ordinal": 3, "title": "- Open access", "url": "https://journal-bcs.springeropen.com/articles/10.1007/BF03192576"},
+            {"ordinal": 4, "title": "link.springer.com", "url": "https://link.springer.com/article/10.1007/BF03192576"},
+            {"ordinal": 5, "title": "DESIGN FOUNDATIONS FOR CONTENT-RICH ACOUSTIC INTERFACES: INVESTIGATING AUDEMES AS REFERENTIAL NON-SPEECH AUDIO CUES", "url": "https://scholarworks.indianapolis.iu.edu/items/95b01b07-be28-4b0d-94f7-70c2b42669c7"},
+            {"ordinal": 6, "title": "Design foundations for content-rich acoustic interfaces : Investigating audemes as referential non-speech audio cues", "url": "https://www.avhandlingar.se/avhandling/6455aedc7b/"},
+            {"ordinal": 7, "title": "95b01b07 be28 4b0d 94f7 70c2b42669c7", "url": "https://scholarworks.indianapolis.iu.edu//signposting/describedby/95b01b07-be28-4b0d-94f7-70c2b42669c7"},
+            {"ordinal": 8, "title": "Semiotics Contributions to Accessible Interface Design", "url": "https://a11y-paradise.onrender.com/reviews/69bfee331e934e0983217669"},
+            {"ordinal": 9, "title": "10.1007%2F11821731 12", "url": "https://unpaywall.org/10.1007%2F11821731_12"},
+            {"ordinal": 10, "title": "doi.org", "url": "https://doi.org/10.1145%2F67880.1046600"}
+          ]
+        },
+        {
+          "label": "P-B5",
+          "lane": "brier",
+          "mode": "standard",
+          "query": "Thomsen 2010 \"From Talking Heads to Communicating Bodies\" cybersemiotics total communication Entropy",
+          "results": [
+            {"ordinal": 1, "title": "entropy 12 01902", "url": "https://mdpi-res.com/d_attachment/entropy/entropy-12-01902/article_deploy/entropy-12-01902.epub"},
+            {"ordinal": 2, "title": "Next Article in Journal", "url": "https://www.mdpi.com/1099-4300/12/8/1902/htm"},
+            {"ordinal": 3, "title": "Next Article in Journal", "url": "https://www.mdpi.com/1099-4300/12/8/1902"},
+            {"ordinal": 4, "title": "www2.mdpi.com", "url": "https://www2.mdpi.com/1099-4300/12/3"},
+            {"ordinal": 5, "title": "Total Integrative Evolutionary Communication: Towards a Cybersemiotic Discourse Pragmatics", "url": "https://journals.lub.lu.se/pjos/article/view/11467"},
+            {"ordinal": 6, "title": "Building Communication Theory from Cybersemiotics", "url": "https://www.journals.usp.br/matrizes/article/view/201594"},
+            {"ordinal": 7, "title": "cybersemiotics paradigms", "url": "https://www.mdpi.com/journal/entropy/special_issues/cybersemiotics-paradigms"},
+            {"ordinal": 8, "title": "www.mdpi.com", "url": "https://www.mdpi.com/search?q=cybersemiotics"},
+            {"ordinal": 9, "title": "Construindo a teoria da comunicação a partir da cibersemiótica", "url": "https://revistas.usp.br/matrizes/it/article/view/201594"},
+            {"ordinal": 10, "title": "Construindo a teoria da comunicação a partir da cibersemiótica", "url": "https://revistas.usp.br/matrizes/fr/article/view/201594"}
+          ]
+        }
+      ]
+    }
+  ]
+}

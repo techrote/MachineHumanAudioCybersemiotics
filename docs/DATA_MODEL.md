@@ -4,7 +4,7 @@
 
 ## Status and implementation boundary
 
-The v1 record system implements this contract through the [executable field dictionary](../schemas/README.md), canonical [live manifest](../research/registry/README.md), and [offline validator](VALIDATION.md). The bootstrap's programme, document/link and JSON checks remain in place. Live evidence is explicitly not_started; infrastructure implementation does not establish research acceptance.
+The v1 record system implements this contract through the [executable field dictionary](../schemas/README.md), canonical [live manifest](../research/registry/README.md), and [offline validator](VALIDATION.md). The bootstrap's programme, document/link and JSON checks remain in place. Live evidence currently holds only MHAC-R002 pilot, method-source and novelty records (state `in_progress`); infrastructure implementation and a protocol freeze do not establish research acceptance.
 
 Prefer versioned UTF-8 JSON records with human-readable generated Markdown/CSV views. Use one stable record per file or bounded issue/source shards to reduce merge collisions. Canonical records have one owner; generated aggregates are rebuilt, not independently edited. Avoid a database/vector service unless a demonstrated need justifies its additional reproducibility cost.
 

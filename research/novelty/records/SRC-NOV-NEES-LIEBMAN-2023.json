@@ -1,0 +1,80 @@
+{
+  "id": "SRC-NOV-NEES-LIEBMAN-2023",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:06:04Z",
+        "access_reason": "Publisher abstract page returned a client error; institutional PDF was refused by robots exclusion (WebFetch) and by the session proxy (shell). See ledger rows 1-5.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Nees, M. A.",
+            "role": "author"
+          },
+          {
+            "name": "Liebman, E.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Auditory Perception & Cognition 6(3-4):300-329 (Version of Record)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lafayette institutional record fetched 2026-10-13 (ledger row 1); also recorded in the archived 1C1 packet",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1080/25742442.2023.2219201"
+          },
+          {
+            "provenance": "Institutional deposit record fetched 2026-10-13",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Lafayette institutional record (2026-10-13) gives title, creators, journal, volume, issue, pages, year and DOI.",
+          "Archived R002 1C1 packet verified the same identity from the institutional and author bibliographies on 2026-10-04."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2023"
+        },
+        "rights": {
+          "evidence": {
+            "state": "known",
+            "value": "Lafayette record rights statement rightsstatements.org InC/1.0, read 2026-10-13"
+          },
+          "reason": "Institutional record states In Copyright with Taylor & Francis as rights holder.",
+          "status": "quotation_limited"
+        },
+        "source_type": "review",
+        "title": "Auditory Icons, Earcons, Spearcons, and Speech: A Systematic Review and Meta-Analysis of Brief Audio Alerts in Human-Machine Interfaces",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

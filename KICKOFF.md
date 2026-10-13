@@ -20,6 +20,25 @@ research evidence. Record true blockers and an exact checkpoint. Report
 merge/check evidence and whether #3/#4/#5 are dependency-ready.
 ```
 
+## Next wave after R002 acceptance
+
+Paste into a fresh worker once #2's landing is verified on the issue:
+
+```text
+Work in techrote/MachineHumanAudioCybersemiotics on #3, #4 and #5
+(MHAC-R003/R004/R005) under frozen protocol v1 (research/protocol/).
+Verify #2's merge and post-merge checks, then reconcile live main, the
+complete issues and comments, branches/PRs and CI. Read AGENTS.md, RAG.md,
+docs/PROGRAMME.md, docs/AGENT_RUNBOOK.md, research/protocol/PROTOCOL-v1.md,
+ANALYSIS_PLAN-v1.md, PILOT_REPORT.md and the overlap matrix. Check the
+database-access gate first (protocol §5.3) and use the declared fallback if
+it is still closed. Keep each lane's records in its own directories; one
+integrator regenerates exports. Never mark tool-mediated reading as a hashed
+full reading. Complete records, tests, PR, review fixes, exact-head checks,
+squash merge and post-merge verification per issue; use Refs when acceptance
+is partial. Record true access gaps and an exact checkpoint.
+```
+
 ## Continue the programme
 
 Use only when the user has authorized a multi-issue run:

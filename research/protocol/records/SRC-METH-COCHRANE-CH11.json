@@ -1,0 +1,85 @@
+{
+  "id": "SRC-METH-COCHRANE-CH11",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:14:08Z",
+        "access_reason": "Chapter HTML read through WebFetch (first 100000 of 115788 characters). No source bytes were retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Chaimani, A.",
+            "role": "author"
+          },
+          {
+            "name": "Caldwell, D. M.",
+            "role": "author"
+          },
+          {
+            "name": "Li, T.",
+            "role": "author"
+          },
+          {
+            "name": "Higgins, J. P. T.",
+            "role": "author"
+          },
+          {
+            "name": "Salanti, G.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Cochrane Handbook for Systematic Reviews of Interventions version 6.5 (2024); chapter last updated October 2019"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Fetched successfully on 2026-10-13 (ledger row 18)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-11"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Authors, chapter update date and handbook version reported from the chapter's citation section by the fetch tool on 2026-10-13."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2019-10"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Chapter 11: Undertaking network meta-analyses",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

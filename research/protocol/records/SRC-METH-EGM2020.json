@@ -1,0 +1,83 @@
+{
+  "id": "SRC-METH-EGM2020",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:14:08Z",
+        "access_reason": "Repository PDF read through WebFetch (first 100000 of 115410 characters). No source bytes were retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "White, H.",
+            "role": "author"
+          },
+          {
+            "name": "Albers, B.",
+            "role": "author"
+          },
+          {
+            "name": "Gaarder, M.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Campbell Systematic Reviews 16:e1125; repository copy"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Printed in the LSHTM repository copy read via WebFetch on 2026-10-13",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1002/cl2.1125"
+          },
+          {
+            "provenance": "Fetched successfully on 2026-10-13 (ledger row 15)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://lshtm-eprints-repo-prod.lshtm-eprints.cdl.cosector.com/4674958/1/White-etal-2020-Guidance-for-producing-a-Campbell-evidence-and-gap-map.pdf"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Citation reported from the repository copy by the fetch tool on 2026-10-13; only the first three authors were transcribed (et al. in source citation)."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2020"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Guidance for producing a Campbell evidence and gap map",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

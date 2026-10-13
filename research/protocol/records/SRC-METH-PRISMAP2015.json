@@ -1,0 +1,107 @@
+{
+  "id": "SRC-METH-PRISMAP2015",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:14:08Z",
+        "access_reason": "Publisher PDF read through WebFetch (tool-mediated) within batch M window. No source bytes were retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Moher, D.",
+            "role": "author"
+          },
+          {
+            "name": "Shamseer, L.",
+            "role": "author"
+          },
+          {
+            "name": "Clarke, M.",
+            "role": "author"
+          },
+          {
+            "name": "Ghersi, D.",
+            "role": "author"
+          },
+          {
+            "name": "Liberati, A.",
+            "role": "author"
+          },
+          {
+            "name": "Petticrew, M.",
+            "role": "author"
+          },
+          {
+            "name": "Shekelle, P.",
+            "role": "author"
+          },
+          {
+            "name": "Stewart, L. A.",
+            "role": "author"
+          },
+          {
+            "name": "PRISMA-P Group",
+            "role": "corporate_author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Systematic Reviews 4:1"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Printed on the publisher PDF read via WebFetch on 2026-10-13",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1186/2046-4053-4-1"
+          },
+          {
+            "provenance": "Fetched successfully on 2026-10-13 (ledger row 16)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://systematicreviewsjournal.biomedcentral.com/track/pdf/10.1186/2046-4053-4-1"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Authors, journal, article number, date and DOI reported from the publisher PDF by the fetch tool on 2026-10-13."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2015-01-01"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015 statement",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
