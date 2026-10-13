@@ -41,4 +41,12 @@ It fixes Track E rules and the analysis plan before production searching, select
 
 ## Post-merge addendum
 
-To be appended after merge with the squash-merge commit SHA, the CI run for that commit and the date. Appending this addendum does not change any frozen artifact.
+Appended 2026-10-13. This addendum does not change any frozen artifact.
+
+| Item | Value |
+|---|---|
+| Pull request | [#24](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/24), head `f106b799a9a343b85d8d76fd2cd13a532f993dd7` |
+| PR-head CI | `repository-integrity` success, [run 38333365192](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/38333365192) |
+| **Freeze commit (squash merge on `main`)** | [`ba8599d6e07140d04d46e858d80d0f12d4fbe10d`](https://github.com/techrote/MachineHumanAudioCybersemiotics/commit/ba8599d6e07140d04d46e858d80d0f12d4fbe10d) |
+| Post-merge CI on that commit | `repository-integrity` success, [run 38333481456](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/38333481456) |
+| Post-merge local check | 216 unit tests OK; validator `pass` against base `8ad50e8`; frozen digests unchanged |
