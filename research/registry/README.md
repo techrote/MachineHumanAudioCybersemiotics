@@ -2,7 +2,9 @@
 
 The canonical live state is **in_progress**. Live records are MHAC-R002's method sources, novelty comparators, pilot search runs
 and occurrences, assistance events and database-access gate, plus MHAC-R003's Brier
-bibliography, reception records, Brier-lane searches and full-text gate. There are no
+bibliography, reception records, Brier-lane searches and full-text gate, and MHAC-R004's
+related-theory sources, Track G web searches, identity lookups and Brier reference-list
+occurrences. There are no
 study, screening, extraction or claim records. Synthetic examples are kept in
 [tests/fixtures/records/v1](../../tests/fixtures/records/v1/README.md).
 

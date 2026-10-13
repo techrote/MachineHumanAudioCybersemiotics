@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-G10-03",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G10",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3,
+        "raw_metadata": "55413  18417  0d86abc64d0742e29e9ebe218a87bd2c | https://cronfa.swansea.ac.uk/Record/cronfa55413/Download/55413__18417__0d86abc64d0742e29e9ebe218a87bd2c.pdf",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://cronfa.swansea.ac.uk/Record/cronfa55413/Download/55413__18417__0d86abc64d0742e29e9ebe218a87bd2c.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G10",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

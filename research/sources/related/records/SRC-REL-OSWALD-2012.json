@@ -1,0 +1,70 @@
+{
+  "id": "SRC-REL-OSWALD-2012",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:46:27Z",
+        "access_reason": "The author's PDF link no longer resolves and the ICAD 2012 proceedings page returned HTTP 500 (ledger rows 28-29).",
+        "access_status": "unavailable",
+        "authors": [
+          {
+            "name": "Oswald, David",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the 18th International Conference on Auditory Display (ICAD 2012), as listed in the HTW Berlin catalogue"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Catalogue page fetched (ledger row 14)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.htw-berlin.de/forschung/online-forschungskatalog/publikationen/publikation?eid=4775"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "HTW Berlin research catalogue record and a repository search title (R005 run A-W1-FR)",
+          "Not in Crossref (lookup NSAS-ICAD)"
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2012"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,81 @@
+{
+  "id": "SRC-REL-FERRARIO-2026",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T07:06:38Z",
+        "access_reason": "Abstract read from the arXiv API record.",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Ferrario, Andrea",
+            "role": "author"
+          },
+          {
+            "name": "Vinay, Rasita",
+            "role": "author"
+          },
+          {
+            "name": "Casserini, Matteo",
+            "role": "author"
+          },
+          {
+            "name": "Facchini, Alessandro",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "arXiv:2601.09869v2 (updated 2026-06-02); author comment names FAccT '26"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Round-3 lookup ANTHRO-LLM-ETHICS result 1, research/searches/related/exports/lookups/ (arXiv API)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://arxiv.org/abs/2601.09869v2"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "arXiv API record"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2026-01-14"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "preprint",
+        "title": "A Scoping Review of the Ethical Perspectives on Anthropomorphising Large Language Model-Based Conversational Agents",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

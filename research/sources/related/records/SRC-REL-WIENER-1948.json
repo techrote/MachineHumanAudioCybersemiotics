@@ -1,0 +1,70 @@
+{
+  "id": "SRC-REL-WIENER-1948",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Wiener, Norbert",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Brier cites the MIT Press 1963 printing (second edition first appeared 1961, not verified here)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup WIENER-1961 (openlibrary) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL4307531W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work record (first published 1948, 40 editions)",
+          "Cited in Brier's own reference lists parsed from hashed files (BRIER-REFLISTS-R004.json): SK 2015, GL 2015 AM"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1948"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Cybernetics: Or Control and Communication in the Animal and the Machine",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

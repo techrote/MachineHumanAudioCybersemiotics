@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-LK3-SOUND-DRIVEN-DESIGN-03",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK3-SOUND-DRIVEN-DESIGN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3,
+        "raw_metadata": "From Design to Reality: Guiding First-Year Students from Design to Makerspace Reality | 2018 FYEE Conference Proceedings | 10.18260/1-2--31402",
+        "resolution_reason": "Returned by the lookup but not the adjudicated match.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.18260/1-2--31402"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK3-SOUND-DRIVEN-DESIGN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

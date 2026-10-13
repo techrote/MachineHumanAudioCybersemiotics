@@ -1,0 +1,81 @@
+{
+  "id": "SRC-REL-SEABORN-2021",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Abstract read from the Crossref work record; the institutional repository file returned HTTP 500 (ledger row 21).",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Seaborn, Katie",
+            "role": "author"
+          },
+          {
+            "name": "Miyake, Norihisa P.",
+            "role": "author"
+          },
+          {
+            "name": "Pennefather, Peter",
+            "role": "author"
+          },
+          {
+            "name": "Otake-Matsuura, Mihoko",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "ACM Computing Surveys 54(4):1-43"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup SEABORN-2021 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1145/3386867"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref record and deposited abstract"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2021-05-03"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "review",
+        "title": "Voice in Human-Agent Interaction: A Survey",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

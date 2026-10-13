@@ -1,0 +1,74 @@
+{
+  "id": "SRC-REL-PEIRCE-EP2",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Peirce, Charles Sanders",
+            "role": "author"
+          },
+          {
+            "name": "Peirce Edition Project",
+            "role": "editor"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Indiana University Press, 1998 (volume 2; volume 1, 1992, is the same Open Library work)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup PEIRCE-EP2 (openlibrary) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL1834312W (both volumes)"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work 'The Essential Peirce' (5 editions)",
+          "Cited in Brier's own reference lists parsed from hashed files (BRIER-REFLISTS-R004.json): SK 2015, GL 2015 AM (1998, Vol. 2)"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1998"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "The Essential Peirce: Selected Philosophical Writings, Volume 2 (1893-1913)",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

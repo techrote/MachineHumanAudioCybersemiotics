@@ -1,0 +1,71 @@
+{
+  "id": "SRC-REL-SHORT-2007",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Short, T. L.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Cambridge University Press, 2007"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup SHORT-2007 (openlibrary-ta) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL8332157W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work record (7 editions)",
+          "Crossref holds a 2018 review in Anuario Filosofico naming the book as CUP 2007, 374 pp. (lookup SHORT-2007 result 2)",
+          "Cited in Brier's own reference lists parsed from hashed files (BRIER-REFLISTS-R004.json): IR 2013, SK 2015, GL 2015 AM"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2007"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Peirce's Theory of Signs",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

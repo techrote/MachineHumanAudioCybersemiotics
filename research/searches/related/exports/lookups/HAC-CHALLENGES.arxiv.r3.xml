@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/BUsfiuwK4PeOOMWD64kZECZ0Z+g</id>
+  <title>arXiv Query: search_query=&amp;id_list=2412.10380&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-13T07:06:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2412.10380" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2412.10380v1</id>
+    <title>Challenges in Human-Agent Communication</title>
+    <updated>2024-11-28T01:21:26Z</updated>
+    <link href="https://arxiv.org/abs/2412.10380v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2412.10380v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Remarkable advancements in modern generative foundation models have enabled the development of sophisticated and highly capable autonomous agents that can observe their environment, invoke tools, and communicate with other agents to solve problems. Although such agents can communicate with users through natural language, their complexity and wide-ranging failure modes present novel challenges for human-AI interaction. Building on prior research and informed by a communication grounding perspective, we contribute to the study of \emph{human-agent communication} by identifying and analyzing twelve key communication challenges that these systems pose. These include challenges in conveying information from the agent to the user, challenges in enabling the user to convey information to the agent, and overarching challenges that need to be considered across all human-agent communication. We illustrate each challenge through concrete examples and identify open directions of research. Our findings provide insights into critical gaps in human-agent communication research and serve as an urgent call for new design patterns, principles, and guidelines to support transparency and control in these systems.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-11-28T01:21:26Z</published>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Gagan Bansal</name>
+    </author>
+    <author>
+      <name>Jennifer Wortman Vaughan</name>
+    </author>
+    <author>
+      <name>Saleema Amershi</name>
+    </author>
+    <author>
+      <name>Eric Horvitz</name>
+    </author>
+    <author>
+      <name>Adam Fourney</name>
+    </author>
+    <author>
+      <name>Hussein Mozannar</name>
+    </author>
+    <author>
+      <name>Victor Dibia</name>
+    </author>
+    <author>
+      <name>Daniel S. Weld</name>
+    </author>
+  </entry>
+</feed>

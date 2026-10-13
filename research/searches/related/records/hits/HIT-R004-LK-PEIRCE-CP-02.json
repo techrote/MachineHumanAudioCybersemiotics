@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-LK-PEIRCE-CP-02",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-PEIRCE-CP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "Collected Papers of Charles Sanders Peirce | Charles Sanders Peirce | 1998 | /works/OL3810815W",
+        "resolution_reason": "Returned by the lookup but not the adjudicated match.",
+        "returned_identifiers": [
+          {
+            "scheme": "other",
+            "value": "Open Library /works/OL3810815W"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-PEIRCE-CP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

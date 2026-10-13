@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/+QGb9wMBfcgBYEoSIWCRKDwEqmI</id>
+  <title>arXiv Query: search_query=&amp;id_list=2601.09869&amp;start=0&amp;max_results=10</title>
+  <updated>2026-10-13T07:06:38Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=10&amp;id_list=2601.09869" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>10</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2601.09869v2</id>
+    <title>A Scoping Review of the Ethical Perspectives on Anthropomorphising Large Language Model-Based Conversational Agents</title>
+    <updated>2026-06-02T09:26:34Z</updated>
+    <link href="https://arxiv.org/abs/2601.09869v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.09869v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Anthropomorphisation -- the phenomenon whereby non-human entities are ascribed human-like qualities -- has become increasingly salient with the rise of large language model (LLM)-based conversational agents (CAs). Unlike earlier chatbots, LLM-based CAs routinely generate interactional and linguistic cues, such as first-person self-reference, epistemic and affective expressions that empirical work shows can increase engagement. On the other hand, anthropomorphisation raises ethical concerns, including deception, overreliance, and exploitative relationship framing, while some authors argue that anthropomorphic interaction may support autonomy, well-being, and inclusion. Despite increasing interest in the phenomenon, literature remains fragmented across domains and varies substantially in how it defines, operationalizes, and normatively evaluates anthropomorphisation. This scoping review maps ethically oriented work on anthropomorphising LLM-based CAs across five databases and three preprint repositories. We synthesize (1) conceptual foundations, (2) ethical challenges and opportunities, and (3) methodological approaches. We find convergence on attribution-based definitions but substantial divergence in operationalization, a predominantly risk-forward normative framing, and limited empirical work that links observed interaction effects to actionable governance guidance. We conclude with a research agenda and design/governance recommendations for ethically deploying anthropomorphic cues in LLM-based conversational agents.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-14T21:03:11Z</published>
+    <arxiv:comment>2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT'26)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Andrea Ferrario</name>
+    </author>
+    <author>
+      <name>Rasita Vinay</name>
+    </author>
+    <author>
+      <name>Matteo Casserini</name>
+    </author>
+    <author>
+      <name>Alessandro Facchini</name>
+    </author>
+  </entry>
+</feed>

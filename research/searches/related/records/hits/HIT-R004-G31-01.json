@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-G31-01",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G31",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-OSWALD-2012",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory | https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11",
+        "resolution_reason": "Title or stable identifier in the result matches the source record; the page itself was opened only where the access ledger says so.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G31",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-OSWALD-2012",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
