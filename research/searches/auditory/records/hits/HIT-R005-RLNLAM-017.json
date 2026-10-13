@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005-RLNLAM-017",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 17,
+        "raw_metadata": "[a] Garzonis, S., Jones, S., Jay, T., & O’Neill, E. (2009). Auditory Icon and Earcon Mobile Service Notifications: Intuitiveness, Learnability, Memorability and Preference. In Greenberg, S and Hudson, SE and Hinkley, K and RingelMorris, M and Olsen, DR (Ed.), CHI2009: PROCEEDINGS OF THE 27TH ANNUAL CHI CONFERENCE ON HUMAN FACTORS IN COMPUTING SYSTEMS, VOLS 1-4 (pp. 1513–1522). ACM SIGCHI; Autodesk; Google; Microsoft; NSF; eLearn Magazine; interations; Yahoo.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005-RLFRAPDF-113",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 113,
+        "raw_metadata": "Yan, X., Zhang, Y., & Ma, L. (2015). The influence of in-vehicle speech warning timing on drivers' collision avoidance performance at signalized intersections. Transportation Research Part C: Emergency Technologies, 51(2015), 231–242.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

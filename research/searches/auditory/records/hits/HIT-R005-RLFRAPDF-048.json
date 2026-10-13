@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005-RLFRAPDF-048",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 48,
+        "raw_metadata": "International Organization for Standardization. (2011). ISO 15006: Road vehicles — Ergonomics aspects of transport information and control systems — Specifications for in-vehicle auditory presentation. International Organization for Standardization.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

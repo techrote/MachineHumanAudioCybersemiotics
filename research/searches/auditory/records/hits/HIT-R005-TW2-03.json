@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-TW2-03",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-TW2",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3,
+        "raw_metadata": "Drivers' Ability to Localize Auditory and Haptic Alarms in Terms of Speed and Accuracy | https://vtechworks.lib.vt.edu/items/bd91bc5f-4d3b-4bee-939e-858fe9411f1b",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://vtechworks.lib.vt.edu/items/bd91bc5f-4d3b-4bee-939e-858fe9411f1b"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-TW2",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

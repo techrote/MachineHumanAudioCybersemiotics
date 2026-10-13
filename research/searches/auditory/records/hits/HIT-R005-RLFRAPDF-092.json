@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005-RLFRAPDF-092",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 92,
+        "raw_metadata": "Sanders, M. S., & McCormick, E. J. (1993). Human factors in engineering and design (7th ed.). Mcgraw-Hill Book Company.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

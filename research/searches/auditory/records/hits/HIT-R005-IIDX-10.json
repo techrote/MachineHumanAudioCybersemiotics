@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-IIDX-10",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-IIDX",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 10,
+        "raw_metadata": "Sounding Board: Proceedings of the 26th Annual International Conference on Auditory Display | https://repository.gatech.edu/entities/publication/15f422a3-32d6-4c91-b54d-9c8c03857107",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/15f422a3-32d6-4c91-b54d-9c8c03857107"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-IIDX",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

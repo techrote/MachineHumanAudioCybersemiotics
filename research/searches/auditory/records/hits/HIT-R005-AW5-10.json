@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-AW5-10",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-AW5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 10,
+        "raw_metadata": "MetaTOC stay on top of your field, easily | https://metatoc.com/papers/86067-do-learned-alarm-sounds-interfere-with-working-memory",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://metatoc.com/papers/86067-do-learned-alarm-sounds-interfere-with-working-memory"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-AW5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

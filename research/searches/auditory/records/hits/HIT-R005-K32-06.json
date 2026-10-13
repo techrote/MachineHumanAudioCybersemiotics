@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K32-06",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K32",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 6,
+        "raw_metadata": "Effects of auditory icons and earcons on visual categorization: The bigger picture | https://repository.gatech.edu/entities/publication/1f962fed-07db-4b6a-9322-4669bd1e688f",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/1f962fed-07db-4b6a-9322-4669bd1e688f"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K32",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

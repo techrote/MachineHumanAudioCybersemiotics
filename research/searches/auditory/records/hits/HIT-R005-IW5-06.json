@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-IW5-06",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-IW5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 6,
+        "raw_metadata": "Icad | http://www.icad.org/websiteV2.0/Conferences/ICAD2003/paper/55%20Sainz%20Salces.pdf",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "http://www.icad.org/websiteV2.0/Conferences/ICAD2003/paper/55%20Sainz%20Salces.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-IW5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

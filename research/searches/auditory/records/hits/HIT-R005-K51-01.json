@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K51-01",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K51",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "IDEAS home Printed from https://ideas.repec.org/a/sae/simgam/v48y2017i3p402-427.html | https://ideas.repec.org/a/sae/simgam/v48y2017i3p402-427.html",
+        "resolution_reason": "Title-level check: matches RL-NL entry 51 (located). Publication identity not verified; canonical source record left to #6.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://ideas.repec.org/a/sae/simgam/v48y2017i3p402-427.html"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K51",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

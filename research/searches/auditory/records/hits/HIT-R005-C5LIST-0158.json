@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-C5LIST-0158",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-C5LIST",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 158,
+        "raw_metadata": "ICAD 2001 proceedings file BrungartSimpson2001.pdf | https://www.icad.org/Proceedings/2001/BrungartSimpson2001.pdf",
+        "resolution_reason": "Listing entry (file name only); publication identity not checked.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.icad.org/Proceedings/2001/BrungartSimpson2001.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-C5LIST",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

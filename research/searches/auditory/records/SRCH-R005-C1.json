@@ -1,0 +1,75 @@
+{
+  "id": "SRCH-R005-C1",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "HG-R002-DATABASE-ACCESS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "boundary": "Access gap or probe record, not an eligibility decision; see the R005 coverage memo for its impact. Gate: HG-R002-DATABASE-ACCESS.",
+        "coverage": {
+          "end": {
+            "reason": "No search executed",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "No search executed",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "reason": "Nothing retrieved",
+          "state": "not_applicable"
+        },
+        "failures": [
+          "Owner's desktop built-in browser: blocked by the owner's site permissions (02:05:11Z and 06:13Z; an access request for the site was refused)",
+          "Workspace shell: session proxy refused the host, HTTP status 000 (02:05:17Z and 02:16:02Z)",
+          "Workspace shell after the owner opened network access: HTTP 429, free key-less budget for the shared IP used up (06:12:19Z to 06:28:27Z)"
+        ],
+        "filters": [
+          "Protocol §5.2 field scope and date limit <= 2026-10-04 would apply"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T06:28:27Z"
+        },
+        "interface": "HTTPS API",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "No results were obtained."
+        },
+        "platform": "OpenAlex works API (protocol channel C1): availability probes",
+        "protocol_version": "v1",
+        "query": "Probes only, not EQ1-EQ8: https://api.openalex.org/works?search=earcon (variants with per_page/per-page=1, select=id, title_and_abstract.search:earcon)",
+        "reported_count": {
+          "reason": "No search executed",
+          "state": "not_applicable"
+        },
+        "retrieved_count": 0,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T02:05:11Z"
+        },
+        "status": "failed"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

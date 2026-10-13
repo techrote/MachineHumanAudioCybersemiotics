@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005-RLFRAPDF-069",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 69,
+        "raw_metadata": "Lewis, B. A., Eisert, J. L., & Baldwin, C. L. (2018). Validation of Essential Acoustic Parameters for Highly Urgent In-Vehicle Collision Warnings. Human Factors, 60(2), 248–261.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

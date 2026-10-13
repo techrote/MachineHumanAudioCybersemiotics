@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNL-023",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNL",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 23,
+        "raw_metadata": "Isherwood & McKeown, 2017: \"Semantic congruency of auditory warnings\"; doi:10.1080/00140139.2016.1237677; a,b,c",
+        "resolution_reason": "Reference-list entry as rendered by the fetch tool; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1080/00140139.2016.1237677"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNL",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

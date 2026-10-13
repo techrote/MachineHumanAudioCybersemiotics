@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-AW3-02",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-AW3",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "I Hear, Therefore I Trust: A Socio-Technical Investigation of Humans as Synthetic Speech Detectors | https://deepfake-demo.aisec.fraunhofer.de/related_work/2605.28064",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://deepfake-demo.aisec.fraunhofer.de/related_work/2605.28064"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-AW3",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

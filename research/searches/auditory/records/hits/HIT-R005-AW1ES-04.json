@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-AW1ES-04",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-AW1ES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "Design and Evaluation of Auditory Icons as Informative Warning Signals | https://www.atsb.gov.au/node/2039",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.atsb.gov.au/node/2039"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-AW1ES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -2,7 +2,7 @@
 
 [Authority index](../RAG.md) · [Programme](../docs/PROGRAMME.md) · [Data contract](../docs/DATA_MODEL.md) · [Templates](templates/README.md)
 
-**In progress: protocol v1 frozen (2026-10-13); no production corpus.** The [protocol](protocol/README.md), [novelty audit](novelty/README.md), [pilot searches](searches/pilot/README.md) and the [Brier bibliography](sources/brier/README.md) exist. There is no reviewed corpus, external registration or completed research. The owners below create directories as their issues execute; missing future outputs must not be imagined from this map.
+**In progress: protocol v1 frozen (2026-10-13); no production corpus.** The [protocol](protocol/README.md), [novelty audit](novelty/README.md), [pilot searches](searches/pilot/README.md), the [Brier bibliography](sources/brier/README.md) and the coverage-limited [auditory search](sources/auditory/README.md) exist. There is no reviewed corpus, external registration or completed research. The owners below create directories as their issues execute; missing future outputs must not be imagined from this map.
 
 | Planned path | Owner and purpose |
 |---|---|

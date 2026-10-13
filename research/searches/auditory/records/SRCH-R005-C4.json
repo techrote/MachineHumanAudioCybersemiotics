@@ -1,0 +1,73 @@
+{
+  "id": "SRCH-R005-C4",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "HG-R002-DATABASE-ACCESS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "boundary": "Access gap or probe record, not an eligibility decision; see the R005 coverage memo for its impact. Gate: HG-R002-DATABASE-ACCESS.",
+        "coverage": {
+          "end": {
+            "reason": "No search executed",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "No search executed",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "reason": "Nothing retrieved",
+          "state": "not_applicable"
+        },
+        "failures": [
+          "Not attempted by the agent: owner-run export only; no export supplied"
+        ],
+        "filters": [
+          "Protocol §5.2 field scope and date limit <= 2026-10-04 would apply"
+        ],
+        "finished_at": {
+          "reason": "Not started",
+          "state": "not_applicable"
+        },
+        "interface": "Owner-run web interface export",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "No results were obtained."
+        },
+        "platform": "IEEE Xplore (protocol channel C4)",
+        "protocol_version": "v1",
+        "query": "EQ1-EQ8 translated to IEEE Xplore syntax (not yet run)",
+        "reported_count": {
+          "reason": "No search executed",
+          "state": "not_applicable"
+        },
+        "retrieved_count": 0,
+        "started_at": {
+          "reason": "Not started",
+          "state": "not_applicable"
+        },
+        "status": "planned"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

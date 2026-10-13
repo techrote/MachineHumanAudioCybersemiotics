@@ -17,8 +17,8 @@ review completeness, sample independence or scientific validity.
 | outcomes | 0 |
 | publications | 58 |
 | samples | 0 |
-| search hits | 460 |
-| search runs | 48 |
+| search hits | 2704 |
+| search runs | 176 |
 | shared sample groups | 0 |
 | source record ids | 58 |
 | studies | 0 |

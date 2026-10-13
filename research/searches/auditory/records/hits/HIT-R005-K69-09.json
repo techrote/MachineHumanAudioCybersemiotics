@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K69-09",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K69",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 9,
+        "raw_metadata": "uist 11.02 | https://faculty.washington.edu/wobbrock/pubs/uist-11.02.pdf",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://faculty.washington.edu/wobbrock/pubs/uist-11.02.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K69",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

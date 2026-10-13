@@ -1,0 +1,70 @@
+{
+  "id": "SRCH-R005-TW4",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [],
+      "data": {
+        "boundary": "Run T-W4, batch A3. C10 thesis route under the §5.3 fallback: frozen W string restricted to OATD and three purposively chosen institutional repositories of auditory-display groups. Purposive, not a thesis database search. Started/finished are the call's log time and the batch's closing shell reading.",
+        "coverage": {
+          "end": {
+            "reason": "The engine does not state its index coverage",
+            "state": "unknown"
+          },
+          "start": {
+            "reason": "The engine does not state its index coverage",
+            "state": "unknown"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+            "sha256": "9c3bf364ea9136da02e18793acb0aa036e7c8afce508fccdc2d705455995c288"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "allowed_domains restricted to: oatd.org, vtechworks.lib.vt.edu, digitalcommons.mtu.edu, theses.gla.ac.uk",
+          "Tool default US-only results"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T02:15:21Z"
+        },
+        "interface": "WebSearch tool, standard mode, US-only results, domain-restricted",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "One page of top results only; the tool exposes no further pages."
+        },
+        "platform": "General web search engine via the agent's WebSearch tool restricted to grey-literature hosts (protocol channel C10 route)",
+        "protocol_version": "v1",
+        "query": "sonification uncertainty listeners experiment",
+        "reported_count": {
+          "reason": "The engine reports no total hit count",
+          "state": "not_reported"
+        },
+        "retrieved_count": 10,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T02:13:17Z"
+        },
+        "status": "partial"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

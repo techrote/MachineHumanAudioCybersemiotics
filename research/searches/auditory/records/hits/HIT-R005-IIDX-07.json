@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-IIDX-07",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-IIDX",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 7,
+        "raw_metadata": "Proceedings of ICAD 2019 — The 25th Meeting of the International Conference on Auditory Display | https://nrl.northumbria.ac.uk/id/eprint/40188",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://nrl.northumbria.ac.uk/id/eprint/40188"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-IIDX",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

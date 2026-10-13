@@ -1,0 +1,74 @@
+{
+  "id": "SRCH-R005-C2",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "HG-R002-DATABASE-ACCESS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "boundary": "Access gap or probe record, not an eligibility decision; see the R005 coverage memo for its impact. Gate: HG-R002-DATABASE-ACCESS.",
+        "coverage": {
+          "end": {
+            "reason": "No search executed",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "No search executed",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "reason": "Nothing retrieved",
+          "state": "not_applicable"
+        },
+        "failures": [
+          "Refused by the session proxy at 02:16:02Z (CONNECT 403); reachable from 06:12:19Z",
+          "The API's free-text query cannot express the protocol's AND between concept blocks: query=earcon returned 11 records and query=earcon+experiment 273,635 (06:20Z), so terms are matched with OR relevance ranking"
+        ],
+        "filters": [
+          "Protocol §5.2 field scope and date limit <= 2026-10-04 would apply"
+        ],
+        "finished_at": {
+          "reason": "Not started",
+          "state": "not_applicable"
+        },
+        "interface": "HTTPS API",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "No results were obtained."
+        },
+        "platform": "Crossref REST API (protocol channel C2)",
+        "protocol_version": "v1",
+        "query": "Not used for EQ1-EQ8; reserved for DOI resolution in #6",
+        "reported_count": {
+          "reason": "No search executed",
+          "state": "not_applicable"
+        },
+        "retrieved_count": 0,
+        "started_at": {
+          "reason": "Not started",
+          "state": "not_applicable"
+        },
+        "status": "planned"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

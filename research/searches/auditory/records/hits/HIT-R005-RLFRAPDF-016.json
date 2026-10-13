@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLFRAPDF-016",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 16,
+        "raw_metadata": "Ben-Yaacov, A., Maltz, M., & Shinar, D. (2005). Effects of an In-Vehicle Collision Avoidance Warning System on Short- and Long-Term Driving Performance. Human Factors: The Journal of the Human Factors and Ergonomics Society, 44(2), 335–342. doi:10.1518/0018720024497925.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1518/0018720024497925"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLFRAPDF-112",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 112,
+        "raw_metadata": "Yan, X., Han, L. D., Richards, S., & Millegan, H. (2010). Train-Vehicle Crash Risk Comparison Between Before and After Stop Signs Installed at Highway-Rail Grade Crossings. Traffic Injury Prevention, 11(5), 535–542. doi:10.1080/15389588.2010.494314.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1080/15389588.2010.494314"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

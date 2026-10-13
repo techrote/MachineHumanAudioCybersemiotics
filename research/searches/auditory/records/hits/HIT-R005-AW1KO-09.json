@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-AW1KO-09",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-AW1KO",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 9,
+        "raw_metadata": "선교내에서 청각경보음의 유형이 반응속도와 정확성에 미치는 영향 | https://www.kriso.re.kr/sciwatch/handle/2021.sw.kriso/1202?mode=full",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.kriso.re.kr/sciwatch/handle/2021.sw.kriso/1202?mode=full"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-AW1KO",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

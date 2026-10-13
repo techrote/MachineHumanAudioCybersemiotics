@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLFRAPDF-068",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 68,
+        "raw_metadata": "Larue, G. S., Wullems, C., Sheldrake, M., & Rakotonirainy, A. (July 2018). Validation of a Driving Simulator Study on Driver Behavior at Passive Rail Level Crossings. Human Factors The Journal of the Human Factors and Ergonomics Society, 60(6), 743–754. doi:10.1177/0018720818783507.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1177/0018720818783507"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K11-04",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K11",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "idmil at icad 2012 | https://www-archive.idmil.org/_export/raw/news/idmil_at_icad_2012",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www-archive.idmil.org/_export/raw/news/idmil_at_icad_2012"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K11",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005-RLFRAPDF-063",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 63,
+        "raw_metadata": "Larsson, P., Opperud, A., Fredriksson, K., & Västfjäll, D. (2009). Emotional and Behavioral Response to Auditory Icons and Earcons in Driver-Vehicle Interfaces. Proceedings of the 21st International Technical Conference on the Enhanced Safety of Vehicles. Paper No. 09-0104, Sweden: Humans Systems and Structures, Volvo Technology Corporation, Applied Acoustics, Chalmers University of Technology.",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNL-013",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNL",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 13,
+        "raw_metadata": "Gable et al., 2017: \"Spindex and Spearcons in Mandarin: Auditory Menu Enhancements\"; doi:10.21785/icad2017.025; a,b,c,d",
+        "resolution_reason": "Reference-list entry as rendered by the fetch tool; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.21785/icad2017.025"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNL",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

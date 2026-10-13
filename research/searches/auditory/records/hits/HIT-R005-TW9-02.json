@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-TW9-02",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-TW9",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "Spearcons Improve Navigation Performance and Perceived | https://vtechworks.lib.vt.edu/server/api/core/bitstreams/ac02cf6a-1131-43c6-a7fd-586383cf23ab/content",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://vtechworks.lib.vt.edu/server/api/core/bitstreams/ac02cf6a-1131-43c6-a7fd-586383cf23ab/content"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-TW9",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
