@@ -1,0 +1,43 @@
+{
+  "id": "HG-R002-DATABASE-ACCESS",
+  "issue": 2,
+  "kind": "human_gate",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "attempted_remedies": [
+          "Shell requests to four open bibliographic APIs on 2026-10-13 (proxy CONNECT 403).",
+          "Owner's built-in browser preview of an OpenAlex API URL on 2026-10-13 (blocked by site permissions; no workaround attempted).",
+          "Pilot through the WebSearch tool, which returned about 7% of a known-item set (pilot report section 4)."
+        ],
+        "authorized_actor": {
+          "reason": "No authorization has been given",
+          "state": "unknown"
+        },
+        "completion_signal": "An OpenAlex API URL opens in the browser pane or the workspace, or exported result files appear in a connected folder or the conversation.",
+        "evidence": {
+          "reason": "No owner action has occurred",
+          "state": "unknown"
+        },
+        "gate_class": "source_access",
+        "need": "Executable, exportable bibliographic database searches for Track E (protocol v1 channels C1-C4, C6-C7), starting with OpenAlex and Crossref.",
+        "owner_action": "Either allow api.openalex.org and api.crossref.org for the Claude desktop built-in browser (or the session network), or supply database exports for the protocol queries. Steps and links: research/protocol/gates/HG-R002-DATABASE-ACCESS.md.",
+        "reason": "The agent workspace proxy refuses api.openalex.org, api.crossref.org, export.arxiv.org and api.semanticscholar.org, and the owner's desktop built-in browser blocks api.openalex.org under its site permissions. Without a database channel, MHAC-R005 must use the declared web-search fallback and cannot claim database coverage.",
+        "status": "waiting",
+        "stop_condition": "If no action is taken before MHAC-R005 starts, R005 executes the protocol section 5.3 fallback and records the database channels as access gaps. No account creation, purchase or paywall bypass is attempted."
+      },
+      "factual_status": "project_decision",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

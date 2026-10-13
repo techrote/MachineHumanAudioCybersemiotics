@@ -1,0 +1,79 @@
+{
+  "id": "SRC-NOV-THOMSEN-BRIER-2014",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:17:51Z",
+        "access_reason": "Only the abstract and metadata were read.",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Thomsen, Ole Nedergaard",
+            "role": "author"
+          },
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Public Journal of Semiotics 6(1):22-57"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Shown on the journal page fetched 2026-10-13 (ledger row 25)",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.37693/pjos.2014.6.11467"
+          },
+          {
+            "provenance": "Fetched successfully on 2026-10-13",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://journals.lub.lu.se/pjos/article/view/11467"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Authors, title, journal, volume, issue, pages, date and DOI reported from the journal page by the fetch tool on 2026-10-13."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2014-10-21"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Total Integrative Evolutionary Communication: Towards a Cybersemiotic Discourse Pragmatics",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

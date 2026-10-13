@@ -1,0 +1,210 @@
+{
+  "id": "AID-R002-PROTOCOL-DRAFT",
+  "issue": 2,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:40:47Z",
+      "basis": [
+        {
+          "id": "SRC-METH-AI2025",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-CIS2006",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-COCHRANE-CH11",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-EGM2020",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRESS2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRISMA2020",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRISMAP2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRISMAS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-SWIM2020",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-BRIER-2010",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-BRIER-2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-COBLEY-2010",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-DESOUZA-2005",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-FRA-IVAA-2022",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NAM-2010",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023-PREPRINT",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-THOMSEN-BRIER-2014",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-VALENTE-2009",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-VRIEND-2025",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/protocol/PROTOCOL-v1.md",
+          "research/protocol/ANALYSIS_PLAN-v1.md",
+          "research/protocol/GLOSSARY-v1.md",
+          "research/protocol/FREEZE.md",
+          "research/protocol/PILOT_REPORT.md",
+          "research/protocol/CONCEPT_REGISTER.md",
+          "research/protocol/REPORTING_APPLICABILITY.md",
+          "research/protocol/gates/HG-R002-DATABASE-ACCESS.md"
+        ],
+        "independence": "Single executing agent. Not a human check and not independent of the work it describes.",
+        "input_refs": [
+          {
+            "id": "SRC-METH-AI2025",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-CIS2006",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-COCHRANE-CH11",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-EGM2020",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-PRESS2015",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-PRISMA2020",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-PRISMAP2015",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-PRISMAS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-METH-SWIM2020",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-BRIER-2010",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-BRIER-2015",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-COBLEY-2010",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-DESOUZA-2005",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-FRA-IVAA-2022",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-NAM-2010",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023-PREPRINT",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-THOMSEN-BRIER-2014",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-VALENTE-2009",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-VRIEND-2025",
+            "rev": 1
+          }
+        ],
+        "limitations": "Single-agent drafting; no human review of content; method sources read in prepasses were not re-read.",
+        "output_refs": [],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-10-13T01:40:06Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Draft and freeze protocol v1, analysis plan and glossary, with pilot report, concept register, reporting applicability record and database-access gate.",
+        "verification_steps": [
+          "Pilot-driven revisions were applied before the digests were taken (pilot report section 8).",
+          "Frozen-file digests recomputed after the last edit and bound in FREEZE.md and the protocol stage declaration."
+        ]
+      },
+      "factual_status": "project_decision",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

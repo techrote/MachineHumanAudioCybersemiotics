@@ -1,0 +1,69 @@
+{
+  "id": "SRC-NOV-COBLEY-2010",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:17:51Z",
+        "access_reason": "DOAJ record and abstract only.",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Cobley, Paul",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Entropy 12(9):2045-2066"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Shown on the DOAJ record fetched 2026-10-13 (ledger row 24)",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.3390/e12092045"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Author, title, journal, volume, issue, pages, year and DOI reported from the DOAJ record by the fetch tool on 2026-10-13."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2010-09"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Cybersemiotics and Human Modelling",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

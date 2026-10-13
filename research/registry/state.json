@@ -1,12 +1,258 @@
 {
-  "contract": "mhac-records/1",
-  "dataset_kind": "live",
-  "research_state": "not_started",
-  "record_roots": ["research/registry/records"],
-  "release_claims": [],
-  "release_requirements": [],
-  "stage_gates": [],
   "bibliography": "research/registry/bibliography.json",
   "citation_manifests": [],
-  "exports": "research/registry/generated"
+  "contract": "mhac-records/1",
+  "dataset_kind": "live",
+  "exports": "research/registry/generated",
+  "record_roots": [
+    "research/novelty/records",
+    "research/protocol/records",
+    "research/registry/records",
+    "research/searches/pilot/records"
+  ],
+  "release_claims": [],
+  "release_requirements": [],
+  "research_state": "in_progress",
+  "stage_gates": [
+    {
+      "artifacts": [
+        {
+          "path": "research/protocol/PROTOCOL-v1.md",
+          "sha256": "9ca38fdb1a973d7ab4b07a1d2131354e9d33cfc88cfa27c4714d02b399c96a4f"
+        },
+        {
+          "path": "research/protocol/ANALYSIS_PLAN-v1.md",
+          "sha256": "c4d89a8b56c01698c34c907645c013c507bd91e4b2a5cc9ac6ce5afe0a18db89"
+        },
+        {
+          "path": "research/protocol/GLOSSARY-v1.md",
+          "sha256": "e330247c66b165a1c06ac6f7764da6f89de99f983a7179fdfab9dfc1ceeb1ee4"
+        },
+        {
+          "path": "research/searches/pilot/exports/PILOT-WEBSEARCH-2026-10-13.json",
+          "sha256": "9336f3329f9d3da9fb6d997a21f73445cb070d680d8aace49cbfdb018df4b1bd"
+        },
+        {
+          "path": "research/searches/pilot/exports/ACCESS-LEDGER-2026-10-13.csv",
+          "sha256": "d1687579fff5bd9bea283eb8c590df86d3df7188e2078977ab773dee5fd2517f"
+        }
+      ],
+      "evidence_refs": [
+        {
+          "id": "SRC-METH-AI2025",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-CIS2006",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-COCHRANE-CH11",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-EGM2020",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRESS2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRISMA2020",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRISMAP2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-PRISMAS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-METH-SWIM2020",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-BRIER-2010",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-BRIER-2015",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-COBLEY-2010",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-DESOUZA-2005",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-FRA-IVAA-2022",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NAM-2010",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023-PREPRINT",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-THOMSEN-BRIER-2014",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-VALENTE-2009",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-VRIEND-2025",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-M1",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-M2",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-M3",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-M4",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-M5",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-M6",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-N1",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-N2",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-N3",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-N4",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA1",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA1X",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA2",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA3",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA4",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA5",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA6",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA7",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA8",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PA9",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PB1",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PB2",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PB3",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PB4",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PB5",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PR1",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PR2",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PR3",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PR4",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PR5",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-PR6",
+          "rev": 1
+        }
+      ],
+      "human_gate_refs": [],
+      "limitations": "Structural declaration only. Protocol v1 is internal and unregistered; prepared and self-audited by one agent with no human review; pilot used web search only; database access is gated (HG-R002-DATABASE-ACCESS); comparator readings were tool-mediated and partly abstract-only.",
+      "review_refs": [
+        {
+          "id": "AID-R002-INTERNAL-AUDIT",
+          "rev": 1
+        }
+      ],
+      "stage": "protocol",
+      "status": "complete"
+    }
+  ]
 }

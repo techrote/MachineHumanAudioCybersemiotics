@@ -1,0 +1,119 @@
+{
+  "id": "SRC-METH-SWIM2020",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:14:08Z",
+        "access_reason": "Repository PDF read through WebFetch (tool-mediated). No source bytes were retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Campbell, M.",
+            "role": "author"
+          },
+          {
+            "name": "McKenzie, J. E.",
+            "role": "author"
+          },
+          {
+            "name": "Sowden, A.",
+            "role": "author"
+          },
+          {
+            "name": "Katikireddi, S. V.",
+            "role": "author"
+          },
+          {
+            "name": "Brennan, S. E.",
+            "role": "author"
+          },
+          {
+            "name": "Ellis, S.",
+            "role": "author"
+          },
+          {
+            "name": "Hartmann-Boyce, J.",
+            "role": "author"
+          },
+          {
+            "name": "Ryan, R.",
+            "role": "author"
+          },
+          {
+            "name": "Shepperd, S.",
+            "role": "author"
+          },
+          {
+            "name": "Thomas, J.",
+            "role": "author"
+          },
+          {
+            "name": "Welch, V.",
+            "role": "author"
+          },
+          {
+            "name": "Thomson, H.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "BMJ 2020;368:l6890; UCL repository copy"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Printed on the repository copy read via WebFetch on 2026-10-13",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1136/bmj.l6890"
+          },
+          {
+            "provenance": "Fetched successfully on 2026-10-13 (ledger row 13)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://discovery-pp.ucl.ac.uk/10092670/1/bmj.l6890.full.pdf"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Citation reported from the repository copy of the BMJ article by the fetch tool on 2026-10-13."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2020"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Synthesis without meta-analysis (SWiM) in systematic reviews: reporting guideline",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

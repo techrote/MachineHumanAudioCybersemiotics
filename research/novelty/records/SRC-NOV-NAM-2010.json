@@ -1,0 +1,75 @@
+{
+  "id": "SRC-NOV-NAM-2010",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:17:51Z",
+        "access_reason": "Only the abstract and an issue listing were visible.",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Nam, Yoonjae",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "reason": "Journal name, volume and pages not visible on the fetched page",
+          "state": "unknown"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Publisher page fetched 2026-10-13 (ledger row 21)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.degruyterbrill.com/document/doi/10.1515/semi.2010.060/pdf"
+          },
+          {
+            "provenance": "Inferred from the publisher URL path only; not shown on the page and not resolved",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1515/semi.2010.060"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Author, title and copyright year (2010, Walter de Gruyter) reported by the fetch tool; journal identity unverified."
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2010"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "A semiotic analysis of sounds in personal computers: Toward a semiotic model of human-computer interaction",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

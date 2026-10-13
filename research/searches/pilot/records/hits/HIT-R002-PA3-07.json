@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R002-PA3-07",
+  "issue": 2,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [
+        {
+          "id": "SRCH-R002-PA3",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 7,
+        "raw_metadata": "the effect of voice and repair strategy on trust formation and re | https://research.manchester.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/",
+        "resolution_reason": "Pilot occurrence; publication identity not checked. Title and URL only.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://research.manchester.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R002-PA3",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

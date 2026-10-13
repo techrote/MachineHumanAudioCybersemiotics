@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R002-PR1-04",
+  "issue": 2,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [
+        {
+          "id": "SRCH-R002-PR1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-DESOUZA-2005",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "The Semiotic Engineering of Human-Computer Interaction | https://penguinrandomhouse.ca/books/655169/the-semiotic-engineering-of-human-computer-interaction-by-clarisse-sieckenius-de-souza/9780262527095",
+        "resolution_reason": "Retailer or bookshop page whose URL carries ISBN 9780262527095, recorded as a candidate identifier of this book; the page was not opened.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://penguinrandomhouse.ca/books/655169/the-semiotic-engineering-of-human-computer-interaction-by-clarisse-sieckenius-de-souza/9780262527095"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R002-PR1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-NOV-DESOUZA-2005",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

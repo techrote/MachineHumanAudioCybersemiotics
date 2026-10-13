@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Programme](PROGRAMME.md) · [RAG](../RAG.md) · [R001 implementation](R001_IMPLEMENTATION.md)
 
-These immutable checkpoints preserve the original preparatory work and its recorded evidence. They keep archive completeness separate from implementation and research acceptance. R001 was accepted through [PR #22](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/22), merged as [`f08330bf05e124694b276313d76ee68ccc946d48`](https://github.com/techrote/MachineHumanAudioCybersemiotics/commit/f08330bf05e124694b276313d76ee68ccc946d48). [R002 / issue #2](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2) remains the next dependency-ready task; its research preparation is partial and its protocol is not frozen. Live research remains `not_started`.
+These immutable checkpoints preserve the original preparatory work and its recorded evidence. They keep archive completeness separate from implementation and research acceptance. R001 was accepted through [PR #22](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/22), merged as [`f08330bf05e124694b276313d76ee68ccc946d48`](https://github.com/techrote/MachineHumanAudioCybersemiotics/commit/f08330bf05e124694b276313d76ee68ccc946d48). [R002 / issue #2](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2) reused these packets and froze [protocol v1](../research/protocol/PROTOCOL-v1.md) on 2026-10-13; the packets themselves remain archival preparation and were not applied as patches.
 
 ## Archive entry points
 
@@ -57,7 +57,7 @@ The quantitative checkpoint remains pinned at `007559214bf3fe2f2a00f9151fa7e3462
 
 ## Reuse and remaining work
 
-Resume R002 by reconciling its live issue, the accepted R001 record system, these complete original packets and their unresolved questions. Reuse the existing 1A/1B preparation and quantitative decisions. The primary comparator reading gap, further methodological decisions, feasible-channel pilots and truthful protocol freeze still require their own work and acceptance. Publication does not establish source-grounded novelty, source fidelity, scientific validity, independent human review or participant results.
+R002 reused the 1A/1B preparation and adopted the quantitative decisions with recorded modifications ([analysis plan §1](../research/protocol/ANALYSIS_PLAN-v1.md#1-adoption-of-the-prepass)). The primary comparator gap was narrowed by a version-limited reading of the Nees–Liebman preprint ([comparator record](../research/novelty/COMPARATOR_NEES_LIEBMAN_2023.md)); the Version of Record remains unread. Publication does not establish source-grounded novelty, source fidelity, scientific validity, independent human review or participant results.
 
 Prototypes, fixture records, source exports and proposed patches remain in archival locations. They are not live research records or active protocol authority. The registry, accepted implementation and protocol files are outside this documentation-only harmonization.
 

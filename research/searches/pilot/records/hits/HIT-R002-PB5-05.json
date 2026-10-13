@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R002-PB5-05",
+  "issue": 2,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [
+        {
+          "id": "SRCH-R002-PB5",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-THOMSEN-BRIER-2014",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 5,
+        "raw_metadata": "Total Integrative Evolutionary Communication: Towards a Cybersemiotic Discourse Pragmatics | https://journals.lub.lu.se/pjos/article/view/11467",
+        "resolution_reason": "The agent fetched this URL in R002 and identified the publication from its content (access ledger).",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://journals.lub.lu.se/pjos/article/view/11467"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R002-PB5",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-NOV-THOMSEN-BRIER-2014",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,94 @@
+{
+  "id": "SRC-NOV-NEES-LIEBMAN-2023-PREPRINT",
+  "issue": 2,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r002-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:33:00Z",
+      "basis": [
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-10-13T01:06:04Z",
+        "access_reason": "Preprint text available through an author-hosted copy; read only through WebFetch paraphrase (first 100000 of 102096 characters). No source bytes were retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Nees, Michael A.",
+            "role": "author"
+          },
+          {
+            "name": "Liebman, Eliana",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "PsyArXiv preprint labelled 'Preprint version 9.8.22' (day/month order ambiguous); 47 pages; not peer reviewed"
+        },
+        "family_links": [
+          {
+            "reason": "Author preprint submitted as the journal article; correspondence with the Version of Record is unverified.",
+            "relation": "version_of",
+            "source_ref": {
+              "id": "SRC-NOV-NEES-LIEBMAN-2023",
+              "rev": 1
+            }
+          }
+        ],
+        "identifiers": [
+          {
+            "provenance": "Printed in the preprint text as reported by WebFetch; DOI landing page could not be opened (ledger row 8)",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.31234/osf.io/g68f5"
+          },
+          {
+            "provenance": "Author-hosted copy fetched 2026-10-13 (ledger row 6)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.academia.edu/94454696/Auditory_icons_earcons_spearcons_and_speech_A_systematic_review_and_meta_analysis_of_brief_audio_alerts_in_human_machine_interfaces"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Version label, authors, affiliation, page count and preprint DOI reported from the hosted PDF text by the fetch tool on 2026-10-13.",
+          "Year 2022 inferred from the version label 9.8.22; the exact day is ambiguous."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2022"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R002",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission was verified; no bytes are retained.",
+          "status": "unknown"
+        },
+        "source_type": "preprint",
+        "title": "Auditory icons, earcons, spearcons, and speech: A systematic review and meta-analysis of brief audio alerts in human-machine interfaces",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
