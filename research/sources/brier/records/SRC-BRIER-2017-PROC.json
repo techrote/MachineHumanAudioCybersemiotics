@@ -1,0 +1,69 @@
+{
+  "id": "SRC-BRIER-2017-PROC",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Extended abstract read through WebFetch. No bytes retained: the workspace cannot download from this host and WebFetch returns an intermediary model's paraphrase only.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Extended abstract, Proceedings (MDPI) 2017 vol. 1; conference not named in the text"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Fetched 2026-10-13 (ledger row 25)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://sciforum.net/paper/download/4105/manuscript"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Title, author, affiliation, venue and date reported from the manuscript file by the fetch tool; no DOI given."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2017-06-26"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Can Cybersemiotics solve the problem of informational transdisciplinarity?",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,75 @@
+{
+  "id": "SRC-BRIER-2008-BOOK",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Catalogue metadata only. No lawful open copy identified; a search result offering the full book on dokumen.pub was not opened because it appears to redistribute the book without permission (ledger row 31).",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "University of Toronto Press, Toronto/Buffalo, c2008; xx, 477 pages; Toronto Studies in Semiotics and Communication; bibliography pp. 453-469"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Loughborough University catalogue record fetched 2026-10-13 (ledger row 9)",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9780802092205"
+          },
+          {
+            "provenance": "Appears in catalogue and search URLs (oeaw.ac.at, dokumen.pub); the catalogue page was blocked (ledger row 17); format and date unverified",
+            "scheme": "isbn",
+            "status": "candidate",
+            "value": "9781442687813"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Catalogue record gives publisher, place, copyright year, ISBN, pagination, series and notes."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2008"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Cybersemiotics: why information is not enough!",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

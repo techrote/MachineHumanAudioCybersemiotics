@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R003-B06-03",
+  "issue": 3,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRCH-R003-B06",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-REC-KYBERNETES-2009",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3,
+        "raw_metadata": "Cybersemiotics: Why Information Is Not Enough! | https://www.emerald.com/insight/content/doi/10.1108/03684920910962713/full/html",
+        "resolution_reason": "The URL carries this publication's persistent identifier or ISBN; the page itself was not opened.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.emerald.com/insight/content/doi/10.1108/03684920910962713/full/html"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R003-B06",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-BRIER-REC-KYBERNETES-2009",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

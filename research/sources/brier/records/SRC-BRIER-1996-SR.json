@@ -1,0 +1,69 @@
+{
+  "id": "SRC-BRIER-1996-SR",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Publisher page could not be fetched (client error). An author manuscript is recorded separately.",
+        "access_status": "unavailable",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Systems Research 13(3), starting page 229 per the DOI (end page unknown)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Decoded from the Wiley URL returned by search B-08 and repeated in the academia.edu metadata; the Wiley page returned a client error (ledger row 18)",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1002/(SICI)1099-1735(199609)13:3<229::AID-SRES96>3.0.CO;2-B"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Title, author, journal and year from the Wiley search-result title (B-08) and the author manuscript; volume/issue/start page inferred from the DOI string."
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "1996-09"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "From second-order cybernetics to cybersemiotics: A semiotic re-entry into the second-order cybernetics of Heinz von Foerster",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

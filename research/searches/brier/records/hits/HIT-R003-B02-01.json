@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R003-B02-01",
+  "issue": 3,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRCH-R003-B02",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-REC-COBLEY-2010-SIGNS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "tidsskrift.dk | https://tidsskrift.dk/signs/article/download/26861/23621/62029",
+        "resolution_reason": "Same journal article identifier as a URL the agent fetched (different galley or path).",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R003-B02",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-BRIER-REC-COBLEY-2010-SIGNS",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

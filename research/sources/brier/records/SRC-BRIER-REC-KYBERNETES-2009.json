@@ -1,0 +1,64 @@
+{
+  "id": "SRC-BRIER-REC-KYBERNETES-2009",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Publisher page returned a traffic-verification challenge; not bypassed.",
+        "access_status": "unavailable",
+        "authors": [],
+        "edition": {
+          "state": "known",
+          "value": "Kybernetes 38(5), page 840 per the Emerald URL path"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "From the Emerald URL returned by search B-06; page blocked by verification (ledger row 11)",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1108/03684920910962713"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Title from the search result; journal, volume, issue and page inferred from the URL path; reviewer unknown; year inferred from the DOI string."
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2009"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "review",
+        "title": "Cybersemiotics: Why Information Is Not Enough!",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

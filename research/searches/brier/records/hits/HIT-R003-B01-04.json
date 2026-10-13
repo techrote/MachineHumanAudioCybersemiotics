@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R003-B01-04",
+  "issue": 3,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRCH-R003-B01",
+          "rev": 1
+        },
+        {
+          "id": "SRC-BRIER-2006-SEMIOTICA",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "www.degruyterbrill.com | https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/pdf",
+        "resolution_reason": "The agent fetched this URL in R003 and identified the publication from its content (R003 access ledger).",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R003-B01",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-BRIER-2006-SEMIOTICA",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

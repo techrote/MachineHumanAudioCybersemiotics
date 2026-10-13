@@ -1,0 +1,75 @@
+{
+  "id": "SRC-BRIER-2003-TRIPLEC",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Open-access PDF linked from the journal page; not fetched or read.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "tripleC 1(1):71-94"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Shown on the tripleC article page fetched 2026-10-13 (ledger row 3)",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.31269/triplec.v1i1.6"
+          },
+          {
+            "provenance": "Fetched 2026-10-13",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://www.triple-c.at/index.php/tripleC/article/view/6"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Title, author, affiliation, volume, issue, pages, year, DOI and licence reported from the journal page by the fetch tool."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2003"
+        },
+        "rights": {
+          "evidence": {
+            "state": "known",
+            "value": "Licence statement on the tripleC article page read via WebFetch 2026-10-13"
+          },
+          "reason": "Journal page states CC BY-NC-ND 4.0; redistribution of unmodified copies with attribution for non-commercial use.",
+          "status": "redistribution_permitted"
+        },
+        "source_type": "article",
+        "title": "The Cybersemiotic Model of Communication: An Evolutionary View on the Threshold between Semiosis and Informational Exchange",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

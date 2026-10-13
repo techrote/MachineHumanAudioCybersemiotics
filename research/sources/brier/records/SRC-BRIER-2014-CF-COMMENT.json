@@ -1,0 +1,70 @@
+{
+  "id": "SRC-BRIER-2014-CF-COMMENT",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Located only as a citation.",
+        "access_status": "not_attempted",
+        "authors": [
+          {
+            "name": "Brier, Søren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Open peer commentary, Constructivist Foundations 9(2) (as cited by Brier)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "URL as printed in Brier's 2015 reference list; not opened",
+            "scheme": "url",
+            "status": "candidate",
+            "value": "http://www.univie.ac.at/constructivism/journal/articles/9/2/234.brier.pdf"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Listed in Brier's own reference list in the Studia kulturoznawcze 2015 article and/or the Green Letters 2015 accepted manuscript, read through WebFetch on 2026-10-13 (ledger rows 20, 28); not checked against the publication itself.",
+          "The title also appears on Brier's PhilPeople profile description (ledger row 2)."
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2014-03-15"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "other",
+        "title": "Phenomenological Computation?",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R003-B09-03",
+  "issue": 3,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [
+        {
+          "id": "SRCH-R003-B09",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-BRIER-2015",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3,
+        "raw_metadata": "Cybersemiotics: A Semiotic-systemic Transdisciplinary | https://research-api.cbs.dk/ws/portalfiles/portal/45591012/s_ren_brier_cybersemiotics_a_semiotic_systemic_publishersversion.pdf",
+        "resolution_reason": "The agent fetched this URL in R003 and identified the publication from its content (R003 access ledger).",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://research-api.cbs.dk/ws/portalfiles/portal/45591012/s_ren_brier_cybersemiotics_a_semiotic_systemic_publishersversion.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R003-B09",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-NOV-BRIER-2015",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

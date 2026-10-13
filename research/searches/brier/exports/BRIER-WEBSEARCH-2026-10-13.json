@@ -1,0 +1,226 @@
+{
+  "schema": "mhac-r002-websearch-log/1",
+  "issue": 3,
+  "status": "production discovery runs under protocol v1, Brier lane (Track G tier T1/T4); C8 web search only",
+  "tool": "WebSearch tool available to the executing Claude agent in a claude.ai cloud session. General web search engine, US-only, 'standard' or 'extended' mode. Each call returns result titles and URLs only (at most about ten), no total hit count, no abstracts, no pagination control and no documented ranking or personalization settings.",
+  "transcription": "Titles and URLs are transcribed exactly as the tool returned them, in returned order. No result was added from memory.",
+  "clock": "Times are shell-clock readings (UTC) taken before and after each batch; individual calls were not separately timestamped.",
+  "batches": [
+    {
+      "batch": "B1",
+      "purpose": "Brier bibliography, editions and reception discovery",
+      "window_start": "2026-10-13T01:49:05Z",
+      "window_end": "2026-10-13T01:52:59Z",
+      "window_note": "Shell clock readings when the R003 branch was created and before batch B2.",
+      "runs": [
+        {"label": "B-01", "lane": "brier", "mode": "standard", "query": "Søren Brier publications cybersemiotics list Copenhagen Business School research portal", "results": [
+          {"ordinal": 1, "title": "glossariumBITri Ed 2 2016 s", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/58545543/glossariumBITri_Ed_2_2016_s.pdf"},
+          {"ordinal": 2, "title": "Abstract Brier CHIAS II", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/58810411/Abstract_Brier_CHIAS_II.pdf"},
+          {"ordinal": 3, "title": "revistas.pucsp.br", "url": "https://revistas.pucsp.br/index.php/teccogs/article/download/52904/34713/157589"},
+          {"ordinal": 4, "title": "www.degruyterbrill.com", "url": "https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/pdf"},
+          {"ordinal": 5, "title": "fis-mail.sciforum.net", "url": "https://fis-mail.sciforum.net/2325"},
+          {"ordinal": 6, "title": "soren brier 1", "url": "https://philpeople.org/profiles/soren-brier-1"},
+          {"ordinal": 7, "title": "Introduction: Cybersemiotics, Biosemiotics, General Semiotics", "url": "https://research.cbs.dk/en/publications/introduction-cybersemiotics-biosemiotics-general-semiotics/"},
+          {"ordinal": 8, "title": "www.springer.com", "url": "https://www.springer.com/book/9783030527464"},
+          {"ordinal": 9, "title": "Plastir Number 26 – 03/2012", "url": "https://plasticites-sciences-arts.org/category/plastir-english-abstracts/page/20"},
+          {"ordinal": 10, "title": "Plastir Number 26 – 03/2012", "url": "https://www.plasticites-sciences-arts.org/author/psa-research-group/page/57/"}
+        ]},
+        {"label": "B-02", "lane": "brier", "mode": "standard", "query": "Brier 1996 \"From second-order cybernetics to cybersemiotics\"", "results": [
+          {"ordinal": 1, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"},
+          {"ordinal": 2, "title": "oeaw.ac.at", "url": "https://oeaw.ac.at/resources/Record/9781442687813"},
+          {"ordinal": 3, "title": "second order cybernetics and semiotic perspective on the idea of", "url": "https://researchprofiles.ku.dk/en/publications/second-order-cybernetics-and-semiotic-perspective-on-the-idea-of-/"},
+          {"ordinal": 4, "title": "Cybersemiotics, a transdisciplinary view on communication, information, signification, and cognition", "url": "https://journals.upol.cz/lingfrontiers/article/view/588"},
+          {"ordinal": 5, "title": "linguisticfrontiers.ff.upol.cz", "url": "https://linguisticfrontiers.ff.upol.cz/index.php/lingfrontiers/article/download/117/57/398"},
+          {"ordinal": 6, "title": "www-users.cs.york.ac.uk", "url": "https://www-users.cs.york.ac.uk/ss44/books/pages/b/SorenBrier.htm"},
+          {"ordinal": 7, "title": "Namur Conference", "url": "https://fis-mail.sciforum.net/0074"},
+          {"ordinal": 8, "title": "www.degruyterbrill.com", "url": "https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/pdf"},
+          {"ordinal": 9, "title": "plasticites sciences arts", "url": "https://plasticites-sciences-arts.org/?p=1441"},
+          {"ordinal": 10, "title": "Beyond Luhmann - Cybersemiotics", "url": "https://acpt.projectenportfolio.hz.nl/wiki/index.php/LC_00537"}
+        ]},
+        {"label": "B-03", "lane": "brier", "mode": "standard", "query": "Brier \"The cybersemiotic model of communication\" evolutionary view threshold semiosis informational exchange tripleC", "results": [
+          {"ordinal": 1, "title": "www.triple-c.at", "url": "https://www.triple-c.at/index.php/tripleC/article/view/6"},
+          {"ordinal": 2, "title": "triple-c.at", "url": "https://triple-c.at/index.php/tripleC/article/view/6/708"},
+          {"ordinal": 3, "title": "www.degruyterbrill.com", "url": "https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/pdf"},
+          {"ordinal": 4, "title": "Series | Buch | Kapitel", "url": "https://et-al.ophen.org/pub-196829"},
+          {"ordinal": 5, "title": "Central and East European", "url": "https://ceesp.org/pub-196829"},
+          {"ordinal": 6, "title": "Newsletter of Phenomenology", "url": "https://newsletter-phenomenology.ophen.org/pub-196829"},
+          {"ordinal": 7, "title": "www.triple-c.at", "url": "https://www.triple-c.at/index.php/tripleC/issue/view/3"},
+          {"ordinal": 8, "title": "Svar: Kickoff for September FIS Session", "url": "https://fis-mail.sciforum.net/0743"},
+          {"ordinal": 9, "title": "oeaw.ac.at", "url": "https://oeaw.ac.at/resources/Record/9781442687813"},
+          {"ordinal": 10, "title": "[Fis] Announcement: New Journal \"TripleC\" (triplec.uti.at)", "url": "https://fis-mail.sciforum.net/1098"}
+        ]},
+        {"label": "B-04", "lane": "brier", "mode": "standard", "query": "Brier \"Cybersemiotics: A New Foundation for Transdisciplinary Theory\" Integral Review 2013", "results": [
+          {"ordinal": 1, "title": "cybersemiotics a new foundation for transdisciplinary theory of i 2", "url": "https://research.cbs.dk/en/publications/cybersemiotics-a-new-foundation-for-transdisciplinary-theory-of-i-2/"},
+          {"ordinal": 2, "title": "brier cybersemiotics 2013", "url": "https://cspeirce.com/menu/library/aboutcsp/brier/brier-cybersemiotics-2013.pdf"},
+          {"ordinal": 3, "title": "Integral Review", "url": "https://integral-review.org/tag/soren-brier/"},
+          {"ordinal": 4, "title": "Integral Review", "url": "https://integral-review.org/tag/phenomenology/"},
+          {"ordinal": 5, "title": "Abstract Brier CHIAS II", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/58810411/Abstract_Brier_CHIAS_II.pdf"},
+          {"ordinal": 6, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/view/26864"},
+          {"ordinal": 7, "title": "Repository | Book | Chapter", "url": "https://ophen.org/pub-186530"},
+          {"ordinal": 8, "title": "Central and East European", "url": "https://ceesp.org/pub-186530"},
+          {"ordinal": 9, "title": "Søren Brier", "url": "https://emcsr.net/soren-brier/"},
+          {"ordinal": 10, "title": "Dr. Phil. Søren Brier", "url": "https://emcsr.net/?p=3292"}
+        ]},
+        {"label": "B-05", "lane": "brier", "mode": "standard", "query": "Brier cybersemiotics Journal of Documentation 1996 knowledge organization document retrieval", "results": [
+          {"ordinal": 1, "title": "doi.org", "url": "https://doi.org/10.1108%2Feb026970"},
+          {"ordinal": 2, "title": "alke.is.cuni.cz", "url": "https://alke.is.cuni.cz/node/2197.html"},
+          {"ordinal": 3, "title": "ko.cuni.cz", "url": "https://ko.cuni.cz/node/2197.html"},
+          {"ordinal": 4, "title": "Namur Conference", "url": "https://fis-mail.sciforum.net/0074"},
+          {"ordinal": 5, "title": "SV: FIS discussion and call for papers", "url": "https://fis-mail.sciforum.net/0078"},
+          {"ordinal": 6, "title": "default search action", "url": "https://dblp.org/pid/73/3759"},
+          {"ordinal": 7, "title": "Re: SV: FIS discussion and call for papers", "url": "https://fis-mail.sciforum.net/0080"},
+          {"ordinal": 8, "title": "ko.cuni.cz", "url": "https://ko.cuni.cz/node/935.html"},
+          {"ordinal": 9, "title": "alke.is.cuni.cz", "url": "https://alke.is.cuni.cz/node/935.html"}
+        ]},
+        {"label": "B-06", "lane": "brier", "mode": "extended", "query": "\"Cybersemiotics: Why Information Is Not Enough\" review Brier book", "results": [
+          {"ordinal": 1, "title": "Cybersemiotics: Why Information Is Not Enough by Søren Brier", "url": "https://www.goodreads.com/book/show/768261.Cybersemiotics"},
+          {"ordinal": 2, "title": "Signs vol. 3: pp. 69-107, 2010 ISSN: 1902-8822 69 Paul Cobley", "url": "https://tidsskrift.dk/signs/article/download/26861/23621"},
+          {"ordinal": 3, "title": "Cybersemiotics: Why Information Is Not Enough!", "url": "https://www.emerald.com/insight/content/doi/10.1108/03684920910962713/full/html"},
+          {"ordinal": 4, "title": "Cybersemiotics: Why Information Is Not Enough!", "url": "https://www.emerald.com/k/article/38/5/840/273433/Cybersemiotics-Why-Information-Is-Not-Enough"},
+          {"ordinal": 5, "title": "Review of Søren Brier's (2008) Cybersemiotics: Why information is not enough", "url": "https://www.degruyterbrill.com/document/doi/10.1515/sem-2012-0085/html"},
+          {"ordinal": 6, "title": "Two Reviews of Cybersemiotics. Why Information is not enough!", "url": "https://www.researchgate.net/publication/233681616_Two_Reviews_of_Cybersemiotics_Why_Information_is_not_enough"},
+          {"ordinal": 7, "title": "Carlos Vidales & Søren Brier (eds.), Introduction to Cybersemiotics: A Transdisciplinary Perspective - PhilPapers", "url": "https://philpapers.org/rec/VIDITC"},
+          {"ordinal": 8, "title": "Biosemiotics 21 Introduction to Cybersemiotics: A Transdisciplinary Perspective", "url": "https://download.e-bookshelf.de/download/0014/1019/54/L-G-0014101954-0055310236.pdf"},
+          {"ordinal": 9, "title": "review: Cybersemiotics", "url": "https://gnusystems.ca/Cybersem.htm"},
+          {"ordinal": 10, "title": "Cybersemiotics: Why Information Is Not Enough 9781442687813 - DOKUMEN.PUB", "url": "https://dokumen.pub/cybersemiotics-why-information-is-not-enough-9781442687813.html"}
+        ]},
+        {"label": "B-07", "lane": "brier", "mode": "standard", "query": "\"semiotic re-entry into the second-order cybernetics of Heinz von Foerster\" Brier Systems Research 1996", "results": [
+          {"ordinal": 1, "title": "cspeirce.com", "url": "https://cspeirce.com/menu/library/aboutcsp/brier/integration.doc"},
+          {"ordinal": 2, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"},
+          {"ordinal": 3, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=.+"},
+          {"ordinal": 4, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier/publications?app=446"},
+          {"ordinal": 5, "title": "Ciber 2b 22 out. second order cybernetcs", "url": "https://sites.ufpe.br/wp-content/uploads/sites/49/2021/10/Ciber-2b-22-out.-second-order-cybernetcs.pdf"},
+          {"ordinal": 6, "title": "www.degruyterbrill.com", "url": "https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/pdf"},
+          {"ordinal": 7, "title": "second order cybernetics and semiotic perspective on the idea of", "url": "https://researchprofiles.ku.dk/en/publications/second-order-cybernetics-and-semiotic-perspective-on-the-idea-of-/"},
+          {"ordinal": 8, "title": "Second order cybernetics an historical", "url": "https://www.emerald.com/k/article-split/33/9-10/1365/262487/Second-order-cybernetics-an-historical"},
+          {"ordinal": 9, "title": "Heinz von Foerster in the Systems Counterculture", "url": "https://esel.at/termin/47272"},
+          {"ordinal": 10, "title": "Beyond Luhmann - Cybersemiotics", "url": "https://acpt.projectenportfolio.hz.nl/wiki/index.php/LC_00537"}
+        ]},
+        {"label": "B-08", "lane": "brier", "mode": "extended", "query": "Brier \"Systems Research\" 1996 \"second-order cybernetics\" cybersemiotics von Foerster re-entry 13", "results": [
+          {"ordinal": 1, "title": "From second‐order cybernetics to cybersemiotics: A semiotic re‐entry into the second‐order cybernetics of Heinz von Foerster - Brier - 1996 - Systems Research - Wiley Online Library", "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/%28SICI%291099-1735%28199609%2913%3A3%3C229%3A%3AAID-SRES96%3E3.0.CO%3B2-B"},
+          {"ordinal": 2, "title": "Cybersemiotics in the Information Age", "url": "https://link.springer.com/chapter/10.1007/978-3-030-52746-4_1"},
+          {"ordinal": 3, "title": "Cybersemiotics: a reconceptualization of the foundation for information science - Brier - 2001 - Systems Research and Behavioral Science - Wiley Online Library", "url": "https://onlinelibrary.wiley.com/doi/10.1002/sres.446"},
+          {"ordinal": 4, "title": "(DOC) From Second-order Cybernetics to Cybersemiotics: A Semiotic Re-entry into the Second-order Cybernetics of Heinz von Foerster", "url": "https://www.academia.edu/10056952/From_Second_order_Cybernetics_to_Cybersemiotics_A_Semiotic_Re_entry_into_the_Second_order_Cybernetics_of_Heinz_von_Foerster"},
+          {"ordinal": 5, "title": "fis: SV: Information and Natural Languages", "url": "https://fis-mail.sciforum.net/0015"},
+          {"ordinal": 6, "title": "(PDF) Second‐order cybernetics as cognitive methodology", "url": "https://www.researchgate.net/publication/229678366_Second-order_cybernetics_as_cognitive_methodology"},
+          {"ordinal": 7, "title": "The integration of second order cybernetics, cognitive ...", "url": "https://www.cspeirce.com/menu/library/aboutcsp/brier/integration.doc"},
+          {"ordinal": 8, "title": "Second-order cybernetics", "url": "https://en.wikipedia.org/wiki/Second-order_cybernetics"},
+          {"ordinal": 9, "title": "Heinz von Foerster", "url": "https://en.wikipedia.org/wiki/Heinz_von_Foerster"}
+        ]},
+        {"label": "B-09", "lane": "brier", "mode": "standard", "query": "Brier \"Cybersemiotic pragmaticism and constructivism\" Constructivist Foundations 2009", "results": [
+          {"ordinal": 1, "title": "sciforum.net", "url": "https://sciforum.net/paper/download/4105/manuscript"},
+          {"ordinal": 2, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/view/26864"},
+          {"ordinal": 3, "title": "Cybersemiotics: A Semiotic-systemic Transdisciplinary", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/45591012/s_ren_brier_cybersemiotics_a_semiotic_systemic_publishersversion.pdf"},
+          {"ordinal": 4, "title": "cybersemiotics paradigms", "url": "https://www.mdpi.com/journal/entropy/special_issues/cybersemiotics-paradigms"},
+          {"ordinal": 5, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=6"},
+          {"ordinal": 6, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=88"},
+          {"ordinal": 7, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=616"},
+          {"ordinal": 8, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=96"},
+          {"ordinal": 9, "title": "Søren Brier", "url": "https://emcsr.net/soren-brier/"},
+          {"ordinal": 10, "title": "Dr. Phil. Søren Brier", "url": "https://emcsr.net/?p=3292"}
+        ]},
+        {"label": "B-10", "lane": "brier", "mode": "standard", "query": "Brier 1998 BioSystems \"Cybersemiotics: a transdisciplinary framework for information studies\"", "results": [
+          {"ordinal": 1, "title": "Cybersemiotics: A Semiotic-systemic Transdisciplinary", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/45591012/s_ren_brier_cybersemiotics_a_semiotic_systemic_publishersversion.pdf"},
+          {"ordinal": 2, "title": "sciforum.net", "url": "https://sciforum.net/paper/download/4105/manuscript"},
+          {"ordinal": 3, "title": "www.springer.com", "url": "https://www.springer.com/book/9783030527464"},
+          {"ordinal": 4, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/view/26864"},
+          {"ordinal": 5, "title": "link.springer.com", "url": "https://link.springer.com/book/10.1007/978-3-030-52746-4"},
+          {"ordinal": 6, "title": "Namur Conference", "url": "https://fis-mail.sciforum.net/0074"},
+          {"ordinal": 7, "title": "s ren brier cybersemiotics reasoning powers postprint", "url": "https://research-api.cbs.dk/ws/files/44031602/s_ren_brier_cybersemiotics_reasoning_powers_postprint.pdf"},
+          {"ordinal": 8, "title": "triple-c.at", "url": "https://triple-c.at/index.php/tripleC/article/view/6/708"},
+          {"ordinal": 9, "title": "www-users.cs.york.ac.uk", "url": "https://www-users.cs.york.ac.uk/ss44/books/pages/b/SorenBrier.htm"}
+        ]},
+        {"label": "B-11", "lane": "brier", "mode": "standard", "query": "Brier cybersemiotics \"Progress in Biophysics and Molecular Biology\" 2015 biosemiotics science bridge", "results": [
+          {"ordinal": 1, "title": "can biosemiotics be a science if its purpose is to be a bridge be 2", "url": "https://research.cbs.dk/da/publications/can-biosemiotics-be-a-science-if-its-purpose-is-to-be-a-bridge-be-2/"},
+          {"ordinal": 2, "title": "Abstract Brier CHIAS II", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/58810411/Abstract_Brier_CHIAS_II.pdf"},
+          {"ordinal": 3, "title": "s ren brier cybersemiotics reasoning powers postprint", "url": "https://research-api.cbs.dk/ws/files/44031602/s_ren_brier_cybersemiotics_reasoning_powers_postprint.pdf"},
+          {"ordinal": 4, "title": "linguisticfrontiers.ff.upol.cz", "url": "https://linguisticfrontiers.ff.upol.cz/index.php/lingfrontiers/article/download/117/57/398"},
+          {"ordinal": 5, "title": "www-users.york.ac.uk", "url": "https://www-users.york.ac.uk/~ss44/books/pages/b/SorenBrier.htm"},
+          {"ordinal": 6, "title": "oeaw.ac.at", "url": "https://oeaw.ac.at/resources/Record/9781442687813"},
+          {"ordinal": 7, "title": "cybersemiotics why information is not enough book 9781442626362", "url": "https://www.betterread.com.au/book/cybersemiotics-why-information-is-not-enough-book-9781442626362.do"},
+          {"ordinal": 8, "title": "akademika.no", "url": "https://akademika.no/dokumentar-og-fakta/kunst-og-kultur/cybersemiotics/9781442626362"},
+          {"ordinal": 9, "title": "brier cybersemiotics 2013", "url": "https://cspeirce.com/menu/library/aboutcsp/brier/brier-cybersemiotics-2013.pdf"}
+        ]},
+        {"label": "B-12", "lane": "brier", "mode": "standard", "query": "Brier \"Cybersemiotics and the question of knowledge\" Information and Computation World Scientific", "results": [
+          {"ordinal": 1, "title": "Transdisciplinarity seen through Information, Communication, Computation, (Inter-)Action and Cognition", "url": "https://arxiv.org/pdf/1604.04711"},
+          {"ordinal": 2, "title": "Cybersemiotics and the Question of Knowledge", "url": "https://research.cbs.dk/en/publications/cybersemiotics-and-the-question-of-knowledge/"},
+          {"ordinal": 3, "title": "World Scientific (", "url": "https://www.philpapers.org/rec/DODIAC-3"},
+          {"ordinal": 4, "title": "s ren brier cybersemiotic systemic and semiotical publishersversion", "url": "https://research-api.cbs.dk/ws/files/60162937/s_ren_brier_cybersemiotic_systemic_and_semiotical_publishersversion.pdf"},
+          {"ordinal": 5, "title": "oeaw.ac.at", "url": "https://oeaw.ac.at/resources/Record/9781442687813"},
+          {"ordinal": 6, "title": "Cybersemiotics: A Semiotic-systemic Transdisciplinary", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/45591012/s_ren_brier_cybersemiotics_a_semiotic_systemic_publishersversion.pdf"},
+          {"ordinal": 7, "title": "cybersemiotics why information is not enough book 9781442626362", "url": "https://www.betterread.com.au/book/cybersemiotics-why-information-is-not-enough-book-9781442626362.do"},
+          {"ordinal": 8, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"},
+          {"ordinal": 9, "title": "The Cybersemiotics and Info-Computationalist Research Programmes", "url": "https://philpapers.org/rec/DODP"}
+        ]},
+        {"label": "B-13", "lane": "brier", "mode": "standard", "query": "Claudia Jacques \"Human-Computer Interaction Design and the Cybersemiotic Experience\"", "results": [
+          {"ordinal": 1, "title": "CYBERSEMIOTICS: REFLECTIONS ON THE TRANSDISCIPLINARY INTEGRATING OF SEMIOTICS, CYBERNETICS AND SYSTEMS", "url": "https://artsci.ucla.edu/node/1335"},
+          {"ordinal": 2, "title": "⚘ Navigating the Cybersemiotic Experience: From Deely to Brier ☀ Claudia Jacques", "url": "https://zenodo.org/records/7102590"},
+          {"ordinal": 3, "title": "artsci.ucla.edu", "url": "https://artsci.ucla.edu/categories/theory"},
+          {"ordinal": 4, "title": "Navigating the Cybersemiotic Experience: From Deely to Brier (September 17)", "url": "https://iass-ais.org/navigating-the-cybersemiotic-experience-from-deely-to-brier-september-17/"},
+          {"ordinal": 5, "title": "⚘ Navigating the Cybersemiotic Experience: From Deely to Brier | Claudia Jacques", "url": "https://lyceum.institute/io2s/2022/09/15/%e2%9a%98-navigating-the-cybersemiotic-experience-from-deely-to-brier-claudia-jacques/"},
+          {"ordinal": 6, "title": "⚘ Navigating the Cybersemiotic Experience: From Deely to Brier | Claudia Jacques", "url": "https://lyceum.institute/io2s/2022/09/15/⚘-navigating-the-cybersemiotic-experience-from-deely-to-brier-claudia-jacques/"},
+          {"ordinal": 7, "title": "Claudia Jacques", "url": "https://www.isea-symposium-archives.org/?p=64596"},
+          {"ordinal": 8, "title": "Claudia Jacques", "url": "https://artsci.ucla.edu/node/1258"},
+          {"ordinal": 9, "title": "Email: cj@claudiajacques.org", "url": "https://asc-cybernetics.org/2014/?p=738"},
+          {"ordinal": 10, "title": "Claudia Jacques", "url": "https://blackchicagohistory.com/node/127"}
+        ]}
+      ]
+    },
+    {
+      "batch": "B2",
+      "purpose": "Follow-up: HCI chapter page, 2009 article, critique search, co-authored 2013 article",
+      "window_start": "2026-10-13T01:52:59Z",
+      "window_end": "2026-10-13T01:53:19Z",
+      "window_note": "Shell clock readings immediately before and after the batch.",
+      "runs": [
+        {"label": "B-14", "lane": "brier", "mode": "standard", "query": "Human-Computer Interaction Design and the Cybersemiotic Experience Springer chapter 2021 Jacques", "results": [
+          {"ordinal": 1, "title": "link.springer.com", "url": "https://link.springer.com/10.1007/978-3-030-52746-4_10"},
+          {"ordinal": 2, "title": "pearl.plymouth.ac.uk", "url": "https://pearl.plymouth.ac.uk/ada-theses/13"},
+          {"ordinal": 3, "title": "human computer interaction theoretical approaches and design methods format broche", "url": "https://fr.shopping.rakuten.com/offer/buy/8589342365/human-computer-interaction-theoretical-approaches-and-design-methods-format-broche.html?np=true"},
+          {"ordinal": 4, "title": "CYBERSEMIOTICS: REFLECTIONS ON THE TRANSDISCIPLINARY INTEGRATING OF SEMIOTICS, CYBERNETICS AND SYSTEMS", "url": "https://artsci.ucla.edu/node/1335"},
+          {"ordinal": 5, "title": "www.springer.com", "url": "https://www.springer.com/gb/book/9783319562902"},
+          {"ordinal": 6, "title": "artsci.ucla.edu", "url": "https://artsci.ucla.edu/categories/theory"},
+          {"ordinal": 7, "title": "The Semiotic Engineering of Human-Computer Interaction (Acting with Technology)", "url": "https://mitpressbookstore.mit.edu/book/9780262527095"},
+          {"ordinal": 8, "title": "The Semiotic Engineering of Human-Computer Interaction", "url": "https://tenlong.com.tw/products/9780262527095"},
+          {"ordinal": 9, "title": "Navigating the Cybersemiotic Experience: From Deely to Brier (September 17)", "url": "https://iass-ais.org/navigating-the-cybersemiotic-experience-from-deely-to-brier-september-17/"}
+        ]},
+        {"label": "B-15", "lane": "brier", "mode": "standard", "query": "Brier \"Cybersemiotic Pragmaticism and Constructivism\" Constructivist Foundations 5(1) open peer commentary", "results": [
+          {"ordinal": 1, "title": "linguisticfrontiers.ff.upol.cz", "url": "https://linguisticfrontiers.ff.upol.cz/index.php/lingfrontiers/article/download/117/57/398"},
+          {"ordinal": 2, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=6"},
+          {"ordinal": 3, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=616"},
+          {"ordinal": 4, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=88"},
+          {"ordinal": 5, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=96"},
+          {"ordinal": 6, "title": "sciforum.net", "url": "https://sciforum.net/paper/download/4105/manuscript"},
+          {"ordinal": 7, "title": "philpeople.org", "url": "https://philpeople.org/profiles/soren-brier-1/publications?app=.."},
+          {"ordinal": 8, "title": "Cybersemiotics, a transdisciplinary view on communication, information, signification, and cognition", "url": "https://journals.upol.cz/lingfrontiers/article/view/588"},
+          {"ordinal": 9, "title": "s ren brier cybersemiotics reasoning powers postprint", "url": "https://research-api.cbs.dk/ws/files/44031602/s_ren_brier_cybersemiotics_reasoning_powers_postprint.pdf"},
+          {"ordinal": 10, "title": "Søren Brier", "url": "https://emcsr.net/soren-brier/"}
+        ]},
+        {"label": "B-16", "lane": "brier", "mode": "standard", "query": "critique of cybersemiotics Brier objections constructivism autopoiesis Luhmann", "results": [
+          {"ordinal": 1, "title": "tidsskrift.dk", "url": "https://tidsskrift.dk/signs/article/download/26861/23621/62029"},
+          {"ordinal": 2, "title": "www.springer.com", "url": "https://www.springer.com/book/9783030527464"},
+          {"ordinal": 3, "title": "link.springer.com", "url": "https://link.springer.com/book/10.1007/978-3-030-52746-4"},
+          {"ordinal": 4, "title": "sciforum.net", "url": "https://sciforum.net/paper/download/4105/manuscript"},
+          {"ordinal": 5, "title": "Abstract Brier CHIAS II", "url": "https://research-api.cbs.dk/ws/portalfiles/portal/58810411/Abstract_Brier_CHIAS_II.pdf"},
+          {"ordinal": 6, "title": "mitpressbookstore.mit.edu", "url": "https://mitpressbookstore.mit.edu/book/9783030527488"},
+          {"ordinal": 7, "title": "mitpressbookstore.mit.edu", "url": "https://mitpressbookstore.mit.edu/book/9783030527457"},
+          {"ordinal": 8, "title": "SV: Information and Natural Languages", "url": "https://fis-mail.sciforum.net/0015"},
+          {"ordinal": 9, "title": "2 Brier v1 2", "url": "https://cspeirce.com/menu/library/aboutcsp/brier/2_Brier_v1_2.pdf"},
+          {"ordinal": 10, "title": "cspeirce.com", "url": "https://cspeirce.com/menu/library/aboutcsp/brier/integration.doc"}
+        ]},
+        {"label": "B-17", "lane": "brier", "mode": "standard", "query": "Brier Joslyn 2013 \"What does it take to produce interpretation\" Biosemiotics", "results": [
+          {"ordinal": 1, "title": "April 1, 2013", "url": "https://www.pnnl.gov/publications/what-does-it-take-produce-interpretation-informational-peircean-and-code-semiotic"},
+          {"ordinal": 2, "title": "Natural intelligence and anthropic reasoning", "url": "https://arxiv.org/pdf/2001.01109"},
+          {"ordinal": 3, "title": "Biosemiotics", "url": "https://en.wikipedia.org/wiki/Biosemiotics"},
+          {"ordinal": 4, "title": "Cover not available", "url": "https://lwc1.benjamins.com/catalog/btl.157.05mar"},
+          {"ordinal": 5, "title": "the expanded ontology of peircean biosemiotics", "url": "https://research.cbs.dk/en/activities/the-expanded-ontology-of-peircean-biosemiotics/"},
+          {"ordinal": 6, "title": "The Possibility of Biosemiotics: Peircean Semiotics and the Question of the Mental Interpretant생물기호학의 가능성", "url": "https://koasas.kaist.ac.kr/handle/10203/203579"},
+          {"ordinal": 7, "title": "zygonjournal.org", "url": "https://zygonjournal.org/article/13776/galley/27929/download"},
+          {"ordinal": 8, "title": "graphsearch.epfl.ch", "url": "https://graphsearch.epfl.ch/en/concept/570440/concepts"},
+          {"ordinal": 9, "title": "blog.linguisten.de", "url": "https://blog.linguisten.de/post/133167780996/biosemiotics-a-growing-field-of-studies-that/amp"},
+          {"ordinal": 10, "title": "zygonjournal.org", "url": "https://zygonjournal.org/article/13780/galley/27937/download"}
+        ]}
+      ]
+    }
+  ]
+}

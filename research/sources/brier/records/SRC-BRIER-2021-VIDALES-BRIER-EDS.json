@@ -1,0 +1,91 @@
+{
+  "id": "SRC-BRIER-2021-VIDALES-BRIER-EDS",
+  "issue": 3,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r003-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T01:58:16Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T01:52:59Z",
+        "access_reason": "Table of contents and metadata only; chapters are subscription content.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Vidales, Carlos",
+            "role": "editor"
+          },
+          {
+            "name": "Brier, Søren",
+            "role": "editor"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "1st edition; Biosemiotics vol. 21; Springer, Cham; XIX + 555 pages"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Springer book page fetched 2026-10-13 (ledger row 8)",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/978-3-030-52746-4"
+          },
+          {
+            "provenance": "Hardcover ISBN on the Springer page",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9783030527457"
+          },
+          {
+            "provenance": "Softcover ISBN on the Springer page",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9783030527488"
+          },
+          {
+            "provenance": "eBook ISBN on the Springer page",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9783030527464"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Editors, series, publisher, dates, ISBNs, DOI, page count and full table of contents reported from the Springer page."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2021-04-14"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked in R003",
+            "state": "unknown"
+          },
+          "reason": "No licence or permission verified; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Introduction to Cybersemiotics: A Transdisciplinary Perspective",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
