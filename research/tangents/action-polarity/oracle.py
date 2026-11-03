@@ -36,11 +36,13 @@ def truth_valid(t: object) -> bool:
         return False
     if not all(number(t.get(k)) for k in ("issued_at", "expires_at")):
         return False
-    if t["expires_at"] <= t["issued_at"] or t.get("state") not in VALID_STATES:
+    if (t["expires_at"] <= t["issued_at"] or not isinstance(t.get("state"), str)
+            or t["state"] not in VALID_STATES):
         return False
     actions = t.get("actions")
     return (isinstance(actions, dict) and bool(actions)
-            and all(identity(k) and v in VALID_AUTH for k, v in actions.items()))
+            and all(identity(k) and isinstance(v, str) and v in VALID_AUTH
+                    for k, v in actions.items()))
 
 
 def expected_tokens(m: dict) -> list[str] | None:
@@ -58,6 +60,8 @@ def expected_tokens(m: dict) -> list[str] | None:
             return None
         return ["DO", action, "NOT", avoid]
     if kind == "status":
+        if not isinstance(m.get("claim"), str):
+            return None
         return {"active": ["HAZARD", "ACTIVE"],
                 "inactive": ["HAZARD", "CLEARED"],
                 "unknown": ["HAZARD", "UNKNOWN"],
@@ -97,7 +101,8 @@ def evaluate(case: object) -> dict:
         return outcome("reject", "invalid-message")
     if not all(number(m.get(k)) for k in ("issued_at", "expires_at")):
         return outcome("reject", "invalid-message")
-    if m["expires_at"] <= m["issued_at"] or m.get("kind") not in KINDS:
+    if (m["expires_at"] <= m["issued_at"]
+            or not isinstance(m.get("kind"), str) or m["kind"] not in KINDS):
         return outcome("reject", "invalid-message")
     if m["source"] != t["source"] or m["event"] != t["event"]:
         return outcome("reject", "source-event-mismatch")

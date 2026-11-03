@@ -74,6 +74,20 @@ class TestActionPolarity(unittest.TestCase):
         self.assertEqual(oracle.evaluate(case),
                          {"status": "unresolved", "reason": "no-clearance-evidence"})
 
+    def test_malformed_unhashable_fields_fail_closed(self):
+        case = deepcopy(self.by_id["simple-direct"])
+        case["truth"]["state"] = []
+        self.assertEqual(oracle.evaluate(case)["reason"], "invalid-truth")
+        case = deepcopy(self.by_id["simple-direct"])
+        case["truth"]["actions"]["stop"] = []
+        self.assertEqual(oracle.evaluate(case)["reason"], "invalid-truth")
+        case = deepcopy(self.by_id["simple-direct"])
+        case["message"]["kind"] = []
+        self.assertEqual(oracle.evaluate(case)["reason"], "invalid-message")
+        case = deepcopy(self.by_id["active-status"])
+        case["message"]["claim"] = []
+        self.assertEqual(oracle.evaluate(case)["reason"], "invalid-message")
+
 
 if __name__ == "__main__":
     unittest.main()
