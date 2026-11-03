@@ -4,6 +4,7 @@
 
 ## Runs
 
+| **2026-11-03 16:00 UTC** | **1 / 2 / 2** | Warning urgency mappings presuppose received cue integrity (S83); speech intelligibility and envelope fidelity can trade under compression (S84); left/right and front/back directional outcomes diverge (S85); fast compression can *improve* gap detection (S86); directional microphones can hide wrong first turns behind correct final localization (S87). Propose channel-conditioned, endpoint-separated negative controls; no separate issue. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-1600-utc--sixteenth-pass-channel-processing-mapping-reversals-and-directional-orienting) |
 | UTC hour | Parallel / orthogonal / perpendicular | Strongest candidate connections | Full notes |
 |---|---|---|---|
 | **2026-11-03 15:01 UTC** | **2 / 1 / 2** | Room direct/reverberant ratio affects speech segregation (S78–S79); spatial precedence/coherence can bias apparent source (S80); room-independent intelligibility model performs less well than tuned variants (S81); critique of unconstrained semiotic “affordances” adds a falsification requirement (S82). R013/R014 channel-stress crosswalk; do not confuse signal presence, source identity or appropriate action. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-1501-utc--fifteenth-pass-room-dependent-auditory-binding-precedence-effects-and-situated-sign-affordances) |
