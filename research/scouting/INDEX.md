@@ -8,6 +8,8 @@
 |---|---|---|---|
 | **2026-11-03 01:06** | **2 / 1 / 2** | (1) Concurrent messages: masking vs semantic identity vs correct action; (2) spoken uncertainty: trust vs decision calibration; (3) workload-aware deferral with hard deadlines; (4) alarm truthfulness, cross-checkability and cry-wolf effects; (5) perceived urgency can invert identification performance. | [2026-11-03](hourly/2026-11-03.md) |
 
+| **2026-11-03 01:58** | **1 / 1 / 2** | (1) Spatial cues plus verbal direction may combine conditionally; (2) signal-detection criterion and severity are distinct; (3) inattentional deafness under critical workload; (4) frequency/noise/hearing-profile accessibility and warning thresholds. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0158-utc--second-pass-spatial-cue-convergence-decision-thresholds-attention-failure-and-audibility-equity) |
+
 ## Research-triage priorities
 
 | Priority | Lead | Proposed owner / next action | Evidence status |
@@ -16,6 +18,10 @@
 | High | Spoken uncertainty: credibility and consequential action diverge | #5/#6 check; #9/#13 calibration outcomes; #14 protocol-only design | 2024 empirical abstract, not fully extracted |
 | High | Alarm reliability, confirmation and false-positive history | #8/#11 counterposition; #12/#13 verification semantics | 2014 experimental abstract; audio-specific transfer uncertain |
 | High | Urgency *impression* versus effective recognition | #5/#6 candidate screening; #9/#10 outcome separation | 2006 primary-study abstract; domain-limited counterexample |
+| High | Attention-related miss distinct from acoustic masking, response noncompliance or recall failure | #5/#6 candidate identity; #9 appraisal; #13/#14 negative-case protocol | T5/T6 aviation abstracts, workload dependence; transfer uncertain |
+| High | Hearing-profile and background-noise stress tests of semantic cue audibility | #5/#6 possible eligibility; #9 spectral/noise strata; #13 accessibility stress cases | T7/T8 age/hearing and ringer abstracts; no universal frequency rule |
+| High | Warning policy and decision criterion versus urgency/semantic certainty | #8/#11 alternative account; #12 field separation; #14 synthetic cost-matrix sweep | T3 model/experiments + T4 auditory vigilance abstract; not audio-framework evidence |
+| Medium | Spatialized and spoken directional cue congruence | #5/#6 check; #9 outcome separation; #13/#14 factorial protocol | T1/T2 simulator/alarm abstracts; possible R005 citation overlap |
 | Medium | Deadline-aware interruption lifecycle | #12 lifecycle hypothesis; #14 synthetic-only queue test | ATC interruption-management analogy, not an MHAC-audio trial |
 
 ## Operating rules
