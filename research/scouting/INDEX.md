@@ -6,6 +6,7 @@
 
 | UTC hour | Parallel / orthogonal / perpendicular | Strongest candidate connections | Full notes |
 |---|---|---|---|
+| **2026-11-03 10:59 UTC** | **1 / 1 / 1** | Synthesized cockpit voice alerts may cost action latency yet spare other audio monitoring (S58–S59, overlap unverified); negated language carries context-sensitive processing costs (S60–S61); contrastive virtual-robot guidance was slower but improved some gesture execution outcomes (S62, corrected 2026); candidate source-truth × instruction-polarity × deadline falsifier. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-1059-utc--eleventh-pass-voice-warning-latency-negation-cost-and-contrastive-action-guidance) |
 | **2026-11-03 10:01 UTC** | **1 / 1 / 1** | Close-onset alarm count and crossmodal interference (S55); operator-level alarm-flood/stale/suppression audit via IEC 62682 (S56, comparator only); retrospective validation-delay reduction incurred 13 missed clinical events despite fewer alerts (S57); joint burst-vs-deadline negative-control model. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-1001-utc--tenth-pass-alarm-flood-temporal-competition-operator-level-audit-and-suppression-hazards) |
 | **2026-11-03 09:00** | **2 / 1 / 2** | Looming acoustic ramps imply approach and sustain crossmodal attention; rising intensity can recruit autonomic alerting without machine emotion; deviant vs changing-state distraction dissociate; spectral context limits looming localization; simple alerts can have conditional ~1.5-s tracking recovery tails. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0900-utc--ninth-pass-auditory-looming-dual-distraction-and-causal-urgency-miscalibration) |
 | **2026-11-03 08:00** | **2 / 1 / 1** | (1) 2026 pilot/control data: modality-specific task load erodes multimodal warning speed advantage; (2) 2025 ATC: fewer misses but greater urgency/annoyance; (3) learned auditory repetition improves detection yet can induce false positives; (4) adult cochlear-implant users' safety-sound identification remains fallible. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0800-utc--eighth-pass-load-conditioned-redundancy-predictive-false-alarms-and-cochlear-implant-sound-identification) |
@@ -19,6 +20,7 @@
 
 ## Research-triage priorities
 
+| High | Polarity and contrastive instructions: when "not A"/"do B" changes correct action rather than mere message intelligibility (10:59 P18/O12/X15) | R008/R012/R013/R014, and #33/#34/#36 negative controls: separate source-truth polarity, first/correct-final action, deadline and speech/noise access | S58–S59 abstract-only same-author; S60 abstract/institutional; S61/S62 selective open full HTML; **direct emergency-audio action evidence absent** |
 | Priority | Lead | Proposed owner / next action | Evidence status |
 |---|---|---|---|
 | High | Event-burst temporal competition and the false-negative price of suppression (10th pass S55–S57) | #30/#33/#36 constraints; R012/R014 operator-level burst, stale and deadline negative controls | S55 experiments abstract-only; S56 paid standard catalogue; S57 retrospective counts; **no MHAC validation** |
