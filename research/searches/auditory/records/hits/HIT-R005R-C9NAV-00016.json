@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C9NAV-00016",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9NAV",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 16,
+        "raw_metadata": "TheSonificationHandbook HermannHuntNeuhoff 2011 | PDF | Interdisciplinarity | Sound | https://ru.scribd.com/document/666947611/TheSonificationHandbook-HermannHuntNeuhoff-2011",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://ru.scribd.com/document/666947611/TheSonificationHandbook-HermannHuntNeuhoff-2011"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NAV",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

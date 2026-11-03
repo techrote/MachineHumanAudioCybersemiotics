@@ -2,6 +2,12 @@
 
 [Protocol §5](../PROTOCOL-v1.md#5-track-e-sources-and-searches) · [§13](../PROTOCOL-v1.md#13-access-gaps-and-human-gates) · Record: `HG-R002-DATABASE-ACCESS` · Status: **waiting** (not blocking protocol acceptance)
 
+## Current observation — 3 November 2026
+
+The original gate and owner instructions below describe the 13 October environment. In the current authorized workspace, public OpenAlex and Crossref requests succeeded without credentials. [R005's retained audit](../../searches/auditory/recovery-2026-11-03/database/AUDIT.md) records exact requests and outcomes. Seven frozen OpenAlex query families were fully retrieved; EQ1 remains partial after the anonymous daily allowance reached zero. Crossref is usable for metadata but does not implement equivalent frozen Boolean searches. Other publisher/subscription channels remain gaps.
+
+No browser-permission change is currently needed to explain or repeat these successful requests. The machine-readable human gate remains historically `waiting`: its schema requires an actual human satisfaction event, which the agent does not fabricate. This note records changed access observations, not a protocol amendment or proof of complete database coverage. The [current coverage memo](../../sources/auditory/README.md) governs the present handoff.
+
 ## Why this is needed
 
 The agent can reach only a general web search engine. Its workspace proxy refuses the open bibliographic APIs (OpenAlex, Crossref, arXiv export, Semantic Scholar), and your Claude desktop app's built-in browser blocked `api.openalex.org` under its site permissions on 2026-10-13. In the pilot, web search returned only about 7% of a known set of eligible studies. Without a database channel, MHAC-R005 will run the declared fallback and must report that no bibliographic database was searched.

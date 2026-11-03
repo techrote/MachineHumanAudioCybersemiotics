@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9RUSKIN-00081",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 81,
+        "raw_metadata": "Kearney, P., Li, W. C., & Lin, J. J. (2016). The impact of alerting design on air traffic controllers' response to conflict detection and resolution. International Journal of Industrial Ergonomics, 56, 51-58. | C9-RUSKIN-2020-REF081 | source PDF pp. 65; printed pp. 65; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

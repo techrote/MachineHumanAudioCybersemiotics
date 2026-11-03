@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-03875",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3875,
+        "raw_metadata": "The Benefits, Factors, and Barriers Faced in the Implementation of Digital National Early Warning Score in Hospitals: A Scoping Review | first author: Fricilia Noya | 2025-07-03 | article | https://openalex.org/W4413028177",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4413028177"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.30994/jnp.v8i4.680"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

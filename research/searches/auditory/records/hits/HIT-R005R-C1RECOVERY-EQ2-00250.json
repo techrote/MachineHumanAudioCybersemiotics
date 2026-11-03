@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ2-00250",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 250,
+        "raw_metadata": "Meteorological warnings issued by INMET for the Brazilian cities of Belém, Belo Horizonte, Porto Alegre, Rio de Janeiro, and São Paulo between 2021 and 2022 | first author: Lesandro Ponciano | 2023-06-08 | dataset | https://openalex.org/W4393583293",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4393583293"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.5281/zenodo.8018164"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

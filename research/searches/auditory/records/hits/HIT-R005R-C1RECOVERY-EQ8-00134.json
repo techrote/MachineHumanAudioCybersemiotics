@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ8-00134",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 134,
+        "raw_metadata": "Automated seizure detection with noninvasive wearable devices: A systematic review and meta‐analysis | first author: Vaidehi Naganur | 2022-05-12 | review | https://openalex.org/W4280516165",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4280516165"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1111/epi.17297"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

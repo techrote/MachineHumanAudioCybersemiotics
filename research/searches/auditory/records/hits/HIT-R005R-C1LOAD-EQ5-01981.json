@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ5-01981",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1981,
+        "raw_metadata": "Development Of A Novel High-fidelity 3d-printed Mandibular Model With Piezoelectric-integration For Bsso Training | first author: Thomas Ren | 2026-05-08 | conference-paper | https://openalex.org/W7160661763",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W7160661763"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.5281/zenodo.20086493"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

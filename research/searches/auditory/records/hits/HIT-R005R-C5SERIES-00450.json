@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00450",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 450,
+        "raw_metadata": "One small step: Sound sources and events as the basis for auditory graphs. | Neuhoff, John G; Heller, Laurie M | issued: 2005-07 | Text | https://repository.gatech.edu/entities/publication/a9a4bde4-dbed-4453-a552-fb445e41f2e7",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/a9a4bde4-dbed-4453-a552-fb445e41f2e7"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50174"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

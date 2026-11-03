@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-02749",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2749,
+        "raw_metadata": "Uso Prejudicial de Drogas Na Adolescência: Escola e Família no Desafio da Prevenção. | first author: Carlos Alberto De Lima | 2022-12-22 | article | https://openalex.org/W4313289493",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4313289493"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.21727/rm.v13i3.3207"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-02180",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2180,
+        "raw_metadata": "Comment on: Transversus abdominis plane block using a short-acting local anesthetic reduces pain and opioid consumption after laparoscopic bariatric surgery: a meta-analysis | first author: Ann M. Rogers | 2021-02-05 | letter | https://openalex.org/W4247335523",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4247335523"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1016/j.soard.2021.01.030"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ5-01011",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1011,
+        "raw_metadata": "Faculty Opinions recommendation of Auditory Icon Alarms Are More Accurately and Quickly Identified than Current Standard Melodic Alarms in a Simulated Clinical Setting. | first author: Noa Segall | 2018-05-01 | peer-review | https://openalex.org/W4252430977",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4252430977"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.3410/f.733114256.793545418"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

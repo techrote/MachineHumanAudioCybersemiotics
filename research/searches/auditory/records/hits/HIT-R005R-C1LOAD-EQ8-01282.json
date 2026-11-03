@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-01282",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1282,
+        "raw_metadata": "Effects of targeting lower versus higher arterial oxygen saturations on death or disability in preterm infants | first author: Lisa Maree Askie | 2017-04-11 | review | https://openalex.org/W1544295278",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1544295278"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/14651858.cd011190.pub2"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

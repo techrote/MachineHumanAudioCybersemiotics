@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01217",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1217,
+        "raw_metadata": "SONIFICATION OF CHEMOTACTIC WAVES OF BACTERIA | Braun, Rhea; Tfirn, Maxwell; Ford, Roseanne | issued: 2023-06 | Text | https://repository.gatech.edu/entities/publication/d22efc1a-f1d0-4e25-b5cb-37829463126d",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d22efc1a-f1d0-4e25-b5cb-37829463126d"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2023.8263"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/72885"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-02072",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2072,
+        "raw_metadata": "The Trend Is Your Friend: Direct Oral Antagonists as Standard Anticoagulants for Patients With Atrial Fibrillation Undergoing Percutaneous Coronary Interventions | first author: Peter Nordbeck | 2020-11-09 | editorial | https://openalex.org/W3103019729",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W3103019729"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1097/fjc.0000000000000950"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

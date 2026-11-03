@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ1-03178",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3178,
+        "raw_metadata": "Arm Swing Asymmetry and Effect of Auditory Cues on Amplitude in the Patients with Parkinson's Disease | first author: Ho-Hee Son | 2013-01-31 | article | https://openalex.org/W1968150359",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1968150359"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.5762/kais.2013.14.1.344"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

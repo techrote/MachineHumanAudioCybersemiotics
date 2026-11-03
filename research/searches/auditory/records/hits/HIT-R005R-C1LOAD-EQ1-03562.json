@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ1-03562",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3562,
+        "raw_metadata": "Nocturnal Enuresis: An Approach to Assessment and Treatment | first author: Aaron P. Bayne | 2014-08-01 | article | https://openalex.org/W4244617377",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4244617377"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1542/pir.35.8.327"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

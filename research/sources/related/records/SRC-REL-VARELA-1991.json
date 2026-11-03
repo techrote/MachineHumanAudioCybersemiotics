@@ -1,0 +1,77 @@
+{
+  "id": "SRC-REL-VARELA-1991",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Varela, Francisco J.",
+            "role": "author"
+          },
+          {
+            "name": "Thompson, Evan",
+            "role": "author"
+          },
+          {
+            "name": "Rosch, Eleanor",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "MIT Press (year as commonly cited; Open Library records give 1992 and 2016 for English works and list a French translation)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup VARELA-1991 (openlibrary-ta) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "candidate",
+            "value": "Open Library work OL15207300W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library: English work records dated 1992 and 2016 and a French work 'L'inscription corporelle de l'esprit' (lookups VARELA-1991)"
+        ],
+        "metadata_status": "conflict",
+        "publication_date": {
+          "state": "known",
+          "value": "1991"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "The Embodied Mind: Cognitive Science and Human Experience",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

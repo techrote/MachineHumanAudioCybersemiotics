@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00870",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 870,
+        "raw_metadata": "Sonic Shapes: Visualizing Vocal Expression | Pietrowicz, Mary; Karahalios, Karrie | issued: 2013-07 | Text | https://repository.gatech.edu/entities/publication/37b9bd68-e887-487f-8ac7-805ce3b2d0e1",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/37b9bd68-e887-487f-8ac7-805ce3b2d0e1"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51661"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

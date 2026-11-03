@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ8-00324",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 324,
+        "raw_metadata": "Mortality of COVID-19 in patients with hematological malignancies versus solid tumors: a systematic literature review and meta-analysis | first author: Nicole J. Hardy | 2023-02-16 | review | https://openalex.org/W4321003848",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4321003848"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/s10238-023-01004-5"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

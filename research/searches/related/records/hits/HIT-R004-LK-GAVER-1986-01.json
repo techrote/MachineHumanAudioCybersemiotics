@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-LK-GAVER-1986-01",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-GAVER-1986",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-GAVER-1986",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "Auditory Icons: Using Sound in Computer Interfaces | Human-Computer Interaction | 10.1207/s15327051hci0202_3",
+        "resolution_reason": "Adjudicated match: title, author and year agree with the source record (R004 source map).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1207/s15327051hci0202_3"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-GAVER-1986",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-GAVER-1986",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

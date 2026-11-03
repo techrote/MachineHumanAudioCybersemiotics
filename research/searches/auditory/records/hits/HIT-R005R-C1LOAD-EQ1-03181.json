@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ1-03181",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3181,
+        "raw_metadata": "Lights, Cameras, Action: Using Video to Create Instructor Presence in an Online Information Studies Course | first author: Sharon Stoerger | 2013-02-01 | article | https://openalex.org/W2191225233",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2191225233"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.9776/13317"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

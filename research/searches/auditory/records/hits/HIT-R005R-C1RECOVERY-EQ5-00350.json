@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ5-00350",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 350,
+        "raw_metadata": "Tool use involving a different prey type, microhabitat and location, and long‐term anvil use, by the graphic tuskfish Choerodon graphicus (De Vis 1885) | first author: Kimberley Pryor | 2023-08-08 | article | https://openalex.org/W4385658956",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4385658956"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1111/maec.12768"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

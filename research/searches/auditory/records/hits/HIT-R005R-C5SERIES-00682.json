@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00682",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 682,
+        "raw_metadata": "Measuring the use of sound in everyday software | Walker, Bruce N.; Davison, Benjamin K. | issued: 2009-05 | Text | https://repository.gatech.edu/entities/publication/c9fa547c-7ae0-41e1-a8b6-23ef46360926",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/c9fa547c-7ae0-41e1-a8b6-23ef46360926"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51402"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

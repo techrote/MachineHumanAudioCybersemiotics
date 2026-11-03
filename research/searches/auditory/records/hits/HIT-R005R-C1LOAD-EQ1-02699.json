@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ1-02699",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2699,
+        "raw_metadata": "The interplay of cue modality and response latency in brain areas supporting crossmodal motor preparation: an event-related fMRI study | first author: Zainab Fatima | 2011-06-08 | article | https://openalex.org/W2144658936",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2144658936"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/s00221-011-2745-5"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

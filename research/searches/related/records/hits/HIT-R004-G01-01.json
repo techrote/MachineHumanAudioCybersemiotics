@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-G01-01",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G01",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "seer.ufrgs.br | https://seer.ufrgs.br/index.php/rita/article/download/REIS-RITA-VOL20-NR3/27354/174729",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://seer.ufrgs.br/index.php/rita/article/download/REIS-RITA-VOL20-NR3/27354/174729"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G01",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

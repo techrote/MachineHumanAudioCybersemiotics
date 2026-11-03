@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ5-00426",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 426,
+        "raw_metadata": "The effect of the amount of blocking cue training on blocking of appetitive conditioning in mice | first author: David J. Sanderson | 2015-11-10 | article | https://openalex.org/W2193411606",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2193411606"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1016/j.beproc.2015.11.007"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

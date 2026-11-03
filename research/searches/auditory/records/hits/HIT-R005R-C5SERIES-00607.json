@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00607",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 607,
+        "raw_metadata": "Internet-Based Interactive Auditory Virtual Environment Generators | Borss, Christian; Silzle, Andreas; Martin, Rainer | issued: 2008-06 | Text | https://repository.gatech.edu/entities/publication/7754e529-45db-48cc-9ff1-a8188f0f6753",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7754e529-45db-48cc-9ff1-a8188f0f6753"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49936"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

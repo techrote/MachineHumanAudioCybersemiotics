@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00496",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 496,
+        "raw_metadata": "3D real-time auralization with separate rendering of direct sound, reflections and directional late reverberation | Lesoinne, S; Werner, N; Embrechts, J. J. | issued: 2006-06 | Text | https://repository.gatech.edu/entities/publication/d30596c9-ea9e-466e-9d65-bde56da793a9",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d30596c9-ea9e-466e-9d65-bde56da793a9"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50420"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

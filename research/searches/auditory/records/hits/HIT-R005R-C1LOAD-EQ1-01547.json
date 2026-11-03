@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ1-01547",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1547,
+        "raw_metadata": "dD, dH, hD, hH: The Gallaudet Infancy Study * The World of Deaf Infants: Meadow-Orlans, K. P., Spencer, P. E., & Koester, L. S. (2004). The World of Deaf Infants. * New York: Oxford University Press. 266 pages. Hardcover. $43.60. | first author: Marc H. Bornstein | 2005-09-29 | article | https://openalex.org/W2048740903",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2048740903"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1093/deafed/enj005"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,1827 @@
+{
+ "schema": "mhac-r004-websearch-log/1",
+ "issue": 4,
+ "status": "Track G theoretical-sampling discovery under protocol v1 §7: purposive searches per concept cluster, the §7.3 negative-case searches, and searches to locate lawful open copies. Not a systematic search; no coverage is claimed.",
+ "tool": "WebSearch tool available to the executing Claude agent in a claude.ai cloud session: general web search engine, US-only, standard mode; titles and URLs only.",
+ "transcription": "Titles and URLs copied programmatically from the session's tool-call log, in returned order.",
+ "clock": "called_at is the session log time of each call; batch windows are shell-clock readings. Batch R4 was appended after the session transcript had been compacted; R1-R3 are unchanged from the first extraction.",
+ "batches": [
+  {
+   "batch": "R1",
+   "purpose": "Cluster discovery and §7.3 negative-case searches",
+   "window_start": "2026-10-13T06:40:13Z",
+   "window_end": "2026-10-13T06:41:33Z",
+   "runs": [
+    {
+     "label": "G-01",
+     "purpose": "negative",
+     "cluster": "semiotic-engineering",
+     "mode": "standard",
+     "query": "critique of semiotic engineering HCI de Souza limitations",
+     "called_at": "2026-10-13T06:40:15Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "seer.ufrgs.br",
+       "url": "https://seer.ufrgs.br/index.php/rita/article/download/REIS-RITA-VOL20-NR3/27354/174729"
+      },
+      {
+       "ordinal": 2,
+       "title": "dc.contributorRaquel Oliveira Prates",
+       "url": "https://repositorioslatinoamericanos.uchile.cl/handle/2250/3804175?show=full"
+      },
+      {
+       "ordinal": 3,
+       "title": "ufmg.br",
+       "url": "https://repositorio.ufmg.br/bitstream/1843/ESBF-8SUQU2/1/soraiadesouzareis.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "link.springer.com",
+       "url": "https://link.springer.com/chapter/10.1007/978-3-031-02185-5_5"
+      },
+      {
+       "ordinal": 5,
+       "title": "Semiotic engineering methods for scientific research in HCI",
+       "url": "https://ebook.library.uitm.edu.my/Record/3409/TOC"
+      },
+      {
+       "ordinal": 6,
+       "title": "librarycatalog.ecu.edu",
+       "url": "https://librarycatalog.ecu.edu/catalog/4273866"
+      },
+      {
+       "ordinal": 7,
+       "title": "Why Designers Should Study Semiotics: Applications of Semiotics to User Interface Design",
+       "url": "https://dukespace.lib.duke.edu/items/6629f2a5-668a-4644-b84c-396ab701d416"
+      },
+      {
+       "ordinal": 8,
+       "title": "sbc.org.br",
+       "url": "https://sol.sbc.org.br/index.php/sbes/article/download/24459/24280"
+      },
+      {
+       "ordinal": 9,
+       "title": "skip to main content",
+       "url": "https://unpaywall.org/10.1145%2F3702038.3702104"
+      },
+      {
+       "ordinal": 10,
+       "title": "The Semiotic Engineering of Human-Computer Interaction",
+       "url": "https://massivebookshop.com/products/9780262527095"
+      }
+     ]
+    },
+    {
+     "label": "G-02",
+     "purpose": "negative",
+     "cluster": "autopoiesis",
+     "mode": "standard",
+     "query": "autopoiesis transfer to social systems critique Luhmann Mingers",
+     "called_at": "2026-10-13T06:40:16Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "kar.kent.ac.uk",
+       "url": "https://kar.kent.ac.uk/3907"
+      },
+      {
+       "ordinal": 2,
+       "title": "kar.kent.ac.uk",
+       "url": "https://kar.kent.ac.uk/3913"
+      },
+      {
+       "ordinal": 3,
+       "title": "www.gongfa.com",
+       "url": "https://www.gongfa.com/lumanzitizaisheng.htm"
+      },
+      {
+       "ordinal": 4,
+       "title": "kar.kent.ac.uk",
+       "url": "https://kar.kent.ac.uk/3792"
+      },
+      {
+       "ordinal": 5,
+       "title": "dialnet.unirioja.es",
+       "url": "https://dialnet.unirioja.es/descarga/articulo/7870955.pdf"
+      },
+      {
+       "ordinal": 6,
+       "title": "wrap.warwick.ac.uk",
+       "url": "https://wrap.warwick.ac.uk/id/eprint/10852"
+      },
+      {
+       "ordinal": 7,
+       "title": "api.philpapers.org",
+       "url": "https://api.philpapers.org/rec/MINCSS"
+      },
+      {
+       "ordinal": 8,
+       "title": "The autopoiesis of social systems and its criticisms",
+       "url": "https://repositorio.uchile.cl/handle/2250/155162"
+      },
+      {
+       "ordinal": 9,
+       "title": "contractio.hateblo.jp",
+       "url": "https://contractio.hateblo.jp/entry/20080820/p3"
+      },
+      {
+       "ordinal": 10,
+       "title": "A COMPARISON OF MATURANAS AUTOPOIETIC SOCIAL-THEORY AND GIDDENS THEORY OF STRUCTURATION",
+       "url": "https://acnpsearch.tweb-dev.unibo.it/singlejournalindex/2577565"
+      }
+     ]
+    },
+    {
+     "label": "G-03",
+     "purpose": "negative",
+     "cluster": "grounding",
+     "mode": "standard",
+     "query": "symbol grounding problem critical review solutions Taddeo Floridi",
+     "called_at": "2026-10-13T06:40:16Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "PhilSci Archive",
+       "url": "https://philsci-archive.pitt.edu/2542/"
+      },
+      {
+       "ordinal": 2,
+       "title": "solving the symbol grounding problem a critical review of fifteen",
+       "url": "https://researchprofiles.herts.ac.uk/en/publications/solving-the-symbol-grounding-problem-a-critical-review-of-fifteen/"
+      },
+      {
+       "ordinal": 3,
+       "title": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+       "url": "https://philarchive.org/rec/TADSTS"
+      },
+      {
+       "ordinal": 4,
+       "title": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+       "url": "https://uhra.herts.ac.uk/id/eprint/2228"
+      },
+      {
+       "ordinal": 5,
+       "title": "Journal of Experimental and Theoretical Artificial Intelligence",
+       "url": "https://uhra.herts.ac.uk/view/publication/Journal_of_Experimental_and_Theoretical_Artificial_Intelligence.html"
+      },
+      {
+       "ordinal": 6,
+       "title": "Which symbol grounding problem should we try to solve?",
+       "url": "https://cris.fau.de/publications/276957947"
+      },
+      {
+       "ordinal": 7,
+       "title": "A Praxical Solution of the Symbol Grounding Problem",
+       "url": "https://uhra.herts.ac.uk/id/eprint/2241/"
+      },
+      {
+       "ordinal": 8,
+       "title": "A Praxical Solution of the Symbol Grounding Problem",
+       "url": "https://uhra.herts.ac.uk/handle/2299/1371?show=full"
+      },
+      {
+       "ordinal": 9,
+       "title": "The Difficulties in Symbol Grounding Problem and the Direction for Solving It",
+       "url": "https://p.gyb.elementfx.com/2409-9287/7/5/108"
+      },
+      {
+       "ordinal": 10,
+       "title": "Which symbol grounding problem should we try to solve?",
+       "url": "https://dev.cris.fau-dev.tf.fau.de/publications/276957947/"
+      }
+     ]
+    },
+    {
+     "label": "G-04",
+     "purpose": "discovery",
+     "cluster": "grounding",
+     "mode": "standard",
+     "query": "grounding in communication spoken dialogue system feedback Brennan Hulteen",
+     "called_at": "2026-10-13T06:40:17Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Conversation as Action Under Uncertainty",
+       "url": "https://arxiv.org/pdf/1301.3883"
+      },
+      {
+       "ordinal": 2,
+       "title": "Positive and Negative User Feedback in a Spoken Dialogue Corpus",
+       "url": "https://www.speech.kth.se/adapt/papers/Positive and Negative User Feedback in a Spoken Dialogue Corpus.pdf"
+      },
+      {
+       "ordinal": 3,
+       "title": "Positive and Negative User Feedback in a Spoken Dialogue Corpus",
+       "url": "https://www.speech.kth.se/~jocke/publications/icslp2000/feedback_final.htm"
+      },
+      {
+       "ordinal": 4,
+       "title": "www.cs.columbia.edu",
+       "url": "https://www.cs.columbia.edu/~julia/papers/bell00.pdf"
+      },
+      {
+       "ordinal": 5,
+       "title": "sigdial.org",
+       "url": "https://sigdial.org/files/workshops/workshop8/Proceedings/SIGdial49.pdf"
+      },
+      {
+       "ordinal": 6,
+       "title": "esslli grounding8 9 22 lecture2",
+       "url": "https://people.ict.usc.edu/~traum/ESSLLI2022/esslli-grounding8-9-22-lecture2.pdf"
+      },
+      {
+       "ordinal": 7,
+       "title": "esslli grounding8 11 22 lecture4",
+       "url": "https://people.ict.usc.edu/~traum/ESSLLI2022/esslli-grounding8-11-22-lecture4.pdf"
+      },
+      {
+       "ordinal": 8,
+       "title": "arxiv.org",
+       "url": "https://arxiv.org/html/2403.16609v1"
+      },
+      {
+       "ordinal": 9,
+       "title": "esslli grounding8 10 22 lecture3",
+       "url": "https://people.ict.usc.edu/~traum/ESSLLI2022/esslli-grounding8-10-22-lecture3.pdf"
+      }
+     ]
+    },
+    {
+     "label": "G-05",
+     "purpose": "discovery",
+     "cluster": "human-factors",
+     "mode": "standard",
+     "query": "perceived urgency auditory warnings review urgency mapping hazard",
+     "called_at": "2026-10-13T06:40:18Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "jcaa.caa-aca.ca",
+       "url": "https://jcaa.caa-aca.ca/index.php/jcaa/article/download/1391/1134/1524"
+      },
+      {
+       "ordinal": 2,
+       "title": "on using psychophysical techniques to achieve urgency mapping in",
+       "url": "https://researchportal.plymouth.ac.uk/en/publications/on-using-psychophysical-techniques-to-achieve-urgency-mapping-in-/"
+      },
+      {
+       "ordinal": 3,
+       "title": "user.engineering.uiowa.edu",
+       "url": "https://user.engineering.uiowa.edu/~csl/publications/pdf/leewiese04.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "Journal article",
+       "url": "https://iro.uiowa.edu/esploro/outputs/journalArticle/Alerts-for-in-vehicle-information-systems-annoyance/9984622750702771"
+      },
+      {
+       "ordinal": 5,
+       "title": "design and implementation non verbal auditory warnings",
+       "url": "https://swov.nl/en/publicatie/design-and-implementation-non-verbal-auditory-warnings"
+      },
+      {
+       "ordinal": 6,
+       "title": "OLB PM 17315851",
+       "url": "https://ngdc.cncb.ac.cn/openlb/publication/OLB-PM-17315851"
+      },
+      {
+       "ordinal": 7,
+       "title": "Perceived urgency of non-verbal auditory alarms in the Ch146 Griffon helicopter",
+       "url": "https://jcaa.caa-aca.ca/index.php/jcaa/article/view/1391"
+      },
+      {
+       "ordinal": 8,
+       "title": "the design and implementation of non verbal auditory warnings",
+       "url": "https://researchportal.plymouth.ac.uk/en/publications/the-design-and-implementation-of-non-verbal-auditory-warnings/"
+      },
+      {
+       "ordinal": 9,
+       "title": "CRASINS: an improved method for urgency scaling within and across modalities",
+       "url": "https://www.inderscience.com/filter.php?aid=82247"
+      },
+      {
+       "ordinal": 10,
+       "title": "journals.sagepub.com",
+       "url": "https://journals.sagepub.com/doi/full/10.3141/2423-02"
+      }
+     ]
+    },
+    {
+     "label": "G-06",
+     "purpose": "negative",
+     "cluster": "anthropomorphism",
+     "mode": "standard",
+     "query": "human-like synthetic voice increases trust compliance warnings evidence",
+     "called_at": "2026-10-13T06:40:18Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "New Paper Published at ACM-THRI",
+       "url": "https://www.inf.uni-hamburg.de/en/inst/ab/wtm/about/news/20250211journalpaper.html"
+      },
+      {
+       "ordinal": 2,
+       "title": "Papers by Lennart Clasmeier",
+       "url": "https://independent.academia.edu/LClasmeier"
+      },
+      {
+       "ordinal": 3,
+       "title": "Influence of Robots’ Voice Naturalness on Trust and Compliance",
+       "url": "https://wtmbib.informatik.uni-hamburg.de/Basilic/publis/928/"
+      },
+      {
+       "ordinal": 4,
+       "title": "api.crossref.org",
+       "url": "https://api.crossref.org/works/10.1145%2F3706066"
+      },
+      {
+       "ordinal": 5,
+       "title": "Logo image",
+       "url": "https://openresearch.surrey.ac.uk/permalink/44SUR_INST/15d8lgh/alma991115568402346"
+      },
+      {
+       "ordinal": 6,
+       "title": "ACM Transactions on Human-Robot Interaction, Volume 14, Issue 2, 2025",
+       "url": "https://independent.academia.edu/DiFu14"
+      },
+      {
+       "ordinal": 7,
+       "title": "the effect of voice and repair strategy on trust formation and re",
+       "url": "https://research.manchester.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/"
+      },
+      {
+       "ordinal": 8,
+       "title": "the impact of voice on trust attributions",
+       "url": "https://researchportal.plymouth.ac.uk/en/studentTheses/the-impact-of-voice-on-trust-attributions/"
+      },
+      {
+       "ordinal": 9,
+       "title": "Українська правда",
+       "url": "https://mezha.ua/en/news/ai-voice-recognition-315173/amp/"
+      },
+      {
+       "ordinal": 10,
+       "title": "ai voice recognition 315173",
+       "url": "https://mezha.ua/en/news/ai-voice-recognition-315173/"
+      }
+     ]
+    },
+    {
+     "label": "G-07",
+     "purpose": "negative",
+     "cluster": "biosemiotics",
+     "mode": "standard",
+     "query": "biosemiotics critique Peircean semiosis below the human level code biology Barbieri",
+     "called_at": "2026-10-13T06:40:23Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "linguisticfrontiers.ff.upol.cz",
+       "url": "https://linguisticfrontiers.ff.upol.cz/index.php/lingfrontiers/article/download/148/87/516"
+      },
+      {
+       "ordinal": 2,
+       "title": "Startseite Biosemiotics, code biology, and operational interpretation",
+       "url": "https://www.degruyterbrill.com/document/doi/10.1515/css-2025-2003/html?lang=de"
+      },
+      {
+       "ordinal": 3,
+       "title": "ABOUT THE WRITER",
+       "url": "https://nutholepublishing.substack.com/p/posthumans-are-not-posthumans-considering"
+      },
+      {
+       "ordinal": 4,
+       "title": "Can Biosemiotics be a “Science” if its Purpose is to be a Bridge between the Natural, Social and Human Sciences?",
+       "url": "https://research.cbs.dk/en/publications/can-biosemiotics-be-a-science-if-its-purpose-is-to-be-a-bridge-be-2/"
+      },
+      {
+       "ordinal": 5,
+       "title": "uned.academia.edu",
+       "url": "https://uned.academia.edu/FedericoVega"
+      },
+      {
+       "ordinal": 6,
+       "title": "can biosemiotics be a science if its purpose is to be a bridge be 2",
+       "url": "https://research.cbs.dk/da/publications/can-biosemiotics-be-a-science-if-its-purpose-is-to-be-a-bridge-be-2/"
+      },
+      {
+       "ordinal": 7,
+       "title": "Codes: Necessary, but not Sufficient for Meaning-Making",
+       "url": "https://dc2.philarchive.org/rec/KULCNB"
+      },
+      {
+       "ordinal": 8,
+       "title": "s12304 019 09366 8",
+       "url": "https://link.springer.com/article/10.1007/s12304-019-09366-8"
+      },
+      {
+       "ordinal": 9,
+       "title": "s13752 018 0302 1",
+       "url": "https://springerlink.bibliotecabuap.elogim.com/10.1007/s13752-018-0302-1"
+      }
+     ]
+    },
+    {
+     "label": "G-08",
+     "purpose": "discovery",
+     "cluster": "information",
+     "mode": "standard",
+     "query": "semantic information autonomous agency Kolchinsky Wolpert viability",
+     "called_at": "2026-10-13T06:40:23Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Semantic information, autonomous agency, and nonequilibrium statistical physics",
+       "url": "https://arxiv.org/pdf/1806.08053"
+      },
+      {
+       "ordinal": 2,
+       "title": "Hybrid Life: Integrating Biological, Artificial, and Cognitive Systems",
+       "url": "https://arxiv.org/pdf/2212.00285"
+      },
+      {
+       "ordinal": 3,
+       "title": "Semantic information in a model of resource gathering agents",
+       "url": "https://ar5iv.org/html/2304.03286"
+      },
+      {
+       "ordinal": 4,
+       "title": "www.lesswrong.com",
+       "url": "https://www.lesswrong.com/posts/RmEeXbvrmakRubTzN"
+      },
+      {
+       "ordinal": 5,
+       "title": "The Physics of Life: Exploring Information as a Distinctive Feature of Living Systems",
+       "url": "https://arxiv.org/html/2501.08683v1"
+      },
+      {
+       "ordinal": 6,
+       "title": "pmc.ncbi.nlm.nih.gov",
+       "url": "https://pmc.ncbi.nlm.nih.gov/articles/pmid/30443338"
+      },
+      {
+       "ordinal": 7,
+       "title": "par.nsf.gov",
+       "url": "https://par.nsf.gov/servlets/purl/10111258"
+      },
+      {
+       "ordinal": 8,
+       "title": "Semantic information, autonomous agency, and nonequilibrium statistical physics",
+       "url": "https://ar5iv.labs.arxiv.org/html/1806.08053"
+      },
+      {
+       "ordinal": 9,
+       "title": "Information-theoretic description of a feedback-control Kuramoto model",
+       "url": "https://arxiv.org/html/2404.02221v3"
+      },
+      {
+       "ordinal": 10,
+       "title": "Semantic information, agency, & physics",
+       "url": "https://comdig.cssociety.org/2018/10/28/semantic-information-agency-physics/"
+      }
+     ]
+    },
+    {
+     "label": "G-09",
+     "purpose": "discovery",
+     "cluster": "anthropomorphism",
+     "mode": "standard",
+     "query": "voice in human-agent interaction survey human-likeness synthetic voice perception",
+     "called_at": "2026-10-13T06:40:24Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Tokyo Tech News",
+       "url": "https://www.titech.ac.jp/english/news/2021/061073"
+      },
+      {
+       "ordinal": 2,
+       "title": "Tokyo Tech News",
+       "url": "https://www.titech.ac.jp/english/news/2021/061073.html"
+      },
+      {
+       "ordinal": 3,
+       "title": "tokyotechpr en seaborn 20210601",
+       "url": "https://www.titech.ac.jp/english/news/pdf/tokyotechpr-en-seaborn-20210601.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "Industrial Engineering and Economics News",
+       "url": "https://educ.titech.ac.jp/iee/eng/news/2021_06/060862.html"
+      },
+      {
+       "ordinal": 5,
+       "title": "Robotics & Physical AI",
+       "url": "https://www.unite.ai/?p=176559"
+      },
+      {
+       "ordinal": 6,
+       "title": "Robotics & Physical AI",
+       "url": "https://www.unite.ai/?p=357348"
+      },
+      {
+       "ordinal": 7,
+       "title": "Connect with us",
+       "url": "https://www.unite.ai/humans-prefer-to-interact-with-human-like-robots-research-finds"
+      },
+      {
+       "ordinal": 8,
+       "title": "t2r2.star.titech.ac.jp",
+       "url": "https://t2r2.star.titech.ac.jp/rrws/file/CTT100852839/ATD100000413/"
+      },
+      {
+       "ordinal": 9,
+       "title": "Voice in Human-Agent Interaction: A Survey",
+       "url": "https://cir.nii.ac.jp/crid/1050007282471699968"
+      },
+      {
+       "ordinal": 10,
+       "title": "Voice in Human-Agent Interaction: A Survey",
+       "url": "https://cir.nii.ac.jp/crid/1050007282471699968?lang=en"
+      }
+     ]
+    },
+    {
+     "label": "G-10",
+     "purpose": "discovery",
+     "cluster": "anthropomorphism",
+     "mode": "standard",
+     "query": "appropriate voices for artificial agents mismatch human-like voice robot Moore",
+     "called_at": "2026-10-13T06:40:24Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Talking with Robots: Opportunities and Challenges",
+       "url": "https://arxiv.org/pdf/1912.00369"
+      },
+      {
+       "ordinal": 2,
+       "title": "A 'Canny' Approach to Spoken Language Interfaces",
+       "url": "https://arxiv.org/pdf/1908.08131"
+      },
+      {
+       "ordinal": 3,
+       "title": "55413  18417  0d86abc64d0742e29e9ebe218a87bd2c",
+       "url": "https://cronfa.swansea.ac.uk/Record/cronfa55413/Download/55413__18417__0d86abc64d0742e29e9ebe218a87bd2c.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "opus.bibliothek.uni-augsburg.de",
+       "url": "https://opus.bibliothek.uni-augsburg.de/opus4/files/126742/126742.pdf"
+      },
+      {
+       "ordinal": 5,
+       "title": "skip to main content",
+       "url": "https://unpaywall.org/10.1145%2F3342775.3342806"
+      },
+      {
+       "ordinal": 6,
+       "title": "License: CC BY 4.0",
+       "url": "https://arxiv.org/html/2402.05206v1"
+      },
+      {
+       "ordinal": 7,
+       "title": "api.crossref.org",
+       "url": "https://api.crossref.org/works/10.1145%2F3342775.3342806"
+      },
+      {
+       "ordinal": 8,
+       "title": "Voice Design for Human-Robot Interaction: Tuning Acoustic Cues for Diverse Robot Appearances",
+       "url": "https://essay.utwente.nl/essays/101051"
+      },
+      {
+       "ordinal": 9,
+       "title": "The right kind of unnatural: designing a robot voice",
+       "url": "https://researchportal.hw.ac.uk/en/publications/the-right-kind-of-unnatural-designing-a-robot-voice/"
+      }
+     ]
+    },
+    {
+     "label": "G-11",
+     "purpose": "discovery",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "semiotics of product sound design assigning meaning to sounds Jekosch",
+     "called_at": "2026-10-13T06:40:25Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "u jekosch j blauert a semiotic approach toward product sound quality",
+       "url": "https://www.ioa.org.uk/system/files/proceedings/u_jekosch_j_blauert_a_semiotic_approach_toward_product_sound_quality.pdf"
+      },
+      {
+       "ordinal": 2,
+       "title": "ijdesign.org",
+       "url": "https://www.ijdesign.org/index.php/IJDesign/article/download/957/436"
+      },
+      {
+       "ordinal": 3,
+       "title": "Basic Semantics of Product Sounds",
+       "url": "https://ijdesign.org/index.php/IJDesign/article/view/957/473"
+      },
+      {
+       "ordinal": 4,
+       "title": "Dissertation – Product Sounds: Fundamentals & Application",
+       "url": "https://studiolab.ide.tudelft.nl/studiolab/ozcanvieira/?p=148"
+      },
+      {
+       "ordinal": 5,
+       "title": "acta-acustica.edpsciences.org",
+       "url": "https://acta-acustica.edpsciences.org/articles/aacus/ref/2023/01/aacus230081/aacus230081.html"
+      },
+      {
+       "ordinal": 6,
+       "title": "Basic Semantics of Product Sounds",
+       "url": "https://ijdesign.org/index.php/IJDesign/article/view/957"
+      },
+      {
+       "ordinal": 7,
+       "title": "sciencedaily.com",
+       "url": "https://www.sciencedaily.com/releases/2008/10/081006093033.htm"
+      },
+      {
+       "ordinal": 8,
+       "title": "File e3127553 d5bc 4800 8b38 a97718d13ca6",
+       "url": "https://repository.tudelft.nl/file/File_e3127553-d5bc-4800-8b38-a97718d13ca6"
+      },
+      {
+       "ordinal": 9,
+       "title": "ecampusontario.pressbooks.pub",
+       "url": "https://ecampusontario.pressbooks.pub/sensoryaspectsofdesign/?p=1704"
+      }
+     ]
+    },
+    {
+     "label": "G-12",
+     "purpose": "discovery",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "\"Non-Speech Audio-Semiotics\" review revision auditory icon earcon theory",
+     "called_at": "2026-10-13T06:40:26Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11"
+      },
+      {
+       "ordinal": 2,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://www.htw-berlin.de/forschung/online-forschungskatalog/vortraege-veranstaltungen/vortrag-veranstaltung?eid=3807"
+      },
+      {
+       "ordinal": 3,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://www.htw-berlin.de/forschung/online-forschungskatalog/publikationen/publikation?eid=4775"
+      },
+      {
+       "ordinal": 4,
+       "title": "A review-based conceptual analysis of auditory signs and their design",
+       "url": "https://repository.gatech.edu/entities/publication/4d76fff4-8093-4fe0-b0f9-d489503049bf"
+      },
+      {
+       "ordinal": 5,
+       "title": "jyx.jyu.fi",
+       "url": "https://jyx.jyu.fi/bitstreams/7f3158cf-a1d0-4ef0-a9a6-7f0cc1e66198/download"
+      },
+      {
+       "ordinal": 6,
+       "title": "Brewster thesis tagged",
+       "url": "https://www.dcs.gla.ac.uk/~stephen/papers/theses/Brewster_thesis_tagged.pdf"
+      },
+      {
+       "ordinal": 7,
+       "title": "Mexhid Ferati Dissertation Defense",
+       "url": "https://seeu.edu.mk/files/cst/Mexhid_Ferati_Dissertation_Defense.pdf"
+      },
+      {
+       "ordinal": 8,
+       "title": "Please use this identifier to cite or link to this item:",
+       "url": "https://repositorio-aberto.up.pt/handle/10216/165151"
+      },
+      {
+       "ordinal": 9,
+       "title": "Please use this identifier to cite or link to this item:",
+       "url": "https://repositorio-aberto.up.pt/handle/10216/165151?mode=full"
+      },
+      {
+       "ordinal": 10,
+       "title": "www.dcs.gla.ac.uk",
+       "url": "https://www.dcs.gla.ac.uk/~stephen/papers/CHI93.PDF"
+      }
+     ]
+    },
+    {
+     "label": "G-13",
+     "purpose": "negative",
+     "cluster": "cybernetics",
+     "mode": "standard",
+     "query": "second-order cybernetics critique observer constructivism objections",
+     "called_at": "2026-10-13T06:40:31Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "\"There's Nothing Like the Real Thing\". Revisiting the Need for a Third-Order Cybernetics",
+       "url": "https://dc2.philarchive.org/rec/KENTNL"
+      },
+      {
+       "ordinal": 2,
+       "title": "The purpose of cybernetics1",
+       "url": "https://ranulphglanville.org.za/wp-content/uploads/2024/12/The-purpose-of-cybernetics1.pdf"
+      },
+      {
+       "ordinal": 3,
+       "title": "pq.iphras.ru",
+       "url": "https://pq.iphras.ru/article/view/7874/version/6904"
+      },
+      {
+       "ordinal": 4,
+       "title": "[Xmca-l] Re: New book on Ilyenkov",
+       "url": "https://lchc.ucsd.edu/mca/Mail/Archives/2019-May/012830.html"
+      },
+      {
+       "ordinal": 5,
+       "title": "[Xmca-l] Re: New book on Ilyenkov",
+       "url": "https://lchc.ucsd.edu/MCA/Mail/Archives/2019-May/012822.html"
+      },
+      {
+       "ordinal": 6,
+       "title": "[Xmca-l] Re: New book on Ilyenkov",
+       "url": "https://lchc.ucsd.edu/mca/Mail/Archives/2019-May/012822.html"
+      },
+      {
+       "ordinal": 7,
+       "title": "[Xmca-l] Re: New book on Ilyenkov",
+       "url": "https://lchc.ucsd.edu/MCA/Mail/Archives/2019-May/012826.html"
+      },
+      {
+       "ordinal": 8,
+       "title": "[Xmca-l] Re: New book on Ilyenkov",
+       "url": "https://lchc.ucsd.edu/mca/Mail/Archives/2019-May/012826.html"
+      },
+      {
+       "ordinal": 9,
+       "title": "CYBERNETICS OF CONCEPTUAL SYSTEMS",
+       "url": "https://www.academia.edu/12280884/CYBERNETICS_OF_CONCEPTUAL_SYSTEMS"
+      },
+      {
+       "ordinal": 10,
+       "title": "[Xmca-l] Re: New book on Ilyenkov",
+       "url": "https://lchc.ucsd.edu/MCA/Mail/Archives/2019-May/012834.html"
+      }
+     ]
+    },
+    {
+     "label": "G-14",
+     "purpose": "negative",
+     "cluster": "information",
+     "mode": "standard",
+     "query": "Weaver three levels of communication problems semantic effectiveness Shannon theory meaning critique",
+     "called_at": "2026-10-13T06:40:31Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Beyond Transmitting Bits: Context, Semantics, and Task-Oriented Communications",
+       "url": "https://arxiv.org/pdf/2207.09353"
+      },
+      {
+       "ordinal": 2,
+       "title": "A Theory of Semantic Communication",
+       "url": "https://arxiv.org/pdf/2212.01485"
+      },
+      {
+       "ordinal": 3,
+       "title": "Shannon%E2%80%93Weaver model",
+       "url": "https://en.wikipedia.org/wiki/Shannon%E2%80%93Weaver_model"
+      },
+      {
+       "ordinal": 4,
+       "title": "Semantic Communication: From Philosophical Conceptions Towards a Mathematical Framework",
+       "url": "https://arxiv.org/pdf/2505.01342"
+      },
+      {
+       "ordinal": 5,
+       "title": "Introduction to Communication Studies",
+       "url": "https://perlego.com/book/1607240/introduction-to-communication-studies-pdf"
+      },
+      {
+       "ordinal": 6,
+       "title": "Shannon Weaver 1949%20Mathematical%20Theory%20of%20Communication",
+       "url": "https://rauterberg.employee.id.tue.nl/lecturenotes/DDM110%20CAS/Shannon-Weaver-1949%20Mathematical%20Theory%20of%20Communication.pdf"
+      },
+      {
+       "ordinal": 7,
+       "title": "fibreculturejournal.org",
+       "url": "https://fibreculturejournal.org/?p=687"
+      },
+      {
+       "ordinal": 8,
+       "title": "day4 notes",
+       "url": "https://ils.unc.edu/~march/courses/180_s99/day4_notes.html"
+      },
+      {
+       "ordinal": 9,
+       "title": "arxiv.org",
+       "url": "https://arxiv.org/html/2505.01342v1"
+      },
+      {
+       "ordinal": 10,
+       "title": "SciAm 1949 Weaver",
+       "url": "https://mt-archive.net/50/SciAm-1949-Weaver.pdf"
+      }
+     ]
+    },
+    {
+     "label": "G-15",
+     "purpose": "negative",
+     "cluster": "grounding",
+     "mode": "standard",
+     "query": "common ground human-machine communication asymmetry critique Clark grounding computers",
+     "called_at": "2026-10-13T06:40:32Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Challenges in Human-Agent Communication",
+       "url": "https://arxiv.org/pdf/2412.10380"
+      },
+      {
+       "ordinal": 2,
+       "title": "LVLMs and Humans Ground Differently in Referential Communication",
+       "url": "https://arxiv.org/pdf/2601.19792"
+      },
+      {
+       "ordinal": 3,
+       "title": "www.degruyterbrill.com",
+       "url": "https://www.degruyterbrill.com/document/doi/10.1515/ip-2025-2005/pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "usc.edu",
+       "url": "https://people.ict.usc.edu/~traum/Papers/traum98clark.pdf"
+      },
+      {
+       "ordinal": 5,
+       "title": "LTRF 11.01.2017",
+       "url": "https://LT.cityu.edu.hk/Research/cred/repo/2017/LTRF-11.01.2017.pdf"
+      },
+      {
+       "ordinal": 6,
+       "title": "Asymmetric Interpretation",
+       "url": "https://rogerhuntphdcand.substack.com/p/asymmetric-interpretation"
+      },
+      {
+       "ordinal": 7,
+       "title": "Published In",
+       "url": "https://pdxscholar.library.pdx.edu/ling_fac/79"
+      },
+      {
+       "ordinal": 8,
+       "title": "Grounding in Multi-modal Task-Oriented Collaboration",
+       "url": "https://tecfa.unige.ch/tecfa/research/cscps/euroaied/murder-4.html"
+      },
+      {
+       "ordinal": 9,
+       "title": "Common ground in electronically mediated conversation",
+       "url": "https://ebook.library.uitm.edu.my/Record/3373/TOC"
+      },
+      {
+       "ordinal": 10,
+       "title": "Susan%20Brennan%20 %20The%20Grounding%20Problem%20in%20Conversations%20With%20and%20Through%20Computers",
+       "url": "https://achrafkassioui.com/library/Susan%20Brennan%20-%20The%20Grounding%20Problem%20in%20Conversations%20With%20and%20Through%20Computers.pdf"
+      }
+     ]
+    },
+    {
+     "label": "G-16",
+     "purpose": "negative",
+     "cluster": "anthropomorphism",
+     "mode": "standard",
+     "query": "deceptive anthropomorphism voice assistants ethics human-like speech machines disclosure",
+     "called_at": "2026-10-13T06:40:33Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Listening to the Voices: Describing Ethical Caveats of Conversational User Interfaces According to Experts and Frequent Users",
+       "url": "https://arxiv.org/pdf/2401.14746"
+      },
+      {
+       "ordinal": 2,
+       "title": "toronto.edu",
+       "url": "https://www.cs.toronto.edu/~raeidsaqur/csc401/lectures/EthicsModule2.pdf"
+      },
+      {
+       "ordinal": 3,
+       "title": "fb tracking",
+       "url": "https://www.citizen.org/article/openai-letter-suspend-voice-mode/"
+      },
+      {
+       "ordinal": 4,
+       "title": "fb tracking",
+       "url": "https://www.citizen.org/?p=101382"
+      },
+      {
+       "ordinal": 5,
+       "title": "arxiv.org",
+       "url": "https://arxiv.org/pdf/2601.09869v1.pdf"
+      },
+      {
+       "ordinal": 6,
+       "title": "A Scoping Review of the Ethical Perspectives on Anthropomorphising Large Language Model-Based Conversational Agents",
+       "url": "https://arxiv.org/html/2601.09869v1"
+      },
+      {
+       "ordinal": 7,
+       "title": "Tag Archives: phones",
+       "url": "https://ethicsadvicelineforjournalists.org/tag/phones/"
+      },
+      {
+       "ordinal": 8,
+       "title": "develop plus.bigthink",
+       "url": "https://develop-plus.bigthink.com/?p=46723"
+      },
+      {
+       "ordinal": 9,
+       "title": "Is it ethical for A.I. to have a human voice?",
+       "url": "https://develop.bigthink.com/?p=46723"
+      }
+     ]
+    },
+    {
+     "label": "G-17",
+     "purpose": "discovery",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "modes of listening taxonomy revised Tuuri Eerola auditory display",
+     "called_at": "2026-10-13T06:40:33Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Ways of Listening and Modes of Being: Electroacoustic Auditory Display",
+       "url": "https://arxiv.org/pdf/1311.5880"
+      },
+      {
+       "ordinal": 2,
+       "title": "Listening-Mode-Centered Sonification Design for Data Exploration",
+       "url": "https://pub.uni-bielefeld.de/record/2675399"
+      },
+      {
+       "ordinal": 3,
+       "title": "www.cambridge.org",
+       "url": "https://www.cambridge.org/core/journals/organised-sound/article/interactive-sonification-for-data-exploration-how-listening-modes-and-display-purposes-define-design-guidelines/B6989403EB6D046271D7973233472AC5"
+      },
+      {
+       "ordinal": 4,
+       "title": "dc.contributor.author | Tuuri, Kai | |",
+       "url": "https://jyx.jyu.fi/handle/123456789/83540?show=full"
+      },
+      {
+       "ordinal": 5,
+       "title": "subject:Reflective listening",
+       "url": "https://fitforthem.unipa.it/subject:Reflective listening"
+      },
+      {
+       "ordinal": 6,
+       "title": "In Pursuit of Measuring Pre-reflective Music Listening Experiences",
+       "url": "https://jyx.jyu.fi/handle/123456789/83540"
+      },
+      {
+       "ordinal": 7,
+       "title": "core reader",
+       "url": "https://www-cambridge-org.ezproxyberklee.flo.org/core/product/B6989403EB6D046271D7973233472AC5/core-reader"
+      },
+      {
+       "ordinal": 8,
+       "title": "Listening and Interpretation: A Peircean Semiotic Model for the Analysis of Listening",
+       "url": "https://bdu3.siu.edu.ar/bdu/Record/I28-R145-13332_oai/Description"
+      },
+      {
+       "ordinal": 9,
+       "title": "link.springer.com",
+       "url": "https://link.springer.com/chapter/10.1057/978-1-137-59829-5_3"
+      }
+     ]
+    },
+    {
+     "label": "G-18",
+     "purpose": "discovery",
+     "cluster": "anthropomorphism",
+     "mode": "standard",
+     "query": "social robots as depictions of social agents Clark Fischer",
+     "called_at": "2026-10-13T06:40:34Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "www.cambridge.org",
+       "url": "https://www.cambridge.org/core/product/F5CB476CCC6A1BF375489045F4BED200"
+      },
+      {
+       "ordinal": 2,
+       "title": "Mills G 53710 AAM",
+       "url": "https://eprints-gro.gold.ac.uk/38501/1/Mills-G-53710-AAM.pdf"
+      },
+      {
+       "ordinal": 3,
+       "title": "BBS D 22 00580 Dancing Robots",
+       "url": "https://eprints-gro.gold.ac.uk/32973/1/BBS-D-22-00580_Dancing_Robots.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "How robots become social: A comment on Clark & Fischer",
+       "url": "https://ideophone.org/?p=6308"
+      },
+      {
+       "ordinal": 5,
+       "title": "www.cambridge.org",
+       "url": "https://www.cambridge.org/core/product/80582812570F69308617AE23DA623DAE"
+      },
+      {
+       "ordinal": 6,
+       "title": "2023 05 humans interact socially robots",
+       "url": "https://techxplore.com/news/2023-05-humans-interact-socially-robots.pdf"
+      },
+      {
+       "ordinal": 7,
+       "title": "New model seeks to explain how humans interact socially with robots",
+       "url": "https://news.stanford.edu/?p=47409"
+      },
+      {
+       "ordinal": 8,
+       "title": "www.cambridge.org",
+       "url": "https://www.cambridge.org/core/product/00529D3B294882679C6C773B99A4D1C0"
+      },
+      {
+       "ordinal": 9,
+       "title": "1 min readScience & Engineering",
+       "url": "https://news.stanford.edu/2023/05/15/respond-social-robots/"
+      },
+      {
+       "ordinal": 10,
+       "title": "core reader",
+       "url": "https://core-prod.cambridgecore.org/core/product/F5CB476CCC6A1BF375489045F4BED200/core-reader"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "batch": "R2",
+   "purpose": "Locating lawful open copies and missing identity details",
+   "window_start": "2026-10-13T06:45:36Z",
+   "window_end": "2026-10-13T06:46:27Z",
+   "runs": [
+    {
+     "label": "G-19",
+     "purpose": "access",
+     "cluster": "anthropomorphism",
+     "mode": "standard",
+     "query": "Seaborn \"Voice in Human-Agent Interaction: A Survey\" pdf arXiv",
+     "called_at": "2026-10-13T06:46:04Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "tokyotechpr en seaborn 20210601",
+       "url": "https://www.titech.ac.jp/english/news/pdf/tokyotechpr-en-seaborn-20210601.pdf"
+      },
+      {
+       "ordinal": 2,
+       "title": "biblio.cerist.dz",
+       "url": "https://biblio.cerist.dz/show/fr/00000000000000618440000000"
+      },
+      {
+       "ordinal": 3,
+       "title": "t2r2.star.titech.ac.jp",
+       "url": "https://t2r2.star.titech.ac.jp/rrws/file/CTT100852839/ATD100000413/"
+      },
+      {
+       "ordinal": 4,
+       "title": "Voice in Human-Agent Interaction: A Survey",
+       "url": "https://cir.nii.ac.jp/crid/1050007282471699968"
+      },
+      {
+       "ordinal": 5,
+       "title": "cdi proquest journals 2671351042",
+       "url": "https://vufind.lboro.ac.uk/PrimoRecord/cdi_proquest_journals_2671351042"
+      },
+      {
+       "ordinal": 6,
+       "title": "Tokyo Tech News",
+       "url": "https://www.titech.ac.jp/english/news/2021/061073"
+      },
+      {
+       "ordinal": 7,
+       "title": "Tokyo Tech News",
+       "url": "https://www.titech.ac.jp/english/news/2021/061073.html"
+      },
+      {
+       "ordinal": 8,
+       "title": "Voice in Human-Agent Interaction: A Survey",
+       "url": "https://cir.nii.ac.jp/crid/1050007282471699968?lang=en"
+      },
+      {
+       "ordinal": 9,
+       "title": "Industrial Engineering and Economics News",
+       "url": "https://educ.titech.ac.jp/iee/eng/news/2021_06/060862.html"
+      },
+      {
+       "ordinal": 10,
+       "title": "When Machines Talk: Research Survey on Voice in Human-Agent Interaction (IMAGE)",
+       "url": "https://www.eurekalert.org/multimedia/649977"
+      }
+     ]
+    },
+    {
+     "label": "G-20",
+     "purpose": "access",
+     "cluster": "grounding",
+     "mode": "standard",
+     "query": "Clark Brennan \"Grounding in communication\" 1991 pdf",
+     "called_at": "2026-10-13T06:46:05Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "ClarkAndBrennan GroundingInCommunication 1991",
+       "url": "https://collablab.northwestern.edu//CollabolabDistro/nucmc/ClarkAndBrennan-GroundingInCommunication-1991.pdf"
+      },
+      {
+       "ordinal": 2,
+       "title": "Herbert H. Clark",
+       "url": "https://web.stanford.edu/~clark/pubs.html"
+      },
+      {
+       "ordinal": 3,
+       "title": "Clark,%20H.H.%20 %20Brennan,%20S.E.%20 Grounding%20in%20communication %201991",
+       "url": "https://web.stanford.edu/%7Eclark/1990s/Clark,%20H.H.%20_%20Brennan,%20S.E.%20_Grounding%20in%20communication_%201991.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "www.coli.uni-saarland.de",
+       "url": "https://www.coli.uni-saarland.de/~masta/WS15/Laura.pdf"
+      },
+      {
+       "ordinal": 5,
+       "title": "wordpress.cs.vt.edu",
+       "url": "https://wordpress.cs.vt.edu/cscw2019/?p=96"
+      },
+      {
+       "ordinal": 6,
+       "title": "Reading Reflection on Grounding in Communication",
+       "url": "https://wordpress.cs.vt.edu/cscw2019/?p=91"
+      },
+      {
+       "ordinal": 7,
+       "title": "wordpress.cs.vt.edu",
+       "url": "https://wordpress.cs.vt.edu/cscw2019/2019/09/"
+      },
+      {
+       "ordinal": 8,
+       "title": "www.cambridge.org",
+       "url": "https://www.cambridge.org/core/books/using-language/grounding/6753B41C95C651FE51A8B4B513A245E2"
+      },
+      {
+       "ordinal": 9,
+       "title": "Grounding in Communication: Collaborative work in the modern world",
+       "url": "https://wordpress.cs.vt.edu/cscw2019/?p=103"
+      }
+     ]
+    },
+    {
+     "label": "G-21",
+     "purpose": "access",
+     "cluster": "grounding",
+     "mode": "standard",
+     "query": "Brennan Hulteen \"Interaction and feedback in a spoken language system\" pdf",
+     "called_at": "2026-10-13T06:46:06Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Interaction and feedback in a spoken language system: a theoretical framework",
+       "url": "https://datalearner.com/academic/journal-papers/0950-7051/volumes-and-issues/31/paper-detail/95115"
+      },
+      {
+       "ordinal": 2,
+       "title": "Interaction and feedback in a spoken language system: a theoretical framework",
+       "url": "https://datalearner.com:8443/academic/journal-papers/0950-7051/volumes-and-issues/31/paper-detail/95115"
+      },
+      {
+       "ordinal": 3,
+       "title": "www.cs.columbia.edu",
+       "url": "https://www.cs.columbia.edu/~julia/papers/bell00.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "interaction and feedback in a spoken language system a theoretica",
+       "url": "https://researchconnect.stonybrook.edu/en/publications/interaction-and-feedback-in-a-spoken-language-system-a-theoretica/"
+      },
+      {
+       "ordinal": 5,
+       "title": "interaction and feedback in a spoken language system",
+       "url": "https://researchconnect.stonybrook.edu/en/publications/interaction-and-feedback-in-a-spoken-language-system/"
+      },
+      {
+       "ordinal": 6,
+       "title": "ntrs.nasa.gov",
+       "url": "https://ntrs.nasa.gov/citations/20030107286"
+      },
+      {
+       "ordinal": 7,
+       "title": "'Institute of Electrical and Electronics Engineers (IEEE)'",
+       "url": "https://core.ac.uk/works/216341"
+      },
+      {
+       "ordinal": 8,
+       "title": "IDEAS home Printed from https://ideas.repec.org/a/igg/jcallt/v7y2017i3p1-20.html",
+       "url": "https://ideas.repec.org/a/igg/jcallt/v7y2017i3p1-20.html"
+      },
+      {
+       "ordinal": 9,
+       "title": "P89 1016",
+       "url": "https://preview.aclanthology.org/author-url/P89-1016.pdf"
+      }
+     ]
+    },
+    {
+     "label": "G-22",
+     "purpose": "access",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "\"Non-Speech Audio-Semiotics\" ICAD pdf author htw berlin",
+     "called_at": "2026-10-13T06:46:06Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://www.htw-berlin.de/forschung/online-forschungskatalog/publikationen/publikation?eid=4775"
+      },
+      {
+       "ordinal": 2,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://www.htw-berlin.de/forschung/online-forschungskatalog/vortraege-veranstaltungen/vortrag-veranstaltung?eid=3807"
+      },
+      {
+       "ordinal": 3,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11"
+      },
+      {
+       "ordinal": 4,
+       "title": "File(s) not publicly available",
+       "url": "https://sussex.figshare.com/articles/presentation/A_Semiotic_Approach_to_the_Design_of_Non-Speech_Sounds/23352818"
+      },
+      {
+       "ordinal": 5,
+       "title": "Document Type",
+       "url": "https://digitalcommons.mtu.edu/cls-fp/87"
+      },
+      {
+       "ordinal": 6,
+       "title": "AUDITORY INTERFACES:",
+       "url": "https://billbuxton.com/Audio.TOC.html"
+      },
+      {
+       "ordinal": 7,
+       "title": "Non-speech sounds as elements of a use scenario: A semiotic perspective",
+       "url": "https://repository.gatech.edu/entities/publication/e508ee28-0a98-42d9-9dc0-30ec85f1dd5d"
+      },
+      {
+       "ordinal": 8,
+       "title": "www.icad.org",
+       "url": "https://www.icad.org/websiteV2.0/Conferences/ICAD92/about92.html"
+      },
+      {
+       "ordinal": 9,
+       "title": "www-users.york.ac.uk",
+       "url": "https://www-users.york.ac.uk/~ade1/research/dphil/jckh/publications.html"
+      },
+      {
+       "ordinal": 10,
+       "title": "10.1007%2F11821731 12",
+       "url": "https://api.crossref.org/works/10.1007%2F11821731_12"
+      }
+     ]
+    },
+    {
+     "label": "G-23",
+     "purpose": "access",
+     "cluster": "human-factors",
+     "mode": "standard",
+     "query": "\"Design Framework for Audible Alarms\" International Journal of Design authors",
+     "called_at": "2026-10-13T06:46:07Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "ijdesign.org",
+       "url": "https://ijdesign.org/index.php/IJDesign/article/view/3911/987"
+      },
+      {
+       "ordinal": 2,
+       "title": "design framework for audible alarms a multidisciplinary and integ",
+       "url": "https://pure.eur.nl/en/publications/design-framework-for-audible-alarms-a-multidisciplinary-and-integ/"
+      },
+      {
+       "ordinal": 3,
+       "title": "ijdesign.org",
+       "url": "https://ijdesign.org/index.php/IJDesign/article/download/3911/983"
+      },
+      {
+       "ordinal": 4,
+       "title": "Design Framework for Audible Alarms: A Multidisciplinary and Integrated Approach",
+       "url": "https://ijdesign.org/index.php/IJDesign/article/view/3911"
+      },
+      {
+       "ordinal": 5,
+       "title": "ijdesign.org",
+       "url": "https://ijdesign.org/index.php/IJDesign/issue/view/61"
+      },
+      {
+       "ordinal": 6,
+       "title": "dl.designresearchsociety.org",
+       "url": "https://dl.designresearchsociety.org/drs-conference-papers/drs2024/researchpapers/261"
+      },
+      {
+       "ordinal": 7,
+       "title": "Guiding design students to sound-driven design from the base camp of semiotics",
+       "url": "https://zaguan.unizar.es/record/149868?ln=fr"
+      },
+      {
+       "ordinal": 8,
+       "title": "Guiding design students to sound-driven design from the base camp of semiotics",
+       "url": "https://zaguan.unizar.es/record/149868"
+      },
+      {
+       "ordinal": 9,
+       "title": "Guiding design students to sound-driven design from the base camp of semiotics",
+       "url": "https://zaguan.unizar.es/record/149868?ln=en"
+      }
+     ]
+    },
+    {
+     "label": "G-24",
+     "purpose": "access",
+     "cluster": "semiotic-engineering",
+     "mode": "standard",
+     "query": "Prates de Souza Barbosa communicability evaluation method interactions 2000 pdf",
+     "called_at": "2026-10-13T06:46:07Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "methods and tools a method for evaluating the communicability of user",
+       "url": "https://interactions.acm.org/archive/view/jan.-feb.-2000/methods-and-tools-a-method-for-evaluating-the-communicability-of-user-"
+      },
+      {
+       "ordinal": 2,
+       "title": "www.maxwell.vrac.puc-rio.br",
+       "url": "https://www.maxwell.vrac.puc-rio.br/15340/15340_7.PDF"
+      },
+      {
+       "ordinal": 3,
+       "title": "Um Mapeamento Sistemático da Literatura sobre Avaliação da Comunicabilidade em Ambientes Virtuais de Aprendizagem",
+       "url": "https://sol.sbc.org.br/index.php/sbie/article/view/45674"
+      },
+      {
+       "ordinal": 4,
+       "title": "simone d j barbosa",
+       "url": "https://ixdf.org/literature/author/simone-d-j-barbosa"
+      },
+      {
+       "ordinal": 5,
+       "title": "RPrates BRCHI Set2020 compressed",
+       "url": "https://brchi.hosting.acm.org/brchisite/wp-content/uploads/2024/12/RPrates_BRCHI_Set2020_compressed.pdf"
+      },
+      {
+       "ordinal": 6,
+       "title": "Uma extensão do método de avaliação de comunicabilidade para sistemas colaborativos",
+       "url": "https://oasisbr.ibict.br/vufind/Record/UFMG_014c676996a1c511159f63a126b399f4"
+      },
+      {
+       "ordinal": 7,
+       "title": "c%C3%B3mo se aplican las evaluaciones de comunicabilidad una revisi%C3%B3n",
+       "url": "https://cris.pucp.edu.pe/en/publications/c%C3%B3mo-se-aplican-las-evaluaciones-de-comunicabilidad-una-revisi%C3%B3n-/"
+      },
+      {
+       "ordinal": 8,
+       "title": "Usabilidade e Comunicabilidade no Site do IFPR Paranavaí: Integração de Heurísticas de Nielsen e MAC",
+       "url": "https://sol.sbc.org.br/index.php/latinoware/article/view/41028"
+      },
+      {
+       "ordinal": 9,
+       "title": "12466 2.PDF",
+       "url": "https://www.maxwell.vrac.puc-rio.br/12466/12466_2.PDF"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "batch": "R3",
+   "purpose": "Locating the Oswald (2012) paper and a second ICAD review",
+   "window_start": "2026-10-13T06:47:21Z",
+   "window_end": "2026-10-13T06:48:59Z",
+   "runs": [
+    {
+     "label": "G-25",
+     "purpose": "access",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "Oswald 2012 ICAD \"Non-Speech Audio-Semiotics\" pdf icad.org proceedings",
+     "called_at": "2026-10-13T06:48:15Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11"
+      },
+      {
+       "ordinal": 2,
+       "title": "proceedings papers",
+       "url": "https://icad2012.icad.org/proceedings-papers.html"
+      },
+      {
+       "ordinal": 3,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://www.htw-berlin.de/forschung/online-forschungskatalog/publikationen/publikation?eid=4775"
+      },
+      {
+       "ordinal": 4,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://www.htw-berlin.de/forschung/online-forschungskatalog/vortraege-veranstaltungen/vortrag-veranstaltung?eid=3807"
+      },
+      {
+       "ordinal": 5,
+       "title": "AUDITORY INTERFACES:",
+       "url": "https://billbuxton.com/Audio.TOC.html"
+      },
+      {
+       "ordinal": 6,
+       "title": "Document Type",
+       "url": "https://digitalcommons.mtu.edu/cls-fp/87"
+      },
+      {
+       "ordinal": 7,
+       "title": "Non-speech sounds as elements of a use scenario: A semiotic perspective",
+       "url": "https://repository.gatech.edu/entities/publication/e508ee28-0a98-42d9-9dc0-30ec85f1dd5d"
+      },
+      {
+       "ordinal": 8,
+       "title": "Audio Representations",
+       "url": "https://www-users.cs.york.ac.uk/~alistair/research/dphil/jckh/icad98/poster7.html"
+      },
+      {
+       "ordinal": 9,
+       "title": "File(s) not publicly available",
+       "url": "https://sussex.figshare.com/articles/presentation/A_Semiotic_Approach_to_the_Design_of_Non-Speech_Sounds/23352818"
+      },
+      {
+       "ordinal": 10,
+       "title": "www-users.york.ac.uk",
+       "url": "https://www-users.york.ac.uk/~ade1/research/dphil/jckh/publications.html"
+      }
+     ]
+    },
+    {
+     "label": "G-26",
+     "purpose": "access",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "\"A review-based conceptual analysis of auditory signs and their design\" ICAD authors",
+     "called_at": "2026-10-13T06:48:16Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "A review-based conceptual analysis of auditory signs and their design",
+       "url": "https://repository.gatech.edu/entities/publication/4d76fff4-8093-4fe0-b0f9-d489503049bf"
+      },
+      {
+       "ordinal": 2,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11"
+      },
+      {
+       "ordinal": 3,
+       "title": "Document Type",
+       "url": "https://digitalcommons.mtu.edu/cls-fp/87"
+      },
+      {
+       "ordinal": 4,
+       "title": "The 26th International Conference on Auditory Display (ICAD 2021)",
+       "url": "https://icad2021.icad.org/wp-content/uploads/2021/06/ICAD_2021_6.pdf"
+      },
+      {
+       "ordinal": 5,
+       "title": "hal.sorbonne-universite.fr",
+       "url": "https://hal.sorbonne-universite.fr/hal-02553146v1/document"
+      },
+      {
+       "ordinal": 6,
+       "title": "jyx.jyu.fi",
+       "url": "https://jyx.jyu.fi/bitstreams/7f3158cf-a1d0-4ef0-a9a6-7f0cc1e66198/download"
+      },
+      {
+       "ordinal": 7,
+       "title": "Sound Design",
+       "url": "https://www.cdfr.design.kyushu-u.ac.jp/en/?p=695"
+      },
+      {
+       "ordinal": 8,
+       "title": "DESIGN GUIDELINES FOR THE USE OF AUDIO CUES IN COMPUTER INTERFACES",
+       "url": "https://trid.trb.org/view.aspx?id=392538"
+      },
+      {
+       "ordinal": 9,
+       "title": "PLoP2007 FrauenbergerEtAl",
+       "url": "https://hillside.net/plop/2007/papers/PLoP2007_FrauenbergerEtAl.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "batch": "R4",
+   "purpose": "Second §7.3 negative-case batch for clusters without one (Peircean sign theory, embodiment, sign relations of sounds, urgency and speech warnings)",
+   "window_start": "2026-10-13T07:09:41Z",
+   "window_end": "2026-10-13T07:09:57Z",
+   "runs": [
+    {
+     "label": "G-27",
+     "purpose": "negative",
+     "cluster": "peirce",
+     "mode": "standard",
+     "query": "critique of applying Peirce semiotics to computers machine semiosis interpretant objection",
+     "called_at": "2026-10-13T07:09:41Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "ojs.nbu.bg",
+       "url": "https://ojs.nbu.bg/index.php/DASC/article/download/1391/1214/3120"
+      },
+      {
+       "ordinal": 2,
+       "title": "core.ac.uk",
+       "url": "https://core.ac.uk/works/8852763"
+      },
+      {
+       "ordinal": 3,
+       "title": "Signs 8 (1-24) (",
+       "url": "https://philarchive.org/rec/FRIPST"
+      },
+      {
+       "ordinal": 4,
+       "title": "www.cambridge.org",
+       "url": "https://www.cambridge.org/core/books/computer-as-medium/meaning-and-the-machine-toward-a-semiotics-of-interaction/55AE7F6FF2A4B896C384E494C2E09C8F"
+      },
+      {
+       "ordinal": 5,
+       "title": "bepress.com",
+       "url": "https://works.bepress.com/alon-friedman/21"
+      },
+      {
+       "ordinal": 6,
+       "title": "core.ac.uk",
+       "url": "https://api.core.ac.uk/oai/oai:ojs.tidsskrift.dk:article/26872"
+      },
+      {
+       "ordinal": 7,
+       "title": "Document Type",
+       "url": "https://digitalcommons.usf.edu/si_facpub/331"
+      },
+      {
+       "ordinal": 8,
+       "title": "Peirce’s sign theory as an open source R package",
+       "url": "https://tidsskrift.dk/signs/article/view/26872"
+      },
+      {
+       "ordinal": 9,
+       "title": "semioticon.com",
+       "url": "https://semioticon.com/semiotix/?p=70"
+      },
+      {
+       "ordinal": 10,
+       "title": "B. Concepts: HCI as the object of semiotics",
+       "url": "https://nadin.ws/hci/concepts.html"
+      }
+     ]
+    },
+    {
+     "label": "G-28",
+     "purpose": "negative",
+     "cluster": "embodiment",
+     "mode": "standard",
+     "query": "critique of enactivism autopoiesis cognition objections embodied mind",
+     "called_at": "2026-10-13T07:09:42Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "api.philpapers.org",
+       "url": "https://api.philpapers.org/rec/MAICTM"
+      },
+      {
+       "ordinal": 2,
+       "title": "Zeitschrift | Band | Artikel",
+       "url": "https://et-al.ophen.org/pub-142699"
+      },
+      {
+       "ordinal": 3,
+       "title": "api.philpapers.org",
+       "url": "https://api.philpapers.org/rec/ROLPQN"
+      },
+      {
+       "ordinal": 4,
+       "title": "s11097 025 10131 1",
+       "url": "https://link.springer.com/article/10.1007/s11097-025-10131-1"
+      },
+      {
+       "ordinal": 5,
+       "title": "Can the mind be embodied, enactive, affective, and extended?",
+       "url": "https://katalog.hcu-hamburg.de/vufind/Search2Record/SPR016619668"
+      },
+      {
+       "ordinal": 6,
+       "title": "Autopoietic enactivism, phenomenology and the deep continuity between life and mind",
+       "url": "https://research.gold.ac.uk/11278"
+      },
+      {
+       "ordinal": 7,
+       "title": "api.philpapers.org",
+       "url": "https://api.philpapers.org/rec/DEJAEP"
+      },
+      {
+       "ordinal": 8,
+       "title": "Central and East European",
+       "url": "https://ceesp.org/pub-142804"
+      },
+      {
+       "ordinal": 9,
+       "title": "1 Introduction",
+       "url": "https://springerlink.bibliotecabuap.elogim.com/10.1007/s11097-017-9510-6"
+      }
+     ]
+    },
+    {
+     "label": "G-29",
+     "purpose": "negative",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "auditory icons versus earcons learnability comparison abstract sounds performance evidence",
+     "called_at": "2026-10-13T07:09:42Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "earcon 238m60f7",
+       "url": "https://scispace.com/topics/earcon-238m60f7"
+      },
+      {
+       "ordinal": 2,
+       "title": "Auditory Icon and Earcon Mobile Service Notifications: Intuitiveness, Learnability, Memorability and Preference",
+       "url": "https://researchportal.bath.ac.uk/en/publications/auditory-icon-and-earcon-mobile-service-notifications-intuitivene/"
+      },
+      {
+       "ordinal": 3,
+       "title": "www.dcs.gla.ac.uk",
+       "url": "https://www.dcs.gla.ac.uk/~stephen/generalearcons/generalearcons3.shtml"
+      },
+      {
+       "ordinal": 4,
+       "title": "Learnabiltiy of Sound Cues for Environmental Features: Auditory Icons, Earcons, Spearcons, and Speech",
+       "url": "https://repository.gatech.edu/entities/publication/8cf42420-1aaf-4a59-9ccb-7c7458346a9d"
+      },
+      {
+       "ordinal": 5,
+       "title": "ldr.lafayette.edu",
+       "url": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"
+      },
+      {
+       "ordinal": 6,
+       "title": "www.frontiersin.org",
+       "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.780657/pdf"
+      },
+      {
+       "ordinal": 7,
+       "title": "Learning and retention of auditory warnings",
+       "url": "https://repository.gatech.edu/entities/publication/d1b12e8f-665d-4ecf-9536-3131f8191553"
+      },
+      {
+       "ordinal": 8,
+       "title": "eprints.gla.ac.uk",
+       "url": "https://eprints.gla.ac.uk/65586"
+      },
+      {
+       "ordinal": 9,
+       "title": "Memory for Auditory Icons and Earcons with Localization Cues",
+       "url": "https://repository.gatech.edu/entities/publication/e30c1603-3a99-49df-8dd0-d43e63c69e12"
+      }
+     ]
+    },
+    {
+     "label": "G-30",
+     "purpose": "negative",
+     "cluster": "human-factors",
+     "mode": "standard",
+     "query": "speech versus tonal auditory warnings comparison response time evidence",
+     "called_at": "2026-10-13T07:09:43Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "JAXA Repository / AIREX 未来へ続く、宙(そら)への英知",
+       "url": "https://repository.exst.jaxa.jp/dspace/handle/a-is/556210"
+      },
+      {
+       "ordinal": 2,
+       "title": "ntrs.nasa.gov",
+       "url": "https://ntrs.nasa.gov/citations/20230003834"
+      },
+      {
+       "ordinal": 3,
+       "title": "apps.dtic.mil",
+       "url": "https://apps.dtic.mil/sti/pdfs/AD0702459.pdf"
+      },
+      {
+       "ordinal": 4,
+       "title": "use auditory icons emergency warnings evaluation within vehicle collision avoidance",
+       "url": "https://swov.nl/en/publicatie/use-auditory-icons-emergency-warnings-evaluation-within-vehicle-collision-avoidance"
+      },
+      {
+       "ordinal": 5,
+       "title": "use auditory icons emergency warnings evaluation within vehicle collision avoidance",
+       "url": "https://swov.nl/nl/publicatie/use-auditory-icons-emergency-warnings-evaluation-within-vehicle-collision-avoidance"
+      },
+      {
+       "ordinal": 6,
+       "title": "Driver Response Times to In-Vehicle Warning Signals",
+       "url": "https://deepblue.lib.umich.edu/items/32ae7f85-cf81-4c33-862e-ef8535f8822d/full"
+      },
+      {
+       "ordinal": 7,
+       "title": "openaccess-api.cms-conferences.org",
+       "url": "https://openaccess-api.cms-conferences.org/articles/download/979-8-950676-00-0_21"
+      },
+      {
+       "ordinal": 8,
+       "title": "Driver Response Times to In-Vehicle Warning Signals",
+       "url": "https://deepblue.lib.umich.edu/items/32ae7f85-cf81-4c33-862e-ef8535f8822d"
+      },
+      {
+       "ordinal": 9,
+       "title": "dael.euracoustics.org",
+       "url": "https://dael.euracoustics.org/confs/fa2025/data/articles/000375.pdf"
+      }
+     ]
+    },
+    {
+     "label": "G-31",
+     "purpose": "negative",
+     "cluster": "auditory-semiotics",
+     "mode": "standard",
+     "query": "limitations of semiotic classification of interface sounds critique Peircean icon index symbol sound design",
+     "called_at": "2026-10-13T07:09:43Z",
+     "results": [
+      {
+       "ordinal": 1,
+       "title": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+       "url": "https://repository.gatech.edu/entities/publication/02a8e262-fa16-4a54-9dea-9cbb16992e11"
+      },
+      {
+       "ordinal": 2,
+       "title": "Peircean Semiotics and Sound",
+       "url": "https://researchcatalogue.net/view/94638/208625"
+      },
+      {
+       "ordinal": 3,
+       "title": "jyx.jyu.fi",
+       "url": "https://jyx.jyu.fi/bitstreams/7f3158cf-a1d0-4ef0-a9a6-7f0cc1e66198/download"
+      },
+      {
+       "ordinal": 4,
+       "title": "iris.unipv.it",
+       "url": "https://iris.unipv.it/handle/11571/119056"
+      },
+      {
+       "ordinal": 5,
+       "title": "iris.unige.it",
+       "url": "https://iris.unige.it/handle/11567/982895"
+      },
+      {
+       "ordinal": 6,
+       "title": "www.degruyterbrill.com",
+       "url": "https://www.degruyterbrill.com/document/doi/10.1515/semi.2009.070/pdf"
+      },
+      {
+       "ordinal": 7,
+       "title": "Document Type",
+       "url": "https://digitalcommons.mtu.edu/cls-fp/87"
+      },
+      {
+       "ordinal": 8,
+       "title": "A semiotic analysis of sounds in personal computers: Toward a semiotic model of human-computer interaction",
+       "url": "https://www.degruyterbrill.com/document/doi/10.1515/semi.2010.060/pdf"
+      },
+      {
+       "ordinal": 9,
+       "title": "- From: Dave Pawson <dave.pawson@virgin.net>",
+       "url": "https://lists.w3.org/Archives/Public/w3c-wai-ig/1999AprJun/0593.html"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

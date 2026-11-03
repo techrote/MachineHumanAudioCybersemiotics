@@ -1,0 +1,69 @@
+{
+  "id": "SRC-REL-MINGERS-2002",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Abstract read from the Crossref work record; the Kent repository holds no full text (ledger row 24).",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Mingers, John",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "The Sociological Review 50(2):278-299"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup MINGERS-2002 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1111/1467-954x.00367"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref record and deposited abstract"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2002-05"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Can Social Systems Be Autopoietic? Assessing Luhmann's Social Theory",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

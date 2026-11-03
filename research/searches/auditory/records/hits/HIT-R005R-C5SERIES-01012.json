@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01012",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1012,
+        "raw_metadata": "Word Spotting in a Multichannel Virtual Auditory Display at Normal and Accelerated Rates of Speech | Brock, Derek; Wasylyshyn, Christina; McClimens, Brian | issued: 2016-07 | Text | https://repository.gatech.edu/entities/publication/7e2715e1-09ad-4eb3-89f0-b9d99f293f2c",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7e2715e1-09ad-4eb3-89f0-b9d99f293f2c"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.21785/icad2016.031"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/56578"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

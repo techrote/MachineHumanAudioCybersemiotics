@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00876",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 876,
+        "raw_metadata": "Analysis Of The Spectral Variations In Repeated Head-Related Transfer Function Measurements | Andreopoulou, Areti; Rogińska, Agnieszka; Mohanraj, Hariharan | issued: 2013-07 | Text | https://repository.gatech.edu/entities/publication/c413a04e-213b-450d-9dfd-111ee24f46b1",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/c413a04e-213b-450d-9dfd-111ee24f46b1"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51670"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

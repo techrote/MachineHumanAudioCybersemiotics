@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00426",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 426,
+        "raw_metadata": "A new rendering method of moving sound with the doppler effect | Iwaya, Yukio; Toyoda, Masashi; Suzuki, Yoiti | issued: 2005-07 | Text | https://repository.gatech.edu/entities/publication/9cab3cde-ad2a-465f-9c95-30b4d91bb939",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/9cab3cde-ad2a-465f-9c95-30b4d91bb939"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50090"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

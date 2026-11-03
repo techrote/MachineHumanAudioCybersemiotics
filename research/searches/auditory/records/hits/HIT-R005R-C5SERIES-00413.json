@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00413",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 413,
+        "raw_metadata": "Thirteen years of reflection on auditory graphing: Promises, pitfalls, and potential new directions | Flowers, John H. | issued: 2005-07 | Text | https://repository.gatech.edu/entities/publication/7934708b-760e-4cec-a6c3-66d57a34a687",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7934708b-760e-4cec-a6c3-66d57a34a687"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50188"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

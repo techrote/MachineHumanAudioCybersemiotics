@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00911",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 911,
+        "raw_metadata": "Auditory and Visual Evaluation of Fixed-frequency Events in Time-varying Signals | Alexander, Robert L.; O’Modhrain, Sile; Gilbert, Jason A.; Zurbuchen, Thomas H. | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/f587ab0b-c0be-4fa9-af8b-7ec76c48f074",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/f587ab0b-c0be-4fa9-af8b-7ec76c48f074"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52069"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

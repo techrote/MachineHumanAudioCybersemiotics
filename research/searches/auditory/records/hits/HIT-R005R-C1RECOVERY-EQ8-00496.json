@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ8-00496",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 496,
+        "raw_metadata": "Prevalence of type 2 diabetes mellitus and related factors among the general adult population in Saudi Arabia between 2016–2022: A systematic review and meta-analysis of the cross-sectional studies | first author: Khalid S. Alwadeai | 2023-06-16 | review | https://openalex.org/W4380989057",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4380989057"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1097/md.0000000000034021"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

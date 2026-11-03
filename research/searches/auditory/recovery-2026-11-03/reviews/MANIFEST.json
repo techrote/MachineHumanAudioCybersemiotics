@@ -1,0 +1,443 @@
+{
+  "schema_version": "mhac-r005-c9-review-recovery-v1",
+  "created_at": "2026-11-03T01:07:29.194338+00:00",
+  "actor": "ChatGPT GPT-6 Astra Pro C9 retrieval subagent",
+  "scope": "Three named remaining C9 reference-list gaps only",
+  "review_count": 3,
+  "total_reference_occurrences": 312,
+  "reference_lists_complete": 3,
+  "access_log": "access.jsonl",
+  "source_bytes_retained_outside_repository": "/tmp/mhac-r005-reviews/",
+  "independent_human_review": false,
+  "technical_verification": {
+    "actor": "Separate AI subagent /root/icad_coverage/review_boundary_check",
+    "method": "Independent pdfplumber geometry, pdftotext layout counts and visual bibliography checks",
+    "counts_agree": true,
+    "reference_page_or_column_spans_found": 0,
+    "exceptions": [
+      "Totland p44 IEEE 92(4) line is continuation; p46 two unindented UKEssays URL lines are continuations.",
+      "Ruskin p64 Hickling et al. first line starts x75 rather than usual x72 and remains a separate occurrence.",
+      "Edworthy reference numbers 1–80 are sequential across left/right columns on PDF pages5–6."
+    ],
+    "limitation": "AI technical verification is not independent human screening, bibliographic correction, or corpus acceptance."
+  },
+  "reproduction": {
+    "command": "python research/searches/auditory/recovery-2026-11-03/reviews/extract_r005_reviews.py --check",
+    "input_requirement": "Matching fulltext source bytes in /tmp/mhac-r005-reviews/ or --input-dir; source SHA256 enforced",
+    "export_rewrites": "Default command deterministically regenerates only the three reference JSON files",
+    "retrieval_helper": "fetch_r005_review.py refuses to overwrite retained responses and records each actual GET; temporary signed redirect queries omitted"
+  },
+  "limitations": [
+    "These 312 entries are reference occurrences, not unique eligible studies. Duplicates and out-of-scope works remain.",
+    "Original order, spelling, apparent date errors and incomplete bibliography entries are preserved.",
+    "bibliographic_parse_hints are unverified structural splits, not canonical identities; citation_text and citation_lines are authoritative metadata.",
+    "No empirical results are exported; cited works were not retrieved or read for this task.",
+    "Source PDFs and raw access-response bytes are retained outside Git. Their availability later requires reacquisition of matching source bytes.",
+    "No authentication, CAPTCHA, paywall or access-control bypass was attempted."
+  ],
+  "reviews": [
+    {
+      "review_key": "totland-2021",
+      "title": "Design Considerations for Auditory Alarms in the Process Industry: A Systematic Literature Review",
+      "authors_in_pdf_title_page_order": [
+        "Jonas Totland"
+      ],
+      "publication_date_as_printed": "June 2021",
+      "publication_year": 2021,
+      "publication_type": "Master thesis",
+      "institution": "University of South-Eastern Norway",
+      "doi": null,
+      "original_handle": "https://hdl.handle.net/11250/2764585",
+      "landing_url": "https://nva.sikt.no/registration/019913c778ff-dc8521c4-eeb9-4fb2-ac17-83acb6271313",
+      "metadata_url": "https://api.nva.unit.no/publication/019913c778ff-dc8521c4-eeb9-4fb2-ac17-83acb6271313",
+      "metadata_request_accept": "application/json",
+      "metadata_capture": "nva-publication-accept-json.json",
+      "fulltext_capture": "totland-2021-alias-response",
+      "reference_printed_pages": [
+        42,
+        47
+      ],
+      "identity_evidence": [
+        "PDF/printed title page 1: title, candidate Jonas Totland, institution, MASTER THESIS, June 2021",
+        "NVA JSON /entityDescription/mainTitle, /entityDescription/publicationDate/year, contributor Creator Jonas Totland, instance type DegreeMaster, OpenFile allowedOperations download/read-metadata"
+      ],
+      "identity_notes": [
+        "NVA contributor Steven Mallam is Supervisor, not a coauthor.",
+        "NVA migration/import date in 2025 is distinct from publication year 2021."
+      ],
+      "retrieval_notes": [
+        "The old handle now redirects to the NVA single-page application. JSON metadata requires Accept: application/json.",
+        "The obsolete /download/.../files/... route returned 403. Current anonymously supported /publication/{id}/filelink/{file} yielded an OpenFile download alias.",
+        "The first alias request used unsupported Accept: application/pdf and returned 406 JSON, despite the retained filename totland-2021.pdf. The successful retry without that Accept header is totland-2021-alias-response.",
+        "The successful public alias redirected to a temporary signed storage URL. Its credential-bearing query is deliberately omitted from the access log. The full source bytes and SHA256 are retained locally; the stable filelink endpoint reproduces a fresh public download."
+      ],
+      "rights_note": "NVA OpenFile lists https://nva.sikt.no/license/copyright-act/1.0 and permits public download. No unrestricted redistribution license is inferred; PDF bytes remain outside Git.",
+      "status": "complete_reference_list_export",
+      "reference_count": 47,
+      "reference_pdf_pages_inclusive": [
+        42,
+        47
+      ],
+      "reference_export": {
+        "path": "totland-2021-references.json",
+        "bytes": 92180,
+        "sha256": "6be6844c55a52e99b5b4f4b85fcf70c94b347582aa1d935b8e49c1d7c73bcb70"
+      },
+      "source_pdf": {
+        "capture_name": "totland-2021-alias-response",
+        "requested_url": "https://api.nva.unit.no/publication/file/01a19eec9ce9-e110b77d-bbf2-4a7c-a00e-fc5ed0758606",
+        "final_url": "https://nva-resource-storage-755923822223.s3.eu-west-1.amazonaws.com/02e585a1-2cd2-4b78-bf4d-b7ecdf7542e5",
+        "started_at": "2026-11-03T01:02:54.787393+00:00",
+        "finished_at": "2026-11-03T01:02:56.004264+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 821130,
+        "sha256": "caf75fd9f71016b869d1c27aa238c56a8f302a4ae2ce4459647203432e8d600d",
+        "source_file_local": "/tmp/mhac-r005-reviews/totland-2021-alias-response"
+      },
+      "references_per_pdf_page": {
+        "42": 8,
+        "43": 9,
+        "44": 9,
+        "45": 9,
+        "46": 9,
+        "47": 3
+      },
+      "first_reference": "ANSI/ISA 18.2. (2009). Management of Alarm Systems for the Process Industries.",
+      "last_reference": "Xiao, Y. and F. J. Seagull (1999). An Analysis of Problems with Auditory Alarms: Defining the Roles of Alarms in Process Monitoring Tasks. Proceedings of the Human Factors and Ergonomics Society Annual Meeting 43(3): 256-260.",
+      "reading_extent": "Source identity and bibliography; no full-paper empirical extraction or eligibility assessment",
+      "cited_work_identity_status": "Unverified discovery occurrences; no reference-level external identity verification",
+      "fulltext_copy_committed": false,
+      "metadata_capture_record": {
+        "requested_url": "https://api.nva.unit.no/publication/019913c778ff-dc8521c4-eeb9-4fb2-ac17-83acb6271313",
+        "started_at": "2026-11-03T00:59:34.125354+00:00",
+        "finished_at": "2026-11-03T00:59:34.451655+00:00",
+        "status": 200,
+        "bytes": 11119,
+        "sha256": "c4168300e67c5f4a656d988f9c40780af678b69a8d79919bc689318f85aa54eb",
+        "source_file_local": "/tmp/mhac-r005-reviews/nva-publication-accept-json.json"
+      }
+    },
+    {
+      "review_key": "edworthy-2013",
+      "title": "Medical audible alarms: a review",
+      "authors_in_pdf_title_page_order": [
+        "Judy Edworthy"
+      ],
+      "publication_date_as_printed": "2013;20:584–589",
+      "publication_year": 2013,
+      "first_online_publication_date": "2012-10-25",
+      "journal": "Journal of the American Medical Informatics Association",
+      "volume": "20",
+      "issue": "3",
+      "article_printed_pages": [
+        584,
+        589
+      ],
+      "doi": "10.1136/amiajnl-2012-001061",
+      "pmid": "23100127",
+      "pmcid": "PMC3628049",
+      "landing_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/",
+      "metadata_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:23100127%20AND%20SRC:MED&format=json&resultType=core",
+      "metadata_capture": "edworthy-epmc-core.json",
+      "fulltext_capture": "edworthy-epmc.pdf",
+      "reference_printed_pages": [
+        588,
+        589
+      ],
+      "identity_evidence": [
+        "PDF page 1 title/author block, publication dates and citation/footer",
+        "Europe PMC core metadata title, authorList, journalInfo, pubYear, firstPublicationDate, doi, pmid and pmcid"
+      ],
+      "identity_notes": [
+        "The review has a 2013 issue year and an earlier online-first date of 25 October 2012; these are retained as distinct dates."
+      ],
+      "retrieval_notes": [
+        "PMC returned a 203 challenge page; no challenge was solved or bypassed.",
+        "The Oxford publisher PDF route returned 403. Europe PMC fullTextXML returned 500.",
+        "The public Europe PMC PDF link successfully returned the six-page article. The reference API was used only as a supplemental check; the PDF bibliography defines the complete 80-occurrence export."
+      ],
+      "rights_note": "Publicly retrievable through Europe PMC; its metadata has isOpenAccess=N. Public availability is not asserted to be an unrestricted redistribution license. PDF bytes remain outside Git.",
+      "status": "complete_reference_list_export",
+      "reference_count": 80,
+      "reference_pdf_pages_inclusive": [
+        5,
+        6
+      ],
+      "reference_export": {
+        "path": "edworthy-2013-references.json",
+        "bytes": 133129,
+        "sha256": "21dc383967e0c84e9c5f56e2138efa85c8fa71530c845aa45a0326f891e21450"
+      },
+      "source_pdf": {
+        "capture_name": "edworthy-epmc.pdf",
+        "requested_url": "https://europepmc.org/articles/PMC3628049?pdf=render",
+        "final_url": "https://europepmc.org/api/getPdf?pmcid=PMC3628049",
+        "started_at": "2026-11-03T01:00:06.696167+00:00",
+        "finished_at": "2026-11-03T01:00:07.294822+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 100569,
+        "sha256": "e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2",
+        "source_file_local": "/tmp/mhac-r005-reviews/edworthy-epmc.pdf"
+      },
+      "references_per_pdf_page": {
+        "5": 69,
+        "6": 11
+      },
+      "first_reference": "ECRI Institute 2010. Top 10 technology hazards. Health Dev 2009;38:1–10.",
+      "last_reference": "Miller G. The magical number seven plus or minus two. Psychol Rev 1957;63:81–96.",
+      "reading_extent": "Source identity and bibliography; no full-paper empirical extraction or eligibility assessment",
+      "cited_work_identity_status": "Unverified discovery occurrences; no reference-level external identity verification",
+      "fulltext_copy_committed": false,
+      "metadata_capture_record": {
+        "requested_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:23100127%20AND%20SRC:MED&format=json&resultType=core",
+        "started_at": "2026-11-03T01:04:37.033904+00:00",
+        "finished_at": "2026-11-03T01:04:37.590953+00:00",
+        "status": 200,
+        "bytes": 4008,
+        "sha256": "2dd8ff91dcf28246aaadc2bd9eb48f2f330854f02fcf0a53fc143b73df0639ae",
+        "source_file_local": "/tmp/mhac-r005-reviews/edworthy-epmc-core.json"
+      }
+    },
+    {
+      "review_key": "ruskin-2020",
+      "title": "ATC Signaling Systems: A Review of the Literature on Alarms, Alerts, and Warnings",
+      "authors_in_pdf_title_page_order": [
+        "Keith J Ruskin",
+        "Chase Corvin",
+        "Stephen Rice"
+      ],
+      "authors_in_repository_order": [
+        "Keith J Ruskin",
+        "Stephen Rice",
+        "Chase Corvin"
+      ],
+      "publication_date_as_repository_metadata": "2020-09-01",
+      "publication_year": 2020,
+      "publication_type": "Final report, phase 1",
+      "institution": "United States Department of Transportation, Federal Aviation Administration",
+      "doi": null,
+      "repository_identifier": "dot/59041",
+      "landing_url": "https://rosap.ntl.bts.gov/view/dot/59041",
+      "metadata_url": "https://rosap.ntl.bts.gov/view/dot/59041",
+      "metadata_capture": "ruskin-rosap-landing.html",
+      "fulltext_capture": "ruskin-2020.pdf",
+      "reference_printed_pages": [
+        55,
+        79
+      ],
+      "identity_evidence": [
+        "PDF/printed title page 1: title and authors in Ruskin, Corvin, Rice order",
+        "ROSA P landing metadata citation_title, citation_author, publication date 2020-09-01, publisher and document link"
+      ],
+      "identity_notes": [
+        "The PDF title page orders authors Ruskin, Corvin, Rice; repository metadata orders Ruskin, Rice, Corvin. Both are preserved rather than silently reconciled."
+      ],
+      "retrieval_notes": [
+        "The official ROSA P download returned the 79-page PDF.",
+        "The downloaded SHA512 also matches the file checksum published by ROSA P."
+      ],
+      "source_sha512": "b216b8709ad769232e3207764fbecef6b4a86f562d3ac951fe37fd52ea34715e8f68c2ac4b75e99e3f59f82ef2f0a32a9bd1aa5cd11121757e869cbe06426763",
+      "rights_note": "No blanket redistribution license is inferred from repository availability; PDF bytes remain outside Git.",
+      "status": "complete_reference_list_export",
+      "reference_count": 185,
+      "reference_pdf_pages_inclusive": [
+        55,
+        79
+      ],
+      "reference_export": {
+        "path": "ruskin-2020-references.json",
+        "bytes": 377075,
+        "sha256": "2c9c0cab16950d484b8964f155ca9bbe44646318a327d0332f24b983ef51f119"
+      },
+      "source_pdf": {
+        "capture_name": "ruskin-2020.pdf",
+        "requested_url": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf",
+        "final_url": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf",
+        "started_at": "2026-11-03T00:58:53.461159+00:00",
+        "finished_at": "2026-11-03T00:58:54.132075+00:00",
+        "status": 200,
+        "content_type": "application/pdf",
+        "bytes": 1196825,
+        "sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+        "source_file_local": "/tmp/mhac-r005-reviews/ruskin-2020.pdf"
+      },
+      "references_per_pdf_page": {
+        "55": 7,
+        "56": 7,
+        "57": 7,
+        "58": 7,
+        "59": 8,
+        "60": 8,
+        "61": 8,
+        "62": 7,
+        "63": 8,
+        "64": 7,
+        "65": 7,
+        "66": 7,
+        "67": 8,
+        "68": 8,
+        "69": 8,
+        "70": 8,
+        "71": 8,
+        "72": 8,
+        "73": 7,
+        "74": 8,
+        "75": 8,
+        "76": 8,
+        "77": 8,
+        "78": 7,
+        "79": 3
+      },
+      "first_reference": "Allendoerfer, K., Friedman-Berg, F., & Pai, S. (2007). Human factors analysis of safety alerts in air traffic control (Tech. Rep. No. DOT/FAA/TC-07-22). Atlantic City, NJ: Federal Aviation Administration.",
+      "last_reference": "Ziółkowski, A., & Skłodowski, M. (2018). On value and using of TAWS/FMS alert data in examination of air accidents, the case of warsaw-smolensk flight on 10 april 2010. The Aeronautical Journal, 122(1255), 1301-1329. doi:10.1017/aer.2018.59",
+      "reading_extent": "Source identity and bibliography; no full-paper empirical extraction or eligibility assessment",
+      "cited_work_identity_status": "Unverified discovery occurrences; no reference-level external identity verification",
+      "fulltext_copy_committed": false,
+      "metadata_capture_record": {
+        "requested_url": "https://rosap.ntl.bts.gov/view/dot/59041",
+        "started_at": "2026-11-03T01:04:37.034439+00:00",
+        "finished_at": "2026-11-03T01:04:37.402558+00:00",
+        "status": 200,
+        "bytes": 65977,
+        "sha256": "00e5eb25183ddf5541a9c9c1b5c0231d2539fe9f70eaec7a6898b7117478e195",
+        "source_file_local": "/tmp/mhac-r005-reviews/ruskin-rosap-landing.html"
+      }
+    }
+  ],
+  "access_outcomes": [
+    {
+      "capture_name": "edworthy-pmc.html",
+      "outcome": "access_blocked",
+      "reason": "203 challenge HTML, not source article bytes",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "process-usn-handle.html",
+      "outcome": "route_discovery",
+      "reason": "200 redirect to NVA application shell, not thesis bytes",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "ruskin-2020.pdf",
+      "outcome": "fulltext_retrieved",
+      "reason": "Official ROSA P PDF; bibliography only exported",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-publication.json",
+      "outcome": "route_discovery",
+      "reason": "200 HTML application after content-negotiation redirect, not JSON metadata",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "edworthy-europepmc.xml",
+      "outcome": "server_error",
+      "reason": "500 response, no fullTextXML",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-paths.js",
+      "outcome": "public_frontend_route_discovery",
+      "reason": "Publicly linked JavaScript inspected to identify the supported anonymous file-download endpoint",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "edworthy-europepmc.html",
+      "outcome": "route_discovery",
+      "reason": "200 mirror landing/application shell",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-publication-accept-json.json",
+      "outcome": "metadata_retrieved",
+      "reason": "200 JSON, verified Creator and openly downloadable file",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "edworthy-oup.pdf",
+      "outcome": "access_blocked",
+      "reason": "403 HTML, not PDF",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-download.json",
+      "outcome": "access_blocked",
+      "reason": "403 on obsolete endpoint; no authorization circumvention",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "edworthy-reference-api.json",
+      "outcome": "supplemental_metadata",
+      "reason": "200 indexed reference metadata; not treated as exhaustive bibliography",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "edworthy-epmc.pdf",
+      "outcome": "fulltext_retrieved",
+      "reason": "200 PDF through public Europe PMC rendering link",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-index.js",
+      "outcome": "public_frontend_route_discovery",
+      "reason": "Publicly linked JavaScript inspected to identify the supported anonymous file-download endpoint",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-registration-api.js",
+      "outcome": "public_frontend_route_discovery",
+      "reason": "Publicly linked JavaScript inspected to identify the supported anonymous file-download endpoint",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-download-button.js",
+      "outcome": "public_frontend_route_discovery",
+      "reason": "Publicly linked JavaScript inspected to identify the supported anonymous file-download endpoint",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-file-helpers.js",
+      "outcome": "public_frontend_route_discovery",
+      "reason": "Publicly linked JavaScript inspected to identify the supported anonymous file-download endpoint",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-api-request.js",
+      "outcome": "public_frontend_route_discovery",
+      "reason": "Publicly linked JavaScript inspected to identify the supported anonymous file-download endpoint",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "nva-filelink.json",
+      "outcome": "route_discovery",
+      "reason": "200 public filelink response; signed token retained only outside repository",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "totland-2021.pdf",
+      "outcome": "unsupported_accept_header",
+      "reason": "406 JSON problem response, not PDF",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "totland-2021-alias-response",
+      "outcome": "fulltext_retrieved",
+      "reason": "200 thesis PDF through supported public anonymous route",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "ruskin-rosap-landing.html",
+      "outcome": "metadata_retrieved",
+      "reason": "200 official repository metadata",
+      "provenance": "access.jsonl entry with matching name"
+    },
+    {
+      "capture_name": "edworthy-epmc-core.json",
+      "outcome": "metadata_retrieved",
+      "reason": "200 Europe PMC identity metadata",
+      "provenance": "access.jsonl entry with matching name"
+    }
+  ]
+}

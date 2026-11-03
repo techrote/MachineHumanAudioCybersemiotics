@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ5-01931",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1931,
+        "raw_metadata": "1357: IMPROVING PEDIATRIC CPR RATE COMPLIANCE WITH THE USE OF A METRONOME | first author: Jennifer Murphy | 2026-03-01 | article | https://openalex.org/W7140233158",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W7140233158"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1097/01.ccm.0001187424.33757.ab"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

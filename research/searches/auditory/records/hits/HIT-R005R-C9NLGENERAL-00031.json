@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C9NLGENERAL-00031",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 31,
+        "raw_metadata": "Fiedler, B. L., Moore, E. B., Sawyer, T., & Walker, B. N. (2021). Multimodality and inclusion: Educator perceptions of physics simulation auditory display. 2021 Physics Education Research Conference Proceedings, 123–128. https://doi.org/10.1119/perc.2021.pr.Fiedler | source PDF pp.36–36, reference 31",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1119/perc.2021.pr.Fiedler"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

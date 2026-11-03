@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C9NAV-00010",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9NAV",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 10,
+        "raw_metadata": "Alarm Tones, Voice Warnings, and Musical Treatments: A Systematic Review of Auditory Countermeasures for Sleep Inertia in Abrupt and Casual Awakenings | JoVE Visualize | https://visualize.jove.com/33118526-alarm-tones-voice-warnings-and-musical-treatments-a-systematic-review-of-auditory-countermeasures-for-sleep-inertia-in-abrupt-and-casual-awakenings",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://visualize.jove.com/33118526-alarm-tones-voice-warnings-and-musical-treatments-a-systematic-review-of-auditory-countermeasures-for-sleep-inertia-in-abrupt-and-casual-awakenings"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NAV",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

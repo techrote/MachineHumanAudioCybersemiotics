@@ -1,0 +1,62 @@
+{
+  "id": "SRC-REL-NSS-USE-SCENARIO",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Title known only from search results; Crossref did not find it (round-3 lookup NSS-USE-SCENARIO).",
+        "access_status": "not_attempted",
+        "authors": [],
+        "edition": {
+          "reason": "Venue presumed ICAD from the repository collection; not verified",
+          "state": "unknown"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Search-result URL (runs G-22, G-25); repository API returned HTTP 500 (ledger row 33)",
+            "scheme": "url",
+            "status": "candidate",
+            "value": "https://repository.gatech.edu/entities/publication/e508ee28-0a98-42d9-9dc0-30ec85f1dd5d"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "reason": "Not shown in the search results",
+          "state": "unknown"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Non-speech sounds as elements of a use scenario: A semiotic perspective",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

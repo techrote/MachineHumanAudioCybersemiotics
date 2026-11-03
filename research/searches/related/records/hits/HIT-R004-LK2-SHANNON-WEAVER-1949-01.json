@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-LK2-SHANNON-WEAVER-1949-01",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK2-SHANNON-WEAVER-1949",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-SHANNON-WEAVER-1949",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "The mathematical theory of communication | Claude Elwood Shannon | 1949 | /works/OL2296213W",
+        "resolution_reason": "Adjudicated match: title, author and year agree with the source record (R004 source map).",
+        "returned_identifiers": [
+          {
+            "scheme": "other",
+            "value": "Open Library /works/OL2296213W"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK2-SHANNON-WEAVER-1949",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-SHANNON-WEAVER-1949",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

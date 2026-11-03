@@ -1,0 +1,67 @@
+{
+  "id": "SRCH-R005R-C9NAV",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [],
+      "data": {
+        "boundary": "Combined C9 known-item navigation call; the tool does not expose individual-query attribution, total indexed count or subsequent pages. Results are discovery leads only.",
+        "coverage": {
+          "end": {
+            "state": "known",
+            "value": "2026-10-04"
+          },
+          "start": {
+            "reason": "No lower date bound",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/auditory/recovery-2026-11-03/references/NAVIGATION.json",
+            "sha256": "514cb09cf54b1621a7dd73ceea8efb17d0361be2a0e5e8a470b8a865a94f0360"
+          }
+        },
+        "failures": [],
+        "filters": [],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-11-03T00:57:33Z"
+        },
+        "interface": "system2_search_query",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "Combined C9 known-item navigation call; the tool does not expose individual-query attribution, total indexed count or subsequent pages. Results are discovery leads only."
+        },
+        "platform": "Web search, C9 known-item recovery",
+        "protocol_version": "v1",
+        "query": "\"Design Considerations for Auditory Alarms in the Process Industry\" full text\n\"Alarm Tones, Voice Warnings, and Musical Treatments\" full text",
+        "reported_count": {
+          "reason": "No independently reported total",
+          "state": "not_reported"
+        },
+        "retrieved_count": 26,
+        "started_at": {
+          "state": "known",
+          "value": "2026-11-03T00:57:31Z"
+        },
+        "status": "partial"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

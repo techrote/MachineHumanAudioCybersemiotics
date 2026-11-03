@@ -1,0 +1,440 @@
+{
+  "schema": "mhac-r005-database-execution-summary/1",
+  "unit_warning": "API work IDs and search occurrences are not eligible publications, studies or samples",
+  "runs": [
+    {
+      "run_id": "20261103-database-load-recovery",
+      "manifest": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+      "manifest_sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a",
+      "complete": false,
+      "finished_at": "2026-11-03T01:06:18+00:00",
+      "requests_made": 58,
+      "families": [
+        {
+          "label": "EQ5",
+          "run_id": "20261103-database-load-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 2112,
+          "occurrences": 2112,
+          "unique_work_ids_within_run": 2112,
+          "failures": [],
+          "sort": "publication_date:asc,display_name:asc"
+        },
+        {
+          "label": "EQ8",
+          "run_id": "20261103-database-load-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 4652,
+          "occurrences": 4652,
+          "unique_work_ids_within_run": 4652,
+          "failures": [],
+          "sort": "publication_date:asc,display_name:asc"
+        },
+        {
+          "label": "EQ1",
+          "run_id": "20261103-database-load-recovery",
+          "status": "partial",
+          "complete": false,
+          "reported_count": 9368,
+          "occurrences": 4200,
+          "unique_work_ids_within_run": 4200,
+          "failures": [
+            "observed_daily_budget_boundary"
+          ],
+          "sort": "publication_date:asc,display_name:asc"
+        }
+      ]
+    },
+    {
+      "run_id": "20261103-database-recovery",
+      "manifest": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+      "manifest_sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b",
+      "complete": false,
+      "finished_at": "2026-11-03T00:59:07+00:00",
+      "requests_made": 27,
+      "families": [
+        {
+          "label": "EQ3",
+          "run_id": "20261103-database-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 76,
+          "occurrences": 76,
+          "unique_work_ids_within_run": 76,
+          "failures": [],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ7",
+          "run_id": "20261103-database-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 153,
+          "occurrences": 153,
+          "unique_work_ids_within_run": 153,
+          "failures": [],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ6",
+          "run_id": "20261103-database-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 537,
+          "occurrences": 537,
+          "unique_work_ids_within_run": 537,
+          "failures": [],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ2",
+          "run_id": "20261103-database-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 556,
+          "occurrences": 556,
+          "unique_work_ids_within_run": 556,
+          "failures": [],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ4",
+          "run_id": "20261103-database-recovery",
+          "status": "partial",
+          "complete": false,
+          "reported_count": 585,
+          "occurrences": 585,
+          "unique_work_ids_within_run": 584,
+          "failures": [
+            "page 3: duplicate_work_ids"
+          ],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ5",
+          "run_id": "20261103-database-recovery",
+          "status": "partial",
+          "complete": false,
+          "reported_count": 2112,
+          "occurrences": 1600,
+          "unique_work_ids_within_run": 1599,
+          "failures": [
+            "page 8: duplicate_work_ids"
+          ],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ8",
+          "run_id": "20261103-database-recovery",
+          "status": "partial",
+          "complete": false,
+          "reported_count": 4652,
+          "occurrences": 600,
+          "unique_work_ids_within_run": 599,
+          "failures": [
+            "page 3: duplicate_work_ids"
+          ],
+          "sort": "provider default relevance"
+        },
+        {
+          "label": "EQ1",
+          "run_id": "20261103-database-recovery",
+          "status": "partial",
+          "complete": false,
+          "reported_count": 9368,
+          "occurrences": 1000,
+          "unique_work_ids_within_run": 998,
+          "failures": [
+            "page 5: duplicate_work_ids"
+          ],
+          "sort": "provider default relevance"
+        }
+      ]
+    },
+    {
+      "run_id": "20261103-database-sort-recovery",
+      "manifest": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/MANIFEST.json",
+      "manifest_sha256": "30726cd453d1c1aa92b33f4e6fc3bf6d4fdc258d75e71ae1776f7708e3d87e39",
+      "complete": false,
+      "finished_at": "2026-11-03T01:00:38+00:00",
+      "requests_made": 8,
+      "families": [
+        {
+          "label": "EQ4",
+          "run_id": "20261103-database-sort-recovery",
+          "status": "completed",
+          "complete": true,
+          "reported_count": 585,
+          "occurrences": 585,
+          "unique_work_ids_within_run": 585,
+          "failures": [],
+          "sort": "publication_date:asc,display_name:asc"
+        },
+        {
+          "label": "EQ5",
+          "run_id": "20261103-database-sort-recovery",
+          "status": "partial",
+          "complete": false,
+          "reported_count": 2112,
+          "occurrences": 800,
+          "unique_work_ids_within_run": 800,
+          "failures": [
+            "page 5: HTTP 429"
+          ],
+          "sort": "publication_date:asc,display_name:asc"
+        },
+        {
+          "label": "EQ8",
+          "run_id": "20261103-database-sort-recovery",
+          "status": "failed",
+          "complete": false,
+          "reported_count": null,
+          "occurrences": 0,
+          "unique_work_ids_within_run": 0,
+          "failures": [
+            "HTTP_429_access_or_budget_limit"
+          ],
+          "sort": "publication_date:asc,display_name:asc"
+        },
+        {
+          "label": "EQ1",
+          "run_id": "20261103-database-sort-recovery",
+          "status": "failed",
+          "complete": false,
+          "reported_count": null,
+          "occurrences": 0,
+          "unique_work_ids_within_run": 0,
+          "failures": [
+            "HTTP_429_access_or_budget_limit"
+          ],
+          "sort": "publication_date:asc,display_name:asc"
+        }
+      ]
+    }
+  ],
+  "families": {
+    "EQ5": [
+      {
+        "label": "EQ5",
+        "run_id": "20261103-database-load-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 2112,
+        "occurrences": 2112,
+        "unique_work_ids_within_run": 2112,
+        "failures": [],
+        "sort": "publication_date:asc,display_name:asc"
+      },
+      {
+        "label": "EQ5",
+        "run_id": "20261103-database-recovery",
+        "status": "partial",
+        "complete": false,
+        "reported_count": 2112,
+        "occurrences": 1600,
+        "unique_work_ids_within_run": 1599,
+        "failures": [
+          "page 8: duplicate_work_ids"
+        ],
+        "sort": "provider default relevance"
+      },
+      {
+        "label": "EQ5",
+        "run_id": "20261103-database-sort-recovery",
+        "status": "partial",
+        "complete": false,
+        "reported_count": 2112,
+        "occurrences": 800,
+        "unique_work_ids_within_run": 800,
+        "failures": [
+          "page 5: HTTP 429"
+        ],
+        "sort": "publication_date:asc,display_name:asc"
+      }
+    ],
+    "EQ8": [
+      {
+        "label": "EQ8",
+        "run_id": "20261103-database-load-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 4652,
+        "occurrences": 4652,
+        "unique_work_ids_within_run": 4652,
+        "failures": [],
+        "sort": "publication_date:asc,display_name:asc"
+      },
+      {
+        "label": "EQ8",
+        "run_id": "20261103-database-recovery",
+        "status": "partial",
+        "complete": false,
+        "reported_count": 4652,
+        "occurrences": 600,
+        "unique_work_ids_within_run": 599,
+        "failures": [
+          "page 3: duplicate_work_ids"
+        ],
+        "sort": "provider default relevance"
+      },
+      {
+        "label": "EQ8",
+        "run_id": "20261103-database-sort-recovery",
+        "status": "failed",
+        "complete": false,
+        "reported_count": null,
+        "occurrences": 0,
+        "unique_work_ids_within_run": 0,
+        "failures": [
+          "HTTP_429_access_or_budget_limit"
+        ],
+        "sort": "publication_date:asc,display_name:asc"
+      }
+    ],
+    "EQ1": [
+      {
+        "label": "EQ1",
+        "run_id": "20261103-database-load-recovery",
+        "status": "partial",
+        "complete": false,
+        "reported_count": 9368,
+        "occurrences": 4200,
+        "unique_work_ids_within_run": 4200,
+        "failures": [
+          "observed_daily_budget_boundary"
+        ],
+        "sort": "publication_date:asc,display_name:asc"
+      },
+      {
+        "label": "EQ1",
+        "run_id": "20261103-database-recovery",
+        "status": "partial",
+        "complete": false,
+        "reported_count": 9368,
+        "occurrences": 1000,
+        "unique_work_ids_within_run": 998,
+        "failures": [
+          "page 5: duplicate_work_ids"
+        ],
+        "sort": "provider default relevance"
+      },
+      {
+        "label": "EQ1",
+        "run_id": "20261103-database-sort-recovery",
+        "status": "failed",
+        "complete": false,
+        "reported_count": null,
+        "occurrences": 0,
+        "unique_work_ids_within_run": 0,
+        "failures": [
+          "HTTP_429_access_or_budget_limit"
+        ],
+        "sort": "publication_date:asc,display_name:asc"
+      }
+    ],
+    "EQ3": [
+      {
+        "label": "EQ3",
+        "run_id": "20261103-database-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 76,
+        "occurrences": 76,
+        "unique_work_ids_within_run": 76,
+        "failures": [],
+        "sort": "provider default relevance"
+      }
+    ],
+    "EQ7": [
+      {
+        "label": "EQ7",
+        "run_id": "20261103-database-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 153,
+        "occurrences": 153,
+        "unique_work_ids_within_run": 153,
+        "failures": [],
+        "sort": "provider default relevance"
+      }
+    ],
+    "EQ6": [
+      {
+        "label": "EQ6",
+        "run_id": "20261103-database-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 537,
+        "occurrences": 537,
+        "unique_work_ids_within_run": 537,
+        "failures": [],
+        "sort": "provider default relevance"
+      }
+    ],
+    "EQ2": [
+      {
+        "label": "EQ2",
+        "run_id": "20261103-database-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 556,
+        "occurrences": 556,
+        "unique_work_ids_within_run": 556,
+        "failures": [],
+        "sort": "provider default relevance"
+      }
+    ],
+    "EQ4": [
+      {
+        "label": "EQ4",
+        "run_id": "20261103-database-recovery",
+        "status": "partial",
+        "complete": false,
+        "reported_count": 585,
+        "occurrences": 585,
+        "unique_work_ids_within_run": 584,
+        "failures": [
+          "page 3: duplicate_work_ids"
+        ],
+        "sort": "provider default relevance"
+      },
+      {
+        "label": "EQ4",
+        "run_id": "20261103-database-sort-recovery",
+        "status": "completed",
+        "complete": true,
+        "reported_count": 585,
+        "occurrences": 585,
+        "unique_work_ids_within_run": 585,
+        "failures": [],
+        "sort": "publication_date:asc,display_name:asc"
+      }
+    ]
+  },
+  "all_retained_occurrences": 17456,
+  "distinct_api_work_ids_across_all_runs": 11898,
+  "distinct_api_work_ids_by_family_across_attempts": {
+    "EQ1": 4549,
+    "EQ2": 556,
+    "EQ3": 76,
+    "EQ4": 585,
+    "EQ5": 2112,
+    "EQ6": 537,
+    "EQ7": 153,
+    "EQ8": 4652
+  },
+  "completed_families": [
+    "EQ2",
+    "EQ3",
+    "EQ4",
+    "EQ5",
+    "EQ6",
+    "EQ7",
+    "EQ8"
+  ],
+  "incomplete_families": [
+    "EQ1"
+  ]
+}

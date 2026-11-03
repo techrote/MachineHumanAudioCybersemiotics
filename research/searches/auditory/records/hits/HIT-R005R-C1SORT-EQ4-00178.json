@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ4-00178",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 178,
+        "raw_metadata": "Differential coding of uncertain reward in rat insular and orbitofrontal cortex | first author: Suhyun Jo | 2016-04-07 | article | https://openalex.org/W2317882917",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2317882917"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1038/srep24085"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

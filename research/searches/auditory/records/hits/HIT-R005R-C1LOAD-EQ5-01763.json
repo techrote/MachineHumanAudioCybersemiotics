@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ5-01763",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1763,
+        "raw_metadata": "Enhanced Cross-Audiovisual Perception in High-Level Martial Arts Routine Athletes Stems from Increased Automatic Processing Capacity | first author: Xiaohan Wang | 2025-07-29 | article | https://openalex.org/W4412901446",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4412901446"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.3390/bs15081028"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

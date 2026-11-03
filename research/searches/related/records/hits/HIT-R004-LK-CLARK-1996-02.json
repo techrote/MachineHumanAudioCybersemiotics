@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-LK-CLARK-1996-02",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-CLARK-1996",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "<b>Herbert H. Clark, </b><i>Using language</i>. Cambridge: Cambridge University Press, \n1996. Pp. xi+432. | Journal of Linguistics | 10.1017/s0022226798217361",
+        "resolution_reason": "Returned by the lookup but not the adjudicated match.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1017/s0022226798217361"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-CLARK-1996",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

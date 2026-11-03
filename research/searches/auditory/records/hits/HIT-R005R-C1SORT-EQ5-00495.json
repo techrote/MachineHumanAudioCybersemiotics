@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ5-00495",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 495,
+        "raw_metadata": "Interactive musical participation with humanoid robots through the use of novel musical tempo and beat tracking techniques in the absence of auditory cues | first author: Daniel M. Lofaro | 2010-12-01 | conference-paper | https://openalex.org/W2158093613",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2158093613"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1109/ichr.2010.5686847"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

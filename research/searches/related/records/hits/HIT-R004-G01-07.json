@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-G01-07",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G01",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 7,
+        "raw_metadata": "Why Designers Should Study Semiotics: Applications of Semiotics to User Interface Design | https://dukespace.lib.duke.edu/items/6629f2a5-668a-4644-b84c-396ab701d416",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://dukespace.lib.duke.edu/items/6629f2a5-668a-4644-b84c-396ab701d416"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G01",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

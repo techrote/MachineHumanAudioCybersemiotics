@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00560",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 560,
+        "raw_metadata": "Expressive Musical Warning Signs | Fagerlon, Johan | issued: 2007-06 | Text | https://repository.gatech.edu/entities/publication/e82b0562-2943-4907-9c6b-65e50c0a9c2c",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e82b0562-2943-4907-9c6b-65e50c0a9c2c"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49996"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

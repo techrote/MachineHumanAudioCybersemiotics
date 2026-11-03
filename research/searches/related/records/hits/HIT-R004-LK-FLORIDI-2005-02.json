@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R004-LK-FLORIDI-2005-02",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-FLORIDI-2005",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-FLORIDI-2005",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "Is Semantic Information Meaningful Data? | Philosophy and Phenomenological Research | 10.1111/j.1933-1592.2005.tb00531.x",
+        "resolution_reason": "Adjudicated match: title, author and year agree with the source record (R004 source map).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1111/j.1933-1592.2005.tb00531.x"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-FLORIDI-2005",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-FLORIDI-2005",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

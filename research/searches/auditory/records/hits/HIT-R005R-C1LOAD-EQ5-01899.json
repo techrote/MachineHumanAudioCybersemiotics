@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ5-01899",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1899,
+        "raw_metadata": "Understanding Emerging Needs of Astronauts: Integrating AR/VR-Based Human Factor Solutions for Enhanced Physical and Emotional Well-Being in Long-Duration Spaceflight | first author: Aagam Jain | 2026-01-01 | conference-paper | https://openalex.org/W7167039455",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W7167039455"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/978-3-032-30816-0_2"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00946",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 946,
+        "raw_metadata": "Haptic-auditory perceptual feedback based training for improving the spatial acoustic resolution of the visually impaired people | Bălan, Oana; Moldoveanu, Alin; Nagy, Hunor; Wersényi, György; Botezatu, Nicolae; Stan, Andrei; Lupu, Robert-Gabriel | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/273f7f44-f3b3-463b-825b-214f4a3b5ad2",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/273f7f44-f3b3-463b-825b-214f4a3b5ad2"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54096"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

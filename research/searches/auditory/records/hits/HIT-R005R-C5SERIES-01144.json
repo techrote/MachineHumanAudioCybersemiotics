@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01144",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1144,
+        "raw_metadata": "A radar-based navigation assistance device with binaural sound interface for vision-impaired people | Urbanietz, Christoph; Enzner, Gerald; Orth, Alexander; Kwiatkowski, Patrick; Pohl, Nils | issued: 2019-06 | Text | https://repository.gatech.edu/entities/publication/e0b1a1fe-8ed4-4dfd-be16-38c548da6f0e",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e0b1a1fe-8ed4-4dfd-be16-38c548da6f0e"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2019.023"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/61503"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

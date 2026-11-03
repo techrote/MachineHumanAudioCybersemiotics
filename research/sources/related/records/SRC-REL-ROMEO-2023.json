@@ -1,0 +1,85 @@
+{
+  "id": "SRC-REL-ROMEO-2023",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only; no abstract deposited.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Romeo, Marta",
+            "role": "author"
+          },
+          {
+            "name": "Torre, Ilaria",
+            "role": "author"
+          },
+          {
+            "name": "Le Maguer, Sébastien",
+            "role": "author"
+          },
+          {
+            "name": "Cangelosi, Angelo",
+            "role": "author"
+          },
+          {
+            "name": "Leite, Iolanda",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "2023 32nd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN), pp. 2045-2050"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Round-3 lookup VOICE-NATURALNESS-TRUST result 2, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1109/ro-man57019.2023.10309631"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref record (round-3 lookup); Crossref gives the third author's name as 'Maguer, Sébastien Le'"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2023-08-28"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Putting Robots in Context: Challenging the Influence of Voice and Empathic Behaviour on Trust",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

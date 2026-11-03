@@ -1,0 +1,4069 @@
+{
+  "schema_version": "mhac-r005-c9-reference-occurrences-v1",
+  "review_key": "edworthy-2013",
+  "source_file_basename": "edworthy-epmc.pdf",
+  "source_sha256": "e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2",
+  "source_pdf_pages": 6,
+  "reference_pdf_pages_inclusive": [
+    5,
+    6
+  ],
+  "reference_count": 80,
+  "reference_order": "source order; column left then right within each Edworthy page",
+  "reading_extent": "bibliography and source identity metadata only; no empirical extraction",
+  "normalization": "PDF text-layer words joined by spaces; line boundaries and boxes retained; no citation corrections",
+  "extraction_software": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "coordinate_system": "PDF points; [x0, top, x1, bottom] from top-left of each source page",
+  "layout_exceptions": [],
+  "references": [
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF001",
+      "ordinal": 1,
+      "source_number": 1,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "1 ECRI Institute 2010. Top 10 technology hazards. Health Dev 2009;38:1–10.",
+          "bbox_pdf_points": [
+            45.751,
+            64.784,
+            267.327,
+            73.949
+          ]
+        }
+      ],
+      "citation_text": "ECRI Institute 2010. Top 10 technology hazards. Health Dev 2009;38:1–10.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "ECRI Institute 2010",
+        "date_text": "2009",
+        "title_text": "Top 10 technology hazards.",
+        "remaining_bibliographic_text": "Health Dev 2009;38:1–10.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF002",
+      "ordinal": 2,
+      "source_number": 2,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "2 American Association for Medical Instrumentation. AAMI alarm fatigue: an issue",
+          "bbox_pdf_points": [
+            45.752,
+            75.463,
+            277.817,
+            82.963
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "across the country in influencing patient safety: priority issues from the AAMI/FDA",
+          "bbox_pdf_points": [
+            58.338,
+            82.812,
+            282.129,
+            91.977
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "infusion device summit. Arlington, VA: American Association for Medical",
+          "bbox_pdf_points": [
+            58.337,
+            93.491,
+            256.14,
+            100.991
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "Instrumentation, 2010, 35.",
+          "bbox_pdf_points": [
+            58.337,
+            102.448,
+            132.057,
+            109.948
+          ]
+        }
+      ],
+      "citation_text": "American Association for Medical Instrumentation. AAMI alarm fatigue: an issue across the country in influencing patient safety: priority issues from the AAMI/FDA infusion device summit. Arlington, VA: American Association for Medical Instrumentation, 2010, 35.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "American Association for Medical Instrumentation",
+        "date_text": "2010",
+        "title_text": "AAMI alarm fatigue: an issue across the country in influencing patient safety: priority issues from the AAMI/FDA infusion device summit.",
+        "remaining_bibliographic_text": "Arlington, VA: American Association for Medical Instrumentation, 2010, 35.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF003",
+      "ordinal": 3,
+      "source_number": 3,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "3 Sanderson PM, Liu D, Jenkins SA. Auditory displays in anaesthesiology. Curr Opin",
+          "bbox_pdf_points": [
+            45.751,
+            111.463,
+            281.122,
+            118.963
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "Anesthesiol 2009;22:788–95.",
+          "bbox_pdf_points": [
+            58.337,
+            118.812,
+            140.051,
+            127.977
+          ]
+        }
+      ],
+      "citation_text": "Sanderson PM, Liu D, Jenkins SA. Auditory displays in anaesthesiology. Curr Opin Anesthesiol 2009;22:788–95.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Sanderson PM, Liu D, Jenkins SA",
+        "date_text": "2009",
+        "title_text": "Auditory displays in anaesthesiology.",
+        "remaining_bibliographic_text": "Curr Opin Anesthesiol 2009;22:788–95.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF004",
+      "ordinal": 4,
+      "source_number": 4,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "4 Imhoff M, Kuhls S. Alarm algorithms in critical care monitoring. Anesth Analg",
+          "bbox_pdf_points": [
+            45.751,
+            129.491,
+            270.486,
+            136.991
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "2006;102:1525–37.",
+          "bbox_pdf_points": [
+            58.338,
+            136.783,
+            114.257,
+            145.948
+          ]
+        }
+      ],
+      "citation_text": "Imhoff M, Kuhls S. Alarm algorithms in critical care monitoring. Anesth Analg 2006;102:1525–37.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Imhoff M, Kuhls S",
+        "date_text": "2006",
+        "title_text": "Alarm algorithms in critical care monitoring.",
+        "remaining_bibliographic_text": "Anesth Analg 2006;102:1525–37.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF005",
+      "ordinal": 5,
+      "source_number": 5,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "5 Tversky A, Kahneman D. Judgement under uncertainty: heuristics and biases.",
+          "bbox_pdf_points": [
+            45.752,
+            147.462,
+            268.431,
+            154.962
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "Science 1972;185:1124–31.",
+          "bbox_pdf_points": [
+            58.338,
+            154.811,
+            136.31,
+            163.976
+          ]
+        }
+      ],
+      "citation_text": "Tversky A, Kahneman D. Judgement under uncertainty: heuristics and biases. Science 1972;185:1124–31.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Tversky A, Kahneman D",
+        "date_text": "1972",
+        "title_text": "Judgement under uncertainty: heuristics and biases.",
+        "remaining_bibliographic_text": "Science 1972;185:1124–31.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF006",
+      "ordinal": 6,
+      "source_number": 6,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "6 Kahneman D, Tversky A. Choices, values and frames. Am Psychol 1984;39:341–50.",
+          "bbox_pdf_points": [
+            45.752,
+            163.825,
+            287.907,
+            172.99
+          ]
+        }
+      ],
+      "citation_text": "Kahneman D, Tversky A. Choices, values and frames. Am Psychol 1984;39:341–50.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Kahneman D, Tversky A",
+        "date_text": "1984",
+        "title_text": "Choices, values and frames.",
+        "remaining_bibliographic_text": "Am Psychol 1984;39:341–50.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF007",
+      "ordinal": 7,
+      "source_number": 7,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "7 International Electrotechnical Commission. Medical electrical equipment, part 1–8:",
+          "bbox_pdf_points": [
+            45.752,
+            172.783,
+            282.727,
+            181.948
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "General requirements, tests and guidance for alarm systems in medical electrical",
+          "bbox_pdf_points": [
+            58.338,
+            183.462,
+            276.423,
+            190.962
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "equipment and medical electrical systems. 2005, Geneva. IEC 60601-1-8. Geneva:",
+          "bbox_pdf_points": [
+            58.338,
+            192.477,
+            284.151,
+            199.976
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "International Electrotechnical Commission, 2006.",
+          "bbox_pdf_points": [
+            58.338,
+            201.491,
+            191.285,
+            208.991
+          ]
+        }
+      ],
+      "citation_text": "International Electrotechnical Commission. Medical electrical equipment, part 1–8: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems. 2005, Geneva. IEC 60601-1-8. Geneva: International Electrotechnical Commission, 2006.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "International Electrotechnical Commission",
+        "date_text": null,
+        "title_text": "Medical electrical equipment, part 1–8: General requirements, tests and guidance for alarm systems in medical electrical equipment and medical electrical systems.",
+        "remaining_bibliographic_text": "2005, Geneva. IEC 60601-1-8. Geneva: International Electrotechnical Commission, 2006.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF008",
+      "ordinal": 8,
+      "source_number": 8,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "8 Lacherez P, Seah E, Sanderson P. Overlapping medical alarms are almost",
+          "bbox_pdf_points": [
+            45.752,
+            210.448,
+            256.406,
+            217.948
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "indiscriminable. Hum Factors 2007;49:636–45.",
+          "bbox_pdf_points": [
+            58.338,
+            217.797,
+            187.164,
+            226.962
+          ]
+        }
+      ],
+      "citation_text": "Lacherez P, Seah E, Sanderson P. Overlapping medical alarms are almost indiscriminable. Hum Factors 2007;49:636–45.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Lacherez P, Seah E, Sanderson P",
+        "date_text": "2007",
+        "title_text": "Overlapping medical alarms are almost indiscriminable.",
+        "remaining_bibliographic_text": "Hum Factors 2007;49:636–45.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF009",
+      "ordinal": 9,
+      "source_number": 9,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "9 Sanderson P, Wee A, Lacherez P. Learnability and discriminability of melodic medical",
+          "bbox_pdf_points": [
+            45.752,
+            228.476,
+            288.469,
+            235.976
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "equipment alarms. Anesthesia 2006;61:142–7.",
+          "bbox_pdf_points": [
+            58.338,
+            235.825,
+            187.483,
+            244.99
+          ]
+        }
+      ],
+      "citation_text": "Sanderson P, Wee A, Lacherez P. Learnability and discriminability of melodic medical equipment alarms. Anesthesia 2006;61:142–7.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Sanderson P, Wee A, Lacherez P",
+        "date_text": "2006",
+        "title_text": "Learnability and discriminability of melodic medical equipment alarms.",
+        "remaining_bibliographic_text": "Anesthesia 2006;61:142–7.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF010",
+      "ordinal": 10,
+      "source_number": 10,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "10 Block F. For if the trumpet sound an uncertain note, who shall prepare himself to",
+          "bbox_pdf_points": [
+            42.009,
+            246.447,
+            283.594,
+            253.947
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "the battle? (I Corinthians, 14:8, KJV) Anesth Analg 2008;106:357–9.",
+          "bbox_pdf_points": [
+            58.167,
+            253.796,
+            248.994,
+            262.961
+          ]
+        }
+      ],
+      "citation_text": "Block F. For if the trumpet sound an uncertain note, who shall prepare himself to the battle? (I Corinthians, 14:8, KJV) Anesth Analg 2008;106:357–9.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Block F",
+        "date_text": "2008",
+        "title_text": "For if the trumpet sound an uncertain note, who shall prepare himself to the battle?",
+        "remaining_bibliographic_text": "(I Corinthians, 14:8, KJV) Anesth Analg 2008;106:357–9.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF011",
+      "ordinal": 11,
+      "source_number": 11,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "11 Sanderson P, Wee A, Seah E, Lacherez P. Auditory alarms, medical standards, and",
+          "bbox_pdf_points": [
+            42.009,
+            264.476,
+            282.33,
+            271.975
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "urgency. Proceedings of the 12th International Conference on Auditory Displays.",
+          "bbox_pdf_points": [
+            58.167,
+            273.49,
+            276.659,
+            280.99
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "London, 2006;24–7.",
+          "bbox_pdf_points": [
+            58.167,
+            280.782,
+            114.859,
+            289.947
+          ]
+        }
+      ],
+      "citation_text": "Sanderson P, Wee A, Seah E, Lacherez P. Auditory alarms, medical standards, and urgency. Proceedings of the 12th International Conference on Auditory Displays. London, 2006;24–7.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Sanderson P, Wee A, Seah E, Lacherez P",
+        "date_text": "2006",
+        "title_text": "Auditory alarms, medical standards, and urgency.",
+        "remaining_bibliographic_text": "Proceedings of the 12th International Conference on Auditory Displays. London, 2006;24–7.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF012",
+      "ordinal": 12,
+      "source_number": 12,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "12 Wee A, Sanderson P. Are melodic equipment alarms easily learned? Anesth Analg",
+          "bbox_pdf_points": [
+            42.009,
+            291.461,
+            281.994,
+            298.961
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "2008;106:501–8.",
+          "bbox_pdf_points": [
+            58.167,
+            298.81,
+            106.923,
+            307.975
+          ]
+        }
+      ],
+      "citation_text": "Wee A, Sanderson P. Are melodic equipment alarms easily learned? Anesth Analg 2008;106:501–8.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Wee A, Sanderson P",
+        "date_text": "2008",
+        "title_text": "Are melodic equipment alarms easily learned?",
+        "remaining_bibliographic_text": "Anesth Analg 2008;106:501–8.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF013",
+      "ordinal": 13,
+      "source_number": 13,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "13 Williams S, Beatty P. Measuring the performance of audible alarms for anesthesia.",
+          "bbox_pdf_points": [
+            42.01,
+            309.489,
+            282.627,
+            316.989
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "Phys Meas 2005;26:571–81.",
+          "bbox_pdf_points": [
+            58.168,
+            316.781,
+            138.012,
+            325.946
+          ]
+        }
+      ],
+      "citation_text": "Williams S, Beatty P. Measuring the performance of audible alarms for anesthesia. Phys Meas 2005;26:571–81.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Williams S, Beatty P",
+        "date_text": "2005",
+        "title_text": "Measuring the performance of audible alarms for anesthesia.",
+        "remaining_bibliographic_text": "Phys Meas 2005;26:571–81.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF014",
+      "ordinal": 14,
+      "source_number": 14,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "14 Belz S, Robinsonm C, Casali J. A new class of auditory warning signals: auditory",
+          "bbox_pdf_points": [
+            42.011,
+            327.46,
+            278.41,
+            334.96
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "icons. Hum Factors 1999;41:608–18.",
+          "bbox_pdf_points": [
+            58.169,
+            334.81,
+            160.632,
+            343.975
+          ]
+        }
+      ],
+      "citation_text": "Belz S, Robinsonm C, Casali J. A new class of auditory warning signals: auditory icons. Hum Factors 1999;41:608–18.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Belz S, Robinsonm C, Casali J",
+        "date_text": "1999",
+        "title_text": "A new class of auditory warning signals: auditory icons.",
+        "remaining_bibliographic_text": "Hum Factors 1999;41:608–18.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF015",
+      "ordinal": 15,
+      "source_number": 15,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "15 Edworthy J, Loxley S, Dennis I. Improving auditory warning design: relationship",
+          "bbox_pdf_points": [
+            42.011,
+            345.489,
+            273.461,
+            352.989
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "between warning sound parameters and perceived urgency. Hum Factors",
+          "bbox_pdf_points": [
+            58.169,
+            354.446,
+            256.569,
+            361.946
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "1991;33:205–31.",
+          "bbox_pdf_points": [
+            58.169,
+            361.795,
+            106.888,
+            370.96
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J, Loxley S, Dennis I. Improving auditory warning design: relationship between warning sound parameters and perceived urgency. Hum Factors 1991;33:205–31.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J, Loxley S, Dennis I",
+        "date_text": "1991",
+        "title_text": "Improving auditory warning design: relationship between warning sound parameters and perceived urgency.",
+        "remaining_bibliographic_text": "Hum Factors 1991;33:205–31.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF016",
+      "ordinal": 16,
+      "source_number": 16,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "16 Graham R. Use of auditory icons as emergency warnings: evaluation within a",
+          "bbox_pdf_points": [
+            42.012,
+            372.474,
+            269.452,
+            379.974
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "vehicle avoidance application. Ergonomics 1999;42:1233–48.",
+          "bbox_pdf_points": [
+            58.17,
+            379.823,
+            226.624,
+            388.988
+          ]
+        }
+      ],
+      "citation_text": "Graham R. Use of auditory icons as emergency warnings: evaluation within a vehicle avoidance application. Ergonomics 1999;42:1233–48.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Graham R",
+        "date_text": "1999",
+        "title_text": "Use of auditory icons as emergency warnings: evaluation within a vehicle avoidance application.",
+        "remaining_bibliographic_text": "Ergonomics 1999;42:1233–48.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF017",
+      "ordinal": 17,
+      "source_number": 17,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "17 Hellier E, Edworthy J, Dennis I. Improving auditory warning design: quantifying and",
+          "bbox_pdf_points": [
+            42.012,
+            390.445,
+            285.675,
+            397.945
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "predicting the effects of different warning parameters on perceived urgency. Hum",
+          "bbox_pdf_points": [
+            58.17,
+            399.46,
+            279.678,
+            406.959
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "Factors 1993;35:693–706.",
+          "bbox_pdf_points": [
+            58.17,
+            406.809,
+            131.571,
+            415.974
+          ]
+        }
+      ],
+      "citation_text": "Hellier E, Edworthy J, Dennis I. Improving auditory warning design: quantifying and predicting the effects of different warning parameters on perceived urgency. Hum Factors 1993;35:693–706.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Hellier E, Edworthy J, Dennis I",
+        "date_text": "1993",
+        "title_text": "Improving auditory warning design: quantifying and predicting the effects of different warning parameters on perceived urgency.",
+        "remaining_bibliographic_text": "Hum Factors 1993;35:693–706.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF018",
+      "ordinal": 18,
+      "source_number": 18,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "18 Keller P, Stevens C. Meaning from environmental sounds: type of signal-referent",
+          "bbox_pdf_points": [
+            42.009,
+            417.491,
+            276.451,
+            424.991
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "relations and their effect on recognising auditory icons. J Exp Psychol Appl",
+          "bbox_pdf_points": [
+            58.167,
+            426.449,
+            261.2,
+            433.948
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "2004;10:3–12.",
+          "bbox_pdf_points": [
+            58.167,
+            433.798,
+            99.686,
+            442.963
+          ]
+        }
+      ],
+      "citation_text": "Keller P, Stevens C. Meaning from environmental sounds: type of signal-referent relations and their effect on recognising auditory icons. J Exp Psychol Appl 2004;10:3–12.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Keller P, Stevens C",
+        "date_text": "2004",
+        "title_text": "Meaning from environmental sounds: type of signal-referent relations and their effect on recognising auditory icons.",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2004;10:3–12.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF019",
+      "ordinal": 19,
+      "source_number": 19,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "19 Patterson R. Guidelines for auditory warnings systems on civil aircraft. UK Civil Aviation",
+          "bbox_pdf_points": [
+            42.009,
+            444.477,
+            282.566,
+            451.977
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "Authority contract report no. 82017. London: Civil Aviation Authority, 1982.",
+          "bbox_pdf_points": [
+            58.167,
+            453.491,
+            255.795,
+            460.991
+          ]
+        }
+      ],
+      "citation_text": "Patterson R. Guidelines for auditory warnings systems on civil aircraft. UK Civil Aviation Authority contract report no. 82017. London: Civil Aviation Authority, 1982.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Patterson R",
+        "date_text": "1982",
+        "title_text": "Guidelines for auditory warnings systems on civil aircraft.",
+        "remaining_bibliographic_text": "UK Civil Aviation Authority contract report no. 82017. London: Civil Aviation Authority, 1982.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF020",
+      "ordinal": 20,
+      "source_number": 20,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "20 Watson M, Sanderson P. Sonification helps eyes-free respiratory monitoring and task",
+          "bbox_pdf_points": [
+            42.009,
+            460.783,
+            287.883,
+            469.948
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "timesharing. Hum Factors 2004;46:497–517.",
+          "bbox_pdf_points": [
+            58.167,
+            469.797,
+            181.968,
+            478.962
+          ]
+        }
+      ],
+      "citation_text": "Watson M, Sanderson P. Sonification helps eyes-free respiratory monitoring and task timesharing. Hum Factors 2004;46:497–517.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Watson M, Sanderson P",
+        "date_text": "2004",
+        "title_text": "Sonification helps eyes-free respiratory monitoring and task timesharing.",
+        "remaining_bibliographic_text": "Hum Factors 2004;46:497–517.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF021",
+      "ordinal": 21,
+      "source_number": 21,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "21 Edworthy J. Melodic contour and musical structure. In: Howell P, Cross I, West R",
+          "bbox_pdf_points": [
+            42.009,
+            480.476,
+            278.254,
+            487.976
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "eds. Musical structure and cognition. London: Academic Press, 1983: 169–188.",
+          "bbox_pdf_points": [
+            58.167,
+            487.825,
+            276.645,
+            496.99
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J. Melodic contour and musical structure. In: Howell P, Cross I, West R eds. Musical structure and cognition. London: Academic Press, 1983: 169–188.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J",
+        "date_text": "1983",
+        "title_text": "Melodic contour and musical structure.",
+        "remaining_bibliographic_text": "In: Howell P, Cross I, West R eds. Musical structure and cognition. London: Academic Press, 1983: 169–188.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF022",
+      "ordinal": 22,
+      "source_number": 22,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "22 Edworthy J. Interval and contour in melody processing. Music Percept",
+          "bbox_pdf_points": [
+            42.009,
+            498.448,
+            247.945,
+            505.947
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "1985;2:375–88.",
+          "bbox_pdf_points": [
+            58.167,
+            505.797,
+            103.314,
+            514.962
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J. Interval and contour in melody processing. Music Percept 1985;2:375–88.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J",
+        "date_text": "1985",
+        "title_text": "Interval and contour in melody processing.",
+        "remaining_bibliographic_text": "Music Percept 1985;2:375–88.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF023",
+      "ordinal": 23,
+      "source_number": 23,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "23 Edworthy J, Hellier E, Walters K, et al. Acoustic, semantic and phonetic influences",
+          "bbox_pdf_points": [
+            42.009,
+            514.811,
+            281.807,
+            523.976
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "in spoken warning signal words. Appl Cognit Psychol 2003;17:915–33.",
+          "bbox_pdf_points": [
+            58.167,
+            523.825,
+            254.401,
+            532.99
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J, Hellier E, Walters K, et al. Acoustic, semantic and phonetic influences in spoken warning signal words. Appl Cognit Psychol 2003;17:915–33.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J, Hellier E, Walters K, et al",
+        "date_text": "2003",
+        "title_text": "Acoustic, semantic and phonetic influences in spoken warning signal words.",
+        "remaining_bibliographic_text": "Appl Cognit Psychol 2003;17:915–33.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF024",
+      "ordinal": 24,
+      "source_number": 24,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "24 Guillaume A, Pellieux L, Chastres V, et al. Judging the urgency of nonvocal auditory",
+          "bbox_pdf_points": [
+            42.01,
+            534.447,
+            286.766,
+            541.947
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "warning signals: perceptual and cognitive processes. J Exp Psychol Appl",
+          "bbox_pdf_points": [
+            58.168,
+            543.461,
+            253.717,
+            550.961
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "2003;9:196–212.",
+          "bbox_pdf_points": [
+            58.168,
+            550.81,
+            106.908,
+            559.975
+          ]
+        }
+      ],
+      "citation_text": "Guillaume A, Pellieux L, Chastres V, et al. Judging the urgency of nonvocal auditory warning signals: perceptual and cognitive processes. J Exp Psychol Appl 2003;9:196–212.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Guillaume A, Pellieux L, Chastres V, et al",
+        "date_text": "2003",
+        "title_text": "Judging the urgency of nonvocal auditory warning signals: perceptual and cognitive processes.",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2003;9:196–212.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF025",
+      "ordinal": 25,
+      "source_number": 25,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "25 Hellier E, Edworthy J. On using psychophysical techniques to achieve urgency",
+          "bbox_pdf_points": [
+            42.01,
+            561.489,
+            268.315,
+            568.989
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "mapping in auditory warnings. Appl Ergon 1996;30:167–71.",
+          "bbox_pdf_points": [
+            58.168,
+            568.782,
+            225.206,
+            577.946
+          ]
+        }
+      ],
+      "citation_text": "Hellier E, Edworthy J. On using psychophysical techniques to achieve urgency mapping in auditory warnings. Appl Ergon 1996;30:167–71.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Hellier E, Edworthy J",
+        "date_text": "1996",
+        "title_text": "On using psychophysical techniques to achieve urgency mapping in auditory warnings.",
+        "remaining_bibliographic_text": "Appl Ergon 1996;30:167–71.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF026",
+      "ordinal": 26,
+      "source_number": 26,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "26 Hellier E, Edworthy J, Weedon B, et al. The perceived urgency of speech warnings",
+          "bbox_pdf_points": [
+            42.011,
+            579.461,
+            281.692,
+            586.961
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "1: semantics vs acoustics. Hum Factors 2002;44:1–17.",
+          "bbox_pdf_points": [
+            58.168,
+            586.81,
+            207.744,
+            595.975
+          ]
+        }
+      ],
+      "citation_text": "Hellier E, Edworthy J, Weedon B, et al. The perceived urgency of speech warnings 1: semantics vs acoustics. Hum Factors 2002;44:1–17.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Hellier E, Edworthy J, Weedon B, et al",
+        "date_text": "2002",
+        "title_text": "The perceived urgency of speech warnings 1: semantics vs acoustics.",
+        "remaining_bibliographic_text": "Hum Factors 2002;44:1–17.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF027",
+      "ordinal": 27,
+      "source_number": 27,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "27 Haas E, Casali J. Perceived urgency and response time to multi-tone and",
+          "bbox_pdf_points": [
+            42.01,
+            597.489,
+            256.08,
+            604.989
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "frequency-modulated warning signals in broadband noise. Ergonomics",
+          "bbox_pdf_points": [
+            58.168,
+            606.446,
+            249.225,
+            613.946
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "1995;38:2313–26.",
+          "bbox_pdf_points": [
+            58.168,
+            613.795,
+            110.516,
+            622.96
+          ]
+        }
+      ],
+      "citation_text": "Haas E, Casali J. Perceived urgency and response time to multi-tone and frequency-modulated warning signals in broadband noise. Ergonomics 1995;38:2313–26.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Haas E, Casali J",
+        "date_text": "1995",
+        "title_text": "Perceived urgency and response time to multi-tone and frequency-modulated warning signals in broadband noise.",
+        "remaining_bibliographic_text": "Ergonomics 1995;38:2313–26.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF028",
+      "ordinal": 28,
+      "source_number": 28,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "28 Haas E, Edworthy J. Designing urgency into auditory warnings using pitch, speed",
+          "bbox_pdf_points": [
+            42.011,
+            624.474,
+            279.816,
+            631.974
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "and loudness. IEE Comp Control J 1996;7:193–8.",
+          "bbox_pdf_points": [
+            58.169,
+            631.824,
+            194.458,
+            640.988
+          ]
+        }
+      ],
+      "citation_text": "Haas E, Edworthy J. Designing urgency into auditory warnings using pitch, speed and loudness. IEE Comp Control J 1996;7:193–8.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Haas E, Edworthy J",
+        "date_text": "1996",
+        "title_text": "Designing urgency into auditory warnings using pitch, speed and loudness.",
+        "remaining_bibliographic_text": "IEE Comp Control J 1996;7:193–8.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF029",
+      "ordinal": 29,
+      "source_number": 29,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "29 McNeer R, Bohorquez J, Ozdamar O, et al. A new paradigm for the design of",
+          "bbox_pdf_points": [
+            42.012,
+            642.446,
+            270.861,
+            649.946
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "audible alarms that convey urgency information. J Clin Monit Comput",
+          "bbox_pdf_points": [
+            58.169,
+            651.461,
+            247.865,
+            658.96
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "2007;21:353–63.",
+          "bbox_pdf_points": [
+            58.169,
+            658.81,
+            106.888,
+            667.975
+          ]
+        }
+      ],
+      "citation_text": "McNeer R, Bohorquez J, Ozdamar O, et al. A new paradigm for the design of audible alarms that convey urgency information. J Clin Monit Comput 2007;21:353–63.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "McNeer R, Bohorquez J, Ozdamar O, et al",
+        "date_text": "2007",
+        "title_text": "A new paradigm for the design of audible alarms that convey urgency information.",
+        "remaining_bibliographic_text": "J Clin Monit Comput 2007;21:353–63.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF030",
+      "ordinal": 30,
+      "source_number": 30,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "30 Momtahan K. Mapping of psychoacoustic parameters to the perceived urgency of",
+          "bbox_pdf_points": [
+            42.012,
+            669.489,
+            279.873,
+            676.989
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "auditory warnings. Master’s thesis, Carleton University, Ottawa, Ontario, Canada,",
+          "bbox_pdf_points": [
+            58.169,
+            676.781,
+            280.318,
+            685.946
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "1990.",
+          "bbox_pdf_points": [
+            58.169,
+            687.46,
+            74.332,
+            694.96
+          ]
+        }
+      ],
+      "citation_text": "Momtahan K. Mapping of psychoacoustic parameters to the perceived urgency of auditory warnings. Master’s thesis, Carleton University, Ottawa, Ontario, Canada, 1990.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Momtahan K",
+        "date_text": "1990",
+        "title_text": "Mapping of psychoacoustic parameters to the perceived urgency of auditory warnings.",
+        "remaining_bibliographic_text": "Master’s thesis, Carleton University, Ottawa, Ontario, Canada, 1990.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF031",
+      "ordinal": 31,
+      "source_number": 31,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "31 Anderson J, Sanderson P. Sonification design for complex work domains:",
+          "bbox_pdf_points": [
+            42.012,
+            694.809,
+            256.775,
+            703.974
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "dimensions and distractions. J Exp Psychol Appl 2009;15:183–98.",
+          "bbox_pdf_points": [
+            58.169,
+            703.823,
+            238.87,
+            712.988
+          ]
+        }
+      ],
+      "citation_text": "Anderson J, Sanderson P. Sonification design for complex work domains: dimensions and distractions. J Exp Psychol Appl 2009;15:183–98.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Anderson J, Sanderson P",
+        "date_text": "2009",
+        "title_text": "Sonification design for complex work domains: dimensions and distractions.",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2009;15:183–98.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF032",
+      "ordinal": 32,
+      "source_number": 32,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "32 Edworthy J, Hellier E, Aldrich K, et al. Designing trend monitoring sounds:",
+          "bbox_pdf_points": [
+            42.012,
+            714.445,
+            260.718,
+            721.945
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "methodological issues and an application. J Exp Psychol Appl 2004;10:203–18.",
+          "bbox_pdf_points": [
+            58.17,
+            721.795,
+            276.398,
+            730.963
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J, Hellier E, Aldrich K, et al. Designing trend monitoring sounds: methodological issues and an application. J Exp Psychol Appl 2004;10:203–18.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J, Hellier E, Aldrich K, et al",
+        "date_text": "2004",
+        "title_text": "Designing trend monitoring sounds: methodological issues and an application.",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2004;10:203–18.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF033",
+      "ordinal": 33,
+      "source_number": 33,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "33 Neuhoff J, Kramer G, Wayand J. Pitch and loudness interact in auditory displays:",
+          "bbox_pdf_points": [
+            42.009,
+            732.477,
+            277.455,
+            739.977
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "left",
+          "text": "can the data get lost in the map? J Exp Psychol Appl 2002;8:17–25.",
+          "bbox_pdf_points": [
+            58.167,
+            739.826,
+            247.258,
+            748.991
+          ]
+        }
+      ],
+      "citation_text": "Neuhoff J, Kramer G, Wayand J. Pitch and loudness interact in auditory displays: can the data get lost in the map? J Exp Psychol Appl 2002;8:17–25.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Neuhoff J, Kramer G, Wayand J",
+        "date_text": "2002",
+        "title_text": "Pitch and loudness interact in auditory displays: can the data get lost in the map?",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2002;8:17–25.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF034",
+      "ordinal": 34,
+      "source_number": 34,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "34 Walker B. Magnitude estimation of conceptual data dimensions for use in",
+          "bbox_pdf_points": [
+            306.652,
+            56.075,
+            524.049,
+            63.574
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "sonification. J Exp Psychol Appl 2002;8:211–21.",
+          "bbox_pdf_points": [
+            322.81,
+            63.424,
+            455.662,
+            72.589
+          ]
+        }
+      ],
+      "citation_text": "Walker B. Magnitude estimation of conceptual data dimensions for use in sonification. J Exp Psychol Appl 2002;8:211–21.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Walker B",
+        "date_text": "2002",
+        "title_text": "Magnitude estimation of conceptual data dimensions for use in sonification.",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2002;8:211–21.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF035",
+      "ordinal": 35,
+      "source_number": 35,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "35 Watson M, Sanderson P Designing for attention with sound: challenges and",
+          "bbox_pdf_points": [
+            306.653,
+            74.047,
+            530.305,
+            81.546
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "extensions to ecological interface design. Hum Factors 2007;49:331–46.",
+          "bbox_pdf_points": [
+            322.811,
+            81.396,
+            521.087,
+            90.561
+          ]
+        }
+      ],
+      "citation_text": "Watson M, Sanderson P Designing for attention with sound: challenges and extensions to ecological interface design. Hum Factors 2007;49:331–46.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Watson M, Sanderson P Designing for attention with sound: challenges and extensions to ecological interface design",
+        "date_text": "2007",
+        "title_text": "Hum Factors 2007;49:331–46.",
+        "remaining_bibliographic_text": "",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF036",
+      "ordinal": 36,
+      "source_number": 36,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "36 Finley G, Cohen A. Perceived urgency and the anesthetist: responses to common",
+          "bbox_pdf_points": [
+            306.654,
+            92.075,
+            542.042,
+            99.575
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "operating room monitor alarms. Can J Anesth 1991;38:958–64.",
+          "bbox_pdf_points": [
+            322.812,
+            99.424,
+            498.41,
+            108.589
+          ]
+        }
+      ],
+      "citation_text": "Finley G, Cohen A. Perceived urgency and the anesthetist: responses to common operating room monitor alarms. Can J Anesth 1991;38:958–64.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Finley G, Cohen A",
+        "date_text": "1991",
+        "title_text": "Perceived urgency and the anesthetist: responses to common operating room monitor alarms.",
+        "remaining_bibliographic_text": "Can J Anesth 1991;38:958–64.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF037",
+      "ordinal": 37,
+      "source_number": 37,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "37 Momtahan K, Hetu R, Tansley B. An ergonomic analysis of the auditory alarm",
+          "bbox_pdf_points": [
+            306.655,
+            110.047,
+            535.577,
+            117.547
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "signals in the operating room and the recovery room. Ergonomics",
+          "bbox_pdf_points": [
+            322.812,
+            119.061,
+            501.201,
+            126.561
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "1993;36:1159–76.",
+          "bbox_pdf_points": [
+            322.812,
+            126.41,
+            375.16,
+            135.575
+          ]
+        }
+      ],
+      "citation_text": "Momtahan K, Hetu R, Tansley B. An ergonomic analysis of the auditory alarm signals in the operating room and the recovery room. Ergonomics 1993;36:1159–76.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Momtahan K, Hetu R, Tansley B",
+        "date_text": "1993",
+        "title_text": "An ergonomic analysis of the auditory alarm signals in the operating room and the recovery room.",
+        "remaining_bibliographic_text": "Ergonomics 1993;36:1159–76.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF038",
+      "ordinal": 38,
+      "source_number": 38,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "38 Mondor T, Finley G. The perceived urgency of auditory warning alarms used in the",
+          "bbox_pdf_points": [
+            306.655,
+            137.089,
+            547.788,
+            144.589
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "hospital operating room is inappropriate. Can J Anesth 2003;50:221–8.",
+          "bbox_pdf_points": [
+            322.813,
+            144.381,
+            519.423,
+            153.546
+          ]
+        }
+      ],
+      "citation_text": "Mondor T, Finley G. The perceived urgency of auditory warning alarms used in the hospital operating room is inappropriate. Can J Anesth 2003;50:221–8.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Mondor T, Finley G",
+        "date_text": "2003",
+        "title_text": "The perceived urgency of auditory warning alarms used in the hospital operating room is inappropriate.",
+        "remaining_bibliographic_text": "Can J Anesth 2003;50:221–8.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF039",
+      "ordinal": 39,
+      "source_number": 39,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "39 Sanderson P. The multimodal world of medical monitoring displays. Appl Ergon",
+          "bbox_pdf_points": [
+            306.655,
+            155.06,
+            539.227,
+            162.56
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "2006;37:501–12.",
+          "bbox_pdf_points": [
+            322.813,
+            162.41,
+            371.533,
+            171.574
+          ]
+        }
+      ],
+      "citation_text": "Sanderson P. The multimodal world of medical monitoring displays. Appl Ergon 2006;37:501–12.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Sanderson P",
+        "date_text": "2006",
+        "title_text": "The multimodal world of medical monitoring displays.",
+        "remaining_bibliographic_text": "Appl Ergon 2006;37:501–12.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF040",
+      "ordinal": 40,
+      "source_number": 40,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "40 Walsh T, Beatty P. Establishing scales of perceived severity for clinical situations",
+          "bbox_pdf_points": [
+            306.656,
+            173.089,
+            538.888,
+            180.589
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "during anaesthesia. Br J Anaesth 2005;95:339–43.",
+          "bbox_pdf_points": [
+            322.814,
+            180.382,
+            463.262,
+            189.546
+          ]
+        }
+      ],
+      "citation_text": "Walsh T, Beatty P. Establishing scales of perceived severity for clinical situations during anaesthesia. Br J Anaesth 2005;95:339–43.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Walsh T, Beatty P",
+        "date_text": "2005",
+        "title_text": "Establishing scales of perceived severity for clinical situations during anaesthesia.",
+        "remaining_bibliographic_text": "Br J Anaesth 2005;95:339–43.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF041",
+      "ordinal": 41,
+      "source_number": 41,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "41 Chambrin M, Revaux P, Calvelo-Aros D, et al. Multicentric study of monitoring",
+          "bbox_pdf_points": [
+            306.657,
+            191.061,
+            536.776,
+            198.561
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "alarms in the adult intensive care unit (ICU): a descriptive analysis. Intensive Care",
+          "bbox_pdf_points": [
+            322.815,
+            200.075,
+            545.448,
+            207.575
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Med 1999;25:1360–6.",
+          "bbox_pdf_points": [
+            322.815,
+            207.424,
+            385.913,
+            216.589
+          ]
+        }
+      ],
+      "citation_text": "Chambrin M, Revaux P, Calvelo-Aros D, et al. Multicentric study of monitoring alarms in the adult intensive care unit (ICU): a descriptive analysis. Intensive Care Med 1999;25:1360–6.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Chambrin M, Revaux P, Calvelo-Aros D, et al",
+        "date_text": "1999",
+        "title_text": "Multicentric study of monitoring alarms in the adult intensive care unit (ICU): a descriptive analysis.",
+        "remaining_bibliographic_text": "Intensive Care Med 1999;25:1360–6.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF042",
+      "ordinal": 42,
+      "source_number": 42,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "42 Koski E, Makivirta A, Sukuvaara T, et al. Frequency and reliability of alarms in the",
+          "bbox_pdf_points": [
+            306.657,
+            218.046,
+            546.261,
+            225.546
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "monitoring of cardiac postoperative patients. Int J Clin Monit Comput",
+          "bbox_pdf_points": [
+            322.815,
+            227.06,
+            512.285,
+            234.56
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "1990;7:129–33.",
+          "bbox_pdf_points": [
+            322.815,
+            234.409,
+            367.963,
+            243.574
+          ]
+        }
+      ],
+      "citation_text": "Koski E, Makivirta A, Sukuvaara T, et al. Frequency and reliability of alarms in the monitoring of cardiac postoperative patients. Int J Clin Monit Comput 1990;7:129–33.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Koski E, Makivirta A, Sukuvaara T, et al",
+        "date_text": "1990",
+        "title_text": "Frequency and reliability of alarms in the monitoring of cardiac postoperative patients.",
+        "remaining_bibliographic_text": "Int J Clin Monit Comput 1990;7:129–33.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF043",
+      "ordinal": 43,
+      "source_number": 43,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "43 Lawless T. Crying wolf: false alarms in a pediatric intensive care unit. Crit Care Med",
+          "bbox_pdf_points": [
+            306.658,
+            245.089,
+            551.932,
+            252.588
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "1994;22:981–5.",
+          "bbox_pdf_points": [
+            322.815,
+            252.381,
+            367.942,
+            261.546
+          ]
+        }
+      ],
+      "citation_text": "Lawless T. Crying wolf: false alarms in a pediatric intensive care unit. Crit Care Med 1994;22:981–5.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Lawless T",
+        "date_text": "1994",
+        "title_text": "Crying wolf: false alarms in a pediatric intensive care unit.",
+        "remaining_bibliographic_text": "Crit Care Med 1994;22:981–5.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF044",
+      "ordinal": 44,
+      "source_number": 44,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "44 O’Carroll T. Survey of alarms in an intensive therapy unit. Anaesthesia 1986;41:742–4.",
+          "bbox_pdf_points": [
+            306.658,
+            261.395,
+            548.339,
+            270.56
+          ]
+        }
+      ],
+      "citation_text": "O’Carroll T. Survey of alarms in an intensive therapy unit. Anaesthesia 1986;41:742–4.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "O’Carroll T",
+        "date_text": "1986",
+        "title_text": "Survey of alarms in an intensive therapy unit.",
+        "remaining_bibliographic_text": "Anaesthesia 1986;41:742–4.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF045",
+      "ordinal": 45,
+      "source_number": 45,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "45 Talley L, Hooper J, Jacobs B, et al. Cardiopulmonary monitors and clinically",
+          "bbox_pdf_points": [
+            306.658,
+            272.074,
+            527.767,
+            279.574
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "significant events in critically ill children. Horizons Spring 2011;38–45.",
+          "bbox_pdf_points": [
+            322.815,
+            279.423,
+            515.364,
+            288.588
+          ]
+        }
+      ],
+      "citation_text": "Talley L, Hooper J, Jacobs B, et al. Cardiopulmonary monitors and clinically significant events in critically ill children. Horizons Spring 2011;38–45.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Talley L, Hooper J, Jacobs B, et al",
+        "date_text": "2011",
+        "title_text": "Cardiopulmonary monitors and clinically significant events in critically ill children.",
+        "remaining_bibliographic_text": "Horizons Spring 2011;38–45.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF046",
+      "ordinal": 46,
+      "source_number": 46,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "46 Keller J, Diefes R, Graham K, et al. Why clinical alarms are a ‘top ten’ hazard.",
+          "bbox_pdf_points": [
+            306.658,
+            288.381,
+            536.62,
+            297.546
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Horizons Spring 2011;17–23.",
+          "bbox_pdf_points": [
+            322.815,
+            297.395,
+            403.736,
+            306.56
+          ]
+        }
+      ],
+      "citation_text": "Keller J, Diefes R, Graham K, et al. Why clinical alarms are a ‘top ten’ hazard. Horizons Spring 2011;17–23.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Keller J, Diefes R, Graham K, et al",
+        "date_text": "2011",
+        "title_text": "Why clinical alarms are a ‘top ten’ hazard.",
+        "remaining_bibliographic_text": "Horizons Spring 2011;17–23.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF047",
+      "ordinal": 47,
+      "source_number": 47,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "47 Siebig S, Kuhls S, Imhoff M, et al. Intensive care unit alarms—how many do we",
+          "bbox_pdf_points": [
+            306.658,
+            306.409,
+            542.383,
+            315.574
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "need? Crit Care Med 2010;38:451–6.",
+          "bbox_pdf_points": [
+            322.81,
+            315.423,
+            427.294,
+            324.588
+          ]
+        }
+      ],
+      "citation_text": "Siebig S, Kuhls S, Imhoff M, et al. Intensive care unit alarms—how many do we need? Crit Care Med 2010;38:451–6.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Siebig S, Kuhls S, Imhoff M, et al",
+        "date_text": "2010",
+        "title_text": "Intensive care unit alarms—how many do we need?",
+        "remaining_bibliographic_text": "Crit Care Med 2010;38:451–6.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF048",
+      "ordinal": 48,
+      "source_number": 48,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "48 Tsien C, Fackler J. Poor prognosis for existing monitors in the intensive care unit.",
+          "bbox_pdf_points": [
+            306.652,
+            326.045,
+            543.149,
+            333.545
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Crit Care Med 1997;26:614–19.",
+          "bbox_pdf_points": [
+            322.81,
+            333.394,
+            412.235,
+            342.559
+          ]
+        }
+      ],
+      "citation_text": "Tsien C, Fackler J. Poor prognosis for existing monitors in the intensive care unit. Crit Care Med 1997;26:614–19.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Tsien C, Fackler J",
+        "date_text": "1997",
+        "title_text": "Poor prognosis for existing monitors in the intensive care unit.",
+        "remaining_bibliographic_text": "Crit Care Med 1997;26:614–19.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF049",
+      "ordinal": 49,
+      "source_number": 49,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "49 Bliss J, Acton S. Alarm mistrust in automobiles: how collision alarm reliability affects",
+          "bbox_pdf_points": [
+            306.653,
+            344.074,
+            552.382,
+            351.573
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "driving. Appl Ergon 2003;34:499–509.",
+          "bbox_pdf_points": [
+            322.81,
+            351.423,
+            430.058,
+            360.588
+          ]
+        }
+      ],
+      "citation_text": "Bliss J, Acton S. Alarm mistrust in automobiles: how collision alarm reliability affects driving. Appl Ergon 2003;34:499–509.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Bliss J, Acton S",
+        "date_text": "2003",
+        "title_text": "Alarm mistrust in automobiles: how collision alarm reliability affects driving.",
+        "remaining_bibliographic_text": "Appl Ergon 2003;34:499–509.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF050",
+      "ordinal": 50,
+      "source_number": 50,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "50 Bliss J, Gilson R, Deaton J. Human probability matching behaviour in response to",
+          "bbox_pdf_points": [
+            306.654,
+            362.045,
+            544.157,
+            369.545
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "alarms of varying reliability. Ergonomics 1995;38:2300–12.",
+          "bbox_pdf_points": [
+            322.812,
+            369.394,
+            485.314,
+            378.559
+          ]
+        }
+      ],
+      "citation_text": "Bliss J, Gilson R, Deaton J. Human probability matching behaviour in response to alarms of varying reliability. Ergonomics 1995;38:2300–12.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Bliss J, Gilson R, Deaton J",
+        "date_text": "1995",
+        "title_text": "Human probability matching behaviour in response to alarms of varying reliability.",
+        "remaining_bibliographic_text": "Ergonomics 1995;38:2300–12.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF051",
+      "ordinal": 51,
+      "source_number": 51,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "51 Bliss J, Dunn M. Behavioural implications of alarm mistrust as a function of task",
+          "bbox_pdf_points": [
+            306.655,
+            380.073,
+            541.586,
+            387.573
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "workload. Ergonomics 2000;43:1283–300.",
+          "bbox_pdf_points": [
+            322.813,
+            387.422,
+            441.115,
+            396.587
+          ]
+        }
+      ],
+      "citation_text": "Bliss J, Dunn M. Behavioural implications of alarm mistrust as a function of task workload. Ergonomics 2000;43:1283–300.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Bliss J, Dunn M",
+        "date_text": "2000",
+        "title_text": "Behavioural implications of alarm mistrust as a function of task workload.",
+        "remaining_bibliographic_text": "Ergonomics 2000;43:1283–300.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF052",
+      "ordinal": 52,
+      "source_number": 52,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "52 Schoenberg R, Sands D, Safran C. Making ICU alarms meaningful: a comparison of",
+          "bbox_pdf_points": [
+            306.656,
+            398.044,
+            550.414,
+            405.544
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "traditional vs. trend-based algorithms. Proc AMIA Symp 1999;379–83.",
+          "bbox_pdf_points": [
+            322.813,
+            405.394,
+            516.327,
+            414.558
+          ]
+        }
+      ],
+      "citation_text": "Schoenberg R, Sands D, Safran C. Making ICU alarms meaningful: a comparison of traditional vs. trend-based algorithms. Proc AMIA Symp 1999;379–83.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Schoenberg R, Sands D, Safran C",
+        "date_text": "1999",
+        "title_text": "Making ICU alarms meaningful: a comparison of traditional vs.",
+        "remaining_bibliographic_text": "trend-based algorithms. Proc AMIA Symp 1999;379–83.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF053",
+      "ordinal": 53,
+      "source_number": 53,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "53 Gorges M, Markewitz B, Westenskow D. Improving alarm performance in the",
+          "bbox_pdf_points": [
+            306.656,
+            416.073,
+            533.274,
+            423.573
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "medical intensive care unit using delays and clinical context. Anesth Analg",
+          "bbox_pdf_points": [
+            322.814,
+            425.087,
+            525.608,
+            432.587
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "2009;108:1546–52.",
+          "bbox_pdf_points": [
+            322.814,
+            432.379,
+            378.733,
+            441.544
+          ]
+        }
+      ],
+      "citation_text": "Gorges M, Markewitz B, Westenskow D. Improving alarm performance in the medical intensive care unit using delays and clinical context. Anesth Analg 2009;108:1546–52.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Gorges M, Markewitz B, Westenskow D",
+        "date_text": "2009",
+        "title_text": "Improving alarm performance in the medical intensive care unit using delays and clinical context.",
+        "remaining_bibliographic_text": "Anesth Analg 2009;108:1546–52.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF054",
+      "ordinal": 54,
+      "source_number": 54,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "54 Edworthy J. Designing effective alarm sounds. Biomed Instrum Technol 2011;July/",
+          "bbox_pdf_points": [
+            306.657,
+            443.058,
+            545.792,
+            450.558
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "August:200–4.",
+          "bbox_pdf_points": [
+            322.815,
+            450.407,
+            363.463,
+            459.572
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J. Designing effective alarm sounds. Biomed Instrum Technol 2011;July/ August:200–4.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J",
+        "date_text": "2011",
+        "title_text": "Designing effective alarm sounds.",
+        "remaining_bibliographic_text": "Biomed Instrum Technol 2011;July/ August:200–4.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF055",
+      "ordinal": 55,
+      "source_number": 55,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "55 Lower M, Patterson R, Edworthy J, et al. The design and production of auditory",
+          "bbox_pdf_points": [
+            306.658,
+            461.086,
+            540.415,
+            468.586
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "warnings for helicopters. 1: The Sea King. 1986: Research report AC527A.",
+          "bbox_pdf_points": [
+            322.815,
+            470.043,
+            526.737,
+            477.543
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Southampton, UK: Institute of Sound and Vibration Research, 1986.",
+          "bbox_pdf_points": [
+            322.815,
+            479.058,
+            508.6,
+            486.557
+          ]
+        }
+      ],
+      "citation_text": "Lower M, Patterson R, Edworthy J, et al. The design and production of auditory warnings for helicopters. 1: The Sea King. 1986: Research report AC527A. Southampton, UK: Institute of Sound and Vibration Research, 1986.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Lower M, Patterson R, Edworthy J, et al",
+        "date_text": null,
+        "title_text": "The design and production of auditory warnings for helicopters.",
+        "remaining_bibliographic_text": "1: The Sea King. 1986: Research report AC527A. Southampton, UK: Institute of Sound and Vibration Research, 1986.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF056",
+      "ordinal": 56,
+      "source_number": 56,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "56 Edworthy J, Hellier E, Noble V. Efficacy of alerts and prompts for eprescribing.",
+          "bbox_pdf_points": [
+            306.657,
+            486.407,
+            535.003,
+            495.572
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Report on UK NHS Connecting for Health project ER-08-0174, London, 2010.",
+          "bbox_pdf_points": [
+            322.815,
+            497.086,
+            535.871,
+            504.586
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J, Hellier E, Noble V. Efficacy of alerts and prompts for eprescribing. Report on UK NHS Connecting for Health project ER-08-0174, London, 2010.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J, Hellier E, Noble V",
+        "date_text": "2010",
+        "title_text": "Efficacy of alerts and prompts for eprescribing.",
+        "remaining_bibliographic_text": "Report on UK NHS Connecting for Health project ER-08-0174, London, 2010.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF057",
+      "ordinal": 57,
+      "source_number": 57,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "57 Ho C, Spence C. The multisensory driver: implications for ergonomic car interface",
+          "bbox_pdf_points": [
+            306.657,
+            506.043,
+            543.927,
+            513.543
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "design. Aldershot, UK: Ashgate Publishing, 2008.",
+          "bbox_pdf_points": [
+            322.815,
+            515.057,
+            458.316,
+            522.557
+          ]
+        }
+      ],
+      "citation_text": "Ho C, Spence C. The multisensory driver: implications for ergonomic car interface design. Aldershot, UK: Ashgate Publishing, 2008.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Ho C, Spence C",
+        "date_text": "2008",
+        "title_text": "The multisensory driver: implications for ergonomic car interface design.",
+        "remaining_bibliographic_text": "Aldershot, UK: Ashgate Publishing, 2008.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF058",
+      "ordinal": 58,
+      "source_number": 58,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "58 Ng J, Man J, Fels S, et al. An evaluation of a virbo-tactile display prototype for",
+          "bbox_pdf_points": [
+            306.658,
+            524.071,
+            537.929,
+            531.571
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "physiological monitoring. Anesth Analg 2005;101:1719–24.",
+          "bbox_pdf_points": [
+            322.815,
+            531.42,
+            487.584,
+            540.585
+          ]
+        }
+      ],
+      "citation_text": "Ng J, Man J, Fels S, et al. An evaluation of a virbo-tactile display prototype for physiological monitoring. Anesth Analg 2005;101:1719–24.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Ng J, Man J, Fels S, et al",
+        "date_text": "2005",
+        "title_text": "An evaluation of a virbo-tactile display prototype for physiological monitoring.",
+        "remaining_bibliographic_text": "Anesth Analg 2005;101:1719–24.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF059",
+      "ordinal": 59,
+      "source_number": 59,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "59 Deatherage B. Auditory and other sensory forms of information processing. In:",
+          "bbox_pdf_points": [
+            306.657,
+            542.042,
+            536.435,
+            549.542
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "VanCott HP, Kincade RG. eds Human engineering guide to equipment design.",
+          "bbox_pdf_points": [
+            322.815,
+            551.057,
+            535.731,
+            558.556
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Washington, DC: American Institutes for Research, 1972, 124.",
+          "bbox_pdf_points": [
+            322.814,
+            560.071,
+            493.612,
+            567.571
+          ]
+        }
+      ],
+      "citation_text": "Deatherage B. Auditory and other sensory forms of information processing. In: VanCott HP, Kincade RG. eds Human engineering guide to equipment design. Washington, DC: American Institutes for Research, 1972, 124.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Deatherage B",
+        "date_text": "1972",
+        "title_text": "Auditory and other sensory forms of information processing.",
+        "remaining_bibliographic_text": "In: VanCott HP, Kincade RG. eds Human engineering guide to equipment design. Washington, DC: American Institutes for Research, 1972, 124.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF060",
+      "ordinal": 60,
+      "source_number": 60,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "60 Berger A, Henik A, Rafal R. Competition between endogenous and exogenous",
+          "bbox_pdf_points": [
+            306.656,
+            569.085,
+            536.787,
+            576.585
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "orienting of visual attention. J Exp Psychol Gen 2005;134:207–21.",
+          "bbox_pdf_points": [
+            322.814,
+            576.377,
+            505.953,
+            585.542
+          ]
+        }
+      ],
+      "citation_text": "Berger A, Henik A, Rafal R. Competition between endogenous and exogenous orienting of visual attention. J Exp Psychol Gen 2005;134:207–21.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Berger A, Henik A, Rafal R",
+        "date_text": "2005",
+        "title_text": "Competition between endogenous and exogenous orienting of visual attention.",
+        "remaining_bibliographic_text": "J Exp Psychol Gen 2005;134:207–21.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF061",
+      "ordinal": 61,
+      "source_number": 61,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "61 Vicente K. Ecological interface design: progress and challenges. Hum Factors",
+          "bbox_pdf_points": [
+            306.657,
+            587.056,
+            531.523,
+            594.556
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "2002;44:62–78.",
+          "bbox_pdf_points": [
+            322.815,
+            594.405,
+            367.963,
+            603.57
+          ]
+        }
+      ],
+      "citation_text": "Vicente K. Ecological interface design: progress and challenges. Hum Factors 2002;44:62–78.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Vicente K",
+        "date_text": "2002",
+        "title_text": "Ecological interface design: progress and challenges.",
+        "remaining_bibliographic_text": "Hum Factors 2002;44:62–78.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF062",
+      "ordinal": 62,
+      "source_number": 62,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "62 UK Rail Safety and Standards Board. Alarms and alerts guidance and evaluation",
+          "bbox_pdf_points": [
+            306.658,
+            605.084,
+            541.703,
+            612.584
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "tool. http://www.rssb.co.uk/sitecollectiondocuments/pdf/research-toolkits/T326/main.",
+          "bbox_pdf_points": [
+            322.816,
+            614.042,
+            551.077,
+            621.542
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "html 2009. (accessed 16 April 2012).",
+          "bbox_pdf_points": [
+            322.816,
+            623.056,
+            425.495,
+            630.556
+          ]
+        }
+      ],
+      "citation_text": "UK Rail Safety and Standards Board. Alarms and alerts guidance and evaluation tool. http://www.rssb.co.uk/sitecollectiondocuments/pdf/research-toolkits/T326/main. html 2009. (accessed 16 April 2012).",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "UK Rail Safety and Standards Board",
+        "date_text": null,
+        "title_text": "Alarms and alerts guidance and evaluation tool.",
+        "remaining_bibliographic_text": "http://www.rssb.co.uk/sitecollectiondocuments/pdf/research-toolkits/T326/main. html 2009. (accessed 16 April 2012).",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "http://www.rssb.co.uk/sitecollectiondocuments/pdf/research-toolkits/T326/main."
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF063",
+      "ordinal": 63,
+      "source_number": 63,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "63 Kerr J. Warning devices. Br J Anaesth 1985;57:696–708.",
+          "bbox_pdf_points": [
+            306.658,
+            630.406,
+            479.498,
+            639.57
+          ]
+        }
+      ],
+      "citation_text": "Kerr J. Warning devices. Br J Anaesth 1985;57:696–708.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Kerr J",
+        "date_text": "1985",
+        "title_text": "Warning devices.",
+        "remaining_bibliographic_text": "Br J Anaesth 1985;57:696–708.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF064",
+      "ordinal": 64,
+      "source_number": 64,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "64 Broadbent D. The hidden preattentive process. Am Psychol 1977;32:109–18.",
+          "bbox_pdf_points": [
+            306.658,
+            639.42,
+            533.507,
+            648.585
+          ]
+        }
+      ],
+      "citation_text": "Broadbent D. The hidden preattentive process. Am Psychol 1977;32:109–18.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Broadbent D",
+        "date_text": "1977",
+        "title_text": "The hidden preattentive process.",
+        "remaining_bibliographic_text": "Am Psychol 1977;32:109–18.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF065",
+      "ordinal": 65,
+      "source_number": 65,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "65 Borowksi M, Gorges M, Fried R, et al. Medical device alarms. Biomed Technol",
+          "bbox_pdf_points": [
+            306.659,
+            650.042,
+            536.599,
+            657.545
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "2011;56:73–83.",
+          "bbox_pdf_points": [
+            322.809,
+            657.395,
+            367.957,
+            666.56
+          ]
+        }
+      ],
+      "citation_text": "Borowksi M, Gorges M, Fried R, et al. Medical device alarms. Biomed Technol 2011;56:73–83.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Borowksi M, Gorges M, Fried R, et al",
+        "date_text": "2011",
+        "title_text": "Medical device alarms.",
+        "remaining_bibliographic_text": "Biomed Technol 2011;56:73–83.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF066",
+      "ordinal": 66,
+      "source_number": 66,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "66 Edworthy J. The design and implementation of nonverbal auditory warnings. Appl",
+          "bbox_pdf_points": [
+            306.652,
+            668.074,
+            546.137,
+            675.574
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Ergon 1994;25:202–10.",
+          "bbox_pdf_points": [
+            322.809,
+            675.423,
+            389.443,
+            684.588
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J. The design and implementation of nonverbal auditory warnings. Appl Ergon 1994;25:202–10.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J",
+        "date_text": "1994",
+        "title_text": "The design and implementation of nonverbal auditory warnings.",
+        "remaining_bibliographic_text": "Appl Ergon 1994;25:202–10.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF067",
+      "ordinal": 67,
+      "source_number": 67,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "67 Laroche C, Tran Quoc H, Hetu R, et al. ‘Detectsound’: a computerised model for",
+          "bbox_pdf_points": [
+            306.652,
+            684.38,
+            542.061,
+            693.545
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "predicting the detectability of warning signals in noisy environments. Appl Acoustics",
+          "bbox_pdf_points": [
+            322.809,
+            695.059,
+            551.752,
+            702.559
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "1991;33:193–214.",
+          "bbox_pdf_points": [
+            322.809,
+            702.408,
+            375.121,
+            711.573
+          ]
+        }
+      ],
+      "citation_text": "Laroche C, Tran Quoc H, Hetu R, et al. ‘Detectsound’: a computerised model for predicting the detectability of warning signals in noisy environments. Appl Acoustics 1991;33:193–214.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Laroche C, Tran Quoc H, Hetu R, et al",
+        "date_text": "1991",
+        "title_text": "‘Detectsound’: a computerised model for predicting the detectability of warning signals in noisy environments.",
+        "remaining_bibliographic_text": "Appl Acoustics 1991;33:193–214.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF068",
+      "ordinal": 68,
+      "source_number": 68,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "68 Johansen J, Larsen S. Signs in use. London: Routledge, 2002.",
+          "bbox_pdf_points": [
+            306.652,
+            713.087,
+            491.248,
+            720.587
+          ]
+        }
+      ],
+      "citation_text": "Johansen J, Larsen S. Signs in use. London: Routledge, 2002.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Johansen J, Larsen S",
+        "date_text": "2002",
+        "title_text": "Signs in use.",
+        "remaining_bibliographic_text": "London: Routledge, 2002.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF069",
+      "ordinal": 69,
+      "source_number": 69,
+      "citation_lines": [
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "69 Edworthy J, Hellier E. Complex nonverbal auditory signals and speech warnings. In:",
+          "bbox_pdf_points": [
+            306.652,
+            722.045,
+            550.093,
+            729.545
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "Wogalter M. ed Handbook of warnings. New Jersey: Lawrence Erlbaum Associates,",
+          "bbox_pdf_points": [
+            322.81,
+            731.059,
+            549.169,
+            738.559
+          ]
+        },
+        {
+          "pdf_page": 5,
+          "printed_page": "588",
+          "column": "right",
+          "text": "2006: 199–220.",
+          "bbox_pdf_points": [
+            322.81,
+            738.408,
+            368.375,
+            747.573
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J, Hellier E. Complex nonverbal auditory signals and speech warnings. In: Wogalter M. ed Handbook of warnings. New Jersey: Lawrence Erlbaum Associates, 2006: 199–220.",
+      "pdf_pages": [
+        5
+      ],
+      "printed_pages": [
+        "588"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J, Hellier E",
+        "date_text": "2006",
+        "title_text": "Complex nonverbal auditory signals and speech warnings.",
+        "remaining_bibliographic_text": "In: Wogalter M. ed Handbook of warnings. New Jersey: Lawrence Erlbaum Associates, 2006: 199–220.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF070",
+      "ordinal": 70,
+      "source_number": 70,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "70 Petocz A, Keller P, Stevens C. Auditory warnings, signal-referent relations, and",
+          "bbox_pdf_points": [
+            42.009,
+            56.074,
+            271.728,
+            63.574
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "natural indicators: re-thinking theory and application. J Exp Psychol Appl",
+          "bbox_pdf_points": [
+            58.167,
+            65.088,
+            255.87,
+            72.588
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "2004;14:165–78.",
+          "bbox_pdf_points": [
+            58.167,
+            72.381,
+            106.887,
+            81.546
+          ]
+        }
+      ],
+      "citation_text": "Petocz A, Keller P, Stevens C. Auditory warnings, signal-referent relations, and natural indicators: re-thinking theory and application. J Exp Psychol Appl 2004;14:165–78.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Petocz A, Keller P, Stevens C",
+        "date_text": "2004",
+        "title_text": "Auditory warnings, signal-referent relations, and natural indicators: re-thinking theory and application.",
+        "remaining_bibliographic_text": "J Exp Psychol Appl 2004;14:165–78.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF071",
+      "ordinal": 71,
+      "source_number": 71,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "71 Leung Y, Smith S, Parker S, et al. Learning and retention of auditory warnings. In:",
+          "bbox_pdf_points": [
+            42.01,
+            83.06,
+            282.275,
+            90.56
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "Frysinger S, Kramer G. eds Proceedings of the Third International Conference on",
+          "bbox_pdf_points": [
+            58.167,
+            92.074,
+            276.613,
+            99.574
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "Auditory Display. Palo Alto, CA, USA, 1997.",
+          "bbox_pdf_points": [
+            58.167,
+            101.088,
+            178.813,
+            108.588
+          ]
+        }
+      ],
+      "citation_text": "Leung Y, Smith S, Parker S, et al. Learning and retention of auditory warnings. In: Frysinger S, Kramer G. eds Proceedings of the Third International Conference on Auditory Display. Palo Alto, CA, USA, 1997.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Leung Y, Smith S, Parker S, et al",
+        "date_text": "1997",
+        "title_text": "Learning and retention of auditory warnings.",
+        "remaining_bibliographic_text": "In: Frysinger S, Kramer G. eds Proceedings of the Third International Conference on Auditory Display. Palo Alto, CA, USA, 1997.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF072",
+      "ordinal": 72,
+      "source_number": 72,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "72 Ulfvengren P. Design of natural warning sounds in human−machine systems.",
+          "bbox_pdf_points": [
+            42.009,
+            108.381,
+            268.287,
+            117.546
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "Doctoral thesis, Stockholm Institute of Technology, 2003.",
+          "bbox_pdf_points": [
+            58.166,
+            119.06,
+            213.962,
+            126.56
+          ]
+        }
+      ],
+      "citation_text": "Ulfvengren P. Design of natural warning sounds in human−machine systems. Doctoral thesis, Stockholm Institute of Technology, 2003.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Ulfvengren P",
+        "date_text": "2003",
+        "title_text": "Design of natural warning sounds in human−machine systems.",
+        "remaining_bibliographic_text": "Doctoral thesis, Stockholm Institute of Technology, 2003.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF073",
+      "ordinal": 73,
+      "source_number": 73,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "73 Block F. Evaluation of users’ abilities to recognise musical alarm tones. J Clin Monit",
+          "bbox_pdf_points": [
+            42.009,
+            126.41,
+            286.396,
+            135.575
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "1992;8:285–90.",
+          "bbox_pdf_points": [
+            58.166,
+            135.424,
+            103.314,
+            144.589
+          ]
+        }
+      ],
+      "citation_text": "Block F. Evaluation of users’ abilities to recognise musical alarm tones. J Clin Monit 1992;8:285–90.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Block F",
+        "date_text": "1992",
+        "title_text": "Evaluation of users’ abilities to recognise musical alarm tones.",
+        "remaining_bibliographic_text": "J Clin Monit 1992;8:285–90.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF074",
+      "ordinal": 74,
+      "source_number": 74,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "74 Bregman A. Auditory scene analysis. Cambridge, MA: MIT Press, 1990.",
+          "bbox_pdf_points": [
+            42.009,
+            146.046,
+            253.024,
+            153.546
+          ]
+        }
+      ],
+      "citation_text": "Bregman A. Auditory scene analysis. Cambridge, MA: MIT Press, 1990.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Bregman A",
+        "date_text": "1990",
+        "title_text": "Auditory scene analysis.",
+        "remaining_bibliographic_text": "Cambridge, MA: MIT Press, 1990.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF075",
+      "ordinal": 75,
+      "source_number": 75,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "75 Ellis D. Detecting alarm sounds. Proceedings of the CRAC Workshop 2001: 59–62.",
+          "bbox_pdf_points": [
+            42.008,
+            153.395,
+            285.297,
+            162.56
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "left",
+          "text": "Aalborg, Denmark.",
+          "bbox_pdf_points": [
+            58.166,
+            164.074,
+            109.494,
+            171.574
+          ]
+        }
+      ],
+      "citation_text": "Ellis D. Detecting alarm sounds. Proceedings of the CRAC Workshop 2001: 59–62. Aalborg, Denmark.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Ellis D",
+        "date_text": "2001",
+        "title_text": "Detecting alarm sounds.",
+        "remaining_bibliographic_text": "Proceedings of the CRAC Workshop 2001: 59–62. Aalborg, Denmark.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF076",
+      "ordinal": 76,
+      "source_number": 76,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "76 Lutfi R, Heo I. Automated detection of alarm sounds. J Acoust Soc Am",
+          "bbox_pdf_points": [
+            306.651,
+            54.409,
+            516.221,
+            63.574
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "2011;129:2594.",
+          "bbox_pdf_points": [
+            322.808,
+            65.088,
+            367.785,
+            72.588
+          ]
+        }
+      ],
+      "citation_text": "Lutfi R, Heo I. Automated detection of alarm sounds. J Acoust Soc Am 2011;129:2594.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Lutfi R, Heo I",
+        "date_text": "2011",
+        "title_text": "Automated detection of alarm sounds.",
+        "remaining_bibliographic_text": "J Acoust Soc Am 2011;129:2594.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF077",
+      "ordinal": 77,
+      "source_number": 77,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "77 Blattner M, Sumikawa D, Greenberg R. Earcons and icons: their structure and",
+          "bbox_pdf_points": [
+            306.65,
+            74.046,
+            534.553,
+            81.546
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "common design principles. Hum Comput Interact 1989;4:11–44.",
+          "bbox_pdf_points": [
+            322.808,
+            81.395,
+            499.596,
+            90.56
+          ]
+        }
+      ],
+      "citation_text": "Blattner M, Sumikawa D, Greenberg R. Earcons and icons: their structure and common design principles. Hum Comput Interact 1989;4:11–44.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Blattner M, Sumikawa D, Greenberg R",
+        "date_text": "1989",
+        "title_text": "Earcons and icons: their structure and common design principles.",
+        "remaining_bibliographic_text": "Hum Comput Interact 1989;4:11–44.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF078",
+      "ordinal": 78,
+      "source_number": 78,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "78 Patterson R, Edworthy J, Shailer M, et al. Alarm sounds for medical equipment in",
+          "bbox_pdf_points": [
+            306.651,
+            92.074,
+            545.534,
+            99.574
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "intensive care areas and operating theatres. Report no. AC598; Southampton, UK:",
+          "bbox_pdf_points": [
+            322.808,
+            101.088,
+            547.221,
+            108.588
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "Institute of Sound and Vibration Research, 1986.",
+          "bbox_pdf_points": [
+            322.808,
+            110.046,
+            456.267,
+            117.546
+          ]
+        }
+      ],
+      "citation_text": "Patterson R, Edworthy J, Shailer M, et al. Alarm sounds for medical equipment in intensive care areas and operating theatres. Report no. AC598; Southampton, UK: Institute of Sound and Vibration Research, 1986.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Patterson R, Edworthy J, Shailer M, et al",
+        "date_text": "1986",
+        "title_text": "Alarm sounds for medical equipment in intensive care areas and operating theatres.",
+        "remaining_bibliographic_text": "Report no. AC598; Southampton, UK: Institute of Sound and Vibration Research, 1986.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF079",
+      "ordinal": 79,
+      "source_number": 79,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "79 Edworthy J, Hellier E, Titchener K, et al. Heterogeneity in alarm sounds makes them",
+          "bbox_pdf_points": [
+            306.65,
+            119.06,
+            551.84,
+            126.56
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "easier to learn. Int J Ind Ergon 2011;41:136–46.",
+          "bbox_pdf_points": [
+            322.807,
+            126.41,
+            457.019,
+            135.575
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J, Hellier E, Titchener K, et al. Heterogeneity in alarm sounds makes them easier to learn. Int J Ind Ergon 2011;41:136–46.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J, Hellier E, Titchener K, et al",
+        "date_text": "2011",
+        "title_text": "Heterogeneity in alarm sounds makes them easier to learn.",
+        "remaining_bibliographic_text": "Int J Ind Ergon 2011;41:136–46.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    },
+    {
+      "occurrence_id": "C9-EDWORTHY-2013-REF080",
+      "ordinal": 80,
+      "source_number": 80,
+      "citation_lines": [
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "80 Miller G. The magical number seven plus or minus two. Psychol Rev",
+          "bbox_pdf_points": [
+            306.65,
+            137.089,
+            508.701,
+            144.589
+          ]
+        },
+        {
+          "pdf_page": 6,
+          "printed_page": "589",
+          "column": "right",
+          "text": "1957;63:81–96.",
+          "bbox_pdf_points": [
+            322.807,
+            144.381,
+            367.955,
+            153.546
+          ]
+        }
+      ],
+      "citation_text": "Miller G. The magical number seven plus or minus two. Psychol Rev 1957;63:81–96.",
+      "pdf_pages": [
+        6
+      ],
+      "printed_pages": [
+        "589"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Miller G",
+        "date_text": "1957",
+        "title_text": "The magical number seven plus or minus two.",
+        "remaining_bibliographic_text": "Psychol Rev 1957;63:81–96.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "first-full-stop split; date only if one occurrence"
+      }
+    }
+  ]
+}

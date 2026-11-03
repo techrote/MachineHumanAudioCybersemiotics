@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ5-01484",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1484,
+        "raw_metadata": "VRMTFOA: Gaze-Guided Virtual Reality Mirror Therapy that Enhances Cortical Activation and Network Coherence for Stroke Rehabilitation | first author: Ai-Ting Huang | 2025-11-24 | conference-paper | https://openalex.org/W7154570848",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W7154570848"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1109/i-create67590.2025.11478186"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

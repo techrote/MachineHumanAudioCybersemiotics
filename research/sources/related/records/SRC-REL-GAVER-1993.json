@@ -1,0 +1,69 @@
+{
+  "id": "SRC-REL-GAVER-1993",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Gaver, William W.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Ecological Psychology 5(1):1-29"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup GAVER-1993 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1207/s15326969eco0501_1"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref record"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1993-03"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "What in the World Do We Hear? An Ecological Approach to Auditory Event Perception",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

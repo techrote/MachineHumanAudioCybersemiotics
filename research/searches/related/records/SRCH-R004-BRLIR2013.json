@@ -1,0 +1,74 @@
+{
+  "id": "SRCH-R004-BRLIR2013",
+  "issue": 4,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRC-BRIER-2013-IR",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "boundary": "Track G tier T2 tracing: which works Brier actually cites (protocol v1 §7.1). Citation is not evidence that a passage depends on the work.",
+        "coverage": {
+          "end": {
+            "reason": "Reference list",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "Reference list",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/related/exports/BRIER-REFLISTS-R004.json",
+            "sha256": "41f6ed9f8c5e6a2556399c420fbbd994e281d26edc0d6cd2d7ac01901e8c41d6"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "None"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T06:39:05Z"
+        },
+        "interface": "Direct HTTPS download (sha256 7def4e649c7d8eceb577f51ce2affbdb17fcdc41286a0e2a5bc2b07fdd302e8a, 1349421 bytes, 44 pages) and pdftotext",
+        "lane": "related",
+        "mode": "production",
+        "pagination": {
+          "complete": true,
+          "detail": "Whole reference section parsed; entry splitting is heuristic and some running heads remain inside entries."
+        },
+        "platform": "Reference list of SRC-BRIER-2013-IR, parsed from the downloaded file",
+        "protocol_version": "v1",
+        "query": "Every entry of the article's reference list",
+        "reported_count": {
+          "reason": "No entry count printed",
+          "state": "not_reported"
+        },
+        "retrieved_count": 150,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T06:38:46Z"
+        },
+        "status": "completed"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ5-00599",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 599,
+        "raw_metadata": "Auditory, Visual, and Auditory-Visual Identification of Emotions by Nursery School Children | first author: Tova Most | 2012-08-01 | article | https://openalex.org/W310285933",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W310285933"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

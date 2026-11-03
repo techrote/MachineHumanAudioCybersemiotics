@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-G19-10",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-G19",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 10,
+        "raw_metadata": "When Machines Talk: Research Survey on Voice in Human-Agent Interaction (IMAGE) | https://www.eurekalert.org/multimedia/649977",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.eurekalert.org/multimedia/649977"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-G19",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

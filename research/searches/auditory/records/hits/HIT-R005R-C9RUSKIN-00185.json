@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9RUSKIN-00185",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 185,
+        "raw_metadata": "Ziółkowski, A., & Skłodowski, M. (2018). On value and using of TAWS/FMS alert data in examination of air accidents, the case of warsaw-smolensk flight on 10 april 2010. The Aeronautical Journal, 122(1255), 1301-1329. doi:10.1017/aer.2018.59 | C9-RUSKIN-2020-REF185 | source PDF pp. 79; printed pp. 79; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

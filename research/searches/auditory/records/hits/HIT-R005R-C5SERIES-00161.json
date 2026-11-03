@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00161",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 161,
+        "raw_metadata": "Distance-based speech segregation in near-field virtual audio displays | Brungart, Douglas S; Simpson, Brian D | issued: 2001-07 | Text | https://repository.gatech.edu/entities/publication/a21c25cf-9d4c-4521-b7f4-e726982484d7",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/a21c25cf-9d4c-4521-b7f4-e726982484d7"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50613"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

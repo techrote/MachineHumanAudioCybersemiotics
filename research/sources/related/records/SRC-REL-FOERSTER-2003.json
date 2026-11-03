@@ -1,0 +1,75 @@
+{
+  "id": "SRC-REL-FOERSTER-2003",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "von Foerster, Heinz",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Springer, New York, 2003 (collected essays, e.g. 'Cybernetics of Cybernetics' pp. 283-286)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup FOERSTER-2003 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9780387953922"
+          },
+          {
+            "provenance": "Lookup FOERSTER-2003 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9780387217222"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref chapter records give container title, publisher, year and ISBNs"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2003"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Understanding Understanding: Essays on Cybernetics and Cognition",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

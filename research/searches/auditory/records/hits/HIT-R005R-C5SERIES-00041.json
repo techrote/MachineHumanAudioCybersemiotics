@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00041",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 41,
+        "raw_metadata": "A 3D-auditory environment for hierarchical navigation in non-visual interaction | Crispien, Kai; Fellbaum, Klaus; Savidis, Anthony; Stephanidis, Constantine | issued: 1996-11 | Text | https://repository.gatech.edu/entities/publication/120c9dd7-9a08-4eb1-94ce-a8f5c6c19c58",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/120c9dd7-9a08-4eb1-94ce-a8f5c6c19c58"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50798"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

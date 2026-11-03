@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R004-BRLSK2015-068",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 68,
+        "raw_metadata": "Schrödinger, E. (1944). What Is Life?: The Physical Aspect of the Living Cell. Based on lectures delivered under the auspices of the Dublin Institute for Advanced Cybersemiotics: a semiotic-systemic transdisciplinary approach 265 Studies at Trinity College, Dublin, February 1943. http://whatislife.stanford.edu/ LoCo_files/What-is-Life.pdf [1.05.2015].",
+        "resolution_reason": "Brier reference entry not matched to an R004 source record.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLSK2015",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

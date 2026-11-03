@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00009",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 9,
+        "raw_metadata": "Defining and redefining limits on human performance in auditory spatial displays | Shinn-Cunningham, Barbara; Durlach, Nathaniel | issued: 1994-11 | Text | https://repository.gatech.edu/entities/publication/4772c045-35f0-4711-b63f-ac247fe7d07f",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/4772c045-35f0-4711-b63f-ac247fe7d07f"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50843"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

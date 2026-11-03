@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00057",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 57,
+        "raw_metadata": "BROWeb: An interactive collaborative auditory environment on the world wide web | Metois, Eric; Back, Maribeth | issued: 1996-11 | Text | https://repository.gatech.edu/entities/publication/aaa1799e-6b18-40e8-8327-6c2fa76a8f60",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/aaa1799e-6b18-40e8-8327-6c2fa76a8f60"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50802"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

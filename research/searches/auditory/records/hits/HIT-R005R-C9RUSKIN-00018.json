@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C9RUSKIN-00018",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 18,
+        "raw_metadata": "Brewster SA, Wright PC, Edwards ADN. 1993. An evaluation of earcons for use in auditory human-computer interfaces. In Proceedings of the INTERACT '93 and CHI '93 Conference on Human Factors in Computing Systems (CHI '93). Association for Computing Machinery, New York, NY, USA, 222–227. DOI:https://doi.org/10.1145/169059.169179 | C9-RUSKIN-2020-REF018 | source PDF pp. 57; printed pp. 57; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1145/169059.169179"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

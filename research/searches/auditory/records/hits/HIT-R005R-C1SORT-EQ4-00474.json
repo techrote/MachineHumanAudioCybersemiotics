@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ4-00474",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 474,
+        "raw_metadata": "BuffetAR: A Food Recognition System with Stereo Audio Cues for Blind Users in Conference Dining | first author: Chun-Nan Chi | 2025-09-23 | conference-paper | https://openalex.org/W4417284573",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4417284573"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1109/gcce65946.2025.11274593"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

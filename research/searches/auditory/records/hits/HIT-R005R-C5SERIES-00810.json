@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00810",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 810,
+        "raw_metadata": "Voice of Sisyphus: an image sonification multimedia installation | McGee, Ryan Michael; Dickinson, Joshua; Legrady,  George | issued: 2012-06 | Text | https://repository.gatech.edu/entities/publication/91c7c2a7-6df8-4796-a9ca-ce45ac5e1e26",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/91c7c2a7-6df8-4796-a9ca-ce45ac5e1e26"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/44428"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

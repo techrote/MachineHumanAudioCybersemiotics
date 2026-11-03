@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01041",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1041,
+        "raw_metadata": "Rotator: Flexible Distribution of Data Across Sensory Channels | Cherston, Juliana; Paradiso, Joseph A. | issued: 2017-06 | Text | https://repository.gatech.edu/entities/publication/24de15d8-41c6-43e3-a909-1c76e2f42059",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/24de15d8-41c6-43e3-a909-1c76e2f42059"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2017.009"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/58351"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

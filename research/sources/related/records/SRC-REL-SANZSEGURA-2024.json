@@ -1,0 +1,73 @@
+{
+  "id": "SRC-REL-SANZSEGURA-2024",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Sanz-Segura, Rosana",
+            "role": "author"
+          },
+          {
+            "name": "Manchado-Pérez, Eduardo",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of DRS2024: Boston (Design Research Society)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Round-3 lookup SOUND-DRIVEN-DESIGN result 1, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.21606/drs.2024.855"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref record (round-3 lookup)"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2024-06-23"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Guiding design students to sound-driven design from the base camp of semiotics",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

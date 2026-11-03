@@ -1,0 +1,2770 @@
+{
+  "schema_version": "mhac-r005-c9-reference-occurrences-v1",
+  "review_key": "totland-2021",
+  "source_file_basename": "totland-2021-alias-response",
+  "source_sha256": "caf75fd9f71016b869d1c27aa238c56a8f302a4ae2ce4459647203432e8d600d",
+  "source_pdf_pages": 52,
+  "reference_pdf_pages_inclusive": [
+    42,
+    47
+  ],
+  "reference_count": 47,
+  "reference_order": "source order; column left then right within each Edworthy page",
+  "reading_extent": "bibliography and source identity metadata only; no empirical extraction",
+  "normalization": "PDF text-layer words joined by spaces; line boundaries and boxes retained; no citation corrections",
+  "extraction_software": {
+    "name": "pdfplumber",
+    "version": "0.11.9"
+  },
+  "coordinate_system": "PDF points; [x0, top, x1, bottom] from top-left of each source page",
+  "layout_exceptions": [
+    [
+      44,
+      "IEEE 92(4): 742-758."
+    ],
+    [
+      46,
+      "https://www.ukessays.com/essays/psycology/validity-and-reliability-of-systematic-"
+    ],
+    [
+      46,
+      "review.php?vref=1"
+    ]
+  ],
+  "references": [
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF001",
+      "ordinal": 1,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "ANSI/ISA 18.2. (2009). Management of Alarm Systems for the Process Industries.",
+          "bbox_pdf_points": [
+            70.775,
+            115.892,
+            467.906,
+            127.892
+          ]
+        }
+      ],
+      "citation_text": "ANSI/ISA 18.2. (2009). Management of Alarm Systems for the Process Industries.",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "ANSI/ISA 18.2.",
+        "date_text": "2009",
+        "title_text": "Management of Alarm Systems for the Process Industries.",
+        "remaining_bibliographic_text": "",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF002",
+      "ordinal": 2,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Bellettiere, J., Hughes, S. C., Liles, S., Boman-Davis, M., Klepeis, N., Blumberg, E., Mills, J.,",
+          "bbox_pdf_points": [
+            70.775,
+            150.392,
+            523.368,
+            162.392
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Berardi, V., Obayashi, S., Allen, T. T., & Hovell, M. F. (2014). Developing and",
+          "bbox_pdf_points": [
+            106.3,
+            170.892,
+            489.892,
+            182.892
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Selecting Auditory Warnings for a Real-Time Behavioral Intervention. American",
+          "bbox_pdf_points": [
+            106.3,
+            191.642,
+            495.158,
+            203.642
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "journal of public health research, 2(6), 232–238. https://doi.org/10.12691/ajphr-2-6-3",
+          "bbox_pdf_points": [
+            106.3,
+            212.422,
+            515.48,
+            224.422
+          ]
+        }
+      ],
+      "citation_text": "Bellettiere, J., Hughes, S. C., Liles, S., Boman-Davis, M., Klepeis, N., Blumberg, E., Mills, J., Berardi, V., Obayashi, S., Allen, T. T., & Hovell, M. F. (2014). Developing and Selecting Auditory Warnings for a Real-Time Behavioral Intervention. American journal of public health research, 2(6), 232–238. https://doi.org/10.12691/ajphr-2-6-3",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Bellettiere, J., Hughes, S. C., Liles, S., Boman-Davis, M., Klepeis, N., Blumberg, E., Mills, J., Berardi, V., Obayashi, S., Allen, T. T., & Hovell, M. F.",
+        "date_text": "2014",
+        "title_text": "Developing and Selecting Auditory Warnings for a Real-Time Behavioral Intervention.",
+        "remaining_bibliographic_text": "American journal of public health research, 2(6), 232–238. https://doi.org/10.12691/ajphr-2-6-3",
+        "doi_tokens_as_extracted": [
+          "10.12691/ajphr-2-6-3"
+        ],
+        "url_tokens_as_extracted": [
+          "https://doi.org/10.12691/ajphr-2-6-3"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF003",
+      "ordinal": 3,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Belz, S. M., Robinson, G. S., & Casali, J. G. (1999). A New Class of Auditory Warning",
+          "bbox_pdf_points": [
+            70.775,
+            253.922,
+            492.359,
+            265.922
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Signals for Complex Systems: Auditory Icons. Human Factors, 41(4), 608–618.",
+          "bbox_pdf_points": [
+            106.3,
+            274.422,
+            489.95,
+            286.422
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "https://doi.org/10.1518/001872099779656734",
+          "bbox_pdf_points": [
+            106.3,
+            295.192,
+            327.292,
+            307.192
+          ]
+        }
+      ],
+      "citation_text": "Belz, S. M., Robinson, G. S., & Casali, J. G. (1999). A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons. Human Factors, 41(4), 608–618. https://doi.org/10.1518/001872099779656734",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Belz, S. M., Robinson, G. S., & Casali, J. G.",
+        "date_text": "1999",
+        "title_text": "A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons.",
+        "remaining_bibliographic_text": "Human Factors, 41(4), 608–618. https://doi.org/10.1518/001872099779656734",
+        "doi_tokens_as_extracted": [
+          "10.1518/001872099779656734"
+        ],
+        "url_tokens_as_extracted": [
+          "https://doi.org/10.1518/001872099779656734"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF004",
+      "ordinal": 4,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Bransby, M. (1999). The Human Contribution to Safety: Designing Alarm Systems for",
+          "bbox_pdf_points": [
+            70.775,
+            336.692,
+            484.576,
+            348.692
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Reliable Operator Performance. Measurement and Control 32(7): 209-213.",
+          "bbox_pdf_points": [
+            106.3,
+            357.442,
+            469.2,
+            369.442
+          ]
+        }
+      ],
+      "citation_text": "Bransby, M. (1999). The Human Contribution to Safety: Designing Alarm Systems for Reliable Operator Performance. Measurement and Control 32(7): 209-213.",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Bransby, M.",
+        "date_text": "1999",
+        "title_text": "The Human Contribution to Safety: Designing Alarm Systems for Reliable Operator Performance.",
+        "remaining_bibliographic_text": "Measurement and Control 32(7): 209-213.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF005",
+      "ordinal": 5,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Brown, N. (2003). Alarm Management/The EEMUA Guidelines in Practice. Measurement",
+          "bbox_pdf_points": [
+            70.775,
+            398.712,
+            504.962,
+            410.712
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "and Control 36(4): 114-119.",
+          "bbox_pdf_points": [
+            106.3,
+            419.462,
+            241.35,
+            431.462
+          ]
+        }
+      ],
+      "citation_text": "Brown, N. (2003). Alarm Management/The EEMUA Guidelines in Practice. Measurement and Control 36(4): 114-119.",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Brown, N.",
+        "date_text": "2003",
+        "title_text": "Alarm Management/The EEMUA Guidelines in Practice.",
+        "remaining_bibliographic_text": "Measurement and Control 36(4): 114-119.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF006",
+      "ordinal": 6,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Budgen & Pearl Brereton.(2006). Performing systematic literature reviews in software",
+          "bbox_pdf_points": [
+            70.775,
+            460.742,
+            486.748,
+            472.742
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "engineering. In Proceedings of the 28th International Conference on Software",
+          "bbox_pdf_points": [
+            106.3,
+            481.492,
+            479.758,
+            493.492
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Engineering, ICSE ’06, pages 1051–1052, New York, NY, USA, 2006. ACM. ISBN",
+          "bbox_pdf_points": [
+            106.3,
+            502.242,
+            512.674,
+            514.242
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "1-59593-375-1. doi:10.1145/1134285.1134500.",
+          "bbox_pdf_points": [
+            106.3,
+            522.992,
+            335.086,
+            534.992
+          ]
+        }
+      ],
+      "citation_text": "Budgen & Pearl Brereton.(2006). Performing systematic literature reviews in software engineering. In Proceedings of the 28th International Conference on Software Engineering, ICSE ’06, pages 1051–1052, New York, NY, USA, 2006. ACM. ISBN 1-59593-375-1. doi:10.1145/1134285.1134500.",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Budgen & Pearl Brereton.",
+        "date_text": "2006",
+        "title_text": "Performing systematic literature reviews in software engineering.",
+        "remaining_bibliographic_text": "In Proceedings of the 28th International Conference on Software Engineering, ICSE ’06, pages 1051–1052, New York, NY, USA, 2006. ACM. ISBN 1-59593-375-1. doi:10.1145/1134285.1134500.",
+        "doi_tokens_as_extracted": [
+          "10.1145/1134285.1134500."
+        ],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF007",
+      "ordinal": 7,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Chamberland C, Hodgetts HM, Vallières BR, Vachon F, Tremblay S (2017) The benefits and",
+          "bbox_pdf_points": [
+            70.775,
+            564.262,
+            519.132,
+            576.262
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "the costs of using auditory warning messages in dynamic decision making settings. J",
+          "bbox_pdf_points": [
+            106.3,
+            585.022,
+            512.118,
+            597.022
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "Cogn Eng Decis Mak. https://doi.org/10.1177/1555343417735398",
+          "bbox_pdf_points": [
+            106.3,
+            605.762,
+            425.224,
+            617.762
+          ]
+        }
+      ],
+      "citation_text": "Chamberland C, Hodgetts HM, Vallières BR, Vachon F, Tremblay S (2017) The benefits and the costs of using auditory warning messages in dynamic decision making settings. J Cogn Eng Decis Mak. https://doi.org/10.1177/1555343417735398",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Chamberland C, Hodgetts HM, Vallières BR, Vachon F, Tremblay S",
+        "date_text": "2017",
+        "title_text": "The benefits and the costs of using auditory warning messages in dynamic decision making settings.",
+        "remaining_bibliographic_text": "J Cogn Eng Decis Mak. https://doi.org/10.1177/1555343417735398",
+        "doi_tokens_as_extracted": [
+          "10.1177/1555343417735398"
+        ],
+        "url_tokens_as_extracted": [
+          "https://doi.org/10.1177/1555343417735398"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF008",
+      "ordinal": 8,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "DeCarlo, M. (2020). Inductive and deductive reasoning. Retrieved from:",
+          "bbox_pdf_points": [
+            70.775,
+            647.292,
+            419.968,
+            659.292
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "https://scientificinquiryinsocialwork.pressbooks.com/chapter/6-3-inductive-and-",
+          "bbox_pdf_points": [
+            106.3,
+            667.792,
+            492.196,
+            679.792
+          ]
+        },
+        {
+          "pdf_page": 42,
+          "printed_page": "42",
+          "column": null,
+          "text": "deductive-reasoning/",
+          "bbox_pdf_points": [
+            106.3,
+            688.542,
+            206.894,
+            700.542
+          ]
+        }
+      ],
+      "citation_text": "DeCarlo, M. (2020). Inductive and deductive reasoning. Retrieved from: https://scientificinquiryinsocialwork.pressbooks.com/chapter/6-3-inductive-and- deductive-reasoning/",
+      "pdf_pages": [
+        42
+      ],
+      "printed_pages": [
+        "42"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "DeCarlo, M.",
+        "date_text": "2020",
+        "title_text": "Inductive and deductive reasoning.",
+        "remaining_bibliographic_text": "Retrieved from: https://scientificinquiryinsocialwork.pressbooks.com/chapter/6-3-inductive-and- deductive-reasoning/",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://scientificinquiryinsocialwork.pressbooks.com/chapter/6-3-inductive-and-"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF009",
+      "ordinal": 9,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Dolfing, H. (2018). Understanding Your Problem Is Half the Solution (Actually the Most",
+          "bbox_pdf_points": [
+            70.775,
+            72.622,
+            497.638,
+            84.622
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Important Half). Retrieved from:",
+          "bbox_pdf_points": [
+            106.3,
+            93.372,
+            264.876,
+            105.372
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "https://www.henricodolfing.com/2018/05/understanding-your-problem-is-half.html",
+          "bbox_pdf_points": [
+            106.3,
+            114.122,
+            506.522,
+            126.122
+          ]
+        }
+      ],
+      "citation_text": "Dolfing, H. (2018). Understanding Your Problem Is Half the Solution (Actually the Most Important Half). Retrieved from: https://www.henricodolfing.com/2018/05/understanding-your-problem-is-half.html",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Dolfing, H.",
+        "date_text": "2018",
+        "title_text": "Understanding Your Problem Is Half the Solution (Actually the Most Important Half).",
+        "remaining_bibliographic_text": "Retrieved from: https://www.henricodolfing.com/2018/05/understanding-your-problem-is-half.html",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.henricodolfing.com/2018/05/understanding-your-problem-is-half.html"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF010",
+      "ordinal": 10,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Edworthy J. (1994). The design and implementation of non-verbal auditory warnings. Appl",
+          "bbox_pdf_points": [
+            70.775,
+            155.642,
+            509.184,
+            167.642
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Ergon. 1994;25:202–210.",
+          "bbox_pdf_points": [
+            106.3,
+            176.142,
+            229.1,
+            188.142
+          ]
+        }
+      ],
+      "citation_text": "Edworthy J. (1994). The design and implementation of non-verbal auditory warnings. Appl Ergon. 1994;25:202–210.",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy J.",
+        "date_text": "1994",
+        "title_text": "The design and implementation of non-verbal auditory warnings.",
+        "remaining_bibliographic_text": "Appl Ergon. 1994;25:202–210.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF011",
+      "ordinal": 11,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Edworthy, J et al. (2017) The recognizability and localizability of auditory alarms: setting",
+          "bbox_pdf_points": [
+            70.775,
+            217.672,
+            501.587,
+            229.672
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "global medical device standards. Hum Factors 59(17):1108–1127.",
+          "bbox_pdf_points": [
+            106.3,
+            238.422,
+            423.68,
+            250.422
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "https://doi.org/10.1177/ 0018720817712004",
+          "bbox_pdf_points": [
+            106.3,
+            259.172,
+            318.292,
+            271.172
+          ]
+        }
+      ],
+      "citation_text": "Edworthy, J et al. (2017) The recognizability and localizability of auditory alarms: setting global medical device standards. Hum Factors 59(17):1108–1127. https://doi.org/10.1177/ 0018720817712004",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy, J et al.",
+        "date_text": "2017",
+        "title_text": "The recognizability and localizability of auditory alarms: setting global medical device standards.",
+        "remaining_bibliographic_text": "Hum Factors 59(17):1108–1127. https://doi.org/10.1177/ 0018720817712004",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://doi.org/10.1177/"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF012",
+      "ordinal": 12,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Edworthy, J., Loxley, S., & Dennis, L. (1991). Improving Auditory Warning Design:",
+          "bbox_pdf_points": [
+            70.775,
+            300.442,
+            478.02,
+            312.442
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Relationship between Warning Sound Parameters and Perceived Urgency. Human",
+          "bbox_pdf_points": [
+            106.3,
+            321.192,
+            503.682,
+            333.192
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Factors, vol. 33, pp 205-231.",
+          "bbox_pdf_points": [
+            106.3,
+            341.942,
+            244.85,
+            353.942
+          ]
+        }
+      ],
+      "citation_text": "Edworthy, J., Loxley, S., & Dennis, L. (1991). Improving Auditory Warning Design: Relationship between Warning Sound Parameters and Perceived Urgency. Human Factors, vol. 33, pp 205-231.",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy, J., Loxley, S., & Dennis, L.",
+        "date_text": "1991",
+        "title_text": "Improving Auditory Warning Design: Relationship between Warning Sound Parameters and Perceived Urgency.",
+        "remaining_bibliographic_text": "Human Factors, vol. 33, pp 205-231.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF013",
+      "ordinal": 13,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Edworthy, J., Reid, S., McDougall, S., Edworthy, J., Hall, S., Bennett, D., Pye, E. (2017). The",
+          "bbox_pdf_points": [
+            70.775,
+            395.212,
+            522.302,
+            407.212
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Recognizability and Localizability of Auditory Alarms: Setting Global Medical",
+          "bbox_pdf_points": [
+            106.3,
+            415.962,
+            484.708,
+            427.962
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Device Standards. Human Factors, 59(7), 1108-1127.",
+          "bbox_pdf_points": [
+            106.3,
+            436.712,
+            363.9,
+            448.712
+          ]
+        }
+      ],
+      "citation_text": "Edworthy, J., Reid, S., McDougall, S., Edworthy, J., Hall, S., Bennett, D., Pye, E. (2017). The Recognizability and Localizability of Auditory Alarms: Setting Global Medical Device Standards. Human Factors, 59(7), 1108-1127.",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy, J., Reid, S., McDougall, S., Edworthy, J., Hall, S., Bennett, D., Pye, E.",
+        "date_text": "2017",
+        "title_text": "The Recognizability and Localizability of Auditory Alarms: Setting Global Medical Device Standards.",
+        "remaining_bibliographic_text": "Human Factors, 59(7), 1108-1127.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF014",
+      "ordinal": 14,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Edworthy, J., Stanton, N. (1995). A user-centred approach to the design and evaluation of",
+          "bbox_pdf_points": [
+            70.775,
+            477.992,
+            504.122,
+            489.992
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "auditory warning signals: 1. Methodology. Ergonomics 1995, 38: 2262-2280.",
+          "bbox_pdf_points": [
+            106.3,
+            498.742,
+            479.7,
+            510.742
+          ]
+        }
+      ],
+      "citation_text": "Edworthy, J., Stanton, N. (1995). A user-centred approach to the design and evaluation of auditory warning signals: 1. Methodology. Ergonomics 1995, 38: 2262-2280.",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Edworthy, J., Stanton, N.",
+        "date_text": "1995",
+        "title_text": "A user-centred approach to the design and evaluation of auditory warning signals: 1.",
+        "remaining_bibliographic_text": "Methodology. Ergonomics 1995, 38: 2262-2280.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF015",
+      "ordinal": 15,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "EEMUA. (2007). Alarm Systems - A guide to design, Management and Procurement. 2nd",
+          "bbox_pdf_points": [
+            70.775,
+            554.012,
+            501.2,
+            566.012
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Edition ed. London: EEMUA",
+          "bbox_pdf_points": [
+            106.3,
+            567.762,
+            248.164,
+            579.762
+          ]
+        }
+      ],
+      "citation_text": "EEMUA. (2007). Alarm Systems - A guide to design, Management and Procurement. 2nd Edition ed. London: EEMUA",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "EEMUA.",
+        "date_text": "2007",
+        "title_text": "Alarm Systems - A guide to design, Management and Procurement.",
+        "remaining_bibliographic_text": "2nd Edition ed. London: EEMUA",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF016",
+      "ordinal": 16,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Fagerlönn, J., et al. (2017). Designing a Multimodal Warning Display for an Industrial",
+          "bbox_pdf_points": [
+            70.775,
+            602.262,
+            488.294,
+            614.262
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Control Room. Proceedings of the 12th International Audio Mostly Conference on",
+          "bbox_pdf_points": [
+            106.3,
+            623.022,
+            501.46,
+            635.022
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Augmented and Participatory Sound and Music Experiences. London, United",
+          "bbox_pdf_points": [
+            106.3,
+            643.792,
+            477.616,
+            655.792
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Kingdom, Association for Computing Machinery: Article 46.",
+          "bbox_pdf_points": [
+            106.3,
+            664.542,
+            401.618,
+            676.542
+          ]
+        }
+      ],
+      "citation_text": "Fagerlönn, J., et al. (2017). Designing a Multimodal Warning Display for an Industrial Control Room. Proceedings of the 12th International Audio Mostly Conference on Augmented and Participatory Sound and Music Experiences. London, United Kingdom, Association for Computing Machinery: Article 46.",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Fagerlönn, J., et al.",
+        "date_text": "2017",
+        "title_text": "Designing a Multimodal Warning Display for an Industrial Control Room.",
+        "remaining_bibliographic_text": "Proceedings of the 12th International Audio Mostly Conference on Augmented and Participatory Sound and Music Experiences. London, United Kingdom, Association for Computing Machinery: Article 46.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF017",
+      "ordinal": 17,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "Haas, E., & Edworthy, J. (1996). Designing urgency into auditory warnings using pitch,",
+          "bbox_pdf_points": [
+            70.775,
+            705.792,
+            493.994,
+            717.792
+          ]
+        },
+        {
+          "pdf_page": 43,
+          "printed_page": "43",
+          "column": null,
+          "text": "speed and loudness. Computing & Control Engineering Journal, 7, 193-198.",
+          "bbox_pdf_points": [
+            106.3,
+            726.572,
+            472.7,
+            738.572
+          ]
+        }
+      ],
+      "citation_text": "Haas, E., & Edworthy, J. (1996). Designing urgency into auditory warnings using pitch, speed and loudness. Computing & Control Engineering Journal, 7, 193-198.",
+      "pdf_pages": [
+        43
+      ],
+      "printed_pages": [
+        "43"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Haas, E., & Edworthy, J.",
+        "date_text": "1996",
+        "title_text": "Designing urgency into auditory warnings using pitch, speed and loudness.",
+        "remaining_bibliographic_text": "Computing & Control Engineering Journal, 7, 193-198.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF018",
+      "ordinal": 18,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Hearst MA (1997) Dissonance on audio interfaces. IEEE Expert 12(5):10–16.",
+          "bbox_pdf_points": [
+            70.775,
+            72.622,
+            446.17,
+            84.622
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "https://doi.org/10.1109/64.621221",
+          "bbox_pdf_points": [
+            106.3,
+            93.372,
+            270.292,
+            105.372
+          ]
+        }
+      ],
+      "citation_text": "Hearst MA (1997) Dissonance on audio interfaces. IEEE Expert 12(5):10–16. https://doi.org/10.1109/64.621221",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Hearst MA",
+        "date_text": "1997",
+        "title_text": "Dissonance on audio interfaces.",
+        "remaining_bibliographic_text": "IEEE Expert 12(5):10–16. https://doi.org/10.1109/64.621221",
+        "doi_tokens_as_extracted": [
+          "10.1109/64.621221"
+        ],
+        "url_tokens_as_extracted": [
+          "https://doi.org/10.1109/64.621221"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF019",
+      "ordinal": 19,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Hellier E.J., Edworthy J., & Dennis I. (1993) Improving auditory warning design:",
+          "bbox_pdf_points": [
+            70.775,
+            134.892,
+            464.072,
+            146.892
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "quantifying and predicting the effects of different warning parameters on perceived",
+          "bbox_pdf_points": [
+            106.3,
+            155.642,
+            506.32,
+            167.642
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "urgency. Human Factors, vol. 35, no. 4, pp. 693-706.",
+          "bbox_pdf_points": [
+            106.3,
+            176.142,
+            360.9,
+            188.142
+          ]
+        }
+      ],
+      "citation_text": "Hellier E.J., Edworthy J., & Dennis I. (1993) Improving auditory warning design: quantifying and predicting the effects of different warning parameters on perceived urgency. Human Factors, vol. 35, no. 4, pp. 693-706.",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Hellier E.J., Edworthy J., & Dennis I.",
+        "date_text": "1993",
+        "title_text": "Improving auditory warning design: quantifying and predicting the effects of different warning parameters on perceived urgency.",
+        "remaining_bibliographic_text": "Human Factors, vol. 35, no. 4, pp. 693-706.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF020",
+      "ordinal": 20,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Hollifield, B., & Habibi, E. (2010). The alarm management handbook: A comprehensive",
+          "bbox_pdf_points": [
+            70.775,
+            217.672,
+            496.028,
+            229.672
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "guide : Practical and proven methods to optimize the performance of alarm",
+          "bbox_pdf_points": [
+            106.3,
+            238.422,
+            469.652,
+            250.422
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "management systems (2nd. ed.). Houston, TX: PAS.",
+          "bbox_pdf_points": [
+            106.3,
+            259.172,
+            356.798,
+            271.172
+          ]
+        }
+      ],
+      "citation_text": "Hollifield, B., & Habibi, E. (2010). The alarm management handbook: A comprehensive guide : Practical and proven methods to optimize the performance of alarm management systems (2nd. ed.). Houston, TX: PAS.",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Hollifield, B., & Habibi, E.",
+        "date_text": "2010",
+        "title_text": "The alarm management handbook: A comprehensive guide : Practical and proven methods to optimize the performance of alarm management systems (2nd.",
+        "remaining_bibliographic_text": "ed.). Houston, TX: PAS.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF021",
+      "ordinal": 21,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "International Maritime Organization (IMO). (2009). Resolution A.1021(26), Code on Alerts",
+          "bbox_pdf_points": [
+            70.775,
+            300.442,
+            510.252,
+            312.442
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "and Indicators. Available at:",
+          "bbox_pdf_points": [
+            106.3,
+            321.192,
+            244.186,
+            333.192
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions",
+          "bbox_pdf_points": [
+            106.3,
+            341.942,
+            521.044,
+            353.942
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "/AssemblyDocuments/A.1021(26).pdf",
+          "bbox_pdf_points": [
+            106.3,
+            362.692,
+            289.96,
+            374.692
+          ]
+        }
+      ],
+      "citation_text": "International Maritime Organization (IMO). (2009). Resolution A.1021(26), Code on Alerts and Indicators. Available at: https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions /AssemblyDocuments/A.1021(26).pdf",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "International Maritime Organization (IMO).",
+        "date_text": "2009",
+        "title_text": "Resolution A.1021(26), Code on Alerts and Indicators.",
+        "remaining_bibliographic_text": "Available at: https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions /AssemblyDocuments/A.1021(26).pdf",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF022",
+      "ordinal": 22,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Johannsen, G. (2004). \"Auditory displays in human-machine interfaces.\" Proceedings of the",
+          "bbox_pdf_points": [
+            70.775,
+            403.962,
+            511.714,
+            415.962
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "IEEE 92(4): 742-758.",
+          "bbox_pdf_points": [
+            70.775,
+            424.712,
+            174.83,
+            436.712
+          ]
+        }
+      ],
+      "citation_text": "Johannsen, G. (2004). \"Auditory displays in human-machine interfaces.\" Proceedings of the IEEE 92(4): 742-758.",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Johannsen, G.",
+        "date_text": "2004",
+        "title_text": "\"Auditory displays in human-machine interfaces.\" Proceedings of the IEEE 92(4): 742-758.",
+        "remaining_bibliographic_text": "",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF023",
+      "ordinal": 23,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Lowhorn, Greg. (2007). Qualitative and Quantitative Research: How to Choose the Best",
+          "bbox_pdf_points": [
+            70.775,
+            465.992,
+            496.26,
+            477.992
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Design. Regent University. Retrieved from:",
+          "bbox_pdf_points": [
+            106.3,
+            486.742,
+            316.052,
+            498.742
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "https://www.researchgate.net/publication/256053334_Qualitative_and_Quantitative_R",
+          "bbox_pdf_points": [
+            106.3,
+            507.492,
+            522.34,
+            519.492
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "esearch_How_to_Choose_the_Best_Design",
+          "bbox_pdf_points": [
+            106.3,
+            528.242,
+            316.672,
+            540.242
+          ]
+        }
+      ],
+      "citation_text": "Lowhorn, Greg. (2007). Qualitative and Quantitative Research: How to Choose the Best Design. Regent University. Retrieved from: https://www.researchgate.net/publication/256053334_Qualitative_and_Quantitative_R esearch_How_to_Choose_the_Best_Design",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Lowhorn, Greg.",
+        "date_text": "2007",
+        "title_text": "Qualitative and Quantitative Research: How to Choose the Best Design.",
+        "remaining_bibliographic_text": "Regent University. Retrieved from: https://www.researchgate.net/publication/256053334_Qualitative_and_Quantitative_R esearch_How_to_Choose_the_Best_Design",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.researchgate.net/publication/256053334_Qualitative_and_Quantitative_R"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF024",
+      "ordinal": 24,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Marshall, D. C., Lee, J. D., & Austria, P. A. (2007). Alerts for In-Vehicle Information",
+          "bbox_pdf_points": [
+            70.775,
+            569.512,
+            481.362,
+            581.512
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Systems: Annoyance, Urgency, and Appropriateness. Human Factors, 49(1), 145-157.",
+          "bbox_pdf_points": [
+            106.3,
+            590.262,
+            518.95,
+            602.262
+          ]
+        }
+      ],
+      "citation_text": "Marshall, D. C., Lee, J. D., & Austria, P. A. (2007). Alerts for In-Vehicle Information Systems: Annoyance, Urgency, and Appropriateness. Human Factors, 49(1), 145-157.",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Marshall, D. C., Lee, J. D., & Austria, P. A.",
+        "date_text": "2007",
+        "title_text": "Alerts for In-Vehicle Information Systems: Annoyance, Urgency, and Appropriateness.",
+        "remaining_bibliographic_text": "Human Factors, 49(1), 145-157.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF025",
+      "ordinal": 25,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Metah, B. R. & Reddy Y.K. (2015). Chapter 21 - Alarm management systems, Industrial",
+          "bbox_pdf_points": [
+            70.775,
+            631.792,
+            498.766,
+            643.792
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Process Automation Systems: Design and Implementation. (pp. 569-582). Oxford, UK:",
+          "bbox_pdf_points": [
+            106.3,
+            652.542,
+            523.976,
+            664.542
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Elsevier",
+          "bbox_pdf_points": [
+            106.3,
+            673.042,
+            145.276,
+            685.042
+          ]
+        }
+      ],
+      "citation_text": "Metah, B. R. & Reddy Y.K. (2015). Chapter 21 - Alarm management systems, Industrial Process Automation Systems: Design and Implementation. (pp. 569-582). Oxford, UK: Elsevier",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Metah, B. R. & Reddy Y.K.",
+        "date_text": "2015",
+        "title_text": "Chapter 21 - Alarm management systems, Industrial Process Automation Systems: Design and Implementation.",
+        "remaining_bibliographic_text": "(pp. 569-582). Oxford, UK: Elsevier",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF026",
+      "ordinal": 26,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "NORSOK Standard I-002 Rev. 2. (2001). Safety and Automation Systems (SAS). Norwegian",
+          "bbox_pdf_points": [
+            70.775,
+            714.562,
+            513.158,
+            726.562
+          ]
+        },
+        {
+          "pdf_page": 44,
+          "printed_page": "44",
+          "column": null,
+          "text": "Technology Centre, Oslo, Norway",
+          "bbox_pdf_points": [
+            106.3,
+            735.317,
+            271.708,
+            747.317
+          ]
+        }
+      ],
+      "citation_text": "NORSOK Standard I-002 Rev. 2. (2001). Safety and Automation Systems (SAS). Norwegian Technology Centre, Oslo, Norway",
+      "pdf_pages": [
+        44
+      ],
+      "printed_pages": [
+        "44"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "NORSOK Standard I-002 Rev. 2.",
+        "date_text": "2001",
+        "title_text": "Safety and Automation Systems (SAS).",
+        "remaining_bibliographic_text": "Norwegian Technology Centre, Oslo, Norway",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF027",
+      "ordinal": 27,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Norwegian Energy Partners. (2021). Petroleum Safety Authority Norway. Retrieved from:",
+          "bbox_pdf_points": [
+            70.775,
+            93.372,
+            504.359,
+            105.372
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "https://www.norwep.com/About/Alliances/Petroleum-Safety-Authority",
+          "bbox_pdf_points": [
+            106.3,
+            114.122,
+            448.158,
+            126.122
+          ]
+        }
+      ],
+      "citation_text": "Norwegian Energy Partners. (2021). Petroleum Safety Authority Norway. Retrieved from: https://www.norwep.com/About/Alliances/Petroleum-Safety-Authority",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Norwegian Energy Partners.",
+        "date_text": "2021",
+        "title_text": "Petroleum Safety Authority Norway.",
+        "remaining_bibliographic_text": "Retrieved from: https://www.norwep.com/About/Alliances/Petroleum-Safety-Authority",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.norwep.com/About/Alliances/Petroleum-Safety-Authority"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF028",
+      "ordinal": 28,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Norwegian Petroleum Directorate. (2001). Principles for alarm system design: YA-711. 1st",
+          "bbox_pdf_points": [
+            70.775,
+            155.642,
+            508.026,
+            167.642
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Edition.",
+          "bbox_pdf_points": [
+            106.3,
+            169.392,
+            144.304,
+            181.392
+          ]
+        }
+      ],
+      "citation_text": "Norwegian Petroleum Directorate. (2001). Principles for alarm system design: YA-711. 1st Edition.",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Norwegian Petroleum Directorate.",
+        "date_text": "2001",
+        "title_text": "Principles for alarm system design: YA-711.",
+        "remaining_bibliographic_text": "1st Edition.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF029",
+      "ordinal": 29,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Patterson, R.D. (1990). Auditory warning sounds in the work environment. Phil. Trans. R.",
+          "bbox_pdf_points": [
+            70.775,
+            203.922,
+            501.912,
+            215.922
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Soc. Lond., vol. 327, pp. 485-492.",
+          "bbox_pdf_points": [
+            106.3,
+            224.672,
+            270.85,
+            236.672
+          ]
+        }
+      ],
+      "citation_text": "Patterson, R.D. (1990). Auditory warning sounds in the work environment. Phil. Trans. R. Soc. Lond., vol. 327, pp. 485-492.",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Patterson, R.D.",
+        "date_text": "1990",
+        "title_text": "Auditory warning sounds in the work environment.",
+        "remaining_bibliographic_text": "Phil. Trans. R. Soc. Lond., vol. 327, pp. 485-492.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF030",
+      "ordinal": 30,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Rasmussen, J. (1990). The Human Data Processor as a System Component: Bits and Pieces",
+          "bbox_pdf_points": [
+            70.775,
+            265.922,
+            512.72,
+            277.922
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "of a Model, Report No. Nisø-M-1722. Roskilde, Denmark: Danish Atomic Energy",
+          "bbox_pdf_points": [
+            106.3,
+            286.692,
+            501.98,
+            298.692
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Commission.",
+          "bbox_pdf_points": [
+            106.3,
+            307.442,
+            169.78,
+            319.442
+          ]
+        }
+      ],
+      "citation_text": "Rasmussen, J. (1990). The Human Data Processor as a System Component: Bits and Pieces of a Model, Report No. Nisø-M-1722. Roskilde, Denmark: Danish Atomic Energy Commission.",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Rasmussen, J.",
+        "date_text": "1990",
+        "title_text": "The Human Data Processor as a System Component: Bits and Pieces of a Model, Report No.",
+        "remaining_bibliographic_text": "Nisø-M-1722. Roskilde, Denmark: Danish Atomic Energy Commission.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF031",
+      "ordinal": 31,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Reason, J. (1990). Human Error. New York: Cambridge University Press",
+          "bbox_pdf_points": [
+            70.775,
+            348.692,
+            424.168,
+            360.692
+          ]
+        }
+      ],
+      "citation_text": "Reason, J. (1990). Human Error. New York: Cambridge University Press",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Reason, J.",
+        "date_text": "1990",
+        "title_text": "Human Error.",
+        "remaining_bibliographic_text": "New York: Cambridge University Press",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF032",
+      "ordinal": 32,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Petroleumtilsynet. (2016). Rapport etter tilsyn med alarmbelastning og Human Factors",
+          "bbox_pdf_points": [
+            70.775,
+            390.212,
+            490.834,
+            402.212
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "forhold i kontrollrom på Mongstad. Retrieved from:",
+          "bbox_pdf_points": [
+            106.3,
+            410.962,
+            356.448,
+            422.962
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "https://www.ptil.no/contentassets/7d8d1aecadfa4a379350e936c5ba2f11/2016_289_tils",
+          "bbox_pdf_points": [
+            106.3,
+            431.462,
+            523.036,
+            443.462
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "ynsrapport-alarmbelastning-kontrollrom-mongstad.pdf",
+          "bbox_pdf_points": [
+            106.3,
+            452.212,
+            369.344,
+            464.212
+          ]
+        }
+      ],
+      "citation_text": "Petroleumtilsynet. (2016). Rapport etter tilsyn med alarmbelastning og Human Factors forhold i kontrollrom på Mongstad. Retrieved from: https://www.ptil.no/contentassets/7d8d1aecadfa4a379350e936c5ba2f11/2016_289_tils ynsrapport-alarmbelastning-kontrollrom-mongstad.pdf",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Petroleumtilsynet.",
+        "date_text": "2016",
+        "title_text": "Rapport etter tilsyn med alarmbelastning og Human Factors forhold i kontrollrom på Mongstad.",
+        "remaining_bibliographic_text": "Retrieved from: https://www.ptil.no/contentassets/7d8d1aecadfa4a379350e936c5ba2f11/2016_289_tils ynsrapport-alarmbelastning-kontrollrom-mongstad.pdf",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.ptil.no/contentassets/7d8d1aecadfa4a379350e936c5ba2f11/2016_289_tils"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF033",
+      "ordinal": 33,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Petroleumtilsynet. (2017). Rapport etter oppfølgingstilsyn med alarmbelastning og Human",
+          "bbox_pdf_points": [
+            70.775,
+            493.742,
+            507.43,
+            505.742
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Factors forhold i sentralt kontrollrom på Mongstad. Retrieved from:",
+          "bbox_pdf_points": [
+            106.3,
+            514.492,
+            436.468,
+            526.492
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "https://www.ptil.no/contentassets/66bf2eddc9b146be9a23ce7b71e10c69/2016_289-",
+          "bbox_pdf_points": [
+            106.3,
+            534.992,
+            509.466,
+            546.992
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "rapport.pdf",
+          "bbox_pdf_points": [
+            106.3,
+            555.762,
+            159.796,
+            567.762
+          ]
+        }
+      ],
+      "citation_text": "Petroleumtilsynet. (2017). Rapport etter oppfølgingstilsyn med alarmbelastning og Human Factors forhold i sentralt kontrollrom på Mongstad. Retrieved from: https://www.ptil.no/contentassets/66bf2eddc9b146be9a23ce7b71e10c69/2016_289- rapport.pdf",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Petroleumtilsynet.",
+        "date_text": "2017",
+        "title_text": "Rapport etter oppfølgingstilsyn med alarmbelastning og Human Factors forhold i sentralt kontrollrom på Mongstad.",
+        "remaining_bibliographic_text": "Retrieved from: https://www.ptil.no/contentassets/66bf2eddc9b146be9a23ce7b71e10c69/2016_289- rapport.pdf",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.ptil.no/contentassets/66bf2eddc9b146be9a23ce7b71e10c69/2016_289-"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF034",
+      "ordinal": 34,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Reed, D. and T. Z. Strybel (2004). \"Does the Perceived Urgency of Auditory Signals Affect",
+          "bbox_pdf_points": [
+            70.775,
+            597.262,
+            511.643,
+            609.262
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Auditory Spatial Cueing in Visual Search Tasks?\" Proceedings of the Human Factors",
+          "bbox_pdf_points": [
+            106.3,
+            618.012,
+            515.704,
+            630.012
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "and Ergonomics Society Annual Meeting 48(16): 1823-1827.",
+          "bbox_pdf_points": [
+            106.3,
+            638.542,
+            401.4,
+            650.542
+          ]
+        }
+      ],
+      "citation_text": "Reed, D. and T. Z. Strybel (2004). \"Does the Perceived Urgency of Auditory Signals Affect Auditory Spatial Cueing in Visual Search Tasks?\" Proceedings of the Human Factors and Ergonomics Society Annual Meeting 48(16): 1823-1827.",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Reed, D. and T. Z. Strybel",
+        "date_text": "2004",
+        "title_text": "\"Does the Perceived Urgency of Auditory Signals Affect Auditory Spatial Cueing in Visual Search Tasks?\" Proceedings of the Human Factors and Ergonomics Society Annual Meeting 48(16): 1823-1827.",
+        "remaining_bibliographic_text": "",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF035",
+      "ordinal": 35,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Rothenberg, D. (2009). Alarm Management for Process Control : A Best-Practice Guide for",
+          "bbox_pdf_points": [
+            70.775,
+            680.042,
+            514.026,
+            692.042
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Design, Implementation, and Use of Industrial Alarm Systems. New York: Momentum",
+          "bbox_pdf_points": [
+            106.3,
+            700.792,
+            522.694,
+            712.792
+          ]
+        },
+        {
+          "pdf_page": 45,
+          "printed_page": "45",
+          "column": null,
+          "text": "Press.",
+          "bbox_pdf_points": [
+            106.3,
+            721.562,
+            134.776,
+            733.562
+          ]
+        }
+      ],
+      "citation_text": "Rothenberg, D. (2009). Alarm Management for Process Control : A Best-Practice Guide for Design, Implementation, and Use of Industrial Alarm Systems. New York: Momentum Press.",
+      "pdf_pages": [
+        45
+      ],
+      "printed_pages": [
+        "45"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Rothenberg, D.",
+        "date_text": "2009",
+        "title_text": "Alarm Management for Process Control : A Best-Practice Guide for Design, Implementation, and Use of Industrial Alarm Systems.",
+        "remaining_bibliographic_text": "New York: Momentum Press.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF036",
+      "ordinal": 36,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Rousseau, Manning, & Denyer. (2008) Evidence in management and organizational science:",
+          "bbox_pdf_points": [
+            70.775,
+            72.622,
+            517.952,
+            84.622
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Assembling the field’s full weight of scientific knowledge through syntheses. The",
+          "bbox_pdf_points": [
+            106.3,
+            93.372,
+            493.276,
+            105.372
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Academy of Management Annals, 2(1):475–515. doi:10.1080/19416520802211651.",
+          "bbox_pdf_points": [
+            106.3,
+            114.122,
+            511.126,
+            126.122
+          ]
+        }
+      ],
+      "citation_text": "Rousseau, Manning, & Denyer. (2008) Evidence in management and organizational science: Assembling the field’s full weight of scientific knowledge through syntheses. The Academy of Management Annals, 2(1):475–515. doi:10.1080/19416520802211651.",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Rousseau, Manning, & Denyer.",
+        "date_text": "2008",
+        "title_text": "Evidence in management and organizational science: Assembling the field’s full weight of scientific knowledge through syntheses.",
+        "remaining_bibliographic_text": "The Academy of Management Annals, 2(1):475–515. doi:10.1080/19416520802211651.",
+        "doi_tokens_as_extracted": [
+          "10.1080/19416520802211651."
+        ],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF037",
+      "ordinal": 37,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Sirkka, A., et al. (2014). An auditory display to convey urgency information in industrial",
+          "bbox_pdf_points": [
+            70.775,
+            155.642,
+            496.512,
+            167.642
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "control rooms. Lecture Notes in Computer Science (including subseries Lecture Notes",
+          "bbox_pdf_points": [
+            106.3,
+            176.142,
+            520.772,
+            188.142
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "in Artificial Intelligence and Lecture Notes in Bioinformatics). 8532 LNAI: 533-544.",
+          "bbox_pdf_points": [
+            106.3,
+            196.892,
+            515.7,
+            208.892
+          ]
+        }
+      ],
+      "citation_text": "Sirkka, A., et al. (2014). An auditory display to convey urgency information in industrial control rooms. Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics). 8532 LNAI: 533-544.",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Sirkka, A., et al.",
+        "date_text": "2014",
+        "title_text": "An auditory display to convey urgency information in industrial control rooms.",
+        "remaining_bibliographic_text": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics). 8532 LNAI: 533-544.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF038",
+      "ordinal": 38,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Stanton, N. A., Salmon, P., Jenkins, D. & Walker, G. (2010). Human Factors in the Design",
+          "bbox_pdf_points": [
+            70.775,
+            238.422,
+            509.566,
+            250.422
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "and Evaluation of Central Control Room Operations. CRC Press. Taylor & Francis",
+          "bbox_pdf_points": [
+            106.3,
+            259.172,
+            507.016,
+            271.172
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Group.",
+          "bbox_pdf_points": [
+            106.3,
+            279.672,
+            139.792,
+            291.672
+          ]
+        }
+      ],
+      "citation_text": "Stanton, N. A., Salmon, P., Jenkins, D. & Walker, G. (2010). Human Factors in the Design and Evaluation of Central Control Room Operations. CRC Press. Taylor & Francis Group.",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Stanton, N. A., Salmon, P., Jenkins, D. & Walker, G.",
+        "date_text": "2010",
+        "title_text": "Human Factors in the Design and Evaluation of Central Control Room Operations.",
+        "remaining_bibliographic_text": "CRC Press. Taylor & Francis Group.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF039",
+      "ordinal": 39,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Stanton, N.A. (1994). Key topics in alarm Design. In N.A. Stanton (Ed.), Human Factors in",
+          "bbox_pdf_points": [
+            70.775,
+            321.192,
+            512.428,
+            333.192
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Alarm Design. (pp. 221-231). London: Taylor & Francis.",
+          "bbox_pdf_points": [
+            106.3,
+            341.942,
+            380.562,
+            353.942
+          ]
+        }
+      ],
+      "citation_text": "Stanton, N.A. (1994). Key topics in alarm Design. In N.A. Stanton (Ed.), Human Factors in Alarm Design. (pp. 221-231). London: Taylor & Francis.",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Stanton, N.A.",
+        "date_text": "1994",
+        "title_text": "Key topics in alarm Design.",
+        "remaining_bibliographic_text": "In N.A. Stanton (Ed.), Human Factors in Alarm Design. (pp. 221-231). London: Taylor & Francis.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF040",
+      "ordinal": 40,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "UKEssays. (2018). Validity and Reliability of Systematic Review. Retrieved from",
+          "bbox_pdf_points": [
+            70.775,
+            383.212,
+            459.954,
+            395.212
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "https://www.ukessays.com/essays/psycology/validity-and-reliability-of-systematic-",
+          "bbox_pdf_points": [
+            70.775,
+            403.962,
+            470.446,
+            415.962
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "review.php?vref=1",
+          "bbox_pdf_points": [
+            70.775,
+            424.712,
+            161.759,
+            436.712
+          ]
+        }
+      ],
+      "citation_text": "UKEssays. (2018). Validity and Reliability of Systematic Review. Retrieved from https://www.ukessays.com/essays/psycology/validity-and-reliability-of-systematic- review.php?vref=1",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "UKEssays.",
+        "date_text": "2018",
+        "title_text": "Validity and Reliability of Systematic Review.",
+        "remaining_bibliographic_text": "Retrieved from https://www.ukessays.com/essays/psycology/validity-and-reliability-of-systematic- review.php?vref=1",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.ukessays.com/essays/psycology/validity-and-reliability-of-systematic-"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF041",
+      "ordinal": 41,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Ulfvengren, P. (2003). Design of Natural Warning Sounds in Human-Machine Systems.",
+          "bbox_pdf_points": [
+            70.775,
+            465.992,
+            492.2,
+            477.992
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "(Doctoral dissertation, Royal Institute of Technology, Stockholm, Sweden). Retrieved",
+          "bbox_pdf_points": [
+            106.3,
+            486.742,
+            519.088,
+            498.742
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "from: https://www.diva-portal.org/smash/get/diva2:9515/FULLTEXT01.pdf",
+          "bbox_pdf_points": [
+            106.3,
+            507.492,
+            473.23,
+            519.492
+          ]
+        }
+      ],
+      "citation_text": "Ulfvengren, P. (2003). Design of Natural Warning Sounds in Human-Machine Systems. (Doctoral dissertation, Royal Institute of Technology, Stockholm, Sweden). Retrieved from: https://www.diva-portal.org/smash/get/diva2:9515/FULLTEXT01.pdf",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Ulfvengren, P.",
+        "date_text": "2003",
+        "title_text": "Design of Natural Warning Sounds in Human-Machine Systems.",
+        "remaining_bibliographic_text": "(Doctoral dissertation, Royal Institute of Technology, Stockholm, Sweden). Retrieved from: https://www.diva-portal.org/smash/get/diva2:9515/FULLTEXT01.pdf",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://www.diva-portal.org/smash/get/diva2:9515/FULLTEXT01.pdf"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF042",
+      "ordinal": 42,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Ulfvengren, P. (2007). DESIGN OF NATURAL WARNING SOUNDS. Proceedings of the 13th",
+          "bbox_pdf_points": [
+            70.775,
+            549.012,
+            523.65,
+            561.012
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "International Conference on Auditory Display, Montréal, Canada.",
+          "bbox_pdf_points": [
+            106.3,
+            569.512,
+            422.176,
+            581.512
+          ]
+        }
+      ],
+      "citation_text": "Ulfvengren, P. (2007). DESIGN OF NATURAL WARNING SOUNDS. Proceedings of the 13th International Conference on Auditory Display, Montréal, Canada.",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Ulfvengren, P.",
+        "date_text": "2007",
+        "title_text": "DESIGN OF NATURAL WARNING SOUNDS.",
+        "remaining_bibliographic_text": "Proceedings of the 13th International Conference on Auditory Display, Montréal, Canada.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF043",
+      "ordinal": 43,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Villoria, C. (2013). Propose an alternative method to generate Alarm Management KPI",
+          "bbox_pdf_points": [
+            70.775,
+            611.012,
+            492.516,
+            623.012
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "utilizing IMS in Offshore Platforms (Master’s Thesis, University of Stavanger,",
+          "bbox_pdf_points": [
+            106.3,
+            631.792,
+            482.988,
+            643.792
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Stavanger, Norway). Retrieved from: https://uis.brage.unit.no/uis-",
+          "bbox_pdf_points": [
+            106.3,
+            652.542,
+            423.176,
+            664.542
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "xmlui/bitstream/handle/11250/182924/Villoria.pdf?sequence=6&isAllowed=y",
+          "bbox_pdf_points": [
+            106.3,
+            673.042,
+            483.148,
+            685.042
+          ]
+        }
+      ],
+      "citation_text": "Villoria, C. (2013). Propose an alternative method to generate Alarm Management KPI utilizing IMS in Offshore Platforms (Master’s Thesis, University of Stavanger, Stavanger, Norway). Retrieved from: https://uis.brage.unit.no/uis- xmlui/bitstream/handle/11250/182924/Villoria.pdf?sequence=6&isAllowed=y",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Villoria, C.",
+        "date_text": "2013",
+        "title_text": "Propose an alternative method to generate Alarm Management KPI utilizing IMS in Offshore Platforms (Master’s Thesis, University of Stavanger, Stavanger, Norway).",
+        "remaining_bibliographic_text": "Retrieved from: https://uis.brage.unit.no/uis- xmlui/bitstream/handle/11250/182924/Villoria.pdf?sequence=6&isAllowed=y",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [
+          "https://uis.brage.unit.no/uis-"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF044",
+      "ordinal": 44,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Viraldo, J. and B. Caldwell (2013). Sonification as Sensemaking in Control Room",
+          "bbox_pdf_points": [
+            70.775,
+            714.562,
+            463.664,
+            726.562
+          ]
+        },
+        {
+          "pdf_page": 46,
+          "printed_page": "46",
+          "column": null,
+          "text": "Applications. Proceedings of the Human Factors and Ergonomics Society Annual",
+          "bbox_pdf_points": [
+            106.3,
+            735.317,
+            497.238,
+            747.317
+          ]
+        }
+      ],
+      "citation_text": "Viraldo, J. and B. Caldwell (2013). Sonification as Sensemaking in Control Room Applications. Proceedings of the Human Factors and Ergonomics Society Annual",
+      "pdf_pages": [
+        46
+      ],
+      "printed_pages": [
+        "46"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Viraldo, J. and B. Caldwell",
+        "date_text": "2013",
+        "title_text": "Sonification as Sensemaking in Control Room Applications.",
+        "remaining_bibliographic_text": "Proceedings of the Human Factors and Ergonomics Society Annual",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF045",
+      "ordinal": 45,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Watson, M. (2006). Scalable earcons: bridging the gap between intermittent and continuous",
+          "bbox_pdf_points": [
+            70.775,
+            93.372,
+            515.096,
+            105.372
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "auditory displays. Proceedings of the 12th International Conference on Auditory",
+          "bbox_pdf_points": [
+            106.3,
+            114.122,
+            492.7,
+            126.122
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Display, London",
+          "bbox_pdf_points": [
+            106.3,
+            134.892,
+            186.772,
+            146.892
+          ]
+        }
+      ],
+      "citation_text": "Watson, M. (2006). Scalable earcons: bridging the gap between intermittent and continuous auditory displays. Proceedings of the 12th International Conference on Auditory Display, London",
+      "pdf_pages": [
+        47
+      ],
+      "printed_pages": [
+        "47"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Watson, M.",
+        "date_text": "2006",
+        "title_text": "Scalable earcons: bridging the gap between intermittent and continuous auditory displays.",
+        "remaining_bibliographic_text": "Proceedings of the 12th International Conference on Auditory Display, London",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF046",
+      "ordinal": 46,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Wolfman, G. J., Miller, D. L., & Volanth, A. J. (1996). An Application of Auditory Alarm",
+          "bbox_pdf_points": [
+            70.775,
+            176.142,
+            500.26,
+            188.142
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Research in the Design of Warning Sounds for an Integrated Tower Air Traffic",
+          "bbox_pdf_points": [
+            106.3,
+            196.892,
+            485.2,
+            208.892
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Control Computer System. Proceedings of the Human Factors and Ergonomics Society",
+          "bbox_pdf_points": [
+            106.3,
+            217.672,
+            522.942,
+            229.672
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Annual Meeting, 40(19), 1002–1006. https://doi.org/10.1177/154193129604001910",
+          "bbox_pdf_points": [
+            106.3,
+            238.422,
+            509.86,
+            250.422
+          ]
+        }
+      ],
+      "citation_text": "Wolfman, G. J., Miller, D. L., & Volanth, A. J. (1996). An Application of Auditory Alarm Research in the Design of Warning Sounds for an Integrated Tower Air Traffic Control Computer System. Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 40(19), 1002–1006. https://doi.org/10.1177/154193129604001910",
+      "pdf_pages": [
+        47
+      ],
+      "printed_pages": [
+        "47"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Wolfman, G. J., Miller, D. L., & Volanth, A. J.",
+        "date_text": "1996",
+        "title_text": "An Application of Auditory Alarm Research in the Design of Warning Sounds for an Integrated Tower Air Traffic Control Computer System.",
+        "remaining_bibliographic_text": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 40(19), 1002–1006. https://doi.org/10.1177/154193129604001910",
+        "doi_tokens_as_extracted": [
+          "10.1177/154193129604001910"
+        ],
+        "url_tokens_as_extracted": [
+          "https://doi.org/10.1177/154193129604001910"
+        ],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    },
+    {
+      "occurrence_id": "C9-TOTLAND-2021-REF047",
+      "ordinal": 47,
+      "source_number": null,
+      "citation_lines": [
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "Xiao, Y. and F. J. Seagull (1999). An Analysis of Problems with Auditory Alarms: Defining",
+          "bbox_pdf_points": [
+            70.775,
+            279.672,
+            508.698,
+            291.672
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "the Roles of Alarms in Process Monitoring Tasks. Proceedings of the Human Factors",
+          "bbox_pdf_points": [
+            106.3,
+            300.442,
+            513.728,
+            312.442
+          ]
+        },
+        {
+          "pdf_page": 47,
+          "printed_page": "47",
+          "column": null,
+          "text": "and Ergonomics Society Annual Meeting 43(3): 256-260.",
+          "bbox_pdf_points": [
+            106.3,
+            321.192,
+            383.4,
+            333.192
+          ]
+        }
+      ],
+      "citation_text": "Xiao, Y. and F. J. Seagull (1999). An Analysis of Problems with Auditory Alarms: Defining the Roles of Alarms in Process Monitoring Tasks. Proceedings of the Human Factors and Ergonomics Society Annual Meeting 43(3): 256-260.",
+      "pdf_pages": [
+        47
+      ],
+      "printed_pages": [
+        "47"
+      ],
+      "bibliographic_parse_hints": {
+        "authors_text": "Xiao, Y. and F. J. Seagull",
+        "date_text": "1999",
+        "title_text": "An Analysis of Problems with Auditory Alarms: Defining the Roles of Alarms in Process Monitoring Tasks.",
+        "remaining_bibliographic_text": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting 43(3): 256-260.",
+        "doi_tokens_as_extracted": [],
+        "url_tokens_as_extracted": [],
+        "status": "unverified parser hints; use complete citation_text for identity work",
+        "split_method": "parenthesized-date split"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "SRC-REL-LUHMANN-1995",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Luhmann, Niklas",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Stanford University Press, 1995 (as cited by Brier)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup LUHMANN-1995 (openlibrary-ta) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL1652158W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work record (1995, 2 editions)",
+          "Cited in Brier's own reference lists parsed from hashed files (BRIER-REFLISTS-R004.json): IR 2013, SK 2015, GL 2015 AM"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1995"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Social Systems",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,45 @@
+{
+  "id": "HIT-R004-BRLIR2013-111",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-PEIRCE-CP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 111,
+        "raw_metadata": "Peirce, C.S. (1931-1935). The Collected Papers of Charles Sanders Peirce. Intelex CD-ROM edition (1994), reproducing Vols. I-VI, Hartshorne, C. & Weiss, P. (Eds.). Cambridge, MA: Harvard University Press 1931-1935; Vols. VII-VIII, Burks, A.W. (Ed.) same publisher, 1958. Citations give volume and paragraph number, separated by a period.",
+        "resolution_reason": "Entry names this work (author, year, title); the edition Brier cites may differ (see the source record).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-PEIRCE-CP",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

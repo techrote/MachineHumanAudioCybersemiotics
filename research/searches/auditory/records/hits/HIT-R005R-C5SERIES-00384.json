@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00384",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 384,
+        "raw_metadata": "Localisation of multiple sounds as a function of the duration of the inter-sound gap | Martin, R.; McAnally, K. I.; Watt, J. P. | issued: 2004-07 | Text | https://repository.gatech.edu/entities/publication/e1d869de-4db5-45bc-8f9b-1817c0d5b8f2",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e1d869de-4db5-45bc-8f9b-1817c0d5b8f2"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50898"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

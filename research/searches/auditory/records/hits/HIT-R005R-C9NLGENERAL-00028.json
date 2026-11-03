@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C9NLGENERAL-00028",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 28,
+        "raw_metadata": "Edworthy, J., Parker, C. J., & Martin, E. V. (2022). Discriminating between simultaneous audible alarms is easier with auditory icons. Applied Ergonomics, 99, 103609. https://doi.org/10.1016/j.apergo.2021.103609 | source PDF pp.36–36, reference 28",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1016/j.apergo.2021.103609"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

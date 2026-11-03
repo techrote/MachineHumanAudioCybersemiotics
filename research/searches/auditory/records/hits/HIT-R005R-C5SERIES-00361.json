@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00361",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 361,
+        "raw_metadata": "The interaction between head-tracker latency, source duration, and response time in the localization of virtual sound sources | Brungart, D. S.; Simpson, B. D.; McKinley, R. L.; Kordik, A. J.; Dallman, R. C.; Ovenshire, D. A. | issued: 2004-07 | Text | https://repository.gatech.edu/entities/publication/89a2958f-fc6d-4021-ba14-e2f2f7b3e6ef",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/89a2958f-fc6d-4021-ba14-e2f2f7b3e6ef"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50921"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

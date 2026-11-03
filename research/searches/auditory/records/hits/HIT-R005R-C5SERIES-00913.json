@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00913",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 913,
+        "raw_metadata": "Cross-Modal Soundscape Mapping: Integrating Ambisonic Environmental Audio Recordings and High Dynamic Range Spherical Panoramic Photography | Carter, J. Parkman; Braasch, Jonas | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/eba55456-e59b-4e85-9e64-3b04dc455edf",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/eba55456-e59b-4e85-9e64-3b04dc455edf"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52077"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

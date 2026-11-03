@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9NLGENERAL-00082",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 82,
+        "raw_metadata": "Walker, B. N., & Nees, M. A. (2011). Theory of sonification. In T. Hermann, A. Hunt, & J. Neuhoff (Eds.), Principles of Sonification: An Introduction to Auditory Display (pp. 9–39). Logos Publishing House. | source PDF pp.42–42, reference 82",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ4-00132",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 132,
+        "raw_metadata": "Auditory Coding of Human Movement Kinematics | first author: Pia Maria Vinken | 2013-01-01 | article | https://openalex.org/W1990282485",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1990282485"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1163/22134808-00002435"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

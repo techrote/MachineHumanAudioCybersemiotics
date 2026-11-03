@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00864",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 864,
+        "raw_metadata": "Determination Of Subjective Tinnitus Characteristics By Means Of Sound Synthesis Controlled By The Touch Screen Interface | Poremski, Tomasz; Kotus, Józef; Odya, Piotr; Suchomski, Piotr; Czyżewski, Andrzej; Kostek, Bożena | issued: 2013-07 | Text | https://repository.gatech.edu/entities/publication/bc09a608-d5b8-49a7-8792-aa97f61a3198",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/bc09a608-d5b8-49a7-8792-aa97f61a3198"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51677"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

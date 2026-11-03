@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-LK4-AUTOPOIETIC-ENACTIVISM-02",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK4-AUTOPOIETIC-ENACTIVISM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "Phenomenology and naturalism in autopoietic and radical enactivism: exploring sense-making and continuity from the top down | Synthese | 10.1007/s11229-018-1851-3",
+        "resolution_reason": "Returned by the lookup but not the adjudicated match.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/s11229-018-1851-3"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK4-AUTOPOIETIC-ENACTIVISM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,63 @@
+{
+  "id": "SRC-REL-MATURANA-1988A",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Publication venue unresolved.",
+        "access_status": "not_attempted",
+        "authors": [
+          {
+            "name": "Maturana, Humberto R.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Cited by Brier as The Irish Journal of Psychology 9(1):25-82, the same pages as 1988b"
+        },
+        "family_links": [],
+        "identifiers": [],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Brier's lists give identical volume, issue and pages for 1988a and 1988b (BRL-IR2013, BRL-SK2015, BRL-GL2015AM)",
+          "Crossref shows only 'Reality: ...' at those pages and found no record with this title (lookup MATURANA-1988)"
+        ],
+        "metadata_status": "conflict",
+        "publication_date": {
+          "state": "known",
+          "value": "1988"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "other",
+        "title": "Ontology of Observing: The Biological Foundations of Self-Consciousness and the Physical Domain of Existence",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

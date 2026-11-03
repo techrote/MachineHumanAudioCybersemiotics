@@ -1,177 +1,100 @@
 # Auditory evidence search — MHAC-R005 coverage memo
 
-[Search log](../../searches/auditory/README.md) · [Export](../../searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json) · [Access ledger](../../searches/auditory/exports/ACCESS-LEDGER-R005-2026-10-13.csv) · [Known-item table](../../searches/auditory/exports/KNOWN-ITEM-CHECK-R005.csv) · [Build script](scripts/build_r005_records.py) · [Protocol §5](../../protocol/PROTOCOL-v1.md#5-track-e-sources-and-searches)
+[Search inventory](../../searches/auditory/README.md) · [Recovery checkpoint](../../searches/auditory/recovery-2026-11-03/README.md) · [Protocol §5](../../protocol/PROTOCOL-v1.md#5-track-e-sources-and-searches) · [Duplicate candidates](DUPLICATE-CANDIDATES.md)
 
-> **Coverage-limited search. No bibliographic database was searched.** Discovery relied on web search (C8), ICAD-host and grey-literature routes through the same engine (C5, C10) and two review reference lists (C9). This is the protocol's predeclared fallback (§5.3), not a silent narrowing, and it limits every completeness claim. Nothing here is a screening decision: every occurrence is still unscreened.
+**Coverage remains limited and Track E is not complete.** The 3 November 2026 recovery executed the frozen OpenAlex searches: seven query families have complete runs; broad EQ1 remains partial at the observed anonymous daily-budget boundary. The available ICAD series index and five additional review bibliography sections were recovered. Retrieval counts are not included-study or independent-sample counts.
 
-## Contents
+The cutoff remains **2026-10-04**, although recovery occurred on **2026-11-03**. No frozen concept block, language rule or eligibility criterion changed. The older 13 October observations are preserved, including access failures, abbreviated reference lists and subsequent manifestation-based corrections. The old statement that no bibliographic database was searched describes the October fallback only.
 
-| # | Section | Summary |
+## Inventory and reproducibility
+
+| Retained layer | Search records | Occurrences | Meaning |
+|---|---:|---:|---|
+| Preserved 13 October branch | 128 | 2,244 | Web routes, known-item lookups, 780 ICAD filenames, original and manifestation-based reference lists |
+| Three OpenAlex invocations | 15 | 17,456 | Includes two planned families skipped after an earlier family's access failure; every actual retrieval remains separate |
+| Georgia Tech ICAD series | 1 | 1,269 | Distinct repository items, including proceedings and media |
+| C9 known-item navigation | 1 | 26 | Combined web-tool batch; no query-specific total or pagination |
+| Five new bibliography sections | 5 | 488 | 85 + 91 + 47 + 80 + 185 ordered references |
+| **Auditory-lane total** | **150** | **21,483** | Discovery occurrences; overlap and eligibility remain for R006 |
+
+The [database summary](../../searches/auditory/recovery-2026-11-03/database/database-execution-summary.json) verifies **11,898 distinct OpenAlex work IDs** across all three invocations. A service ID is not automatically a verified publication identity. Neither occurrence nor ID counts measure scientific coverage or study independence.
+
+The [recovery builder](scripts/build_r005_recovery_records.py) verifies response hashes, decompressed payload hashes, per-run counts and ordered registration. It refuses conflicting history and preserves later revisions. Retained metadata permits offline re-registration without querying a changing index. Private PDFs and original API abstract indexes are not republished; derivatives identify original hashes and retrieval routes. A new online fetch is a new observation, not reproduction of historical bytes.
+
+## Channel outcomes and impact
+
+| Channel | Actual outcome | Consequence / next action |
 |---|---|---|
-| 1 | [Status and scope](#1-status-and-scope) | What ran on 13 October 2026 and under which rule. |
-| 2 | [Channel outcomes](#2-channel-outcomes) | C1–C10 with status, yield and impact. |
-| 3 | [What ran](#3-what-ran) | Batches, counts and record identifiers. |
-| 4 | [Known-item check](#4-known-item-check) | How many of 68 known eligible-type reports the web routes could find. |
-| 5 | [Targeted, negative, non-English, grey and contrary probes](#5-targeted-negative-non-english-grey-and-contrary-probes) | Yield of W2–W9, translations and grey routes. |
-| 6 | [Review and primary-study overlap](#6-review-and-primary-study-overlap) | Reviews located, items both reviews cite, leads for #4. |
-| 7 | [Possible duplicate publications](#7-possible-duplicate-publications) | Conference/journal, thesis/article and repository duplicates to resolve in #6. |
-| 8 | [Access is not an exclusion criterion](#8-access-is-not-an-exclusion-criterion) | How restrictions are recorded. |
-| 9 | [Unresolved gaps and stopping](#9-unresolved-gaps-and-stopping) | What is missing and why the search stops here. |
-| 10 | [Handoffs](#10-handoffs) | What #6, #4, #9 and #17 receive. |
-| 11 | [Reproduction and limits](#11-reproduction-and-limits) | How to rebuild the records and what the agent could not do. |
+| **C1 OpenAlex** | EQ2–EQ8 each have a complete run; EQ1 partial. [Audit](../../searches/auditory/recovery-2026-11-03/database/AUDIT.md). | Broad retrieval is incomplete. The final EQ1 prefix is sorted by date/title, not randomly sampled. Continue in a new immutable invocation when allowance permits and reconcile overlap. |
+| **C2 Crossref** | Current metadata probe succeeded; its API does not implement the frozen Boolean title/abstract semantics. | Available for DOI/metadata checking; no equivalent EQ1–EQ8 execution claimed. October refusal remains historically true. |
+| **C3 ACM DL** | No owner-run database export supplied; original access gap retained. | HCI coverage relies on other channels. ACM web results are not an ACM database search. |
+| **C4 IEEE Xplore** | No owner-run database export supplied; access gap retained. | Engineering and warning-system coverage remains uncertain. |
+| **C5 ICAD** | All 13 available Georgia Tech series pages enumerated, with issued-year outcomes for 1992–2026. [Manifest](../../searches/auditory/recovery-2026-11-03/icad/MANIFEST.json). | Index completion does not establish venue completion. 1992 is absent; the 2026 bin is a 2025 companion book issued in 2026, and the actual 2026 route returned 503. Empty bins do not prove no conference occurred. |
+| **C6 SAGE / T&F** | Publisher database searches unexecuted; explicit access gaps retained. | Human-factors coverage relies on OpenAlex, references and web routes. |
+| **C7 PsycINFO / WoS / Scopus** | Subscription searches unexecuted; no supplied exports. | Psychology, citation-index and non-English coverage remain uncertain. |
+| **C8 web search** | October W1–W9, extended W1 and seven translated W1 queries retained; no pagination. | Supplementary discovery only; ranking and recall unknown. |
+| **C9 chaining** | Original Nees–Liebman included-list and FRA bibliography retained; five additional sections recovered. | Backward chaining remains for other EQ8 reviews and subsequently included reports. Forward chaining has not run; C1 budget is exhausted. C9 is not complete. |
+| **C10 grey literature** | October report/thesis searches retained; new thesis/report bibliographies recovered. | Purposive transport, defence and thesis routes do not establish exhaustive grey coverage. |
 
-## 1. Status and scope
+The [historical database gate](../../protocol/gates/HG-R002-DATABASE-ACCESS.md) records the earlier owner-access request. Successful API access does not constitute a human authorization record or remove remaining channel and quota gaps.
 
-| Item | Record |
+## OpenAlex query execution
+
+| Frozen family | Complete matching records, or retained subset | Status |
+|---|---:|---|
+| EQ1 broad cue-family recall | Final sorted run 4,200 / 9,368 reported; 4,549 distinct IDs across attempts | **Partial** |
+| EQ2 urgency, hazard and severity | 556 / 556 | Complete run |
+| EQ3 voice, human likeness and affect | 76 / 76 | Complete run |
+| EQ4 uncertainty | 585 / 585 | Complete run |
+| EQ5 learning and retention | 2,112 / 2,112 | Complete run |
+| EQ6 monitoring sonification | 537 / 537 | Complete run |
+| EQ7 interruption and workload | 153 / 153 | Complete run |
+| EQ8 existing reviews | 4,652 / 4,652 | Complete run; references not all chained |
+
+Default relevance paging exposed duplicate IDs; affected runs remain partial even where raw counts equal the service total. Sorted recovery preserves every frozen term and field scope. Completion requires stable reported totals and equal distinct-ID counts. Separate attempts are never overwritten. Bounded temporary-load retries follow observed Retry-After values. The final run stopped at **2026-11-03T01:06:18Z**, when the response reported zero credits; no quota or authentication workaround was used.
+
+October negative/null-oriented W9 probes, grey routes and non-English translations remain in the [original export](../../searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json). Database searches have no language, type or open-access filter. This does not establish exhaustive null-result or non-English coverage. The [A7 date-derived inventory](../../searches/auditory/recovery-2026-11-03/database/A7-INVENTORY.json) retains 5,404 occurrences (4,029 distinct OpenAlex IDs) dated 2021-04-01–2026-10-04 across all query families. It is an offline subset of existing metadata, not a new executed query or complete cue-family update search; it inherits EQ1's incomplete retrieval. No dates were missing in this retained subset calculation.
+
+## Review bibliographies and version identity
+
+| Source / section | Verified range or boundary | Occurrences |
+|---|---|---:|
+| Nees–Liebman original tool-rendered included list | Discovery rendering without hash-bound page coordinates; truncation preserved | 68 |
+| Nees–Liebman 52-page accepted manuscript, included list | October manifestation-bound export; replaces the rendering for fidelity checks | 69 |
+| FRA 2022 bibliography | Original tool list and PDF-derived list; deliberately retained as separate occurrences | 115 + 115 |
+| Nees–Liebman accepted manuscript, general references | PDF pp. 33–42; distinct from its included-list section | 85 |
+| McFarlane et al. 2020 sleep-inertia review | PDF pp. 14–18 | 91 |
+| Totland 2021 process-industry thesis | Printed/PDF pp. 42–47 | 47 |
+| Edworthy 2013 medical audible-alarm review | PDF pp. 5–6 / printed pp. 588–589; references 1–80 | 80 |
+| Ruskin, Corvin and Rice 2020 ATC report | Printed/PDF pp. 55–79; repository author order differs and is preserved | 185 |
+
+November source files were lawfully obtained and inspected for identity and bibliography boundaries. This is **selected-range reading**, not empirical extraction. Hashes, access outcomes and locators are in [reference recovery](../../searches/auditory/recovery-2026-11-03/references/README.md) and [review recovery](../../searches/auditory/recovery-2026-11-03/reviews/README.md). The FRA reacquisition matches its October hash and is not another bibliography run.
+
+**Version reconciliation:** `SRC-NOV-NEES-LIEBMAN-2023-PREPRINT` describes the older 47-page 9.8.22 manuscript. The recovered 52-page accepted manuscript is separately registered as `SRC-AUD-NEES-LIEBMAN-2023-AM`, SHA256 `5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf`. Historical `SRCH-R005-RLNLAM` identifies these later bytes in its boundary although its basis pin points to the older source. That historical pin does not establish manifestation equivalence and must not transfer page numbers. New family links distinguish both manuscripts and the Version of Record.
+
+Reviews provide discovery paths, never duplicate primary observations. [Sixteen historical publication/sample-overlap flags](DUPLICATE-CANDIDATES.md) remain unadjudicated, including Walker conference/journal spearcon reports, Garzonis and Warnock thesis/article families, and rail-crossing alert reports. Shared authors, titles or paradigms justify inspection; they do not prove shared or independent samples.
+
+## Known-item check and residual bias
+
+The corrected October [known-item table](../../searches/auditory/exports/KNOWN-ITEM-CHECK-R005.csv) has **69 entries: 38 located, 10 possible and 21 not located**. It evaluates earlier web routes and has not been recomputed against the enlarged corpus. A title match does not establish eligibility, text access or independence.
+
+Residual biases include incomplete EQ1 retrieval, missing publisher/subscription channels, repository-year gaps, selective web indexing, limited non-English discovery and unfinished chaining. The date-sorted EQ1 prefix may overrepresent earlier work. Repository dates and item types require screening; an issued year does not establish the conference year or cutoff eligibility. Absence from this inventory never establishes absence of a relevant study.
+
+No item was excluded in recovery. Inaccessible reports remain candidates; unavailable full text must become `awaiting_text`, not exclusion. Primary-text requests follow actual title/abstract screening. No methods, outcomes or numerical estimates are inferred from snippets or bibliographies.
+
+## Stopping, dependency reconciliation and handoff
+
+This is a **checkpoint**, not Track E completion. Current API allowance is exhausted and inaccessible channels retain gaps. Protocol §11 also requires deduplication, resolved screening or awaiting text, and complete backward chaining; those conditions remain unmet. No target paper count is a stopping rule.
+
+Issue #6 depends on #5, while protocol §11's global search-completion rule includes work owned by #6. The safe staging is to land R005 search evidence and bounded R006 infrastructure/identity work as partial PRs, keep both issues open, and defer the completed corpus and dependent #7–#9 acceptance. This explicitly records the dependency tension without silently relaxing either contract.
+
+| Work | Actual state |
 |---|---|
-| Protocol | [v1](../../protocol/PROTOCOL-v1.md), frozen 2026-10-13; search cut-off 2026-10-04 |
-| Gate check (batch A0) | 02:05–02:16 UTC: OpenAlex refused in the owner's built-in browser and by the workspace proxy; Crossref refused by the proxy; no owner exports. [HG-R002-DATABASE-ACCESS](../../protocol/gates/HG-R002-DATABASE-ACCESS.md) is still `waiting`, so §5.3 applies. |
-| Executing agent | Claude in a claude.ai cloud session (configured model `claude-opus-5-5`); WebSearch, WebFetch, shell. No human took part. |
-| Assistance record | `AID-R005-AUDITORY-SEARCH` |
-| Lane outputs | 124 `search_run` and 1,271 `search_hit` records under [`research/searches/auditory/records/`](../../searches/auditory/records/) |
+| Occurrence preservation | All retained production exports registered; original branch history retained |
+| Frozen families | Seven complete C1 families; EQ1 partial; other database gaps explicit |
+| Venue coverage | Available ICAD series enumerated; venue-year gaps remain |
+| Identity, eligibility and studies (#6) | Pending; no selected corpus or included primary studies declared by R005 |
+| Brier/theory/empirical analysis (#7–#9) | Dependency gates remain; discovery counts establish no analysis readiness |
+| Final refresh (#17) | Use actual later refresh date and retain original cutoff and observations |
 
-## 2. Channel outcomes
-
-| Channel | Outcome | Records | Impact on coverage |
-|---|---|---|---|
-| C1 OpenAlex | `failed`: availability probes refused | `SRCH-R005-C1` | No reproducible database counts, no field-scoped EQ1–EQ8 search and no forward citation chaining. The largest single loss. |
-| C2 Crossref | `failed`: probe refused (proxy 403) | `SRCH-R005-C2` | No DOI-level metadata sweep or resolution. |
-| C3 ACM DL | `planned`: owner-run export only | `SRCH-R005-C3` | CHI, AutoUI, ASSETS and ICMI coverage depends on the web index: 8 of 18 ACM items in the known-item list were not found by title or only by a file name (§4). |
-| C4 IEEE Xplore | `planned`: owner-run export only | `SRCH-R005-C4` | The one IEEE item in the known-item list was not found. |
-| C5 ICAD | `partial`: nine W strings restricted to ICAD hosts (90 occurrences); year-by-year browse `failed` | `SRCH-R005-IW1`–`IW9`, `IIDX`, `C5BROWSE` | ICAD remains the best-covered venue (12 of 16 known ICAD items found), but no proceedings year was browsed, so per-year coverage is **unknown for every year 1992–2026**. |
-| C6 SAGE / T&F | `planned`: publisher search gated | `SRCH-R005-C6` | Human-factors venues are the weakest point: 8 of 13 SAGE items (*Human Factors*, HFES proceedings) were not found by exact-title lookup. |
-| C7 PsycINFO, WoS, Scopus | `planned`: subscription | `SRCH-R005-C7` | No psychology-database or citation-index coverage; non-English journal coverage unknown. |
-| C8 web search | `partial` (no pagination): W1–W9, W1 extended, seven translations | `SRCH-R005-AW1`… (17 runs) | Supplementary discovery only; cannot establish coverage. |
-| C9 backward chaining | `partial`: two review lists read (183 entries), 68 known-item lookups; process-industry review list `failed` | `SRCH-R005-RLNL`, `RLFRA`, `K01`–`K68`, `RLPSLR` | Chaining from included reports waits for screening (#6); forward chaining needs C1. |
-| C10 grey literature | `partial`: W1–W9 on ROSA P, NASA NTRS and DTIC hosts; W1–W9 on OATD and three purposive repositories | `SRCH-R005-GW1`–`GW9`, `TW1`–`TW9` | Transport and defence reports are reasonably represented; thesis coverage is purposive (OATD returned nothing through the engine). |
-
-## 3. What ran
-
-All times UTC, 13 October 2026. Each run's exact string, mode, domain restriction and call time is in the [export](../../searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json).
-
-| Batch | Window | Content | Runs | Occurrences | Distinct URLs |
-|---|---|---|---|---|---|
-| A1 | 02:05:19–02:05:41 | C8: W1–W9 standard, W1 extended, W1 in DE, FR, ES, PT, ZH, JA, KO | 17 | 160 | 132 |
-| A2 | 02:05:41–02:12:25 | C9: quoted-title lookup for each of 68 RL-NL entries | 68 | 640 | 510 |
-| A3 | 02:12:25–02:15:21 | C5 route (9 + archive lookup), C10 reports (9), C10 theses (9), process-industry review lookup (1) | 29 | 288 | — |
-| RL-NL | 00:59 (fetched in R002, reused) | Nees & Liebman preprint, "References Used in Meta-analyses" | 1 | 68 | — |
-| RL-FRA | 02:13–02:15 | FRA in-vehicle auditory alerts review (DOT/FRA/ORD-22/05), full reference list | 1 | 115 | — |
-| Gated | 02:05–02:16 | C1, C2 probes; C3, C4, C6, C7 planned; C5 browse and process-industry list failed | 8 | 0 | — |
-
-Topic runs (A1 and A3) returned 355 distinct URLs; known-item runs 510; 35 URLs overlap; 830 in all. Nine occurrences match existing source records by identical identifier (the Nees–Liebman article, the FRA review, Vriend et al. 2025, Nam 2010); all others stay `unresolved` for #6.
-
-## 4. Known-item check
-
-The 68 reports Nees and Liebman list as entering their meta-analyses are the closest available set of known eligible-type studies. Each was looked up by its quoted title phrase and author (A2). Outcomes are title-level only ([table](../../searches/auditory/exports/KNOWN-ITEM-CHECK-R005.csv)):
-
-| Outcome | Count | Meaning |
-|---|---|---|
-| `located` | 38 | A result title, or a DOI inside a result URL, matches the entry |
-| `possible` | 9 | Only a file name, record key or institutional record suggests it |
-| `not_located` | 21 | Neither (one of these, Suh et al. 2012, was found by a topic run instead) |
-
-Two further results bound what the fallback can do:
-
-- **Topical recall is low.** Only 11 of the 68 titles (12 if the 2006 conference version of Walker et al. is counted) appeared anywhere in the 46 topic and navigational runs (A1 + A3), about one in six. Exact-title lookups are not a discovery strategy for unknown studies, so this is the better indicator of what C8/C5/C10 find unaided.
-- **Losses concentrate in human-factors and HCI venues.** Not located or only `possible`: 8 of 13 SAGE items, 8 of 18 ACM items, 4 of 16 ICAD items, the single IEEE and Wiley items. These are exactly the venues C3, C4, C6 and C7 would cover.
-
-Consequence: web-route discovery cannot support any statement that a type of study is absent. The Track E map must carry the coverage-limited label until the database gate is satisfied.
-
-## 5. Targeted, negative, non-English, grey and contrary probes
-
-Protocol §12 batches A3–A8 were run as the single frozen web string per cluster. Characterisation below is from result titles only; nothing was read.
-
-| Probe | Run(s) | What came back (titles) |
-|---|---|---|
-| Urgency, hazard (EQ2) | A-W2, I-W2, G-W2, T-W2 | Urgency-coding and urgency-mapping items, transport crash-warning reports, alarm-categorisation thesis |
-| Voice, human likeness, affect (EQ3) | A-W3, I-W3, G-W3, T-W3 | Mostly off-target: voice trust in deepfake and dialogue settings, trust-in-automation theses. **A gap**: the contrary-evidence question (do human-like voices help?) is not served by web search. |
-| Uncertainty (EQ4) | A-W4, I-W4, G-W4, T-W4 | Uncertainty-sonification studies, including the already recorded Vriend et al. (2025) and an affect-focused uncertainty study |
-| Learning, retention (EQ5) | A-W5, I-W5, G-W5, T-W5 | Learning and retention of auditory warnings; learned alarm sounds and working memory; habituation to alerts in locomotive cabs |
-| Monitoring sonification (EQ6) | A-W6, I-W6, G-W6, T-W6 | Pulse-oximetry sonification laboratory studies; patents; the grey routes returned off-target clinical items |
-| Interruption, workload (EQ7) | A-W7, I-W7, G-W7, T-W7 | Dual-task and distraction reports, including a Traditional Chinese-language item on dual-task distraction and warning-sound feedback |
-| Null-oriented probe | A-W9, I-W9, G-W9, T-W9 | A speech versus non-speech warning comparison, alarm literature reviews; mostly unrelated speech-perception items |
-| Non-English (W1 translations) | A-W1-DE … A-W1-KO | DE, FR, ES, PT, ZH and JA runs returned almost only English items. KO returned Korean-language items (mobile auditory icons, ship-bridge alarm experiments). Non-English coverage is therefore minimal. |
-| Grey: reports | G-W1–G-W9 | DOT/NHTSA/FAA/FRA, NASA and DTIC reports on crash-avoidance alerts, aviation non-speech audio, spacecraft caution-and-warning design and alarm literature reviews |
-| Grey: theses | T-W1–T-W9 | Theses and papers from Virginia Tech, Michigan Tech and Glasgow repositories; OATD contributed nothing |
-
-The update window for the cue-family comparison (§12 A7, 2021-04-01 to 2026-10-04) could not be run as a separate search because the web tool has no date filter; post-2021 reports must be identified at screening from these runs, and their recall is unknown.
-
-## 6. Review and primary-study overlap
-
-Reviews are discovery and coverage aids; under protocol §6.4 a review never contributes primary observations.
-
-**Reviews and frameworks located**
-
-| Item | Where found | Status |
-|---|---|---|
-| Nees & Liebman (2023), cue-family SR/MA | A-W1X:2, A-W8:2, A-W1-PT:5 | Comparator C1 in the overlap matrix; its list chained (RL-NL) |
-| Jeon et al. (2022), FRA in-vehicle auditory alerts review | A-W8:9, G-W8:1, K30:3/5 | List chained (RL-FRA); search method printed: Google Scholar, TRID, Scopus, agency interviews |
-| Process-industry auditory alarm SLR | A-W8:3/7 | Not reachable (archive moved); chaining `failed` |
-| Systematic review of auditory countermeasures for sleep inertia | A-W8:1 | Relevance to alerts to be judged in #6 |
-| "A Review of the Literature on Alarms, Alerts, and Warnings" (ROSA P) | G-W1:2, G-W9:1 | Chaining candidate for #6 |
-| "Visual and auditory symbols: A literature review" (ROSA P) | G-W1:6 | Chaining candidate for #6 |
-| "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory" (ICAD) | A-W1-FR:4 | **Overlap lead for N08** (semiotic classification of interface sounds) → #4 |
-| "Design Framework for Audible Alarms: A Multidisciplinary and Integrated Approach" (IJDesign) | R-PSLR:4/6 | **Overlap lead for N06** (integrated alarm dimensions) → #4 |
-| Hermann (2008), sonification taxonomy and definitions (ICAD) | I-W6:7 | Concept source for #4/#8 |
-| Wickens et al. (2009), meta-analysis of off-nominal pilot performance | RL-FRA 109 | Chaining candidate |
-
-**Primary reports both reviews cite** (RL-NL entry / RL-FRA entry): Graham 1999 (19/37), Haas 1998 (20/40), Jeon 2019 (24/50), Jeon & Sun 2014 (26/51), Jeon et al. 2015 (25/53), Jeon et al. 2012 (28/54), Landry et al. 2019 (30/61), McKeown 2005 (37/76), Nees et al. 2016 (44/86), Perry et al. 2007 (47/87), Vargas & Anderson 2003 (61/101), Walker et al. 2013 (64/103). These twelve need one publication record each, with both discovery paths kept.
-
-**Further overlap leads from RL-FRA for #4** (titles only): urgency-mapping work by Hellier (2002, speech-warning urgency; 1999 psychophysical urgency mapping) and Baldwin (2011–2012, loudness × semantics, multimodal urgency coding); Marshall et al. (2007, annoyance and urgency); voice and social-response studies by Arrabito (2009, talker sex and voice style), Moran (2018, accent and gender bias), Dahlbäck et al. (2007) and Jonsson et al. (2013, personality matching). These bear on overlap rows N04 and N07, which are still `unknown`.
-
-## 7. Possible duplicate publications
-
-Flags only; §6.4 decides in #6 (a conference paper and its journal extension share a study unless the extension reports a new sample).
-
-| # | Items | Evidence | Flag |
-|---|---|---|---|
-| D1 | Walker et al. 2006 ICAD "Spearcons: speech-based earcons improve navigation performance in auditory menus" / Walker et al. 2013 *Human Factors* "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus" | A-W1:1, A-W1X:5, K64:3; RL-FRA 103–104; RL-NL 64 | Conference/journal pair |
-| D2 | Jeon & Sun 2014 ICAD (Lyricons design) / Sun & Jeon 2015 (Lyricon identification) / "Lyricons: Designing a new auditory cue combining speech and sounds" | K26:1–4, K57:1–2; RL-NL 26, 57 | Nees & Liebman count two reports; sample overlap unknown |
-| D3 | Garzonis et al. 2008 / 2009 / first author's thesis "Mobile service awareness via auditory notifications" | K16:4–5, K17:2; RL-NL 16, 17 | Thesis–article and article–article overlap |
-| D4 | Jeon & Walker 2011 Spindex / earlier "'Spindex': Accelerated Initial Speech Sounds Improve Navigation Performance in Auditory Menus" | K27:5; RL-NL 27 | Precursor paper |
-| D5 | Jeon et al. 2012 "Spindex Enhances Menus on Touch Screen Devices" / "… with Tapping, Wheeling, and Flicking" | K28:2–3; RL-NL 28 | Title variants: conference and extended version |
-| D6 | Jeon et al. 2009 "Enhanced Auditory Menu Cues Improve Dual Task Performance…" / Moskovitch et al. 2010 "Enhanced auditory menu cues on a mobile phone improve time-shared performance…" | RL-FRA 52; K25:5; RL-NL 39 | Same group and paradigm |
-| D7 | Gable et al. 2013 AutoUI / "Applying spindex auditory cues while driving and performing a secondary task" | K14:3; RL-NL 14 | Possible thesis or precursor |
-| D8 | Landry et al. 2019 / "Subjective assessment of in-vehicle auditory warnings for rail grade crossings" / Landry et al. 2016 "Getting Active with Passive Crossings" | K30:1, K30:6, T-W8:1; RL-FRA 60–61 | Possible shared samples |
-| D9 | Nadri et al. 2021 / ICAD 2021 "Investigating the effect of earcon and speech variables on hybrid auditory alerts at rail crossings" | K41:1, K41:8–9; RL-NL 41 | Conference/journal candidate |
-| D10 | Nees & Best 2013 / 2014 (ICAD verification tasks) | RL-NL 42, 43 | Same paradigm; overlap unknown |
-| D11 | Warnock et al. 2011 ICMI / 2013 CHI / Warnock 2014 PhD thesis | K65:3, K66:1/3; RL-NL 65, 66 | Thesis–article overlap |
-| D12 | McGee-Lennon et al. 2011 "Name That Tune" / "Audio reminders in the home environment" (ICAD 2007) | K36:2/5, K68:6; RL-NL 36 | Same project |
-| D13 | Palladino 2008: two repository records with the same title | K46:1–2 | Repository duplicate |
-| D14 | Hofmann et al.: list year 2016; record key of the located result implies 2014 | K21:4; RL-NL 21 | Metadata conflict |
-| D15 | Richie et al. 2018 / Kutchek & Jeon 2019 "Takeover and handover requests using non-speech auditory displays…" | K49:1–3; RL-FRA 59 | Same group; overlap unknown |
-| D16 | Bonebright & Nees 2007 ICAD / 2009 *Applied Cognitive Psychology* | RL-NL 6, 7 | Same authors; low prior of shared sample |
-
-## 8. Access is not an exclusion criterion
-
-Nothing was excluded in R005. Paywalled, unreachable, untitled and non-English occurrences keep `unresolved` status with their access facts in the [ledger](../../searches/auditory/exports/ACCESS-LEDGER-R005-2026-10-13.csv). Two result types were deliberately not opened as access routes (a third-party proxy URL, document-sharing sites); that is an access decision, not an eligibility one. Under protocol §6.2–6.3, an item whose text cannot be obtained becomes `awaiting_text`, never `exclude`.
-
-## 9. Unresolved gaps and stopping
-
-The search stops here because every §5.1 channel now has a recorded outcome (§11), not because a number of papers was reached. Open gaps:
-
-1. **Databases** (C1–C4, C6, C7): not searched. Owner action is already prepared in HG-R002-DATABASE-ACCESS; #17 must rerun executed channels and, if the gate is satisfied, run EQ1–EQ8.
-2. **ICAD per-year coverage**: unknown for all years; a SMARTech collection listing was not reachable.
-3. **Backward chaining** is complete only for RL-NL and RL-FRA. Chaining from included reports and from reviews confirmed in #6 remains; forward chaining needs C1.
-4. **Voice/human-likeness and contrary evidence** (EQ3): web search returned little that is on-target.
-5. **Non-English evidence**: only Korean items and one Chinese-language item surfaced; no regional databases (e.g., KCI, CNKI, J-STAGE) were searched.
-6. **Update window 2021–2026** (N13): not separately searchable; recall unknown.
-7. **Full texts and supplements**: none retrieved. The workspace cannot download and WebFetch returns paraphrase, so retrieval needs lawful files from the owner. Per protocol §6.3 and §13, the full-text request list follows title/abstract screening in #6, which will raise the source-access gate with a concrete list; the [known-item table](../../searches/auditory/exports/KNOWN-ITEM-CHECK-R005.csv) and hits already show where open repository copies appear.
-8. **Reference-list fidelity**: RL-NL and RL-FRA entries are tool-rendered abbreviations; the last RL-NL entry is truncated. Each entry must be checked against a manifestation before it supports a decision.
-
-Track E search completion as defined in protocol §11 also requires deduplication and resolved screening; those belong to #6.
-
-## 10. Handoffs
-
-| To | What |
-|---|---|
-| #6 screening and ledger | 1,271 occurrences (830 distinct URLs plus 183 reference entries) to deduplicate and screen; known-item table; duplicate flags D1–D16; review list in §6; the full-text request list and source-access gate |
-| #4 related theory | Overlap leads for N04, N06, N07 and N08 (§6) |
-| #9 extraction | No numeric extraction is possible from tool-mediated reading (protocol §10) |
-| #17 refresh | Rerun C5, C8, C9 and C10 from 2026-10-04; run C1–C7 if HG-R002-DATABASE-ACCESS is satisfied; report the known-item check again as a recall benchmark |
-
-## 11. Reproduction and limits
-
-`python3 research/sources/auditory/scripts/build_r005_records.py` regenerates the records and the known-item table from the export; `python3 tools/validate.py --write-exports` then rebuilds the registry aggregates. The export was copied programmatically from the session's tool-call log. Four earlier hand transcriptions (K01–K24) were compared with it and matched exactly.
-
-Limits: one agent did all the work, with no librarian (PRESS) review and no independent human check. Web results are unpaginated, US-region and possibly personalised; the engine's ranking and index dates are unknown. Known-item outcomes are the agent's title-level judgements. No source bytes are held.
+Recovery used ChatGPT (GPT-6 Astra Pro), Python, public HTTPS, web search and Poppler. The integrator, database and ICAD/review agents divided source batches; another AI pass checked bibliography boundaries. These are correlated checks, not independent human screening, librarian review, external scholarly review or participant validation. Structural CI verifies integrity and reproduction, not scientific truth.

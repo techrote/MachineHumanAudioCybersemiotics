@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00630",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 630,
+        "raw_metadata": "Visualising the Soundfield and Soundscape: Extending Macaulay and Crerar's 1998 Method | McGregor, Iain; Crerar, Alison; Benyon, David; Leplatre, Gregory | issued: 2008-06 | Text | https://repository.gatech.edu/entities/publication/ec9371d1-005c-4be6-b1e1-fb447bd4fc6f",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/ec9371d1-005c-4be6-b1e1-fb447bd4fc6f"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49968"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

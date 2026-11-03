@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00395",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 395,
+        "raw_metadata": "A system for real-time virtual auditory space | Scarpaci, Jacob W; White, John A | issued: 2005-07 | Text | https://repository.gatech.edu/entities/publication/1275fe47-6e66-4f22-84ec-4c196270ae80",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/1275fe47-6e66-4f22-84ec-4c196270ae80"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50094"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

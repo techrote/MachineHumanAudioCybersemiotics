@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00941",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 941,
+        "raw_metadata": "A wireless instrumented insole device for real-time sonification of gait | Horsak, Brian; Iber, Michael; Bauer, Karin; Kiselka, Anita; Gorgas, Anna-Maria; Dlapka, Ronald; Doppler, Jakob | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/53d90158-52f7-4e9c-8df2-3952e102224d",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/53d90158-52f7-4e9c-8df2-3952e102224d"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54114"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

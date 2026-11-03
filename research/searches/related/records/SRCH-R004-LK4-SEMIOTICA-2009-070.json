@@ -1,0 +1,69 @@
+{
+  "id": "SRCH-R004-LK4-SEMIOTICA-2009-070",
+  "issue": 4,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "boundary": "Identity lookup for R004 candidate SEMIOTICA-2009-070; file research/searches/related/exports/lookups/SEMIOTICA-2009-070.crossref-doi.r4.json (sha256 43a82ff7e077a272ee4d98b2779bad447686438e1ab5284beb3aba53c66a30e3).",
+        "coverage": {
+          "end": {
+            "reason": "Known-item lookup",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "Known-item lookup",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/related/exports/lookups/MANIFEST.json",
+            "sha256": "817499d25ddc0a0429b72fa61c8389f185461997f217db6d67d3719f851bbbfd"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "filter=doi, rows=3"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T07:10:13Z"
+        },
+        "interface": "HTTPS request from the workspace shell; response kept unchanged",
+        "lane": "related",
+        "mode": "production",
+        "pagination": {
+          "complete": true,
+          "detail": "Known-item lookup: only the top results were requested and all returned items are recorded."
+        },
+        "platform": "Crossref REST API (DOI filter)",
+        "protocol_version": "v1",
+        "query": "10.1515/semi.2009.070",
+        "reported_count": {
+          "reason": "Total-results count not used for a known-item lookup",
+          "state": "not_reported"
+        },
+        "retrieved_count": 1,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T07:10:13Z"
+        },
+        "status": "completed"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

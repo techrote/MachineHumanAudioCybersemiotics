@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00249",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 249,
+        "raw_metadata": "Subjective evaluation of auditory spatial imagery associated with decorrelated subwoofer signals | Martens, W. L. | issued: 2002-07 | Text | https://repository.gatech.edu/entities/publication/e6cd3af4-70b4-4168-b640-e7bda5792561",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e6cd3af4-70b4-4168-b640-e7bda5792561"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51379"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

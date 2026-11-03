@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00934",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 934,
+        "raw_metadata": "Electroencephalogram Steady State Response Sonification Focused on the Spatial and Temporal Properties | Kaniwa, Teruaki; Terasawa, Hiroko; Matsubara, Masaki; Makino, Shoji; Rutkowski, Thomas M. | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/f85db142-ee60-4252-af34-3686fd58c3c2",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/f85db142-ee60-4252-af34-3686fd58c3c2"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52065"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

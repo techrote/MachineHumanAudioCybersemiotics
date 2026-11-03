@@ -1,0 +1,76 @@
+{
+  "id": "SRCH-R005R-C9SLEEP",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRC-AUD-MCFARLANE-2020-REVIEW",
+          "rev": 1
+        },
+        {
+          "id": "AID-R005R-SLEEP-REFERENCES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "boundary": "Complete enumeration of this reference section. Entries remain unscreened discovery occurrences; methods/context sources are retained and no sample independence is inferred.",
+        "coverage": {
+          "end": {
+            "state": "known",
+            "value": "2026-10-04"
+          },
+          "start": {
+            "reason": "No lower date bound",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/auditory/recovery-2026-11-03/references/REFERENCE-LISTS.json",
+            "sha256": "96c7ab70b296f1145e304f49afd71a8b20b5051646ec4b3c3814fb8debadf6b7"
+          }
+        },
+        "failures": [],
+        "filters": [],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-11-03T01:19:04.605202Z"
+        },
+        "interface": "Hash-identified PDF; deterministic ordered bibliographic extraction with file-page locators",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": true,
+          "detail": "Complete enumeration of this reference section. Entries remain unscreened discovery occurrences; methods/context sources are retained and no sample independence is inferred."
+        },
+        "platform": "Reference list of Alarm Tones, Voice Warnings, and Musical Treatments: A Systematic Review of Auditory Countermeasures for Sleep Inertia in Abrupt and Casual Awakenings, protocol C9",
+        "protocol_version": "v1",
+        "query": "Every entry in References, numbered 1–91 (printed pp.429–433)",
+        "reported_count": {
+          "reason": "No independently reported total",
+          "state": "not_reported"
+        },
+        "retrieved_count": 91,
+        "started_at": {
+          "state": "known",
+          "value": "2026-11-03T00:55:56.669139Z"
+        },
+        "status": "completed"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00089",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 89,
+        "raw_metadata": "Sound traffic control: An interactive 3-D audio system for live musical performance | Humon, Naut; Thibault, Bill; Galloway, Vance; Willis, Garnet; Wing, Jessica Grace | issued: 1998-11 | Text | https://repository.gatech.edu/entities/publication/6f9f1d74-241b-4ca0-a6bd-c7f7d0835a87",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/6f9f1d74-241b-4ca0-a6bd-c7f7d0835a87"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50730"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

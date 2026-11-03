@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00255",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 255,
+        "raw_metadata": "Design guidelines for audio representation of graphs and tables | Brown, Lorna M; Brewster, Stephen A; Ramloll, Ramesh; Burton, Mike; Riedel, Beate | issued: 2003-07 | Text | https://repository.gatech.edu/entities/publication/680d3adc-5b12-4544-880f-b4f7f9441f44",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/680d3adc-5b12-4544-880f-b4f7f9441f44"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50454"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

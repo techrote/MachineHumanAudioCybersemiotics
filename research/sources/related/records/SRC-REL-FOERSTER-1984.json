@@ -1,0 +1,70 @@
+{
+  "id": "SRC-REL-FOERSTER-1984",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "von Foerster, Heinz",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Intersystems Publications; Open Library gives first publication 1981; Brier cites 1984 (SK 2015)"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup FOERSTER-1984 (openlibrary-ta) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL2098990W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work record (first published 1981, 2 editions)",
+          "Brier cites a 1984 date (BRL-SK2015); the edition he used is not identified"
+        ],
+        "metadata_status": "conflict",
+        "publication_date": {
+          "state": "known",
+          "value": "1981"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "Observing Systems",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

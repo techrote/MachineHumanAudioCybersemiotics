@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00943",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 943,
+        "raw_metadata": "3DJ: A supercollider framework for real-time sound spatialization | Perez-Lopez, Andres | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/5224b248-5bca-497a-846a-5e6bc0764648",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/5224b248-5bca-497a-846a-5e6bc0764648"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54123"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

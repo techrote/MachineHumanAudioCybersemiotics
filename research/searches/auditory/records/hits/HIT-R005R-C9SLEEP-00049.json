@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00049",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 49,
+        "raw_metadata": "Figueiro, M.G.; Sahin, L.; Roohan, C.; Kalsher, M.; Plitnick, B.; Rea, M.S. Effects of red light on sleep inertia. Nat. Sci. Sleep 2019, 11, 45–57. [CrossRef] | source PDF pp.16–16, reference 49",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

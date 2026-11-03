@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00069",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 69,
+        "raw_metadata": "Design of spatialized audio in nomadic environments | Sawhney, Nitin; Schmandt, Chris | issued: 1997-11 | Text | https://repository.gatech.edu/entities/publication/07003825-e276-4fb9-b9ea-23130cc0aff7",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/07003825-e276-4fb9-b9ea-23130cc0aff7"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50744"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

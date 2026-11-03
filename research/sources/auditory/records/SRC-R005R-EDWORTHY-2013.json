@@ -1,0 +1,92 @@
+{
+  "id": "SRC-R005R-EDWORTHY-2013",
+  "issue": 5,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-11-03T01:00:07.294822+00:00",
+        "access_reason": "Complete PDF lawfully retrieved; identity block and bibliography ranges only inspected. Failed routes and exact times remain in reviews/access.jsonl. No empirical extraction or full-report reading asserted.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Judy Edworthy",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "JAMIA 20(3), 584–589; six-page PDF; online-first date 2012-10-25 differs from 2013 issue year"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "reviews/MANIFEST.json edworthy-2013; source title-page/identity inspection; capture SHA256 e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+          },
+          {
+            "provenance": "reviews/MANIFEST.json edworthy-2013; source title-page/identity inspection; capture SHA256 e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://europepmc.org/articles/PMC3628049?pdf=render"
+          },
+          {
+            "provenance": "reviews/MANIFEST.json edworthy-2013; source title-page/identity inspection; capture SHA256 e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1136/amiajnl-2012-001061"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [
+          {
+            "coordinate": "file_page_1based",
+            "extent": 6,
+            "id": "C9-RECOVERED-PDF-20261103",
+            "location": "https://europepmc.org/articles/PMC3628049?pdf=render (exact bytes held outside repository; stable retrieval route and hashes in reviews/MANIFEST.json)",
+            "sha256": "e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2"
+          }
+        ],
+        "metadata_evidence": [
+          "PDF page 1 title/author block, publication dates and citation/footer",
+          "Europe PMC core metadata title, authorList, journalInfo, pubYear, firstPublicationDate, doi, pmid and pmcid",
+          "The review has a 2013 issue year and an earlier online-first date of 25 October 2012; these are retained as distinct dates.",
+          "reviews/MANIFEST.json edworthy-2013; source title-page/identity inspection; capture SHA256 e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2013"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No blanket redistribution permission established; bytes held outside Git",
+            "state": "unknown"
+          },
+          "reason": "Publicly retrievable through Europe PMC; its metadata has isOpenAccess=N. Public availability is not asserted to be an unrestricted redistribution license. PDF bytes remain outside Git.",
+          "status": "unknown"
+        },
+        "source_type": "review",
+        "title": "Medical audible alarms: a review",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

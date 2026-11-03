@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00474",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 474,
+        "raw_metadata": "Sonification of autonomic rhythms in the frequency spectrum of heart rate variability | Orzessek, B.; Falkner, M. | issued: 2006-06 | Text | https://repository.gatech.edu/entities/publication/66b2e7e6-d5cb-46bc-995d-10637738f894",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/66b2e7e6-d5cb-46bc-995d-10637738f894"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50639"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01072",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1072,
+        "raw_metadata": "Examining the learnability of auditory displays: Music, earcons, spearcons, and lyricons | Tislar, Kay; Duford, Zackery; Nelson, Brittany; Peabody, Madeline; Jeon, Myounghoon | issued: 2018-06 | Text | https://repository.gatech.edu/entities/publication/7847b94c-1b79-4dea-9dba-62cfb4548102",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7847b94c-1b79-4dea-9dba-62cfb4548102"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2018.029"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/60090"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

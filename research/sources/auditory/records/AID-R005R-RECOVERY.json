@@ -1,0 +1,143 @@
+{
+  "id": "AID-R005R-RECOVERY",
+  "issue": 5,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "HG-R002-DATABASE-ACCESS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/searches/auditory/recovery-2026-11-03",
+          "research/sources/auditory/scripts/build_r005_recovery_records.py"
+        ],
+        "independence": "Parent integrator plus disjoint database and ICAD/reference-recovery subagents; correlated AI checks, not independent human review.",
+        "input_refs": [
+          {
+            "id": "HG-R002-DATABASE-ACCESS",
+            "rev": 1
+          }
+        ],
+        "limitations": "ChatGPT agents performed retrieval, code review and record checks. No independent human screening, scholarly review or empirical validation occurred. Access and paging gaps remain explicit; repository integrity does not establish scientific validity.",
+        "output_refs": [
+          {
+            "id": "SRCH-R005R-C1LOAD-EQ1",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1LOAD-EQ5",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1LOAD-EQ8",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ1",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ2",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ3",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ4",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ5",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ6",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ7",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1RECOVERY-EQ8",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1SORT-EQ1",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1SORT-EQ4",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1SORT-EQ5",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C1SORT-EQ8",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C5SERIES",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C9NAV",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C9NLGENERAL",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C9SLEEP",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C9TOTLAND",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C9EDWORTHY",
+            "rev": 1
+          },
+          {
+            "id": "SRCH-R005R-C9RUSKIN",
+            "rev": 1
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-03T01:19:04.605202Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Resume preserved R005, recover available bibliographic/ICAD/reference-list channels, preserve access gaps and register all actual retrieval occurrences.",
+        "verification_steps": [
+          "Hash-check retained responses and gzip payloads",
+          "Reconcile run counts and unique API/repository IDs",
+          "Preserve historical observations and separate retrieval attempts",
+          "Inspect actual source headers and reference sections; keep unread experimental reports unscreened"
+        ]
+      },
+      "factual_status": "researcher_interpretation",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00759",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 759,
+        "raw_metadata": "The R Programming Language as a Unified Environment for Data Sonification | Brown, Ethan | issued: 2011-06 | Text | https://repository.gatech.edu/entities/publication/7a5eabb5-f06a-433a-bd5e-929f2b9bfbf1",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7a5eabb5-f06a-433a-bd5e-929f2b9bfbf1"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51917"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

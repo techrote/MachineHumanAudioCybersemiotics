@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00059",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 59,
+        "raw_metadata": "Poulton, E.C. Arousing environmental stresses can improve performance, whatever people say. Aviat. Space Environ. Med. 1976, 47, 1193–1204. | source PDF pp.17–17, reference 59",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

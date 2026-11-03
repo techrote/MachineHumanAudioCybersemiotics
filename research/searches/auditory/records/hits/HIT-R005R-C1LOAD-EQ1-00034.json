@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ1-00034",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 34,
+        "raw_metadata": "ANALYSIS AND EVALUATION OF TACTICAL PENETRATION AIDS PENVAL PROGRAM. MEMORANDUM REPORT ON EXPERIMENTAL INVESTIGATIONS OF HUMAN AUDITORY CAPACITIES FOR USE IN THE DESIGN OF AUDIO DISPLAYS. | first author: Leo Rubinstein | 1967-07-01 | article | https://openalex.org/W276668518",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W276668518"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

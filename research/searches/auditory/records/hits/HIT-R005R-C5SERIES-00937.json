@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00937",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 937,
+        "raw_metadata": "Sonification of a streaming-server logfile | Hauer, Wolfgang; Vogt, Katharina | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/5db57077-86eb-4e5e-816b-e91dd6fe5b5d",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/5db57077-86eb-4e5e-816b-e91dd6fe5b5d"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54180"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,1391 @@
+{
+ "schema": "mhac-r004-lookups/1",
+ "lookups": {
+  "PEIRCE-CP": {
+   "route": "openlibrary",
+   "query": "Collected papers of Charles Sanders Peirce",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Collected%20papers%20of%20Charles%20Sanders%20Peirce&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:41:51Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PEIRCE-CP.openlibrary.json",
+   "bytes": 1562,
+   "sha256": "83d48ed3e37d9dcc8d45f64c694a8a8a3fda21e65f28040fa14b98eccc9ab335",
+   "errors": []
+  },
+  "PEIRCE-EP2": {
+   "route": "openlibrary",
+   "query": "The essential Peirce selected philosophical writings volume 2 1893-1913",
+   "url": "https://openlibrary.org/search.json?limit=5&q=The%20essential%20Peirce%20selected%20philosophical%20writings%20volume%202%201893-1913&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:41:52Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PEIRCE-EP2.openlibrary.json",
+   "bytes": 615,
+   "sha256": "bca8948f1b55081ecc4531a9fe1fca9c225eba8a6fb57e67427b7f8c2eb3fd10",
+   "errors": []
+  },
+  "PEIRCE-W": {
+   "route": "openlibrary",
+   "query": "Writings of Charles S. Peirce a chronological edition",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Writings%20of%20Charles%20S.%20Peirce%20a%20chronological%20edition&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:41:53Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PEIRCE-W.openlibrary.json",
+   "bytes": 1571,
+   "sha256": "9afd44bbb516dfd38fb2461f7c7ab4df8d4e1d251a40d1b0146733dbe01238cf",
+   "errors": []
+  },
+  "SHORT-2007": {
+   "route": "crossref",
+   "query": "Peirce's Theory of Signs Short 2007 Cambridge University Press",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Peirce%27s%20Theory%20of%20Signs%20Short%202007%20Cambridge%20University%20Press&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:41:54Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SHORT-2007.crossref.json",
+   "bytes": 1609,
+   "sha256": "564347682126d1f534c1dad11b9da0cb93820b6ec2fc31eb6ce5bf1167ac60d2",
+   "errors": []
+  },
+  "LUHMANN-1995": {
+   "route": "openlibrary",
+   "query": "Social systems Luhmann Stanford University Press 1995",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Social%20systems%20Luhmann%20Stanford%20University%20Press%201995&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:41:55Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/LUHMANN-1995.openlibrary.json",
+   "bytes": 209,
+   "sha256": "e2046480582f5ac08a82a11c8b16637c3bec9a56ed75d1c33e56dc7172419b70",
+   "errors": []
+  },
+  "MATURANA-VARELA-1980": {
+   "route": "crossref",
+   "query": "Autopoiesis and Cognition: The Realization of the Living Maturana Varela 1980",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Autopoiesis%20and%20Cognition%3A%20The%20Realization%20of%20the%20Living%20Maturana%20Varela%201980&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:41:56Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MATURANA-VARELA-1980.crossref.json",
+   "bytes": 2013,
+   "sha256": "97294d730311c0248e85663c07e1e227ac8d739e83111f066b32d0e2b8f7d56f",
+   "errors": []
+  },
+  "MATURANA-1988": {
+   "route": "crossref",
+   "query": "Ontology of observing: the biological foundations of self-consciousness Maturana 1988 Irish Journal of Psychology",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Ontology%20of%20observing%3A%20the%20biological%20foundations%20of%20self-consciousness%20Maturana%201988%20Irish%20Journal%20of%20Psychology&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:41:58Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MATURANA-1988.crossref.json",
+   "bytes": 1801,
+   "sha256": "78c36b7a43e1f27bc060f9afabc28e16dc5908c946456edb07ae5ee0f59144fd",
+   "errors": []
+  },
+  "BATESON-1972": {
+   "route": "openlibrary",
+   "query": "Steps to an ecology of mind Bateson",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Steps%20to%20an%20ecology%20of%20mind%20Bateson&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:41:58Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/BATESON-1972.openlibrary.json",
+   "bytes": 1947,
+   "sha256": "023ef216b72a0301acf8d1dcd81f66319bf9cc6cc564fc007e0fd48ee9cbb819",
+   "errors": []
+  },
+  "FOERSTER-1984": {
+   "route": "openlibrary",
+   "query": "Observing systems von Foerster 1984",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Observing%20systems%20von%20Foerster%201984&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:41:59Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/FOERSTER-1984.openlibrary.json",
+   "bytes": 191,
+   "sha256": "dde8a4a9ad84a20c6e6ae816aec3a1321975006a347db9da6a06fed3b2c6f351",
+   "errors": []
+  },
+  "FOERSTER-2003": {
+   "route": "crossref",
+   "query": "Understanding Understanding: Essays on Cybernetics and Cognition von Foerster 2003",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Understanding%20Understanding%3A%20Essays%20on%20Cybernetics%20and%20Cognition%20von%20Foerster%202003&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:00Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/FOERSTER-2003.crossref.json",
+   "bytes": 1430,
+   "sha256": "bb15cd39e7597a02e284db3b046d6584c2fc363ed914d28536f2c50e99c64397",
+   "errors": []
+  },
+  "WIENER-1961": {
+   "route": "openlibrary",
+   "query": "Cybernetics or control and communication in the animal and the machine Wiener second edition",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Cybernetics%20or%20control%20and%20communication%20in%20the%20animal%20and%20the%20machine%20Wiener%20second%20edition&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:42:01Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/WIENER-1961.openlibrary.json",
+   "bytes": 1475,
+   "sha256": "54c39a157d9daf1e120aea2c0538d69ff29424b1b436634d5739d96201921caf",
+   "errors": []
+  },
+  "SPENCER-BROWN-1969": {
+   "route": "openlibrary",
+   "query": "Laws of form Spencer-Brown",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Laws%20of%20form%20Spencer-Brown&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:42:02Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SPENCER-BROWN-1969.openlibrary.json",
+   "bytes": 1568,
+   "sha256": "fe0e3999aee3d4324b0b25c5faae35b3b3619a8884de86672f4cec307e350e3b",
+   "errors": []
+  },
+  "SHANNON-1948": {
+   "route": "crossref",
+   "query": "A Mathematical Theory of Communication Shannon 1948 Bell System Technical Journal",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=A%20Mathematical%20Theory%20of%20Communication%20Shannon%201948%20Bell%20System%20Technical%20Journal&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:03Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SHANNON-1948.crossref.json",
+   "bytes": 1569,
+   "sha256": "8f274483d863ad56b9655a7962581747af8c12b46244bf718d8f99fd252ee171",
+   "errors": []
+  },
+  "SHANNON-WEAVER-1949": {
+   "route": "openlibrary",
+   "query": "The mathematical theory of communication Shannon Weaver 1949",
+   "url": "https://openlibrary.org/search.json?limit=5&q=The%20mathematical%20theory%20of%20communication%20Shannon%20Weaver%201949&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:42:04Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SHANNON-WEAVER-1949.openlibrary.json",
+   "bytes": 545,
+   "sha256": "c46a103832387980fdcbe48e6b2c8733e5467668a12e26dd053dcc5b07e78b64",
+   "errors": []
+  },
+  "HOFFMEYER-1996": {
+   "route": "openlibrary",
+   "query": "Signs of meaning in the universe Hoffmeyer",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Signs%20of%20meaning%20in%20the%20universe%20Hoffmeyer&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:42:05Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/HOFFMEYER-1996.openlibrary.json",
+   "bytes": 818,
+   "sha256": "6ffd2890273cbb155cad52f00a1a746b4956ff80596bf973656aedc5cbbe3511",
+   "errors": []
+  },
+  "KULL-2009": {
+   "route": "crossref",
+   "query": "Theses on Biosemiotics: Prolegomena to a Theoretical Biology Kull Deacon Emmeche Hoffmeyer Stjernfelt",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Theses%20on%20Biosemiotics%3A%20Prolegomena%20to%20a%20Theoretical%20Biology%20Kull%20Deacon%20Emmeche%20Hoffmeyer%20Stjernfelt&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:05Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/KULL-2009.crossref.json",
+   "bytes": 4276,
+   "sha256": "54a896c668eef609cac5eacf7ff1918279ff800fd55f7a05eff26dcb237b89c6",
+   "errors": []
+  },
+  "BARBIERI-2008": {
+   "route": "crossref",
+   "query": "Biosemiotics: a new understanding of life Barbieri 2008 Naturwissenschaften",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Biosemiotics%3A%20a%20new%20understanding%20of%20life%20Barbieri%202008%20Naturwissenschaften&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:06Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/BARBIERI-2008.crossref.json",
+   "bytes": 1520,
+   "sha256": "4aa50b355ca37c605ae0e8e879de9f2d45c6c32a519132afe121b8946bdfce11",
+   "errors": []
+  },
+  "DESOUZA-1993": {
+   "route": "crossref",
+   "query": "The semiotic engineering of user interface languages de Souza 1993",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20semiotic%20engineering%20of%20user%20interface%20languages%20de%20Souza%201993&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:07Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/DESOUZA-1993.crossref.json",
+   "bytes": 1782,
+   "sha256": "b5f401c73fd634afa40d9db5189c207aea665326dffd4a23b40c4c6bf6d625b9",
+   "errors": []
+  },
+  "PRATES-2000": {
+   "route": "crossref",
+   "query": "A method for evaluating the communicability of user interfaces Prates de Souza Barbosa 2000",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=A%20method%20for%20evaluating%20the%20communicability%20of%20user%20interfaces%20Prates%20de%20Souza%20Barbosa%202000&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:08Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PRATES-2000.crossref.json",
+   "bytes": 3838,
+   "sha256": "1cb3c8a8efe6f020509ba777f367f611e320191e6a2c808d7b99d9003f8c526f",
+   "errors": []
+  },
+  "DESOUZA-LEITAO-2009": {
+   "route": "crossref",
+   "query": "Semiotic Engineering Methods for Scientific Research in HCI de Souza Leitao",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Semiotic%20Engineering%20Methods%20for%20Scientific%20Research%20in%20HCI%20de%20Souza%20Leitao&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:09Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/DESOUZA-LEITAO-2009.crossref.json",
+   "bytes": 2200,
+   "sha256": "7f40ebb894f8e96b49ac439aa25a20c64c5b770a9d97e104b508f1ea71fbf8d1",
+   "errors": []
+  },
+  "CLARK-BRENNAN-1991": {
+   "route": "crossref",
+   "query": "Grounding in communication Clark Brennan 1991",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Grounding%20in%20communication%20Clark%20Brennan%201991&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:09Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CLARK-BRENNAN-1991.crossref.json",
+   "bytes": 2251,
+   "sha256": "074bdb0d41d2c1af0d9b754ca189479551bb01c5108948c49f2a2ec66929f122",
+   "errors": []
+  },
+  "CLARK-SCHAEFER-1989": {
+   "route": "crossref",
+   "query": "Contributing to discourse Clark Schaefer 1989 Cognitive Science",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Contributing%20to%20discourse%20Clark%20Schaefer%201989%20Cognitive%20Science&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:44:10Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CLARK-SCHAEFER-1989.crossref.json",
+   "bytes": 1585,
+   "sha256": "809f7e0a15e68f0a62e9c27bcbcca47dd801ff9a73f1317b8ba2570d1b7a18d2",
+   "errors": []
+  },
+  "CLARK-1996": {
+   "route": "crossref",
+   "query": "Using Language Clark 1996 Cambridge University Press",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Using%20Language%20Clark%201996%20Cambridge%20University%20Press&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:44:12Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CLARK-1996.crossref.json",
+   "bytes": 1815,
+   "sha256": "b81b1bf68a431933ac4e382a598607623379e21325221086c6f713660ffaefb8",
+   "errors": []
+  },
+  "SCHEGLOFF-1977": {
+   "route": "crossref",
+   "query": "The preference for self-correction in the organization of repair in conversation Schegloff Jefferson Sacks",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20preference%20for%20self-correction%20in%20the%20organization%20of%20repair%20in%20conversation%20Schegloff%20Jefferson%20Sacks&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:11Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SCHEGLOFF-1977.crossref.json",
+   "bytes": 2293,
+   "sha256": "f9f25f2ed1f810ae123916e10eab120d16403491108a8881e4914d0b9ecde640",
+   "errors": []
+  },
+  "BRENNAN-HULTEEN-1995": {
+   "route": "crossref",
+   "query": "Interaction and feedback in a spoken language system: a theoretical framework Brennan Hulteen",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Interaction%20and%20feedback%20in%20a%20spoken%20language%20system%3A%20a%20theoretical%20framework%20Brennan%20Hulteen&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:12Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/BRENNAN-HULTEEN-1995.crossref.json",
+   "bytes": 1922,
+   "sha256": "7df8a5f8a14fb888869051f980f0e07dcd01d6abc2a42d35e5147540e6679da3",
+   "errors": []
+  },
+  "HARNAD-1990": {
+   "route": "crossref",
+   "query": "The symbol grounding problem Harnad 1990 Physica D",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20symbol%20grounding%20problem%20Harnad%201990%20Physica%20D&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:13Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/HARNAD-1990.crossref.json",
+   "bytes": 1343,
+   "sha256": "2834378a1b337664ab363a49f59111d7ffbe2d37b935c628975c9e21592ef5fa",
+   "errors": []
+  },
+  "TADDEO-FLORIDI-2005": {
+   "route": "crossref",
+   "query": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Solving%20the%20symbol%20grounding%20problem%3A%20a%20critical%20review%20of%20fifteen%20years%20of%20research&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:16Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/TADDEO-FLORIDI-2005.crossref.json",
+   "bytes": 2312,
+   "sha256": "d3e7c6a8f66a411ad2743c507eb7f745b63b1c662b43fffcaa95715d8b6274c7",
+   "errors": []
+  },
+  "FLORIDI-2005": {
+   "route": "crossref",
+   "query": "Is Semantic Information Meaningful Data? Floridi 2005",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Is%20Semantic%20Information%20Meaningful%20Data%3F%20Floridi%202005&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:14Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/FLORIDI-2005.crossref.json",
+   "bytes": 1372,
+   "sha256": "18a1f9fd919a0b6b48cbf0f49a343b305ea536ce133c0d42d9650595ccabe9fa",
+   "errors": []
+  },
+  "KOLCHINSKY-WOLPERT-2018": {
+   "route": "crossref",
+   "query": "Semantic information, autonomous agency and non-equilibrium statistical physics Kolchinsky Wolpert",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Semantic%20information%2C%20autonomous%20agency%20and%20non-equilibrium%20statistical%20physics%20Kolchinsky%20Wolpert&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:15Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/KOLCHINSKY-WOLPERT-2018.crossref.json",
+   "bytes": 3061,
+   "sha256": "1cae9f8180878174b8da130f29f23f34ebabfc1686c07f51c172e32ae5134a18",
+   "errors": []
+  },
+  "EDWORTHY-1991": {
+   "route": "crossref",
+   "query": "Improving auditory warning design: relationship between warning sound parameters and perceived urgency Edworthy Loxley Dennis",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Improving%20auditory%20warning%20design%3A%20relationship%20between%20warning%20sound%20parameters%20and%20perceived%20urgency%20Edworthy%20Loxley%20Dennis&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:16Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/EDWORTHY-1991.crossref.json",
+   "bytes": 2502,
+   "sha256": "0fdead0aa71dc37619547f33525bb15104768732e79bb06052f67f013fdc413e",
+   "errors": []
+  },
+  "HELLIER-1993": {
+   "route": "crossref",
+   "query": "Improving auditory warning design: quantifying and predicting the effects of different warning parameters on perceived urgency Hellier Edworthy Dennis",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Improving%20auditory%20warning%20design%3A%20quantifying%20and%20predicting%20the%20effects%20of%20different%20warning%20parameters%20on%20perceived%20urgency%20Hellier%20Edworthy%20Dennis&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:16Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/HELLIER-1993.crossref.json",
+   "bytes": 2500,
+   "sha256": "fe9e3e00ca81951b2f0ad93037727215fe7711889f269e25fa5f9b0f66ff6f61",
+   "errors": []
+  },
+  "EDWORTHY-HELLIER-2006": {
+   "route": "crossref",
+   "query": "Alarms and human behaviour: implications for medical alarms Edworthy Hellier",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Alarms%20and%20human%20behaviour%3A%20implications%20for%20medical%20alarms%20Edworthy%20Hellier&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:17Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/EDWORTHY-HELLIER-2006.crossref.json",
+   "bytes": 1943,
+   "sha256": "b0278ae0beb19de238f88b9881087765e6ce373a255f2647b3c186b9ef6f7822",
+   "errors": []
+  },
+  "VICENTE-RASMUSSEN-1992": {
+   "route": "crossref",
+   "query": "Ecological interface design: theoretical foundations Vicente Rasmussen",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Ecological%20interface%20design%3A%20theoretical%20foundations%20Vicente%20Rasmussen&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:18Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/VICENTE-RASMUSSEN-1992.crossref.json",
+   "bytes": 1908,
+   "sha256": "8eca99f824eefece430f6b26134c63a061590ffe6994efbd1ecc6e30d8f8612e",
+   "errors": []
+  },
+  "WICKENS-2002": {
+   "route": "crossref",
+   "query": "Multiple resources and performance prediction Wickens 2002",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Multiple%20resources%20and%20performance%20prediction%20Wickens%202002&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:19Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/WICKENS-2002.crossref.json",
+   "bytes": 1569,
+   "sha256": "e191ffb514f3491a7b3d6fbad392d4108a8b52b299a68214b6be10f0577c3f7d",
+   "errors": []
+  },
+  "GAVER-1986": {
+   "route": "crossref",
+   "query": "Auditory icons: using sound in computer interfaces Gaver 1986",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Auditory%20icons%3A%20using%20sound%20in%20computer%20interfaces%20Gaver%201986&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:20Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/GAVER-1986.crossref.json",
+   "bytes": 1753,
+   "sha256": "6cfe7eb75c761d220b49b9485d46fc3fc740ebab91a158d452c86655bfbe62bf",
+   "errors": []
+  },
+  "GAVER-1993": {
+   "route": "crossref",
+   "query": "What in the world do we hear? An ecological approach to auditory event perception Gaver",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=What%20in%20the%20world%20do%20we%20hear%3F%20An%20ecological%20approach%20to%20auditory%20event%20perception%20Gaver&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:21Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/GAVER-1993.crossref.json",
+   "bytes": 1545,
+   "sha256": "26a734b0e97b79dcda09a0317fbaf9ab3db7d6b209baa63f01af774d820b5c4f",
+   "errors": []
+  },
+  "BLATTNER-1989": {
+   "route": "crossref",
+   "query": "Earcons and icons: their structure and common design principles Blattner Sumikawa Greenberg",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Earcons%20and%20icons%3A%20their%20structure%20and%20common%20design%20principles%20Blattner%20Sumikawa%20Greenberg&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:21Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/BLATTNER-1989.crossref.json",
+   "bytes": 1909,
+   "sha256": "e36ad885e72138e16e3d8ec59bd9cb4360fb9b3cff600cab4720dee0ce466c61",
+   "errors": []
+  },
+  "IJDESIGN-ALARM-FRAMEWORK": {
+   "route": "crossref",
+   "query": "Design Framework for Audible Alarms: A Multidisciplinary and Integrated Approach",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Design%20Framework%20for%20Audible%20Alarms%3A%20A%20Multidisciplinary%20and%20Integrated%20Approach&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:22Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/IJDESIGN-ALARM-FRAMEWORK.crossref.json",
+   "bytes": 791,
+   "sha256": "4ad3ae03d8f6d0ff8162e1ae8b24b75bb22f039a083901a9b1d3626c6afa8bb1",
+   "errors": []
+  },
+  "NASS-1994": {
+   "route": "crossref",
+   "query": "Computers are social actors Nass Steuer Tauber 1994",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Computers%20are%20social%20actors%20Nass%20Steuer%20Tauber%201994&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:23Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/NASS-1994.crossref.json",
+   "bytes": 2565,
+   "sha256": "ae0b7e2b40f32b25d3574ff088844b0ea7f13bcbdd530623c3caa81de2e05362",
+   "errors": []
+  },
+  "NASS-BRAVE-2005": {
+   "route": "crossref",
+   "query": "Wired for speech: how voice activates and advances the human-computer relationship Nass Brave",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Wired%20for%20speech%3A%20how%20voice%20activates%20and%20advances%20the%20human-computer%20relationship%20Nass%20Brave&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:24Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/NASS-BRAVE-2005.crossref.json",
+   "bytes": 1761,
+   "sha256": "a75fd718f49bf806be65df8a27ff8989411bd4b35d3df08fe0a1ac10f469d9ec",
+   "errors": []
+  },
+  "EPLEY-2007": {
+   "route": "crossref",
+   "query": "On seeing human: a three-factor theory of anthropomorphism Epley Waytz Cacioppo",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=On%20seeing%20human%3A%20a%20three-factor%20theory%20of%20anthropomorphism%20Epley%20Waytz%20Cacioppo&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:24Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/EPLEY-2007.crossref.json",
+   "bytes": 2153,
+   "sha256": "e7fe18a7f43f38e8f039c36353308f0551318aa0373beeb3ce51ce02d4b789c4",
+   "errors": []
+  },
+  "MORI-2012": {
+   "route": "crossref",
+   "query": "The Uncanny Valley Mori MacDorman Kageki 2012 IEEE Robotics Automation Magazine",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20Uncanny%20Valley%20Mori%20MacDorman%20Kageki%202012%20IEEE%20Robotics%20Automation%20Magazine&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:25Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MORI-2012.crossref.json",
+   "bytes": 1833,
+   "sha256": "94656b30fb4cf9dcf823af30087d0ffb3a49017a06e876075351599dada12f1b",
+   "errors": []
+  },
+  "SEABORN-2021": {
+   "route": "crossref",
+   "query": "Voice in Human-Agent Interaction: A Survey Seaborn",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Voice%20in%20Human-Agent%20Interaction%3A%20A%20Survey%20Seaborn&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:26Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SEABORN-2021.crossref.json",
+   "bytes": 3331,
+   "sha256": "a6f54aed610f42606c68ded044c5438cb57948a4710bd0de5b8e5bce1dded19e",
+   "errors": []
+  },
+  "CLARK-FISCHER-2023": {
+   "route": "crossref",
+   "query": "Social robots as depictions of social agents Clark Fischer",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Social%20robots%20as%20depictions%20of%20social%20agents%20Clark%20Fischer&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:26Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CLARK-FISCHER-2023.crossref.json",
+   "bytes": 1554,
+   "sha256": "79dc59bbe39de57946ef10ffebbd881710eeac9c67dfb100467aeaf86fa2bba4",
+   "errors": []
+  },
+  "MOORE-2017": {
+   "route": "crossref",
+   "query": "Appropriate voices for artefacts: some key insights Moore",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Appropriate%20voices%20for%20artefacts%3A%20some%20key%20insights%20Moore&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:28Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MOORE-2017.crossref.json",
+   "bytes": 1627,
+   "sha256": "58c7751b0c9c96adabf382f5f096949c3b3da3a949e96b15c1414b7144e1a1a0",
+   "errors": []
+  },
+  "KUHNE-2020": {
+   "route": "crossref",
+   "query": "The human takes it all: humanlike synthesized voices are perceived as less eerie and more likable Kuhne",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20human%20takes%20it%20all%3A%20humanlike%20synthesized%20voices%20are%20perceived%20as%20less%20eerie%20and%20more%20likable%20Kuhne&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:18Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/KUHNE-2020.crossref.json",
+   "bytes": 2348,
+   "sha256": "32b6b4b1e7e6dee8c7b1344e4f0de6cdfe4c66076db69bafe074e673f1ddd744",
+   "errors": []
+  },
+  "VARELA-1991": {
+   "route": "openlibrary",
+   "query": "The embodied mind cognitive science and human experience Varela Thompson Rosch",
+   "url": "https://openlibrary.org/search.json?limit=5&q=The%20embodied%20mind%20cognitive%20science%20and%20human%20experience%20Varela%20Thompson%20Rosch&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:42:29Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/VARELA-1991.openlibrary.json",
+   "bytes": 1139,
+   "sha256": "b5d2c2a4f6aa730c39b757d919f672037ee0408530a951621cdae723d8854fb5",
+   "errors": []
+  },
+  "PICARD-1997": {
+   "route": "openlibrary",
+   "query": "Affective computing Picard 1997",
+   "url": "https://openlibrary.org/search.json?limit=5&q=Affective%20computing%20Picard%201997&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:42:30Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PICARD-1997.openlibrary.json",
+   "bytes": 187,
+   "sha256": "32a020a1f28bc633181d6154b242b2d8647826e622061d877453dfbcf635b06f",
+   "errors": []
+  },
+  "MINGERS-2002": {
+   "route": "crossref",
+   "query": "Can social systems be autopoietic? Assessing Luhmann's social theory Mingers",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Can%20social%20systems%20be%20autopoietic%3F%20Assessing%20Luhmann%27s%20social%20theory%20Mingers&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:31Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MINGERS-2002.crossref.json",
+   "bytes": 1583,
+   "sha256": "3bfe94a4f05a23d54ec43e3cda11f23997cf0ebeb351d487e92226b1c43bfe60",
+   "errors": []
+  },
+  "SCOTT-2004": {
+   "route": "crossref",
+   "query": "Second-order cybernetics: an historical introduction Scott 2004 Kybernetes",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Second-order%20cybernetics%3A%20an%20historical%20introduction%20Scott%202004%20Kybernetes&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:21Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SCOTT-2004.crossref.json",
+   "bytes": 1291,
+   "sha256": "8c3c0e1aad276ca06e778c7856b184e9724ed8efc03c9f725785239368f20376",
+   "errors": []
+  },
+  "NSAS-ICAD": {
+   "route": "crossref",
+   "query": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Non-Speech%20Audio-Semiotics%3A%20A%20Review%20and%20Revision%20of%20Auditory%20Icon%20and%20Earcon%20Theory&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:23Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/NSAS-ICAD.crossref.json",
+   "bytes": 2371,
+   "sha256": "82853121a2f81e031ddf7c867d73c020587eacb84d4baf05ee74360286c5b7b3",
+   "errors": []
+  },
+  "REVIEW-AUDITORY-SIGNS-ICAD": {
+   "route": "crossref",
+   "query": "A review-based conceptual analysis of auditory signs and their design",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=A%20review-based%20conceptual%20analysis%20of%20auditory%20signs%20and%20their%20design&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:26Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/REVIEW-AUDITORY-SIGNS-ICAD.crossref.json",
+   "bytes": 1386,
+   "sha256": "5866c00cb51627f34dfdb8118c3752ec34cce3658d3662099ba1ebab3f56e398",
+   "errors": []
+  },
+  "JEKOSCH-2005": {
+   "route": "crossref",
+   "query": "Assigning meaning to sounds: semiotics in the context of product-sound design Jekosch",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Assigning%20meaning%20to%20sounds%3A%20semiotics%20in%20the%20context%20of%20product-sound%20design%20Jekosch&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:29Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/JEKOSCH-2005.crossref.json",
+   "bytes": 1135,
+   "sha256": "102ddd057fd0e8ad1cb568055267508364f6318e3f741e8a8521576f82e5c0dc",
+   "errors": []
+  },
+  "TUURI-EEROLA-2012": {
+   "route": "crossref",
+   "query": "Formulating a revised taxonomy for modes of listening Tuuri Eerola",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Formulating%20a%20revised%20taxonomy%20for%20modes%20of%20listening%20Tuuri%20Eerola&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:34Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/TUURI-EEROLA-2012.crossref.json",
+   "bytes": 2079,
+   "sha256": "4ce5cfbdf2e64a2b4bc7007c1af30a1ad08528b732ef9bfff5e0ccb3f36947e4",
+   "errors": []
+  },
+  "HERMANN-2008": {
+   "route": "crossref",
+   "query": "Taxonomy and definitions for sonification and auditory display Hermann",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Taxonomy%20and%20definitions%20for%20sonification%20and%20auditory%20display%20Hermann&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:43:31Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/HERMANN-2008.crossref.json",
+   "bytes": 1998,
+   "sha256": "8198ed5ea3b962ca77aeebbb77bcc73f82a4660771cedf76179a422ae418b162",
+   "errors": []
+  },
+  "OZCAN-2008": {
+   "route": "crossref",
+   "query": "Basic semantics of product sounds Ozcan van Egmond",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Basic%20semantics%20of%20product%20sounds%20Ozcan%20van%20Egmond&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:42:35Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/OZCAN-2008.crossref.json",
+   "bytes": 1503,
+   "sha256": "31cba31c1f59db649a206a2bbc5c92d7e2572439758f731bb7e312fdba3d558e",
+   "errors": []
+  }
+ },
+ "round2": {
+  "LUHMANN-1995": {
+   "route": "openlibrary-ta",
+   "query": "Social systems|Niklas Luhmann",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Social%20systems&author=Niklas%20Luhmann&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:16Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/LUHMANN-1995.openlibrary-ta.r2.json",
+   "bytes": 1409,
+   "sha256": "2a029bb2d8070a99787c1eb287b8155ffe1306a55f7a15185a8d6af4f9071402"
+  },
+  "FOERSTER-1984": {
+   "route": "openlibrary-ta",
+   "query": "Observing systems|Heinz von Foerster",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Observing%20systems&author=Heinz%20von%20Foerster&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:18Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/FOERSTER-1984.openlibrary-ta.r2.json",
+   "bytes": 404,
+   "sha256": "b5a0d3afbec7c6cbbaa18cb0082de17ef3281835af6f793b9b26d5583f448f5d"
+  },
+  "PICARD-1997": {
+   "route": "openlibrary-ta",
+   "query": "Affective computing|Rosalind Picard",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Affective%20computing&author=Rosalind%20Picard&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:20Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PICARD-1997.openlibrary-ta.r2.json",
+   "bytes": 1353,
+   "sha256": "f530cb86520f98884164fc4eb7fb28046cda53501854586713aee5d97008d2cd"
+  },
+  "SPENCER-BROWN-1969": {
+   "route": "openlibrary-ta",
+   "query": "Laws of form|Spencer-Brown",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Laws%20of%20form&author=Spencer-Brown&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:22Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SPENCER-BROWN-1969.openlibrary-ta.r2.json",
+   "bytes": 1362,
+   "sha256": "a41f3d44b4fc63247d21a8e4da5753d936b627bdde7f0732c08f0bed1f7e33a0"
+  },
+  "SHANNON-WEAVER-1949": {
+   "route": "openlibrary-ta",
+   "query": "The mathematical theory of communication|Claude Shannon",
+   "url": "https://openlibrary.org/search.json?limit=5&title=The%20mathematical%20theory%20of%20communication&author=Claude%20Shannon&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:23Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SHANNON-WEAVER-1949.openlibrary-ta.r2.json",
+   "bytes": 1384,
+   "sha256": "c4e46bae497bc401d01c1a1d078894b3d09f15ce094ccfe351d70a24baaac410"
+  },
+  "VARELA-1991": {
+   "route": "openlibrary-ta",
+   "query": "The embodied mind|Francisco Varela",
+   "url": "https://openlibrary.org/search.json?limit=5&title=The%20embodied%20mind&author=Francisco%20Varela&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:25Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/VARELA-1991.openlibrary-ta.r2.json",
+   "bytes": 974,
+   "sha256": "7397425ed26c11b934c28c32c0ae7ed8e94c346c9b23586bb6ae7cbf7434d026"
+  },
+  "NASS-BRAVE-2005": {
+   "route": "openlibrary-ta",
+   "query": "Wired for speech|Clifford Nass",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Wired%20for%20speech&author=Clifford%20Nass&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:27Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/NASS-BRAVE-2005.openlibrary-ta.r2.json",
+   "bytes": 607,
+   "sha256": "827fa81a1112b520ce8812e35d5d35f042db4f334765db4b00d936449a345d96"
+  },
+  "CLARK-1996": {
+   "route": "openlibrary-ta",
+   "query": "Using language|Herbert H. Clark",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Using%20language&author=Herbert%20H.%20Clark&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:29Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CLARK-1996.openlibrary-ta.r2.json",
+   "bytes": 1058,
+   "sha256": "ee32b6d486786d0b88ec75d15e13c2b45fc9c95118419dcbf970bca833d07afc"
+  },
+  "SHORT-2007": {
+   "route": "openlibrary-ta",
+   "query": "Peirce's theory of signs|T. L. Short",
+   "url": "https://openlibrary.org/search.json?limit=5&title=Peirce%27s%20theory%20of%20signs&author=T.%20L.%20Short&fields=key,title,author_name,first_publish_year,publisher,isbn,edition_count,language",
+   "at": "2026-10-13T06:45:31Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SHORT-2007.openlibrary-ta.r2.json",
+   "bytes": 809,
+   "sha256": "0972c1d68acc87a459b0f353f1723185d5dd45fb72c96c03c88fc937017c77aa"
+  },
+  "MOORE-2017": {
+   "route": "crossref",
+   "query": "The right kind of unnatural: designing a robot voice",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20right%20kind%20of%20unnatural%3A%20designing%20a%20robot%20voice&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T06:45:33Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MOORE-2017.crossref.r2.json",
+   "bytes": 2792,
+   "sha256": "5c3d27702d6caf4341537424df780a5ac1c068c6258b8b2931a4e3db9d3b36b5"
+  }
+ },
+ "work_records": {
+  "DESOUZA-1993": {
+   "doi": "10.1006/imms.1993.1082",
+   "url": "https://api.crossref.org/works/10.1006%2Fimms.1993.1082",
+   "at": "2026-10-13T06:52:05Z",
+   "http_status": 200,
+   "bytes": 2221,
+   "sha256": "d78a3fde373cb206c4e5e1a79b7b06fc73ddfa4eb122e41bbd0bed866ad9a87f",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "PRATES-2000": {
+   "doi": "10.1145/328595.328608",
+   "url": "https://api.crossref.org/works/10.1145%2F328595.328608",
+   "at": "2026-10-13T06:52:07Z",
+   "http_status": 200,
+   "bytes": 5806,
+   "sha256": "96ce8dcdef4edb3f69b7c4b8c828996555a73a17c1935582c3d8d6a106fa2a55",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "BRENNAN-HULTEEN-1995": {
+   "doi": "10.1016/0950-7051(95)98376-h",
+   "url": "https://api.crossref.org/works/10.1016%2F0950-7051%2895%2998376-h",
+   "at": "2026-10-13T06:52:09Z",
+   "http_status": 200,
+   "bytes": 7334,
+   "sha256": "b6816bfc2f2281e782d2b116bd911d6eeddb5569be8f2d5f528ae3e6aa2053ac",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "CLARK-SCHAEFER-1989": {
+   "doi": "10.1207/s15516709cog1302_7",
+   "url": "https://api.crossref.org/works/10.1207%2Fs15516709cog1302_7",
+   "at": "2026-10-13T06:52:10Z",
+   "http_status": 200,
+   "bytes": 8674,
+   "sha256": "cd3c870510466af739e5fc6ac805c90c88cddcaeea7f8fa1e14ef744573ff486",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "EDWORTHY-1991": {
+   "doi": "10.1177/001872089103300206",
+   "url": "https://api.crossref.org/works/10.1177%2F001872089103300206",
+   "at": "2026-10-13T06:52:12Z",
+   "http_status": 200,
+   "bytes": 6496,
+   "sha256": "f1a173d6dd36747c53c47b27a53dc9954a26ba30382464f0eb3d27b16b860070",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "HELLIER-1993": {
+   "doi": "10.1177/001872089303500408",
+   "url": "https://api.crossref.org/works/10.1177%2F001872089303500408",
+   "at": "2026-10-13T06:52:14Z",
+   "http_status": 200,
+   "bytes": 5537,
+   "sha256": "7d52e0218b110880434aee170dcb790080218f434530e1c713b7bb615017aa0d",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "EDWORTHY-HELLIER-2006": {
+   "doi": "10.1093/bja/ael114",
+   "url": "https://api.crossref.org/works/10.1093%2Fbja%2Fael114",
+   "at": "2026-10-13T06:52:16Z",
+   "http_status": 200,
+   "bytes": 15741,
+   "sha256": "af481990f56a9c8de6e05e9fa56d34548713ef7ad5199bd979d49b5f475adc25",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "VICENTE-RASMUSSEN-1992": {
+   "doi": "10.1109/21.156574",
+   "url": "https://api.crossref.org/works/10.1109%2F21.156574",
+   "at": "2026-10-13T06:52:18Z",
+   "http_status": 200,
+   "bytes": 17236,
+   "sha256": "be3fb3af62d537cc1b798195a4ad4acf3e886ef1ca0bd3669d2fea02b04376fb",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "WICKENS-2002": {
+   "doi": "10.1080/14639220210123806",
+   "url": "https://api.crossref.org/works/10.1080%2F14639220210123806",
+   "at": "2026-10-13T06:52:20Z",
+   "http_status": 200,
+   "bytes": 10658,
+   "sha256": "b040d940c4165be162a2ab3eb30542c9a2b95b5376ac2d59d865ac10eb9ed91c",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "GAVER-1986": {
+   "doi": "10.1207/s15327051hci0202_3",
+   "url": "https://api.crossref.org/works/10.1207%2Fs15327051hci0202_3",
+   "at": "2026-10-13T06:52:21Z",
+   "http_status": 200,
+   "bytes": 4997,
+   "sha256": "9742e67e1d1d133d397ed34c93fd3e2a351f9d3741b99a40fc7d205a4b5f3219",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "GAVER-1993": {
+   "doi": "10.1207/s15326969eco0501_1",
+   "url": "https://api.crossref.org/works/10.1207%2Fs15326969eco0501_1",
+   "at": "2026-10-13T06:52:23Z",
+   "http_status": 200,
+   "bytes": 7811,
+   "sha256": "92835e19df16cf92ed4cb430c809d4fb2a8f1def77467f4b422e1b3653e05d86",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "BLATTNER-1989": {
+   "doi": "10.1207/s15327051hci0401_1",
+   "url": "https://api.crossref.org/works/10.1207%2Fs15327051hci0401_1",
+   "at": "2026-10-13T06:52:25Z",
+   "http_status": 200,
+   "bytes": 11477,
+   "sha256": "e3b4eeae9c27bac6c0ce6baa812118da34d8e218c7679bfd1888a7ee27221a73",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "SEABORN-2021": {
+   "doi": "10.1145/3386867",
+   "url": "https://api.crossref.org/works/10.1145%2F3386867",
+   "at": "2026-10-13T06:52:26Z",
+   "http_status": 200,
+   "bytes": 30995,
+   "sha256": "48db6d6253504f718ef28ab0c6ac211c7e7239e21aa0e51f4fae364f8fe5a4c4",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "CLARK-FISCHER-2023": {
+   "doi": "10.1017/s0140525x22000668",
+   "url": "https://api.crossref.org/works/10.1017%2Fs0140525x22000668",
+   "at": "2026-10-13T06:52:28Z",
+   "http_status": 200,
+   "bytes": 17353,
+   "sha256": "366a596f2c33aab7e036690b253710940b522aba4f6d59df8a125a5250800ea4",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "EPLEY-2007": {
+   "doi": "10.1037/0033-295x.114.4.864",
+   "url": "https://api.crossref.org/works/10.1037%2F0033-295x.114.4.864",
+   "at": "2026-10-13T06:52:30Z",
+   "http_status": 200,
+   "bytes": 2621,
+   "sha256": "d9b0272abf91223866974e0612e1620374dde8a8f84b899831b774558a88dffe",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "MORI-2012": {
+   "doi": "10.1109/mra.2012.2192811",
+   "url": "https://api.crossref.org/works/10.1109%2Fmra.2012.2192811",
+   "at": "2026-10-13T06:53:14Z",
+   "http_status": 200,
+   "bytes": 2290,
+   "sha256": "2f6e423b03698a2c621e53f177413dec082bd2de692ed8b5cb1331590e1a5d6c",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "NASS-1994": {
+   "doi": "10.1145/191666.191703",
+   "url": "https://api.crossref.org/works/10.1145%2F191666.191703",
+   "at": "2026-10-13T06:52:33Z",
+   "http_status": 200,
+   "bytes": 6128,
+   "sha256": "6b6a6d4e409ce8c9b2c97c0a3b3d3d2dbab729d90e1f1646b6b9784f137a95e9",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "MINGERS-2002": {
+   "doi": "10.1111/1467-954x.00367",
+   "url": "https://api.crossref.org/works/10.1111%2F1467-954x.00367",
+   "at": "2026-10-13T06:52:35Z",
+   "http_status": 200,
+   "bytes": 15593,
+   "sha256": "79330a8ebf83e86df6e62cf0c21a96e780ec32bc309cc71c7a3586d02b2f068e",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "SCOTT-2004": {
+   "doi": "10.1108/03684920410556007",
+   "url": "https://api.crossref.org/works/10.1108%2F03684920410556007",
+   "at": "2026-10-13T06:52:37Z",
+   "http_status": 200,
+   "bytes": 14358,
+   "sha256": "dc716c7a27dab584799c950df1f9f12ebdd5cfce6d0dbdec22a04489e5a4723c",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "TADDEO-FLORIDI-2005": {
+   "doi": "10.1080/09528130500284053",
+   "url": "https://api.crossref.org/works/10.1080%2F09528130500284053",
+   "at": "2026-10-13T06:52:39Z",
+   "http_status": 200,
+   "bytes": 10923,
+   "sha256": "8593068a8cfafee84acb2f360d9d02630246bc36b8510f7e24ed763ba888995b",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "FLORIDI-2005": {
+   "doi": "10.1111/j.1933-1592.2005.tb00531.x",
+   "url": "https://api.crossref.org/works/10.1111%2Fj.1933-1592.2005.tb00531.x",
+   "at": "2026-10-13T06:52:41Z",
+   "http_status": 200,
+   "bytes": 6048,
+   "sha256": "fccbba29512b3e34a0fdc60349e11fadb3143af0a6eb27d725176f8dc8a981b9",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "BARBIERI-2008": {
+   "doi": "10.1007/s00114-008-0368-x",
+   "url": "https://api.crossref.org/works/10.1007%2Fs00114-008-0368-x",
+   "at": "2026-10-13T06:52:42Z",
+   "http_status": 200,
+   "bytes": 30779,
+   "sha256": "fb179a2b6342b80f52003731e695e2b8442d79bbbe8cc1d933ca09aec52ba7be",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "KULL-2009": {
+   "doi": "10.1162/biot.2009.4.2.167",
+   "url": "https://api.crossref.org/works/10.1162%2Fbiot.2009.4.2.167",
+   "at": "2026-10-13T06:52:44Z",
+   "http_status": 200,
+   "bytes": 10729,
+   "sha256": "505727ea8e59889e0b0bead74f3157b915058fbcd5fda02bf79a5a0adf0cb2dd",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "TUURI-EEROLA-2012": {
+   "doi": "10.1080/09298215.2011.614951",
+   "url": "https://api.crossref.org/works/10.1080%2F09298215.2011.614951",
+   "at": "2026-10-13T06:52:46Z",
+   "http_status": 200,
+   "bytes": 11497,
+   "sha256": "dcd43d23a00e10755cd1a9beab28b0f57a73522cce13d7ce02b8bb31c88fe12c",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "JEKOSCH-2005": {
+   "doi": "10.1007/3-540-27437-5_8",
+   "url": "https://api.crossref.org/works/10.1007%2F3-540-27437-5_8",
+   "at": "2026-10-13T06:52:47Z",
+   "http_status": 200,
+   "bytes": 16441,
+   "sha256": "57334a9a9430b779566fe865d6f6b016e3d59891b14e46b22d42f73486ddc155",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "SCHEGLOFF-1977": {
+   "doi": "10.2307/413107",
+   "url": "https://api.crossref.org/works/10.2307%2F413107",
+   "at": "2026-10-13T06:52:49Z",
+   "http_status": 200,
+   "bytes": 5858,
+   "sha256": "e0ae648f23277e4b3e4dcc382d9ae82427dc7ff047e512d6dbd6127080685ada",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "AYLETT-2019": {
+   "doi": "10.1145/3342775.3342806",
+   "url": "https://api.crossref.org/works/10.1145%2F3342775.3342806",
+   "at": "2026-10-13T06:52:51Z",
+   "http_status": 200,
+   "bytes": 8115,
+   "sha256": "850c864c5a630854af8d61963e016fa99a67106186e83d58ab088d6c5a050399",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "BECKER-2025": {
+   "doi": "10.1145/3706066",
+   "url": "https://api.crossref.org/works/10.1145%2F3706066",
+   "at": "2026-10-13T07:07:17Z",
+   "http_status": 200,
+   "bytes": 22734,
+   "sha256": "0dfd4125b623d38cd47fe6c3a602c70742e441c18695e49695ded01f2b36c662",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "ROMEO-2025": {
+   "doi": "10.1145/3711938",
+   "url": "https://api.crossref.org/works/10.1145%2F3711938",
+   "at": "2026-10-13T07:07:19Z",
+   "http_status": 200,
+   "bytes": 16873,
+   "sha256": "2d946811f351025f0a8b3dff9d10269aa00e812d9093c64c00a67d1c7793a2bb",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "ROMEO-2023": {
+   "doi": "10.1109/ro-man57019.2023.10309631",
+   "url": "https://api.crossref.org/works/10.1109%2Fro-man57019.2023.10309631",
+   "at": "2026-10-13T07:07:21Z",
+   "http_status": 200,
+   "bytes": 7755,
+   "sha256": "c5b6d94b2be19a40e90cc3e5fbd9160e6e50412cb733afe0b7e754ccfa1bcf8a",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "MULLER-2015": {
+   "doi": "10.1080/0952813x.2014.940143",
+   "url": "https://api.crossref.org/works/10.1080%2F0952813x.2014.940143",
+   "at": "2026-10-13T07:07:22Z",
+   "http_status": 200,
+   "bytes": 3715,
+   "sha256": "3760724251777abfe586a2b55bac0656ad1e45bd541b91681df042dd76f3259f",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "ZHOU-2025": {
+   "doi": "10.1515/css-2025-2003",
+   "url": "https://api.crossref.org/works/10.1515%2Fcss-2025-2003",
+   "at": "2026-10-13T07:07:24Z",
+   "http_status": 200,
+   "bytes": 19051,
+   "sha256": "4f389d7558881c41e4b0a6c9b055f5a2dfb5c34e839f70338fa634b90dd7238f",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "MURPHY-2006": {
+   "doi": "10.1007/11821731_12",
+   "url": "https://api.crossref.org/works/10.1007%2F11821731_12",
+   "at": "2026-10-13T07:07:26Z",
+   "http_status": 200,
+   "bytes": 6498,
+   "sha256": "f6b568ecb5b45ba17ea6ce4fd5a8d19b6a5b1cc6d0f8a50f4425e316fa563092",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  },
+  "SANZSEGURA-2024": {
+   "doi": "10.21606/drs.2024.855",
+   "url": "https://api.crossref.org/works/10.21606%2Fdrs.2024.855",
+   "at": "2026-10-13T07:07:28Z",
+   "http_status": 200,
+   "bytes": 1970,
+   "sha256": "79fdb5465f0935a3e2e22cbf09f093ec88bf4e22a747f3dc0142fbbef5017466",
+   "retained": false,
+   "note": "Full Crossref work record; contains publisher-deposited abstracts for some items, so the file is not committed. Hash recorded."
+  }
+ },
+ "superseded_attempts": [
+  {
+   "KULL-2009": {
+    "route": "crossref",
+    "query": "Theses on Biosemiotics: Prolegomena to a Theoretical Biology Kull Deacon Emmeche Hoffmeyer Stjernfelt",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Theses%20on%20Biosemiotics%3A%20Prolegomena%20to%20a%20Theoretical%20Biology%20Kull%20Deacon%20Emmeche%20Hoffmeyer%20Stjernfelt&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:06Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "CLARK-SCHAEFER-1989": {
+    "route": "crossref",
+    "query": "Contributing to discourse Clark Schaefer 1989 Cognitive Science",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Contributing%20to%20discourse%20Clark%20Schaefer%201989%20Cognitive%20Science&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:10Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "CLARK-1996": {
+    "route": "crossref",
+    "query": "Using Language Clark 1996 Cambridge University Press",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Using%20Language%20Clark%201996%20Cambridge%20University%20Press&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:11Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "HARNAD-1990": {
+    "route": "crossref",
+    "query": "The symbol grounding problem Harnad 1990 Physica D",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20symbol%20grounding%20problem%20Harnad%201990%20Physica%20D&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:13Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "TADDEO-FLORIDI-2005": {
+    "route": "crossref",
+    "query": "Solving the symbol grounding problem: a critical review of fifteen years of research",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Solving%20the%20symbol%20grounding%20problem%3A%20a%20critical%20review%20of%20fifteen%20years%20of%20research&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:13Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "KUHNE-2020": {
+    "route": "crossref",
+    "query": "The human takes it all: humanlike synthesized voices are perceived as less eerie and more likable Kuhne",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20human%20takes%20it%20all%3A%20humanlike%20synthesized%20voices%20are%20perceived%20as%20less%20eerie%20and%20more%20likable%20Kuhne&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:28Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "SCOTT-2004": {
+    "route": "crossref",
+    "query": "Second-order cybernetics: an historical introduction Scott 2004 Kybernetes",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Second-order%20cybernetics%3A%20an%20historical%20introduction%20Scott%202004%20Kybernetes&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:32Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "NSAS-ICAD": {
+    "route": "crossref",
+    "query": "Non-Speech Audio-Semiotics: A Review and Revision of Auditory Icon and Earcon Theory",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Non-Speech%20Audio-Semiotics%3A%20A%20Review%20and%20Revision%20of%20Auditory%20Icon%20and%20Earcon%20Theory&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:32Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "REVIEW-AUDITORY-SIGNS-ICAD": {
+    "route": "crossref",
+    "query": "A review-based conceptual analysis of auditory signs and their design",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=A%20review-based%20conceptual%20analysis%20of%20auditory%20signs%20and%20their%20design&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:33Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "JEKOSCH-2005": {
+    "route": "crossref",
+    "query": "Assigning meaning to sounds: semiotics in the context of product-sound design Jekosch",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Assigning%20meaning%20to%20sounds%3A%20semiotics%20in%20the%20context%20of%20product-sound%20design%20Jekosch&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:33Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "HERMANN-2008": {
+    "route": "crossref",
+    "query": "Taxonomy and definitions for sonification and auditory display Hermann",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Taxonomy%20and%20definitions%20for%20sonification%20and%20auditory%20display%20Hermann&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:42:35Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "CLARK-SCHAEFER-1989": {
+    "route": "crossref",
+    "query": "Contributing to discourse Clark Schaefer 1989 Cognitive Science",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Contributing%20to%20discourse%20Clark%20Schaefer%201989%20Cognitive%20Science&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:43:08Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  },
+  {
+   "CLARK-1996": {
+    "route": "crossref",
+    "query": "Using Language Clark 1996 Cambridge University Press",
+    "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Using%20Language%20Clark%201996%20Cambridge%20University%20Press&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+    "at": "2026-10-13T06:43:11Z",
+    "http_status": 429,
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "errors": [],
+    "note": "Rate-limited response (HTTP 429); the body was overwritten by the successful retry recorded under lookups."
+   }
+  }
+ ],
+ "note": "Bibliographic identity lookups for MHAC-R004. 'lookups' are first-round queries (Crossref REST API or Open Library search), 'round2' are field-scoped Open Library queries and one refined Crossref query, 'round3' are Crossref and arXiv API identity checks for counter-position items found by the negative-case searches, 'work_records' are single-DOI Crossref records fetched to read deposited abstracts (not committed). Crossref and Open Library metadata are released under CC0.",
+ "round3": {
+  "VOICE-NATURALNESS-TRUST": {
+   "route": "crossref",
+   "query": "Influence of Robots' Voice Naturalness on Trust and Compliance",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Influence%20of%20Robots%27%20Voice%20Naturalness%20on%20Trust%20and%20Compliance&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:05:59Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/VOICE-NATURALNESS-TRUST.crossref.r3.json",
+   "bytes": 5033,
+   "sha256": "cf21e3a6799beef7d2f894a4a40e08d31ba5843aa0c444e331b2120a8bc152a4"
+  },
+  "VOICE-REPAIR-TRUST": {
+   "route": "crossref",
+   "query": "The effect of voice and repair strategy on trust formation and repair in human-robot interaction",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=The%20effect%20of%20voice%20and%20repair%20strategy%20on%20trust%20formation%20and%20repair%20in%20human-robot%20interaction&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:02Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/VOICE-REPAIR-TRUST.crossref.r3.json",
+   "bytes": 3748,
+   "sha256": "ffa9508853e34b63e9c46fd69ca9997aa7b9730db2e837b45369991548f128e7"
+  },
+  "THIRD-ORDER-CYBERNETICS": {
+   "route": "crossref",
+   "query": "There's nothing like the real thing: revisiting the need for a third-order cybernetics",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=There%27s%20nothing%20like%20the%20real%20thing%3A%20revisiting%20the%20need%20for%20a%20third-order%20cybernetics&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:06Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/THIRD-ORDER-CYBERNETICS.crossref.r3.json",
+   "bytes": 1210,
+   "sha256": "91a27d84ce22eeac1cd79eff62483d8e59e1240ba92a972bcd8d78236d4cf928"
+  },
+  "WHICH-SGP": {
+   "route": "crossref",
+   "query": "Which symbol grounding problem should we try to solve?",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Which%20symbol%20grounding%20problem%20should%20we%20try%20to%20solve%3F&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:09Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/WHICH-SGP.crossref.r3.json",
+   "bytes": 1921,
+   "sha256": "3f41bf72dc714dcb2ed0788d34a5e039a0067ed1683d140ed82ea74edd685adf"
+  },
+  "CODE-BIOLOGY-OPERATIONAL": {
+   "route": "crossref",
+   "query": "Biosemiotics, code biology, and operational interpretation",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Biosemiotics%2C%20code%20biology%2C%20and%20operational%20interpretation&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:13Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CODE-BIOLOGY-OPERATIONAL.crossref.r3.json",
+   "bytes": 1727,
+   "sha256": "0191ef92c916f7a38da894eab5893d1aac26cbd948c919accb49851f1a5f79d8"
+  },
+  "CODES-NOT-SUFFICIENT": {
+   "route": "crossref",
+   "query": "Codes: necessary, but not sufficient for meaning-making",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Codes%3A%20necessary%2C%20but%20not%20sufficient%20for%20meaning-making&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:16Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CODES-NOT-SUFFICIENT.crossref.r3.json",
+   "bytes": 1542,
+   "sha256": "ae9b13f8204aa9441259d8f5915a581a2a78c6a08fd6c735542bf1ec48bbd8c4"
+  },
+  "PEIRCEAN-LISTENING": {
+   "route": "crossref",
+   "query": "Listening and interpretation: a Peircean semiotic model for the analysis of listening",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Listening%20and%20interpretation%3A%20a%20Peircean%20semiotic%20model%20for%20the%20analysis%20of%20listening&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:20Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/PEIRCEAN-LISTENING.crossref.r3.json",
+   "bytes": 1734,
+   "sha256": "c812440fed96862ea4d9365dead6b306ec15f32ca85978144964b3ec82b8ad38"
+  },
+  "NSS-USE-SCENARIO": {
+   "route": "crossref",
+   "query": "Non-speech sounds as elements of a use scenario: a semiotic perspective",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Non-speech%20sounds%20as%20elements%20of%20a%20use%20scenario%3A%20a%20semiotic%20perspective&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:24Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/NSS-USE-SCENARIO.crossref.r3.json",
+   "bytes": 2281,
+   "sha256": "1b5e10a528af4f531853d0e4d22b7ead94c9ec1dd161c303ea6f36b6bbf220df"
+  },
+  "SOUND-DRIVEN-DESIGN": {
+   "route": "crossref",
+   "query": "Guiding design students to sound-driven design from the base camp of semiotics",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Guiding%20design%20students%20to%20sound-driven%20design%20from%20the%20base%20camp%20of%20semiotics&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:06:28Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SOUND-DRIVEN-DESIGN.crossref.r3.json",
+   "bytes": 2268,
+   "sha256": "1f73539d9a707b8bff35e084b6dffcc433179fe794f18f5aced5a4be894f3a98"
+  },
+  "HAC-CHALLENGES": {
+   "route": "arxiv",
+   "query": "2412.10380",
+   "url": "https://export.arxiv.org/api/query?id_list=2412.10380",
+   "at": "2026-10-13T07:06:31Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/HAC-CHALLENGES.arxiv.r3.xml",
+   "bytes": 3011,
+   "sha256": "38e1f5c07528194d16b6ee9bd26c8ac48596161c56b00578644287d0d739de05"
+  },
+  "CUI-ETHICAL-CAVEATS": {
+   "route": "arxiv",
+   "query": "2401.14746",
+   "url": "https://export.arxiv.org/api/query?id_list=2401.14746",
+   "at": "2026-10-13T07:06:34Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/CUI-ETHICAL-CAVEATS.arxiv.r3.xml",
+   "bytes": 3631,
+   "sha256": "441467f5faa222b3d5bc0cc212919a300a9868b07953ad90a3ac2be7cf69bf12"
+  },
+  "ANTHRO-LLM-ETHICS": {
+   "route": "arxiv",
+   "query": "2601.09869",
+   "url": "https://export.arxiv.org/api/query?id_list=2601.09869",
+   "at": "2026-10-13T07:06:38Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/ANTHRO-LLM-ETHICS.arxiv.r3.xml",
+   "bytes": 3287,
+   "sha256": "49bc09706e7519abfb9536354821588ce8768bc7be495e005e0735b3d69b71bf"
+  }
+ },
+ "round4": {
+  "SEMIOTICA-2009-070": {
+   "route": "crossref-doi",
+   "query": "10.1515/semi.2009.070",
+   "url": "https://api.crossref.org/works?rows=3&filter=doi:10.1515/semi.2009.070&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:10:13Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/SEMIOTICA-2009-070.crossref-doi.r4.json",
+   "bytes": 637,
+   "sha256": "43a82ff7e077a272ee4d98b2779bad447686438e1ab5284beb3aba53c66a30e3"
+  },
+  "MEANING-AND-MACHINE": {
+   "route": "crossref",
+   "query": "Meaning and the machine: toward a semiotics of interaction",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Meaning%20and%20the%20machine%3A%20toward%20a%20semiotics%20of%20interaction&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:10:17Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/MEANING-AND-MACHINE.crossref.r4.json",
+   "bytes": 1410,
+   "sha256": "9fbe3a9ddb7272df50063b384504be3d7a7c80804b0455acf9c07f467b18b3bc"
+  },
+  "AUTOPOIETIC-ENACTIVISM": {
+   "route": "crossref",
+   "query": "Autopoietic enactivism, phenomenology and the deep continuity between life and mind",
+   "url": "https://api.crossref.org/works?rows=3&query.bibliographic=Autopoietic%20enactivism%2C%20phenomenology%20and%20the%20deep%20continuity%20between%20life%20and%20mind&select=DOI,title,author,issued,container-title,type,publisher,ISBN,page,volume,issue,editor",
+   "at": "2026-10-13T07:10:21Z",
+   "http_status": 200,
+   "file": "research/searches/related/exports/lookups/AUTOPOIETIC-ENACTIVISM.crossref.r4.json",
+   "bytes": 2247,
+   "sha256": "b3d261e2d808a082544fca83951680b1c1f5a0b6fca649556025c7a820682b16"
+  }
+ }
+}

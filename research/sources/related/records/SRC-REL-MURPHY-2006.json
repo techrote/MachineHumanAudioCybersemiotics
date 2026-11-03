@@ -1,0 +1,87 @@
+{
+  "id": "SRC-REL-MURPHY-2006",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only; the Sussex repository entry in the search results says the files are not publicly available.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Murphy, Emma",
+            "role": "author"
+          },
+          {
+            "name": "Pirhonen, Antti",
+            "role": "author"
+          },
+          {
+            "name": "McAllister, Graham",
+            "role": "author"
+          },
+          {
+            "name": "Yu, Wai",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "In Haptic and Audio Interaction Design (HAID 2006), Lecture Notes in Computer Science, Springer, pp. 121-132"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Round-3 lookup NSS-USE-SCENARIO result 3, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/11821731_12"
+          },
+          {
+            "provenance": "Round-3 lookup NSS-USE-SCENARIO result 3, research/searches/related/exports/lookups/",
+            "scheme": "isbn",
+            "status": "verified",
+            "value": "9783540375951"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref chapter record returned by the round-3 query for a different title"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2006"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "A Semiotic Approach to the Design of Non-speech Sounds",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

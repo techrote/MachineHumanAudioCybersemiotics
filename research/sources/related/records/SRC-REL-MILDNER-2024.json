@@ -1,0 +1,119 @@
+{
+  "id": "SRC-REL-MILDNER-2024",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T07:06:38Z",
+        "access_reason": "Abstract read from the arXiv API record.",
+        "access_status": "abstract_only",
+        "authors": [
+          {
+            "name": "Mildner, Thomas",
+            "role": "author"
+          },
+          {
+            "name": "Cooney, Orla",
+            "role": "author"
+          },
+          {
+            "name": "Meck, Anna-Maria",
+            "role": "author"
+          },
+          {
+            "name": "Bartl, Marion",
+            "role": "author"
+          },
+          {
+            "name": "Savino, Gian-Luca",
+            "role": "author"
+          },
+          {
+            "name": "Doyle, Philip R.",
+            "role": "author"
+          },
+          {
+            "name": "Garaialde, Diego",
+            "role": "author"
+          },
+          {
+            "name": "Clark, Leigh",
+            "role": "author"
+          },
+          {
+            "name": "Sloan, John",
+            "role": "author"
+          },
+          {
+            "name": "Wenig, Nina",
+            "role": "author"
+          },
+          {
+            "name": "Malaka, Rainer",
+            "role": "author"
+          },
+          {
+            "name": "Niess, Jasmin",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "arXiv:2401.14746v1, author's version of a CHI '24 paper"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Round-3 lookup CUI-ETHICAL-CAVEATS result 1, research/searches/related/exports/lookups/ (arXiv API)",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://arxiv.org/abs/2401.14746v1"
+          },
+          {
+            "provenance": "Version-of-record DOI stated in the arXiv author comment (CHI '24); not resolved",
+            "scheme": "doi",
+            "status": "candidate",
+            "value": "10.1145/3613904.3642542"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "arXiv API record including the author comment"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2024-01-26"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "preprint",
+        "title": "Listening to the Voices: Describing Ethical Caveats of Conversational User Interfaces According to Experts and Frequent Users",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,69 @@
+{
+  "id": "SRCH-R004-LK-KUHNE-2020",
+  "issue": 4,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "boundary": "Identity lookup for R004 candidate KUHNE-2020; file research/searches/related/exports/lookups/KUHNE-2020.crossref.json (sha256 32b6b4b1e7e6dee8c7b1344e4f0de6cdfe4c66076db69bafe074e673f1ddd744).",
+        "coverage": {
+          "end": {
+            "reason": "Known-item lookup",
+            "state": "not_applicable"
+          },
+          "start": {
+            "reason": "Known-item lookup",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/related/exports/lookups/MANIFEST.json",
+            "sha256": "817499d25ddc0a0429b72fa61c8389f185461997f217db6d67d3719f851bbbfd"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "rows=3"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T06:43:18Z"
+        },
+        "interface": "HTTPS request from the workspace shell; response kept unchanged",
+        "lane": "related",
+        "mode": "production",
+        "pagination": {
+          "complete": true,
+          "detail": "Known-item lookup: only the top results were requested and all returned items are recorded."
+        },
+        "platform": "Crossref REST API",
+        "protocol_version": "v1",
+        "query": "The human takes it all: humanlike synthesized voices are perceived as less eerie and more likable Kuhne",
+        "reported_count": {
+          "reason": "Total-results count not used for a known-item lookup",
+          "state": "not_reported"
+        },
+        "retrieved_count": 3,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T06:43:18Z"
+        },
+        "status": "completed"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

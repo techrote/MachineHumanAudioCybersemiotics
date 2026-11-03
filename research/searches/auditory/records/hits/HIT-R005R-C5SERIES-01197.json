@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01197",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1197,
+        "raw_metadata": "Ritualistic approach to sonic interaction design: A poetic framework for participatory sonification | Morabito, Robin; Armitage, Jack; Magnusson, Thor | issued: 2022-06 | Text | https://repository.gatech.edu/entities/publication/fb4141dd-4056-42ba-9daa-35a6077094a2",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/fb4141dd-4056-42ba-9daa-35a6077094a2"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2022.018"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/67382"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

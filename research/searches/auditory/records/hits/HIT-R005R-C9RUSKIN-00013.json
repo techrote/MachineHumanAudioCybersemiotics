@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9RUSKIN-00013",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 13,
+        "raw_metadata": "Bliss, J. P. (2003). Investigation of alarm-related accidents and incidents in aviation. The International Journal of Aviation Psychology, 13(3), 249-268. doi:10.1207/S15327108IJAP1303_04 | C9-RUSKIN-2020-REF013 | source PDF pp. 56; printed pp. 56; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

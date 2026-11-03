@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01262",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1262,
+        "raw_metadata": "Helium Burning: Affordances of stellar nucleosynthesis to explore timbral plasticity, form and spatialization in computer music | Hernandez, Juan | issued: 2025-06 | Text | https://repository.gatech.edu/entities/publication/b8f1786e-caf0-4f84-98f4-2d4a7e7c77c9",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/b8f1786e-caf0-4f84-98f4-2d4a7e7c77c9"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2025.089"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/79976"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

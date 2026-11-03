@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ5-00703",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 703,
+        "raw_metadata": "The Effect of Extended Sensory Range via the EyeCane Sensory Substitution Device on the Characteristics of Visionless Virtual Navigation | first author: Shachar Maidenbaum | 2014-01-01 | article | https://openalex.org/W2104794386",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2104794386"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1163/22134808-00002463"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

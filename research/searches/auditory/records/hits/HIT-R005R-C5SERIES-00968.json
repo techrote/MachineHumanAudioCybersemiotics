@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00968",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 968,
+        "raw_metadata": "Sonification of the Tohoku earthquake: Music, popularization & the auditory sublime | Winters, R. Michael; Weinberg, Gil | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/01b6b33f-7b83-4acc-b564-78ecac3e1f21",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/01b6b33f-7b83-4acc-b564-78ecac3e1f21"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54149"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

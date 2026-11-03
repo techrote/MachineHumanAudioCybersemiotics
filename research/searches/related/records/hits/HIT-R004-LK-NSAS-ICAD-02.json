@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R004-LK-NSAS-ICAD-02",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-LK-NSAS-ICAD",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2,
+        "raw_metadata": "Non-Negative Multilinear Principal Component Analysis of Auditory Temporal Modulations for Music Genre Classification | IEEE Transactions on Audio, Speech, and Language Processing | 10.1109/tasl.2009.2036813",
+        "resolution_reason": "Returned by the lookup but not the adjudicated match.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1109/tasl.2009.2036813"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R004-LK-NSAS-ICAD",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

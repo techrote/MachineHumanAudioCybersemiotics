@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00636",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 636,
+        "raw_metadata": "The IPEM_EME: a Wireless Music Controller for Real-time Music Interaction | Demey, Michiel; Leman, Marc; Cornelis, Olmo | issued: 2008-06 | Text | https://repository.gatech.edu/entities/publication/38461567-8385-4b00-8673-2f1f09824da8",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/38461567-8385-4b00-8673-2f1f09824da8"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49957"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

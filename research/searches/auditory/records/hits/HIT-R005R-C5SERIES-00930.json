@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00930",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 930,
+        "raw_metadata": "Prototype Auditory Displays for a Fuel Efficiency Driver Interface | Nees, Michael A.; Gable, Thomas M.; Jeon, Myounghoon; Walker, Bruce N. | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/e6efb9ae-92dc-48fa-99f3-4b6a0f9d30d1",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e6efb9ae-92dc-48fa-99f3-4b6a0f9d30d1"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52089"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

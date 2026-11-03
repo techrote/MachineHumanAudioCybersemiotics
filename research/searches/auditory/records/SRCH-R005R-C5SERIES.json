@@ -1,0 +1,66 @@
+{
+  "id": "SRCH-R005R-C5SERIES",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [],
+      "data": {
+        "boundary": "The available index was completely enumerated. This does not establish complete venue coverage: 1992 is absent and the 2026 bin is a 2025 companion book issued in 2026. Items include proceedings and media. Date eligibility is screened later.",
+        "coverage": {
+          "end": {
+            "state": "known",
+            "value": "2026-10-04"
+          },
+          "start": {
+            "reason": "No lower date bound",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/auditory/recovery-2026-11-03/icad/MANIFEST.json",
+            "sha256": "1c2d0ca009f9f82550e96a868df55bb3a31ce083607c21571c726d6e912e6b14"
+          }
+        },
+        "failures": [],
+        "filters": [
+          "ICAD series membership only; publication-date cut-off applied later at screening"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-11-03T00:56:44.965292+00:00"
+        },
+        "interface": "Public repository HTTPS API; 13 advertised pages; complete index enumeration",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": true,
+          "detail": "The available index was completely enumerated. This does not establish complete venue coverage: 1992 is absent and the 2026 bin is a 2025 companion book issued in 2026. Items include proceedings and media. Date eligibility is screened later."
+        },
+        "platform": "Georgia Tech public ICAD series index, protocol C5",
+        "protocol_version": "v1",
+        "query": "Enumerate every page of Georgia Tech ICAD series 6cb90d00-3311-4767-954d-415c9341a358; record issued-year outcomes 1992–2026",
+        "reported_count": 1269,
+        "retrieved_count": 1269,
+        "started_at": {
+          "state": "known",
+          "value": "2026-11-03T00:54:03.156235+00:00"
+        },
+        "status": "completed"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

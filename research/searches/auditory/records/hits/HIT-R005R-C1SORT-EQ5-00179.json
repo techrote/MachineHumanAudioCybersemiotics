@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ5-00179",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 179,
+        "raw_metadata": "Cross-modal transfer effects on visual discrimination depends on lesion location in the rat visual system | first author: Eugene R. Delay | 2001-07-01 | article | https://openalex.org/W1985965715",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1985965715"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1016/s0031-9384(01)00513-3"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

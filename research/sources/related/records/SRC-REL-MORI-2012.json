@@ -1,0 +1,78 @@
+{
+  "id": "SRC-REL-MORI-2012",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Mori, Masahiro",
+            "role": "author"
+          },
+          {
+            "name": "MacDorman, Karl F.",
+            "role": "translator"
+          },
+          {
+            "name": "Kageki, Norri",
+            "role": "translator"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "IEEE Robotics & Automation Magazine 19(2):98-100 ('From the Field')"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Lookup MORI-2012 (crossref) result 1, research/searches/related/exports/lookups/",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1109/mra.2012.2192811"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Crossref record lists Mori, MacDorman and Kageki",
+          "Translator roles and the original Japanese publication are not stated in the lookup and were not verified"
+        ],
+        "metadata_status": "candidate",
+        "publication_date": {
+          "state": "known",
+          "value": "2012-06"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "The Uncanny Valley",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

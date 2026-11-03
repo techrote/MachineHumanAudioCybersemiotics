@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01001",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1001,
+        "raw_metadata": "In Ear to Out There: A Magnitude Based Parameterization Scheme for Sound Source Externalization | Romigh, Griffin D.; Simpson, Brian D.; Iyer, Nandini | issued: 2016-07 | Text | https://repository.gatech.edu/entities/publication/648e9a23-1055-4411-9e37-cff107a3ecd0",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/648e9a23-1055-4411-9e37-cff107a3ecd0"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.21785/icad2016.035"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/56582"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

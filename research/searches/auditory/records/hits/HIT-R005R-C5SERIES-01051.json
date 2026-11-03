@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01051",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1051,
+        "raw_metadata": "Navigation in an Audio-Only First Person Adventure Game | Jäger, Adrian; Hadjakos, Aristotelis | issued: 2017-06 | Text | https://repository.gatech.edu/entities/publication/f394b955-0234-419c-b95c-5336d8d26849",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/f394b955-0234-419c-b95c-5336d8d26849"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2017.033"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/58363"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

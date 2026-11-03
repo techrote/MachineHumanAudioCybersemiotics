@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00483",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 483,
+        "raw_metadata": "Investigation of system latency detection threshold of virtual auditory display | Yairi, S.; Iwaya, Y.; Suzuki, Y. | issued: 2006-06 | Text | https://repository.gatech.edu/entities/publication/7c66c38d-fca4-4d65-a057-9481dc16df58",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7c66c38d-fca4-4d65-a057-9481dc16df58"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50596"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

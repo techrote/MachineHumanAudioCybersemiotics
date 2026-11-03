@@ -1,0 +1,88 @@
+{
+  "id": "SRC-REL-SHANNON-WEAVER-1949",
+  "issue": 4,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRC-REL-SHANNON-1948",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-10-13T06:41:33Z",
+        "access_reason": "Catalogue metadata only.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Shannon, Claude E.",
+            "role": "author"
+          },
+          {
+            "name": "Weaver, Warren",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "University of Illinois Press, Urbana, 1949 (as cited by Brier, with Weaver's 'Recent contributions' essay)"
+        },
+        "family_links": [
+          {
+            "reason": "Book reprints Shannon's 1948 paper with Weaver's essay.",
+            "relation": "companion_of",
+            "source_ref": {
+              "id": "SRC-REL-SHANNON-1948",
+              "rev": 1
+            }
+          }
+        ],
+        "identifiers": [
+          {
+            "provenance": "Lookup SHANNON-WEAVER-1949 (openlibrary-ta) result 1, research/searches/related/exports/lookups/",
+            "scheme": "other",
+            "status": "verified",
+            "value": "Open Library work OL2296213W"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "Open Library work record (1949, 4 editions)",
+          "Cited in Brier's own reference lists parsed from hashed files (BRIER-REFLISTS-R004.json): SK 2015, GL 2015 AM"
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1949"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "Licence not checked",
+            "state": "unknown"
+          },
+          "reason": "No licence verified in R004; no bytes retained.",
+          "status": "unknown"
+        },
+        "source_type": "book",
+        "title": "The Mathematical Theory of Communication",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

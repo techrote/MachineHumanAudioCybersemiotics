@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00145",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 145,
+        "raw_metadata": "Personal webmelody: Customized sonification of web servers | Barra, Maria; Cillo, Tania; de Santis, Antonio; Petrillo, Umberto Ferraro; Negro, Alberto; Scarano, Vittoro; Matlock, Teenie; Maglio, Paul P | issued: 2001-07 | Text | https://repository.gatech.edu/entities/publication/3238aaa6-6a63-4d66-96e1-6ba777c2f0a7",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/3238aaa6-6a63-4d66-96e1-6ba777c2f0a7"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50626"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

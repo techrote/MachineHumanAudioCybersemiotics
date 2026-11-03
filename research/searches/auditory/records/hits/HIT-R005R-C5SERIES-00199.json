@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00199",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 199,
+        "raw_metadata": "W-panning and o-format, tools for object spatialization | Menzies, D. | issued: 2002-07 | Text | https://repository.gatech.edu/entities/publication/30e672ca-a6d5-48ac-b0a3-c7efd518193e",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/30e672ca-a6d5-48ac-b0a3-c7efd518193e"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51395"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,53 @@
+{
+  "id": "AID-R005R-SLEEP-REFERENCES",
+  "issue": 5,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRC-AUD-MCFARLANE-2020-REVIEW",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at_read": "full_text_available",
+        "independence": "AI-assisted reading by the executing ChatGPT agent; no human or external review.",
+        "manifestation_id": "RECOVERED-PDF-20261103",
+        "method": "Poppler pdftotext -layout; header and bibliography inspected; rendered reference pages checked. Bibliographic entries only, not a whole-report reading or numerical extraction.",
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-03T01:19:04.605202Z"
+        },
+        "ranges": [
+          [
+            1,
+            1
+          ],
+          [
+            14,
+            18
+          ]
+        ],
+        "reading_status": "selected_ranges_read",
+        "source_ref": {
+          "id": "SRC-AUD-MCFARLANE-2020-REVIEW",
+          "rev": 1
+        },
+        "status": "performed",
+        "subtype": "reading"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

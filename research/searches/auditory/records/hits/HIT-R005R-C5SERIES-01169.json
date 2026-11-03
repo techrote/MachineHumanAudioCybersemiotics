@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01169",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1169,
+        "raw_metadata": "Tiltification: An accessible app to popularize sonification | Asendorf, Malte; Kienzle, Moritz; Ringe, Rachel; Ahmadi, Fida; Bhowmik, Debaditya; Chen, Jiumeng; Huynh, Kelly; Kleinert, Steffen; Kruesilp, Jatawan; Lee, Ying Ying; Wang, Xin; Luo, Wei; Jadid, Navid Mirzayousef; Awadin, Ahmed; Raval, Varun; Schade, Eve Emily Sophie; Jaman, Hasanur; Sharma, Kashish; Weber, Colin; Winkler, Helena; Ziemer, Tim | issued: 2021-06 | Text | https://repository.gatech.edu/entities/publication/d820207a-d9fb-4d5d-9d81-84f94239e3ba",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d820207a-d9fb-4d5d-9d81-84f94239e3ba"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2021.025"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/66331"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9EDWORTHY-00078",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9EDWORTHY",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 78,
+        "raw_metadata": "Patterson R, Edworthy J, Shailer M, et al. Alarm sounds for medical equipment in intensive care areas and operating theatres. Report no. AC598; Southampton, UK: Institute of Sound and Vibration Research, 1986. | C9-EDWORTHY-2013-REF078 | source PDF pp. 6; printed pp. 589; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9EDWORTHY",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

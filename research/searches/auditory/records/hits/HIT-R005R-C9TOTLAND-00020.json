@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9TOTLAND-00020",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9TOTLAND",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 20,
+        "raw_metadata": "Hollifield, B., & Habibi, E. (2010). The alarm management handbook: A comprehensive guide : Practical and proven methods to optimize the performance of alarm management systems (2nd. ed.). Houston, TX: PAS. | C9-TOTLAND-2021-REF020 | source PDF pp. 44; printed pp. 44; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9TOTLAND",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

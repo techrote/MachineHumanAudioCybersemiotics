@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005R-C9RUSKIN-00021",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 21,
+        "raw_metadata": "Bunce S.C. et al. (2011) Implementation of fNIRS for Monitoring Levels of Expertise and Mental Workload. In: Schmorrow D.D., Fidopiastis C.M. (eds) Foundations of Augmented Cognition. Directing the Future of Adaptive Systems. FAC 2011. Lecture Notes in Computer Science, vol 6780. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-642-21852-1_2 | C9-RUSKIN-2020-REF021 | source PDF pp. 57; printed pp. 57; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/978-3-642-21852-1_2"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01085",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1085,
+        "raw_metadata": "Investigating effective methods of designing sonifications | Quinton, Michael; McGregor, Iain; Benyon, David | issued: 2018-06 | Text | https://repository.gatech.edu/entities/publication/a0f4b3bb-f18e-4757-a25c-2bd81aec2367",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/a0f4b3bb-f18e-4757-a25c-2bd81aec2367"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2018.011"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/60075"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

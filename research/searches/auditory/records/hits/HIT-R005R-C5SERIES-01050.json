@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01050",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1050,
+        "raw_metadata": "madBPM: Musical and Auditory Display for Biological Predictive Modeling | Fox, K. Michael; Stewart, Jeremy; Hamilton, Rob | issued: 2017-06 | Text | https://repository.gatech.edu/entities/publication/f261a486-fa86-4d4d-8bfb-57ac3806cf4d",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/f261a486-fa86-4d4d-8bfb-57ac3806cf4d"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2017.045"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/58367"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

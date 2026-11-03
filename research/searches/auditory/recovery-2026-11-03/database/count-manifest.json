@@ -1,0 +1,205 @@
+{
+  "purpose": "Count and basic-page feasibility probes only; not complete production searches",
+  "actor": "ChatGPT GPT-6 Astra Pro database-channel subagent",
+  "credential_use": "none",
+  "probes": [
+    {
+      "label": "EQ1",
+      "query": "(\"auditory icon\" OR \"auditory icons\" OR earcon OR earcons OR spearcon OR spearcons OR \"auditory alert\" OR \"auditory alerts\" OR \"audio alert\" OR \"audio alerts\" OR \"auditory warning\" OR \"auditory warnings\" OR \"auditory alarm\" OR \"auditory alarms\" OR \"auditory notification\" OR \"auditory notifications\" OR \"audio notification\" OR \"audio notifications\" OR \"speech warning\" OR \"speech warnings\" OR \"verbal warning\" OR \"verbal warnings\" OR \"voice alert\" OR \"voice alerts\" OR \"voice warning\" OR \"voice warnings\" OR \"auditory cue\" OR \"auditory cues\" OR \"audio cue\" OR \"audio cues\" OR \"auditory display\" OR \"auditory displays\" OR \"auditory menu\" OR \"auditory menus\" OR lyricon OR lyricons OR spindex OR musicon OR musicons OR \"auditory beacon\" OR \"auditory beacons\" OR \"acoustic beacon\" OR \"acoustic beacons\") AND (experiment OR experimental OR participants OR study OR evaluation OR user)",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28%22auditory+icon%22+OR+%22auditory+icons%22+OR+earcon+OR+earcons+OR+spearcon+OR+spearcons+OR+%22auditory+alert%22+OR+%22auditory+alerts%22+OR+%22audio+alert%22+OR+%22audio+alerts%22+OR+%22auditory+warning%22+OR+%22auditory+warnings%22+OR+%22auditory+alarm%22+OR+%22auditory+alarms%22+OR+%22auditory+notification%22+OR+%22auditory+notifications%22+OR+%22audio+notification%22+OR+%22audio+notifications%22+OR+%22speech+warning%22+OR+%22speech+warnings%22+OR+%22verbal+warning%22+OR+%22verbal+warnings%22+OR+%22voice+alert%22+OR+%22voice+alerts%22+OR+%22voice+warning%22+OR+%22voice+warnings%22+OR+%22auditory+cue%22+OR+%22auditory+cues%22+OR+%22audio+cue%22+OR+%22audio+cues%22+OR+%22auditory+display%22+OR+%22auditory+displays%22+OR+%22auditory+menu%22+OR+%22auditory+menus%22+OR+lyricon+OR+lyricons+OR+spindex+OR+musicon+OR+musicons+OR+%22auditory+beacon%22+OR+%22auditory+beacons%22+OR+%22acoustic+beacon%22+OR+%22acoustic+beacons%22%29+AND+%28experiment+OR+experimental+OR+participants+OR+study+OR+evaluation+OR+user%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:44.914172+00:00",
+      "http_status": 200,
+      "file": "eq1-probe.json",
+      "bytes": 9121,
+      "sha256": "8f049f9eeeec225211291aeb3fd3fc7f032fb0471792351dd80cf464e8dbfc62",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "980"
+      },
+      "summary": {
+        "count": 9368,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ2",
+      "query": "(\"perceived urgency\" OR \"urgency mapping\" OR \"hazard matching\" OR \"warning urgency\" OR \"alarm urgency\" OR \"perceived hazard\" OR \"perceived severity\") AND (auditory OR sound OR sounds OR speech OR alarm OR alarms OR warning OR warnings)",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28%22perceived+urgency%22+OR+%22urgency+mapping%22+OR+%22hazard+matching%22+OR+%22warning+urgency%22+OR+%22alarm+urgency%22+OR+%22perceived+hazard%22+OR+%22perceived+severity%22%29+AND+%28auditory+OR+sound+OR+sounds+OR+speech+OR+alarm+OR+alarms+OR+warning+OR+warnings%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:46.424844+00:00",
+      "http_status": 200,
+      "file": "eq2-probe.json",
+      "bytes": 3511,
+      "sha256": "775dbe654278106fba393d5b012c8293e2300e67df8fe41fd8df4421054f77be",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "970"
+      },
+      "summary": {
+        "count": 556,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ3",
+      "query": "(\"synthetic speech\" OR \"synthesized speech\" OR \"text-to-speech\" OR \"speech synthesis\" OR \"robot voice\" OR \"voice interface\" OR \"voice assistant\" OR \"speech interface\") AND (warning OR warnings OR alert OR alerts OR alarm OR alarms OR notification OR notifications) AND (anthropomorphism OR anthropomorphic OR \"human-likeness\" OR \"human likeness\" OR humanlike OR \"human-like\" OR emotion OR emotional OR prosody OR naturalness OR trust OR compliance)",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28%22synthetic+speech%22+OR+%22synthesized+speech%22+OR+%22text-to-speech%22+OR+%22speech+synthesis%22+OR+%22robot+voice%22+OR+%22voice+interface%22+OR+%22voice+assistant%22+OR+%22speech+interface%22%29+AND+%28warning+OR+warnings+OR+alert+OR+alerts+OR+alarm+OR+alarms+OR+notification+OR+notifications%29+AND+%28anthropomorphism+OR+anthropomorphic+OR+%22human-likeness%22+OR+%22human+likeness%22+OR+humanlike+OR+%22human-like%22+OR+emotion+OR+emotional+OR+prosody+OR+naturalness+OR+trust+OR+compliance%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:47.868159+00:00",
+      "http_status": 200,
+      "file": "eq3-probe.json",
+      "bytes": 5391,
+      "sha256": "ceedf5585831bc5f1a65150506a66db0fd3425dec5749630e7960a9dcfd0762c",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "960"
+      },
+      "summary": {
+        "count": 76,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ4",
+      "query": "(sonification OR sonified OR \"auditory display\" OR \"auditory displays\" OR \"auditory graph\" OR \"audio cue\" OR \"auditory cue\") AND (uncertainty OR uncertain OR probability OR confidence OR likelihood)",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28sonification+OR+sonified+OR+%22auditory+display%22+OR+%22auditory+displays%22+OR+%22auditory+graph%22+OR+%22audio+cue%22+OR+%22auditory+cue%22%29+AND+%28uncertainty+OR+uncertain+OR+probability+OR+confidence+OR+likelihood%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:49.672544+00:00",
+      "http_status": 200,
+      "file": "eq4-probe.json",
+      "bytes": 3097,
+      "sha256": "be02f1d3dec01eb55d8a602b4487f1d80384d2a57a19839fb70440de4a03065b",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "950"
+      },
+      "summary": {
+        "count": 585,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ5",
+      "query": "(\"auditory icon\" OR \"auditory icons\" OR earcon OR earcons OR spearcon OR spearcons OR \"auditory alarm\" OR \"auditory alarms\" OR \"auditory warning\" OR \"auditory warnings\" OR \"auditory cue\" OR \"auditory cues\" OR \"auditory alert\" OR \"auditory alerts\") AND (learning OR learnability OR training OR retention OR memorability OR \"long-term\" OR forgetting)",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28%22auditory+icon%22+OR+%22auditory+icons%22+OR+earcon+OR+earcons+OR+spearcon+OR+spearcons+OR+%22auditory+alarm%22+OR+%22auditory+alarms%22+OR+%22auditory+warning%22+OR+%22auditory+warnings%22+OR+%22auditory+cue%22+OR+%22auditory+cues%22+OR+%22auditory+alert%22+OR+%22auditory+alerts%22%29+AND+%28learning+OR+learnability+OR+training+OR+retention+OR+memorability+OR+%22long-term%22+OR+forgetting%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:50.928631+00:00",
+      "http_status": 200,
+      "file": "eq5-probe.json",
+      "bytes": 4440,
+      "sha256": "ec3aefada0fbda49e8ea10abd884361be5af19b51eff5215b4e50f3c0f174be6",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "940"
+      },
+      "summary": {
+        "count": 2112,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ6",
+      "query": "(sonification OR sonified OR \"auditory display\" OR \"auditory displays\") AND (monitoring OR \"situation awareness\" OR \"situational awareness\" OR anesthesia OR anaesthesia OR \"patient monitoring\" OR \"process control\" OR \"vital signs\")",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28sonification+OR+sonified+OR+%22auditory+display%22+OR+%22auditory+displays%22%29+AND+%28monitoring+OR+%22situation+awareness%22+OR+%22situational+awareness%22+OR+anesthesia+OR+anaesthesia+OR+%22patient+monitoring%22+OR+%22process+control%22+OR+%22vital+signs%22%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:52.218609+00:00",
+      "http_status": 200,
+      "file": "eq6-probe.json",
+      "bytes": 3244,
+      "sha256": "e2c3c9b3d5bc907cf094acc3b0468f688d4c95dfa446157b53ad26aaf22dbc5e",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "930"
+      },
+      "summary": {
+        "count": 537,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ7",
+      "query": "(\"auditory alert\" OR \"auditory alerts\" OR \"auditory notification\" OR \"auditory notifications\" OR \"audio notification\" OR \"audio notifications\" OR earcon OR earcons OR \"auditory icon\" OR \"auditory icons\" OR \"speech alert\" OR \"speech alerts\") AND (interruption OR interruptions OR \"dual task\" OR \"dual-task\" OR workload OR distraction OR multitasking)",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28%22auditory+alert%22+OR+%22auditory+alerts%22+OR+%22auditory+notification%22+OR+%22auditory+notifications%22+OR+%22audio+notification%22+OR+%22audio+notifications%22+OR+earcon+OR+earcons+OR+%22auditory+icon%22+OR+%22auditory+icons%22+OR+%22speech+alert%22+OR+%22speech+alerts%22%29+AND+%28interruption+OR+interruptions+OR+%22dual+task%22+OR+%22dual-task%22+OR+workload+OR+distraction+OR+multitasking%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:53.572144+00:00",
+      "http_status": 200,
+      "file": "eq7-probe.json",
+      "bytes": 4320,
+      "sha256": "8e66ff70b7dfcf352c5d5eebcf53df2363240060d367aef7f601a4da9890df2a",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "920"
+      },
+      "summary": {
+        "count": 153,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ8",
+      "query": "(\"systematic review\" OR \"meta-analysis\" OR \"scoping review\" OR \"literature review\") AND (alarm OR alarms OR \"auditory warning\" OR \"auditory warnings\" OR \"auditory display\" OR \"auditory displays\" OR earcon OR earcons OR \"auditory icon\" OR \"auditory icons\" OR sonification OR \"audio notification\" OR \"audio notifications\")",
+      "page": 1,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28%22systematic+review%22+OR+%22meta-analysis%22+OR+%22scoping+review%22+OR+%22literature+review%22%29+AND+%28alarm+OR+alarms+OR+%22auditory+warning%22+OR+%22auditory+warnings%22+OR+%22auditory+display%22+OR+%22auditory+displays%22+OR+earcon+OR+earcons+OR+%22auditory+icon%22+OR+%22auditory+icons%22+OR+sonification+OR+%22audio+notification%22+OR+%22audio+notifications%22%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=1",
+      "requested_at": "2026-11-03T00:53:54.992621+00:00",
+      "http_status": 200,
+      "file": "eq8-probe.json",
+      "bytes": 4156,
+      "sha256": "5c28005f799d08b633ed6d31b01e88462ba30126edbd468729d72bd780c9c992",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "910"
+      },
+      "summary": {
+        "count": 4652,
+        "page": 1,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    },
+    {
+      "label": "EQ4_PAGE2",
+      "query": "(sonification OR sonified OR \"auditory display\" OR \"auditory displays\" OR \"auditory graph\" OR \"audio cue\" OR \"auditory cue\") AND (uncertainty OR uncertain OR probability OR confidence OR likelihood)",
+      "page": 2,
+      "url": "https://api.openalex.org/works?filter=title_and_abstract.search%3A%28sonification+OR+sonified+OR+%22auditory+display%22+OR+%22auditory+displays%22+OR+%22auditory+graph%22+OR+%22audio+cue%22+OR+%22auditory+cue%22%29+AND+%28uncertainty+OR+uncertain+OR+probability+OR+confidence+OR+likelihood%29%2Cto_publication_date%3A2026-10-04&per_page=1&select=id%2Cdoi%2Cdisplay_name&page=2",
+      "requested_at": "2026-11-03T00:53:56.359779+00:00",
+      "http_status": 200,
+      "file": "eq4_page2-probe.json",
+      "bytes": 3088,
+      "sha256": "801aca3fea4a5575cfe304167d13cca912a2aac6a93c41bff1a264b3f1469507",
+      "headers": {
+        "content-type": "application/json",
+        "x-ratelimit-limit": "1000",
+        "x-ratelimit-remaining": "900"
+      },
+      "summary": {
+        "count": 585,
+        "page": 2,
+        "per_page": 1,
+        "cost_usd": 0.001
+      }
+    }
+  ]
+}

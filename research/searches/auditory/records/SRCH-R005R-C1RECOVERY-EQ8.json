@@ -1,0 +1,75 @@
+{
+  "id": "SRCH-R005R-C1RECOVERY-EQ8",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "HG-R002-DATABASE-ACCESS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "boundary": "Run 20261103-database-recovery, query EQ8: 600 retained occurrences, 599 distinct OpenAlex IDs. An OpenAlex ID is not a verified independent study. Every retrieval attempt is preserved and requires cross-run deduplication. Public gzip metadata derivatives omit abstracts; raw-response hashes and transient private cache keys are retained. Index updates and tied sorting can cause paging duplicates; these prevent completed status.",
+        "coverage": {
+          "end": {
+            "state": "known",
+            "value": "2026-10-04"
+          },
+          "start": {
+            "reason": "No lower date bound",
+            "state": "not_applicable"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+            "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b"
+          }
+        },
+        "failures": [
+          "page 3: duplicate_work_ids"
+        ],
+        "filters": [
+          "Frozen title/abstract Boolean concept blocks preserved",
+          "Publication date <= 2026-10-04",
+          "No language, type or open-access restriction"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-11-03T00:58:57+00:00"
+        },
+        "interface": "Unauthenticated HTTPS; documented basic paging; per_page=200 legacy support; exact per-page URLs and sort in manifest",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "Run 20261103-database-recovery, query EQ8: 600 retained occurrences, 599 distinct OpenAlex IDs. An OpenAlex ID is not a verified independent study. Every retrieval attempt is preserved and requires cross-run deduplication. Public gzip metadata derivatives omit abstracts; raw-response hashes and transient private cache keys are retained. Index updates and tied sorting can cause paging duplicates; these prevent completed status."
+        },
+        "platform": "OpenAlex works API, protocol C1",
+        "protocol_version": "v1",
+        "query": "title_and_abstract.search:(\"systematic review\" OR \"meta-analysis\" OR \"scoping review\" OR \"literature review\") AND (alarm OR alarms OR \"auditory warning\" OR \"auditory warnings\" OR \"auditory display\" OR \"auditory displays\" OR earcon OR earcons OR \"auditory icon\" OR \"auditory icons\" OR sonification OR \"audio notification\" OR \"audio notifications\"),to_publication_date:2026-10-04",
+        "reported_count": 4652,
+        "retrieved_count": 600,
+        "started_at": {
+          "state": "known",
+          "value": "2026-11-03T00:58:51+00:00"
+        },
+        "status": "partial"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

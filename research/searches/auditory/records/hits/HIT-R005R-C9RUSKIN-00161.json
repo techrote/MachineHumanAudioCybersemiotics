@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9RUSKIN-00161",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-icad-coverage",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT subagent /root/icad_coverage; public HTTPS retrieval, pdfplumber and Poppler bibliography extraction"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 161,
+        "raw_metadata": "Tippey, K. G., Roady, T., Rodriguez-Paras, C., Brown, L. J., Rantz, W. G., & Ferris, T. K. (2017). General aviation weather alerting: the effectiveness of different visual and tactile display characteristics in supporting weather-related decision making. The International Journal of Aerospace Psychology, 27(3-4), 121-136. | C9-RUSKIN-2020-REF161 | source PDF pp. 76; printed pp. 76; exact line/column boxes in retained export",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

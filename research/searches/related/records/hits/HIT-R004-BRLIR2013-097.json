@@ -1,0 +1,45 @@
+{
+  "id": "HIT-R004-BRLIR2013-097",
+  "issue": 4,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r004-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, shell with network access, Python)"
+      },
+      "at": "2026-10-13T07:20:54Z",
+      "basis": [
+        {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-MATURANA-1988A",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 97,
+        "raw_metadata": "Maturana, H.R. (1988a). Ontology of observing: The biological foundation of self consciousness and the physical domain of existence. Irish Journal of Psychology, 9(1), 25-82.",
+        "resolution_reason": "Entry names this work (author, year, title); the edition Brier cites may differ (see the source record).",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R004-BRLIR2013",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-MATURANA-1988A",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

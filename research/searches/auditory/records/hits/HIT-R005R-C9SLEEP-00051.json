@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00051",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 51,
+        "raw_metadata": "Gabel, V.; Maire, M.; Reichert, C.F.; Chellappa, S.L.; Schmidt, C.; Hommes, V.; Viola, A.U.; Ecajochen, C. Effects of Artificial Dawn and Morning Blue Light on Daytime Cognitive Performance, Well-being, Cortisol and Melatonin Levels. Chronobiol. Int. 2013, 30, 988–997. [CrossRef] | source PDF pp.16–16, reference 51",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

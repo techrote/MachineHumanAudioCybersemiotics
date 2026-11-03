@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00362",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 362,
+        "raw_metadata": "Designing a generalized sonification environment | de Campo, A.; Frauenberger, C; Hoeldrich, R. | issued: 2004-07 | Text | https://repository.gatech.edu/entities/publication/86d35bd9-064b-463f-9c4d-ac25e8197769",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/86d35bd9-064b-463f-9c4d-ac25e8197769"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50758"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01078",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1078,
+        "raw_metadata": "CardioSounds: A portable system to sonify ECG rhythm disturbances in real-time | Aldana Blanco, Andrea Lorena; Grautoff, Steffen; Hermann, Thomas | issued: 2018-06 | Text | https://repository.gatech.edu/entities/publication/0901f252-36d8-4db0-9972-c4759a0c733b",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/0901f252-36d8-4db0-9972-c4759a0c733b"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2018.028"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/60089"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00940",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 940,
+        "raw_metadata": "Evaluating the use of sonification and music to support the communication of alcohol health risk to young people: Initial results | Walus, Bartlomiej P.; Pauletto, Sandra; Mason-Jones, Amanda | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/4ab50429-1937-4997-b6f2-91121e0daf5c",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/4ab50429-1937-4997-b6f2-91121e0daf5c"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54151"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

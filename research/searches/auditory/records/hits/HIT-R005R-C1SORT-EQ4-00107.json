@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ4-00107",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 107,
+        "raw_metadata": "Audio-Visual Classification and Fusion of Spontaneous Affective Data in Likelihood Space | first author: Mihalis A. Nicolaou | 2010-08-01 | conference-paper | https://openalex.org/W2133174069",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2133174069"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1109/icpr.2010.900"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
