@@ -1,0 +1,219 @@
+{
+ "schema": "mhac-r005-a7-derived-inventory/1",
+ "derived_on": "2026-11-03",
+ "actor": "ChatGPT GPT-6 Astra Pro database-channel subagent",
+ "method": "Offline inclusive date selection over every retained successful C1 response; original query terms unchanged; no new requests",
+ "date_field": "OpenAlex publication_date as supplied, not a verified primary-source publication or availability date",
+ "window": {
+  "start_inclusive": "2021-04-01",
+  "end_inclusive": "2026-10-04"
+ },
+ "source_manifests": [
+  {
+   "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+   "sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a",
+   "run_id": "20261103-database-load-recovery"
+  },
+  {
+   "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+   "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b",
+   "run_id": "20261103-database-recovery"
+  },
+  {
+   "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/MANIFEST.json",
+   "sha256": "30726cd453d1c1aa92b33f4e6fc3bf6d4fdc258d75e71ae1776f7708e3d87e39",
+   "run_id": "20261103-database-sort-recovery"
+  }
+ ],
+ "counts": {
+  "within_window": 5404,
+  "unknown": 0,
+  "before_window": 12052,
+  "after_window": 0
+ },
+ "all_retained_occurrences": 17456,
+ "distinct_api_ids_in_all_retained_occurrences": 11898,
+ "distinct_api_ids_within_window": 4029,
+ "distinct_api_ids_with_unknown_dates": 0,
+ "counts_by_family": {
+  "EQ1": {
+   "within_window": 182,
+   "unknown": 0,
+   "before_window": 5018,
+   "after_window": 0
+  },
+  "EQ2": {
+   "within_window": 181,
+   "unknown": 0,
+   "before_window": 375,
+   "after_window": 0
+  },
+  "EQ3": {
+   "within_window": 48,
+   "unknown": 0,
+   "before_window": 28,
+   "after_window": 0
+  },
+  "EQ4": {
+   "within_window": 581,
+   "unknown": 0,
+   "before_window": 589,
+   "after_window": 0
+  },
+  "EQ5": {
+   "within_window": 1483,
+   "unknown": 0,
+   "before_window": 3029,
+   "after_window": 0
+  },
+  "EQ6": {
+   "within_window": 96,
+   "unknown": 0,
+   "before_window": 441,
+   "after_window": 0
+  },
+  "EQ7": {
+   "within_window": 51,
+   "unknown": 0,
+   "before_window": 102,
+   "after_window": 0
+  },
+  "EQ8": {
+   "within_window": 2782,
+   "unknown": 0,
+   "before_window": 2470,
+   "after_window": 0
+  }
+ },
+ "counts_by_invocation_family": {
+  "20261103-database-load-recovery:EQ5": {
+   "within_window": 884,
+   "unknown": 0,
+   "before_window": 1228,
+   "after_window": 0
+  },
+  "20261103-database-load-recovery:EQ8": {
+   "within_window": 2440,
+   "unknown": 0,
+   "before_window": 2212,
+   "after_window": 0
+  },
+  "20261103-database-load-recovery:EQ1": {
+   "within_window": 0,
+   "unknown": 0,
+   "before_window": 4200,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ3": {
+   "within_window": 48,
+   "unknown": 0,
+   "before_window": 28,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ7": {
+   "within_window": 51,
+   "unknown": 0,
+   "before_window": 102,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ6": {
+   "within_window": 96,
+   "unknown": 0,
+   "before_window": 441,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ2": {
+   "within_window": 181,
+   "unknown": 0,
+   "before_window": 375,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ4": {
+   "within_window": 291,
+   "unknown": 0,
+   "before_window": 294,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ5": {
+   "within_window": 599,
+   "unknown": 0,
+   "before_window": 1001,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ8": {
+   "within_window": 342,
+   "unknown": 0,
+   "before_window": 258,
+   "after_window": 0
+  },
+  "20261103-database-recovery:EQ1": {
+   "within_window": 182,
+   "unknown": 0,
+   "before_window": 818,
+   "after_window": 0
+  },
+  "20261103-database-sort-recovery:EQ4": {
+   "within_window": 290,
+   "unknown": 0,
+   "before_window": 295,
+   "after_window": 0
+  },
+  "20261103-database-sort-recovery:EQ5": {
+   "within_window": 0,
+   "unknown": 0,
+   "before_window": 800,
+   "after_window": 0
+  },
+  "20261103-database-sort-recovery:EQ8": {
+   "within_window": 0,
+   "unknown": 0,
+   "before_window": 0,
+   "after_window": 0
+  },
+  "20261103-database-sort-recovery:EQ1": {
+   "within_window": 0,
+   "unknown": 0,
+   "before_window": 0,
+   "after_window": 0
+  }
+ },
+ "successful_response_pages": 90,
+ "retained_error_attempts": 3,
+ "complete_query_families": [
+  "EQ2",
+  "EQ3",
+  "EQ4",
+  "EQ5",
+  "EQ6",
+  "EQ7",
+  "EQ8"
+ ],
+ "incomplete_query_families": [
+  "EQ1"
+ ],
+ "coverage_complete": false,
+ "limitations": [
+  "EQ1 remains incomplete: sorted recovery retained 4200 of 9368 reported matches; cross-attempt union is 4549 distinct API IDs.",
+  "This A7 derivative covers retained C1 metadata only, not all C1 matches or all repository search channels.",
+  "Search families and recovery attempts overlap; every occurrence is retained, and unique API IDs are not independent studies or samples.",
+  "A date-selected inventory is not a newly executed date-filtered search, an eligibility decision or an update to the frozen cutoff.",
+  "No language, access, outcome-direction or study-design exclusion is applied here; records outside the A7 window remain in the source exports.",
+  "Unknown publication dates are retained separately for adjudication, and known metadata dates may still be inaccurate."
+ ],
+ "artifacts": [
+  {
+   "path": "research/searches/auditory/recovery-2026-11-03/database/A7-OCCURRENCES.json.gz",
+   "sha256": "9245b0ae99ea1e4ac7957b428339fa38d6d4dd32cda205aee3c947f2c2584390",
+   "bytes": 448640,
+   "payload_sha256": "515bcaed6833f0bb9f2e1ffe491942957134ecbf193517c5c415674e2394da9d",
+   "payload_bytes": 3797286
+  },
+  {
+   "path": "research/searches/auditory/recovery-2026-11-03/database/A7-UNKNOWN-DATES.json.gz",
+   "sha256": "c3dd42180a8855d9e8b922b0833613e48e38b93f80a31d0a3160d018e3bd72b1",
+   "bytes": 160,
+   "payload_sha256": "e5d7c1316e9c2e96ef2930970b73f2d4d1925731f22b78ba17a664fa446b5914",
+   "payload_bytes": 178
+  }
+ ]
+}

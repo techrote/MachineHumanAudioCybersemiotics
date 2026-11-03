@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00926",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 926,
+        "raw_metadata": "Skin Pattern Sonification Using NMF-based Visual Feature Extraction and Learning-based PMSon | Han, Yoon Chung; Han, Byeong-jun | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/c16ca02d-df79-4e4e-9639-4f98b593cda3",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/c16ca02d-df79-4e4e-9639-4f98b593cda3"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52068"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

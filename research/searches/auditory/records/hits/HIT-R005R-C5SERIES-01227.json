@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01227",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1227,
+        "raw_metadata": "EXPLORING SPATIALIZATION: A METHOD FOR SUBJECTIVE ASSESSMENT OF SOUNDSCAPE PREFERENCE USING IMMERSIVE ENVIRONMENTS | Bem, Milena Jonas; Chabot, Samuel; Braasch, Jonas | issued: 2024-06 | Text | https://repository.gatech.edu/entities/publication/22fbae05-97c1-4a4f-9edb-2d38057e5141",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/22fbae05-97c1-4a4f-9edb-2d38057e5141"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2024.026"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/76312"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

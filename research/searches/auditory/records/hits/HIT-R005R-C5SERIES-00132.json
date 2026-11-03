@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00132",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 132,
+        "raw_metadata": "Musical phrase-structured audio communication | Hankinson, John CK; Edwards, Alistair DN | issued: 2000-04 | Text | https://repository.gatech.edu/entities/publication/daddc377-6039-43e6-b8da-6a3c89d3f7a5",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/daddc377-6039-43e6-b8da-6a3c89d3f7a5"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50676"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

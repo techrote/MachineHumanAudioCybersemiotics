@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1SORT-EQ4-00330",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 330,
+        "raw_metadata": "Reconstruction of flood probabilities in France, 1705-2015 | first author: Benjamin Renard | 2022-07-04 | dataset | https://openalex.org/W4394031517",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4394031517"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.5281/zenodo.6793500"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ4",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00099",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 99,
+        "raw_metadata": "A pedagogy of creative thinking based on sonification of visual structures and visualization of aural structures | Somers, Eric | issued: 1998-11 | Text | https://repository.gatech.edu/entities/publication/d5daeae3-a554-4d48-8eef-9158da490947",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d5daeae3-a554-4d48-8eef-9158da490947"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50717"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

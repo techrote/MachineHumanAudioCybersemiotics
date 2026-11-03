@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01060",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1060,
+        "raw_metadata": "Reflections on the Representation of Women in the International Conferences on Auditory Displays (ICAD) | Andreopoulou, Areti; Goudarzi, Visda | issued: 2017-06 | Text | https://repository.gatech.edu/entities/publication/fa48c8c4-254e-4326-a4e2-4d915416c4e8",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/fa48c8c4-254e-4326-a4e2-4d915416c4e8"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2017.031"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/58362"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

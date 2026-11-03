@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00335",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 335,
+        "raw_metadata": "Towards enhancing earthquake response interpretation using sonification | Kuester, F.; Hutchinson, T. C.; Ramaswamy, L. | issued: 2004-07 | Text | https://repository.gatech.edu/entities/publication/2df544bc-7754-4510-b2ef-d355c8a47e26",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/2df544bc-7754-4510-b2ef-d355c8a47e26"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51316"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01156",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1156,
+        "raw_metadata": "Investigating the effect of earcon and speech variables on hybrid auditory alerts at rail crossings | Nadri, Chihab; Lee, Seul Chan; Kekal, Siddhant; Li, Yinjia; Li, Xuan; Lautala, Pasi; Nelson, David; Jeon, Myounghoon | issued: 2021-06 | Text | https://repository.gatech.edu/entities/publication/146bfb5a-62dc-4f01-879d-3ad9b9e5ca9a",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/146bfb5a-62dc-4f01-879d-3ad9b9e5ca9a"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2021.024"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/66329"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

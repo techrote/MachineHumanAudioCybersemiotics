@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1RECOVERY-EQ3-00019",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ3",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 19,
+        "raw_metadata": "Insights from Cyclone Ditwah: Recommendations for Addressing Linguistic Barriers in Sri Lanka’s Disaster Early Warning Systems through Language Technology | first author: Sanjalee Chandrasekara | 2026-05-22 | conference-paper | https://openalex.org/W7204831012",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W7204831012"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.54389/jmcc7351"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ3",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

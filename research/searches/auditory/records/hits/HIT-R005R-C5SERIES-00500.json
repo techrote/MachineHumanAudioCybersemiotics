@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00500",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 500,
+        "raw_metadata": "Sound and soundscape classification: establishing key auditory dimensions and their relative importance | McGregor, I.; Leplatre, G.; Crerar, A.; Benyon, D. | issued: 2006-06 | Text | https://repository.gatech.edu/entities/publication/adebf423-9c16-4e7b-9c93-0b089bf5a756",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/adebf423-9c16-4e7b-9c93-0b089bf5a756"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50637"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

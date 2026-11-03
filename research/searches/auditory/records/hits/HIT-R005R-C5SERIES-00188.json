@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00188",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 188,
+        "raw_metadata": "Dolphin: The design and initial evaluation of multimodal focus and context | McGookin, D.; Brewster, S. | issued: 2002-07 | Text | https://repository.gatech.edu/entities/publication/5a9c5cd9-743a-4b91-b30a-26c6c417a77a",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/5a9c5cd9-743a-4b91-b30a-26c6c417a77a"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51350"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00058",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 58,
+        "raw_metadata": "Tassi, P.; Nicolas, A.; Dewasmes, G.; Eschenlauer, R.; Ehrhart, J.; Salame, P.; Muzet, A.; Libert, J.P. Effects of Noise on Sleep Inertia as a Function of Circadian Placement of a One-Hour Nap. Percept. Mot. Ski. 1992, 75, 291–302. [CrossRef] | source PDF pp.17–17, reference 58",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

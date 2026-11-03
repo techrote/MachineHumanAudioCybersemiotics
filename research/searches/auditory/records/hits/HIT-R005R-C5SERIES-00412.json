@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00412",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 412,
+        "raw_metadata": "Extracting and modelling approximated pinna-related transfer functions from HRTF data | Rodriguez, Sergio G; Ramirez, Miguel A | issued: 2005-07 | Text | https://repository.gatech.edu/entities/publication/7b2f8686-22df-4302-9b8b-7d0af1552aa1",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/7b2f8686-22df-4302-9b8b-7d0af1552aa1"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50154"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

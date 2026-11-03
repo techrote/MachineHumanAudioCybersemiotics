@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00579",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 579,
+        "raw_metadata": "Beowulf: A game experience built on sound effects | Liljedahl, Mats; Papworth, Nigel; Lindberg, Stefan | issued: 2007-06 | Text | https://repository.gatech.edu/entities/publication/c52e7fb9-3f54-4072-b9de-89fe4fadb447",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/c52e7fb9-3f54-4072-b9de-89fe4fadb447"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49983"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

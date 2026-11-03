@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00921",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 921,
+        "raw_metadata": "“Listen2dRoom”: Helping Visually Impaired People Navigate Indoor Environments Using an Ultrasonic Sensor-Based Orientation Aid | Hosseini, Seyedeh Maryam Fakhr; Riener, Andreas; Bose, Rahul; Jeon, Myounghoon | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/44575297-2666-4e11-b621-bb4391f3bab4",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/44575297-2666-4e11-b621-bb4391f3bab4"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52085"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

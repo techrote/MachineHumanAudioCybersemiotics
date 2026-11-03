@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00157",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 157,
+        "raw_metadata": "The importance of head movements for binaural room synthesis | Minnaar, Pauli; Olesen, Soren Krarup; Christensen, Flemming; Moller, Henrik | issued: 2001-07 | Text | https://repository.gatech.edu/entities/publication/01c68f21-b8e1-4547-a441-f29cf1471c25",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/01c68f21-b8e1-4547-a441-f29cf1471c25"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50656"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

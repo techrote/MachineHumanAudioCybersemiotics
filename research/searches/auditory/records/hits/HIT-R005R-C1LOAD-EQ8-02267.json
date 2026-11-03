@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-02267",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2267,
+        "raw_metadata": "Viralization keys of messages in unofficial accounts during crisis periods: the case of Covid-19 on TwitterClaves de viralización de mensajes en cuentas no oficiales durante periodos de crisis. El caso de covid 19 en Twitter危机时期非官方账号信息成功传播的关键: 以新冠病毒信息在推特上的传播为例 | first author: Elena Mansilla | 2021-06-10 | article | https://openalex.org/W3167240939",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W3167240939"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1108/sjme-09-2020-0170"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

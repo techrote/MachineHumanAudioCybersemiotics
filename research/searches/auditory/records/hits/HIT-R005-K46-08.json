@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K46-08",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K46",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 8,
+        "raw_metadata": "Combining speech and earcons to assist menu navigation | https://repository.gatech.edu/entities/publication/d4e779b2-1b27-4217-a8ea-69a4c8bd10d5",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d4e779b2-1b27-4217-a8ea-69a4c8bd10d5"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K46",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

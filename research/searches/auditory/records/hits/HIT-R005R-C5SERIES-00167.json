@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00167",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 167,
+        "raw_metadata": "The sonification of numerical fluid flow simulations | Childs, Edward | issued: 2001-07 | Text | https://repository.gatech.edu/entities/publication/f55c5393-a8fc-4a28-9950-99ac456386ba",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/f55c5393-a8fc-4a28-9950-99ac456386ba"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50655"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

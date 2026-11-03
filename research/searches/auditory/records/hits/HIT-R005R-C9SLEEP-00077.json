@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00077",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 77,
+        "raw_metadata": "Smith, G.A.; Splaingard, M.; Hayes, J.R.; Xiang, H. Comparison of a personalized parent voice smoke alarm with a conventional residential tone smoke alarm for awakening children. Pediatrics 2006, 118, 1623–1632. [CrossRef] | source PDF pp.18–18, reference 77",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

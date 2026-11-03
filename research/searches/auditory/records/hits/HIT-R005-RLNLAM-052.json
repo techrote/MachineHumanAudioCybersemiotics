@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNLAM-052",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 52,
+        "raw_metadata": "[a,b,d] Šabić, E., Chen, J., & MacDonald, J. A. (2021). Toward a Better Understanding of In-Vehicle Auditory Warnings and Background Noise. Human Factors, 63(2), 312–335. https://doi.org/10.1177/0018720819879311",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1177/0018720819879311"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

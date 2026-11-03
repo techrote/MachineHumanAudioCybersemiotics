@@ -1,0 +1,71 @@
+{
+  "id": "SRCH-R005-C5LIST",
+  "issue": 5,
+  "kind": "search_run",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [],
+      "data": {
+        "boundary": "C5 year-by-year browse. File names identify author surnames and year only; titles need the paper or another channel. Per-year coverage: 1994: 35 files; 1996: 28 files; 1997: 20 files; 1998: 31 files; 2000: 38 files; 2001: 47 files; 2002: 70 files; 2003: 75 files; 2004: 61 files; 2005: 78 files; 2006: 53 files; 2007: 82 files; 2008: 60 files; 2009: 44 files; 2010: 58 files; 2011: 0 files.",
+        "coverage": {
+          "end": {
+            "state": "known",
+            "value": "2010"
+          },
+          "start": {
+            "state": "known",
+            "value": "1994"
+          }
+        },
+        "export": {
+          "state": "known",
+          "value": {
+            "path": "research/searches/auditory/exports/ICAD-LISTING-2026-10-13.json",
+            "sha256": "ff2d68c05a46657fc897e850f541348e9f571c1c0692354e235c72ce0a2435a8"
+          }
+        },
+        "failures": [
+          "The icad.org directory root lists 1994, 1996-1998 and 2000-2011; the 2011 directory is empty. No listing for 1992 or for 2012 onward was reachable: the SMARTech series pages need JavaScript, its REST API returned HTTP 400/500 for search, item and relationship requests, its OAI-PMH ListRecords returned HTTP 500 and then reset the connection, and dblp's ICAD index served a bot-protection challenge that was not bypassed."
+        ],
+        "filters": [
+          "None"
+        ],
+        "finished_at": {
+          "state": "known",
+          "value": "2026-10-13T06:24:04Z"
+        },
+        "interface": "Apache directory index pages fetched with curl from the workspace shell; raw pages retained under exports/icad-listing/",
+        "lane": "auditory",
+        "mode": "production",
+        "pagination": {
+          "complete": false,
+          "detail": "Every listed year directory was read in full, but no listing exists for 1992 or 2011 onward on this host."
+        },
+        "platform": "ICAD proceedings directory listings on www.icad.org (protocol channel C5 browse)",
+        "protocol_version": "v1",
+        "query": "Every PDF file listed for each year directory under https://www.icad.org/Proceedings/",
+        "reported_count": {
+          "reason": "Directory pages print no totals",
+          "state": "not_reported"
+        },
+        "retrieved_count": 780,
+        "started_at": {
+          "state": "known",
+          "value": "2026-10-13T06:23:58Z"
+        },
+        "status": "partial"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

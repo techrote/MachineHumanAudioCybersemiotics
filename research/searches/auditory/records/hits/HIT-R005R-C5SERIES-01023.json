@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01023",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1023,
+        "raw_metadata": "Implementation and Evaluation of 10.2 channel Microphone for UHDTV Audio | Jang, Daeyoung; Yoo, Jae-hyoun; Lee, Tae Jin | issued: 2016-07 | Text | https://repository.gatech.edu/entities/publication/cbf2c4ef-f5d8-4042-9cd3-7a488970226a",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/cbf2c4ef-f5d8-4042-9cd3-7a488970226a"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.21785/icad2016.011"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/56593"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

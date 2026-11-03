@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00944",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 944,
+        "raw_metadata": "Aegis audio engine: integrating a real-time analog signal processing, pattern recognition, and a procedural soundtrack in a live twelve-perfomer spectacle with crowd participation | Bukvic, Ivica Ico; Matthews, Michael | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/52d98b02-66d9-4470-a6c3-18ddfa85da90",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/52d98b02-66d9-4470-a6c3-18ddfa85da90"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54098"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

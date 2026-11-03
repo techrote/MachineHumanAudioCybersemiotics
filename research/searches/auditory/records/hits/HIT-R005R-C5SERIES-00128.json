@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00128",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 128,
+        "raw_metadata": "Teaching orientation and mobility skills to blind children using computer generated 3D sound environments | Inman, Dean P; Loge, Ken; Cram, Aaron | issued: 2000-04 | Text | https://repository.gatech.edu/entities/publication/f274bb43-94a1-4dba-8995-7375e75bb8ad",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/f274bb43-94a1-4dba-8995-7375e75bb8ad"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50684"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

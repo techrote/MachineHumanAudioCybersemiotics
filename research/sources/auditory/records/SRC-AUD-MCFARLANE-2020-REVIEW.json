@@ -1,0 +1,95 @@
+{
+  "id": "SRC-AUD-MCFARLANE-2020-REVIEW",
+  "issue": 5,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [],
+      "data": {
+        "access_at": "2026-11-03T00:55:56.879975Z",
+        "access_reason": "Complete PDF retrieved lawfully. Reading was limited to header/identity and reference-list ranges; no primary experimental result extracted.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "McFarlane, Stuart J.",
+            "role": "author"
+          },
+          {
+            "name": "Garcia, Jair E.",
+            "role": "author"
+          },
+          {
+            "name": "Verhagen, Darrin S.",
+            "role": "author"
+          },
+          {
+            "name": "Dyer, Adrian G.",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Clocks & Sleep 2(4), 416–433, publisher PDF v2"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "Direct PDF retrieval, hash and header inspection in recovery access ledger",
+            "scheme": "url",
+            "status": "verified",
+            "value": "https://mdpi-res.com/d_attachment/clockssleep/clockssleep-02-00031/article_deploy/clockssleep-02-00031-v2.pdf"
+          },
+          {
+            "provenance": "Publisher PDF header/footer, file page 1",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.3390/clockssleep2040031"
+          }
+        ],
+        "language": {
+          "state": "known",
+          "value": "en"
+        },
+        "manifestations": [
+          {
+            "coordinate": "file_page_1based",
+            "extent": 18,
+            "id": "RECOVERED-PDF-20261103",
+            "location": "https://mdpi-res.com/d_attachment/clockssleep/clockssleep-02-00031/article_deploy/clockssleep-02-00031-v2.pdf (downloaded bytes held outside the public repository)",
+            "sha256": "5cc81d1275bafc8da1e3e3ac7e5b4f08801a19c7759667cd32368615a33e77b4"
+          }
+        ],
+        "metadata_evidence": [
+          "Downloaded source header inspected; exact bytes/hash and retrieval time in recovery reference access ledger."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2020-10-20"
+        },
+        "rights": {
+          "evidence": {
+            "state": "known",
+            "value": "Publisher PDF file page 18, copyright/licence statement; http://creativecommons.org/licenses/by/4.0/"
+          },
+          "reason": "The source's last page states CC BY 4.0; only bibliographic metadata is committed here.",
+          "status": "redistribution_permitted"
+        },
+        "source_type": "review",
+        "title": "Alarm Tones, Voice Warnings, and Musical Treatments: A Systematic Review of Auditory Countermeasures for Sleep Inertia in Abrupt and Casual Awakenings",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

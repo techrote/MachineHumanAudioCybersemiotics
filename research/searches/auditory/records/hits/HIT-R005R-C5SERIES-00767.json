@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00767",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 767,
+        "raw_metadata": "The sound of Rowing Stroke Cycles as Acoustic Feedback | Schaffert, Nina; Mattes, Klaus; Effenberg, Alfred O | issued: 2011-06 | Text | https://repository.gatech.edu/entities/publication/b8eff6f6-d251-48c1-ad3f-03547b040e76",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/b8eff6f6-d251-48c1-ad3f-03547b040e76"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51919"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

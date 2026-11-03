@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-GW6-06",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-GW6",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 6,
+        "raw_metadata": "N O T I C E THIS DOCUMENT HAS BEEN REPRODUCED FROM | https://ntrs.nasa.gov/api/citations/19810003625/downloads/19810003625.pdf",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://ntrs.nasa.gov/api/citations/19810003625/downloads/19810003625.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-GW6",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00184",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 184,
+        "raw_metadata": "Feasibility of multiple non-speech sounds presentation using headphones | Lorho, Gaetan; Marila, Juha; Hipakka, Jarmo | issued: 2001-07 | Text | https://repository.gatech.edu/entities/publication/e1b7d8dc-2025-444a-91db-350c87420b23",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e1b7d8dc-2025-444a-91db-350c87420b23"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50619"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

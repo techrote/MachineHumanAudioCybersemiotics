@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00633",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 633,
+        "raw_metadata": "Evaluating Listeners' Attention to and Comprehension of Spatialized Concurrent and Serial Talkers at Normal and a Synthetically Faster Rate of Speech | Brock, Derek; McClimens, Brian; Trafton, J Gregory; McCurry, Malcolm; Perzanowski, Dennis | issued: 2008-06 | Text | https://repository.gatech.edu/entities/publication/daeddf44-6e98-440b-9b1f-793fd243eacf",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/daeddf44-6e98-440b-9b1f-793fd243eacf"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49902"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

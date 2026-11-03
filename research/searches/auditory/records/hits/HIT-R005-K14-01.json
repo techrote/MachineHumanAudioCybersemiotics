@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K14-01",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K14",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "Enhancing Driving Safety through User Experience Evaluation of the C-ITS Mobile Application: A Case Study of the DARS Traffic Plus App in a Driving Simulator Environment | https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11314706/",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11314706/"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K14",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

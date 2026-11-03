@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNLAM-043",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 43,
+        "raw_metadata": "[a,b] Nees, M. A., & Best, K. (2014). A Verification Task with Lateralized Tones and Accelerated Speech. https://smartech.gatech.edu/handle/1853/52102",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "other",
+            "value": "SMARTech handle 1853/52102"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

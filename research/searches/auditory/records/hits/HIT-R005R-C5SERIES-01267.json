@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01267",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1267,
+        "raw_metadata": "Interactive Sonification of 2D Quantum Systems | Hermann, Thomas; Freye, Arthur; Müller, Jannis L. | issued: 2025-06 | Text | https://repository.gatech.edu/entities/publication/ab4e5c09-603f-4e9d-b7c1-75bfd6c32460",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/ab4e5c09-603f-4e9d-b7c1-75bfd6c32460"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2025.030"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/79971"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

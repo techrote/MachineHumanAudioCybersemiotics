@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01092",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1092,
+        "raw_metadata": "Sonification as ASDR: Proceedings of the 24th Annual International Conference on Auditory Display |  | issued: 2018-06 | Text | https://repository.gatech.edu/entities/publication/de1283a6-e734-4767-8660-92821039de66",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/de1283a6-e734-4767-8660-92821039de66"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2018.000"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/60095"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00098",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 98,
+        "raw_metadata": "Ad-hoc synthesis of auditory icons | Conversy, Stephane | issued: 1998-11 | Text | https://repository.gatech.edu/entities/publication/d2af8459-e75f-449f-842d-419468c8943e",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d2af8459-e75f-449f-842d-419468c8943e"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50709"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

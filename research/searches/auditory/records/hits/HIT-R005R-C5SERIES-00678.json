@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00678",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 678,
+        "raw_metadata": "Analysis of the drilling sound component from expert performance in a maxillo-facial surgery | Hoffman, Pablo F; Gosselin, Florian; Taha, Farid | issued: 2009-05 | Text | https://repository.gatech.edu/entities/publication/ab148a0c-0fec-4c97-95e5-47094923a171",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/ab148a0c-0fec-4c97-95e5-47094923a171"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51289"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

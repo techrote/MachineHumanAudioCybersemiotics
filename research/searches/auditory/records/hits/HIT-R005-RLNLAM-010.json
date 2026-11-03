@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNLAM-010",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 10,
+        "raw_metadata": "[a] Edworthy, J., Page, R., Hibbard, A., Kyle, S., Ratnage, P., & Claydon, S. (2014). Learning three sets of alarms for the same medical functions: A perspective on the difficulty of learning alarms specified in an international standard. Applied Ergonomics, 45(5), 1291–1296. https://doi.org/https://doi.org/10.1016/j.apergo.2013.10.003",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1016/j.apergo.2013.10.003"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

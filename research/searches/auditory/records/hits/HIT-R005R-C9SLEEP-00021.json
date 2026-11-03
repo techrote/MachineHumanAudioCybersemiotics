@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00021",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 21,
+        "raw_metadata": "Scheer, F.A.J.L.; Shea, T.J.; Hilton, M.F.; Shea, S.A. An Endogenous Circadian Rhythm in Sleep Inertia Results in Greatest Cognitive Impairment upon Awakening during the Biological Night. J. Biol. Rhythm. 2008, 23, 353–361. [CrossRef] | source PDF pp.15–15, reference 21",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

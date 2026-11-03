@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00818",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 818,
+        "raw_metadata": "Evaluating listeners’ attention to and comprehension of serialy interleaved, rate-accelerated speech | Brock, Derek; Peres, S. Camille; McClimens, Brian | issued: 2012-06 | Text | https://repository.gatech.edu/entities/publication/ed681907-e63b-4de9-9adc-4d37dc5a1765",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/ed681907-e63b-4de9-9adc-4d37dc5a1765"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/44411"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

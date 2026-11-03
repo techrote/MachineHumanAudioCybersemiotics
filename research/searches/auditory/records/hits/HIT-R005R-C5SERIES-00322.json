@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00322",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 322,
+        "raw_metadata": "Boardtalker: Initial experiences and open problems in prototyping a talking digital whiteboard to assist visually impaired students | Berque, Dave | issued: 2003-07 | Text | https://repository.gatech.edu/entities/publication/e48f9d30-5dae-40f0-979e-7cb49a10bafd",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e48f9d30-5dae-40f0-979e-7cb49a10bafd"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50446"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

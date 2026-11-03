@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNL-027",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNL",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 27,
+        "raw_metadata": "Jeon & Walker, 2011: \"Spindex (Speech Index) Improves Auditory Menu Acceptance and Navigation\"; doi:10.1145/1952383.1952385; b,c",
+        "resolution_reason": "Reference-list entry as rendered by the fetch tool; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1145/1952383.1952385"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNL",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

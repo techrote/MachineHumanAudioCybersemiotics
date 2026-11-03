@@ -2,7 +2,7 @@
 
 Foundational research for explicit machine–human audio communication: information, contextual state, uncertainty, urgency and action without dependence on performed human emotion.
 
-**Current status: the MHAC-R001 record pipeline is implemented and MHAC-R002 froze research protocol v1 on 2026-10-13; live research is `in_progress` with pilot, method-source and novelty-audit records only.** No production search, included study set or finding exists yet. The seed reading list is not a reviewed corpus. Green CI means repository and record integrity, not scientific validity or effective human communication. See the [implementation record](docs/R001_IMPLEMENTATION.md) and live issue/PR acceptance evidence.
+**Current status: the record pipeline and frozen protocol are implemented; the Brier and related-theory inventories are accepted, and auditory search recovery is in progress.** The [auditory inventory](research/sources/auditory/README.md) now retains database, ICAD and review-bibliography evidence, with explicit coverage gaps. Live research remains `in_progress`: no selected empirical study set, complete theoretical reconstruction, numerical synthesis or manuscript finding is declared. Green CI means repository and record integrity, not scientific validity. See the [programme](docs/PROGRAMME.md) and live issue/PR evidence.
 
 ## Start here
 
@@ -33,7 +33,7 @@ The intended system is linguistically intelligible but perceptually non-human. S
 
 ## Execution
 
-[#1 — MHAC-R001](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1) is accepted and [#2 — MHAC-R002](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/2) froze [protocol v1](research/protocol/PROTOCOL-v1.md). Verify #2's merge and post-merge checks on the issue before starting #3/#4/#5, which may then run in parallel. Database searching for #5 is gated on [owner access](research/protocol/gates/HG-R002-DATABASE-ACCESS.md); the protocol declares a fallback. The full graph is in the programme. Issues #1–#18 form the internal foundational-research programme; #19 and #20 are separately gated external-review and real-participant extensions.
+Issues [#1](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/1)–[#4](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/4) have accepted infrastructure, protocol and source-inventory deliverables. [#5](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/5) now includes seven complete OpenAlex query families, partial broad-query retrieval, the available ICAD series and recovered review bibliographies. Its [coverage memo](research/sources/auditory/README.md) distinguishes completed retrievals from outstanding search and corpus requirements. [#6](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/6) owns identity and actual screening; later analysis depends on accepted selected evidence. Issues #19–#20 remain separately gated external-review and real-participant extensions.
 
 From the repository root, using Python 3.11 or newer:
 

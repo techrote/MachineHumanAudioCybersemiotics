@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K49-04",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K49",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "Multimodal Displays for Take-over in Level 3 Automated Vehicles while Playing a Game | https://vtechworks.lib.vt.edu/items/3c6cd864-453c-4fd7-8933-4bd8bf3db8e2",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://vtechworks.lib.vt.edu/items/3c6cd864-453c-4fd7-8933-4bd8bf3db8e2"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K49",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

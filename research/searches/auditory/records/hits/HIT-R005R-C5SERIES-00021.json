@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00021",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 21,
+        "raw_metadata": "An evaluation of the communicative ability of auditory icons and earcons | Lucas, Paul A | issued: 1994-11 | Text | https://repository.gatech.edu/entities/publication/8662d772-6c02-402a-9799-b291e985c79e",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/8662d772-6c02-402a-9799-b291e985c79e"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50825"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

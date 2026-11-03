@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00238",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 238,
+        "raw_metadata": "Auditory navigation cues for a small 2D grid: A case study of the memory game | Hiipakka, J.; Lorho, G.; Holm, J. | issued: 2002-07 | Text | https://repository.gatech.edu/entities/publication/3be9d739-6186-43ec-8c1d-84f452d72a3a",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/3be9d739-6186-43ec-8c1d-84f452d72a3a"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/51336"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

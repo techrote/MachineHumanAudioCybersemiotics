@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01088",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1088,
+        "raw_metadata": "Plausible auditory augmentation of physical interaction | Weger, Marian; Herrmann, Thomas; Höldrich, Robert | issued: 2018-06 | Text | https://repository.gatech.edu/entities/publication/d3b0cb9a-576d-4f82-b0f0-a7f7ca2a258d",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/d3b0cb9a-576d-4f82-b0f0-a7f7ca2a258d"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2018.024"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/60085"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

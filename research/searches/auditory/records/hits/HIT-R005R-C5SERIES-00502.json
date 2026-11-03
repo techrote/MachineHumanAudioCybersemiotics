@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00502",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 502,
+        "raw_metadata": "Providing a size-independent overview of non-visual tables | Brewster, S.; Kildal, J. | issued: 2006-06 | Text | https://repository.gatech.edu/entities/publication/a9ee94ad-ca88-4ea7-a0da-480a7ff0b618",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/a9ee94ad-ca88-4ea7-a0da-480a7ff0b618"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50607"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

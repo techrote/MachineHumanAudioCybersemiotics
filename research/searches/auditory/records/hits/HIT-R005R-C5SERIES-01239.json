@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01239",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1239,
+        "raw_metadata": "CENOTAPH AND ELEGY OF CONTAGION: COLLECTIVE IMMERSION OF NATIONAL-LEVEL COVID-19 FATALITY DATA IN THE UNITED STATES | Huang, M. Jerry; Loveless, Stephanie; Braasch, Jonas | issued: 2024-06 | Text | https://repository.gatech.edu/entities/publication/ac1cd647-1fe3-43fc-8c5e-21601671f701",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/ac1cd647-1fe3-43fc-8c5e-21601671f701"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2024.018"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/76308"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

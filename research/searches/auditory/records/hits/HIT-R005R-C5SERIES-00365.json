@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00365",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 365,
+        "raw_metadata": "The design of mixed-use virtual auditory displays: Recent findings with a dual-task paradigm | McClimens, B.; Stroup, J. L.; Ballas, J. A.; Brock, D. | issued: 2004-07 | Text | https://repository.gatech.edu/entities/publication/b78bcaae-c3fb-4666-8c83-b3a31b66a519",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/b78bcaae-c3fb-4666-8c83-b3a31b66a519"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50920"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

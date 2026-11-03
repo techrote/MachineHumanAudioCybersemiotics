@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00989",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 989,
+        "raw_metadata": "Guiding auditory attention toward the subtle components in electrocardiography sonification | Terasawa, Hiroko; Morimoto, Yota; Matsubara, Masaki; Sato, Akira; Ohara, Makoto; Kawarasaki, Masatoshi | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/a8c1909d-e58d-4881-9f8f-955635c9e53d",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/a8c1909d-e58d-4881-9f8f-955635c9e53d"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54144"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

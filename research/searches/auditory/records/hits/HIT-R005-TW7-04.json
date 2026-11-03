@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-TW7-04",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-TW7",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "Mitigating the Effects of Interruption on Audit Efficiency and Effectiveness | https://vtechworks.lib.vt.edu/items/584fe805-b84b-44f1-a18a-08244c2b8237",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://vtechworks.lib.vt.edu/items/584fe805-b84b-44f1-a18a-08244c2b8237"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-TW7",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

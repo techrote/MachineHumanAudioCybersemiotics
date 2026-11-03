@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00971",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 971,
+        "raw_metadata": "The loud bird doesn’t (always) get the worm: Why computational salience also needs brightness and tempo | Tordini, Francesco; Bregman, Albert S.; Cooperstock, Jeremy R. | issued: 2015-07 | Text | https://repository.gatech.edu/entities/publication/811df341-b00d-4b1a-a5dd-8e805ee83552",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/811df341-b00d-4b1a-a5dd-8e805ee83552"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/54145"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

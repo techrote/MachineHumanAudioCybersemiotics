@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-TW3-01",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-TW3",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1,
+        "raw_metadata": "The Use of the Auditory Lexical Decision Task | https://vtechworks.lib.vt.edu/server/api/core/bitstreams/78d8cabf-5f9e-4705-a5c9-6dd85bb6b88f/content",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://vtechworks.lib.vt.edu/server/api/core/bitstreams/78d8cabf-5f9e-4705-a5c9-6dd85bb6b88f/content"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-TW3",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-K51-04",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-K51",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 4,
+        "raw_metadata": "The impact of health-related user interface sounds on player experience | https://results2021.ref.ac.uk/outputs/4ebf5398-dc9d-411c-b4fe-173ea6b035c4?page=1",
+        "resolution_reason": "Title-level check: matches RL-NL entry 51 (located). Publication identity not verified; canonical source record left to #6.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://results2021.ref.ac.uk/outputs/4ebf5398-dc9d-411c-b4fe-173ea6b035c4?page=1"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-K51",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

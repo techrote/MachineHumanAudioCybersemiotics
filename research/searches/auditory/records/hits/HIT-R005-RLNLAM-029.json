@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-RLNLAM-029",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 29,
+        "raw_metadata": "[a,c] Kenny, C. W. L., & Wei, C. L. (2009). Association Testing-A Methodology for Selecting and Evaluating Audio Alerts. Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 53(18), 1309–1313. https://doi.org/10.1177/154193120905301831",
+        "resolution_reason": "Reference-list entry parsed from the hashed file; not matched to a source record (left to #6).",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1177/154193120905301831"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

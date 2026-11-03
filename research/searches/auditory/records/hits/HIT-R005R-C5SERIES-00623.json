@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00623",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 623,
+        "raw_metadata": "A Study Toward the Development of a Spatial, O Speech Auditory Interface for Trigonometric Problem Solvig | Neff, Flaithri; Pitt, Ian | issued: 2008-06 | Text | https://repository.gatech.edu/entities/publication/b621e3a3-d71d-4d74-822d-015185dd24dd",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/b621e3a3-d71d-4d74-822d-015185dd24dd"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49884"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

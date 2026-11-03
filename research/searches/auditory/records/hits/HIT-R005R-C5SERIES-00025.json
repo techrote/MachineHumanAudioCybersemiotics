@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00025",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 25,
+        "raw_metadata": "LSL: A specification language for program auralization | Mathur, Aditya P.; Boardman, David B.; Khandelwal, Vivek | issued: 1994-11 | Text | https://repository.gatech.edu/entities/publication/b4f5e281-b451-4c0d-b8d8-92613739e8a2",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/b4f5e281-b451-4c0d-b8d8-92613739e8a2"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50867"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

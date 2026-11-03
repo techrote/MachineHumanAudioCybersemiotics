@@ -1,0 +1,58 @@
+{
+  "schema": "mhac-source-recovery/1",
+  "access": [
+    {
+      "label": "nees-liebman-am",
+      "requested_url": "https://osf.io/download/zaqbh/",
+      "started_at": "2026-11-03T00:55:55.233858Z",
+      "status": 200,
+      "final_url": "https://idvyorynw6xy.compat.objectstorage.us-ashburn-1.oraclecloud.com/cos-prod-osf-1-files-ash/5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "content_type": "application/octet-stream",
+      "bytes": 2721676,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "outcome": "pdf_obtained",
+      "cache_key": "nees-liebman-am.pdf",
+      "finished_at": "2026-11-03T00:55:57.398791Z",
+      "redirect_note": "Temporary signed redirect parameters omitted; use requested_url for lawful retrieval."
+    },
+    {
+      "label": "fra-review",
+      "requested_url": "https://rosap.ntl.bts.gov/view/dot/60401/dot_60401_DS1.pdf",
+      "started_at": "2026-11-03T00:55:55.234982Z",
+      "status": 200,
+      "final_url": "https://rosap.ntl.bts.gov/view/dot/60401/dot_60401_DS1.pdf",
+      "content_type": "application/pdf",
+      "bytes": 1092751,
+      "sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "outcome": "pdf_obtained",
+      "cache_key": "fra-review.pdf",
+      "finished_at": "2026-11-03T00:55:55.995333Z"
+    },
+    {
+      "label": "process-review",
+      "requested_url": "https://openarchive.usn.no/usn-xmlui/bitstream/handle/11250/2764585/no.usn%3Awiseflow%3A2543716%3A41805445.pdf?sequence=1",
+      "started_at": "2026-11-03T00:55:55.995448Z",
+      "status": 200,
+      "final_url": "https://openarchive.usn.no/index.html?sequence=1",
+      "content_type": "text/html",
+      "bytes": 2032,
+      "sha256": "768be88dcd55f7f88465a33fb7733686bf406cb635ef721c98736a74e48ef9cf",
+      "outcome": "not_pdf",
+      "finished_at": "2026-11-03T00:55:56.668977Z"
+    },
+    {
+      "label": "sleep-review",
+      "requested_url": "https://mdpi-res.com/d_attachment/clockssleep/clockssleep-02-00031/article_deploy/clockssleep-02-00031-v2.pdf",
+      "started_at": "2026-11-03T00:55:56.669139Z",
+      "status": 200,
+      "final_url": "https://mdpi-res.com/d_attachment/clockssleep/clockssleep-02-00031/article_deploy/clockssleep-02-00031-v2.pdf",
+      "content_type": "application/pdf",
+      "bytes": 678997,
+      "sha256": "5cc81d1275bafc8da1e3e3ac7e5b4f08801a19c7759667cd32368615a33e77b4",
+      "outcome": "pdf_obtained",
+      "cache_key": "sleep-review.pdf",
+      "finished_at": "2026-11-03T00:55:56.879975Z"
+    }
+  ],
+  "rights_note": "Full source files remain outside the public repository; only metadata, hashes and bounded bibliographic references may be committed."
+}

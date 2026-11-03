@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-03248",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3248,
+        "raw_metadata": "Somatisko šūnu skaita dinamikas kompleksā izvērtēšana mastīta diagnostikā govju robotizētā slaukšanā un transferencei derīgu embriju ieguvē = Complex assessment of the somatic cell count dynamics in mastitis diagnosis in cows` robotic milking and in the production of transferable embryos | first author: Ivars Lūsis | 2024-03-18 | dissertation | https://openalex.org/W4392913541",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4392913541"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.22616/lbtuthesis/2024.004"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

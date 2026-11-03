@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01253",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1253,
+        "raw_metadata": "Audio-Influenced Pseudo-Haptics: A Review of Effects, Applications and Research Directions | Wang, Keru; Wu, Yi; Liu, Pincun; Wang, Zhu; Roginska, Agneiszka; Sun, Qi; Perlin, Ken | issued: 2025-06 | Text | https://repository.gatech.edu/entities/publication/07a95a59-9dba-4ab4-a7f5-47b9d7f0001b",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/07a95a59-9dba-4ab4-a7f5-47b9d7f0001b"
+          },
+          {
+            "scheme": "doi",
+            "value": "https://doi.org/10.21785/icad2025.029"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/79963"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

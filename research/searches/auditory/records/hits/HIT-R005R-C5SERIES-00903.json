@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00903",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 903,
+        "raw_metadata": "dataSonification Open Source Project for Real-Time Data Sonification | Childs, Edward P.; Stephens, John; Childs, Benjamin | issued: 2014-06 | Text | https://repository.gatech.edu/entities/publication/025f5054-8ba0-4533-bd77-8929d7faa5b8",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/025f5054-8ba0-4533-bd77-8929d7faa5b8"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/52033"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

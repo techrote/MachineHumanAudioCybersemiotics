@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00093",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 93,
+        "raw_metadata": "Data collection and analysis techniques for evaluating the perceptual qualities of auditory stimuli | Bonebright, Terri L; Miner, Nadine E; Goldsmith, Timothy E; Caudell, Thomas P | issued: 1998-11 | Text | https://repository.gatech.edu/entities/publication/86aacb82-4343-41df-b76f-fe696c31e25b",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/86aacb82-4343-41df-b76f-fe696c31e25b"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50721"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

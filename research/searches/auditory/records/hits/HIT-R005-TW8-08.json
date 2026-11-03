@@ -1,0 +1,42 @@
+{
+  "id": "HIT-R005-TW8-08",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "claude-r005-session",
+        "kind": "agent",
+        "model": "claude-opus-5-5",
+        "tool": "Claude in a claude.ai cloud session (WebSearch, WebFetch, shell)"
+      },
+      "at": "2026-10-13T06:30:12Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-TW8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 8,
+        "raw_metadata": "a\\comparison of three subsidiary tasks used as driver ... | https://vtechworks.lib.vt.edu/bitstream/handle/10919/54294/LD5655.V856_1985.H372.pdf?sequence=1&isAllowed=y",
+        "resolution_reason": "Publication identity not checked for this occurrence.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://vtechworks.lib.vt.edu/bitstream/handle/10919/54294/LD5655.V856_1985.H372.pdf?sequence=1&isAllowed=y"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-TW8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

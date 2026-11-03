@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01032",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1032,
+        "raw_metadata": "The Aesthetics Of Causality: A Descriptive Account Into Ecological Performativity | Connors, Teresa Marie | issued: 2016-07 | Text | https://repository.gatech.edu/entities/publication/e2f8ecd5-2228-4745-81bd-8416e07beda1",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/e2f8ecd5-2228-4745-81bd-8416e07beda1"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.21785/icad2016.017"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/56566"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

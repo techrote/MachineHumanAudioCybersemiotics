@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00719",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 719,
+        "raw_metadata": "Rhythmic Gait Signature from Video without Motion Capture | Sadikali, Akil; Boyd, Jeffrey | issued: 2010-06 | Text | https://repository.gatech.edu/entities/publication/bb079152-6a5a-43fa-8628-ce511442a027",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/bb079152-6a5a-43fa-8628-ce511442a027"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/49903"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

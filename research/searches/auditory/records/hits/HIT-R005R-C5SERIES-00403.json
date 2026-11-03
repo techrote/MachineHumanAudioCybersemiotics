@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C5SERIES-00403",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 403,
+        "raw_metadata": "Gesture interaction with spatial audio displays: Effects of target size and inter-target separation | Marentakis, Georgios; Brewster, Stephen A | issued: 2005-07 | Text | https://repository.gatech.edu/entities/publication/26056b06-a0d0-4ecd-9ff7-94dfaf6f602b",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/26056b06-a0d0-4ecd-9ff7-94dfaf6f602b"
+          },
+          {
+            "scheme": "url",
+            "value": "http://hdl.handle.net/1853/50159"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,37 @@
+{
+  "id": "HIT-R005R-C9SLEEP-00082",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 82,
+        "raw_metadata": "Bruck, D.; Reid, S.; Kouzma, J.; Ball, M. The effectiveness of different alarms in waking sleeping children. In Human Behavior in Fire: Public Fire Safety-Professionals in Partnership, Proceedings of the 3rd International Symposium, Belfast, Northern Ireland, 1–3 September 2004; Interscience Communications Ltd.: London, UK, 2004; pp. 279–289. | source PDF pp.18–18, reference 82",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [],
+        "search_ref": {
+          "id": "SRCH-R005R-C9SLEEP",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

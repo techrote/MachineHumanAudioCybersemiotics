@@ -1,0 +1,46 @@
+{
+  "id": "HIT-R005R-C1LOAD-EQ8-03203",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3203,
+        "raw_metadata": "Multidisciplinary Management Of Acute Sepsis: Correlating Nursing Clinical Indicators With Rapid Laboratory Biomarkers And Radiologic Imaging Findings | first author: Salwa Ali Alzahrani, Taghreed Ali Alyhayawi, Amal Aiyed Mohammed Alanzi, Naif Mansour Ayed AlRashidi, Kholoud Ghanem Alshahrani, Shadin Falih Alshahrani, Fatima Falih Alshahrani, Afaf Radi Ahmad Alashqar, Hussain Abdullah Almaslami, | 2024-01-25 | article | https://openalex.org/W7216018825",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W7216018825"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.70082/4dajhg03"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

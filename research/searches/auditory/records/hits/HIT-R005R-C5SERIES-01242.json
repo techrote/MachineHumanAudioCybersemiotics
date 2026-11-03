@@ -1,0 +1,50 @@
+{
+  "id": "HIT-R005R-C5SERIES-01242",
+  "issue": 5,
+  "kind": "search_hit",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r005-recovery-integrator",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; GitHub connector, web search, Python and Poppler"
+      },
+      "at": "2026-11-03T01:19:04.605202Z",
+      "basis": [
+        {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1242,
+        "raw_metadata": "SOUNDING NUMBERS: THE SONIFICATION OBJECT AS AN INTERFACE IN \"I AM THE OCEAN\" | Crozzoli, Miguel Angel; Magnusson, Thor | issued: 2024-06 | Text | https://repository.gatech.edu/entities/publication/c575a37a-e4c8-4330-a4d7-490e3d2328f9",
+        "resolution_reason": "Retained discovery occurrence; publication identity, eligibility and study/sample relationships require R006 adjudication.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://repository.gatech.edu/entities/publication/c575a37a-e4c8-4330-a4d7-490e3d2328f9"
+          },
+          {
+            "scheme": "doi",
+            "value": "https:// doi.org/10.21785/icad2024.021"
+          },
+          {
+            "scheme": "url",
+            "value": "https://hdl.handle.net/1853/76309"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C5SERIES",
+          "rev": 1
+        },
+        "status": "unresolved"
+      },
+      "factual_status": "discovery",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
