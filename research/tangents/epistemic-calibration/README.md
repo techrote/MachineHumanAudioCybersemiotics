@@ -17,7 +17,7 @@ Separate source truth, detection accuracy, prior prevalence, alert predictive va
 - [PROTOCOL-SKETCH.md](PROTOCOL-SKETCH.md): a proposed, **not executed**, prospective human comparison with R020 gate.
 - [DECISION-MEMO.md](DECISION-MEMO.md): positive, negative, null and contradictory interpretation and handoffs.
 - [rehearsal.py](rehearsal.py): standalone standard-library model.
-- [test_epistemic_calibration_t002.py](../../../tests/test_epistemic_calibration_t002.py): nine isolated invariant tests.
+- [test_epistemic_calibration_t002.py](../../../tests/test_epistemic_calibration_t002.py): ten isolated invariant tests.
 
 ## Reproduction
 

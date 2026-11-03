@@ -9,7 +9,7 @@ From repo root:
     python research/tangents/epistemic-calibration/rehearsal.py --json
     python -m unittest tests.test_epistemic_calibration_t002 -v
 
-The deterministic JSON has schema marker mhac-t002-synthetic-v1 and exactly 24 ordered grid cases. The simulation has no random seed because it performs finite exact joint-probability arithmetic, not Monte Carlo sampling. Nine tests cover normalization, basic policy dominance, false-trust counterexample, verification benefit/harm, zero-probability observations, extreme priors, invalid input and deterministic tie handling.
+The deterministic JSON has schema marker mhac-t002-synthetic-v1 and exactly 24 ordered grid cases. The simulation has no random seed because it performs finite exact joint-probability arithmetic, not Monte Carlo sampling. Each policy now also emits expected TP/FP/FN/TN counts per 1,000 fictional intervals and the expected number of additional checks; these are arithmetic expectations, **not observed confusion counts**. Ten tests cover normalization, basic policy dominance, false-trust counterexample, verification benefit/harm, zero-probability observations, extreme priors, invalid input and deterministic tie handling.
 
 ## Three explicitly negative/countervailing cases
 
