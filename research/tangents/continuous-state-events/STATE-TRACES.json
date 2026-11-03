@@ -1,0 +1,948 @@
+[
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "fresh-recovery-current-event",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": true,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "silenced",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "silenced-after-recovery",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": true,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "failed",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "playback-failed-after-recovery",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": true,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "active",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [
+      "E1"
+    ],
+    "completed_events": [],
+    "id": "ack-not-recovery",
+    "expected": {
+      "truth": "active",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "active",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [
+      "E1"
+    ],
+    "id": "action-complete-not-recovery",
+    "expected": {
+      "truth": "active",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "active",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "silenced",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "silence-not-recovery",
+    "expected": {
+      "truth": "active",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "unknown",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "unknown-not-recovery",
+    "expected": {
+      "truth": "unknown",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 10,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "stale-not-recovery",
+    "expected": {
+      "truth": "stale",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": false
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "offline-not-recovery",
+    "expected": {
+      "truth": "unknown",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 1
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "old-source-version",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 0,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "wrong-event-version",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "beta",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "wrong-source-identity",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E0",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "wrong-event-identity",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "open",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "unclosed-event",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": true
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      },
+      "E2": {
+        "source_id": "alpha",
+        "version": 3,
+        "state": "open",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "newer-active-event",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      },
+      "beta": {
+        "version": 3,
+        "condition": "active",
+        "observed_at_ms": 95,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      },
+      "B1": {
+        "source_id": "beta",
+        "version": 3,
+        "state": "open",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "unrelated-other-source-open",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": true,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "beta",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "foreign-event-source",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "silenced",
+    "cue": null,
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "disappearance-not-an-all-clear",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {},
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "source-missing",
+    "expected": {
+      "truth": "unknown",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {},
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "event-missing",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "active",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "open",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": null,
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "urgent-event-while-status-persists",
+    "expected": {
+      "truth": "active",
+      "clear_allowed": false,
+      "event_due": true
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "active",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "open",
+        "deadline_ms": 99
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": null,
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "event-expired",
+    "expected": {
+      "truth": "active",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 2,
+        "condition": "inactive",
+        "observed_at_ms": 101,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 2
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "clock-future-source",
+    "expected": {
+      "truth": "stale",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 0,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 0
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "source-version-older-than-event",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  },
+  {
+    "now_ms": 100,
+    "sources": {
+      "alpha": {
+        "version": 3,
+        "condition": "inactive",
+        "observed_at_ms": 90,
+        "ttl_ms": 50,
+        "online": true
+      }
+    },
+    "events": {
+      "E1": {
+        "source_id": "alpha",
+        "version": 1,
+        "state": "closed",
+        "deadline_ms": 140
+      },
+      "E2": {
+        "source_id": "alpha",
+        "version": 3,
+        "state": "closed",
+        "deadline_ms": 140
+      }
+    },
+    "target_source": "alpha",
+    "target_event": "E1",
+    "playback": "playing",
+    "cue": {
+      "kind": "clear",
+      "source_id": "alpha",
+      "event_id": "E1",
+      "event_version": 1,
+      "source_version": 3
+    },
+    "acknowledged_events": [],
+    "completed_events": [],
+    "id": "newer-closed-event-replaces-old-clear",
+    "expected": {
+      "truth": "inactive",
+      "clear_allowed": false,
+      "event_due": false
+    }
+  }
+]
