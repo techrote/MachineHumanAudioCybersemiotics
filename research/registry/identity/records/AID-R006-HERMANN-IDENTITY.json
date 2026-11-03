@@ -1,0 +1,92 @@
+{
+  "id": "AID-R006-HERMANN-IDENTITY",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "chatgpt-r006-identity-20261103",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; local Python record comparison"
+      },
+      "at": "2026-11-03T01:18:17Z",
+      "basis": [
+        {
+          "id": "SRC-REL-HERMANN-2008",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-IW6-07",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-IW9-08",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-C5LIST-0644",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-HERMANN-2008.json",
+          "research/registry/identity/R006-HERMANN-2008.csv",
+          "research/registry/identity/README.md",
+          "research/registry/identity/REVIEW-R006-INFRASTRUCTURE.md"
+        ],
+        "independence": "One ChatGPT agent performed the identity comparison and self-review. No independent human review or external scholarly review.",
+        "input_refs": [
+          {
+            "id": "SRC-REL-HERMANN-2008",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-IW6-07",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-IW9-08",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-C5LIST-0644",
+            "rev": 1
+          }
+        ],
+        "limitations": "Relies on R004's recorded metadata verification and previously recorded PDF hash. R006 did not retrieve or read the PDF, verify its contents, make an eligibility decision, or identify participants, studies or samples. Other discovery remains outside this tranche.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-IW6-07",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-IW9-08",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-C5LIST-0644",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-03T01:18:17Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Resolve three preserved R005 occurrences to the existing R004 Hermann 2008 publication by exact equality with its verified URL; preserve duplicate discovery paths.",
+        "verification_steps": [
+          "Compared all three original returned URL strings with the verified URL on the pinned accepted R004 source revision; no URL normalization or fuzzy title matching was needed.",
+          "Kept the source and every original hit revision unchanged; the two duplicate links point to the representative occurrence's new source-resolved revision.",
+          "Selected IW6-07 as the representative within this tranche because its recorded query began before IW9 and the directory listing; no claim that it was the first global discovery."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

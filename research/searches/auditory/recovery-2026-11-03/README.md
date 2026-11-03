@@ -28,3 +28,7 @@ This work supports a **partial evidence-preserving PR referencing #5**. Protocol
 ## Verification boundary
 
 Offline reproduction, history checks, tests and CI establish structural integrity. Source-fidelity checks cover identity and specified reference ranges. They establish neither empirical conclusions nor independent human review nor exhaustive coverage.
+
+## Landed evidence
+
+The recovery landed in [PR #28](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/28), squash commit `8c4629180d9d81744f3e7c067fff4f35211e2d0d`. The published tree exactly matched validated local tree `2488758eda4f7d8c0ab4add4af54e25b4cf9e7c0`. [Final PR-head CI](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/41561016673) passed on `b1024823d6dbdddb6b0662fd393abe3d86fd822d`, and [push CI](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/41561149891) passed on the merged main commit. Issue #5 remains open for the acceptance limits above; landing this tranche does not close the research gate.

@@ -1,0 +1,125 @@
+{
+  "actor": {
+    "id": "chatgpt-r006-identity-20261103",
+    "kind": "agent",
+    "model": "GPT-6 Astra Pro",
+    "tool": "ChatGPT; local Python record comparison"
+  },
+  "artifact_kind": "bounded_identity_tranche",
+  "boundaries": [
+    "No Track E or Track G eligibility is decided.",
+    "No complete source reading or new access observation is asserted.",
+    "Duplicate occurrences do not represent independent studies or samples.",
+    "Other unresolved discovery and every unmet R006 acceptance criterion remain open."
+  ],
+  "counts": {
+    "duplicate_occurrences": 2,
+    "existing_publications": 1,
+    "new_source_records": 0,
+    "occurrences": 3,
+    "resolved_representatives": 1,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "study_records_created": 0
+  },
+  "implementation_base": "9eab42a6c8d899dbae9eb09b35758c188ddf5ed2",
+  "issue": 6,
+  "method": "Exact URL-string equality with a previously verified publication identifier; retain all occurrences.",
+  "occurrences": [
+    {
+      "duplicate_of": null,
+      "exact_url": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf",
+      "hit_id": "HIT-R005-IW6-07",
+      "input_ref": {
+        "id": "HIT-R005-IW6-07",
+        "rev": 1
+      },
+      "input_revision_sha256": "e1d081bd8aaf169d7ee6b4332f768b99826660883890d16a7f3bd345bce78168",
+      "original_ordinal": 7,
+      "original_search_ref": {
+        "id": "SRCH-R005-IW6",
+        "rev": 1
+      },
+      "output_ref": {
+        "id": "HIT-R005-IW6-07",
+        "rev": 2
+      },
+      "output_revision_sha256": "79988dd7b9a10d24a7b0fde132cac5c00bd97136c3f3b7d3ff823e6d0e599c3f",
+      "source_ref": {
+        "id": "SRC-REL-HERMANN-2008",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R005-IW6-07",
+        "rev": 2
+      },
+      "exact_url": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf",
+      "hit_id": "HIT-R005-IW9-08",
+      "input_ref": {
+        "id": "HIT-R005-IW9-08",
+        "rev": 1
+      },
+      "input_revision_sha256": "0a1d248a3fe0144b1649ca50277f187a75e2f98b4ab68a2e7c3e5d2178e4649e",
+      "original_ordinal": 8,
+      "original_search_ref": {
+        "id": "SRCH-R005-IW9",
+        "rev": 1
+      },
+      "output_ref": {
+        "id": "HIT-R005-IW9-08",
+        "rev": 2
+      },
+      "output_revision_sha256": "c0044c813eae92969667197be3a6de1cfdecb6c4c482f917700a2f22603a4d47",
+      "source_ref": {
+        "id": "SRC-REL-HERMANN-2008",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R005-IW6-07",
+        "rev": 2
+      },
+      "exact_url": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf",
+      "hit_id": "HIT-R005-C5LIST-0644",
+      "input_ref": {
+        "id": "HIT-R005-C5LIST-0644",
+        "rev": 1
+      },
+      "input_revision_sha256": "f2dc08a72e4c172bf9e62b0056289609bde7afedaff3929c46ef37247881e88c",
+      "original_ordinal": 644,
+      "original_search_ref": {
+        "id": "SRCH-R005-C5LIST",
+        "rev": 1
+      },
+      "output_ref": {
+        "id": "HIT-R005-C5LIST-0644",
+        "rev": 2
+      },
+      "output_revision_sha256": "ba51186bca90838098449d88add2ddc86ed15821d5841ffb5e50dcaa7f90ee6a",
+      "source_ref": {
+        "id": "SRC-REL-HERMANN-2008",
+        "rev": 1
+      },
+      "status": "duplicate"
+    }
+  ],
+  "resolved_at": "2026-11-03T01:18:17Z",
+  "source": {
+    "path": "research/sources/related/records/SRC-REL-HERMANN-2008.json",
+    "pdf_hash_status": "Inherited from R004; not a fresh PDF-byte verification in R006.",
+    "recorded_pdf_sha256": "7a07958fe2d4e1cc12e2fca76d45df3602def7d06536054fdd31fe41e358365a",
+    "revision_sha256": "326c96a5a64f9ec3ddc13fdadd679d658c1cd5bc56a5b579f43553cb6ef25a19",
+    "source_ref": {
+      "id": "SRC-REL-HERMANN-2008",
+      "rev": 1
+    },
+    "title": "Taxonomy and Definitions for Sonification and Auditory Display",
+    "verified_url": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf"
+  },
+  "status": "partial_issue_work"
+}

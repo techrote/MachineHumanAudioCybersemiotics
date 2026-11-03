@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "chatgpt-r006-identity-20261103",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; local Python record comparison"
+      },
+      "at": "2026-11-03T01:18:17Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-C5LIST",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-C5LIST-0644",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-HERMANN-2008",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-HERMANN-IDENTITY",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-IW6-07",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005-IW6-07",
+          "rev": 2
+        },
+        "ordinal": 644,
+        "raw_metadata": "ICAD 2008 proceedings file Hermann2008.pdf | https://www.icad.org/Proceedings/2008/Hermann2008.pdf",
+        "resolution_reason": "MHAC-R006: exact returned URL equals the verified publication URL on SRC-REL-HERMANN-2008 revision 1 (R004 access ledger row 16). Identity only; no new source reading or eligibility decision. See research/registry/identity/R006-HERMANN-2008.json.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-C5LIST",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-HERMANN-2008",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

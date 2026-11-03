@@ -8,7 +8,7 @@ from typing import Any
 
 from schemas import ValidationError
 from schemas.v1 import validate_record
-from tools.record_io import contained_path, fail, loads, read_json, relative_path, verify_artifact
+from tools.record_io import contained_path, dumps, fail, loads, read_json, relative_path, verify_artifact
 
 CONTRACT = "mhac-records/1"
 STATE_PATH = "research/registry/state.json"
@@ -17,7 +17,7 @@ DATA_FIELDS = {"contract", "dataset_kind", "research_state", "records",
 STATE_FIELDS = (DATA_FIELDS - {"records"}) | {
     "record_roots", "bibliography", "citation_manifests", "exports"}
 ALLOWED_AREAS = (
-    "research/registry/records", "research/sources", "research/searches",
+    "research/registry/records", "research/registry/identity", "research/sources", "research/searches",
     "research/screening", "research/extractions", "research/appraisal",
     "research/claims", "research/design", "research/experiments",
     "research/amendments", "research/assistance", "research/gates",
@@ -80,6 +80,42 @@ def assert_append_only(previous: dict, current: dict) -> None:
             fail("HISTORY", f"Changed immutable envelope of {rid}")
         if new["revisions"][:len(old["revisions"])] != old["revisions"]:
             fail("HISTORY", f"Rewrote or deleted revisions of {rid}")
+
+
+def write_generated_records(root: Path, generated: dict[str, dict]) -> None:
+    """Preflight a generated batch and preserve later canonical revisions.
+
+    A discovery builder may reproduce its original prefix after a later lane
+    resolves a hit or corrects a source. It must neither erase that later history
+    nor silently replace a changed original assertion. All records are checked
+    before any are written; derived non-record artifacts remain the caller's job.
+    """
+    prepared = []
+    ids = set()
+    for relative, row in sorted(generated.items()):
+        target = contained_path(root, relative, must_exist=False)
+        expected_kind = "fixture" if row.get("synthetic") else "live"
+        validate_record(row, expected_kind=expected_kind)
+        if target.name != row["id"] + ".json" or row["id"] in ids:
+            fail("RECORD_FILENAME", relative)
+        ids.add(row["id"])
+        if target.exists():
+            existing = read_json(target)
+            validate_record(existing, expected_kind=expected_kind)
+            envelope = lambda value: {k: v for k, v in value.items() if k != "revisions"}
+            if envelope(existing) != envelope(row):
+                fail("HISTORY", f"Generator changed immutable envelope: {row['id']}")
+            old, new = existing["revisions"], row["revisions"]
+            if old[:len(new)] == new:
+                # Includes byte-independent equivalent JSON and a longer
+                # downstream history. Avoid touching either case.
+                continue
+            if new[:len(old)] != old:
+                fail("HISTORY", f"Generator would rewrite retained revisions: {row['id']}")
+        prepared.append((target, dumps(row)))
+    for target, text in prepared:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(text, encoding="utf-8")
 
 
 def _verify_local_artifacts(data: dict, root: Path | None) -> None:
