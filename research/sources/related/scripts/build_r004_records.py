@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from tools.record_io import dumps  # noqa: E402
+from tools.records import write_generated_records  # noqa: E402
 from candidates_r004 import CANDIDATES, ROUND2  # noqa: E402
 
 AT = "2026-10-13T07:20:54Z"
@@ -977,10 +977,7 @@ def main() -> int:
         "independence": "Single executing agent. Not a human check and not independent of the work it describes.",
     }, [ref("SRC-BRIER-2013-IR"), ref("SRC-NOV-BRIER-2015"), ref("SRC-BRIER-2015-GL-AM")], "researcher_interpretation")
 
-    for path, row in sorted(out.items()):
-        target = ROOT / path
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(dumps(row), encoding="utf-8")
+    write_generated_records(ROOT, out)
     print(f"wrote {len(out)} records; sources {len(src_ids)}; runs {len(run_ids)}; Brier-list matches {t2_counts}")
     return 0
 

@@ -396,8 +396,9 @@ def _search_hit(b: dict, revision: dict, synthetic: bool) -> None:
 
 
 def _screening(b: dict, revision: dict, synthetic: bool) -> None:
-    _object(b, {"source_ref", "stage", "protocol_version", "rule", "decision", "reason", "access_limitation", "reading_refs", "review_refs"}, {"supersedes_ref"}, field="screening")
+    _object(b, {"source_ref", "stage", "protocol_version", "rule", "decision", "reason", "access_limitation", "reading_refs", "review_refs"}, {"supersedes_ref", "track"}, field="screening")
     pin(b["source_ref"])
+    _enum(b.get("track", "empirical"), {"empirical", "theoretical"}, "screening.track")
     _enum(b["stage"], {"title_abstract", "full_text"}, "screening.stage")
     _enum(b["decision"], {"pending", "include", "exclude", "awaiting_text", "uncertain"}, "screening.decision")
     for key in ("protocol_version", "rule", "reason", "access_limitation"):
@@ -784,7 +785,8 @@ def _transition(kind: str, old: dict, new: dict) -> None:
             fail("HISTORY", "A search occurrence's raw identity is immutable")
     elif kind == "screening":
         allowed = {"pending", "include", "exclude", "awaiting_text", "uncertain"}
-        if any(old[field] != new[field] for field in ("source_ref", "stage", "protocol_version", "rule")):
+        if (old.get("track", "empirical") != new.get("track", "empirical")
+                or any(old[field] != new[field] for field in ("source_ref", "stage", "protocol_version", "rule"))):
             fail("HISTORY", "Changed screening scope requires a successor screening record")
     elif kind == "study":
         allowed = {old_status} if old_status == "alias" else {"unresolved", "provisional", "resolved", "fixture_asserted_same", "alias"}

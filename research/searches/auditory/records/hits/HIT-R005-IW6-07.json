@@ -35,6 +35,55 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "chatgpt-r006-identity-20261103",
+        "kind": "agent",
+        "model": "GPT-6 Astra Pro",
+        "tool": "ChatGPT; local Python record comparison"
+      },
+      "at": "2026-11-03T01:18:17Z",
+      "basis": [
+        {
+          "id": "SRCH-R005-IW6",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-IW6-07",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-HERMANN-2008",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-HERMANN-IDENTITY",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 7,
+        "raw_metadata": "TAXONOMY AND DEFINITIONS FOR SONIFICATION AND ... | https://www.icad.org/Proceedings/2008/Hermann2008.pdf",
+        "resolution_reason": "MHAC-R006: exact returned URL equals the verified publication URL on SRC-REL-HERMANN-2008 revision 1 (R004 access ledger row 16). Identity only; no new source reading or eligibility decision. See research/registry/identity/R006-HERMANN-2008.json.",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://www.icad.org/Proceedings/2008/Hermann2008.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-IW6",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-HERMANN-2008",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

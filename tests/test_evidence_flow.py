@@ -122,6 +122,13 @@ class EvidenceFlowTests(unittest.TestCase):
         revision["basis"] = [ref("SRC-UNAVAILABLE")]
         revision["data"].update(source_ref=ref("SRC-UNAVAILABLE"), decision="awaiting_text", reading_refs=[],
                                 reason="Synthetic full text unavailable.", access_limitation="No text obtained in the fictional scenario.")
+        initial = copy.deepcopy(row(data, "SCR-B-TA"))
+        initial["id"] = "SCR-UNAVAILABLE-TA"
+        initial["revisions"][0]["basis"] = [ref("SRC-UNAVAILABLE")]
+        initial["revisions"][0]["data"].update(
+            source_ref=ref("SRC-UNAVAILABLE"), decision="uncertain", reading_refs=[],
+            reason="Synthetic title/abstract decision retains the report for full-text retrieval.")
+        data["records"].append(initial)
         data["records"].append(screening)
         result = flow(data)
         self.assertEqual(result["publications"], 3)

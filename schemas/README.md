@@ -39,7 +39,7 @@ hyphen and uppercase letters, digits or hyphens.
 | `source` / SRC | `title`, `authors: [{name,role}]` (role author/editor/translator/corporate_author), `publication_date: tagged date` (year, month or day precision), `identifiers: [{scheme,value,status,provenance}]` (scheme doi/isbn/url/other; status candidate/verified/conflict), `source_type` (article/book/chapter/conference_paper/thesis/preprint/report/review/web/correction/other), `language: tagged text`, `edition: tagged text`, `metadata_status` (candidate/verified/conflict), `metadata_evidence: [text]`, `access_status`, `access_at: timestamp`, `access_reason`, `rights: {status,reason,evidence: tagged text}`, `validity` (active/corrected/retracted/withdrawn/superseded), `family_links: [{relation,source_ref,reason}]`, `manifestations: [{id,sha256,extent,coordinate, ...}]`; optional `alias_of: pin`, `alias_reason`. |
 | `search_run` / SRCH | `lane`, `protocol_version`, `mode` (pilot/production/update), `status` (planned/running/completed/partial/failed), `platform`, `interface`, `query`, `filters: [text]`, `coverage: {start: tagged date,end: tagged date}`, `started_at: tagged timestamp`, `finished_at: tagged timestamp`, `reported_count: nonnegative int or missing`, `retrieved_count: nonnegative int`, `export: tagged artifact`, `pagination: {complete: bool,detail}`, `failures: [text]`, `boundary`. |
 | `search_hit` / HIT | `search_ref`, `ordinal: positive int`, `raw_metadata: text`, `returned_identifiers: [{scheme,value}]`, `status` (unresolved/resolved/duplicate/unresolvable), `resolution_reason`; `source_ref` required for resolved/duplicate; optional `duplicate_of: pin` only for duplicate. Unresolved/unresolvable records have no source_ref. |
-| `screening` / SCR | `source_ref`, `stage` (title_abstract/full_text), `protocol_version`, `rule`, `decision` (pending/include/exclude/awaiting_text/uncertain), `reason`, `access_limitation`, `reading_refs: [pin]`, `review_refs: [pin]`; optional `supersedes_ref: pin`. Decision actor is revision.actor. |
+| `screening` / SCR | `source_ref`, `stage` (title_abstract/full_text), `protocol_version`, `rule`, `decision` (pending/include/exclude/awaiting_text/uncertain), `reason`, `access_limitation`, `reading_refs: [pin]`, `review_refs: [pin]`; optional `supersedes_ref: pin`, `track` (empirical/theoretical; absent means empirical for retained v1 records). Decision actor is revision.actor. |
 | `study` / STUDY | `publications: nonempty [pin]`, `identity_status` (unresolved/provisional/resolved/fixture_asserted_same/alias), `identity_basis`, `identity_locators: [located source]`, `scope`; `alias_of: pin` required only for alias. fixture_asserted_same is fixture-only. |
 | `sample` / SAMPLE | `n: nonnegative int or missing`, `population: text or missing`, `recruitment: text or missing`, `missingness: tagged text`, `overlap: [{sample_ref,relation,reason}]` (known_shared/partial_overlap/shared_control/unknown/independent), `uncertainty`, `status` (provisional/checked/withdrawn/superseded); optional `evidence: [located source]`, `collection_dates: {start: tagged date,end: tagged date}`. |
 | `experiment` / EXP | `study_ref`, `sample_refs: nonempty [pin]`, `conditions: nonempty [text]`, `outcomes: nonempty keyed object` with `{unit,contrast}` per outcome (optional `timepoints: nonempty [text]`), `dependence`, `status` (provisional/extracted/checked/withdrawn/superseded), `report_label`, `assignment`. |
@@ -127,6 +127,76 @@ their affected dependent records also require the cross-record amendment checks.
 A captured source access observation can improve or worsen independently of prior
 reading. Search occurrence identity and the original query are immutable across
 revisions; terminal search runs do not acquire different historical counts.
+
+### Screening tracks and stage order
+
+A screening scope is canonical source identity, track, stage and protocol version.
+New records should state `track` explicitly. The optional field preserves the
+meaning of the earlier v1 synthetic examples; adding explicit `empirical` to an
+old empirical decision does not change its scope. Changing to `theoretical`
+requires a separate logical decision, not an in-place revision or a supersession
+across tracks. The same source may be selected in both tracks for different reasons.
+
+Every full-text-stage revision, including `awaiting_text`, requires a preceding
+effective title/abstract decision of `include` or `uncertain` for the same scope.
+The graph checks what was recorded by that revision's time; a later inclusion
+or source-identity alias cannot retroactively supply an absent or excluded prior
+decision. Historical source scopes and supersession use only aliases recorded by
+that time, while current conflict checks use the current canonical identities.
+Effective current stages must also agree. Full-text include/exclude still
+requires reading evidence. An unavailable report remains visible as
+`awaiting_text`; no access status is converted into an eligibility exclusion.
+
+Each full-text revision has a currency dependency on the exact historical
+title/abstract revision that qualified it. Invalidating that prerequisite also
+makes the full-text decision stale, even if the latter cites a corrected source
+revision. A later title/abstract recheck does not silently repair the older
+full-text decision: a subsequent full-text revision must record the recheck.
+Stale history stays available for audit but cannot be used as current gate
+evidence.
+
+`tools.evidence_flow` retains the all-track `screening` aggregate so existing
+corpus gates still reject unresolved decisions in either track. It additionally
+exports `screening_by_track`. The `included_publications`, `included_studies` and
+`included_outcomes` counts use only empirical full-text inclusions;
+`selected_theoretical_publications` is separate. A theoretical selection is not
+an empirical observation or an assertion that a source was completely read.
+
+`tools.screening.screening_coverage(graph, source_ids=..., protocol_version=...,
+track=...)` reports missing title/abstract decisions, missing required full-text
+decisions and unavailable reports within an explicit source scope. Its
+`acceptance` is always `not_evaluated`. The default flow also lists registered
+sources and resolved search publications without any screening. Neither list
+defines the empirical eligibility denominator: method sources, theory sources
+and unscreened discovery records may coexist in the registry.
+
+### Conservative identity and history preservation
+
+`tools.screening.identity_candidates` returns pairwise candidates from normalized
+verified DOI, conservatively normalized verified resource URL, or exact normalized
+title + first author + known year. It does not merge IDs, perform fuzzy matching,
+infer missing authors/dates or make a screening decision. A resource URL may name
+an index rather than a publication; its matches still require adjudication.
+Distinct verified DOIs or conflicted metadata remain a conflict even when titles
+or URLs match. DOI suffix punctuation is preserved; URL path case, trailing slash,
+query order/values and fragments are preserved.
+
+The graph rejects a normalized verified DOI assigned to distinct canonical source
+identities. An evidence-backed alias is allowed; marking a genuinely disputed
+identifier `conflict` records uncertainty without inventing a merge. Publication
+identity never establishes study or sample independence.
+
+R006 may register records under `research/registry/identity/`; the broader
+`research/registry/` path remains disallowed as a record root. All existing path,
+symlink, duplicate-ID and unregistered-record checks still apply.
+
+The R004/R005 builders use `tools.records.write_generated_records`. It preflights
+the entire record batch, preserves a longer downstream history when the generated
+original revisions are an exact prefix, and rejects any attempt to rewrite an
+earlier revision or immutable envelope. Rerunning a discovery builder cannot erase
+later hit-resolution or source-correction revisions. New changes still use the
+ordinary append-only and amendment rules; generated non-record views are not
+independent evidence authorities.
 
 The schema checks shape, enums, closed variants, finite values, local numeric/date
 consistency and per-record state history. The graph checks typed references,

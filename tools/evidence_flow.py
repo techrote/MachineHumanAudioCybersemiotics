@@ -7,6 +7,7 @@ import io
 from typing import Any
 
 from tools.record_io import dumps, fail
+from tools.screening import DECISIONS, STAGES, TRACKS, effective_screening, screening_coverage
 
 
 def evidence_flow(graph: Any) -> dict:
@@ -62,37 +63,48 @@ def evidence_flow(graph: Any) -> dict:
     if any(row["unresolved_hits"] for row in run_rows):
         warnings.append("Unresolved search-hit identities remain; publication coverage is incomplete.")
 
-    candidates: dict[tuple[str, str, str], dict[str, dict]] = defaultdict(dict)
-    superseded_decisions: set[str] = set()
-    for rid, decision in sorted(kinds["screening"].items()):
-        key = (canonical(decision["source_ref"]["id"], "source"),
-               decision["stage"], decision["protocol_version"])
-        candidates[key][rid] = decision
-        predecessor = decision.get("supersedes_ref", {}).get("id")
-        if predecessor and predecessor != rid:
-            superseded_decisions.add(predecessor)
-    decisions: dict[tuple[str, str, str], tuple[str, dict]] = {}
-    for key, scoped in sorted(candidates.items()):
-        effective = sorted(set(scoped) - superseded_decisions)
-        if len(effective) != 1:
-            fail("SCREENING_CONFLICT", f"{sorted(scoped)} share a decision scope")
-        rid = effective[0]
-        decisions[key] = (rid, scoped[rid])
-    stages = {}
-    for stage in ("title_abstract", "full_text"):
-        counter = Counter(decision["decision"] for _, decision in decisions.values()
-                          if decision["stage"] == stage)
-        stages[stage] = {status: counter[status] for status in (
-            "pending", "include", "exclude", "awaiting_text", "uncertain")}
+    decisions = effective_screening(graph)
+
+    def stage_counts(track=None):
+        result = {}
+        for stage in STAGES:
+            counter = Counter(decision["decision"] for key, (_, decision) in decisions.items()
+                              if key[2] == stage and (track is None or key[1] == track))
+            result[stage] = {status: counter[status] for status in DECISIONS}
+        return result
+
+    # Preserve the all-track aggregate used by corpus-completion gates. A
+    # theoretical unresolved decision must not disappear from those checks.
+    stages = stage_counts()
+    by_track = {track: stage_counts(track) for track in TRACKS}
     included_publications = {
         key[0] for key, (_, d) in decisions.items()
-        if key[1] == "full_text" and d["decision"] == "include"
+        if key[1] == "empirical" and key[2] == "full_text" and d["decision"] == "include"
     }
-    protocols = sorted({key[2] for key in decisions})
+    selected_theoretical_publications = {
+        key[0] for key, (_, d) in decisions.items()
+        if key[1] == "theoretical" and key[2] == "full_text" and d["decision"] == "include"
+    }
+    protocols = sorted({key[3] for key in decisions})
     if len(protocols) > 1:
         warnings.append("Screening includes multiple protocol versions; aggregate inclusion is a union, not a final review flow.")
 
     publications = {canonical(rid, "source") for rid in kinds["source"]}
+    screened_sources = {key[0] for key in decisions}
+    resolved_search_sources = {canonical(hit["source_ref"]["id"], "source")
+                               for hit in hits.values() if "source_ref" in hit}
+    scopes: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for source, track, _, protocol in decisions:
+        scopes[(track, protocol)].add(source)
+    coverage = {
+        "scope": "Registered canonical sources and recorded decision scopes; not an empirical eligibility denominator or a completion assertion.",
+        "registered_publications_without_screening": sorted(publications - screened_sources),
+        "resolved_search_publications_without_screening": sorted(resolved_search_sources - screened_sources),
+        "decision_scopes": [screening_coverage(graph, source_ids=sorted(ids), protocol_version=protocol, track=track)
+                            for (track, protocol), ids in sorted(scopes.items())],
+    }
+    if coverage["resolved_search_publications_without_screening"]:
+        warnings.append("Resolved search publications without recorded screening remain; source discovery is not corpus selection.")
     studies = {canonical(rid, "study") for rid in kinds["study"]}
     included_studies = {
         canonical(rid, "study") for rid, study in kinds["study"].items()
@@ -166,8 +178,12 @@ def evidence_flow(graph: Any) -> dict:
         "unknown_overlap_pairs": [list(pair) for pair in sorted(unknown_pairs)],
         "search_runs": len(runs), "search_hits": len(hits),
         "search_details": run_rows, "screening": stages,
+        "screening_by_track": by_track,
+        "screening_coverage": coverage,
+        "screening_scope": "screening aggregates all tracks for unresolved-stage gates; included_* counts use empirical full-text decisions only.",
         "screening_protocols": protocols,
         "included_publications": len(included_publications),
+        "selected_theoretical_publications": len(selected_theoretical_publications),
         "included_studies": len(included_studies), "included_outcomes": len(included_outcomes),
         "unavailable_publications": sum(source["access_status"] == "unavailable"
                                          for source in kinds["source"].values()),

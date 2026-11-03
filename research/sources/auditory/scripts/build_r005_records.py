@@ -7,7 +7,8 @@ Run from the repository root:
 Inputs are the retained export (titles, URLs and reference-list entries copied from the
 session's tool-call log) and the adjudications written below. The script fetches nothing.
 It writes search_run, search_hit and assistance records plus a known-item check table.
-Later changes must append revisions to the written records rather than rerun this over them.
+Later changes must append revisions. Rebuilding preserves a later history when
+the generated original prefix still matches and refuses to rewrite prior facts.
 """
 from __future__ import annotations
 
@@ -22,7 +23,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[4]
 sys.path.insert(0, str(ROOT))
 
-from tools.record_io import dumps  # noqa: E402
+from tools.records import write_generated_records  # noqa: E402
+from schemas.v1 import stamp  # noqa: E402
 
 AT = "2026-10-13T06:30:12Z"
 ACTOR = {"kind": "agent", "id": "claude-r005-session",
@@ -173,11 +175,17 @@ def main() -> int:
     digest = hashlib.sha256(export_path.read_bytes()).hexdigest()
     exp_ref = known({"path": EXPORT, "sha256": digest})
 
-    # Existing source records: resolve occurrences only by identical identifier.
+    # Reproduce the identity knowledge available at the original record time.
+    # Later lanes must append explicit resolutions; their new sources must not
+    # change what this historical builder claims was known on 13 October.
     by_url, by_doi = {}, {}
-    for root in json.loads((ROOT / "research/registry/state.json").read_text(encoding="utf-8"))["record_roots"]:
-        for f in (ROOT / root).rglob("SRC-*.json"):
-            data = json.loads(f.read_text(encoding="utf-8"))["revisions"][-1]["data"]
+    for root in sorted(json.loads((ROOT / "research/registry/state.json").read_text(encoding="utf-8"))["record_roots"]):
+        for f in sorted((ROOT / root).rglob("SRC-*.json")):
+            revisions = json.loads(f.read_text(encoding="utf-8"))["revisions"]
+            available = [revision for revision in revisions if stamp(revision["at"]) <= stamp(AT)]
+            if not available:
+                continue
+            data = available[-1]["data"]
             for ident in data["identifiers"]:
                 if ident["scheme"] == "url":
                     by_url[ident["value"].rstrip("/")] = f.stem
@@ -491,10 +499,7 @@ def main() -> int:
         "independence": "Single executing agent. Not a human check and not independent of the work it describes.",
     }, [ref(NL), ref(FRA), ref("HG-R002-DATABASE-ACCESS")], "researcher_interpretation")
 
-    for path, row in sorted(out.items()):
-        target = ROOT / path
-        target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(dumps(row), encoding="utf-8")
+    write_generated_records(ROOT, out)
     print(f"wrote {len(out)} records; resolved {resolved_count}; known-item {counts}; topic {topic_any}")
     return 0
 

@@ -4,6 +4,7 @@ This module refines the retained MHAC-R001 prepass prototype.  It checks recorde
 relationships, not source fidelity, human identity, or scientific validity.
 Identity, overlap, prospective tests, and review targets have different meanings;
 only explicit, mandatory supporting pins enter the evidence dependency graph.
+Full-text currency also depends on its exact historical title/abstract prerequisite.
 """
 from __future__ import annotations
 
@@ -13,6 +14,7 @@ from typing import Any, Iterable
 
 from schemas import ValidationError
 from schemas.v1 import pin, references, stamp, validate_record
+from tools.screening import effective_screening, screening_scope, validate_verified_doi_uniqueness
 
 Pin = tuple[str, int]
 Ref = dict[str, Any] | Pin
@@ -127,6 +129,34 @@ class RecordGraph:
         while rid in self.aliases:
             rid = self.aliases[rid]
         return rid
+
+    def canonical_id_at(self, rid: str, at: str) -> str:
+        """Resolve identity using only source/study revisions visible at ``at``.
+
+        Current aliases must not supply knowledge to historical screening.
+        Alias targets are exact pins; a target recorded after the cutoff is
+        unavailable even when another revision of that logical ID existed.
+        """
+        cutoff = stamp(at)
+        seen = set()
+        while True:
+            if rid not in self.records:
+                fail("DANGLING_REFERENCE", rid)
+            if rid in seen:
+                fail("IDENTITY_ALIAS_CYCLE", rid)
+            seen.add(rid)
+            revision = next((r for r in reversed(self.records[rid]["revisions"])
+                             if stamp(r["at"]) <= cutoff), None)
+            if revision is None:
+                fail("FUTURE_IDENTITY", f"{rid}: no revision recorded by {at}")
+            alias = revision["data"].get("alias_of")
+            if alias is None:
+                return rid
+            target = pin(alias)
+            self.lookup(target, self.records[rid]["kind"])
+            if stamp(self.versions[target]["at"]) > cutoff:
+                fail("FUTURE_IDENTITY", f"{rid}: alias target {target} was not recorded by {at}")
+            rid = target[0]
 
     def require_current(self, ref: Ref, kind: str | None = None, *, usable: bool = True) -> dict:
         """Check a requested current output, leaving stale WIP valid in storage.
@@ -312,7 +342,15 @@ def _validate_claim(graph: RecordGraph, key: Pin, body: dict) -> None:
 
 
 def _validate_relations(graph: RecordGraph) -> None:
-    screening: dict[tuple[str, str, str], list[Pin]] = defaultdict(list)
+    title_abstract: dict[tuple[str, str], list[str]] = defaultdict(list)
+    supersession_edges = {}
+    for rid, row in graph.records.items():
+        if row["kind"] == "screening":
+            supersession_edges[rid] = set()
+            body = graph.latest[rid]["data"]
+            if body["stage"] == "title_abstract":
+                title_abstract[(body.get("track", "empirical"), body["protocol_version"])].append(rid)
+    historical_screening = {}
     hit_ordinals: dict[tuple[str, int], str] = {}
     for key, revision in graph.versions.items():
         kind, body = graph.records[key[0]]["kind"], revision["data"]
@@ -339,6 +377,7 @@ def _validate_relations(graph: RecordGraph) -> None:
                     fail("DUPLICATE_IDENTITY", repr(key))
         elif kind == "screening":
             graph.lookup(body["source_ref"], "source")
+            canonical_at = lambda rid: graph.canonical_id_at(rid, revision["at"])
             for ref in body["reading_refs"]:
                 reading = graph.lookup(ref, "assistance")
                 if reading["subtype"] != "reading" or reading["source_ref"] != body["source_ref"]:
@@ -351,11 +390,38 @@ def _validate_relations(graph: RecordGraph) -> None:
                     fail("FALSE_FULL_TEXT_SCREENING", repr(key))
             if "supersedes_ref" in body:
                 old = graph.lookup(body["supersedes_ref"], "screening")
-                if (graph.canonical_id(pin(old["source_ref"])[0]), old["stage"], old["protocol_version"]) != (graph.canonical_id(pin(body["source_ref"])[0]), body["stage"], body["protocol_version"]):
+                predecessor = pin(body["supersedes_ref"])
+                if (screening_scope(old, canonical_at) != screening_scope(body, canonical_at)
+                        or predecessor[0] == key[0]
+                        or stamp(graph.versions[predecessor]["at"]) > stamp(revision["at"])):
                     fail("SCREENING_SUPERSESSION", repr(key))
-            if key == graph.latest_pin(key[0]):
-                scope = graph.canonical_id(pin(body["source_ref"])[0]), body["stage"], body["protocol_version"]
-                screening[scope].append(key)
+                supersession_edges[key[0]].add(predecessor[0])
+            if body["stage"] == "full_text":
+                source, track, _, protocol = screening_scope(body, canonical_at)
+                scope = (source, track, "title_abstract", protocol)
+                cache_key = scope, revision["at"]
+                cutoff = stamp(revision["at"])
+                if cache_key not in historical_screening:
+                    # Filter the historical source scope before choosing an
+                    # effective decision. A current alias must neither import
+                    # another source's earlier TA nor hide an earlier scope.
+                    candidates = []
+                    for rid in title_abstract.get((track, protocol), []):
+                        initial = graph.records[rid]["revisions"][0]
+                        if (stamp(initial["at"]) <= cutoff
+                                and screening_scope(initial["data"], canonical_at) == scope):
+                            candidates.append(rid)
+                    historical_screening[cache_key] = effective_screening(
+                        graph, at=revision["at"], record_ids=candidates)
+                previous = historical_screening[cache_key].get(scope)
+                if previous is None or previous[1]["decision"] not in {"include", "uncertain"}:
+                    fail("SCREENING_SEQUENCE", f"{key}: full-text stage needs a preceding include/uncertain title/abstract decision for the same source, track and protocol")
+                # The qualifying TA revision is a prerequisite, not just a
+                # count. Its later invalidation must stale this FT revision,
+                # including an FT decision that itself cites a corrected source.
+                prior_revision = next(r for r in reversed(graph.records[previous[0]]["revisions"])
+                                      if stamp(r["at"]) <= cutoff)
+                graph.currency_edges.setdefault(key, set()).add((previous[0], prior_revision["rev"]))
         elif kind == "study":
             for ref in body["publications"]:
                 graph.lookup(ref, "source")
@@ -461,11 +527,13 @@ def _validate_relations(graph: RecordGraph) -> None:
                             or revision["actor"]["kind"] != "human"
                             or body["verification"] not in {"human_checked", "independent_human_checked"}):
                         fail("FALSE_EXTERNAL_REVIEW", repr(key))
-    for scope, current in screening.items():
-        superseded = {pin(graph.lookup(key)["supersedes_ref"]) for key in current if "supersedes_ref" in graph.lookup(key)}
-        effective = [key for key in current if key not in superseded]
-        if len(effective) > 1:
-            fail("SCREENING_CONFLICT", repr(scope))
+    _dag(supersession_edges, "SCREENING_SUPERSESSION_CYCLE")
+    decisions = effective_screening(graph)
+    for (source, track, stage, protocol), (rid, _) in decisions.items():
+        if stage == "full_text":
+            previous = decisions.get((source, track, "title_abstract", protocol))
+            if previous is None or previous[1]["decision"] not in {"include", "uncertain"}:
+                fail("SCREENING_SEQUENCE", f"{rid}: current full-text decision conflicts with current title/abstract disposition")
 
 
 def _identity(graph: RecordGraph) -> None:
@@ -480,6 +548,9 @@ def _identity(graph: RecordGraph) -> None:
             aliases[rid].add(target)
             graph.aliases[rid] = target
     _dag(aliases, "IDENTITY_ALIAS_CYCLE")
+    validate_verified_doi_uniqueness(
+        {rid: revision["data"] for rid, revision in graph.latest.items()
+         if graph.records[rid]["kind"] == "source"}, graph.canonical_id)
     samples = sorted(rid for rid, row in graph.records.items() if row["kind"] == "sample")
     relations: dict[tuple[str, str], set[str]] = defaultdict(set)
     adjacency: dict[str, set[str]] = {rid: set() for rid in samples}
