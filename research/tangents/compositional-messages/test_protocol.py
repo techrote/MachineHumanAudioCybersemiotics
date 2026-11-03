@@ -1,13 +1,15 @@
 """Fictional T004 syntactic invariants; no participants or waveforms."""
+import importlib.util
 import json
-import sys
 import unittest
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from protocol import audit_cases, evaluate, SOURCES, EVENTS  # noqa: E402
-
 HERE = Path(__file__).resolve().parent
+spec = importlib.util.spec_from_file_location("mhac_t004_oracle", HERE / "protocol.py")
+oracle = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(oracle)
+audit_cases, evaluate = oracle.audit_cases, oracle.evaluate
+SOURCES, EVENTS = oracle.SOURCES, oracle.EVENTS
 
 class TestCompositionalMessages(unittest.TestCase):
     def test_fixture_expectations(self):
