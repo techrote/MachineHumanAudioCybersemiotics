@@ -24,7 +24,7 @@ class ReceivedChannelCases(unittest.TestCase):
     def feat(self, transform, cue, key):
         return self.record(transform,cue)['features'][key]
 
-    def test_all_24_adversarial_cases(self):
+    def test_all_25_adversarial_cases(self):
         cases=model.load('CASES.json')['cases']
         self.assertGreaterEqual(len(cases), 16)
         self.assertEqual(len(cases),len({c['id'] for c in cases}))
@@ -84,6 +84,12 @@ class ReceivedChannelCases(unittest.TestCase):
                         model.apply(raw,{'kind':'imaginary_hearing_aid'},8000)
                 elif kind=='pulse_divergence':
                     self.assertNotEqual(self.feat(t,a,'pulse_groups_proxy'),self.feat(t,b,'pulse_groups_proxy'))
+                elif kind=='rank_reversal':
+                    key=c['axis']
+                    def signed_gap(transform):
+                        anchor=self.feat(transform,cue,key)
+                        return abs(anchor-self.feat(transform,a,key))-abs(anchor-self.feat(transform,b,key))
+                    self.assertLess(signed_gap('identity')*signed_gap(t),0)
                 elif kind=='cross_axis_non_equivalence':
                     diff=self.results['pairwise'][t][a+'|'+b]
                     self.assertEqual(diff['pulse_groups_proxy'],0)

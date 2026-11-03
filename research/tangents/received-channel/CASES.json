@@ -24,6 +24,7 @@
     {"id":"C21", "test":"unknown_transform_error", "cue":"P_FAST"},
     {"id":"C22", "test":"truth_invariant", "cue":"P_ALT", "transform":"noise_gate"},
     {"id":"C23", "test":"pulse_divergence", "left":"P_FAST", "right":"P_SLOW", "transform":"identity"},
-    {"id":"C24", "test":"cross_axis_non_equivalence", "left":"S_LEFT", "right":"S_RIGHT", "transform":"lowpass"}
+    {"id":"C24", "test":"cross_axis_non_equivalence", "left":"S_LEFT", "right":"S_RIGHT", "transform":"lowpass"},
+    {"id":"C25", "test":"rank_reversal", "cue":"P_ALT", "left":"P_WIDE", "right":"P_SLOW", "transform":"noise_gate", "axis":"pulse_groups_proxy"}
   ]
 }
