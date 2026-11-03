@@ -10,6 +10,8 @@
 
 | **2026-11-03 01:58** | **1 / 1 / 2** | (1) Spatial cues plus verbal direction may combine conditionally; (2) signal-detection criterion and severity are distinct; (3) inattentional deafness under critical workload; (4) frequency/noise/hearing-profile accessibility and warning thresholds. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0158-utc--second-pass-spatial-cue-convergence-decision-thresholds-attention-failure-and-audibility-equity) |
 
+| **2026-11-03 02:59** | **2 / 1 / 1** | (1) Compositional audio grammar and unseen combinations, distinct from overlapping independent alarms; (2) persistent signal–referent congruency costs despite training; (3) post-alert primary-task resumption; (4) intended event versus actionable alert in operational context. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0259-utc--third-pass-compositional-semantics-referent-congruence-resumption-cost-and-context-dependent-actionability) |
+
 ## Research-triage priorities
 
 | Priority | Lead | Proposed owner / next action | Evidence status |
