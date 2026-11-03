@@ -7,15 +7,16 @@
 | UTC hour | Parallel / orthogonal / perpendicular | Strongest candidate connections | Full notes |
 |---|---|---|---|
 | **2026-11-03 01:06** | **2 / 1 / 2** | (1) Concurrent messages: masking vs semantic identity vs correct action; (2) spoken uncertainty: trust vs decision calibration; (3) workload-aware deferral with hard deadlines; (4) alarm truthfulness, cross-checkability and cry-wolf effects; (5) perceived urgency can invert identification performance. | [2026-11-03](hourly/2026-11-03.md) |
-
 | **2026-11-03 01:58** | **1 / 1 / 2** | (1) Spatial cues plus verbal direction may combine conditionally; (2) signal-detection criterion and severity are distinct; (3) inattentional deafness under critical workload; (4) frequency/noise/hearing-profile accessibility and warning thresholds. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0158-utc--second-pass-spatial-cue-convergence-decision-thresholds-attention-failure-and-audibility-equity) |
-
 | **2026-11-03 02:59** | **2 / 1 / 1** | (1) Compositional audio grammar and unseen combinations, distinct from overlapping independent alarms; (2) persistent signal–referent congruency costs despite training; (3) post-alert primary-task resumption; (4) intended event versus actionable alert in operational context. | [2026-11-03](hourly/2026-11-03.md#2026-11-03-0259-utc--third-pass-compositional-semantics-referent-congruence-resumption-cost-and-context-dependent-actionability) |
 
 ## Research-triage priorities
 
 | Priority | Lead | Proposed owner / next action | Evidence status |
 |---|---|---|---|
+| High | Context-dependent actionability: intended event versus genuine requirement for intervention (02:59 X5) | #8/#11 remove-Brier comparison; #12/#13 truth table; #14 synthetic transition replay | S16 clinical observational abstract + S17 context/method caution; not generalizable |
+| High | Compositional machine audio: unseen field combinations and semantic binding versus flat motifs (02:59 P4) | #5/#6 screening; #13 hypothesis; #14 training/transfer protocol design | Brewster S9–S11 primary-study abstracts; no MHAC transfer validated |
+| Medium | Post-alert resumption and interruption recovery as separate lifecycle costs (02:59 O3) | #12 lifecycle hypotheses; #14 synthetic resumption costs | S14/S15 task-interruption experiments; audio-message transfer untested |
 | High | Concurrent alarm failure taxonomy, independent detection/identity/action metrics | #5/#6 eligibility check; #9 extraction fields; #12/#13 hypothesis | Two empirical publisher abstracts, cross-domain extrapolation untested |
 | High | Spoken uncertainty: credibility and consequential action diverge | #5/#6 check; #9/#13 calibration outcomes; #14 protocol-only design | 2024 empirical abstract, not fully extracted |
 | High | Alarm reliability, confirmation and false-positive history | #8/#11 counterposition; #12/#13 verification semantics | 2014 experimental abstract; audio-specific transfer uncertain |
