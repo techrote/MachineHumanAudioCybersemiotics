@@ -1,0 +1,104 @@
+{
+  "case_count": 25,
+  "cue_count": 10,
+  "diagnostics": {
+    "fast_compression": {
+      "alternate_pulse_groups": 3,
+      "alternate_tail_rms": 0.017678,
+      "left_waveform_sha256": "16285916db5106d6c8a0474131e0d7302bf8edcd257747441eda8eda07720f16",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "a9c702cecb4c76471c8ea6ff781148437c386a534873390dfe80c49b2b708899",
+      "spatial_pair_ild_difference_db": 8.941098,
+      "spectral_pair_contrast_db": 113.81221
+    },
+    "gain_half": {
+      "alternate_pulse_groups": 4,
+      "alternate_tail_rms": 0.008839,
+      "left_waveform_sha256": "cc2c2e4492743e4ca340eba1030daf47487706c57bd51ff23c28e0807f3da038",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "21a320a785af6249ad2c490f2137ab09903fed258bc554b6dd0b844ddd468375",
+      "spatial_pair_ild_difference_db": 26.1285,
+      "spectral_pair_contrast_db": 240.000018
+    },
+    "identity": {
+      "alternate_pulse_groups": 4,
+      "alternate_tail_rms": 0.017678,
+      "left_waveform_sha256": "7d94d68e9ba350db3a482f46a8060dcb476ab5279dd41b78a83374073aaa6218",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "99ff81e3209456efe68b54a780f7a6a1e8fd21b40929803123c5b168ec607e05",
+      "spatial_pair_ild_difference_db": 26.1285,
+      "spectral_pair_contrast_db": 240.000018
+    },
+    "lowpass": {
+      "alternate_pulse_groups": 6,
+      "alternate_tail_rms": 0.002011,
+      "left_waveform_sha256": "c9e49c6b27a44b5e226d3b1ed12ae8bd511336571d332f02cce956b44c2842b3",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "6a28af3dbbb963ebc14497a898e688acc6f19a792247770cde2fd9f9e4d98b78",
+      "spatial_pair_ild_difference_db": 26.1285,
+      "spectral_pair_contrast_db": 143.957556
+    },
+    "masker": {
+      "alternate_pulse_groups": 1,
+      "alternate_tail_rms": 0.056569,
+      "left_waveform_sha256": "b325a93f0cc5dd267f20784975f9307f1618d27578f6f80c5298cb8e05558d4e",
+      "pulse_pair_count_difference": 0,
+      "right_waveform_sha256": "907ab97d8370d3967a531c6d96a6fa4e1ab3fc81d7e658ba2a98015897bbfac4",
+      "spatial_pair_ild_difference_db": 24.296876,
+      "spectral_pair_contrast_db": 240.000018
+    },
+    "mono": {
+      "alternate_pulse_groups": 4,
+      "alternate_tail_rms": 0.017678,
+      "left_waveform_sha256": "f9b0ca82fa2ac1736284400255f0a6a664bb2cbbaf91ac1f7b4504e48831532e",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "f9b0ca82fa2ac1736284400255f0a6a664bb2cbbaf91ac1f7b4504e48831532e",
+      "spatial_pair_ild_difference_db": null,
+      "spectral_pair_contrast_db": 240.000018
+    },
+    "mute": {
+      "alternate_pulse_groups": 0,
+      "alternate_tail_rms": 0.0,
+      "left_waveform_sha256": "c65206769723a13afe80c0d925531639ceef9c2eb97eee3b1b542739ec40597f",
+      "pulse_pair_count_difference": 0,
+      "right_waveform_sha256": "c65206769723a13afe80c0d925531639ceef9c2eb97eee3b1b542739ec40597f",
+      "spatial_pair_ild_difference_db": null,
+      "spectral_pair_contrast_db": null
+    },
+    "noise_gate": {
+      "alternate_pulse_groups": 2,
+      "alternate_tail_rms": 0.0,
+      "left_waveform_sha256": "0eda1e5daf611b520ce205432fac154dc85ba7d442933a3333bf727befb4faae",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "05cc099f30ac35db75117c7b1a91bac1d9331f6694764a467a6657f4bd55ae2e",
+      "spatial_pair_ild_difference_db": null,
+      "spectral_pair_contrast_db": 240.000016
+    },
+    "reflection": {
+      "alternate_pulse_groups": 4,
+      "alternate_tail_rms": 0.026517,
+      "left_waveform_sha256": "6a6a133753fb29a668399eeba052142f7ec75b96ce77825d2069314360e97e0b",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "46347520ae55875c67e9fb77f2bcadb7951d1f670fada02b1dc4d23885a1a1ec",
+      "spatial_pair_ild_difference_db": 26.1285,
+      "spectral_pair_contrast_db": 240.000018
+    },
+    "slow_compression": {
+      "alternate_pulse_groups": 4,
+      "alternate_tail_rms": 0.017622,
+      "left_waveform_sha256": "1f31351fedc27054380da9502f60c878c7ceb0460ff6b0c589906d03a02d13b3",
+      "pulse_pair_count_difference": 2,
+      "right_waveform_sha256": "ed6643e25d6f52e5795d1054efcf3b7f6d51e5c67d3bd77ec48ad6245fb2d805",
+      "spatial_pair_ild_difference_db": 14.473716,
+      "spectral_pair_contrast_db": 138.253291
+    }
+  },
+  "inputs_sha256": {
+    "CASES.json": "a2bd433fd119536c053d83994ba1bed41ab1ef0015bba2e4d99db3294afc3f91",
+    "CUES.json": "20d31be982b583ec74beaea6a8e39a9287fffaacc5bd63798753ba6d95067e17",
+    "TRANSFORMS.json": "0471033fb1b7430fa18d9f93c7e732af528b4b93085cabc69447158fa0ed4940"
+  },
+  "schema": "mhac-t007-summary-v1",
+  "scope": "synthetic engineering diagnostics, NOT perceptual or behavioral results",
+  "transform_count": 10
+}

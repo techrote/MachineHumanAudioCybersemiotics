@@ -1,0 +1,17 @@
+{
+  "schema": "mhac-t007-fictional-cues-v1", "sample_rate_hz": 8000, "duration_ms": 800,
+  "level_convention": "dimensionless linear PCM amplitude, NOT calibrated dB SPL",
+  "synthesis_seed": 0,
+  "cues": [
+    {"id":"P_FAST", "kind":"pulsed", "frequency_hz":600, "pulse_starts_ms":[40,140,240,340], "pulse_width_ms":40, "amplitude":0.65, "source_id":"machine-A", "event_id":"fictional-1", "state_version":1, "action_id":"fictional-check", "truth_status":"hypothetical"},
+    {"id":"P_SLOW", "kind":"pulsed", "frequency_hz":600, "pulse_starts_ms":[40,240], "pulse_width_ms":40, "amplitude":0.65, "source_id":"machine-A", "event_id":"fictional-2", "state_version":2, "action_id":"fictional-check", "truth_status":"hypothetical"},
+    {"id":"P_WIDE", "kind":"pulsed", "frequency_hz":600, "pulse_starts_ms":[40,140,240,340], "pulse_width_ms":75, "amplitude":0.65, "source_id":"machine-A", "event_id":"fictional-3", "state_version":3, "action_id":"fictional-check", "truth_status":"hypothetical"},
+    {"id":"P_ALT", "kind":"pulsed", "frequency_hz":600, "pulse_starts_ms":[40,140,240,340], "pulse_width_ms":40, "amplitude":0.65, "pulse_amplitudes":[0.65,0.12,0.65,0.12], "background_amplitude":0.025, "source_id":"machine-A", "event_id":"fictional-4", "state_version":4, "action_id":"fictional-check", "truth_status":"hypothetical"},
+    {"id":"F_LOW", "kind":"continuous", "frequency_hz":500, "amplitude":0.50, "source_id":"machine-B", "event_id":"fictional-5", "state_version":1, "action_id":"fictional-hold", "truth_status":"hypothetical"},
+    {"id":"F_HIGH", "kind":"continuous", "frequency_hz":1500, "amplitude":0.50, "source_id":"machine-B", "event_id":"fictional-6", "state_version":2, "action_id":"fictional-hold", "truth_status":"hypothetical"},
+    {"id":"F_MIX", "kind":"continuous", "frequency_hz":500, "secondary_frequency_hz":1500, "secondary_amplitude":0.33, "amplitude":0.50, "source_id":"machine-B", "event_id":"fictional-7", "state_version":3, "action_id":"fictional-hold", "truth_status":"hypothetical"},
+    {"id":"S_LEFT", "kind":"spatial", "frequency_hz":750, "amplitude":0.55, "left_gain":0.90, "right_gain":0.20, "source_id":"machine-C", "event_id":"fictional-8", "state_version":1, "action_id":"fictional-observe", "truth_status":"hypothetical"},
+    {"id":"S_RIGHT", "kind":"spatial", "frequency_hz":750, "amplitude":0.55, "left_gain":0.20, "right_gain":0.90, "source_id":"machine-C", "event_id":"fictional-9", "state_version":2, "action_id":"fictional-observe", "truth_status":"hypothetical"},
+    {"id":"S_CENTER", "kind":"spatial", "frequency_hz":750, "amplitude":0.55, "left_gain":0.55, "right_gain":0.55, "source_id":"machine-C", "event_id":"fictional-10", "state_version":3, "action_id":"fictional-observe", "truth_status":"hypothetical"}
+  ]
+}
