@@ -142,6 +142,13 @@ class PostEmissionRetractionTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate case id"):
                 mod.load_cases(p)
 
+    def test_independent_expected_metrics_are_exact(self):
+        expected = json.loads((DIR / "EXPECTED-METRICS.json").read_text(encoding="utf-8"))
+        self.assertEqual(expected["case_count"], len(self.cases))
+        report = mod.build_report()
+        actual = {item["policy"]: item["metrics"] for item in report["policies"]}
+        self.assertEqual(actual, expected["metric_expectations"])
+
     def test_repeatability(self):
         first = json.dumps(mod.build_report(), sort_keys=True)
         second = json.dumps(mod.build_report(), sort_keys=True)
