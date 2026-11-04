@@ -34,6 +34,8 @@ def load():
             raise ValueError("contradictory_trusted_label:" + row["id"])
         if row["nonaudio_verified"] and row["nonaudio"] != row["truth"]:
             raise ValueError("contradictory_nonaudio_attestation:" + row["id"])
+        if row["attested_status"] != (truth(row) if row["state_attested"] else None):
+            raise ValueError("attestation_not_ideal:" + row["id"])
     return doc
 
 def mapping(doc, version, asset):
@@ -43,7 +45,7 @@ def compatible(a, b):
     return a is not None and b is not None and a == b
 
 def decision(doc, row, policy):
-    """Policy input excludes independent truth referent/action/priority fields."""
+    """Policy reads separately declared ideal attestation, not scripted truth fields."""
     if policy == "alternate_family_unknown":
         return ("unresolved", "listener_transfer_unmeasured", None)
     if policy in ("silent_replacement", "frozen_legacy"):
@@ -53,7 +55,7 @@ def decision(doc, row, policy):
     if policy != "versioned_manifest":
         raise ValueError("unknown_policy")
     # A hypothetical, ideal independently attested state/clock is available only when declared.
-    if not row["state_attested"] or truth(row) != "valid":
+    if not row["state_attested"] or row["attested_status"] != "valid":
         return ("unresolved", "unattested_or_invalid_obligation", None)
     if row["nonaudio_verified"] and row["nonaudio"] is not None:
         return ("offer", "verified_nonaudio_fallback", list(row["nonaudio"].values()))

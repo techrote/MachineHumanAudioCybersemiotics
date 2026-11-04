@@ -51,6 +51,11 @@ class CodebookMigrationTests(unittest.TestCase):
         for key in ("wrong_referent", "wrong_priority", "wrong_action", "invalid_or_unknown_offers", "false_compatibility_offers"):
             self.assertEqual(s[key], 0)
         self.assertGreater(s["omitted_valid"], 0)
+    def test_policy_does_not_look_through_missing_state_attestation(self):
+        row = dict(self.rows["T01"], attested_status="unknown")
+        self.assertEqual(mod.truth(row), "valid")
+        self.assertEqual(mod.decision(self.doc, row, "versioned_manifest")[0], "unresolved")
+
     def test_alt_family_has_no_invented_human_performance(self):
         s = mod.summarize(self.doc)["policies"]["alternate_family_unknown"]
         self.assertEqual(s["offers"], 0)
