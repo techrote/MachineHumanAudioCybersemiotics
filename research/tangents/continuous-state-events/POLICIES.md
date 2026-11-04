@@ -1,6 +1,6 @@
 # MHAC-T005 — Candidate policies and independently encoded trace contracts
 
-The [fixture ledger](STATE-TRACES.json) contains **25 deliberately fictional cases**. Each case gives `sources` and `events` as separate maps; one target source and optional target event; evaluation time in milliseconds; playback status; optional clear cue; and separately stored acknowledgment and action-completion lists. Authors supplied `expected.truth`, `expected.event_due`, and `expected.clear_allowed` before the oracle comparison. These are constructed labels, not independently measured physical truths.
+The [fixture ledger](STATE-TRACES.json) contains **25 deliberately fictional cases**. Each case gives `sources` and `events` as separate maps; one target source and optional target event; evaluation time in milliseconds; playback status; optional clear cue; and separately stored acknowledgment and action-completion lists. The fixtures store `expected.truth`, `expected.event_due`, and `expected.clear_allowed` as separate reference fields. Their authorship was **not blinded or independently adjudicated**; the expected labels and script were committed together. They are constructed test expectations, not independently measured physical truths.
 
 ## Candidate presentation policies
 
