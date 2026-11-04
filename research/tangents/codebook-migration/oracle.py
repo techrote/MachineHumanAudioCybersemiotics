@@ -101,7 +101,11 @@ def check():
     digest = hashlib.sha256((DIR / "TRACES.json").read_bytes()).hexdigest()
     if m["schema"] != "mhac-t012-manifest-v1" or m["sha256"] != digest or m["case_count"] != len(doc["cases"]):
         raise ValueError("stale_or_corrupt_manifest")
-    return summarize(doc)
+    expected_report = json.loads((DIR / "REPORT.json").read_text(encoding="utf8"))
+    actual_report = summarize(doc)
+    if expected_report != actual_report:
+        raise ValueError("stale_report_snapshot")
+    return actual_report
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
