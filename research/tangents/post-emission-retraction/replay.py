@@ -167,12 +167,22 @@ def assess(cases: list[dict], policy: str) -> dict:
                 metrics["erased_unknown_action"] += 1
         elif required:
             metrics["missing_offers"] += 1
-        if required and (not out["offer"] or not out["closed"]):
+        # Truth is computed from *fixture evidence*, not the candidate's
+        # self-reported closed state. A defective policy cannot erase obligations
+        # by declaring its own correction delivered or its world restored.
+        actually_resolved = (
+            out["offer"] and c["correction_delivery"] == "confirmed"
+            and c["resolution_verified"]
+        )
+        if required and not actually_resolved:
             metrics["unresolved_required_obligations"] += 1
+            if out["closed"]:
+                metrics["false_clear_for_unresolved"] += 1
         observations.append({
             "id": c["id"], "required": required, "offer": out["offer"],
             "bound": out["bound"], "delivery": out["delivery"],
-            "action": out["action"], "closed": out["closed"],
+            "action": out["action"], "declared_closed": out["closed"],
+            "ground_truth_unresolved": bool(required and not actually_resolved),
         })
 
     names = (
@@ -180,7 +190,7 @@ def assess(cases: list[dict], policy: str) -> dict:
         "unbound_ambiguous", "unsupported_receipt_claims",
         "unsupported_action_claims", "unsupported_undo_claims",
         "premature_closure", "erased_unknown_action",
-        "unresolved_required_obligations", "tokens",
+        "unresolved_required_obligations", "false_clear_for_unresolved", "tokens",
         "urgent_interruption_tokens_proxy",
     )
     return {"policy": policy, "cases": len(cases),
@@ -212,7 +222,7 @@ def check_report(report: dict) -> None:
         for key in (
             "missing_offers", "unnecessary_offers", "unsupported_receipt_claims",
             "unsupported_action_claims", "unsupported_undo_claims",
-            "premature_closure", "erased_unknown_action",
+            "premature_closure", "erased_unknown_action", "false_clear_for_unresolved",
         ):
             if m[name][key] != 0:
                 raise AssertionError(name + " violates " + key)
