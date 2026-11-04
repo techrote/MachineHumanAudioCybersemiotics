@@ -14,7 +14,7 @@ Can a persistent auditory state display coexist with a separate time-critical ev
 - [replay.py](replay.py): deterministic Python 3.11+ symbolic oracle.
 - [PROTOCOL-SKETCH.md](PROTOCOL-SKETCH.md): prospective experimental comparison, covariates, failure definitions, decision rules and gates.
 - [DECISION-MEMO.md](DECISION-MEMO.md): conditional dispositions, implementation limits and lane ownership.
-- [tests/test_continuous_state_events_t005.py](../../../tests/test_continuous_state_events_t005.py) and [tests/test_continuous_state_events_hardening.py](../../../tests/test_continuous_state_events_hardening.py): isolated regression and negative controls.
+- [tests/test_continuous_state_events_t005.py](../../../tests/test_continuous_state_events_t005.py), [tests/test_continuous_state_events_hardening.py](../../../tests/test_continuous_state_events_hardening.py), and [tests/test_continuous_state_events_causality.py](../../../tests/test_continuous_state_events_causality.py): isolated regression and negative controls.
 
 From repository root (stdlib only):
 
@@ -36,6 +36,6 @@ Uses a persistent-state × separate-event *policy interaction*, rather than dupl
 
 States are fictional and snapshots are supplied by an assumed authoritative source. The evaluator makes **no sound waveform, audibility, masking, attention, detection, latency, memory or physical-response model**. Both visual status and event visual presentation are idealized available channels. All four policies share the same event issuance rule, so their symbolic event-audio counts cannot demonstrate superiority or noninferiority. `ducked` is a declared playback input state and is not evidence about true acoustic energy.
 
-The current fixture oracle additionally assumes source and event version integers belong to a jointly ordered synthetic revision domain in its `source.version >= event.version` guard. Real MHAC implementations may use independent version domains: **do not reuse that comparison without an explicit causal mapping and separate validation**. An independent-clock/sequence experiment is a potential failure of the current model, not a supported production policy. A conservative false-clear rejection here does not prove that every valid recovery is announced.
+The replay now **never compares source and event revision integers across domains**. A clear requires an explicitly authored fictional recovery binding for the precise source observation and every closed same-source event. A source revision of 0 and event revision of 1 can therefore permit recovery. The marker `synthetic_fixture_only` is NOT a signature, independently sourced verification, causality proof or deployable authority. A missing/incomplete binding fails closed; a forged-but-well-formed attestation remains outside the model. Real time ordering, trust, and concurrent state changes need R012 analysis.
 
 The first tranche of #36 is a **bounded prepass**, not complete human research; any synthetic invariants should be reviewed before integration. No files in the frozen protocol or live research registry are changed.

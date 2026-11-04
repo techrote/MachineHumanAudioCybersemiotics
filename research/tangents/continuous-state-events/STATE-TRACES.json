@@ -35,6 +35,18 @@
       "truth": "inactive",
       "clear_allowed": true,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -73,6 +85,18 @@
       "truth": "inactive",
       "clear_allowed": true,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -111,6 +135,18 @@
       "truth": "inactive",
       "clear_allowed": true,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -151,6 +187,18 @@
       "truth": "active",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -191,6 +239,18 @@
       "truth": "active",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -229,6 +289,18 @@
       "truth": "active",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -267,6 +339,18 @@
       "truth": "unknown",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -305,6 +389,18 @@
       "truth": "stale",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 10,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -343,6 +439,18 @@
       "truth": "unknown",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -381,6 +489,18 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -419,6 +539,18 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -457,6 +589,18 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -495,6 +639,18 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -533,6 +689,13 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": true
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": []
     }
   },
   {
@@ -577,6 +740,18 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -628,6 +803,18 @@
       "truth": "inactive",
       "clear_allowed": true,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -666,6 +853,13 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": []
     }
   },
   {
@@ -759,6 +953,13 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 90,
+      "closed_events": []
     }
   },
   {
@@ -861,6 +1062,18 @@
       "truth": "stale",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 2,
+      "source_observed_at_ms": 101,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -897,8 +1110,20 @@
     "id": "source-version-older-than-event",
     "expected": {
       "truth": "inactive",
-      "clear_allowed": false,
+      "clear_allowed": true,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 0,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   },
   {
@@ -943,6 +1168,18 @@
       "truth": "inactive",
       "clear_allowed": false,
       "event_due": false
+    },
+    "recovery_binding": {
+      "authority": "synthetic_fixture_only",
+      "source_id": "alpha",
+      "source_version": 3,
+      "source_observed_at_ms": 90,
+      "closed_events": [
+        {
+          "event_id": "E1",
+          "event_version": 1
+        }
+      ]
     }
   }
 ]

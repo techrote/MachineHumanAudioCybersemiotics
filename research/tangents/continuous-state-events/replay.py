@@ -16,6 +16,40 @@ def _integer(value):
     return type(value) is int and value >= 0
 
 
+def _matching_synthetic_recovery_binding(trace, target, source, event_id, event):
+    """Assumed trusted fictional attestation, never deployable source authority."""
+    binding = trace.get("recovery_binding")
+    if not isinstance(binding, dict) or binding.get("authority") != "synthetic_fixture_only":
+        return False
+    if (binding.get("source_id") != target
+            or not _integer(binding.get("source_version"))
+            or binding["source_version"] != source["version"]
+            or not _integer(binding.get("source_observed_at_ms"))
+            or binding["source_observed_at_ms"] != source["observed_at_ms"]):
+        return False
+    attested = binding.get("closed_events")
+    if not isinstance(attested, list):
+        return False
+    witnessed = []
+    for identity, record in trace["events"].items():
+        if record.get("source_id") != target:
+            continue
+        if record.get("state") != "closed" or not _integer(record.get("version")):
+            return False
+        witnessed.append((identity, record["version"]))
+    claimed = []
+    for entry in attested:
+        if (not isinstance(entry, dict)
+                or not isinstance(entry.get("event_id"), str)
+                or not _integer(entry.get("event_version"))):
+            return False
+        claimed.append((entry["event_id"], entry["event_version"]))
+    return (len(claimed) == len(witnessed)
+            and len(claimed) == len(set(claimed))
+            and set(claimed) == set(witnessed)
+            and (event_id, event["version"]) in claimed)
+
+
 def evaluate(trace: dict, policy: str) -> dict:
     if policy not in POLICIES:
         raise ValueError("unknown candidate policy")
@@ -60,11 +94,6 @@ def evaluate(trace: dict, policy: str) -> dict:
         for field in ("source_version", "event_version"):
             if not _integer(cue.get(field)):
                 raise ValueError("invalid clear cue version")
-        conflicting_event = any(
-            e["source_id"] == target and (
-                e["state"] == "open" or e["version"] > (event["version"] if event_valid else 0)
-            ) for e in events.values()
-        )
         clear_allowed = bool(
             truth == "inactive" and source is not None
             and event_valid and event is not None and event["state"] == "closed"
@@ -72,8 +101,7 @@ def evaluate(trace: dict, policy: str) -> dict:
             and cue.get("event_id") == event_id
             and cue["source_version"] == source["version"]
             and cue["event_version"] == event["version"]
-            and source["version"] >= event["version"]
-            and not conflicting_event
+            and _matching_synthetic_recovery_binding(trace, target, source, event_id, event)
         )
     sound_available = playback == "playing"
     persistent = policy != "discrete_visual" and truth in {"active", "inactive"}

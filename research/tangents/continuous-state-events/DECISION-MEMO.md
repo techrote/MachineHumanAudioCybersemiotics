@@ -4,7 +4,7 @@
 
 ## What this tranche does and does not show
 
-The fixture ledger enumerates 25 cases × 4 policies = **100 policy-case evaluations** when the replay suite passes. There are positive recovery cases, silencing/failure without recovery, source unknown/stale, mismatched replay, concurrent sources and a separate urgent event. The predicted logical restriction is **no approved clear without a fresh, known inactive source and matching closed event**, under assumed trusted snapshots and an assumed shared revision convention. Those are *oracle rules by construction*, not independently observed false-clear rates. Symbolic event offerings and ducking are not human hearing or task outcomes; no benefit ranking or safety claim is justified.
+The fixture ledger enumerates 25 cases × 4 policies = **100 policy-case evaluations** when the replay suite passes. There are positive recovery cases, silencing/failure without recovery, source unknown/stale, mismatched replay, concurrent sources and a separate urgent event. The predicted logical restriction is **no approved clear without a fresh, known inactive source and matching closed event**, under hypothetical trusted snapshots and a separately encoded fictional recovery binding (no cross-domain revision ordering). Those are *oracle rules by construction*, not independently observed false-clear rates. Symbolic event offerings and ducking are not human hearing or task outcomes; no benefit ranking or safety claim is justified.
 
 | Candidate | Possible gain | Specific failure / reason to reject or narrow |
 |---|---|---|
@@ -14,7 +14,7 @@ The fixture ledger enumerates 25 cases × 4 policies = **100 policy-case evaluat
 | Persistent + explicit transition/clear | Could reduce ambiguity of sound cessation | Extra events and interpretation burden; only valid if source recovery confirmed independently of playback |
 | Ducked hybrid | Prioritizes event offer over persistent status in the script | Abrupt suspension can itself look like recovery; no audibility, detection or latency result |
 
-**Unresolved technical flaw / upstream question:** comparing `source.version` to `event.version` requires a shared logical epoch, which R012 has not established. The script also assumes authoritative fresh status and an always-available visual channel. Treat any assertion that it already models a production causal chain as **inconclusive**; no schema adoption. A narrowly bounded next engineering step, only if R012 specifies independent epochs, is to add explicit causal binding and a negative control where raw integers mislead. The false-clear refusal remains a useful interim guard.
+**Symbolic revision-causality repair, still not a live proof:** The old `source.version >= event.version` and cross-event numeric supersession assumptions are removed. Fresh inactive snapshots require a fictional binding to a complete closed-event set. The positive source-revision-0/event-revision-1 case and missing/partial-binding negative controls expose the earlier flaw. The binding is *not* verified source authority, authentic time ordering or protection against a TOCTOU race. The idealized visual channel remains unvalidated. The scientific and oracle review gate remains open; no schema or production audio policy is adopted.
 
 ## Decision consequences
 
