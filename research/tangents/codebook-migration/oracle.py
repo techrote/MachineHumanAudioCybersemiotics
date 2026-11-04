@@ -89,7 +89,7 @@ def summarize(doc):
                 s["expired_or_revoked_offers"] += 1
             original = mapping(doc, row["generation_codebook_version"], row["cue_asset_id"])
             current = mapping(doc, row["receiver_codebook_version"], row["cue_asset_id"])
-            if original is not None and not compatible(original, current):
+            if reason == "receiver_or_legacy_legend" and original is not None and not compatible(original, current):
                 s["false_compatibility_offers"] += 1
         out[policy] = s
     return dict(schema="mhac-t012-results-v1", cases=len(doc["cases"]), policies=out,
