@@ -99,6 +99,11 @@ class PostEmissionRetractionTests(unittest.TestCase):
         self.assertGreater(by_policy["generic-closure"]["unsupported_action_claims"], 0)
         self.assertGreater(by_policy["generic-closure"]["unsupported_receipt_claims"], 0)
         self.assertGreater(by_policy["generic-closure"]["unnecessary_offers"], 0)
+        # Policy self-declarations must not rewrite the independent world oracle:
+        self.assertEqual(by_policy["generic-closure"]["unresolved_required_obligations"], 21)
+        self.assertEqual(by_policy["generic-closure"]["false_clear_for_unresolved"], 21)
+        self.assertEqual(by_policy["bound-minimal"]["unresolved_required_obligations"], 21)
+        self.assertEqual(by_policy["bound-minimal"]["false_clear_for_unresolved"], 0)
         self.assertEqual(by_policy["bound-minimal"]["premature_closure"], 0)
         self.assertEqual(by_policy["silent"]["offers"], 0)
 
