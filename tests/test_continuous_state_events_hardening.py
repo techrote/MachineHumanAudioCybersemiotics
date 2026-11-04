@@ -32,7 +32,7 @@ class TestT005Hardening(unittest.TestCase):
                 self.assertFalse(result["clear_audio"])
                 self.assertFalse(result["clear_visual"])
 
-    def test_fixture_expected_truth_labels_are_independent_inputs(self):
+    def test_fixture_expected_truth_labels_are_explicit_fields(self):
         self.assertEqual(len(self.by_id), 25)
         for case in self.by_id.values():
             with self.subTest(case=case["id"]):
