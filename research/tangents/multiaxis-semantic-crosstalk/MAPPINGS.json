@@ -1,0 +1,70 @@
+{
+  "fused": {
+    "mode": "fused_sum",
+    "label": "One scalar shared across certainty, hazard and urgency; no field attribution; comparator only."
+  },
+  "naive": {
+    "mode": "component",
+    "label": "Independently controlled example descriptors, not perceptually independent.",
+    "dimensions": {
+      "certainty": {
+        "parameter": "pitch_hz",
+        "levels": [
+          300,
+          500,
+          700
+        ]
+      },
+      "hazard": {
+        "parameter": "level_relative",
+        "levels": [
+          0,
+          1,
+          2
+        ]
+      },
+      "urgency": {
+        "parameter": "timbre_index",
+        "levels": [
+          0,
+          1,
+          2
+        ]
+      }
+    }
+  },
+  "engineered": {
+    "mode": "component",
+    "label": "Alternative declared parameterization only; labels do not establish psychoacoustic orthogonality.",
+    "dimensions": {
+      "certainty": {
+        "parameter": "spectral_brightness_index",
+        "levels": [
+          1,
+          2,
+          3
+        ]
+      },
+      "hazard": {
+        "parameter": "roughness_index",
+        "levels": [
+          1,
+          2,
+          3
+        ]
+      },
+      "urgency": {
+        "parameter": "pulse_rate_index",
+        "levels": [
+          1,
+          2,
+          3
+        ]
+      }
+    }
+  },
+  "serial": {
+    "mode": "serial_fields",
+    "label": "Serialized/accessible textual fields, NOT an observed speech-comprehension or delivery outcome."
+  }
+}
