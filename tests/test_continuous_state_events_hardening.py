@@ -73,6 +73,7 @@ class TestT005Hardening(unittest.TestCase):
         case = self.fresh()
         case["sources"]["alpha"]["observed_at_ms"] = 50
         case["sources"]["alpha"]["ttl_ms"] = 50
+        case["recovery_binding"]["source_observed_at_ms"] = 50
         for policy in oracle.POLICIES:
             with self.subTest(policy=policy):
                 result = oracle.evaluate(case, policy)
