@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "predeclared cross-check, fictional only",
+  "method": "Independent JavaScript arithmetic over static authored fixtures; not Python execution or an empirical observation.",
+  "case_count": 36,
+  "metric_expectations": {
+    "silent": {
+      "required": 22,
+      "offers": 0,
+      "missing_offers": 22,
+      "unnecessary_offers": 0,
+      "unbound_ambiguous": 0,
+      "unsupported_receipt_claims": 0,
+      "unsupported_action_claims": 0,
+      "unsupported_undo_claims": 0,
+      "premature_closure": 0,
+      "erased_unknown_action": 0,
+      "unresolved_required_obligations": 22,
+      "false_clear_for_unresolved": 0,
+      "tokens": 0,
+      "urgent_interruption_tokens_proxy": 0
+    },
+    "generic-closure": {
+      "required": 22,
+      "offers": 32,
+      "missing_offers": 0,
+      "unnecessary_offers": 10,
+      "unbound_ambiguous": 21,
+      "unsupported_receipt_claims": 14,
+      "unsupported_action_claims": 31,
+      "unsupported_undo_claims": 31,
+      "premature_closure": 31,
+      "erased_unknown_action": 15,
+      "unresolved_required_obligations": 21,
+      "false_clear_for_unresolved": 21,
+      "tokens": 320,
+      "urgent_interruption_tokens_proxy": 50
+    },
+    "bound-minimal": {
+      "required": 22,
+      "offers": 22,
+      "missing_offers": 0,
+      "unnecessary_offers": 0,
+      "unbound_ambiguous": 0,
+      "unsupported_receipt_claims": 0,
+      "unsupported_action_claims": 0,
+      "unsupported_undo_claims": 0,
+      "premature_closure": 0,
+      "erased_unknown_action": 0,
+      "unresolved_required_obligations": 21,
+      "false_clear_for_unresolved": 0,
+      "tokens": 220,
+      "urgent_interruption_tokens_proxy": 40
+    },
+    "bound-uncertainty": {
+      "required": 22,
+      "offers": 22,
+      "missing_offers": 0,
+      "unnecessary_offers": 0,
+      "unbound_ambiguous": 0,
+      "unsupported_receipt_claims": 0,
+      "unsupported_action_claims": 0,
+      "unsupported_undo_claims": 0,
+      "premature_closure": 0,
+      "erased_unknown_action": 0,
+      "unresolved_required_obligations": 21,
+      "false_clear_for_unresolved": 0,
+      "tokens": 660,
+      "urgent_interruption_tokens_proxy": 120
+    }
+  }
+}
