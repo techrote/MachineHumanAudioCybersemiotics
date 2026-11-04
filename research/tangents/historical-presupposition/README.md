@@ -42,7 +42,7 @@ All policies independently **suppress false/unknown present factual assertions**
 
 ```sh
 python research/tangents/historical-presupposition/replay.py --check
-python -m unittest tests/test_historical_presupposition.py -v
+python -m unittest discover -s tests -p 'test_historical_presupposition.py' -v
 python -m unittest discover -s tests -v
 python tools/validate.py
 python -m tools.build_record_fixtures --check
