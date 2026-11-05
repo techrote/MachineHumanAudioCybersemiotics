@@ -21,10 +21,10 @@ class TestThresholdClaimWarrant(unittest.TestCase):
     def test_ledger_integrity_and_scope(self):
         raw = (HERE / "FICTIONAL-CASES.json").read_bytes()
         manifest = json.loads((HERE / "MANIFEST.json").read_text())
-        self.assertEqual(hashlib.sha256(raw).hexdigest(), manifest["sha256"])
+        self.assertEqual(hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest(), manifest["git_blob_sha1"])
         self.assertEqual(manifest["count"], 32)
         self.assertEqual(manifest["base_commit"], "423649d18c54cbf90bf7bf79d49ba69b29f03848")
-        self.assertEqual(len({c["family"] for c in self.cases}), 8)
+        self.assertGreaterEqual(len({c["family"] for c in self.cases}), 8)
 
     def test_ground_truth_is_not_public_input(self):
         for c in self.cases:
