@@ -118,6 +118,13 @@ class CausalWarrantTests(unittest.TestCase):
                          p["warranted"]["unsupported_action_offer"])
         self.assertLess(p["state_only"]["word_tokens"], p["warranted"]["word_tokens"])
 
+    def test_independent_expected_metrics_ledger(self):
+        ledger = json.loads((HERE / "EXPECTED-METRICS.json").read_text(encoding="utf-8"))
+        self.assertEqual(ledger["case_count"], len(self.cases))
+        self.assertEqual(ledger["fixture_git_blob_sha1"],
+                         json.loads((HERE / "MANIFEST.json").read_text())["cases_git_blob_sha1"])
+        self.assertEqual(model.compare(self.cases)["policies"], ledger["expected_policy_totals"])
+
     def test_unknown_policy_rejected(self):
         with self.assertRaises(ValueError):
             model.render(model.public_input(self.cases[0]), "magical_causal_solver")

@@ -14,3 +14,20 @@ Inputs to each policy are **only** `observation`, `hypothesis`, `test`, `interve
 Tests require negative controls, same-observation changing just test status, correct cause/wrong action, genuinely warranted diagnosis/action, independent label verification, integrity of committed case bytes and oracle non-leakage. Performance cannot be inferred from error counts generated under their own policy definitions.
 
 Run `python research/tangents/causal-claim-warrant/oracle.py`. The output is deterministic and must not be described as empirical effect sizes.
+
+## Independently checked exact symbolic accounting
+
+A second, separately written JavaScript counter enumerated the **predeclared** cases and compared policy outputs; its frozen totals are in [EXPECTED-METRICS.json](EXPECTED-METRICS.json), and a Python regression test checks complete equality. This is a cross-implementation bookkeeping check, not independent scientific evaluation.
+
+| Symbolic metric (32 fictional cases) | A naive | B state-only | C alternatives | D warranted |
+|---|---:|---:|---:|---:|
+| Cause assertions lacking warrant | 22 | 0 | 0 | 0 |
+| Factually wrong named causes | 11 | 0 | 0 | 0 |
+| Invalid-observation claims | 4 | 0 | 0 | 0 |
+| Unwarranted action offers | 28 | 0 | 0 | 0 |
+| Warranted diagnoses withheld | 0 | 16 | 16 | 0 |
+| Warranted actions withheld | 0 | 4 | 4 | 0 |
+| Constructed word tokens | 305 | 96 | 320 | 190 |
+| Arbitrary urgent-word-budget exceedances | 0 | 0 | 16 | 2 |
+
+**Null and adverse findings:** B ties D on unsupported certainty, invalid observations and unsupported action offers with about half the counted words. D shows no claimed listener benefit and has 2 artificial deadline-budget exceedances; C exceeds a deliberately short 10-token budget on 16 urgent fictional cases. These budget counts **do not** establish timing or comprehension effects.
