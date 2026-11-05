@@ -41,7 +41,18 @@ def check_cases(document: dict) -> list[dict]:
     if sum(c.get("case_kind") == "negative" for c in cases) < 12:
         raise ValueError("at least 12 explicit controls are required")
     ids = set()
+    case_keys = {"id", "scenario", "case_kind", "dependency_relation",
+                 "delivery_proximity", "alerts", "gold"}
+    alert_keys = {"message_id", "source_device", "observation_id",
+                  "upstream_lineage_id", "event_id", "event_truth",
+                  "action_id", "action_obligation", "authorized_actor",
+                  "emitted_at_s", "expires_at_s", "deadline_s",
+                  "delivery_group", "cue_identity"}
+    gold_keys = {"independent_support", "required_obligations",
+                 "independent_eligible_message_ids"}
     for c in cases:
+        if not isinstance(c, dict) or set(c) != case_keys:
+            raise ValueError("hidden or missing case provenance fields")
         name = c.get("id")
         if not isinstance(name, str) or not name.startswith("T015-") or name in ids:
             raise ValueError("duplicate or malformed case id")
@@ -56,6 +67,8 @@ def check_cases(document: dict) -> list[dict]:
         if not isinstance(alerts, list) or len(alerts) != 2:
             raise ValueError("exactly two messages required")
         for a in alerts:
+            if not isinstance(a, dict) or set(a) != alert_keys:
+                raise ValueError("hidden or missing alert provenance fields")
             for key in ("message_id", "source_device", "observation_id", "event_id",
                         "action_id", "delivery_group", "cue_identity"):
                 if not isinstance(a.get(key), str) or not a[key]:
@@ -95,6 +108,8 @@ def check_cases(document: dict) -> list[dict]:
                 raise ValueError("one world event cannot have two truth labels")
             truth_by_event[ev] = a["event_truth"]
         gold = c.get("gold")
+        if not isinstance(gold, dict) or set(gold) != gold_keys:
+            raise ValueError("hidden or missing gold label fields")
         expected_support = ("verified_independent" if relation == "verified_independent"
                             else "unknown" if relation == "unknown" else "shared")
         if not isinstance(gold, dict) or gold.get("independent_support") != expected_support:
