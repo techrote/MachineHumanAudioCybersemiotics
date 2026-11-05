@@ -1,30 +1,51 @@
 {
-  "kind": "hand-checked logical constraints not simulated observation",
+  "kind": "predeclared authored per-case expectations with independent JS-language arithmetic cross-check; not independent human audit",
   "count": 32,
   "constraints": {
     "value_only": {
       "unsupported_class": 0,
       "false_accept_world": 0,
       "false_reject_world": 0,
-      "unsupported_no_action": 0,
-      "misreported_numeric_value": 0
-    },
-    "naive": {
-      "unsupported_no_action": 18,
-      "misreported_numeric_value": 2
-    },
-    "local_rule": {
-      "unsupported_no_action": 0,
-      "misreported_numeric_value": 0
-    },
-    "upstream_warrant": {
-      "unsupported_class": 0,
+      "withheld_warranted_binary_class": 10,
+      "withheld_warranted_indeterminate": 6,
       "unsupported_no_action": 0,
       "misreported_numeric_value": 0,
+      "class_while_rule_unavailable": 0,
+      "word_tokens": 96
+    },
+    "naive": {
+      "unsupported_class": 22,
+      "false_accept_world": 4,
+      "false_reject_world": 4,
+      "withheld_warranted_binary_class": 0,
+      "withheld_warranted_indeterminate": 6,
+      "unsupported_no_action": 18,
+      "misreported_numeric_value": 2,
+      "class_while_rule_unavailable": 11,
+      "word_tokens": 214
+    },
+    "local_rule": {
+      "unsupported_class": 5,
       "false_accept_world": 1,
       "false_reject_world": 1,
       "withheld_warranted_binary_class": 0,
-      "withheld_warranted_indeterminate": 0
+      "withheld_warranted_indeterminate": 0,
+      "unsupported_no_action": 0,
+      "misreported_numeric_value": 0,
+      "class_while_rule_unavailable": 0,
+      "word_tokens": 181
+    },
+    "upstream_warrant": {
+      "unsupported_class": 0,
+      "false_accept_world": 1,
+      "false_reject_world": 1,
+      "withheld_warranted_binary_class": 0,
+      "withheld_warranted_indeterminate": 0,
+      "unsupported_no_action": 0,
+      "misreported_numeric_value": 0,
+      "class_while_rule_unavailable": 0,
+      "word_tokens": 192
     }
-  }
+  },
+  "limits": "Counts are aggregates of constructed fixtures, not probability estimates or measured listener performance."
 }
