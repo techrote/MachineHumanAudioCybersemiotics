@@ -12,12 +12,12 @@ Ownership/dedup checked on 2026-11-05 UTC:
 
 | Existing work | Actual boundary | Missing here |
 |---|---|---|
-| [#30 / PR #32](../../../../../../issues/30) | Masking, recognition and timely-action failure taxonomy | Common upstream observation versus distinct observation |
-| [#31 / PR #40](../../../../../../issues/31) | Alert validity and decision criteria | Cross-alert common-cause dependence |
-| [#34 / PR #37](../../../../../../issues/34) | Within-message source/event grammar | Cross-message observation lineage |
-| [#36 / PR #53](../../../../../../issues/36) | Continuous state, events and recovery | False corroboration and duplicate suppression |
-| [#41 / PR #42](../../../../../../issues/41), [#45 / PR #46](../../../../../../issues/45) | Received waveform and multiaxis cue discrimination | Perceptual distinguishability does not imply evidence independence |
-| [#43 / PR #44](../../../../../../issues/43) | Actor/addressee authority | Two independent alert obligations under one audible source |
+| [#30 / PR #32](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/30) | Masking, recognition and timely-action failure taxonomy | Common upstream observation versus distinct observation |
+| [#31 / PR #40](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/31) | Alert validity and decision criteria | Cross-alert common-cause dependence |
+| [#34 / PR #37](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/34) | Within-message source/event grammar | Cross-message observation lineage |
+| [#36 / PR #53](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/36) | Continuous state, events and recovery | False corroboration and duplicate suppression |
+| [#41 / PR #42](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/41), [#45 / PR #46](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/45) | Received waveform and multiaxis cue discrimination | Perceptual distinguishability does not imply evidence independence |
+| [#43 / PR #44](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/43) | Actor/addressee authority | Two independent alert obligations under one audible source |
 
 All seven associated PR scopes were inspected by the connected GitHub interface. None implements the paired **same-upstream-versus-verified-independent** oracle and **false-corroboration-versus-omitted-obligation** comparison. [PR #57](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/57) is a separate, existing instruction-retraction falsifier and is not modified. Thus **limited GO** for fictional research only. If subsequent source review shows these conditions already covered, this package should be rejected as duplicate without promoting another design contract.
 
