@@ -127,6 +127,26 @@ class T015EvidenceIndependence(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "gold obligations contradict"):
             mod.check_cases(d)
 
+    def test_unknown_obligation_remains_nonrequired(self):
+        d = json.loads(mod.FIXTURE.read_text(encoding="utf-8"))
+        d["cases"][1]["alerts"][1]["action_obligation"] = "unknown"
+        # First report remains independently eligible, with the same
+        # authored E1/A1 obligation; unknown does not become "required".
+        mod.check_cases(d)
+        c = d["cases"][1]
+        self.assertFalse(mod.eligible(c["alerts"][1]))
+        self.assertEqual(len(mod.deliver(c, "separate")), 1)
+
+    def test_extra_hidden_lineage_and_gold_fields_are_rejected(self):
+        d = json.loads(mod.FIXTURE.read_text(encoding="utf-8"))
+        d["cases"][0]["alerts"][0]["secret_evidence_lineage"] = "LINE-Z"
+        with self.assertRaisesRegex(ValueError, "hidden or missing alert provenance"):
+            mod.check_cases(d)
+        d = json.loads(mod.FIXTURE.read_text(encoding="utf-8"))
+        d["cases"][0]["gold"]["inferred_from_policy"] = True
+        with self.assertRaisesRegex(ValueError, "hidden or missing gold label"):
+            mod.check_cases(d)
+
     def test_boolean_and_unknown_input_validation(self):
         d = json.loads(mod.FIXTURE.read_text(encoding="utf-8"))
         d["cases"][0]["alerts"][0]["deadline_s"] = True
