@@ -1,0 +1,15 @@
+# Falsifiable causal-warrant ladder (fictional domain)
+
+| Layer | Available input | Claim candidate | Defeating case / independently required warrant |
+|---|---|---|---|
+| O — measurement | One printer reports low extrusion | “Extrusion anomaly observed” | Measurement outside valid operating envelope: report *unverified reading*, never an accepted observation. NIST's traceability caveat is an analogy, not a rule borrowed wholesale. |
+| H — hypothesis | Valid O; detector favors a feed-path fault | “Feed-path obstruction **may** explain the anomaly” | No discriminating test and a nozzle fault explains the same symptom. Candidate ≠ named established cause, even where the favored candidate happens to be true. |
+| D — fictional diagnosis | Valid O; **current independently discriminating** closed-world test identifies feed or nozzle cause | “Diagnostic test supports feed-path cause” | Test stale, ambiguous or in conflict, or observation invalid. Real-world causal identification needs model, validation and background assumptions beyond a named test field. |
+| E — intervention | D plus separate declared effect evidence | “Inspection/remedy is expected to resolve condition” | Correct diagnosis but remedy effect unknown/refuted. Causes and interventions are separate (JMLR causal hierarchy); *no claimed performed or successful fix*. |
+| A — permission, feasibility and time | E plus current actor, mode and deadline validity | “Authorized actor may undertake remedy” | Wrong actor, invalid mode or elapsed practical deadline. Existing #43/#49/#47 own authoritative downstream action preconditions; here only isolated negative controls. |
+
+**Minimal countermodel:** observed extrusion anomaly is true, actual cause is nozzle, favored diagnosis is feed. A guessed feed cause is wrong; a lucky feed guess in another case is still unsupported without discriminating evidence. A true diagnosed cause does not make an unvalidated reset an effective remedy. An effective remedy does not entitle an unauthorized actor to execute it. No state of a speaker's or listener's understanding is inferred from these symbolic labels.
+
+**Alternative explanation / remove-Brier test:** ordinary measurement validity, underdetermination, causal identification, decision theory and speech-act authority suffice to describe every logical distinction in these cases. Thus this package supplies **no incremental evidence for cybersemiotics**. Only later corpus-backed analysis could argue otherwise. Avoid baking a new “causal belief engine” into R012 just because the simple typed distinction is useful.
+
+**Threats:** the test-kind label is a fictional oracle of diagnostic validity, not a real executable inference procedure. Detector preference may itself be biased. Real sensors share faults and confounders; remedy benefit requires empirical validation. Word-token length is not speech duration, cultural comprehension, ergonomic load or urgency. A policy's abstention can be beneficial or costly depending on the unmeasured task.
