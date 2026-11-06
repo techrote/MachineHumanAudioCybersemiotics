@@ -1262,6 +1262,64 @@ comparison, implementation, software self-review and fourteen regression tests.
 These are not independent human adjudication or scientific validation. No
 protocol amendment or human gate satisfaction is asserted.
 
+## Bibliography batch G — 6 November 2026
+
+The [six-occurrence ledger](R006-REFERENCE-G-20261106.json) resolves all
+bibliography cases deferred by [DOI batch G](R006-DOI-G-20261106.json).
+Six occurrences now point to existing representatives of five publications:
+Bennett, Davidson, Hutchinson, Fagerlönn and Jeon. Across the two tranches,
+57 occurrences link to nineteen publication identities. The separate three-
+occurrence Ferreira correction-related hold remains unresolved; the original
+sixty-occurrence plan is not declared fully resolved.
+
+The [fresh retrieval and citation receipt](R006-REFERENCE-G-WITNESSES-20261106.json)
+records two HTTP 200 PDFs with hashes identical to the retained originals.
+Five selected citations were visually checked:
+
+| Containing PDF / section | File pages | Printed pages | Cited publication |
+| --- | --- | --- | --- |
+| Nees accepted manuscript, general references | 33, 35 | 33, 35 | Bennett; Davidson |
+| Nees accepted manuscript, included list | 46 | 46 | Hutchinson |
+| FRA review | 36, 37 | 28, 29 | Fagerlönn; Jeon |
+
+Original discovery text, export hashes, ordinals, citation locators and outcome
+letters remain intact. The two general references retain original references 6
+and 21 and their exact page assertions. Fagerlönn's full subtitle remains in its
+original citation without expanding the target source's main title. Jeon's
+original single-page `91` assertion is retained rather than rewritten from the
+registration's page range. Hutchinson's older `RL-NL` abbreviated title receives
+publication-identity corroboration from the accepted manuscript, not faithful
+original-preprint transcription or review-version equivalence.
+
+Inspection covered only those five citations; no cited target article or whole
+containing review/report was read. All five existing target sources remain
+`metadata_only`, with unchanged access/rights and no study/sample links. No new
+source, eligibility decision, empirical extraction, correction adjudication or
+completed corpus is created. PDFs and renders are not committed. The fixed
+[batch G profile](scripts/build_r006_reference_batch_g.py) reuses the existing
+reference engine and reproduces its complete deferred scope and canonical output
+prefixes; no shared engine or frozen protocol changed in this tranche.
+
+```bash
+python research/registry/identity/scripts/build_r006_reference_batch_g.py --check
+python -m unittest tests.test_screening_reference_batch_g -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane queue falls from 22,085 to 22,079 unresolved occurrences:
+zero exact candidates, zero conflicts and 22,079 unmatched. The three held
+Ferreira occurrences stay in that unmatched residual pending explicit correction
+review. Broader issue #6 identity reconciliation, actual screening, study/sample
+overlap, selected corpus and bias assessment remain open, alongside the R005
+coverage gaps and downstream #7–#9 corpus gates.
+
+AI assistance: one Codex/GPT-6 agent performed fresh retrieval, five citation
+inspections, retained-export comparison, software self-review and twelve
+regression tests. These checks are not independent human adjudication or
+scientific validation. No human gate satisfaction or protocol amendment is
+asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:
