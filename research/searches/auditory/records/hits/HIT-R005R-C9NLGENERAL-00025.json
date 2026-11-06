@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-remaining-dois-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Python comparison of retained OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T03:05:07Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00025",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R005R-EDWORTHY-2013",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-REMAINING-DOIS-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03058",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-03058",
+          "rev": 2
+        },
+        "ordinal": 25,
+        "raw_metadata": "Edworthy, J. (2013). Medical audible alarms: A review. Journal of the American Medical Informatics Association, 20(3), 584–589. https://doi.org/10.1136/amiajnl-2012-001061 | source PDF pp.35–35, reference 25",
+        "resolution_reason": "R006: explicit DOI and full title (case/whitespace normalized only) agree with retained export and accepted verified source. Identity only; no eligibility, new reading or independent-study assertion. See research/registry/identity/R006-REMAINING-DOIS-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1136/amiajnl-2012-001061"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R005R-EDWORTHY-2013",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

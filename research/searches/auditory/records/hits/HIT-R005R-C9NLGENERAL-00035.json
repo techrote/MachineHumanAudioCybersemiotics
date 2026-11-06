@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-remaining-dois-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Python comparison of retained OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T03:05:07Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00035",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-GAVER-1986",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-REMAINING-DOIS-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-GAVER-1986-01",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R004-LK-GAVER-1986-01",
+          "rev": 1
+        },
+        "ordinal": 35,
+        "raw_metadata": "Gaver, W. W. (1986). Auditory Icons: Using Sound in Computer Interfaces. Human–Computer Interaction, 2(2), 167–177. https://doi.org/10.1207/s15327051hci0202_3 | source PDF pp.36–36, reference 35",
+        "resolution_reason": "R006: explicit DOI and full title (case/whitespace normalized only) agree with retained export and accepted verified source. Identity only; no eligibility, new reading or independent-study assertion. See research/registry/identity/R006-REMAINING-DOIS-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1207/s15327051hci0202_3"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-GAVER-1986",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

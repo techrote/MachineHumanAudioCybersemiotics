@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-remaining-dois-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Python comparison of retained OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T03:05:07Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ8-00001",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-REMAINING-DOIS-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R002-PA6-02",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R002-PA6-02",
+          "rev": 1
+        },
+        "ordinal": 1,
+        "raw_metadata": "Auditory Icons, Earcons, Spearcons, and Speech: A Systematic Review and Meta-Analysis of Brief Audio Alerts in Human-Machine Interfaces | first author: Michael A. Nees | 2023-06-11 | review | https://openalex.org/W4380342473",
+        "resolution_reason": "R006: explicit DOI and full title (case/whitespace normalized only) agree with retained export and accepted verified source. Identity only; no eligibility, new reading or independent-study assertion. See research/registry/identity/R006-REMAINING-DOIS-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4380342473"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1080/25742442.2023.2219201"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ8",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,
