@@ -1,0 +1,94 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "8c839b40c09310f575551eb8ed0ed08329b1a89722cc5b6b826d56897920c192",
+  "record": {
+    "DOI": "10.14569/ijacsa.2014.050112",
+    "URL": "https://doi.org/10.14569/ijacsa.2014.050112",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Alseid",
+        "given": "Marwan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Azzeh",
+        "given": "Mohammad",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "El",
+        "given": "Yousef",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "International Journal of Advanced Computer Science and Applications"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "publisher": "The Science and Information Organization",
+    "relation": {},
+    "title": [
+      "A Comparative Usability Study on the Use of Auditory Icons to Support Virtual Lecturers in E-Learning Interfaces"
+    ],
+    "type": "journal-article",
+    "volume": "5"
+  },
+  "requested_doi": "10.14569/ijacsa.2014.050112",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:56Z",
+  "url": "https://api.crossref.org/works/10.14569%2Fijacsa.2014.050112"
+}

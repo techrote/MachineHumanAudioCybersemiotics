@@ -1,0 +1,93 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "78d7eb454b8a58c9879dcfbcf02ce1dd5eccce26e1fecea1f91a6011547965c3",
+  "record": {
+    "DOI": "10.1145/169059.169179",
+    "URL": "https://doi.org/10.1145/169059.169179",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Brewster",
+        "given": "Stephen A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Wright",
+        "given": "Peter C.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Edwards",
+        "given": "Alistair D. N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the SIGCHI conference on Human factors in computing systems  - CHI '93"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "page": "222-227",
+    "published-print": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "publisher": "ACM Press",
+    "relation": {},
+    "title": [
+      "An evaluation of earcons for use in auditory human-computer interfaces"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.1145/169059.169179",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:48Z",
+  "url": "https://api.crossref.org/works/10.1145%2F169059.169179"
+}

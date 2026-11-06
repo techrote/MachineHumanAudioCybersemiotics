@@ -1,0 +1,81 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "062cfbbcc9903b4184ac943fa2d3f0f46cd91411496413359dadd74590ef8a60",
+  "record": {
+    "DOI": "10.1007/978-3-642-82392-3_18",
+    "URL": "https://doi.org/10.1007/978-3-642-82392-3_18",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "McIntyre",
+        "given": "J. W. R.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Stanford",
+        "given": "L. M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Anaesthesia — Innovations in Management"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1985
+        ]
+      ]
+    },
+    "page": "87-92",
+    "published-print": {
+      "date-parts": [
+        [
+          1985
+        ]
+      ]
+    },
+    "publisher": "Springer Berlin Heidelberg",
+    "relation": {},
+    "title": [
+      "Ergonomics and Anaesthesia: Auditory Alarm Signals in the Operating Room"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-3-642-82392-3_18",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:06:53Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-642-82392-3_18"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "SRC-R006-D-STEPHAN-RETENTION",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T12:10:02Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01684",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00312",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00022",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00003",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00312",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-D-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T12:08:04Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Karen L. Stephan",
+            "role": "author"
+          },
+          {
+            "name": "Sean E. Smith",
+            "role": "author"
+          },
+          {
+            "name": "Russell L. Martin",
+            "role": "author"
+          },
+          {
+            "name": "Simon P. A. Parker",
+            "role": "author"
+          },
+          {
+            "name": "Ken I. McAnally",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Human Factors: The Journal of the Human Factors and Ergonomics Society; 48; 2; 288-299"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-d-stephan-retention.json record.DOI/title/author; HTTP 200 on 2026-11-06T12:08:04Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1518/001872006777724426"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-d-stephan-retention.json record.DOI, title, author and dates; retained derivative SHA256 18f15c308e24f9b7f43b74d37ba39af086d733731fb406b2943932271b2446c2",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-D-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2006-06"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Learning and Retention of Associations Between Auditory Icons and Denotative Referents: Implications for the Design of Auditory Warnings",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

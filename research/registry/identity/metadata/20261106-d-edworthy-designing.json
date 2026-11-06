@@ -1,0 +1,73 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "978d562f708f6ccb9e463f7d0c1dcbe30f6baaae244acda7eb39eaa49aa15006",
+  "record": {
+    "DOI": "10.2345/0899-8205-45.4.290",
+    "URL": "https://doi.org/10.2345/0899-8205-45.4.290",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Biomedical Instrumentation &amp; Technology"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "page": "290-294",
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "publisher": "Association for the Advancement of Medical Instrumentation (AAMI)",
+    "relation": {},
+    "title": [
+      "Designing Effective Alarm Sounds"
+    ],
+    "type": "journal-article",
+    "volume": "45"
+  },
+  "requested_doi": "10.2345/0899-8205-45.4.290",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:08:27Z",
+  "url": "https://api.crossref.org/works/10.2345%2F0899-8205-45.4.290"
+}

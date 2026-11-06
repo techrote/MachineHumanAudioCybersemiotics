@@ -1,0 +1,95 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "6cad7d347680a4ed8631e5ae6a3f3531652d2a4450bf5fe555219a8f1ab75acb",
+  "record": {
+    "DOI": "10.1109/csit.2013.6588783",
+    "URL": "https://doi.org/10.1109/csit.2013.6588783",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Alseid",
+        "given": "Marwan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Azzeh",
+        "given": "Mohammad",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "El Sheikh",
+        "given": "Yousef",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "2013 5th International Conference on Computer Science and Information Technology"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          3
+        ]
+      ]
+    },
+    "page": "219-222",
+    "published-print": {
+      "date-parts": [
+        [
+          2013,
+          3
+        ]
+      ]
+    },
+    "publisher": "IEEE",
+    "relation": {},
+    "title": [
+      "Employing auditory icons to support virtual lecturers in e-learning interfaces"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.1109/csit.2013.6588783",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:32Z",
+  "url": "https://api.crossref.org/works/10.1109%2Fcsit.2013.6588783"
+}

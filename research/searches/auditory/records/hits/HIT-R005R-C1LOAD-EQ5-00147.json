@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T12:10:02Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00147",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-D-EDWORTHY-LEARNING",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-D-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00787",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-00787",
+          "rev": 2
+        },
+        "ordinal": 147,
+        "raw_metadata": "Learning auditory warnings: The effects of sound type, verbal labelling and imagery on the identification of alarm sounds | first author: Judy Reed Edworthy | 1999-10-01 | article | https://openalex.org/W2171688791",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-D-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2171688791"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1016/s0169-8141(98)00066-3"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-D-EDWORTHY-LEARNING",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

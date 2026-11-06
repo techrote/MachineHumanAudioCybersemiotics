@@ -1,0 +1,108 @@
+{
+  "id": "SRC-R006-D-NAKATANI-GUIDELINES",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T12:10:02Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02122",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00398",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00470",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00155",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00398",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-D-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T12:06:45Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Mie Nakatani",
+            "role": "author"
+          },
+          {
+            "name": "Daisuke Suzuki",
+            "role": "author"
+          },
+          {
+            "name": "Nobuchika Sakata",
+            "role": "author"
+          },
+          {
+            "name": "Shogo Nishida",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Lecture Notes in Computer Science; Human Interface and the Management of Information. Information and Interaction; 826-834"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-d-nakatani-guidelines.json record.DOI/title/author; HTTP 200 on 2026-11-06T12:06:45Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/978-3-642-02559-4_89"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-d-nakatani-guidelines.json record.DOI, title, author and dates; retained derivative SHA256 bd7e6f80c5a06713c5e58b5ab4e63c57cf3b5173f5527662fab43f15273112e0",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-D-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2009"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "A Study of Auditory Warning Signals for the Design Guidelines of Man-Machine Interfaces",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

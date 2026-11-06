@@ -1,0 +1,83 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "f2ce61cb1dbc7380c591062b9e0876ea0a9bd40c93ee160933a1a85af6261df8",
+  "record": {
+    "DOI": "10.1037/1076-898x.10.1.3",
+    "URL": "https://doi.org/10.1037/1076-898x.10.1.3",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Keller",
+        "given": "Peter",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Stevens",
+        "given": "Catherine",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Journal of Experimental Psychology: Applied"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2004
+        ]
+      ]
+    },
+    "page": "3-12",
+    "published-online": {
+      "date-parts": [
+        [
+          2004
+        ]
+      ]
+    },
+    "publisher": "American Psychological Association (APA)",
+    "relation": {},
+    "title": [
+      "Meaning From Environmental Sounds: Types of Signal-Referent Relations and Their Effect on Recognizing Auditory Icons."
+    ],
+    "type": "journal-article",
+    "volume": "10"
+  },
+  "requested_doi": "10.1037/1076-898x.10.1.3",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:08Z",
+  "url": "https://api.crossref.org/works/10.1037%2F1076-898x.10.1.3"
+}

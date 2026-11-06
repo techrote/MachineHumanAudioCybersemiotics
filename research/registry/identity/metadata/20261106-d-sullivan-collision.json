@@ -1,0 +1,92 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "e23dd3a8c342d1c24b7c2df8bde78c27107e668a070d0df65e90710ac0a6cbc3",
+  "record": {
+    "DOI": "10.17077/drivingassessment.1333",
+    "URL": "https://doi.org/10.17077/drivingassessment.1333",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Michigan, \nAnn Arbor, MI"
+          }
+        ],
+        "family": "Sullivan",
+        "given": "John M",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Michigan, \nAnn Arbor, MI"
+          }
+        ],
+        "family": "Buonarosa",
+        "given": "Mary Lynn",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Driving Assessment Conference 2009"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          6,
+          24
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2009,
+          6,
+          24
+        ]
+      ]
+    },
+    "publisher": "University of Iowa Libraries Publishing",
+    "relation": {},
+    "title": [
+      "Acquisition, Response, and Error Rates With Three Suites of Collision Warning Sounds"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.17077/drivingassessment.1333",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:08:19Z",
+  "url": "https://api.crossref.org/works/10.17077%2Fdrivingassessment.1333"
+}

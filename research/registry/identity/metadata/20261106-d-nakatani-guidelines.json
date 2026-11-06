@@ -1,0 +1,106 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "0ce83ee164ad65b9817b3f2f6441129088354fecaa6d6f40f284fff34cf63bba",
+  "record": {
+    "DOI": "10.1007/978-3-642-02559-4_89",
+    "URL": "https://doi.org/10.1007/978-3-642-02559-4_89",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Nakatani",
+        "given": "Mie",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Suzuki",
+        "given": "Daisuke",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Sakata",
+        "given": "Nobuchika",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Nishida",
+        "given": "Shogo",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Lecture Notes in Computer Science",
+      "Human Interface and the Management of Information. Information and Interaction"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "page": "826-834",
+    "published-print": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "publisher": "Springer Berlin Heidelberg",
+    "relation": {},
+    "title": [
+      "A Study of Auditory Warning Signals for the Design Guidelines of Man-Machine Interfaces"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-3-642-02559-4_89",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:06:45Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-642-02559-4_89"
+}

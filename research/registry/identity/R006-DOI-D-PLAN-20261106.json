@@ -1,0 +1,758 @@
+{
+  "accepted_base": "7ec5e18c4edda3f7b7f9ad986de7a5191e943293",
+  "access_note": "Fifteen sequential Crossref single-work requests; only successful bibliographic derivatives admitted. Actual statuses retained per capture. No article/chapter or abstract text was read.",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Metadata identity only. No article/chapter/abstract reading, eligibility, independent-study or corpus acceptance. Unreviewed export formats and title disagreements stay unresolved.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1518/001872099779656734",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-011",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BELZ-CLASS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1080/10447318.2014.925774",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-053",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-JEON-MENUS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/169059.169179",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-008",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BREWSTER-EVALUATION"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1080/10447318.2014.925774",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-025",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-JEON-MENUS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/169059.169179",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-008",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BREWSTER-EVALUATION"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1080/10447318.2014.925774",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-025",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-JEON-MENUS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/169059.169179",
+      "hit_ref": {
+        "id": "HIT-R005R-C9RUSKIN-00018",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BREWSTER-EVALUATION"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1518/001872099779656734",
+      "hit_ref": {
+        "id": "HIT-R005R-C9TOTLAND-00003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BELZ-CLASS"
+    }
+  ],
+  "issue": 6,
+  "not_admitted": [],
+  "selected": [
+    {
+      "doi": "10.1007/978-3-642-82392-3_18",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00223",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-MCINTYRE-OPERATING"
+    },
+    {
+      "doi": "10.1145/169059.169179",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00378",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BREWSTER-EVALUATION"
+    },
+    {
+      "doi": "10.1007/978-1-5041-2896-4_8",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00469",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-LEIMANN-EARCONS"
+    },
+    {
+      "doi": "10.1016/s0169-8141(98)00066-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00787",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-LEARNING"
+    },
+    {
+      "doi": "10.1518/001872099779656734",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00798",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BELZ-CLASS"
+    },
+    {
+      "doi": "10.1037/1076-898x.10.1.3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01282",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-KELLER-MEANING"
+    },
+    {
+      "doi": "10.1518/001872006777724426",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01684",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-STEPHAN-RETENTION"
+    },
+    {
+      "doi": "10.1007/978-3-642-02559-4_89",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02122",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-NAKATANI-GUIDELINES"
+    },
+    {
+      "doi": "10.17077/drivingassessment.1333",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02243",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-SULLIVAN-COLLISION"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.290",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02714",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-DESIGNING"
+    },
+    {
+      "doi": "10.1109/csit.2013.6588783",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03193",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-LECTURERS"
+    },
+    {
+      "doi": "10.1115/1.4024309",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03246",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-MELODIC"
+    },
+    {
+      "doi": "10.14569/ijacsa.2014.050112",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03372",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-COMPARATIVE"
+    },
+    {
+      "doi": "10.1080/10447318.2014.925774",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03524",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-JEON-MENUS"
+    },
+    {
+      "doi": "10.1007/978-3-642-82392-3_18",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00049",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-MCINTYRE-OPERATING"
+    },
+    {
+      "doi": "10.1007/978-1-5041-2896-4_8",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00089",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-LEIMANN-EARCONS"
+    },
+    {
+      "doi": "10.1016/s0169-8141(98)00066-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00147",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-LEARNING"
+    },
+    {
+      "doi": "10.1037/1076-898x.10.1.3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00239",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-KELLER-MEANING"
+    },
+    {
+      "doi": "10.1518/001872006777724426",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00312",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-STEPHAN-RETENTION"
+    },
+    {
+      "doi": "10.1007/978-3-642-02559-4_89",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00398",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-NAKATANI-GUIDELINES"
+    },
+    {
+      "doi": "10.17077/drivingassessment.1333",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00427",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-SULLIVAN-COLLISION"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.290",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00530",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-DESIGNING"
+    },
+    {
+      "doi": "10.1109/csit.2013.6588783",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00641",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-LECTURERS"
+    },
+    {
+      "doi": "10.1115/1.4024309",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00655",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-MELODIC"
+    },
+    {
+      "doi": "10.14569/ijacsa.2014.050112",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00689",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-COMPARATIVE"
+    },
+    {
+      "doi": "10.1080/13554794.2016.1253751",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00897",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-COMPOSING"
+    },
+    {
+      "doi": "10.1518/001872099779656734",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00012",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BELZ-CLASS"
+    },
+    {
+      "doi": "10.1518/001872006777724426",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00022",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-STEPHAN-RETENTION"
+    },
+    {
+      "doi": "10.1007/978-1-5041-2896-4_8",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00051",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-LEIMANN-EARCONS"
+    },
+    {
+      "doi": "10.1145/169059.169179",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00068",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BREWSTER-EVALUATION"
+    },
+    {
+      "doi": "10.1080/10447318.2014.925774",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00097",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-JEON-MENUS"
+    },
+    {
+      "doi": "10.1080/13554794.2016.1253751",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00265",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-COMPOSING"
+    },
+    {
+      "doi": "10.1007/978-3-642-82392-3_18",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00370",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-MCINTYRE-OPERATING"
+    },
+    {
+      "doi": "10.1037/1076-898x.10.1.3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00441",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-KELLER-MEANING"
+    },
+    {
+      "doi": "10.1007/978-3-642-02559-4_89",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00470",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-NAKATANI-GUIDELINES"
+    },
+    {
+      "doi": "10.1109/csit.2013.6588783",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00599",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-LECTURERS"
+    },
+    {
+      "doi": "10.1016/s0169-8141(98)00066-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00699",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-LEARNING"
+    },
+    {
+      "doi": "10.14569/ijacsa.2014.050112",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00724",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-COMPARATIVE"
+    },
+    {
+      "doi": "10.1115/1.4024309",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00807",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-MELODIC"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.290",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00017",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-DESIGNING"
+    },
+    {
+      "doi": "10.17077/drivingassessment.1333",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00072",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-SULLIVAN-COLLISION"
+    },
+    {
+      "doi": "10.1080/13554794.2016.1253751",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ4-00152",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-COMPOSING"
+    },
+    {
+      "doi": "10.1518/001872006777724426",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-STEPHAN-RETENTION"
+    },
+    {
+      "doi": "10.1109/csit.2013.6588783",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00046",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-LECTURERS"
+    },
+    {
+      "doi": "10.1007/978-1-5041-2896-4_8",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00047",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-LEIMANN-EARCONS"
+    },
+    {
+      "doi": "10.1016/s0169-8141(98)00066-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00054",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-LEARNING"
+    },
+    {
+      "doi": "10.1007/978-3-642-82392-3_18",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00064",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-MCINTYRE-OPERATING"
+    },
+    {
+      "doi": "10.1037/1076-898x.10.1.3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00066",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-KELLER-MEANING"
+    },
+    {
+      "doi": "10.1080/13554794.2016.1253751",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00077",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-COMPOSING"
+    },
+    {
+      "doi": "10.14569/ijacsa.2014.050112",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00124",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-COMPARATIVE"
+    },
+    {
+      "doi": "10.1007/978-3-642-02559-4_89",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00155",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-NAKATANI-GUIDELINES"
+    },
+    {
+      "doi": "10.1115/1.4024309",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00156",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-MELODIC"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.290",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00924",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-DESIGNING"
+    },
+    {
+      "doi": "10.17077/drivingassessment.1333",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01387",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-SULLIVAN-COLLISION"
+    },
+    {
+      "doi": "10.1518/001872099779656734",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00011",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-BELZ-CLASS"
+    },
+    {
+      "doi": "10.1080/13554794.2016.1253751",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ4-00190",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-COMPOSING"
+    },
+    {
+      "doi": "10.1007/978-3-642-82392-3_18",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00049",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-MCINTYRE-OPERATING"
+    },
+    {
+      "doi": "10.1007/978-1-5041-2896-4_8",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00089",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-LEIMANN-EARCONS"
+    },
+    {
+      "doi": "10.1016/s0169-8141(98)00066-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00147",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-LEARNING"
+    },
+    {
+      "doi": "10.1037/1076-898x.10.1.3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00239",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-KELLER-MEANING"
+    },
+    {
+      "doi": "10.1518/001872006777724426",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00312",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-STEPHAN-RETENTION"
+    },
+    {
+      "doi": "10.1007/978-3-642-02559-4_89",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00398",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-NAKATANI-GUIDELINES"
+    },
+    {
+      "doi": "10.17077/drivingassessment.1333",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00427",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-SULLIVAN-COLLISION"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.290",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00530",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-EDWORTHY-DESIGNING"
+    },
+    {
+      "doi": "10.1109/csit.2013.6588783",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00641",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-LECTURERS"
+    },
+    {
+      "doi": "10.1115/1.4024309",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00655",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-GILLARD-MELODIC"
+    },
+    {
+      "doi": "10.14569/ijacsa.2014.050112",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00689",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-D-ALSEID-COMPARATIVE"
+    }
+  ],
+  "selection_rationale": "Fifteen recurring DOI groups with five unresolved occurrences each were selected using auditory warning/interface topic labels and recurrence, not result direction or eligibility. This is bounded identity prioritization, not exhaustive selection or screening.",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-leimann-earcons.json",
+        "sha256": "75e9a6ba355c1f5cf937b46d741de7440a7dac5847153b1a0488651dab8c4b26"
+      },
+      "doi": "10.1007/978-1-5041-2896-4_8",
+      "source_id": "SRC-R006-D-LEIMANN-EARCONS",
+      "title": "Earcons and Icons: An Experimental Study"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-nakatani-guidelines.json",
+        "sha256": "bd7e6f80c5a06713c5e58b5ab4e63c57cf3b5173f5527662fab43f15273112e0"
+      },
+      "doi": "10.1007/978-3-642-02559-4_89",
+      "source_id": "SRC-R006-D-NAKATANI-GUIDELINES",
+      "title": "A Study of Auditory Warning Signals for the Design Guidelines of Man-Machine Interfaces"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-mcintyre-operating.json",
+        "sha256": "c680f9d428f8d5eaa2e237245ca3a9147df31296be8411c483f1b992f4beebf2"
+      },
+      "doi": "10.1007/978-3-642-82392-3_18",
+      "source_id": "SRC-R006-D-MCINTYRE-OPERATING",
+      "title": "Ergonomics and Anaesthesia: Auditory Alarm Signals in the Operating Room"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-edworthy-learning.json",
+        "sha256": "72130f2875bb1825793c17f6ade3d0b13b92f4fb710df94dc1f4358c1e9be0e8"
+      },
+      "doi": "10.1016/s0169-8141(98)00066-3",
+      "source_id": "SRC-R006-D-EDWORTHY-LEARNING",
+      "title": "Learning auditory warnings: The effects of sound type, verbal labelling and imagery on the identification of alarm sounds"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-keller-meaning.json",
+        "sha256": "b5fc6d2835f17b78bf05d681867b8faf4a817b092f1eb13b9ab9a6ccbf7670ab"
+      },
+      "doi": "10.1037/1076-898x.10.1.3",
+      "source_id": "SRC-R006-D-KELLER-MEANING",
+      "title": "Meaning From Environmental Sounds: Types of Signal-Referent Relations and Their Effect on Recognizing Auditory Icons."
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-jeon-menus.json",
+        "sha256": "0cbaa3854d172b84e336509aee6ec278ff6a499e8d78cde4abcdeba2fc450a91"
+      },
+      "doi": "10.1080/10447318.2014.925774",
+      "source_id": "SRC-R006-D-JEON-MENUS",
+      "title": "Menu Navigation With In-Vehicle Technologies: Auditory Menu Cues Improve Dual Task Performance, Preference, and Workload"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-gillard-composing.json",
+        "sha256": "ca4c36848f024aba924ff90dbd0648414305a869532e78142797d8ec17e7253a"
+      },
+      "doi": "10.1080/13554794.2016.1253751",
+      "source_id": "SRC-R006-D-GILLARD-COMPOSING",
+      "title": "Composing alarms: considering the musical aspects of auditory alarm design"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-alseid-lecturers.json",
+        "sha256": "1c3631f68c240893ebbb75cf59f8d4a3a1251f1d22ab02cc1201fc6035542107"
+      },
+      "doi": "10.1109/csit.2013.6588783",
+      "source_id": "SRC-R006-D-ALSEID-LECTURERS",
+      "title": "Employing auditory icons to support virtual lecturers in e-learning interfaces"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-gillard-melodic.json",
+        "sha256": "b9a750c8e9b646089a159d5c3893c621645d7d1ff2168bf7f6345b0c201d665a"
+      },
+      "doi": "10.1115/1.4024309",
+      "source_id": "SRC-R006-D-GILLARD-MELODIC",
+      "title": "Exploring Melodic Structure to Increase Heterogeneity of Auditory Alarm Sets in Medical Devices"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-brewster-evaluation.json",
+        "sha256": "96c1efc9ac5987a5f97767915a44d2524b816a4df64e1412d11d6ea5f6f92c00"
+      },
+      "doi": "10.1145/169059.169179",
+      "source_id": "SRC-R006-D-BREWSTER-EVALUATION",
+      "title": "An evaluation of earcons for use in auditory human-computer interfaces"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-alseid-comparative.json",
+        "sha256": "4c6dac50597f64e859e48ae2b9dabfa7142cbdf3cf6d28b0510ebfc26b198b78"
+      },
+      "doi": "10.14569/ijacsa.2014.050112",
+      "source_id": "SRC-R006-D-ALSEID-COMPARATIVE",
+      "title": "A Comparative Usability Study on the Use of Auditory Icons to Support Virtual Lecturers in E-Learning Interfaces"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-stephan-retention.json",
+        "sha256": "18f15c308e24f9b7f43b74d37ba39af086d733731fb406b2943932271b2446c2"
+      },
+      "doi": "10.1518/001872006777724426",
+      "source_id": "SRC-R006-D-STEPHAN-RETENTION",
+      "title": "Learning and Retention of Associations Between Auditory Icons and Denotative Referents: Implications for the Design of Auditory Warnings"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-belz-class.json",
+        "sha256": "56f2350a3625c47e6bb998612faf61a3eb2e26afc13ee091bb834d2a99829819"
+      },
+      "doi": "10.1518/001872099779656734",
+      "source_id": "SRC-R006-D-BELZ-CLASS",
+      "title": "A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-sullivan-collision.json",
+        "sha256": "069e3f4aa84cb4d62ffc2f9685d115353f323751d660bfc92a7245169506cc29"
+      },
+      "doi": "10.17077/drivingassessment.1333",
+      "source_id": "SRC-R006-D-SULLIVAN-COLLISION",
+      "title": "Acquisition, Response, and Error Rates With Three Suites of Collision Warning Sounds"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-d-edworthy-designing.json",
+        "sha256": "15f3994210724539e52cb80d33cb1cbccaa340b336c2b484ff7b508611594437"
+      },
+      "doi": "10.2345/0899-8205-45.4.290",
+      "source_id": "SRC-R006-D-EDWORTHY-DESIGNING",
+      "title": "Designing Effective Alarm Sounds"
+    }
+  ]
+}

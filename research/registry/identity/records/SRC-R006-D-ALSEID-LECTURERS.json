@@ -1,0 +1,104 @@
+{
+  "id": "SRC-R006-D-ALSEID-LECTURERS",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T12:10:02Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03193",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00641",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00599",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00046",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00641",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-D-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T12:07:32Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Marwan Alseid",
+            "role": "author"
+          },
+          {
+            "name": "Mohammad Azzeh",
+            "role": "author"
+          },
+          {
+            "name": "Yousef El Sheikh",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "2013 5th International Conference on Computer Science and Information Technology; 219-222"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-d-alseid-lecturers.json record.DOI/title/author; HTTP 200 on 2026-11-06T12:07:32Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1109/csit.2013.6588783"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-d-alseid-lecturers.json record.DOI, title, author and dates; retained derivative SHA256 1c3631f68c240893ebbb75cf59f8d4a3a1251f1d22ab02cc1201fc6035542107",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-D-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2013-03"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Employing auditory icons to support virtual lecturers in e-learning interfaces",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
