@@ -1,0 +1,429 @@
+{
+  "actor": {
+    "id": "codex-r006-url-tranche-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; Python comparison of retained web-discovery exports and accepted source provenance"
+  },
+  "artifact_kind": "bounded_resource_url_tranche",
+  "boundary": "Completes the fixed 30-candidate queue, not publication reconciliation or corpus acceptance. Issue #6 stays open.",
+  "counts": {
+    "duplicate_occurrences": 7,
+    "existing_publications": 4,
+    "new_source_records": 0,
+    "occurrences": 8,
+    "resolved_representatives": 1,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "study_records_created": 0
+  },
+  "implementation_base": "3f6082f513604dce0c80922945a088458b2529d7",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-IDENTITY-QUEUE-20261106.json",
+      "sha256": "0d924df442537c4c29e3ed7356a5fffc331566335ac8f309b1c131b377310483"
+    },
+    {
+      "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+      "sha256": "9c3bf364ea9136da02e18793acb0aa036e7c8afce508fccdc2d705455995c288"
+    },
+    {
+      "path": "research/searches/pilot/exports/PILOT-WEBSEARCH-2026-10-13.json",
+      "sha256": "9336f3329f9d3da9fb6d997a21f73445cb070d680d8aace49cbfdb018df4b1bd"
+    },
+    {
+      "path": "research/searches/related/exports/RELATED-WEBSEARCH-2026-10-13.json",
+      "sha256": "1346eebd0cb7f95a59057266b06fcd99a38d57e99f39ee7c78d343be4a62ed98"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03058",
+        "rev": 2
+      },
+      "export_locator": {
+        "batch": "P1",
+        "item": 3,
+        "path": "research/searches/pilot/exports/PILOT-WEBSEARCH-2026-10-13.json",
+        "run": "P-A6"
+      },
+      "hit_id": "HIT-R002-PA6-03",
+      "input_ref": {
+        "id": "HIT-R002-PA6-03",
+        "rev": 1
+      },
+      "input_revision_sha256": "a372c954815c340dd734bdf4695b75342037f7fa65dff7821802465ab9f5a90c",
+      "ordinal": 3,
+      "original_result_label": "pmc.ncbi.nlm.nih.gov",
+      "output_ref": {
+        "id": "HIT-R002-PA6-03",
+        "rev": 2
+      },
+      "output_revision_sha256": "65c98ee68dfe7ec4992352b102a6a8e0a6a4a4ec965b6662f8be448bb878170e",
+      "path": "research/searches/pilot/records/hits/HIT-R002-PA6-03.json",
+      "search_ref": {
+        "id": "SRCH-R002-PA6",
+        "rev": 1
+      },
+      "search_revision_sha256": "7936db75b6e7039d12136f9bdb7aa5605421e8c84e883e338b8fec54c6deac6a",
+      "source_ref": {
+        "id": "SRC-R005R-EDWORTHY-2013",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R003-B04-06",
+        "rev": 1
+      },
+      "export_locator": {
+        "batch": "P1",
+        "item": 3,
+        "path": "research/searches/pilot/exports/PILOT-WEBSEARCH-2026-10-13.json",
+        "run": "P-B1"
+      },
+      "hit_id": "HIT-R002-PB1-03",
+      "input_ref": {
+        "id": "HIT-R002-PB1-03",
+        "rev": 1
+      },
+      "input_revision_sha256": "2899d39c921eb014e86f49b626d5cb9ce6dc5e4939d2936177b714464ff28813",
+      "ordinal": 3,
+      "original_result_label": "tidsskrift.dk",
+      "output_ref": {
+        "id": "HIT-R002-PB1-03",
+        "rev": 2
+      },
+      "output_revision_sha256": "a82020b20b17b96488ac4901fbee9bb3275055085859034a7c81ab575490b809",
+      "path": "research/searches/pilot/records/hits/HIT-R002-PB1-03.json",
+      "search_ref": {
+        "id": "SRCH-R002-PB1",
+        "rev": 1
+      },
+      "search_revision_sha256": "484a22ca60c04b9436cf6312732dab596a6d30cfcf9e06dd65f11674073f9a92",
+      "source_ref": {
+        "id": "SRC-BRIER-2011-SIGNS",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://tidsskrift.dk/signs/article/view/26864"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R002-PA6-02",
+        "rev": 1
+      },
+      "export_locator": {
+        "batch": "R4",
+        "item": 5,
+        "path": "research/searches/related/exports/RELATED-WEBSEARCH-2026-10-13.json",
+        "run": "G-29"
+      },
+      "hit_id": "HIT-R004-G29-05",
+      "input_ref": {
+        "id": "HIT-R004-G29-05",
+        "rev": 1
+      },
+      "input_revision_sha256": "7b44b168038df7ce48d954521aca0775ff9cdf8776e62fa2e88ea4d9f553530a",
+      "ordinal": 5,
+      "original_result_label": "ldr.lafayette.edu",
+      "output_ref": {
+        "id": "HIT-R004-G29-05",
+        "rev": 2
+      },
+      "output_revision_sha256": "3b911502bde7918a1fdc9365a62ca6355717b6fef521e226995bc569a03232d7",
+      "path": "research/searches/related/records/hits/HIT-R004-G29-05.json",
+      "search_ref": {
+        "id": "SRCH-R004-G29",
+        "rev": 1
+      },
+      "search_revision_sha256": "e321f69910b80a0ac0f04582371e37ae93b33b19b3aaec72e8d735b886979102",
+      "source_ref": {
+        "id": "SRC-NOV-NEES-LIEBMAN-2023",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03058",
+        "rev": 2
+      },
+      "export_locator": {
+        "batch": "A1",
+        "item": 8,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "run": "A-W8"
+      },
+      "hit_id": "HIT-R005-AW8-08",
+      "input_ref": {
+        "id": "HIT-R005-AW8-08",
+        "rev": 1
+      },
+      "input_revision_sha256": "4a847d8ff885bcc8a50351ae230c8cb0c6c050892c3b2c1b9278cd8acde96b97",
+      "ordinal": 8,
+      "original_result_label": "pmc.ncbi.nlm.nih.gov",
+      "output_ref": {
+        "id": "HIT-R005-AW8-08",
+        "rev": 2
+      },
+      "output_revision_sha256": "bc07ac1d483551d4744657acffd0c793dae8a3f5d00ff8ade36eba6f324cf968",
+      "path": "research/searches/auditory/records/hits/HIT-R005-AW8-08.json",
+      "search_ref": {
+        "id": "SRCH-R005-AW8",
+        "rev": 1
+      },
+      "search_revision_sha256": "871b91740473cf35739c24002dd9e32621259e1c2a2e12bdec6a72d1186d34c9",
+      "source_ref": {
+        "id": "SRC-R005R-EDWORTHY-2013",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+    },
+    {
+      "duplicate_of": null,
+      "export_locator": {
+        "batch": "A3",
+        "item": 2,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "run": "G-W1"
+      },
+      "hit_id": "HIT-R005-GW1-02",
+      "input_ref": {
+        "id": "HIT-R005-GW1-02",
+        "rev": 1
+      },
+      "input_revision_sha256": "4d36a68e8a4811401449f06b520d8033043e2271ce9c59c3d00cb68f86ca2230",
+      "ordinal": 2,
+      "original_result_label": "A Review of the Literature on Alarms, Alerts, and Warnings",
+      "output_ref": {
+        "id": "HIT-R005-GW1-02",
+        "rev": 2
+      },
+      "output_revision_sha256": "c3ef3c38b0b1e7ff4daed9310640e4d8f1ad9d5ecc53c9f0569c3597aece488d",
+      "path": "research/searches/auditory/records/hits/HIT-R005-GW1-02.json",
+      "search_ref": {
+        "id": "SRCH-R005-GW1",
+        "rev": 1
+      },
+      "search_revision_sha256": "a58b604ba1d6362bfb9d15ad07a967135a9dd1da0d10c4580912416bd11febe3",
+      "source_ref": {
+        "id": "SRC-R005R-RUSKIN-2020",
+        "rev": 1
+      },
+      "status": "resolved",
+      "verified_resource": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R005-GW1-02",
+        "rev": 2
+      },
+      "export_locator": {
+        "batch": "A3",
+        "item": 2,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "run": "G-W8"
+      },
+      "hit_id": "HIT-R005-GW8-02",
+      "input_ref": {
+        "id": "HIT-R005-GW8-02",
+        "rev": 1
+      },
+      "input_revision_sha256": "a51ab2d396ac03c3919c36656a158a5e10318020e010ce68f3aa98e1b26d0177",
+      "ordinal": 2,
+      "original_result_label": "A Review of the Literature on Alarms, Alerts, and Warnings",
+      "output_ref": {
+        "id": "HIT-R005-GW8-02",
+        "rev": 2
+      },
+      "output_revision_sha256": "1c67b225efe483796e48f853e5df6bb79cee0f81d02be2aee247bb5a29f20514",
+      "path": "research/searches/auditory/records/hits/HIT-R005-GW8-02.json",
+      "search_ref": {
+        "id": "SRCH-R005-GW8",
+        "rev": 1
+      },
+      "search_revision_sha256": "c5defe071711e707409c7857eacbf32f20ac3092a4f9bb3b72c6ef441e99907e",
+      "source_ref": {
+        "id": "SRC-R005R-RUSKIN-2020",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R005-GW1-02",
+        "rev": 2
+      },
+      "export_locator": {
+        "batch": "A3",
+        "item": 1,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "run": "G-W9"
+      },
+      "hit_id": "HIT-R005-GW9-01",
+      "input_ref": {
+        "id": "HIT-R005-GW9-01",
+        "rev": 1
+      },
+      "input_revision_sha256": "3136f07d3e5eaa84127d4e709aeebc6561395ce07231a45b8f264f41f534d5fc",
+      "ordinal": 1,
+      "original_result_label": "A Review of the Literature on Alarms, Alerts, and Warnings",
+      "output_ref": {
+        "id": "HIT-R005-GW9-01",
+        "rev": 2
+      },
+      "output_revision_sha256": "2577402ce70eea6ca23640e168d6449cfd9b982702b070e1b91868d0a1135eb3",
+      "path": "research/searches/auditory/records/hits/HIT-R005-GW9-01.json",
+      "search_ref": {
+        "id": "SRCH-R005-GW9",
+        "rev": 1
+      },
+      "search_revision_sha256": "51123befe424feec432c2067a36b44163a9aeb10040807eeef56bda0465e37d3",
+      "source_ref": {
+        "id": "SRC-R005R-RUSKIN-2020",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    },
+    {
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03058",
+        "rev": 2
+      },
+      "export_locator": {
+        "batch": "A3",
+        "item": 8,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "run": "R-PSLR"
+      },
+      "hit_id": "HIT-R005-RPSLR-08",
+      "input_ref": {
+        "id": "HIT-R005-RPSLR-08",
+        "rev": 1
+      },
+      "input_revision_sha256": "9ebf497f90ebce207946a55ee84fc8fc53ca920f9399daaff67cccef2510f5df",
+      "ordinal": 8,
+      "original_result_label": "pmc.ncbi.nlm.nih.gov",
+      "output_ref": {
+        "id": "HIT-R005-RPSLR-08",
+        "rev": 2
+      },
+      "output_revision_sha256": "0539a4284617d140c064287700ebdf59efddf5433bc847e7b56d53707cf5af10",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RPSLR-08.json",
+      "search_ref": {
+        "id": "SRCH-R005-RPSLR",
+        "rev": 1
+      },
+      "search_revision_sha256": "81a6505c74db74831b3c7725696a0fcc619292d62048b832ce19d3689603ebcb",
+      "source_ref": {
+        "id": "SRC-R005R-EDWORTHY-2013",
+        "rev": 1
+      },
+      "status": "duplicate",
+      "verified_resource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+    }
+  ],
+  "resolved_at": "2026-11-06T03:58:46Z",
+  "sources": [
+    {
+      "existing_representative": {
+        "path": "research/searches/brier/records/hits/HIT-R003-B04-06.json",
+        "ref": {
+          "id": "HIT-R003-B04-06",
+          "rev": 1
+        },
+        "revision_sha256": "7574fdf422119e2f6ca1ed12c8b09c36f278207083a7651e694ded2c1927b7ca"
+      },
+      "identifier_provenance": "Fetched 2026-10-13 (ledger row 24)",
+      "metadata_evidence": [
+        "Title, journal, volume, pages and publication date reported from the journal page by the fetch tool."
+      ],
+      "path": "research/sources/brier/records/SRC-BRIER-2011-SIGNS.json",
+      "revision_sha256": "70cbf6acc534302bc88a76c878981721c845ab07491d6dd5bdf53d1a94c3f4f4",
+      "source_ref": {
+        "id": "SRC-BRIER-2011-SIGNS",
+        "rev": 1
+      },
+      "title": "Cybersemiotics: A New Foundation for Transdisciplinary Theory of Information, Cognition, Meaning, Communication and Consciousness",
+      "verification_extent": "Inherited accepted publication-specific resource verification; no fresh online retrieval or source reading.",
+      "verified_resource": "https://tidsskrift.dk/signs/article/view/26864"
+    },
+    {
+      "existing_representative": {
+        "path": "research/searches/pilot/records/hits/HIT-R002-PA6-02.json",
+        "ref": {
+          "id": "HIT-R002-PA6-02",
+          "rev": 1
+        },
+        "revision_sha256": "66def03cbc931480b159e9661f035e7e23feb45f0133b65155b639f2edeea8b6"
+      },
+      "identifier_provenance": "Institutional deposit record fetched 2026-10-13",
+      "metadata_evidence": [
+        "Lafayette institutional record (2026-10-13) gives title, creators, journal, volume, issue, pages, year and DOI.",
+        "Archived R002 1C1 packet verified the same identity from the institutional and author bibliographies on 2026-10-04."
+      ],
+      "path": "research/novelty/records/SRC-NOV-NEES-LIEBMAN-2023.json",
+      "revision_sha256": "4a73aa90628a1e7ae6bed13c78dee9479769056b513ac417f2eeb8ef6e349c6f",
+      "source_ref": {
+        "id": "SRC-NOV-NEES-LIEBMAN-2023",
+        "rev": 1
+      },
+      "title": "Auditory Icons, Earcons, Spearcons, and Speech: A Systematic Review and Meta-Analysis of Brief Audio Alerts in Human-Machine Interfaces",
+      "verification_extent": "Inherited accepted publication-specific resource verification; no fresh online retrieval or source reading.",
+      "verified_resource": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"
+    },
+    {
+      "existing_representative": {
+        "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-03058.json",
+        "ref": {
+          "id": "HIT-R005R-C1LOAD-EQ1-03058",
+          "rev": 2
+        },
+        "revision_sha256": "4766e079b215c5fa30535052197a482bc1da54cbf457f370bdcefd3e78bc549a"
+      },
+      "identifier_provenance": "reviews/MANIFEST.json edworthy-2013; source title-page/identity inspection; capture SHA256 e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2",
+      "metadata_evidence": [
+        "PDF page 1 title/author block, publication dates and citation/footer",
+        "Europe PMC core metadata title, authorList, journalInfo, pubYear, firstPublicationDate, doi, pmid and pmcid",
+        "The review has a 2013 issue year and an earlier online-first date of 25 October 2012; these are retained as distinct dates.",
+        "reviews/MANIFEST.json edworthy-2013; source title-page/identity inspection; capture SHA256 e708a1d3a57082e3532bebfd6ec37631fe66bea8af1bf99858e7ec5e573c7cb2"
+      ],
+      "path": "research/sources/auditory/records/SRC-R005R-EDWORTHY-2013.json",
+      "revision_sha256": "444692db21d527d6ac32740e9b0368fd008ed3048018a1fd0a95780a82890658",
+      "source_ref": {
+        "id": "SRC-R005R-EDWORTHY-2013",
+        "rev": 1
+      },
+      "title": "Medical audible alarms: a review",
+      "verification_extent": "Inherited accepted publication-specific resource verification; no fresh online retrieval or source reading.",
+      "verified_resource": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+    },
+    {
+      "identifier_provenance": "reviews/MANIFEST.json ruskin-2020; source title-page/identity inspection; capture SHA256 fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "metadata_evidence": [
+        "PDF/printed title page 1: title and authors in Ruskin, Corvin, Rice order",
+        "ROSA P landing metadata citation_title, citation_author, publication date 2020-09-01, publisher and document link",
+        "The PDF title page orders authors Ruskin, Corvin, Rice; repository metadata orders Ruskin, Rice, Corvin. Both are preserved rather than silently reconciled.",
+        "reviews/MANIFEST.json ruskin-2020; source title-page/identity inspection; capture SHA256 fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec"
+      ],
+      "path": "research/sources/auditory/records/SRC-R005R-RUSKIN-2020.json",
+      "revision_sha256": "10c55970129abe419dd59f0562d74a094771f274fcc0d8949b14b408bdfcc457",
+      "source_ref": {
+        "id": "SRC-R005R-RUSKIN-2020",
+        "rev": 1
+      },
+      "title": "ATC Signaling Systems: A Review of the Literature on Alarms, Alerts, and Warnings",
+      "verification_extent": "Inherited accepted publication-specific resource verification; no fresh online retrieval or source reading.",
+      "verified_resource": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    }
+  ]
+}

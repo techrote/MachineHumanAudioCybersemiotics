@@ -188,7 +188,60 @@ AI assistance: one Codex/GPT-6 agent, 6 November 2026, metadata comparison,
 software self-review and ten regression tests. No fresh online retrieval,
 independent human adjudication or scientific acceptance is claimed.
 
-## Reproduction and review
+## URL-resource batch and original queue completion — 6 November 2026
+
+The [eight-occurrence ledger](R006-URL-TRANCHE-20261106.json) adjudicates the
+remaining URL-only matches from the original 30-candidate queue. Exact returned
+URLs, original query, run, result ordinal and raw result label were checked in
+the hash-bound discovery exports. Each URL equals an accepted source revision's
+verified **publication-specific resource**, with its recorded metadata and
+identifier provenance pinned in the ledger. This inherits the accepted source
+verification; no current URL availability or fresh page/PDF reading is claimed.
+
+| Existing publication resource | Occurrences | Disposition |
+|---|---:|---|
+| Edworthy review, PMC article `PMC3628049` | 3 | Duplicates of its existing DOI-resolved occurrence |
+| Brier (2011), Signs article `26864` | 1 | Duplicate of `HIT-R003-B04-06@1` |
+| Nees/Liebman published review, Lafayette record `gx41mk40g` | 1 | Duplicate of `HIT-R002-PA6-02@1` |
+| Ruskin et al. report, ROSA P `dot/59041` PDF | 3 | One representative at revision 2; two duplicates |
+
+Several original labels are merely hostnames (`pmc.ncbi.nlm.nih.gov`,
+`tidsskrift.dk`, `ldr.lafayette.edu`). These remain unchanged and are not promoted
+to bibliographic titles. The publication link rests on the exact resource and
+its accepted verification provenance, not an inferred title or same-host match.
+The shorter Ruskin result title is also retained; no title correction or version
+alias is introduced. Pilot records retain their original search references and
+pilot status. Brier's abstract-only access state and every other source's
+access/reading/rights assertions remain unchanged.
+
+All-lane unresolved discovery falls **22,472 → 22,464**. The original fixed queue
+is now fully adjudicated: **12 + 10 + 8 = 30 occurrences**, spanning ten existing
+source IDs. Its historical snapshot stays intact. Re-running the current exact
+identifier queue returns **zero candidates and 22,464 unmatched unresolved
+occurrences**. This completes a bounded identity queue, not issue #6, the corpus
+gate or programme-level deduplication. No source, eligibility decision, study or
+sample was created, and independent-publication/sample counts are not inferred.
+
+```sh
+python research/registry/identity/scripts/build_r006_url_tranche.py --check
+python -m unittest tests.test_screening_url_tranche -v
+python tools/validate.py
+python -m tools.identity_queue > build/identity-queue-current.json
+```
+
+Next work must expand beyond exact matches to the currently registered verified
+identifiers: inventory unresolved DOI/metadata groups and preserve contrary
+identifiers, then adjudicate new publication identities in bounded batches under
+protocol §6. Do not automatically merge titles, publication versions or studies.
+Actual eligibility screening, study/sample relationships, the selected corpus
+and bias assessment remain outstanding. Issue #6 stays open; #7–#9 do not gain a
+completed corpus prerequisite from these identity decisions.
+
+AI disclosure: one Codex/GPT-6 agent, 6 November 2026, local metadata comparison,
+software self-review and ten regression tests. No new online retrieval, source
+reading, independent human adjudication or scientific acceptance occurred.
+
+## Reproduction of the original Hermann tranche
 
 From the repository root:
 
