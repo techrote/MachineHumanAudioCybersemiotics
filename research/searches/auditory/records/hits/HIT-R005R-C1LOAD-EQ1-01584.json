@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-remaining-dois-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Python comparison of retained OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T03:05:07Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01584",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-MURPHY-2006",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-REMAINING-DOIS-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK3-NSS-USE-SCENARIO-03",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R004-LK3-NSS-USE-SCENARIO-03",
+          "rev": 1
+        },
+        "ordinal": 1584,
+        "raw_metadata": "A Semiotic Approach to the Design of Non-speech Sounds | first author: Emma Murphy | 2006-01-01 | conference-paper | https://openalex.org/W1558271106",
+        "resolution_reason": "R006: explicit DOI and full title (case/whitespace normalized only) agree with retained export and accepted verified source. Identity only; no eligibility, new reading or independent-study assertion. See research/registry/identity/R006-REMAINING-DOIS-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1558271106"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/11821731_12"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-MURPHY-2006",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

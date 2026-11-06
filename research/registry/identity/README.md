@@ -134,6 +134,60 @@ responses were not re-inspected; public OpenAlex metadata derivatives and the
 preserved Crossref/bibliographic exports were checked. These support the bounded
 identity decision, not empirical extraction or study independence.
 
+## Remaining explicit-DOI batch — 6 November 2026
+
+The [ten-occurrence ledger](R006-REMAINING-DOIS-20261106.json) resolves the
+remaining explicit-DOI matches in the original 30-candidate queue. Full titles
+were compared after case and whitespace normalization only; punctuation, words
+and digits were retained. Each DOI/title pair agrees with its original export
+ordinal and the accepted source's verified metadata. Source verification is
+inherited from the pinned accepted record, not a new paper reading.
+
+| Existing publication | Occurrences | Disposition |
+|---|---:|---|
+| Nees and Liebman (2023), published review | 4 | Duplicates of `HIT-R002-PA6-02@1` |
+| Edworthy, *Medical audible alarms: a review* | 2 | One representative at revision 2; one duplicate |
+| McFarlane et al. (2020), sleep-inertia review | 2 | One representative at revision 2; one duplicate |
+| Murphy (2006), *A Semiotic Approach to the Design of Non-speech Sounds* | 1 | Duplicate of existing R004 occurrence |
+| Gaver (1986), *Auditory Icons* | 1 | Duplicate of existing R004 occurrence |
+
+The first fixed occurrence for Edworthy and McFarlane becomes the representative
+within this batch; no claim of first global discovery is made. Nees's published
+version stays `SRC-NOV-NEES-LIEBMAN-2023`; its accepted manuscript remains a
+distinct source. No version alias or publication-family claim is introduced.
+Edworthy's original OpenAlex date `2012-10-26` and the bibliographic issue year
+`2013` remain untouched; the accepted source separately records online-first
+`2012-10-25`. Identity agreement does not resolve that one-day metadata discrepancy
+or justify overwriting the issue year.
+
+All ten original discovery revisions and original search paths/ordinals remain
+intact. Retained export manifests, compressed OpenAlex pages and decompressed
+payload hashes were checked, alongside the bibliography's source-page/entry
+locators. The ledger preserves input/output revision hashes and exact source
+pins. Public metadata derivatives were checked; private raw API responses and
+article texts were not re-read.
+
+All-lane unresolved discovery falls **22,482 → 22,472**. **Eight URL-only
+candidates** remain from the original queue; **22,464** other unresolved
+occurrences still have no exact match proposed by that queue. These are
+occurrence-level bookkeeping counts, not a selected Track E corpus or independent
+studies. Two representatives and eight duplicates create no new sources,
+screening decisions, studies or samples. Issue #6 and its corpus gate remain open.
+
+```sh
+python research/registry/identity/scripts/build_r006_remaining_dois.py --check
+python -m unittest tests.test_screening_remaining_dois -v
+python tools/validate.py
+```
+
+Next, adjudicate the eight URL-only candidates against their retained discovery
+exports and publication-specific resource provenance; a shared URL alone is not
+proof of publication identity. Broader publication reconciliation, actual
+screening, study/sample relationships and corpus selection remain necessary.
+AI assistance: one Codex/GPT-6 agent, 6 November 2026, metadata comparison,
+software self-review and ten regression tests. No fresh online retrieval,
+independent human adjudication or scientific acceptance is claimed.
+
 ## Reproduction and review
 
 From the repository root:
