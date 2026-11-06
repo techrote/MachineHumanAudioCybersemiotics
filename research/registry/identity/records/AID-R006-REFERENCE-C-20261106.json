@@ -1,0 +1,232 @@
+{
+  "id": "AID-R006-REFERENCE-C-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-reference-c-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; urllib hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T10:10:09Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLFRAPDF-037",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLFRAPDF-086",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-003",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-019",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-044",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-059",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-003",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-019",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-044",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-059",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00002",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9TOTLAND-00002",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-AMER-2018-EVENTS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-GRAHAM-1999-COLLISION",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-NEES-2016-MEMORY",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-REFERENCE-C-WITNESSES-20261106.json",
+          "research/registry/identity/R006-REFERENCE-C-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-037",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLFRAPDF-086",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-003",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-019",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-044",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-059",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-003",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-019",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-044",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-059",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00002",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9TOTLAND-00002",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-AMER-2018-EVENTS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-GRAHAM-1999-COLLISION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-NEES-2016-MEMORY",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+            "rev": 1
+          }
+        ],
+        "limitations": "No target article or whole report/thesis read; target source records remain metadata_only. Four model-rendered abbreviations receive identity corroboration only. One agent; no independent human review, eligibility, sample identity, version alias or corpus acceptance. Source PDFs/renders not committed; stable URLs/hashes and page locators retained.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-037",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLFRAPDF-086",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-003",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-019",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-044",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-059",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-003",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-019",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-044",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-059",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00002",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9TOTLAND-00002",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T10:10:09Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify twelve batch C bibliography occurrence identities using three freshly retrieved hash-matched PDFs and eight visually checked citation witnesses. Keep the venue case and six HTML-title cases unresolved.",
+        "verification_steps": [
+          "Nees AM, FRA review and Totland thesis PDFs returned HTTP 200 and match retained SHA-256 exactly. Expired Totland alias 404 was resolved through the stable public OpenFile endpoint; no access bypass.",
+          "Rendered/inspected eight citation pages: Nees AM 33,43,45,49,51; FRA file 36,40 (printed 28,32); Totland file/printed 42. No target-article or whole-report/thesis reading.",
+          "Checked original export/hash/ordinal, full titles or four explicitly abbreviated title prefixes, explicit DOI, source/page provenance and existing representatives. Preserved Totland citation line/box locators and literal discovery text.",
+          "Pinned parent plan and required the twelve checked plus one remaining venue occurrence to partition its thirteen deferred entries without omissions/duplicates. The six Wilcox title-representation cases remain unadmitted in that parent."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

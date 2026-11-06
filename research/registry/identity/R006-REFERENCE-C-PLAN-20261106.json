@@ -1,0 +1,131 @@
+{
+  "accepted_base": "993f3cb85a547da366e2d8bf7d76718162e7ba21",
+  "artifact_kind": "fixed_reference_identity_subplan",
+  "boundary": "Twelve bibliography identities only. Parent plan partitions remain explicit: ICAD-series venue case deferred; six Wilcox title-representation cases remain unadmitted in parent plan. No eligibility, source reading or corpus acceptance.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-037",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-086",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C9TOTLAND-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    }
+  ],
+  "issue": 6,
+  "parent_plan": {
+    "path": "research/registry/identity/R006-DOI-C-PLAN-20261106.json",
+    "sha256": "528d4c141867e8ad42ed7bd8e6147b961ef7f2270662eb1384d73900da281a19"
+  },
+  "remaining_deferred": [
+    {
+      "defer_reason": "Unreviewed ICAD-series export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005R-C5SERIES-01072",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    }
+  ]
+}

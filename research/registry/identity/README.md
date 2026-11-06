@@ -558,6 +558,80 @@ retrieval, retained-export comparison, software self-review and eleven new
 regression tests. No independent human adjudication, target-source reading or
 scientific acceptance occurred.
 
+## Batch C bibliography provenance — 6 November 2026
+
+The [subplan](R006-REFERENCE-C-PLAN-20261106.json) and
+[twelve-occurrence ledger](R006-REFERENCE-C-20261106.json) resolve the twelve
+bibliography cases deferred by DOI batch C. The [witness receipt](R006-REFERENCE-C-WITNESSES-20261106.json)
+records three fresh HTTP 200 PDF retrievals matching the retained original bytes,
+with eight selected citation witnesses checked on rendered bibliography pages.
+
+| Containing source inspected | File pages | Printed pages | Target identities |
+|---|---|---|---|
+| Nees/Liebman accepted manuscript | 33, 43, 45, 49, 51 | Same | Amer (general and meta-analysis bibliographies), Graham, Nees, Tislar |
+| FRA auditory-alert literature review | 36, 40 | 28, 32 | Graham, Nees |
+| Totland process-industry alarm thesis | 42 | 42 | Bellettiere |
+
+Totland's previously retained temporary download alias returned HTTP 404.
+The stable public OpenFile endpoint supplied a fresh anonymous alias returning
+the same 821,130-byte PDF. The receipt retains the stable filelink URL, success
+status/hash and actual alias-fetch time; temporary alias/redirect URLs are omitted.
+The failed response bytes and precise request time were not retained. The initial
+batch receipt was interrupted by the expired alias; the successful Nees/FRA
+retrievals recorded here were repeated afterward. No earlier request times or
+access permissions are invented, and no access restriction was bypassed.
+
+Every original export/hash/ordinal, citation title and DOI, source/page locator
+and existing representative was checked. Totland's coordinate-bearing reference
+export remains unchanged, with occurrence ID, PDF/printed page and line boxes
+available at the pinned export locator. Four older `RL-NL` model-rendered short
+entries receive publication-identity **corroboration** from full Nees AM citations.
+This does not establish faithful original-preprint transcription, review-version
+equivalence or empirical findings. Original outcome letters, wording, discovery
+paths/dates, partial search states and all revisions remain intact.
+
+All twelve become duplicates of existing representatives across five publication
+identities. Target source records remain `metadata_only`: no target article or
+whole review/report/thesis was read, and no source access/rights/reading state,
+source alias, screening decision, study or sample is introduced. Only the eight
+selected bibliography citations were inspected; neighbouring page text is not
+accepted evidence for unrelated claims.
+
+The subplan hash-pins its parent DOI plan and partitions its thirteen deferred
+entries into twelve checked cases plus **one remaining ICAD-series venue case**.
+Missing or duplicated partition entries and changed parent bytes fail before
+writes. The Totland case explicitly uses the coordinate-bearing reference format;
+unreviewed export labels now fail rather than falling through that branch. Both
+older reference-batch ledgers and canonical prefixes still reproduce exactly.
+Historical DOI-batch tests check the original deferral and that batch's output
+inventory, allowing later canonical revisions; append-only history validation
+continues to guard those later resolutions.
+
+```sh
+python research/registry/identity/scripts/build_r006_reference_batch_c.py --check
+python research/registry/identity/scripts/build_r006_reference_tranche.py --check
+python research/registry/identity/scripts/build_r006_reference_batch_b.py --check
+python -m unittest tests.test_screening_reference_batch_c -v
+python tools/validate.py
+```
+
+All-lane unresolved discovery falls **22,358 → 22,346**. Batch C now accounts for
+**38 + 12 = 50 resolved occurrences** of its 57 reviewed occurrence assertions.
+One venue-listing case and all six Wilcox HTML-title cases remain unresolved;
+the current exact-identifier queue has one candidate, zero conflicts and 22,345
+unmatched unresolved occurrences. This closes the bibliography subplan, not issue
+#6, the corpus gate or programme deduplication. Next: review the ICAD venue export
+and the title representation separately, then continue bounded identity work and
+actual protocol-governed screening without inferring study/sample independence.
+
+The offline builder reproduces the recorded observations, not the visual check
+itself. Rechecking requires matching the receipt's hashes and inspecting its page
+locators; changed bytes require new provenance. Source PDFs/renders are not
+committed. AI assistance: one Codex/GPT-6 agent, 6 November 2026, public retrieval,
+eight citation-page inspections, retained-export/metadata comparison, software
+self-review and fourteen new regression tests. No independent human adjudication
+or scientific acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

@@ -67,6 +67,13 @@ def build(root,at,*,profile=None):
         if expected is not None and sha!=expected:raise ValueError('Artifact hash mismatch: '+path)
         artifacts[path]={'path':path,'sha256':sha};return blob
     plan=json.loads(artifact(plan_path));previous=json.loads(artifact(previous_path));receipt=json.loads(artifact(receipt_path))
+    if parent_pin:=plan.get('parent_plan'):
+        parent=json.loads(artifact(parent_pin['path'],parent_pin['sha256']))
+        scope=plan['deferred']+plan['remaining_deferred']
+        sort=lambda rows:sorted(rows,key=lambda row:row['hit_ref']['id'])
+        if (len({row['hit_ref']['id'] for row in scope})!=len(scope)
+                or sort(scope)!=sort(parent['deferred'])):
+            raise ValueError('Parent deferred scope disagreement')
     if len(plan['deferred'])!=len(cases) or {i['hit_ref']['id'] for i in plan['deferred']}!=set(cases):raise ValueError('Fixed deferred scope disagreement')
     pdfs={r['key']:r for r in receipt['retrievals']};witnesses={w['key']:w for w in receipt['witnesses']}
     if len(pdfs)!=len(receipt['retrievals']) or len(witnesses)!=len(receipt['witnesses']):raise ValueError('Repeated receipt identity')
@@ -117,11 +124,12 @@ def build(root,at,*,profile=None):
             expected=text+f" | source PDF pp.{row['file_page_start']}–{row['file_page_end']}, reference {ordinal}"
             if row['ordinal']!=ordinal or before['raw_metadata']!=expected or key(body['title']) not in key(text):raise ValueError('General-reference export disagreement')
             locator={'path':exp['path'],'section':section['section'],'item':ordinal};extent='Byte-derived general-bibliography citation and original page locator checked against fresh same-byte PDF.'
-        else:
+        elif label in {'ruskin','totland'}:
             row=export['references'][ordinal-1];text=row['citation_text']
             if export['source_sha256']!=pdf['sha256'] or row['pdf_pages']!=witness['file_pages_1based']:raise ValueError('Ruskin source/page disagreement')
             if row['ordinal']!=ordinal or not before['raw_metadata'].startswith(text+' | '+row['occurrence_id']+' | ') or key(body['title']) not in key(text):raise ValueError('Ruskin reference export disagreement')
             locator={'path':exp['path'],'item':ordinal,'occurrence_id':row['occurrence_id'],'pdf_pages':row['pdf_pages']};extent='Coordinate-bearing bibliography citation and original page/line provenance checked against fresh same-byte PDF.'
+        else:raise ValueError('Unreviewed reference export format')
         if doi not in text.lower():raise ValueError('Reference text DOI disagreement')
         after=copy.deepcopy(before);after.update(status='duplicate',source_ref=pin(sid),duplicate_of=representative['output_ref'],
             resolution_reason='R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. '+extent+' No eligibility, empirical extraction or independent-study assertion. See '+ledger_path)
