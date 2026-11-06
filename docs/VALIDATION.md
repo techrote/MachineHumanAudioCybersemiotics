@@ -31,6 +31,45 @@ as an empty bootstrap only if it contains no canonical record objects. Without a
 prior input, the report explicitly says `history_comparison: not_supplied`; a
 standalone file cannot prove its own history.
 
+Historical snapshot reconstruction reads tree-selected blob IDs with
+[`git cat-file --batch`](https://git-scm.com/docs/git-cat-file), at most 512 objects
+per invocation, instead of starting one `git show` per record. Registry state is
+still read from the immutable base. The
+[`git ls-tree -z`](https://git-scm.com/docs/git-ls-tree) listing preserves paths
+verbatim, including Unicode, tabs and line breaks; decoding does not translate
+carriage returns. Only ordinary JSON blobs under declared record roots enter a
+registered snapshot. A base without state still scans research JSON for hidden
+records before accepting an empty bootstrap.
+
+The reader checks response object identity/type, byte sizes and delimiters,
+rejects truncated/trailing/non-UTF-8 output, then uses the same strict JSON parser
+and filename/ID checks. Symlink/executable JSON refusal, full immutable SHA input,
+append-only comparison and all downstream record/graph/export gates remain in
+place. No fetch, text conversion, filters or symlink following is introduced.
+
+Measure reconstruction separately from the full validator:
+
+```sh
+python3 -m tools.benchmark_history_loading --ref FULL_ACCEPTED_COMMIT_SHA
+```
+
+The benchmark reports elapsed seconds, Git-process count, record count, canonical
+snapshot SHA-256 and loader-source SHA-256. Compare the same script and base in
+before/after checkouts; matching snapshot hashes establish output equality for
+that input. Local timings vary with caches and concurrent load, so CI tests bound
+process count and check results, not elapsed-time thresholds. This is software
+qualification, not research or scientific acceptance.
+
+The [6 November 2026 qualification](benchmarks/HISTORY-LOADING-20261106.json)
+compares the accepted serial loader with this implementation on the same 23,295
+records. Both produce the same canonical snapshot SHA-256. Git launches fall
+from 23,298 to 49; the recorded local reconstruction times are 535.0 s and 8.7 s.
+These are single observations under uncontrolled concurrent load/cache conditions,
+not a promised speedup or a timing test. Fifteen new regression tests cover real
+committed bytes/batch boundaries, quoted paths, malformed responses and retained
+rejection rules. One Codex/GPT-6 agent performed implementation, measurements and
+software self-review; no research decisions or records changed.
+
 After an authorized canonical record change, rebuild the four generated views:
 
 ```sh

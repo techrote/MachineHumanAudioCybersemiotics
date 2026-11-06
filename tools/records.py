@@ -289,46 +289,87 @@ def load_snapshot(path: Path, *, expected_kind: str | None = None) -> dict:
     return data
 
 
+_HISTORY_BATCH_SIZE = 512
+
+
+def _git_json_blobs(root: Path, entries: list[tuple[str, str]]):
+    """Read only tree-selected blob IDs, in bounded batches with byte framing."""
+    for start in range(0, len(entries), _HISTORY_BATCH_SIZE):
+        batch = entries[start:start + _HISTORY_BATCH_SIZE]
+        result = subprocess.run(
+            ["git", "-C", str(root), "cat-file", "--batch"],
+            input="".join(oid + "\n" for _, oid in batch).encode("ascii"),
+            capture_output=True)
+        if result.returncode:
+            fail("HISTORY_REF", result.stderr.decode("utf-8", errors="replace").strip()
+                 or "Git object unavailable")
+        raw = result.stdout
+        cursor = 0
+        for path, oid in batch:
+            end = raw.find(b"\n", cursor)
+            header = raw[cursor:end] if end >= 0 else b""
+            match = re.fullmatch(rb"([0-9a-f]{40}|[0-9a-f]{64}) blob (0|[1-9][0-9]{0,19})", header)
+            if match is None or match[1].decode("ascii") != oid:
+                fail("HISTORY_OBJECT", "Unexpected blob identity/type/size: " + path)
+            size = int(match[2])
+            cursor = end + 1
+            end = cursor + size
+            if raw[end:end + 1] != b"\n":
+                fail("HISTORY_OBJECT", "Truncated or malformed blob: " + path)
+            try:
+                text = raw[cursor:end].decode("utf-8")
+            except UnicodeDecodeError:
+                fail("HISTORY_OBJECT", "Non-UTF-8 JSON blob: " + path)
+            yield path, loads(text)
+            cursor = end + 1
+        if cursor != len(raw):
+            fail("HISTORY_OBJECT", "Unexpected trailing batch bytes")
+
+
 def snapshot_from_git(root: Path, ref: str) -> dict:
     """Read a pre-fetched immutable base; never contacts the network."""
     if re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", ref) is None:
         fail("HISTORY_REF", "Expected a full immutable commit SHA")
 
     def git(*args: str, missing: bool = False) -> str | None:
-        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True,
-                                text=True, encoding="utf-8")
+        result = subprocess.run(["git", "-C", str(root), *args], capture_output=True)
         if result.returncode:
             if missing:
                 return None
-            fail("HISTORY_REF", result.stderr.strip() or "Git object unavailable")
-        return result.stdout
+            fail("HISTORY_REF", result.stderr.decode("utf-8", errors="replace").strip()
+                 or "Git object unavailable")
+        # Decode without universal-newline conversion: tree paths are verbatim.
+        return result.stdout.decode("utf-8")
 
     git("cat-file", "-e", ref + "^{commit}")
     state_text = git("show", ref + ":" + STATE_PATH, missing=True)
-    entries = git("ls-tree", "-r", ref, "--", "research") or ""
+    entries = git("ls-tree", "-r", "-z", ref, "--", "research") or ""
     paths = []
-    for line in entries.splitlines():
-        meta, path = line.split("\t", 1)
-        mode, object_type, _ = meta.split(" ")
+    for entry in entries.split("\0"):
+        if not entry:
+            continue
+        meta, path = entry.split("\t", 1)
+        mode, object_type, oid = meta.split(" ")
         if path.endswith(".json"):
-            if mode != "100644" or object_type != "blob":
+            if (mode != "100644" or object_type != "blob"
+                    or re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", oid) is None):
                 fail("HISTORY_PATH", path)
-            paths.append(path)
+            relative_path(path)
+            paths.append((path, oid))
     if state_text is None:
-        for path in paths:
-            value = loads(git("show", ref + ":" + path) or "")
+        for path, value in _git_json_blobs(root, paths):
             if isinstance(value, dict) and {"id", "kind", "revisions"} <= set(value):
                 fail("HISTORY_STATE", "Base has records but no registry state")
         return empty_dataset()
     state = loads(state_text)
     _check_state(state)
     records = []
-    for path in paths:
-        if any(path.startswith(prefix + "/") for prefix in state["record_roots"]):
-            row = loads(git("show", ref + ":" + path) or "")
-            if not isinstance(row, dict) or Path(path).name != str(row.get("id", "")) + ".json":
-                fail("RECORD_FILENAME", path)
-            records.append(row)
+    selected = [(path, oid) for path, oid in paths
+                if any(path.startswith(prefix + "/") for prefix in state["record_roots"])]
+    for path, row in _git_json_blobs(root, selected):
+        if not isinstance(row, dict) or Path(path).name != str(row.get("id", "")) + ".json":
+            fail("RECORD_FILENAME", path)
+        records.append(row)
     result = {key: value for key, value in state.items() if key in DATA_FIELDS}
     result["records"] = sorted(records, key=lambda row: row["id"])
     return result

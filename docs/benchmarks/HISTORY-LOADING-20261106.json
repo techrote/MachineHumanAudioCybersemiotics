@@ -1,0 +1,55 @@
+{
+  "accepted_base": "3c958ee6bf0d343536fd8731b94a7b86ba0709de",
+  "actor": {
+    "id": "codex-r006-history-loader-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "offline_history_loader_qualification",
+  "baseline": {
+    "base": "3c958ee6bf0d343536fd8731b94a7b86ba0709de",
+    "elapsed_seconds": 534.9577138759996,
+    "git": "git version 2.51.1",
+    "git_processes": 23298,
+    "implementation": "accepted serial git show loader",
+    "loader_source_sha256": "572095a1a5e5bc94b895d446ead4e671cb705e71c5801e6a17301d656c50948f",
+    "python": "3.12.14",
+    "record_count": 23295,
+    "snapshot_sha256": "5c1564c6178db3c301d3e2b4c443e2b3956109ec5d257181dca0b7fcdaf12691"
+  },
+  "boundaries": [
+    "No canonical research records, identity decisions, access/reading states, eligibility or generated registry exports changed.",
+    "All schema, graph, append-only, strict JSON and downstream gate checks remain active.",
+    "One agent and software self-review, no independent human or scientific acceptance."
+  ],
+  "candidate": {
+    "artifact_kind": "offline_history_loader_measurement",
+    "base": "3c958ee6bf0d343536fd8731b94a7b86ba0709de",
+    "elapsed_seconds": 8.744582757004537,
+    "git": "git version 2.51.1",
+    "git_processes": 49,
+    "limitations": "Single local elapsed-time observation; caches and concurrent load uncontrolled. No scientific acceptance or CI timing threshold.",
+    "loader_source_sha256": "f1d8c6e1c943589116bc77d7e4efd6817d924c01d3df4592ede44659404deebc",
+    "measured_at": "2026-11-06T16:13:49Z",
+    "python": "3.12.14",
+    "record_count": 23295,
+    "snapshot_sha256": "5c1564c6178db3c301d3e2b4c443e2b3956109ec5d257181dca0b7fcdaf12691"
+  },
+  "equality": {
+    "baseline_equals_candidate": true,
+    "canonical_snapshot_sha256": "5c1564c6178db3c301d3e2b4c443e2b3956109ec5d257181dca0b7fcdaf12691",
+    "live_accepted_registry_equals_candidate": true,
+    "record_count": 23295
+  },
+  "issue": 6,
+  "methodology": [
+    "Both observations reconstruct the same pre-fetched immutable base using the before/after snapshot_from_git implementation in one workspace.",
+    "Elapsed time covers snapshot reconstruction only; canonical JSON hashing is outside the timed interval. Git-process counts wrap subprocess.run around reconstruction; no time threshold or scientific claim follows.",
+    "Baseline used a direct counting wrapper; candidate used the committed benchmark helper with an equivalent counting wrapper. No cache/load isolation or statistical replication."
+  ],
+  "recorded_at": "2026-11-06T16:16:30Z",
+  "reproduction": [
+    "Use the committed tools/benchmark_history_loading.py script in both before/after checkouts with PYTHONPATH=. and the same --ref. The accepted base predates the harness; copy the unchanged script outside that checkout first.",
+    "Compare record_count, git_processes, loader_source_sha256 and snapshot_sha256. Timing depends on host, cache and concurrent load."
+  ]
+}
