@@ -1,0 +1,92 @@
+{
+  "id": "SRC-R006-F-JENSEN-TOXIC",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-f-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T17:07:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00403",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00077",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-01480",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00077",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-F-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T17:04:51Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Dean G. Jensen",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting; 37; 1; 52-54"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-f-jensen-toxic.json record.DOI/title/author; HTTP 200 on 2026-11-06T17:04:51Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/154193129303700113"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-f-jensen-toxic.json record.DOI, title, author and dates; retained derivative SHA256 165d3e64fcd2d5b41af7147f33fcb908febe09d955daf7ba0d7576486c09a07f",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-F-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1993-10"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Space Station Freedom Aural Toxic Alarm Development",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

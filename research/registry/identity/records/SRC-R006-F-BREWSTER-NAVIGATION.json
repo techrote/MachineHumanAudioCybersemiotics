@@ -1,0 +1,92 @@
+{
+  "id": "SRC-R006-F-BREWSTER-NAVIGATION",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-f-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T17:07:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00517",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00427",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-F-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T17:05:08Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Stephen Brewster",
+            "role": "author"
+          },
+          {
+            "name": "Veli-Pekka Raty",
+            "role": "author"
+          },
+          {
+            "name": "Atte Kortekangas",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "People and Computers XI; 169-183"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-f-brewster-navigation.json record.DOI/title/author; HTTP 200 on 2026-11-06T17:05:08Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/978-1-4471-3588-3_12"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-f-brewster-navigation.json record.DOI, title, author and dates; retained derivative SHA256 08e828979c40cac867c092985e22ae7ab490cadc263fa5a8595a7d02fc28441a",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-F-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1996"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Earcons as a Method of Providing Navigational Cues in a Menu Hierarchy",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

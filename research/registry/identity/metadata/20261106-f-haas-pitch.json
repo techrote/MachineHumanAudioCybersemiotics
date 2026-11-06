@@ -1,0 +1,89 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "bf6cf23b1e044698b8ff37700ba7e3da558e129e430819ca33531e00db32dce6",
+  "record": {
+    "DOI": "10.1049/cce:19960407",
+    "URL": "https://doi.org/10.1049/cce:19960407",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Haas",
+        "given": "E.C.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Computing &amp; Control Engineering Journal"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          1996,
+          8,
+          1
+        ]
+      ]
+    },
+    "page": "193-198",
+    "published-print": {
+      "date-parts": [
+        [
+          1996,
+          8,
+          1
+        ]
+      ]
+    },
+    "publisher": "Institution of Engineering and Technology (IET)",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Designing urgency into auditory warnings using pitch, speed and loudness"
+    ],
+    "type": "journal-article",
+    "volume": "7"
+  },
+  "requested_doi": "10.1049/cce:19960407",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:58Z",
+  "url": "https://api.crossref.org/works/10.1049%2Fcce%3A19960407"
+}

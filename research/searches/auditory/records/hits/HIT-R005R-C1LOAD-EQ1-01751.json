@@ -39,6 +39,59 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-f-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T17:07:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01751",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-F-JANG-SPEECH",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-F-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1751,
+        "raw_metadata": "Designing acoustic and non-acoustic parameters of synthesized speech warnings to control perceived urgency | first author: Phil-Sik Jang | 2006-12-30 | article | https://openalex.org/W2037808869",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-F-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2037808869"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1016/j.ergon.2006.10.018"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-F-JANG-SPEECH",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

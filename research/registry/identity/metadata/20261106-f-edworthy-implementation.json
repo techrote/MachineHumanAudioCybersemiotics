@@ -1,0 +1,76 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "6f72d452fd4a6fb8c232ed7205974a0430683438cf6fed38e1764980a6b84889",
+  "record": {
+    "DOI": "10.1016/0003-6870(94)90001-9",
+    "URL": "https://doi.org/10.1016/0003-6870(94)90001-9",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Applied Ergonomics"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          1994,
+          8
+        ]
+      ]
+    },
+    "page": "202-210",
+    "published-print": {
+      "date-parts": [
+        [
+          1994,
+          8
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "The design and implementation of non-verbal auditory warnings"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "volume": "25"
+  },
+  "requested_doi": "10.1016/0003-6870(94)90001-9",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:19Z",
+  "url": "https://api.crossref.org/works/10.1016%2F0003-6870%2894%2990001-9"
+}

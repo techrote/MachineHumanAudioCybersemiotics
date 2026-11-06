@@ -1,0 +1,120 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "744dd26399b5dac6b65347ceaa1f8635b6b8ddf87750f588412d82e1ab340400",
+  "record": {
+    "DOI": "10.1177/154193121005401804",
+    "URL": "https://doi.org/10.1177/154193121005401804",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Sonification Lab, Georgia Institute of Technology Atlanta, Georgia, USA 30332–0170"
+          }
+        ],
+        "family": "Moskovitch",
+        "given": "Yarden",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Sonification Lab, Georgia Institute of Technology Atlanta, Georgia, USA 30332–0170"
+          }
+        ],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Sonification Lab, Georgia Institute of Technology Atlanta, Georgia, USA 30332–0170"
+          }
+        ],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "18",
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          9
+        ]
+      ]
+    },
+    "page": "1321-1325",
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          9,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2010,
+          9
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Enhanced Auditory Menu Cues on a Mobile Phone Improve Time-Shared Performance of a Driving-Like Dual Task"
+    ],
+    "type": "journal-article",
+    "volume": "54"
+  },
+  "requested_doi": "10.1177/154193121005401804",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:04:44Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193121005401804"
+}

@@ -1,0 +1,109 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "9b3aa59934e4218a64764d45a703cf737d0b4353e94eb34063e689c010620e5c",
+  "record": {
+    "DOI": "10.1037/1076-898x.9.1.12",
+    "URL": "https://doi.org/10.1037/1076-898x.9.1.12",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Banbury",
+        "given": "Simon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Fricker",
+        "given": "Liz",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Tremblay",
+        "given": "Sébastien",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Emery",
+        "given": "Lucy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Journal of Experimental Psychology: Applied"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "page": "12-22",
+    "published-online": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "publisher": "American Psychological Association (APA)",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Using auditory streaming to reduce disruption to serial memory by extraneous auditory warnings."
+    ],
+    "type": "journal-article",
+    "volume": "9"
+  },
+  "requested_doi": "10.1037/1076-898x.9.1.12",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:49Z",
+  "url": "https://api.crossref.org/works/10.1037%2F1076-898x.9.1.12"
+}

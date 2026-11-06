@@ -1,0 +1,112 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "2a8ee24ea96dde35a8e26f3e44a5cf0fa52717f283c4d80f5b4440b3ecec8528",
+  "record": {
+    "DOI": "10.1080/00140139508925271",
+    "URL": "https://doi.org/10.1080/00140139508925271",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "BURT",
+        "given": "JENNIFER L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "BARTOLOME",
+        "given": "DEBBIE S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "BURDETTE",
+        "given": "DANIEL W.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "COMSTOCK",
+        "given": "J. RAYMOND",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional",
+        "suffix": "JR"
+      }
+    ],
+    "container-title": [
+      "Ergonomics"
+    ],
+    "issue": "11",
+    "issued": {
+      "date-parts": [
+        [
+          1995,
+          11
+        ]
+      ]
+    },
+    "page": "2327-2340",
+    "published-print": {
+      "date-parts": [
+        [
+          1995,
+          11
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "A psychophysiological evaluation of the perceived urgency of auditory warning signals"
+    ],
+    "type": "journal-article",
+    "volume": "38"
+  },
+  "requested_doi": "10.1080/00140139508925271",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:06:13Z",
+  "url": "https://api.crossref.org/works/10.1080%2F00140139508925271"
+}

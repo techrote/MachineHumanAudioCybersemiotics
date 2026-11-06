@@ -1015,6 +1015,99 @@ visual citation checks, publisher-versus-index adjudication, software self-revie
 and 21 regression tests. These checks are not independent human screening,
 scientific validation or empirical acceptance.
 
+## DOI batch F — 6 November 2026
+
+The [fixed plan](R006-DOI-F-PLAN-20261106.json) and
+[ledger](R006-DOI-F-20261106.json) add twenty metadata-only publication records
+and resolve sixty retained occurrences (twenty representatives and forty
+duplicates). Twenty sequential Crossref single-work requests returned HTTP 200.
+Selected bibliographic derivatives retain actual request URLs/times,
+original-response hashes, declared subtitle fields when present, and separate
+issued/online/print assertions. No abstract or article/chapter text was read;
+raw responses are not committed.
+
+| Publication title from metadata | Crossref type | Resolved | Deferred |
+| --- | --- | ---: | ---: |
+| Standardization of Interface Design for Medical Devices: International Electrotechnical Commission and International Organization for Standardization Medical Alarm Systems | journal-article | 5 | 0 |
+| Enhanced Auditory Menu Cues on a Mobile Phone Improve Time-Shared Performance of a Driving-Like Dual Task | journal-article | 2 | 2 |
+| Space Station Freedom Aural Toxic Alarm Development | journal-article | 4 | 0 |
+| Can 3-D Auditory Warnings Enhance Helicopter Cockpit Safety? | journal-article | 2 | 2 |
+| Auditory Alarms in Intensive Care | book-chapter | 4 | 0 |
+| Earcons as a Method of Providing Navigational Cues in a Menu Hierarchy | book-chapter | 2 | 1 |
+| A Review of Design Guidelines for Clinical Auditory Alarms | book-chapter | 3 | 0 |
+| The design and implementation of non-verbal auditory warnings | journal-article | 3 | 0 |
+| Designing acoustic and non-acoustic parameters of synthesized speech warnings to control perceived urgency | journal-article | 3 | 0 |
+| Improving auditory alarms: Reducing perceived annoyance with musical timbre (a randomized trial) | journal-article | 3 | 0 |
+| Loudness interacts with semantics in auditory warnings to impact rear-end collisions | journal-article | 2 | 1 |
+| On using psychophysical techniques to achieve urgency mapping in auditory warnings | journal-article | 3 | 0 |
+| Using auditory streaming to reduce disruption to serial memory by extraneous auditory warnings. | journal-article | 3 | 0 |
+| Judging the urgency of nonvocal auditory warning signals: Perceptual and cognitive processes. | journal-article | 3 | 0 |
+| Designing urgency into auditory warnings using pitch, speed and loudness | journal-article | 3 | 0 |
+| Localizable auditory warning pulses | journal-article | 3 | 0 |
+| Judging the urgency of non-verbal auditory alarms: a case study | journal-article | 3 | 0 |
+| A psychophysiological evaluation of the perceived urgency of auditory warning signals | journal-article | 3 | 0 |
+| Effects of Synthesized Voice Warning Parameters on Perceived Urgency | journal-article | 3 | 0 |
+| The Perceived Urgency of Speech Warnings: Semantics versus Acoustics | journal-article | 3 | 0 |
+
+The batch prioritizes twenty recurring DOI groups with three, four or five
+unresolved occurrences each and auditory warning/interface topic labels.
+Recurrence and topic labels order identity work; they do not establish eligibility,
+quality, preferred cue families or result direction. All 66 occurrences are
+accounted for: sixty checked and six explicitly deferred, with no discarded
+candidate groups in this fixed plan.
+
+Each admitted occurrence's explicit DOI and full title agree with its original
+export and fresh registration metadata under case/whitespace normalization only.
+Original manifest/page hashes, decompressed payload hashes, ordinals and work IDs
+were checked. No competing source DOI assertion or exactly normalized title was
+found across existing source histories. Original discovery fields, dates and
+index type labels remain intact. Subtitle capture is more complete than the
+older selected-field format; it does not authorize title expansion or fuzzy
+matching.
+
+Crossref classifies Welch, Brewster and Vieira as book chapters. Several other
+records are registered as `journal-article` within HFES proceedings containers;
+registration type is not a final report-type or eligibility judgment. Jang's
+source date uses reported print 2007-03, while original OpenAlex 2006-12-30
+remains unchanged. Other print/online/issued assertions likewise stay separate.
+Catchpole's original index first-author string says Ken C. while the fresh
+registration reports Ken R; both remain literal assertions in their respective
+records. Identity checking does not silently reconcile author initials.
+
+Six bibliography occurrences need separate source/export verification: Baldwin
+in the FRA PDF list, Haas and Moskovitch in the original model-rendered and
+accepted-manuscript lists, and Brewster in the coordinate-bearing Ruskin export.
+DOI/full-title registration alone does not resolve their page/transcription
+provenance. They remain unresolved in this batch.
+
+All twenty sources have verified bibliographic metadata, `metadata_only` access,
+unknown reuse rights, no manifestations, reading claims or family/sample links.
+No eligibility, study, sample, empirical extraction or completed corpus is created.
+Existing source access/reading observations remain unchanged.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_batch_f.py --check
+python -m unittest tests.test_screening_doi_batch_f -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The fixed profile reuses the existing admission engine; no shared matcher or
+research gate changed. Frozen ledger disagreement stops writes, and historical
+canonical revision prefixes remain reproducible. A changed future metadata
+response requires a new observation, not replacement of these captures.
+
+The dated all-lane unresolved count falls **22,202 → 22,142**, with six exact
+candidates, zero conflicts and 22,136 unmatched occurrences. Issue #6 and the
+corpus gate stay open. Next: verify the six bibliography cases separately,
+continue bounded identity admission and undertake actual protocol-governed
+screening and study/sample reconciliation.
+
+AI assistance: one Codex/GPT-6 agent performed bibliographic retrieval,
+retained-export comparison, software self-review and ten regression tests.
+No independent human adjudication, target-source reading or scientific
+acceptance is claimed.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

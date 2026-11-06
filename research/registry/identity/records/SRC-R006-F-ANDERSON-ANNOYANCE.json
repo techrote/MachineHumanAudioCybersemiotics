@@ -1,0 +1,104 @@
+{
+  "id": "SRC-R006-F-ANDERSON-ANNOYANCE",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-f-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T17:07:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01428",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00682",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00133",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-F-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T17:05:28Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Cameron J. Anderson",
+            "role": "author"
+          },
+          {
+            "name": "Sharmila Sreetharan",
+            "role": "author"
+          },
+          {
+            "name": "Andrés E. Elizondo López",
+            "role": "author"
+          },
+          {
+            "name": "Joseph J. Schlesinger",
+            "role": "author"
+          },
+          {
+            "name": "Michael Schutz",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Perioperative Care and Operating Room Management; 32; 100332"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-f-anderson-annoyance.json record.DOI/title/author; HTTP 200 on 2026-11-06T17:05:28Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1016/j.pcorm.2023.100332"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-f-anderson-annoyance.json record.DOI, title, author and dates; retained derivative SHA256 23d0e3ac9616e77dd85f0d4c9f5c3eccc410b0e8af3dda06d188ab6b9730830c",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-F-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2023-09"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Improving auditory alarms: Reducing perceived annoyance with musical timbre (a randomized trial)",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

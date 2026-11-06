@@ -1,0 +1,96 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "9df162dc8c98481e7ef2e5f79e55c6cd3e89413545cc68b075fb1c1f96774d71",
+  "record": {
+    "DOI": "10.1080/10803548.1999.11076412",
+    "URL": "https://doi.org/10.1080/10803548.1999.11076412",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Park",
+        "given": "Kyung S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Jang",
+        "given": "Phil S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "International Journal of Occupational Safety and Ergonomics"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          1999,
+          1
+        ]
+      ]
+    },
+    "page": "73-95",
+    "published-online": {
+      "date-parts": [
+        [
+          2015,
+          1,
+          8
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1999,
+          1
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Effects of Synthesized Voice Warning Parameters on Perceived Urgency"
+    ],
+    "type": "journal-article",
+    "volume": "5"
+  },
+  "requested_doi": "10.1080/10803548.1999.11076412",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:06:18Z",
+  "url": "https://api.crossref.org/works/10.1080%2F10803548.1999.11076412"
+}
