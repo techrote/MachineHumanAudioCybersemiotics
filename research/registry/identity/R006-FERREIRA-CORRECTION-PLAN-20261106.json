@@ -1,0 +1,38 @@
+{
+  "accepted_base": "a0aea6f965f159a0054a5c5ee436aa697e4dffbc",
+  "artifact_kind": "fixed_publication_correction_identity_plan",
+  "boundary": "Three held original-paper occurrences plus one retained correction-notice occurrence. Distinct publication identities; no original-paper reading, eligibility, study/sample identity or empirical-results assertion.",
+  "held_occurrences": [
+    {
+      "id": "HIT-R005R-C1RECOVERY-EQ5-00158",
+      "rev": 1
+    },
+    {
+      "id": "HIT-R005R-C1LOAD-EQ5-01402",
+      "rev": 1
+    },
+    {
+      "id": "HIT-R005R-C1RECOVERY-EQ1-00537",
+      "rev": 1
+    }
+  ],
+  "issue": 6,
+  "notice_capture": {
+    "path": "research/registry/identity/metadata/20261106-ferreira-correction-notice.json",
+    "sha256": "10c679a9ca87e56dd5e4eb7e1c424dabdc194970892fca6ffd9cf049fd58f017"
+  },
+  "notice_doi": "10.1371/journal.pone.0295826",
+  "notice_occurrence": {
+    "id": "HIT-R005R-C1RECOVERY-EQ1-00705",
+    "rev": 1
+  },
+  "original_capture": {
+    "path": "research/registry/identity/metadata/20261106-ferreira-correction-original.json",
+    "sha256": "b4489ca7aa34caf0830934251d98fd2b534ff16db8b63e5f0b35d58429729d73"
+  },
+  "original_doi": "10.1371/journal.pone.0281680",
+  "parent_plan": {
+    "path": "research/registry/identity/R006-DOI-G-PLAN-20261106.json",
+    "sha256": "6b99cd71c2571b798a8fa8f065756e3e5c629a3e3b7e01cb02f082073513938c"
+  }
+}

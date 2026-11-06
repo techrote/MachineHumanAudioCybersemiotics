@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 228,
+  "current_usable_sources": 229,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 228,
+  "publications": 230,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -192,6 +192,8 @@
       "SRC-R006-G-BIKAKI-AGGREGATOR",
       "SRC-R006-G-DAVIDSON-LINGUISTIC",
       "SRC-R006-G-FAGERLONN-GRADED",
+      "SRC-R006-G-FERREIRA-CORRECTION",
+      "SRC-R006-G-FERREIRA-ERP",
       "SRC-R006-G-HAAS-URGENCY",
       "SRC-R006-G-HELLIER-PSYCHOPHYSICS",
       "SRC-R006-G-HOLLANDER-HAZARD",
@@ -400,6 +402,8 @@
       "SRC-R006-G-BIKAKI-AGGREGATOR",
       "SRC-R006-G-DAVIDSON-LINGUISTIC",
       "SRC-R006-G-FAGERLONN-GRADED",
+      "SRC-R006-G-FERREIRA-CORRECTION",
+      "SRC-R006-G-FERREIRA-ERP",
       "SRC-R006-G-HAAS-URGENCY",
       "SRC-R006-G-HELLIER-PSYCHOPHYSICS",
       "SRC-R006-G-HOLLANDER-HAZARD",
@@ -4594,11 +4598,11 @@
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 45,
+      "resolved_hits": 46,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 45,
-      "unresolved_hits": 2067
+      "unique_publications": 46,
+      "unresolved_hits": 2066
     },
     {
       "duplicate_hits": 2,
@@ -4612,15 +4616,15 @@
       "unresolved_hits": 4649
     },
     {
-      "duplicate_hits": 75,
+      "duplicate_hits": 76,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 78,
+      "resolved_hits": 80,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 77,
-      "unresolved_hits": 922
+      "unique_publications": 79,
+      "unresolved_hits": 920
     },
     {
       "duplicate_hits": 30,
@@ -4656,15 +4660,15 @@
       "unresolved_hits": 582
     },
     {
-      "duplicate_hits": 45,
+      "duplicate_hits": 46,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 45,
+      "resolved_hits": 46,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 45,
-      "unresolved_hits": 1555
+      "unique_publications": 46,
+      "unresolved_hits": 1554
     },
     {
       "duplicate_hits": 9,
@@ -4849,7 +4853,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 228,
+  "source_record_ids": 230,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

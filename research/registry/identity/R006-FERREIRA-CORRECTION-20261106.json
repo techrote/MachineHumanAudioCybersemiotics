@@ -1,0 +1,300 @@
+{
+  "actor": {
+    "id": "codex-r006-ferreira-correction-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; fresh Crossref metadata, publisher correction PDF/Poppler reading and retained-export comparison"
+  },
+  "artifact_kind": "bounded_correction_aware_publication_identity_tranche",
+  "boundary": "Original and correction are distinct publications, not independent experiments or samples. Correction known on first source registration; no earlier local source revision or scientific acceptance invented.",
+  "counts": {
+    "correction_notices": 1,
+    "duplicate_occurrences": 2,
+    "new_source_records": 2,
+    "notice_full_readings": 1,
+    "notice_occurrences": 1,
+    "occurrences": 4,
+    "original_article_readings": 0,
+    "original_occurrences": 3,
+    "resolved_representatives": 2,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "study_records_created": 0
+  },
+  "implementation_base": "a0aea6f965f159a0054a5c5ee436aa697e4dffbc",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-DOI-G-PLAN-20261106.json",
+      "sha256": "6b99cd71c2571b798a8fa8f065756e3e5c629a3e3b7e01cb02f082073513938c"
+    },
+    {
+      "path": "research/registry/identity/R006-FERREIRA-CORRECTION-PLAN-20261106.json",
+      "sha256": "f83e0351b47655a12bc57e82b5e6e4bc8c4b668f4850651cacecc8448b57add1"
+    },
+    {
+      "path": "research/registry/identity/R006-FERREIRA-CORRECTION-WITNESS-20261106.json",
+      "sha256": "0b46f072250893574318663d842d99268a523013d9fece38742b8247446648cb"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-ferreira-correction-notice.json",
+      "sha256": "10c679a9ca87e56dd5e4eb7e1c424dabdc194970892fca6ffd9cf049fd58f017"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-ferreira-correction-original.json",
+      "sha256": "b4489ca7aa34caf0830934251d98fd2b534ff16db8b63e5f0b35d58429729d73"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-g-ferreira-erp.json",
+      "sha256": "4d0d92bfb4f1ab9a272f7371fc008868f94b1bd73b9cbc7071f73c175e80b9da"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0001.json.gz",
+      "sha256": "6606d8c289c09849ad863bea9cd927dda823ad0d194ad0823be8aabae3438da5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0002.json.gz",
+      "sha256": "25d3a7dacca2d11288ef90851e9bbcad8ae136d8e589657e912d876b85040d87"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+      "sha256": "bd5a2876aa9e23347d15a9639b875759191742561c18e12e8183fda142a3396d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0004.json.gz",
+      "sha256": "fff6796eaa3310cf3da0d11746191a08a220052d65dff422bdc08fbdf01903d1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0005.json.gz",
+      "sha256": "86f8cfc955bf27095987cc12b4a191a5fa9362374171e895ee6651c96f70784b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0006.json.gz",
+      "sha256": "c56267aa604a1ac5836016d1ba2507e75f5ff36b73b3ce8043681a61eed41d0c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0007.json.gz",
+      "sha256": "06b3f3a1095fbfc9ef3b1edbc9e62b53ebb084a0eaafab82da4569d430035a01"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0008.json.gz",
+      "sha256": "944286b9840e3ee410a5b83ac6a857cabcb78aa9aab006bfe883e934b1597501"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0009.json.gz",
+      "sha256": "74466151f34b131e0079e19058d0c72ec6cba7037f0761a344b929ea77dccff5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0010.json.gz",
+      "sha256": "6e823b71c57aa461d03fa5a3b007a3ca1cbd4e5e40b71918fa7cadb25cbec2b5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0011.json.gz",
+      "sha256": "a53bc310433542328a083bf88c5e45aa6d6058113d04934534dfc443c35c0795"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+      "sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+      "sha256": "a4e7a83a1947e4305077e8b6a259de4a814072022752adc8eba09c7f33fed14f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+      "sha256": "4f6be15385cecec4ac3a2540e236aeebb78d74e21230f16090d89e86b10a90ee"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+      "sha256": "ccee941f98d31ff7a375a1818e974d2716a4d35f3092af2062706b91239cb3ec"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+      "sha256": "ce66781f59dfd2150c0998843d0b07fd9c33729c81547bd9c99a3b5bed8e96b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+      "sha256": "b87f72d0672c4ac5c5537948a5e2209c061655f0519bc3d1efcbe148cca71305"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+      "sha256": "996e54968acbc09fed933cedb0088abf7535f876ba64cdad130e1eea82be93b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0002.json.gz",
+      "sha256": "a8cb32319f6e8f43ac26e03c19c01712599d8c9b06912961df157803c7b95304"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0003.json.gz",
+      "sha256": "ea313963bcd6a57c84476896956776949a462ff3b0fe5f1158ddf35f1f0dc0bb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0004.json.gz",
+      "sha256": "80b08440606576465e54167df37f4226b000db1f2428aa52c63f055785b6d1e6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0005.json.gz",
+      "sha256": "ba9b57087f4cb811947d4ad25cc8e1bae88a7d01ec124fca38165b8822413792"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0006.json.gz",
+      "sha256": "f3e3572eedbabd89b5f5fda05aef284510f61a03873340de788401cacf227b23"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0007.json.gz",
+      "sha256": "bf5892aed1cd9bbf0dca4002ad66e6f5947a1f4d5fbcef73f9d3e1cc78318ef4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0008.json.gz",
+      "sha256": "d108c66aeb292a995057431072d0a9f2cccf301ad03bb1c4160d2ce85c8a27ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+      "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b"
+    }
+  ],
+  "issue": 6,
+  "notice_reading_ref": {
+    "id": "AID-R006-FERREIRA-NOTICE-READING-20261106",
+    "rev": 1
+  },
+  "occurrences": [
+    {
+      "doi": "10.1371/journal.pone.0281680",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 2,
+        "ordinal": 1402,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0008.json.gz",
+        "reported_publication_date": "2023-02-16",
+        "work_id": "https://openalex.org/W4321003426"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-01402",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01402",
+        "rev": 1
+      },
+      "input_revision_sha256": "07d44908429e4fde1c761d65e042a60db830963528dbc804004720a4dd8bf2f9",
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01402",
+        "rev": 2
+      },
+      "output_revision_sha256": "8f83c11a912d9feaf799a425f76e060a4c63576131ba0b97a345ccc9e4f15d35",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-01402.json",
+      "source_ref": {
+        "id": "SRC-R006-G-FERREIRA-ERP",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1371/journal.pone.0281680",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01402",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 137,
+        "ordinal": 537,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+        "reported_publication_date": "2023-02-16",
+        "work_id": "https://openalex.org/W4321003426"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00537",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00537",
+        "rev": 1
+      },
+      "input_revision_sha256": "7bbe8e986a17d366330042a91aed007bf562f0ff2abae6d0407e02ff42c7b801",
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00537",
+        "rev": 2
+      },
+      "output_revision_sha256": "6c70035a32aecab2ba83cb58efb9ff038fa659b5448b15ff61700bc02f9e1c02",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00537.json",
+      "source_ref": {
+        "id": "SRC-R006-G-FERREIRA-ERP",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1371/journal.pone.0295826",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 105,
+        "ordinal": 705,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+        "reported_publication_date": "2023-12-07",
+        "work_id": "https://openalex.org/W4389429591"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00705",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00705",
+        "rev": 1
+      },
+      "input_revision_sha256": "8c20ce222eab4a8f0cf5382170070a10e48b080d7286acbb4f8baefbe61b7d20",
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00705",
+        "rev": 2
+      },
+      "output_revision_sha256": "d1d4e3464b0cfc72e2ad376d708d370bd745c31fe5301e22e1e301a1e7b2ec3b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00705.json",
+      "source_ref": {
+        "id": "SRC-R006-G-FERREIRA-CORRECTION",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1371/journal.pone.0281680",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01402",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 158,
+        "ordinal": 158,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "2023-02-16",
+        "work_id": "https://openalex.org/W4321003426"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00158",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00158",
+        "rev": 1
+      },
+      "input_revision_sha256": "03f78a2eaad33003b22b7f33ee7c2d17acb577fb251f806545186ed80152901d",
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00158",
+        "rev": 2
+      },
+      "output_revision_sha256": "2c456f4683aedaadbe00a8293ea88be34ed459dd0069c11bafff53fab1598783",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00158.json",
+      "source_ref": {
+        "id": "SRC-R006-G-FERREIRA-ERP",
+        "rev": 1
+      },
+      "status": "duplicate"
+    }
+  ],
+  "receipt": "research/registry/identity/R006-FERREIRA-CORRECTION-WITNESS-20261106.json",
+  "resolved_at": "2026-11-06T21:14:19Z",
+  "sources": [
+    {
+      "path": "research/registry/identity/records/SRC-R006-G-FERREIRA-ERP.json",
+      "revision_sha256": "ccc7a27e0366607be2b630f48573535f791f53e2ddd86f9bd4ce5ea753404a70",
+      "source_ref": {
+        "id": "SRC-R006-G-FERREIRA-ERP",
+        "rev": 1
+      }
+    },
+    {
+      "path": "research/registry/identity/records/SRC-R006-G-FERREIRA-CORRECTION.json",
+      "revision_sha256": "201870bf0f00cd072c8c95ccdd80f05375b450f1cd3f241b0022100f9b6cc8fe",
+      "source_ref": {
+        "id": "SRC-R006-G-FERREIRA-CORRECTION",
+        "rev": 1
+      }
+    }
+  ]
+}

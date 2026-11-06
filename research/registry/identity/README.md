@@ -1320,6 +1320,92 @@ regression tests. These checks are not independent human adjudication or
 scientific validation. No human gate satisfaction or protocol amendment is
 asserted.
 
+## Ferreira correction-aware identity review — 6 November 2026
+
+The [fixed correction-review plan](R006-FERREIRA-CORRECTION-PLAN-20261106.json)
+and [ledger](R006-FERREIRA-CORRECTION-20261106.json) resolve the three
+Ferreira occurrences held by batch G. They create one representative and two
+duplicate links to `SRC-R006-G-FERREIRA-ERP`, first registered with validity
+`corrected` and access `metadata_only`. A separate source,
+`SRC-R006-G-FERREIRA-CORRECTION`, records the publisher's correction notice and
+links `correction_of` the original. They are distinct publications, never two
+independent experiments or samples and never source aliases.
+
+Two fresh Crossref single-work requests returned HTTP 200. The original's
+`relation.correction` names notice DOI `10.1371/journal.pone.0295826`; the
+notice's publisher `update-to` identifies original DOI
+`10.1371/journal.pone.0281680` as its correction target. The full author names
+agree, although the original registration splits the first author's family name
+as `Ribeiro Ferreira` and the notice registration uses `Ferreira`. Both literal
+registration assertions are retained. Original publication date 16 February
+2023 and notice date 7 December 2023 remain distinct.
+
+The [publisher reading receipt](R006-FERREIRA-CORRECTION-WITNESS-20261106.json)
+records the freshly retrieved one-page PDF, exact URL/time/hash, rendered-image
+inspection and paragraph locators. The full correction notice, its original-paper
+reference and copyright sidebar were read. It identifies three changes:
+
+| Publisher notice locator | Stated change |
+| --- | --- |
+| PDF p.1, paragraph 1 | Guilherme Campos replaces Alberto Crego as corresponding author. |
+| PDF p.1, paragraph 2 | Three omitted affiliations are added for Guilherme Campos. |
+| PDF p.1, paragraph 3 | Additional partial FCT funding through UIDB/00127/2020 is acknowledged. |
+
+This is the notice's stated scope. The original article, abstract, methods and
+results were not retrieved or read, and no empirical-result effect assessment was
+performed. The source's corrected flag records a known publisher correction; it
+does not certify unaffected results or study validity. The notice's full-item
+reading applies only to its one-page manifestation. Its explicit Creative Commons
+Attribution redistribution terms are recorded only for the notice, with no licence
+version inferred; original-paper rights remain unknown. PDFs, HTML, renders,
+raw registration responses and contact details are not committed.
+
+The initial noncanonical PDF request using `type=print` returned 404; the actual
+publisher-linked `type=printable` route returned 200. No source-unavailability
+claim is made from the failed route. The fixed
+[correction-aware builder](scripts/build_r006_ferreira_correction.py) checks
+reciprocal registration identities, title/author/date context, the inspected
+publisher witness, the complete three-case parent hold and separate notice
+occurrence, export/page/payload hashes, DOI/full titles and work IDs. It preserves every original hit
+revision and discovery field. The ordinary metadata admission engine's relation/
+update guard is unchanged; this separate path does not discard those fields.
+
+Registration of the notice exposed an additional retained exact-DOI candidate,
+`HIT-R005R-C1RECOVERY-EQ1-00705`. Its full correction title, explicit notice DOI,
+original ordinal 705, date 2023-12-07, `erratum` type label and OpenAlex work ID
+were checked against the retained export and current registration. It now resolves
+to the correction source as its own representative, never as a duplicate of the
+original paper. Four occurrences are resolved in this review: the three held
+original-paper occurrences and this separate notice occurrence.
+
+Because the original source did not previously exist locally, its first revision
+already records the correction. No fictional earlier active revision, amendment
+or downstream invalidation event is fabricated. Future source changes still need
+ordinary append-only correction handling. Notice content belongs in future
+funding/conflict appraisal when actual empirical reading occurs; no eligibility,
+study/sample, appraisal or selected corpus is created here.
+
+```bash
+python research/registry/identity/scripts/build_r006_ferreira_correction.py --check
+python -m unittest tests.test_screening_ferreira_correction -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane unresolved count falls **22,079 → 22,075**, with zero exact
+candidates/conflicts and 22,075 unmatched. Batch G's sixty original discovery
+occurrences now link to twenty cited publication identities; its correction
+notice is an additional linked source with its own separately retained discovery
+occurrence; it is not another study.
+This completes only that fixed identity scope. Issue #6 remains open for broader
+identity, actual eligibility, overlap, corpus snapshot and bias assessment;
+R005 coverage and the #7–#9 corpus gates remain incomplete.
+
+AI assistance: one Codex/GPT-6 agent performed retrieval, full notice reading,
+identity review, implementation and software self-review, with eighteen regression
+tests. No independent human adjudication, peer review, original-paper reading,
+scientific validation or human-gate satisfaction is asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

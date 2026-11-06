@@ -1,0 +1,49 @@
+{
+  "id": "AID-R006-FERREIRA-NOTICE-READING-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-ferreira-correction-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref metadata, publisher correction PDF/Poppler reading and retained-export comparison"
+      },
+      "at": "2026-11-06T21:14:19Z",
+      "basis": [
+        {
+          "id": "SRC-R006-G-FERREIRA-CORRECTION",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at_read": "full_text_available",
+        "independence": "One Codex/GPT-6 agent; no independent human adjudication or scientific validation.",
+        "manifestation_id": "MAN-R006-FERREIRA-CORRECTION-PDF",
+        "method": "Complete one-page correction notice, including its reference and copyright sidebar, read from pdftoppm -png -singlefile -scale-to 1800 rendering. Original article/abstract/methods/results not retrieved or read.",
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T21:09:00Z"
+        },
+        "ranges": [
+          [
+            1,
+            1
+          ]
+        ],
+        "reading_status": "full_item_read",
+        "source_ref": {
+          "id": "SRC-R006-G-FERREIRA-CORRECTION",
+          "rev": 1
+        },
+        "status": "performed",
+        "subtype": "reading"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
