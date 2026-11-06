@@ -1,0 +1,95 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "bac3d6e3a5126ce19e72e8ae21242ffbedb2219db07d5d813cea0adb9ccbb478",
+  "record": {
+    "DOI": "10.1016/j.promfg.2015.07.875",
+    "URL": "https://doi.org/10.1016/j.promfg.2015.07.875",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Bakowski",
+        "given": "Deborah L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Davis",
+        "given": "Susan T.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Moroney",
+        "given": "William F.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Procedia Manufacturing"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "page": "3238-3245",
+    "published-print": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "title": [
+      "Reaction Time and Glance Behavior of Visually Distracted Drivers to an Imminent Forward Collision as a Function of Training, Auditory Warning, and Gender"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "volume": "3"
+  },
+  "requested_doi": "10.1016/j.promfg.2015.07.875",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:06:05Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.promfg.2015.07.875"
+}

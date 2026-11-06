@@ -1,0 +1,92 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "7ad102a2cbac6aebd75c4d794eebd14f145a13b5e3d21195d4ed93548b4acf15",
+  "record": {
+    "DOI": "10.1007/978-3-319-20898-5_37",
+    "URL": "https://doi.org/10.1007/978-3-319-20898-5_37",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Sun",
+        "given": "Yuanjing",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Lecture Notes in Computer Science",
+      "Design, User Experience, and Usability: Users and Interactions"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "page": "382-389",
+    "published-online": {
+      "date-parts": [
+        [
+          2015,
+          7,
+          21
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    },
+    "publisher": "Springer International Publishing",
+    "relation": {},
+    "title": [
+      "Lyricon (Lyrics + Earcons) Improves Identification of Auditory Cues"
+    ],
+    "type": "book-chapter",
+    "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  },
+  "requested_doi": "10.1007/978-3-319-20898-5_37",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:41Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-319-20898-5_37"
+}

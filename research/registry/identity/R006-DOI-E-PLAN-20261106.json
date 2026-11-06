@@ -1,0 +1,656 @@
+{
+  "accepted_base": "69bb4bb252f6f53a4da0ab474b4755fc67de4d6b",
+  "access_note": "Fifteen sequential Crossref single-work requests; only successful bibliographic derivatives admitted. Actual statuses retained per capture. No article/chapter or abstract text was read.",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Metadata identity only. No article/chapter/abstract reading, eligibility, independent-study or corpus acceptance. Unreviewed export formats and title disagreements stay unresolved.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1002/acp.1457",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-007",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/1952383.1952385",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-027",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-SPINDEX"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-057",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SUN-LYRICON"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-063",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WALKER-MOBILE"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1002/acp.1457",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-007",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/1952383.1952385",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-027",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-SPINDEX"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-057",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SUN-LYRICON"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-063",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WALKER-MOBILE"
+    },
+    {
+      "defer_reason": "Retained full title disagrees with Crossref under case/whitespace-only comparison",
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03013",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    },
+    {
+      "defer_reason": "Retained full title disagrees with Crossref under case/whitespace-only comparison",
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    }
+  ],
+  "issue": 6,
+  "not_admitted": [],
+  "selected": [
+    {
+      "doi": "10.1177/154193120004402247",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00885",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-EDWORTHY-PERFORMANCE"
+    },
+    {
+      "doi": "10.1177/154193120304700142",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01241",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-MOULOUA-COCKPIT"
+    },
+    {
+      "doi": "10.1016/j.intcom.2003.12.002",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01317",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WATSON-TAILORING"
+    },
+    {
+      "doi": "10.1007/11555261_125",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01449",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WEE-TESTING"
+    },
+    {
+      "doi": "10.1002/acp.1457",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02032",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS"
+    },
+    {
+      "doi": "10.2478/v10053-008-0064-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02138",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEVENS-INFORMATIVE"
+    },
+    {
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02165",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WALKER-MOBILE"
+    },
+    {
+      "doi": "10.1016/j.actpsy.2009.12.011",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02395",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEINBORN-SHIFT"
+    },
+    {
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02447",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    },
+    {
+      "doi": "10.1145/1952383.1952385",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02671",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-SPINDEX"
+    },
+    {
+      "doi": "10.1109/have.2014.6954329",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03615",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-IMBEAULT-CADENCE"
+    },
+    {
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03712",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SUN-LYRICON"
+    },
+    {
+      "doi": "10.1016/j.promfg.2015.07.875",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03717",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BAKOWSKI-COLLISION"
+    },
+    {
+      "doi": "10.1177/154193120304700142",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00230",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-MOULOUA-COCKPIT"
+    },
+    {
+      "doi": "10.1007/11555261_125",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00267",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WEE-TESTING"
+    },
+    {
+      "doi": "10.2478/v10053-008-0064-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00403",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEVENS-INFORMATIVE"
+    },
+    {
+      "doi": "10.1016/j.actpsy.2009.12.011",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00461",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEINBORN-SHIFT"
+    },
+    {
+      "doi": "10.1109/have.2014.6954329",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00750",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-IMBEAULT-CADENCE"
+    },
+    {
+      "doi": "10.1016/j.promfg.2015.07.875",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00777",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BAKOWSKI-COLLISION"
+    },
+    {
+      "doi": "10.1007/978-3-319-51941-8_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00907",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SOUSA-CONTROL"
+    },
+    {
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00007",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SUN-LYRICON"
+    },
+    {
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00016",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WALKER-MOBILE"
+    },
+    {
+      "doi": "10.1145/1952383.1952385",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00032",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-SPINDEX"
+    },
+    {
+      "doi": "10.1177/0018720818797502",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00037",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-LI-PATIENTS"
+    },
+    {
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00152",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    },
+    {
+      "doi": "10.1007/978-3-319-51941-8_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00233",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SOUSA-CONTROL"
+    },
+    {
+      "doi": "10.1002/acp.1457",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00284",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS"
+    },
+    {
+      "doi": "10.1016/j.actpsy.2009.12.011",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00615",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEINBORN-SHIFT"
+    },
+    {
+      "doi": "10.1177/154193120004402247",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00800",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-EDWORTHY-PERFORMANCE"
+    },
+    {
+      "doi": "10.1177/154193120004402247",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00802",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-EDWORTHY-PERFORMANCE"
+    },
+    {
+      "doi": "10.1177/154193120004402247",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00029",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-EDWORTHY-PERFORMANCE"
+    },
+    {
+      "doi": "10.1177/0018720818797502",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ4-00009",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-LI-PATIENTS"
+    },
+    {
+      "doi": "10.1016/j.intcom.2003.12.002",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ4-00147",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WATSON-TAILORING"
+    },
+    {
+      "doi": "10.1007/978-3-319-51941-8_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00060",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SOUSA-CONTROL"
+    },
+    {
+      "doi": "10.1016/j.actpsy.2009.12.011",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00115",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEINBORN-SHIFT"
+    },
+    {
+      "doi": "10.1016/j.promfg.2015.07.875",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00116",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BAKOWSKI-COLLISION"
+    },
+    {
+      "doi": "10.1109/have.2014.6954329",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00260",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-IMBEAULT-CADENCE"
+    },
+    {
+      "doi": "10.1007/11555261_125",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00945",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WEE-TESTING"
+    },
+    {
+      "doi": "10.1177/154193120304700142",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01047",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-MOULOUA-COCKPIT"
+    },
+    {
+      "doi": "10.2478/v10053-008-0064-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01221",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEVENS-INFORMATIVE"
+    },
+    {
+      "doi": "10.1177/0018720818797502",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-LI-PATIENTS"
+    },
+    {
+      "doi": "10.1016/j.intcom.2003.12.002",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00152",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WATSON-TAILORING"
+    },
+    {
+      "doi": "10.1007/978-3-319-51941-8_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00408",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SOUSA-CONTROL"
+    },
+    {
+      "doi": "10.2478/v10053-008-0064-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00080",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEVENS-INFORMATIVE"
+    },
+    {
+      "doi": "10.1016/j.intcom.2003.12.002",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ4-00046",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WATSON-TAILORING"
+    },
+    {
+      "doi": "10.1177/0018720818797502",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ4-00237",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-LI-PATIENTS"
+    },
+    {
+      "doi": "10.1177/154193120304700142",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00230",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-MOULOUA-COCKPIT"
+    },
+    {
+      "doi": "10.1007/11555261_125",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00267",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WEE-TESTING"
+    },
+    {
+      "doi": "10.2478/v10053-008-0064-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00403",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEVENS-INFORMATIVE"
+    },
+    {
+      "doi": "10.1016/j.actpsy.2009.12.011",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00461",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-STEINBORN-SHIFT"
+    },
+    {
+      "doi": "10.1109/have.2014.6954329",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00750",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-IMBEAULT-CADENCE"
+    },
+    {
+      "doi": "10.1016/j.promfg.2015.07.875",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00777",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BAKOWSKI-COLLISION"
+    }
+  ],
+  "selection_rationale": "Fifteen recurring DOI groups with four or five unresolved occurrences each were selected using auditory warning/interface topic labels and recurrence, not result direction or eligibility. This is bounded identity prioritization, not exhaustive selection or screening.",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-steinborn-shift.json",
+        "sha256": "87fea1a37f5005b33a3068fdaefffd3a1736bc2120b09d69a0f635c670ebf7e0"
+      },
+      "doi": "10.1016/j.actpsy.2009.12.011",
+      "source_id": "SRC-R006-E-STEINBORN-SHIFT",
+      "title": "The effect of a cross-trial shift of auditory warning signals on the sequential foreperiod effect"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-stevens-informative.json",
+        "sha256": "046aa1127fcece63eee7289101c13c8c9b43b404e0e7a22a3a7e1d472f50ce40"
+      },
+      "doi": "10.2478/v10053-008-0064-6",
+      "source_id": "SRC-R006-E-STEVENS-INFORMATIVE",
+      "title": "Designing informative warning signals: Effects of indicator type, modality, and task demand on recognition speed and accuracy"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-bonebright-earcons.json",
+        "sha256": "803be1f918ce8a5670c2f249c216664cc28aeb3411aa74d96a5e320c3adbcdcf"
+      },
+      "doi": "10.1002/acp.1457",
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS",
+      "title": "Most earcons do not interfere with spoken passage comprehension"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-wee-testing.json",
+        "sha256": "58fca31236d158e10af994199baaff121fccd3e1239f77ae0e7610b278791809"
+      },
+      "doi": "10.1007/11555261_125",
+      "source_id": "SRC-R006-E-WEE-TESTING",
+      "title": "Testing New Alarms for Medical Electrical Equipment"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-sun-lyricon.json",
+        "sha256": "01ba5809e1055416f1a2cf1f077b81589837741167cbf659159fccdd8a9793ee"
+      },
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "source_id": "SRC-R006-E-SUN-LYRICON",
+      "title": "Lyricon (Lyrics + Earcons) Improves Identification of Auditory Cues"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-sousa-control.json",
+        "sha256": "1a3198963c989c5d673f1d2bebfa1eba7149d8aba24620c42af155c1675ad1b9"
+      },
+      "doi": "10.1007/978-3-319-51941-8_12",
+      "source_id": "SRC-R006-E-SOUSA-CONTROL",
+      "title": "Designing and Deploying Meaningful Auditory Alarms for Control Systems"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-walker-mobile.json",
+        "sha256": "3eec85e98c095a2c5efdd820ed1f58c81d4a41bb7f3be12bf805690ae94ddab1"
+      },
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "source_id": "SRC-R006-E-WALKER-MOBILE",
+      "title": "Spearcon Performance and Preference for Auditory Menus on a Mobile Phone"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-watson-tailoring.json",
+        "sha256": "16e164b85456bf07db283cf5545fb9ac10eccd21639e91b41ea62e1ccbf8adf6"
+      },
+      "doi": "10.1016/j.intcom.2003.12.002",
+      "source_id": "SRC-R006-E-WATSON-TAILORING",
+      "title": "Tailoring reveals information requirements: the case of anaesthesia alarms"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-bakowski-collision.json",
+        "sha256": "360b239c2d9ac9658c6802ad9948750fce8920790aba6b0b880f9d4af0e644b1"
+      },
+      "doi": "10.1016/j.promfg.2015.07.875",
+      "source_id": "SRC-R006-E-BAKOWSKI-COLLISION",
+      "title": "Reaction Time and Glance Behavior of Visually Distracted Drivers to an Imminent Forward Collision as a Function of Training, Auditory Warning, and Gender"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-imbeault-cadence.json",
+        "sha256": "75d8863bb95cbba1876b4a1fb746a242c994ffe9ed045eab070b5a3ab6c1f2c9"
+      },
+      "doi": "10.1109/have.2014.6954329",
+      "source_id": "SRC-R006-E-IMBEAULT-CADENCE",
+      "title": "Synchronized walking cadence for TUG in perturbed environments: Using Earcon or Tacton cues?"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-jeon-unavailable.json",
+        "sha256": "0a3b1a9cc26c84f030d6bc13e80b76b6b504266a7e3e85003be3856c2358d318"
+      },
+      "doi": "10.1145/1753846.1753978",
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE",
+      "title": "Auditory menus are not just spoken visual menus"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-jeon-spindex.json",
+        "sha256": "448ac451e82335fdeb97bc71bcef449f725e4e77a18aa51efbaacd3bd4aca793"
+      },
+      "doi": "10.1145/1952383.1952385",
+      "source_id": "SRC-R006-E-JEON-SPINDEX",
+      "title": "Spindex (Speech Index) Improves Auditory Menu Acceptance and Navigation Performance"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-li-patients.json",
+        "sha256": "5eb9543b19498e423578119796cc3c6a159436f95bbb450f0db9c99eb57e329c"
+      },
+      "doi": "10.1177/0018720818797502",
+      "source_id": "SRC-R006-E-LI-PATIENTS",
+      "title": "Spearcon Sequences for Monitoring Multiple Patients: Laboratory Investigation Comparing Two Auditory Display Designs"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-edworthy-performance.json",
+        "sha256": "4d8b32bdd1ff852aba09a54c09f2cfcbf81e1a2aa951d42a683eec1a73ea3c3f"
+      },
+      "doi": "10.1177/154193120004402247",
+      "source_id": "SRC-R006-E-EDWORTHY-PERFORMANCE",
+      "title": "The Relationship between Task Performance, Reaction Time, and Perceived Urgency in Nonverbal Auditory Warnings"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-e-mouloua-cockpit.json",
+        "sha256": "c197734390d7700524b2a7d7f265610ef0c031ffb929c90a54da35293ab31ef4"
+      },
+      "doi": "10.1177/154193120304700142",
+      "source_id": "SRC-R006-E-MOULOUA-COCKPIT",
+      "title": "Pilot Interactions with Alarm Systems in the Cockpit"
+    }
+  ]
+}

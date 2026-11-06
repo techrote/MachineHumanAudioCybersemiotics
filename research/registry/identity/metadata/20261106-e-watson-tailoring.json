@@ -1,0 +1,97 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "fca7226f4d5759b4c6fab9a46aa9bf3d6c2c37c1d2b0b0d3b41b765ee581adae",
+  "record": {
+    "DOI": "10.1016/j.intcom.2003.12.002",
+    "URL": "https://doi.org/10.1016/j.intcom.2003.12.002",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Watson",
+        "given": "Marcus",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Sanderson",
+        "given": "Penelope",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "John Russell",
+        "given": "W.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Interacting with Computers"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2004,
+          4
+        ]
+      ]
+    },
+    "page": "271-293",
+    "published-print": {
+      "date-parts": [
+        [
+          2004,
+          4
+        ]
+      ]
+    },
+    "publisher": "Oxford University Press (OUP)",
+    "relation": {},
+    "title": [
+      "Tailoring reveals information requirements: the case of anaesthesia alarms"
+    ],
+    "type": "journal-article",
+    "volume": "16"
+  },
+  "requested_doi": "10.1016/j.intcom.2003.12.002",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:58Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.intcom.2003.12.002"
+}

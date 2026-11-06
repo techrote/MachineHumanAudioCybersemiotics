@@ -1,0 +1,95 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "b1208d3b86090329fb581f9658368fe97f7e219e141453476ed2b491323abd01",
+  "record": {
+    "DOI": "10.1002/acp.1457",
+    "URL": "https://doi.org/10.1002/acp.1457",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Bonebright",
+        "given": "Terri L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Nees",
+        "given": "Michael A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Applied Cognitive Psychology"
+    ],
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2008,
+          5,
+          2
+        ]
+      ]
+    },
+    "page": "431-445",
+    "published-online": {
+      "date-parts": [
+        [
+          2008,
+          5,
+          2
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          4
+        ]
+      ]
+    },
+    "publisher": "Wiley",
+    "relation": {},
+    "title": [
+      "Most earcons do not interfere with spoken passage comprehension"
+    ],
+    "type": "journal-article",
+    "volume": "23"
+  },
+  "requested_doi": "10.1002/acp.1457",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:30Z",
+  "url": "https://api.crossref.org/works/10.1002%2Facp.1457"
+}

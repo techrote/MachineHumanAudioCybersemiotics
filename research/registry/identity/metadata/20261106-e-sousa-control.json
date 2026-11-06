@@ -1,0 +1,162 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "c489146a683c03be495aa45e608abd17d36c2a8731e1ed283a255ec26dc663c2",
+  "record": {
+    "DOI": "10.1007/978-3-319-51941-8_12",
+    "URL": "https://doi.org/10.1007/978-3-319-51941-8_12",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Sousa",
+        "given": "Bruno",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Donati",
+        "given": "Alessandro",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Özcan",
+        "given": "Elif",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "van Egmond",
+        "given": "René",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Jansen",
+        "given": "Reinier",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Peldszus",
+        "given": "Regina",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Voumard",
+        "given": "Yann",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Space Operations: Contributions from the Global Community"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "page": "255-270",
+    "published-online": {
+      "date-parts": [
+        [
+          2017,
+          3,
+          31
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "publisher": "Springer International Publishing",
+    "relation": {},
+    "title": [
+      "Designing and Deploying Meaningful Auditory Alarms for Control Systems"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-3-319-51941-8_12",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:47Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-319-51941-8_12"
+}

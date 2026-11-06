@@ -836,6 +836,91 @@ AI assistance: one Codex/GPT-6 agent performed retrieval, six citation inspectio
 retained-export comparison, software self-review and ten regression tests. These
 checks do not constitute independent human adjudication or scientific validation.
 
+## DOI batch E — 6 November 2026
+
+The [fixed plan](R006-DOI-E-PLAN-20261106.json) and
+[identity ledger](R006-DOI-E-20261106.json) add fifteen metadata-only publication
+records and resolve 52 original DOI/full-title occurrences (fifteen
+representatives and 37 duplicates). Fifteen sequential Crossref single-work
+requests returned HTTP 200; selected bibliographic derivatives retain actual
+request URLs/times and original-response hashes. Abstracts and article/chapter
+texts were not read; raw responses are not committed.
+
+| Publication title from metadata | Type | Resolved | Deferred |
+| --- | --- | ---: | ---: |
+| The effect of a cross-trial shift of auditory warning signals on the sequential foreperiod effect | article | 5 | 0 |
+| Designing informative warning signals: Effects of indicator type, modality, and task demand on recognition speed and accuracy | article | 5 | 0 |
+| Most earcons do not interfere with spoken passage comprehension | article | 2 | 2 |
+| Testing New Alarms for Medical Electrical Equipment | chapter | 4 | 0 |
+| Lyricon (Lyrics + Earcons) Improves Identification of Auditory Cues | chapter | 2 | 2 |
+| Designing and Deploying Meaningful Auditory Alarms for Control Systems | chapter | 4 | 0 |
+| Spearcon Performance and Preference for Auditory Menus on a Mobile Phone | chapter | 2 | 2 |
+| Tailoring reveals information requirements: the case of anaesthesia alarms | article | 4 | 0 |
+| Reaction Time and Glance Behavior of Visually Distracted Drivers to an Imminent Forward Collision as a Function of Training, Auditory Warning, and Gender | article | 4 | 0 |
+| Synchronized walking cadence for TUG in perturbed environments: Using Earcon or Tacton cues? | conference paper | 4 | 0 |
+| Auditory menus are not just spoken visual menus | conference paper | 2 | 2 |
+| Spindex (Speech Index) Improves Auditory Menu Acceptance and Navigation Performance | article | 2 | 2 |
+| Spearcon Sequences for Monitoring Multiple Patients: Laboratory Investigation Comparing Two Auditory Display Designs | article | 4 | 0 |
+| The Relationship between Task Performance, Reaction Time, and Perceived Urgency in Nonverbal Auditory Warnings | article | 4 | 0 |
+| Pilot Interactions with Alarm Systems in the Cockpit | article | 4 | 0 |
+
+The batch prioritizes recurring DOI groups with auditory warning/interface topic
+labels and four or five unresolved occurrences each. Recurrence and topic labels
+are work ordering, not eligibility, result-direction or quality judgments. All
+62 occurrences are accounted for: 52 checked and ten deferred; no candidate group
+was silently discarded. The eight older bibliography entries need separate
+source/export verification. Two additional OpenAlex occurrences use the same DOI
+as the shorter Jeon menu title, but a longer title, different work ID and date:
+
+| Retained OpenAlex work | Original title/date assertion | Disposition |
+| --- | --- | --- |
+| W2130765441 | Auditory menus are not just spoken visual menus; 2010-04-10 | Two exact full-title/DOI matches admitted |
+| W1492156475 | Auditory Menus Are Not Just Spoken Visual Menus: A Case Study of “Unavailable” Menu Items; 2012-08-27 | Two occurrences deferred for title/version provenance review |
+
+Crossref reports the shorter title and 2010-04-10. Shared DOI text does not
+establish that the longer title/date assertion is equivalent, wrong, a version,
+or an independent publication. No alias or family link is inferred. A negative
+test confirms that attempting to admit those longer-title records fails even
+with the same DOI and adjusted batch counts.
+
+Admitted titles agree under case/whitespace normalization only. Original export
+and page hashes, decompressed payload hashes, ordinals and work IDs were checked.
+No competing existing source DOI assertion or exact normalized source title was
+found across source-record histories. Discovery text, dates and type labels stay
+unchanged. Crossref classifies Wee, Sun, Sousa and Walker as book chapters, while
+several original index records call them conference papers. Bonebright's source
+date uses reported print 2009-04; original discovery/online 2008-05-02 remains
+visible. Li's print date is 2019-03 and online/issued date 2018-09-27. Identity
+matching does not adjudicate these date/type distinctions.
+
+All fifteen sources have verified metadata, `metadata_only` access, unknown
+rights, no manifestations, reading claims or family/sample links. No eligibility,
+study, sample, extraction or corpus decision is created. Existing source reading
+and access observations remain unchanged.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_batch_e.py --check
+python -m unittest tests.test_screening_doi_batch_e -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The thin fixed profile reuses the existing admission engine; no shared matcher or
+research gate changed. Frozen ledger disagreement stops writes, and old canonical
+revision prefixes remain reproducible. Re-querying requires a new observation,
+not replacement of these retained captures.
+
+The dated all-lane unresolved count falls **22,264 → 22,212**. The exact identifier
+queue has ten candidates, zero conflicts and 22,202 unmatched. Issue #6 and the
+corpus gate remain open. Next: check the eight deferred bibliography citations
+and reconcile the two discordant Jeon title/work-ID occurrences before any link;
+continue bounded identity work and actual protocol-governed screening separately.
+
+AI assistance: one Codex/GPT-6 agent performed bibliographic retrieval,
+retained-export comparison, software self-review and eleven regression tests.
+No independent human adjudication, target-source reading or scientific
+acceptance is claimed.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:
