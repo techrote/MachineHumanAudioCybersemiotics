@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-ferreira-correction-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref metadata, publisher correction PDF/Poppler reading and retained-export comparison"
+      },
+      "at": "2026-11-06T21:14:19Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01402",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-FERREIRA-ERP",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-FERREIRA-NOTICE-READING-20261106",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-FERREIRA-CORRECTION-20261106",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-FERREIRA-CORRECTION",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 1402,
+        "raw_metadata": "Capturing the attentional response to clinical auditory alarms: An ERP study on priority pulses | first author: Vasco Ribeiro Ferreira | 2023-02-16 | article | https://openalex.org/W4321003426",
+        "resolution_reason": "R006: original publication DOI/full title checked against retained OpenAlex export and fresh registration; separate publisher correction notice fully read and linked. Original source first registered as corrected, metadata_only; notice changes corresponding-author, affiliation and funding information. No original-paper reading, eligibility, empirical-results or independent-study assertion. See research/registry/identity/R006-FERREIRA-CORRECTION-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4321003426"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1371/journal.pone.0281680"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-G-FERREIRA-ERP",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

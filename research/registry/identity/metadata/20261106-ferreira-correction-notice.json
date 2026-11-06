@@ -1,0 +1,181 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; declared bibliographic/identity fields only; abstracts and unrelated fields omitted. Raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "226d71fe121a1d985add65868b006875e3ef3a8859e43762fa63146e599589f2",
+  "record": {
+    "DOI": "10.1371/journal.pone.0295826",
+    "URL": "https://doi.org/10.1371/journal.pone.0295826",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Ferreira",
+        "given": "Vasco Ribeiro",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Pereira",
+        "given": "Ana Rita",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Vieira",
+        "given": "Joana",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Pereira",
+        "given": "Frederico",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Marques",
+        "given": "Rui",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Campos",
+        "given": "Guilherme",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Sampaio",
+        "given": "Adriana",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Crego",
+        "given": "Alberto",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "PLOS ONE"
+    ],
+    "issue": "12",
+    "issued": {
+      "date-parts": [
+        [
+          2023,
+          12,
+          7
+        ]
+      ]
+    },
+    "page": "e0295826",
+    "published-online": {
+      "date-parts": [
+        [
+          2023,
+          12,
+          7
+        ]
+      ]
+    },
+    "publisher": "Public Library of Science (PLoS)",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Correction: Capturing the attentional response to clinical auditory alarms: An ERP study on priority pulses"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1371/journal.pone.corrections_policy",
+    "update-to": [
+      {
+        "DOI": "10.1371/journal.pone.0281680",
+        "label": "Correction",
+        "source": "publisher",
+        "type": "correction",
+        "updated": {
+          "date-parts": [
+            [
+              2023,
+              12,
+              7
+            ]
+          ],
+          "date-time": "2023-12-07T00:00:00Z",
+          "timestamp": 1701907200000
+        }
+      }
+    ],
+    "volume": "18"
+  },
+  "requested_doi": "10.1371/journal.pone.0295826",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T21:04:21Z",
+  "url": "https://api.crossref.org/works/10.1371%2Fjournal.pone.0295826"
+}

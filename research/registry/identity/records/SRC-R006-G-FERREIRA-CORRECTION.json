@@ -1,0 +1,137 @@
+{
+  "id": "SRC-R006-G-FERREIRA-CORRECTION",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-ferreira-correction-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref metadata, publisher correction PDF/Poppler reading and retained-export comparison"
+      },
+      "at": "2026-11-06T21:14:19Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01402",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00537",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00705",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00158",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-FERREIRA-CORRECTION-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T21:05:31Z",
+        "access_reason": "Complete one-page publisher correction notice retrieved and read; original article not read.",
+        "access_status": "full_text_available",
+        "authors": [
+          {
+            "name": "Vasco Ribeiro Ferreira",
+            "role": "author"
+          },
+          {
+            "name": "Ana Rita Pereira",
+            "role": "author"
+          },
+          {
+            "name": "Joana Vieira",
+            "role": "author"
+          },
+          {
+            "name": "Frederico Pereira",
+            "role": "author"
+          },
+          {
+            "name": "Rui Marques",
+            "role": "author"
+          },
+          {
+            "name": "Guilherme Campos",
+            "role": "author"
+          },
+          {
+            "name": "Adriana Sampaio",
+            "role": "author"
+          },
+          {
+            "name": "Alberto Crego",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "PLOS ONE; 18; 12; e0295826"
+        },
+        "family_links": [
+          {
+            "reason": "Publisher notice Reference 1 and reciprocal Crossref relation/update-to identify the original. Not a second experiment, sample or source alias.",
+            "relation": "correction_of",
+            "source_ref": {
+              "id": "SRC-R006-G-FERREIRA-ERP",
+              "rev": 1
+            }
+          }
+        ],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-ferreira-correction-notice.json record.DOI/title/author; HTTP 200 on 2026-11-06T21:04:21Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1371/journal.pone.0295826"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from metadata.",
+          "state": "not_reported"
+        },
+        "manifestations": [
+          {
+            "coordinate": "file_page_1based",
+            "extent": 1,
+            "id": "MAN-R006-FERREIRA-CORRECTION-PDF",
+            "location": "Public publisher correction PDF https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0295826&type=printable; local bytes/renders not committed.",
+            "sha256": "bb7420089cf82b07e78ab4756efe5588a35de81b9da9dfe58c01d9b292905ccb"
+          }
+        ],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-ferreira-correction-notice.json; SHA256 10c679a9ca87e56dd5e4eb7e1c424dabdc194970892fca6ffd9cf049fd58f017",
+          "Publisher notice p.1 and reciprocal Crossref original relation.correction / notice update-to confirm distinct original and correction identities; see research/registry/identity/R006-FERREIRA-CORRECTION-WITNESS-20261106.json",
+          "Correction scope: corresponding author, omitted affiliations and funding disclosure; original paper methods/results not assessed. Source first registered with correction already known; no earlier local active revision is invented."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2023-12-07"
+        },
+        "rights": {
+          "evidence": {
+            "state": "known",
+            "value": "research/registry/identity/R006-FERREIRA-CORRECTION-WITNESS-20261106.json rights_witness; publisher correction PDF p.1 copyright sidebar"
+          },
+          "reason": "Publisher correction PDF p.1 states Creative Commons Attribution terms permitting redistribution with author/source credit; no licence version inferred.",
+          "status": "redistribution_permitted"
+        },
+        "source_type": "correction",
+        "title": "Correction: Capturing the attentional response to clinical auditory alarms: An ERP study on priority pulses",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

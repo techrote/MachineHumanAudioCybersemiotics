@@ -1,0 +1,60 @@
+{
+  "actor": {
+    "id": "codex-r006-ferreira-correction-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "publisher_correction_notice_reading_receipt",
+  "checked_at": "2026-11-06T21:09:00Z",
+  "checked_notice_doi": "10.1371/journal.pone.0295826",
+  "checked_notice_title": "Correction: Capturing the attentional response to clinical auditory alarms: An ERP study on priority pulses",
+  "checked_original_doi": "10.1371/journal.pone.0281680",
+  "correction_topics": [
+    "corresponding_author",
+    "affiliations",
+    "funding"
+  ],
+  "file_pages_1based": [
+    1
+  ],
+  "identity_witness": "PDF p.1 Reference 1 identifies the original title, PLOS ONE 18(2), e0281680 and original DOI; the sidebar/footer identify correction DOI, PLOS ONE 18(12), e0295826 and 7 December 2023. All eight author names checked.",
+  "independence": "One Codex/GPT-6 agent; no independent human adjudication or scientific validation.",
+  "notice_source_ref": {
+    "id": "SRC-R006-G-FERREIRA-CORRECTION",
+    "rev": 1
+  },
+  "observations": [
+    {
+      "locator": "PDF p.1, correction paragraph 1",
+      "summary": "The corresponding author is changed from Alberto Crego to Guilherme Campos; contact details are not reproduced."
+    },
+    {
+      "locator": "PDF p.1, correction paragraph 2",
+      "summary": "Three omitted affiliations are added for the sixth author, Guilherme Campos."
+    },
+    {
+      "locator": "PDF p.1, correction paragraph 3",
+      "summary": "Additional partial FCT funding through project UIDB/00127/2020 is acknowledged."
+    }
+  ],
+  "original_article_read": false,
+  "printed_pages": [
+    "1 / 1"
+  ],
+  "reading_extent": "Complete one-page correction notice, including its reference and copyright sidebar, read from pdftoppm -png -singlefile -scale-to 1800 rendering. Original article/abstract/methods/results not retrieved or read.",
+  "reading_status": "full_item_read",
+  "results_effect_assessment": "not_performed",
+  "retention": "PDF/render and temporary HTML used locally and not committed. No author email or full notice text reproduced. Selected registration derivatives and hashes retained.",
+  "retrieval": {
+    "at": "2026-11-06T21:05:31Z",
+    "bytes": 189174,
+    "http_status": 200,
+    "page_count": 1,
+    "pdf_header": true,
+    "sha256": "bb7420089cf82b07e78ab4756efe5588a35de81b9da9dfe58c01d9b292905ccb",
+    "url": "https://journals.plos.org/plosone/article/file?id=10.1371%2Fjournal.pone.0295826&type=printable"
+  },
+  "rights_statement_checked": true,
+  "rights_witness": "PDF p.1 copyright sidebar states a Creative Commons Attribution License permitting distribution and reproduction with author/source credit; no licence version inferred. This observation applies to this correction notice only.",
+  "route_note": "An initial noncanonical PDF request using type=print returned HTTP 404; the publisher-linked type=printable route returned HTTP 200. The failed route did not establish source unavailability."
+}
