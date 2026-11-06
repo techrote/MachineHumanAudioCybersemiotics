@@ -422,6 +422,67 @@ retrieval, retained-export comparison, software self-review and thirteen batch/
 profile regression tests. No independent human adjudication, source-content
 appraisal or scientific acceptance occurred.
 
+## Batch B deferred references — 6 November 2026
+
+The [nine-occurrence ledger](R006-REFERENCE-B-20261106.json) resolves all nine
+reference-list cases deferred by DOI batch B. A fresh HTTP 200 retrieval of the
+Nees/Liebman accepted manuscript matches the retained original SHA-256 exactly.
+The [witness receipt](R006-REFERENCE-B-WITNESSES-20261106.json) records the request,
+bytes/hash, five visually inspected citation witnesses and reading limits.
+
+| Cited publication | Nees AM file/printed page | Occurrences resolved |
+|---|---:|---:|
+| Alseid/Rigas (2011), avatar-based e-learning | 43 | 2 |
+| Edworthy et al. (2014), learning medical alarm sets | 44 | 2 |
+| Hofmann et al. (2016), in-car SDS chapter | 46 | 2 |
+| Suh et al. (2012), Korean auditory menus | 50 | 2 |
+| Petocz et al. (2008), warning signal–referent relations | 40 | 1 |
+
+Original export hashes, reference ordinals, full titles or explicitly abbreviated
+title prefixes, DOI suffixes and existing resolved representatives were checked.
+Four older `RL-NL` model-rendered short entries receive **publication-identity
+corroboration** from the full accepted-manuscript citations. This does not prove
+faithful transcription of the original preprint/Academia source or equivalence
+of review versions. All original wording, outcome-letter prefixes, dates,
+search states and discovery revisions are preserved. In particular, the doubled
+`https://doi.org/` prefix in the Edworthy citation remains unchanged; the explicit
+DOI suffix agrees with the accepted publication metadata.
+
+All nine become duplicates of existing representatives. The five target sources
+remain `metadata_only`, with no new reading/access/rights state or manifestation.
+Only the selected bibliography citations in the containing review were checked;
+no target article or chapter, whole review, empirical result or eligibility
+criterion was read/applied. No source, screening, study or sample record is added.
+
+The bibliography builder now accepts complete fixed profiles, including their
+own scope, actor, assistance narrative and exact counts. Duplicate receipt keys,
+missing witnesses and count disagreement fail before writes. The original
+seven-reference ledger and canonical prefixes still reproduce **exactly**; the
+new profile does not mutate the original defaults. Offline checks reproduce the
+recorded observations, not the visual inspection itself. Rechecking requires
+retrieving the receipt URL, matching the SHA-256 and inspecting the page locators;
+changed bytes require a new provenance decision. PDF/renders are not committed.
+
+```sh
+python research/registry/identity/scripts/build_r006_reference_tranche.py --check
+python research/registry/identity/scripts/build_r006_reference_batch_b.py --check
+python -m unittest tests.test_screening_reference_batch_b -v
+python tools/validate.py
+```
+
+All-lane unresolved discovery falls **22,405 → 22,396**. Batch B now accounts for
+**23 + 9 = 32 occurrences** across five publication identities. The current exact
+identifier queue has zero candidates; 22,396 unmatched unresolved occurrences
+remain. This completes batch B's bounded identity work, not issue #6 or the
+corpus gate. Next: admit further DOI-group identities in bounded profiles, then
+perform protocol-governed eligibility and study/sample reconciliation. No
+completed corpus prerequisite is asserted for #7–#9.
+
+AI disclosure: one Codex/GPT-6 agent, 6 November 2026, fresh same-byte PDF
+retrieval, five citation-page inspections, retained-export/metadata comparison,
+software self-review and thirteen new profile/provenance regression tests. No
+independent human adjudication or scientific acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

@@ -42,22 +42,42 @@ def digest(value):return hashlib.sha256(dumps(value).encode()).hexdigest()
 def key(value):return ' '.join(value.casefold().split())
 
 
-def build(root,at):
+def build(root,at,*,profile=None):
+    config={
+        'plan':PLAN,'previous':PREVIOUS,'receipt':RECEIPT,'ledger':LEDGER,
+        'aid':AID,'actor':ACTOR,'cases':CASES,
+        'base':'8f5e15e0445ffd70495fe15e434b6799098acced',
+        'task':'Verify seven deferred bibliography occurrence identities using three freshly retrieved hash-matched review/report PDFs and five visually checked citation witnesses.',
+        'steps':['All three retrieved PDFs returned HTTP 200 and match the retained original SHA-256 exactly.',
+            'Rendered/inspected Nees AM file pages 36,49,51; FRA 41-42 (citation spans page break); Ruskin 71. Inspection limited to selected bibliography citations.',
+            'Checked original export/hash/ordinal, full or explicitly abbreviated title, explicit DOI and existing resolved representative. Two rendered short entries receive corroboration, not transcription/source-version acceptance.'],
+        'limitations':'No cited target article was retrieved/read; target source records remain metadata_only. Selected review/report reference pages were checked, not complete reports or empirical results. One agent; no independent human verification, version alias, sample identity, eligibility or corpus acceptance. PDFs/renders are not committed; exact receipt hashes/URLs and locators are retained.',
+        'counts':{'occurrences':7,'duplicate_occurrences':7,'existing_target_publications':3,'source_pdf_retrievals':3,
+            'visually_checked_citation_witnesses':5,'corroborated_model_abbreviations':2,'new_source_records':0,
+            'screening_decisions_created':0,'study_records_created':0,'sample_records_created':0},
+    }
+    if profile is not None:
+        if set(profile)!=set(config):raise ValueError('Profile must supply its complete fixed scope and verification narrative')
+        config=copy.deepcopy(profile)
+    plan_path,previous_path,receipt_path,ledger_path=(config[k] for k in ('plan','previous','receipt','ledger'))
+    aid,actor,cases=(config[k] for k in ('aid','actor','cases'))
     artifacts={}
     def artifact(path,expected=None):
         blob=(root/path).read_bytes();sha=hashlib.sha256(blob).hexdigest()
         if expected is not None and sha!=expected:raise ValueError('Artifact hash mismatch: '+path)
         artifacts[path]={'path':path,'sha256':sha};return blob
-    plan=json.loads(artifact(PLAN));previous=json.loads(artifact(PREVIOUS));receipt=json.loads(artifact(RECEIPT))
-    if {i['hit_ref']['id'] for i in plan['deferred']}!=set(CASES):raise ValueError('Fixed deferred scope disagreement')
+    plan=json.loads(artifact(plan_path));previous=json.loads(artifact(previous_path));receipt=json.loads(artifact(receipt_path))
+    if len(plan['deferred'])!=len(cases) or {i['hit_ref']['id'] for i in plan['deferred']}!=set(cases):raise ValueError('Fixed deferred scope disagreement')
     pdfs={r['key']:r for r in receipt['retrievals']};witnesses={w['key']:w for w in receipt['witnesses']}
+    if len(pdfs)!=len(receipt['retrievals']) or len(witnesses)!=len(receipt['witnesses']):raise ValueError('Repeated receipt identity')
+    if {c[1] for c in cases.values()}!=set(witnesses) or {w['pdf_key'] for w in witnesses.values()}!=set(pdfs):raise ValueError('Receipt scope disagreement')
     for pdf in pdfs.values():
         if pdf.get('http_status')!=200 or not pdf.get('pdf_header') or not pdf.get('hash_matches') or pdf['sha256']!=pdf['expected_sha256']:
             raise ValueError('Same-byte source PDF receipt failed')
     representatives={o['source_ref']['id']:o for o in previous['occurrences'] if o['status']=='resolved'}
     output={};occurrences=[]
     for item in plan['deferred']:
-        hid=item['hit_ref']['id'];sid=item['source_id'];doi=item['doi'];label,wkey=CASES[hid]
+        hid=item['hit_ref']['id'];sid=item['source_id'];doi=item['doi'];label,wkey=cases[hid]
         witness=witnesses[wkey];pdf=pdfs[witness['pdf_key']]
         source_path=AREA+'/records/'+sid+'.json';source=read_json(root/source_path)['revisions'][0];body=source['data']
         if body['metadata_status']!='verified' or body['validity']!='active' or doi not in {normalize_doi(i['value']) for i in body['identifiers'] if i['scheme']=='doi' and i['status']=='verified'}:
@@ -104,47 +124,51 @@ def build(root,at):
             locator={'path':exp['path'],'item':ordinal,'occurrence_id':row['occurrence_id'],'pdf_pages':row['pdf_pages']};extent='Coordinate-bearing bibliography citation and original page/line provenance checked against fresh same-byte PDF.'
         if doi not in text.lower():raise ValueError('Reference text DOI disagreement')
         after=copy.deepcopy(before);after.update(status='duplicate',source_ref=pin(sid),duplicate_of=representative['output_ref'],
-            resolution_reason='R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. '+extent+' No eligibility, empirical extraction or independent-study assertion. See '+LEDGER)
-        revision={'rev':2,'at':at,'actor':ACTOR,'basis':[item['hit_ref'],before['search_ref'],pin(sid),representative['output_ref'],pin(AID)],'factual_status':'derived','data':after}
+            resolution_reason='R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. '+extent+' No eligibility, empirical extraction or independent-study assertion. See '+ledger_path)
+        revision={'rev':2,'at':at,'actor':actor,'basis':[item['hit_ref'],before['search_ref'],pin(sid),representative['output_ref'],pin(aid)],'factual_status':'derived','data':after}
         output[path]={**record,'revisions':[copy.deepcopy(original),revision]}
         occurrences.append({'hit_id':hid,'path':path,'input_ref':item['hit_ref'],'output_ref':pin(hid,2),'source_ref':pin(sid),
             'input_revision_sha256':digest(original),'output_revision_sha256':digest(revision),'source_revision_sha256':digest(source),
             'duplicate_of':representative['output_ref'],'doi':doi,'export_locator':locator,'witness_key':wkey,
             'source_pdf_sha256':pdf['sha256'],'file_pages_1based':witness['file_pages_1based'],'verification_extent':extent})
+    observed_counts={'occurrences':len(occurrences),'duplicate_occurrences':len(occurrences),
+        'existing_target_publications':len({o['source_ref']['id'] for o in occurrences}),
+        'source_pdf_retrievals':len(pdfs),'visually_checked_citation_witnesses':len(witnesses),
+        'corroborated_model_abbreviations':sum(c[0]=='RL-NL' for c in cases.values()),
+        'new_source_records':0,'screening_decisions_created':0,'study_records_created':0,'sample_records_created':0}
+    if observed_counts!=config['counts']:raise ValueError('Fixed profile count disagreement')
     inputs=[i['hit_ref'] for i in plan['deferred']]+[pin(s) for s in sorted({i['source_id'] for i in plan['deferred']})]
-    output[AREA+'/records/'+AID+'.json']={'id':AID,'issue':6,'kind':'assistance','schema_version':1,'synthetic':False,'revisions':[{
-        'rev':1,'at':at,'actor':ACTOR,'basis':inputs,'factual_status':'derived','data':{
+    output[AREA+'/records/'+aid+'.json']={'id':aid,'issue':6,'kind':'assistance','schema_version':1,'synthetic':False,'revisions':[{
+        'rev':1,'at':at,'actor':actor,'basis':inputs,'factual_status':'derived','data':{
         'subtype':'assistance','status':'performed','performed_at':{'state':'known','value':at},
-        'task':'Verify seven deferred bibliography occurrence identities using three freshly retrieved hash-matched review/report PDFs and five visually checked citation witnesses.',
-        'input_refs':inputs,'output_refs':[o['output_ref'] for o in occurrences],'artifacts':[RECEIPT,LEDGER,AREA+'/README.md'],
-        'verification_steps':['All three retrieved PDFs returned HTTP 200 and match the retained original SHA-256 exactly.',
-            'Rendered/inspected Nees AM file pages 36,49,51; FRA 41-42 (citation spans page break); Ruskin 71. Inspection limited to selected bibliography citations.',
-            'Checked original export/hash/ordinal, full or explicitly abbreviated title, explicit DOI and existing resolved representative. Two rendered short entries receive corroboration, not transcription/source-version acceptance.'],
-        'limitations':'No cited target article was retrieved/read; target source records remain metadata_only. Selected review/report reference pages were checked, not complete reports or empirical results. One agent; no independent human verification, version alias, sample identity, eligibility or corpus acceptance. PDFs/renders are not committed; exact receipt hashes/URLs and locators are retained.',
+        'task':config['task'],
+        'input_refs':inputs,'output_refs':[o['output_ref'] for o in occurrences],'artifacts':[receipt_path,ledger_path,AREA+'/README.md'],
+        'verification_steps':config['steps'],
+        'limitations':config['limitations'],
         'independence':'One Codex/GPT-6 agent and software self-review; no independent human adjudication.'}}]}
-    ledger={'artifact_kind':'bounded_reference_identity_tranche','issue':6,'resolved_at':at,'actor':ACTOR,
-        'implementation_base':'8f5e15e0445ffd70495fe15e434b6799098acced','occurrences':occurrences,
-        'input_artifacts':[artifacts[p] for p in sorted(artifacts)],'source_receipt':RECEIPT,
-        'counts':{'occurrences':7,'duplicate_occurrences':7,'existing_target_publications':3,'source_pdf_retrievals':3,
-            'visually_checked_citation_witnesses':5,'corroborated_model_abbreviations':2,'new_source_records':0,
-            'screening_decisions_created':0,'study_records_created':0,'sample_records_created':0},
+    ledger={'artifact_kind':'bounded_reference_identity_tranche','issue':6,'resolved_at':at,'actor':actor,
+        'implementation_base':config['base'],'occurrences':occurrences,
+        'input_artifacts':[artifacts[p] for p in sorted(artifacts)],'source_receipt':receipt_path,
+        'counts':observed_counts,
         'boundary':'Identity of cited publications only. Original model-rendered provenance and search incompleteness remain intact; issue #6/corpus gate stay open.'}
     return output,ledger
 
 
-def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true');args=parser.parse_args();target=ROOT/LEDGER
+def main(*,root=None,profile=None):
+    root=ROOT if root is None else root
+    ledger_path=LEDGER if profile is None else profile['ledger']
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true');args=parser.parse_args();target=root/ledger_path
     if args.check and not target.exists():raise SystemExit('Frozen tranche ledger is missing')
     at=read_json(target)['resolved_at'] if target.exists() else datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00','Z')
-    records,ledger=build(ROOT,at)
+    records,ledger=build(root,at,profile=profile)
     if target.exists() and read_json(target)!=ledger:raise SystemExit('Frozen reference ledger drift; no records written')
     if args.check:
         for path,expected in records.items():
-            actual=read_json(ROOT/path)
+            actual=read_json(root/path)
             if {**actual,'revisions':actual['revisions'][:len(expected['revisions'])]}!=expected:raise SystemExit('Reference tranche record prefix drift: '+path)
-        print('Seven bibliography duplicate resolutions reproduce; source-verification limits retained.')
+        print(str(ledger['counts']['occurrences'])+' bibliography duplicate resolutions reproduce; source-verification limits retained.')
     else:
-        write_generated_records(ROOT,records);target.write_text(dumps(ledger),encoding='utf-8');print('Recorded 7 bibliography duplicates; no new sources or eligibility decisions.')
+        write_generated_records(root,records);target.write_text(dumps(ledger),encoding='utf-8');print('Recorded '+str(ledger['counts']['occurrences'])+' bibliography duplicates; no new sources or eligibility decisions.')
 
 
 if __name__=='__main__':main()

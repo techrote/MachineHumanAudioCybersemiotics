@@ -1,0 +1,195 @@
+{
+  "id": "AID-R006-REFERENCE-B-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-reference-b-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; urllib same-byte PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T08:04:33Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLNL-002",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-010",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-021",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-056",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-002",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-010",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-021",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-056",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00068",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-ALSEID-2011-EARCONS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-EDWORTHY-2014-LEARNING",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-HOFMANN-2016-INCAR",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-PETOCZ-2008-WARNINGS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-SUH-2012-SPEEDINESS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-REFERENCE-B-WITNESSES-20261106.json",
+          "research/registry/identity/R006-REFERENCE-B-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005-RLNL-002",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-010",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-021",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-056",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-002",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-010",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-021",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-056",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00068",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-ALSEID-2011-EARCONS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-EDWORTHY-2014-LEARNING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-HOFMANN-2016-INCAR",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-PETOCZ-2008-WARNINGS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-SUH-2012-SPEEDINESS",
+            "rev": 1
+          }
+        ],
+        "limitations": "No cited target article or chapter was retrieved/read; all five target source records remain metadata_only. Only selected Nees AM bibliography citations were checked. Four model-rendered abbreviations receive corroboration, not original-preprint transcription or review-version acceptance. One agent; no independent human verification, source alias, sample identity, eligibility or corpus acceptance. PDF/renders not committed; exact receipt URL/hash and page locators retained.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-RLNL-002",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-010",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-021",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-056",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-002",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-010",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-021",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-056",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00068",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T08:04:33Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify nine deferred batch B bibliography occurrence identities using one freshly retrieved hash-matched Nees accepted-manuscript PDF and five visually checked citation witnesses.",
+        "verification_steps": [
+          "Fresh Nees AM retrieval returned HTTP 200 and matches the retained original SHA-256 exactly.",
+          "Rendered and inspected Nees AM file pages 40,43,44,46,50; printed page numbers coincide. Inspection limited to five selected bibliography citations, not target articles or chapter.",
+          "Checked original export hashes/ordinals, full titles or four explicitly abbreviated title prefixes, explicit DOI and existing resolved representatives. Four old model-rendered short entries receive corroboration only. The duplicated DOI URL prefix in the Edworthy citation is preserved."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
