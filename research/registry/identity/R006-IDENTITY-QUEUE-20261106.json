@@ -1,0 +1,830 @@
+{
+  "acceptance": "not_evaluated",
+  "artifact_kind": "unadjudicated_identity_work_queue",
+  "candidates": [
+    {
+      "hit_ref": {
+        "id": "HIT-R002-PA6-03",
+        "rev": 1
+      },
+      "ordinal": 3,
+      "search_ref": {
+        "id": "SRCH-R002-PA6",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-EDWORTHY-2013",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R002-PB1-03",
+        "rev": 1
+      },
+      "ordinal": 3,
+      "search_ref": {
+        "id": "SRCH-R002-PB1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://tidsskrift.dk/signs/article/view/26864"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-BRIER-2011-SIGNS",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R004-G29-05",
+        "rev": 1
+      },
+      "ordinal": 5,
+      "search_ref": {
+        "id": "SRCH-R004-G29",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://ldr.lafayette.edu/concern/publications/gx41mk40g"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R004-LK-EDWORTHY-1991-02",
+        "rev": 1
+      },
+      "ordinal": 2,
+      "search_ref": {
+        "id": "SRCH-R004-LK-EDWORTHY-1991",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1177/001872089303500408"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-HELLIER-1993",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R004-LK-HELLIER-1993-02",
+        "rev": 1
+      },
+      "ordinal": 2,
+      "search_ref": {
+        "id": "SRCH-R004-LK-HELLIER-1993",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1177/001872089103300206"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-EDWORTHY-1991",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005-AW8-08",
+        "rev": 1
+      },
+      "ordinal": 8,
+      "search_ref": {
+        "id": "SRCH-R005-AW8",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-EDWORTHY-2013",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005-GW1-02",
+        "rev": 1
+      },
+      "ordinal": 2,
+      "search_ref": {
+        "id": "SRCH-R005-GW1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-RUSKIN-2020",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005-GW8-02",
+        "rev": 1
+      },
+      "ordinal": 2,
+      "search_ref": {
+        "id": "SRCH-R005-GW8",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-RUSKIN-2020",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005-GW9-01",
+        "rev": 1
+      },
+      "ordinal": 1,
+      "search_ref": {
+        "id": "SRCH-R005-GW9",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-RUSKIN-2020",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005-RPSLR-08",
+        "rev": 1
+      },
+      "ordinal": 8,
+      "search_ref": {
+        "id": "SRCH-R005-RPSLR",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "url",
+              "value": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3628049/"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-EDWORTHY-2013",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00280",
+        "rev": 1
+      },
+      "ordinal": 280,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0401_1"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00334",
+        "rev": 1
+      },
+      "ordinal": 334,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1177/001872089103300206"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-EDWORTHY-1991",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01584",
+        "rev": 1
+      },
+      "ordinal": 1584,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1007/11821731_12"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-MURPHY-2006",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03058",
+        "rev": 1
+      },
+      "ordinal": 3058,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1136/amiajnl-2012-001061"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-EDWORTHY-2013",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00058",
+        "rev": 1
+      },
+      "ordinal": 58,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0401_1"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ8-02056",
+        "rev": 1
+      },
+      "ordinal": 2056,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ8",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.3390/clockssleep2040031"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-AUD-MCFARLANE-2020-REVIEW",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ8-02935",
+        "rev": 1
+      },
+      "ordinal": 2935,
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ8",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1080/25742442.2023.2219201"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00003",
+        "rev": 1
+      },
+      "ordinal": 3,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1080/25742442.2023.2219201"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00074",
+        "rev": 1
+      },
+      "ordinal": 74,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0401_1"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00168",
+        "rev": 1
+      },
+      "ordinal": 168,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1177/001872089103300206"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-EDWORTHY-1991",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00001",
+        "rev": 1
+      },
+      "ordinal": 1,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ2",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1177/001872089103300206"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-EDWORTHY-1991",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00007",
+        "rev": 1
+      },
+      "ordinal": 7,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ2",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1177/001872089303500408"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-HELLIER-1993",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00017",
+        "rev": 1
+      },
+      "ordinal": 17,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0401_1"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00003",
+        "rev": 1
+      },
+      "ordinal": 3,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ7",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1080/25742442.2023.2219201"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ8-00001",
+        "rev": 1
+      },
+      "ordinal": 1,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ8",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1080/25742442.2023.2219201"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ8-00155",
+        "rev": 1
+      },
+      "ordinal": 155,
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ8",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.3390/clockssleep2040031"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-AUD-MCFARLANE-2020-REVIEW",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00058",
+        "rev": 1
+      },
+      "ordinal": 58,
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0401_1"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00007",
+        "rev": 1
+      },
+      "ordinal": 7,
+      "search_ref": {
+        "id": "SRCH-R005R-C9NLGENERAL",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0401_1"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00025",
+        "rev": 1
+      },
+      "ordinal": 25,
+      "search_ref": {
+        "id": "SRCH-R005R-C9NLGENERAL",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1136/amiajnl-2012-001061"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-R005R-EDWORTHY-2013",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    },
+    {
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00035",
+        "rev": 1
+      },
+      "ordinal": 35,
+      "search_ref": {
+        "id": "SRCH-R005R-C9NLGENERAL",
+        "rev": 1
+      },
+      "source_candidates": [
+        {
+          "matches": [
+            {
+              "scheme": "doi",
+              "value": "10.1207/s15327051hci0202_3"
+            }
+          ],
+          "source_metadata_conflict": false,
+          "source_ref": {
+            "id": "SRC-REL-GAVER-1986",
+            "rev": 1
+          }
+        }
+      ],
+      "status": "candidate_review"
+    }
+  ],
+  "counts": {
+    "candidate_hits": 30,
+    "conflict_review_hits": 0,
+    "unmatched_hits": 22464,
+    "unresolved_hits": 22494
+  },
+  "input_records_sha256": "182629588c6c12b359aebff2c5feabd5ca889e2b5de622a3110d1ac02998c9b5",
+  "issue": 6,
+  "limitations": [
+    "Returned identifiers are discovery assertions, not verified hit identity.",
+    "Exact resource equality can match a shared page rather than a publication.",
+    "Multiple candidate sources remain separate; no transitive or fuzzy merging.",
+    "No source retrieval, screening, corpus acceptance or study/sample inference."
+  ]
+}

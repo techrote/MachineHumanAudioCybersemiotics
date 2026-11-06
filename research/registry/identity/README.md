@@ -43,6 +43,47 @@ passes, selected corpus snapshot and residual-bias assessment. Downstream issues
 #7–#9 do not acquire a completed corpus gate from these identity links. A PR
 containing this tranche must use `Refs #6`, not a closing keyword.
 
+## Exact-identifier review queue — 6 November 2026
+
+The read-only `python -m tools.identity_queue` command validates the live registry
+and proposes unresolved occurrences whose explicit DOI or normalized resource URL
+matches an active, non-alias source's verified identifier. It preserves latest
+hit/source revision pins, original search pins and ordinals. Ambiguous sources or
+conflicted source metadata/identifiers receive `conflict_review`; nothing is
+resolved automatically. It does not use titles, infer a DOI from a publisher path,
+collapse URL query order or make transitive identity links.
+
+The [dated queue](R006-IDENTITY-QUEUE-20261106.json) was generated from accepted
+main `423649d18c54cbf90bf7bf79d49ba69b29f03848`: **22,494 unresolved occurrences,
+30 candidate occurrences, 22,464 unmatched occurrences, zero conflict-review
+occurrences**. These counts span all registered search lanes, including pilot and
+theoretical discovery; they are not a Track E flow or independent-publication
+count. The queue includes a SHA-256 of all ordered input records and history.
+It is a dated checkpoint, not a perpetually current generated registry export.
+
+To reproduce from that unchanged canonical registry:
+
+```sh
+mkdir -p build
+python -m tools.identity_queue > build/identity-queue.json
+cmp build/identity-queue.json research/registry/identity/R006-IDENTITY-QUEUE-20261106.json
+python -m unittest tests.test_identity_queue -v
+```
+
+Next, review each candidate's original occurrence/export and the pinned source's
+identifier provenance. Resource equality may identify a shared landing page;
+it is not publication identity by itself. If warranted, create a bounded,
+append-only resolution tranche using the Hermann builder as a worked example,
+retaining every discovery path and recording the actual verification performed.
+Unmatched candidates need separate identity work; no title-only screening or
+source reading is inferred from this queue.
+
+AI disclosure: Codex/GPT-6 prepared the tool, nine fictional regression tests and
+the dated queue on 6 November 2026. Verification is local registry comparison and
+software self-review; no fresh paper retrieval, human adjudication, independent
+scientific review, eligibility decision or new canonical evidence was performed.
+Issue #6 and the corpus gate remain open.
+
 ## Reproduction and review
 
 From the repository root:
