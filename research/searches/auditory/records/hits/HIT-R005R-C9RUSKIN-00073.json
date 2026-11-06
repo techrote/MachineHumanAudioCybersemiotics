@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-reference-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T23:07:50Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C9RUSKIN-00073",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-H-HICKLING-SEQUENCE",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+          "rev": 2
+        },
+        {
+          "id": "AID-R006-REFERENCE-H-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+          "rev": 2
+        },
+        "ordinal": 73,
+        "raw_metadata": "Hickling, A., Brecknell, B., Loeb, R. G., & Sanderson, P. (2017). Using a Sequence of Earcons to Monitor Multiple Simulated Patients. Human Factors, 59(2), 268–288. https://doi.org/10.1177/0018720816670986 | C9-RUSKIN-2020-REF073 | source PDF pp. 64; printed pp. 64; exact line/column boxes in retained export",
+        "resolution_reason": "R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. Coordinate-bearing bibliography citation and original page/line provenance checked against fresh same-byte PDF. No eligibility, empirical extraction or independent-study assertion. See research/registry/identity/R006-REFERENCE-H-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1177/0018720816670986"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-H-HICKLING-SEQUENCE",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

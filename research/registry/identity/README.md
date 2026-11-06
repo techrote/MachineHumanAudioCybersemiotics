@@ -1493,6 +1493,70 @@ comparison, software self-review and twelve regression tests. No independent
 human adjudication, target-source reading, scientific validation, protocol
 amendment or human-gate satisfaction is asserted.
 
+## Bibliography batch H — 6 November 2026
+
+The [bibliography ledger](R006-REFERENCE-H-20261106.json) resolves all nine
+deferred occurrences from the [DOI batch H plan](R006-DOI-H-PLAN-20261106.json).
+Nine duplicate links point to five existing publications: Isherwood, Neurauter,
+the two distinct Sabic papers and Hickling. No source record is added or aliased.
+
+The [fresh source receipt](R006-REFERENCE-H-WITNESSES-20261106.json) records two
+HTTP 200 PDF retrievals. Both match the original retained SHA-256 exactly. Five
+citations were inspected on four rendered pages:
+
+| Witness | PDF file / printed page | Original occurrences |
+| --- | --- | --- |
+| Isherwood and McKeown | Nees AM 46 / 46 | RL-NL and RL-NLAM item 23 |
+| Neurauter | Nees AM 49 / 49 | RL-NL and RL-NLAM item 45 |
+| Sabic, Chen and MacDonald | Nees AM 50 / 50 | RL-NL and RL-NLAM item 52 |
+| Sabic, Mishler, Chen and Hu | Nees AM 50 / 50 | RL-NL and RL-NLAM item 53 |
+| Hickling and colleagues | Ruskin 64 / 64 | Ruskin reference 73 |
+
+Original export hashes, ordinals, DOI, author/date context, full citation titles,
+outcome letters and PDF/page provenance were checked. The four model-rendered
+RL-NL entries receive publication-identity corroboration from the same-byte AM
+citations. Their literal shortened titles remain unchanged; this does not assert
+faithful transcription of the original preprint or equivalence of review versions.
+
+The recognition paper requires an explicit comparison beyond the ordinary
+main-title prefix rule. Its registered main title, *Recognition of Car Warnings*,
+and single deposited subtitle, *An Analysis of Various Alert Types*, remain
+separate in the [prior DOI capture](metadata/20261106-h-sabic-recognition.json).
+The witness opts into that exact capture pin from the accepted DOI ledger.
+The builder checks its bytes, DOI, registered title, single nonempty subtitle and
+absence of deposited correction relations/updates. It compares the original short
+entry only with an exact word-boundary prefix of the combined citation form and
+requires the complete combined form in the AM citation. Other matching behavior
+is unchanged. Missing opt-in, substituted pins, ambiguous subtitles, conflicting
+identity/correction metadata and nonprefix or partial-word renderings fail closed.
+The source's main title, conference-paper type and all discovery wording stay
+literal; no fuzzy match or publication-family inference is introduced.
+
+The two Sabic publications remain distinct identities. Their separate DOIs do not
+establish independent studies or samples. Target sources remain `metadata_only`;
+checking their citations is not reading the cited articles. Access, reuse rights,
+manifestations, screening, sample overlap, corpus selection and downstream gates
+are unchanged. No full review/report or target empirical result was read. PDFs
+and rendered images are not committed. No protocol amendment is made.
+
+```sh
+python research/registry/identity/scripts/build_r006_reference_batch_h.py --check
+python -m unittest tests.test_screening_reference_batch_h -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane queue falls **22,050 → 22,041 unresolved occurrences**:
+zero exact candidates, zero conflicts and 22,041 unmatched. This exhausts only
+the fixed nine-case bibliography scope. Issue #6 remains open for broader identity,
+actual eligibility, study/sample reconciliation, the frozen corpus and residual
+bias assessment; R005 coverage and the #7–#9 corpus gates remain incomplete.
+
+AI assistance: one Codex/GPT-6 agent performed fresh retrieval, selected citation
+inspection, implementation and software self-review. Sixteen regression tests
+cover provenance, fixed scope and adverse subtitle/capture/PDF cases. No independent
+human adjudication, target-article reading or scientific validation is asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:
