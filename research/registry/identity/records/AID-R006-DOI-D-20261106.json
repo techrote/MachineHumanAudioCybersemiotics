@@ -1,0 +1,912 @@
+{
+  "id": "AID-R006-DOI-D-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T12:10:02Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00223",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00378",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00469",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00787",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00798",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01282",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01684",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02122",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02243",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02714",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03193",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03246",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03372",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03524",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00049",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00089",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00147",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00239",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00312",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00398",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00427",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00530",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00641",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00655",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00689",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00897",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00012",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00022",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00051",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00068",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00097",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00265",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00370",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00441",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00470",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00599",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00699",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00724",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00807",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00017",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00072",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ4-00152",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00003",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00046",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00047",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00054",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00064",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00066",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00077",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00124",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00155",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00156",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00924",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-01387",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00011",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ4-00190",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00049",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00089",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00147",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00239",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00312",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00398",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00427",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00530",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00641",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00655",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00689",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-DOI-D-PLAN-20261106.json",
+          "research/registry/identity/R006-DOI-D-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent with software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00223",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00378",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00469",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00787",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00798",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-01282",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-01684",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02122",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02243",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02714",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03193",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03246",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03372",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03524",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00049",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00089",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00147",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00239",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00312",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00398",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00427",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00530",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00641",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00655",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00689",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00897",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00012",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00022",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00051",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00068",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00097",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00265",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00370",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00441",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00470",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00599",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00699",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00724",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00807",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00017",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00072",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ4-00152",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00003",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00046",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00047",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00054",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00064",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00066",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00077",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00124",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00155",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00156",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00924",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-01387",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ7-00011",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ4-00190",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00049",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00089",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00147",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00239",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00312",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00398",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00427",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00530",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00641",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00655",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00689",
+            "rev": 1
+          }
+        ],
+        "limitations": "Metadata-only access, no article/abstract reading or empirical extraction. Crossref registration metadata and retained discovery are not independent human scientific review. No eligibility, study/sample links or corpus acceptance. Raw Crossref response bytes are not retained; selected bibliographic derivatives are hash-pinned.",
+        "output_refs": [
+          {
+            "id": "SRC-R006-D-LEIMANN-EARCONS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-NAKATANI-GUIDELINES",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-MCINTYRE-OPERATING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-EDWORTHY-LEARNING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-KELLER-MEANING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-JEON-MENUS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-GILLARD-COMPOSING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-ALSEID-LECTURERS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-GILLARD-MELODIC",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-BREWSTER-EVALUATION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-ALSEID-COMPARATIVE",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-STEPHAN-RETENTION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-BELZ-CLASS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-SULLIVAN-COLLISION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-EDWORTHY-DESIGNING",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00223",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00378",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00469",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00787",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00798",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-01282",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-01684",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02122",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02243",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02714",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03193",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03246",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03372",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03524",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00049",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00089",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00147",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00239",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00312",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00398",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00427",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00530",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00641",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00655",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00689",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00897",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00012",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00022",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00051",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00068",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00097",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00265",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00370",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00441",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00470",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00599",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00699",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00724",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00807",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00017",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00072",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ4-00152",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00003",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00046",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00047",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00054",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00064",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00066",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00077",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00124",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00155",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00156",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00924",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-01387",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ7-00011",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ4-00190",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00049",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00089",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00147",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00239",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00312",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00398",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00427",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00530",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00641",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00655",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00689",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T12:10:02Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify fifteen metadata-only publication identities and resolve 67 fixed DOI/full-title occurrences, deferring eight bibliography occurrences for separate provenance checks.",
+        "verification_steps": [
+          "Fifteen sequential Crossref single-work requests returned HTTP 200; retained selected bibliographic derivatives and original-response hashes. Abstracts, chapters and articles not read.",
+          "Checked original export/page hashes, payloads, ordinals/work IDs, explicit DOI and full title under case/whitespace normalization only. No competing existing DOI assertions or exact normalized source titles found.",
+          "Preserved original discovery dates and separate print/online/issued metadata. Three book chapters retain that publication type; original OpenAlex type labels remain unchanged.",
+          "Eight bibliography occurrences remain explicitly deferred. No source alias, eligibility, study/sample or corpus decision introduced."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

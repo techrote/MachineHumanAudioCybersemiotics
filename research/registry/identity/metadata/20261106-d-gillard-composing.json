@@ -1,0 +1,109 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "5aed6bb94aafcb8aa7dbc50650ca06e2f37f9ee469de73bb55bbec6167e41067",
+  "record": {
+    "DOI": "10.1080/13554794.2016.1253751",
+    "URL": "https://doi.org/10.1080/13554794.2016.1253751",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology, Neuroscience &amp; Behaviour, McMaster University, Hamilton, Canada"
+          },
+          {
+            "name": "McMaster Institute for Music and the Mind, McMaster University, Hamilton, Canada"
+          }
+        ],
+        "family": "Gillard",
+        "given": "Jessica",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "McMaster Institute for Music and the Mind, McMaster University, Hamilton, Canada"
+          },
+          {
+            "name": "School of the Arts, McMaster University, Hamilton, Canada"
+          }
+        ],
+        "family": "Schutz",
+        "given": "Michael",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Neurocase"
+    ],
+    "issue": "6",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          11
+        ]
+      ]
+    },
+    "page": "566-576",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          11,
+          21
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2016,
+          11
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "title": [
+      "Composing alarms: considering the musical aspects of auditory alarm design"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "volume": "22"
+  },
+  "requested_doi": "10.1080/13554794.2016.1253751",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:24Z",
+  "url": "https://api.crossref.org/works/10.1080%2F13554794.2016.1253751"
+}

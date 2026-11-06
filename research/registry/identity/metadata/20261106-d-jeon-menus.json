@@ -1,0 +1,145 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "f70be4784ed10d984825b229afc2099a937afe0d73af855603e05a1290d73715",
+  "record": {
+    "DOI": "10.1080/10447318.2014.925774",
+    "URL": "https://doi.org/10.1080/10447318.2014.925774",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Gable",
+        "given": "Thomas M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Davison",
+        "given": "Benjamin K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Nees",
+        "given": "Michael A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Wilson",
+        "given": "Jeff",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "International Journal of Human-Computer Interaction"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          10,
+          22
+        ]
+      ]
+    },
+    "page": "1-16",
+    "published-online": {
+      "date-parts": [
+        [
+          2014,
+          10,
+          22
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2015,
+          1,
+          2
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "title": [
+      "Menu Navigation With In-Vehicle Technologies: Auditory Menu Cues Improve Dual Task Performance, Preference, and Workload"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "volume": "31"
+  },
+  "requested_doi": "10.1080/10447318.2014.925774",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:16Z",
+  "url": "https://api.crossref.org/works/10.1080%2F10447318.2014.925774"
+}

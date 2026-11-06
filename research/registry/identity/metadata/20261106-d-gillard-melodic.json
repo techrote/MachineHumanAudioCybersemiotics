@@ -1,0 +1,100 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "29d2d35ac64ead0b73db98f3d551cdcdd7f6e762e76159039bebb5fd31c2d00a",
+  "record": {
+    "DOI": "10.1115/1.4024309",
+    "URL": "https://doi.org/10.1115/1.4024309",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Gillard",
+        "given": "Jessica",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "McMaster Institute for Music and the Mind\n             \n            McMaster University"
+          }
+        ],
+        "family": "Schutz",
+        "given": "Michael",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Journal of Medical Devices"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          1
+        ]
+      ]
+    },
+    "published-online": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          12
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          1
+        ]
+      ]
+    },
+    "publisher": "ASME International",
+    "relation": {},
+    "title": [
+      "Exploring Melodic Structure to Increase Heterogeneity of Auditory Alarm Sets in Medical Devices"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1115/crossmarkpolicy-asme",
+    "volume": "7"
+  },
+  "requested_doi": "10.1115/1.4024309",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:07:40Z",
+  "url": "https://api.crossref.org/works/10.1115%2F1.4024309"
+}

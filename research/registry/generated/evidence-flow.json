@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 158,
+  "current_usable_sources": 173,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 158,
+  "publications": 173,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -132,6 +132,21 @@
       "SRC-R006-BELLETTIERE-2014-INTERVENTION",
       "SRC-R006-BLATTNER-1989-ABSTRACT",
       "SRC-R006-BREWSTER-1997-TELEPHONE",
+      "SRC-R006-D-ALSEID-COMPARATIVE",
+      "SRC-R006-D-ALSEID-LECTURERS",
+      "SRC-R006-D-BELZ-CLASS",
+      "SRC-R006-D-BREWSTER-EVALUATION",
+      "SRC-R006-D-EDWORTHY-DESIGNING",
+      "SRC-R006-D-EDWORTHY-LEARNING",
+      "SRC-R006-D-GILLARD-COMPOSING",
+      "SRC-R006-D-GILLARD-MELODIC",
+      "SRC-R006-D-JEON-MENUS",
+      "SRC-R006-D-KELLER-MEANING",
+      "SRC-R006-D-LEIMANN-EARCONS",
+      "SRC-R006-D-MCINTYRE-OPERATING",
+      "SRC-R006-D-NAKATANI-GUIDELINES",
+      "SRC-R006-D-STEPHAN-RETENTION",
+      "SRC-R006-D-SULLIVAN-COLLISION",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
       "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
       "SRC-R006-EDWORTHY-2014-LEARNING",
@@ -270,6 +285,21 @@
       "SRC-R006-BELLETTIERE-2014-INTERVENTION",
       "SRC-R006-BLATTNER-1989-ABSTRACT",
       "SRC-R006-BREWSTER-1997-TELEPHONE",
+      "SRC-R006-D-ALSEID-COMPARATIVE",
+      "SRC-R006-D-ALSEID-LECTURERS",
+      "SRC-R006-D-BELZ-CLASS",
+      "SRC-R006-D-BREWSTER-EVALUATION",
+      "SRC-R006-D-EDWORTHY-DESIGNING",
+      "SRC-R006-D-EDWORTHY-LEARNING",
+      "SRC-R006-D-GILLARD-COMPOSING",
+      "SRC-R006-D-GILLARD-MELODIC",
+      "SRC-R006-D-JEON-MENUS",
+      "SRC-R006-D-KELLER-MEANING",
+      "SRC-R006-D-LEIMANN-EARCONS",
+      "SRC-R006-D-MCINTYRE-OPERATING",
+      "SRC-R006-D-NAKATANI-GUIDELINES",
+      "SRC-R006-D-STEPHAN-RETENTION",
+      "SRC-R006-D-SULLIVAN-COLLISION",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
       "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
       "SRC-R006-EDWORTHY-2014-LEARNING",
@@ -4443,22 +4473,22 @@
       "id": "SRCH-R005R-C1LOAD-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 22,
+      "resolved_hits": 36,
       "status": "partial",
       "stored_hits": 4200,
-      "unique_publications": 22,
-      "unresolved_hits": 4178
+      "unique_publications": 36,
+      "unresolved_hits": 4164
     },
     {
-      "duplicate_hits": 17,
+      "duplicate_hits": 28,
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 19,
+      "resolved_hits": 31,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 19,
-      "unresolved_hits": 2093
+      "unique_publications": 31,
+      "unresolved_hits": 2081
     },
     {
       "duplicate_hits": 1,
@@ -4472,26 +4502,26 @@
       "unresolved_hits": 4650
     },
     {
-      "duplicate_hits": 20,
+      "duplicate_hits": 33,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 20,
+      "resolved_hits": 33,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 20,
-      "unresolved_hits": 980
+      "unique_publications": 33,
+      "unresolved_hits": 967
     },
     {
-      "duplicate_hits": 5,
+      "duplicate_hits": 7,
       "id": "SRCH-R005R-C1RECOVERY-EQ2",
       "mode": "production",
       "reported_count": 556,
-      "resolved_hits": 5,
+      "resolved_hits": 7,
       "status": "completed",
       "stored_hits": 556,
-      "unique_publications": 5,
-      "unresolved_hits": 551
+      "unique_publications": 7,
+      "unresolved_hits": 549
     },
     {
       "duplicate_hits": 0,
@@ -4505,26 +4535,26 @@
       "unresolved_hits": 76
     },
     {
-      "duplicate_hits": 0,
+      "duplicate_hits": 1,
       "id": "SRCH-R005R-C1RECOVERY-EQ4",
       "mode": "production",
       "reported_count": 585,
-      "resolved_hits": 0,
+      "resolved_hits": 1,
       "status": "partial",
       "stored_hits": 585,
-      "unique_publications": 0,
-      "unresolved_hits": 585
+      "unique_publications": 1,
+      "unresolved_hits": 584
     },
     {
-      "duplicate_hits": 19,
+      "duplicate_hits": 31,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 19,
+      "resolved_hits": 31,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 19,
-      "unresolved_hits": 1581
+      "unique_publications": 31,
+      "unresolved_hits": 1569
     },
     {
       "duplicate_hits": 2,
@@ -4538,15 +4568,15 @@
       "unresolved_hits": 535
     },
     {
-      "duplicate_hits": 3,
+      "duplicate_hits": 4,
       "id": "SRCH-R005R-C1RECOVERY-EQ7",
       "mode": "production",
       "reported_count": 153,
-      "resolved_hits": 3,
+      "resolved_hits": 4,
       "status": "completed",
       "stored_hits": 153,
-      "unique_publications": 3,
-      "unresolved_hits": 150
+      "unique_publications": 4,
+      "unresolved_hits": 149
     },
     {
       "duplicate_hits": 2,
@@ -4574,26 +4604,26 @@
       "unresolved_hits": 0
     },
     {
-      "duplicate_hits": 0,
+      "duplicate_hits": 1,
       "id": "SRCH-R005R-C1SORT-EQ4",
       "mode": "production",
       "reported_count": 585,
-      "resolved_hits": 0,
+      "resolved_hits": 1,
       "status": "completed",
       "stored_hits": 585,
-      "unique_publications": 0,
-      "unresolved_hits": 585
+      "unique_publications": 1,
+      "unresolved_hits": 584
     },
     {
-      "duplicate_hits": 16,
+      "duplicate_hits": 27,
       "id": "SRCH-R005R-C1SORT-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 16,
+      "resolved_hits": 27,
       "status": "partial",
       "stored_hits": 800,
-      "unique_publications": 16,
-      "unresolved_hits": 784
+      "unique_publications": 27,
+      "unresolved_hits": 773
     },
     {
       "duplicate_hits": 0,
@@ -4709,7 +4739,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 158,
+  "source_record_ids": 173,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

@@ -1,0 +1,150 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "d2a34b80f104987ec5f4445e864ff0ac35d6317de0a2567ce1f94b0bf4a06d91",
+  "record": {
+    "DOI": "10.1518/001872006777724426",
+    "URL": "https://doi.org/10.1518/001872006777724426",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Defence Science and Technology Organisation, Fishermans Bend, Victoria, Australia"
+          }
+        ],
+        "family": "Stephan",
+        "given": "Karen L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Defence Science and Technology Organisation, Fishermans Bend, Victoria, Australia"
+          }
+        ],
+        "family": "Smith",
+        "given": "Sean E.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Defence Science and Technology Organisation, Fishermans Bend, Victoria, Australia"
+          }
+        ],
+        "family": "Martin",
+        "given": "Russell L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Defence Science and Technology Organisation, Fishermans Bend, Victoria, Australia"
+          }
+        ],
+        "family": "Parker",
+        "given": "Simon P. A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Defence Science and Technology Organisation, Fishermans Bend, Victoria, Australia"
+          }
+        ],
+        "family": "McAnally",
+        "given": "Ken I.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2006,
+          6
+        ]
+      ]
+    },
+    "page": "288-299",
+    "published-online": {
+      "date-parts": [
+        [
+          2006,
+          6,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2006,
+          6
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Learning and Retention of Associations Between Auditory Icons and Denotative Referents: Implications for the Design of Auditory Warnings"
+    ],
+    "type": "journal-article",
+    "volume": "48"
+  },
+  "requested_doi": "10.1518/001872006777724426",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:08:04Z",
+  "url": "https://api.crossref.org/works/10.1518%2F001872006777724426"
+}

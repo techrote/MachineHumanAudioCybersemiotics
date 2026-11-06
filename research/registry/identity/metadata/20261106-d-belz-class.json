@@ -1,0 +1,118 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "c00ce79e298ba0adb001389b0429a2fd55f7abc4246e5e07683214473076dc6d",
+  "record": {
+    "DOI": "10.1518/001872099779656734",
+    "URL": "https://doi.org/10.1518/001872099779656734",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Virginia Polytechnic Institute and State University, Blacksburg, Virginia"
+          }
+        ],
+        "family": "Belz",
+        "given": "Steven M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Virginia Polytechnic Institute and State University, Blacksburg, Virginia"
+          }
+        ],
+        "family": "Robinson",
+        "given": "Gary S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Virginia Polytechnic Institute and State University, Blacksburg, Virginia"
+          }
+        ],
+        "family": "Casali",
+        "given": "John G.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          1999,
+          12
+        ]
+      ]
+    },
+    "page": "608-618",
+    "published-online": {
+      "date-parts": [
+        [
+          1999,
+          12,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1999,
+          12
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons"
+    ],
+    "type": "journal-article",
+    "volume": "41"
+  },
+  "requested_doi": "10.1518/001872099779656734",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T12:08:11Z",
+  "url": "https://api.crossref.org/works/10.1518%2F001872099779656734"
+}

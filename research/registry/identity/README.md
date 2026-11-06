@@ -707,6 +707,86 @@ retained-export verification, record-specific presentation decision, disclosed
 incidental source-text exposure, software self-review and fifteen regression
 tests. No independent human adjudication or scientific acceptance occurred.
 
+## DOI batch D — 6 November 2026
+
+The [fixed plan](R006-DOI-D-PLAN-20261106.json) and
+[ledger](R006-DOI-D-20261106.json) admit fifteen metadata-only publication
+identities and resolve 67 retained DOI/full-title occurrences. Fifteen sequential
+Crossref single-work requests returned HTTP 200. Selected bibliographic
+derivatives retain request URLs/times and original-response hashes. Abstracts
+and article/chapter texts were not read; original raw responses are not committed.
+
+| Publication title from metadata | Type | Resolved | Deferred |
+|---|---|---:|---:|
+| Earcons and Icons: An Experimental Study | chapter | 5 | 0 |
+| A Study of Auditory Warning Signals for the Design Guidelines of Man-Machine Interfaces | chapter | 5 | 0 |
+| Ergonomics and Anaesthesia: Auditory Alarm Signals in the Operating Room | chapter | 5 | 0 |
+| Learning auditory warnings: The effects of sound type, verbal labelling and imagery on the identification of alarm sounds | article | 5 | 0 |
+| Meaning From Environmental Sounds: Types of Signal-Referent Relations and Their Effect on Recognizing Auditory Icons. | article | 5 | 0 |
+| Menu Navigation With In-Vehicle Technologies: Auditory Menu Cues Improve Dual Task Performance, Preference, and Workload | article | 2 | 3 |
+| Composing alarms: considering the musical aspects of auditory alarm design | article | 5 | 0 |
+| Employing auditory icons to support virtual lecturers in e-learning interfaces | conference paper | 5 | 0 |
+| Exploring Melodic Structure to Increase Heterogeneity of Auditory Alarm Sets in Medical Devices | article | 5 | 0 |
+| An evaluation of earcons for use in auditory human-computer interfaces | conference paper | 2 | 3 |
+| A Comparative Usability Study on the Use of Auditory Icons to Support Virtual Lecturers in E-Learning Interfaces | article | 5 | 0 |
+| Learning and Retention of Associations Between Auditory Icons and Denotative Referents: Implications for the Design of Auditory Warnings | article | 5 | 0 |
+| A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons | article | 3 | 2 |
+| Acquisition, Response, and Error Rates With Three Suites of Collision Warning Sounds | conference paper | 5 | 0 |
+| Designing Effective Alarm Sounds | article | 5 | 0 |
+
+The source batch was selected from recurring DOI groups with auditory-warning/
+interface topic labels and five occurrences per group, not from result direction,
+statistical significance, open-access status or eligibility. All **75 occurrences**
+are accounted for: 67 checked and eight bibliography cases explicitly deferred.
+There are no silently discarded candidate groups. This is bounded identity
+prioritization, not exhaustive source selection or corpus acceptance.
+
+Every admitted occurrence's explicit DOI and full title agree between the fresh
+metadata and the original export under case/whitespace normalization only.
+Original manifest/page hashes, payload hashes, ordinals and work IDs were checked.
+No competing existing source DOI assertion or exact normalized source title was
+found across source-record histories. Fifteen representatives and 52 duplicates
+preserve all old revisions, literal metadata, search paths and discovery dates.
+Eight references in the FRA, Nees, Ruskin and Totland exports require separate
+bibliography provenance checks; none is inferred resolved from DOI text alone.
+
+All fifteen sources have verified metadata, `metadata_only` access, unknown reuse
+rights, no manifestations, family/sample links or reading claims. Crossref records
+Leimann, Nakatani and McIntyre as **book chapters**. The original Nakatani OpenAlex
+`conference-paper` label remains literal discovery metadata; registration and
+index type assertions are not silently overwritten. Jeon's original OpenAlex date
+`2014-05-30`, Crossref online/issued `2014-10-22` and print `2015-01-02` remain
+distinct. The source date explicitly uses the reported print field; identity does
+not adjudicate those date differences or establish an independent study.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_batch_d.py --check
+python -m unittest tests.test_screening_doi_batch_d -v
+python tools/validate.py
+python -m tools.identity_queue > build/identity-queue-current.json
+```
+
+This thin fixed profile reuses the existing admission engine with exact counts
+and its own task/provenance narrative. No shared matcher or research gate is
+changed. Frozen ledger disagreement stops canonical writes, and older outputs
+retain their historical prefixes. Re-querying may return changed metadata;
+retain a new dated capture and correction instead of overwriting these inputs.
+The registry and retrieval-map summaries now describe the accumulated identity
+batches and separate access observations rather than only the first Hermann case.
+
+All-lane unresolved discovery falls **22,339 → 22,272**. The current exact-identifier
+queue has eight candidates, zero conflicts and 22,264 unmatched unresolved
+occurrences. No eligibility, screening, study, sample, empirical claim or design
+record is created. Existing limited access/reading observations remain unchanged.
+Issue #6 and the corpus gate stay open. Next: separately verify the eight deferred
+bibliography cases, then continue bounded identity admission and actual
+protocol-governed screening with study/sample reconciliation.
+
+AI disclosure: one Codex/GPT-6 agent, 6 November 2026, fresh bibliographic metadata
+retrieval, retained-export comparison, software self-review and nine regression
+tests. No new target-source reading, independent human adjudication or scientific
+acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:
