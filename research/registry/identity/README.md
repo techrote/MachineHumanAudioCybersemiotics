@@ -84,6 +84,56 @@ software self-review; no fresh paper retrieval, human adjudication, independent
 scientific review, eligibility decision or new canonical evidence was performed.
 Issue #6 and the corpus gate remain open.
 
+## DOI/title adjudication — 6 November 2026
+
+The [fixed twelve-occurrence tranche](R006-DOI-TRANCHE-20261106.json) advances
+the earlier candidate queue into recorded publication identity. Each occurrence's
+explicit DOI and full title agree with the retained export at its original
+ordinal and the existing source's verified Crossref metadata. Export manifests,
+compressed public OpenAlex pages and decompressed payload hashes were checked;
+the ledger records exact file/item locators and revision hashes.
+
+| Existing publication | Newly linked duplicate occurrences | Existing representative |
+|---|---:|---|
+| Blattner et al. (1989), *Earcons and Icons* | 6 | `HIT-R004-LK-BLATTNER-1989-01@1` |
+| Edworthy et al. (1991), *Relationship between Warning Sound Parameters and Perceived Urgency* | 4 | `HIT-R004-LK-EDWORTHY-1991-01@1` |
+| Hellier et al. (1993), *Quantifying and Predicting the Effects of Different Warning Parameters on Perceived Urgency* | 2 | `HIT-R004-LK-HELLIER-1993-01@1` |
+
+All twelve original revisions remain intact; new revision 2 links each occurrence
+to its already resolved R004 representative. The two crossed R004 lookup hits
+are resolved to the actual returned publication, independently of the lookup's
+query name. The separate abstract-only record returned by the Blattner lookup
+has DOI `10.1145/67880.1046599` and is **not** collapsed into the full article's
+`10.1207/s15327051hci0401_1` identity. Source records and their access/reading states
+are unchanged.
+
+This reduces all-lane unresolved occurrences from **22,494 to 22,482** and leaves
+**18** of the original 30 queue candidates unresolved. These are discovery-level
+counts, not Track E flow counts or independent studies. No source, screening,
+study or sample records were created. The older queue is retained as a historical
+input, not overwritten to look current.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_tranche.py --check
+python -m unittest tests.test_screening_doi_tranche -v
+python tools/validate.py
+python -m tools.identity_queue > build/identity-queue-current.json
+```
+
+The builder reproduces a fixed scope and preserves later canonical revisions;
+frozen ledger drift stops it before writes. It does not admit new candidates.
+Next work is adjudication of the remaining 18 candidates, followed by broader
+publication reconciliation and actual protocol-governed screening. Issue #6 and
+the corpus gate remain open; #7–#9 do not gain a completed corpus prerequisite.
+
+AI disclosure: one Codex/GPT-6 agent performed metadata comparison, software
+self-review and nine adverse-input/history tests on 6 November 2026. No fresh
+online source retrieval or paper reading, independent human adjudication,
+scientific acceptance or participant evaluation occurred. Original private API
+responses were not re-inspected; public OpenAlex metadata derivatives and the
+preserved Crossref/bibliographic exports were checked. These support the bounded
+identity decision, not empirical extraction or study independence.
+
 ## Reproduction and review
 
 From the repository root:
