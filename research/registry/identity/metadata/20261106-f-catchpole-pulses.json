@@ -1,0 +1,122 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "f41a735100575025e57876ed2d0c88537e6d7d4ffe58bcb1cdde3945b9ef2980",
+  "record": {
+    "DOI": "10.1080/00140130310001629739",
+    "URL": "https://doi.org/10.1080/00140130310001629739",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "a Cardiothoracic Unit , Great Ormond Street Hospital for Children NHS Trust , London, WC1N 3JH, UK"
+          }
+        ],
+        "family": "Catchpole",
+        "given": "Ken R",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "b School of Psychology, Worsley Medical and Dental Building , University of Leeds , LS2 9NQ, UK"
+          }
+        ],
+        "family": "McKeown",
+        "given": "J Denis",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "c School of Biomedical Sciences, Worsley Medical and Dental Building , University of Leeds , LS2 9NQ, UK"
+          }
+        ],
+        "family": "Withington",
+        "given": "Deborah J",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Ergonomics"
+    ],
+    "issue": "7",
+    "issued": {
+      "date-parts": [
+        [
+          2004,
+          6,
+          10
+        ]
+      ]
+    },
+    "page": "748-771",
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          2,
+          20
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2004,
+          6,
+          10
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Localizable auditory warning pulses"
+    ],
+    "type": "journal-article",
+    "volume": "47"
+  },
+  "requested_doi": "10.1080/00140130310001629739",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:06:03Z",
+  "url": "https://api.crossref.org/works/10.1080%2F00140130310001629739"
+}

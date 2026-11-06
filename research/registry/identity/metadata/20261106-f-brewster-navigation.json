@@ -1,0 +1,95 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "ba5e06dcdb4cb47078b24cd698ce257dd95af6cc2dd1050850cf91ae9675c072",
+  "record": {
+    "DOI": "10.1007/978-1-4471-3588-3_12",
+    "URL": "https://doi.org/10.1007/978-1-4471-3588-3_12",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Brewster",
+        "given": "Stephen",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Raty",
+        "given": "Veli-Pekka",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Kortekangas",
+        "given": "Atte",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "People and Computers XI"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1996
+        ]
+      ]
+    },
+    "page": "169-183",
+    "published-print": {
+      "date-parts": [
+        [
+          1996
+        ]
+      ]
+    },
+    "publisher": "Springer London",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Earcons as a Method of Providing Navigational Cues in a Menu Hierarchy"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-1-4471-3588-3_12",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:08Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-1-4471-3588-3_12"
+}

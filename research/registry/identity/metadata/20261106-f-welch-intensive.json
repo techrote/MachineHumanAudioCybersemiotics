@@ -1,0 +1,75 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "467966a5ff774db54d59828ce4370b3b957f9b22912cd3056179b09b69c8b243",
+  "record": {
+    "DOI": "10.4324/9780429455742-16",
+    "URL": "https://doi.org/10.4324/9780429455742-16",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Welch",
+        "given": "John",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Human Factors in Auditory Warnings"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          1,
+          15
+        ]
+      ]
+    },
+    "page": "319-342",
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          1,
+          15
+        ]
+      ]
+    },
+    "publisher": "Routledge",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Auditory Alarms in Intensive Care"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.4324/9780429455742-16",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:03Z",
+  "url": "https://api.crossref.org/works/10.4324%2F9780429455742-16"
+}

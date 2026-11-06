@@ -1,0 +1,122 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "420de869b4a899c360949dde0ed032163a541255092e55933a372403bc604c73",
+  "record": {
+    "DOI": "10.1080/0014013042000193282",
+    "URL": "https://doi.org/10.1080/0014013042000193282",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "a Defence R&amp;D Canada-Toronto , 1133 Sheppard Avenue West, P.O. Box 2000, Toronto, Ontario, Canada , M3M 3B9"
+          }
+        ],
+        "family": "Arrabito",
+        "given": "G Robert",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "b Department of Psychology, Duff Roblin Bldg , University of Manitoba , Winnipeg, Manitoba, Canada , R3T 2N2"
+          }
+        ],
+        "family": "Mondor",
+        "given": "Todd A",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "a Defence R&amp;D Canada-Toronto , 1133 Sheppard Avenue West, P.O. Box 2000, Toronto, Ontario, Canada , M3M 3B9"
+          }
+        ],
+        "family": "Kent",
+        "given": "Kimberley J",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Ergonomics"
+    ],
+    "issue": "8",
+    "issued": {
+      "date-parts": [
+        [
+          2004,
+          6,
+          22
+        ]
+      ]
+    },
+    "page": "821-840",
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          2,
+          20
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2004,
+          6,
+          22
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Judging the urgency of non-verbal auditory alarms: a case study"
+    ],
+    "type": "journal-article",
+    "volume": "47"
+  },
+  "requested_doi": "10.1080/0014013042000193282",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:06:08Z",
+  "url": "https://api.crossref.org/works/10.1080%2F0014013042000193282"
+}

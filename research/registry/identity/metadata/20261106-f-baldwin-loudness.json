@@ -1,0 +1,87 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "1c9c1000e91f464be624d22fe4bb938064a164313d13aec5193899873c91d33a",
+  "record": {
+    "DOI": "10.1016/j.trf.2010.09.004",
+    "URL": "https://doi.org/10.1016/j.trf.2010.09.004",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Baldwin",
+        "given": "Carryl L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "May",
+        "given": "Jennifer F.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Transportation Research Part F: Traffic Psychology and Behaviour"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          1
+        ]
+      ]
+    },
+    "page": "36-42",
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          1
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Loudness interacts with semantics in auditory warnings to impact rear-end collisions"
+    ],
+    "type": "journal-article",
+    "volume": "14"
+  },
+  "requested_doi": "10.1016/j.trf.2010.09.004",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:38Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.trf.2010.09.004"
+}

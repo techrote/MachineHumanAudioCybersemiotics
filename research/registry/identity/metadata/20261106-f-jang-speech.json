@@ -1,0 +1,75 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "ea73ea1674260efda479d2f837d4435e762f5312f4c86b204d948ed45914e1a3",
+  "record": {
+    "DOI": "10.1016/j.ergon.2006.10.018",
+    "URL": "https://doi.org/10.1016/j.ergon.2006.10.018",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Jang",
+        "given": "Phil-Sik",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "International Journal of Industrial Ergonomics"
+    ],
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2007,
+          3
+        ]
+      ]
+    },
+    "page": "213-223",
+    "published-print": {
+      "date-parts": [
+        [
+          2007,
+          3
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Designing acoustic and non-acoustic parameters of synthesized speech warnings to control perceived urgency"
+    ],
+    "type": "journal-article",
+    "volume": "37"
+  },
+  "requested_doi": "10.1016/j.ergon.2006.10.018",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:24Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.ergon.2006.10.018"
+}

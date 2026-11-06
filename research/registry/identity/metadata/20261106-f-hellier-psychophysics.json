@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "2e9a826c7c3b6fe4c08568ce620612b14a7122663943738a41b003d7044a0da1",
+  "record": {
+    "DOI": "10.1016/s0003-6870(97)00013-6",
+    "URL": "https://doi.org/10.1016/s0003-6870(97)00013-6",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Hellier",
+        "given": "Elizabeth",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Applied Ergonomics"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          1999,
+          4
+        ]
+      ]
+    },
+    "page": "167-171",
+    "published-print": {
+      "date-parts": [
+        [
+          1999,
+          4
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "On using psychophysical techniques to achieve urgency mapping in auditory warnings"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "volume": "30"
+  },
+  "requested_doi": "10.1016/s0003-6870(97)00013-6",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:43Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fs0003-6870%2897%2900013-6"
+}

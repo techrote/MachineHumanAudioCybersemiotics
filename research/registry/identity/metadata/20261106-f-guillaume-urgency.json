@@ -1,0 +1,109 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "1c97109aee13202bed720d05129239b2d3ed25f54b398aabdb39b9c3a95a71f9",
+  "record": {
+    "DOI": "10.1037/1076-898x.9.3.196",
+    "URL": "https://doi.org/10.1037/1076-898x.9.3.196",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Guillaume",
+        "given": "Anne",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Pellieux",
+        "given": "Lionel",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Chastres",
+        "given": "Véronique",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Drake",
+        "given": "Carolyn",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Journal of Experimental Psychology: Applied"
+    ],
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "page": "196-212",
+    "published-online": {
+      "date-parts": [
+        [
+          2003
+        ]
+      ]
+    },
+    "publisher": "American Psychological Association (APA)",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Judging the urgency of nonvocal auditory warning signals: Perceptual and cognitive processes."
+    ],
+    "type": "journal-article",
+    "volume": "9"
+  },
+  "requested_doi": "10.1037/1076-898x.9.3.196",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:54Z",
+  "url": "https://api.crossref.org/works/10.1037%2F1076-898x.9.3.196"
+}

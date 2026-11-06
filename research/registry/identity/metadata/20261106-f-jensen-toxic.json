@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "283dc069c8871d39ac1cb3f5a61f693cbe11e8554c65b839d7df651ecd834f72",
+  "record": {
+    "DOI": "10.1177/154193129303700113",
+    "URL": "https://doi.org/10.1177/154193129303700113",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "National Aeronautics and Space Administration Johnson Space Center"
+          }
+        ],
+        "family": "Jensen",
+        "given": "Dean G.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          1993,
+          10
+        ]
+      ]
+    },
+    "page": "52-54",
+    "published-online": {
+      "date-parts": [
+        [
+          1993,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1993,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Space Station Freedom Aural Toxic Alarm Development"
+    ],
+    "type": "journal-article",
+    "volume": "37"
+  },
+  "requested_doi": "10.1177/154193129303700113",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:04:51Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193129303700113"
+}

@@ -1,0 +1,100 @@
+{
+  "id": "SRC-R006-F-GUILLAUME-URGENCY",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-f-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T17:07:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01151",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00304",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00071",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-F-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T17:05:54Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Anne Guillaume",
+            "role": "author"
+          },
+          {
+            "name": "Lionel Pellieux",
+            "role": "author"
+          },
+          {
+            "name": "Véronique Chastres",
+            "role": "author"
+          },
+          {
+            "name": "Carolyn Drake",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Journal of Experimental Psychology: Applied; 9; 3; 196-212"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-f-guillaume-urgency.json record.DOI/title/author; HTTP 200 on 2026-11-06T17:05:54Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1037/1076-898x.9.3.196"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-f-guillaume-urgency.json record.DOI, title, author and dates; retained derivative SHA256 bf0ec362a3fac6aba1613aefb26fb24fc5c1c17f9e6797614b82f5119a2e6f37",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-F-20261106.json.",
+          "publication_date uses Crossref issued; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2003"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Judging the urgency of nonvocal auditory warning signals: Perceptual and cognitive processes.",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,152 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "0582eef0c760bc2039fbbf6fbaaf4fcf60603f882d5d8052920dbac98a232f08",
+  "record": {
+    "DOI": "10.1518/0018720024494810",
+    "URL": "https://doi.org/10.1518/0018720024494810",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Plymouth, Plymouth, United Kingdom"
+          }
+        ],
+        "family": "Hellier",
+        "given": "Elizabeth",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Plymouth, Plymouth, United Kingdom"
+          }
+        ],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Cambridge, Cambridge, United Kingdom"
+          }
+        ],
+        "family": "Weedon",
+        "given": "Ben",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Plymouth, Plymouth, United Kingdom"
+          }
+        ],
+        "family": "Walters",
+        "given": "Kathryn",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of New South Wales, Sydney, Australia"
+          }
+        ],
+        "family": "Adams",
+        "given": "Austin",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2002,
+          3
+        ]
+      ]
+    },
+    "page": "1-17",
+    "published-online": {
+      "date-parts": [
+        [
+          2002,
+          3,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2002,
+          3
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "The Perceived Urgency of Speech Warnings: Semantics versus Acoustics"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1518/0018720024494810",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:06:23Z",
+  "url": "https://api.crossref.org/works/10.1518%2F0018720024494810"
+}

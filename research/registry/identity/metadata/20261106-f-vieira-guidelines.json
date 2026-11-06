@@ -1,0 +1,106 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "cfa17d77937978f076457f6fce92eaf0d3547d94ad2936025b22f2e3210f7dd2",
+  "record": {
+    "DOI": "10.1007/978-3-030-24067-7_37",
+    "URL": "https://doi.org/10.1007/978-3-030-24067-7_37",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Vieira",
+        "given": "Joana",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Santos",
+        "given": "Jorge Almeida",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Noriega",
+        "given": "Paulo",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Advances in Intelligent Systems and Computing",
+      "Health and Social Care Systems of the Future: Demographic Changes, Digital Age and Human Factors"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "page": "325-333",
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          6,
+          26
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "publisher": "Springer International Publishing",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "A Review of Design Guidelines for Clinical Auditory Alarms"
+    ],
+    "type": "book-chapter",
+    "update-policy": "http://dx.doi.org/10.1007/springer_crossmark_policy"
+  },
+  "requested_doi": "10.1007/978-3-030-24067-7_37",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:05:14Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-030-24067-7_37"
+}

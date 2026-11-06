@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-f-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T17:07:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00037",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-F-WELCH-INTENSIVE",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-F-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01072",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ5-01072",
+          "rev": 2
+        },
+        "ordinal": 37,
+        "raw_metadata": "Auditory Alarms in Intensive Care | first author: John Welch | 2019-01-15 | book-chapter | https://openalex.org/W2911376475",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-F-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2911376475"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.4324/9780429455742-16"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-F-WELCH-INTENSIVE",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

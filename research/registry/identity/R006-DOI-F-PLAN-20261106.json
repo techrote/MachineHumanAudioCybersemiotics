@@ -1,0 +1,729 @@
+{
+  "accepted_base": "fbc2bab8d325da53ab03a63cdda0b9eca9359aaa",
+  "access_note": "Twenty sequential Crossref single-work requests; only successful bibliographic derivatives admitted. Actual statuses retained per capture. No article/chapter or abstract text was read.",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Metadata identity only. No article/chapter/abstract reading, eligibility, independent-study or corpus acceptance. Unreviewed export formats and title disagreements stay unresolved.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1016/j.trf.2010.09.004",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-006",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BALDWIN-LOUDNESS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/154193129804201513",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-020",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-HELICOPTER"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/154193121005401804",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-039",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-MOSKOVITCH-DUALTASK"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/154193129804201513",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-020",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-HELICOPTER"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/154193121005401804",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-039",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-MOSKOVITCH-DUALTASK"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-1-4471-3588-3_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C9RUSKIN-00019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BREWSTER-NAVIGATION"
+    }
+  ],
+  "issue": 6,
+  "not_admitted": [],
+  "selected": [
+    {
+      "doi": "10.1177/154193129303700113",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00403",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JENSEN-TOXIC"
+    },
+    {
+      "doi": "10.1016/0003-6870(94)90001-9",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00442",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-EDWORTHY-IMPLEMENTATION"
+    },
+    {
+      "doi": "10.1080/00140139508925271",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00500",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BURT-EVALUATION"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3588-3_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00517",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BREWSTER-NAVIGATION"
+    },
+    {
+      "doi": "10.1049/cce:19960407",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00550",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-PITCH"
+    },
+    {
+      "doi": "10.1177/154193129804201513",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00705",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-HELICOPTER"
+    },
+    {
+      "doi": "10.1080/10803548.1999.11076412",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00738",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-PARK-VOICE"
+    },
+    {
+      "doi": "10.1016/s0003-6870(97)00013-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00764",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HELLIER-PSYCHOPHYSICS"
+    },
+    {
+      "doi": "10.1177/154193120004400158",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00880",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HEDLEY-STANDARDIZATION"
+    },
+    {
+      "doi": "10.1518/0018720024494810",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01036",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HELLIER-SPEECH"
+    },
+    {
+      "doi": "10.1037/1076-898x.9.3.196",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01151",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-GUILLAUME-URGENCY"
+    },
+    {
+      "doi": "10.1037/1076-898x.9.1.12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01165",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BANBURY-STREAMING"
+    },
+    {
+      "doi": "10.1080/00140130310001629739",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01347",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-CATCHPOLE-PULSES"
+    },
+    {
+      "doi": "10.1080/0014013042000193282",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01348",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-ARRABITO-URGENCY"
+    },
+    {
+      "doi": "10.1016/j.ergon.2006.10.018",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01751",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JANG-SPEECH"
+    },
+    {
+      "doi": "10.1177/154193121005401804",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02525",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-MOSKOVITCH-DUALTASK"
+    },
+    {
+      "doi": "10.1016/j.trf.2010.09.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02543",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BALDWIN-LOUDNESS"
+    },
+    {
+      "doi": "10.1177/154193129303700113",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00077",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JENSEN-TOXIC"
+    },
+    {
+      "doi": "10.1177/154193120004400158",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00166",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HEDLEY-STANDARDIZATION"
+    },
+    {
+      "doi": "10.1007/978-3-030-24067-7_37",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01058",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-VIEIRA-GUIDELINES"
+    },
+    {
+      "doi": "10.4324/9780429455742-16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01072",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-WELCH-INTENSIVE"
+    },
+    {
+      "doi": "10.1016/j.pcorm.2023.100332",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01428",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-ANDERSON-ANNOYANCE"
+    },
+    {
+      "doi": "10.1080/00140139508925271",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00049",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BURT-EVALUATION"
+    },
+    {
+      "doi": "10.4324/9780429455742-16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00062",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-WELCH-INTENSIVE"
+    },
+    {
+      "doi": "10.1080/00140130310001629739",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00067",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-CATCHPOLE-PULSES"
+    },
+    {
+      "doi": "10.1049/cce:19960407",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00073",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-PITCH"
+    },
+    {
+      "doi": "10.1016/0003-6870(94)90001-9",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00095",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-EDWORTHY-IMPLEMENTATION"
+    },
+    {
+      "doi": "10.1080/0014013042000193282",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00109",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-ARRABITO-URGENCY"
+    },
+    {
+      "doi": "10.1007/978-3-030-24067-7_37",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00167",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-VIEIRA-GUIDELINES"
+    },
+    {
+      "doi": "10.1518/0018720024494810",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00195",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HELLIER-SPEECH"
+    },
+    {
+      "doi": "10.1016/j.trf.2010.09.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00208",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BALDWIN-LOUDNESS"
+    },
+    {
+      "doi": "10.1016/s0003-6870(97)00013-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00229",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HELLIER-PSYCHOPHYSICS"
+    },
+    {
+      "doi": "10.1037/1076-898x.9.3.196",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00304",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-GUILLAUME-URGENCY"
+    },
+    {
+      "doi": "10.1177/154193129804201513",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00334",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-HELICOPTER"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3588-3_12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00427",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BREWSTER-NAVIGATION"
+    },
+    {
+      "doi": "10.1037/1076-898x.9.1.12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00497",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BANBURY-STREAMING"
+    },
+    {
+      "doi": "10.1080/10803548.1999.11076412",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00535",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-PARK-VOICE"
+    },
+    {
+      "doi": "10.1016/j.ergon.2006.10.018",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00667",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JANG-SPEECH"
+    },
+    {
+      "doi": "10.1016/j.pcorm.2023.100332",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00682",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-ANDERSON-ANNOYANCE"
+    },
+    {
+      "doi": "10.1177/154193121005401804",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00914",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-MOSKOVITCH-DUALTASK"
+    },
+    {
+      "doi": "10.1080/00140139508925271",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BURT-EVALUATION"
+    },
+    {
+      "doi": "10.1518/0018720024494810",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00005",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HELLIER-SPEECH"
+    },
+    {
+      "doi": "10.1016/s0003-6870(97)00013-6",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00010",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HELLIER-PSYCHOPHYSICS"
+    },
+    {
+      "doi": "10.1016/j.ergon.2006.10.018",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00027",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JANG-SPEECH"
+    },
+    {
+      "doi": "10.1080/00140130310001629739",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00033",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-CATCHPOLE-PULSES"
+    },
+    {
+      "doi": "10.4324/9780429455742-16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00037",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-WELCH-INTENSIVE"
+    },
+    {
+      "doi": "10.1080/10803548.1999.11076412",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00041",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-PARK-VOICE"
+    },
+    {
+      "doi": "10.1049/cce:19960407",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00047",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HAAS-PITCH"
+    },
+    {
+      "doi": "10.1016/0003-6870(94)90001-9",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00054",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-EDWORTHY-IMPLEMENTATION"
+    },
+    {
+      "doi": "10.1037/1076-898x.9.3.196",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00071",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-GUILLAUME-URGENCY"
+    },
+    {
+      "doi": "10.1080/0014013042000193282",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00074",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-ARRABITO-URGENCY"
+    },
+    {
+      "doi": "10.1037/1076-898x.9.1.12",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00095",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-BANBURY-STREAMING"
+    },
+    {
+      "doi": "10.1177/154193120004400158",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00171",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HEDLEY-STANDARDIZATION"
+    },
+    {
+      "doi": "10.4324/9780429455742-16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00015",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-WELCH-INTENSIVE"
+    },
+    {
+      "doi": "10.1007/978-3-030-24067-7_37",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00027",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-VIEIRA-GUIDELINES"
+    },
+    {
+      "doi": "10.1016/j.pcorm.2023.100332",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00133",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-ANDERSON-ANNOYANCE"
+    },
+    {
+      "doi": "10.1177/154193120004400158",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01080",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HEDLEY-STANDARDIZATION"
+    },
+    {
+      "doi": "10.1177/154193129303700113",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01480",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JENSEN-TOXIC"
+    },
+    {
+      "doi": "10.1177/154193129303700113",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00077",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-JENSEN-TOXIC"
+    },
+    {
+      "doi": "10.1177/154193120004400158",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00166",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-F-HEDLEY-STANDARDIZATION"
+    }
+  ],
+  "selection_rationale": "Twenty recurring DOI groups with three, four or five unresolved occurrences each were selected using auditory warning/interface topic labels and recurrence, not result direction or eligibility. This is bounded identity prioritization, not exhaustive selection or screening.",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-hedley-standardization.json",
+        "sha256": "aaa74140e5e853ee6a34d8d6b5a6de559e30b622ccb140c8bd29ff9f2495f2a4"
+      },
+      "doi": "10.1177/154193120004400158",
+      "source_id": "SRC-R006-F-HEDLEY-STANDARDIZATION",
+      "title": "Standardization of Interface Design for Medical Devices: International Electrotechnical Commission and International Organization for Standardization Medical Alarm Systems"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-moskovitch-dualtask.json",
+        "sha256": "aacf2c0e551d88c0e8861d8d7d98a1d12cc853f1ae842d924156ae317bb98915"
+      },
+      "doi": "10.1177/154193121005401804",
+      "source_id": "SRC-R006-F-MOSKOVITCH-DUALTASK",
+      "title": "Enhanced Auditory Menu Cues on a Mobile Phone Improve Time-Shared Performance of a Driving-Like Dual Task"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-jensen-toxic.json",
+        "sha256": "165d3e64fcd2d5b41af7147f33fcb908febe09d955daf7ba0d7576486c09a07f"
+      },
+      "doi": "10.1177/154193129303700113",
+      "source_id": "SRC-R006-F-JENSEN-TOXIC",
+      "title": "Space Station Freedom Aural Toxic Alarm Development"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-haas-helicopter.json",
+        "sha256": "cd2c0cdb58be5baa10425091995b300dc0310ab54bcc10212f3875b22b197fe6"
+      },
+      "doi": "10.1177/154193129804201513",
+      "source_id": "SRC-R006-F-HAAS-HELICOPTER",
+      "title": "Can 3-D Auditory Warnings Enhance Helicopter Cockpit Safety?"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-welch-intensive.json",
+        "sha256": "f14bdd738e42dbfd69cd010939d665b9de6ead011281fad97e8565dc81ea57c8"
+      },
+      "doi": "10.4324/9780429455742-16",
+      "source_id": "SRC-R006-F-WELCH-INTENSIVE",
+      "title": "Auditory Alarms in Intensive Care"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-brewster-navigation.json",
+        "sha256": "08e828979c40cac867c092985e22ae7ab490cadc263fa5a8595a7d02fc28441a"
+      },
+      "doi": "10.1007/978-1-4471-3588-3_12",
+      "source_id": "SRC-R006-F-BREWSTER-NAVIGATION",
+      "title": "Earcons as a Method of Providing Navigational Cues in a Menu Hierarchy"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-vieira-guidelines.json",
+        "sha256": "839230017865ec430f99c1d0fc1f51efe50878322a549ce71cc9959f372f0ffd"
+      },
+      "doi": "10.1007/978-3-030-24067-7_37",
+      "source_id": "SRC-R006-F-VIEIRA-GUIDELINES",
+      "title": "A Review of Design Guidelines for Clinical Auditory Alarms"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-edworthy-implementation.json",
+        "sha256": "fa235cbb2a118f1208639f0086e9730a6cfd5f5a7b96981b457a6f6272f29187"
+      },
+      "doi": "10.1016/0003-6870(94)90001-9",
+      "source_id": "SRC-R006-F-EDWORTHY-IMPLEMENTATION",
+      "title": "The design and implementation of non-verbal auditory warnings"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-jang-speech.json",
+        "sha256": "78d5f5b646938951d76021dcc3235df7efbf8e0ca572feabc60329b8a454c34a"
+      },
+      "doi": "10.1016/j.ergon.2006.10.018",
+      "source_id": "SRC-R006-F-JANG-SPEECH",
+      "title": "Designing acoustic and non-acoustic parameters of synthesized speech warnings to control perceived urgency"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-anderson-annoyance.json",
+        "sha256": "23d0e3ac9616e77dd85f0d4c9f5c3eccc410b0e8af3dda06d188ab6b9730830c"
+      },
+      "doi": "10.1016/j.pcorm.2023.100332",
+      "source_id": "SRC-R006-F-ANDERSON-ANNOYANCE",
+      "title": "Improving auditory alarms: Reducing perceived annoyance with musical timbre (a randomized trial)"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-baldwin-loudness.json",
+        "sha256": "3f0ba4eb9e3e1d4d086fc5fcd49abdc3784fd416f0772c1ce661ff88384a7bef"
+      },
+      "doi": "10.1016/j.trf.2010.09.004",
+      "source_id": "SRC-R006-F-BALDWIN-LOUDNESS",
+      "title": "Loudness interacts with semantics in auditory warnings to impact rear-end collisions"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-hellier-psychophysics.json",
+        "sha256": "b918741d121fc585dc62ec4b4f27fdb95edd7de6cf790e82cdc9895ee4076aba"
+      },
+      "doi": "10.1016/s0003-6870(97)00013-6",
+      "source_id": "SRC-R006-F-HELLIER-PSYCHOPHYSICS",
+      "title": "On using psychophysical techniques to achieve urgency mapping in auditory warnings"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-banbury-streaming.json",
+        "sha256": "b6da22154408fbf6da4e2b620e4169503d09b42ca25e7dea60e67cfa85fd40d3"
+      },
+      "doi": "10.1037/1076-898x.9.1.12",
+      "source_id": "SRC-R006-F-BANBURY-STREAMING",
+      "title": "Using auditory streaming to reduce disruption to serial memory by extraneous auditory warnings."
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-guillaume-urgency.json",
+        "sha256": "bf0ec362a3fac6aba1613aefb26fb24fc5c1c17f9e6797614b82f5119a2e6f37"
+      },
+      "doi": "10.1037/1076-898x.9.3.196",
+      "source_id": "SRC-R006-F-GUILLAUME-URGENCY",
+      "title": "Judging the urgency of nonvocal auditory warning signals: Perceptual and cognitive processes."
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-haas-pitch.json",
+        "sha256": "1160cefd03f6b304dd16852b5ba5670538b608ad4ca4e37d0f256af0d354f07b"
+      },
+      "doi": "10.1049/cce:19960407",
+      "source_id": "SRC-R006-F-HAAS-PITCH",
+      "title": "Designing urgency into auditory warnings using pitch, speed and loudness"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-catchpole-pulses.json",
+        "sha256": "d0274e1a1de38d8fc1fd675f59642a207a30c0f92dda6d90ab7c4fb84e37b3c0"
+      },
+      "doi": "10.1080/00140130310001629739",
+      "source_id": "SRC-R006-F-CATCHPOLE-PULSES",
+      "title": "Localizable auditory warning pulses"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-arrabito-urgency.json",
+        "sha256": "788859456838320efde7be8d41b8484e9c48d0e84bc2ee799dceba08258bfd22"
+      },
+      "doi": "10.1080/0014013042000193282",
+      "source_id": "SRC-R006-F-ARRABITO-URGENCY",
+      "title": "Judging the urgency of non-verbal auditory alarms: a case study"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-burt-evaluation.json",
+        "sha256": "f3b5191c128b42ebc0172f0dd88df60ab926b48fd63b2549364002e5182581fc"
+      },
+      "doi": "10.1080/00140139508925271",
+      "source_id": "SRC-R006-F-BURT-EVALUATION",
+      "title": "A psychophysiological evaluation of the perceived urgency of auditory warning signals"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-park-voice.json",
+        "sha256": "9403ceb0357906e0a7571f18389883c8666ee69df385046ae97fa0185693bafd"
+      },
+      "doi": "10.1080/10803548.1999.11076412",
+      "source_id": "SRC-R006-F-PARK-VOICE",
+      "title": "Effects of Synthesized Voice Warning Parameters on Perceived Urgency"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-f-hellier-speech.json",
+        "sha256": "cc4669ab682940af52bff604e06774aa4bcf45c2e3251cd74daeabe577901336"
+      },
+      "doi": "10.1518/0018720024494810",
+      "source_id": "SRC-R006-F-HELLIER-SPEECH",
+      "title": "The Perceived Urgency of Speech Warnings: Semantics versus Acoustics"
+    }
+  ]
+}

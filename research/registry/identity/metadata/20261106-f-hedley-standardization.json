@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "261cdfd32f978e9cfebbeaeb2fcedc670d96bb413b17185a4229b5b961ffae7c",
+  "record": {
+    "DOI": "10.1177/154193120004400158",
+    "URL": "https://doi.org/10.1177/154193120004400158",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "David S. Sheridan Professor of Anaesthesia and Respiratory Therapy, Harvard University and Professor in the Department of Health Policy and Management, Harvard School of Public Health, Department of Veterans Affairs Health Care System, West Roxbury Division, Boston, MA"
+          }
+        ],
+        "family": "Hedley-Whyte",
+        "given": "John",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "215-218",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Standardization of Interface Design for Medical Devices: International Electrotechnical Commission and International Organization for Standardization Medical Alarm Systems"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004400158",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:04:36Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004400158"
+}

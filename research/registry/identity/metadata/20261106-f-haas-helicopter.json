@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "4fcd9ae195dd54283b4623c819de79fcb972775e1f74febac570a475f454708e",
+  "record": {
+    "DOI": "10.1177/154193129804201513",
+    "URL": "https://doi.org/10.1177/154193129804201513",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "U.S. Army Research Laboratory Aberdeen Proving Ground, MD"
+          }
+        ],
+        "family": "Haas",
+        "given": "Ellen C.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "15",
+    "issued": {
+      "date-parts": [
+        [
+          1998,
+          10
+        ]
+      ]
+    },
+    "page": "1117-1121",
+    "published-online": {
+      "date-parts": [
+        [
+          1998,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1998,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Can 3-D Auditory Warnings Enhance Helicopter Cockpit Safety?"
+    ],
+    "type": "journal-article",
+    "volume": "42"
+  },
+  "requested_doi": "10.1177/154193129804201513",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T17:04:58Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193129804201513"
+}
