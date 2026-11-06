@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-reference-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T13:05:36Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C9RUSKIN-00018",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-D-BREWSTER-EVALUATION",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00378",
+          "rev": 2
+        },
+        {
+          "id": "AID-R006-REFERENCE-D-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-00378",
+          "rev": 2
+        },
+        "ordinal": 18,
+        "raw_metadata": "Brewster SA, Wright PC, Edwards ADN. 1993. An evaluation of earcons for use in auditory human-computer interfaces. In Proceedings of the INTERACT '93 and CHI '93 Conference on Human Factors in Computing Systems (CHI '93). Association for Computing Machinery, New York, NY, USA, 222–227. DOI:https://doi.org/10.1145/169059.169179 | C9-RUSKIN-2020-REF018 | source PDF pp. 57; printed pp. 57; exact line/column boxes in retained export",
+        "resolution_reason": "R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. Coordinate-bearing bibliography citation and original page/line provenance checked against fresh same-byte PDF. No eligibility, empirical extraction or independent-study assertion. See research/registry/identity/R006-REFERENCE-D-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1145/169059.169179"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9RUSKIN",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-D-BREWSTER-EVALUATION",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,
