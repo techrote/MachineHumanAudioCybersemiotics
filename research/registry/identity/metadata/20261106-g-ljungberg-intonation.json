@@ -1,0 +1,106 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "8a119088aa3a9362beb21da129bc902266f0ab1e8eaf02c73f366acf7a7aadef",
+  "record": {
+    "DOI": "10.1177/0018720812438613",
+    "URL": "https://doi.org/10.1177/0018720812438613",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Umeå University, Umeå, Sweden"
+          }
+        ],
+        "family": "Ljungberg",
+        "given": "Jessica K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of the Balearic Islands, Palma, Spain"
+          }
+        ],
+        "family": "Parmentier",
+        "given": "Fabrice",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "5",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          3,
+          15
+        ]
+      ]
+    },
+    "page": "826-837",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          3,
+          15
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2012,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "The Impact of Intonation and Valence on Objective and Subjective Attention Capture by Auditory Alarms"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "54"
+  },
+  "requested_doi": "10.1177/0018720812438613",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:33Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720812438613"
+}

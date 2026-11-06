@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "5e12aeec63603b17b4254dc1a96e252eb7a36efed5cc4919cefbb09d4752c0f0",
+  "record": {
+    "DOI": "10.1177/107118139704100249",
+    "URL": "https://doi.org/10.1177/107118139704100249",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory (NIST/NVLAP Accredited No. 100352-0) Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Belz",
+        "given": "Steven M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory (NIST/NVLAP Accredited No. 100352-0) Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Winters",
+        "given": "John J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory (NIST/NVLAP Accredited No. 100352-0) Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Robinson",
+        "given": "Gary S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory (NIST/NVLAP Accredited No. 100352-0) Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Casali",
+        "given": "John G.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          1997,
+          10
+        ]
+      ]
+    },
+    "page": "939-943",
+    "published-online": {
+      "date-parts": [
+        [
+          1997,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1997,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "A Methodology for Selecting Auditory Icons for Use in Commercial Motor Vehicles"
+    ],
+    "type": "journal-article",
+    "volume": "41"
+  },
+  "requested_doi": "10.1177/107118139704100249",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:43Z",
+  "url": "https://api.crossref.org/works/10.1177%2F107118139704100249"
+}

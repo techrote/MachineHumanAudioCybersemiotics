@@ -1,0 +1,104 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "51746674e04051bd02aec4cb4915115927c649cd6de73cf5a7744684d6a71798",
+  "record": {
+    "DOI": "10.1177/154193120104501816",
+    "URL": "https://doi.org/10.1177/154193120104501816",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Lockheed Martin Space Operations Kennedy Space Center, FL"
+          }
+        ],
+        "family": "Neubauer",
+        "given": "Andrew G.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "NASA Ames Research Center Moffett Field, CA"
+          }
+        ],
+        "family": "Lanier",
+        "given": "Richard",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "18",
+    "issued": {
+      "date-parts": [
+        [
+          2001,
+          10
+        ]
+      ]
+    },
+    "page": "1390-1394",
+    "published-online": {
+      "date-parts": [
+        [
+          2001,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2001,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Obtaining Objective Measurements of Operator Performance with Auditory Alarms"
+    ],
+    "type": "journal-article",
+    "volume": "45"
+  },
+  "requested_doi": "10.1177/154193120104501816",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:05:22Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120104501816"
+}

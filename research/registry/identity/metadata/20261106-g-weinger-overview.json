@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "59aa554603f8d2c807690b787c78e64ac5cd7ff382b80b423e4b55059fe734a3",
+  "record": {
+    "DOI": "10.1177/154193120004400157",
+    "URL": "https://doi.org/10.1177/154193120004400157",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Anesthesia Ergonomics Research Laboratory Department of Anesthesiology, University of California, San Diego and the San Diego VA Health Care System, La Jolla, CA"
+          }
+        ],
+        "family": "Weinger",
+        "given": "Matthew B.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "211-214",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Auditory Warnings in the Medical Work Domain: An Overview of Critical Issues"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004400157",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:48Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004400157"
+}

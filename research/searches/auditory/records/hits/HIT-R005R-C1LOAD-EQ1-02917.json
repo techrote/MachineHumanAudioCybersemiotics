@@ -39,6 +39,59 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02917",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-LJUNGBERG-INTONATION",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2917,
+        "raw_metadata": "The Impact of Intonation and Valence on Objective and Subjective Attention Capture by Auditory Alarms | first author: Jessica K. Ljungberg | 2012-03-15 | article | https://openalex.org/W2164617905",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-G-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2164617905"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1177/0018720812438613"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-G-LJUNGBERG-INTONATION",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

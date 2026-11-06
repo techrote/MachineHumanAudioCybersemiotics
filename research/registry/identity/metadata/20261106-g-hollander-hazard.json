@@ -1,0 +1,104 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "da3aa8e2744d43bba5c68ec00d0da4ebb2c690a91c3e5682ce03227638f47698",
+  "record": {
+    "DOI": "10.1177/154193120004402254",
+    "URL": "https://doi.org/10.1177/154193120004402254",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology North Carolina State University Raleigh, North Carolina 27695-7801"
+          }
+        ],
+        "family": "Hollander",
+        "given": "Todd D.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology North Carolina State University Raleigh, North Carolina 27695-7801"
+          }
+        ],
+        "family": "Wogalter",
+        "given": "Michael S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "702-705",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Connoted Hazard of Voiced Warning Signal Words: An Examination of Auditory Components"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004402254",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:05:13Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004402254"
+}

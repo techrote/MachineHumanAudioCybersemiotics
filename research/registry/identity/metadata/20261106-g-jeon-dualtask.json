@@ -1,0 +1,153 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "cc6bae624b042f0d35d0e6cd7502c2d3ca4833defb9fb20b6ee1392cdcb0a120",
+  "record": {
+    "DOI": "10.1145/1620509.1620528",
+    "URL": "https://doi.org/10.1145/1620509.1620528",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA"
+          }
+        ],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA"
+          }
+        ],
+        "family": "Davison",
+        "given": "Benjamin K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA"
+          }
+        ],
+        "family": "Nees",
+        "given": "Michael A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA"
+          }
+        ],
+        "family": "Wilson",
+        "given": "Jeff",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA"
+          }
+        ],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 1st International Conference on Automotive User Interfaces and Interactive Vehicular Applications"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          9,
+          21
+        ]
+      ]
+    },
+    "page": "91-98",
+    "published-online": {
+      "date-parts": [
+        [
+          2009,
+          9,
+          21
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          9,
+          21
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Enhanced auditory menu cues improve dual task performance and are preferred with in-vehicle technologies"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/1620509.1620528",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:06Z",
+  "url": "https://api.crossref.org/works/10.1145%2F1620509.1620528"
+}

@@ -1,0 +1,105 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "c3b5003625e487c5c31f71ee216035895aaba9ec1351e1b3a66eaf8c2cd7524b",
+  "record": {
+    "DOI": "10.1145/3170427.3188696",
+    "URL": "https://doi.org/10.1145/3170427.3188696",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Bristol, Bristol, United Kingdom"
+          }
+        ],
+        "family": "Hutchinson",
+        "given": "Joe",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Bristol, London, United Kingdom"
+          }
+        ],
+        "family": "Metatla",
+        "given": "Oussama",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Extended Abstracts of the 2018 CHI Conference on Human Factors in Computing Systems"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          4,
+          20
+        ]
+      ]
+    },
+    "page": "1-6",
+    "published-online": {
+      "date-parts": [
+        [
+          2018,
+          4,
+          20
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2018,
+          4,
+          20
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "An Initial Investigation into Non-visual Code Structure Overview Through Speech, Non-speech and Spearcons"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/3170427.3188696",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:28Z",
+  "url": "https://api.crossref.org/works/10.1145%2F3170427.3188696"
+}

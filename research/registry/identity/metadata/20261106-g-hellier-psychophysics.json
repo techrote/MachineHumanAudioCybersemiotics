@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "0e12b3d84f6f2603950db2886691b636c86c362f26fbbebf393aa7b6f75e3789",
+  "record": {
+    "DOI": "10.1177/154193120004402253",
+    "URL": "https://doi.org/10.1177/154193120004402253",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology University of Plymouth, Drake Circus Plymouth, Devon, UK"
+          }
+        ],
+        "family": "Hellier",
+        "given": "E.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology City University Northampton Square London, EC1V OHB, UK"
+          }
+        ],
+        "family": "Weedon",
+        "given": "B.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology University of Plymouth, Drake Circus Plymouth, Devon, UK"
+          }
+        ],
+        "family": "Edworthy",
+        "given": "J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology University of Plymouth, Drake Circus Plymouth, Devon, UK"
+          }
+        ],
+        "family": "Walters",
+        "given": "K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "698-701",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Using Psychophysics to Design Speech Warnings"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004402253",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:05:08Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004402253"
+}
