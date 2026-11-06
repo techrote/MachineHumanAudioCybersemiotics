@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-tranche-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; local Python, preserved Crossref/OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T02:08:49Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00007",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-HELLIER-1993",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-HELLIER-1993-01",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-TRANCHE-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R004-LK-HELLIER-1993-01",
+          "rev": 1
+        },
+        "ordinal": 7,
+        "raw_metadata": "Improving Auditory Warning Design: Quantifying and Predicting the Effects of Different Warning Parameters on Perceived Urgency | first author: Elizabeth Hellier | 1993-12-01 | article | https://openalex.org/W2104166306",
+        "resolution_reason": "R006: DOI and full title agree between retained occurrence export and verified source/Crossref metadata; duplicate of existing R004 resolved occurrence. Identity only; no eligibility, new reading, study or sample assertion. See research/registry/identity/R006-DOI-TRANCHE-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2104166306"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1177/001872089303500408"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-HELLIER-1993",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

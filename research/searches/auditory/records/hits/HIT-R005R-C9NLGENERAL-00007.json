@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-tranche-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; local Python, preserved Crossref/OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T02:08:49Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00007",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-BLATTNER-1989",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-BLATTNER-1989-01",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-TRANCHE-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R004-LK-BLATTNER-1989-01",
+          "rev": 1
+        },
+        "ordinal": 7,
+        "raw_metadata": "Blattner, M. M., Sumikawa, D. A., & Greenberg, R. M. (1989). Earcons and Icons: Their Structure and Common Design Principles. Human–Computer Interaction, 4(1), 11–44. https://doi.org/10.1207/s15327051hci0401_1 | source PDF pp.33–33, reference 7",
+        "resolution_reason": "R006: DOI and full title agree between retained occurrence export and verified source/Crossref metadata; duplicate of existing R004 resolved occurrence. Identity only; no eligibility, new reading, study or sample assertion. See research/registry/identity/R006-DOI-TRANCHE-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1207/s15327051hci0401_1"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-REL-BLATTNER-1989",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

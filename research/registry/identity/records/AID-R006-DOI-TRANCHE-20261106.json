@@ -1,0 +1,214 @@
+{
+  "id": "AID-R006-DOI-TRANCHE-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-tranche-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; local Python, preserved Crossref/OpenAlex and bibliography metadata"
+      },
+      "at": "2026-11-06T02:08:49Z",
+      "basis": [
+        {
+          "id": "SRC-REL-BLATTNER-1989",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-EDWORTHY-1991",
+          "rev": 1
+        },
+        {
+          "id": "SRC-REL-HELLIER-1993",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-EDWORTHY-1991-02",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-HELLIER-1993-02",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00280",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00334",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00058",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00074",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00168",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00001",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00007",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00017",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00058",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00007",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-DOI-TRANCHE-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and deterministic software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "SRC-REL-BLATTNER-1989",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-EDWORTHY-1991",
+            "rev": 1
+          },
+          {
+            "id": "SRC-REL-HELLIER-1993",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R004-LK-EDWORTHY-1991-02",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R004-LK-HELLIER-1993-02",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00280",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00334",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00058",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00074",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00168",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00001",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00007",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00017",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00058",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00007",
+            "rev": 1
+          }
+        ],
+        "limitations": "Metadata identity only; no new online retrieval, source reading, eligibility, study/sample identity or complete corpus. OpenAlex public derivatives omit abstracts; underlying private raw responses were not inspected. Distinct abstract-only DOI records remain separate.",
+        "output_refs": [
+          {
+            "id": "HIT-R004-LK-EDWORTHY-1991-02",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R004-LK-HELLIER-1993-02",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00280",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-00334",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00058",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00074",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00168",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00001",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00007",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00017",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00058",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00007",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T02:08:49Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Adjudicate twelve DOI/title discovery duplicates against three existing publications and representatives.",
+        "verification_steps": [
+          "Verified retained export and page hashes, DOI and full title at original ordinal.",
+          "Compared source revision 1 against retained Crossref first result; linked each duplicate to its already resolved R004 representative.",
+          "Retained original revisions and all search identifiers/ordinals; no source or scientific record changed."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
