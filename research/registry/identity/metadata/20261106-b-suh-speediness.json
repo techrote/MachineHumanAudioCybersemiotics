@@ -1,0 +1,122 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "32529350645c3835bd547ce683361b3ff8aff6e99f48cb5d8b3516cf2a21f3c0",
+  "record": {
+    "DOI": "10.1177/1071181312561390",
+    "URL": "https://doi.org/10.1177/1071181312561390",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Sonification Lab, School of Interactive Computing"
+          }
+        ],
+        "family": "Suh",
+        "given": "Hyewon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology Georgia Institue of Technology Atlanta, GA, 30332 USA"
+          }
+        ],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Sonification Lab, School of Interactive Computing"
+          },
+          {
+            "name": "School of Psychology Georgia Institue of Technology Atlanta, GA, 30332 USA"
+          }
+        ],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          9
+        ]
+      ]
+    },
+    "page": "1361-1365",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          9,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2012,
+          9
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Spearcons Improve Navigation Performance and Perceived Speediness in Korean Auditory Menus"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "56"
+  },
+  "requested_doi": "10.1177/1071181312561390",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T06:59:45Z",
+  "url": "https://api.crossref.org/works/10.1177%2F1071181312561390"
+}

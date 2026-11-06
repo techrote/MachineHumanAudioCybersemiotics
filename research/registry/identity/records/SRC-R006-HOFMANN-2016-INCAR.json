@@ -1,0 +1,112 @@
+{
+  "id": "SRC-R006-HOFMANN-2016-INCAR",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-b-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliography and fixed retained-export identity comparison"
+      },
+      "at": "2026-11-06T07:02:46Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03988",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00848",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-01235",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00106",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-B-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T06:58:06Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Hansjörg Hofmann",
+            "role": "author"
+          },
+          {
+            "name": "Mario Hermanutz",
+            "role": "author"
+          },
+          {
+            "name": "Vanessa Tobisch",
+            "role": "author"
+          },
+          {
+            "name": "Ute Ehrlich",
+            "role": "author"
+          },
+          {
+            "name": "André Berton",
+            "role": "author"
+          },
+          {
+            "name": "Wolfgang Minker",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Signals and Communication Technology; Situated Dialog in Speech-Based Human-Computer Interaction; 111-124"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-b-hofmann-incar.json record.DOI/title/author; HTTP 200 on 2026-11-06T06:58:06Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/978-3-319-21834-2_11"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-b-hofmann-incar.json record.DOI, title, author and dates; retained derivative SHA256 7570f7ed1b7d2a5724c26aedcc16d69f916eefe7880af9b5b34c37988619b9a8",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-B-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2016"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "Evaluation of In-Car SDS Notification Concepts for Incoming Proactive Events",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

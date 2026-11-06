@@ -367,6 +367,61 @@ metadata comparison, software self-review and ten regression tests on
 claimed. Source-reading extent is logged in the performed assistance record and
 receipt; no complete source reading is asserted.
 
+## DOI batch B and reusable admission profiles — 6 November 2026
+
+The [batch B plan](R006-DOI-B-PLAN-20261106.json) and
+[ledger](R006-DOI-B-20261106.json) add five metadata-only publication identities
+from fresh Crossref bibliographic captures and resolve 23 retained occurrences.
+Nine reference-list occurrences are explicitly deferred for source-provenance
+checks. Original hit revisions, titles, dates and search paths remain intact.
+
+| Publication identity | DOI | Resolved occurrences |
+|---|---|---:|
+| Alseid/Rigas, avatar-based e-learning audio cues | `10.1109/dese.2011.34` | 5 |
+| Suh et al., Korean auditory-menu spearcons | `10.1177/1071181312561390` | 5 |
+| Hofmann et al., in-car SDS notifications | `10.1007/978-3-319-21834-2_11` | 4 |
+| Edworthy et al., learning medical alarm sets | `10.1016/j.apergo.2013.10.003` | 4 |
+| Petocz et al., warning signal–referent relations | `10.1037/1076-898x.14.2.165` | 5 |
+
+The Hofmann record is a **book chapter**, as reported by Crossref, and is not
+silently typed as an article. Print/online/issued dates remain separate in the
+captures and ledger. All five sources have verified metadata, `metadata_only`
+access, unknown article-reuse rights, no manifestations and no reading claim.
+Original article/chapter content, abstracts and empirical results were not read.
+An initial metadata request returned HTTP 429; missing captures were retried
+sequentially after local implementation work. Only successful HTTP 200 captures
+are admitted. The initial failed response bytes/request time were not retained;
+the plan records this limitation rather than inventing a precise retry history.
+
+The admission engine now accepts explicit fixed-batch profiles. Its original
+default invocation still reproduces the previous five-source/29-occurrence
+ledger and canonical prefixes **exactly**. Batch B is a small profile, not a copy
+of the full builder. Each configured batch must supply its own task/provenance
+narrative and exact expected counts. Duplicate IDs/DOIs, repeated or overlapping
+selected/deferred occurrences, sources without qualified occurrence evidence and
+unreviewed publication types are rejected before writes. Profiles do not mutate
+the original default configuration or expand source scope automatically.
+
+```sh
+python research/registry/identity/scripts/build_r006_new_publications.py --check
+python research/registry/identity/scripts/build_r006_doi_batch_b.py --check
+python -m unittest tests.test_screening_doi_batch_b -v
+python tools/validate.py
+```
+
+All-lane unresolved discovery decreases **22,428 → 22,405**: five representatives
+and 18 duplicates. Nine exact-identifier candidates remain for separately checked
+reference-list provenance. No eligibility, screening, study, sample, claim or
+design records are created. Publication metadata does not establish independent
+studies or corpus readiness. Issue #6 and the corpus gate remain open.
+Next: verify the nine deferred references, then reuse fixed profiles for further
+new-publication batches while preserving version and sample distinctions.
+
+AI disclosure: one Codex/GPT-6 agent, 6 November 2026, fresh bibliographic metadata
+retrieval, retained-export comparison, software self-review and thirteen batch/
+profile regression tests. No independent human adjudication, source-content
+appraisal or scientific acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

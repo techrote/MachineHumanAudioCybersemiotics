@@ -1,0 +1,83 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "c3da866cf10cd667548d7575a7df2cad7c6379ce466c36a76c331776f6df44c1",
+  "record": {
+    "DOI": "10.1109/dese.2011.34",
+    "URL": "https://doi.org/10.1109/dese.2011.34",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Alseid",
+        "given": "Marwan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Rigas",
+        "given": "Dimitrios",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "2011 Developments in E-systems Engineering"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          12
+        ]
+      ]
+    },
+    "page": "276-281",
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          12
+        ]
+      ]
+    },
+    "publisher": "IEEE",
+    "relation": {},
+    "title": [
+      "The Role of Earcons and Auditory Icons in the Usability of Avatar-Based E-Learning Interfaces"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.1109/dese.2011.34",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T06:59:40Z",
+  "url": "https://api.crossref.org/works/10.1109%2Fdese.2011.34"
+}
