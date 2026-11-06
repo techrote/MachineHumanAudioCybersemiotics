@@ -1,0 +1,124 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "67ee31ef0a7fbc2346f80c0149dc369a3ecf595d139c232156d3dc25b20b2e60",
+  "record": {
+    "DOI": "10.1177/0018720819879311",
+    "URL": "https://doi.org/10.1177/0018720819879311",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1167-9963",
+        "affiliation": [
+          {
+            "name": "New Mexico State University, Las Cruces, USA"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Šabić",
+        "given": "Edin",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Old Dominion University, Norfolk, Virginia, USA"
+          }
+        ],
+        "family": "Chen",
+        "given": "Jing",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "New Mexico State University, Las Cruces, USA"
+          }
+        ],
+        "family": "MacDonald",
+        "given": "Justin A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          10,
+          8
+        ]
+      ]
+    },
+    "page": "312-335",
+    "published-online": {
+      "date-parts": [
+        [
+          2019,
+          10,
+          8
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          3
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Toward a Better Understanding of In-Vehicle Auditory Warnings and Background Noise"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "63"
+  },
+  "requested_doi": "10.1177/0018720819879311",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:14Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720819879311"
+}

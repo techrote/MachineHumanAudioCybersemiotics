@@ -1,0 +1,1707 @@
+{
+  "actor": {
+    "id": "codex-r006-doi-h-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+  },
+  "artifact_kind": "bounded_new_publication_identity_tranche",
+  "boundary": "12 publication identities; no independent-study count or corpus acceptance. Metadata-only access.",
+  "counts": {
+    "deferred_occurrences": 9,
+    "duplicate_occurrences": 13,
+    "new_source_records": 12,
+    "occurrences": 25,
+    "resolved_representatives": 12,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "study_records_created": 0
+  },
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1080/00140139.2016.1237677",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-023",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-ISHERWOOD-CONGRUENCY"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/154193120504902213",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-045",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-NEURAUTER-CURVE"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/0018720819879311",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-052",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-SABIC-UNDERSTANDING"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/3027063.3053149",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-053",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-SABIC-RECOGNITION"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1080/00140139.2016.1237677",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-023",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-ISHERWOOD-CONGRUENCY"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/154193120504902213",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-045",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-NEURAUTER-CURVE"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/0018720819879311",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-052",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-SABIC-UNDERSTANDING"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/3027063.3053149",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-053",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-SABIC-RECOGNITION"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1177/0018720816670986",
+      "hit_ref": {
+        "id": "HIT-R005R-C9RUSKIN-00073",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-H-HICKLING-SEQUENCE"
+    }
+  ],
+  "implementation_base": "6c634cfc87ee75ca35aa55fdc69502748db9936e",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-DOI-H-PLAN-20261106.json",
+      "sha256": "d51b3affaddbe3e6b15054707a878c1b12ff24f15477175bc16af745a1de9951"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-cardoso-menu.json",
+      "sha256": "e6a7ece6b143876991482d43902ee9734f6b93becba279741db4c3417b276b01"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-edworthy-mapping.json",
+      "sha256": "9ea39f11a6653daf7d46a402f03879946347180136a59d8af8ca2f93a6ca13c0"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-hickling-sequence.json",
+      "sha256": "0f76189e6c0362d2d62a12d670e751f7f1659278884a4e0e83d7c5523588f434"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-isherwood-congruency.json",
+      "sha256": "ff5c20370cd89c6982070b489de60b4b494a9350aea676db867c7705ad75883b"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-jung-helicopter.json",
+      "sha256": "e97046bb23abfe6ad4290824f8250a916d56546fd5cbad99be5fe399d632b691"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-ljungberg-verbal.json",
+      "sha256": "7ec016446a84349c09dc58ef0a09235017fdbc6187f7ea8f46e2955659fc3c63"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-neurauter-curve.json",
+      "sha256": "dd495cf8114f626724b549b9315608b5a98ea1ad0e837d6949a05e4132c4d1ce"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-park-earcons.json",
+      "sha256": "4f0a06a189129313f628207421bc0998c8454513fae72a425b0148be9a86dbcb"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-roginska-displays.json",
+      "sha256": "63270977579ea86b760cd3b120a37451ce627678226c770c5afce3ab1b65ec8f"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-sabic-recognition.json",
+      "sha256": "5580ecf434d358da60e6f8fdebca00f3ce06e1ed9474c18183c46cce11c8d8c9"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-sabic-understanding.json",
+      "sha256": "9d88e48161b3242f746144c1dd7c47815f7dcb88e3af858485489f532dfc844e"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-h-wee-melodic.json",
+      "sha256": "1ad3dee7ef6c96712f1b7a724d752663542b2e9db2846385251cbaa931e92d94"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0001.json.gz",
+      "sha256": "494cbfe9a823dcb5d17947dd852d8b520635c7c617bf541f4ce34d6ba5d9e8e9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0002.json.gz",
+      "sha256": "f0e1224eaa8864a1218c35261b5f96ea990bae561023b1c7e507ddd4579cba59"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0003.json.gz",
+      "sha256": "d396350fb1444d8ccd8a80708decd594072c8938aeeef833ae9d94426304aeba"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0004.json.gz",
+      "sha256": "994c4f1199a11ae894f3d955214a66958725352fbc383df894fb2ee1a8e03354"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0005.json.gz",
+      "sha256": "945ff45ec3aba31316610ab9c89358139618386b20c2239b8b0ad847aeac9a96"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0006.json.gz",
+      "sha256": "b3582d7b2f64d865fd8963654492246c881d8a69caea33293b84c74cbb27ac1f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0007.json.gz",
+      "sha256": "dfa5b8ec7de880e02d8493854ff60bc5209af99eb885cca0e6fc312cccf411b0"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0008.json.gz",
+      "sha256": "249a76d1d2e5c8a3d1939473fc24fdb494b2e7144ae4e454996053a368aacc2a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0009.json.gz",
+      "sha256": "9e84beb38e31230338f00c42e901d4f1cbd908cf1853a94d0bf4d7b5d3c64ab6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0010.json.gz",
+      "sha256": "f517728975e77deb388cdce6e010dea2e2bab65ffe1d1f5edc4988846d9d74b3"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0011.json.gz",
+      "sha256": "37b264ed1e41e746ff72244ee0f9001a7bc0cbae0499eff07905af6f2a12dab7"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0012.json.gz",
+      "sha256": "a205c1ceed17df20eb9993daf69352d8bc19de99909ee6185869340a23a983c1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0013.json.gz",
+      "sha256": "0babc03cbd06ad71dd5d8e2c61f554cbb1ef7debbce4d742e48fdf01c530ec09"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+      "sha256": "d6d947749e47cbb1a112982d5ff155abebae163b11807d6bbebd17b51528d4b4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0015.json.gz",
+      "sha256": "bd095ec4282c2cbca41d11ccc31a7e47fd4de91ecd1f16b111555aa43d1cfd2d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0016.json.gz",
+      "sha256": "6a04c18e72e0e519eddc6bcf7f2045545340013f024b69822420bd1cf59869ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0017.json.gz",
+      "sha256": "20fa7274a7d0705bbfa603e4bcabb7eb9e5088f3def61bb2bf1f0d0d1fc3079b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0018.json.gz",
+      "sha256": "26c2960c0193e931ce9c2abe66f6ce1019be8a6da82522a59ebf402341e6c68a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0019-a2.json.gz",
+      "sha256": "3f6850416e04e62caae7088fac954b802de62c2f2931d423357ba929d967264c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0020-a2.json.gz",
+      "sha256": "c1acc726657034dfb2145ebce9ff1f591363084bc80b0122e06fe53cd3e4b58e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0021.json.gz",
+      "sha256": "47e8e65d8dd319e1f4ae0c143a3dd0c0be4942f8c8366057804a00dfda98471e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0001.json.gz",
+      "sha256": "6606d8c289c09849ad863bea9cd927dda823ad0d194ad0823be8aabae3438da5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0002.json.gz",
+      "sha256": "25d3a7dacca2d11288ef90851e9bbcad8ae136d8e589657e912d876b85040d87"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+      "sha256": "bd5a2876aa9e23347d15a9639b875759191742561c18e12e8183fda142a3396d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0004.json.gz",
+      "sha256": "fff6796eaa3310cf3da0d11746191a08a220052d65dff422bdc08fbdf01903d1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0005.json.gz",
+      "sha256": "86f8cfc955bf27095987cc12b4a191a5fa9362374171e895ee6651c96f70784b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0006.json.gz",
+      "sha256": "c56267aa604a1ac5836016d1ba2507e75f5ff36b73b3ce8043681a61eed41d0c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0007.json.gz",
+      "sha256": "06b3f3a1095fbfc9ef3b1edbc9e62b53ebb084a0eaafab82da4569d430035a01"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0008.json.gz",
+      "sha256": "944286b9840e3ee410a5b83ac6a857cabcb78aa9aab006bfe883e934b1597501"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0009.json.gz",
+      "sha256": "74466151f34b131e0079e19058d0c72ec6cba7037f0761a344b929ea77dccff5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0010.json.gz",
+      "sha256": "6e823b71c57aa461d03fa5a3b007a3ca1cbd4e5e40b71918fa7cadb25cbec2b5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0011.json.gz",
+      "sha256": "a53bc310433542328a083bf88c5e45aa6d6058113d04934534dfc443c35c0795"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+      "sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+      "sha256": "a4e7a83a1947e4305077e8b6a259de4a814072022752adc8eba09c7f33fed14f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+      "sha256": "4f6be15385cecec4ac3a2540e236aeebb78d74e21230f16090d89e86b10a90ee"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+      "sha256": "ccee941f98d31ff7a375a1818e974d2716a4d35f3092af2062706b91239cb3ec"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+      "sha256": "ce66781f59dfd2150c0998843d0b07fd9c33729c81547bd9c99a3b5bed8e96b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+      "sha256": "b87f72d0672c4ac5c5537948a5e2209c061655f0519bc3d1efcbe148cca71305"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+      "sha256": "f8886a8a7a4c78c592529bba485a66694b8c5da21be8907872cf16c324f1d6d5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0002.json.gz",
+      "sha256": "0b223218018fb075949d997052a3eaa33bb33500d352ea4fce03d9e068fcb5eb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0003.json.gz",
+      "sha256": "82360e9371885f4c5fb7057fac29ac65e9358e2ba7bb85b6e0554293a8d94209"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+      "sha256": "996e54968acbc09fed933cedb0088abf7535f876ba64cdad130e1eea82be93b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0002.json.gz",
+      "sha256": "a8cb32319f6e8f43ac26e03c19c01712599d8c9b06912961df157803c7b95304"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0003.json.gz",
+      "sha256": "ea313963bcd6a57c84476896956776949a462ff3b0fe5f1158ddf35f1f0dc0bb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0004.json.gz",
+      "sha256": "80b08440606576465e54167df37f4226b000db1f2428aa52c63f055785b6d1e6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0005.json.gz",
+      "sha256": "ba9b57087f4cb811947d4ad25cc8e1bae88a7d01ec124fca38165b8822413792"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0006.json.gz",
+      "sha256": "f3e3572eedbabd89b5f5fda05aef284510f61a03873340de788401cacf227b23"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0007.json.gz",
+      "sha256": "bf5892aed1cd9bbf0dca4002ad66e6f5947a1f4d5fbcef73f9d3e1cc78318ef4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0008.json.gz",
+      "sha256": "d108c66aeb292a995057431072d0a9f2cccf301ad03bb1c4160d2ce85c8a27ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0001.json.gz",
+      "sha256": "ea86513c4baf0b1de68ce86635b07327eca720684894d7077858bdbfec097c75"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0002.json.gz",
+      "sha256": "a4c866c062dbd7f3ac2f2d119cd0cef7b62f4d48f4cab65cabd3fc157e232ec0"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0003.json.gz",
+      "sha256": "b55568af60f8641a182f54fe97e1404996eb452edc3a423d554c95eaf16222b2"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ7/p0001.json.gz",
+      "sha256": "348a3e8e50d5955c5e4610e7a6593decf2462513b1fa06a79093c4f7e9edc46f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+      "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0001.json.gz",
+      "sha256": "3bcdd32d429b7fc169bd1622196894ef3c6cd938fd05cff25a38a40e0d48af31"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0002.json.gz",
+      "sha256": "67516c5748b3eac8b1c33316d6c942c739377e0aca13ea564c55f36ff137132e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+      "sha256": "908187846e7ce1dbeb6da4a552bcc2489d9cbadc09e23cbbd6f5457d44218121"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0004.json.gz",
+      "sha256": "63e1a3b09efe16c0bf88cb714087bdb12d64cb0765214f297d3d5a376f77d951"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/MANIFEST.json",
+      "sha256": "30726cd453d1c1aa92b33f4e6fc3bf6d4fdc258d75e71ae1776f7708e3d87e39"
+    },
+    {
+      "path": "research/searches/related/exports/lookups/EDWORTHY-1991.crossref.json",
+      "sha256": "0fdead0aa71dc37619547f33525bb15104768732e79bb06052f67f013fdc413e"
+    },
+    {
+      "path": "research/searches/related/exports/lookups/HELLIER-1993.crossref.json",
+      "sha256": "fe9e3e00ca81951b2f0ad93037727215fe7711889f269e25fa5f9b0f66ff6f61"
+    },
+    {
+      "path": "research/searches/related/exports/lookups/MANIFEST.json",
+      "sha256": "817499d25ddc0a0429b72fa61c8389f185461997f217db6d67d3719f851bbbfd"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "doi": "10.1201/9780203481714.pt1",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 3,
+        "path": "research/searches/related/exports/lookups/EDWORTHY-1991.crossref.json"
+      },
+      "hit_id": "HIT-R004-LK-EDWORTHY-1991-03",
+      "input_ref": {
+        "id": "HIT-R004-LK-EDWORTHY-1991-03",
+        "rev": 1
+      },
+      "input_revision_sha256": "f2d02032e1fc7e3be25f216ff06837f153c5a0e490b11d59a50bf87e1dd1f519",
+      "ordinal": 3,
+      "output_ref": {
+        "id": "HIT-R004-LK-EDWORTHY-1991-03",
+        "rev": 2
+      },
+      "output_revision_sha256": "82974df5046ebfe6fd3cbdf340c1bdb6646609303d8061f3525ce50f68d18a9d",
+      "path": "research/searches/related/records/hits/HIT-R004-LK-EDWORTHY-1991-03.json",
+      "search_ref": {
+        "id": "SRCH-R004-LK-EDWORTHY-1991",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-EDWORTHY-MAPPING",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1201/9780203481714.pt1",
+      "duplicate_of": {
+        "id": "HIT-R004-LK-EDWORTHY-1991-03",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 3,
+        "path": "research/searches/related/exports/lookups/HELLIER-1993.crossref.json"
+      },
+      "hit_id": "HIT-R004-LK-HELLIER-1993-03",
+      "input_ref": {
+        "id": "HIT-R004-LK-HELLIER-1993-03",
+        "rev": 1
+      },
+      "input_revision_sha256": "f09fc71c3a7e548dcc46650276b5af4fb85003765a7da6fddade44886dcc527a",
+      "ordinal": 3,
+      "output_ref": {
+        "id": "HIT-R004-LK-HELLIER-1993-03",
+        "rev": 2
+      },
+      "output_revision_sha256": "b02431a2ea2baeff4a7d799731c142b123cbdcfd9de86a5a0887371c9f668c3b",
+      "path": "research/searches/related/records/hits/HIT-R004-LK-HELLIER-1993-03.json",
+      "search_ref": {
+        "id": "SRCH-R004-LK-HELLIER-1993",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-EDWORTHY-MAPPING",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1177/154193120504902213",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 139,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0008.json.gz",
+        "reported_publication_date": "2005-09-01",
+        "work_id": "https://openalex.org/W2333482324"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-01539",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01539",
+        "rev": 1
+      },
+      "input_revision_sha256": "c47c40f42a32b0893aad1b5281559d69c7484f664fa4427f622d26223cf50418",
+      "ordinal": 1539,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01539",
+        "rev": 2
+      },
+      "output_revision_sha256": "ff7d789a02af5bca1b247a89a88f758075cf91ba24ac8574c00c950d32f8c5d7",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-01539.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-NEURAUTER-CURVE",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1002/hfm.20243",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 37,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+        "reported_publication_date": "2011-01-21",
+        "work_id": "https://openalex.org/W2032279505"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-02637",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02637",
+        "rev": 1
+      },
+      "input_revision_sha256": "725d52dc2ac026e2b0f3cdc70495019dca3fcaf5376b6f201526b1fb22fed4f8",
+      "ordinal": 2637,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02637",
+        "rev": 2
+      },
+      "output_revision_sha256": "2b1cf07cba6a23091951cc793389ae878dac6068f22433e798a38cf91a22dbda",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-02637.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-PARK-EARCONS",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1002/acp.2818",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 95,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0015.json.gz",
+        "reported_publication_date": "2012-01-18",
+        "work_id": "https://openalex.org/W1738254596"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-02895",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02895",
+        "rev": 1
+      },
+      "input_revision_sha256": "18670900db55bec6ed98c32bd93eb0a45ec3e7ec59e2125f722a78d3647e5071",
+      "ordinal": 2895,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02895",
+        "rev": 2
+      },
+      "output_revision_sha256": "3efcf517a14a311c6d136ad706e32305989d16353ee8ee4483cfdf5e1dd304de",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-02895.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-LJUNGBERG-VERBAL",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1093/acprof:oso/9780199608157.003.0015",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 55,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0017.json.gz",
+        "reported_publication_date": "2013-06-27",
+        "work_id": "https://openalex.org/W2492944603"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-03255",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03255",
+        "rev": 1
+      },
+      "input_revision_sha256": "7978e1a251a1033fd7830c5552bde194bc023bfc041d529b21f12a199553b764",
+      "ordinal": 3255,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03255",
+        "rev": 2
+      },
+      "output_revision_sha256": "88d7cfdd3bda72763b65ff6c069d637f78b38e319f44b8411e92458e96a00cad",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-03255.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-ROGINSKA-DISPLAYS",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.7471/ikeee.2013.17.2.189",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 57,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0017.json.gz",
+        "reported_publication_date": "2013-06-30",
+        "work_id": "https://openalex.org/W2009582805"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-03257",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03257",
+        "rev": 1
+      },
+      "input_revision_sha256": "50d4d3d20eddd67ac132f6996aebbe124fdb18e1be51f32d5d79bd2a4391e683",
+      "ordinal": 3257,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03257",
+        "rev": 2
+      },
+      "output_revision_sha256": "01024eab2679262cd0a79e8560656dec78d15410bbe5c1ce4332b4ab7baa592a",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-03257.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-JUNG-HELICOPTER",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1213/01.ane.0000286148.58823.6c",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 165,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0002.json.gz",
+        "reported_publication_date": "2008-02-01",
+        "work_id": "https://openalex.org/W2031347071"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00365",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00365",
+        "rev": 1
+      },
+      "input_revision_sha256": "61c7e1776ce17a96cbce3f184075bbf300c8e7688299cafa0772971958cd08a7",
+      "ordinal": 365,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00365",
+        "rev": 2
+      },
+      "output_revision_sha256": "28ff981aee1c27fb09d9f36d43046a34a23bd10ca2c9913240dd0db42375cdfb",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00365.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-WEE-MELODIC",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.3390/signals3020024",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 128,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0007.json.gz",
+        "reported_publication_date": "2022-06-16",
+        "work_id": "https://openalex.org/W4283167404"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-01328",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01328",
+        "rev": 1
+      },
+      "input_revision_sha256": "9863d08e6d87ca0a6f88d22e8c0a83eb81076cf9fd2c74cd40f06c51f3a4f853",
+      "ordinal": 1328,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01328",
+        "rev": 2
+      },
+      "output_revision_sha256": "868f089d08278a48926f37a5c0b67fe83b5962a30831b3b2178b1f329cb732d7",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-01328.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-CARDOSO-MENU",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1093/acprof:oso/9780199608157.003.0015",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03255",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 19,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2013-06-27",
+        "work_id": "https://openalex.org/W2492944603"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00019",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00019",
+        "rev": 1
+      },
+      "input_revision_sha256": "3b9c991db7105db243f938e4319e750a4ec3f334c8f8a9ab21ae0ec2736e1f64",
+      "ordinal": 19,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00019",
+        "rev": 2
+      },
+      "output_revision_sha256": "e4d05660abc91ed4adffd65db1a2d1f9e3853778a1cf5038e71b8cfcb2c39fff",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00019.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-ROGINSKA-DISPLAYS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1177/0018720819879311",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 46,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2019-10-08",
+        "work_id": "https://openalex.org/W2980063141"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00046",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00046",
+        "rev": 1
+      },
+      "input_revision_sha256": "76e3b005a21af4a103078e4cb9f52059751db6f24ed11a87553318e63fe3fc74",
+      "ordinal": 46,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00046",
+        "rev": 2
+      },
+      "output_revision_sha256": "d7ae2f08a26d2cfff58fe8bb4d522053cb6d1afa1a25f464e044e8cac9cec11b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00046.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1080/00140139.2016.1237677",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 60,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2016-09-21",
+        "work_id": "https://openalex.org/W2522698122"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+        "rev": 1
+      },
+      "input_revision_sha256": "46bebb3ea6f36381a19d3fc10fd15df3a12332c6ef47a22e8c6ba7580a938c26",
+      "ordinal": 60,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+        "rev": 2
+      },
+      "output_revision_sha256": "ca346701f5904c9f6a06cb1a4aa00ff295255d18063e00d700a16b51bee065c6",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00060.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1002/acp.2818",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02895",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 87,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+        "reported_publication_date": "2012-01-18",
+        "work_id": "https://openalex.org/W1738254596"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00287",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00287",
+        "rev": 1
+      },
+      "input_revision_sha256": "78ae96e50bb46b3edd864dfc1e3b20ff646a3585c840306d0994500af391a8ab",
+      "ordinal": 287,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00287",
+        "rev": 2
+      },
+      "output_revision_sha256": "1b57ade4201cc5def1fe03d560e604451379ca04d1cd51dc5979ea8be3ecc5db",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00287.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-LJUNGBERG-VERBAL",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1002/hfm.20243",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02637",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 154,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+        "reported_publication_date": "2011-01-21",
+        "work_id": "https://openalex.org/W2032279505"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+        "rev": 1
+      },
+      "input_revision_sha256": "7ce2d039fb599f285bf6324470a9cf153a34fd4e7db40f2f1bae54a4452e55d5",
+      "ordinal": 354,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+        "rev": 2
+      },
+      "output_revision_sha256": "37d997082f00a333723fc1e46677058ee103314114fd9f12718f4bab23873a8c",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00354.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-PARK-EARCONS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1177/0018720816670986",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 90,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+        "reported_publication_date": "2016-11-07",
+        "work_id": "https://openalex.org/W2549214777"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+        "rev": 1
+      },
+      "input_revision_sha256": "92279b7cefe09f521526ed7b74efca10a5b9a3f0eef981de609f8feb4abeb01f",
+      "ordinal": 690,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+        "rev": 2
+      },
+      "output_revision_sha256": "c49d0295a520ce917fabfb033b174145d650c170e1bb7867a9f321eabec260c9",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00690.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-HICKLING-SEQUENCE",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.7471/ikeee.2013.17.2.189",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03257",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 174,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+        "reported_publication_date": "2013-06-30",
+        "work_id": "https://openalex.org/W2009582805"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00774",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00774",
+        "rev": 1
+      },
+      "input_revision_sha256": "18b5c334c961844ddcfdeefebe372f0795f4dd0ee16617e1132992efd291be18",
+      "ordinal": 774,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00774",
+        "rev": 2
+      },
+      "output_revision_sha256": "f0e3ab5a7d1981d9b9969a12f1d6660a5760b529835a055ef3cdf255f58d591d",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00774.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-JUNG-HELICOPTER",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.3390/signals3020024",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01328",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 8,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+        "reported_publication_date": "2022-06-16",
+        "work_id": "https://openalex.org/W4283167404"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00808",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00808",
+        "rev": 1
+      },
+      "input_revision_sha256": "17b54b3a5c525cb152296ac81b91e452ffc950c5520ee1dcce05c7463eb09a3e",
+      "ordinal": 808,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00808",
+        "rev": 2
+      },
+      "output_revision_sha256": "27f6eafd012a3168ae69587a607f4f052b8c8cd2d3c124fe2f1f0fc627e2e99d",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00808.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-CARDOSO-MENU",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1201/9780203481714.pt1",
+      "duplicate_of": {
+        "id": "HIT-R004-LK-EDWORTHY-1991-03",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 11,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+        "reported_publication_date": "1994-02-28",
+        "work_id": "https://openalex.org/W4238836163"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+        "rev": 1
+      },
+      "input_revision_sha256": "292522347464888868e362e96335798b5485edd48f3683a31f75b6413e69c1fe",
+      "ordinal": 11,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+        "rev": 2
+      },
+      "output_revision_sha256": "1abd81b3c3924af53203c5cd17d172644495fa40c6cf5fccb43cc61ff360b7a9",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ2-00011.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ2",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-EDWORTHY-MAPPING",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.7471/ikeee.2013.17.2.189",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03257",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 52,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+        "reported_publication_date": "2013-06-30",
+        "work_id": "https://openalex.org/W2009582805"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ2-00052",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00052",
+        "rev": 1
+      },
+      "input_revision_sha256": "b0577515f9fd3b0921dc22d74c3148ff3b083671f2d52fc115ec137aebde239d",
+      "ordinal": 52,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00052",
+        "rev": 2
+      },
+      "output_revision_sha256": "43d12ef63cbfed022daf9469644719cb6fd278320211f73bd4f83f43cf67988b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ2-00052.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ2",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-JUNG-HELICOPTER",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1213/01.ane.0000286148.58823.6c",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00365",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 113,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0005.json.gz",
+        "reported_publication_date": "2008-02-01",
+        "work_id": "https://openalex.org/W2031347071"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00913",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00913",
+        "rev": 1
+      },
+      "input_revision_sha256": "bc4d0cd87f4b27169ef6bffbe53fa13969980822cd389e0a5c79adf48281c4c4",
+      "ordinal": 913,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00913",
+        "rev": 2
+      },
+      "output_revision_sha256": "8f340ec2b65d0b00e65aca76a1405627bd13190778b6d32d6bb9c0c0b2ec2b46",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00913.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-WEE-MELODIC",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.3390/signals3020024",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01328",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 78,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0006.json.gz",
+        "reported_publication_date": "2022-06-16",
+        "work_id": "https://openalex.org/W4283167404"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-01078",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01078",
+        "rev": 1
+      },
+      "input_revision_sha256": "431f87c930a9614a88800be658a00b0e2fabc898ffcde84f728de8500568487b",
+      "ordinal": 1078,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01078",
+        "rev": 2
+      },
+      "output_revision_sha256": "476f500212ca54a2fde8c5f2cbe3e84cd9995d7ded5ee40df758394410c4961e",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-01078.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-CARDOSO-MENU",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1177/0018720816670986",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 86,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0002.json.gz",
+        "reported_publication_date": "2016-11-07",
+        "work_id": "https://openalex.org/W2549214777"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ6-00286",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00286",
+        "rev": 1
+      },
+      "input_revision_sha256": "1e53271f31e7355c3f535d6cf844af6e0eeb51a50a13550cfce6d341528707e2",
+      "ordinal": 286,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00286",
+        "rev": 2
+      },
+      "output_revision_sha256": "3af9550b7816b9e902b7ebda46aef76e08466b57e78f03728a28f238c7182931",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ6-00286.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ6",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-HICKLING-SEQUENCE",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1093/acprof:oso/9780199608157.003.0015",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03255",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 2,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ7/p0001.json.gz",
+        "reported_publication_date": "2013-06-27",
+        "work_id": "https://openalex.org/W2492944603"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ7-00002",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00002",
+        "rev": 1
+      },
+      "input_revision_sha256": "d3c6701581e3dc5d4e03077d7ebc9ea8e036f3ce6ea30717a23cf3d82fa9d359",
+      "ordinal": 2,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00002",
+        "rev": 2
+      },
+      "output_revision_sha256": "893bcbafbdb7d23616c91953ec9c46da8c0f6f8c3d44523c1a08eae244ba8ce8",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ7-00002.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ7",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-ROGINSKA-DISPLAYS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1145/3027063.3053149",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 51,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ7/p0001.json.gz",
+        "reported_publication_date": "2017-05-01",
+        "work_id": "https://openalex.org/W2611744690"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ7-00051",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00051",
+        "rev": 1
+      },
+      "input_revision_sha256": "a81a9f57d37e0887fe801f0b8bf4b7072c14e70b6e5d3728c891987d73348e89",
+      "ordinal": 51,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00051",
+        "rev": 2
+      },
+      "output_revision_sha256": "110e1d81d49ea0352d6cb141f34e84ca90829988db2bc35a6e983b92e66fdaa1",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ7-00051.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ7",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-SABIC-RECOGNITION",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1213/01.ane.0000286148.58823.6c",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00365",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 165,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0002.json.gz",
+        "reported_publication_date": "2008-02-01",
+        "work_id": "https://openalex.org/W2031347071"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00365",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00365",
+        "rev": 1
+      },
+      "input_revision_sha256": "b73296574b74d71a176f808be5842e7720ce2a23b2fbe98967ccdc88af6fb98f",
+      "ordinal": 365,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00365",
+        "rev": 2
+      },
+      "output_revision_sha256": "7789d3c1db2c92287c9b3529d5b8715283b7eca94c247f4a1bf1a856b813ee09",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00365.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-H-WEE-MELODIC",
+        "rev": 1
+      },
+      "status": "duplicate"
+    }
+  ],
+  "resolved_at": "2026-11-06T22:09:57Z",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-isherwood-congruency.json",
+        "sha256": "ff5c20370cd89c6982070b489de60b4b494a9350aea676db867c7705ad75883b"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-ISHERWOOD-CONGRUENCY.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              10,
+              5
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              10,
+              5
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              7,
+              3
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "5541b0ee6b2b48954eee1cd4a0cdf7a6d5998eca978fa63de18783851713c407",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-roginska-displays.json",
+        "sha256": "63270977579ea86b760cd3b120a37451ce627678226c770c5afce3ab1b65ec8f"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-ROGINSKA-DISPLAYS.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              27
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              27
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "b85b726a41f399961b9b82dee9f312da1f4fe87346bb5933fb9b93dfe092bb8a",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-ROGINSKA-DISPLAYS",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-sabic-recognition.json",
+        "sha256": "5580ecf434d358da60e6f8fdebca00f3ce06e1ed9474c18183c46cce11c8d8c9"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-SABIC-RECOGNITION.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              6
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              6
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              5,
+              6
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "453222c30c0df0a6bc34c81cbb3644a8a817e93ca5072d2cd9bb0b7103b35205",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-SABIC-RECOGNITION",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-hickling-sequence.json",
+        "sha256": "0f76189e6c0362d2d62a12d670e751f7f1659278884a4e0e83d7c5523588f434"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-HICKLING-SEQUENCE.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              11,
+              11
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              11,
+              11
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "3ba9bb1892e17f73d72c96c23d3a6749d1072a181e4e5c0424ff816261c71460",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-HICKLING-SEQUENCE",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-sabic-understanding.json",
+        "sha256": "9d88e48161b3242f746144c1dd7c47815f7dcb88e3af858485489f532dfc844e"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-SABIC-UNDERSTANDING.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2019,
+              10,
+              8
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2019,
+              10,
+              8
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              3
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "c0a47ffaac67e8790c88c910179d7da43a7c3023ffc1a160f72c2b7b7b9eda46",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-neurauter-curve.json",
+        "sha256": "dd495cf8114f626724b549b9315608b5a98ea1ad0e837d6949a05e4132c4d1ce"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-NEURAUTER-CURVE.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2005,
+              9
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2005,
+              9,
+              1
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2005,
+              9
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "0bd315c9b957f68d424e141cad754db350267a03724071f46d063780866a8134",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-NEURAUTER-CURVE",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-edworthy-mapping.json",
+        "sha256": "9ea39f11a6653daf7d46a402f03879946347180136a59d8af8ca2f93a6ca13c0"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-EDWORTHY-MAPPING.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              1994,
+              2,
+              28
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              1,
+              21
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1994,
+              2,
+              28
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "a7ae37a7989fb3d74ec4d74fab7bc56461bb739078deb30764974c191d615bae",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-EDWORTHY-MAPPING",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-wee-melodic.json",
+        "sha256": "1ad3dee7ef6c96712f1b7a724d752663542b2e9db2846385251cbaa931e92d94"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-WEE-MELODIC.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2008,
+              2
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2008,
+              2
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "fd08676d7596e3309aae5c2e8448f03a59077fd4ac885debaad7fe70ca90fc93",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-WEE-MELODIC",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-cardoso-menu.json",
+        "sha256": "e6a7ece6b143876991482d43902ee9734f6b93becba279741db4c3417b276b01"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-CARDOSO-MENU.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              16
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              6,
+              16
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "8aa24576595ba7d3481a60dd2b2c702f2d8f25ed7f826508e1a3f5caa90f3189",
+      "selected_publication_date_field": "issued",
+      "source_ref": {
+        "id": "SRC-R006-H-CARDOSO-MENU",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-jung-helicopter.json",
+        "sha256": "e97046bb23abfe6ad4290824f8250a916d56546fd5cbad99be5fe399d632b691"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-JUNG-HELICOPTER.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              30
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              6,
+              30
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "369b56c89c2d82ee724416905be02f69be74899564f4dfd6d9338e0631b6e27e",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-JUNG-HELICOPTER",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-ljungberg-verbal.json",
+        "sha256": "7ec016446a84349c09dc58ef0a09235017fdbc6187f7ea8f46e2955659fc3c63"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-LJUNGBERG-VERBAL.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              18
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2012,
+              1,
+              18
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2012,
+              5
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "c5ca39baf637c686e8f93546c2493754a5dd239c6567d4a68828cf05125ec9a2",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-LJUNGBERG-VERBAL",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-h-park-earcons.json",
+        "sha256": "4f0a06a189129313f628207421bc0998c8454513fae72a425b0148be9a86dbcb"
+      },
+      "path": "research/registry/identity/records/SRC-R006-H-PARK-EARCONS.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2011,
+              1,
+              21
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2011,
+              1,
+              21
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              9
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "e3d59e75a36e38c3233ea7ee1d0c4a81f0af3c36f529b7f24a90ce4cd3dbdf2c",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-H-PARK-EARCONS",
+        "rev": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T22:09:57Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-H-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T22:07:56Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Sarah J. Isherwood",
+            "role": "author"
+          },
+          {
+            "name": "Denis McKeown",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Ergonomics; 60; 7; 1014-1023"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-h-isherwood-congruency.json record.DOI/title/author; HTTP 200 on 2026-11-06T22:07:56Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1080/00140139.2016.1237677"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-h-isherwood-congruency.json record.DOI, title, author and dates; retained derivative SHA256 ff5c20370cd89c6982070b489de60b4b494a9350aea676db867c7705ad75883b",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-H-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2017-07-03"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Semantic congruency of auditory warnings",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

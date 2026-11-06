@@ -1,0 +1,84 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "8bda6a78c3b5b6e8321313f418bf0fc71f726e9501f8980bd0985ef375614010",
+  "record": {
+    "DOI": "10.1201/9780203481714.pt1",
+    "URL": "https://doi.org/10.1201/9780203481714.pt1",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Human Factors in Alarm Design"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1994,
+          2,
+          28
+        ]
+      ]
+    },
+    "page": "15-30",
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          1,
+          21
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1994,
+          2,
+          28
+        ]
+      ]
+    },
+    "publisher": "Taylor & Francis",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Urgency mapping in auditory warning signals"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1201/9780203481714.pt1",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:22Z",
+  "url": "https://api.crossref.org/works/10.1201%2F9780203481714.pt1"
+}

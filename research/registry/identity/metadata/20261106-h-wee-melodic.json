@@ -1,0 +1,87 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "fe42a88fba985e9fddb5a0c93bdc152fe7228f270184ae6cab5076d78f4fb8dd",
+  "record": {
+    "DOI": "10.1213/01.ane.0000286148.58823.6c",
+    "URL": "https://doi.org/10.1213/01.ane.0000286148.58823.6c",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Wee",
+        "given": "Alexandra N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Sanderson",
+        "given": "Penelope M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Anesthesia &amp; Analgesia"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2008,
+          2
+        ]
+      ]
+    },
+    "page": "501-508",
+    "published-print": {
+      "date-parts": [
+        [
+          2008,
+          2
+        ]
+      ]
+    },
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Are Melodic Medical Equipment Alarms Easily Learned?"
+    ],
+    "type": "journal-article",
+    "volume": "106"
+  },
+  "requested_doi": "10.1213/01.ane.0000286148.58823.6c",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:26Z",
+  "url": "https://api.crossref.org/works/10.1213%2F01.ane.0000286148.58823.6c"
+}

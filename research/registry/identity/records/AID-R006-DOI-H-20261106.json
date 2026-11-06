@@ -1,0 +1,397 @@
+{
+  "id": "AID-R006-DOI-H-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T22:09:57Z",
+      "basis": [
+        {
+          "id": "HIT-R004-LK-EDWORTHY-1991-03",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-HELLIER-1993-03",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01539",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02637",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02895",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03255",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03257",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00365",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01328",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00019",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00046",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00287",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00774",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00808",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00052",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00913",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-01078",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ6-00286",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00002",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00051",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00365",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-DOI-H-PLAN-20261106.json",
+          "research/registry/identity/R006-DOI-H-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent with software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R004-LK-EDWORTHY-1991-03",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R004-LK-HELLIER-1993-03",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-01539",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02637",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02895",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03255",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03257",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00365",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-01328",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00019",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00046",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00287",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00774",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00808",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00052",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00913",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-01078",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ6-00286",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ7-00002",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ7-00051",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00365",
+            "rev": 1
+          }
+        ],
+        "limitations": "Metadata-only access, no article/abstract reading or empirical extraction. Crossref registration metadata and retained discovery are not independent human scientific review. No eligibility, study/sample links or corpus acceptance. Raw Crossref response bytes are not retained; selected bibliographic derivatives are hash-pinned.",
+        "output_refs": [
+          {
+            "id": "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-ROGINSKA-DISPLAYS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-SABIC-RECOGNITION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-HICKLING-SEQUENCE",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-NEURAUTER-CURVE",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-EDWORTHY-MAPPING",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-WEE-MELODIC",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-CARDOSO-MENU",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-JUNG-HELICOPTER",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-LJUNGBERG-VERBAL",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-H-PARK-EARCONS",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R004-LK-EDWORTHY-1991-03",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R004-LK-HELLIER-1993-03",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-01539",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02637",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02895",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03255",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03257",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00365",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-01328",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00019",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00046",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00060",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00287",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00690",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00774",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00808",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00052",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00913",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-01078",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ6-00286",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ7-00002",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ7-00051",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00365",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T22:09:57Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify twelve metadata-only publication identities and resolve 25 fixed DOI/full-title occurrences, deferring nine bibliography cases for separate provenance checks.",
+        "verification_steps": [
+          "Twelve sequential Crossref single-work requests returned HTTP 200; retained selected bibliographic derivatives and original-response hashes. Abstracts, chapters and articles not read.",
+          "Checked original export/page hashes, payloads, ordinals/work IDs, explicit DOI and full title under case/whitespace normalization only. No competing existing DOI assertions or exact normalized source titles found.",
+          "Preserved original discovery dates and separate print/online/issued metadata. Two book chapters retain that publication type; original OpenAlex type labels remain unchanged.",
+          "Two R004 lookup occurrences for the returned Edworthy 1994 chapter retain the original 1991/1993 query labels; no discovery-field or date harmonization.",
+          "Nine bibliography occurrences remain explicitly deferred. Captures retain deposited subtitle fields when present; no title expansion or fuzzy matching applied. No source alias, eligibility, study/sample or corpus decision introduced."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

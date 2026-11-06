@@ -1,0 +1,162 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "41ff51f5f70edcb20eb625ca837220fcd929f14391dc4a471b242bff2d2e1c49",
+  "record": {
+    "DOI": "10.1002/acp.2818",
+    "URL": "https://doi.org/10.1002/acp.2818",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology Umeå University  Umeå Sweden"
+          },
+          {
+            "name": "School of Psychology Cardiff University  Cardiff UK"
+          }
+        ],
+        "family": "Ljungberg",
+        "given": "Jessica K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology, Edificio Cientifico‐Tecnico University of the Balearic Islands  Palma Spain"
+          },
+          {
+            "name": "School of Psychology University of Western Australia  Australia"
+          }
+        ],
+        "family": "Parmentier",
+        "given": "Fabrice B. R.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology Cardiff University  Cardiff UK"
+          }
+        ],
+        "family": "Hughes",
+        "given": "Robert W.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology Cardiff University  Cardiff UK"
+          }
+        ],
+        "family": "Macken",
+        "given": "William J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology Cardiff University  Cardiff UK"
+          },
+          {
+            "name": "School of Psychology University of Western Australia  Australia"
+          }
+        ],
+        "family": "Jones",
+        "given": "Dylan M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Applied Cognitive Psychology"
+    ],
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          1,
+          18
+        ]
+      ]
+    },
+    "page": "451-461",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          1,
+          18
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2012,
+          5
+        ]
+      ]
+    },
+    "publisher": "Wiley",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Listen Out! Behavioural and Subjective Responses to Verbal Warnings"
+    ],
+    "type": "journal-article",
+    "volume": "26"
+  },
+  "requested_doi": "10.1002/acp.2818",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:39Z",
+  "url": "https://api.crossref.org/works/10.1002%2Facp.2818"
+}

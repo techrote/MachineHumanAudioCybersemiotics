@@ -1,0 +1,80 @@
+{
+  "id": "SRC-R006-H-NEURAUTER-CURVE",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T22:09:57Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-01539",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-H-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T22:08:18Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "M. Lucas Neurauter",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting; 49; 22; 1945-1949"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-h-neurauter-curve.json record.DOI/title/author; HTTP 200 on 2026-11-06T22:08:18Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/154193120504902213"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-h-neurauter-curve.json record.DOI, title, author and dates; retained derivative SHA256 dd495cf8114f626724b549b9315608b5a98ea1ad0e837d6949a05e4132c4d1ce",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-H-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2005-09"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Multimodal Warnings: Curve-Warning Design",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1406,6 +1406,93 @@ identity review, implementation and software self-review, with eighteen regressi
 tests. No independent human adjudication, peer review, original-paper reading,
 scientific validation or human-gate satisfaction is asserted.
 
+## DOI batch H — 6 November 2026
+
+The [fixed twelve-group plan](R006-DOI-H-PLAN-20261106.json) and
+[ledger](R006-DOI-H-20261106.json) add twelve metadata-only publication records
+and resolve 25 occurrences (twelve representatives and thirteen duplicates).
+Twelve sequential Crossref single-work requests returned HTTP 200. Selected
+bibliographic derivatives retain actual request URLs/times, response hashes,
+subtitle fields and separate issued/online/print assertions. Raw responses,
+abstracts and article/chapter text are not committed or read.
+
+| Publication title from metadata | Crossref type | Resolved | Deferred |
+| --- | --- | ---: | ---: |
+| Semantic congruency of auditory warnings | journal-article | 1 | 2 |
+| Auditory icons, earcons, and displays: Information and expression through sound | book-chapter | 3 | 0 |
+| Recognition of Car Warnings | proceedings-article | 1 | 2 |
+| Using a Sequence of Earcons to Monitor Multiple Simulated Patients | journal-article | 2 | 1 |
+| Toward a Better Understanding of In-Vehicle Auditory Warnings and Background Noise | journal-article | 1 | 2 |
+| Multimodal Warnings: Curve-Warning Design | journal-article | 1 | 2 |
+| Urgency mapping in auditory warning signals | book-chapter | 3 | 0 |
+| Are Melodic Medical Equipment Alarms Easily Learned? | journal-article | 3 | 0 |
+| Manual 3D Control of an Assistive Robotic Manipulator Using Alpha Rhythms and an Auditory Menu: A Proof-of-Concept | journal-article | 3 | 0 |
+| Ergonomic Design of Voice Warning Sounds Used in Utility Helicopter | journal-article | 3 | 0 |
+| Listen Out! Behavioural and Subjective Responses to Verbal Warnings | journal-article | 2 | 0 |
+| Evaluation of earcons for portable digital electronic products considering perceptual user characteristics | journal-article | 2 | 0 |
+
+The fixed scope contains 34 occurrences across twelve DOI groups, with two or
+three occurrences each. Auditory warning/interface topic labels and recurrence
+prioritize identity work, not eligibility, quality or result direction. Other
+recurring groups remain unadjudicated rather than excluded. All 34 occurrences
+are accounted for: 25 resolved, nine deferred, zero discarded or substituted
+candidate groups.
+
+Each admitted occurrence's explicit DOI and full registration title agrees with
+its original retained export under case/whitespace normalization only. Export,
+page and decompressed payload hashes, original ordinals and work IDs were checked.
+Twenty-three OpenAlex rows also agree in volume/issue/page fields wherever both
+services supply them; historical index flags are not a fresh retraction search.
+No competing existing source DOI assertion or exactly normalized title was found.
+Captured relation/update fields were empty; this is not a comprehensive correction
+or retraction search. The ordinary engine's relation/update guard remains active.
+
+Two Roginska/Edworthy sources retain chapter type; Sabic's recognition paper
+retains conference-paper type. HFES registration as journal-article is not a final
+report-type decision. The two R004 Crossref lookup occurrences returned Edworthy's
+1994 chapter at ordinal 3, although their query labels name 1991 and 1993 targets.
+Those labels, search pins and discovery strings are preserved; a query target does
+not determine the identity or year of every returned result.
+
+Isherwood's source date uses reported print 2017-07-03, while original OpenAlex
+2016-09-21 remains literal. Sabic's journal paper similarly keeps print 2021-03
+separate from index 2019-10-08 and its captured online date. Park's and Roginska's
+name spellings and all other author/date assertions remain as reported by their
+respective services. No discovery text is harmonized to fresh registration.
+
+Nine bibliography cases remain unresolved: Isherwood, both Sabic papers and
+Neurauter in the original model-rendered/accepted-manuscript included lists, plus
+Hickling in Ruskin reference 073. They need citation/source-provenance review.
+The recognition paper's registered main title, *Recognition of Car Warnings*,
+and deposited subtitle, *An Analysis of Various Alert Types*, remain separate.
+Its model-rendered title includes a truncated subtitle; verifying that
+presentation requires an explicit subtitle-aware comparison, not a relaxation
+of the full-title matcher or an inferred review-version alias.
+
+All twelve sources remain `metadata_only`, with unknown reuse rights, no
+manifestations and no family/sample links. No eligibility, study, sample,
+empirical extraction, correction adjudication, completed corpus or downstream
+#7–#9 acceptance is created. No full-text availability or reading is inferred from
+metadata, and the R005 coverage gaps remain open.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_batch_h.py --check
+python -m unittest tests.test_screening_doi_batch_h -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane unresolved count falls **22,075 → 22,050**: nine exact
+candidates, zero conflicts and 22,041 unmatched. These are all-lane discovery
+counts, not an empirical flow or independent-study count. Issue #6 and the corpus
+gate remain open for broader identity, actual protocol-governed screening,
+study/sample reconciliation and bias assessment.
+
+AI assistance: one Codex/GPT-6 agent performed metadata retrieval, retained-export
+comparison, software self-review and twelve regression tests. No independent
+human adjudication, target-source reading, scientific validation, protocol
+amendment or human-gate satisfaction is asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

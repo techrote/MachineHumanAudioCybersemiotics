@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T22:09:57Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00011",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-H-EDWORTHY-MAPPING",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-H-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-EDWORTHY-1991-03",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R004-LK-EDWORTHY-1991-03",
+          "rev": 2
+        },
+        "ordinal": 11,
+        "raw_metadata": "Urgency mapping in auditory warning signals | first author: Judy Reed Edworthy | 1994-02-28 | book-chapter | https://openalex.org/W4238836163",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-H-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W4238836163"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1201/9780203481714.pt1"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ2",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-H-EDWORTHY-MAPPING",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

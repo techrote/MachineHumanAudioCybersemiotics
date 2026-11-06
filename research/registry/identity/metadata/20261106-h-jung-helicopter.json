@@ -1,0 +1,101 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "521c0fd7aa19016c7ba26507415aa280ba7c742be35748b01ff69220f4c912d9",
+  "record": {
+    "DOI": "10.7471/ikeee.2013.17.2.189",
+    "URL": "https://doi.org/10.7471/ikeee.2013.17.2.189",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Jung",
+        "given": "Jonghyuk",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Kim",
+        "given": "Taekon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Koh",
+        "given": "Jinhwan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Journal of IKEEE"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          30
+        ]
+      ]
+    },
+    "page": "189-201",
+    "published-print": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          30
+        ]
+      ]
+    },
+    "publisher": "Institute of Korean Electrical and Electronics Engineers",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Ergonomic Design of Voice Warning Sounds Used in Utility Helicopter"
+    ],
+    "type": "journal-article",
+    "volume": "17"
+  },
+  "requested_doi": "10.7471/ikeee.2013.17.2.189",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:34Z",
+  "url": "https://api.crossref.org/works/10.7471%2Fikeee.2013.17.2.189"
+}

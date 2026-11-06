@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "7efd5f98248ba86826fbcc274326a790e999149cb314380692063638589534db",
+  "record": {
+    "DOI": "10.1177/154193120504902213",
+    "URL": "https://doi.org/10.1177/154193120504902213",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Virginia Tech Transportation Institute 3500 Transportation Research Plaza (0536) Blacksburg, VA 24061"
+          }
+        ],
+        "family": "Neurauter",
+        "given": "M. Lucas",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2005,
+          9
+        ]
+      ]
+    },
+    "page": "1945-1949",
+    "published-online": {
+      "date-parts": [
+        [
+          2005,
+          9,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2005,
+          9
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Multimodal Warnings: Curve-Warning Design"
+    ],
+    "type": "journal-article",
+    "volume": "49"
+  },
+  "requested_doi": "10.1177/154193120504902213",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:18Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120504902213"
+}
