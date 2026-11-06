@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-e-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T14:07:23Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00233",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-SOUSA-CONTROL",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-E-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00907",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ5-00907",
+          "rev": 2
+        },
+        "ordinal": 233,
+        "raw_metadata": "Designing and Deploying Meaningful Auditory Alarms for Control Systems | first author: Bruno Teixeira de Sousa | 2017-01-01 | book-chapter | https://openalex.org/W2360137255",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-E-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2360137255"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1007/978-3-319-51941-8_12"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-E-SOUSA-CONTROL",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

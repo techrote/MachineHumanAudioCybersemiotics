@@ -1,0 +1,82 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "4b9d2d07c5a813536ec99020e996789cf0cd2b621c7377d3dcef052458c7c266",
+  "record": {
+    "DOI": "10.1007/978-3-642-02710-9_49",
+    "URL": "https://doi.org/10.1007/978-3-642-02710-9_49",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Kogan",
+        "given": "Anya",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Lecture Notes in Computer Science",
+      "Universal Access in Human-Computer Interaction. Intelligent and Ubiquitous Interaction Environments"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "page": "445-454",
+    "published-print": {
+      "date-parts": [
+        [
+          2009
+        ]
+      ]
+    },
+    "publisher": "Springer Berlin Heidelberg",
+    "relation": {},
+    "title": [
+      "Spearcon Performance and Preference for Auditory Menus on a Mobile Phone"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-3-642-02710-9_49",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:53Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-642-02710-9_49"
+}

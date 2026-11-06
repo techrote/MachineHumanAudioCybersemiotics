@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 173,
+  "current_usable_sources": 188,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 173,
+  "publications": 188,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -147,6 +147,21 @@
       "SRC-R006-D-NAKATANI-GUIDELINES",
       "SRC-R006-D-STEPHAN-RETENTION",
       "SRC-R006-D-SULLIVAN-COLLISION",
+      "SRC-R006-E-BAKOWSKI-COLLISION",
+      "SRC-R006-E-BONEBRIGHT-EARCONS",
+      "SRC-R006-E-EDWORTHY-PERFORMANCE",
+      "SRC-R006-E-IMBEAULT-CADENCE",
+      "SRC-R006-E-JEON-SPINDEX",
+      "SRC-R006-E-JEON-UNAVAILABLE",
+      "SRC-R006-E-LI-PATIENTS",
+      "SRC-R006-E-MOULOUA-COCKPIT",
+      "SRC-R006-E-SOUSA-CONTROL",
+      "SRC-R006-E-STEINBORN-SHIFT",
+      "SRC-R006-E-STEVENS-INFORMATIVE",
+      "SRC-R006-E-SUN-LYRICON",
+      "SRC-R006-E-WALKER-MOBILE",
+      "SRC-R006-E-WATSON-TAILORING",
+      "SRC-R006-E-WEE-TESTING",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
       "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
       "SRC-R006-EDWORTHY-2014-LEARNING",
@@ -300,6 +315,21 @@
       "SRC-R006-D-NAKATANI-GUIDELINES",
       "SRC-R006-D-STEPHAN-RETENTION",
       "SRC-R006-D-SULLIVAN-COLLISION",
+      "SRC-R006-E-BAKOWSKI-COLLISION",
+      "SRC-R006-E-BONEBRIGHT-EARCONS",
+      "SRC-R006-E-EDWORTHY-PERFORMANCE",
+      "SRC-R006-E-IMBEAULT-CADENCE",
+      "SRC-R006-E-JEON-SPINDEX",
+      "SRC-R006-E-JEON-UNAVAILABLE",
+      "SRC-R006-E-LI-PATIENTS",
+      "SRC-R006-E-MOULOUA-COCKPIT",
+      "SRC-R006-E-SOUSA-CONTROL",
+      "SRC-R006-E-STEINBORN-SHIFT",
+      "SRC-R006-E-STEVENS-INFORMATIVE",
+      "SRC-R006-E-SUN-LYRICON",
+      "SRC-R006-E-WALKER-MOBILE",
+      "SRC-R006-E-WATSON-TAILORING",
+      "SRC-R006-E-WEE-TESTING",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
       "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
       "SRC-R006-EDWORTHY-2014-LEARNING",
@@ -4473,22 +4503,22 @@
       "id": "SRCH-R005R-C1LOAD-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 36,
+      "resolved_hits": 49,
       "status": "partial",
       "stored_hits": 4200,
-      "unique_publications": 36,
-      "unresolved_hits": 4164
+      "unique_publications": 49,
+      "unresolved_hits": 4151
     },
     {
-      "duplicate_hits": 28,
+      "duplicate_hits": 34,
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 31,
+      "resolved_hits": 38,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 31,
-      "unresolved_hits": 2081
+      "unique_publications": 38,
+      "unresolved_hits": 2074
     },
     {
       "duplicate_hits": 1,
@@ -4502,26 +4532,26 @@
       "unresolved_hits": 4650
     },
     {
-      "duplicate_hits": 33,
+      "duplicate_hits": 42,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 33,
+      "resolved_hits": 43,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 33,
-      "unresolved_hits": 967
+      "unique_publications": 42,
+      "unresolved_hits": 957
     },
     {
-      "duplicate_hits": 7,
+      "duplicate_hits": 8,
       "id": "SRCH-R005R-C1RECOVERY-EQ2",
       "mode": "production",
       "reported_count": 556,
-      "resolved_hits": 7,
+      "resolved_hits": 8,
       "status": "completed",
       "stored_hits": 556,
-      "unique_publications": 7,
-      "unresolved_hits": 549
+      "unique_publications": 8,
+      "unresolved_hits": 548
     },
     {
       "duplicate_hits": 0,
@@ -4535,48 +4565,48 @@
       "unresolved_hits": 76
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 3,
       "id": "SRCH-R005R-C1RECOVERY-EQ4",
       "mode": "production",
       "reported_count": 585,
-      "resolved_hits": 1,
+      "resolved_hits": 3,
       "status": "partial",
       "stored_hits": 585,
-      "unique_publications": 1,
-      "unresolved_hits": 584
+      "unique_publications": 3,
+      "unresolved_hits": 582
     },
     {
-      "duplicate_hits": 31,
+      "duplicate_hits": 38,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 31,
+      "resolved_hits": 38,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 31,
-      "unresolved_hits": 1569
+      "unique_publications": 38,
+      "unresolved_hits": 1562
     },
     {
-      "duplicate_hits": 2,
+      "duplicate_hits": 5,
       "id": "SRCH-R005R-C1RECOVERY-EQ6",
       "mode": "production",
       "reported_count": 537,
-      "resolved_hits": 2,
+      "resolved_hits": 5,
       "status": "completed",
       "stored_hits": 537,
-      "unique_publications": 2,
-      "unresolved_hits": 535
+      "unique_publications": 5,
+      "unresolved_hits": 532
     },
     {
-      "duplicate_hits": 4,
+      "duplicate_hits": 5,
       "id": "SRCH-R005R-C1RECOVERY-EQ7",
       "mode": "production",
       "reported_count": 153,
-      "resolved_hits": 4,
+      "resolved_hits": 5,
       "status": "completed",
       "stored_hits": 153,
-      "unique_publications": 4,
-      "unresolved_hits": 149
+      "unique_publications": 5,
+      "unresolved_hits": 148
     },
     {
       "duplicate_hits": 2,
@@ -4604,26 +4634,26 @@
       "unresolved_hits": 0
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 3,
       "id": "SRCH-R005R-C1SORT-EQ4",
       "mode": "production",
       "reported_count": 585,
-      "resolved_hits": 1,
+      "resolved_hits": 3,
       "status": "completed",
       "stored_hits": 585,
-      "unique_publications": 1,
-      "unresolved_hits": 584
+      "unique_publications": 3,
+      "unresolved_hits": 582
     },
     {
-      "duplicate_hits": 27,
+      "duplicate_hits": 33,
       "id": "SRCH-R005R-C1SORT-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 27,
+      "resolved_hits": 33,
       "status": "partial",
       "stored_hits": 800,
-      "unique_publications": 27,
-      "unresolved_hits": 773
+      "unique_publications": 33,
+      "unresolved_hits": 767
     },
     {
       "duplicate_hits": 0,
@@ -4739,7 +4769,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 173,
+  "source_record_ids": 188,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

@@ -1,0 +1,120 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "650889f1a7ffea09fbed1d5862a42b82b10480da759449b07544012a840ac1cb",
+  "record": {
+    "DOI": "10.2478/v10053-008-0064-6",
+    "URL": "https://doi.org/10.2478/v10053-008-0064-6",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Stevens",
+        "given": "Catherine J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Brennan",
+        "given": "David",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Petocz",
+        "given": "Agnes",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Howell",
+        "given": "Clare",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Advances in Cognitive Psychology"
+    ],
+    "issue": "-1",
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          1,
+          1
+        ]
+      ]
+    },
+    "page": "84-90",
+    "published-online": {
+      "date-parts": [
+        [
+          2009,
+          5,
+          4
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          1,
+          1
+        ]
+      ]
+    },
+    "publisher": "University of Economics and Human Sciences in Warsaw",
+    "relation": {},
+    "title": [
+      "Designing informative warning signals: Effects of indicator type, modality, and task demand on recognition speed and accuracy"
+    ],
+    "type": "journal-article",
+    "volume": "5"
+  },
+  "requested_doi": "10.2478/v10053-008-0064-6",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:23Z",
+  "url": "https://api.crossref.org/works/10.2478%2Fv10053-008-0064-6"
+}

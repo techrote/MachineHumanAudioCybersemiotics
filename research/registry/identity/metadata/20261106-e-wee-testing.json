@@ -1,0 +1,82 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "016fd99ae64c128c2a6c02bd0f9a23be38e61fa8d06696ad51c5560a0a5d344a",
+  "record": {
+    "DOI": "10.1007/11555261_125",
+    "URL": "https://doi.org/10.1007/11555261_125",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Wee",
+        "given": "Alexandra",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Sanderson",
+        "given": "Penelope",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Lecture Notes in Computer Science",
+      "Human-Computer Interaction - INTERACT 2005"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "page": "1146-1149",
+    "published-print": {
+      "date-parts": [
+        [
+          2005
+        ]
+      ]
+    },
+    "publisher": "Springer Berlin Heidelberg",
+    "relation": {},
+    "title": [
+      "Testing New Alarms for Medical Electrical Equipment"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/11555261_125",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:36Z",
+  "url": "https://api.crossref.org/works/10.1007%2F11555261_125"
+}

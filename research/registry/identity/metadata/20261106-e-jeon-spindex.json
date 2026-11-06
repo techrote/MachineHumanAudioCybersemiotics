@@ -1,0 +1,103 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "e1faabb842fde372e281443b7a857de327339724ce72b4787ade77c7f188d5eb",
+  "record": {
+    "DOI": "10.1145/1952383.1952385",
+    "URL": "https://doi.org/10.1145/1952383.1952385",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology"
+          }
+        ],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology"
+          }
+        ],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "ACM Transactions on Accessible Computing"
+    ],
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          4
+        ]
+      ]
+    },
+    "page": "1-26",
+    "published-online": {
+      "date-parts": [
+        [
+          2011,
+          4
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          4,
+          14
+        ]
+      ]
+    },
+    "publisher": "Association for Computing Machinery (ACM)",
+    "relation": {},
+    "title": [
+      "Spindex (Speech Index) Improves Auditory Menu Acceptance and Navigation Performance"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "volume": "3"
+  },
+  "requested_doi": "10.1145/1952383.1952385",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:06:22Z",
+  "url": "https://api.crossref.org/works/10.1145%2F1952383.1952385"
+}

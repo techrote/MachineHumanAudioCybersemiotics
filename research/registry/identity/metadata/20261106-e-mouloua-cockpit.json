@@ -1,0 +1,134 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "43e3b161501ee6f0685c39e64b4f762374396e6915180014f4b293926479af41",
+  "record": {
+    "DOI": "10.1177/154193120304700142",
+    "URL": "https://doi.org/10.1177/154193120304700142",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Central Florida Orlando, Florida"
+          }
+        ],
+        "family": "Mouloua",
+        "given": "Mustapha",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Central Florida Orlando, Florida"
+          }
+        ],
+        "family": "Gilson",
+        "given": "Richard D.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Florida Institute for Technology Melbourne, Florida"
+          }
+        ],
+        "family": "Deaton",
+        "given": "John",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Central Florida Orlando, Florida"
+          }
+        ],
+        "family": "Brill",
+        "given": "J. Christopher",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2003,
+          10
+        ]
+      ]
+    },
+    "page": "199-201",
+    "published-online": {
+      "date-parts": [
+        [
+          2003,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2003,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Pilot Interactions with Alarm Systems in the Cockpit"
+    ],
+    "type": "journal-article",
+    "volume": "47"
+  },
+  "requested_doi": "10.1177/154193120304700142",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:06:41Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120304700142"
+}

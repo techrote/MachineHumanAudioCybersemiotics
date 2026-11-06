@@ -1,0 +1,109 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "a5b5df0abc0671727a97fd0042109b39fb9d73a15106f28548f2a34979c8185c",
+  "record": {
+    "DOI": "10.1016/j.actpsy.2009.12.011",
+    "URL": "https://doi.org/10.1016/j.actpsy.2009.12.011",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Steinborn",
+        "given": "Michael B.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Rolke",
+        "given": "Bettina",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Bratzke",
+        "given": "Daniel",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Ulrich",
+        "given": "Rolf",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Acta Psychologica"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          5
+        ]
+      ]
+    },
+    "page": "94-104",
+    "published-print": {
+      "date-parts": [
+        [
+          2010,
+          5
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "title": [
+      "The effect of a cross-trial shift of auditory warning signals on the sequential foreperiod effect"
+    ],
+    "type": "journal-article",
+    "volume": "134"
+  },
+  "requested_doi": "10.1016/j.actpsy.2009.12.011",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:05:15Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.actpsy.2009.12.011"
+}

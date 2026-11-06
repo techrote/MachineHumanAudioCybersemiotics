@@ -1,0 +1,150 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "7b11817c0024d23ed6f57b29885ee4c21ff7c28aa3382e1a5e74b89286418d37",
+  "record": {
+    "DOI": "10.1177/154193120004402247",
+    "URL": "https://doi.org/10.1177/154193120004402247",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology University of Plymouth Drake Circus Plymouth PL4 8AA United Kingdom"
+          }
+        ],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology University of Plymouth Drake Circus Plymouth PL4 8AA United Kingdom"
+          }
+        ],
+        "family": "Hellier",
+        "given": "Elizabeth",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology University of Plymouth Drake Circus Plymouth PL4 8AA United Kingdom"
+          }
+        ],
+        "family": "Walters",
+        "given": "Kathryn",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology City University LONDON EC1V 0HB United Kingdom"
+          }
+        ],
+        "family": "Weedon",
+        "given": "Ben",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology University of New South Wales Sydney 2052 Australia"
+          }
+        ],
+        "family": "Adams",
+        "given": "Austin",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "674-677",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "The Relationship between Task Performance, Reaction Time, and Perceived Urgency in Nonverbal Auditory Warnings"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004402247",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:06:36Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004402247"
+}

@@ -1,0 +1,130 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "e9466d20bae82ba70456fd6807e5e544d75ae76e337f1643c0c6d9dde2a99dd3",
+  "record": {
+    "DOI": "10.1177/0018720818797502",
+    "URL": "https://doi.org/10.1177/0018720818797502",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-7960-0364",
+        "affiliation": [],
+        "authenticated-orcid": false,
+        "family": "Li",
+        "given": "Simon Y. W.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Lingnan University, Tuen Mun, Hong Kong"
+          }
+        ],
+        "family": "Tse",
+        "given": "Man-Kei",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Brecknell",
+        "given": "Birgit",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "The University of Queensland, Brisbane, Australia"
+          }
+        ],
+        "family": "Sanderson",
+        "given": "Penelope M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          9,
+          27
+        ]
+      ]
+    },
+    "page": "288-304",
+    "published-online": {
+      "date-parts": [
+        [
+          2018,
+          9,
+          27
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          3
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Spearcon Sequences for Monitoring Multiple Patients: Laboratory Investigation Comparing Two Auditory Display Designs"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "61"
+  },
+  "requested_doi": "10.1177/0018720818797502",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:06:30Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720818797502"
+}

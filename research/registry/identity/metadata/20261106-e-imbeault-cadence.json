@@ -1,0 +1,83 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "0c2b14a4079c471285dec6be3d850cfba400880fa8218d676b5838e55bedb3ef",
+  "record": {
+    "DOI": "10.1109/have.2014.6954329",
+    "URL": "https://doi.org/10.1109/have.2014.6954329",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Imbeault-Nepton",
+        "given": "Thomas",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Otis",
+        "given": "Martin J.-D.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "2014 IEEE International Symposium on Haptic, Audio and Visual Environments and Games (HAVE) Proceedings"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          10
+        ]
+      ]
+    },
+    "page": "41-46",
+    "published-print": {
+      "date-parts": [
+        [
+          2014,
+          10
+        ]
+      ]
+    },
+    "publisher": "IEEE",
+    "relation": {},
+    "title": [
+      "Synchronized walking cadence for TUG in perturbed environments: Using Earcon or Tacton cues?"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.1109/have.2014.6954329",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T14:06:10Z",
+  "url": "https://api.crossref.org/works/10.1109%2Fhave.2014.6954329"
+}

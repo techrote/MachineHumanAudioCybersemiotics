@@ -1,0 +1,104 @@
+{
+  "id": "SRC-R006-E-LI-PATIENTS",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-e-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T14:07:23Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00037",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ4-00009",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ6-00044",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ4-00237",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-E-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T14:06:30Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Simon Y. W. Li",
+            "role": "author"
+          },
+          {
+            "name": "Man-Kei Tse",
+            "role": "author"
+          },
+          {
+            "name": "Birgit Brecknell",
+            "role": "author"
+          },
+          {
+            "name": "Penelope M. Sanderson",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Human Factors: The Journal of the Human Factors and Ergonomics Society; 61; 2; 288-304"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-e-li-patients.json record.DOI/title/author; HTTP 200 on 2026-11-06T14:06:30Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/0018720818797502"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-e-li-patients.json record.DOI, title, author and dates; retained derivative SHA256 5eb9543b19498e423578119796cc3c6a159436f95bbb450f0db9c99eb57e329c",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-E-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2019-03"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Spearcon Sequences for Monitoring Multiple Patients: Laboratory Investigation Comparing Two Auditory Display Designs",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

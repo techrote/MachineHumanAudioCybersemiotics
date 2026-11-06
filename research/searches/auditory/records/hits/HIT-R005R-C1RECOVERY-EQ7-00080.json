@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-e-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T14:07:23Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00080",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ7",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-E-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02138",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-02138",
+          "rev": 2
+        },
+        "ordinal": 80,
+        "raw_metadata": "Designing informative warning signals: Effects of indicator type, modality, and task demand on recognition speed and accuracy | first author: Catherine Stevens | 2009-01-01 | article | https://openalex.org/W2022893852",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-E-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2022893852"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.2478/v10053-008-0064-6"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ7",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,
