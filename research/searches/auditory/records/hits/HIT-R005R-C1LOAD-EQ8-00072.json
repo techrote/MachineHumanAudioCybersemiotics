@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ8-00072",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-ULFVENGREN-NATURAL",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00873",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-00873",
+          "rev": 2
+        },
+        "ordinal": 72,
+        "raw_metadata": "Natural Warning Sounds in Safety Critical Human-Machine Systems -A Cognitive Engineering Approach | first author: Pernilla Ulfvengren | 2000-07-01 | article | https://openalex.org/W1992882202",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-G-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1992882202"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1177/154193120004402264"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ8",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-G-ULFVENGREN-NATURAL",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

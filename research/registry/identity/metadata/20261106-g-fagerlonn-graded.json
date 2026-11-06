@@ -1,0 +1,123 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "b418166516a52d06cc2d29e454e49298440e9e836b8e76d90d2aa71ef949dbd1",
+  "record": {
+    "DOI": "10.1145/2390256.2390269",
+    "URL": "https://doi.org/10.1145/2390256.2390269",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Interactive Institute Acusticum, Piteå, Sweden"
+          }
+        ],
+        "family": "Fagerlönn",
+        "given": "Johan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Interactive Institute Acusticum, Piteå, Sweden"
+          }
+        ],
+        "family": "Lindberg",
+        "given": "Stefan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Interactive Institute Acusticum, Piteå, Sweden"
+          }
+        ],
+        "family": "Sirkka",
+        "given": "Anna",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 4th International Conference on Automotive User Interfaces and Interactive Vehicular Applications"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          10,
+          17
+        ]
+      ]
+    },
+    "page": "85-91",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          10,
+          17
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2012,
+          10,
+          17
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [
+      "using sound to guide drivers without additional noise"
+    ],
+    "title": [
+      "Graded auditory warnings during in-vehicle use"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/2390256.2390269",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:18Z",
+  "url": "https://api.crossref.org/works/10.1145%2F2390256.2390269"
+}

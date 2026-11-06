@@ -1,0 +1,100 @@
+{
+  "id": "SRC-R006-G-SEAGULL-INFORMING",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00865",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00061",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ6-00332",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T19:04:53Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "F. Jacob Seagull",
+            "role": "author"
+          },
+          {
+            "name": "Yan Xiao",
+            "role": "author"
+          },
+          {
+            "name": "Colin F. Mackenzie",
+            "role": "author"
+          },
+          {
+            "name": "Christopher D. Wickens",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting; 44; 1; 223-226"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-g-seagull-informing.json record.DOI/title/author; HTTP 200 on 2026-11-06T19:04:53Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/154193120004400160"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-g-seagull-informing.json record.DOI, title, author and dates; retained derivative SHA256 f9cefd089a4d1bfa794172b17fe4125d9702da612ba0d0552581ee336bf7bf34",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-G-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2000-07"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Auditory Alarms: From Alerting to Informing",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

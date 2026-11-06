@@ -1,0 +1,125 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "7043ccb1fbdcd6b966703f80e5c7f3616926ff7f96270ffd391d2fcdee78fd7b",
+  "record": {
+    "DOI": "10.1016/j.apergo.2019.102895",
+    "URL": "https://doi.org/10.1016/j.apergo.2019.102895",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Davidson",
+        "given": "Thomas",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Ryu",
+        "given": "Youn Ji",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Brecknell",
+        "given": "Birgit",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Loeb",
+        "given": "Robert",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1235-1719",
+        "affiliation": [],
+        "authenticated-orcid": false,
+        "family": "Sanderson",
+        "given": "Penelope",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Applied Ergonomics"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          11
+        ]
+      ]
+    },
+    "page": "102895",
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          11
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "The impact of concurrent linguistic tasks on participants’ identification of spearcons"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "volume": "81"
+  },
+  "requested_doi": "10.1016/j.apergo.2019.102895",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:03:55Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.apergo.2019.102895"
+}

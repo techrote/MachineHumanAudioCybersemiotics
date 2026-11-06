@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "e40e42b6a8d0f525de2de544fd8c1ed3e7bbed091313394e2a8641c87b94368d",
+  "record": {
+    "DOI": "10.1177/154193120004402251",
+    "URL": "https://doi.org/10.1177/154193120004402251",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology, City University, London, UK"
+          }
+        ],
+        "family": "Weedon",
+        "given": "B.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology, City University, London, UK"
+          }
+        ],
+        "family": "Hellier",
+        "given": "E.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology, Plymouth University, Plymouth, UK."
+          }
+        ],
+        "family": "Edworthy",
+        "given": "J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Psychology, Plymouth University, Plymouth, UK."
+          }
+        ],
+        "family": "Walters",
+        "given": "K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "690-693",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Perceived Urgency in Speech Warnings"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004402251",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:05:03Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004402251"
+}

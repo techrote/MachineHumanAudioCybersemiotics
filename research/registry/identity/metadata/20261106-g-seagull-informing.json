@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "2a606d685a56eccb68ee717c70872d171c9fc43441a838498a63eb03145dbce8",
+  "record": {
+    "DOI": "10.1177/154193120004400160",
+    "URL": "https://doi.org/10.1177/154193120004400160",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Illinois at Urbana-Champaign Champaign, Illinois"
+          }
+        ],
+        "family": "Seagull",
+        "given": "F. Jacob",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Maryland School of Medicine, Baltimore Maryland"
+          }
+        ],
+        "family": "Xiao",
+        "given": "Yan",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Maryland School of Medicine, Baltimore Maryland"
+          }
+        ],
+        "family": "Mackenzie",
+        "given": "Colin F.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Illinois at Urbana-Champaign Champaign, Illinois"
+          }
+        ],
+        "family": "Wickens",
+        "given": "Christopher D.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "223-226",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Auditory Alarms: From Alerting to Informing"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004400160",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:53Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004400160"
+}

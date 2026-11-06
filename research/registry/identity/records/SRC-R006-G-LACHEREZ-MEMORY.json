@@ -1,0 +1,96 @@
+{
+  "id": "SRC-R006-G-LACHEREZ-MEMORY",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-04183",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00888",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-01381",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T19:04:38Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Philippe Lacherez",
+            "role": "author"
+          },
+          {
+            "name": "Liam Donaldson",
+            "role": "author"
+          },
+          {
+            "name": "Jennifer S. Burt",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Human Factors: The Journal of the Human Factors and Ergonomics Society; 58; 7; 1044-1051"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-g-lacherez-memory.json record.DOI/title/author; HTTP 200 on 2026-11-06T19:04:38Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/0018720816662733"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-g-lacherez-memory.json record.DOI, title, author and dates; retained derivative SHA256 924bcc57d9ece6d0e43234f8b5849ec2acf606dfe4ae97f23d3c1fc89037b4f1",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-G-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2016-11"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Do Learned Alarm Sounds Interfere With Working Memory?",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

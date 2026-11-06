@@ -1,0 +1,136 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "e8ba43e43c5d1fcad00e4c5dd3fbb005bedbcb3c7d476e46b5365ea83f23c480",
+  "record": {
+    "DOI": "10.1177/154193120004402249",
+    "URL": "https://doi.org/10.1177/154193120004402249",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Belz",
+        "given": "S.M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Winters",
+        "given": "J.J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Robinson",
+        "given": "G.S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Auditory Systems Laboratory Department of Industrial and Systems Engineering Virginia Polytechnic Institute and State University Blacksburg, Virginia"
+          }
+        ],
+        "family": "Casali",
+        "given": "J.G.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "682-685",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Representative Auditory Warning Signals: Methodological Considerations for Their Development and Selection"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004402249",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:58Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004402249"
+}

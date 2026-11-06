@@ -1,0 +1,121 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "9d63823436f407238ede61def5f04cdd15b4d7deaf5382f50019c4157b8c88af",
+  "record": {
+    "DOI": "10.1145/2667317.2667318",
+    "URL": "https://doi.org/10.1145/2667317.2667318",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Glasgow Interactive Systems Group, School of Computing Science, University of Glasgow, Glasgow, G12 8QQ, UK"
+          }
+        ],
+        "family": "Politis",
+        "given": "Ioannis",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Glasgow Interactive Systems Group, School of Computing Science, University of Glasgow, Glasgow, G12 8QQ, UK"
+          }
+        ],
+        "family": "Brewster",
+        "given": "Stephen",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology, University of Glasgow, Glasgow, G12 8QB, UK"
+          }
+        ],
+        "family": "Pollick",
+        "given": "Frank",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 6th International Conference on Automotive User Interfaces and Interactive Vehicular Applications"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          9,
+          17
+        ]
+      ]
+    },
+    "page": "1-8",
+    "published-online": {
+      "date-parts": [
+        [
+          2014,
+          9,
+          17
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2014,
+          9,
+          17
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Speech Tactons Improve Speech Warnings for Drivers"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/2667317.2667318",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:23Z",
+  "url": "https://api.crossref.org/works/10.1145%2F2667317.2667318"
+}

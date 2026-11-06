@@ -1,0 +1,96 @@
+{
+  "id": "SRC-R006-G-POLITIS-TACTONS",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03601",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00339",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00065",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T19:04:23Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Ioannis Politis",
+            "role": "author"
+          },
+          {
+            "name": "Stephen Brewster",
+            "role": "author"
+          },
+          {
+            "name": "Frank Pollick",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the 6th International Conference on Automotive User Interfaces and Interactive Vehicular Applications; 1-8"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-g-politis-tactons.json record.DOI/title/author; HTTP 200 on 2026-11-06T19:04:23Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1145/2667317.2667318"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-g-politis-tactons.json record.DOI, title, author and dates; retained derivative SHA256 e85aa91a7a570ffc8b5890d64264d8162af978e0eeea0a9745c41525843730f6",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-G-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2014-09-17"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Speech Tactons Improve Speech Warnings for Drivers",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

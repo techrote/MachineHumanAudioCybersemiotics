@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00725",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-HOLLANDER-HAZARD",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00868",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-00868",
+          "rev": 2
+        },
+        "ordinal": 725,
+        "raw_metadata": "Connoted Hazard of Voiced Warning Signal Words: An Examination of Auditory Components | first author: Todd D. Hollander | 2000-07-01 | article | https://openalex.org/W2000517840",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-G-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2000517840"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1177/154193120004402254"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-G-HOLLANDER-HAZARD",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

@@ -1,0 +1,100 @@
+{
+  "id": "SRC-R006-G-BELZ-METHODOLOGY",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00616",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00401",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00257",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T19:04:43Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Steven M. Belz",
+            "role": "author"
+          },
+          {
+            "name": "John J. Winters",
+            "role": "author"
+          },
+          {
+            "name": "Gary S. Robinson",
+            "role": "author"
+          },
+          {
+            "name": "John G. Casali",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the Human Factors and Ergonomics Society Annual Meeting; 41; 2; 939-943"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-g-belz-methodology.json record.DOI/title/author; HTTP 200 on 2026-11-06T19:04:43Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/107118139704100249"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-g-belz-methodology.json record.DOI, title, author and dates; retained derivative SHA256 80b92b82d1cfa65b5df139282261b0870f59672c3f14690ec495611929585460",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-G-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1997-10"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "A Methodology for Selecting Auditory Icons for Use in Commercial Motor Vehicles",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

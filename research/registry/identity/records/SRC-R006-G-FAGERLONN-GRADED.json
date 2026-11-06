@@ -1,0 +1,92 @@
+{
+  "id": "SRC-R006-G-FAGERLONN-GRADED",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T19:06:31Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03053",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00228",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T19:04:18Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Johan Fagerlönn",
+            "role": "author"
+          },
+          {
+            "name": "Stefan Lindberg",
+            "role": "author"
+          },
+          {
+            "name": "Anna Sirkka",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the 4th International Conference on Automotive User Interfaces and Interactive Vehicular Applications; 85-91"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-g-fagerlonn-graded.json record.DOI/title/author; HTTP 200 on 2026-11-06T19:04:18Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1145/2390256.2390269"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-g-fagerlonn-graded.json record.DOI, title, author and dates; retained derivative SHA256 4d5e34d61c4a4c66224499ffdb45765816669c39368a3d7d756e4182e9882915",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-G-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2012-10-17"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Graded auditory warnings during in-vehicle use",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

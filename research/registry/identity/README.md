@@ -1159,6 +1159,109 @@ inspections, retained-export comparison, software self-review and ten regression
 tests. These checks are not independent human adjudication or scientific
 validation. No protocol amendment or scientific acceptance is asserted.
 
+## DOI batch G — 6 November 2026
+
+The [fixed twenty-group plan](R006-DOI-G-PLAN-20261106.json) and
+[nineteen-publication ledger](R006-DOI-G-20261106.json) add nineteen metadata-only
+source records and resolve 51 occurrences (nineteen representatives and 32
+duplicates). Twenty sequential Crossref single-work requests returned HTTP 200.
+Selected bibliographic derivatives retain actual URLs/times, original-response
+hashes, subtitle fields and separate issued/online/print assertions. Raw responses,
+abstracts and article text are not committed; no abstract or article was read.
+
+| Publication title from metadata | Crossref type | Resolved | Deferred |
+| --- | --- | ---: | ---: |
+| The impact of concurrent linguistic tasks on participants’ identification of spearcons | journal-article | 2 | 1 |
+| Recommendation of New Medical Alarms Based on Audibility, Identifiability, and Detectability in a Randomized, Simulation-Based Study | journal-article | 2 | 1 |
+| Enhanced auditory menu cues improve dual task performance and are preferred with in-vehicle technologies | proceedings-article | 2 | 1 |
+| An RSS-feed auditory aggregator using earcons | proceedings-article | 3 | 0 |
+| Graded auditory warnings during in-vehicle use | proceedings-article | 2 | 1 |
+| Speech Tactons Improve Speech Warnings for Drivers | proceedings-article | 3 | 0 |
+| An Initial Investigation into Non-visual Code Structure Overview Through Speech, Non-speech and Spearcons | proceedings-article | 1 | 2 |
+| The Impact of Intonation and Valence on Objective and Subjective Attention Capture by Auditory Alarms | journal-article | 3 | 0 |
+| Do Learned Alarm Sounds Interfere With Working Memory? | journal-article | 3 | 0 |
+| A Methodology for Selecting Auditory Icons for Use in Commercial Motor Vehicles | journal-article | 3 | 0 |
+| Auditory Warnings in the Medical Work Domain: An Overview of Critical Issues | journal-article | 3 | 0 |
+| Auditory Alarms: From Alerting to Informing | journal-article | 3 | 0 |
+| Representative Auditory Warning Signals: Methodological Considerations for Their Development and Selection | journal-article | 3 | 0 |
+| Perceived Urgency in Speech Warnings | journal-article | 3 | 0 |
+| Using Psychophysics to Design Speech Warnings | journal-article | 3 | 0 |
+| Connoted Hazard of Voiced Warning Signal Words: An Examination of Auditory Components | journal-article | 3 | 0 |
+| Natural Warning Sounds in Safety Critical Human-Machine Systems -A Cognitive Engineering Approach | journal-article | 3 | 0 |
+| Obtaining Objective Measurements of Operator Performance with Auditory Alarms | journal-article | 3 | 0 |
+| Measuring Perceived Urgency to Create Safe Auditory Warnings | journal-article | 3 | 0 |
+
+The fixed scope contains sixty occurrences across twenty recurring DOI groups,
+each with three occurrences. Auditory warning/interface topic labels and
+recurrence prioritize identity work; they do not establish eligibility, quality,
+preferred result direction or study independence. Other recurring groups remain
+unadjudicated, not excluded. All sixty fixed occurrences are accounted for:
+51 resolved, six bibliography cases deferred, and three correction-related cases
+not admitted. No candidate was silently replaced after verification.
+
+Each admitted occurrence's explicit DOI and full title agrees with the retained
+original export and fresh registration under case/whitespace comparison only.
+Original export/page hashes, decompressed payload hashes, ordinals and work IDs
+were checked. No competing DOI assertion or exactly normalized title was found
+in existing source histories. Original discovery text, dates and index type labels
+remain intact. Five ACM proceedings articles retain conference-paper type;
+HFES entries registered as journal-article are not given a final report-type or
+eligibility judgment from registration type alone.
+
+Davidson's source date uses reported print 2019-11 while original OpenAlex
+2019-08-14 remains literal; Ljungberg and Lacherez likewise retain separate print
+and index-date assertions. Fagerlönn's main registration title and deposited
+subtitle are retained separately. The subtitle is not inserted into the source's
+main title or used to rewrite discovery text. Author-name expansions and initials
+from the two services likewise remain their respective assertions.
+
+Six bibliography occurrences need separate citation/provenance verification:
+Davidson and Bennett in Nees general references; Jeon and Fagerlönn in the FRA
+PDF-derived list; and Hutchinson in the original model-rendered and accepted-
+manuscript included lists. These remain unresolved in this batch. No source PDF
+retrieval, full-citation corroboration or review-version equivalence is inferred.
+
+### Correction-related hold
+
+The retained [Ferreira registration derivative](metadata/20261106-g-ferreira-erp.json)
+for `10.1371/journal.pone.0281680` contains a `relation.correction` entry naming
+`10.1371/journal.pone.0295826`. Its three discovery occurrences remain unresolved;
+no Ferreira source or hit revisions are created. This records registration
+metadata, not a reading or adjudication of the correction notice, a retraction,
+publication invalidity or an eligibility exclusion. Next: retrieve the correction
+registration and lawful publisher notice, inspect its exact scope, and record the
+original/correction identities and consequences explicitly before admission.
+
+The shared admission engine now rejects nonempty `relation` or `update-to`
+metadata even when the capture hash and DOI/title match. This makes the existing
+manual deferral policy fail closed during reconstruction. A separate reviewed
+correction/relation path is necessary; fields cannot simply be dropped to admit
+a record. Fictional adverse-input tests cover both fields with matching artifact
+hashes. Existing frozen batches remain reproducible.
+
+All nineteen admitted sources have verified bibliographic metadata,
+`metadata_only` access, unknown reuse rights, no manifestations or family/sample
+links. No eligibility, study, sample, empirical extraction, completed corpus or
+#7–#9 analysis acceptance is created. The R005 coverage gaps remain open.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_batch_g.py --check
+python -m unittest tests.test_screening_doi_batch_g -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane unresolved count falls **22,136 → 22,085**: six exact
+candidates, zero conflicts and 22,079 unmatched occurrences. The three held
+Ferreira occurrences belong to the unmatched residual, not to a screened-out
+category. Issue #6 and the corpus gate remain open for broader identity,
+protocol-governed screening, study/sample reconciliation and bias assessment.
+
+AI assistance: one Codex/GPT-6 agent performed metadata retrieval, retained-export
+comparison, implementation, software self-review and fourteen regression tests.
+These are not independent human adjudication or scientific validation. No
+protocol amendment or human gate satisfaction is asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

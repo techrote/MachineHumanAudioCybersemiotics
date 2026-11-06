@@ -70,6 +70,8 @@ def build(root,at,*,plan_path=None,ledger_path=None,assistance_id=None,actor=Non
             raise ValueError('Crossref identity disagreement: '+sid)
         if not metadata['url'].startswith('https://api.crossref.org/works/') or normalize_doi(metadata['requested_doi'])!=spec['doi']:
             raise ValueError('Crossref request provenance disagreement')
+        if m.get('update-to') or m.get('relation'):
+            raise ValueError('Correction/relation metadata requires explicit identity review')
         date_field='published-print' if m.get('published-print',{}).get('date-parts') else 'issued'
         parts=m[date_field]['date-parts'][0]
         date='-'.join(str(p).zfill(4 if i==0 else 2) for i,p in enumerate(parts))

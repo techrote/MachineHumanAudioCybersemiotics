@@ -1,0 +1,105 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "5564d7eb27800b3e17a5a9b4b1ad37cd691d2f752579754f64ba3dae3b55a2ff",
+  "record": {
+    "DOI": "10.1145/2095667.2095681",
+    "URL": "https://doi.org/10.1145/2095667.2095681",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Hellenic Open University, Greece"
+          }
+        ],
+        "family": "Bikaki",
+        "given": "Athina",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Ionian University, Greece"
+          }
+        ],
+        "family": "Floros",
+        "given": "Andreas",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 6th Audio Mostly Conference: A Conference on Interaction with Sound"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          9,
+          7
+        ]
+      ]
+    },
+    "page": "95-100",
+    "published-online": {
+      "date-parts": [
+        [
+          2011,
+          9,
+          7
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          9,
+          7
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "An RSS-feed auditory aggregator using earcons"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/2095667.2095681",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:12Z",
+  "url": "https://api.crossref.org/works/10.1145%2F2095667.2095681"
+}

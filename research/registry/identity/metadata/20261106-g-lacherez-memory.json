@@ -1,0 +1,122 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "afc41a08ba265138277d626ac02ef7d5b3102b4a15523f3fe0733d344a024c64",
+  "record": {
+    "DOI": "10.1177/0018720816662733",
+    "URL": "https://doi.org/10.1177/0018720816662733",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "The University of Queensland, Brisbane, Australia"
+          }
+        ],
+        "family": "Lacherez",
+        "given": "Philippe",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "The University of Queensland, Brisbane, Australia"
+          }
+        ],
+        "family": "Donaldson",
+        "given": "Liam",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "The University of Queensland, Brisbane, Australia"
+          }
+        ],
+        "family": "Burt",
+        "given": "Jennifer S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "7",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          9,
+          27
+        ]
+      ]
+    },
+    "page": "1044-1051",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          9,
+          27
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2016,
+          11
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Do Learned Alarm Sounds Interfere With Working Memory?"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "58"
+  },
+  "requested_doi": "10.1177/0018720816662733",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:38Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720816662733"
+}

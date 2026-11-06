@@ -1,0 +1,671 @@
+{
+  "accepted_base": "a074fcf4f83cfac610096ecf21c4ee3c8c82a3fe",
+  "access_note": "Twenty sequential Crossref single-work requests; only successful bibliographic derivatives admitted. Actual statuses retained per capture. No article/chapter or abstract text was read.",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Metadata identity only. No article/chapter/abstract reading, eligibility, independent-study or corpus acceptance. Unreviewed export formats and title disagreements stay unresolved.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/2390256.2390269",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-032",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-FAGERLONN-GRADED"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/1620509.1620528",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-052",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-JEON-DUALTASK"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/3170427.3188696",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-022",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HUTCHINSON-CODE"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/3170427.3188696",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-022",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HUTCHINSON-CODE"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1097/ccm.0000000000003802",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00006",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BENNETT-RECOMMENDATION"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1016/j.apergo.2019.102895",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00021",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-DAVIDSON-LINGUISTIC"
+    }
+  ],
+  "issue": 6,
+  "not_admitted": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-ferreira-erp.json",
+        "sha256": "4d0d92bfb4f1ab9a272f7371fc008868f94b1bd73b9cbc7071f73c175e80b9da"
+      },
+      "doi": "10.1371/journal.pone.0281680",
+      "hit_refs": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00158",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01402",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00537",
+          "rev": 1
+        }
+      ],
+      "reason": "Nonempty update/relation metadata requires separate identity/correction review."
+    }
+  ],
+  "selected": [
+    {
+      "doi": "10.1177/154193129604001611",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00556",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HAAS-URGENCY"
+    },
+    {
+      "doi": "10.1177/107118139704100249",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00616",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BELZ-METHODOLOGY"
+    },
+    {
+      "doi": "10.1177/154193120004400160",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00865",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-SEAGULL-INFORMING"
+    },
+    {
+      "doi": "10.1177/154193120004400157",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00867",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-WEINGER-OVERVIEW"
+    },
+    {
+      "doi": "10.1177/154193120004402254",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00868",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HOLLANDER-HAZARD"
+    },
+    {
+      "doi": "10.1177/154193120004402264",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00873",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-ULFVENGREN-NATURAL"
+    },
+    {
+      "doi": "10.1177/154193120004402251",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00877",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-WEEDON-URGENCY"
+    },
+    {
+      "doi": "10.1177/154193120004402249",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00878",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BELZ-REPRESENTATIVE"
+    },
+    {
+      "doi": "10.1177/154193120004402253",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00886",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HELLIER-PSYCHOPHYSICS"
+    },
+    {
+      "doi": "10.1177/154193120104501816",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00980",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-NEUBAUER-PERFORMANCE"
+    },
+    {
+      "doi": "10.1145/1620509.1620528",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02270",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-JEON-DUALTASK"
+    },
+    {
+      "doi": "10.1145/2095667.2095681",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02748",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BIKAKI-AGGREGATOR"
+    },
+    {
+      "doi": "10.1177/0018720812438613",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02917",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-LJUNGBERG-INTONATION"
+    },
+    {
+      "doi": "10.1145/2390256.2390269",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03053",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-FAGERLONN-GRADED"
+    },
+    {
+      "doi": "10.1145/2667317.2667318",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03601",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-POLITIS-TACTONS"
+    },
+    {
+      "doi": "10.1177/0018720816662733",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-04183",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-LACHEREZ-MEMORY"
+    },
+    {
+      "doi": "10.1177/0018720816662733",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00888",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-LACHEREZ-MEMORY"
+    },
+    {
+      "doi": "10.1097/ccm.0000000000003802",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01096",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BENNETT-RECOMMENDATION"
+    },
+    {
+      "doi": "10.1177/154193120004402264",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ8-00072",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-ULFVENGREN-NATURAL"
+    },
+    {
+      "doi": "10.1145/1620509.1620528",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00055",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-JEON-DUALTASK"
+    },
+    {
+      "doi": "10.1177/154193120004400160",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00061",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-SEAGULL-INFORMING"
+    },
+    {
+      "doi": "10.1016/j.apergo.2019.102895",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00110",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-DAVIDSON-LINGUISTIC"
+    },
+    {
+      "doi": "10.1177/154193120004402251",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00127",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-WEEDON-URGENCY"
+    },
+    {
+      "doi": "10.1145/2390256.2390269",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00228",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-FAGERLONN-GRADED"
+    },
+    {
+      "doi": "10.1145/2667317.2667318",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00339",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-POLITIS-TACTONS"
+    },
+    {
+      "doi": "10.1177/154193120004400157",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00344",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-WEINGER-OVERVIEW"
+    },
+    {
+      "doi": "10.1177/154193120104501816",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00382",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-NEUBAUER-PERFORMANCE"
+    },
+    {
+      "doi": "10.1177/107118139704100249",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00401",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BELZ-METHODOLOGY"
+    },
+    {
+      "doi": "10.1177/154193120004402253",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00410",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HELLIER-PSYCHOPHYSICS"
+    },
+    {
+      "doi": "10.1177/0018720812438613",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00411",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-LJUNGBERG-INTONATION"
+    },
+    {
+      "doi": "10.1177/154193120004402249",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00416",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BELZ-REPRESENTATIVE"
+    },
+    {
+      "doi": "10.1177/154193129604001611",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00521",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HAAS-URGENCY"
+    },
+    {
+      "doi": "10.1177/154193120004402254",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00725",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HOLLANDER-HAZARD"
+    },
+    {
+      "doi": "10.1145/2095667.2095681",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00889",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BIKAKI-AGGREGATOR"
+    },
+    {
+      "doi": "10.1145/3170427.3188696",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00946",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HUTCHINSON-CODE"
+    },
+    {
+      "doi": "10.1177/154193120004402251",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00008",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-WEEDON-URGENCY"
+    },
+    {
+      "doi": "10.1177/154193129604001611",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00015",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HAAS-URGENCY"
+    },
+    {
+      "doi": "10.1145/2667317.2667318",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00065",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-POLITIS-TACTONS"
+    },
+    {
+      "doi": "10.1177/154193120004402253",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00085",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HELLIER-PSYCHOPHYSICS"
+    },
+    {
+      "doi": "10.1177/0018720812438613",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00086",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-LJUNGBERG-INTONATION"
+    },
+    {
+      "doi": "10.1177/154193120104501816",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00089",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-NEUBAUER-PERFORMANCE"
+    },
+    {
+      "doi": "10.1177/154193120004402254",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00093",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-HOLLANDER-HAZARD"
+    },
+    {
+      "doi": "10.1177/154193120004402249",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00115",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BELZ-REPRESENTATIVE"
+    },
+    {
+      "doi": "10.1177/107118139704100249",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00257",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BELZ-METHODOLOGY"
+    },
+    {
+      "doi": "10.1097/ccm.0000000000003802",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01145",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BENNETT-RECOMMENDATION"
+    },
+    {
+      "doi": "10.1177/0018720816662733",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01381",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-LACHEREZ-MEMORY"
+    },
+    {
+      "doi": "10.1177/154193120004400160",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00332",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-SEAGULL-INFORMING"
+    },
+    {
+      "doi": "10.1016/j.apergo.2019.102895",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00353",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-DAVIDSON-LINGUISTIC"
+    },
+    {
+      "doi": "10.1177/154193120004402264",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00366",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-ULFVENGREN-NATURAL"
+    },
+    {
+      "doi": "10.1145/2095667.2095681",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00485",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-BIKAKI-AGGREGATOR"
+    },
+    {
+      "doi": "10.1177/154193120004400157",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00133",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-G-WEINGER-OVERVIEW"
+    }
+  ],
+  "selection_rationale": "Twenty recurring DOI groups with three unresolved occurrences each were prioritized by auditory warning/interface topic labels and recurrence, not result direction or eligibility. Other recurring groups remain unadjudicated; they are not eligibility exclusions. This is bounded identity prioritization, not exhaustive selection or screening.",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-davidson-linguistic.json",
+        "sha256": "fbc4f9f05f88e671c37243168825df43b8efa637889cf2b989fae58bf194c9b1"
+      },
+      "doi": "10.1016/j.apergo.2019.102895",
+      "source_id": "SRC-R006-G-DAVIDSON-LINGUISTIC",
+      "title": "The impact of concurrent linguistic tasks on participants’ identification of spearcons"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-bennett-recommendation.json",
+        "sha256": "28086c5cdb56bd2919101f5ccf9000df7d295fc040bd1905911d7402e51fbae0"
+      },
+      "doi": "10.1097/ccm.0000000000003802",
+      "source_id": "SRC-R006-G-BENNETT-RECOMMENDATION",
+      "title": "Recommendation of New Medical Alarms Based on Audibility, Identifiability, and Detectability in a Randomized, Simulation-Based Study"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-jeon-dualtask.json",
+        "sha256": "0bf402708e88641097670daea5bc1be3fdb8368084d48a3ec15a2b45cb4d36e1"
+      },
+      "doi": "10.1145/1620509.1620528",
+      "source_id": "SRC-R006-G-JEON-DUALTASK",
+      "title": "Enhanced auditory menu cues improve dual task performance and are preferred with in-vehicle technologies"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-bikaki-aggregator.json",
+        "sha256": "0ca7a04d38f0e99f90b65db392de23e442a4e318d872ba004113bf8830068d5a"
+      },
+      "doi": "10.1145/2095667.2095681",
+      "source_id": "SRC-R006-G-BIKAKI-AGGREGATOR",
+      "title": "An RSS-feed auditory aggregator using earcons"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-fagerlonn-graded.json",
+        "sha256": "4d5e34d61c4a4c66224499ffdb45765816669c39368a3d7d756e4182e9882915"
+      },
+      "doi": "10.1145/2390256.2390269",
+      "source_id": "SRC-R006-G-FAGERLONN-GRADED",
+      "title": "Graded auditory warnings during in-vehicle use"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-politis-tactons.json",
+        "sha256": "e85aa91a7a570ffc8b5890d64264d8162af978e0eeea0a9745c41525843730f6"
+      },
+      "doi": "10.1145/2667317.2667318",
+      "source_id": "SRC-R006-G-POLITIS-TACTONS",
+      "title": "Speech Tactons Improve Speech Warnings for Drivers"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-hutchinson-code.json",
+        "sha256": "4a5ffbb8c9967c7fc06a8b5f9d20757ea59662dd7f80cd400e553813556afae5"
+      },
+      "doi": "10.1145/3170427.3188696",
+      "source_id": "SRC-R006-G-HUTCHINSON-CODE",
+      "title": "An Initial Investigation into Non-visual Code Structure Overview Through Speech, Non-speech and Spearcons"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-ljungberg-intonation.json",
+        "sha256": "176b397791720fc5175e6d64c68335574d1232cc2f5d3aaca63be36f58a4a327"
+      },
+      "doi": "10.1177/0018720812438613",
+      "source_id": "SRC-R006-G-LJUNGBERG-INTONATION",
+      "title": "The Impact of Intonation and Valence on Objective and Subjective Attention Capture by Auditory Alarms"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-lacherez-memory.json",
+        "sha256": "924bcc57d9ece6d0e43234f8b5849ec2acf606dfe4ae97f23d3c1fc89037b4f1"
+      },
+      "doi": "10.1177/0018720816662733",
+      "source_id": "SRC-R006-G-LACHEREZ-MEMORY",
+      "title": "Do Learned Alarm Sounds Interfere With Working Memory?"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-belz-methodology.json",
+        "sha256": "80b92b82d1cfa65b5df139282261b0870f59672c3f14690ec495611929585460"
+      },
+      "doi": "10.1177/107118139704100249",
+      "source_id": "SRC-R006-G-BELZ-METHODOLOGY",
+      "title": "A Methodology for Selecting Auditory Icons for Use in Commercial Motor Vehicles"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-weinger-overview.json",
+        "sha256": "dd6b9815185a104c64c10aa679dee45df886ee992a209c522e4dd44209737674"
+      },
+      "doi": "10.1177/154193120004400157",
+      "source_id": "SRC-R006-G-WEINGER-OVERVIEW",
+      "title": "Auditory Warnings in the Medical Work Domain: An Overview of Critical Issues"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-seagull-informing.json",
+        "sha256": "f9cefd089a4d1bfa794172b17fe4125d9702da612ba0d0552581ee336bf7bf34"
+      },
+      "doi": "10.1177/154193120004400160",
+      "source_id": "SRC-R006-G-SEAGULL-INFORMING",
+      "title": "Auditory Alarms: From Alerting to Informing"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-belz-representative.json",
+        "sha256": "cbeb2d18ca93f26222181062eef62e9acb474c3c1c024d8861454f87c381e6d2"
+      },
+      "doi": "10.1177/154193120004402249",
+      "source_id": "SRC-R006-G-BELZ-REPRESENTATIVE",
+      "title": "Representative Auditory Warning Signals: Methodological Considerations for Their Development and Selection"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-weedon-urgency.json",
+        "sha256": "7a01a8eac368a1729e82736286fc3803175542729202851324ae32cbfe2852ec"
+      },
+      "doi": "10.1177/154193120004402251",
+      "source_id": "SRC-R006-G-WEEDON-URGENCY",
+      "title": "Perceived Urgency in Speech Warnings"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-hellier-psychophysics.json",
+        "sha256": "6056f64b3156890b18020cf60ee54668d645e100f17e8396d66619201f9ce2a5"
+      },
+      "doi": "10.1177/154193120004402253",
+      "source_id": "SRC-R006-G-HELLIER-PSYCHOPHYSICS",
+      "title": "Using Psychophysics to Design Speech Warnings"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-hollander-hazard.json",
+        "sha256": "2b321905fd972f8a548030143b8467ebdd0b24bcd76ae7577d60ebc854a2af1a"
+      },
+      "doi": "10.1177/154193120004402254",
+      "source_id": "SRC-R006-G-HOLLANDER-HAZARD",
+      "title": "Connoted Hazard of Voiced Warning Signal Words: An Examination of Auditory Components"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-ulfvengren-natural.json",
+        "sha256": "5121725508cf05601ceb9caf92cb4cafa78513abefd6f2ecaa24d12281fcdfd2"
+      },
+      "doi": "10.1177/154193120004402264",
+      "source_id": "SRC-R006-G-ULFVENGREN-NATURAL",
+      "title": "Natural Warning Sounds in Safety Critical Human-Machine Systems -A Cognitive Engineering Approach"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-neubauer-performance.json",
+        "sha256": "ef65aa0a46299bc44771ba390cc81aa8af2790e00b1a69ebdf09c8afea36ecf3"
+      },
+      "doi": "10.1177/154193120104501816",
+      "source_id": "SRC-R006-G-NEUBAUER-PERFORMANCE",
+      "title": "Obtaining Objective Measurements of Operator Performance with Auditory Alarms"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-g-haas-urgency.json",
+        "sha256": "88ab312e523f99fc5675977cb9a159ace299b4794827554ab7cfa2a25051714e"
+      },
+      "doi": "10.1177/154193129604001611",
+      "source_id": "SRC-R006-G-HAAS-URGENCY",
+      "title": "Measuring Perceived Urgency to Create Safe Auditory Warnings"
+    }
+  ]
+}

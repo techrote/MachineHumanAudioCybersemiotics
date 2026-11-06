@@ -1,0 +1,104 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "23b211929d1a824851ca639be8dbfc0be274e2630813448ce7e2f6944def1012",
+  "record": {
+    "DOI": "10.1177/154193129604001611",
+    "URL": "https://doi.org/10.1177/154193129604001611",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "U.S. Army Research Laboratory Aberdeen Proving Ground, Maryland"
+          }
+        ],
+        "family": "Haas",
+        "given": "Ellen C.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Plymouth Plymouth, United Kingdom"
+          }
+        ],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "16",
+    "issued": {
+      "date-parts": [
+        [
+          1996,
+          10
+        ]
+      ]
+    },
+    "page": "845-849",
+    "published-online": {
+      "date-parts": [
+        [
+          1996,
+          10,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1996,
+          10
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Measuring Perceived Urgency to Create Safe Auditory Warnings"
+    ],
+    "type": "journal-article",
+    "volume": "40"
+  },
+  "requested_doi": "10.1177/154193129604001611",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:05:27Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193129604001611"
+}

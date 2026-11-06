@@ -1,0 +1,143 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "b22b9de7dbaf8ed7319cc1d8470acce4919a22209960fbf574b282352c5c6309",
+  "record": {
+    "DOI": "10.1097/ccm.0000000000003802",
+    "URL": "https://doi.org/10.1097/ccm.0000000000003802",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Music Engineering Technology, Frost School of Music, University of Miami, Coral Gables, FL."
+          }
+        ],
+        "family": "Bennett",
+        "given": "Christopher",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Department of Anesthesiology, Perioperative Medicine and Pain Management, Miller School of Medicine, University of Miami, Miami, FL."
+          }
+        ],
+        "family": "Dudaryk",
+        "given": "Roman",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Nursing & Health Studies, University of Miami, Coral Gables, FL."
+          }
+        ],
+        "family": "Crenshaw",
+        "given": "Nichole",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Cognition Institute, Plymouth University, Plymouth, United Kingdom."
+          }
+        ],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Nursing & Health Studies, University of Miami, Coral Gables, FL."
+          }
+        ],
+        "family": "McNeer",
+        "given": "Richard",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Critical Care Medicine"
+    ],
+    "issue": "8",
+    "issued": {
+      "date-parts": [
+        [
+          2019,
+          8
+        ]
+      ]
+    },
+    "page": "1050-1057",
+    "published-print": {
+      "date-parts": [
+        [
+          2019,
+          8
+        ]
+      ]
+    },
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Recommendation of New Medical Alarms Based on Audibility, Identifiability, and Detectability in a Randomized, Simulation-Based Study"
+    ],
+    "type": "journal-article",
+    "volume": "47"
+  },
+  "requested_doi": "10.1097/ccm.0000000000003802",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:04:01Z",
+  "url": "https://api.crossref.org/works/10.1097%2Fccm.0000000000003802"
+}

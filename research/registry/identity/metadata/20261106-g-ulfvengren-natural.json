@@ -1,0 +1,88 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "de605a7bacb43471fb0032de9e6218df3627934e217a8827b7c476be9fdf00dd",
+  "record": {
+    "DOI": "10.1177/154193120004402264",
+    "URL": "https://doi.org/10.1177/154193120004402264",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Industrial Work Science, Department of Industrial Economics and Management Royal Institute of Technology, 100 44, Stockholm, Sweden"
+          }
+        ],
+        "family": "Ulfvengren",
+        "given": "Pernilla",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the Human Factors and Ergonomics Society Annual Meeting"
+    ],
+    "issue": "22",
+    "issued": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "page": "742-745",
+    "published-online": {
+      "date-parts": [
+        [
+          2000,
+          7,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2000,
+          7
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Natural Warning Sounds in Safety Critical Human-Machine Systems -A Cognitive Engineering Approach"
+    ],
+    "type": "journal-article",
+    "volume": "44"
+  },
+  "requested_doi": "10.1177/154193120004402264",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T19:05:18Z",
+  "url": "https://api.crossref.org/works/10.1177%2F154193120004402264"
+}
