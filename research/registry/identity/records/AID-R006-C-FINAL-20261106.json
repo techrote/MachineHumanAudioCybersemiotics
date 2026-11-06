@@ -1,0 +1,147 @@
+{
+  "id": "AID-R006-C-FINAL-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-c-final-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fixed Crossref title presentation, PubMed/Georgia Tech identity metadata and retained-export checks"
+      },
+      "at": "2026-11-06T11:08:37Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02713",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00529",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00529",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C5SERIES-01072",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-C-FINAL-PLAN-20261106.json",
+          "research/registry/identity/R006-C-FINAL-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent with software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02713",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00529",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00529",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C5SERIES-01072",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+            "rev": 1
+          }
+        ],
+        "limitations": "Wilcox publisher first-page search excerpts were exposed through web search: partial_text only, with no stable whole-article bytes or contiguous/full reading. Tislar embedded abstract was exposed but not appraised; access observation is abstract_only. No full-paper reading, eligibility, extraction, sample identity, independent human adjudication or corpus acceptance. Raw metadata response bytes and source texts not committed; selected derivatives and original-response hashes retained.",
+        "output_refs": [
+          {
+            "id": "SRC-R006-WILCOX-2011-ALARMS",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-02713",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ5-00529",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1SORT-EQ5-00529",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C5SERIES-01072",
+            "rev": 2
+          },
+          {
+            "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T11:08:37Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Resolve seven batch C residual identity cases using a fixed Wilcox title-presentation decision and exact ICAD venue provenance; record actual partial/abstract access exposure without eligibility or extraction.",
+        "verification_steps": [
+          "Fixed exact raw Crossref title and DOI; retained both original and display title, with PubMed bibliographic corroboration.",
+          "Checked six OpenAlex DOI/full-title occurrences through original hashes, payloads, ordinals and work IDs; checked one venue occurrence through original manifest, gzip/payload hashes, JSON pointer and fresh Georgia Tech identity fields.",
+          "Recorded Wilcox publisher first-page search excerpts as partial_text and Tislar embedded abstract exposure as abstract_only. No full article or eligibility assessment."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,78 @@
+{
+  "artifact_kind": "crossref_identity_derivative_with_fixed_title_presentation",
+  "derivation": "Record-specific presentation only: remove the exact <i> and </i> strings and collapse whitespace including the actual U+000A line feed (encoded as backslash-n in JSON). This is fixed to DOI 10.2345/0899-8205-45.4.284 and the retained exact raw title; no generic HTML/fuzzy title merging. Other bibliographic fields unchanged.",
+  "http_status": 200,
+  "original_record_title": "<i>A Human Factors Perspective</i>\n            : Auditory Alarm Signals",
+  "parent_capture": {
+    "path": "research/registry/identity/metadata/20261106-c-final-wilcox-crossref.json",
+    "sha256": "aeb6853c65bed39e76c3815e2ffb6a51f26db374df1cd11ba9c7a52a6864b919"
+  },
+  "raw_response_sha256": "3034c63efcec4c9dc752e13a022fc43781bdb442f8590ef8e035ae4f2434b553",
+  "record": {
+    "DOI": "10.2345/0899-8205-45.4.284",
+    "URL": "https://doi.org/10.2345/0899-8205-45.4.284",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Wilcox",
+        "given": "Stephen B.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Biomedical Instrumentation &amp; Technology"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "page": "284-289",
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "publisher": "Association for the Advancement of Medical Instrumentation (AAMI)",
+    "relation": {},
+    "title": [
+      "A Human Factors Perspective : Auditory Alarm Signals"
+    ],
+    "type": "journal-article",
+    "volume": "45"
+  },
+  "requested_doi": "10.2345/0899-8205-45.4.284",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T11:03:48Z",
+  "url": "https://api.crossref.org/works/10.2345%2F0899-8205-45.4.284"
+}

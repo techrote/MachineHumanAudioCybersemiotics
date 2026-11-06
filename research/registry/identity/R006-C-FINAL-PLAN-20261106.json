@@ -1,0 +1,115 @@
+{
+  "accepted_base": "f12ffa2dead06e4c4cb26ed3c4edcda0723d8091",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Seven fixed identity occurrences and truthful access observations only; no eligibility, study/sample independence, empirical finding or corpus acceptance.",
+  "deferred": [],
+  "gatech": {
+    "path": "research/registry/identity/metadata/20261106-c-final-tislar-gatech.json",
+    "sha256": "d4cc88d91d17e00ed13047828bf48da6ded128a0a0a8eeb808b29467e8be7a71"
+  },
+  "issue": 6,
+  "parent_plan": {
+    "path": "research/registry/identity/R006-DOI-C-PLAN-20261106.json",
+    "sha256": "528d4c141867e8ad42ed7bd8e6147b961ef7f2270662eb1384d73900da281a19"
+  },
+  "pubmed": {
+    "path": "research/registry/identity/metadata/20261106-c-final-wilcox-pubmed.json",
+    "sha256": "7b0812170bd37f0bfa20ee967ce53c86c32075b2cdddcb0808c72850da0372ba"
+  },
+  "raw_crossref": {
+    "path": "research/registry/identity/metadata/20261106-c-final-wilcox-crossref.json",
+    "sha256": "aeb6853c65bed39e76c3815e2ffb6a51f26db374df1cd11ba9c7a52a6864b919"
+  },
+  "reading_exposure": {
+    "tislar": {
+      "extent": "The original retained Georgia Tech venue response exposed its embedded abstract during metadata inspection. No target paper/full text or eligibility appraisal. Later fresh derivative retains bibliographic fields only.",
+      "status": "abstract_only"
+    },
+    "wilcox": {
+      "extent": "Publisher PDF bibliographic header and first-page excerpts (printed p.284) exposed via web search. Not a contiguous page/full-article reading or accepted extraction.",
+      "status": "partial_text",
+      "url": "https://meridian.allenpress.com/bit/article-pdf/45/4/284/1488444/0899-8205-45_4_284.pdf"
+    }
+  },
+  "reference_subplan": {
+    "path": "research/registry/identity/R006-REFERENCE-C-PLAN-20261106.json",
+    "sha256": "ab94412bd889dbaac104941ce4bd162a09358d43d5847f74b39dfd6fc30ce2ea"
+  },
+  "selected": [
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00529",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00529",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS"
+    }
+  ],
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-final-wilcox-presentation.json",
+        "sha256": "7be3307a7dc4b780396f7321beca1df44f924f2d887dc75725e92ff32d14d5bc"
+      },
+      "doi": "10.2345/0899-8205-45.4.284",
+      "source_id": "SRC-R006-WILCOX-2011-ALARMS",
+      "title": "A Human Factors Perspective : Auditory Alarm Signals"
+    }
+  ],
+  "title_decision": {
+    "display_title": "A Human Factors Perspective : Auditory Alarm Signals",
+    "doi": "10.2345/0899-8205-45.4.284",
+    "line_feed_codepoint": 10,
+    "raw_title": "<i>A Human Factors Perspective</i>\n            : Auditory Alarm Signals",
+    "scope": "Exact record-specific markup presentation; punctuation and words retained, including the space before the colon. PubMed uses a colon without that space and a trailing period; publisher PDF bibliographic header corroborates title/author. No general HTML tag stripping or fuzzy matching."
+  },
+  "venue": {
+    "defer_reason": "Unreviewed ICAD-series export format",
+    "doi": "10.21785/icad2018.029",
+    "hit_ref": {
+      "id": "HIT-R005R-C5SERIES-01072",
+      "rev": 1
+    },
+    "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+  }
+}

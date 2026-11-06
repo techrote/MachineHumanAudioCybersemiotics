@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-c-final-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fixed Crossref title presentation, PubMed/Georgia Tech identity metadata and retained-export checks"
+      },
+      "at": "2026-11-06T11:08:37Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00529",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-WILCOX-2011-ALARMS",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-C-FINAL-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02713",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-02713",
+          "rev": 2
+        },
+        "ordinal": 529,
+        "raw_metadata": "A Human Factors Perspective : Auditory Alarm Signals | first author: Stephen B. Wilcox | 2011-07-01 | article | https://openalex.org/W2129835749",
+        "resolution_reason": "R006: explicit DOI and full retained title agree after the record-specific Crossref presentation decision. Partial tool-mediated text exposure is logged separately; no eligibility, full reading, version alias or independent-study assertion. See research/registry/identity/R006-C-FINAL-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2129835749"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.2345/0899-8205-45.4.284"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ5",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-WILCOX-2011-ALARMS",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

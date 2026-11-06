@@ -1,0 +1,23 @@
+{
+  "artifact_kind": "pubmed_identity_metadata_derivative",
+  "derivation": "Only bibliographic fields retained from XML; no abstract or article text retained.",
+  "http_status": 200,
+  "raw_response_sha256": "180ed3889361b21b1c69b750c3ffc36c6baa84777640227b68e35c42df2d8765",
+  "record": {
+    "authors": [
+      "Stephen B Wilcox"
+    ],
+    "identifiers": {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "pubmed": "21812603"
+    },
+    "issue": "4",
+    "journal": "Biomedical instrumentation & technology",
+    "pages": "284-9",
+    "publication_year": "2011",
+    "title": "A human factors perspective: auditory alarm signals.",
+    "volume": "45"
+  },
+  "retrieved_at": "2026-11-06T11:04:00Z",
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=21812603&retmode=xml"
+}

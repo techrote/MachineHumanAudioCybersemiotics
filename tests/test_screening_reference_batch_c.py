@@ -42,7 +42,8 @@ class ReferenceBatchCTests(unittest.TestCase):
         for o in self.ledger['occurrences']:
             self.assertEqual(self.records[o['path']]['revisions'][1]['data']['status'],'duplicate')
             s=read_json(ROOT/f"research/registry/identity/records/{o['source_ref']['id']}.json")
-            self.assertEqual(len(s['revisions']),1);self.assertEqual(s['revisions'][0]['data']['access_status'],'metadata_only')
+            # This batch pins source revision 1; later access observations are allowed.
+            self.assertEqual(s['revisions'][0]['data']['access_status'],'metadata_only')
 
     def test_every_original_discovery_field_and_hash_is_preserved(self):
         allowed={'status','source_ref','duplicate_of','resolution_reason'}

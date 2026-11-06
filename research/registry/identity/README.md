@@ -632,6 +632,81 @@ eight citation-page inspections, retained-export/metadata comparison, software
 self-review and fourteen new regression tests. No independent human adjudication
 or scientific acceptance occurred.
 
+## Batch C venue and title-presentation completion — 6 November 2026
+
+The [fixed residual plan](R006-C-FINAL-PLAN-20261106.json) and
+[seven-occurrence ledger](R006-C-FINAL-20261106.json) resolve the one venue case
+and six Wilcox occurrences left after the bibliography subplan. Fresh Crossref,
+PubMed and Georgia Tech identity requests all returned HTTP 200. Selected
+bibliographic derivatives retain URLs, times and original-response hashes;
+original response bytes are not committed.
+
+**Wilcox's title representation is an explicit, fixed decision.** The raw
+Crossref title contains exact italic tags and an actual **U+000A line feed**,
+which JSON displays as an escaped newline. It is not a two-character literal
+backslash followed by `n`. The dated raw title is preserved in the original and
+fresh captures. The [presentation derivative](metadata/20261106-c-final-wilcox-presentation.json)
+removes only the exact italic-tag strings and collapses whitespace for this DOI
+and exact raw title. It preserves every word, punctuation and the space before
+the colon in the retained display label. PubMed corroborates DOI, author, year,
+volume and issue; its title has a colon without that space and a trailing period.
+The publisher PDF's bibliographic header was also exposed through web search.
+No generic HTML stripping, fuzzy matching or title-based source alias is added.
+Unknown tags, literal backslash-n text and corroborating DOI disagreement fail.
+
+Six Wilcox hits now link to new `SRC-R006-WILCOX-2011-ALARMS`: one representative
+and five duplicates. Their original OpenAlex hashes/payloads, ordinals, work IDs,
+DOIs and full labels were checked. The original 2011-07-01 discovery date remains
+alongside the Crossref print date 2011-07. The raw title and title decision remain
+distinct from the canonical display string; the old deferral is not rewritten.
+
+**The ICAD venue case is publication-specific.** Original manifest ordinal 1072,
+repository UUID, full title, five authors, issued date, DOI and literal discovery
+text agree with the hash-matched compressed API page and its exact JSON pointer
+(`/objects/80/`), plus fresh Georgia Tech metadata. It becomes a duplicate of the
+existing Tislar representative, with original source revision 1 pinned. No venue
+listing or same-host URL is accepted from title similarity alone.
+
+**Actual source-text exposure is recorded separately.** Wilcox's publisher PDF
+header and first-page excerpts (printed p.284) appeared through web search; the
+new source records `partial_text`, not full-text availability or complete reading.
+Those excerpts were not a contiguous page/article reading, appraised evidence or
+an extraction, and the tool's rendered search response was not retained as source
+bytes. During original venue-metadata inspection, Tislar's embedded abstract was
+exposed. A new source revision records `abstract_only` and that limitation. Only
+access observations and metadata evidence change; material publication identity,
+manifestations, rights, original revisions and old source pins stay intact. No
+formal reading record, full-paper reading, eligibility decision, study, sample or
+empirical claim is created. The fresh selected-field derivatives omit abstracts.
+
+```sh
+python research/registry/identity/scripts/build_r006_batch_c_final.py --check
+python -m unittest tests.test_screening_batch_c_final -v
+python tools/validate.py
+python -m tools.identity_queue > build/identity-queue-current.json
+```
+
+The bounded builder composes the existing DOI/title checker with the reviewed
+venue format and source-access observations. A frozen ledger mismatch stops all
+canonical writes. Both historical batch C ledgers/prefixes still reproduce;
+source-observation tests allow later revisions while checking their original
+pinned assertions. Fifteen new tests cover exact presentation, contradictory
+metadata, wrong venue identity/DOI/text, scope drift, immutable discovery and
+truthful access extent. No generic source-matching rule or research gate is relaxed.
+
+All-lane unresolved discovery falls **22,346 → 22,339**. Batch C's bounded scope
+is complete: **38 + 12 + 7 = 57 occurrences** across ten publication identities,
+without an independent-study count. The current exact-identifier queue has zero
+candidates/conflicts and 22,339 unmatched unresolved occurrences. Issue #6 and
+the corpus gate remain open for broader identity work, actual protocol-governed
+screening, study/sample overlap, selection and bias assessment. Next: further
+bounded DOI-group admission, preserving these access/reading limits.
+
+AI disclosure: one Codex/GPT-6 agent, 6 November 2026, primary/index metadata and
+retained-export verification, record-specific presentation decision, disclosed
+incidental source-text exposure, software self-review and fifteen regression
+tests. No independent human adjudication or scientific acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:
