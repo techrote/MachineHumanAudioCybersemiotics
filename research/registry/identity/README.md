@@ -483,6 +483,81 @@ retrieval, five citation-page inspections, retained-export/metadata comparison,
 software self-review and thirteen new profile/provenance regression tests. No
 independent human adjudication or scientific acceptance occurred.
 
+## DOI batch C — 6 November 2026
+
+The [fixed plan](R006-DOI-C-PLAN-20261106.json) and
+[ledger](R006-DOI-C-20261106.json) add nine metadata-only publication identities
+and resolve 38 retained DOI/full-title occurrences. Ten sequential Crossref
+single-work requests returned HTTP 200; selected bibliographic derivatives,
+request times/URLs and original-response hashes are retained. Abstracts and
+target article/chapter texts were not read. Selection for this bounded identity
+batch used recurring DOI groups and auditory warning/interface topic labels,
+not eligibility, results or outcome direction; it is not exhaustive sampling.
+
+| Publication identity | Resolved occurrences | Deferred occurrences |
+|---|---:|---:|
+| Graham (1999), collision-avoidance auditory icons | 3 | 3 |
+| Sanderson et al. (2009), anesthesiology displays | 6 | 0 |
+| Nees et al. (2016), alerted-event memory | 3 | 3 |
+| Bellettiere et al. (2014), behavioral-intervention warnings | 5 | 1 |
+| Tislar et al. (2018), auditory-display learnability | 3 | 3 |
+| Amer/Johnson (2018), computing-event cues | 3 | 3 |
+| Brewster (1997), telephone interfaces, **chapter** | 5 | 0 |
+| Gygi/Shafiro (2010), environmental-sound design, **chapter** | 5 | 0 |
+| Edworthy et al. (2011), alarm-set heterogeneity | 5 | 0 |
+
+Full titles and explicit DOIs agree under case/whitespace normalization only
+with fresh Crossref metadata and the hash-bound retained exports. Original
+export/page hashes, payload hashes, ordinals and work IDs were checked. Nine
+representatives and 29 duplicates preserve every discovery revision. No competing
+source with these DOI assertions or exact normalized titles was found in the
+existing source records. This is publication identity, not study independence.
+
+Twelve bibliography occurrences and one ICAD-series occurrence remain deferred
+because their export formats need a separate provenance check. The ICAD entry
+is a venue listing, not a reference-list entry. The dated plan distinguishes it.
+The tenth group, Wilcox's alarm-signals article, is **not admitted**: Crossref's
+title contains literal HTML and escaped-newline markup and disagrees with all six plain
+retained discovery titles under the current comparison. The capture/hash, title,
+six original hit pins and reason remain in the plan. No silent tag stripping,
+canonical source or occurrence resolution is introduced. A separate reviewed
+representation/identity decision is needed; this is not an eligibility exclusion.
+The profile checks the retained unadmitted capture's hash before building.
+
+All nine sources remain `metadata_only`, with unknown reuse rights, no
+manifestations, family/sample links or reading claims. Both chapters retain their
+publication type. Dates stay separate assertions: Sanderson's discovery date
+`2009-10-31` remains alongside Crossref's print/issued `2009-12`; Graham's print
+1999 and online 2010 assertions remain distinct; Nees's February online/issued
+and May print dates are retained. No discovery metadata is harmonized or rewritten.
+
+```sh
+python research/registry/identity/scripts/build_r006_doi_batch_c.py --check
+python -m unittest tests.test_screening_doi_batch_c -v
+python tools/validate.py
+python -m tools.identity_queue > build/identity-queue-current.json
+```
+
+This small fixed profile reuses the existing builder without changing its
+original or batch B outputs. Offline reproduction uses the retained captures,
+not new API responses. Frozen ledger disagreement stops canonical writes.
+Re-querying may return changed metadata; retain new dated provenance rather than
+overwriting these inputs. Original raw Crossref responses are not committed.
+
+All-lane unresolved discovery falls **22,396 → 22,358**. The current exact-identifier
+queue has **13 candidates**, zero conflicts and **22,345 unmatched unresolved**
+occurrences; the six Wilcox cases remain among the unmatched occurrences. These
+are occurrence counts, not a selected corpus. No eligibility, screening, study,
+sample, empirical claim or design records are created. Issue #6 and the corpus
+gate stay open. Next: separately verify the 13 bibliography/venue cases and the
+HTML-marked title representation, then continue bounded identity admission and
+protocol-governed screening without inferring study/sample independence.
+
+AI disclosure: one Codex/GPT-6 agent, 6 November 2026, fresh bibliographic metadata
+retrieval, retained-export comparison, software self-review and eleven new
+regression tests. No independent human adjudication, target-source reading or
+scientific acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

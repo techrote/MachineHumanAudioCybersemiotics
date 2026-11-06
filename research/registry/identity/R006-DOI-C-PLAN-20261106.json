@@ -1,0 +1,553 @@
+{
+  "accepted_base": "f2c8debc242f045fa27798e173ac95d2e461001f",
+  "access_note": "Ten sequential Crossref single-work requests returned HTTP 200. No article, chapter or abstract was read; only selected bibliographic derivatives retained.",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Metadata identity only. No eligibility, reading, independent-study or corpus acceptance. Unreviewed reference exports, title disagreements and the HTML-marked Crossref title remain unresolved.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-037",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-086",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed ICAD-series export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005R-C5SERIES-01072",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C9TOTLAND-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    }
+  ],
+  "issue": 6,
+  "not_admitted": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-wilcox-alarms.json",
+        "sha256": "7679b21dcb01881ffc543ad7780fd47fc84ea22c2405a466ab7cac6fbb6f857b"
+      },
+      "doi": "10.2345/0899-8205-45.4.284",
+      "hit_refs": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00529",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00529",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02713",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+          "rev": 1
+        }
+      ],
+      "reason": "Crossref title contains literal HTML/newline markup; every retained plain discovery title disagrees under the current case/whitespace-only comparison. No silent tag stripping, source creation or occurrence resolution. Requires a separately reviewed representation/identity decision.",
+      "reported_title": "<i>A Human Factors Perspective</i>\n            : Auditory Alarm Signals"
+    }
+  ],
+  "selected": [
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BREWSTER-1997-TELEPHONE"
+    },
+    {
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00783",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GYGI-2010-ENVIRONMENTAL"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    },
+    {
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-04051",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00114",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BREWSTER-1997-TELEPHONE"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00441",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00451",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GYGI-2010-ENVIRONMENTAL"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00513",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00758",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01017",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01031",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00001",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00020",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY"
+    },
+    {
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00063",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00183",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00307",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BREWSTER-1997-TELEPHONE"
+    },
+    {
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00329",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00490",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00947",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GYGI-2010-ENVIRONMENTAL"
+    },
+    {
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00067",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00009",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00010",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00014",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BREWSTER-1997-TELEPHONE"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00094",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00773",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00989",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GYGI-2010-ENVIRONMENTAL"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00011",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY"
+    },
+    {
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00308",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00114",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BREWSTER-1997-TELEPHONE"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00441",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00451",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GYGI-2010-ENVIRONMENTAL"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00513",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00758",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    }
+  ],
+  "selection_rationale": "Ten recurring DOI groups were selected for bounded identity verification from unresolved discovery, using auditory warning/interface topic labels and occurrence recurrence, not result direction or eligibility. One whole group is not admitted because all plain discovery titles disagree with its HTML-marked Crossref title. No claim of exhaustive source selection.",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-graham-collision.json",
+        "sha256": "16d89b64e23d9f273292ccc8e7fa30a8e4d119d881b0792cbcbf06b194fae9e0"
+      },
+      "doi": "10.1080/001401399185108",
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION",
+      "title": "Use of auditory icons as emergency warnings: evaluation within a vehicle collision avoidance application"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-sanderson-anesthesiology.json",
+        "sha256": "538a46313b466f077b693bca6000662bcff8623639cdb6b428ba0bb0d1546d98"
+      },
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "source_id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+      "title": "Auditory displays in anesthesiology"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-nees-memory.json",
+        "sha256": "8285f648a5376e672ea39c8ba2a8172a91e89b94dc504b29cbb37ab67b2b1357"
+      },
+      "doi": "10.1177/0018720816629279",
+      "source_id": "SRC-R006-NEES-2016-MEMORY",
+      "title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-bellettiere-intervention.json",
+        "sha256": "ca0e0d1f1df5cf5b71a3a6cd010bb6ca04d5ae0908d8d19c3d1d89e6c5b59cce"
+      },
+      "doi": "10.12691/ajphr-2-6-3",
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+      "title": "Developing and Selecting Auditory Warnings for a Real-Time Behavioral Intervention"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-tislar-learnability.json",
+        "sha256": "c1fd7b9d40db89c38b1982b2c2e7762b075bfa200079fce95aef123948ed6a61"
+      },
+      "doi": "10.21785/icad2018.029",
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+      "title": "Examining the Learnability of Auditory Displays: Music, Earcons, Spearcons, and Lyricons"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-amer-events.json",
+        "sha256": "389a5a1d44ded210ca0aac7f35fe69e538a9f6ce049dfeca2ccb3b2d392c054f"
+      },
+      "doi": "10.4018/ijthi.2018100106",
+      "source_id": "SRC-R006-AMER-2018-EVENTS",
+      "title": "Earcons Versus Auditory Icons in Communicating Computing Events: Learning and User Preference"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-brewster-telephone.json",
+        "sha256": "744c4e1123b01f491b30b915cf17b9a53108b643c4f4a5cc8979f5d4e897ba0c"
+      },
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "source_id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+      "title": "Navigating Telephone-Based Interfaces with Earcons"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-gygi-environmental.json",
+        "sha256": "8100d97260dbb226da1b65fbcf0dee35043a1a6dd74ddf89c8c30a84bc8924fa"
+      },
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "source_id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+      "title": "From Signal to Substance and Back: Insights from Environmental Sound Research to Auditory Display Design"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-edworthy-heterogeneity.json",
+        "sha256": "76de8d1d899f3a4e7359b731c0bb116f2372bbabc2f9ef6e3fd13f4f3978caf7"
+      },
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "source_id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+      "title": "Heterogeneity in auditory alarm sets makes them easier to learn"
+    }
+  ]
+}

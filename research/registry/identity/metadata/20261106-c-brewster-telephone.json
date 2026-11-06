@@ -1,0 +1,69 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "7154e7fd1a4c70f8266c5b95b27f437128f973d7aed2d9aacb279a751dfce96f",
+  "record": {
+    "DOI": "10.1007/978-1-4471-3601-9_3",
+    "URL": "https://doi.org/10.1007/978-1-4471-3601-9_3",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Brewster",
+        "given": "Stephen",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "People and Computers XII"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "page": "39-56",
+    "published-print": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    },
+    "publisher": "Springer London",
+    "relation": {},
+    "title": [
+      "Navigating Telephone-Based Interfaces with Earcons"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-1-4471-3601-9_3",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:29Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-1-4471-3601-9_3"
+}

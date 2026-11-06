@@ -1,0 +1,100 @@
+{
+  "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-c-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliography and retained-export identity comparison"
+      },
+      "at": "2026-11-06T09:08:58Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02353",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00451",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00947",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00989",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00451",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-C-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T09:07:35Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Brian Gygi",
+            "role": "author"
+          },
+          {
+            "name": "Valeriy Shafiro",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Lecture Notes in Computer Science; Auditory Display; 306-329"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-c-gygi-environmental.json record.DOI/title/author; HTTP 200 on 2026-11-06T09:07:35Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1007/978-3-642-12439-6_16"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-c-gygi-environmental.json record.DOI, title, author and dates; retained derivative SHA256 8100d97260dbb226da1b65fbcf0dee35043a1a6dd74ddf89c8c30a84bc8924fa",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-C-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2010"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "chapter",
+        "title": "From Signal to Substance and Back: Insights from Environmental Sound Research to Auditory Display Design",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

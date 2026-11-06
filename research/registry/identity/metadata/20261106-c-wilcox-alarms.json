@@ -1,0 +1,73 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "3034c63efcec4c9dc752e13a022fc43781bdb442f8590ef8e035ae4f2434b553",
+  "record": {
+    "DOI": "10.2345/0899-8205-45.4.284",
+    "URL": "https://doi.org/10.2345/0899-8205-45.4.284",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Wilcox",
+        "given": "Stephen B.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Biomedical Instrumentation &amp; Technology"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "page": "284-289",
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          7
+        ]
+      ]
+    },
+    "publisher": "Association for the Advancement of Medical Instrumentation (AAMI)",
+    "relation": {},
+    "title": [
+      "<i>A Human Factors Perspective</i>\n            : Auditory Alarm Signals"
+    ],
+    "type": "journal-article",
+    "volume": "45"
+  },
+  "requested_doi": "10.2345/0899-8205-45.4.284",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:19Z",
+  "url": "https://api.crossref.org/works/10.2345%2F0899-8205-45.4.284"
+}

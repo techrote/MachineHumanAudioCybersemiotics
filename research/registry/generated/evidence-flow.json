@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 148,
+  "current_usable_sources": 157,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 148,
+  "publications": 157,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -128,14 +128,23 @@
       "SRC-R005R-RUSKIN-2020",
       "SRC-R005R-TOTLAND-2021",
       "SRC-R006-ALSEID-2011-EARCONS",
+      "SRC-R006-AMER-2018-EVENTS",
+      "SRC-R006-BELLETTIERE-2014-INTERVENTION",
       "SRC-R006-BLATTNER-1989-ABSTRACT",
+      "SRC-R006-BREWSTER-1997-TELEPHONE",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+      "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
       "SRC-R006-EDWORTHY-2014-LEARNING",
       "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+      "SRC-R006-GRAHAM-1999-COLLISION",
+      "SRC-R006-GYGI-2010-ENVIRONMENTAL",
       "SRC-R006-HOFMANN-2016-INCAR",
+      "SRC-R006-NEES-2016-MEMORY",
       "SRC-R006-PERRY-2007-COUGH",
       "SRC-R006-PETOCZ-2008-WARNINGS",
+      "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
       "SRC-R006-SUH-2012-SPEEDINESS",
+      "SRC-R006-TISLAR-2018-LEARNABILITY",
       "SRC-R006-WALKER-2013-SPEARCONS",
       "SRC-REL-ATKIN-SEP",
       "SRC-REL-AUDITORY-SIGNS-REVIEW",
@@ -256,14 +265,23 @@
       "SRC-R005R-EDWORTHY-2013",
       "SRC-R005R-RUSKIN-2020",
       "SRC-R006-ALSEID-2011-EARCONS",
+      "SRC-R006-AMER-2018-EVENTS",
+      "SRC-R006-BELLETTIERE-2014-INTERVENTION",
       "SRC-R006-BLATTNER-1989-ABSTRACT",
+      "SRC-R006-BREWSTER-1997-TELEPHONE",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+      "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
       "SRC-R006-EDWORTHY-2014-LEARNING",
       "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+      "SRC-R006-GRAHAM-1999-COLLISION",
+      "SRC-R006-GYGI-2010-ENVIRONMENTAL",
       "SRC-R006-HOFMANN-2016-INCAR",
+      "SRC-R006-NEES-2016-MEMORY",
       "SRC-R006-PERRY-2007-COUGH",
       "SRC-R006-PETOCZ-2008-WARNINGS",
+      "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
       "SRC-R006-SUH-2012-SPEEDINESS",
+      "SRC-R006-TISLAR-2018-LEARNABILITY",
       "SRC-R006-WALKER-2013-SPEARCONS",
       "SRC-REL-AUDITORY-SIGNS-REVIEW",
       "SRC-REL-AYLETT-2019",
@@ -4423,22 +4441,22 @@
       "id": "SRCH-R005R-C1LOAD-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 14,
+      "resolved_hits": 21,
       "status": "partial",
       "stored_hits": 4200,
-      "unique_publications": 14,
-      "unresolved_hits": 4186
+      "unique_publications": 21,
+      "unresolved_hits": 4179
     },
     {
-      "duplicate_hits": 11,
+      "duplicate_hits": 16,
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 11,
+      "resolved_hits": 18,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 11,
-      "unresolved_hits": 2101
+      "unique_publications": 18,
+      "unresolved_hits": 2094
     },
     {
       "duplicate_hits": 1,
@@ -4452,26 +4470,26 @@
       "unresolved_hits": 4650
     },
     {
-      "duplicate_hits": 10,
+      "duplicate_hits": 19,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 10,
+      "resolved_hits": 19,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 10,
-      "unresolved_hits": 990
+      "unique_publications": 19,
+      "unresolved_hits": 981
     },
     {
-      "duplicate_hits": 3,
+      "duplicate_hits": 4,
       "id": "SRCH-R005R-C1RECOVERY-EQ2",
       "mode": "production",
       "reported_count": 556,
-      "resolved_hits": 3,
+      "resolved_hits": 4,
       "status": "completed",
       "stored_hits": 556,
-      "unique_publications": 3,
-      "unresolved_hits": 553
+      "unique_publications": 4,
+      "unresolved_hits": 552
     },
     {
       "duplicate_hits": 0,
@@ -4496,26 +4514,26 @@
       "unresolved_hits": 585
     },
     {
-      "duplicate_hits": 11,
+      "duplicate_hits": 18,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 11,
+      "resolved_hits": 18,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 11,
-      "unresolved_hits": 1589
+      "unique_publications": 18,
+      "unresolved_hits": 1582
     },
     {
-      "duplicate_hits": 0,
+      "duplicate_hits": 2,
       "id": "SRCH-R005R-C1RECOVERY-EQ6",
       "mode": "production",
       "reported_count": 537,
-      "resolved_hits": 0,
+      "resolved_hits": 2,
       "status": "completed",
       "stored_hits": 537,
-      "unique_publications": 0,
-      "unresolved_hits": 537
+      "unique_publications": 2,
+      "unresolved_hits": 535
     },
     {
       "duplicate_hits": 3,
@@ -4565,15 +4583,15 @@
       "unresolved_hits": 585
     },
     {
-      "duplicate_hits": 10,
+      "duplicate_hits": 15,
       "id": "SRCH-R005R-C1SORT-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 10,
+      "resolved_hits": 15,
       "status": "partial",
       "stored_hits": 800,
-      "unique_publications": 10,
-      "unresolved_hits": 790
+      "unique_publications": 15,
+      "unresolved_hits": 785
     },
     {
       "duplicate_hits": 0,
@@ -4689,7 +4707,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 148,
+  "source_record_ids": 157,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

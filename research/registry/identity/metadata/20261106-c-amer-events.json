@@ -1,0 +1,95 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "fdb6a63206dabfe8cc803932c83ffd374e256789547be5c6a6ad48ee5c377a34",
+  "record": {
+    "DOI": "10.4018/ijthi.2018100106",
+    "URL": "https://doi.org/10.4018/ijthi.2018100106",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "The W. A. Franke College of Business, Flagstaff, USA"
+          }
+        ],
+        "family": "Amer",
+        "given": "T. S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "The W. A. Franke College of Business, Flagstaff, USA"
+          }
+        ],
+        "family": "Johnson",
+        "given": "Todd L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "International Journal of Technology and Human Interaction"
+    ],
+    "issue": "4",
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          1
+        ]
+      ]
+    },
+    "page": "95-109",
+    "published-print": {
+      "date-parts": [
+        [
+          2018,
+          10,
+          1
+        ]
+      ]
+    },
+    "publisher": "IGI Global Scientific Publishing",
+    "relation": {},
+    "title": [
+      "Earcons Versus Auditory Icons in Communicating Computing Events: Learning and User Preference"
+    ],
+    "type": "journal-article",
+    "volume": "14"
+  },
+  "requested_doi": "10.4018/ijthi.2018100106",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:24Z",
+  "url": "https://api.crossref.org/works/10.4018%2Fijthi.2018100106"
+}

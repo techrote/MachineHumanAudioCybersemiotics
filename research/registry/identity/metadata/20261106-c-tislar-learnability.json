@@ -1,0 +1,119 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "b447ab4bc35246313dd766303c69533259eadc64434cc04ae8cdcc805c7c424f",
+  "record": {
+    "DOI": "10.21785/icad2018.029",
+    "URL": "https://doi.org/10.21785/icad2018.029",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Tislar",
+        "given": "Kay",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Duford",
+        "given": "Zackery",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Nelson",
+        "given": "Brittany",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Peabody",
+        "given": "Madeline",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 24th International Conference on Auditory Display - ICAD 2018"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018,
+          6
+        ]
+      ]
+    },
+    "page": "197-202",
+    "published-online": {
+      "date-parts": [
+        [
+          2018,
+          6
+        ]
+      ]
+    },
+    "publisher": "The International Community for Auditory Display",
+    "relation": {},
+    "title": [
+      "Examining the Learnability of Auditory Displays: Music, Earcons, Spearcons, and Lyricons"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.21785/icad2018.029",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:14Z",
+  "url": "https://api.crossref.org/works/10.21785%2Ficad2018.029"
+}

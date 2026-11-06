@@ -1,0 +1,108 @@
+{
+  "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-c-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliography and retained-export identity comparison"
+      },
+      "at": "2026-11-06T09:08:58Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02305",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00441",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00044",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00773",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ6-00011",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00441",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-C-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T09:06:58Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Penelope M Sanderson",
+            "role": "author"
+          },
+          {
+            "name": "David Liu",
+            "role": "author"
+          },
+          {
+            "name": "Simon A Jenkins",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Current Opinion in Anaesthesiology; 22; 6; 788-795"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-c-sanderson-anesthesiology.json record.DOI/title/author; HTTP 200 on 2026-11-06T09:06:58Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1097/aco.0b013e3283326a2f"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-c-sanderson-anesthesiology.json record.DOI, title, author and dates; retained derivative SHA256 538a46313b466f077b693bca6000662bcff8623639cdb6b428ba0bb0d1546d98",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-C-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2009-12"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Auditory displays in anesthesiology",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
