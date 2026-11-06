@@ -39,6 +39,59 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T22:09:57Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02895",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-H-LJUNGBERG-VERBAL",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-H-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2895,
+        "raw_metadata": "Listen Out! Behavioural and Subjective Responses to Verbal Warnings | first author: Jessica K. Ljungberg | 2012-01-18 | article | https://openalex.org/W1738254596",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-H-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1738254596"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/acp.2818"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-H-LJUNGBERG-VERBAL",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

@@ -1,0 +1,79 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "39da464676e7962157f6320a43b413477ce39db7b414e72a6f50e1699f5fed7c",
+  "record": {
+    "DOI": "10.1093/acprof:oso/9780199608157.003.0015",
+    "URL": "https://doi.org/10.1093/acprof:oso/9780199608157.003.0015",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "New York University, USA"
+          }
+        ],
+        "family": "Roginska",
+        "given": "Agnieszka",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "The Psychology of Music in Multimedia"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          27
+        ]
+      ]
+    },
+    "page": "339-364",
+    "published-print": {
+      "date-parts": [
+        [
+          2013,
+          6,
+          27
+        ]
+      ]
+    },
+    "publisher": "Oxford University PressOxford",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Auditory icons, earcons, and displays: Information and expression through sound"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1093/acprof:oso/9780199608157.003.0015",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:01Z",
+  "url": "https://api.crossref.org/works/10.1093%2Facprof%3Aoso%2F9780199608157.003.0015"
+}

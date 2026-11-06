@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-h-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliographic metadata and retained-export identity comparison"
+      },
+      "at": "2026-11-06T22:09:57Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00354",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-H-PARK-EARCONS",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-H-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02637",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-02637",
+          "rev": 2
+        },
+        "ordinal": 354,
+        "raw_metadata": "Evaluation of earcons for portable digital electronic products considering perceptual user characteristics | first author: Min‐Yong Park | 2011-01-21 | article | https://openalex.org/W2032279505",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-H-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2032279505"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1002/hfm.20243"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-H-PARK-EARCONS",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

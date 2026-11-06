@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 229,
+  "current_usable_sources": 241,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 230,
+  "publications": 242,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -210,6 +210,18 @@
       "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
       "SRC-R006-GRAHAM-1999-COLLISION",
       "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+      "SRC-R006-H-CARDOSO-MENU",
+      "SRC-R006-H-EDWORTHY-MAPPING",
+      "SRC-R006-H-HICKLING-SEQUENCE",
+      "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+      "SRC-R006-H-JUNG-HELICOPTER",
+      "SRC-R006-H-LJUNGBERG-VERBAL",
+      "SRC-R006-H-NEURAUTER-CURVE",
+      "SRC-R006-H-PARK-EARCONS",
+      "SRC-R006-H-ROGINSKA-DISPLAYS",
+      "SRC-R006-H-SABIC-RECOGNITION",
+      "SRC-R006-H-SABIC-UNDERSTANDING",
+      "SRC-R006-H-WEE-MELODIC",
       "SRC-R006-HOFMANN-2016-INCAR",
       "SRC-R006-NEES-2016-MEMORY",
       "SRC-R006-PERRY-2007-COUGH",
@@ -420,6 +432,18 @@
       "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
       "SRC-R006-GRAHAM-1999-COLLISION",
       "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+      "SRC-R006-H-CARDOSO-MENU",
+      "SRC-R006-H-EDWORTHY-MAPPING",
+      "SRC-R006-H-HICKLING-SEQUENCE",
+      "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+      "SRC-R006-H-JUNG-HELICOPTER",
+      "SRC-R006-H-LJUNGBERG-VERBAL",
+      "SRC-R006-H-NEURAUTER-CURVE",
+      "SRC-R006-H-PARK-EARCONS",
+      "SRC-R006-H-ROGINSKA-DISPLAYS",
+      "SRC-R006-H-SABIC-RECOGNITION",
+      "SRC-R006-H-SABIC-UNDERSTANDING",
+      "SRC-R006-H-WEE-MELODIC",
       "SRC-R006-HOFMANN-2016-INCAR",
       "SRC-R006-NEES-2016-MEMORY",
       "SRC-R006-PERRY-2007-COUGH",
@@ -1804,11 +1828,11 @@
         "reason": "Total-results count not used for a known-item lookup",
         "state": "not_reported"
       },
-      "resolved_hits": 2,
+      "resolved_hits": 3,
       "status": "completed",
       "stored_hits": 3,
-      "unique_publications": 2,
-      "unresolved_hits": 1
+      "unique_publications": 3,
+      "unresolved_hits": 0
     },
     {
       "duplicate_hits": 0,
@@ -1923,18 +1947,18 @@
       "unresolved_hits": 2
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 2,
       "id": "SRCH-R004-LK-HELLIER-1993",
       "mode": "production",
       "reported_count": {
         "reason": "Total-results count not used for a known-item lookup",
         "state": "not_reported"
       },
-      "resolved_hits": 2,
+      "resolved_hits": 3,
       "status": "completed",
       "stored_hits": 3,
-      "unique_publications": 2,
-      "unresolved_hits": 1
+      "unique_publications": 3,
+      "unresolved_hits": 0
     },
     {
       "duplicate_hits": 0,
@@ -4587,22 +4611,22 @@
       "id": "SRCH-R005R-C1LOAD-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 83,
+      "resolved_hits": 88,
       "status": "partial",
       "stored_hits": 4200,
-      "unique_publications": 83,
-      "unresolved_hits": 4117
+      "unique_publications": 88,
+      "unresolved_hits": 4112
     },
     {
       "duplicate_hits": 37,
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 46,
+      "resolved_hits": 48,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 46,
-      "unresolved_hits": 2066
+      "unique_publications": 48,
+      "unresolved_hits": 2064
     },
     {
       "duplicate_hits": 2,
@@ -4616,26 +4640,26 @@
       "unresolved_hits": 4649
     },
     {
-      "duplicate_hits": 76,
+      "duplicate_hits": 81,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 80,
+      "resolved_hits": 88,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 79,
-      "unresolved_hits": 920
+      "unique_publications": 87,
+      "unresolved_hits": 912
     },
     {
-      "duplicate_hits": 30,
+      "duplicate_hits": 32,
       "id": "SRCH-R005R-C1RECOVERY-EQ2",
       "mode": "production",
       "reported_count": 556,
-      "resolved_hits": 30,
+      "resolved_hits": 32,
       "status": "completed",
       "stored_hits": 556,
-      "unique_publications": 30,
-      "unresolved_hits": 526
+      "unique_publications": 32,
+      "unresolved_hits": 524
     },
     {
       "duplicate_hits": 0,
@@ -4660,37 +4684,37 @@
       "unresolved_hits": 582
     },
     {
-      "duplicate_hits": 46,
+      "duplicate_hits": 48,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 46,
+      "resolved_hits": 48,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 46,
-      "unresolved_hits": 1554
+      "unique_publications": 48,
+      "unresolved_hits": 1552
     },
     {
-      "duplicate_hits": 9,
+      "duplicate_hits": 10,
       "id": "SRCH-R005R-C1RECOVERY-EQ6",
       "mode": "production",
       "reported_count": 537,
-      "resolved_hits": 9,
+      "resolved_hits": 10,
       "status": "completed",
       "stored_hits": 537,
-      "unique_publications": 9,
-      "unresolved_hits": 528
+      "unique_publications": 10,
+      "unresolved_hits": 527
     },
     {
-      "duplicate_hits": 6,
+      "duplicate_hits": 7,
       "id": "SRCH-R005R-C1RECOVERY-EQ7",
       "mode": "production",
       "reported_count": 153,
-      "resolved_hits": 6,
+      "resolved_hits": 8,
       "status": "completed",
       "stored_hits": 153,
-      "unique_publications": 6,
-      "unresolved_hits": 147
+      "unique_publications": 8,
+      "unresolved_hits": 145
     },
     {
       "duplicate_hits": 2,
@@ -4729,15 +4753,15 @@
       "unresolved_hits": 582
     },
     {
-      "duplicate_hits": 35,
+      "duplicate_hits": 36,
       "id": "SRCH-R005R-C1SORT-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 35,
+      "resolved_hits": 36,
       "status": "partial",
       "stored_hits": 800,
-      "unique_publications": 35,
-      "unresolved_hits": 765
+      "unique_publications": 36,
+      "unresolved_hits": 764
     },
     {
       "duplicate_hits": 0,
@@ -4853,7 +4877,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 230,
+  "source_record_ids": 242,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

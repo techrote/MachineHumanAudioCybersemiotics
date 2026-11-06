@@ -1,0 +1,85 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "fa8fbfbfea05ad0a7bc9c13e0da8cac6dd02e80dd257fdc458508ed27dc1af94",
+  "record": {
+    "DOI": "10.1002/hfm.20243",
+    "URL": "https://doi.org/10.1002/hfm.20243",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Park",
+        "given": "Minyong",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Human Factors and Ergonomics in Manufacturing &amp; Service Industries"
+    ],
+    "issue": "5",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          1,
+          21
+        ]
+      ]
+    },
+    "page": "464-473",
+    "published-online": {
+      "date-parts": [
+        [
+          2011,
+          1,
+          21
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          9
+        ]
+      ]
+    },
+    "publisher": "Wiley",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Evaluation of earcons for portable digital electronic products considering perceptual user characteristics"
+    ],
+    "type": "journal-article",
+    "volume": "21"
+  },
+  "requested_doi": "10.1002/hfm.20243",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:43Z",
+  "url": "https://api.crossref.org/works/10.1002%2Fhfm.20243"
+}

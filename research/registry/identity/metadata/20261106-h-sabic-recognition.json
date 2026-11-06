@@ -1,0 +1,139 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "0e86e0b8836f5551ac38e3116ce554d819ee534f631c4d614c01cbea80c8bc36",
+  "record": {
+    "DOI": "10.1145/3027063.3053149",
+    "URL": "https://doi.org/10.1145/3027063.3053149",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "New Mexico State University, Las Cruces, NM, USA"
+          }
+        ],
+        "family": "Sabic",
+        "given": "Edin",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "New Mexico State University, Las Cruces, NM, USA"
+          }
+        ],
+        "family": "Mishler",
+        "given": "Scott",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "New Mexico State University, Las Cruces, NM, USA"
+          }
+        ],
+        "family": "Chen",
+        "given": "Jing",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "New Mexico State University, Las Cruces, NM, USA"
+          }
+        ],
+        "family": "Hu",
+        "given": "Bin",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the 2017 CHI Conference Extended Abstracts on Human Factors in Computing Systems"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          6
+        ]
+      ]
+    },
+    "page": "2010-2016",
+    "published-online": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          6
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2017,
+          5,
+          6
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [
+      "An Analysis of Various Alert Types"
+    ],
+    "title": [
+      "Recognition of Car Warnings"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/3027063.3053149",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:06Z",
+  "url": "https://api.crossref.org/works/10.1145%2F3027063.3053149"
+}

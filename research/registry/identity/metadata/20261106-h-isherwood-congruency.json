@@ -1,0 +1,107 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "22fa629de111629fa91775db214cf8b40a8d98b72a8fc211a9eabbf68ed3d109",
+  "record": {
+    "DOI": "10.1080/00140139.2016.1237677",
+    "URL": "https://doi.org/10.1080/00140139.2016.1237677",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "School of Medicine, University of Leeds, Leeds, UK"
+          }
+        ],
+        "family": "Isherwood",
+        "given": "Sarah J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "School of Psychology, University of Leeds, Leeds, UK"
+          }
+        ],
+        "family": "McKeown",
+        "given": "Denis",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Ergonomics"
+    ],
+    "issue": "7",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          10,
+          5
+        ]
+      ]
+    },
+    "page": "1014-1023",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          10,
+          5
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2017,
+          7,
+          3
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Semantic congruency of auditory warnings"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "volume": "60"
+  },
+  "requested_doi": "10.1080/00140139.2016.1237677",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:07:56Z",
+  "url": "https://api.crossref.org/works/10.1080%2F00140139.2016.1237677"
+}

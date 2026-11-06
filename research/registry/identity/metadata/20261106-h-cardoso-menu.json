@@ -1,0 +1,138 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "234e7c0c57922ff9f19d129b6dbe7a5651c3899207e1862b73f9773d5aee5818",
+  "record": {
+    "DOI": "10.3390/signals3020024",
+    "URL": "https://doi.org/10.3390/signals3020024",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-9476-249X",
+        "affiliation": [
+          {
+            "name": "Center for Rehabilitation Robotics, Department of Health Science and Technology, Aalborg University, 9220 Aalborg, Denmark"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Santos Cardoso",
+        "given": "Ana S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1186-3712",
+        "affiliation": [
+          {
+            "name": "Center for Rehabilitation Robotics, Department of Health Science and Technology, Aalborg University, 9220 Aalborg, Denmark"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Kæseler",
+        "given": "Rasmus L.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7729-4359",
+        "affiliation": [
+          {
+            "name": "Center for Rehabilitation Robotics, Department of Health Science and Technology, Aalborg University, 9220 Aalborg, Denmark"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Jochumsen",
+        "given": "Mads",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0484-5962",
+        "affiliation": [
+          {
+            "name": "Center for Rehabilitation Robotics, Department of Health Science and Technology, Aalborg University, 9220 Aalborg, Denmark"
+          }
+        ],
+        "authenticated-orcid": false,
+        "family": "Andreasen Struijk",
+        "given": "Lotte N. S.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Signals"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          16
+        ]
+      ]
+    },
+    "page": "396-409",
+    "published-online": {
+      "date-parts": [
+        [
+          2022,
+          6,
+          16
+        ]
+      ]
+    },
+    "publisher": "MDPI AG",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Manual 3D Control of an Assistive Robotic Manipulator Using Alpha Rhythms and an Auditory Menu: A Proof-of-Concept"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.3390/mdpi_crossmark_policy",
+    "volume": "3"
+  },
+  "requested_doi": "10.3390/signals3020024",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:30Z",
+  "url": "https://api.crossref.org/works/10.3390%2Fsignals3020024"
+}

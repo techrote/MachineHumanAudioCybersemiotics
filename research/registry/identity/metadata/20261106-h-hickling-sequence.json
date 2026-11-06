@@ -1,0 +1,134 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "d6a203372b60566fd130e2c240edcb87575759e813d94be61f6c636dda0caee2",
+  "record": {
+    "DOI": "10.1177/0018720816670986",
+    "URL": "https://doi.org/10.1177/0018720816670986",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Hickling",
+        "given": "Anna",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "The University of Queensland, St Lucia, Australia"
+          }
+        ],
+        "family": "Brecknell",
+        "given": "Birgit",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Arizona, Tucson"
+          }
+        ],
+        "family": "Loeb",
+        "given": "Robert G.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "The University of Queensland, St Lucia, Australia"
+          }
+        ],
+        "family": "Sanderson",
+        "given": "Penelope",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          11,
+          11
+        ]
+      ]
+    },
+    "page": "268-288",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          11,
+          11
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2017,
+          3
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "subtitle": [],
+    "title": [
+      "Using a Sequence of Earcons to Monitor Multiple Simulated Patients"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "59"
+  },
+  "requested_doi": "10.1177/0018720816670986",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T22:08:10Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720816670986"
+}
