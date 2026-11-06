@@ -1108,6 +1108,57 @@ retained-export comparison, software self-review and ten regression tests.
 No independent human adjudication, target-source reading or scientific
 acceptance is claimed.
 
+## Bibliography batch F — 6 November 2026
+
+The [six-occurrence ledger](R006-REFERENCE-F-20261106.json) completes the
+bibliography cases deferred by [DOI batch F](R006-DOI-F-20261106.json).
+All six occurrences link to existing representatives of four publications:
+Baldwin and May, Haas, Moskovitch and colleagues, and Brewster and colleagues.
+Together, the two batches resolve 66 occurrences to twenty publication
+identities. These are not independent-study or sample counts.
+
+The [fresh retrieval and witness receipt](R006-REFERENCE-F-WITNESSES-20261106.json)
+records three HTTP 200 PDFs with hashes identical to the retained originals.
+Four selected bibliography citations were visually checked:
+
+| Containing PDF | File pages | Printed pages | Cited publication |
+| --- | --- | --- | --- |
+| Nees accepted manuscript | 45, 48 | 45, 48 | Haas; Moskovitch and colleagues |
+| FRA review | 34 | 26 | Baldwin and May |
+| Ruskin report | 57 | 57 | Brewster and colleagues |
+
+Original discovery fields, export hashes, ordinals, literal citation text and
+outcome letters remain intact. The two older `RL-NL` short entries receive
+publication-identity corroboration from the accepted manuscript, not faithful
+original-preprint transcription or review-version equivalence. Ruskin reference
+019 retains its original page and coordinate-bearing citation lines.
+
+Inspection covered only those four citations. No cited target article or whole
+containing review/report was read. All four target sources remain `metadata_only`;
+no source access, rights, eligibility decisions, studies or samples changed.
+Source PDFs and renders are not committed. The fixed
+[batch F profile](scripts/build_r006_reference_batch_f.py) uses the existing
+reference engine, verifies its complete deferred scope and reproduces all output
+revision hashes without replacing historical input revisions.
+
+```bash
+python research/registry/identity/scripts/build_r006_reference_batch_f.py --check
+python -m unittest tests.test_screening_reference_batch_f -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane queue falls from 22,142 to 22,136 unresolved occurrences:
+zero exact candidates, zero conflicts and 22,136 unmatched. This completes the
+fixed batch F identity scope; broader issue #6 reconciliation, eligibility,
+study/sample overlap, corpus selection and residual-bias assessment remain open.
+The R005 coverage gaps and downstream #7–#9 corpus gates remain explicit.
+
+AI assistance: one Codex/GPT-6 agent performed retrieval, four citation
+inspections, retained-export comparison, software self-review and ten regression
+tests. These checks are not independent human adjudication or scientific
+validation. No protocol amendment or scientific acceptance is asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:
