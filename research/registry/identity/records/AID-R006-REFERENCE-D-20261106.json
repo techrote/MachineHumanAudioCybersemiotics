@@ -1,0 +1,167 @@
+{
+  "id": "AID-R006-REFERENCE-D-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-reference-d-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T13:05:36Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLFRAPDF-011",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLFRAPDF-053",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-008",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-025",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-008",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-025",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9RUSKIN-00018",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9TOTLAND-00003",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-D-BELZ-CLASS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-D-BREWSTER-EVALUATION",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-D-JEON-MENUS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-REFERENCE-D-WITNESSES-20261106.json",
+          "research/registry/identity/R006-REFERENCE-D-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-011",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLFRAPDF-053",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-008",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-025",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-008",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-025",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9RUSKIN-00018",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9TOTLAND-00003",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-BELZ-CLASS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-BREWSTER-EVALUATION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-D-JEON-MENUS",
+            "rev": 1
+          }
+        ],
+        "limitations": "No cited target article or whole review/report/thesis read; all three target source records remain metadata_only. Two model-rendered short titles receive publication-identity corroboration only. Source PDFs/renders not committed. No independent human verification, eligibility, version alias, study/sample identity or corpus acceptance.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-011",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLFRAPDF-053",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-008",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-025",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-008",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-025",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9RUSKIN-00018",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9TOTLAND-00003",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T13:05:36Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify eight deferred batch D bibliography occurrence identities through four freshly retrieved same-byte PDFs and six visually checked citation witnesses.",
+        "verification_steps": [
+          "All four PDFs returned HTTP 200 and match retained original SHA-256 exactly. Totland used the stable public OpenFile endpoint and a newly issued anonymous alias; route times/status retained, alias omitted.",
+          "Rendered/inspected Nees AM file/printed 44,46; FRA file 34,38 (printed 26,30); Ruskin 57; Totland 42. Inspection limited to selected bibliography citations.",
+          "Checked original export hashes, ordinals, explicit DOI, full title or two abbreviated prefixes, source/page provenance and existing representatives. Coordinate-bearing Ruskin/Totland citation exports and original line/box locators remain intact."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

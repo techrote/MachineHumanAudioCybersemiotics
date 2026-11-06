@@ -787,6 +787,55 @@ retrieval, retained-export comparison, software self-review and nine regression
 tests. No new target-source reading, independent human adjudication or scientific
 acceptance occurred.
 
+## Bibliography batch D — 6 November 2026
+
+The [eight-occurrence ledger](R006-REFERENCE-D-20261106.json) completes the
+bibliography work deferred by [DOI batch D](R006-DOI-D-20261106.json). All eight
+occurrences now point to existing representatives of three publications (Belz,
+Jeon and Brewster). Together, the two batches resolve 75 occurrences to fifteen
+publication identities; those identities are not independent studies.
+
+The [fresh retrieval and witness receipt](R006-REFERENCE-D-WITNESSES-20261106.json)
+records four HTTP 200 PDFs with hashes identical to the original retained files.
+Six selected bibliography citations were visually checked:
+
+| Containing PDF | File pages | Printed pages | Cited publication |
+| --- | --- | --- | --- |
+| Nees accepted manuscript | 44, 46 | 44, 46 | Brewster; Jeon |
+| FRA review | 34, 38 | 26, 30 | Belz; Jeon |
+| Ruskin report | 57 | 57 | Brewster |
+| Totland thesis | 42 | 42 | Belz |
+
+Original discovery fields, export hashes, ordinals, citation text and coordinate
+locators remain intact. The two older `RL-NL` short titles receive publication
+identity corroboration from the accepted manuscript, not faithful original
+preprint transcription or review-version equivalence. Ruskin reference 018 and
+Totland reference 003 retain their original page and line boxes.
+
+Inspection covered only those six citations. No cited target article or whole
+containing report was read. All three target publications remain `metadata_only`;
+no source access, rights, screening decision, study or sample records were changed.
+The PDFs and renders are not committed. A fresh anonymous Totland OpenFile alias
+was used; only its stable public endpoint and retrieval provenance are retained.
+
+Reproduce and check:
+
+```bash
+python research/registry/identity/scripts/build_r006_reference_batch_d.py --check
+python -m unittest tests.test_screening_reference_batch_d -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The dated all-lane queue falls from 22,272 to 22,264 unresolved occurrences, with
+zero exact candidates or conflicts and 22,264 unmatched. This finishes this fixed
+batch, not issue #6, programme deduplication or the corpus gate. Further identity
+admission and actual eligibility screening remain open.
+
+AI assistance: one Codex/GPT-6 agent performed retrieval, six citation inspections,
+retained-export comparison, software self-review and ten regression tests. These
+checks do not constitute independent human adjudication or scientific validation.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

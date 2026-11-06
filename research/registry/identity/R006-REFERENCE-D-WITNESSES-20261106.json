@@ -1,0 +1,170 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-d-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T13:05:36Z",
+  "limitations": "One agent; no independent human adjudication. Two original RL-NL model-rendered short titles receive publication-identity corroboration, not faithful original-preprint transcription or review-version equivalence. All original discovery and source access/rights states remain unchanged.",
+  "reading_extent": "Six selected bibliography citations only: Nees AM file/printed pp.44,46; FRA file pp.34,38 (printed 26,30); Ruskin file/printed p.57; Totland file/printed p.42. No cited target article, whole review/report/thesis or empirical result read.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1600; six page images inspected in two contact sheets.",
+  "retention": "PDFs and rendered pages used locally, not committed. Exact public URLs, hashes and page locators retained. NVA OpenFile endpoint issued a fresh anonymous alias; alias and storage redirect URL omitted.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T13:01:42Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    },
+    {
+      "at": "2026-11-06T13:01:42Z",
+      "bytes": 1092751,
+      "expected_sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "fra",
+      "page_count": 43,
+      "pdf_header": true,
+      "sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "url": "https://rosap.ntl.bts.gov/view/dot/60401/dot_60401_DS1.pdf"
+    },
+    {
+      "at": "2026-11-06T13:01:42Z",
+      "bytes": 1196825,
+      "expected_sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "ruskin",
+      "page_count": 79,
+      "pdf_header": true,
+      "sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "url": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    },
+    {
+      "at": "2026-11-06T13:01:48Z",
+      "bytes": 821130,
+      "expected_sha256": "caf75fd9f71016b869d1c27aa238c56a8f302a4ae2ce4459647203432e8d600d",
+      "filelink_http_status": 200,
+      "filelink_requested_at": "2026-11-06T13:01:42Z",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "totland",
+      "page_count": 52,
+      "pdf_header": true,
+      "route_note": "Stable public OpenFile endpoint supplied an anonymous alias; alias/redirect URL omitted. Recorded at is PDF alias-fetch start.",
+      "sha256": "caf75fd9f71016b869d1c27aa238c56a8f302a4ae2ce4459647203432e8d600d",
+      "url": "https://api.nva.unit.no/publication/019913c778ff-dc8521c4-eeb9-4fb2-ac17-83acb6271313/filelink/02e585a1-2cd2-4b78-bf4d-b7ecdf7542e5"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.1145/169059.169179",
+      "checked_full_title": "An evaluation of earcons for use in auditory human-computer interfaces",
+      "checked_source_ref": {
+        "id": "SRC-R006-D-BREWSTER-EVALUATION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        44
+      ],
+      "key": "nees-brewster",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "44"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked in the rendered bibliography page; no target paper or empirical result read."
+    },
+    {
+      "checked_doi": "10.1080/10447318.2014.925774",
+      "checked_full_title": "Menu Navigation With In-Vehicle Technologies: Auditory Menu Cues Improve Dual Task Performance, Preference, and Workload",
+      "checked_source_ref": {
+        "id": "SRC-R006-D-JEON-MENUS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "key": "nees-jeon",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "46"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked in the rendered bibliography page; no target paper or empirical result read."
+    },
+    {
+      "checked_doi": "10.1518/001872099779656734",
+      "checked_full_title": "A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons",
+      "checked_source_ref": {
+        "id": "SRC-R006-D-BELZ-CLASS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        34
+      ],
+      "key": "fra-belz",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "26"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked in the rendered bibliography page; no target paper or empirical result read."
+    },
+    {
+      "checked_doi": "10.1080/10447318.2014.925774",
+      "checked_full_title": "Menu Navigation With In-Vehicle Technologies: Auditory Menu Cues Improve Dual Task Performance, Preference, and Workload",
+      "checked_source_ref": {
+        "id": "SRC-R006-D-JEON-MENUS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        38
+      ],
+      "key": "fra-jeon",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "30"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked in the rendered bibliography page; no target paper or empirical result read."
+    },
+    {
+      "checked_doi": "10.1145/169059.169179",
+      "checked_full_title": "An evaluation of earcons for use in auditory human-computer interfaces",
+      "checked_source_ref": {
+        "id": "SRC-R006-D-BREWSTER-EVALUATION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        57
+      ],
+      "key": "ruskin-brewster",
+      "pdf_key": "ruskin",
+      "printed_pages": [
+        "57"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked in the rendered bibliography page; no target paper or empirical result read."
+    },
+    {
+      "checked_doi": "10.1518/001872099779656734",
+      "checked_full_title": "A New Class of Auditory Warning Signals for Complex Systems: Auditory Icons",
+      "checked_source_ref": {
+        "id": "SRC-R006-D-BELZ-CLASS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        42
+      ],
+      "key": "totland-belz",
+      "pdf_key": "totland",
+      "printed_pages": [
+        "42"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked in the rendered bibliography page; no target paper or empirical result read."
+    }
+  ]
+}
