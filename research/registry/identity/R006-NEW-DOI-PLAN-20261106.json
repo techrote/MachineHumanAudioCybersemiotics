@@ -1,0 +1,345 @@
+{
+  "accepted_base": "7b4e41b97e930c5cb732075f51c9067264cc8564",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Explicit identity scope only; unsupported reference-list provenance deferred; no eligibility or independent-study count.",
+  "deferred": [
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-103",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-047",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-064",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-047",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-064",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00029",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005R-C9RUSKIN-00125",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    }
+  ],
+  "issue": 6,
+  "selected": [
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R002-N3-05",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1145/67880.1046599",
+      "hit_ref": {
+        "id": "HIT-R004-LK-BLATTNER-1989-02",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R004-LK-NSAS-ICAD-01",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1145/67880.1046599",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00285",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00501",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-01930",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02208",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02993",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1145/67880.1046599",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00061",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00098",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00351",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00422",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00597",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00009",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00057",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1145/67880.1046599",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00528",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00080",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00006",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00080",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1145/67880.1046599",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00110",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00826",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00001",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1145/67880.1046599",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00061",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT"
+    },
+    {
+      "doi": "10.1080/00140139508925267",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00098",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY"
+    },
+    {
+      "doi": "10.1518/001872007x249929",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00351",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PERRY-2007-COUGH"
+    },
+    {
+      "doi": "10.1145/1518701.1518932",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00422",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS"
+    },
+    {
+      "doi": "10.1177/0018720812450587",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00597",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS"
+    }
+  ],
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-walker-spearcons.json",
+        "sha256": "c196198606718a23774d5b3ed71516cf9db0e55e47a713192a9fec90876aad1d"
+      },
+      "doi": "10.1177/0018720812450587",
+      "source_id": "SRC-R006-WALKER-2013-SPEARCONS",
+      "title": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-edworthy-methodology.json",
+        "sha256": "9c47d7c71b4cd717d72336850a460aed218336812ceb07dc0985ca10fed44d9c"
+      },
+      "doi": "10.1080/00140139508925267",
+      "source_id": "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+      "title": "A user-centred approach to the design and evaluation of auditory warning signals: 1. Methodology"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-garzonis-notifications.json",
+        "sha256": "2ecb55c4c5d3816520d6788d6b70463855623d3ff065fb6295adb47ce66ed53c"
+      },
+      "doi": "10.1145/1518701.1518932",
+      "source_id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+      "title": "Auditory icon and earcon mobile service notifications"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-perry-cough.json",
+        "sha256": "63926cfa0a2827c0f21e0a61ebc1e1df9d392b2e3c36d099f1d5584f89a3c9a3"
+      },
+      "doi": "10.1518/001872007x249929",
+      "source_id": "SRC-R006-PERRY-2007-COUGH",
+      "title": "Cough Once for Danger: Icons Versus Abstract Warnings as Informative Alerts in Civil Aviation"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-blattner-abstract.json",
+        "sha256": "53c16ca85407df1562e3bbc880c9cd9a60890fa55ed90cb7b7e04fbc91f14db4"
+      },
+      "doi": "10.1145/67880.1046599",
+      "source_id": "SRC-R006-BLATTNER-1989-ABSTRACT",
+      "title": "Earcons and Icons: Their Structure and Common Design Principles (Abstract only)"
+    }
+  ]
+}

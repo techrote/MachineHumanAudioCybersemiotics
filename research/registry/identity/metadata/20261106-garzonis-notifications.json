@@ -1,0 +1,135 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "014c609a2836afa2085a640d693c2c8b7339ac1bf13dd0f6495e16e69afa33b1",
+  "record": {
+    "DOI": "10.1145/1518701.1518932",
+    "URL": "https://doi.org/10.1145/1518701.1518932",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Bath, Bath, United Kingdom"
+          }
+        ],
+        "family": "Garzonis",
+        "given": "Stavros",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Bath, Bath, United Kingdom"
+          }
+        ],
+        "family": "Jones",
+        "given": "Simon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Bristol, Bristol, United Kingdom"
+          }
+        ],
+        "family": "Jay",
+        "given": "Tim",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Bath, Bath, United Kingdom"
+          }
+        ],
+        "family": "O'Neill",
+        "given": "Eamonn",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          4,
+          4
+        ]
+      ]
+    },
+    "page": "1513-1522",
+    "published-online": {
+      "date-parts": [
+        [
+          2009,
+          4,
+          4
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          4,
+          4
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "title": [
+      "Auditory icon and earcon mobile service notifications"
+    ],
+    "type": "proceedings-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy"
+  },
+  "requested_doi": "10.1145/1518701.1518932",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T05:03:02Z",
+  "url": "https://api.crossref.org/works/10.1145%2F1518701.1518932"
+}

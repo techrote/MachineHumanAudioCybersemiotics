@@ -241,6 +241,71 @@ AI disclosure: one Codex/GPT-6 agent, 6 November 2026, local metadata comparison
 software self-review and ten regression tests. No new online retrieval, source
 reading, independent human adjudication or scientific acceptance occurred.
 
+## New publication identities from recurring DOI groups — 6 November 2026
+
+The [fixed plan](R006-NEW-DOI-PLAN-20261106.json) and
+[adjudication ledger](R006-NEW-PUBLICATIONS-20261106.json) extend identity work
+beyond already registered verified sources. Fresh Crossref single-work HTTP 200
+responses supplied bibliographic identity metadata for five explicit DOIs. The
+retained [metadata derivatives](metadata/) contain title, authors, dates and
+publication fields, request URL/time and original-response SHA-256. Abstracts and
+unrelated fields were omitted, and original raw response bytes are not committed.
+No article or abstract was read, and no article availability or licence is inferred.
+
+| New metadata-only source | DOI | Resolved occurrences |
+|---|---|---:|
+| Walker et al., *Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus* | `10.1177/0018720812450587` | 6 |
+| Edworthy and Stanton, *A user-centred approach… 1. Methodology* | `10.1080/00140139508925267` | 6 |
+| Garzonis et al., *Auditory icon and earcon mobile service notifications* | `10.1145/1518701.1518932` | 7 |
+| Perry et al., *Cough Once for Danger…* | `10.1518/001872007x249929` | 4 |
+| Blattner et al., *Earcons and Icons… (Abstract only)* | `10.1145/67880.1046599` | 6 |
+
+Each selected occurrence's explicit DOI and full title agree with the retained
+OpenAlex, Crossref or original web-search export and the fresh metadata. Hashes,
+ordinals and work IDs were checked. The pilot Walker result includes the full
+title followed by authors; its raw label and pilot discovery path are retained.
+Five representatives and 24 duplicates preserve every original discovery revision.
+The five new source records have verified **metadata**, `metadata_only` access,
+unknown article-reuse rights, no manifestations, and no article-reading claim.
+These five publication identities do not establish five independent studies.
+
+Dates remain separate assertions. The source `publication_date` explicitly uses
+Crossref's `published-print` field when supplied; the ledger and captures also
+retain `issued` and `published-online`. Walker is online/issued in July 2012 and
+print in February 2013. Edworthy's record reports print/issued November 1995 and
+online March 2007. Perry's retained OpenAlex date differs from Crossref's date
+fields. No original discovery date is rewritten, and no dates are interpreted as
+new empirical-study dates. The abstract-only Blattner DOI stays distinct from the
+full article DOI `10.1207/s15327051hci0401_1`; no alias, publication-family or
+sample-overlap judgment is added.
+
+**Seven reference-list occurrences are deferred**, listed explicitly in the plan
+and ledger. Their rendered/extracted references require a separate provenance
+check; they were not silently accepted from matching DOI text. The earlier
+original 30-candidate queue remains a historical completed batch. This new batch
+reduces all-lane unresolved occurrences **22,464 → 22,435**. No eligibility,
+screening, study, sample, claim or design records are created; issue #6 and the
+corpus gate remain open.
+
+```sh
+python research/registry/identity/scripts/build_r006_new_publications.py --check
+python -m unittest tests.test_screening_new_publications -v
+python tools/validate.py
+```
+
+The builder is offline and reuses the fixed captures, not fresh API responses.
+Its ledger stops drift before canonical writes and preserves later revisions.
+Re-querying Crossref may return changed metadata; retain a new dated capture and
+explicit correction rather than overwriting these frozen inputs.
+Next: verify the seven deferred reference-list occurrences, then continue bounded
+new DOI-group identity batches. Actual screening and study/sample reconciliation
+remain separate obligations.
+
+AI disclosure: one Codex/GPT-6 agent performed fresh bibliographic retrieval,
+metadata comparison, software self-review and twelve regression tests on
+6 November 2026. No independent human adjudication, source-content appraisal,
+empirical extraction or scientific acceptance occurred.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

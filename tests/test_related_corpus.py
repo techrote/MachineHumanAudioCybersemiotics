@@ -29,8 +29,10 @@ def latest(path: Path) -> dict:
 
 
 def record_path(rid: str) -> Path | None:
-    for lane in ("research/sources/related/records", "research/novelty/records", "research/sources/brier/records",
-                 "research/searches/related/records"):
+    # Cross-lane adjudication may resolve an R004 hit to an identity-owned source.
+    # Use the live registry authority rather than a frozen list of four lanes.
+    state = json.loads((ROOT / "research/registry/state.json").read_text(encoding="utf-8"))
+    for lane in state["record_roots"]:
         path = ROOT / lane / f"{rid}.json"
         if path.exists():
             return path

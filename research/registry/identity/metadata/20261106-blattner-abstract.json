@@ -1,0 +1,106 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "f68a28123e68e415d2d50ce6b81053f1a3251c857355ff1f502b4664393baf0c",
+  "record": {
+    "DOI": "10.1145/67880.1046599",
+    "URL": "https://doi.org/10.1145/67880.1046599",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Blattner",
+        "given": "Meera M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Sumikawa",
+        "given": "Denise A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Greenberg",
+        "given": "Robert M.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "ACM SIGCHI Bulletin"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          1989,
+          8
+        ]
+      ]
+    },
+    "page": "123-124",
+    "published-online": {
+      "date-parts": [
+        [
+          1989,
+          8
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1989,
+          8
+        ]
+      ]
+    },
+    "publisher": "Association for Computing Machinery (ACM)",
+    "relation": {},
+    "title": [
+      "Earcons and Icons: Their Structure and Common Design Principles (Abstract only)"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "volume": "21"
+  },
+  "requested_doi": "10.1145/67880.1046599",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T05:03:02Z",
+  "url": "https://api.crossref.org/works/10.1145%2F67880.1046599"
+}

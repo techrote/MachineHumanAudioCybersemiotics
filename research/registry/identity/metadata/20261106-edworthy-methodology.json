@@ -1,0 +1,108 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "05fd49efd115339ae6c1265a25580499acdf9d747317db8b2af840fc5f202c1a",
+  "record": {
+    "DOI": "10.1080/00140139508925267",
+    "URL": "https://doi.org/10.1080/00140139508925267",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Plymouth",
+            "place": [
+              "UK"
+            ]
+          }
+        ],
+        "family": "EDWORTHY",
+        "given": "JUDY",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Southampton",
+            "place": [
+              "UK"
+            ]
+          }
+        ],
+        "family": "STANTON",
+        "given": "NEVILLE",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Ergonomics"
+    ],
+    "issue": "11",
+    "issued": {
+      "date-parts": [
+        [
+          1995,
+          11
+        ]
+      ]
+    },
+    "page": "2262-2280",
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          3,
+          27
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1995,
+          11
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "title": [
+      "A user-centred approach to the design and evaluation of auditory warning signals: 1. Methodology"
+    ],
+    "type": "journal-article",
+    "volume": "38"
+  },
+  "requested_doi": "10.1080/00140139508925267",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T05:03:02Z",
+  "url": "https://api.crossref.org/works/10.1080%2F00140139508925267"
+}
