@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-reference-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T20:05:03Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00006",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-BENNETT-RECOMMENDATION",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-01096",
+          "rev": 2
+        },
+        {
+          "id": "AID-R006-REFERENCE-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ5-01096",
+          "rev": 2
+        },
+        "ordinal": 6,
+        "raw_metadata": "Bennett, C., Dudaryk, R., Crenshaw, N., Edworthy, J., & McNeer, R. (2019). Recommendation of New Medical Alarms Based on Audibility, Identifiability, and Detectability in a Randomized, Simulation-Based Study: Critical Care Medicine, 47(8), 1050–1057. https://doi.org/10.1097/CCM.0000000000003802 | source PDF pp.33–33, reference 6",
+        "resolution_reason": "R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. Byte-derived general-bibliography citation and original page locator checked against fresh same-byte PDF. No eligibility, empirical extraction or independent-study assertion. See research/registry/identity/R006-REFERENCE-G-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1097/CCM.0000000000003802"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C9NLGENERAL",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-G-BENNETT-RECOMMENDATION",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-reference-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T20:05:03Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLFRAPDF-052",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-JEON-DUALTASK",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02270",
+          "rev": 2
+        },
+        {
+          "id": "AID-R006-REFERENCE-G-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-02270",
+          "rev": 2
+        },
+        "ordinal": 52,
+        "raw_metadata": "Jeon, M., Davison, B. K., Nees, M. A., Wilson, J., & Walker, B. N. (2009). Enhanced Auditory Menu Cues Improve Dual Task Performance and are Preferred with In-vehicle Technologies. Proceedings of 1st International Conference on Automotive User Interfaces and Interactive Vehicular Applications, AutomotiveUI 2009, 91. Essen, Germany. doi:10.1145/1620509.1620528.",
+        "resolution_reason": "R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. Original byte-parsed citation checked against fresh same-byte PDF reference pages. No eligibility, empirical extraction or independent-study assertion. See research/registry/identity/R006-REFERENCE-G-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1145/1620509.1620528"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLFRAPDF",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-G-JEON-DUALTASK",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

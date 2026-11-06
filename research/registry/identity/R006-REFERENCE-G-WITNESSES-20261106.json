@@ -1,0 +1,126 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-g-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T20:05:03Z",
+  "limitations": "One agent; no independent human adjudication. One original RL-NL model-rendered short title receives publication-identity corroboration, not faithful original-preprint transcription or review-version equivalence. All original discovery and source access/rights states remain unchanged. Three Ferreira correction-related occurrences stay outside this bibliography scope.",
+  "reading_extent": "Five selected bibliography citations only: Nees AM general references at file/printed pp.33,35 and included list p.46; FRA file pp.36,37 (printed 28,29). No cited target article, whole review/report or empirical result read.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1600; five page images inspected in three contact sheets.",
+  "retention": "PDFs and rendered pages used locally, not committed. Exact public URLs, hashes and page locators retained.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T20:02:59Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    },
+    {
+      "at": "2026-11-06T20:02:59Z",
+      "bytes": 1092751,
+      "expected_sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "fra",
+      "page_count": 43,
+      "pdf_header": true,
+      "sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "url": "https://rosap.ntl.bts.gov/view/dot/60401/dot_60401_DS1.pdf"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.1097/ccm.0000000000003802",
+      "checked_full_title": "Recommendation of New Medical Alarms Based on Audibility, Identifiability, and Detectability in a Randomized, Simulation-Based Study",
+      "checked_source_ref": {
+        "id": "SRC-R006-G-BENNETT-RECOMMENDATION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        33
+      ],
+      "key": "nees-bennett",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "33"
+      ],
+      "visual_check": "Citation title, explicit DOI and author/date context checked in the rendered bibliography page; no cited target article or empirical result read. Fagerlonn subtitle and all literal bibliography wording remain retained."
+    },
+    {
+      "checked_doi": "10.1016/j.apergo.2019.102895",
+      "checked_full_title": "The impact of concurrent linguistic tasks on participants’ identification of spearcons",
+      "checked_source_ref": {
+        "id": "SRC-R006-G-DAVIDSON-LINGUISTIC",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        35
+      ],
+      "key": "nees-davidson",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "35"
+      ],
+      "visual_check": "Citation title, explicit DOI and author/date context checked in the rendered bibliography page; no cited target article or empirical result read. Fagerlonn subtitle and all literal bibliography wording remain retained."
+    },
+    {
+      "checked_doi": "10.1145/3170427.3188696",
+      "checked_full_title": "An Initial Investigation into Non-visual Code Structure Overview Through Speech, Non-speech and Spearcons",
+      "checked_source_ref": {
+        "id": "SRC-R006-G-HUTCHINSON-CODE",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "key": "nees-hutchinson",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "46"
+      ],
+      "visual_check": "Citation title, explicit DOI and author/date context checked in the rendered bibliography page; no cited target article or empirical result read. Fagerlonn subtitle and all literal bibliography wording remain retained."
+    },
+    {
+      "checked_doi": "10.1145/2390256.2390269",
+      "checked_full_title": "Graded auditory warnings during in-vehicle use",
+      "checked_source_ref": {
+        "id": "SRC-R006-G-FAGERLONN-GRADED",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        36
+      ],
+      "key": "fra-fagerlonn",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "28"
+      ],
+      "visual_check": "Citation title, explicit DOI and author/date context checked in the rendered bibliography page; no cited target article or empirical result read. Fagerlonn subtitle and all literal bibliography wording remain retained."
+    },
+    {
+      "checked_doi": "10.1145/1620509.1620528",
+      "checked_full_title": "Enhanced auditory menu cues improve dual task performance and are preferred with in-vehicle technologies",
+      "checked_source_ref": {
+        "id": "SRC-R006-G-JEON-DUALTASK",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        37
+      ],
+      "key": "fra-jeon",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "29"
+      ],
+      "visual_check": "Citation title, explicit DOI and author/date context checked in the rendered bibliography page; no cited target article or empirical result read. Fagerlonn subtitle and all literal bibliography wording remain retained."
+    }
+  ]
+}

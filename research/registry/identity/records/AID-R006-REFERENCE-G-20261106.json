@@ -1,0 +1,160 @@
+{
+  "id": "AID-R006-REFERENCE-G-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-reference-g-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T20:05:03Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLFRAPDF-032",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLFRAPDF-052",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-022",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-022",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00006",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00021",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-BENNETT-RECOMMENDATION",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-DAVIDSON-LINGUISTIC",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-FAGERLONN-GRADED",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-HUTCHINSON-CODE",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-G-JEON-DUALTASK",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-REFERENCE-G-WITNESSES-20261106.json",
+          "research/registry/identity/R006-REFERENCE-G-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-032",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLFRAPDF-052",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-022",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-022",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00006",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00021",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-G-BENNETT-RECOMMENDATION",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-G-DAVIDSON-LINGUISTIC",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-G-FAGERLONN-GRADED",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-G-HUTCHINSON-CODE",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-G-JEON-DUALTASK",
+            "rev": 1
+          }
+        ],
+        "limitations": "No cited target article or whole review/report read; all five target source records remain metadata_only. One model-rendered short title receives publication-identity corroboration only. Source PDFs/renders not committed. No independent human verification, eligibility, version alias, study/sample identity, correction adjudication or corpus acceptance.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-032",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLFRAPDF-052",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-022",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-022",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00006",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00021",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T20:05:03Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify six deferred batch G bibliography identities through two freshly retrieved same-byte PDFs and five visually checked citation witnesses.",
+        "verification_steps": [
+          "Both PDFs returned HTTP 200 and match retained original SHA-256 exactly.",
+          "Rendered/inspected Nees AM general references at file/printed 33,35 and included list 46; FRA file 36,37 (printed 28,29). Inspection limited to five selected citations.",
+          "Checked original export hashes, ordinals, explicit DOI, full titles or one abbreviated prefix, source/page provenance and existing representatives. Preserved literal general-reference wording, Fagerlonn subtitle, Hutchinson outcome letter and Jeon citation page assertion.",
+          "Resolved only the complete six-case deferred bibliography scope; the three Ferreira correction-related occurrences remain untouched and unadmitted."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
