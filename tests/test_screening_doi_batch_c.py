@@ -55,7 +55,8 @@ class DoiBatchCTests(unittest.TestCase):
         self.assertEqual(len(item['hit_refs']),6)
         for ref in item['hit_refs']:
             path=ROOT/f"research/searches/auditory/records/hits/{ref['id']}.json"
-            record=read_json(path);self.assertEqual(len(record['revisions']),1)
+            record=read_json(path)
+            # This frozen batch made no decision; later batches may append one.
             self.assertEqual(record['revisions'][0]['data']['status'],'unresolved')
             self.assertNotIn(str(path.relative_to(ROOT)),self.records)
         self.assertNotIn(item['doi'],{i['doi'] for i in self.plan['sources']})
@@ -66,7 +67,8 @@ class DoiBatchCTests(unittest.TestCase):
         for item in self.plan['deferred']:
             path=f"research/searches/auditory/records/hits/{item['hit_ref']['id']}.json"
             self.assertNotIn(path,self.records)
-            record=read_json(ROOT/path);self.assertEqual(len(record['revisions']),1)
+            record=read_json(ROOT/path)
+            # Preserve the original deferral without prohibiting later resolution.
             self.assertEqual(record['revisions'][0]['data']['status'],'unresolved')
 
     def test_date_assertions_and_discovery_dates_are_not_harmonized(self):

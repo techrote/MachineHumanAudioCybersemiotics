@@ -1,0 +1,192 @@
+{
+  "access_note": "Initial attempt using the previously retained Totland temporary alias returned HTTP 404; failed response bytes and precise request time not retained. Stable public OpenFile filelink endpoint supplied a fresh alias returning HTTP 200 and matching original bytes. Nees/FRA successful retrievals recorded here were repeated after the initial batch receipt was interrupted by that expired alias; earlier successful request times not retained. No access restriction bypassed.",
+  "actor": {
+    "id": "codex-r006-reference-c-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T10:10:09Z",
+  "limitations": "One agent; no independent human adjudication. Four original RL-NL model-rendered short entries receive publication-identity corroboration, not faithful original-preprint transcription, review-version equivalence or empirical evidence. One venue-listing occurrence and six HTML-title occurrences remain unresolved.",
+  "reading_extent": "Eight selected bibliography citations only: Nees AM file/printed pp.33,43,45,49,51; FRA file pp.36,40 (printed 28,32); Totland file/printed p.42. Whole reports/thesis and cited target articles not read.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1600 for each checked page; eight page images inspected in two 2x2 contact sheets.",
+  "retention": "PDFs and rendered pages used locally, not committed. Exact hashes, public source/filelink URLs and file-page locators retained. Temporary NVA alias/redirect URL omitted.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T10:07:41Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    },
+    {
+      "at": "2026-11-06T10:07:55Z",
+      "bytes": 1092751,
+      "expected_sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "fra",
+      "page_count": 43,
+      "pdf_header": true,
+      "sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "url": "https://rosap.ntl.bts.gov/view/dot/60401/dot_60401_DS1.pdf"
+    },
+    {
+      "at": "2026-11-06T10:08:51Z",
+      "bytes": 821130,
+      "expected_sha256": "caf75fd9f71016b869d1c27aa238c56a8f302a4ae2ce4459647203432e8d600d",
+      "filelink_http_status": 200,
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "totland",
+      "page_count": 52,
+      "pdf_header": true,
+      "route_note": "Stable public OpenFile endpoint returned an anonymous download alias; the alias fetch at the recorded time returned the PDF. Filelink request timestamp not separately retained; ephemeral alias and redirect URL omitted.",
+      "sha256": "caf75fd9f71016b869d1c27aa238c56a8f302a4ae2ce4459647203432e8d600d",
+      "url": "https://api.nva.unit.no/publication/019913c778ff-dc8521c4-eeb9-4fb2-ac17-83acb6271313/filelink/02e585a1-2cd2-4b78-bf4d-b7ecdf7542e5"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.4018/ijthi.2018100106",
+      "checked_full_title": "Earcons Versus Auditory Icons in Communicating Computing Events: Learning and User Preference",
+      "checked_source_ref": {
+        "id": "SRC-R006-AMER-2018-EVENTS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        43
+      ],
+      "key": "nees-amer",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "43"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1080/001401399185108",
+      "checked_full_title": "Use of auditory icons as emergency warnings: evaluation within a vehicle collision avoidance application",
+      "checked_source_ref": {
+        "id": "SRC-R006-GRAHAM-1999-COLLISION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        45
+      ],
+      "key": "nees-graham",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "45"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1177/0018720816629279",
+      "checked_full_title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride",
+      "checked_source_ref": {
+        "id": "SRC-R006-NEES-2016-MEMORY",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        49
+      ],
+      "key": "nees-nees",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "49"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.21785/icad2018.029",
+      "checked_full_title": "Examining the Learnability of Auditory Displays: Music, Earcons, Spearcons, and Lyricons",
+      "checked_source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        51
+      ],
+      "key": "nees-tislar",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "51"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.4018/ijthi.2018100106",
+      "checked_full_title": "Earcons Versus Auditory Icons in Communicating Computing Events: Learning and User Preference",
+      "checked_source_ref": {
+        "id": "SRC-R006-AMER-2018-EVENTS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        33
+      ],
+      "key": "nees-amer-general",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "33"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1080/001401399185108",
+      "checked_full_title": "Use of auditory icons as emergency warnings: evaluation within a vehicle collision avoidance application",
+      "checked_source_ref": {
+        "id": "SRC-R006-GRAHAM-1999-COLLISION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        36
+      ],
+      "key": "fra-graham",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "28"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1177/0018720816629279",
+      "checked_full_title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride",
+      "checked_source_ref": {
+        "id": "SRC-R006-NEES-2016-MEMORY",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        40
+      ],
+      "key": "fra-nees",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "32"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.12691/ajphr-2-6-3",
+      "checked_full_title": "Developing and Selecting Auditory Warnings for a Real-Time Behavioral Intervention",
+      "checked_source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        42
+      ],
+      "key": "totland-bellettiere",
+      "pdf_key": "totland",
+      "printed_pages": [
+        "42"
+      ],
+      "visual_check": "Full citation title, explicit DOI and author/date context checked on rendered bibliography page; no target article or empirical result read."
+    }
+  ]
+}
