@@ -1,0 +1,104 @@
+{
+  "id": "SRC-R006-PETOCZ-2008-WARNINGS",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-b-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliography and fixed retained-export identity comparison"
+      },
+      "at": "2026-11-06T07:02:46Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02047",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00373",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00324",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00052",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00373",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-B-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T06:58:06Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Agnes Petocz",
+            "role": "author"
+          },
+          {
+            "name": "Peter E. Keller",
+            "role": "author"
+          },
+          {
+            "name": "Catherine J. Stevens",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Journal of Experimental Psychology: Applied; 14; 2; 165-178"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-b-petocz-warnings.json record.DOI/title/author; HTTP 200 on 2026-11-06T06:58:06Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1037/1076-898x.14.2.165"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-b-petocz-warnings.json record.DOI, title, author and dates; retained derivative SHA256 8e3a1f74a448f8d0d157a7e8520d9b28657b6f8ff4cfaaf46b99aeae3a235a4a",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-B-20261106.json.",
+          "publication_date uses Crossref issued; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2008-06"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Auditory warnings, signal-referent relations, and natural indicators: Re-thinking theory and application.",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -1,0 +1,323 @@
+{
+  "accepted_base": "c390954a2b21d63ea018d611b508b0e0d9e28188",
+  "access_note": "Initial parallel Alseid metadata request returned HTTP 429; missing captures were retried sequentially after local builder work. Only successful HTTP 200 bibliographic derivatives are admitted; initial failed response bytes/request time not retained.",
+  "artifact_kind": "fixed_new_publication_identity_plan",
+  "boundary": "Metadata identity only. Reference-list provenance and title disagreements remain deferred; no eligibility or independent-study inference.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-010",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-021",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-056",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-010",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-021",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-056",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1037/1076-898x.14.2.165",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00068",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS"
+    }
+  ],
+  "issue": 6,
+  "selected": [
+    {
+      "doi": "10.1037/1076-898x.14.2.165",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02047",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS"
+    },
+    {
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02798",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03024",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03333",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING"
+    },
+    {
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03988",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR"
+    },
+    {
+      "doi": "10.1037/1076-898x.14.2.165",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00373",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS"
+    },
+    {
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00549",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00603",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00670",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING"
+    },
+    {
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00848",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR"
+    },
+    {
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00018",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00025",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "doi": "10.1037/1076-898x.14.2.165",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00324",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS"
+    },
+    {
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00011",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "doi": "10.1037/1076-898x.14.2.165",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00052",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS"
+    },
+    {
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00097",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00355",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING"
+    },
+    {
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-01235",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR"
+    },
+    {
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ7-00106",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR"
+    },
+    {
+      "doi": "10.1037/1076-898x.14.2.165",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00373",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS"
+    },
+    {
+      "doi": "10.1109/dese.2011.34",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00549",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS"
+    },
+    {
+      "doi": "10.1177/1071181312561390",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00603",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS"
+    },
+    {
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "hit_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00670",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING"
+    }
+  ],
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-b-alseid-earcons.json",
+        "sha256": "fd848977d361cd017ba89fe46fd351125db390330878f65fca2427f8f20d4cf4"
+      },
+      "doi": "10.1109/dese.2011.34",
+      "source_id": "SRC-R006-ALSEID-2011-EARCONS",
+      "title": "The Role of Earcons and Auditory Icons in the Usability of Avatar-Based E-Learning Interfaces"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-b-suh-speediness.json",
+        "sha256": "759de39c41fa85c08e17d03200b9351b851e51aebff4f36fcbcb329856a5b862"
+      },
+      "doi": "10.1177/1071181312561390",
+      "source_id": "SRC-R006-SUH-2012-SPEEDINESS",
+      "title": "Spearcons Improve Navigation Performance and Perceived Speediness in Korean Auditory Menus"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-b-hofmann-incar.json",
+        "sha256": "7570f7ed1b7d2a5724c26aedcc16d69f916eefe7880af9b5b34c37988619b9a8"
+      },
+      "doi": "10.1007/978-3-319-21834-2_11",
+      "source_id": "SRC-R006-HOFMANN-2016-INCAR",
+      "title": "Evaluation of In-Car SDS Notification Concepts for Incoming Proactive Events"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-b-edworthy-learning.json",
+        "sha256": "8cf509ddbb62c8e3a8f15bd4838ea7561f3d5bfe962bed67c431708eccb45b43"
+      },
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+      "title": "Learning three sets of alarms for the same medical functions: A perspective on the difficulty of learning alarms specified in an international standard"
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-b-petocz-warnings.json",
+        "sha256": "8e3a1f74a448f8d0d157a7e8520d9b28657b6f8ff4cfaaf46b99aeae3a235a4a"
+      },
+      "doi": "10.1037/1076-898x.14.2.165",
+      "source_id": "SRC-R006-PETOCZ-2008-WARNINGS",
+      "title": "Auditory warnings, signal-referent relations, and natural indicators: Re-thinking theory and application."
+    }
+  ]
+}

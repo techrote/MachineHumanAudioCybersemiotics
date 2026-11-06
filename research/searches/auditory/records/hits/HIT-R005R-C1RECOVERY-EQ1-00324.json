@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-b-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliography and fixed retained-export identity comparison"
+      },
+      "at": "2026-11-06T07:02:46Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00324",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-PETOCZ-2008-WARNINGS",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-B-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02047",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-02047",
+          "rev": 2
+        },
+        "ordinal": 324,
+        "raw_metadata": "Auditory warnings, signal-referent relations, and natural indicators: Re-thinking theory and application. | first author: Agnes Petocz | 2008-06-01 | article | https://openalex.org/W1985737286",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-B-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1985737286"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1037/1076-898x.14.2.165"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-PETOCZ-2008-WARNINGS",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

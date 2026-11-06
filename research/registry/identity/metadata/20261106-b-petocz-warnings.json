@@ -1,0 +1,101 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "8ff9848aaa0f7611f3e69557f9a5f6201f804ca945dcb9c09bf746565b4c055a",
+  "record": {
+    "DOI": "10.1037/1076-898x.14.2.165",
+    "URL": "https://doi.org/10.1037/1076-898x.14.2.165",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Petocz",
+        "given": "Agnes",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7579-6515",
+        "affiliation": [],
+        "authenticated-orcid": false,
+        "family": "Keller",
+        "given": "Peter E.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7558-2717",
+        "affiliation": [],
+        "authenticated-orcid": false,
+        "family": "Stevens",
+        "given": "Catherine J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Journal of Experimental Psychology: Applied"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2008,
+          6
+        ]
+      ]
+    },
+    "page": "165-178",
+    "published-online": {
+      "date-parts": [
+        [
+          2008,
+          6
+        ]
+      ]
+    },
+    "publisher": "American Psychological Association (APA)",
+    "relation": {},
+    "title": [
+      "Auditory warnings, signal-referent relations, and natural indicators: Re-thinking theory and application."
+    ],
+    "type": "journal-article",
+    "volume": "14"
+  },
+  "requested_doi": "10.1037/1076-898x.14.2.165",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T06:58:06Z",
+  "url": "https://api.crossref.org/works/10.1037%2F1076-898x.14.2.165"
+}

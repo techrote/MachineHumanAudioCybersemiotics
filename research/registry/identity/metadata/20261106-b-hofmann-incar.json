@@ -1,0 +1,140 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "3e95e59c61c4992c627de063d5e1573f7f78bf5696f6f29d7da84cf68b1c40fb",
+  "record": {
+    "DOI": "10.1007/978-3-319-21834-2_11",
+    "URL": "https://doi.org/10.1007/978-3-319-21834-2_11",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Hofmann",
+        "given": "Hansjörg",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Hermanutz",
+        "given": "Mario",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Tobisch",
+        "given": "Vanessa",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Ehrlich",
+        "given": "Ute",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Berton",
+        "given": "André",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Minker",
+        "given": "Wolfgang",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Signals and Communication Technology",
+      "Situated Dialog in Speech-Based Human-Computer Interaction"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "page": "111-124",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          4,
+          21
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "publisher": "Springer International Publishing",
+    "relation": {},
+    "title": [
+      "Evaluation of In-Car SDS Notification Concepts for Incoming Proactive Events"
+    ],
+    "type": "book-chapter",
+    "update-policy": "https://doi.org/10.1007/springer_crossmark_policy"
+  },
+  "requested_doi": "10.1007/978-3-319-21834-2_11",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T06:58:06Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-319-21834-2_11"
+}
