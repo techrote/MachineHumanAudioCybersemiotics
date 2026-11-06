@@ -91,6 +91,22 @@ def build(root,at,*,profile=None):
             raise ValueError('Unverified target publication identity')
         if witness['checked_source_ref']!=pin(sid) or witness['checked_doi']!=doi or witness['checked_full_title']!=body['title']:
             raise ValueError('PDF witness identity disagreement')
+        comparison_title=body['title']
+        if capture_pin:=witness.get('title_subtitle_capture'):
+            # Explicit opt-in only: use the exact prior DOI ledger's deposited fields,
+            # never a witness-supplied expanded title or a fuzzy similarity rule.
+            prior=next((s for s in previous.get('sources',[]) if s['source_ref']==pin(sid)),None)
+            if label not in {'RL-NL','RL-NLAM'} or prior is None or capture_pin!=prior['capture']:
+                raise ValueError('Title/subtitle capture pin disagreement')
+            capture=json.loads(artifact(capture_pin['path'],capture_pin['sha256']));registered=capture['record']
+            subtitles=registered.get('subtitle',[])
+            if (capture.get('http_status')!=200 or normalize_doi(capture.get('requested_doi',''))!=doi
+                    or normalize_doi(registered.get('DOI',''))!=doi or registered.get('title')!=[body['title']]
+                    or not isinstance(subtitles,list) or len(subtitles)!=1
+                    or not isinstance(subtitles[0],str) or not subtitles[0].strip()
+                    or registered.get('relation') or registered.get('update-to')):
+                raise ValueError('Registered title/subtitle identity disagreement')
+            comparison_title=body['title']+': '+subtitles[0]
         if not witness['file_pages_1based'] or any(p<1 or p>pdf['page_count'] for p in witness['file_pages_1based']):raise ValueError('PDF witness page bounds disagreement')
         representative=representatives[sid];rep_record=read_json(root/representative['path'])
         rep=rep_record['revisions'][representative['output_ref']['rev']-1]
@@ -107,17 +123,24 @@ def build(root,at,*,profile=None):
             locator={'path':exp['path'],'reference_list':label,'item':ordinal}
             if label=='RL-NL':
                 opening=re.search(r': "([^"]+)";',text)
-                if not opening or not key(body['title']).startswith(key(opening[1])):raise ValueError('Abbreviated title disagreement')
+                if not opening:raise ValueError('Abbreviated title disagreement')
+                short,full_title=key(opening[1]),key(comparison_title)
+                if capture_pin:
+                    if (not short.startswith(key(body['title'])+': ')
+                            or not (full_title==short or full_title.startswith(short+' '))):
+                        raise ValueError('Registered title/subtitle prefix disagreement')
+                elif not full_title.startswith(short):raise ValueError('Abbreviated title disagreement')
                 corroborating=next(s for s in export['reference_lists'] if s['label']=='RL-NLAM')
                 full=corroborating['entries'][ordinal-1]
-                if full['ordinal']!=ordinal or doi not in full['text'].lower() or key(body['title']) not in key(full['text']):raise ValueError('Rendered entry lacks matching full citation corroboration')
+                if full['ordinal']!=ordinal or doi not in full['text'].lower() or key(comparison_title) not in key(full['text']):raise ValueError('Rendered entry lacks matching full citation corroboration')
                 if corroborating['manifestation']['sha256']!=pdf['sha256']:raise ValueError('Corroborating PDF hash disagreement')
                 locator['corroborating_reference_list']='RL-NLAM'
                 extent='Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.'
             else:
                 if section['manifestation']['sha256']!=pdf['sha256']:raise ValueError('Reference source PDF hash disagreement')
-                if key(body['title']) not in key(text):raise ValueError('Full citation title disagreement')
+                if key(comparison_title) not in key(text):raise ValueError('Full citation title disagreement')
                 extent='Original byte-parsed citation checked against fresh same-byte PDF reference pages.'
+            if capture_pin:extent+=' Deposited main title and subtitle checked separately in the hash-bound prior DOI capture; only an exact word-boundary prefix of their combined citation form is accepted.'
         elif label=='general':
             section=next(s for s in export['sources'] if s['label']=='nees-liebman-am');row=section['entries'][ordinal-1];text=row['text']
             if section['sha256']!=pdf['sha256'] or [row['file_page_start'],row['file_page_end']]!=[witness['file_pages_1based'][0]]*2:raise ValueError('General-reference source/page disagreement')

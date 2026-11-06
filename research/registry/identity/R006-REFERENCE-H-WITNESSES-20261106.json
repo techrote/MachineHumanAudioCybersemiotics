@@ -1,0 +1,130 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-h-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T23:07:50Z",
+  "limitations": "No cited target article or whole review/report read; all five target source records remain metadata_only. Four model-rendered titles receive publication-identity corroboration only, including one exact word-boundary prefix of the registered main-title-plus-subtitle citation form. Source PDFs/renders not committed. No independent human verification, eligibility, version alias, study/sample identity or corpus acceptance.",
+  "reading_extent": "Five selected bibliography citations only: Nees AM included references at file/printed pp.46,49,50 and Ruskin file/printed p.64. No cited target article, whole review/report or empirical result read.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1600; all four full-page images inspected.",
+  "retention": "PDFs and rendered pages used locally, not committed. Exact public URLs, hashes and page locators retained.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T23:06:01Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    },
+    {
+      "at": "2026-11-06T23:06:01Z",
+      "bytes": 1196825,
+      "expected_sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "ruskin",
+      "page_count": 79,
+      "pdf_header": true,
+      "sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "url": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.1080/00140139.2016.1237677",
+      "checked_full_title": "Semantic congruency of auditory warnings",
+      "checked_source_ref": {
+        "id": "SRC-R006-H-ISHERWOOD-CONGRUENCY",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "key": "nees-isherwood",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "46"
+      ],
+      "visual_check": "Citation title, explicit DOI, author/date context and displayed outcome letters checked on the rendered bibliography page; no cited target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1177/154193120504902213",
+      "checked_full_title": "Multimodal Warnings: Curve-Warning Design",
+      "checked_source_ref": {
+        "id": "SRC-R006-H-NEURAUTER-CURVE",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        49
+      ],
+      "key": "nees-neurauter",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "49"
+      ],
+      "visual_check": "Citation title, explicit DOI, author/date context and displayed outcome letters checked on the rendered bibliography page; no cited target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1177/0018720819879311",
+      "checked_full_title": "Toward a Better Understanding of In-Vehicle Auditory Warnings and Background Noise",
+      "checked_source_ref": {
+        "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        50
+      ],
+      "key": "nees-understanding",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "50"
+      ],
+      "visual_check": "Citation title, explicit DOI, author/date context and displayed outcome letters checked on the rendered bibliography page; no cited target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1145/3027063.3053149",
+      "checked_full_title": "Recognition of Car Warnings",
+      "checked_source_ref": {
+        "id": "SRC-R006-H-SABIC-RECOGNITION",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        50
+      ],
+      "key": "nees-recognition",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "50"
+      ],
+      "title_subtitle_capture": {
+        "path": "research/registry/identity/metadata/20261106-h-sabic-recognition.json",
+        "sha256": "5580ecf434d358da60e6f8fdebca00f3ce06e1ed9474c18183c46cce11c8d8c9"
+      },
+      "visual_check": "Full main title and subtitle, authors, year, proceedings pages 2010–2016, explicit DOI and outcome letters a,b checked in the rendered citation. Deposited title and subtitle remain separate in the prior hash-bound Crossref capture and source main title stays unchanged."
+    },
+    {
+      "checked_doi": "10.1177/0018720816670986",
+      "checked_full_title": "Using a Sequence of Earcons to Monitor Multiple Simulated Patients",
+      "checked_source_ref": {
+        "id": "SRC-R006-H-HICKLING-SEQUENCE",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        64
+      ],
+      "key": "ruskin-hickling",
+      "pdf_key": "ruskin",
+      "printed_pages": [
+        "64"
+      ],
+      "visual_check": "Citation title, explicit DOI, author/date context and displayed outcome letters checked on the rendered bibliography page; no cited target article or empirical result read."
+    }
+  ]
+}
