@@ -35,6 +35,55 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-new-publications-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliographic metadata and retained discovery comparison"
+      },
+      "at": "2026-11-06T05:06:08Z",
+      "basis": [
+        {
+          "id": "HIT-R002-N3-05",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R002-N3",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-WALKER-2013-SPEARCONS",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-NEW-PUBLICATIONS-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 5,
+        "raw_metadata": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus - Bruce N. Walker, Jeffrey Lindsay, Amanda Nance, Yoko Nakano, Dianne K. Palladino, Tilman Dingler, Myounghoon Jeon, 2013 | https://doi.org/10.1177/0018720812450587",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-NEW-PUBLICATIONS-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://doi.org/10.1177/0018720812450587"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R002-N3",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-WALKER-2013-SPEARCONS",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

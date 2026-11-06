@@ -1,0 +1,116 @@
+{
+  "id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-new-publications-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliographic metadata and retained discovery comparison"
+      },
+      "at": "2026-11-06T05:06:08Z",
+      "basis": [
+        {
+          "id": "HIT-R004-LK-NSAS-ICAD-01",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02208",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00422",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00009",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00002",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00001",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00422",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-NEW-PUBLICATIONS-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T05:03:02Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Stavros Garzonis",
+            "role": "author"
+          },
+          {
+            "name": "Simon Jones",
+            "role": "author"
+          },
+          {
+            "name": "Tim Jay",
+            "role": "author"
+          },
+          {
+            "name": "Eamonn O'Neill",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems; 1513-1522"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-garzonis-notifications.json record.DOI/title/author; HTTP 200 on 2026-11-06T05:03:02Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1145/1518701.1518932"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-garzonis-notifications.json record.DOI, title, author and dates; retained derivative SHA256 2ecb55c4c5d3816520d6788d6b70463855623d3ff065fb6295adb47ce66ed53c",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-NEW-PUBLICATIONS-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2009-04-04"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "conference_paper",
+        "title": "Auditory icon and earcon mobile service notifications",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

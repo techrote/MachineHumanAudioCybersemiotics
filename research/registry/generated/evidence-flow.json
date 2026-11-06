@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 138,
+  "current_usable_sources": 143,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 138,
+  "publications": 143,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -127,6 +127,11 @@
       "SRC-R005R-EDWORTHY-2013",
       "SRC-R005R-RUSKIN-2020",
       "SRC-R005R-TOTLAND-2021",
+      "SRC-R006-BLATTNER-1989-ABSTRACT",
+      "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+      "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+      "SRC-R006-PERRY-2007-COUGH",
+      "SRC-R006-WALKER-2013-SPEARCONS",
       "SRC-REL-ATKIN-SEP",
       "SRC-REL-AUDITORY-SIGNS-REVIEW",
       "SRC-REL-AYLETT-2019",
@@ -245,6 +250,11 @@
       "SRC-NOV-VRIEND-2025",
       "SRC-R005R-EDWORTHY-2013",
       "SRC-R005R-RUSKIN-2020",
+      "SRC-R006-BLATTNER-1989-ABSTRACT",
+      "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+      "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+      "SRC-R006-PERRY-2007-COUGH",
+      "SRC-R006-WALKER-2013-SPEARCONS",
       "SRC-REL-AUDITORY-SIGNS-REVIEW",
       "SRC-REL-AYLETT-2019",
       "SRC-REL-BANSAL-2024",
@@ -444,11 +454,11 @@
         "reason": "The engine reports no total hit count",
         "state": "not_reported"
       },
-      "resolved_hits": 2,
+      "resolved_hits": 3,
       "status": "partial",
       "stored_hits": 9,
-      "unique_publications": 2,
-      "unresolved_hits": 7
+      "unique_publications": 3,
+      "unresolved_hits": 6
     },
     {
       "duplicate_hits": 0,
@@ -1508,11 +1518,11 @@
         "reason": "Total-results count not used for a known-item lookup",
         "state": "not_reported"
       },
-      "resolved_hits": 1,
+      "resolved_hits": 2,
       "status": "completed",
       "stored_hits": 3,
-      "unique_publications": 1,
-      "unresolved_hits": 2
+      "unique_publications": 2,
+      "unresolved_hits": 1
     },
     {
       "duplicate_hits": 0,
@@ -1970,11 +1980,11 @@
         "reason": "Total-results count not used for a known-item lookup",
         "state": "not_reported"
       },
-      "resolved_hits": 0,
+      "resolved_hits": 1,
       "status": "completed",
       "stored_hits": 3,
-      "unique_publications": 0,
-      "unresolved_hits": 3
+      "unique_publications": 1,
+      "unresolved_hits": 2
     },
     {
       "duplicate_hits": 0,
@@ -4399,26 +4409,26 @@
       "unresolved_hits": 10
     },
     {
-      "duplicate_hits": 3,
+      "duplicate_hits": 6,
       "id": "SRCH-R005R-C1LOAD-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 4,
+      "resolved_hits": 9,
       "status": "partial",
       "stored_hits": 4200,
-      "unique_publications": 4,
-      "unresolved_hits": 4196
+      "unique_publications": 9,
+      "unresolved_hits": 4191
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 6,
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 1,
+      "resolved_hits": 6,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 1,
-      "unresolved_hits": 2111
+      "unique_publications": 6,
+      "unresolved_hits": 2106
     },
     {
       "duplicate_hits": 1,
@@ -4432,26 +4442,26 @@
       "unresolved_hits": 4650
     },
     {
-      "duplicate_hits": 3,
+      "duplicate_hits": 7,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 3,
+      "resolved_hits": 7,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 3,
-      "unresolved_hits": 997
+      "unique_publications": 7,
+      "unresolved_hits": 993
     },
     {
-      "duplicate_hits": 2,
+      "duplicate_hits": 3,
       "id": "SRCH-R005R-C1RECOVERY-EQ2",
       "mode": "production",
       "reported_count": 556,
-      "resolved_hits": 2,
+      "resolved_hits": 3,
       "status": "completed",
       "stored_hits": 556,
-      "unique_publications": 2,
-      "unresolved_hits": 554
+      "unique_publications": 3,
+      "unresolved_hits": 553
     },
     {
       "duplicate_hits": 0,
@@ -4476,15 +4486,15 @@
       "unresolved_hits": 585
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 6,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 1,
+      "resolved_hits": 6,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 1,
-      "unresolved_hits": 1599
+      "unique_publications": 6,
+      "unresolved_hits": 1594
     },
     {
       "duplicate_hits": 0,
@@ -4498,15 +4508,15 @@
       "unresolved_hits": 537
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 2,
       "id": "SRCH-R005R-C1RECOVERY-EQ7",
       "mode": "production",
       "reported_count": 153,
-      "resolved_hits": 1,
+      "resolved_hits": 2,
       "status": "completed",
       "stored_hits": 153,
-      "unique_publications": 1,
-      "unresolved_hits": 152
+      "unique_publications": 2,
+      "unresolved_hits": 151
     },
     {
       "duplicate_hits": 2,
@@ -4545,15 +4555,15 @@
       "unresolved_hits": 585
     },
     {
-      "duplicate_hits": 1,
+      "duplicate_hits": 6,
       "id": "SRCH-R005R-C1SORT-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 1,
+      "resolved_hits": 6,
       "status": "partial",
       "stored_hits": 800,
-      "unique_publications": 1,
-      "unresolved_hits": 799
+      "unique_publications": 6,
+      "unresolved_hits": 794
     },
     {
       "duplicate_hits": 0,
@@ -4669,7 +4679,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 138,
+  "source_record_ids": 143,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

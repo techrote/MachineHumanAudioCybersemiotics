@@ -1,0 +1,184 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "b6e69a812b59731cb0defc2d4fb1f31e1d708de34750d5a5728be4c126deb00b",
+  "record": {
+    "DOI": "10.1177/0018720812450587",
+    "URL": "https://doi.org/10.1177/0018720812450587",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Lindsay",
+        "given": "Jeffrey",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Nance",
+        "given": "Amanda",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Nakano",
+        "given": "Yoko",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Palladino",
+        "given": "Dianne K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Dingler",
+        "given": "Tilman",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, Georgia"
+          }
+        ],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2012,
+          7,
+          2
+        ]
+      ]
+    },
+    "page": "157-182",
+    "published-online": {
+      "date-parts": [
+        [
+          2012,
+          7,
+          2
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2013,
+          2
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "55"
+  },
+  "requested_doi": "10.1177/0018720812450587",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T05:03:02Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720812450587"
+}

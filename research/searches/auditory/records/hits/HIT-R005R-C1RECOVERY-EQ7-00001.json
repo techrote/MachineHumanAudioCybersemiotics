@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-new-publications-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliographic metadata and retained discovery comparison"
+      },
+      "at": "2026-11-06T05:06:08Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ7-00001",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1RECOVERY-EQ7",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-NEW-PUBLICATIONS-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-LK-NSAS-ICAD-01",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R004-LK-NSAS-ICAD-01",
+          "rev": 2
+        },
+        "ordinal": 1,
+        "raw_metadata": "Auditory icon and earcon mobile service notifications | first author: Stavros Garzonis | 2009-04-04 | conference-paper | https://openalex.org/W2133337274",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-NEW-PUBLICATIONS-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2133337274"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1145/1518701.1518932"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1RECOVERY-EQ7",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-GARZONIS-2009-NOTIFICATIONS",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

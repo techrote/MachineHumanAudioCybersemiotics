@@ -1,0 +1,134 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "00e3576e864478a4a8a6654817f589aa1351d80d9d2f5ef1ec6a31cb5d74e737",
+  "record": {
+    "DOI": "10.1518/001872007x249929",
+    "URL": "https://doi.org/10.1518/001872007x249929",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "University of Western Sydney-Bankstown, South Penrith, Australia"
+          }
+        ],
+        "family": "Perry",
+        "given": "Nathan C.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Western Sydney-Bankstown, South Penrith, Australia,"
+          }
+        ],
+        "family": "Stevens",
+        "given": "Catherine J.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Western Sydney-Bankstown, South Penrith, Australia"
+          }
+        ],
+        "family": "Wiggins",
+        "given": "Mark W.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "University of Western Sydney-Bankstown, South Penrith, Australia"
+          }
+        ],
+        "family": "Howell",
+        "given": "Clare E.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "6",
+    "issued": {
+      "date-parts": [
+        [
+          2007,
+          12
+        ]
+      ]
+    },
+    "page": "1061-1071",
+    "published-online": {
+      "date-parts": [
+        [
+          2007,
+          12,
+          1
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2007,
+          12
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Cough Once for Danger: Icons Versus Abstract Warnings as Informative Alerts in Civil Aviation"
+    ],
+    "type": "journal-article",
+    "volume": "49"
+  },
+  "requested_doi": "10.1518/001872007x249929",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T05:03:02Z",
+  "url": "https://api.crossref.org/works/10.1518%2F001872007x249929"
+}

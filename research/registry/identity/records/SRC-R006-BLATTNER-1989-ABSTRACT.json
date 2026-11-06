@@ -1,0 +1,108 @@
+{
+  "id": "SRC-R006-BLATTNER-1989-ABSTRACT",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-new-publications-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh Crossref bibliographic metadata and retained discovery comparison"
+      },
+      "at": "2026-11-06T05:06:08Z",
+      "basis": [
+        {
+          "id": "HIT-R004-LK-BLATTNER-1989-02",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-00285",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ5-00061",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00528",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ5-00110",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00061",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-NEW-PUBLICATIONS-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T05:03:02Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Meera M. Blattner",
+            "role": "author"
+          },
+          {
+            "name": "Denise A. Sumikawa",
+            "role": "author"
+          },
+          {
+            "name": "Robert M. Greenberg",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "ACM SIGCHI Bulletin; 21; 1; 123-124"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-blattner-abstract.json record.DOI/title/author; HTTP 200 on 2026-11-06T05:03:02Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1145/67880.1046599"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-blattner-abstract.json record.DOI, title, author and dates; retained derivative SHA256 53c16ca85407df1562e3bbc880c9cd9a60890fa55ed90cb7b7e04fbc91f14db4",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-NEW-PUBLICATIONS-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "1989-08"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Earcons and Icons: Their Structure and Common Design Principles (Abstract only)",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
