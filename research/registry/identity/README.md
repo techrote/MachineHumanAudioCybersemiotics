@@ -306,6 +306,67 @@ metadata comparison, software self-review and twelve regression tests on
 6 November 2026. No independent human adjudication, source-content appraisal,
 empirical extraction or scientific acceptance occurred.
 
+## Deferred bibliography identities — 6 November 2026
+
+The [seven-occurrence ledger](R006-REFERENCE-TRANCHE-20261106.json) resolves the
+seven reference-list cases deferred by the new-publication batch. The
+[source witness receipt](R006-REFERENCE-WITNESSES-20261106.json) records three
+fresh HTTP 200 PDF retrievals, all matching the retained original SHA-256 exactly,
+and five citation witnesses checked in rendered reference pages.
+
+| Source bibliography inspected | File pages checked | Cited publication identity |
+|---|---|---|
+| Nees/Liebman accepted manuscript | 36, 49, 51 | Edworthy/Stanton methodology; Perry aviation warnings; Walker spearcons |
+| FRA *In-Vehicle Auditory Alerts Literature Review* | 41–42, printed 33–34 | Walker citation spans the page break |
+| Ruskin et al. *ATC Signaling Systems* report | 71 | Perry citation, matching retained line/coordinate provenance |
+
+Original export hashes, list/entry ordinals, explicit DOI, full title or declared
+short-title prefix, and existing resolved representative were checked. For the
+two `RL-NL` model-rendered abbreviated occurrences, a matching full citation in
+the hash-matched Nees accepted manuscript supplies **corroboration of the cited
+publication identity**. It does not prove faithful transcription of the original
+preprint/Academia page, restore omitted text or establish equivalence of review
+versions. Original labels, abbreviations and model-render provenance remain in
+the old revisions and new verification limits. Outcome-letter prefixes remain
+literal discovery text; no result interpretation or independent-evidence count
+is inferred. The original partial search statuses are unchanged.
+
+All seven become duplicates of existing publication representatives; no new
+source record is created. Target source records remain `metadata_only`: the
+cited target articles were not retrieved or read. Inspection was limited to the
+selected bibliography citations in the three containing reviews/reports, not
+whole-report reading or empirical extraction. Original source states, rights,
+source-version distinctions and all discovery revisions remain intact.
+
+All-lane unresolved discovery falls **22,435 → 22,428**. The five-publication
+batch now accounts for **29 + 7 = 36** resolved occurrences, with no remaining
+exact-identifier candidates for currently registered verified sources. This
+closes that bounded identity tranche, not issue #6 or the corpus gate. The
+remaining unresolved DOI groups, eligibility screening, study/sample identities,
+selected corpus and bias assessment still require work.
+
+```sh
+python research/registry/identity/scripts/build_r006_reference_tranche.py --check
+python -m unittest tests.test_screening_reference_tranche -v
+python tools/validate.py
+```
+
+The offline builder reproduces the fixed receipt/ledger and canonical revision
+prefixes; it does not re-download PDFs or prove the recorded visual observations.
+To repeat the source check, retrieve the receipt's exact URLs, require the same
+SHA-256, then inspect its file-page locators. Changed bytes require a new dated
+provenance/correction decision. Source PDFs and rendered pages were used locally
+and are not committed; the receipt retains exact hashes, URLs and reading extent.
+Next: continue bounded new-publication admission from remaining DOI groups, then
+perform actual protocol-governed screening without treating metadata identity as
+eligibility or sample independence.
+
+AI disclosure: one Codex/GPT-6 agent performed retrieval, bibliography inspection,
+metadata comparison, software self-review and ten regression tests on
+6 November 2026. No independent human adjudication or scientific acceptance is
+claimed. Source-reading extent is logged in the performed assistance record and
+receipt; no complete source reading is asserted.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

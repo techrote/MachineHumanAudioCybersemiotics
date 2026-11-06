@@ -1,0 +1,155 @@
+{
+  "id": "AID-R006-REFERENCE-TRANCHE-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-reference-provenance-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; urllib same-byte PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T06:11:11Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLFRAPDF-103",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-047",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-064",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-047",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-064",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9NLGENERAL-00029",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C9RUSKIN-00125",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-PERRY-2007-COUGH",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-WALKER-2013-SPEARCONS",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-REFERENCE-WITNESSES-20261106.json",
+          "research/registry/identity/R006-REFERENCE-TRANCHE-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-103",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-047",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-064",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-047",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-064",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00029",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C9RUSKIN-00125",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-PERRY-2007-COUGH",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-WALKER-2013-SPEARCONS",
+            "rev": 1
+          }
+        ],
+        "limitations": "No cited target article was retrieved/read; target source records remain metadata_only. Selected review/report reference pages were checked, not complete reports or empirical results. One agent; no independent human verification, version alias, sample identity, eligibility or corpus acceptance. PDFs/renders are not committed; exact receipt hashes/URLs and locators are retained.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-RLFRAPDF-103",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-047",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-064",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-047",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-064",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9NLGENERAL-00029",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C9RUSKIN-00125",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T06:11:11Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify seven deferred bibliography occurrence identities using three freshly retrieved hash-matched review/report PDFs and five visually checked citation witnesses.",
+        "verification_steps": [
+          "All three retrieved PDFs returned HTTP 200 and match the retained original SHA-256 exactly.",
+          "Rendered/inspected Nees AM file pages 36,49,51; FRA 41-42 (citation spans page break); Ruskin 71. Inspection limited to selected bibliography citations.",
+          "Checked original export/hash/ordinal, full or explicitly abbreviated title, explicit DOI and existing resolved representative. Two rendered short entries receive corroboration, not transcription/source-version acceptance."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

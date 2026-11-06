@@ -1,0 +1,140 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-provenance-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T06:09:09Z",
+  "limitations": "One agent; no independent human source-fidelity adjudication. Two old model-rendered abbreviated entries are corroborated against the Nees AM citation, not upgraded to faithful original-preprint transcription or independent evidence.",
+  "reading_extent": "Selected bibliography citations only: Nees AM file pages 36/49/51, FRA 41-42, Ruskin 71. Full reports and cited target articles were not read.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1400 for each checked page; page images inspected by the agent.",
+  "retention": "Original PDFs and rendered pages used locally; not committed. Retained URLs, exact SHA-256 and bibliographic identity observations permit same-byte rechecking.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T06:05:51Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    },
+    {
+      "at": "2026-11-06T06:05:51Z",
+      "bytes": 1092751,
+      "expected_sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "fra",
+      "page_count": 43,
+      "pdf_header": true,
+      "sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "url": "https://rosap.ntl.bts.gov/view/dot/60401/dot_60401_DS1.pdf"
+    },
+    {
+      "at": "2026-11-06T06:05:51Z",
+      "bytes": 1196825,
+      "expected_sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "ruskin",
+      "page_count": 79,
+      "pdf_header": true,
+      "sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "url": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.1080/00140139508925267",
+      "checked_full_title": "A user-centred approach to the design and evaluation of auditory warning signals: 1. Methodology",
+      "checked_source_ref": {
+        "id": "SRC-R006-EDWORTHY-1995-METHODOLOGY",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        36
+      ],
+      "key": "nees-edworthy",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "36"
+      ],
+      "visual_check": "DOI, full citation title and author/date context checked in rendered reference page(s); no empirical result extracted."
+    },
+    {
+      "checked_doi": "10.1518/001872007x249929",
+      "checked_full_title": "Cough Once for Danger: Icons Versus Abstract Warnings as Informative Alerts in Civil Aviation",
+      "checked_source_ref": {
+        "id": "SRC-R006-PERRY-2007-COUGH",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        49
+      ],
+      "key": "nees-perry",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "49"
+      ],
+      "visual_check": "DOI, full citation title and author/date context checked in rendered reference page(s); no empirical result extracted."
+    },
+    {
+      "checked_doi": "10.1177/0018720812450587",
+      "checked_full_title": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus",
+      "checked_source_ref": {
+        "id": "SRC-R006-WALKER-2013-SPEARCONS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        51
+      ],
+      "key": "nees-walker",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "51"
+      ],
+      "visual_check": "DOI, full citation title and author/date context checked in rendered reference page(s); no empirical result extracted."
+    },
+    {
+      "checked_doi": "10.1177/0018720812450587",
+      "checked_full_title": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus",
+      "checked_source_ref": {
+        "id": "SRC-R006-WALKER-2013-SPEARCONS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        41,
+        42
+      ],
+      "key": "fra-walker",
+      "pdf_key": "fra",
+      "printed_pages": [
+        "33",
+        "34"
+      ],
+      "visual_check": "DOI, full citation title and author/date context checked in rendered reference page(s); no empirical result extracted."
+    },
+    {
+      "checked_doi": "10.1518/001872007x249929",
+      "checked_full_title": "Cough Once for Danger: Icons Versus Abstract Warnings as Informative Alerts in Civil Aviation",
+      "checked_source_ref": {
+        "id": "SRC-R006-PERRY-2007-COUGH",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        71
+      ],
+      "key": "ruskin-perry",
+      "pdf_key": "ruskin",
+      "printed_pages": [
+        "71"
+      ],
+      "visual_check": "DOI, full citation title and author/date context checked in rendered reference page(s); no empirical result extracted."
+    }
+  ]
+}
