@@ -1,0 +1,176 @@
+{
+  "id": "AID-R006-REFERENCE-E-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-reference-e-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T15:04:42Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLNL-007",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-027",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-057",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNL-063",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-007",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-027",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-057",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RLNLAM-063",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-BONEBRIGHT-EARCONS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-JEON-SPINDEX",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-SUN-LYRICON",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-WALKER-MOBILE",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-REFERENCE-E-WITNESSES-20261106.json",
+          "research/registry/identity/R006-REFERENCE-E-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005-RLNL-007",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-027",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-057",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNL-063",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-007",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-027",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-057",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RLNLAM-063",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-E-BONEBRIGHT-EARCONS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-E-JEON-SPINDEX",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-E-SUN-LYRICON",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-E-WALKER-MOBILE",
+            "rev": 1
+          }
+        ],
+        "limitations": "Four cited target publications remain metadata_only. Four RL-NL model-rendered entries receive identity corroboration only (three truncated titles, one full title); no faithful preprint transcription or review-version equivalence. PDF/renders not committed; no independent human verification, eligibility, study/sample identity or corpus acceptance.",
+        "output_refs": [
+          {
+            "id": "HIT-R005-RLNL-007",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-027",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-057",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNL-063",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-007",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-027",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-057",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RLNLAM-063",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T15:04:42Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Verify eight deferred batch E bibliography occurrences through one freshly retrieved same-byte PDF and four visual citation witnesses.",
+        "verification_steps": [
+          "Nees accepted manuscript returned HTTP 200 and matches retained original SHA-256 exactly.",
+          "Rendered and inspected four selected citations at file/printed pages 44,46,50,51. No target-article or whole-review reading.",
+          "Checked original export/hash/ordinal, full title or original model-rendered prefix, explicit DOI and existing representative. Preserved doubled DOI resolver prefix, outcome letters and all discovery fields.",
+          "Eight bibliography cases plus two remaining title cases exactly partition the hash-bound parent deferred scope."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

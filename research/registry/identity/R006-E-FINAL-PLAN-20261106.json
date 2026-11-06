@@ -1,0 +1,78 @@
+{
+  "accepted_base": "0b088db1aa83149fea94d98c0a7aac0601970c88",
+  "artifact_kind": "fixed_subtitle_identity_adjudication_plan",
+  "boundary": "One new journal publication with abstract_only access; conference source unchanged and metadata_only. No verified DOI for journal assigned, no alias or family/study/sample/eligibility decision. Potential conference/journal overlap remains a later study/sample gate.",
+  "conference_publication_date": "2010-04-10",
+  "decision": "Resolve the two occurrences to the distinct 2012 AES journal publication using exact publisher title, all four authors, journal/volume/pages and retained AES item URL. Reject the retained ACM DOI as evidence for journal identity: Crossref title/subtitle authors, 2010 CHI venue and pages identify the separate conference report. Preserve every original DOI/date/ID assertion. No database-work alias or sample independence follows.",
+  "fresh_crossref": {
+    "path": "research/registry/identity/metadata/20261106-e-jeon-subtitle.json",
+    "sha256": "a6c07776ea6dfd4bb6adc13a0e5003149c7a82b431729c80d6d9f12476c63214"
+  },
+  "full_title": "Auditory menus are not just spoken visual menus: a case study of \"unavailable\" menu items",
+  "incidental_exposure": {
+    "access_status": "abstract_only",
+    "extent": "General web search results incidentally exposed a short third-party abstract fragment. It was not checked against the primary abstract, appraised or used for identity, eligibility or empirical claims. This is tool-mediated fragment exposure, not complete abstract or article reading. The association of this secondary fragment with either report is not adjudicated.",
+    "url": "https://www.academia.edu/69210255/Auditory_menus_are_not_just_spoken_visual_menus_a_case_study_of_unavailable_menu_items"
+  },
+  "new_source_id": "SRC-R006-E-JEON-2012-AES",
+  "parent_plan": {
+    "path": "research/registry/identity/R006-DOI-E-PLAN-20261106.json",
+    "sha256": "96dd5d9e61e1af231e09fde426d37700959d0cb92c85444dfdad37e9425758e5"
+  },
+  "previous_crossref": {
+    "path": "research/registry/identity/metadata/20261106-e-jeon-unavailable.json",
+    "sha256": "0a3b1a9cc26c84f030d6bc13e80b76b6b504266a7e3e85003be3856c2358d318"
+  },
+  "previous_ledger": {
+    "path": "research/registry/identity/R006-DOI-E-20261106.json",
+    "sha256": "df41b0baec1feca1ac6afe8f3ad4b182e8056c48e580e23196ffe975649ffb5a"
+  },
+  "publisher": {
+    "path": "research/registry/identity/metadata/20261106-e-jeon-aes2012.json",
+    "sha256": "cc94f9f7a09bcdce3c12366ec678c41f55bcafaa13e72d790ab00e5abfd521c8"
+  },
+  "publisher_publication_date": "2012-07-06",
+  "publisher_reading_extent": "Publisher abstract exposed in full through web search while checking bibliographic identity; not appraised, extracted or treated as full-paper reading. No article PDF or methods/results section retrieved/read.",
+  "quote_mapping": {
+    "“": "\"",
+    "”": "\""
+  },
+  "reference_subplan": {
+    "path": "research/registry/identity/R006-REFERENCE-E-PLAN-20261106.json",
+    "sha256": "92a8f561912c87f328093748e232882e5e1444d097c520cb6e86477cea415994"
+  },
+  "retained_biblio": {
+    "first_page": "505",
+    "issue": null,
+    "last_page": "518",
+    "volume": "60"
+  },
+  "retained_index_title": "Auditory Menus Are Not Just Spoken Visual Menus: A Case Study of “Unavailable” Menu Items",
+  "retained_publication_date": "2012-08-27",
+  "retained_venue_url": "https://www.aes.org/e-lib/browse.cfm?elib=16362",
+  "retained_work_id": "https://openalex.org/W1492156475",
+  "selected": [
+    {
+      "defer_reason": "Retained full title disagrees with Crossref under case/whitespace-only comparison",
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03013",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    },
+    {
+      "defer_reason": "Retained full title disagrees with Crossref under case/whitespace-only comparison",
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    }
+  ],
+  "source_ref": {
+    "id": "SRC-R006-E-JEON-UNAVAILABLE",
+    "rev": 1
+  }
+}

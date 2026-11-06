@@ -1,0 +1,103 @@
+{
+  "accepted_base": "0b088db1aa83149fea94d98c0a7aac0601970c88",
+  "artifact_kind": "fixed_reference_identity_subplan",
+  "boundary": "Eight bibliography cases; the two remaining title cases are separately adjudicated by R006-E-FINAL-20261106.json. Publication identities only, no eligibility or scientific acceptance.",
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1002/acp.1457",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-007",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/1952383.1952385",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-027",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-SPINDEX"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-057",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SUN-LYRICON"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-063",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WALKER-MOBILE"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1002/acp.1457",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-007",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-BONEBRIGHT-EARCONS"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1145/1952383.1952385",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-027",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-SPINDEX"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-057",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-SUN-LYRICON"
+    },
+    {
+      "defer_reason": "Unreviewed bibliography or discovery export format",
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-063",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-WALKER-MOBILE"
+    }
+  ],
+  "parent_plan": {
+    "path": "research/registry/identity/R006-DOI-E-PLAN-20261106.json",
+    "sha256": "96dd5d9e61e1af231e09fde426d37700959d0cb92c85444dfdad37e9425758e5"
+  },
+  "remaining_deferred": [
+    {
+      "defer_reason": "Retained full title disagrees with Crossref under case/whitespace-only comparison",
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03013",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    },
+    {
+      "defer_reason": "Retained full title disagrees with Crossref under case/whitespace-only comparison",
+      "doi": "10.1145/1753846.1753978",
+      "hit_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-E-JEON-UNAVAILABLE"
+    }
+  ]
+}

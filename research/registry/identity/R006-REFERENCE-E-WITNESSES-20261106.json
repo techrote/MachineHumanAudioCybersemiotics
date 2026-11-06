@@ -1,0 +1,97 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-e-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T15:04:42Z",
+  "limitations": "One agent, no independent human adjudication. Four original RL-NL model-rendered entries receive identity corroboration only (three titles are truncated; Bonebright is not). No original-preprint transcription or version-equivalence claim.",
+  "reading_extent": "Four selected bibliography citations only: Nees accepted manuscript file/printed pages 44,46,50,51. No target articles, whole review or empirical result read.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1600; four citation-page images inspected in two contact sheets.",
+  "retention": "Source PDF and rendered pages inspected locally, not committed; public URL, exact hash and page locators retained.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T15:02:20Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.1002/acp.1457",
+      "checked_full_title": "Most earcons do not interfere with spoken passage comprehension",
+      "checked_source_ref": {
+        "id": "SRC-R006-E-BONEBRIGHT-EARCONS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        44
+      ],
+      "key": "nees-bonebright",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "44"
+      ],
+      "visual_check": "Full title, DOI and author/date citation context checked in rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1145/1952383.1952385",
+      "checked_full_title": "Spindex (Speech Index) Improves Auditory Menu Acceptance and Navigation Performance",
+      "checked_source_ref": {
+        "id": "SRC-R006-E-JEON-SPINDEX",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "key": "nees-spindex",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "46"
+      ],
+      "visual_check": "Full title, DOI and author/date citation context checked in rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1007/978-3-319-20898-5_37",
+      "checked_full_title": "Lyricon (Lyrics + Earcons) Improves Identification of Auditory Cues",
+      "checked_source_ref": {
+        "id": "SRC-R006-E-SUN-LYRICON",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        50
+      ],
+      "key": "nees-sun",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "50"
+      ],
+      "visual_check": "Full title, DOI and author/date citation context checked in rendered bibliography page; no target article or empirical result read."
+    },
+    {
+      "checked_doi": "10.1007/978-3-642-02710-9_49",
+      "checked_full_title": "Spearcon Performance and Preference for Auditory Menus on a Mobile Phone",
+      "checked_source_ref": {
+        "id": "SRC-R006-E-WALKER-MOBILE",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        51
+      ],
+      "key": "nees-walker",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "51"
+      ],
+      "visual_check": "Full title, DOI and author/date citation context checked in rendered bibliography page; no target article or empirical result read."
+    }
+  ]
+}

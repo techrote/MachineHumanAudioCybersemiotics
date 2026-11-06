@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-reference-e-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+      },
+      "at": "2026-11-06T15:04:42Z",
+      "basis": [
+        {
+          "id": "HIT-R005-RLNLAM-063",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-WALKER-MOBILE",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02165",
+          "rev": 2
+        },
+        {
+          "id": "AID-R006-REFERENCE-E-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-02165",
+          "rev": 2
+        },
+        "ordinal": 63,
+        "raw_metadata": "[a,b] Walker, B. N., & Kogan, A. (2009). Spearcon Performance and Preference for Auditory Menus on a Mobile Phone. In C. Stephanidis (Ed.), Universal Access in Human-Computer Interaction. Intelligent and Ubiquitous Interaction Environments (pp. 445–454). Springer. https://doi.org/10.1007/978-3-642-02710-9_49",
+        "resolution_reason": "R006: reference publication identity checked against retained export, accepted DOI/title metadata and fresh hash-matched PDF bibliography witness. Original byte-parsed citation checked against fresh same-byte PDF reference pages. No eligibility, empirical extraction or independent-study assertion. See research/registry/identity/R006-REFERENCE-E-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "doi",
+            "value": "10.1007/978-3-642-02710-9_49"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-RLNLAM",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-E-WALKER-MOBILE",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,
