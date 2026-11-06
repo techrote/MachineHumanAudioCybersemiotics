@@ -1,0 +1,114 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-b-20261106",
+    "kind": "agent",
+    "model": "GPT-6"
+  },
+  "artifact_kind": "source_pdf_bibliographic_identity_receipt",
+  "checked_at": "2026-11-06T08:04:33Z",
+  "limitations": "One Codex/GPT-6 agent; no independent human adjudication. Four older RL-NL model-rendered abbreviations are corroborated against full accepted-manuscript citations, not upgraded to faithful original-preprint transcription or review-version equivalence.",
+  "reading_extent": "Five selected bibliography citations only: Nees AM file pages 40,43,44,46,50 (printed page numbers coincide). No whole-report or target article/chapter reading.",
+  "rendering": "pdftoppm -png -singlefile -scale-to 1800 for each selected page; all five rendered page images inspected in a contact sheet.",
+  "retention": "PDF and renders used locally, not committed. Exact URL/hash and page locators permit same-byte rechecking.",
+  "retrievals": [
+    {
+      "at": "2026-11-06T08:02:31Z",
+      "bytes": 2721676,
+      "expected_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "hash_matches": true,
+      "http_status": 200,
+      "key": "nees-am",
+      "page_count": 52,
+      "pdf_header": true,
+      "sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "url": "https://osf.io/download/zaqbh/"
+    }
+  ],
+  "witnesses": [
+    {
+      "checked_doi": "10.1109/dese.2011.34",
+      "checked_full_title": "The Role of Earcons and Auditory Icons in the Usability of Avatar-Based E-Learning Interfaces",
+      "checked_source_ref": {
+        "id": "SRC-R006-ALSEID-2011-EARCONS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        43
+      ],
+      "key": "nees-alseid",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "43"
+      ],
+      "visual_check": "DOI, full title and author/year context checked on the rendered bibliography page; no target-paper or empirical-result reading."
+    },
+    {
+      "checked_doi": "10.1016/j.apergo.2013.10.003",
+      "checked_full_title": "Learning three sets of alarms for the same medical functions: A perspective on the difficulty of learning alarms specified in an international standard",
+      "checked_source_ref": {
+        "id": "SRC-R006-EDWORTHY-2014-LEARNING",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        44
+      ],
+      "key": "nees-edworthy",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "44"
+      ],
+      "visual_check": "DOI, full title and author/year context checked on the rendered bibliography page; no target-paper or empirical-result reading. The bibliography repeats the https://doi.org/ prefix; this original text is preserved, and the explicit DOI suffix identifies the publication."
+    },
+    {
+      "checked_doi": "10.1007/978-3-319-21834-2_11",
+      "checked_full_title": "Evaluation of In-Car SDS Notification Concepts for Incoming Proactive Events",
+      "checked_source_ref": {
+        "id": "SRC-R006-HOFMANN-2016-INCAR",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "key": "nees-hofmann",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "46"
+      ],
+      "visual_check": "DOI, full title and author/year context checked on the rendered bibliography page; no target-paper or empirical-result reading."
+    },
+    {
+      "checked_doi": "10.1177/1071181312561390",
+      "checked_full_title": "Spearcons Improve Navigation Performance and Perceived Speediness in Korean Auditory Menus",
+      "checked_source_ref": {
+        "id": "SRC-R006-SUH-2012-SPEEDINESS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        50
+      ],
+      "key": "nees-suh",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "50"
+      ],
+      "visual_check": "DOI, full title and author/year context checked on the rendered bibliography page; no target-paper or empirical-result reading."
+    },
+    {
+      "checked_doi": "10.1037/1076-898x.14.2.165",
+      "checked_full_title": "Auditory warnings, signal-referent relations, and natural indicators: Re-thinking theory and application.",
+      "checked_source_ref": {
+        "id": "SRC-R006-PETOCZ-2008-WARNINGS",
+        "rev": 1
+      },
+      "file_pages_1based": [
+        40
+      ],
+      "key": "nees-petocz",
+      "pdf_key": "nees-am",
+      "printed_pages": [
+        "40"
+      ],
+      "visual_check": "DOI, full title and author/year context checked on the rendered bibliography page; no target-paper or empirical-result reading."
+    }
+  ]
+}
