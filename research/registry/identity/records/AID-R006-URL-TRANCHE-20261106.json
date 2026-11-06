@@ -1,0 +1,174 @@
+{
+  "id": "AID-R006-URL-TRANCHE-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-url-tranche-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Python comparison of retained web-discovery exports and accepted source provenance"
+      },
+      "at": "2026-11-06T03:58:46Z",
+      "basis": [
+        {
+          "id": "SRC-BRIER-2011-SIGNS",
+          "rev": 1
+        },
+        {
+          "id": "SRC-NOV-NEES-LIEBMAN-2023",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R005R-EDWORTHY-2013",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R005R-RUSKIN-2020",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R002-PA6-03",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R002-PB1-03",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R004-G29-05",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-AW8-08",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-GW1-02",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-GW8-02",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-GW9-01",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-RPSLR-08",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-URL-TRANCHE-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "SRC-BRIER-2011-SIGNS",
+            "rev": 1
+          },
+          {
+            "id": "SRC-NOV-NEES-LIEBMAN-2023",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R005R-EDWORTHY-2013",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R005R-RUSKIN-2020",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R002-PA6-03",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R002-PB1-03",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R004-G29-05",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-AW8-08",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-GW1-02",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-GW8-02",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-GW9-01",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005-RPSLR-08",
+            "rev": 1
+          }
+        ],
+        "limitations": "Inherits accepted source metadata/resource verification. No current URL availability claim, new online retrieval, article/PDF reading, source alias, eligibility, study/sample independence or complete corpus. Some original labels are hostnames, not publication titles.",
+        "output_refs": [
+          {
+            "id": "HIT-R002-PA6-03",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R002-PB1-03",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R004-G29-05",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-AW8-08",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-GW1-02",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-GW8-02",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-GW9-01",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005-RPSLR-08",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T03:58:46Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Adjudicate eight fixed publication-resource URL occurrences against four existing sources; retain original web labels and pilot provenance.",
+        "verification_steps": [
+          "Checked hash-bound original web exports, query, run label, ordinal, exact returned URL and unmodified raw result label.",
+          "Checked exact verified source resource, source metadata provenance, and pre-existing representative source pins.",
+          "Resolved one Ruskin representative and seven duplicates, preserving every original revision and scientific/access/reading state."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

@@ -35,6 +35,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-url-tranche-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Python comparison of retained web-discovery exports and accepted source provenance"
+      },
+      "at": "2026-11-06T03:58:46Z",
+      "basis": [
+        {
+          "id": "HIT-R005-GW9-01",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005-GW9",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R005R-RUSKIN-2020",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-URL-TRANCHE-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005-GW1-02",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005-GW1-02",
+          "rev": 2
+        },
+        "ordinal": 1,
+        "raw_metadata": "A Review of the Literature on Alarms, Alerts, and Warnings | https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf",
+        "resolution_reason": "R006: original exported result URL equals the exact publication-specific verified source resource; exported query, ordinal and raw result label checked. Source verification inherited; hostname-only labels are not bibliographic titles. Identity only; no eligibility or new reading. See research/registry/identity/R006-URL-TRANCHE-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://rosap.ntl.bts.gov/view/dot/59041/dot_59041_DS1.pdf"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005-GW9",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R005R-RUSKIN-2020",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,
