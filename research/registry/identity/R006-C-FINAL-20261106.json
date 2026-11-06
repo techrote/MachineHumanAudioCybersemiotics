@@ -1,0 +1,580 @@
+{
+  "actor": {
+    "id": "codex-r006-c-final-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; fixed Crossref title presentation, PubMed/Georgia Tech identity metadata and retained-export checks"
+  },
+  "artifact_kind": "bounded_new_publication_identity_tranche",
+  "boundary": "One new publication and seven occurrence identities; Wilcox partial tool-mediated text exposure and Tislar abstract exposure are not full readings, eligibility or independent studies. Issue #6/corpus gate remain open.",
+  "counts": {
+    "deferred_occurrences": 0,
+    "duplicate_occurrences": 6,
+    "new_source_records": 1,
+    "occurrences": 7,
+    "resolved_representatives": 1,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "source_access_observations": 1,
+    "study_records_created": 0
+  },
+  "deferred": [],
+  "implementation_base": "f12ffa2dead06e4c4cb26ed3c4edcda0723d8091",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-C-FINAL-PLAN-20261106.json",
+      "sha256": "9249e093b2d4d6f64f95901d09d43f2d1d5d69b40c81f79c1993717580e799ea"
+    },
+    {
+      "path": "research/registry/identity/R006-DOI-C-PLAN-20261106.json",
+      "sha256": "528d4c141867e8ad42ed7bd8e6147b961ef7f2270662eb1384d73900da281a19"
+    },
+    {
+      "path": "research/registry/identity/R006-REFERENCE-C-PLAN-20261106.json",
+      "sha256": "ab94412bd889dbaac104941ce4bd162a09358d43d5847f74b39dfd6fc30ce2ea"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-final-tislar-gatech.json",
+      "sha256": "d4cc88d91d17e00ed13047828bf48da6ded128a0a0a8eeb808b29467e8be7a71"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-final-wilcox-crossref.json",
+      "sha256": "aeb6853c65bed39e76c3815e2ffb6a51f26db374df1cd11ba9c7a52a6864b919"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-final-wilcox-presentation.json",
+      "sha256": "7be3307a7dc4b780396f7321beca1df44f924f2d887dc75725e92ff32d14d5bc"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-final-wilcox-pubmed.json",
+      "sha256": "7b0812170bd37f0bfa20ee967ce53c86c32075b2cdddcb0808c72850da0372ba"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-wilcox-alarms.json",
+      "sha256": "7679b21dcb01881ffc543ad7780fd47fc84ea22c2405a466ab7cac6fbb6f857b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0001.json.gz",
+      "sha256": "494cbfe9a823dcb5d17947dd852d8b520635c7c617bf541f4ce34d6ba5d9e8e9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0002.json.gz",
+      "sha256": "f0e1224eaa8864a1218c35261b5f96ea990bae561023b1c7e507ddd4579cba59"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0003.json.gz",
+      "sha256": "d396350fb1444d8ccd8a80708decd594072c8938aeeef833ae9d94426304aeba"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0004.json.gz",
+      "sha256": "994c4f1199a11ae894f3d955214a66958725352fbc383df894fb2ee1a8e03354"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0005.json.gz",
+      "sha256": "945ff45ec3aba31316610ab9c89358139618386b20c2239b8b0ad847aeac9a96"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0006.json.gz",
+      "sha256": "b3582d7b2f64d865fd8963654492246c881d8a69caea33293b84c74cbb27ac1f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0007.json.gz",
+      "sha256": "dfa5b8ec7de880e02d8493854ff60bc5209af99eb885cca0e6fc312cccf411b0"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0008.json.gz",
+      "sha256": "249a76d1d2e5c8a3d1939473fc24fdb494b2e7144ae4e454996053a368aacc2a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0009.json.gz",
+      "sha256": "9e84beb38e31230338f00c42e901d4f1cbd908cf1853a94d0bf4d7b5d3c64ab6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0010.json.gz",
+      "sha256": "f517728975e77deb388cdce6e010dea2e2bab65ffe1d1f5edc4988846d9d74b3"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0011.json.gz",
+      "sha256": "37b264ed1e41e746ff72244ee0f9001a7bc0cbae0499eff07905af6f2a12dab7"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0012.json.gz",
+      "sha256": "a205c1ceed17df20eb9993daf69352d8bc19de99909ee6185869340a23a983c1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0013.json.gz",
+      "sha256": "0babc03cbd06ad71dd5d8e2c61f554cbb1ef7debbce4d742e48fdf01c530ec09"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+      "sha256": "d6d947749e47cbb1a112982d5ff155abebae163b11807d6bbebd17b51528d4b4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0015.json.gz",
+      "sha256": "bd095ec4282c2cbca41d11ccc31a7e47fd4de91ecd1f16b111555aa43d1cfd2d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0016.json.gz",
+      "sha256": "6a04c18e72e0e519eddc6bcf7f2045545340013f024b69822420bd1cf59869ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0017.json.gz",
+      "sha256": "20fa7274a7d0705bbfa603e4bcabb7eb9e5088f3def61bb2bf1f0d0d1fc3079b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0018.json.gz",
+      "sha256": "26c2960c0193e931ce9c2abe66f6ce1019be8a6da82522a59ebf402341e6c68a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0019-a2.json.gz",
+      "sha256": "3f6850416e04e62caae7088fac954b802de62c2f2931d423357ba929d967264c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0020-a2.json.gz",
+      "sha256": "c1acc726657034dfb2145ebce9ff1f591363084bc80b0122e06fe53cd3e4b58e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0021.json.gz",
+      "sha256": "47e8e65d8dd319e1f4ae0c143a3dd0c0be4942f8c8366057804a00dfda98471e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0001.json.gz",
+      "sha256": "6606d8c289c09849ad863bea9cd927dda823ad0d194ad0823be8aabae3438da5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0002.json.gz",
+      "sha256": "25d3a7dacca2d11288ef90851e9bbcad8ae136d8e589657e912d876b85040d87"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+      "sha256": "bd5a2876aa9e23347d15a9639b875759191742561c18e12e8183fda142a3396d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0004.json.gz",
+      "sha256": "fff6796eaa3310cf3da0d11746191a08a220052d65dff422bdc08fbdf01903d1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0005.json.gz",
+      "sha256": "86f8cfc955bf27095987cc12b4a191a5fa9362374171e895ee6651c96f70784b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0006.json.gz",
+      "sha256": "c56267aa604a1ac5836016d1ba2507e75f5ff36b73b3ce8043681a61eed41d0c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0007.json.gz",
+      "sha256": "06b3f3a1095fbfc9ef3b1edbc9e62b53ebb084a0eaafab82da4569d430035a01"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0008.json.gz",
+      "sha256": "944286b9840e3ee410a5b83ac6a857cabcb78aa9aab006bfe883e934b1597501"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0009.json.gz",
+      "sha256": "74466151f34b131e0079e19058d0c72ec6cba7037f0761a344b929ea77dccff5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0010.json.gz",
+      "sha256": "6e823b71c57aa461d03fa5a3b007a3ca1cbd4e5e40b71918fa7cadb25cbec2b5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0011.json.gz",
+      "sha256": "a53bc310433542328a083bf88c5e45aa6d6058113d04934534dfc443c35c0795"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+      "sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+      "sha256": "a4e7a83a1947e4305077e8b6a259de4a814072022752adc8eba09c7f33fed14f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+      "sha256": "4f6be15385cecec4ac3a2540e236aeebb78d74e21230f16090d89e86b10a90ee"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+      "sha256": "ccee941f98d31ff7a375a1818e974d2716a4d35f3092af2062706b91239cb3ec"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+      "sha256": "ce66781f59dfd2150c0998843d0b07fd9c33729c81547bd9c99a3b5bed8e96b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+      "sha256": "b87f72d0672c4ac5c5537948a5e2209c061655f0519bc3d1efcbe148cca71305"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+      "sha256": "f8886a8a7a4c78c592529bba485a66694b8c5da21be8907872cf16c324f1d6d5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0002.json.gz",
+      "sha256": "0b223218018fb075949d997052a3eaa33bb33500d352ea4fce03d9e068fcb5eb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0003.json.gz",
+      "sha256": "82360e9371885f4c5fb7057fac29ac65e9358e2ba7bb85b6e0554293a8d94209"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+      "sha256": "996e54968acbc09fed933cedb0088abf7535f876ba64cdad130e1eea82be93b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0002.json.gz",
+      "sha256": "a8cb32319f6e8f43ac26e03c19c01712599d8c9b06912961df157803c7b95304"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0003.json.gz",
+      "sha256": "ea313963bcd6a57c84476896956776949a462ff3b0fe5f1158ddf35f1f0dc0bb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0004.json.gz",
+      "sha256": "80b08440606576465e54167df37f4226b000db1f2428aa52c63f055785b6d1e6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0005.json.gz",
+      "sha256": "ba9b57087f4cb811947d4ad25cc8e1bae88a7d01ec124fca38165b8822413792"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0006.json.gz",
+      "sha256": "f3e3572eedbabd89b5f5fda05aef284510f61a03873340de788401cacf227b23"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0007.json.gz",
+      "sha256": "bf5892aed1cd9bbf0dca4002ad66e6f5947a1f4d5fbcef73f9d3e1cc78318ef4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0008.json.gz",
+      "sha256": "d108c66aeb292a995057431072d0a9f2cccf301ad03bb1c4160d2ce85c8a27ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+      "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0001.json.gz",
+      "sha256": "3bcdd32d429b7fc169bd1622196894ef3c6cd938fd05cff25a38a40e0d48af31"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0002.json.gz",
+      "sha256": "67516c5748b3eac8b1c33316d6c942c739377e0aca13ea564c55f36ff137132e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+      "sha256": "908187846e7ce1dbeb6da4a552bcc2489d9cbadc09e23cbbd6f5457d44218121"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0004.json.gz",
+      "sha256": "63e1a3b09efe16c0bf88cb714087bdb12d64cb0765214f297d3d5a376f77d951"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/MANIFEST.json",
+      "sha256": "30726cd453d1c1aa92b33f4e6fc3bf6d4fdc258d75e71ae1776f7708e3d87e39"
+    },
+    {
+      "path": "research/searches/auditory/recovery-2026-11-03/icad/MANIFEST.json",
+      "sha256": "1c2d0ca009f9f82550e96a868df55bb3a31ce083607c21571c726d6e912e6b14"
+    },
+    {
+      "path": "research/searches/auditory/recovery-2026-11-03/icad/raw/series-page-001.json.gz",
+      "sha256": "8bab8b83f15156a56a55e4c2680bf831803693f2d2368b01acb1370cc0e1aba2"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 113,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+        "reported_publication_date": "2011-07-01",
+        "work_id": "https://openalex.org/W2129835749"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-02713",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 1
+      },
+      "input_revision_sha256": "df4d36f0a8e615a366d60e48234fe9535db9303c993c2a1a1966e7c74e3a5657",
+      "ordinal": 2713,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 2
+      },
+      "output_revision_sha256": "76a66ef9433bd5bb6d9ae9acdd975bd662d41fd63738ed5f913f4fb47d6066cc",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-02713.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 129,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2011-07-01",
+        "work_id": "https://openalex.org/W2129835749"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00529",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00529",
+        "rev": 1
+      },
+      "input_revision_sha256": "d1c9a6c182c431943614d539e436a3929d466f131f1b18b17719175c9cf64070",
+      "ordinal": 529,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00529",
+        "rev": 2
+      },
+      "output_revision_sha256": "b5cf01032b292312084e6f80e51068536301c157cc314bc8b65330285ab401cd",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00529.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 13,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+        "reported_publication_date": "2011-07-01",
+        "work_id": "https://openalex.org/W2129835749"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+        "rev": 1
+      },
+      "input_revision_sha256": "42f68d0eb90e6331c516da16d94e95b8a92e745a6f8840d783c97b5a58826ef3",
+      "ordinal": 213,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00213",
+        "rev": 2
+      },
+      "output_revision_sha256": "acbe45635773d05ab85add2ece7a86da8934a27991ad7642983da49ac488db27",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00213.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 68,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+        "reported_publication_date": "2011-07-01",
+        "work_id": "https://openalex.org/W2129835749"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+        "rev": 1
+      },
+      "input_revision_sha256": "d4cefb2ebfa17d94deae3e1c50272b4454b717a4597aee8d523659a2c6850af6",
+      "ordinal": 68,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00068",
+        "rev": 2
+      },
+      "output_revision_sha256": "e5e157cf8581f966b8d88d607787381588f62d123269c23d369f9b5525584c17",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ2-00068.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ2",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 36,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "2011-07-01",
+        "work_id": "https://openalex.org/W2129835749"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+        "rev": 1
+      },
+      "input_revision_sha256": "c41cd203612e35a0f28f3543b0c1d3e98e54958a1e719bcb36ba7896bdb5992e",
+      "ordinal": 36,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00036",
+        "rev": 2
+      },
+      "output_revision_sha256": "1562e784bce04d3dee1538e2cc3d37073bb8c749b0cfb9c9c18803076c0d7d38",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00036.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.2345/0899-8205-45.4.284",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02713",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 129,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2011-07-01",
+        "work_id": "https://openalex.org/W2129835749"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00529",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00529",
+        "rev": 1
+      },
+      "input_revision_sha256": "7e77cf929c2bc41b1869750586450ddbc5c53846bc3d7e23db868456c27747f8",
+      "ordinal": 529,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00529",
+        "rev": 2
+      },
+      "output_revision_sha256": "349777e9591e1527524248c0c36c9b07715771c20976db87e2900d7b4a7b9f1e",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00529.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01017",
+        "rev": 2
+      },
+      "export_locator": {
+        "json_pointer": "/_embedded/searchResult/_embedded/objects/80/_embedded/indexableObject",
+        "manifest_ordinal": 1072,
+        "manifest_path": "research/searches/auditory/recovery-2026-11-03/icad/MANIFEST.json",
+        "path": "research/searches/auditory/recovery-2026-11-03/icad/raw/series-page-001.json.gz",
+        "repository_item_id": "7847b94c-1b79-4dea-9dba-62cfb4548102"
+      },
+      "hit_id": "HIT-R005R-C5SERIES-01072",
+      "input_ref": {
+        "id": "HIT-R005R-C5SERIES-01072",
+        "rev": 1
+      },
+      "input_revision_sha256": "29ebe6ca052863f5aa67544cd9a3d1f2eb2e5596d2b1dbb01a8626696bca2328",
+      "ordinal": 1072,
+      "output_ref": {
+        "id": "HIT-R005R-C5SERIES-01072",
+        "rev": 2
+      },
+      "output_revision_sha256": "0a761d2aab9129fa37275ae4d3dc9971403a7c526bbde56e8ec77dbc29836ff2",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C5SERIES-01072.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C5SERIES",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    }
+  ],
+  "resolved_at": "2026-11-06T11:08:37Z",
+  "source_access_observations": [
+    {
+      "extent": "The original retained Georgia Tech venue response exposed its embedded abstract during metadata inspection. No target paper/full text or eligibility appraisal. Later fresh derivative retains bibliographic fields only.",
+      "input_revision_sha256": "b03d451b9a3f2534bb2e5668a77ff53334c4de4b898898979d7d2b8931dcae1b",
+      "output_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 2
+      },
+      "output_revision_sha256": "971577bf65d05cf3fb9e6c5014f1ed6020b1eb6cb9dcae484013b580be5b4e0c",
+      "source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      }
+    }
+  ],
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-final-wilcox-presentation.json",
+        "sha256": "7be3307a7dc4b780396f7321beca1df44f924f2d887dc75725e92ff32d14d5bc"
+      },
+      "path": "research/registry/identity/records/SRC-R006-WILCOX-2011-ALARMS.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2011,
+              7
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              7
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "a3d26041e117a7554880bc7aaefd38830e31bda8842d0a959f63d959307286b4",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-WILCOX-2011-ALARMS",
+        "rev": 1
+      }
+    }
+  ]
+}

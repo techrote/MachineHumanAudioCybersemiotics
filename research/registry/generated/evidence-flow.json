@@ -1,7 +1,7 @@
 {
   "count_scope": "Logical identities and declared report decisions; no independent-study count or PRISMA completeness claim.",
   "current_extracted_outcomes": 0,
-  "current_usable_sources": 157,
+  "current_usable_sources": 158,
   "experiments": 0,
   "extraction_records": 0,
   "included_outcomes": 0,
@@ -9,7 +9,7 @@
   "included_studies": 0,
   "known_dependence_groups": [],
   "outcomes": 0,
-  "publications": 157,
+  "publications": 158,
   "samples": 0,
   "screening": {
     "full_text": {
@@ -146,6 +146,7 @@
       "SRC-R006-SUH-2012-SPEEDINESS",
       "SRC-R006-TISLAR-2018-LEARNABILITY",
       "SRC-R006-WALKER-2013-SPEARCONS",
+      "SRC-R006-WILCOX-2011-ALARMS",
       "SRC-REL-ATKIN-SEP",
       "SRC-REL-AUDITORY-SIGNS-REVIEW",
       "SRC-REL-AYLETT-2019",
@@ -283,6 +284,7 @@
       "SRC-R006-SUH-2012-SPEEDINESS",
       "SRC-R006-TISLAR-2018-LEARNABILITY",
       "SRC-R006-WALKER-2013-SPEARCONS",
+      "SRC-R006-WILCOX-2011-ALARMS",
       "SRC-REL-AUDITORY-SIGNS-REVIEW",
       "SRC-REL-AYLETT-2019",
       "SRC-REL-BANSAL-2024",
@@ -4441,22 +4443,22 @@
       "id": "SRCH-R005R-C1LOAD-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 21,
+      "resolved_hits": 22,
       "status": "partial",
       "stored_hits": 4200,
-      "unique_publications": 21,
-      "unresolved_hits": 4179
+      "unique_publications": 22,
+      "unresolved_hits": 4178
     },
     {
-      "duplicate_hits": 16,
+      "duplicate_hits": 17,
       "id": "SRCH-R005R-C1LOAD-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 18,
+      "resolved_hits": 19,
       "status": "completed",
       "stored_hits": 2112,
-      "unique_publications": 18,
-      "unresolved_hits": 2094
+      "unique_publications": 19,
+      "unresolved_hits": 2093
     },
     {
       "duplicate_hits": 1,
@@ -4470,26 +4472,26 @@
       "unresolved_hits": 4650
     },
     {
-      "duplicate_hits": 19,
+      "duplicate_hits": 20,
       "id": "SRCH-R005R-C1RECOVERY-EQ1",
       "mode": "production",
       "reported_count": 9368,
-      "resolved_hits": 19,
+      "resolved_hits": 20,
       "status": "partial",
       "stored_hits": 1000,
-      "unique_publications": 19,
-      "unresolved_hits": 981
+      "unique_publications": 20,
+      "unresolved_hits": 980
     },
     {
-      "duplicate_hits": 4,
+      "duplicate_hits": 5,
       "id": "SRCH-R005R-C1RECOVERY-EQ2",
       "mode": "production",
       "reported_count": 556,
-      "resolved_hits": 4,
+      "resolved_hits": 5,
       "status": "completed",
       "stored_hits": 556,
-      "unique_publications": 4,
-      "unresolved_hits": 552
+      "unique_publications": 5,
+      "unresolved_hits": 551
     },
     {
       "duplicate_hits": 0,
@@ -4514,15 +4516,15 @@
       "unresolved_hits": 585
     },
     {
-      "duplicate_hits": 18,
+      "duplicate_hits": 19,
       "id": "SRCH-R005R-C1RECOVERY-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 18,
+      "resolved_hits": 19,
       "status": "partial",
       "stored_hits": 1600,
-      "unique_publications": 18,
-      "unresolved_hits": 1582
+      "unique_publications": 19,
+      "unresolved_hits": 1581
     },
     {
       "duplicate_hits": 2,
@@ -4583,15 +4585,15 @@
       "unresolved_hits": 585
     },
     {
-      "duplicate_hits": 15,
+      "duplicate_hits": 16,
       "id": "SRCH-R005R-C1SORT-EQ5",
       "mode": "production",
       "reported_count": 2112,
-      "resolved_hits": 15,
+      "resolved_hits": 16,
       "status": "partial",
       "stored_hits": 800,
-      "unique_publications": 15,
-      "unresolved_hits": 785
+      "unique_publications": 16,
+      "unresolved_hits": 784
     },
     {
       "duplicate_hits": 0,
@@ -4608,15 +4610,15 @@
       "unresolved_hits": 0
     },
     {
-      "duplicate_hits": 0,
+      "duplicate_hits": 1,
       "id": "SRCH-R005R-C5SERIES",
       "mode": "production",
       "reported_count": 1269,
-      "resolved_hits": 0,
+      "resolved_hits": 1,
       "status": "completed",
       "stored_hits": 1269,
-      "unique_publications": 0,
-      "unresolved_hits": 1269
+      "unique_publications": 1,
+      "unresolved_hits": 1268
     },
     {
       "duplicate_hits": 0,
@@ -4707,7 +4709,7 @@
   "search_runs": 313,
   "selected_theoretical_publications": 0,
   "shared_sample_groups": 0,
-  "source_record_ids": 157,
+  "source_record_ids": 158,
   "studies": 0,
   "theoretical_extractions": 0,
   "unavailable_publications": 4,

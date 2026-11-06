@@ -1,0 +1,116 @@
+{
+  "artifact_kind": "institutional_identity_metadata_derivative",
+  "derivation": "Selected bibliographic identity fields; abstracts and rights fields omitted. Retained original index response exposed its embedded abstract during initial inspection; no extraction or eligibility inferred.",
+  "http_status": 200,
+  "metadata": {
+    "dc.contributor.author": [
+      {
+        "authority": null,
+        "confidence": 600,
+        "language": null,
+        "place": 0,
+        "value": "Tislar, Kay"
+      },
+      {
+        "authority": null,
+        "confidence": 600,
+        "language": null,
+        "place": 1,
+        "value": "Duford, Zackery"
+      },
+      {
+        "authority": null,
+        "confidence": 600,
+        "language": null,
+        "place": 2,
+        "value": "Nelson, Brittany"
+      },
+      {
+        "authority": null,
+        "confidence": 600,
+        "language": null,
+        "place": 3,
+        "value": "Peabody, Madeline"
+      },
+      {
+        "authority": null,
+        "confidence": 600,
+        "language": null,
+        "place": 4,
+        "value": "Jeon, Myounghoon"
+      }
+    ],
+    "dc.date.issued": [
+      {
+        "authority": null,
+        "confidence": -1,
+        "language": null,
+        "place": 0,
+        "value": "2018-06"
+      }
+    ],
+    "dc.identifier.doi": [
+      {
+        "authority": null,
+        "confidence": -1,
+        "language": "en_US",
+        "place": 0,
+        "value": "https://doi.org/10.21785/icad2018.029"
+      }
+    ],
+    "dc.identifier.uri": [
+      {
+        "authority": null,
+        "confidence": -1,
+        "language": null,
+        "place": 0,
+        "value": "http://hdl.handle.net/1853/60090"
+      }
+    ],
+    "dc.title": [
+      {
+        "authority": null,
+        "confidence": -1,
+        "language": "en_US",
+        "place": 0,
+        "value": "Examining the learnability of auditory displays: Music, earcons, spearcons, and lyricons"
+      }
+    ],
+    "dc.type": [
+      {
+        "authority": null,
+        "confidence": -1,
+        "language": null,
+        "place": 0,
+        "value": "Text"
+      }
+    ],
+    "dc.type.genre": [
+      {
+        "authority": null,
+        "confidence": -1,
+        "language": null,
+        "place": 0,
+        "value": "Proceedings"
+      }
+    ]
+  },
+  "raw_response_sha256": "271317a27807db27b9b5ad9c6601309ce121bcb34d8023e231d46bb80d3e859b",
+  "record": {
+    "handle": "1853/60090",
+    "name": "Examining the learnability of auditory displays: Music, earcons, spearcons, and lyricons",
+    "uuid": "7847b94c-1b79-4dea-9dba-62cfb4548102",
+    "withdrawn": false
+  },
+  "retained_metadata_fields": [
+    "dc.title",
+    "dc.contributor.author",
+    "dc.identifier.doi",
+    "dc.identifier.uri",
+    "dc.date.issued",
+    "dc.type",
+    "dc.type.genre"
+  ],
+  "retrieved_at": "2026-11-06T11:03:54Z",
+  "url": "https://repository.gatech.edu/server/api/core/items/7847b94c-1b79-4dea-9dba-62cfb4548102"
+}
