@@ -39,6 +39,63 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-e-final-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Crossref subtitle / AES publisher metadata and retained OpenAlex provenance adjudication"
+      },
+      "at": "2026-11-06T15:09:10Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03013",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-JEON-2012-AES",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-JEON-UNAVAILABLE",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-E-FINAL-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 3013,
+        "raw_metadata": "Auditory Menus Are Not Just Spoken Visual Menus: A Case Study of “Unavailable” Menu Items | first author: Myounghoon Jeon | 2012-08-27 | conference-paper | https://openalex.org/W1492156475",
+        "resolution_reason": "R006: title, all four authors, AES item 16362, journal volume 60 and pages 505-518 identify the 2012 journal report. Original ACM DOI identifies the separate CHI EA 2010 conference paper, not this journal report; the erroneous/mixed index DOI assertion, 2012-08-27 date and conference-paper type remain literal discovery provenance. No alias, shared/independent-sample or eligibility assertion. See research/registry/identity/R006-E-FINAL-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1492156475"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1145/1753846.1753978"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-E-JEON-2012-AES",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

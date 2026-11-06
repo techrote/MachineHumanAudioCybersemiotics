@@ -1,0 +1,334 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-e-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+  },
+  "artifact_kind": "bounded_reference_identity_tranche",
+  "boundary": "Identity of cited publications only. Original model-rendered provenance and search incompleteness remain intact; issue #6/corpus gate stay open.",
+  "counts": {
+    "corroborated_model_abbreviations": 4,
+    "duplicate_occurrences": 8,
+    "existing_target_publications": 4,
+    "new_source_records": 0,
+    "occurrences": 8,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "source_pdf_retrievals": 1,
+    "study_records_created": 0,
+    "visually_checked_citation_witnesses": 4
+  },
+  "implementation_base": "0b088db1aa83149fea94d98c0a7aac0601970c88",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-DOI-E-20261106.json",
+      "sha256": "df41b0baec1feca1ac6afe8f3ad4b182e8056c48e580e23196ffe975649ffb5a"
+    },
+    {
+      "path": "research/registry/identity/R006-DOI-E-PLAN-20261106.json",
+      "sha256": "96dd5d9e61e1af231e09fde426d37700959d0cb92c85444dfdad37e9425758e5"
+    },
+    {
+      "path": "research/registry/identity/R006-REFERENCE-E-PLAN-20261106.json",
+      "sha256": "92a8f561912c87f328093748e232882e5e1444d097c520cb6e86477cea415994"
+    },
+    {
+      "path": "research/registry/identity/R006-REFERENCE-E-WITNESSES-20261106.json",
+      "sha256": "3e952f84daa488bfa6f4ac52b57a4b3a990b6c0e92a0f2c384d7fd7a0f3371cf"
+    },
+    {
+      "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+      "sha256": "9c3bf364ea9136da02e18793acb0aa036e7c8afce508fccdc2d705455995c288"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "doi": "10.1002/acp.1457",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02032",
+        "rev": 2
+      },
+      "export_locator": {
+        "corroborating_reference_list": "RL-NLAM",
+        "item": 7,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NL"
+      },
+      "file_pages_1based": [
+        44
+      ],
+      "hit_id": "HIT-R005-RLNL-007",
+      "input_ref": {
+        "id": "HIT-R005-RLNL-007",
+        "rev": 1
+      },
+      "input_revision_sha256": "a72ab19e70e2478beb1056771fb9c349bd44d09ce9374bdb761f537a2ef7354f",
+      "output_ref": {
+        "id": "HIT-R005-RLNL-007",
+        "rev": 2
+      },
+      "output_revision_sha256": "e0d8da3ebfad920d56e1c4e9e7a4d704fba91fdd04a326d28a8f5b41c5f276a4",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNL-007.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-BONEBRIGHT-EARCONS",
+        "rev": 1
+      },
+      "source_revision_sha256": "fb4b229b3db59f99febf85503f525277a2224840599221e793b8d403e87882aa",
+      "verification_extent": "Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.",
+      "witness_key": "nees-bonebright"
+    },
+    {
+      "doi": "10.1145/1952383.1952385",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02671",
+        "rev": 2
+      },
+      "export_locator": {
+        "corroborating_reference_list": "RL-NLAM",
+        "item": 27,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NL"
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "hit_id": "HIT-R005-RLNL-027",
+      "input_ref": {
+        "id": "HIT-R005-RLNL-027",
+        "rev": 1
+      },
+      "input_revision_sha256": "95fe583087ea0e9cb39efe0ae65876f4b5e2fdd6aa22ecf0e549ed81868ee9ff",
+      "output_ref": {
+        "id": "HIT-R005-RLNL-027",
+        "rev": 2
+      },
+      "output_revision_sha256": "bd1f7eddb7c86e75e60a6ed4e8da0cb6fd98f91a7bdae2ecd5740784f4ae58a5",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNL-027.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-JEON-SPINDEX",
+        "rev": 1
+      },
+      "source_revision_sha256": "526b84cbb64b2f2bcc9049193f8eb425d4716432de2c36e84f340aaa046369c2",
+      "verification_extent": "Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.",
+      "witness_key": "nees-spindex"
+    },
+    {
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03712",
+        "rev": 2
+      },
+      "export_locator": {
+        "corroborating_reference_list": "RL-NLAM",
+        "item": 57,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NL"
+      },
+      "file_pages_1based": [
+        50
+      ],
+      "hit_id": "HIT-R005-RLNL-057",
+      "input_ref": {
+        "id": "HIT-R005-RLNL-057",
+        "rev": 1
+      },
+      "input_revision_sha256": "a30fff231201ef354489205e16d48a42b52bbff114a3014ba3d954c4b0c67ce1",
+      "output_ref": {
+        "id": "HIT-R005-RLNL-057",
+        "rev": 2
+      },
+      "output_revision_sha256": "57e3a6097fdf7304bfe937329ae81e7972d5981edc3cbd2718407de6a7dc10bb",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNL-057.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-SUN-LYRICON",
+        "rev": 1
+      },
+      "source_revision_sha256": "08a3ce5862af7aa133258f3683a6a54337d1a29ad0f74e569a374be10223d8b6",
+      "verification_extent": "Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.",
+      "witness_key": "nees-sun"
+    },
+    {
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02165",
+        "rev": 2
+      },
+      "export_locator": {
+        "corroborating_reference_list": "RL-NLAM",
+        "item": 63,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NL"
+      },
+      "file_pages_1based": [
+        51
+      ],
+      "hit_id": "HIT-R005-RLNL-063",
+      "input_ref": {
+        "id": "HIT-R005-RLNL-063",
+        "rev": 1
+      },
+      "input_revision_sha256": "df397e92afe009d0188b1aaf75c0e74d57a21ead944dd10f59b47692e59eee0a",
+      "output_ref": {
+        "id": "HIT-R005-RLNL-063",
+        "rev": 2
+      },
+      "output_revision_sha256": "49bfc880c9fd7b8f5125df4c3d3cd797884d60f0b55b30a7b072f17dcfa5a837",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNL-063.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-WALKER-MOBILE",
+        "rev": 1
+      },
+      "source_revision_sha256": "352707f2c2564f44e0dafc948cdd319c3f51a782fb5eb779a395cb306fed521f",
+      "verification_extent": "Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.",
+      "witness_key": "nees-walker"
+    },
+    {
+      "doi": "10.1002/acp.1457",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02032",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 7,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NLAM"
+      },
+      "file_pages_1based": [
+        44
+      ],
+      "hit_id": "HIT-R005-RLNLAM-007",
+      "input_ref": {
+        "id": "HIT-R005-RLNLAM-007",
+        "rev": 1
+      },
+      "input_revision_sha256": "08d832db875b56479b87a107555e53d0f6908117bb53456af0d8f9c803e543ec",
+      "output_ref": {
+        "id": "HIT-R005-RLNLAM-007",
+        "rev": 2
+      },
+      "output_revision_sha256": "8a19b0fb720f7547e3ddeb4a20cd4ae3efb81ca97d0b40c993003bfd0a41b3d0",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNLAM-007.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-BONEBRIGHT-EARCONS",
+        "rev": 1
+      },
+      "source_revision_sha256": "fb4b229b3db59f99febf85503f525277a2224840599221e793b8d403e87882aa",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "nees-bonebright"
+    },
+    {
+      "doi": "10.1145/1952383.1952385",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02671",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 27,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NLAM"
+      },
+      "file_pages_1based": [
+        46
+      ],
+      "hit_id": "HIT-R005-RLNLAM-027",
+      "input_ref": {
+        "id": "HIT-R005-RLNLAM-027",
+        "rev": 1
+      },
+      "input_revision_sha256": "4d48a45183d0a97863302b2d3b9e00dee87dac5cb4782b8e3bc0f6f911ed12c1",
+      "output_ref": {
+        "id": "HIT-R005-RLNLAM-027",
+        "rev": 2
+      },
+      "output_revision_sha256": "8259a46bfa5297ec54a0ad4a19ba76352910b1fd439df3a773064de8bc4903a6",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNLAM-027.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-JEON-SPINDEX",
+        "rev": 1
+      },
+      "source_revision_sha256": "526b84cbb64b2f2bcc9049193f8eb425d4716432de2c36e84f340aaa046369c2",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "nees-spindex"
+    },
+    {
+      "doi": "10.1007/978-3-319-20898-5_37",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03712",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 57,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NLAM"
+      },
+      "file_pages_1based": [
+        50
+      ],
+      "hit_id": "HIT-R005-RLNLAM-057",
+      "input_ref": {
+        "id": "HIT-R005-RLNLAM-057",
+        "rev": 1
+      },
+      "input_revision_sha256": "c76f24541ed1affd38afbe057d317580b54cc56af5f3235d32d5d46abb17cc06",
+      "output_ref": {
+        "id": "HIT-R005-RLNLAM-057",
+        "rev": 2
+      },
+      "output_revision_sha256": "4c8b71dfaa54f386427d5505322b19f06249ef36f341e536e18f0919b543b5d9",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNLAM-057.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-SUN-LYRICON",
+        "rev": 1
+      },
+      "source_revision_sha256": "08a3ce5862af7aa133258f3683a6a54337d1a29ad0f74e569a374be10223d8b6",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "nees-sun"
+    },
+    {
+      "doi": "10.1007/978-3-642-02710-9_49",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02165",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 63,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NLAM"
+      },
+      "file_pages_1based": [
+        51
+      ],
+      "hit_id": "HIT-R005-RLNLAM-063",
+      "input_ref": {
+        "id": "HIT-R005-RLNLAM-063",
+        "rev": 1
+      },
+      "input_revision_sha256": "e63462769852a6d0259d6f0a6409776c814448d3c065ef41f4ec8f1a348380cd",
+      "output_ref": {
+        "id": "HIT-R005-RLNLAM-063",
+        "rev": 2
+      },
+      "output_revision_sha256": "bd19ad87e9a48374f309518b62b609f1c973d6057a8b4bea598b621936cfd7ac",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNLAM-063.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-E-WALKER-MOBILE",
+        "rev": 1
+      },
+      "source_revision_sha256": "352707f2c2564f44e0dafc948cdd319c3f51a782fb5eb779a395cb306fed521f",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "nees-walker"
+    }
+  ],
+  "resolved_at": "2026-11-06T15:04:42Z",
+  "source_receipt": "research/registry/identity/R006-REFERENCE-E-WITNESSES-20261106.json"
+}

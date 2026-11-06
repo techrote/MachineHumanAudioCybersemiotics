@@ -1,0 +1,274 @@
+{
+  "actor": {
+    "id": "codex-r006-e-final-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; Crossref subtitle / AES publisher metadata and retained OpenAlex provenance adjudication"
+  },
+  "artifact_kind": "bounded_mixed_publication_identity_adjudication",
+  "boundary": "Separate conference and journal publications, not independent samples. Journal abstract_only; no whole paper read or corpus acceptance.",
+  "conference_source_unchanged": {
+    "revision_sha256": "966cfc8fc7c648d8fc65295eb8fcbfbca3b5ddcade8a8726a2d143aa04272d38",
+    "source_ref": {
+      "id": "SRC-R006-E-JEON-UNAVAILABLE",
+      "rev": 1
+    }
+  },
+  "counts": {
+    "duplicate_occurrences": 1,
+    "new_source_records": 1,
+    "occurrences": 2,
+    "rejected_discovery_doi_assertions": 2,
+    "resolved_representatives": 1,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "study_records_created": 0
+  },
+  "implementation_base": "0b088db1aa83149fea94d98c0a7aac0601970c88",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-DOI-E-20261106.json",
+      "sha256": "df41b0baec1feca1ac6afe8f3ad4b182e8056c48e580e23196ffe975649ffb5a"
+    },
+    {
+      "path": "research/registry/identity/R006-DOI-E-PLAN-20261106.json",
+      "sha256": "96dd5d9e61e1af231e09fde426d37700959d0cb92c85444dfdad37e9425758e5"
+    },
+    {
+      "path": "research/registry/identity/R006-E-FINAL-PLAN-20261106.json",
+      "sha256": "597b591922da908d22f30bf747341c5cd7615848d38d89c92aab40b969199ad1"
+    },
+    {
+      "path": "research/registry/identity/R006-REFERENCE-E-PLAN-20261106.json",
+      "sha256": "92a8f561912c87f328093748e232882e5e1444d097c520cb6e86477cea415994"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-e-jeon-aes2012.json",
+      "sha256": "cc94f9f7a09bcdce3c12366ec678c41f55bcafaa13e72d790ab00e5abfd521c8"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-e-jeon-subtitle.json",
+      "sha256": "a6c07776ea6dfd4bb6adc13a0e5003149c7a82b431729c80d6d9f12476c63214"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-e-jeon-unavailable.json",
+      "sha256": "0a3b1a9cc26c84f030d6bc13e80b76b6b504266a7e3e85003be3856c2358d318"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0001.json.gz",
+      "sha256": "494cbfe9a823dcb5d17947dd852d8b520635c7c617bf541f4ce34d6ba5d9e8e9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0002.json.gz",
+      "sha256": "f0e1224eaa8864a1218c35261b5f96ea990bae561023b1c7e507ddd4579cba59"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0003.json.gz",
+      "sha256": "d396350fb1444d8ccd8a80708decd594072c8938aeeef833ae9d94426304aeba"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0004.json.gz",
+      "sha256": "994c4f1199a11ae894f3d955214a66958725352fbc383df894fb2ee1a8e03354"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0005.json.gz",
+      "sha256": "945ff45ec3aba31316610ab9c89358139618386b20c2239b8b0ad847aeac9a96"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0006.json.gz",
+      "sha256": "b3582d7b2f64d865fd8963654492246c881d8a69caea33293b84c74cbb27ac1f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0007.json.gz",
+      "sha256": "dfa5b8ec7de880e02d8493854ff60bc5209af99eb885cca0e6fc312cccf411b0"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0008.json.gz",
+      "sha256": "249a76d1d2e5c8a3d1939473fc24fdb494b2e7144ae4e454996053a368aacc2a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0009.json.gz",
+      "sha256": "9e84beb38e31230338f00c42e901d4f1cbd908cf1853a94d0bf4d7b5d3c64ab6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0010.json.gz",
+      "sha256": "f517728975e77deb388cdce6e010dea2e2bab65ffe1d1f5edc4988846d9d74b3"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0011.json.gz",
+      "sha256": "37b264ed1e41e746ff72244ee0f9001a7bc0cbae0499eff07905af6f2a12dab7"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0012.json.gz",
+      "sha256": "a205c1ceed17df20eb9993daf69352d8bc19de99909ee6185869340a23a983c1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0013.json.gz",
+      "sha256": "0babc03cbd06ad71dd5d8e2c61f554cbb1ef7debbce4d742e48fdf01c530ec09"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+      "sha256": "d6d947749e47cbb1a112982d5ff155abebae163b11807d6bbebd17b51528d4b4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0015.json.gz",
+      "sha256": "bd095ec4282c2cbca41d11ccc31a7e47fd4de91ecd1f16b111555aa43d1cfd2d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0016.json.gz",
+      "sha256": "6a04c18e72e0e519eddc6bcf7f2045545340013f024b69822420bd1cf59869ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0017.json.gz",
+      "sha256": "20fa7274a7d0705bbfa603e4bcabb7eb9e5088f3def61bb2bf1f0d0d1fc3079b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0018.json.gz",
+      "sha256": "26c2960c0193e931ce9c2abe66f6ce1019be8a6da82522a59ebf402341e6c68a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0019-a2.json.gz",
+      "sha256": "3f6850416e04e62caae7088fac954b802de62c2f2931d423357ba929d967264c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0020-a2.json.gz",
+      "sha256": "c1acc726657034dfb2145ebce9ff1f591363084bc80b0122e06fe53cd3e4b58e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0021.json.gz",
+      "sha256": "47e8e65d8dd319e1f4ae0c143a3dd0c0be4942f8c8366057804a00dfda98471e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+      "sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+      "sha256": "a4e7a83a1947e4305077e8b6a259de4a814072022752adc8eba09c7f33fed14f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+      "sha256": "4f6be15385cecec4ac3a2540e236aeebb78d74e21230f16090d89e86b10a90ee"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+      "sha256": "ccee941f98d31ff7a375a1818e974d2716a4d35f3092af2062706b91239cb3ec"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+      "sha256": "ce66781f59dfd2150c0998843d0b07fd9c33729c81547bd9c99a3b5bed8e96b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+      "sha256": "b87f72d0672c4ac5c5537948a5e2209c061655f0519bc3d1efcbe148cca71305"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+      "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "conference_source_ref": {
+        "id": "SRC-R006-E-JEON-UNAVAILABLE",
+        "rev": 1
+      },
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 13,
+        "journal_location_url": "https://www.aes.org/e-lib/browse.cfm?elib=16362",
+        "original_ordinal": 3013,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0016.json.gz",
+        "reported_biblio": {
+          "first_page": "505",
+          "issue": null,
+          "last_page": "518",
+          "volume": "60"
+        },
+        "reported_date": "2012-08-27",
+        "work_id": "https://openalex.org/W1492156475"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-03013",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03013",
+        "rev": 1
+      },
+      "input_revision_sha256": "e9905dec54e6dda0569f9a1b8a45ecb1ebf43dd496da62eec4e4570ee7d169f8",
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03013",
+        "rev": 2
+      },
+      "output_revision_sha256": "024a58ccaef31df70e6490237bbf0be04ebb7b8a44799da8fff60666cb2d448c",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-03013.json",
+      "rejected_discovery_doi": "10.1145/1753846.1753978",
+      "source_ref": {
+        "id": "SRC-R006-E-JEON-2012-AES",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "conference_source_ref": {
+        "id": "SRC-R006-E-JEON-UNAVAILABLE",
+        "rev": 1
+      },
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03013",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 78,
+        "journal_location_url": "https://www.aes.org/e-lib/browse.cfm?elib=16362",
+        "original_ordinal": 478,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+        "reported_biblio": {
+          "first_page": "505",
+          "issue": null,
+          "last_page": "518",
+          "volume": "60"
+        },
+        "reported_date": "2012-08-27",
+        "work_id": "https://openalex.org/W1492156475"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+        "rev": 1
+      },
+      "input_revision_sha256": "ba828108f994de0ed583fef60468556698744ab220ebf1c677c848cb00dd666d",
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+        "rev": 2
+      },
+      "output_revision_sha256": "a6fea07851761a480540e7bb8d7a4670c6ef690c2989330a44f5276ede4ef07a",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00478.json",
+      "rejected_discovery_doi": "10.1145/1753846.1753978",
+      "source_ref": {
+        "id": "SRC-R006-E-JEON-2012-AES",
+        "rev": 1
+      },
+      "status": "duplicate"
+    }
+  ],
+  "publication_separation": {
+    "conference": {
+      "id": "SRC-R006-E-JEON-UNAVAILABLE",
+      "rev": 1
+    },
+    "journal": {
+      "id": "SRC-R006-E-JEON-2012-AES",
+      "rev": 1
+    },
+    "study_sample_overlap": "not_adjudicated; no independent-study increment"
+  },
+  "resolved_at": "2026-11-06T15:09:10Z",
+  "source": {
+    "path": "research/registry/identity/records/SRC-R006-E-JEON-2012-AES.json",
+    "revision_sha256": "a6c20a8f3cd86aaad8d605609c20202dc721d42da27c0ec98cbfd10feed6ff65",
+    "source_ref": {
+      "id": "SRC-R006-E-JEON-2012-AES",
+      "rev": 1
+    }
+  }
+}

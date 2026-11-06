@@ -921,6 +921,100 @@ retained-export comparison, software self-review and eleven regression tests.
 No independent human adjudication, target-source reading or scientific
 acceptance is claimed.
 
+## Batch E provenance reconciliation — 6 November 2026
+
+The [bibliography subplan](R006-REFERENCE-E-PLAN-20261106.json) partitions all ten
+cases deferred by [DOI batch E](R006-DOI-E-PLAN-20261106.json): eight bibliography
+occurrences plus two mixed OpenAlex records. The [eight-citation ledger](R006-REFERENCE-E-20261106.json)
+and [two-record publisher adjudication](R006-E-FINAL-20261106.json) resolve all ten.
+The full batch now accounts for 62 occurrences and sixteen publication identities,
+including the distinct journal report; this is not an independent-study count.
+
+### Bibliography witnesses
+
+The [fresh PDF receipt](R006-REFERENCE-E-WITNESSES-20261106.json) records one HTTP
+200 Nees accepted manuscript whose bytes match the retained SHA-256 exactly.
+Four selected citation pages were rendered and visually inspected:
+
+| Cited publication | File / printed page | Occurrences |
+| --- | ---: | ---: |
+| Bonebright and Nees, earcons and passage comprehension | 44 / 44 | 2 |
+| Jeon and Walker, Spindex | 46 / 46 | 2 |
+| Sun and Jeon, Lyricon | 50 / 50 | 2 |
+| Walker and Kogan, mobile-phone menus | 51 / 51 | 2 |
+
+Original export hashes, ordinals, outcome letters, literal text and doubled DOI
+resolver prefix remain intact. The four original `RL-NL` model-rendered entries
+receive identity corroboration only: three have truncated titles, while Bonebright's
+title is complete. The shared engine's historical
+`corroborated_model_abbreviations` counter counts all four `RL-NL` entries; it does
+not mean all four titles are truncated. No faithful original-preprint transcription
+or manuscript-version equivalence is asserted. The four cited targets remain
+`metadata_only`; only these bibliography citations were read. The review PDF and
+renders are not committed.
+
+### Mixed conference and journal metadata
+
+The [fixed adjudication plan](R006-E-FINAL-PLAN-20261106.json) records why the two
+longer-title occurrences cannot simply link to the conference source. A fresh
+[Crossref derivative with subtitle](metadata/20261106-e-jeon-subtitle.json) has the
+same original-response hash as batch E's earlier capture: its selected-field
+export omitted the separately deposited subtitle. Adding that subtitle explains
+the longer title (with an explicit straight/curly quotation-mark comparison),
+but not the conflicting venue, year and pages.
+
+| Identity | Publisher / registration evidence | Retained index assertions |
+| --- | --- | --- |
+| Existing CHI EA 2010 conference report | ACM DOI `10.1145/1753846.1753978`; 2010-04-10; pp.3319–3324; base title plus subtitle | Short-title OpenAlex W2130765441 remains linked to the conference source |
+| New AES 2012 journal report | [AES item 16362](https://aes.org/publications/elibrary/elibrary-page/?id=16362); 2012-07-06; volume 60(7/8), pp.505–518; same full title and four authors | W1492156475 contains the AES item URL, volume/pages and all four authors, but also the conference DOI, 2012-08-27 date and `conference-paper` type |
+
+The [publisher metadata derivative](metadata/20261106-e-jeon-aes2012.json) retains
+HTTP 200, actual retrieval time, raw HTML hash and selected bibliographic
+`citation_*` fields. Two occurrences resolve to the new
+`SRC-R006-E-JEON-2012-AES` (one representative, one duplicate). Their original
+conference DOI assertions are preserved as discovery provenance and explicitly
+rejected as journal identifiers. Only the verified publisher URL identifies the
+new source; no journal DOI was verified, which does not establish that none exists.
+Original index dates/types are preserved rather than silently corrected.
+
+The existing conference source and its representative remain unchanged. Separate
+publication records do not establish different studies or independent participants.
+Potential conference/journal overlap is explicitly unadjudicated in the ledger;
+no source alias, family link, study or sample record is created.
+
+The AES publisher abstract was exposed through web search and is logged as
+`abstract_only`, without appraisal or numerical extraction. An incidental
+third-party abstract fragment is separately disclosed with its uncertain report
+association. No article PDF, methods/results section or complete paper was read;
+no abstract text or raw HTML is committed. The four bibliography targets remain
+metadata-only, and the conference source receives no transferred journal reading.
+
+```sh
+python research/registry/identity/scripts/build_r006_reference_batch_e.py --check
+python research/registry/identity/scripts/build_r006_batch_e_final.py --check
+python -m unittest tests.test_screening_reference_batch_e tests.test_screening_batch_e_final -v
+python tools/validate.py
+python -m tools.identity_queue
+```
+
+The first profile reuses the frozen bibliography engine. The second builder is
+record-specific and requires publisher venue/pages/authors, the original AES
+location and exact retained page/payload/ordinal/work-ID provenance. It does not
+weaken the generic matcher or treat DOI equality as enough. Negative tests reject
+publisher-page/DOI disagreement, changed subtitle, altered index bibliography,
+missing parent cases, failed retrieval/hash mismatch and frozen-ledger drift.
+
+The dated all-lane unresolved count falls **22,212 → 22,202**, with zero exact
+candidates or conflicts and 22,202 unmatched occurrences. This finishes batch E's
+fixed identity scope, not issue #6, screening, study/sample reconciliation or the
+corpus gate. No eligibility decision changed. Further identity work and actual
+protocol-governed screening remain open.
+
+AI assistance: one Codex/GPT-6 agent performed fresh PDF/metadata retrieval, four
+visual citation checks, publisher-versus-index adjudication, software self-review
+and 21 regression tests. These checks are not independent human screening,
+scientific validation or empirical acceptance.
+
 ## Reproduction of the original Hermann tranche
 
 From the repository root:

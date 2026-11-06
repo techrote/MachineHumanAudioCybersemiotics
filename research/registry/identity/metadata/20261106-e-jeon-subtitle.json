@@ -1,0 +1,137 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Selected bibliographic fields including separately deposited subtitle, omitted from the prior selected-field derivative. No abstract/article content retained; original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "3a727f24e66d7ae451d2840ce797cc40e1f685b3f16013245346a6fb4c2356ee",
+  "record": {
+    "DOI": "10.1145/1753846.1753978",
+    "URL": "https://doi.org/10.1145/1753846.1753978",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+          }
+        ],
+        "family": "Jeon",
+        "given": "Myounghoon",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+          }
+        ],
+        "family": "Gupta",
+        "given": "Siddharth",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+          }
+        ],
+        "family": "Davison",
+        "given": "Benjamin K.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Georgia Institute of Technology, Atlanta, GA, USA"
+          }
+        ],
+        "family": "Walker",
+        "given": "Bruce N.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "CHI '10 Extended Abstracts on Human Factors in Computing Systems"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2010,
+          4,
+          10
+        ]
+      ]
+    },
+    "page": "3319-3324",
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          4,
+          10
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2010,
+          4,
+          10
+        ]
+      ]
+    },
+    "publisher": "ACM",
+    "relation": {},
+    "subtitle": [
+      "a case study of \"unavailable\" menu items"
+    ],
+    "title": [
+      "Auditory menus are not just spoken visual menus"
+    ],
+    "type": "proceedings-article"
+  },
+  "requested_doi": "10.1145/1753846.1753978",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "subtitle",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to"
+  ],
+  "retrieved_at": "2026-11-06T15:02:13Z",
+  "url": "https://api.crossref.org/works/10.1145%2F1753846.1753978"
+}

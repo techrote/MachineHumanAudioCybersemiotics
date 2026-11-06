@@ -1,0 +1,44 @@
+{
+  "artifact_kind": "publisher_bibliographic_metadata_derivative",
+  "derivation": "Parsed publisher citation_* metadata tags, omitting abstract text and its URL. Full publisher abstract was exposed through web search, not used for identity or empirical extraction. Raw HTML not committed.",
+  "final_url": "https://aes.org/publications/elibrary/elibrary-page/?id=16362",
+  "http_status": 200,
+  "metadata": {
+    "citation_author": [
+      "Jeon, Myounghoon",
+      "Gupta, Siddharth",
+      "Davison, Benjamin K.",
+      "Walker, Bruce N."
+    ],
+    "citation_firstpage": [
+      "505"
+    ],
+    "citation_issn": [
+      "1549-4950"
+    ],
+    "citation_issue": [
+      "7/8"
+    ],
+    "citation_journal_title": [
+      "Journal of the Audio Engineering Society"
+    ],
+    "citation_lastpage": [
+      "518"
+    ],
+    "citation_publication_date": [
+      "2012/07/06"
+    ],
+    "citation_publisher": [
+      "Audio Engineering Society"
+    ],
+    "citation_title": [
+      "Auditory Menus Are Not Just Spoken Visual Menus: A Case Study of “Unavailable” Menu Items"
+    ],
+    "citation_volume": [
+      "60"
+    ]
+  },
+  "raw_response_sha256": "748ecd158ba8b01c7346ae59ebe68468449336021d4029a4397278f3388a259e",
+  "retrieved_at": "2026-11-06T15:06:32Z",
+  "url": "https://aes.org/publications/elibrary/elibrary-page/?id=16362"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "AID-R006-E-FINAL-20261106",
+  "issue": 6,
+  "kind": "assistance",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-e-final-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; Crossref subtitle / AES publisher metadata and retained OpenAlex provenance adjudication"
+      },
+      "at": "2026-11-06T15:09:10Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03013",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-E-JEON-UNAVAILABLE",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "artifacts": [
+          "research/registry/identity/R006-E-FINAL-PLAN-20261106.json",
+          "research/registry/identity/R006-E-FINAL-20261106.json",
+          "research/registry/identity/README.md"
+        ],
+        "independence": "One Codex/GPT-6 agent and software self-review; no independent human adjudication.",
+        "input_refs": [
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03013",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+            "rev": 1
+          },
+          {
+            "id": "SRC-R006-E-JEON-UNAVAILABLE",
+            "rev": 1
+          }
+        ],
+        "limitations": "Publisher abstract exposed in full through web search while checking bibliographic identity; not appraised, extracted or treated as full-paper reading. No article PDF or methods/results section retrieved/read. General web search results incidentally exposed a short third-party abstract fragment. It was not checked against the primary abstract, appraised or used for identity, eligibility or empirical claims. This is tool-mediated fragment exposure, not complete abstract or article reading. The association of this secondary fragment with either report is not adjudicated. No full-text reading, eligibility, study/sample or alias/family decision; potential conference/journal overlap remains unresolved. Raw HTML/abstract/source PDF not committed.",
+        "output_refs": [
+          {
+            "id": "SRC-R006-E-JEON-2012-AES",
+            "rev": 1
+          },
+          {
+            "id": "HIT-R005R-C1LOAD-EQ1-03013",
+            "rev": 2
+          },
+          {
+            "id": "HIT-R005R-C1RECOVERY-EQ1-00478",
+            "rev": 2
+          }
+        ],
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-06T15:09:10Z"
+        },
+        "status": "performed",
+        "subtype": "assistance",
+        "task": "Adjudicate two mixed OpenAlex records against distinct 2010 conference and 2012 publisher journal identities without transferring the conference DOI or counting independent samples.",
+        "verification_steps": [
+          "Fresh Crossref subtitle captured; old/fresh raw response hashes agree, exposing an omitted field rather than evidence of a changed title.",
+          "AES HTTP 200 citation metadata verifies a distinct 2012 journal report: full title, four authors, volume/issue/pages and publisher date.",
+          "Checked original compressed page and payload hashes, ordinals, work ID, literal title/authors, mixed DOI/date/type, journal biblio and AES location. Assigned journal URL only; original wrong DOI retained on discovery records.",
+          "Eight bibliography cases and these two occurrences partition the parent deferred plan. Old conference source remains unchanged."
+        ]
+      },
+      "factual_status": "derived",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
