@@ -8,20 +8,20 @@ review completeness, sample independence or scientific validity.
 | Measure | Count |
 |---|---:|
 | current extracted outcomes | 0 |
-| current usable sources | 173 |
+| current usable sources | 188 |
 | experiments | 0 |
 | extraction records | 0 |
 | included outcomes | 0 |
 | included publications | 0 |
 | included studies | 0 |
 | outcomes | 0 |
-| publications | 173 |
+| publications | 188 |
 | samples | 0 |
 | search hits | 22761 |
 | search runs | 313 |
 | selected theoretical publications | 0 |
 | shared sample groups | 0 |
-| source record ids | 173 |
+| source record ids | 188 |
 | studies | 0 |
 | theoretical extractions | 0 |
 | unavailable publications | 4 |
