@@ -1,0 +1,265 @@
+{
+  "actor": {
+    "id": "codex-r006-reference-f-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; fresh hash-matched PDF retrieval, pypdf/Poppler bibliography inspection and retained-export comparison"
+  },
+  "artifact_kind": "bounded_reference_identity_tranche",
+  "boundary": "Identity of cited publications only. Original model-rendered provenance and search incompleteness remain intact; issue #6/corpus gate stay open.",
+  "counts": {
+    "corroborated_model_abbreviations": 2,
+    "duplicate_occurrences": 6,
+    "existing_target_publications": 4,
+    "new_source_records": 0,
+    "occurrences": 6,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "source_pdf_retrievals": 3,
+    "study_records_created": 0,
+    "visually_checked_citation_witnesses": 4
+  },
+  "implementation_base": "bc6a506a1c884fd563791c8c0c6b30bb875fe803",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-DOI-F-20261106.json",
+      "sha256": "2c8f1b63b2f04ddb83cc08c8ffa5b62b43e489af48b1720c4063272848810def"
+    },
+    {
+      "path": "research/registry/identity/R006-DOI-F-PLAN-20261106.json",
+      "sha256": "dc86cba192e427f183faa8b3859a8cb5f413758faf5809429ff9bbb59a9b69e1"
+    },
+    {
+      "path": "research/registry/identity/R006-REFERENCE-F-WITNESSES-20261106.json",
+      "sha256": "34ed2e3cf8ddd211c995ffb89c4883492a674ca759a190c0c5c5f3ae8f6aa20b"
+    },
+    {
+      "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+      "sha256": "9c3bf364ea9136da02e18793acb0aa036e7c8afce508fccdc2d705455995c288"
+    },
+    {
+      "path": "research/searches/auditory/recovery-2026-11-03/reviews/ruskin-2020-references.json",
+      "sha256": "2c9c0cab16950d484b8964f155ca9bbe44646318a327d0332f24b983ef51f119"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "doi": "10.1016/j.trf.2010.09.004",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02543",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 6,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-FRAPDF"
+      },
+      "file_pages_1based": [
+        34
+      ],
+      "hit_id": "HIT-R005-RLFRAPDF-006",
+      "input_ref": {
+        "id": "HIT-R005-RLFRAPDF-006",
+        "rev": 1
+      },
+      "input_revision_sha256": "73a25c3c02d1e736c0360525e44e57c45276b89edb8943fe64dd40e4950d98fd",
+      "output_ref": {
+        "id": "HIT-R005-RLFRAPDF-006",
+        "rev": 2
+      },
+      "output_revision_sha256": "7667ef2004fed6d0b347d9cb2079f2f0fdb7a18fdbd1b8517b70efa271f05a6f",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLFRAPDF-006.json",
+      "source_pdf_sha256": "6f652a858994170816f1535405387fadf3ce417ce3642eedb594240f3d9bb0e6",
+      "source_ref": {
+        "id": "SRC-R006-F-BALDWIN-LOUDNESS",
+        "rev": 1
+      },
+      "source_revision_sha256": "94daad6d47193d0916d78a11b69de76a67e86dc49fe773c65d7290b7e2723df8",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "fra-baldwin"
+    },
+    {
+      "doi": "10.1177/154193129804201513",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00705",
+        "rev": 2
+      },
+      "export_locator": {
+        "corroborating_reference_list": "RL-NLAM",
+        "item": 20,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NL"
+      },
+      "file_pages_1based": [
+        45
+      ],
+      "hit_id": "HIT-R005-RLNL-020",
+      "input_ref": {
+        "id": "HIT-R005-RLNL-020",
+        "rev": 1
+      },
+      "input_revision_sha256": "698a76fddbf1c93271b8d408d7d65f49efb7a4110b8733cdeb696f0635ac0344",
+      "output_ref": {
+        "id": "HIT-R005-RLNL-020",
+        "rev": 2
+      },
+      "output_revision_sha256": "9c37ef420bb99c843c8043a7487b1193df4ffedf259a0629ec9ea5ae061049ff",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNL-020.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-F-HAAS-HELICOPTER",
+        "rev": 1
+      },
+      "source_revision_sha256": "ac929c22689b35f5c24aca225991e12a1a34f1ead18e164f0aa5766ddeaff4a9",
+      "verification_extent": "Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.",
+      "witness_key": "nees-haas"
+    },
+    {
+      "doi": "10.1177/154193121005401804",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02525",
+        "rev": 2
+      },
+      "export_locator": {
+        "corroborating_reference_list": "RL-NLAM",
+        "item": 39,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NL"
+      },
+      "file_pages_1based": [
+        48
+      ],
+      "hit_id": "HIT-R005-RLNL-039",
+      "input_ref": {
+        "id": "HIT-R005-RLNL-039",
+        "rev": 1
+      },
+      "input_revision_sha256": "e0e13aebed9f045c331e199c82cb72f4cb1f6ccc9b53dbb87beca8bca5df8f4f",
+      "output_ref": {
+        "id": "HIT-R005-RLNL-039",
+        "rev": 2
+      },
+      "output_revision_sha256": "27db41b39adf1737823c9d0461f2c894041f91c5287ca60949e773b1d15d9b52",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNL-039.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-F-MOSKOVITCH-DUALTASK",
+        "rev": 1
+      },
+      "source_revision_sha256": "e91a879b8d48e19c16ca3bdd25d77a8d28d98b97049d7a44abd12f8215f10f2f",
+      "verification_extent": "Original model-rendered short title retained; publication identity corroborated by the Nees AM full citation. No claim of faithful original-preprint transcription or version equivalence.",
+      "witness_key": "nees-moskovitch"
+    },
+    {
+      "doi": "10.1177/154193129804201513",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00705",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 20,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NLAM"
+      },
+      "file_pages_1based": [
+        45
+      ],
+      "hit_id": "HIT-R005-RLNLAM-020",
+      "input_ref": {
+        "id": "HIT-R005-RLNLAM-020",
+        "rev": 1
+      },
+      "input_revision_sha256": "e938c26666519345543891f63c57e0d75138658284f738075a9af1a421c32300",
+      "output_ref": {
+        "id": "HIT-R005-RLNLAM-020",
+        "rev": 2
+      },
+      "output_revision_sha256": "c0b47f1b8d90675572cafa5206882077a3d8c84409e5116dc44bba2a70a35f4f",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNLAM-020.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-F-HAAS-HELICOPTER",
+        "rev": 1
+      },
+      "source_revision_sha256": "ac929c22689b35f5c24aca225991e12a1a34f1ead18e164f0aa5766ddeaff4a9",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "nees-haas"
+    },
+    {
+      "doi": "10.1177/154193121005401804",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02525",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 39,
+        "path": "research/searches/auditory/exports/AUDITORY-WEBSEARCH-2026-10-13.json",
+        "reference_list": "RL-NLAM"
+      },
+      "file_pages_1based": [
+        48
+      ],
+      "hit_id": "HIT-R005-RLNLAM-039",
+      "input_ref": {
+        "id": "HIT-R005-RLNLAM-039",
+        "rev": 1
+      },
+      "input_revision_sha256": "a40ecd4770a04bcc1fa21d07333fd33b9546b6879d9a51248a9e8598877108ff",
+      "output_ref": {
+        "id": "HIT-R005-RLNLAM-039",
+        "rev": 2
+      },
+      "output_revision_sha256": "adcce09dd6aed39145b478e01d1f5dc58a96719705ad31db9b6bedde429b3b2d",
+      "path": "research/searches/auditory/records/hits/HIT-R005-RLNLAM-039.json",
+      "source_pdf_sha256": "5585a4d7d64d84edaef80ab322863a273152e85eac572da4bbeec245540e2fbf",
+      "source_ref": {
+        "id": "SRC-R006-F-MOSKOVITCH-DUALTASK",
+        "rev": 1
+      },
+      "source_revision_sha256": "e91a879b8d48e19c16ca3bdd25d77a8d28d98b97049d7a44abd12f8215f10f2f",
+      "verification_extent": "Original byte-parsed citation checked against fresh same-byte PDF reference pages.",
+      "witness_key": "nees-moskovitch"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3588-3_12",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00517",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 19,
+        "occurrence_id": "C9-RUSKIN-2020-REF019",
+        "path": "research/searches/auditory/recovery-2026-11-03/reviews/ruskin-2020-references.json",
+        "pdf_pages": [
+          57
+        ]
+      },
+      "file_pages_1based": [
+        57
+      ],
+      "hit_id": "HIT-R005R-C9RUSKIN-00019",
+      "input_ref": {
+        "id": "HIT-R005R-C9RUSKIN-00019",
+        "rev": 1
+      },
+      "input_revision_sha256": "f5d9c1104fac64a743fd08b0bb4b546c9e81b75d27acc903f0bfc464cf48a6c3",
+      "output_ref": {
+        "id": "HIT-R005R-C9RUSKIN-00019",
+        "rev": 2
+      },
+      "output_revision_sha256": "71adbb484e65d732b3babbe97400547581412115d27e4b7e1fa3ddb4c979ec1b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C9RUSKIN-00019.json",
+      "source_pdf_sha256": "fa14019c4a211467a5f9e1622b4d96306823e5ffb69bc1ac4bcd5458604097ec",
+      "source_ref": {
+        "id": "SRC-R006-F-BREWSTER-NAVIGATION",
+        "rev": 1
+      },
+      "source_revision_sha256": "adf33fa84f3d239d702f682cb9750aa46f32ff09ff4e5e524b1297ea8317e123",
+      "verification_extent": "Coordinate-bearing bibliography citation and original page/line provenance checked against fresh same-byte PDF.",
+      "witness_key": "ruskin-brewster"
+    }
+  ],
+  "resolved_at": "2026-11-06T18:00:03Z",
+  "source_receipt": "research/registry/identity/R006-REFERENCE-F-WITNESSES-20261106.json"
+}
