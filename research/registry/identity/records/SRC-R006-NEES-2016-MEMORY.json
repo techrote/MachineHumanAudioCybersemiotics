@@ -1,0 +1,96 @@
+{
+  "id": "SRC-R006-NEES-2016-MEMORY",
+  "issue": 6,
+  "kind": "source",
+  "revisions": [
+    {
+      "actor": {
+        "id": "codex-r006-doi-c-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliography and retained-export identity comparison"
+      },
+      "at": "2026-11-06T09:08:58Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-04051",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ1-00329",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1RECOVERY-EQ6-00308",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-C-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_at": "2026-11-06T09:07:04Z",
+        "access_reason": "Crossref bibliographic identity metadata consulted; no abstract/article/PDF reading or availability verification. Original raw response is not committed; selected bibliographic derivative is retained.",
+        "access_status": "metadata_only",
+        "authors": [
+          {
+            "name": "Michael A. Nees",
+            "role": "author"
+          },
+          {
+            "name": "Benji Helbein",
+            "role": "author"
+          },
+          {
+            "name": "Anna Porter",
+            "role": "author"
+          }
+        ],
+        "edition": {
+          "state": "known",
+          "value": "Human Factors: The Journal of the Human Factors and Ergonomics Society; 58; 3; 416-426"
+        },
+        "family_links": [],
+        "identifiers": [
+          {
+            "provenance": "research/registry/identity/metadata/20261106-c-nees-memory.json record.DOI/title/author; HTTP 200 on 2026-11-06T09:07:04Z",
+            "scheme": "doi",
+            "status": "verified",
+            "value": "10.1177/0018720816629279"
+          }
+        ],
+        "language": {
+          "reason": "Language not inferred from an English metadata title.",
+          "state": "not_reported"
+        },
+        "manifestations": [],
+        "metadata_evidence": [
+          "research/registry/identity/metadata/20261106-c-nees-memory.json record.DOI, title, author and dates; retained derivative SHA256 8285f648a5376e672ea39c8ba2a8172a91e89b94dc504b29cbb37ab67b2b1357",
+          "Explicit DOI and full title cross-checked against the pinned retained discovery exports in research/registry/identity/R006-DOI-C-20261106.json.",
+          "publication_date uses Crossref published-print; issued/online/print date assertions are retained separately in the capture, not silently reconciled."
+        ],
+        "metadata_status": "verified",
+        "publication_date": {
+          "state": "known",
+          "value": "2016-05"
+        },
+        "rights": {
+          "evidence": {
+            "reason": "No licence decision made from metadata availability.",
+            "state": "unknown"
+          },
+          "reason": "No article reuse or redistribution permission verified; only bibliographic metadata retained.",
+          "status": "unknown"
+        },
+        "source_type": "article",
+        "title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride",
+        "validity": "active"
+      },
+      "factual_status": "source_reported",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

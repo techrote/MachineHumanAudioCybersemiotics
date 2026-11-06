@@ -1,0 +1,2021 @@
+{
+  "actor": {
+    "id": "codex-r006-doi-c-20261106",
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "Codex; sequential Crossref bibliography and retained-export identity comparison"
+  },
+  "artifact_kind": "bounded_new_publication_identity_tranche",
+  "boundary": "9 publication identities; no independent-study count or corpus acceptance. Metadata-only access.",
+  "counts": {
+    "deferred_occurrences": 13,
+    "duplicate_occurrences": 29,
+    "new_source_records": 9,
+    "occurrences": 38,
+    "resolved_representatives": 9,
+    "sample_records_created": 0,
+    "screening_decisions_created": 0,
+    "study_records_created": 0
+  },
+  "deferred": [
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-037",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLFRAPDF-086",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005-RLNL-059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-003",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1080/001401399185108",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-019",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-GRAHAM-1999-COLLISION"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.1177/0018720816629279",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-044",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-NEES-2016-MEMORY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005-RLNLAM-059",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed ICAD-series export format",
+      "doi": "10.21785/icad2018.029",
+      "hit_ref": {
+        "id": "HIT-R005R-C5SERIES-01072",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-TISLAR-2018-LEARNABILITY"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.4018/ijthi.2018100106",
+      "hit_ref": {
+        "id": "HIT-R005R-C9NLGENERAL-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-AMER-2018-EVENTS"
+    },
+    {
+      "defer_reason": "Unreviewed reference-list export format",
+      "doi": "10.12691/ajphr-2-6-3",
+      "hit_ref": {
+        "id": "HIT-R005R-C9TOTLAND-00002",
+        "rev": 1
+      },
+      "source_id": "SRC-R006-BELLETTIERE-2014-INTERVENTION"
+    }
+  ],
+  "implementation_base": "f2c8debc242f045fa27798e173ac95d2e461001f",
+  "input_artifacts": [
+    {
+      "path": "research/registry/identity/R006-DOI-C-PLAN-20261106.json",
+      "sha256": "528d4c141867e8ad42ed7bd8e6147b961ef7f2270662eb1384d73900da281a19"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-amer-events.json",
+      "sha256": "389a5a1d44ded210ca0aac7f35fe69e538a9f6ce049dfeca2ccb3b2d392c054f"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-bellettiere-intervention.json",
+      "sha256": "ca0e0d1f1df5cf5b71a3a6cd010bb6ca04d5ae0908d8d19c3d1d89e6c5b59cce"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-brewster-telephone.json",
+      "sha256": "744c4e1123b01f491b30b915cf17b9a53108b643c4f4a5cc8979f5d4e897ba0c"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-edworthy-heterogeneity.json",
+      "sha256": "76de8d1d899f3a4e7359b731c0bb116f2372bbabc2f9ef6e3fd13f4f3978caf7"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-graham-collision.json",
+      "sha256": "16d89b64e23d9f273292ccc8e7fa30a8e4d119d881b0792cbcbf06b194fae9e0"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-gygi-environmental.json",
+      "sha256": "8100d97260dbb226da1b65fbcf0dee35043a1a6dd74ddf89c8c30a84bc8924fa"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-nees-memory.json",
+      "sha256": "8285f648a5376e672ea39c8ba2a8172a91e89b94dc504b29cbb37ab67b2b1357"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-sanderson-anesthesiology.json",
+      "sha256": "538a46313b466f077b693bca6000662bcff8623639cdb6b428ba0bb0d1546d98"
+    },
+    {
+      "path": "research/registry/identity/metadata/20261106-c-tislar-learnability.json",
+      "sha256": "c1fd7b9d40db89c38b1982b2c2e7762b075bfa200079fce95aef123948ed6a61"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0001.json.gz",
+      "sha256": "494cbfe9a823dcb5d17947dd852d8b520635c7c617bf541f4ce34d6ba5d9e8e9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0002.json.gz",
+      "sha256": "f0e1224eaa8864a1218c35261b5f96ea990bae561023b1c7e507ddd4579cba59"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0003.json.gz",
+      "sha256": "d396350fb1444d8ccd8a80708decd594072c8938aeeef833ae9d94426304aeba"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0004.json.gz",
+      "sha256": "994c4f1199a11ae894f3d955214a66958725352fbc383df894fb2ee1a8e03354"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0005.json.gz",
+      "sha256": "945ff45ec3aba31316610ab9c89358139618386b20c2239b8b0ad847aeac9a96"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0006.json.gz",
+      "sha256": "b3582d7b2f64d865fd8963654492246c881d8a69caea33293b84c74cbb27ac1f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0007.json.gz",
+      "sha256": "dfa5b8ec7de880e02d8493854ff60bc5209af99eb885cca0e6fc312cccf411b0"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0008.json.gz",
+      "sha256": "249a76d1d2e5c8a3d1939473fc24fdb494b2e7144ae4e454996053a368aacc2a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0009.json.gz",
+      "sha256": "9e84beb38e31230338f00c42e901d4f1cbd908cf1853a94d0bf4d7b5d3c64ab6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0010.json.gz",
+      "sha256": "f517728975e77deb388cdce6e010dea2e2bab65ffe1d1f5edc4988846d9d74b3"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0011.json.gz",
+      "sha256": "37b264ed1e41e746ff72244ee0f9001a7bc0cbae0499eff07905af6f2a12dab7"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0012.json.gz",
+      "sha256": "a205c1ceed17df20eb9993daf69352d8bc19de99909ee6185869340a23a983c1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0013.json.gz",
+      "sha256": "0babc03cbd06ad71dd5d8e2c61f554cbb1ef7debbce4d742e48fdf01c530ec09"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+      "sha256": "d6d947749e47cbb1a112982d5ff155abebae163b11807d6bbebd17b51528d4b4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0015.json.gz",
+      "sha256": "bd095ec4282c2cbca41d11ccc31a7e47fd4de91ecd1f16b111555aa43d1cfd2d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0016.json.gz",
+      "sha256": "6a04c18e72e0e519eddc6bcf7f2045545340013f024b69822420bd1cf59869ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0017.json.gz",
+      "sha256": "20fa7274a7d0705bbfa603e4bcabb7eb9e5088f3def61bb2bf1f0d0d1fc3079b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0018.json.gz",
+      "sha256": "26c2960c0193e931ce9c2abe66f6ce1019be8a6da82522a59ebf402341e6c68a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0019-a2.json.gz",
+      "sha256": "3f6850416e04e62caae7088fac954b802de62c2f2931d423357ba929d967264c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0020-a2.json.gz",
+      "sha256": "c1acc726657034dfb2145ebce9ff1f591363084bc80b0122e06fe53cd3e4b58e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0021.json.gz",
+      "sha256": "47e8e65d8dd319e1f4ae0c143a3dd0c0be4942f8c8366057804a00dfda98471e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0001.json.gz",
+      "sha256": "6606d8c289c09849ad863bea9cd927dda823ad0d194ad0823be8aabae3438da5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0002.json.gz",
+      "sha256": "25d3a7dacca2d11288ef90851e9bbcad8ae136d8e589657e912d876b85040d87"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+      "sha256": "bd5a2876aa9e23347d15a9639b875759191742561c18e12e8183fda142a3396d"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0004.json.gz",
+      "sha256": "fff6796eaa3310cf3da0d11746191a08a220052d65dff422bdc08fbdf01903d1"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0005.json.gz",
+      "sha256": "86f8cfc955bf27095987cc12b4a191a5fa9362374171e895ee6651c96f70784b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0006.json.gz",
+      "sha256": "c56267aa604a1ac5836016d1ba2507e75f5ff36b73b3ce8043681a61eed41d0c"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0007.json.gz",
+      "sha256": "06b3f3a1095fbfc9ef3b1edbc9e62b53ebb084a0eaafab82da4569d430035a01"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0008.json.gz",
+      "sha256": "944286b9840e3ee410a5b83ac6a857cabcb78aa9aab006bfe883e934b1597501"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0009.json.gz",
+      "sha256": "74466151f34b131e0079e19058d0c72ec6cba7037f0761a344b929ea77dccff5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0010.json.gz",
+      "sha256": "6e823b71c57aa461d03fa5a3b007a3ca1cbd4e5e40b71918fa7cadb25cbec2b5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0011.json.gz",
+      "sha256": "a53bc310433542328a083bf88c5e45aa6d6058113d04934534dfc443c35c0795"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+      "sha256": "ce1719ce152ecbc183b916bd34aed5cd35fa2382282cfc9e1c850c60bb07fb6a"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+      "sha256": "a4e7a83a1947e4305077e8b6a259de4a814072022752adc8eba09c7f33fed14f"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+      "sha256": "4f6be15385cecec4ac3a2540e236aeebb78d74e21230f16090d89e86b10a90ee"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+      "sha256": "ccee941f98d31ff7a375a1818e974d2716a4d35f3092af2062706b91239cb3ec"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0004.json.gz",
+      "sha256": "ce66781f59dfd2150c0998843d0b07fd9c33729c81547bd9c99a3b5bed8e96b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+      "sha256": "b87f72d0672c4ac5c5537948a5e2209c061655f0519bc3d1efcbe148cca71305"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+      "sha256": "f8886a8a7a4c78c592529bba485a66694b8c5da21be8907872cf16c324f1d6d5"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0002.json.gz",
+      "sha256": "0b223218018fb075949d997052a3eaa33bb33500d352ea4fce03d9e068fcb5eb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0003.json.gz",
+      "sha256": "82360e9371885f4c5fb7057fac29ac65e9358e2ba7bb85b6e0554293a8d94209"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+      "sha256": "996e54968acbc09fed933cedb0088abf7535f876ba64cdad130e1eea82be93b9"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0002.json.gz",
+      "sha256": "a8cb32319f6e8f43ac26e03c19c01712599d8c9b06912961df157803c7b95304"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0003.json.gz",
+      "sha256": "ea313963bcd6a57c84476896956776949a462ff3b0fe5f1158ddf35f1f0dc0bb"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0004.json.gz",
+      "sha256": "80b08440606576465e54167df37f4226b000db1f2428aa52c63f055785b6d1e6"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0005.json.gz",
+      "sha256": "ba9b57087f4cb811947d4ad25cc8e1bae88a7d01ec124fca38165b8822413792"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0006.json.gz",
+      "sha256": "f3e3572eedbabd89b5f5fda05aef284510f61a03873340de788401cacf227b23"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0007.json.gz",
+      "sha256": "bf5892aed1cd9bbf0dca4002ad66e6f5947a1f4d5fbcef73f9d3e1cc78318ef4"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0008.json.gz",
+      "sha256": "d108c66aeb292a995057431072d0a9f2cccf301ad03bb1c4160d2ce85c8a27ae"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0001.json.gz",
+      "sha256": "ea86513c4baf0b1de68ce86635b07327eca720684894d7077858bdbfec097c75"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0002.json.gz",
+      "sha256": "a4c866c062dbd7f3ac2f2d119cd0cef7b62f4d48f4cab65cabd3fc157e232ec0"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0003.json.gz",
+      "sha256": "b55568af60f8641a182f54fe97e1404996eb452edc3a423d554c95eaf16222b2"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/MANIFEST.json",
+      "sha256": "d7316b11d341b8c0754fa0103a59535f41ff693b8cbec79a03abfd04d890e83b"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0001.json.gz",
+      "sha256": "3bcdd32d429b7fc169bd1622196894ef3c6cd938fd05cff25a38a40e0d48af31"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0002.json.gz",
+      "sha256": "67516c5748b3eac8b1c33316d6c942c739377e0aca13ea564c55f36ff137132e"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+      "sha256": "908187846e7ce1dbeb6da4a552bcc2489d9cbadc09e23cbbd6f5457d44218121"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0004.json.gz",
+      "sha256": "63e1a3b09efe16c0bf88cb714087bdb12d64cb0765214f297d3d5a376f77d951"
+    },
+    {
+      "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/MANIFEST.json",
+      "sha256": "30726cd453d1c1aa92b33f4e6fc3bf6d4fdc258d75e71ae1776f7708e3d87e39"
+    }
+  ],
+  "issue": 6,
+  "occurrences": [
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 189,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0003.json.gz",
+        "reported_publication_date": "1997-01-01",
+        "work_id": "https://openalex.org/W2128181169"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-00589",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 1
+      },
+      "input_revision_sha256": "5a47cec515970363c8ab3552e69bc886ebd944b99a8bfe52b0ab59f68753f9ba",
+      "ordinal": 589,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 2
+      },
+      "output_revision_sha256": "46357ae702abd3d50d8de829a86a55f7e7aa25e2b1c07c954c8a6060b4051a19",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-00589.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1080/001401399185108",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 183,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0004.json.gz",
+        "reported_publication_date": "1999-09-01",
+        "work_id": "https://openalex.org/W2138098672"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-00783",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00783",
+        "rev": 1
+      },
+      "input_revision_sha256": "94bac39eb3fdc3326f08dc3030d61e147c2d370ddfcbe207d829255cbdc1ea55",
+      "ordinal": 783,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00783",
+        "rev": 2
+      },
+      "output_revision_sha256": "64b60eae280bdf75372d9a42a7e2010be6955e0a794addc4a17745f632a4ab00",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-00783.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GRAHAM-1999-COLLISION",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 105,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0012.json.gz",
+        "reported_publication_date": "2009-10-31",
+        "work_id": "https://openalex.org/W1989274999"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-02305",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 1
+      },
+      "input_revision_sha256": "4c09a5df225c64965c5832db58091f5fc5cca491a49e77cb532afbec25e08e03",
+      "ordinal": 2305,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 2
+      },
+      "output_revision_sha256": "49f78c0e64034c572b4963fb9f341692b5f0ce2375c7761faa495792a0514ed2",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-02305.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 153,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0012.json.gz",
+        "reported_publication_date": "2010-01-01",
+        "work_id": "https://openalex.org/W1593020193"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-02353",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 1
+      },
+      "input_revision_sha256": "6e93e370bd63e73503ab9666e14876548138f4bf634fc107d14f17db515c2721",
+      "ordinal": 2353,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 2
+      },
+      "output_revision_sha256": "d3c3ce157696a5dcd03d422bd1f7ec578a1ba67ac27fd27a530d9903a04d819c",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-02353.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 36,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0014.json.gz",
+        "reported_publication_date": "2011-01-18",
+        "work_id": "https://openalex.org/W1577848066"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-02636",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 1
+      },
+      "input_revision_sha256": "776cffd350ddd5a46eeda36805cd15d856de95b1ec42f729e98ebba1c1a04a6f",
+      "ordinal": 2636,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 2
+      },
+      "output_revision_sha256": "f7509bf1dfa6e1b0ce7465ebe674352059f1a0456ea8965d1cc00b64760ab606",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-02636.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 43,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0019-a2.json.gz",
+        "reported_publication_date": "2014-11-21",
+        "work_id": "https://openalex.org/W2130283058"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-03643",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 1
+      },
+      "input_revision_sha256": "c17561d1f0990705e897b453b330e7eab1e91868bc94c66a20358e9fa1db3925",
+      "ordinal": 3643,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 2
+      },
+      "output_revision_sha256": "63a7694a0f8f9431da7d5bcb191243322a16df681a8f641fc7a19282203ac2cf",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-03643.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1177/0018720816629279",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 51,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ1/p0021.json.gz",
+        "reported_publication_date": "2016-02-16",
+        "work_id": "https://openalex.org/W2280386867"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ1-04051",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-04051",
+        "rev": 1
+      },
+      "input_revision_sha256": "e8e7cc355569aba41e1fdf4cdbd4426afb86c1239c7a12f19d67d263629bdb40",
+      "ordinal": 4051,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ1-04051",
+        "rev": 2
+      },
+      "output_revision_sha256": "7009bbf74e234f1c2639c8116a2492e156acb5b7d8909c21203c762e4410338d",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ1-04051.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-NEES-2016-MEMORY",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 114,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "1997-01-01",
+        "work_id": "https://openalex.org/W2128181169"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00114",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00114",
+        "rev": 1
+      },
+      "input_revision_sha256": "b398acae4f1081a274e74516b9f7fe2aeb41d3a1bb2a417b35b15a23cf13025c",
+      "ordinal": 114,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00114",
+        "rev": 2
+      },
+      "output_revision_sha256": "f0e94be22238484d7c8fb77f1dbf900ea550bc80c177999c6425b036080e4dd6",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00114.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 41,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2009-10-31",
+        "work_id": "https://openalex.org/W1989274999"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00441",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00441",
+        "rev": 1
+      },
+      "input_revision_sha256": "3204b92a937804f8a74bb822cbac5da67af69798ea300347b46ec9c79a2fefc6",
+      "ordinal": 441,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00441",
+        "rev": 2
+      },
+      "output_revision_sha256": "14f273e9717931dd8e227ab12b3a7c97a704bebbf540f8f2615f35afb5193312",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00441.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 51,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2010-01-01",
+        "work_id": "https://openalex.org/W1593020193"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00451",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00451",
+        "rev": 1
+      },
+      "input_revision_sha256": "eed3be0ea2b779b75871bd3016fe1eac7821ec093257c1eb96243913e254a30f",
+      "ordinal": 451,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00451",
+        "rev": 2
+      },
+      "output_revision_sha256": "66a77c147a16966e61707b75db644729755a273d99be7c0cb29a69634e0cdb64",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00451.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 113,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2011-01-18",
+        "work_id": "https://openalex.org/W1577848066"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00513",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00513",
+        "rev": 1
+      },
+      "input_revision_sha256": "5dc0db31a5a38b887fab239045ab459ab96d1e04054ddc1dd96a841616fb736f",
+      "ordinal": 513,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00513",
+        "rev": 2
+      },
+      "output_revision_sha256": "c906e509777579c032c3143208bf59cfd8601b4e606aa31f1e84b0fdd96e819d",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00513.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 158,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0004.json.gz",
+        "reported_publication_date": "2014-11-21",
+        "work_id": "https://openalex.org/W2130283058"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-00758",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00758",
+        "rev": 1
+      },
+      "input_revision_sha256": "82c330c7065e8eb42f78588acf3e065a8b109d34d500fdc63a5a72e524acc9ac",
+      "ordinal": 758,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-00758",
+        "rev": 2
+      },
+      "output_revision_sha256": "e724ab8b220b8b5115ce714897827371c27cfb68d03237327d5ed82e95648cdb",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-00758.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 17,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0006.json.gz",
+        "reported_publication_date": "2018-06-01",
+        "work_id": "https://openalex.org/W2885132859"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-01017",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01017",
+        "rev": 1
+      },
+      "input_revision_sha256": "84114255746cc0297c454bc1ede292ccf026fc868da95a507a7e1cc19ef5cd2a",
+      "ordinal": 1017,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01017",
+        "rev": 2
+      },
+      "output_revision_sha256": "8164ba6302769896ab9079837238f5e425e1c0046ac6d0d1a3962a025146eb2b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-01017.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.4018/ijthi.2018100106",
+      "duplicate_of": null,
+      "export_locator": {
+        "item": 31,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/EQ5/p0006.json.gz",
+        "reported_publication_date": "2018-07-11",
+        "work_id": "https://openalex.org/W2876411168"
+      },
+      "hit_id": "HIT-R005R-C1LOAD-EQ5-01031",
+      "input_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01031",
+        "rev": 1
+      },
+      "input_revision_sha256": "75893c627484b064c750e3568b115281235e2c844395da5ec4a4fafd9a62733c",
+      "ordinal": 1031,
+      "output_ref": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01031",
+        "rev": 2
+      },
+      "output_revision_sha256": "4a9586892221fa0fefbc4735a43514b73229b70131af94da48621bffe64780d1",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1LOAD-EQ5-01031.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1LOAD-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-AMER-2018-EVENTS",
+        "rev": 1
+      },
+      "status": "resolved"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01017",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 1,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2018-06-01",
+        "work_id": "https://openalex.org/W2885132859"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00001",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00001",
+        "rev": 1
+      },
+      "input_revision_sha256": "b09c8c90c7db902e61d7b029d93b5a34a6b86d2e3e3d5fd430538f8c9cf7ec51",
+      "ordinal": 1,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00001",
+        "rev": 2
+      },
+      "output_revision_sha256": "1e481a240aad640f04486ca08e76049da73d71933a65af88de9c88bcadd426a2",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00001.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.4018/ijthi.2018100106",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01031",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 20,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2018-07-11",
+        "work_id": "https://openalex.org/W2876411168"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00020",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00020",
+        "rev": 1
+      },
+      "input_revision_sha256": "155304b00640b57ba865a05f30fd6a404d0aa3ca41f7b4f06b3c12546b86c0f5",
+      "ordinal": 20,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00020",
+        "rev": 2
+      },
+      "output_revision_sha256": "ed4ffa5b0c7e9b098a25180b7aadc5b4906af4f7186f3d1169cdf4c09a1c3576",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00020.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-AMER-2018-EVENTS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 44,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2009-10-31",
+        "work_id": "https://openalex.org/W1989274999"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00044",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00044",
+        "rev": 1
+      },
+      "input_revision_sha256": "71105aa0d6a231204ed06fae66b62d39a8c44245fdcf357d7e75f6f3996fb6d4",
+      "ordinal": 44,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00044",
+        "rev": 2
+      },
+      "output_revision_sha256": "f84b3292e7855303c8ee0608a8ed8675d1661c0f6e026f01fc73a24a76a0b6fd",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00044.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1080/001401399185108",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00783",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 63,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "1999-09-01",
+        "work_id": "https://openalex.org/W2138098672"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00063",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00063",
+        "rev": 1
+      },
+      "input_revision_sha256": "1eda96d3779df3e4f54f4d9de74d3949950a904ca2d631e62de10c7fffaf243c",
+      "ordinal": 63,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00063",
+        "rev": 2
+      },
+      "output_revision_sha256": "6a5e77a29f27e1956d57e21132657bacc88a31ff454f980bf69a1cde61ea8bda",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00063.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GRAHAM-1999-COLLISION",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 183,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0001.json.gz",
+        "reported_publication_date": "2011-01-18",
+        "work_id": "https://openalex.org/W1577848066"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00183",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00183",
+        "rev": 1
+      },
+      "input_revision_sha256": "dc44d29ceaf9b46025f6ca4f6e4a0f8d5b7596b7a7d7e366597f5c392811bd0c",
+      "ordinal": 183,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00183",
+        "rev": 2
+      },
+      "output_revision_sha256": "b3e6ca0bad8151dc1aad50cd34a5e184424289fb8be8745b55e3bf26313eb04a",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00183.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 107,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+        "reported_publication_date": "1997-01-01",
+        "work_id": "https://openalex.org/W2128181169"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00307",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00307",
+        "rev": 1
+      },
+      "input_revision_sha256": "c69d1daee8d26562619ad1553d157c104e343ed5dbcba71af206d5c9726f182f",
+      "ordinal": 307,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00307",
+        "rev": 2
+      },
+      "output_revision_sha256": "096d38589371e55b0cbb84877c372911c5ca8e670190577391db856498140080",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00307.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1177/0018720816629279",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-04051",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 129,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0002.json.gz",
+        "reported_publication_date": "2016-02-16",
+        "work_id": "https://openalex.org/W2280386867"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00329",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00329",
+        "rev": 1
+      },
+      "input_revision_sha256": "5fbf1e0aa995205a2ad9c96aba8f39fed526cd58b2bb35bab78044d240001d39",
+      "ordinal": 329,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00329",
+        "rev": 2
+      },
+      "output_revision_sha256": "530550f95a475def6f5ea6f30522883bbeb5b614b320e1e508077b4d13e2990b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00329.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-NEES-2016-MEMORY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 90,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0003.json.gz",
+        "reported_publication_date": "2014-11-21",
+        "work_id": "https://openalex.org/W2130283058"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00490",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00490",
+        "rev": 1
+      },
+      "input_revision_sha256": "221c356ce437914e7897c001ff00fb44c8174f8eae2eee88989fe93a2aa9bae0",
+      "ordinal": 490,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00490",
+        "rev": 2
+      },
+      "output_revision_sha256": "980cb50cc2a7fde8978750dfdb13d302a9cd6b49cfca2ebe51fd84ba973afb20",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00490.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 147,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ1/p0005.json.gz",
+        "reported_publication_date": "2010-01-01",
+        "work_id": "https://openalex.org/W1593020193"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ1-00947",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00947",
+        "rev": 1
+      },
+      "input_revision_sha256": "8407afaad3b2933d5edf30ef93b59d62eba12cca528ff2a96e9b521704e1a548",
+      "ordinal": 947,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ1-00947",
+        "rev": 2
+      },
+      "output_revision_sha256": "d2486a8f90d135afabaff7306b27385f9e039a779390e038d3e8195c706f96e2",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00947.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ1",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1080/001401399185108",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00783",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 67,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ2/p0001.json.gz",
+        "reported_publication_date": "1999-09-01",
+        "work_id": "https://openalex.org/W2138098672"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ2-00067",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00067",
+        "rev": 1
+      },
+      "input_revision_sha256": "26eff6a5e246f87c0468890f00fe08f82dfa120fc52019b8c634cfc2b8d0b77d",
+      "ordinal": 67,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ2-00067",
+        "rev": 2
+      },
+      "output_revision_sha256": "67ab517bce67251e939b10b7561f1e4fe730f96abed1b284b68125a3bb87f03e",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ2-00067.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ2",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GRAHAM-1999-COLLISION",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.21785/icad2018.029",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01017",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 9,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "2018-06-01",
+        "work_id": "https://openalex.org/W2885132859"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00009",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00009",
+        "rev": 1
+      },
+      "input_revision_sha256": "f27afec00c5e5281df93526f2c22f588ea6d493ce35ce6941b443dacb70dba34",
+      "ordinal": 9,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00009",
+        "rev": 2
+      },
+      "output_revision_sha256": "e9cdcaf252ddccbbf1414dd1a234fcdb4af6e3a838c343d538d57074f38753ba",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00009.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.4018/ijthi.2018100106",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ5-01031",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 10,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "2018-07-11",
+        "work_id": "https://openalex.org/W2876411168"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00010",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00010",
+        "rev": 1
+      },
+      "input_revision_sha256": "ba02c01d5f1e68cb896979b7f02e2858d43d1e8e0e9aafa6e8fcf90b5825224f",
+      "ordinal": 10,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00010",
+        "rev": 2
+      },
+      "output_revision_sha256": "5be61d9caab49886fda6d3cc03ee5f9f2721e93493cebd5f720f9073427b82f8",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00010.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-AMER-2018-EVENTS",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 14,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "2011-01-18",
+        "work_id": "https://openalex.org/W1577848066"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00014",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00014",
+        "rev": 1
+      },
+      "input_revision_sha256": "ef1ca761a8d67d452d97031be6bae5e7c9cc190cd339fd11284f0cd49ba79b8e",
+      "ordinal": 14,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00014",
+        "rev": 2
+      },
+      "output_revision_sha256": "0549b9b988773282a8dc3de75ddaecc4831d763c57a24cc94a7fb2b6036e152b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00014.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 59,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "1997-01-01",
+        "work_id": "https://openalex.org/W2128181169"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00059",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00059",
+        "rev": 1
+      },
+      "input_revision_sha256": "b1c4e6b406137312e9edc120f279801080f770dedf1fc08ed365209b992247fa",
+      "ordinal": 59,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00059",
+        "rev": 2
+      },
+      "output_revision_sha256": "fd1f567de99c0ca952721fbc0f6fce5460bd2f5db50db43ce9b9ab63362ca9d1",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00059.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 94,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "2014-11-21",
+        "work_id": "https://openalex.org/W2130283058"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00094",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00094",
+        "rev": 1
+      },
+      "input_revision_sha256": "916e838d6c009937c0f86762062504bba9efc33f161fa07f5faab8c956a76f81",
+      "ordinal": 94,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00094",
+        "rev": 2
+      },
+      "output_revision_sha256": "d59051cbc520fed3063f3163c716010def8034caab02b35b0f8e03e4aa69c55f",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00094.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 173,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0004.json.gz",
+        "reported_publication_date": "2009-10-31",
+        "work_id": "https://openalex.org/W1989274999"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00773",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00773",
+        "rev": 1
+      },
+      "input_revision_sha256": "937a1656671b3c4b6913d8462828c510c80f5ea7f2d8e64ab57510161703319e",
+      "ordinal": 773,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00773",
+        "rev": 2
+      },
+      "output_revision_sha256": "e5e4e7df1fa0b4e8d4f92a633e1db78e50af31492476d2c0cd132806cc98142b",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00773.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 189,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ5/p0005.json.gz",
+        "reported_publication_date": "2010-01-01",
+        "work_id": "https://openalex.org/W1593020193"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ5-00989",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00989",
+        "rev": 1
+      },
+      "input_revision_sha256": "a9337214ae418c2dc2f089abf150de26dcd2a2c13d0c2801bc66c5dd9006cb95",
+      "ordinal": 989,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ5-00989",
+        "rev": 2
+      },
+      "output_revision_sha256": "f2b9506412df5b556db1d0663d04495817b4326a7e6ae6f67c07e28203c678e6",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ5-00989.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 11,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0001.json.gz",
+        "reported_publication_date": "2009-10-31",
+        "work_id": "https://openalex.org/W1989274999"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ6-00011",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00011",
+        "rev": 1
+      },
+      "input_revision_sha256": "b183c9e058fb723e03db72b44721bcb78159bc8b5a97dec5fc09213d8eeef6cb",
+      "ordinal": 11,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00011",
+        "rev": 2
+      },
+      "output_revision_sha256": "76834f6338e0e34dfaa56f461ace113133fd39b97e498a83adceb9f606783bb9",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ6-00011.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ6",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1177/0018720816629279",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-04051",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 108,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-recovery/EQ6/p0002.json.gz",
+        "reported_publication_date": "2016-02-16",
+        "work_id": "https://openalex.org/W2280386867"
+      },
+      "hit_id": "HIT-R005R-C1RECOVERY-EQ6-00308",
+      "input_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00308",
+        "rev": 1
+      },
+      "input_revision_sha256": "3553e5742a18857ba7a5568afd8f567ddff34e87dcaa167f499840fa5bd00e85",
+      "ordinal": 308,
+      "output_ref": {
+        "id": "HIT-R005R-C1RECOVERY-EQ6-00308",
+        "rev": 2
+      },
+      "output_revision_sha256": "daf39ed361e902534a62c95669b2be239fa726168ac3ac26b25313ca71893929",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ6-00308.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1RECOVERY-EQ6",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-NEES-2016-MEMORY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-1-4471-3601-9_3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-00589",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 114,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0001.json.gz",
+        "reported_publication_date": "1997-01-01",
+        "work_id": "https://openalex.org/W2128181169"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00114",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00114",
+        "rev": 1
+      },
+      "input_revision_sha256": "485529df3ef9dc21b9ff96dd9fcb795a151c21c613ab1c9a02bdb7ee2cc38b75",
+      "ordinal": 114,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00114",
+        "rev": 2
+      },
+      "output_revision_sha256": "a997ba77a3cb45e088520a084344045a7cb50932759166a6d576f0175571abce",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00114.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1097/aco.0b013e3283326a2f",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02305",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 41,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2009-10-31",
+        "work_id": "https://openalex.org/W1989274999"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00441",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00441",
+        "rev": 1
+      },
+      "input_revision_sha256": "3a5473b1ffd2df3d35b3ce47d00c5b286261ee606a8572e0560fb161b165402b",
+      "ordinal": 441,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00441",
+        "rev": 2
+      },
+      "output_revision_sha256": "5d64e656ef6376fd7980e3e8528a243777b1bd894c4929219556c9a17c28714d",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00441.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1007/978-3-642-12439-6_16",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02353",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 51,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2010-01-01",
+        "work_id": "https://openalex.org/W1593020193"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00451",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00451",
+        "rev": 1
+      },
+      "input_revision_sha256": "9c6ae4d38a208e44afd2a0dddb93885470fe0ecf0350af4bc5dc019f36f7a578",
+      "ordinal": 451,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00451",
+        "rev": 2
+      },
+      "output_revision_sha256": "cd2e8c1d37ff2f97d30a96f37582e30c6739e0ae99bafd4f5fd952e8a57ab938",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00451.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.1016/j.ergon.2010.12.004",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-02636",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 113,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0003.json.gz",
+        "reported_publication_date": "2011-01-18",
+        "work_id": "https://openalex.org/W1577848066"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00513",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00513",
+        "rev": 1
+      },
+      "input_revision_sha256": "2238fa738227948b0ad3373ae28b54d89124f79d0d9d56759bb45f94d7dced93",
+      "ordinal": 513,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00513",
+        "rev": 2
+      },
+      "output_revision_sha256": "8a1197294611bfae61faf7f80571dc18785feccd2fed4b079533cef09736cda3",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00513.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+        "rev": 1
+      },
+      "status": "duplicate"
+    },
+    {
+      "doi": "10.12691/ajphr-2-6-3",
+      "duplicate_of": {
+        "id": "HIT-R005R-C1LOAD-EQ1-03643",
+        "rev": 2
+      },
+      "export_locator": {
+        "item": 158,
+        "path": "research/searches/auditory/exports/openalex/20261103-database-sort-recovery/EQ5/p0004.json.gz",
+        "reported_publication_date": "2014-11-21",
+        "work_id": "https://openalex.org/W2130283058"
+      },
+      "hit_id": "HIT-R005R-C1SORT-EQ5-00758",
+      "input_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00758",
+        "rev": 1
+      },
+      "input_revision_sha256": "4faeda1e6dff9ac5ecd21eb505c688d404329f18fddc7b28d3280d23c67062ee",
+      "ordinal": 758,
+      "output_ref": {
+        "id": "HIT-R005R-C1SORT-EQ5-00758",
+        "rev": 2
+      },
+      "output_revision_sha256": "d0020f5d4edc518c8115f4bd83b72722fea394d426dc9b8b1cab840cf4296049",
+      "path": "research/searches/auditory/records/hits/HIT-R005R-C1SORT-EQ5-00758.json",
+      "search_ref": {
+        "id": "SRCH-R005R-C1SORT-EQ5",
+        "rev": 1
+      },
+      "source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      },
+      "status": "duplicate"
+    }
+  ],
+  "resolved_at": "2026-11-06T09:08:58Z",
+  "sources": [
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-graham-collision.json",
+        "sha256": "16d89b64e23d9f273292ccc8e7fa30a8e4d119d881b0792cbcbf06b194fae9e0"
+      },
+      "path": "research/registry/identity/records/SRC-R006-GRAHAM-1999-COLLISION.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              1999,
+              9
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              11,
+              10
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1999,
+              9
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "435b979cd3dc66b17fb925fb522e8b8e3c0d5eb11dad3146ffa3e79b8dcee7ce",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-GRAHAM-1999-COLLISION",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-sanderson-anesthesiology.json",
+        "sha256": "538a46313b466f077b693bca6000662bcff8623639cdb6b428ba0bb0d1546d98"
+      },
+      "path": "research/registry/identity/records/SRC-R006-SANDERSON-2009-ANESTHESIOLOGY.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2009,
+              12
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2009,
+              12
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "c7ae0fc4e1a65955ad8926dd643a3d80fae4ef9f60ff8aaeb87b85af8669a447",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-nees-memory.json",
+        "sha256": "8285f648a5376e672ea39c8ba2a8172a91e89b94dc504b29cbb37ab67b2b1357"
+      },
+      "path": "research/registry/identity/records/SRC-R006-NEES-2016-MEMORY.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              16
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              2,
+              16
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              5
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "8279e6602a5bb77b7805aee34f60b9c9d755aede386607ca28cb29b9beede6d3",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-NEES-2016-MEMORY",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-bellettiere-intervention.json",
+        "sha256": "ca0e0d1f1df5cf5b71a3a6cd010bb6ca04d5ae0908d8d19c3d1d89e6c5b59cce"
+      },
+      "path": "research/registry/identity/records/SRC-R006-BELLETTIERE-2014-INTERVENTION.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2014,
+              11,
+              21
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              11,
+              21
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "b718d175e1b80a7cf701567f9426c1992066cb492f5f109ee60801b484660c76",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-tislar-learnability.json",
+        "sha256": "c1fd7b9d40db89c38b1982b2c2e7762b075bfa200079fce95aef123948ed6a61"
+      },
+      "path": "research/registry/identity/records/SRC-R006-TISLAR-2018-LEARNABILITY.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2018,
+              6
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              6
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "b03d451b9a3f2534bb2e5668a77ff53334c4de4b898898979d7d2b8931dcae1b",
+      "selected_publication_date_field": "issued",
+      "source_ref": {
+        "id": "SRC-R006-TISLAR-2018-LEARNABILITY",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-amer-events.json",
+        "sha256": "389a5a1d44ded210ca0aac7f35fe69e538a9f6ce049dfeca2ccb3b2d392c054f"
+      },
+      "path": "research/registry/identity/records/SRC-R006-AMER-2018-EVENTS.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2018,
+              10,
+              1
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              10,
+              1
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "8bcb568dcb47e406071e9717acc3d1950dc58ec631594447891ad8e7197c72a5",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-AMER-2018-EVENTS",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-brewster-telephone.json",
+        "sha256": "744c4e1123b01f491b30b915cf17b9a53108b643c4f4a5cc8979f5d4e897ba0c"
+      },
+      "path": "research/registry/identity/records/SRC-R006-BREWSTER-1997-TELEPHONE.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              1997
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "cdf20dc5c4b9255cb83e9927b1d49920cea84d7db99b238afb97f667d5c7f927",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-BREWSTER-1997-TELEPHONE",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-gygi-environmental.json",
+        "sha256": "8100d97260dbb226da1b65fbcf0dee35043a1a6dd74ddf89c8c30a84bc8924fa"
+      },
+      "path": "research/registry/identity/records/SRC-R006-GYGI-2010-ENVIRONMENTAL.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "441e8ea4a2ad648041167c7e905799b84943c66f9cf23e13860d7512e0242578",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-GYGI-2010-ENVIRONMENTAL",
+        "rev": 1
+      }
+    },
+    {
+      "capture": {
+        "path": "research/registry/identity/metadata/20261106-c-edworthy-heterogeneity.json",
+        "sha256": "76de8d1d899f3a4e7359b731c0bb116f2372bbabc2f9ef6e3fd13f4f3978caf7"
+      },
+      "path": "research/registry/identity/records/SRC-R006-EDWORTHY-2011-HETEROGENEITY.json",
+      "reported_dates": {
+        "issued": {
+          "date-parts": [
+            [
+              2011,
+              3
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2011,
+              3
+            ]
+          ]
+        }
+      },
+      "revision_sha256": "b58f26f095e9f120f64a3016c9b4001b138176da31a2a4d8b168fbfcf5980a11",
+      "selected_publication_date_field": "published-print",
+      "source_ref": {
+        "id": "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
+        "rev": 1
+      }
+    }
+  ]
+}

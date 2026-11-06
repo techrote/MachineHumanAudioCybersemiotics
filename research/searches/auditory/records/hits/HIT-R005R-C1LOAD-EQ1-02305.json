@@ -39,6 +39,59 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-c-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliography and retained-export identity comparison"
+      },
+      "at": "2026-11-06T09:08:58Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-02305",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-C-20261106",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "ordinal": 2305,
+        "raw_metadata": "Auditory displays in anesthesiology | first author: Penelope M. Sanderson | 2009-10-31 | review | https://openalex.org/W1989274999",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-C-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W1989274999"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.1097/aco.0b013e3283326a2f"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1LOAD-EQ1",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
+          "rev": 1
+        },
+        "status": "resolved"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

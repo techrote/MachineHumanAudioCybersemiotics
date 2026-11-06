@@ -39,6 +39,67 @@
       },
       "factual_status": "discovery",
       "rev": 1
+    },
+    {
+      "actor": {
+        "id": "codex-r006-doi-c-20261106",
+        "kind": "agent",
+        "model": "GPT-6",
+        "tool": "Codex; sequential Crossref bibliography and retained-export identity comparison"
+      },
+      "at": "2026-11-06T09:08:58Z",
+      "basis": [
+        {
+          "id": "HIT-R005R-C1SORT-EQ5-00758",
+          "rev": 1
+        },
+        {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        },
+        {
+          "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-DOI-C-20261106",
+          "rev": 1
+        },
+        {
+          "id": "HIT-R005R-C1LOAD-EQ1-03643",
+          "rev": 2
+        }
+      ],
+      "data": {
+        "duplicate_of": {
+          "id": "HIT-R005R-C1LOAD-EQ1-03643",
+          "rev": 2
+        },
+        "ordinal": 758,
+        "raw_metadata": "Developing and Selecting Auditory Warnings for a Real-Time Behavioral Intervention | first author: John Bellettiere | 2014-11-21 | article | https://openalex.org/W2130283058",
+        "resolution_reason": "R006: explicit DOI and full title agree between retained original export and fresh Crossref identity metadata. Metadata-only source; no eligibility, source reading, version alias or independent-study assertion. See research/registry/identity/R006-DOI-C-20261106.json",
+        "returned_identifiers": [
+          {
+            "scheme": "url",
+            "value": "https://openalex.org/W2130283058"
+          },
+          {
+            "scheme": "doi",
+            "value": "10.12691/ajphr-2-6-3"
+          }
+        ],
+        "search_ref": {
+          "id": "SRCH-R005R-C1SORT-EQ5",
+          "rev": 1
+        },
+        "source_ref": {
+          "id": "SRC-R006-BELLETTIERE-2014-INTERVENTION",
+          "rev": 1
+        },
+        "status": "duplicate"
+      },
+      "factual_status": "derived",
+      "rev": 2
     }
   ],
   "schema_version": 1,

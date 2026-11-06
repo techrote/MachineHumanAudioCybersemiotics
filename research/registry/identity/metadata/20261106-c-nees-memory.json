@@ -1,0 +1,120 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "2362112f35d567c86924efa70625effcea6ed961f226608cb0a18b13490c6606",
+  "record": {
+    "DOI": "10.1177/0018720816629279",
+    "URL": "https://doi.org/10.1177/0018720816629279",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "Lafayette College, Easton, Pennsylvania"
+          }
+        ],
+        "family": "Nees",
+        "given": "Michael A.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Lafayette College, Easton, Pennsylvania"
+          }
+        ],
+        "family": "Helbein",
+        "given": "Benji",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [
+          {
+            "name": "Lafayette College, Easton, Pennsylvania"
+          }
+        ],
+        "family": "Porter",
+        "given": "Anna",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Human Factors: The Journal of the Human Factors and Ergonomics Society"
+    ],
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ]
+    },
+    "page": "416-426",
+    "published-online": {
+      "date-parts": [
+        [
+          2016,
+          2,
+          16
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          2016,
+          5
+        ]
+      ]
+    },
+    "publisher": "SAGE Publications",
+    "relation": {},
+    "title": [
+      "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride"
+    ],
+    "type": "journal-article",
+    "update-policy": "https://doi.org/10.1177/sage-journals-update-policy",
+    "volume": "58"
+  },
+  "requested_doi": "10.1177/0018720816629279",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:04Z",
+  "url": "https://api.crossref.org/works/10.1177%2F0018720816629279"
+}

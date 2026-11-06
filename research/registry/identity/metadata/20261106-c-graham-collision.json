@@ -1,0 +1,86 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "0c4b821bb7d023480b4bf7309190915b9404302d3180ec5dc7edb32d30d8bead",
+  "record": {
+    "DOI": "10.1080/001401399185108",
+    "URL": "https://doi.org/10.1080/001401399185108",
+    "author": [
+      {
+        "affiliation": [
+          {
+            "name": "a  HUSAT Research Institute, Loughborough University, The Elms, Elms Grove, Loughborough LE11 1RG, UK"
+          }
+        ],
+        "family": "GRAHAM",
+        "given": "ROBERT",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      }
+    ],
+    "container-title": [
+      "Ergonomics"
+    ],
+    "issue": "9",
+    "issued": {
+      "date-parts": [
+        [
+          1999,
+          9
+        ]
+      ]
+    },
+    "page": "1233-1248",
+    "published-online": {
+      "date-parts": [
+        [
+          2010,
+          11,
+          10
+        ]
+      ]
+    },
+    "published-print": {
+      "date-parts": [
+        [
+          1999,
+          9
+        ]
+      ]
+    },
+    "publisher": "Informa UK Limited",
+    "relation": {},
+    "title": [
+      "Use of auditory icons as emergency warnings: evaluation within a vehicle collision avoidance application"
+    ],
+    "type": "journal-article",
+    "volume": "42"
+  },
+  "requested_doi": "10.1080/001401399185108",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:06:50Z",
+  "url": "https://api.crossref.org/works/10.1080%2F001401399185108"
+}

@@ -1,0 +1,195 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "f3620559784478c8e695b2c255c6935a8cc3c0a86103aa2379e4da47a8d145a1",
+  "record": {
+    "DOI": "10.12691/ajphr-2-6-3",
+    "URL": "https://doi.org/10.12691/ajphr-2-6-3",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Bellettiere",
+        "given": "John",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "C. Hughes",
+        "given": "Suzanne",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Liles",
+        "given": "Sandy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Boman-Davis",
+        "given": "Marie",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "E. Klepeis",
+        "given": "Neil",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Blumberg",
+        "given": "Elaine",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Mills",
+        "given": "Jeff",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Berardi",
+        "given": "Vincent",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Obayashi",
+        "given": "Saori",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Tracy Allen",
+        "given": "T.",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "F. Hovell",
+        "given": "Melbourne",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "American Journal of Public Health Research"
+    ],
+    "issue": "6",
+    "issued": {
+      "date-parts": [
+        [
+          2014,
+          11,
+          21
+        ]
+      ]
+    },
+    "page": "232-238",
+    "published-print": {
+      "date-parts": [
+        [
+          2014,
+          11,
+          21
+        ]
+      ]
+    },
+    "publisher": "Science and Education Publishing Co., Ltd.",
+    "relation": {},
+    "title": [
+      "Developing and Selecting Auditory Warnings for a Real-Time Behavioral Intervention"
+    ],
+    "type": "journal-article",
+    "volume": "2"
+  },
+  "requested_doi": "10.12691/ajphr-2-6-3",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:09Z",
+  "url": "https://api.crossref.org/works/10.12691%2Fajphr-2-6-3"
+}

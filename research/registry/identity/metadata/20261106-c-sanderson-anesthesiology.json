@@ -1,0 +1,97 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "c0c1f75fcc7138c652223aae0ec77c77674cc1706f17dae513cbeafb9214ee5d",
+  "record": {
+    "DOI": "10.1097/aco.0b013e3283326a2f",
+    "URL": "https://doi.org/10.1097/aco.0b013e3283326a2f",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Sanderson",
+        "given": "Penelope M",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Liu",
+        "given": "David",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Jenkins",
+        "given": "Simon A",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Current Opinion in Anaesthesiology"
+    ],
+    "issue": "6",
+    "issued": {
+      "date-parts": [
+        [
+          2009,
+          12
+        ]
+      ]
+    },
+    "page": "788-795",
+    "published-print": {
+      "date-parts": [
+        [
+          2009,
+          12
+        ]
+      ]
+    },
+    "publisher": "Ovid Technologies (Wolters Kluwer Health)",
+    "relation": {},
+    "title": [
+      "Auditory displays in anesthesiology"
+    ],
+    "type": "journal-article",
+    "volume": "22"
+  },
+  "requested_doi": "10.1097/aco.0b013e3283326a2f",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:06:58Z",
+  "url": "https://api.crossref.org/works/10.1097%2Faco.0b013e3283326a2f"
+}

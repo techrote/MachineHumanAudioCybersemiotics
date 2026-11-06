@@ -1,0 +1,82 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "f4683924f902da44e943dd0319404bb14da761bc1fbd9523236ea9e8faf19fb8",
+  "record": {
+    "DOI": "10.1007/978-3-642-12439-6_16",
+    "URL": "https://doi.org/10.1007/978-3-642-12439-6_16",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Gygi",
+        "given": "Brian",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Shafiro",
+        "given": "Valeriy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "Lecture Notes in Computer Science",
+      "Auditory Display"
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "page": "306-329",
+    "published-print": {
+      "date-parts": [
+        [
+          2010
+        ]
+      ]
+    },
+    "publisher": "Springer Berlin Heidelberg",
+    "relation": {},
+    "title": [
+      "From Signal to Substance and Back: Insights from Environmental Sound Research to Auditory Display Design"
+    ],
+    "type": "book-chapter"
+  },
+  "requested_doi": "10.1007/978-3-642-12439-6_16",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:35Z",
+  "url": "https://api.crossref.org/works/10.1007%2F978-3-642-12439-6_16"
+}

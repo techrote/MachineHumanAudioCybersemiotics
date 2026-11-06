@@ -1,0 +1,121 @@
+{
+  "artifact_kind": "crossref_identity_metadata_derivative",
+  "derivation": "Parsed JSON message; only declared bibliographic/identity fields retained; abstracts and unrelated fields omitted. Original raw response not committed.",
+  "http_status": 200,
+  "raw_response_sha256": "c301e9743a137690e5fe4f675f3ed23ce5132957a5d99478b3b145d6a3720d61",
+  "record": {
+    "DOI": "10.1016/j.ergon.2010.12.004",
+    "URL": "https://doi.org/10.1016/j.ergon.2010.12.004",
+    "author": [
+      {
+        "affiliation": [],
+        "family": "Edworthy",
+        "given": "Judy",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "first"
+      },
+      {
+        "affiliation": [],
+        "family": "Hellier",
+        "given": "Elizabeth",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Titchener",
+        "given": "Kirsteen",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Naweed",
+        "given": "Anjum",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      },
+      {
+        "affiliation": [],
+        "family": "Roels",
+        "given": "Richard",
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ],
+        "sequence": "additional"
+      }
+    ],
+    "container-title": [
+      "International Journal of Industrial Ergonomics"
+    ],
+    "issue": "2",
+    "issued": {
+      "date-parts": [
+        [
+          2011,
+          3
+        ]
+      ]
+    },
+    "page": "136-146",
+    "published-print": {
+      "date-parts": [
+        [
+          2011,
+          3
+        ]
+      ]
+    },
+    "publisher": "Elsevier BV",
+    "relation": {},
+    "title": [
+      "Heterogeneity in auditory alarm sets makes them easier to learn"
+    ],
+    "type": "journal-article",
+    "volume": "41"
+  },
+  "requested_doi": "10.1016/j.ergon.2010.12.004",
+  "retained_fields": [
+    "DOI",
+    "title",
+    "author",
+    "issued",
+    "published-online",
+    "published-print",
+    "type",
+    "publisher",
+    "container-title",
+    "volume",
+    "issue",
+    "page",
+    "URL",
+    "relation",
+    "update-to",
+    "update-policy"
+  ],
+  "retrieved_at": "2026-11-06T09:07:41Z",
+  "url": "https://api.crossref.org/works/10.1016%2Fj.ergon.2010.12.004"
+}
