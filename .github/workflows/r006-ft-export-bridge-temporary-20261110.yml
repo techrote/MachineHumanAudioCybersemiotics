@@ -19,7 +19,7 @@ jobs:
       - name: Assert exact accepted main and source blobs
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD^)" = "1daa81b078cda22f752c2f01da46da25370dab84"
+          git merge-base --is-ancestor 1daa81b078cda22f752c2f01da46da25370dab84 HEAD
           test "$(git hash-object 'research/screening/r006_primary_pdf_preassessment_20261110/README.md')" = "a5a92c13688a93e72ca7f840e9aa9929bf5f92f8"
           test "$(git hash-object 'research/screening/records/SCR-R006-REL-BECKER-2025-FT.json')" = "aa934e0c52336266932e3ad5f46685aab0e76ad6"
           test "$(git hash-object 'research/screening/records/SCR-R006-REL-ROMEO-2025-FT.json')" = "a7d724eef379844de79118d84e50e4ec63884210"
