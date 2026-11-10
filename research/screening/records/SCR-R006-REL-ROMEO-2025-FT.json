@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-REL-ROMEO-2025-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T16:34:32Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-public-pdf-preassessment-20261110",
+        "model": "GPT-6",
+        "tool": "Connected GitHub canonical v1 records, direct public PDF web text and page screenshots; no PDF bytes or audio acquired"
+      },
+      "basis": [
+        {
+          "id": "SRC-REL-ROMEO-2025",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-REL-ROMEO-2025-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-REL-ROMEO-2025",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen v1 §4 E1–E6 and §6.2(3)/§6.3; qualified full-text eligibility pending provenance-pinned source manifestation and source reading",
+        "decision": "pending",
+        "reason": "Provisional full-text workflow checkpoint, not a scientific eligibility inclusion. On 2026-11-10, agent tool-mediated rendering directly displayed the Chalmers-cover version of the original ACM Transactions on Human-Robot Interaction 14(2), Article 33, DOI 10.1145/3711938 and CC BY-NC-SA 4.0 at printed 33:1 (PDF page 2). Original §§2.1–2.4 (printed 33:5–33:10) distinguish an online video-based repair-strategy pilot recruiting via Prolific (author reports 50 participants) from a physical maze human–Pepper between-subject study (author reports 60 participants) manipulating default versus custom synthetic voice and repair strategy, 2x3 conditions, with spoken recommendations, acceptance latency/behaviour and post-task trust ratings; selected §3 Results/§4 Discussion consulted. This supports genuine preliminary E1–E6 assessment of the main maze study, but published phase labels do not warrant two independently counted samples or a merge/split with Romeo 2023, a distinct IEEE DOI. Chalmers adds a volatile PDF wrapper; source owners have not retained/registered the exact version rendered here, and 2023 original text is still missing. Keep full-text eligibility pending exact-byte R004/Integration registration and source-pinned reading/identity evaluation; no sound files played or statistics extracted.",
+        "access_limitation": "Tool-mediated Chalmers original-article PDF viewing on 2026-11-10, specifically PDF pages 1–2 and 6–15 (cover, original 33:1 and selected 33:5–33:14); visual inspection included printed 33:5 and 33:8. Not a complete semantic read of all 23 PDF pages, original audio, videos, supplements or data. https://research.chalmers.se/publication/546010/file/546010_Fulltext.pdf. No current raw PDF bytes, current-instance hash or private source custody. The R005 12:03:12Z and 12:03:14Z genuine earlier download receipts both measured 3,445,682 bytes/23 pages but DIFFERING SHA256 digests ab894fbe2b707df1a140320910ed71dc2799e200c99a15ad373b07c712a5ea21 and 1261fc33accc55c7098ddd59e4f507f95b4d79fa31e3a4b308feddfcb2a7c14c; neither is automatically this rendering. Existing SRC-REL-ROMEO-2025@1 is abstract_only. Romeo 2023 DOI 10.1109/RO-MAN57019.2023.10309631 is a separate publication with unknown study/sample reuse. No reviewer or quantitative study/sample admission has occurred.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}

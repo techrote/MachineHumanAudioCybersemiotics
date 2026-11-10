@@ -199,8 +199,14 @@ class LiveFourCandidatePreflightTests(unittest.TestCase):
             self.assertEqual(result["source_gate_rows"]["SRC-REL-ROMEO-2025"]["gate"],
                              "r006_full_text_screening")
         else:
+            # A recorded FT checkpoint may be pending; do not promote it to
+            # an accepted eligibility determination merely because a record exists.
+            decision = audit.latest(self.ft["SRC-REL-ROMEO-2025"])["data"]["decision"]
+            expected = ("accepted_full_text_decision_requires_scientific_review"
+                        if decision in ("include", "exclude")
+                        else "r006_full_text_screening")
             self.assertEqual(result["source_gate_rows"]["SRC-REL-ROMEO-2025"]["gate"],
-                             "accepted_full_text_decision_requires_scientific_review")
+                             expected)
 
 
 if __name__ == "__main__":
