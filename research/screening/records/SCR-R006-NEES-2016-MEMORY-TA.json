@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-NEES-2016-MEMORY-TA",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T14:33:37Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-nextpair-registration-20261110",
+        "model": "GPT-6",
+        "tool": "R006 source-pinned GitHub identity records; primary institutional/publisher HTML abstracts viewed through web; single AI-assisted first pass (not independent human)"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-NEES-2016-MEMORY",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-NEES-2016-MEMORY",
+          "rev": 1
+        },
+        "stage": "title_abstract",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §4 E1–E6/G01 and §6.2; single original-abstract first pass, retain to full-text",
+        "decision": "uncertain",
+        "reason": "First-pass frozen v1 E1-E6. Publisher abstract compares speech alerts, auditory icons and a visual control in a video-simulated self-driving vehicle status monitoring context, with memory, effort and annoyance outcomes. Report appears primary and audio-manipulated, but exact human participant method/N and complete message/stimulus context are not verified from displayed abstract. Mark uncertain and retain for lawful full-text review (not exclude), with E1 and G01 particulars unresolved. SAGE labels full report restricted access. Distinct publication DOI verified in accepted R006 identity; no study, sample, numerical result or audio inspection claimed.",
+        "access_limitation": "Original primary abstract at https://journals.sagepub.com/doi/10.1177/0018720816629279; locator: SAGE original publisher online abstract (Objective/Background/Method/Results/Conclusion/Application); accessed 2026-11-10 by public web text. No original PDF bytes/hash, full-article Methods/Results, audio/stimulus or human assessor; exact HTTP response timestamp not captured. The canonical R006 source remains at revision 1 metadata_only and has no PDF manifestation; these title/abstract decisions must not be counted as full-text inclusion or independent samples. Agent's preparation antecedent is research/screening/r006_next_ta_20261110/DECISIONS.json and source record hit basis.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}

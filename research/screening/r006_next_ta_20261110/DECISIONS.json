@@ -1,0 +1,129 @@
+{
+  "artifact": "R006_NEXT_TWO_PRIMARY_ABSTRACT_SCREENING_HANDOFF_20261110",
+  "issue": 6,
+  "status": "prepared_noncanonical_do_not_count_as_admitted",
+  "prepared_at_utc": "2026-11-10T14:30:04Z",
+  "accepted_base_main_sha": "f2f9a13a70d38ab50e038ce08f34724c5a08918e",
+  "frozen_protocol": "research/protocol/PROTOCOL-v1.md §§4,6.2,6.3,6.4,11",
+  "search_cutoff": "2026-10-04",
+  "decision_actor": {
+    "kind": "agent",
+    "id": "gpt6-r006-next-pair-primary-abstract-20261110",
+    "model": "GPT-6",
+    "tool": "Connected GitHub source records and public original journal/institutional abstract text via web; no article PDF or audio"
+  },
+  "human_second_screener": false,
+  "novel_publications_prepared": 2,
+  "added_canonical_screening_records": 0,
+  "added_studies": 0,
+  "added_experiments": 0,
+  "added_samples": 0,
+  "selected_track_e": 0,
+  "selected_track_g": 0,
+  "rationale": "Four earlier original candidates already have accepted canonical title/abstract records. Their full-text gate remains blocked by original PDF manifestations; select two other already-identified publications with actually consulted original abstract text rather than repeat those records.",
+  "cases": [
+    {
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+      "source_rev": 1,
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "exact_edition": "Applied Ergonomics 45(5), 1291–1296, September 2014; online date 2013-10-24 appears in PubMed but not equated to final issue",
+      "title": "Learning three sets of alarms for the same medical functions: a perspective on the difficulty of learning alarms specified in an international standard.",
+      "original_source_url": "https://researchportal.plymouth.ac.uk/en/publications/learning-three-sets-of-alarms-for-the-same-medical-functions-a-pe/",
+      "corroboration_url": "https://pubmed.ncbi.nlm.nih.gov/24209498/",
+      "read_locator": "University of Plymouth institutional article entry: Abstract, complete publicly presented abstract text; no Methods/Results beyond abstract",
+      "access_method": "public institutional HTML via web text, unauthenticated",
+      "access_observed_date_utc": "2026-11-10",
+      "http_response_timestamp": "not_captured",
+      "original_fulltext_obtained": false,
+      "original_pdf_bytes_retained": false,
+      "original_pdf_hash": null,
+      "audio_heard": false,
+      "source_discovery_hit_ids": [
+        "HIT-R005R-C1LOAD-EQ1-03333",
+        "HIT-R005R-C1LOAD-EQ5-00670",
+        "HIT-R005R-C1RECOVERY-EQ5-00355",
+        "HIT-R005R-C1SORT-EQ5-00670"
+      ],
+      "track": "empirical",
+      "stage": "title_abstract",
+      "decision": "include",
+      "decision_scope": "proceed_to_full_text_only",
+      "rule_assessment": {
+        "E1": "yes_abstract_non_anaesthetist_participants",
+        "E2": "yes_abstract_function_mapped_medical_equipment_alarms",
+        "E3": "yes_three_alarm_representations",
+        "E4": "yes_alarm_learnability_identification",
+        "E5": "yes_primary_experiment_method_and_results_in_abstract",
+        "E6": "yes_2014_publication_before_cutoff"
+      },
+      "reasoning": "Institutional original abstract describes human participants learning three sets of eight medical alarms: standard tonal, randomly selected abstract, and function-metaphor alarms, over ten trial blocks. Alarm identification/learnability is measured and results summarized. Inclusion is to full-text retrieval only; no population N, effect size, original stimuli or statistical result is extracted.",
+      "identity_limit": "One article; multiple preserved search paths are occurrences, not multiple papers. No sample count or cohort independence from earlier Edworthy work asserted.",
+      "next_gate": "Full text and lawful original manifestation acquisition; register R006 source-pinned reading and canonical TA SCR only via Integration serialization/validation after source-scoped review."
+    },
+    {
+      "source_id": "SRC-R006-NEES-2016-MEMORY",
+      "source_rev": 1,
+      "doi": "10.1177/0018720816629279",
+      "exact_edition": "Human Factors 58(3), 416–426, May 2016; first online 2016-02-16",
+      "title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride",
+      "original_source_url": "https://journals.sagepub.com/doi/10.1177/0018720816629279",
+      "corroboration_url": "https://pubmed.ncbi.nlm.nih.gov/26884437/",
+      "read_locator": "SAGE original publisher HTML: full displayed Abstract (Objective, Background, Method, Results, Conclusion, Application); published full article labelled restricted access",
+      "access_method": "public SAGE publisher abstract via web text, unauthenticated",
+      "access_observed_date_utc": "2026-11-10",
+      "http_response_timestamp": "not_captured",
+      "original_fulltext_obtained": false,
+      "original_pdf_bytes_retained": false,
+      "original_pdf_hash": null,
+      "audio_heard": false,
+      "source_discovery_hit_ids": [
+        "HIT-R005R-C1LOAD-EQ1-04051",
+        "HIT-R005R-C1RECOVERY-EQ1-00329",
+        "HIT-R005R-C1RECOVERY-EQ6-00308"
+      ],
+      "track": "empirical",
+      "stage": "title_abstract",
+      "decision": "include",
+      "decision_scope": "proceed_to_full_text_only",
+      "rule_assessment": {
+        "E1": "yes_probable_human_memory_ratings_experiment_but_N_not_verified",
+        "E2": "yes_speech_and_auditory_icon_vehicle_status_messages",
+        "E3": "yes_speech_icons_visual_control",
+        "E4": "yes_memory_perceived_effort_annoyance",
+        "E5": "yes_experiment_method_and_results_in_abstract",
+        "E6": "yes_2016_publication_before_cutoff"
+      },
+      "reasoning": "Publisher original abstract reports experimental comparison of speech vehicle-status alerts, auditory icons and a visual control during a video-simulated autonomous-car ride and secondary visual task, assessing event memory and subjective effort/annoyance. This is an abstract-level candidate only; reported findings are not extracted as quantitative results.",
+      "identity_limit": "Single publication/source; distinct from Edworthy 2014 by DOI/title/author and application. No study or independent participant sample is instantiated; actual methods and shared participants remain full-text questions.",
+      "next_gate": "Retrieve lawful original publisher/author full text or retain awaiting_text if unavailable; canonical TA admission belongs to Integration's serialized records/export process."
+    }
+  ],
+  "limits": [
+    "First-pass single AI-assisted screening only; no human reviewer or independent intra-agent pass represented.",
+    "Two source identities are already accepted R006 identity records, but both have access_status metadata_only and no original PDF manifestation in those records; the new abstract observations are in this bounded noncanonical packet only.",
+    "No canonical SCR written and no changes to shared manifests, evidence-flow, R005 hits or R004 sources.",
+    "Existing four-candidate FT gate remains blocked: Becker and Romeo 2025 require exact original-file manifestations; Romeo 2023 original IEEE Methods absent.",
+    "Later source corrections or DOI/edition conflicts must invalidate/redo the relevant screening before admission."
+  ],
+  "post_preparation_registration": {
+    "at_utc": "2026-11-10T14:33:37Z",
+    "actor_kind": "agent",
+    "actor_id": "gpt6-r006-nextpair-registration-20261110",
+    "canonical_scrs_authored": [
+      {
+        "id": "SCR-R006-EDWORTHY-2014-LEARNING-TA",
+        "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+        "decision": "include"
+      },
+      {
+        "id": "SCR-R006-NEES-2016-MEMORY-TA",
+        "source_id": "SRC-R006-NEES-2016-MEMORY",
+        "decision": "uncertain"
+      }
+    ],
+    "notes": "R006 authored two actual canonical TA SCR records after the initial prepared packet, but Integration has not regenerated shared exports or admitted the new revisions into accepted main. Nees was conservatively tightened from initial proposal include to uncertain: original publisher abstract did not explicitly verify participant N/human assignment. This is the same agent refining one first-pass judgement, not an independent review.",
+    "exports_regenerated": false,
+    "accepted_main": false,
+    "merged_main_ci_passed": false
+  }
+}
