@@ -62,7 +62,7 @@ def validate(data):
     screens = data.get("track_e_provisional", [])
     if len(screens) != 3 or {x.get("publication") for x in screens} != set(KEYS):
         raise ValueError("Missing first-stage eligibility scope")
-    if any(x.get("decision") != "uncertain" or x.get("stage", "").endswith("canonical")
+    if any(x.get("decision") != "uncertain" or "not_canonical" not in x.get("stage", "")
            or not x.get("reason") for x in screens):
         raise ValueError("Premature scientific eligibility")
     decision = data.get("decision", {})
