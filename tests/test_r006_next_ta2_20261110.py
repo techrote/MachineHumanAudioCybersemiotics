@@ -73,6 +73,12 @@ class R006NextTASourcePin(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "scope"):
             self.check()
 
+    def test_invalidated_original_source_revision_rejected(self):
+        _, (source, _, _) = next(iter(mod.CASES.items()))
+        self.sources[source]["revisions"][0]["data"]["validity"] = "invalid"
+        with self.assertRaisesRegex(ValueError, "Source revision"):
+            self.check()
+
     def test_later_additive_revisions_do_not_break_historical_check(self):
         sid = next(iter(self.records))
         fake_later = copy.deepcopy(self.records[sid]["revisions"][0])
