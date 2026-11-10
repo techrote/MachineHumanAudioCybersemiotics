@@ -1,0 +1,40 @@
+name: Temporary R006 FT preassessment export bridge
+on:
+  push:
+    branches:
+      - mhac-integration/r006-ft-pending-20261110-1700
+    paths:
+      - .github/workflows/r006-ft-export-bridge-temporary-20261110.yml
+permissions:
+  contents: write
+jobs:
+  rebuild-r006-ft-views:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Assert exact accepted main and source blobs
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "1daa81b078cda22f752c2f01da46da25370dab84"
+          test "$(git hash-object 'research/screening/r006_primary_pdf_preassessment_20261110/README.md')" = "a5a92c13688a93e72ca7f840e9aa9929bf5f92f8"
+          test "$(git hash-object 'research/screening/records/SCR-R006-REL-BECKER-2025-FT.json')" = "aa934e0c52336266932e3ad5f46685aab0e76ad6"
+          test "$(git hash-object 'research/screening/records/SCR-R006-REL-ROMEO-2025-FT.json')" = "a7d724eef379844de79118d84e50e4ec63884210"
+          test "$(git hash-object 'tests/test_r006_primary_pdf_pending_20261110.py')" = "fddfa05b0ce64ba387e05fd3833e65d4120380ca"
+      - name: Regenerate actual canonical views and qualify source
+        run: |
+          set -euo pipefail
+          python3 tools/validate.py --write-exports
+          python3 -m unittest discover -s tests -v
+          python3 tools/validate.py --previous-ref 1daa81b078cda22f752c2f01da46da25370dab84
+          python3 -m tools.build_record_fixtures --check
+      - name: Commit only deterministic exports
+        run: |
+          set -euo pipefail
+          git add -- research/registry/generated/evidence-flow.json research/registry/generated/records-index.json
+          git diff --cached --quiet && { echo "ERROR: no export change"; exit 1; }
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" commit -m "R006 integration: rebuild full-text pending canonical exports"
+          git push origin HEAD:refs/heads/mhac-integration/r006-ft-pending-20261110-1700

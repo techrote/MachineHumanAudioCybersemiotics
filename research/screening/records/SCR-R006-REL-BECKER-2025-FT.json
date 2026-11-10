@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-REL-BECKER-2025-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T16:34:32Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-public-pdf-preassessment-20261110",
+        "model": "GPT-6",
+        "tool": "Connected GitHub canonical v1 records, direct public PDF web text and page screenshots; no PDF bytes or audio acquired"
+      },
+      "basis": [
+        {
+          "id": "SRC-REL-BECKER-2025",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-REL-BECKER-2025-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-REL-BECKER-2025",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen v1 §4 E1–E6 and §6.2(3)/§6.3; qualified full-text eligibility pending provenance-pinned source manifestation and source reading",
+        "decision": "pending",
+        "reason": "This is a provisional full-text workflow checkpoint, not a protocol eligibility inclusion. On 2026-11-10, agent tool-mediated viewing directly rendered an institutional public PDF displaying the original ACM Transactions on Human-Robot Interaction 14(2), Article 29, 25 printed pages, DOI 10.1145/3706066 and CC BY 4.0 on article 29:1. Inspected displayed title/abstract and selected original sections 3.1–3.7 (article 29:4–29:9), 4.1 and selected results/discussion/limitations (29:9–29:14), with PDF visual pages 8–9 independently inspected. The main study describes natural versus mechanical spoken NICO robot advice in a between-subject Battleship task; §3.7 explicitly distinguishes the online voice pre-study from the in-person main-study recruitment and excludes pre-study participants from the main study. These are author-reported phases, NOT two admitted independent experiments/samples. Provisional E1–E6 for the main study appears promising; definitive full-text inclusion, source/reading-event evidence and study/experiment/sample ledger remain on hold while R004/Integration registers one lawfully retained exact-byte original manifestation and the reading can be pinned to it. No numerical extraction or voice playback performed.",
+        "access_limitation": "Original public PDF rendered as tool-mediated text/screenshots on 2026-11-10; selected boundaries: PDF pages 1, 4–14 (printed 29:1, 29:4–29:14), particularly printed 29:4 §3.1, 29:5–29:9 §§3.2–3.7, 29:9–29:14 Results/Discussion. Not a certified complete 25-page semantic read. Direct source https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf. No local PDF bytes, present-instance SHA256, independent rights review, audio or registered source manifestation were obtained in this R006 pass; existing SRC-REL-BECKER-2025@1 is abstract_only. R005 historic runner 2026-11-10T12:03:09Z measured 10,436,314 bytes, SHA256 e5a2429e47e15208e285c4f3c1aa35e86529b0591139ff36d46e94babe42f230, but those earlier transient bytes were not archived and cannot be asserted to be this web rendering. Do not treat this checkpoint as screen-in, E1–E6 final decision or independent human verification.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
