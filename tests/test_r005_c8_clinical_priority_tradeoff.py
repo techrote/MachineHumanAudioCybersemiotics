@@ -83,7 +83,7 @@ def audit(obs: dict) -> list[str]:
         shin = sr.get("author_reported_not_independently_extracted", {})
         if shin.get("participants_total") != 45 or shin.get("clinicians", 0) + shin.get("nonclinicians", 0) != 45:
             errors.append("shins_sample")
-        if "abstract" not in sr.get("reading_extent", "").lower() or "not the full article" not in sr.get("reading_extent", ""):
+        if "abstract" not in sr.get("reading_extent", "").lower() or "no complete PDF" not in sr.get("reading_extent", ""):
             errors.append("shins_access")
     contrast = obs.get("cross_source_interpretation", {})
     if contrast.get("classification") != "hypothesis-generating contrast, not a meta-analysis, matched replication, or cross-paper pooled study":
