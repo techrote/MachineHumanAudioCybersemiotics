@@ -14,7 +14,7 @@
   "screening": {
     "full_text": {
       "awaiting_text": 0,
-      "exclude": 0,
+      "exclude": 1,
       "include": 0,
       "pending": 0,
       "uncertain": 0
@@ -31,7 +31,7 @@
     "empirical": {
       "full_text": {
         "awaiting_text": 0,
-        "exclude": 0,
+        "exclude": 1,
         "include": 0,
         "pending": 0,
         "uncertain": 0
@@ -69,7 +69,6 @@
         "boundary": "Only the explicitly supplied source scope is counted; retrieval, verification, source fidelity and search completeness are not inferred.",
         "missing_required_full_text": [
           "SRC-REL-BECKER-2025",
-          "SRC-REL-KUHNE-2020",
           "SRC-REL-ROMEO-2023",
           "SRC-REL-ROMEO-2025"
         ],
@@ -84,7 +83,7 @@
             "title_abstract": "include"
           },
           {
-            "full_text": "not_recorded",
+            "full_text": "exclude",
             "full_text_required": true,
             "source_id": "SRC-REL-KUHNE-2020",
             "title_abstract": "uncertain"
