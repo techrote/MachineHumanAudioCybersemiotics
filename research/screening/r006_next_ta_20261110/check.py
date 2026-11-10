@@ -55,3 +55,32 @@ def verify(packet=None, source_lookup=None):
 
 if __name__ == "__main__":
     print(json.dumps(verify(), sort_keys=True))
+
+def verify_authored_scrs(registry=None, packet=None):
+    """Check authored canonical SCR shape, never certify generated-flow admission."""
+    packet = load(PACKET) if packet is None else packet
+    proposed = packet["post_preparation_registration"]
+    if proposed["actor_kind"] != "agent" or proposed["exports_regenerated"] or proposed["accepted_main"]:
+        raise ValueError("False actor attribution or admission claim")
+    observed = []
+    for row in proposed["canonical_scrs_authored"]:
+        record = ((registry or {}).get(row["id"]) if registry is not None else None)
+        if record is None:
+            record = load(ROOT / "research/screening/records" / (row["id"] + ".json"))
+        if record["id"] != row["id"] or record["kind"] != "screening" or record["synthetic"] is not False:
+            raise ValueError("Authored canonical screening identity mismatch")
+        if len(record["revisions"]) != 1:
+            raise ValueError("Unreconciled screening revision history")
+        r = record["revisions"][0]
+        data = r["data"]
+        if (r["rev"] != 1 or r["at"] != proposed["at_utc"] or
+                r["actor"]["kind"] != "agent" or r["actor"]["id"] != proposed["actor_id"]):
+            raise ValueError("False canonical registration actor/time")
+        if (data["source_ref"] != {"id":row["source_id"], "rev":1} or
+                data["stage"] != "title_abstract" or data["track"] != "empirical" or
+                data["decision"] != row["decision"] or
+                data["protocol_version"] != "MHAC-Track-E-frozen-v1-2026-10-13" or
+                data["reading_refs"] or data["review_refs"]):
+            raise ValueError("Invalid or falsely reviewed canonical TA stage")
+        observed.append(row["id"])
+    return {"authored_unexported":len(observed),"accepted_main_admissions":0,"ids":observed}
