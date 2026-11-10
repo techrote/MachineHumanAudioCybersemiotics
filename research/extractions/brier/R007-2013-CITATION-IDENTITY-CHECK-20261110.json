@@ -1,0 +1,93 @@
+{
+  "record_type": "R007_bounded_reference_identity_audit",
+  "issue": "Refs #7",
+  "date_utc": "2026-11-10",
+  "agent": "OpenAI GPT-6 (web-mediated primary-page checks)",
+  "access_time_precision": "calendar_day_only_no_http_receipt",
+  "base_sha": "0e7f9debc12e66fb75c132c6542b62041f67d53a",
+  "frozen_cutoff": "2026-10-04",
+  "source_bytes_obtained": false,
+  "source_file_sha256": null,
+  "full_item_read": false,
+  "independent_human_review": false,
+  "canonical_track_g_admission": false,
+  "manifestations": {
+    "integral_review_2013": {
+      "source_url": "https://www.integral-review.org/documents/Brier%2C%20Cybersemiotics%2C%20Vol.%209%2C%20No.%202.pdf",
+      "year": 2013,
+      "volume": "9",
+      "issue": "2",
+      "printed_pages": "220-263",
+      "reading_mode": "web_extracted_text_plus_rendered_selected_pages",
+      "rendered_printed_pages": [
+        223,
+        224,
+        259
+      ],
+      "source_hash": null
+    },
+    "semiotica_2006": {
+      "source_url": "https://www.degruyterbrill.com/document/doi/10.1515/SEM.2006.008/html",
+      "doi": "10.1515/SEM.2006.008",
+      "printed_pages": "255-296",
+      "reading_mode": "publisher_metadata_and_abstract_only",
+      "body_access": "publisher_page_explicitly_says_not_able_to_access_content",
+      "source_hash": null
+    },
+    "triplec_2003": {
+      "source_url": "https://research-api.cbs.dk/ws/portalfiles/portal/85720813/s_ren_brier_the_cybersemiotic_model_of_communication_publishersversion.pdf",
+      "doi": "10.31269/triplec.v1i1.6",
+      "printed_pages": "71-94",
+      "reading_mode": "web_pdf_rendered_selected_page_81_cbs_rehosted_published_version",
+      "source_hash": null
+    }
+  },
+  "observations": [
+    {
+      "id": "R007-REF-01",
+      "source": "integral_review_2013",
+      "printed_page": 223,
+      "pdf_page_zero_index": 3,
+      "kind": "in_text_book_reference",
+      "finding": "Author refers to English monograph Cybersemiotics: Why Information Is Not Enough as (Brier, 2006); this is inconsistent with bibliography book entry Brier 2008a.",
+      "inference": "internal_bibliographic_mismatch_not_proven_authorial_intent"
+    },
+    {
+      "id": "R007-REF-02",
+      "source": "integral_review_2013",
+      "printed_page": 259,
+      "pdf_page_zero_index": 39,
+      "kind": "bibliography",
+      "finding": "Brier (2006) is Informationsvidenskabsteori (2nd ed., Danish); English Cybersemiotics book is Brier (2008a). The bibliography does not list the 2006 Semiotica article under Brier (2006).",
+      "inference": "2013_unqualified_Brier_2006_cannot_serve_as_semiotica_2006_identity_proof"
+    },
+    {
+      "id": "R007-REF-03",
+      "source": "integral_review_2013",
+      "printed_page": 224,
+      "pdf_page_zero_index": 4,
+      "kind": "in_text_citation",
+      "finding": "Four-view star discussion references (Brier 2006), but the bibliography maps that short label to the Danish information-science book, not the Semiotica article.",
+      "inference": "genealogy_to_semiotica_2006_unverified"
+    },
+    {
+      "id": "R007-REF-04",
+      "source": "semiotica_2006",
+      "printed_page": null,
+      "pdf_page_zero_index": null,
+      "kind": "publisher_abstract_and_access",
+      "finding": "Publisher gives DOI 10.1515/SEM.2006.008, printed 20 February 2006, online 28 April 2006 and an abstract listing five levels; it explicitly reports article-body access unavailable.",
+      "inference": "abstract_level_only_no_fulltext_comparison"
+    },
+    {
+      "id": "R007-REF-05",
+      "source": "triplec_2003",
+      "printed_page": 81,
+      "pdf_page_zero_index": 11,
+      "kind": "cbs_rehosted_published_layout",
+      "finding": "CBS copy includes one repository title-page cover; printed p.81 occurs at PDF index 11, whereas journal-hosted manifestation in accepted R007 ledger has p.81 at index 10. Both are valid only for their own URL.",
+      "inference": "do_not_transfer_pdf_page_indices_between_manifestations"
+    }
+  ],
+  "scope": "Only listed primary PDF pages and publisher abstract checked. No full-text 2006 Semiotica, full 2013 article, hashed source, 2008 book reading, human confirmation, or independent scientific validation."
+}
