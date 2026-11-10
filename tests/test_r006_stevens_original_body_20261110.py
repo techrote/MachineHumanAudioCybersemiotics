@@ -54,7 +54,7 @@ class StevensOriginalBodyBoundaryTests(unittest.TestCase):
         self.assertEqual(new["data"]["reading_refs"], [])
         self.assertEqual(new["data"]["review_refs"], [])
         self.assertNotIn("supersedes_ref", new["data"])
-        self.assertIn("no canonical manifestation", self.review.lower())
+        self.assertIn("no registered manifestation", self.review.lower())
 
     def test_distinct_rating_task_is_not_main_experiment_or_independent_study(self):
         reason = self.record["revisions"][1]["data"]["reason"]
@@ -63,7 +63,7 @@ class StevensOriginalBodyBoundaryTests(unittest.TestCase):
         self.assertIn("stimulus-selection", reason)
         self.assertIn("UNKNOWN", reason)
         self.assertIn("not two independent studies", reason)
-        self.assertIn("no independent samples", self.review.lower() + " no independent samples")
+        self.assertIn("must not be added to", self.review.lower())
 
     def test_original_html_and_r005_xml_are_not_conflated(self):
         limitation = self.record["revisions"][1]["data"]["access_limitation"]
