@@ -17,12 +17,15 @@
 | Page size | 200 | 100 |
 | Anchor OpenAlex ID `W2520134007` | Historic sorted rank 4,200 | New observed rank **4,142** (page 42, row 42) |
 | Original paper identity for anchor | Historical API work ID only | Same work ID; no primary-paper verification |
+| Current-window work IDs also in the *historic 4,200 prefix* | — | **42 of 200** |
+| Current-window work IDs **not** in that historic prefix | — | **158 of 200**; not automatically new publications |
+| Current page-43 IDs in historic prefix | — | **0 of 100** |
 | Canonical new search occurrences | — | **0** |
 | Study / experiment / independent sample admissions | — | **0 / 0 / 0** |
 
 The provider total declined by **93**, and the same anchor has moved **58 ranked places earlier**. Those are distinct observations; **neither difference is a count of deleted papers, added papers, unique publications or participants**. Page 43 currently begins with `W2551005744`, DOI `10.1016/j.apergo.2016.11.002`, an unscreened title-level lead on auditory/tactile warnings in noise, *not* a canonical R006 inclusion.
 
-The executable audit makes the additional, higher-value check against the **actual historical 4,200 stored work IDs**: for the 200 current rows it calculates how many already occur in that historical prefix, and how many are not in it. It checks immutable historical derivative hashes, page gaps/retries, unique IDs, equality of frozen Boolean filter, sort/cutoff, preserved HTTP receipt metadata and false screening claims. The historical prefix is the only safe comparator; lack of appearance in it **does not imply a globally new publication or search occurrence**.
+The executable audit verifies the **actual historical 4,200 stored work IDs** and finds **42/200 current work IDs already present in that prefix and 158/200 absent from it**; all 100 current page-43 IDs are outside the old prefix. This is a *bounded prefix membership test*, **not a global deduplication** of the 21,483 discovery occurrences, and does not certify 158 new works or independent publications. The observed difference is compatible with shifted paging and old truncation without establishing why the provider's index changed. [Original reproducible execution, Actions #42853123124](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42853123124), ran 894 unit tests and passed repository validation and deterministic fixtures on the prior source head `a28a8e58c0a8357eb63860735d8f4d18b6e3c299`; final head must independently requalify. It checks immutable historical derivative hashes, page gaps/retries, unique IDs, equality of frozen Boolean filter, sort/cutoff, preserved HTTP receipt metadata and false screening claims. The historical prefix is the only safe comparator; lack of appearance in it **does not imply a globally new publication or search occurrence**.
 
 The existing 10 November observation contains metadata row selections, not raw HTTP response bodies; this verifier cannot reconstruct or reauthenticate those exact original HTTP bytes or infer full historic query-set overlap outside the 200-row window. The outcome is **continuation unsafe**, not a guessed corrected search count.
 
