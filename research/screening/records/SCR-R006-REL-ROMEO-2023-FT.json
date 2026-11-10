@@ -40,6 +40,42 @@
         "reading_refs": [],
         "review_refs": []
       }
+    },
+    {
+      "rev": 2,
+      "at": "2026-11-10T13:38:30Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-screening-supplement-reconciliation-20261110",
+        "model": "GPT-6",
+        "tool": "GitHub connector: accepted R005 #124 OBSERVATIONS.json, two HTTP receipt log links, current R006 registry/frozen protocol; not a new original-file download or human review"
+      },
+      "basis": [
+        {
+          "id": "SRC-REL-ROMEO-2023",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-REL-ROMEO-2023-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-REL-ROMEO-2023",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §6.2(3), §6.3 and E1–E6/G01: retain unavailable full-text report as awaiting_text, not exclude",
+        "decision": "awaiting_text",
+        "reason": "Append-only correction to the 09:28 UTC access checkpoint: subsequently, R005 successfully obtained and structurally machine-parsed the separate four-page Romeo/Torre 2023 supplementary utterance-script PDF ROMAN2023_Ila_Marta.pdf. Accepted R005 PR #124 (squash 085a0760294c23b8f128a028e2c377b35571c8c6) and independent Integration #123 receipts agree on exact Zenodo v1 file bytes. This does not revise the original checkpoint's historical unsuccessful access observation. The parent 2023 IEEE RO-MAN article, DOI 10.1109/RO-MAN57019.2023.10309631, pp.2045–2050, remains only metadata/abstract-accessible and its original Methods have not been read. The supplement DOI 10.5281/zenodo.8042317 (concept DOI 10.5281/zenodo.8042316) is not the parent DOI; scripts are neither an independent publication/study/sample nor proof of audio played or 2023/2025 participant or stimulus overlap. The source record still lacks an IEEE-article full-text manifestation. Therefore retain the unresolved E1–E6 judgement as awaiting_text, without an eligibility exclusion/inclusion, claimed study or performed full-text reading.",
+        "access_limitation": "R005 OBSERVATIONS.json (research/sources/auditory/r006-romeo23-zenodo-script-reading-2026-11-10/OBSERVATIONS.json) preserves public no-credential HTTPS 200 original supplement receipt 2026-11-10T12:16:24.812Z, 103320 bytes, four PDF pages, matching Zenodo MD5 7137b64efa2e75ab9aec951ca03449fe, SHA-256 53be4375261a22965392f25151ba004392418727a378df42a253d4c22e969aea; R005 exact original runner log https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42814300602/job/129823316787 and independent Integration https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42813170458. R005 machine-extracted literal OS1/OS2 page markers, not human semantic close reading; this R006 pass inspected the accepted provenance ledger, NOT the original PDF bytes/audio or video. Neither a permanent canonical R004 IEEE full-text manifestation nor a performed R006 original-article reading event exists. Retention and rights to redistribute the supplement beyond public access not assumed. The IEEE paper and independent-sample identity remain unverified.",
+        "reading_refs": [],
+        "review_refs": []
+      }
     }
   ]
 }
