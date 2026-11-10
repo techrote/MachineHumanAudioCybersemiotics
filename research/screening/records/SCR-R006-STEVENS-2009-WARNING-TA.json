@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "id": "SCR-R006-STEVENS-2009-WARNING-TA",
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T20:28:14Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-stevens-primary-screen-20261110-2028",
+        "model": "GPT-6",
+        "tool": "Connected GitHub canonical source/DOI/HIT and R005 original Europe PMC XML receipt; web.run PubMed original-paper abstract, Western Sydney original institutional abstract and CEJSH publication bibliography; no raw XML/PDF downloaded by R006"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        "stage": "title_abstract",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §4 E1–E6, §6.2(2), G01 and §10; original-paper indexed PubMed abstract first-pass only",
+        "decision": "include",
+        "reason": "Original paper abstract identifies an aviation warning/indicator experiment with human participants, natural versus symbolic indicators, independently manipulated auditory versus visual modality and low/high task demand, and accuracy/reaction-time measurement during training and dual-task test phases. E1: human participants (abstract reports 36, author claim only); E2: aviation system warning messages include a manipulated auditory-warning modality, not speech between people or background sound; E3: multiple indicator types and audio/visual modalities; E4: recognition accuracy and latency; E5: primary experimental method and results described in abstract; E6: 2009 first published, before frozen 2026-10-04 cutoff. Include strictly to original full-text assessment; no study, experiment, separate condition-as-sample or independent-sample admission. DOI publication is already resolved from three+ retained OpenAlex discovery routes. Publisher/metadata Crossref issue '-1' versus Western Sydney institutional issue '1' is a bibliographic discrepancy, not a second study or publication. Prior Petocz/Keller/Stevens 2008 and Perry/Stevens 2007 experiments may share authors/laboratory; cross-report participants remain unknown until original Methods comparison. First pass by one AI agent, not human or independent screening.",
+        "access_limitation": "Actually accessed 2026-11-10 via public uncredentialed web text: original-paper abstract indexed at https://pubmed.ncbi.nlm.nih.gov/20523852/ (PMID 20523852, PMCID PMC2865004, DOI 10.2478/v10053-008-0064-6); institutional author-affiliated abstract at https://researchers.westernsydney.edu.au/en/publications/designing-informative-warning-signals-effects-of-indicator-type-m/ ; publication bibliographic/abstract record at https://cejsh.icm.edu.pl/cejsh/element/bwmeta1.element.cejsh-article-doi-10-2478-v10053-008-0064-6 . Crossref verified SRC-R006-E-STEVENS-INFORMATIVE@1; original representative discovery HIT-R005R-C1LOAD-EQ1-02138@2, additional EQ5/EQ7 paths are occurrences not independent publications. Primary full XML successfully received in two *R005* GitHub runner GETs on 2026-11-10T20:15:16.864Z and 20:19:06.280Z; each 74338 bytes SHA256 1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b at https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2865004/fullTextXML ; R005 Draft PR #152 receipt is separate source-lane evidence, not this agent's original XML acquisition, not accepted R004 manifestation. This R006 first pass read abstract records only: no complete primary Methods/Results, raw XML/PDF held by this agent, audio playback, human assessor, effect-size extraction, actual R006 file hash/rights attestation or participant overlap adjudication; recorder time is not HTTP Date.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}

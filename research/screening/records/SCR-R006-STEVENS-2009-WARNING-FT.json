@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "id": "SCR-R006-STEVENS-2009-WARNING-FT",
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T20:28:14Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-stevens-primary-screen-20261110-2028",
+        "model": "GPT-6",
+        "tool": "Connected GitHub canonical source/DOI/HIT and R005 original Europe PMC XML receipt; web.run PubMed original-paper abstract, Western Sydney original institutional abstract and CEJSH publication bibliography; no raw XML/PDF downloaded by R006"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-STEVENS-2009-WARNING-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen v1 §4 E1–E6, §6.2(3), §6.3 and §10; incomplete full-text reading/custody check after confirmed third-party original XML receipt; pending only, not include/exclude",
+        "decision": "pending",
+        "reason": "Source-lane R005 CI genuinely retrieved an original Europe PMC fullTextXML article response with a matching DOI/body and Methods/Results headings, twice at byte-identical SHA256. The original article is therefore not generally unavailable. However R006 has not itself read its complete relevant original Methods/Results, source SRC-R006-E-STEVENS-INFORMATIVE@1 remains metadata_only with manifestations=[], and no manifestation-bound performed-reading AID exists. PubMed/institutional abstracts provisionally support E1–E6 for the paper but do not establish a final full-text eligibility judgment, exact stimulus/action coding, cohort independence, or numeric extraction. Full-text disposition pending (source-instance acquisition + actual reading + participant-overlap review), not inclusion and not an access-based exclusion. R005 receipt's original XML was ephemeral, not durably archived. The reported audiovisual and natural/symbolic conditions are within one publication; no independent samples inferred. R004/Integration should independently re-acquire lawful XML bytes, record edition/rights/time/hash and register source manifestation, then R006 performs qualifying reading, overlap adjudication and legitimate FT decision.",
+        "access_limitation": "R006 only accessed original-paper PubMed abstract https://pubmed.ncbi.nlm.nih.gov/20523852/ and Western Sydney institutional abstract on 2026-11-10; the original European PMC XML route https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2865004/fullTextXML was actually fetched by R005 Draft #152 CI at 20:15:16.864Z and 20:19:06.280Z with same 74338-byte SHA256 1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b. That proves R005's two transient original-XML responses only; R006 neither downloaded its bytes nor read all Methods/Results and there is no durable authorized source custody, R004 source manifestation, original publisher PDF equivalence, unredacted audio, numerical extraction, authenticated human reading or second assessor. R005 PR #152 is Draft/HOLD, not merged main. Crossref DOI 10.2478/v10053-008-0064-6 identifies publication, not a separate 2008 experiment or a verified PDF version. FT decision timestamp is the R006 registrar time, not acquisition time. No reviewer/reading AID was created.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
