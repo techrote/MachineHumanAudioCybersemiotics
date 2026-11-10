@@ -87,10 +87,8 @@ def verify(records=None, sources=None):
         raise ValueError("Publication collision")
     return {
         "canonical_ta_files_authored": len(CASES),
-        "scientifically_admitted_studies": 0,
-        "scientifically_admitted_experiments": 0,
-        "scientifically_admitted_samples": 0,
-        "generated_exports_verified": False,
+        "scientific_admission_not_assessed": True,
+        "generated_exports_not_assessed": True,
     }
 
 
