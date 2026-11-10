@@ -124,11 +124,18 @@ class CrosslaneFirstPassTests(unittest.TestCase):
         self.assertEqual(evaluate(self.data),
                          {"include": 2, "uncertain": 2})
 
-    def test_no_registry_manifest_or_generated_views_modified_by_handoff(self):
-        manifest = json.loads((ROOT / "research/registry/state.json")
-                              .read_text(encoding="utf-8"))
-        self.assertNotIn("research/screening", manifest["record_roots"])
-        self.assertEqual(manifest["research_state"], "in_progress")
+    def test_provisional_handoff_does_not_impose_permanent_registry_exclusion(self):
+        # A future R006 integration must be able to register research/screening.
+        # This ledger's original admission claims remain pinned regardless.
+        self.assertEqual(
+            self.data["kind"],
+            "provisional_first_pass_screening_handoff_not_registered_mhac_records_v1",
+        )
+        self.assertEqual(
+            self.data["acceptance"]["canonical_screening_records_created"], 0
+        )
+        self.assertFalse(self.data["acceptance"]["corpus_snapshot_created"])
+        self.assertFalse(self.data["acceptance"]["track_e_gate_satisfied"])
 
     def test_duplicate_source_fails(self):
         edited = copy.deepcopy(self.data)
