@@ -18,7 +18,7 @@ def check(data, source_bytes):
     assert data["issue"] == 6
     assert data["artifact_kind"] == "noncanonical_primary_source_phase_eligibility_audit"
     assert data["source_ref"] == {"id": "SRC-REL-BECKER-2025", "rev": 1}
-    git_blob = b"blob " + str(len(source_bytes)).encode() + b"\\0" + source_bytes
+    git_blob = b"blob " + str(len(source_bytes)).encode() + b"\0" + source_bytes
     assert hashlib.sha1(git_blob).hexdigest() == data["source_record_git_blob_sha"]
     source = json.loads(source_bytes)
     assert source["id"] == data["source_ref"]["id"]
