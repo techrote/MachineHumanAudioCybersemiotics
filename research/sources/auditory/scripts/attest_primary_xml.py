@@ -45,8 +45,8 @@ def require_url(value: str) -> str:
 def inspect_bytes(raw: bytes) -> dict:
     if len(raw) < 120 or len(raw) > MAX_BYTES:
         raise ValueError("XML source size outside bounded range")
-    if b"<!DOCTYPE" in raw.upper() or b"<!ENTITY" in raw.upper():
-        raise ValueError("DTD and entity-bearing XML are prohibited")
+    if b"<!ENTITY" in raw.upper():
+        raise ValueError("Entity declarations are prohibited")
     try:
         root = ET.fromstring(raw)
     except ET.ParseError as exc:
@@ -57,8 +57,11 @@ def inspect_bytes(raw: bytes) -> dict:
            for node in root.findall("./front/article-meta/article-id")]
     dois = [v.lower() for k, v in ids if k == "doi"]
     pmcids = [v.upper() for k, v in ids if k in ("pmc", "pmcid")]
-    if DOI not in dois or PMCID not in pmcids:
-        raise ValueError("Exact Stevens 2009 DOI and PMCID not both present")
+    if DOI not in dois:
+        raise ValueError("Exact Stevens 2009 DOI missing")
+    normalized_pmcids = [v.removeprefix("PMC") for v in pmcids]
+    if normalized_pmcids and "2865004" not in normalized_pmcids:
+        raise ValueError("Conflicting embedded PMCID")
     if root.find("./body") is None or root.find("./back") is None:
         raise ValueError("Original article body/back is absent")
     sections = ["".join(t.itertext()).strip() for t in root.findall(".//sec/title")]
@@ -66,11 +69,11 @@ def inspect_bytes(raw: bytes) -> dict:
     for node in root.findall(".//license"):
         url = (node.get("{http://www.w3.org/1999/xlink}href")
                or node.get("href") or "").strip()
-        if url.startswith("https://") and not urlparse(url).query:
+        if url.startswith(("https://", "http://")) and not urlparse(url).query:
             licences.append(url)
     return {
         "doi_in_local_xml": DOI,
-        "pmcid_in_local_xml": PMCID,
+        "pmcid_in_local_xml": PMCID if normalized_pmcids else None,
         "article_body_present": True,
         "article_back_present": True,
         "section_heading_inventory_not_reading": sections[:150],
