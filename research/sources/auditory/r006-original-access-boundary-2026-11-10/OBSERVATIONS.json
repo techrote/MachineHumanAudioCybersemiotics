@@ -1,0 +1,152 @@
+{
+  "artifact": "R005_R006_ORIGINAL_ACCESS_BOUNDARY_20261110",
+  "issue": 5,
+  "refs_issue": 6,
+  "observed_date_utc": "2026-11-10",
+  "observation_time_kind": "tool-session day only; no captured original HTTP Date/headers or exact response time",
+  "method": "Public web search and intermediary text fetch; not a publisher database search, raw HTTP receipt, PDF download or completed original-paper reading",
+  "frozen_publication_cutoff": "2026-10-04",
+  "source_record_read_base_sha": "97162b61e87c3ec4ddabd8093f9619c4732c3cfa",
+  "reviewer": {
+    "kind": "agent",
+    "id": "gpt6-r005-20261110-source-boundary",
+    "model": "GPT-6",
+    "actual_human_second_assessor": false
+  },
+  "canonical_delta": {
+    "search_runs": 0,
+    "search_hits": 0,
+    "screenings": 0,
+    "included_fulltexts": 0,
+    "admitted_publications": 0,
+    "studies": 0,
+    "experiments": 0,
+    "independent_samples": 0
+  },
+  "cases": [
+    {
+      "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+      "source_rev": 1,
+      "doi": "10.1016/j.apergo.2013.10.003",
+      "pmid": "24209498",
+      "publication": "Edworthy, Page, Hibbard, Kyle, Ratnage and Claydon, Applied Ergonomics 45(5):1291-1296 (September 2014); 2013-10-24 online date is not a second publication",
+      "existing_screening": "SCR-R006-EDWORTHY-2014-LEARNING-TA@1",
+      "existing_screening_stage": "title_abstract",
+      "existing_screening_decision": "include_to_fulltext_only",
+      "original_search_hit_ids": [
+        "HIT-R005R-C1LOAD-EQ1-03333",
+        "HIT-R005R-C1LOAD-EQ5-00670",
+        "HIT-R005R-C1RECOVERY-EQ5-00355",
+        "HIT-R005R-C1SORT-EQ5-00670"
+      ],
+      "observed": [
+        {
+          "route": "https://researchportal.plymouth.ac.uk/en/publications/learning-three-sets-of-alarms-for-the-same-medical-functions-a-pe/",
+          "kind": "author_institutional_listing",
+          "access": "public_html_text",
+          "extent": "Page header, full presented Abstract, publication metadata and Access to Document link; no article body, tables or supplementary audio",
+          "locator": "Abstract, page lines 20-33; Access to Document lines 51-53",
+          "raw_response_sha256": null
+        },
+        {
+          "route": "https://pubmed.ncbi.nlm.nih.gov/24209498/",
+          "kind": "national_library_bibliographic_record",
+          "access": "public_html_text",
+          "extent": "Original journal abstract and bibliographic identifiers; not article body",
+          "locator": "PMID/DOI lines 177-226; Abstract lines 238-245",
+          "raw_response_sha256": null
+        },
+        {
+          "route": "https://www.sciencedirect.com/science/article/pii/S0003687013002123",
+          "kind": "publisher_original_article_endpoint",
+          "access": "web_fetch_http_403",
+          "extent": "none",
+          "locator": null,
+          "raw_response_sha256": null
+        },
+        {
+          "route": "https://doi.org/10.1016/j.apergo.2013.10.003",
+          "kind": "doi_resolver",
+          "access": "web_tool_inaccessible",
+          "extent": "none",
+          "locator": null,
+          "raw_response_sha256": null
+        }
+      ],
+      "publisher_or_author_full_text_accessed": false,
+      "original_binary_retained": false,
+      "original_binary_sha256": null,
+      "exact_http_acquisition_time": null,
+      "original_audio_accessed": false,
+      "article_redistribution_permission_verified": false,
+      "identity_boundary": "Three alternative alarm sets, eight functions and ten testing blocks are conditions/functions/trials in one report, not three studies, eight independent samples or ten studies. Cohort identity and overlap with earlier work are unverified.",
+      "external_gate": "Find lawful original full article or institutionally deposited author manuscript and, where available, stimuli; retain exact edition, original-byte SHA-256, timestamp and rights outside public repo. R006 decides whether tool-mediated eligibility is sufficient under protocol section 10 and sets honest FT disposition."
+    },
+    {
+      "source_id": "SRC-R006-F-ARRABITO-URGENCY",
+      "source_rev": 1,
+      "doi": "10.1080/0014013042000193282",
+      "pmid": "15204277",
+      "publication": "Arrabito, Mondor and Kent, Ergonomics 47(8):821-840 (2004); Taylor & Francis web page online date 2007-02-20 is not a new experiment or edition",
+      "existing_screening": "SCR-R006-ARRABITO-2004-URGENCY-TA@1",
+      "existing_screening_stage": "title_abstract",
+      "existing_screening_decision": "include_to_fulltext_only",
+      "original_search_hit_ids": [
+        "HIT-R005R-C1LOAD-EQ1-01348",
+        "HIT-R005R-C1RECOVERY-EQ1-00109",
+        "HIT-R005R-C1RECOVERY-EQ2-00074"
+      ],
+      "observed": [
+        {
+          "route": "https://www.tandfonline.com/doi/abs/10.1080/0014013042000193282",
+          "kind": "publisher_abstract_endpoint",
+          "access": "web_fetch_http_403_with_search_indexed_abstract",
+          "extent": "Search-indexed publication abstract and bibliographic page summary only; directly fetched publisher page unavailable",
+          "locator": "Search-indexed Abstract and journal/DOI metadata; no direct-page line locator",
+          "raw_response_sha256": null
+        },
+        {
+          "route": "https://www.tandfonline.com/doi/full/10.1080/0014013042000193282",
+          "kind": "publisher_fulltext_endpoint",
+          "access": "web_fetch_http_403",
+          "extent": "none",
+          "locator": null,
+          "raw_response_sha256": null
+        },
+        {
+          "route": "https://pubmed.ncbi.nlm.nih.gov/15204277/",
+          "kind": "national_library_bibliographic_record",
+          "access": "search_indexed_full_abstract_direct_fetch_inconsistent",
+          "extent": "Title, DOI, issue metadata and complete displayed abstract from search-indexed public record; direct fetch returned a one-line page in this session",
+          "locator": "PubMed PMID 15204277 Abstract (search-indexed), not original article Methods/Results",
+          "raw_response_sha256": null
+        }
+      ],
+      "publisher_or_author_full_text_accessed": false,
+      "original_binary_retained": false,
+      "original_binary_sha256": null,
+      "exact_http_acquisition_time": null,
+      "original_audio_accessed": false,
+      "article_redistribution_permission_verified": false,
+      "identity_boundary": "Pilot versus non-pilot groups, five helicopter alarms and their ratings are not independent publication, study or sample counts. Journal article identity is distinct from 2007 publisher online posting date; group/participant overlap unverified.",
+      "external_gate": "Lawfully access journal full article or authentic author/institutional version and stimulus details. If unavailable, R006 must preserve pending/awaiting-text rather than infer exclusion or admission; only R006 may adjudicate empirical eligibility."
+    }
+  ],
+  "citation_chain_observation": {
+    "channel": "C9 supplemental backward-citation locator, not a completed C9 database/export or search hit",
+    "citing_publication": "Edworthy J.R. and Edworthy J.D. (as displayed), Audible medical alarms, Anaesthesia 70(10), p.1215 (2015), correspondence",
+    "doi": "10.1111/anae.13205",
+    "publisher_url": "https://associationofanaesthetists-publications.onlinelibrary.wiley.com/doi/10.1111/anae.13205",
+    "read_extent": "Original publicly readable Wiley correspondence body and References section, not quantitative study full text",
+    "locator": "Correspondence body and references 1-6; reference 3 names Edworthy et al. 2014, reference 6 names Edworthy et al. 2011",
+    "link_to_existing_source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+    "result_status": "One corroborating citation edge only; no new canonical HIT, new publication identity, study or sample. Correspondence is commentary, not another independent experiment.",
+    "original_html_sha256": null
+  },
+  "limits": [
+    "Public URLs and navigable text are lawful to consult, but no publisher/original response bytes, immutable headers, downloaded PDFs or permission to redistribute was verified.",
+    "Tool intermediaries and search previews can be revisited but are not lossless raw-source captures. These observed web queries do not imply a C3/C4/C6 database search.",
+    "R006 alone owns canonical FT decision and publication-experiment-sample ledger; this artifact is R005 source recovery and access boundary, not screening.",
+    "Peer review, independent human reading, empirical counts and a selected corpus remain absent."
+  ]
+}
