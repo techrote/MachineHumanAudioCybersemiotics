@@ -1,0 +1,152 @@
+{
+  "artifact": "R006_FT_SOURCE_ADMISSION_GATE_20261110",
+  "issue": 6,
+  "kind": "noncanonical_source_and_admission_qualification",
+  "base_main_sha": "0e7f9debc12e66fb75c132c6542b62041f67d53a",
+  "observed_date_utc": "2026-11-10",
+  "exact_http_response_timestamp_captured": false,
+  "cutoff": "2026-10-04",
+  "protocol": "research/protocol/PROTOCOL-v1.md §§4,6.2–6.5 (no amendments)",
+  "actor": {
+    "kind": "agent",
+    "id": "gpt6-r006-ft-gate-qualification-20261110",
+    "human": false,
+    "independent_human": false
+  },
+  "canonical_checkpoint": {
+    "title_abstract": 4,
+    "ta_include_to_ft": 2,
+    "ta_uncertain_to_ft": 2,
+    "full_text": 0,
+    "studies": 0,
+    "experiments": 0,
+    "samples": 0,
+    "selected_empirical_publications": 0,
+    "selected_theoretical_corpus": 0
+  },
+  "scope_note": "Four previously admitted TA records; this audit does not register full-text screening, reading assistance, studies or samples.",
+  "cases": [
+    {
+      "source_id": "SRC-REL-KUHNE-2020",
+      "source_rev": 1,
+      "doi": "10.3389/fnbot.2020.593732",
+      "ta_id": "SCR-R006-REL-KUHNE-2020-TA",
+      "ta_decision": "uncertain",
+      "track": "empirical",
+      "proposed_full_text_decision": "exclude",
+      "rule": "E-NOT-MACHINE-MESSAGE",
+      "disposition": "source_located_candidate_for_integrator_scr_admission_not_yet_canonical",
+      "source_access": {
+        "url": "https://www.frontiersin.org/articles/10.3389/fnbot.2020.593732/pdf",
+        "method": "public_original_publisher_pdf_web_text_and_page_image",
+        "reading_scope": "selected file-pages 1, 4 and 5, including Materials and Methods > Design, Audio Stimuli, Voice Rating Measures and Procedure",
+        "file_pages_1based": [
+          1,
+          4,
+          5
+        ],
+        "whole_article_read": false,
+        "sound_played": false,
+        "local_original_pdf_bytes_retained": false,
+        "original_pdf_sha256_reverified": false
+      },
+      "registered_manifestation": {
+        "id": "FRONTIERS-PDF",
+        "coordinate": "file_page_1based",
+        "extent": 15,
+        "sha256_inherited_from_R004": "4ab306db1904f12eadba34f697d0edc4965e587fa32f415bc898936ef28cebee",
+        "hash_reverified_this_run": false
+      },
+      "source_observation": "Within-participant listening survey uses five decontextualized interview-derived lines per synthesized/humanoid/human voice type, followed by ratings of voice and speaker; the apparent imperatives and robot persona statements were not operational system-state or task-action messages to survey listeners.",
+      "separate_later_recheck": {
+        "path": "research/screening/r006_kuhne_e2_laterpass_20261110/RECHECK.json",
+        "performed_at_utc": "2026-11-10T05:32:44.143Z",
+        "outcome": "E2_no",
+        "blinded": false,
+        "human": false,
+        "independent_human": false
+      },
+      "gate_to_close": "Integrator source/review qualification of this interpretation, actual source-reading AID with truthful reading actor/time and source manifestation pin, canonical FT SCR with correct original actor/time and separate later recheck provenance, serialized generated exports and exact final-head tests. No human second screener mandated by frozen v1."
+    },
+    {
+      "source_id": "SRC-REL-BECKER-2025",
+      "source_rev": 1,
+      "doi": "10.1145/3706066",
+      "ta_id": "SCR-R006-REL-BECKER-2025-TA",
+      "ta_decision": "include",
+      "track": "empirical",
+      "proposed_full_text_decision": "include_main_phase_provisional_only",
+      "rule": "E1-E6_main_robot_Battleship_only",
+      "disposition": "blocked_on_source_manifestation_before_canonical_FT",
+      "source_access": {
+        "url": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+        "method": "lawfully_accessible_author_hosted_publisher_layout_pdf_selected_web_text_and_rendered_pages",
+        "reading_scope": "reported primary Methods §§3.1–3.7 and Appendix E selected pages; original-byte hash unavailable",
+        "file_pages_1based": [],
+        "whole_article_read": false,
+        "sound_played": false,
+        "local_original_pdf_bytes_retained": false,
+        "original_pdf_sha256_reverified": false
+      },
+      "registered_manifestation": null,
+      "source_observation": "Earlier bounded R005 #106 and R006 #107 analyses distinguish a voice-suitability pre-study (E2 uncertain/no for standalone messages), a setup pilot with unknown overlap, and main robot Battleship spoken action advice (provisional E2 yes). Pre-study/main nonoverlap is author-reported, not independently verified.",
+      "separate_later_recheck": null,
+      "gate_to_close": "R004 source authority or delegated integrator must add lawful manifest/version to source record with actual matching file hash/extent; R006 then performs actual source-pinned reading, formal FT SCR and participant identity review. Do not treat separate phases as accepted independent samples."
+    },
+    {
+      "source_id": "SRC-REL-ROMEO-2025",
+      "source_rev": 1,
+      "doi": "10.1145/3711938",
+      "ta_id": "SCR-R006-REL-ROMEO-2025-TA",
+      "ta_decision": "include",
+      "track": "empirical",
+      "proposed_full_text_decision": "include_provisional_only",
+      "rule": "E1-E6_earlier_text_review",
+      "disposition": "blocked_on_source_manifestation_and_stable_article_access",
+      "source_access": {
+        "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+        "method": "earlier tool_mediated_selected_PDF_text; current direct PDF request refused",
+        "reading_scope": "earlier R006 FT ledger describes §§1.4, 2.1–2.4 and 3; no complete or locally hashed article; current PDF route 403",
+        "file_pages_1based": [],
+        "whole_article_read": false,
+        "sound_played": false,
+        "local_original_pdf_bytes_retained": false,
+        "original_pdf_sha256_reverified": false
+      },
+      "registered_manifestation": null,
+      "source_observation": "Earlier source review found maze-navigation robot recommendations, manipulated voice and repair strategies; 2023 Romeo publication is distinct DOI, but experiment/participant overlap remains unknown.",
+      "separate_later_recheck": null,
+      "gate_to_close": "Verify an authorized stable original published manifestation and add it through R004 ownership or integrator delegation; recheck passages, then source-pin actual reading and FT SCR. Preserve 2023-versus-2025 overlap unknown."
+    },
+    {
+      "source_id": "SRC-REL-ROMEO-2023",
+      "source_rev": 1,
+      "doi": "10.1109/ro-man57019.2023.10309631",
+      "ta_id": "SCR-R006-REL-ROMEO-2023-TA",
+      "ta_decision": "uncertain",
+      "track": "empirical",
+      "proposed_full_text_decision": "awaiting_text",
+      "rule": "E2_unknown_not_excluded",
+      "disposition": "blocked_on_original_report_access",
+      "source_access": {
+        "url": "https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/",
+        "method": "institutional_abstract_and_metadata_only; R005 #111 also identified Zenodo 8042317 script listing, neither script nor full paper bytes read",
+        "reading_scope": "abstract only; no original full report or scripts verified",
+        "file_pages_1based": [],
+        "whole_article_read": false,
+        "sound_played": false,
+        "local_original_pdf_bytes_retained": false,
+        "original_pdf_sha256_reverified": false
+      },
+      "registered_manifestation": null,
+      "source_observation": "Two video-based voice-context studies described by abstract; G01/E2 unresolved without actual utterances and task context. No evidence of participant independence or sharing with Romeo 2025.",
+      "separate_later_recheck": null,
+      "gate_to_close": "Lawfully access RO-MAN 2023 full text and original Zenodo supplement; verify edition, methods, actual audio-task messages and 2023/2025 overlap. Until then record awaiting_text, never an E2 exclusion or independent sample."
+    }
+  ],
+  "provenance_handoffs": [
+    "R005 primary source support: PR #106 Becker; PR #111 Romeo 2023 source blocker (draft).",
+    "R006 noncanonical FT assessment: research/screening/r006_fulltext_e2_review_20261110/DECISIONS.json; separate Kühne later pass and Becker phase RECHECK.",
+    "Integration owns generated registry index/evidence flow/manifest and guarded merges; R006 owns eligibility decisions."
+  ]
+}
