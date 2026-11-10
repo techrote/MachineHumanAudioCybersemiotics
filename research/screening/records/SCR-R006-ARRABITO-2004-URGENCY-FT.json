@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-ARRABITO-2004-URGENCY-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T19:33:02Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-ft-access-nextpair-20261110",
+        "model": "GPT-6",
+        "tool": "Connected GitHub source/TA records; web.run primary institutional/publisher indexed Abstract and PubMed, restricted publisher full-text routes; no original PDF bytes, audio or human assessor"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-F-ARRABITO-URGENCY",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-ARRABITO-2004-URGENCY-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-F-ARRABITO-URGENCY",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen v1 §4 E1–E6, §6.2(3), §6.3 and §10: abstract-only/metadata access cannot substantiate full-text eligibility; lawful original full text remains requested",
+        "decision": "awaiting_text",
+        "reason": "The original journal-paper Abstract is readable in PubMed PMID 15204277 and the search-indexed publisher abstract describes pilots and non-pilots rating the perceived urgency of five helicopter auditory alarms. This sustains the previous title/abstract include-to-full-text decision only. Original Taylor & Francis full article (Methods/Results, acoustical specification and participant identity) returned HTTP 403 in a direct request on 2026-11-10, so frozen §6.2(3)/§6.3 require awaiting_text, not an evidence-based exclusion or inclusion. The pilots and non-pilots, five stimuli, rating and ranking tasks do not establish independent studies or samples. No original audio was heard.",
+        "access_limitation": "Verified DOI 10.1080/0014013042000193282; Ergonomics volume 47 issue 8 pages 821-840 in 2004; publisher online posting 2007-02-20 is not a new publication. PubMed original-paper Abstract https://pubmed.ncbi.nlm.nih.gov/15204277/ and publisher abstract index https://www.tandfonline.com/doi/abs/10.1080/0014013042000193282 were accessed through public web reading 2026-11-10; full-article request https://www.tandfonline.com/doi/full/10.1080/0014013042000193282 returned 403 Forbidden. Current web index of the publisher abstract is not its full article. No full Methods/Results, original PDF/audio, original HTTP Date, raw source bytes/SHA-256, local custody/redistribution grant, retained manuscript or independent human assessment. Source SRC@1 remains metadata_only with no manifestations; R005 source access observations in Draft PR #148 are separate and not accepted as source reading.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
