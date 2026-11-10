@@ -1,7 +1,9 @@
-"""R006 source-pinned Romeo 2023 FT access disposition; in-memory mutations are negative tests.
+"""Historical Romeo 2023 first FT access checkpoint; in-memory negative tests.
 
-No original 2023 report, supplement, sound, participant or human review is claimed.
-A local test pass does not replace serialized live manifest/export generation.
+The 09:28 UTC revision genuinely lacked the Zenodo PDF. Later source receipt
+corrections must append revisions, not erase that earlier truth or permanently
+freeze the publication at awaiting_text. No original IEEE report/human review
+is claimed. A local pass does not replace live manifest/export validation.
 """
 from __future__ import annotations
 
@@ -28,7 +30,15 @@ def load(path):
 
 
 def check(source, ta, ft):
-    """Check a *specific actual* access checkpoint; fail closed on correction."""
+    """Check immutable initial revision against the original historical state.
+
+    Later legitimate source and FT revisions are not invalidated by this
+    historical test. Live/latest screening is governed by the graph validator
+    and newer R006 issue-scoped tests, never by dated baseline zero-counts.
+    """
+    source, ta, ft = copy.deepcopy(source), copy.deepcopy(ta), copy.deepcopy(ft)
+    for original in (source, ta, ft):
+        original["revisions"] = original["revisions"][:1]
     if (source["id"] != "SRC-REL-ROMEO-2023"
             or source["kind"] != "source"
             or source["synthetic"] is not False
@@ -94,9 +104,13 @@ class Romeo2023AwaitingTextTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "reassess"):
             check(self.s, self.ta, self.ft)
 
-    def test_source_revision_change_requires_reassessment(self):
+    def test_later_source_revision_does_not_rewrite_historical_gate(self):
         self.s["revisions"].append(copy.deepcopy(self.s["revisions"][0]))
-        self.s["revisions"][-1]["rev"] = 2
+        self.s["revisions"][-1]["rev"] = 2  # isolated snapshot, not a live revision
+        self.assertIsNotNone(check(self.s, self.ta, self.ft))
+
+    def test_original_historical_source_revision_cannot_be_rewritten(self):
+        self.s["revisions"][0]["data"]["access_status"] = "full_text_available"
         with self.assertRaisesRegex(ValueError, "reassess"):
             check(self.s, self.ta, self.ft)
 
