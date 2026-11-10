@@ -20,7 +20,7 @@ jobs:
           python3 -m tools.build_record_fixtures --check
           git diff --check
           actual="$(git diff --name-only | LC_ALL=C sort)"
-          expected="$(printf '%s\n' research/registry/generated/evidence-flow.json research/registry/generated/records-index.json | LC_ALL=C sort)"
+          expected="research/registry/generated/records-index.json"
           if [ "$actual" != "$expected" ]; then
             echo "Unexpected generated output scope: $actual" >&2
             exit 1
