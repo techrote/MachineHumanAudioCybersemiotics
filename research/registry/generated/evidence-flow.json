@@ -22,9 +22,9 @@
     "title_abstract": {
       "awaiting_text": 0,
       "exclude": 0,
-      "include": 2,
+      "include": 3,
       "pending": 0,
-      "uncertain": 2
+      "uncertain": 3
     }
   },
   "screening_by_track": {
@@ -39,9 +39,9 @@
       "title_abstract": {
         "awaiting_text": 0,
         "exclude": 0,
-        "include": 2,
+        "include": 3,
         "pending": 0,
-        "uncertain": 2
+        "uncertain": 3
       }
     },
     "theoretical": {
@@ -70,13 +70,27 @@
         ],
         "boundary": "Only the explicitly supplied source scope is counted; retrieval, verification, source fidelity and search completeness are not inferred.",
         "missing_required_full_text": [
+          "SRC-R006-EDWORTHY-2014-LEARNING",
+          "SRC-R006-NEES-2016-MEMORY",
           "SRC-REL-BECKER-2025",
           "SRC-REL-ROMEO-2025"
         ],
         "missing_title_abstract": [],
         "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
-        "source_count": 4,
+        "source_count": 6,
         "sources": [
+          {
+            "full_text": "not_recorded",
+            "full_text_required": true,
+            "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+            "title_abstract": "include"
+          },
+          {
+            "full_text": "not_recorded",
+            "full_text_required": true,
+            "source_id": "SRC-R006-NEES-2016-MEMORY",
+            "title_abstract": "uncertain"
+          },
           {
             "full_text": "not_recorded",
             "full_text_required": true,
@@ -207,7 +221,6 @@
       "SRC-R006-E-WEE-TESTING",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
       "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
-      "SRC-R006-EDWORTHY-2014-LEARNING",
       "SRC-R006-F-ANDERSON-ANNOYANCE",
       "SRC-R006-F-ARRABITO-URGENCY",
       "SRC-R006-F-BALDWIN-LOUDNESS",
@@ -265,7 +278,6 @@
       "SRC-R006-H-SABIC-UNDERSTANDING",
       "SRC-R006-H-WEE-MELODIC",
       "SRC-R006-HOFMANN-2016-INCAR",
-      "SRC-R006-NEES-2016-MEMORY",
       "SRC-R006-PERRY-2007-COUGH",
       "SRC-R006-PETOCZ-2008-WARNINGS",
       "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
@@ -425,7 +437,6 @@
       "SRC-R006-E-WEE-TESTING",
       "SRC-R006-EDWORTHY-1995-METHODOLOGY",
       "SRC-R006-EDWORTHY-2011-HETEROGENEITY",
-      "SRC-R006-EDWORTHY-2014-LEARNING",
       "SRC-R006-F-ANDERSON-ANNOYANCE",
       "SRC-R006-F-ARRABITO-URGENCY",
       "SRC-R006-F-BALDWIN-LOUDNESS",
@@ -483,7 +494,6 @@
       "SRC-R006-H-SABIC-UNDERSTANDING",
       "SRC-R006-H-WEE-MELODIC",
       "SRC-R006-HOFMANN-2016-INCAR",
-      "SRC-R006-NEES-2016-MEMORY",
       "SRC-R006-PERRY-2007-COUGH",
       "SRC-R006-PETOCZ-2008-WARNINGS",
       "SRC-R006-SANDERSON-2009-ANESTHESIOLOGY",
