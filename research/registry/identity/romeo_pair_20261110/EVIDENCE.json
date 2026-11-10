@@ -1,0 +1,147 @@
+{
+  "issue": 6,
+  "tranche": "R006-ROMEO-CROSSPUBLICATION-20261110",
+  "base_main": "aaffdd541b761f55e701d084717ef49e4e4083ea",
+  "protocol": "PROTOCOL-v1 (frozen 2026-10-13), sections 4, 6.2, 6.4, 10, 11",
+  "cutoff": "2026-10-04",
+  "produced_on": "2026-11-10",
+  "actor": {
+    "kind": "agent",
+    "id": "gpt6-r006-romeo-20261110",
+    "tool": "GitHub connected records and public web text; PDF screenshot attempted but refused 403"
+  },
+  "type": "noncanonical_preselection_publication_experiment_sample_boundary",
+  "review_status": "single_agent_no_independent_human_review",
+  "source_bytes_retained": false,
+  "publications": [
+    {
+      "id": "SRC-REL-ROMEO-2023",
+      "rev": 1,
+      "doi": "10.1109/ro-man57019.2023.10309631",
+      "role": "RO-MAN conference paper",
+      "access": "institutional_abstract_and_supplement_listing_only",
+      "manuscript_full_text_read": false
+    },
+    {
+      "id": "SRC-REL-ROMEO-2025",
+      "rev": 1,
+      "doi": "10.1145/3711938",
+      "role": "ACM THRI journal article",
+      "access": "institutional_publisher_version_pdf_web_reader_selected_sections",
+      "manuscript_full_text_read": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E23-ABSTRACT",
+      "source_id": "SRC-REL-ROMEO-2023",
+      "url": "https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/",
+      "locator": "Abstract; publication details/DOI",
+      "access": "publisher_institutional_html",
+      "bytes_verified": false,
+      "reading": "abstract_only"
+    },
+    {
+      "id": "E23-SUPPLEMENT",
+      "source_id": "SRC-REL-ROMEO-2023",
+      "url": "https://zenodo.org/records/8042317",
+      "locator": "Description and Files listing (ROMAN2023_Ila_Marta.pdf)",
+      "access": "repository_metadata_listing_only_pdf_download_unreadable",
+      "bytes_verified": false,
+      "reading": "metadata_only"
+    },
+    {
+      "id": "E25-METHODS",
+      "source_id": "SRC-REL-ROMEO-2025",
+      "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+      "locator": "Publisher-version PDF parsed text: §§2, 2.1–2.4, printed pages 33:5–33:10; source screenshot refused HTTP 403",
+      "access": "web_pdf_text_selected_sections",
+      "bytes_verified": false,
+      "reading": "selected_sections_no_numeric_extraction"
+    },
+    {
+      "id": "E25-REFERENCE",
+      "source_id": "SRC-REL-ROMEO-2025",
+      "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+      "locator": "Bibliography reference [61], printed page 33:21 (text): Romeo et al. 2023",
+      "access": "web_pdf_text_selected_section",
+      "bytes_verified": false,
+      "reading": "reference_list_only"
+    }
+  ],
+  "experiment_candidates": [
+    {
+      "id": "ROMEO23-OS1",
+      "publication": "SRC-REL-ROMEO-2023",
+      "reference": "E23-ABSTRACT",
+      "design": "online video study of general-context voice/empathic behaviour",
+      "n_reported": null,
+      "e2": "unresolved_abstract_only",
+      "sample_relation": "unknown",
+      "counted_independent_sample": false
+    },
+    {
+      "id": "ROMEO23-OS2",
+      "publication": "SRC-REL-ROMEO-2023",
+      "reference": "E23-SUPPLEMENT",
+      "design": "online video study; Zenodo description calls stimulus corn-maze navigation video",
+      "n_reported": null,
+      "e2": "unresolved_until_supplement_and_paper_read",
+      "sample_relation": "unknown",
+      "counted_independent_sample": false
+    },
+    {
+      "id": "ROMEO25-PILOT",
+      "publication": "SRC-REL-ROMEO-2025",
+      "reference": "E25-METHODS",
+      "design": "online six-video robot repair strategy selection; Prolific recruitment",
+      "n_reported": 50,
+      "e2": "provisional_robot_navigation_message",
+      "sample_relation": "unknown",
+      "counted_independent_sample": false
+    },
+    {
+      "id": "ROMEO25-MAZE",
+      "publication": "SRC-REL-ROMEO-2025",
+      "reference": "E25-METHODS",
+      "design": "in-person physical robot maze; 2 voice x 3 repair, 10 people per arm; 60 people total reported",
+      "n_reported": 60,
+      "e2": "provisional_robot_navigation_message",
+      "sample_relation": "unknown",
+      "counted_independent_sample": false
+    }
+  ],
+  "identity_assessment": {
+    "publications": "distinct_verified_dois",
+    "family_relation": "unknown_not_a_confirmed_conference_extension",
+    "stimuli": "candidate_overlap_not_verified",
+    "stimuli_basis": "2023 Zenodo listing specifies an OS2 corn-maze navigation video; 2025 §2.1 describes Pepper over corn-maze video. This suggests a targeted stimulus comparison, not evidence of identical tracks or participants.",
+    "samples": "unknown_not_independent_not_shared",
+    "study_relationship": "unknown",
+    "no_silent_collapse": true,
+    "reported_participant_counts": "50 online pilot and 60 in-person participants are reported for two procedures, but these are not two adjudicated independent samples and cannot be summed as an included corpus N.",
+    "trial_caution": "Repeated navigation trials and six experimental arms are not independent participant samples."
+  },
+  "decisions": {
+    "new_title_abstract": 0,
+    "new_full_text": 0,
+    "new_canonical_scr": 0,
+    "admitted_studies": 0,
+    "admitted_independent_samples": 0,
+    "selected_corpus": false
+  },
+  "verification_gates": {
+    "paper_2023_full_text": false,
+    "supplement_2023_pdf_read": false,
+    "paper_2025_source_bytes_hash": false,
+    "paper_2025_page_image": false,
+    "participant_overlap_crosschecked": false,
+    "independent_human_screening": false
+  },
+  "next_actions": [
+    "Obtain lawful 2023 full report and the Zenodo supplement bytes; inspect OS1/OS2 stimulus scripts and E2 separately.",
+    "Compare 2023 OS2 maze video utterance and design against 2025 pilot video at actual source-file/stimulus level; record whether stimuli were reused without inferring sample reuse.",
+    "Locate participant recruitment, dates and overlap disclosures; resolve publication-study-sample only with primary-source evidence.",
+    "Integrator owns eventual SCR canonical admission, source revision updates, common manifests/exports and later selection; both #5 and #6 remain open."
+  ]
+}
