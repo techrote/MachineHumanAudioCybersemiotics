@@ -35,7 +35,9 @@ def validate(payload):
         raise ValueError("2006 English thesis identity corrupted")
     if m["brier_2008_utp_book"]["isbn_print"] != "9780802092205":
         raise ValueError("2008 book identity corrupted")
-    if "bibliotek.dk" not in m["brier_2006_danish_textbook"].get("source_url", ""):\n        raise ValueError("missing independent Danish catalogue provenance")\n    if m["brier_2006_danish_textbook"]["title"] != "Informationsvidenskabsteori":
+    if "bibliotek.dk" not in m["brier_2006_danish_textbook"].get("source_url", ""):
+        raise ValueError("missing independent Danish catalogue provenance")
+    if m["brier_2006_danish_textbook"]["title"] != "Informationsvidenskabsteori":
         raise ValueError("Danish 2006 textbook identity corrupted")
     for name in ("brier_2006_english_thesis", "brier_2006_danish_textbook",
                  "brier_2008_utp_book"):
