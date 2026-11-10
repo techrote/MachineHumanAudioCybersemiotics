@@ -16,7 +16,7 @@
       "awaiting_text": 1,
       "exclude": 1,
       "include": 0,
-      "pending": 3,
+      "pending": 4,
       "uncertain": 0
     },
     "title_abstract": {
@@ -33,7 +33,7 @@
         "awaiting_text": 1,
         "exclude": 1,
         "include": 0,
-        "pending": 3,
+        "pending": 4,
         "uncertain": 0
       },
       "title_abstract": {
@@ -71,8 +71,7 @@
         "boundary": "Only the explicitly supplied source scope is counted; retrieval, verification, source fidelity and search completeness are not inferred.",
         "missing_required_full_text": [
           "SRC-R006-EDWORTHY-2014-LEARNING",
-          "SRC-R006-F-ARRABITO-URGENCY",
-          "SRC-R006-NEES-2016-MEMORY"
+          "SRC-R006-F-ARRABITO-URGENCY"
         ],
         "missing_title_abstract": [],
         "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
@@ -97,7 +96,7 @@
             "title_abstract": "include"
           },
           {
-            "full_text": "not_recorded",
+            "full_text": "pending",
             "full_text_required": true,
             "source_id": "SRC-R006-NEES-2016-MEMORY",
             "title_abstract": "uncertain"
