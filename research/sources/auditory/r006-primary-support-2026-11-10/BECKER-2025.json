@@ -1,0 +1,254 @@
+{
+  "schema": "mhac-r005-crosslane-primary-access/1",
+  "id": "R005-PRIMARY-BECKER-2025-20261110",
+  "issue": 5,
+  "downstream_issue": 6,
+  "status": "bounded_source_access_handoff_not_canonical_screening",
+  "record_assembled_at_utc": "2026-11-10T07:24:29.158Z",
+  "retrieval_date_utc": "2026-11-10",
+  "retrieval_timestamp_note": "The web PDF reader did not expose per-request UTC timestamps or raw HTTP response bytes. record_assembled_at_utc is the actual ledger construction time, not a fabricated HTTP fetch time.",
+  "frozen_search_cutoff": "2026-10-04",
+  "base_main_sha": "d3348fba38f01500a134593f9b64b268d62392af",
+  "assistance": {
+    "actor_kind": "agent",
+    "actor_id": "gpt6-r005-primary-access-20261110",
+    "model": "GPT-6",
+    "method": "Web search, web PDF text and page-image reader, GitHub connector; same AI agent conducted selection and technical check",
+    "independent_human_review": false
+  },
+  "source": {
+    "canonical_related_source_ref": {
+      "id": "SRC-REL-BECKER-2025",
+      "rev": 1
+    },
+    "doi": "10.1145/3706066",
+    "publication": "Becker et al. (2025), Influence of Robots' Voice Naturalness on Trust and Compliance",
+    "edition": "ACM Transactions on Human-Robot Interaction 14(2), Article 29, pp. 29:1–29:25, published 28 January 2025",
+    "institution_publication_page": "https://wtmbib.informatik.uni-hamburg.de/Basilic/publis/928/",
+    "lawful_public_pdf_url": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+    "publisher_doi_url": "https://doi.org/10.1145/3706066",
+    "access_proof": "Institutional bibliography links to author-hosted complete 25-page PDF; PDF printed 29:1 states CC BY 4.0, copyright 2025 authors. Tool returned text for pages and rendered four selected page images.",
+    "rights": "The inspected article states CC BY 4.0; no original article bytes are redistributed in this public repository.",
+    "reading_extent": "Selected 25-page author-hosted PDF: publication header, Methodology §§3.1–3.7, Results opening, Appendix E Table E1 and Appendix F contextual text via PDF text extraction. Printed pp. 29:8, 29:9, 29:24, 29:25 separately rendered and visually inspected; other pages not visually checked.",
+    "reading_method": "tool_mediated_primary_article_pdf_text_plus_selected_page_images",
+    "original_pdf_byte_hash_verified": false,
+    "original_pdf_sha256": null,
+    "original_pdf_saved_to_repo": false,
+    "actual_sound_files_heard": false,
+    "raw_http_response_bytes_retained": false,
+    "pdf_download_attempt": "Direct runtime binary download failed; no local file or source SHA-256 was obtained.",
+    "publisher_doi_direct_attempt": "Direct web opening of DOI returned HTTP 403; lawful author-hosted institution PDF was independently found instead.",
+    "page_image_results": [
+      {
+        "pdf_zero_based_page": 7,
+        "printed_page": "29:8",
+        "result": "rendered_inspected"
+      },
+      {
+        "pdf_zero_based_page": 8,
+        "printed_page": "29:9",
+        "result": "rendered_inspected"
+      },
+      {
+        "pdf_zero_based_page": 23,
+        "printed_page": "29:24",
+        "result": "rendered_inspected"
+      },
+      {
+        "pdf_zero_based_page": 24,
+        "printed_page": "29:25",
+        "result": "rendered_inspected"
+      },
+      {
+        "pdf_zero_based_page": 5,
+        "printed_page": "29:6",
+        "result": "render_attempt_403_no_image_inspected"
+      }
+    ]
+  },
+  "retrieval": {
+    "channel": "C8_supplementary_source_navigation_not_ACM_database_search",
+    "platform": "web search plus web PDF text/page-image reader",
+    "queries": [
+      "\"Influence of Robots' Voice Naturalness on Trust and Compliance\" Becker Braach PDF 3706066 full text",
+      "10.1145/3706066 PDF open access voice naturalness trust compliance Becker 2025",
+      "site:informatik.uni-hamburg.de \"Influence of Robots\" \"pdf\""
+    ],
+    "returned_source_route": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+    "existing_search_hit_refs": [
+      {
+        "id": "HIT-R004-G06-03",
+        "rev": 1,
+        "search_id": "SRCH-R004-G06",
+        "ordinal": 3
+      },
+      {
+        "id": "HIT-R004-G06-04",
+        "rev": 1,
+        "search_id": "SRCH-R004-G06",
+        "ordinal": 4
+      },
+      {
+        "id": "HIT-R004-LK3-VOICE-NATURALNESS-TRUST-01",
+        "rev": 1,
+        "search_id": "SRCH-R004-LK3-VOICE-NATURALNESS-TRUST",
+        "ordinal": 1
+      }
+    ],
+    "existing_pilot_route_id": "HIT-R002-PA3-04",
+    "new_canonical_search_runs": 0,
+    "new_canonical_search_hits": 0,
+    "no_claim_of_ACM_DL_query_or_EG_search_completion": true
+  },
+  "observations": [
+    {
+      "key": "operational_message_e2",
+      "unit": "main_experiment",
+      "printed_pages": [
+        "29:6",
+        "29:7",
+        "29:24"
+      ],
+      "locators": [
+        "§3.3",
+        "§3.4",
+        "Appendix E, Table E1"
+      ],
+      "finding": "Robot reports game state, offers grid-target advice and requests accept/reject decisions; status updates and response options appear in the actual interaction, not merely in voice samples.",
+      "limit": "E2/G01 adjudication belongs to R006; voice sound bytes not heard."
+    },
+    {
+      "key": "prestudy_is_voice_ratings",
+      "unit": "online_prestudy",
+      "printed_pages": [
+        "29:5",
+        "29:8"
+      ],
+      "locators": [
+        "§3.2",
+        "§3.7"
+      ],
+      "finding": "Online six-voice suitability/intelligibility ratings used to select two voices for the main experiment; this is not automatically an eligible operational system-message experiment.",
+      "limit": "R006 must separately determine whether this phase meets E2."
+    },
+    {
+      "key": "main_design",
+      "unit": "in_person_main_experiment",
+      "printed_pages": [
+        "29:4",
+        "29:6",
+        "29:7",
+        "29:8"
+      ],
+      "locators": [
+        "§3.1",
+        "§3.3–3.6"
+      ],
+      "finding": "Two between-subject voice conditions; robot speech includes task status and action-oriented advice. Participants randomly assigned; each participant receives nine advice opportunities; actions and response times measured.",
+      "limit": "Nine advice opportunities are repeated observations, not separate participants or samples."
+    },
+    {
+      "key": "prestudy_participant_flow",
+      "unit": "online_prestudy",
+      "printed_pages": [
+        "29:8"
+      ],
+      "locators": [
+        "§3.7"
+      ],
+      "finding": "Author reports 62 completing the voice-selection pre-study, with two failing a control question, giving 60 analysed.",
+      "limit": "Counts are author-reported, not new R006 study/sample admission.",
+      "author_reported_completed": 62,
+      "author_reported_excluded": 2,
+      "author_reported_analysed": 60
+    },
+    {
+      "key": "main_participant_flow",
+      "unit": "in_person_main_experiment",
+      "printed_pages": [
+        "29:8",
+        "29:9"
+      ],
+      "locators": [
+        "§3.7"
+      ],
+      "finding": "Author reports 73 completing main experiment and five excluded due to technical issues, leaving 68 analysed, evenly allocated between two experimental conditions.",
+      "limit": "Counts are author-reported; no raw data or participant identifiers inspected.",
+      "author_reported_completed": 73,
+      "author_reported_excluded": 5,
+      "author_reported_analysed": 68
+    },
+    {
+      "key": "prestudy_vs_main_nonoverlap",
+      "unit": "cross_phase_eligibility",
+      "printed_pages": [
+        "29:8"
+      ],
+      "locators": [
+        "§3.7, last paragraph"
+      ],
+      "finding": "Article explicitly states online pre-study participants were excluded from participating in the main study. Within this publication, authors therefore attest distinct recruitment pools for these two phases.",
+      "limit": "This statement does not verify individual identities, resolve the separately described pilot group, or establish independence from other publications.",
+      "author_statement": "prestudy_participants_excluded_from_main",
+      "r006_verification_required": true
+    },
+    {
+      "key": "pilot_group",
+      "unit": "pre_main_pilot",
+      "printed_pages": [
+        "29:8"
+      ],
+      "locators": [
+        "§3.4 final paragraph"
+      ],
+      "finding": "Separate campus pilot with eight participants is described before the main experiment; exact overlap with analysed main study and pre-study groups is not established here.",
+      "limit": "Do not add eight as independent admitted participants; pilot function and design eligibility require R006 assessment.",
+      "author_reported_pilot_participants": 8,
+      "pilot_overlap": "unknown"
+    },
+    {
+      "key": "voice_content_affect_confounds",
+      "unit": "main_experiment",
+      "printed_pages": [
+        "29:7",
+        "29:24"
+      ],
+      "locators": [
+        "§3.4",
+        "Appendix E, Table E1"
+      ],
+      "finding": "Robot has 76 utterance variants and expressive gestures/faces; recorded examples include apologetic, hopeful, angry, sad and supportive speech. This is not a clean comparison of affectless versus affective machine voices.",
+      "limit": "No audio waveforms listened to and no acoustical equivalence established; only documented utterance and procedure descriptions."
+    }
+  ],
+  "identity_disposition": {
+    "occurrences_are_not_publications": true,
+    "source_publications_proposed": 0,
+    "experiments_provisionally_distinguished": [
+      "online_voice_suitability_prestudy",
+      "in_person_task_advice_main",
+      "separate_pre_main_pilot_unresolved"
+    ],
+    "independent_sample_count_admitted": 0,
+    "canonical_screening_records_added": 0,
+    "canonical_study_records_added": 0,
+    "canonical_sample_records_added": 0,
+    "no_full_text_eligibility_decision_by_R005": true,
+    "R006_maintains_authority_for_E1_E6_and_identity": true,
+    "Becker_R006_prior_full_text_access_status": "awaiting_text",
+    "proposed_follow_up": "R006 independently examine author-hosted 25-page PDF and record whether awaiting_text can be revised, distinguish pre-study and main E2, treat pilot overlap as unknown, and register only justified source-pinned decisions. Integrator alone revises shared manifests and exports."
+  },
+  "residual_limits": [
+    "Exact original PDF byte SHA-256 unavailable",
+    "Source access timestamp has date precision only; assembly time recorded exactly",
+    "No audio file or raw participant data obtained",
+    "No independent human screening or external peer evaluation performed",
+    "No full PDF visual page-by-page verification",
+    "R005 EQ1 remained 4200/9368 at prior dated checkpoint; no new API response or quota measurement"
+  ],
+  "acceptance": {
+    "R005_issue_complete": false,
+    "R006_issue_complete": false,
+    "R007_R008_R009_selected_corpus": false
+  }
+}
