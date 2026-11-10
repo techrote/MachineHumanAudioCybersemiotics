@@ -1,6 +1,6 @@
 # R006 — Romeo 2023 canonical full-text access disposition (10 November 2026)
 
-Refs #6. **This branch is a Draft/HOLD handoff, not an accepted corpus or merged manifest.**
+Refs #6. **Integration of the R006 source-worker Draft/HOLD handoff #116** onto the accepted main baseline, with generated exports synchronized in Integration PR #117. This is an access disposition, not selected-corpus acceptance.
 
 ## Exact pinned source and decision chain
 
@@ -18,7 +18,7 @@ The distinct 2025 ACM paper (DOI `10.1145/3711938`) and its physical-maze proced
 
 ## Integration contract
 
-This change introduces **one new canonical full-text status record**, but **does not** change shared `research/registry/generated/*` files. Integration Shepherd alone must serialize those changes in a trusted full checkout before accepting the record:
+The original R006 worker PR #116 introduced **one new canonical full-text status record** without touching shared exports, as required by ownership. Integration PR #117 imported those exact three R006 files and regenerated the two changed `research/registry/generated/*` views in a full authenticated checkout. Reproduce on the candidate tree:
 
 ```sh
 python -m unittest tests.test_r006_romeo23_ft_awaiting_20261110 -v
