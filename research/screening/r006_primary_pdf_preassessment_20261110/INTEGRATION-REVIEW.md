@@ -9,6 +9,9 @@
 
 **Access boundaries:** Selected original pages directly viewed through public web PDF rendering, not a whole-document semantic rereading; no raw source PDF bytes retained, SHA-256 for current rendered manifestation, original download-response headers, private rights attestation, audio playback, independent participant verification, numerical extraction or human reviewer. A publisher-stated licence is not independent proof of lawful file custody. Historical R005 original HTTP byte hashes are *different observations* and must not be bound to this displayed instance. The R004 `SRC@1` source records remain abstract-only.
 
+
+The two pending first revisions identify an **agent** (`gpt6-r006-public-pdf-preassessment-20261110`, model GPT-6), dated **2026-11-10T16:34:32Z**; both contain empty `reading_refs` and `review_refs`. This timestamp is the recorded screening-decision revision time, **not** a verified publisher HTTP acquisition or human screening timestamp.
+
 ## Exact integration and decision limits
 
 The four original title/abstract decisions and the later Edworthy, Nees, Šabić, Arrabito decisions are already canonical on accepted main (8 TA: 5 include-to-FT and 3 uncertain). This integration copies the R006 author Draft #138's four source/test file **blob identities unchanged**, adds a narrowly targeted preflight regression correction (a *pending* FT record must not be treated as `include`/`exclude`), and regenerates shared evidence-flow/records-index exports with the actual repository generator. Source actor and original decision times are retained; neither is invented human review.
