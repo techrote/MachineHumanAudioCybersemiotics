@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-REL-ROMEO-2023-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T09:28:27Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-romeo2023-ft-access-registrar-20261110",
+        "model": "GPT-6",
+        "tool": "OpenAI ChatGPT connected GitHub plus web reading of institutional publication abstract and Zenodo supplement listing; no PDF/script bytes or audio"
+      },
+      "basis": [
+        {
+          "id": "SRC-REL-ROMEO-2023",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-REL-ROMEO-2023-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-REL-ROMEO-2023",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §6.2(3), §6.3 and E1–E6/G01: retain unavailable full-text report as awaiting_text, not exclude",
+        "decision": "awaiting_text",
+        "reason": "The preceding canonical single-agent title/abstract decision is uncertain, requiring full-text assessment. The 2023 IEEE RO-MAN conference paper DOI 10.1109/ro-man57019.2023.10309631 (pp. 2045–2050) is identified in the Heriot-Watt institutional publication record, which supplies an abstract describing two video-based online studies, not original full Methods, audio/task utterances, or sample identity. As of 10 November 2026 the versioned Zenodo v1 supplement DOI 10.5281/zenodo.8042317 advertises ROMAN2023_Ila_Marta.pdf and an MD5 but the script PDF was not obtained or read: direct download timed out during this pass; a preview page rendered only viewer controls. Earlier R005 PR #111 documents unsuccessful legal original-file routes. A separate 2025 ACM article DOI 10.1145/3711938 describes a corn maze but does not demonstrate stimulus reuse, publication extension, or independent participant samples. Consequently no Track E E2 inclusion or exclusion, no experiment/sample identity, and no new count can be determined until the 2023 original report is accessible. This disposition is an access checkpoint, not a full-text reading or independent reviewer decision.",
+        "access_limitation": "Institutional abstract and metadata only (https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/). Zenodo v1 record (https://zenodo.org/records/8042317) lists supplement and advertised MD5 7137b64efa2e75ab9aec951ca03449fe, not computed or independently validated from original bytes; download timeout, preview controls only. No publisher/author full paper, script PDF bytes, audio or video examined. Access observations made on 2026-11-10; precise HTTP receipt timestamp unavailable. Source SRC-REL-ROMEO-2023@1 remains metadata_only with no registered PDF manifestation. Issue #5 owns retrieval, R006 owns eligibility; later verified full-text access must trigger a new, truthfully dated decision and shared export regeneration.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
