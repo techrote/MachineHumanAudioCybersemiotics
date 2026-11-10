@@ -1,0 +1,223 @@
+{
+  "schema": "mhac-r005-c8-primary-comparator-navigation/1",
+  "issue": 5,
+  "protocol": "PROTOCOL-v1",
+  "cutoff": "2026-10-04",
+  "observed_date_utc": "2026-11-10",
+  "activity": "C8 public web discovery and publisher-text navigation; not C1 EQ1, subscription-database querying, or completed C9 from an R006-included report",
+  "actor": {
+    "type": "AI assistant",
+    "model": "GPT-6",
+    "tools": [
+      "web indexed search",
+      "web publisher-HTML text rendering",
+      "GitHub repository search"
+    ],
+    "human_verification": false,
+    "independent_review": false
+  },
+  "export_scope": {
+    "ordered_search_results_retained": false,
+    "raw_http_bytes_retained": false,
+    "raw_response_sha256": null,
+    "source_file_sha256": null,
+    "per_request_time_utc": null,
+    "verified_http_status": null,
+    "provider_result_total": null,
+    "canonical_search_hits_added": 0,
+    "canonical_screening_records_added": 0,
+    "independent_studies_admitted": 0,
+    "independent_samples_admitted": 0,
+    "baseline_counts_recomputed": false
+  },
+  "exact_indexed_queries": [
+    "site:erau.edu \"Examining the Effectiveness of Speech and Earcon Alerts\" pdf",
+    "\"Examining the Effectiveness of Speech and Earcon Alerts for Aiding Phishing Email Detection\" experiment results",
+    "\"Warning users about cyber threats through sounds\" Datta Namin 2021 full text results",
+    "\"Subject matter experts’ feedback on a prototype development of an audio, visual, and haptic phishing email alert system\" PDF",
+    "\"Conveying automation reliability and automation error type\" empirical cyber domain 2021 full text"
+  ],
+  "source_routes": [
+    {
+      "id": "R005-C8-CYBER-ZHANG2024",
+      "doi": "10.1177/10711813241275518",
+      "title": "Examining the Effectiveness of Speech and Earcon Alerts for Aiding Phishing Email Detection",
+      "year": 2024,
+      "online_date": "2024-08-26",
+      "publisher_url": "https://journals.sagepub.com/doi/10.1177/10711813241275518",
+      "provider": "SAGE Human Factors and Ergonomics Society Annual Meeting",
+      "access_extent": "publisher HTML rendered text, Introduction, Method/Subjects/Apparatus/Experimental Design/Procedure, Results, Discussion; no original response bytes or PDF; figure images and source data not examined",
+      "locators": [
+        "Method > Subjects",
+        "Method > Apparatus and Stimuli",
+        "Method > Experimental Design",
+        "Results, paragraphs on hit rate, false alarm rate, d-prime, and response time",
+        "Discussion, paragraphs 1–5"
+      ],
+      "prior_retained_path": "research/searches/auditory/records/hits/HIT-R005R-C1RECOVERY-EQ1-00611.json",
+      "prior_openalex_id": "https://openalex.org/W4401870057",
+      "prior_source_status": "unresolved occurrence, not selected empirical report",
+      "author_reported": {
+        "participants_recruited": 142,
+        "participants_analyzed": 113,
+        "attention_excluded": 29,
+        "between_subject_arms": [
+          "no-audio control",
+          "1-second spoken 'phishing alert'",
+          "1-second approximately 557 Hz earcon"
+        ],
+        "email_images_per_person": 20,
+        "phishing_images": 10,
+        "legitimate_images": 10,
+        "alerted_phishing_images": 9,
+        "alerted_legitimate_images": 4,
+        "findings": [
+          {
+            "outcome": "phishing hit rate",
+            "comparison": "earcon vs speech",
+            "means": [
+              0.52,
+              0.41
+            ],
+            "test": "t(110)=2.15; p=.034",
+            "evidence_class": "author_reported_not_independently_extracted"
+          },
+          {
+            "outcome": "false alarm rate",
+            "comparison": "audio conditions vs control",
+            "means": {
+              "earcon": 0.51,
+              "speech": 0.5,
+              "control": 0.36
+            },
+            "test": "t(110)=3.32; p=.001 for combined audio vs control; earcon vs speech p=.749",
+            "evidence_class": "author_reported_not_independently_extracted"
+          },
+          {
+            "outcome": "response sensitivity d-prime",
+            "comparison": "across three arms",
+            "test": "F(2,110)=2.74; p=.069 (not significant at .05)",
+            "evidence_class": "author_reported_not_independently_extracted"
+          },
+          {
+            "outcome": "classification response time",
+            "comparison": "both alert arms vs control",
+            "test": "Welch ANOVA F(2,65.60)=5.97; p=.004; no earcon-vs-speech difference p=.439",
+            "evidence_class": "author_reported_not_independently_extracted"
+          }
+        ]
+      },
+      "cautions": [
+        "The earcon differed from speech in content, spectral distribution and potential perceived urgency: no isolated 'tone versus voice' causal mechanism.",
+        "The non-significant d-prime result does not demonstrate equivalence or absence of an effect.",
+        "Human email classifications and intentionally fallible auditory advice are different from objective hazard detection. Do not treat hit-rate preference as unequivocal safety improvement.",
+        "Sample identity, eligibility, PDFs, figure data and correction status await R006/R009; visual acuity/hearing and student sample limit transfer."
+      ]
+    },
+    {
+      "id": "R005-C8-CYBER-DATTA2021",
+      "doi": "10.1007/s42452-021-04703-4",
+      "title": "Warning users about cyber threats through sounds",
+      "year": 2021,
+      "online_date": "2021-06-29",
+      "publisher_url": "https://link.springer.com/article/10.1007/s42452-021-04703-4",
+      "provider": "Springer Nature, SN Applied Sciences",
+      "access_extent": "publisher open-access article rendered text, Abstract, §§3.1–3.2, §4.2, §§5.1–5.3 and conclusion; tables/figures referenced by HTML but source images and PDF not inspected",
+      "locators": [
+        "Abstract",
+        "§3.1 Participant recruitment and study design",
+        "§3.2 Testing procedure and instructions, Stages 1–3",
+        "§4.2 CyberWarner threat/cue implementations",
+        "§5.2 Results for the In Context study",
+        "§5.3.1 Participant responses/comments",
+        "§5.3.2 Comparison"
+      ],
+      "prior_retained_path": null,
+      "author_reported": {
+        "current_sample_sighted_students": 26,
+        "prior_separate_work_visually_impaired_participants": 5,
+        "measure_types": [
+          "immediate out-of-context meaning/memorability judgments",
+          "in-context threat identification",
+          "stated intended protective action"
+        ],
+        "abstract_percentages": {
+          "average_correct_sound_meaning_recall": "58% (author-reported broad abstract summary)",
+          "in_context_correct_threat_identification": "about 73% (abstract); §5.2 says scenario values from 73% to 100%"
+        },
+        "findings": [
+          "Three security threat families: phishing, malware download and form filling.",
+          "In-context evaluation used real websites with simulated/safe warning scenarios, not live malicious attacks.",
+          "Section 5.3.1 records participants' proposed actions, not observed real-world prevented attacks.",
+          "Current sighted study is explicitly without distractors; comparison with an earlier visually impaired group does not establish matched experimental controls."
+        ]
+      },
+      "cautions": [
+        "No primary source-file hash or figure/table visual verification.",
+        "The 26 and previous 5 are not declared two independent studies/samples here; R006 must resolve publication/participant relationships.",
+        "Study compares recognition, attention and stated intended action, not validated threat-detection correctness or longitudinal retention.",
+        "Do not interpret 'all heard alerts' as accurate meaning comprehension or completed protective action."
+      ]
+    },
+    {
+      "id": "R005-C8-CYBER-COOPER2020",
+      "doi": "10.36965/OJAKM.2020.8(2)107-121",
+      "title": "Subject matter experts’ feedback on a prototype development of an audio, visual, and haptic phishing email alert system",
+      "year": 2020,
+      "publication_date": "2020-12-29",
+      "publisher_url": "https://www.iiakm.org/ojakm/articles/2020/OJAKM_Volume8_2pp107-121.php",
+      "institutional_url": "https://scholars.nova.edu/en/publications/subject-matter-experts-feedback-on-a-prototype-development-of-an-/",
+      "provider": "Online Journal of Applied Knowledge Management",
+      "access_extent": "official journal bibliographic page and abstract; institutional bibliographic/abstract page; PDF link identified but original PDF not read or hashed",
+      "locators": [
+        "Official journal page: abstract",
+        "Official journal page: bibliographic fields"
+      ],
+      "prior_retained_path": null,
+      "author_reported": {
+        "expert_raters": 32,
+        "method_class": "prototype design/subject-matter expert judgement",
+        "speech_cue": "voice-over descriptions of phishing signs, not just a short generic warning"
+      },
+      "cautions": [
+        "Do not treat expert preference as experimentally measured end-user task accuracy.",
+        "Spoken information content differs from Zhang 2024, so opposite modal preference is not a controlled replication.",
+        "Article PDF source not read, so detailed method/outcome interpretation is deferred."
+      ]
+    }
+  ],
+  "protocol_controls": {
+    "classification": "C8 targeted publisher/navigation supplemental layer",
+    "completed_protocol_c9": false,
+    "c9_reason": "No R006-included parent for systematic chaining; follows 2024 primary paper's cited comparators only as preparatory C8.",
+    "baseline_c1_eq1": "as of 2026-11-03 sorted prefix 4,200/9,368; not remeasured",
+    "frozen_corpus_cutoff": "2026-10-04",
+    "known_item_benchmark": "October 69-item 38 located / 10 possible / 21 not located, unchanged",
+    "historical_counts": "150 search records / 21,483 occurrences, unchanged",
+    "work_requires_r006_identity": true
+  },
+  "c1_access_probe": {
+    "attempted_url": "https://api.openalex.org/works?filter=from_publication_date%3A2020-01-01%2Cto_publication_date%3A2020-12-31&per-page=1",
+    "interface": "web URL open utility",
+    "date_utc": "2026-11-10",
+    "outcome": "Internal Error; URL not accessible via this tool",
+    "server_http_status": null,
+    "quota_remaining": null,
+    "response_sha256": null,
+    "production_query": false,
+    "eq1_executed": false
+  },
+  "handoffs": [
+    "R006: Match SAGE DOI 10.1177/10711813241275518 against the existing EQ1-00611 occurrence, and assess Cooper/Datta cross-publication/version/participant identity before screening or sample count.",
+    "R009: If included, retrieve and hash original source manifestations; inspect numerical results and tables/figures, evaluate multiplicity and between-arm content/reliability confounding.",
+    "R005: Preserve the three primary-source navigation routes for negative/contrary evidence and continue immutable EQ1 when the interface lawfully permits; no search count or protocol completion change."
+  ],
+  "negative_interpretations": [
+    "Speech always beats non-speech warnings",
+    "Earcons unequivocally improve discrimination",
+    "More urgent-sounding signals necessarily improve safe action",
+    "Correctly noticing a cue proves understanding its referent",
+    "Stated hypothetical security action is observed prevention",
+    "Expert prototype ratings and student trials are exchangeable samples"
+  ]
+}
