@@ -104,5 +104,26 @@
     "No canonical SCR written and no changes to shared manifests, evidence-flow, R005 hits or R004 sources.",
     "Existing four-candidate FT gate remains blocked: Becker and Romeo 2025 require exact original-file manifestations; Romeo 2023 original IEEE Methods absent.",
     "Later source corrections or DOI/edition conflicts must invalidate/redo the relevant screening before admission."
-  ]
+  ],
+  "post_preparation_registration": {
+    "at_utc": "2026-11-10T14:33:37Z",
+    "actor_kind": "agent",
+    "actor_id": "gpt6-r006-nextpair-registration-20261110",
+    "canonical_scrs_authored": [
+      {
+        "id": "SCR-R006-EDWORTHY-2014-LEARNING-TA",
+        "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
+        "decision": "include"
+      },
+      {
+        "id": "SCR-R006-NEES-2016-MEMORY-TA",
+        "source_id": "SRC-R006-NEES-2016-MEMORY",
+        "decision": "uncertain"
+      }
+    ],
+    "notes": "R006 authored two actual canonical TA SCR records after the initial prepared packet, but Integration has not regenerated shared exports or admitted the new revisions into accepted main. Nees was conservatively tightened from initial proposal include to uncertain: original publisher abstract did not explicitly verify participant N/human assignment. This is the same agent refining one first-pass judgement, not an independent review.",
+    "exports_regenerated": false,
+    "accepted_main": false,
+    "merged_main_ci_passed": false
+  }
 }
