@@ -129,6 +129,8 @@ def verify(path: Path, manifest: Path) -> dict:
             or receipt.get("status") != "local_xml_bytes_attested_not_manifestation_or_screening"
             or receipt.get("source_id") != "SRC-R006-E-STEVENS-INFORMATIVE@1"
             or receipt.get("raw_xml_bytes_in_receipt") is not False
+            or receipt.get("private_retention_rights_approved_by_tool") is not False
+            or receipt.get("original_pdf_equivalence_verified") is not False
             or receipt.get("source_manifestation_registered") is not False
             or receipt.get("performed_semantic_reading") is not False
             or receipt.get("human_review_performed") is not False
