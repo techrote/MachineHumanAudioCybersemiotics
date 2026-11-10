@@ -1,0 +1,128 @@
+{
+  "schema": "mhac-r005-primary-methods-navigation/1",
+  "id": "R005-ROMEO25-PRIMARY-METHODS-20261110",
+  "issue": 5,
+  "downstream_issue": 6,
+  "baseline_main_sha": "709b190c3c293283a70e9b6876c9de0e8f146cc5",
+  "frozen_publication_cutoff": "2026-10-04",
+  "inspected_on_utc_date": "2026-11-10",
+  "http_response_timestamp_utc": null,
+  "timestamp_note": "Web PDF reader did not expose the underlying HTTP response timestamp; UTC inspection date only. Original source bytes unavailable for local hashing.",
+  "observer": {
+    "kind": "AI_agent",
+    "name": "GPT-6",
+    "independent_human_review": false,
+    "empirical_data_reanalysis": false
+  },
+  "manifestation": {
+    "publication": "Romeo et al. (2025), The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction",
+    "doi": "10.1145/3711938",
+    "edition": "ACM Transactions on Human-Robot Interaction 14(2), Article 33, 22 printed article pages, February 2025 PDF layout",
+    "repository_url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+    "metadata_url": "https://researchportal.hw.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/",
+    "publisher_layout_pdf_with_institutional_cover": true,
+    "rights_seen": "The article header states CC BY-NC-SA 4.0; the Heriot-Watt repository provides a public Version-of-Record route, subject to its published rights notice.",
+    "reading_extent": "Selected published-layout PDF text: article pp.33:5–33:10, §§1.4, 2, 2.1, 2.2, 2.3, 2.4, plus bibliography [61] on p.33:21; text supplied by web PDF extraction. Not complete-paper reading.",
+    "source_pdf_bytes_retained": false,
+    "original_sha256_verified": false,
+    "page_images_verified": false,
+    "screenshot_attempt": "PDF screenshot for PDF indices 6,7,8 returned HTTP 403 through rendering tool; visual figures/tables not validated.",
+    "audio_heard": false,
+    "online_video_watched": false,
+    "original_supplement_downloaded": false
+  },
+  "existing_discovery_refs": [
+    "SRC-REL-ROMEO-2025@1",
+    "HIT-R004-G06-07@1",
+    "HIT-R004-LK3-VOICE-REPAIR-TRUST-01@1"
+  ],
+  "procedural_observations": [
+    {
+      "code": "PILOT-ONLINE-2025",
+      "source_locator": "Art.33:5, §2.1",
+      "method": "Six pre-recorded Pepper robot videos composited over corn-maze footage; participants chose potential trust-repair strategies after a depicted mistake.",
+      "author_reported_recruited_n": 50,
+      "recruitment": "Prolific Academic, online Qualtrics; five-minute study",
+      "E2_implication": "Video included task-direction utterances but response task was judging appropriate repair options; R006 to assess whether operational message-action criterion is satisfied.",
+      "independent_sample_admitted": false
+    },
+    {
+      "code": "MAZE-INPERSON-2025",
+      "source_locator": "Art.33:6–33:10, §§2.2–2.4",
+      "method": "Physical room maze with Pepper teleoperated by investigator; participants outside maze heard spoken options, recommendations, mistakes and repair utterances; directional choice submitted via keyboard.",
+      "author_reported_recruited_n": 60,
+      "recruitment": "Campus flyers and word of mouth; in-person six-condition between-subject design, 10 per cell",
+      "E2_implication": "Spoken state/options and path recommendations visibly influence participant choices; supports full-text E2 assessment by R006, not canonical eligibility.",
+      "independent_sample_admitted": false
+    }
+  ],
+  "detailed_findings": [
+    {
+      "code": "SPOKEN-ACTION-STATE",
+      "locator": "Art.33:6–33:8, §2.2",
+      "statement": "Robot enumerated possible paths and recommended directions; task had decision junctions and deliberately incorrect guidance followed by apology-like/justification/promise/denial repair language."
+    },
+    {
+      "code": "VOICE-MEDIA-CONFOUND",
+      "locator": "Art.33:9–33:10, §§2.3–2.4",
+      "statement": "Article describes default Pepper voice versus custom TTS; in-person participants wore noise-cancelling headphones and saw subtitles plus camera view; experimenter teleoperated the robot; audio stimuli not audited."
+    },
+    {
+      "code": "DESIGN-IDENTITY-NOT-CLAIM",
+      "locator": "Art.33:5–33:10, §§2.1–2.4; bibliography [61] at Art.33:21",
+      "statement": "2025 publication describes a separate in-person maze procedure and a video pilot and cites Romeo et al. 2023; participant overlap or pilot stimulus reuse across publications not determined without 2023 full text and both supplements."
+    }
+  ],
+  "cross_publication": {
+    "other_publication": "Romeo et al. (2023), Putting Robots in Context",
+    "doi": "10.1109/RO-MAN57019.2023.10309631",
+    "supplement_version_doi": "10.5281/zenodo.8042317",
+    "other_source_access": "2023 institutional abstract and Zenodo file metadata only as pinned in merged PR #111; script file bytes and paper body not accessed.",
+    "different_manuscript_dois": true,
+    "identical_experiments_claimed": false,
+    "participant_nonoverlap_proven": false,
+    "stimulus_nonoverlap_proven": false,
+    "blockers": [
+      "2023 IEEE paper full text pp.2045–2050",
+      "2023 Zenodo ROMAN2023_Ila_Marta.pdf bytes and independently checked MD5",
+      "2025 pilot videos/supplement original media and hashes",
+      "Within-2025 or cross-publication participant overlap documentation"
+    ]
+  },
+  "admission_boundary": {
+    "canonical_scr_added": 0,
+    "canonical_study_added": 0,
+    "canonical_experiment_added": 0,
+    "canonical_sample_added": 0,
+    "new_search_hits_added": 0,
+    "full_text_screening_adjudicated_by_r005": false,
+    "no_study_sample_sum": true
+  },
+  "tool_observations": [
+    {
+      "kind": "web_pdf_text",
+      "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+      "result": "Cached PDF text from original institutional version-of-record route; selected Methods and bibliography visible; direct fresh refetch and screenshot returned 403.",
+      "response_bytes_hashed": false
+    },
+    {
+      "kind": "web_html",
+      "url": "https://researchportal.hw.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/",
+      "result": "Publisher-linked institutional publication metadata with DOI and final published PDF listing; not independent content reading.",
+      "response_bytes_hashed": false
+    },
+    {
+      "kind": "web_html",
+      "url": "https://zenodo.org/records/8042317",
+      "result": "Public metadata and filename; file-body download returned tool Unicode decode error; MD5 advertised but not independently checked.",
+      "response_bytes_hashed": false
+    },
+    {
+      "kind": "web_open",
+      "url": "https://api.openalex.org/works?filter=doi:10.1109/ro-man57019.2023.10309631",
+      "result": "API host unavailable through the web tool; no C1 query or source hit export was executed.",
+      "response_bytes_hashed": false
+    }
+  ],
+  "review_handoff": "R006 determines E1–E6, full-text SCR, publication→experiment→sample and overlap. Integration governs exact-head review and shared manifest/export regeneration. This R005 record does not adjudicate R006 or complete EQ1."
+}
