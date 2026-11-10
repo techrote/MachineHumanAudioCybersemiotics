@@ -1,0 +1,215 @@
+{
+  "schema_version": "mhac-r005-known-item-recheck/1",
+  "run_id": "R005-C8-KNOWN-RECHECK-20261110",
+  "observed_utc_date": "2026-11-10",
+  "actor": "ChatGPT (GPT-6; AI-assisted web search and source verification, not independent human review)",
+  "original_record": "research/searches/auditory/exports/KNOWN-ITEM-CHECK-R005.csv",
+  "original_snapshot": "October 2026 known-item navigation, 69 entries / 38 located / 10 possible / 21 not located (historical; unchanged)",
+  "channel": "C8 targeted web search and C9 known-item navigation; not a database/API query",
+  "frozen_publication_cutoff": "2026-10-04",
+  "production_record_status": "supplementary audit only; not a v1 search_run or search_hit record until integrator registers exact hits",
+  "method": "Exact-title/DOI-author web queries in fast/slow web retrieval; inspected visible indexed publisher/institutional/bibliography pages; retained stable landing URLs and conflicting metadata. Service returned search results but not raw export bytes, reliable per-result timestamps or provider pagination, therefore no hashes, complete hit counts or reproducible total-recall claim.",
+  "scope_limits": [
+    "C1 OpenAlex EQ1 continuation not attempted: direct API cannot be reached here (DNS refusal); earlier completed EQ2–EQ8 not reharvested.",
+    "Crossref direct API unavailable from execution environment; web discovery does not constitute C2, C3, C4, C6 or C7 database execution.",
+    "Observations are title/metadata route matches only; no full-text PDF hashes, sample identity, inclusion/exclusion, numerical extraction or experimental outcome verification.",
+    "Historical search outcomes and R006 identity decisions are not altered. Duplicates with accepted R005/OpenAlex or R006 records require integrator reconciliation.",
+    "No raw response bytes are retained: source landing URLs, exact query text, date, access/reading extent and evidence limitations allow further independent verification without pretending complete reproducibility."
+  ],
+  "observation_count": 10,
+  "observations": [
+    {
+      "known_item": 2,
+      "known_title": "The Role of Earcons and Auditory Icons in the Usability of Avatar-Based E-Learning Interfaces",
+      "as_run_query": "\"The Role of Earcons and Auditory Icons in the Usability of Avatar-Based E-Learning Interfaces\" \"DeSE\" 2011",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://dblp.uni-trier.de/db/conf/dese/dese2011.html"
+      ],
+      "record_type": "bibliographic_index",
+      "reading_extent": "bibliographic_listing",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1109/DeSE.2011.34",
+      "verification_notes": "dblp lists Alseid and Rigas, 2011 DeSE, pp. 276–281. DOI in historical Nees–Liebman citation was not independently resolved against a publisher landing page.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 7,
+      "known_title": "Most earcons do not interfere with spoken passage comprehension",
+      "as_run_query": "\"Most earcons do not interfere with spoken passage comprehension\" Bonebright Nees 2009",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://onlinelibrary.wiley.com/doi/abs/10.1002/acp.1457"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1002/acp.1457",
+      "verification_notes": "Wiley publisher confirms Bonebright and Nees, volume 23, 431–445, issue-year 2009 and online publication 2 May 2008. Not a downloaded/hashed full text.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 29,
+      "known_title": "Association Testing-A Methodology for Selecting and Evaluating Audio Alerts",
+      "as_run_query": "\"Association Testing-A Methodology for Selecting and Evaluating Audio Alerts\" \"10.1177/154193120905301831\"",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://www.singaporetech.edu.sg/directory/professional-officers/chua-wei-liang-kenny",
+        "https://www.researchgate.net/publication/249956066_Association_Testing-A_Methodology_for_Selecting_and_Evaluating_Audio_Alerts"
+      ],
+      "record_type": "institutional_publication_list_plus_third_party",
+      "reading_extent": "bibliographic_metadata_and_abstract_only",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/154193120905301831",
+      "verification_notes": "Institutional author listing gives Chua, W. L. K. and Wei, C. L. with DOI 10.1177/154193120905301831, matching the known-item citation. ResearchGate gives a different DOI 10.1518/107118109X12524443346194 and fuller author-name presentation. Preserve both conflicting claims; do not adjudicate version/DOI identity without publisher record.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 34,
+      "known_title": "Exploration of the Use of Auditory Cues in Code Comprehension and Navigation for Individuals with Visual Impairments in a Visual Programming Environment",
+      "as_run_query": "\"Exploration of the Use of Auditory Cues in Code Comprehension and Navigation\" Ludi Simpson Merchant 2016",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://dblp.org/rec/conf/assets/LudiSM16.html"
+      ],
+      "record_type": "bibliographic_index",
+      "reading_extent": "bibliographic_metadata",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1145/2982142.2982206",
+      "verification_notes": "dblp identifies Ludi, Simpson, Merchant, ASSETS 2016 pp. 279–280, DOI matching the known item; full text not retrieved.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 38,
+      "known_title": "Auditory Displays as Occasion Setters",
+      "as_run_query": "\"Auditory Displays as Occasion Setters\" McKeown Isherwood Conway 2010",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/10.1177/0018720810366861"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/0018720810366861",
+      "verification_notes": "SAGE publisher confirms McKeown, Isherwood and Conway, Human Factors 52(1), pp. 54–62. No independent study/sample adjudication.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 42,
+      "known_title": "Modality And Encoding Strategy Effects On A Verification Task With Accelerated Speech, Visual Text, And Tones",
+      "as_run_query": "\"Modality And Encoding Strategy Effects On A Verification Task\" Nees Best 2013",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://michaelanees.com/publications",
+        "https://elektronicy.p.lodz.pl/projekty_i23/icad2013/paper/34_S8-4_Nees.pdf"
+      ],
+      "record_type": "author_publications_plus_conference_file_link",
+      "reading_extent": "author_bibliographic_listing; public_pdf_link_discovered_not_hashed",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": null,
+      "verification_notes": "First author's publications page confirms ICAD 2013 title, authors and pp. 267–274. An ICAD PDF URL was discovered but PDF bytes, figure pages and text were not checked. Do not label full-text retrieved or screened.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 44,
+      "known_title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride",
+      "as_run_query": "\"Speech Auditory Alerts Promote Memory for Alerted Events\" Nees Helbein Porter 2016",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/10.1177/0018720816629279"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/0018720816629279",
+      "verification_notes": "SAGE confirms Nees, Helbein and Porter, Human Factors 58(3), pp. 416–426. Publisher labels full-text access restricted.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 45,
+      "known_title": "Multimodal Warnings: Curve-Warning Design",
+      "as_run_query": "\"Multimodal Warnings: Curve-Warning Design\" Neurauter 2005",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/pdf/10.1177/154193120504902213"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata; PDF bytes_not_checked",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/154193120504902213",
+      "verification_notes": "Publisher index confirms M. Lucas Neurauter, Proceedings HFES 49(22), pp. 1945–1949; no verified PDF byte access or extracted results.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 52,
+      "known_title": "Toward a Better Understanding of In-Vehicle Auditory Warnings and Background Noise",
+      "as_run_query": "\"Toward a Better Understanding of In-Vehicle Auditory Warnings and Background Noise\" Sabic Chen MacDonald",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/abs/10.1177/0018720819879311"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "publisher_html_sections_and_bibliographic_metadata",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/0018720819879311",
+      "verification_notes": "SAGE confirms Šabić, Chen and MacDonald, Human Factors 63(2), pp. 312–335, first online 8 Oct 2019; publisher HTML exposes article sections but no retained, hashed manifestation or screened outcomes.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 53,
+      "known_title": "Recognition of Car Warnings: An Analysis of Various Alert Types",
+      "as_run_query": "\"Recognition of Car Warnings\" \"Sabic\" 2017 CHI",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://dblp.org/rec/conf/chi/SabicMCH17.html",
+        "https://edinsabic.com/wp-content/uploads/2018/03/chi.pdf"
+      ],
+      "record_type": "bibliographic_index_plus_author_file_link",
+      "reading_extent": "bibliographic_metadata; author_pdf_link_discovered_not_hashed",
+      "source_identity_status": "candidate_matched_to_historical_citation",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1145/3027063.3053149",
+      "verification_notes": "dblp confirms Šabić, Mishler, Chen and Hu, CHI Extended Abstracts 2017 pp. 2010–2016. An author-hosted PDF route was discovered, but its bytes/text were not retrieved and no full-text screening is claimed.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    }
+  ]
+}

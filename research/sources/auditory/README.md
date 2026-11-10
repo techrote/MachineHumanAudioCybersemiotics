@@ -98,3 +98,9 @@ Issue #6 depends on #5, while protocol §11's global search-completion rule incl
 | Final refresh (#17) | Use actual later refresh date and retain original cutoff and observations |
 
 Recovery used ChatGPT (GPT-6 Astra Pro), Python, public HTTPS, web search and Poppler. The integrator, database and ICAD/review agents divided source batches; another AI pass checked bibliography boundaries. These are correlated checks, not independent human screening, librarian review, external scholarly review or participant validation. Structural CI verifies integrity and reproduction, not scientific truth.
+
+## Targeted known-item navigation — 10 November 2026
+
+A supplementary, **non-database** C8/C9 recheck located ten bibliographic candidate routes among the 21 entries historically marked `not_located` in October's 69-entry known-item benchmark: K02, K07, K29, K34, K38, K42, K44, K45, K52 and K53. The dated [observation ledger](../../searches/auditory/known-item-recheck-2026-11-10/OBSERVATIONS.json) and [reproduction limitations](../../searches/auditory/known-item-recheck-2026-11-10/README.md) retain exact queries, stable source locators, access extent and an unresolved DOI/author rendering conflict for K29. These routes are **candidates for R006 reconciliation**, not new independently adjudicated publications or studies.
+
+The historical 38 located / 10 possible / 21 not located counts have **not** been revised or recomputed over OpenAlex and the newer discovery layers. This web batch has no lossless source-result export, unique hit count or verified PDF source hashes and must not be described as completed C1, C2 or other subscription database queries. Direct API access from this execution environment encountered DNS errors; that does not change the historical 3 November OpenAlex results, nor does it establish a new OpenAlex quota observation. EQ1, review chaining, access and eligibility remain incomplete.
