@@ -136,13 +136,47 @@ def verify(path: Path, manifest: Path) -> dict:
             or receipt.get("human_review_performed") is not False
             or receipt.get("screening_and_independent_sample_admissions") != 0):
         raise ValueError("Receipt schema or fail-closed research state was changed")
+    # Verify the receipt's *source-derived* facts, not only its checksum.
+    # Otherwise a changed section inventory or claimed licence hyperlink could
+    # silently pass verification while the original XML bytes remain identical.
     fresh = hash_local(path)
     for field in ("original_xml_sha256", "original_xml_bytes",
-                  "doi_in_local_xml", "pmcid_in_local_xml"):
+                  "doi_in_local_xml", "pmcid_in_local_xml",
+                  "article_body_present", "article_back_present",
+                  "section_heading_inventory_not_reading",
+                  "licence_links_observed_not_independently_verified"):
         if fresh[field] != receipt.get(field):
-            raise ValueError("Private XML bytes or claimed publication identity disagree with receipt")
+            raise ValueError("Private XML bytes or source-derived receipt field disagree: " + field)
+
+    # These fields are self-reported by the operator. Their presence, syntax,
+    # chronology and fixed issue identity can be checked offline; their truth
+    # cannot be verified without external acquisition/rights evidence.
+    if (receipt.get("issue") != 5 or receipt.get("downstream_issue") != 6
+            or receipt.get("frozen_cutoff") != "2026-10-04"
+            or receipt.get("hit_id") != "HIT-R005R-C1LOAD-EQ1-02138@2"):
+        raise ValueError("Receipt issue, hit or frozen-cutoff identity changed")
+    operator_fields = ("reported_edition", "source_url_operator_reported",
+                       "acquired_utc_operator_reported_not_network_verified",
+                       "operator_id_operator_reported",
+                       "access_proof_operator_reported",
+                       "rights_note_operator_reported_not_authorization",
+                       "attestation_utc")
+    for field in operator_fields:
+        if not isinstance(receipt.get(field), str) or not receipt[field].strip():
+            raise ValueError("Required operator-reported receipt field missing: " + field)
+    require_url(receipt["source_url_operator_reported"])
+    acquired = require_utc(receipt["acquired_utc_operator_reported_not_network_verified"])
+    attested = require_utc(receipt["attestation_utc"])
+    if (acquired != receipt["acquired_utc_operator_reported_not_network_verified"]
+            or attested != receipt["attestation_utc"]):
+        raise ValueError("Receipt timestamp is not canonical UTC")
+    if datetime.fromisoformat(acquired.replace("Z", "+00:00")) > datetime.fromisoformat(
+            attested.replace("Z", "+00:00")):
+        raise ValueError("Reported acquisition cannot postdate attestation")
+
     return {"verified_sha256": fresh["original_xml_sha256"],
             "verified_bytes": fresh["original_xml_bytes"],
+            "operator_provenance_syntax_checked_not_authenticated": True,
             "rights_reading_screening_and_custody_not_verified": True}
 
 
