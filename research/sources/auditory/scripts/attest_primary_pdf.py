@@ -26,8 +26,8 @@ def parse_utc(text):
 
 def require_url(text, field):
     parsed = urlparse(text)
-    if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password:
-        raise ValueError(field + " must be HTTPS without embedded credentials")
+    if parsed.scheme != "https" or not parsed.netloc or parsed.username or parsed.password or parsed.query or parsed.fragment:
+        raise ValueError(field + " must be HTTPS without embedded credentials, query tokens or fragments")
     return text
 
 
