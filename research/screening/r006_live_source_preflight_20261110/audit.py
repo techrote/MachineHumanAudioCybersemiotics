@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -28,6 +29,20 @@ TA_EXPECTED = {
     "SRC-REL-ROMEO-2025": "include",
 }
 PROTOCOL = "MHAC-Track-E-frozen-v1-2026-10-13"
+# Only the first accepted event is frozen; appended, truthful revisions remain valid.
+ORIGINAL_FT = {
+    "SRC-REL-KUHNE-2020": ("2026-11-10T09:06:27Z", "gpt6-r006-integration-source-review-20261110"),
+    "SRC-REL-ROMEO-2023": ("2026-11-10T09:28:27Z", "gpt6-r006-romeo2023-ft-access-registrar-20261110"),
+}
+ORIGINAL_READINGS = {
+    "AID-R006-KUHNE-2020-FT-PAGES": ("2026-11-10T09:06:06Z", "gpt6-r006-integration-source-review-20261110"),
+}
+
+
+def instant(value):
+    """Compare offset-aware RFC3339 timestamps rather than lexical timestamps."""
+    return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
 
 
 def load(path: Path):
@@ -66,7 +81,7 @@ def record_checked(record, rid, kind):
     return latest(record)
 
 
-def verify_reading(source_id, source_revision, refs, readings):
+def verify_reading(source_id, source_revision, refs, readings, decision_at):
     manifests = {m["id"]: m for m in source_revision["data"]["manifestations"]}
     if not refs:
         raise ValueError("FT inclusion/exclusion has no performed reading AID: " + source_id)
@@ -75,7 +90,20 @@ def verify_reading(source_id, source_revision, refs, readings):
         r = record_checked(rec, ref["id"], "assistance")
         if r["rev"] != ref["rev"]:
             raise ValueError("Reading pin revision drift: " + ref["id"])
+        if ref["id"] in ORIGINAL_READINGS:
+            first = rec["revisions"][0]
+            expected_time, expected_actor = ORIGINAL_READINGS[ref["id"]]
+            if (first["at"] != expected_time
+                    or first["actor"].get("kind") != "agent"
+                    or first["actor"].get("id") != expected_actor):
+                raise ValueError("Reading historical AI provenance drift: " + ref["id"])
         data = r["data"]
+        performed = data.get("performed_at")
+        performed_time = (performed.get("value") if isinstance(performed, dict)
+                          and performed.get("state") == "known" else None)
+        if (not performed_time or instant(r["at"]) > instant(decision_at)
+                or instant(performed_time) > instant(decision_at)):
+            raise ValueError("FT reading chronology: event/registration postdates decision: " + ref["id"])
         if (data.get("subtype") != "reading" or data.get("status") != "performed"
                 or data.get("source_ref") != {"id": source_id, "rev": source_revision["rev"]}
                 or data.get("reading_status") not in ("selected_ranges_read", "full_item_read")
@@ -136,6 +164,13 @@ def evaluate(sources, ta, ft, readings, flow):
         if ft.get(sid) is not None:
             ft_id = "SCR-R006-" + sid.removeprefix("SRC-") + "-FT"
             f_rev = record_checked(ft[sid], ft_id, "screening")
+            if sid in ORIGINAL_FT:
+                first = ft[sid]["revisions"][0]
+                expected_time, expected_actor = ORIGINAL_FT[sid]
+                if (first["at"] != expected_time
+                        or first["actor"].get("kind") != "agent"
+                        or first["actor"].get("id") != expected_actor):
+                    raise ValueError("FT historical AI provenance drift: " + sid)
             f = f_rev["data"]
             decision = f["decision"]
             pinned = next((r for r in sources[sid]["revisions"]
@@ -147,7 +182,7 @@ def evaluate(sources, ta, ft, readings, flow):
                     or f_rev["at"] < ta_rev["at"] or f_rev["at"] < pinned["at"]):
                 raise ValueError("FT source revision/protocol/chronology drift: " + sid)
             if decision in ("include", "exclude"):
-                verify_reading(sid, pinned, f["reading_refs"], readings)
+                verify_reading(sid, pinned, f["reading_refs"], readings, f_rev["at"])
             elif decision not in ("uncertain", "pending", "awaiting_text"):
                 raise ValueError("Unrecognized full-text disposition: " + sid)
         rows[sid] = {
