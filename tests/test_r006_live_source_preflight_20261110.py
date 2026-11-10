@@ -64,6 +64,45 @@ class LiveFourCandidatePreflightTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "missing source manifestation"):
             self.run_gate()
 
+    def test_new_reading_revision_after_decision_fails(self):
+        reading = self.readings["AID-R006-KUHNE-2020-FT-PAGES"]
+        later = copy.deepcopy(reading["revisions"][-1])
+        later["rev"] = 2
+        later["at"] = "2026-11-10T09:07:00Z"
+        reading["revisions"].append(later)
+        self.ft["SRC-REL-KUHNE-2020"]["revisions"][0]["data"]["reading_refs"][0]["rev"] = 2
+        with self.assertRaisesRegex(ValueError, "chronology"):
+            self.run_gate()
+
+    def test_actual_reading_event_after_decision_fails(self):
+        self.readings["AID-R006-KUHNE-2020-FT-PAGES"]["revisions"][0]["data"]["performed_at"] = {
+            "state": "known", "value": "2026-11-10T09:07:00Z"
+        }
+        with self.assertRaisesRegex(ValueError, "chronology"):
+            self.run_gate()
+
+    def test_missing_reading_event_time_fails(self):
+        self.readings["AID-R006-KUHNE-2020-FT-PAGES"]["revisions"][0]["data"]["performed_at"] = {
+            "state": "unknown", "reason": "Original reading time cannot be established"
+        }
+        with self.assertRaisesRegex(ValueError, "chronology"):
+            self.run_gate()
+
+    def test_first_ft_exclusion_actor_cannot_be_upgraded_to_human(self):
+        self.ft["SRC-REL-KUHNE-2020"]["revisions"][0]["actor"]["kind"] = "human"
+        with self.assertRaisesRegex(ValueError, "FT historical AI provenance"):
+            self.run_gate()
+
+    def test_first_ft_access_decision_actor_cannot_be_upgraded_to_human(self):
+        self.ft["SRC-REL-ROMEO-2023"]["revisions"][0]["actor"]["kind"] = "human"
+        with self.assertRaisesRegex(ValueError, "FT historical AI provenance"):
+            self.run_gate()
+
+    def test_first_reading_actor_cannot_be_upgraded_to_human(self):
+        self.readings["AID-R006-KUHNE-2020-FT-PAGES"]["revisions"][0]["actor"]["kind"] = "human"
+        with self.assertRaisesRegex(ValueError, "Reading historical AI provenance"):
+            self.run_gate()
+
     def test_reading_cannot_claim_outside_file_extent(self):
         record = self.readings["AID-R006-KUHNE-2020-FT-PAGES"]
         record["revisions"][0]["data"]["ranges"] = [[1, 16]]
