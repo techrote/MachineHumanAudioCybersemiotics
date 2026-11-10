@@ -1,0 +1,119 @@
+{
+  "schema": "mhac-r005-romeo23-zenodo-original-script/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "scope": "source-file access and structural reading only; NOT canonical screening",
+  "frozen_cutoff": "2026-10-04",
+  "base_main_sha": "b9e601be1de964eff2a96319520a2bd784658eb2",
+  "source": {
+    "parent_publication_id": "SRC-REL-ROMEO-2023@1",
+    "publication_title": "Putting Robots in Context: Challenging the Influence of Voice and Empathic Behaviour on Trust",
+    "publication_doi": "10.1109/RO-MAN57019.2023.10309631",
+    "publication_venue": "IEEE RO-MAN 2023, pp. 2045–2050",
+    "publication_full_text_read": false,
+    "supplement_title": "Supplementary materials for the paper: Putting Robots in Context",
+    "supplement_record": "https://zenodo.org/records/8042317",
+    "supplement_version_doi": "10.5281/zenodo.8042317",
+    "supplement_concept_doi": "10.5281/zenodo.8042316",
+    "filename": "ROMAN2023_Ila_Marta.pdf",
+    "discovery_hit_existing": "HIT-R004-LK3-VOICE-NATURALNESS-TRUST-02@1",
+    "relation": "supplement belongs to 2023 publication; not an independent empirical report"
+  },
+  "receipt": {
+    "origin": "R005 issue-scoped GitHub Actions Ubuntu runner, public unauthenticated Python urllib GET",
+    "actions_run": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42814300602",
+    "job": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42814300602/job/129823316787",
+    "request_url": "https://zenodo.org/api/records/8042317/files/ROMAN2023_Ila_Marta.pdf/content",
+    "started_utc": "2026-11-10T12:16:24.079+00:00",
+    "response_opened_utc": "2026-11-10T12:16:24.812+00:00",
+    "completed_utc": "2026-11-10T12:16:25.046+00:00",
+    "http_date": "Tue, 10 Nov 2026 12:16:24 GMT",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "byte_count": 103320,
+    "pdf_magic": true,
+    "advertised_md5": "7137b64efa2e75ab9aec951ca03449fe",
+    "received_md5": "7137b64efa2e75ab9aec951ca03449fe",
+    "received_sha256": "53be4375261a22965392f25151ba004392418727a378df42a253d4c22e969aea",
+    "md5_matches_public_record": true,
+    "source_bytes_deposited_to_repo": false,
+    "source_text_redistributed": false,
+    "lawful_access": "public Zenodo file endpoint; no credentials, purchase or bypass; reuse/licence permission not established"
+  },
+  "parser": {
+    "tool": "pypdf",
+    "version": "6.1.1",
+    "pdf_page_count": 4,
+    "text_extraction_scope": "all four pages, automated structural scanning, NOT human semantic reading",
+    "page_index_base": 0,
+    "pages": [
+      {
+        "page_index": 0,
+        "characters_extracted": 686,
+        "os1_token": false,
+        "os2_token": false,
+        "empathy_token": true,
+        "robot_token": true,
+        "voice_token": true
+      },
+      {
+        "page_index": 1,
+        "characters_extracted": 1962,
+        "os1_token": true,
+        "os2_token": true,
+        "empathy_token": true,
+        "robot_token": false,
+        "voice_token": false
+      },
+      {
+        "page_index": 2,
+        "characters_extracted": 1687,
+        "os1_token": true,
+        "os2_token": false,
+        "empathy_token": false,
+        "robot_token": false,
+        "voice_token": false
+      },
+      {
+        "page_index": 3,
+        "characters_extracted": 2085,
+        "os1_token": true,
+        "os2_token": true,
+        "empathy_token": false,
+        "robot_token": false,
+        "voice_token": false
+      }
+    ],
+    "limitations": "literal-token flags do not identify contextual study eligibility, actual utterance meanings, acoustic properties, participant identities or paper Methods"
+  },
+  "failed_attempt_before_success": {
+    "event": "R005 same-branch first request with explicit application/pdf Accept returned HTTP 406",
+    "actions_run": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42814082482",
+    "observed_utc": "2026-11-10T12:14:53.764+00:00",
+    "resolution": "removed PDF Accept negotiation; public endpoint returned 200; historical failure preserved, not described as a paywall"
+  },
+  "independent_correspondence": {
+    "source": "Integration's parallel one-off #123 Actions receipt, separate GitHub runner GET",
+    "actions_run": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42813170458",
+    "observed_utc": "2026-11-10T12:08:31.708+00:00",
+    "md5": "7137b64efa2e75ab9aec951ca03449fe",
+    "sha256": "53be4375261a22965392f25151ba004392418727a378df42a253d4c22e969aea",
+    "note": "two agent/tool executions have matching bytes, NOT independent human screening"
+  },
+  "not_claimed": {
+    "new_search_run": false,
+    "new_database_export": false,
+    "new_search_occurrences": 0,
+    "complete_ieee_paper_read": false,
+    "audio_video_playback": false,
+    "frozen_protocol_eligibility": false,
+    "study_or_sample_independence": false,
+    "human_screen_or_review": false,
+    "source_manifestation_accepted": false
+  },
+  "handoff": {
+    "r006": "Use verified Zenodo v1 file identity to request exact-script content/locator assessment, but keep Romeo 2023 FT awaiting until original IEEE article Methods/full text can be lawfully read and pinned; do not treat scripts as the paper or deduce 2023/2025 overlap.",
+    "integration": "Review access/log SHA, source rights and scope, coordinate R004 source manifestation (separate supplement vs IEEE paper) and generated indices; avoid duplicating live source or R006 decisions.",
+    "r005": "Once source receipt is preserved, prioritize actual incomplete EQ1 4200/9368 response continuation or accessible full-proceedings/C9 review manuscripts; no new counts without raw retained exports."
+  }
+}
