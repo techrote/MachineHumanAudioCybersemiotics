@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "id": "AID-R006-KUHNE-2020-FT-PAGES",
+  "issue": 6,
+  "kind": "assistance",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T09:06:06Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-integration-source-review-20261110",
+        "model": "GPT-6",
+        "tool": "ChatGPT web PDF reader rendered pages, GitHub connector"
+      },
+      "basis": [
+        {
+          "id": "SRC-REL-KUHNE-2020",
+          "rev": 1
+        }
+      ],
+      "factual_status": "source_reported",
+      "data": {
+        "subtype": "reading",
+        "source_ref": {
+          "id": "SRC-REL-KUHNE-2020",
+          "rev": 1
+        },
+        "manifestation_id": "FRONTIERS-PDF",
+        "access_at_read": "full_text_available",
+        "reading_status": "selected_ranges_read",
+        "ranges": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "method": "Original publisher Frontiers in Neurorobotics 14:593732 PDF, DOI 10.3389/fnbot.2020.593732: public PDF text page 1 plus separately visually rendered pages 4–5, Materials and Methods (Design, Audio Stimuli, Voice Rating Measures, Procedure). Tool-mediated web reading, not local original-file bytes; no SHA256 recheck, audio playback, full 15-page article reading or numeric extraction. Inherited source manifestation from R004, no new file hash claim.",
+        "status": "performed",
+        "performed_at": {
+          "state": "known",
+          "value": "2026-11-10T09:06:06Z"
+        },
+        "independence": "Current GPT-6 agent integration source check, after the separately dated R006 preliminary and recheck sessions. AI, nonblinded; not human, external, or independent human review."
+      }
+    }
+  ]
+}
