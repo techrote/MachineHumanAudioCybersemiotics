@@ -18,6 +18,17 @@ PROTO = "MHAC-Track-E-frozen-v1-2026-10-13"
 def load(folder, rid):
     return json.loads((ROOT / folder / (rid + ".json")).read_text(encoding="utf-8"))
 
+def isolated_stage_graph(source, ta, ft):
+    """Project a bounded stage graph without separate R005 discovery/AID nodes.
+
+    This affects only the test's in-memory copy, never the canonical source.
+    Whole-history validation remains the Integration-owned task.
+    """
+    local_source = copy.deepcopy(source)
+    local_source["revisions"][0]["basis"] = []
+    return validate_graph([local_source, ta, ft])
+
+
 class SabicPublisherHtmlPendingTests(unittest.TestCase):
     def setUp(self):
         self.source=load("research/registry/identity/records", SRC)
@@ -39,14 +50,14 @@ class SabicPublisherHtmlPendingTests(unittest.TestCase):
         self.assertEqual("agent",f["actor"]["kind"])
         self.assertEqual("full_text",f["data"]["stage"])
         self.assertEqual("empirical",f["data"]["track"])
-        validate_graph([self.source,self.ta,self.ft])
+        isolated_stage_graph(self.source,self.ta,self.ft)
 
     def test_pending_not_admitted_or_human_verified(self):
         d=self.ft["revisions"][0]["data"]
         self.assertEqual("pending",d["decision"])
         self.assertEqual([],d["reading_refs"])
         self.assertEqual([],d["review_refs"])
-        graph=validate_graph([self.source,self.ta,self.ft])
+        graph=isolated_stage_graph(self.source,self.ta,self.ft)
         c=screening_coverage(graph,source_ids=[SRC],protocol_version=PROTO)
         self.assertEqual(["pending"],[x["full_text"] for x in c["sources"]])
         self.assertEqual([],c["missing_required_full_text"])
@@ -57,17 +68,17 @@ class SabicPublisherHtmlPendingTests(unittest.TestCase):
             altered=copy.deepcopy(self.ft)
             altered["revisions"][0]["data"]["decision"]=decision
             with self.assertRaises(ValidationError):
-                validate_graph([self.source,self.ta,altered])
+                isolated_stage_graph(self.source,self.ta,altered)
 
     def test_source_correction_and_ta_exclusion_fail_closed(self):
         altered_ta=copy.deepcopy(self.ta)
         altered_ta["revisions"][0]["data"]["decision"]="exclude"
         with self.assertRaises(ValidationError):
-            validate_graph([self.source,altered_ta,self.ft])
+            isolated_stage_graph(self.source,altered_ta,self.ft)
         altered_ft=copy.deepcopy(self.ft)
         altered_ft["revisions"][0]["data"]["source_ref"]={"id":SRC,"rev":2}
         with self.assertRaises(ValidationError):
-            validate_graph([self.source,self.ta,altered_ft])
+            isolated_stage_graph(self.source,self.ta,altered_ft)
 
     def test_original_source_boundary_is_explicit(self):
         d=self.ft["revisions"][0]["data"]
