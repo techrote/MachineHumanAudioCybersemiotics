@@ -141,7 +141,7 @@ def validate_saved_receipt(data):
     assert "NOT human" in q["text_extraction_scope"]
     for k in ("complete_ieee_paper_read", "audio_video_playback", "study_or_sample_independence",
               "human_screen_or_review", "frozen_protocol_eligibility",
-              "source_manifestation_accepted", "new_database_search_occurrences"):
+              "source_manifestation_accepted", "new_search_occurrences"):
         assert nc[k] in (False, 0), k
     return True
 
