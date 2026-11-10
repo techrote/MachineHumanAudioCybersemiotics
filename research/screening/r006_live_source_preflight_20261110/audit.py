@@ -103,12 +103,31 @@ def evaluate(sources, ta, ft, readings, flow):
         if doi not in verified or source["validity"] != "active":
             raise ValueError("Active source or exact DOI not verified: " + sid)
         ta_id = "SCR-R006-" + sid.removeprefix("SRC-") + "-TA"
-        ta_rev = record_checked(ta.get(sid), ta_id, "screening")
+        ta_rec = ta.get(sid)
+        ta_rev = record_checked(ta_rec, ta_id, "screening")
+        # Accepted PR #109 is a historical AI transcription, not human review.
+        # Preserve that exact first revision, while allowing protocol-valid
+        # appended later decisions and source revisions when the graph validates.
+        original = ta_rec["revisions"][0]
+        initial = original["data"]
+        if (original.get("at") != "2026-11-10T08:11:16Z"
+                or original.get("actor", {}).get("kind") != "agent"
+                or original.get("actor", {}).get("id") != "gpt6-r006-integration-registrar-20261110"
+                or initial.get("source_ref") != {"id": sid, "rev": 1}
+                or initial.get("stage") != "title_abstract"
+                or initial.get("track") != "empirical"
+                or initial.get("protocol_version") != PROTOCOL
+                or initial.get("decision") != TA_EXPECTED[sid]):
+            raise ValueError("Title/abstract historical registration provenance drift: " + sid)
         t = ta_rev["data"]
-        if (t.get("source_ref") != {"id": sid, "rev": 1} or t.get("stage") != "title_abstract"
-                or t.get("track") != "empirical" or t.get("protocol_version") != PROTOCOL
-                or t.get("decision") != TA_EXPECTED[sid]):
-            raise ValueError("Title/abstract source pin, protocol or decision drift: " + sid)
+        ta_source_pin = t.get("source_ref", {})
+        if (t.get("stage") != "title_abstract" or t.get("track") != "empirical"
+                or t.get("protocol_version") != PROTOCOL
+                or t.get("decision") not in ("include", "uncertain", "exclude")
+                or ta_source_pin.get("id") != sid
+                or not any(v["rev"] == ta_source_pin.get("rev")
+                           for v in sources[sid]["revisions"])):
+            raise ValueError("Title/abstract latest source pin/protocol/decision drift: " + sid)
         if (ta_rev.get("actor", {}).get("kind") not in ("agent", "human")
                 or not ta_rev.get("actor", {}).get("id") or not ta_rev.get("at")):
             raise ValueError("Missing TA decision actor: " + sid)
@@ -138,6 +157,10 @@ def evaluate(sources, ta, ft, readings, flow):
             "title_abstract": t["decision"],
             "full_text": decision,
             "ta_actor_kind": ta_rev["actor"]["kind"],
+            "ta_actor_id": ta_rev["actor"]["id"],
+            "ta_decision_at": ta_rev["at"],
+            "original_ta_registration_actor_id": original["actor"]["id"],
+            "original_ta_registration_at": original["at"],
             "gate": (
                 "accepted_full_text_decision_requires_scientific_review" if decision in ("include", "exclude")
                 else "original_full_text_access" if sid == "SRC-REL-ROMEO-2023"
