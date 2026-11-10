@@ -40,6 +40,42 @@
         "reading_refs": [],
         "review_refs": []
       }
+    },
+    {
+      "rev": 2,
+      "at": "2026-11-10T21:26:56.123Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-stevens-original-html-methods-reading-20261110",
+        "model": "GPT-6",
+        "tool": "web.run opened original PMCID PMC2865004 open-access article HTML via NCBI intermediary; inspected original full Methods, Results, Discussion, tables as rendered text; separate GitHub R006 and R005 source/receipt records; no source bytes retained by this agent"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-STEVENS-2009-WARNING-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-E-STEVENS-INFORMATIVE",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §4 E1–E6, §6.2(3–4), §6.3–6.4, §10; original full-text HTML sections directly inspected via web intermediary; source/reading manifestation unresolved, hence pending rather than include or exclusion",
+        "decision": "pending",
+        "reason": "New R006 source-backed E1–E6 full-text preassessment of the ORIGINAL OPEN-ACCESS 2009 ARTICLE (not only abstract): E1: original Method > Participants states 36 adults in the main recognition experiment, 18 auditory and 18 visual. E2: Method > Stimuli/Auditory Natural Indicators/Auditory Symbolic Indicators specifies computer-delivered one-second auditory warnings paired with four critical aviation events (low fuel, carbon monoxide, ground proximity, engine fire); no claim that generic ambient noise alone qualifies. E3: Aim/Design describes a 2x2x2 factorial experiment: between-person auditory versus visual modality, within-person natural versus symbolic indicators and low versus high dual-task demand. E4: Results and Tables 4–5 report accuracy and response times during learning and test; their numerical cells were viewed but NOT extracted into canonical outcome records. E5: real primary experiment, Methods, Procedure and Results inspected. E6: 2009 article dated May 4, before frozen 2026-10-04 cutoff; DOI 10.2478/v10053-008-0064-6. Thus source TEXT supports Track E eligibility in a tool-mediated, provisional sense. Crucial identity correction: Methods > Stimuli separately reports N=40 in a prior indicator-association stimulus-selection rating task; these are not part of the 36-person recognition main experiment and cannot be added to the empirical main N or counted as another independent included sample from metadata. Eighteen auditory and eighteen visual participants are arms of the same experiment, not two independent studies. Both learning and test phases, and natural/symbolic conditions, are repeated observations—not independent sample multipliers. The article explicitly contrasts earlier Perry 2007 training, but interpublication participant overlap remains UNKNOWN without source-by-source cohort comparison; different design alone is no independence certificate. Factual limitations: publisher-linked original article HTML was consulted through an intermediary, not raw HTTP original XML/PDF bytes; source has no canonical manifestation, R006 has no performed manifestation-bound AID, no audio file inspection or authenticated human second assessment. The graph contract therefore precludes canonical full-text include/exclude and the decision remains PENDING. R004/Integration should secure lawful exact-byte provenance and register a source manifestation, then R006 must perform source-pinned verification/adjudication; do not infer numerical effect estimates, publication-level inclusion or sample admission.",
+        "access_limitation": "Source text read 2026-11-10 at this R006 run via https://pmc.ncbi.nlm.nih.gov/articles/PMC2865004/ (full original open-access paper HTML, journal Advances in Cognitive Psychology 5:84–90, 2009-05-04; PMCID PMC2865004, PMID 20523852, DOI 10.2478/v10053-008-0064-6). Web intermediary returned article with sections Abstract/Introduction/Aim design (HTML lines 85–118), Method > Participants (119–123), Stimuli including Tables 1–2 and stimulus-selection cohort (124–157), Equipment/Procedure (158–167), Results including Tables 3–5 (168–217), Discussion/Limitations (218–239), References (243 onward). Article's copyright notice states Creative Commons Attribution terms (HTML lines 78–82); this is not legal approval to retain user/private source bytes. Source intermediary did NOT provide raw article response bytes, acquisition HTTP Date or current digest; source text version/equivalence to R005's genuine 74,338-byte Europe PMC XML and journal PDF NOT verified by this R006 reading. Historical R005 accepted-on-main receipt: actual two Europe PMC XML GETs 2026-11-10 at 20:15:16.864Z and 20:19:06.280Z, 74,338 bytes, SHA-256 1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b; those are NOT this agent's acquisition and exact byte source has not been durably archived. Existing source pin SRC-R006-E-STEVENS-INFORMATIVE@1 remains metadata_only / manifestations=[]; representative R005 discovery HIT-R005R-C1LOAD-EQ1-02138@2. No original audio listened to or independently inspected; no original PDF screenshot, private licensed storage, numerically authenticated extraction, external or independent human assessment, study/EXP/SAMPLE records, or Track G selection.",
+        "reading_refs": [],
+        "review_refs": []
+      }
     }
   ]
 }
