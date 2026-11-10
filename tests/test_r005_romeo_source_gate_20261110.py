@@ -91,7 +91,7 @@ def validate_record(d):
     }
     if b != expected:
         raise ValueError("unsupported scientific count, study identity or eligibility promotion")
-    if "R006" not in d["R006_handoff"] or "Integration" not in d["Integration_handoff"]:
+    if not d["R006_handoff"].strip() or not d["Integration_handoff"].strip():
         raise ValueError("cross-lane handoff absent")
 
 
