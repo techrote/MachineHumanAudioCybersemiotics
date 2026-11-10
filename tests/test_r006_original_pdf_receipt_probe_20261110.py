@@ -135,10 +135,10 @@ class R006EphemeralOriginalPdfReceiptProbe(unittest.TestCase):
                             "file_count": len(files),
                             "files": [{"key": f.get("key"), "id": f.get("id"),
                                        "checksum": f.get("checksum"), "size": f.get("size"),
-                                       "content_url": f.get("links", {}).get("content")}
+                                       "links": f.get("links", {})}
                                       for f in files[:8]]})
                 for f in files[:2]:
-                    link = f.get("links", {}).get("content")
+                    link = f.get("links", {}).get("content") or f.get("links", {}).get("self")
                     a = {"key": f.get("key"), "content_url": link, "started_utc": utcnow()}
                     if not link or not link.startswith("https://zenodo.org/"):
                         a["result"] = "BLOCKED: no declared public Zenodo file URL"
@@ -154,7 +154,7 @@ class R006EphemeralOriginalPdfReceiptProbe(unittest.TestCase):
                                 a["result"] = "BLOCKED: >30 MiB"
                             else:
                                 a.update({"result":"PUBLIC_FILE_RECEIVED", "bytes":len(data),
-                                          "sha256":hashlib.sha256(data).hexdigest()})
+                                          "sha256":hashlib.sha256(data).hexdigest(), "md5":hashlib.md5(data, usedforsecurity=False).hexdigest(), "is_pdf": data[:5]==b"%PDF-"})
                         except Exception as e:
                             a["result"] = "BLOCKED: " + type(e).__name__ + ": " + str(e)[:180]
                     print("MHAC_R006_ZENODO_FILE_RECEIPT " + json.dumps(a, sort_keys=True), flush=True)
