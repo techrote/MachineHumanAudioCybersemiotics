@@ -20,7 +20,7 @@ Refs #6. Prepared 2026-11-10T17:35:44.912Z against accepted main `a7301d37b8077d
 | E5 primary empirical report | Both experiments' Methods and Results | Yes, methods and outcomes present |
 | E6 publication by cutoff | Publisher article first-online and issue dates | Yes, before 2026-10-04 |
 
-The article describes Experiment 1 with **60 participants** and Experiment 2 with **60 new participants** in their respective Participants sections. These are **author-reported sample descriptions, not new canonical SAMPLE or EXP objects**, participant-level independence evidence or 120 verified independent people. This manuscript says it draws on the first author's master's thesis; possible thesis/publication reuse remains an **unresolved cross-report identity question**.
+The article describes Experiment 1 with **60 participants** and Experiment 2 with **60 new participants** in their respective Participants sections. These are **author-reported sample descriptions, not new canonical SAMPLE or EXP objects**, participant-level independence evidence or 120 verified independent people. This manuscript says it draws on the first author's master's thesis; possible thesis/publication reuse remains an **unresolved cross-report identity question**. The already registered **separate publication** `SRC-R006-H-SABIC-RECOGNITION@1`, *Recognition of Car Warnings*, CHI Extended Abstracts (2017), DOI `10.1145/3027063.3053149`, shares a first author and warning domain; its report/study/sample relation to this journal paper is **not established**. Do not mark it duplicate, extension, independently recruited, or merge samples on metadata alone.
 
 ## Canonical disposition and exact owner actions
 
