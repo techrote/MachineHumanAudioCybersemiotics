@@ -1,0 +1,1685 @@
+{
+  "schema": "mhac-r005-eq1-boundary/1",
+  "actor": "GPT-6 R005 automation via GitHub Actions; AI-assisted, not human",
+  "cutoff": "2026-10-04",
+  "historical_count": 4200,
+  "historical_boundary_openalex_id": "https://openalex.org/W2520134007",
+  "claim_complete_eq1": false,
+  "new_selected_studies_or_samples": 0,
+  "source_full_text_reviewed": false,
+  "human_screening_claimed": false,
+  "pages": [
+    {
+      "page": 42,
+      "page_size": 100,
+      "request_url": "https://api.openalex.org/works?filter=title_and_abstract.search:%28%22auditory%20icon%22%20OR%20%22auditory%20icons%22%20OR%20earcon%20OR%20earcons%20OR%20spearcon%20OR%20spearcons%20OR%20%22auditory%20alert%22%20OR%20%22auditory%20alerts%22%20OR%20%22audio%20alert%22%20OR%20%22audio%20alerts%22%20OR%20%22auditory%20warning%22%20OR%20%22auditory%20warnings%22%20OR%20%22auditory%20alarm%22%20OR%20%22auditory%20alarms%22%20OR%20%22auditory%20notification%22%20OR%20%22auditory%20notifications%22%20OR%20%22audio%20notification%22%20OR%20%22audio%20notifications%22%20OR%20%22speech%20warning%22%20OR%20%22speech%20warnings%22%20OR%20%22verbal%20warning%22%20OR%20%22verbal%20warnings%22%20OR%20%22voice%20alert%22%20OR%20%22voice%20alerts%22%20OR%20%22voice%20warning%22%20OR%20%22voice%20warnings%22%20OR%20%22auditory%20cue%22%20OR%20%22auditory%20cues%22%20OR%20%22audio%20cue%22%20OR%20%22audio%20cues%22%20OR%20%22auditory%20display%22%20OR%20%22auditory%20displays%22%20OR%20%22auditory%20menu%22%20OR%20%22auditory%20menus%22%20OR%20lyricon%20OR%20lyricons%20OR%20spindex%20OR%20musicon%20OR%20musicons%20OR%20%22auditory%20beacon%22%20OR%20%22auditory%20beacons%22%20OR%20%22acoustic%20beacon%22%20OR%20%22acoustic%20beacons%22%29%20AND%20%28experiment%20OR%20experimental%20OR%20participants%20OR%20study%20OR%20evaluation%20OR%20user%29,to_publication_date:2026-10-04&per_page=100&select=id,doi,display_name,publication_year,publication_date,type,language,primary_location,best_oa_location,locations,authorships,biblio,ids,referenced_works,is_retracted,abstract_inverted_index&page=42&sort=publication_date:asc,display_name:asc",
+      "request_started_utc": "2026-11-10T13:11:32.267+00:00",
+      "interface": "OpenAlex works REST API",
+      "access": "public unauthenticated HTTPS, no credentials or account",
+      "source_class": "API discovery metadata, not primary full text",
+      "http_status": 200,
+      "response_date": "Tue, 10 Nov 2026 13:11:33 GMT",
+      "content_type": "application/json",
+      "rate_limit_remaining": "990",
+      "rate_limit_credits_used": "10",
+      "retry_after": null,
+      "received_utc": "2026-11-10T13:11:33.240+00:00",
+      "completed_utc": "2026-11-10T13:11:33.438+00:00",
+      "raw_bytes_read": 1076658,
+      "raw_sha256": "99a557eac990811a3270faf7fb83f6723b9a797f35d821ae610d11f8ecda277a",
+      "reported_total": 9275,
+      "reported_page": 42,
+      "reported_page_size": 100,
+      "api_cost_usd": 0.001,
+      "results_returned": 100,
+      "records": [
+        {
+          "openalex_id": "https://openalex.org/W2468279524",
+          "doi": "https://doi.org/10.1080/13803395.2016.1201461",
+          "publication_date": "2016-07-13",
+          "title": "Are you able not to react to what you hear? Inhibition behavior measured with an auditory Go/NoGo paradigm",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2464679657",
+          "doi": "https://doi.org/10.1016/j.jevs.2016.06.080",
+          "publication_date": "2016-07-16",
+          "title": "Responses of Domestic Horses and Ponies to Single, Combined and Conflicting Visual and Auditory Cues",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2495364902",
+          "doi": "https://doi.org/10.1097/aud.0000000000000328",
+          "publication_date": "2016-07-19",
+          "title": "Assessment of Spectral and Temporal Resolution in Cochlear Implant Users Using Psychoacoustic Discrimination and Speech Cue Categorization",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2483072270",
+          "doi": "https://doi.org/10.1080/17470218.2016.1215480",
+          "publication_date": "2016-07-20",
+          "title": "Adults’ Implicit Associations to Infant Positive and Negative Acoustic Cues: Moderation by Empathy and Gender",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2490641868",
+          "doi": "https://doi.org/10.1016/j.irbmnw.2016.07.001",
+          "publication_date": "2016-07-27",
+          "title": "Gestion des alarmes & monitoring",
+          "type": "article",
+          "language": "de"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2479781950",
+          "doi": "https://doi.org/10.1016/j.bbr.2016.07.044",
+          "publication_date": "2016-07-29",
+          "title": "Dopamine antagonism does not impair learning of Pavlovian conditioned approach to manipulable or non-manipulable cues but biases responding towards goal tracking",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2497240395",
+          "doi": "https://doi.org/10.1016/j.neuropsychologia.2016.07.033",
+          "publication_date": "2016-07-29",
+          "title": "Visuomotor priming of action preparation and motor programming is similar in visually guided and memory-guided actions",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2484338925",
+          "doi": "https://doi.org/10.1016/j.neuropsychologia.2016.07.038",
+          "publication_date": "2016-07-31",
+          "title": "Coherent emotional perception from body expressions and the voice",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2735448860",
+          "doi": "https://doi.org/10.1109/cse-euc-dcabes.2016.177",
+          "publication_date": "2016-08-01",
+          "title": "Development of a Hybrid Defensive Embedded System with Face Recognition",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2573355539",
+          "doi": "https://doi.org/10.1109/inventive.2016.7824900",
+          "publication_date": "2016-08-01",
+          "title": "MED-Alert: An IoT device",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2640975191",
+          "doi": null,
+          "publication_date": "2016-08-01",
+          "title": "Metaphorical and metonymical uses of the Korean verb meok / Jeon Mi Ae",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2945350473",
+          "doi": null,
+          "publication_date": "2016-08-01",
+          "title": "Multi-Listener Auditory Displays",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2735043621",
+          "doi": "https://doi.org/10.1109/cse-euc-dcabes.2016.158",
+          "publication_date": "2016-08-01",
+          "title": "Towards Zero-Configuration Indoor Localization Using Asynchronous Acoustic Beacons",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2589435765",
+          "doi": null,
+          "publication_date": "2016-08-01",
+          "title": "Young people and ICT – materials shaping resource-intensive practices?",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2506216984",
+          "doi": "https://doi.org/10.1007/s40123-016-0058-2",
+          "publication_date": "2016-08-02",
+          "title": "Strategies for Improving Patient Comfort During Intravitreal Injections: Results from a Survey-Based Study",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2549050803",
+          "doi": "https://doi.org/10.22146/jnteti.v5i2.227",
+          "publication_date": "2016-08-03",
+          "title": "Sinkronisasi Sensasi Pendengaran dan Visual di dalam Dunia Simulasi Komputer",
+          "type": "article",
+          "language": "id"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2479685878",
+          "doi": "https://doi.org/10.1016/j.ijpsycho.2016.07.438",
+          "publication_date": "2016-08-04",
+          "title": "Measurement of the three branches of the baroreflex through the sequence method: Effect of fitness and mental stress",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2295995918",
+          "doi": null,
+          "publication_date": "2016-08-09",
+          "title": "Sonification and Music, Music and Sonification",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2511247487",
+          "doi": "https://doi.org/10.1016/j.apergo.2016.08.001",
+          "publication_date": "2016-08-12",
+          "title": "Changes in glance behaviour when using a visual eco-driving system – A field study",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2510286622",
+          "doi": "https://doi.org/10.1016/j.aap.2016.08.003",
+          "publication_date": "2016-08-17",
+          "title": "Drivers’ eye movements as a function of collision avoidance warning conditions in red light running scenarios",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2512160434",
+          "doi": "https://doi.org/10.1186/s12984-016-0184-z",
+          "publication_date": "2016-08-19",
+          "title": "Auditory and visual cueing modulate cycling speed of older adults and persons with Parkinson’s disease in a Virtual Cycling (V-Cycle) system",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2512686822",
+          "doi": "https://doi.org/10.1213/01.ane.0000492529.49090.5b",
+          "publication_date": "2016-08-25",
+          "title": "Abstract PR124",
+          "type": "conference-abstract",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2512652444",
+          "doi": "https://doi.org/10.1016/j.apacoust.2016.08.015",
+          "publication_date": "2016-08-25",
+          "title": "Distance rendering and perception of nearby virtual sound sources with a near-field filter model",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2507288828",
+          "doi": "https://doi.org/10.1111/ejn.13387",
+          "publication_date": "2016-08-30",
+          "title": "An effect of multisensory training on visual processing (Commentary on Grasso et al. (2016))",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2510136156",
+          "doi": "https://doi.org/10.1177/0018720816662733",
+          "publication_date": "2016-08-30",
+          "title": "Do Learned Alarm Sounds Interfere With Working Memory?",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2515612620",
+          "doi": "https://doi.org/10.1007/s13177-016-0130-2",
+          "publication_date": "2016-08-30",
+          "title": "Safe and Environment-Friendly Forward Collision Warning Messages in the Advance Warning Area of a Construction Zone",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2513095860",
+          "doi": "https://doi.org/10.3389/fpsyg.2016.01336",
+          "publication_date": "2016-08-31",
+          "title": "Effects of Team Emotional Authenticity on Virtual Team Performance",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2581111409",
+          "doi": "https://doi.org/10.5281/zenodo.851222",
+          "publication_date": "2016-08-31",
+          "title": "Gestural Control Of Wavefield Synthesis",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2565452749",
+          "doi": "https://doi.org/10.1109/isce.2016.7797382",
+          "publication_date": "2016-09-01",
+          "title": "A wearable UV sensor and accessible smartphone application for blind people",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2550959495",
+          "doi": "https://doi.org/10.1167/16.12.1199",
+          "publication_date": "2016-09-01",
+          "title": "Allocentric and egocentric contribution to manual interception by moving actors.",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2511000204",
+          "doi": "https://doi.org/10.1177/1541931213601352",
+          "publication_date": "2016-09-01",
+          "title": "Attention Redirection Using Binaurally Spatialised Cues Delivered Over a Bone Conduction Headset",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2570802244",
+          "doi": "https://doi.org/10.1167/16.12.615",
+          "publication_date": "2016-09-01",
+          "title": "Auditory alerting enhances visual attentional processing: Evidence from computational modeling and event-related lateralizations",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2513006090",
+          "doi": "https://doi.org/10.1167/16.12.152",
+          "publication_date": "2016-09-01",
+          "title": "Changes in audiovisual cue utilization strategy when cues become unreliable",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2612995046",
+          "doi": null,
+          "publication_date": "2016-09-01",
+          "title": "Concurrency in auditory displays for connected television",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2519939460",
+          "doi": "https://doi.org/10.1177/1541931213601277",
+          "publication_date": "2016-09-01",
+          "title": "Driver Performance in a Cooperative Adaptive Cruise Control String",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2559901003",
+          "doi": "https://doi.org/10.1136/jnnp-2016-314597.135",
+          "publication_date": "2016-09-01",
+          "title": "E9 Impairment in gait speed modulation associated with functional mobility in huntington’s disease",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2519871125",
+          "doi": "https://doi.org/10.1016/j.gaitpost.2016.07.061",
+          "publication_date": "2016-09-01",
+          "title": "Effects of auditory cues and pharmacological therapy on gait in patients with PD: A pilot study",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2536994626",
+          "doi": "https://doi.org/10.1109/vs-games.2016.7590352",
+          "publication_date": "2016-09-01",
+          "title": "Immersive Orchestras: Audio Processing for Orchestral Music VR Content",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2510242620",
+          "doi": "https://doi.org/10.1177/1541931213601442",
+          "publication_date": "2016-09-01",
+          "title": "Measuring Cognitive Efficiency of Novel Speedometer Displays",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2564711641",
+          "doi": "https://doi.org/10.1109/oceans.2016.7761456",
+          "publication_date": "2016-09-01",
+          "title": "Navigation of unmanned surface vehicle and detection of GPS abnormality by fusing multiple sensor measurements",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2514710676",
+          "doi": "https://doi.org/10.1167/16.12.23",
+          "publication_date": "2016-09-01",
+          "title": "Neural coding of action planning: visual processing or visual memory?",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2520134007",
+          "doi": "https://doi.org/10.1177/1541931213601065",
+          "publication_date": "2016-09-01",
+          "title": "Pip and Pop",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2546635522",
+          "doi": "https://doi.org/10.1515/aoa-2016-0040",
+          "publication_date": "2016-09-01",
+          "title": "Sonification: Review of Auditory Display Solutions in Electronic Travel Aids for the Blind",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2519617199",
+          "doi": "https://doi.org/10.1177/1541931213601147",
+          "publication_date": "2016-09-01",
+          "title": "The Design and Testing of Novel IEC 60601-1-8 Audible Alarms",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2569793636",
+          "doi": "https://doi.org/10.1167/16.12.578",
+          "publication_date": "2016-09-01",
+          "title": "The Sight-Audition Farness Effect (SAFE): Observation Distance Systematically Changes Umpire versus Fan Judgments about Baseball Runners Being Out or Safe",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2516087951",
+          "doi": "https://doi.org/10.1177/1541931213601353",
+          "publication_date": "2016-09-01",
+          "title": "Threshold of Spearcon Recognition for Auditory Menus",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2515480542",
+          "doi": "https://doi.org/10.1177/1541931213601428",
+          "publication_date": "2016-09-01",
+          "title": "Towards Mitigating Teenagers’ Distracted Driving Behaviors",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2521025401",
+          "doi": "https://doi.org/10.1177/1541931213601144",
+          "publication_date": "2016-09-01",
+          "title": "Using Earcons to Monitor Multiple Patients",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2528416655",
+          "doi": "https://doi.org/10.5920/jcms.2016.02",
+          "publication_date": "2016-09-01",
+          "title": "Utility Versus Creativity in Biomedical Musification",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2617748900",
+          "doi": null,
+          "publication_date": "2016-09-01",
+          "title": "Wide-Ranging Views on Korean Unification",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2519350400",
+          "doi": "https://doi.org/10.1371/journal.pone.0162367",
+          "publication_date": "2016-09-06",
+          "title": "Progression of Behavioral and CNS Deficits in a Viable Murine Model of Chronic Neuronopathic Gaucher Disease",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2520923349",
+          "doi": "https://doi.org/10.1016/j.ntt.2016.09.003",
+          "publication_date": "2016-09-12",
+          "title": "Long-lasting behavioral effects in neonatal mice with multiple exposures to ketamine-xylazine anesthesia",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2519652960",
+          "doi": "https://doi.org/10.1145/2968219.2968263",
+          "publication_date": "2016-09-12",
+          "title": "Multisensory experiences for singers",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2531708628",
+          "doi": null,
+          "publication_date": "2016-09-13",
+          "title": "TIMING AND COORDINATION OF GAIT: IMPACT OF AGING, GAIT SPEED AND RHYTHMIC AUDITORY CUEING",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2520441634",
+          "doi": "https://doi.org/10.1016/j.gaitpost.2016.08.032",
+          "publication_date": "2016-09-16",
+          "title": "Development of a smartphone application to measure reaction times during walking",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2529008277",
+          "doi": null,
+          "publication_date": "2016-09-16",
+          "title": "Digital musical instruments for people with physical disabilities",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2518761205",
+          "doi": "https://doi.org/10.1016/j.neuroscience.2016.09.023",
+          "publication_date": "2016-09-17",
+          "title": "Visual form predictions facilitate auditory processing at the N1",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2521216711",
+          "doi": "https://doi.org/10.1016/j.humov.2016.09.003",
+          "publication_date": "2016-09-19",
+          "title": "Children with developmental coordination disorder (DCD) can adapt to perceptible and subliminal rhythm changes but are more variable",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2522698122",
+          "doi": "https://doi.org/10.1080/00140139.2016.1237677",
+          "publication_date": "2016-09-21",
+          "title": "Semantic congruency of auditory warnings",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2522040345",
+          "doi": "https://doi.org/10.1016/j.ergon.2016.09.002",
+          "publication_date": "2016-09-23",
+          "title": "The impact of alerting design on air traffic controllers' response to conflict detection and resolution",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2525096926",
+          "doi": "https://doi.org/10.1016/j.gaitpost.2016.09.020",
+          "publication_date": "2016-09-30",
+          "title": "Biologically-variable rhythmic auditory cues are superior to isochronous cues in fostering natural gait variability in Parkinson’s disease",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2524110064",
+          "doi": "https://doi.org/10.1038/srep30175",
+          "publication_date": "2016-09-30",
+          "title": "Predicting episodic memory formation for movie events",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2581886499",
+          "doi": "https://doi.org/10.1109/biocas.2016.7833850",
+          "publication_date": "2016-10-01",
+          "title": "A multimodal drowsiness monitoring ear-module system with closed-loop real-time alarm",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2549749463",
+          "doi": "https://doi.org/10.1121/1.4970903",
+          "publication_date": "2016-10-01",
+          "title": "Appropriateness of acoustic characteristics on perception of disaster warnings",
+          "type": "conference-abstract",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2564253157",
+          "doi": "https://doi.org/10.1109/gcce.2016.7800460",
+          "publication_date": "2016-10-01",
+          "title": "Auditory lateralization steering independent of loudspeaker position using sound from ultrasound",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2990540266",
+          "doi": "https://doi.org/10.5281/zenodo.4280757",
+          "publication_date": "2016-10-01",
+          "title": "Dynamic Music Representations for Real-Time Performance: From Sound to Symbol and Back",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2554596428",
+          "doi": "https://doi.org/10.1121/1.4969535",
+          "publication_date": "2016-10-01",
+          "title": "Effect of individualization of interaural time/level differences with non-individualized head-related transfer functions on sound localization",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2555333982",
+          "doi": "https://doi.org/10.1109/ipin.2016.7743612",
+          "publication_date": "2016-10-01",
+          "title": "Effect of parameters of phase-modulated M-sequence signal on direction-of-arrival and localization error",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2552309665",
+          "doi": "https://doi.org/10.1121/1.4969329",
+          "publication_date": "2016-10-01",
+          "title": "Perceptual thresholds of spatial audio update latency in virtual auditory and audiovisual environments",
+          "type": "conference-abstract",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2586339122",
+          "doi": "https://doi.org/10.1109/smc.2016.7844870",
+          "publication_date": "2016-10-01",
+          "title": "Predicting decision accuracy and certainty in complex brain-machine interactions",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2560670122",
+          "doi": null,
+          "publication_date": "2016-10-01",
+          "title": "Scaffolding Novices to Leverage Auditory Awareness Cues in First-Person Shooters",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2546824637",
+          "doi": "https://doi.org/10.1145/2986416.2986418",
+          "publication_date": "2016-10-04",
+          "title": "A Study on User Acceptance of Different Auditory Content for Relaxation",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2547210566",
+          "doi": "https://doi.org/10.1145/2986416.2986422",
+          "publication_date": "2016-10-04",
+          "title": "Exploration of sonification design process through an interdisciplinary workshop",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2538738044",
+          "doi": "https://doi.org/10.1145/2983310.2985759",
+          "publication_date": "2016-10-04",
+          "title": "On Your Feet!",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2548397593",
+          "doi": "https://doi.org/10.1145/2986416.2986435",
+          "publication_date": "2016-10-04",
+          "title": "Speech Feedback Reduces Driver Distraction Caused by In-vehicle Visual Interfaces",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2785470176",
+          "doi": null,
+          "publication_date": "2016-10-05",
+          "title": "A novel speech-based auditory display for monitoring vital signs",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2768026895",
+          "doi": null,
+          "publication_date": "2016-10-05",
+          "title": "Pitch-Based Earcons: An Auditory Display for Patient Monitoring",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2531609034",
+          "doi": "https://doi.org/10.1080/00222895.2016.1219304",
+          "publication_date": "2016-10-11",
+          "title": "Speed and Rhythm Affect Temporal Structure of Variability in Reaching Poststroke: A Pilot Study",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2530548113",
+          "doi": "https://doi.org/10.1007/978-3-319-46669-9_139",
+          "publication_date": "2016-10-12",
+          "title": "Short-Term Effects of Real-Time Auditory Display (Sonification) on Gait Parameters in People with Parkinsons’ Disease—A Pilot Study",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2539584968",
+          "doi": null,
+          "publication_date": "2016-10-18",
+          "title": "How Usability Testing Resulted in Improvements to Ground Collision Software for General Aviation: Improved Ground Collision Avoidance System (IGCAS)",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2539062311",
+          "doi": "https://doi.org/10.1145/2982142.2982171",
+          "publication_date": "2016-10-20",
+          "title": "A Personalizable Mobile Sound Detector App Design for Deaf and Hard-of-Hearing Users",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2533437026",
+          "doi": "https://doi.org/10.1145/2982142.2982206",
+          "publication_date": "2016-10-20",
+          "title": "Exploration of the Use of Auditory Cues in Code Comprehension and Navigation for Individuals with Visual Impairments in a Visual Programming Environment",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2567737384",
+          "doi": "https://doi.org/10.1145/3004323.3004357",
+          "publication_date": "2016-10-24",
+          "title": "Development Tool for Rapid Evaluation of Eyes-free In-vehicle Gesture Controls",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2568148192",
+          "doi": "https://doi.org/10.1145/3003715.3005413",
+          "publication_date": "2016-10-24",
+          "title": "Effects of Mediating Notifications Based on Task Load",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2539312284",
+          "doi": "https://doi.org/10.1007/s00221-016-4782-6",
+          "publication_date": "2016-10-24",
+          "title": "Relative contributions of spatial weighting, explicit knowledge and proprioception to hand localisation during positional ambiguity",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2567884206",
+          "doi": "https://doi.org/10.1145/3004323.3005685",
+          "publication_date": "2016-10-24",
+          "title": "Tutorial on In-vehicle Auditory Interactions",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2533370895",
+          "doi": "https://doi.org/10.1145/2996463",
+          "publication_date": "2016-10-25",
+          "title": "Fixation Prediction through Multimodal Analysis",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2545637476",
+          "doi": "https://doi.org/10.1016/j.aap.2016.10.024",
+          "publication_date": "2016-10-28",
+          "title": "Effects of secondary tasks on auditory detection and crossing thresholds in relation to approaching vehicle noises",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4211011925",
+          "doi": "https://doi.org/10.1002/9781118929384.ch16",
+          "publication_date": "2016-10-28",
+          "title": "Multisensory flavour perception",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2547385020",
+          "doi": "https://doi.org/10.1145/2993148.2993157",
+          "publication_date": "2016-10-31",
+          "title": "Effects of multimodal cues on children's perception of uncanniness in a social robot",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2555554089",
+          "doi": "https://doi.org/10.1080/13554794.2016.1253751",
+          "publication_date": "2016-11-01",
+          "title": "Composing alarms: considering the musical aspects of auditory alarm design",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2726115092",
+          "doi": null,
+          "publication_date": "2016-11-01",
+          "title": "Development of in-Vehicle Auditory Display using Sound Quality Metrics",
+          "type": "article",
+          "language": "ko"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2547040949",
+          "doi": "https://doi.org/10.1016/j.neulet.2016.11.011",
+          "publication_date": "2016-11-04",
+          "title": "Attention and driving performance modulations due to anger state: Contribution of electroencephalographic data",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2547408259",
+          "doi": "https://doi.org/10.1007/s00422-016-0706-6",
+          "publication_date": "2016-11-04",
+          "title": "Comparison of congruence judgment and auditory localization tasks for assessing the spatial limits of visual capture",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2556729532",
+          "doi": "https://doi.org/10.3389/fnbeh.2016.00216",
+          "publication_date": "2016-11-07",
+          "title": "Contexts Paired with Junk Food Impair Goal-Directed Behavior in Rats: Implications for Decision Making in Obesogenic Environments",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2549214777",
+          "doi": "https://doi.org/10.1177/0018720816670986",
+          "publication_date": "2016-11-07",
+          "title": "Using a Sequence of Earcons to Monitor Multiple Simulated Patients",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2550573676",
+          "doi": "https://doi.org/10.1007/s00221-016-4823-1",
+          "publication_date": "2016-11-11",
+          "title": "Auditory spatial representations of the world are compressed in blind humans",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2551198475",
+          "doi": "https://doi.org/10.1016/j.displa.2016.11.002",
+          "publication_date": "2016-11-11",
+          "title": "EcoSonic: Auditory peripheral monitoring of fuel consumption for fuel-efficient driving",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2588467464",
+          "doi": null,
+          "publication_date": "2016-11-11",
+          "title": "Push and pull menus for auditory interfaces",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4244593129",
+          "doi": "https://doi.org/10.1108/apjml-08-2016-0138",
+          "publication_date": "2016-11-14",
+          "title": "Editorial",
+          "type": "editorial",
+          "language": "en"
+        }
+      ],
+      "unique_ids": 100,
+      "disposition": "PAGE_RETURNED_UNADJUDICATED",
+      "matches_historical_4200_boundary": false
+    },
+    {
+      "page": 43,
+      "page_size": 100,
+      "request_url": "https://api.openalex.org/works?filter=title_and_abstract.search:%28%22auditory%20icon%22%20OR%20%22auditory%20icons%22%20OR%20earcon%20OR%20earcons%20OR%20spearcon%20OR%20spearcons%20OR%20%22auditory%20alert%22%20OR%20%22auditory%20alerts%22%20OR%20%22audio%20alert%22%20OR%20%22audio%20alerts%22%20OR%20%22auditory%20warning%22%20OR%20%22auditory%20warnings%22%20OR%20%22auditory%20alarm%22%20OR%20%22auditory%20alarms%22%20OR%20%22auditory%20notification%22%20OR%20%22auditory%20notifications%22%20OR%20%22audio%20notification%22%20OR%20%22audio%20notifications%22%20OR%20%22speech%20warning%22%20OR%20%22speech%20warnings%22%20OR%20%22verbal%20warning%22%20OR%20%22verbal%20warnings%22%20OR%20%22voice%20alert%22%20OR%20%22voice%20alerts%22%20OR%20%22voice%20warning%22%20OR%20%22voice%20warnings%22%20OR%20%22auditory%20cue%22%20OR%20%22auditory%20cues%22%20OR%20%22audio%20cue%22%20OR%20%22audio%20cues%22%20OR%20%22auditory%20display%22%20OR%20%22auditory%20displays%22%20OR%20%22auditory%20menu%22%20OR%20%22auditory%20menus%22%20OR%20lyricon%20OR%20lyricons%20OR%20spindex%20OR%20musicon%20OR%20musicons%20OR%20%22auditory%20beacon%22%20OR%20%22auditory%20beacons%22%20OR%20%22acoustic%20beacon%22%20OR%20%22acoustic%20beacons%22%29%20AND%20%28experiment%20OR%20experimental%20OR%20participants%20OR%20study%20OR%20evaluation%20OR%20user%29,to_publication_date:2026-10-04&per_page=100&select=id,doi,display_name,publication_year,publication_date,type,language,primary_location,best_oa_location,locations,authorships,biblio,ids,referenced_works,is_retracted,abstract_inverted_index&page=43&sort=publication_date:asc,display_name:asc",
+      "request_started_utc": "2026-11-10T13:11:34.647+00:00",
+      "interface": "OpenAlex works REST API",
+      "access": "public unauthenticated HTTPS, no credentials or account",
+      "source_class": "API discovery metadata, not primary full text",
+      "http_status": 200,
+      "response_date": "Tue, 10 Nov 2026 13:11:36 GMT",
+      "content_type": "application/json",
+      "rate_limit_remaining": "980",
+      "rate_limit_credits_used": "10",
+      "retry_after": null,
+      "received_utc": "2026-11-10T13:11:36.748+00:00",
+      "completed_utc": "2026-11-10T13:11:36.935+00:00",
+      "raw_bytes_read": 1017746,
+      "raw_sha256": "7f17c8eb666c0f2d2bf52f6c336bd3748d173a6b2ff73e769f1b976ac587a4c8",
+      "reported_total": 9275,
+      "reported_page": 43,
+      "reported_page_size": 100,
+      "api_cost_usd": 0.001,
+      "results_returned": 100,
+      "records": [
+        {
+          "openalex_id": "https://openalex.org/W2551005744",
+          "doi": "https://doi.org/10.1016/j.apergo.2016.11.002",
+          "publication_date": "2016-11-14",
+          "title": "Effects of auditory and tactile warning on response to visual hazards under a noisy environment",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2540977947",
+          "doi": "https://doi.org/10.1108/apjml-11-2015-0182",
+          "publication_date": "2016-11-14",
+          "title": "“Chopin” effect? An exploratory study on how musical tempo influence consumer choice of drink with different temperatures",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2555943323",
+          "doi": "https://doi.org/10.1016/j.trc.2016.11.005",
+          "publication_date": "2016-11-18",
+          "title": "An on-road evaluation of connected motorcycle crash warning interface with different motorcycle types",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2553879701",
+          "doi": "https://doi.org/10.1016/j.langcom.2016.10.007",
+          "publication_date": "2016-11-26",
+          "title": "Bodily constraints contributing to multimodal referentiality in humans: The contribution of a de-pigmented sclera to proto-declaratives",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2585958938",
+          "doi": null,
+          "publication_date": "2016-11-28",
+          "title": "Interactive Exploration of Multidmensional Raster Geospatial Data through Sonification",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2593289625",
+          "doi": null,
+          "publication_date": "2016-12-01",
+          "title": "Cooperative Adaptive Cruise Control Human Factors Study : Experiment 3 : The Role of Automated Braking and Auditory Alert in Collision Avoidance Response",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2747998081",
+          "doi": null,
+          "publication_date": "2016-12-01",
+          "title": "Foraging behaviour and sensory ecology of the bat-eared fox (Otocyon megalotis)",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4230905633",
+          "doi": "https://doi.org/10.1053/s0146-0005(16)30111-2",
+          "publication_date": "2016-12-01",
+          "title": "Masthead",
+          "type": "paratext",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2560154205",
+          "doi": "https://doi.org/10.1016/j.gaitpost.2016.12.006",
+          "publication_date": "2016-12-06",
+          "title": "Balance and mobility training with or without concurrent cognitive training does not improve posture, but improves reaction time in healthy older adults",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2560484604",
+          "doi": "https://doi.org/10.1016/j.nrl.2016.10.008",
+          "publication_date": "2016-12-09",
+          "title": "Efectos de los estímulos auditivos en la fase de iniciación de la marcha y de giro en pacientes con enfermedad de Parkinson",
+          "type": "review",
+          "language": "es"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2565655431",
+          "doi": "https://doi.org/10.1101/093138",
+          "publication_date": "2016-12-11",
+          "title": "RL mechanisms of short-term plasticity of auditory cortex",
+          "type": "preprint",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2561713757",
+          "doi": "https://doi.org/10.1371/journal.pone.0165391",
+          "publication_date": "2016-12-13",
+          "title": "Modeling the Perception of Audiovisual Distance: Bayesian Causal Inference and Other Models",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2566878713",
+          "doi": "https://doi.org/10.1016/j.cortex.2016.12.008",
+          "publication_date": "2016-12-18",
+          "title": "Stimulus uncertainty enhances long-term potentiation-like plasticity in human motor cortex",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2567559077",
+          "doi": "https://doi.org/10.1093/jme/tjw192",
+          "publication_date": "2016-12-23",
+          "title": "Arrestant Effect of Human Scalp Components on Head Louse (Phthiraptera: Pediculidae) Behavior",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2528841789",
+          "doi": "https://doi.org/10.1109/tmm.2016.2644872",
+          "publication_date": "2016-12-24",
+          "title": "Recognizing and Presenting the Storytelling Video Structure With Deep Multimodal Networks",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2562023448",
+          "doi": "https://doi.org/10.1016/j.asoc.2016.12.035",
+          "publication_date": "2016-12-26",
+          "title": "Face detection and recognition in an unconstrained environment for mobile visual assistive system",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W3198215685",
+          "doi": "https://doi.org/10.51280/yjer.2016.003",
+          "publication_date": "2016-12-27",
+          "title": "İlkokul Öğretmenlerinin Karşılaştıkları İstenmeyen Davranışlar ile Baş Etme Stratejileri",
+          "type": "article",
+          "language": "tr"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2570179444",
+          "doi": "https://doi.org/10.12963/csd.16281",
+          "publication_date": "2016-12-31",
+          "title": "Micrographia in Parkinson’s Disease: Comparison between Horizontal and Vertical Handwritings",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2562829537",
+          "doi": "https://doi.org/10.1250/ast.38.23",
+          "publication_date": "2016-12-31",
+          "title": "Spatial accuracy of binaural synthesis from rigid spherical microphone array recordings",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2727635817",
+          "doi": "https://doi.org/10.1007/978-3-319-61572-1_21",
+          "publication_date": "2017-01-01",
+          "title": "A Basic Study of Gaze Behavior Measurement Methodology for Drivers in Autonomous Vehicles",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2761007447",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "A ROBUST VIDEO-OBJECT STEGANOGRAPHIC MECHANISM",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2735962229",
+          "doi": "https://doi.org/10.1007/978-3-319-61949-1_35",
+          "publication_date": "2017-01-01",
+          "title": "A Smart Wearable Navigation System for Visually Impaired",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2903775209",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "A vibrotactile interface to support the driver during the take-over process",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2914137590",
+          "doi": "https://doi.org/10.3389/conf.fnhum.2017.223.00110",
+          "publication_date": "2017-01-01",
+          "title": "Adding temporal dynamics to models of impaired language production",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2941042563",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Affect analysis for text dialogue in movies",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2765204500",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Affective Assessment of Automobile Sound Quality: Evaluation Framework of AUI (Auditory User-Interface)",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W3198047216",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "An Analysis of the 2014-2015 State of Connecticut Traffic Stop and Search Data",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4246089213",
+          "doi": "https://doi.org/10.1121/2.0000773",
+          "publication_date": "2017-01-01",
+          "title": "An exploration of rhythm perception in African penguins (Spheniscus demersus)",
+          "type": "conference-abstract",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2613361862",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Anti-Intellectualism in Tomi Lahren’s “Final Thoughts”: A Rhetorical Analysis through Tony Schwartz’s Resonance Principle",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2945841853",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "ARM TRAINING WITH AUDITORY CUEING IS MORE EFFECTIVE FOR UPPER LIMB MOTOR FUNCTION THAN MODIFIED CONSTRAINT INDUSED MOVEMENT THERAPY IN SUB ACUTE STROKE PATIENTS : AN EXPERIMENTAL STUDY.",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2806121008",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Assessing the mechanisms behind sound-taste correspondences and their impact on multisensory flavour perception and evaluation",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2964025759",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Audio augmented reality as navigation aid for remotely operated vehicle piloting",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2768283408",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Auditory Cortex Mediates Hearing-Guided Prey Capture in Mice",
+          "type": "other",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2806228637",
+          "doi": "https://doi.org/10.5287/ora-8rqyj8aao",
+          "publication_date": "2017-01-01",
+          "title": "Auditory cuing of visual attention: spatial and sound parameters",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2794657545",
+          "doi": "https://doi.org/10.18420/muc2017-mci-0240",
+          "publication_date": "2017-01-01",
+          "title": "Auditory Display for Improving Free-hand Gesture Interaction",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2591934800",
+          "doi": "https://doi.org/10.4018/978-1-5225-2492-2.ch007",
+          "publication_date": "2017-01-01",
+          "title": "Auditory Feedback in a Computer Game for Blind People",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2767247934",
+          "doi": "https://doi.org/10.25911/5d70f13c0c526",
+          "publication_date": "2017-01-01",
+          "title": "Behavioural and neuronal correlates of sensory prioritization in the rat whisker system",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4301738787",
+          "doi": "https://doi.org/10.5281/zenodo.5882482",
+          "publication_date": "2017-01-01",
+          "title": "CLTKTY? CLACK! Exploring Design and Interpretation of Sound for Interactive Commodities",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2906496296",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Cooking and Eating: An Exploration of Auditory Cues of Food Preparation During Commensality",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2773420742",
+          "doi": "https://doi.org/10.7282/t3k64n4m",
+          "publication_date": "2017-01-01",
+          "title": "Cueing, feedback and directed attention embedded in a virtual environment modulate temporal and spatial bicycling features of healthy older adults and people with Parkinson's disease",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2779405810",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Design Implications of Drivers’ Engagement with Secondary Activities During Highly-Automated Driving – A Longitudinal Simulator Study",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2804193205",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Design of a Haptic/Auditory Warning Interface to Improve User Communication with Autonomous Vehicles",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2360137255",
+          "doi": "https://doi.org/10.1007/978-3-319-51941-8_12",
+          "publication_date": "2017-01-01",
+          "title": "Designing and Deploying Meaningful Auditory Alarms for Control Systems",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2772606378",
+          "doi": "https://doi.org/10.21767/2171-6625.1000234",
+          "publication_date": "2017-01-01",
+          "title": "Dietary Quercetin Ameliorates Memory Impairment in a Murine Model of Alzheimer’s Disease with Obesity and Diabetes, Suppressing ATF4 Expression",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W3092983810",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Effectiveness of auditory and visual cues on Bradykinesia in individuals with Parkinson’s disease: a comparative study",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2764319616",
+          "doi": "https://doi.org/10.3141/2663-04",
+          "publication_date": "2017-01-01",
+          "title": "Effects of Alert Cue Specificity on Situation Awareness in Transfer of Control in Level 3 Automation",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2783351654",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Electrocortical Reactivity and Regulation in 5- To 8-Year Old Children Who Do and Do Not Stutter: An ERP Study of Affective Face Processing",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4394490190",
+          "doi": "https://doi.org/10.6084/m9.figshare.5394925",
+          "publication_date": "2017-01-01",
+          "title": "Electrophysiological Indices of Audiovisual Speech Perception: Beyond the McGurk Effect and Speech in Noise. Supplementary Material",
+          "type": "dataset",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2887043950",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Evaluating Spatial-Auditory Symbology for Improved Performance in Low-Fidelity Spatial Audio Displays",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2599804164",
+          "doi": "https://doi.org/10.1007/978-3-319-51662-2_10",
+          "publication_date": "2017-01-01",
+          "title": "Hearing with Cochlear Implants and Hearing Aids in Complex Auditory Scenes",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2767675473",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Hippocampal Neurogenesis and its Contribution to Auditory Fear Generalization",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2755597906",
+          "doi": "https://doi.org/10.1007/978-3-319-67684-5_11",
+          "publication_date": "2017-01-01",
+          "title": "I Smell Creativity: Exploring the Effects of Olfactory and Auditory Cues to Support Creative Writing Tasks",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2786024751",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "IMPLEMENTASI KEBIJAKAN DISIPLIN KERJA PEGAWAI NEGERI SIPIL DI KANTOR OMBUDSMAN HAK ASASI MANUSIA DI TIMOR - LESTE",
+          "type": "article",
+          "language": "id"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2888490075",
+          "doi": "https://doi.org/10.13016/m23b5wb81",
+          "publication_date": "2017-01-01",
+          "title": "INSTRUMENT OF ARCHITECTURE",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2747839060",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Instrumental conditioning and learning in Poroderma Pantherinum",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W3204360513",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "INVESTIGASI CYBERSICKNESS PADA DRIVING SIMULATOR DENGAN SIMULATOR SICKNESS QUESTIONNAIRE (SSQ) DAN EYE TRACKING",
+          "type": "article",
+          "language": "id"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2611357729",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "IOT BASED SMART STICK FOR BLIND PEOPLE",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2768390043",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Manipulation of Auditory Feedback in Individuals with Normal Hearing and Hearing Loss",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2896288257",
+          "doi": "https://doi.org/10.7939/r30863j1s",
+          "publication_date": "2017-01-01",
+          "title": "Mediation of memory permanence: Neural activity versus protein synthesis",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2951714484",
+          "doi": "https://doi.org/10.2139/ssrn.3050500",
+          "publication_date": "2017-01-01",
+          "title": "Motor (But Not Auditory) Attention Affects Syntactic Choice",
+          "type": "preprint",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W3124707911",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Motor (But Not Auditory) Attention Affects Syntactic Choice",
+          "type": "preprint",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2594199081",
+          "doi": "https://doi.org/10.1109/ccwc.2017.7868407",
+          "publication_date": "2017-01-01",
+          "title": "Multiple distance sensors based smart stick for visually impaired people",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2804524993",
+          "doi": "https://doi.org/10.37099/mtu.dc.etdr/513",
+          "publication_date": "2017-01-01",
+          "title": "MUSICAL EXERCISE FOR PEOPLE WITH VISUAL IMPAIRMENTS",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2892857752",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Neural correlates of impaired motor-auditory prediction in Autism Spectrum Disorder",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2972070220",
+          "doi": "https://doi.org/10.5287/ora-8nwr8r7nd",
+          "publication_date": "2017-01-01",
+          "title": "Neuronal dynamics of flexible motor control in the human subthalamic nucleus and cortex",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2734468216",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Neuroscience Underlying Temporal Cue Discrimination in the Auditory Cortex",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2586497631",
+          "doi": "https://doi.org/10.1007/978-3-319-48980-3_11",
+          "publication_date": "2017-01-01",
+          "title": "Parkinson’s Disease and Gait Asymmetry",
+          "type": "book-chapter",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2337729016",
+          "doi": "https://doi.org/10.15761/srj.1000126",
+          "publication_date": "2017-01-01",
+          "title": "Patient responses to swallowing safety cues: A comparison of traditional face-to-face and tele-dysphagia instructional methods",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2981702070",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "PROTOTIPO DE DESPENSA INTELIGENTE PARA CONTROLAR EL PESO Y TIEMPO MÁXIMO DE CONSUMO DE VÍVERES EN UN SUPERMERCADO",
+          "type": "dissertation",
+          "language": "es"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2230273403",
+          "doi": "https://doi.org/10.4225/03/58b3c1106b292",
+          "publication_date": "2017-01-01",
+          "title": "Prototyping and characterising a spatial audio visual aid that models planar structures using 3D sensing",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2732067318",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "Puppy talk: why do we use it and do dogs pay attention to it?",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W7166690957",
+          "doi": "https://doi.org/10.82161/t1zt-9e90",
+          "publication_date": "2017-01-01",
+          "title": "RANDOMIZED CONTROLLED TRIAL PROTOCOL: EFFECT OF TRAINING WITH RHYTHMICAL CUES BALANCE, FALLS, GAIT AND FEEZING IN PARKINSON'S DISEASE",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2736115503",
+          "doi": "https://doi.org/10.4236/ojas.2017.73023",
+          "publication_date": "2017-01-01",
+          "title": "Relevance of Visual, Auditory, and Olfactory Cues in Pet Dogs’ Awareness of Humans",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4253361222",
+          "doi": "https://doi.org/10.26686/wgtn.17060906",
+          "publication_date": "2017-01-01",
+          "title": "Synthesis of sign and speech in a New Zealand Sign Language-target session: Oral channel variation of hearing bimodal bilingual children of Deaf parents",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2601409038",
+          "doi": "https://doi.org/10.24001/ijaems.3.3.24",
+          "publication_date": "2017-01-01",
+          "title": "Taxi Ride Based on Voice Alert System",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2938328095",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "The effect of covert auditory attention in multiple targets aiming: Kinematic evidence",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2770520263",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "The Fear Factor: Impacts of Perceived Predation Risk and Competition on Fall Field Crickets (Gryllus pennsylvanicus)",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2972742946",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "The impact of response complexity and cue modality for choice eye-hand coordination movements in typically developing individuals",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2613180455",
+          "doi": null,
+          "publication_date": "2017-01-01",
+          "title": "The influence of rhythmic and spectro-timbral musical features on gait-related movement",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2575666807",
+          "doi": "https://doi.org/10.4992/jjpsy.88.15032",
+          "publication_date": "2017-01-01",
+          "title": "The mutual interference of facial and vocal information in Chinese and Japanese people's perception of emotions",
+          "type": "article",
+          "language": "ja"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2592889554",
+          "doi": "https://doi.org/10.1163/1568539x-00003419",
+          "publication_date": "2017-01-01",
+          "title": "The sensory ecology of prey detection in the bat-eared fox (Otocyon megalotis)",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2596401053",
+          "doi": "https://doi.org/10.21767/2171-6625.1000177",
+          "publication_date": "2017-01-01",
+          "title": "Transformative Autonomous Entrainment of Gait in Neurological Patients",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2570382363",
+          "doi": "https://doi.org/10.1016/j.neuropsychologia.2017.01.002",
+          "publication_date": "2017-01-06",
+          "title": "Cross-modal influences on attentional asymmetries: Additive effects of attentional orienting and arousal",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2570497341",
+          "doi": "https://doi.org/10.1186/s41235-016-0043-2",
+          "publication_date": "2017-01-07",
+          "title": "Effects of cues to event segmentation on subsequent memory",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2572718281",
+          "doi": "https://doi.org/10.1098/rspb.2016.2429",
+          "publication_date": "2017-01-11",
+          "title": "Dog-directed speech: why do we use it and do dogs pay attention to it?",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W3114206326",
+          "doi": "https://doi.org/10.5205/10198",
+          "publication_date": "2017-01-16",
+          "title": "Care in the administration of medicines: the responsibilities of nursing professionals",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2577972920",
+          "doi": "https://doi.org/10.3758/s13414-016-1270-9",
+          "publication_date": "2017-01-17",
+          "title": "Estimating the relative weights of visual and auditory tau versus heuristic-based cues for time-to-contact judgments in realistic, familiar scenes by older and younger adults",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2573827085",
+          "doi": "https://doi.org/10.3389/fpsyg.2017.00010",
+          "publication_date": "2017-01-17",
+          "title": "Shape Perception and Navigation in Blind Adults",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2575841921",
+          "doi": "https://doi.org/10.1016/j.neuroimage.2017.01.039",
+          "publication_date": "2017-01-17",
+          "title": "Temporal orienting precedes intersensory attention and has opposing effects on early evoked brain activity",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2580098429",
+          "doi": "https://doi.org/10.1049/iet-its.2016.0084",
+          "publication_date": "2017-01-25",
+          "title": "Evaluation of the effects of in‐vehicle traffic lights on driving performances for unsignalised intersections",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2582487349",
+          "doi": "https://doi.org/10.1016/j.gaitpost.2017.01.015",
+          "publication_date": "2017-01-25",
+          "title": "Sensory reweighting after loss of auditory cues in healthy adults",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2581170604",
+          "doi": "https://doi.org/10.1371/journal.pone.0170838",
+          "publication_date": "2017-01-26",
+          "title": "Painted Goby Larvae under High-CO2 Fail to Recognize Reef Sounds",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2581950186",
+          "doi": "https://doi.org/10.1117/12.2256942",
+          "publication_date": "2017-01-27",
+          "title": "Quantifying the gait pattern adaptation to auditory feedback in healthy elder adults",
+          "type": "conference-paper",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2624710547",
+          "doi": "https://doi.org/10.1136/bjsports-2016-097372.74",
+          "publication_date": "2017-02-01",
+          "title": "THE DEVELOPMENT OF INJURY PREVENTION EDUCATIONAL TOOLS FOR EVALUATION IN CHILDREN AND ADOLESCENTS IN SCHOOL AND COMMUNITY SETTINGS",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2585898071",
+          "doi": "https://doi.org/10.1177/1687814017691671",
+          "publication_date": "2017-02-01",
+          "title": "Underwater acoustic beacon signal extraction based on dislocation superimposed method",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2585599366",
+          "doi": "https://doi.org/10.3233/rnn-160686",
+          "publication_date": "2017-02-02",
+          "title": "Waist-up protection for blind individuals using the EyeCane as a primary and secondary mobility aid",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2743773571",
+          "doi": null,
+          "publication_date": "2017-02-08",
+          "title": "PENGENAAN SANKSI ADMINISTRASI TERHADAP PELANGGARAN KETENTRAMAN DAN KETERTIBAN UMUM (Studi Di Kabupaten Gresik )",
+          "type": "article",
+          "language": "id"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2804227035",
+          "doi": null,
+          "publication_date": "2017-02-09",
+          "title": "ASYMMETRY OF SELECTIVE ATTENTION IN HEALTHY SUBJECTS AND PATIENTS WITH CERVICAL FOCAL DYSTONIA",
+          "type": "dissertation",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2586474848",
+          "doi": "https://doi.org/10.1016/j.aap.2017.01.019",
+          "publication_date": "2017-02-09",
+          "title": "Augmented reality warnings in vehicles: Effects of modality and specificity on effectiveness",
+          "type": "article",
+          "language": "en"
+        },
+        {
+          "openalex_id": "https://openalex.org/W2588771879",
+          "doi": "https://doi.org/10.1111/ibi.12467",
+          "publication_date": "2017-02-13",
+          "title": "Detection of earthworm prey by RuffPhilomachus pugnax",
+          "type": "article",
+          "language": "en"
+        }
+      ],
+      "unique_ids": 100,
+      "disposition": "PAGE_RETURNED_UNADJUDICATED"
+    }
+  ],
+  "provenance": {
+    "source_actions_run": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42822235351",
+    "source_actions_job": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42822235351/job/129850397555",
+    "tested_source_commit": "554541af7488b7f91d0fa22334026a63aa14b4ab",
+    "evidence_type": "Original GitHub-runner HTTP receipt, derived metadata and original response hashes; NOT archived original API response bytes",
+    "historical_sorted_prefix": "research/searches/auditory/exports/openalex/20261103-database-load-recovery/MANIFEST.json",
+    "historical_reported_total": 9368,
+    "current_reported_total": 9275,
+    "historical_boundary_matched": false,
+    "index_drift": "reported_count_9368_to_9275_and_historical_4200_boundary_not_matched",
+    "count_added_to_canonical_search_records": 0,
+    "new_search_occurrences_registered": 0,
+    "deduplication_outcome": "not performed; current 200 API metadata work hits may overlap prior 21483 occurrences",
+    "access_rights": "Public anonymous OpenAlex metadata API; original abstracts are not redistributed"
+  }
+}
