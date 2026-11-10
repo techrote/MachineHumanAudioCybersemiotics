@@ -109,6 +109,8 @@ class AttestationTests(unittest.TestCase):
         rec = mod.capture(self.xml, **ARGS)
         for field, value in [
             ("source_manifestation_registered", True),
+            ("private_retention_rights_approved_by_tool", True),
+            ("original_pdf_equivalence_verified", True),
             ("performed_semantic_reading", True),
             ("human_review_performed", True),
             ("screening_and_independent_sample_admissions", 2),
