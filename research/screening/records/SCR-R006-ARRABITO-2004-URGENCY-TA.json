@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-ARRABITO-2004-URGENCY-TA",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T15:33:58.305Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-ta-noise-urgency-20261110",
+        "model": "GPT-6",
+        "tool": "GitHub source identity/hit records + web.run original public SAGE and Taylor & Francis publisher HTML; source text tool-mediated, no publisher PDF bytes"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-F-ARRABITO-URGENCY",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-F-ARRABITO-URGENCY",
+          "rev": 1
+        },
+        "stage": "title_abstract",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §4 E1–E6/G01 and §6.2; original publisher public text, single AI first pass; include to full-text retrieval only",
+        "decision": "include",
+        "reason": "Frozen v1 E1–E6 first-pass assessment. Original Taylor & Francis publisher abstract describes pilots and non-pilots rating and comparing perceived urgency of five existing helicopter auditory alarms; pilots also ranked triggering-situation urgency. Human listeners, manipulated/contrasted alarm sound properties, perceived-urgency outcomes, experimental report methods and results in abstract, and publication before 2026-10-04 support inclusion to full-text screening only. Actual sound files, allocation, exact participant N, alarm levels, full Methods, numerical result extraction and independent sample identity were not reviewed. A single publication with multiple discovery paths is not multiple independent studies.",
+        "access_limitation": "Original publisher https://www.tandfonline.com/doi/abs/10.1080/0014013042000193282; DOI 10.1080/0014013042000193282; Ergonomics 47(8), 821–840 (2004), publisher page online-posting date 2007-02-20 is not the original issue year; PubMed PMID 15204277 corroborates 2004-06-22 issue. Accessed 2026-11-10: entire publisher Abstract only; full article restricted, not read. Tool-mediated public HTML text; original publisher HTTP Date, PDF bytes/hash, audio and complete Methods not obtained; rights not inferred. Existing R006 DOI source SRC-R006-F-ARRABITO-URGENCY@1 is metadata_only with three retained R005 discovery HIT references: HIT-R005R-C1LOAD-EQ1-01348, HIT-R005R-C1RECOVERY-EQ1-00109, HIT-R005R-C1RECOVERY-EQ2-00074. No human review, numerical extraction, experiment/sample or full-text eligibility.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
