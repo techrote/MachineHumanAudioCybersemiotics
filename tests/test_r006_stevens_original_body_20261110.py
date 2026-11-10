@@ -73,7 +73,7 @@ class StevensOriginalBodyBoundaryTests(unittest.TestCase):
         self.assertIn("1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b", limitation)
         self.assertIn("NOT verified", limitation)
         self.assertIn("web intermediary", limitation.lower())
-        self.assertIn("Methods", self.review)
+        self.assertIn("Method > Participants", self.review)
         self.assertIn("Results", self.review)
 
     def test_tampering_earlier_provenance_is_detected_by_v1(self):
