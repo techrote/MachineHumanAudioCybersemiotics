@@ -31,7 +31,7 @@ def validate_ledger(a):
     assert len({x["doi"].lower() for x in refs}) == len(refs)
     for x in refs:
         assert x["candidate_key"] == f'C9-DANG2022-R{x["review_reference_number"]:03}'
-        assert re.fullmatch(r'10\\.[0-9]{4,9}/\\S+', x["doi"])
+        assert re.fullmatch(r'10\.[0-9]{4,9}/\S+', x["doi"])
         assert x["source_url"].startswith("https://")
         assert x["publication_year"] <= 2026
         assert x["eligibility_status"] == "not_screened"
