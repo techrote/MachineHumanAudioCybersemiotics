@@ -50,7 +50,7 @@ def verify_receipt(doc):
         "source_custody_accepted", "legal_private_retention_authorized",
         "full_text_eligibility_admitted"))
     assert doc["independent_studies_or_samples_admitted"] == 0
-    assert "R006" in doc["r006_next_action"]
+    assert "source-pinned" in doc["r006_next_action"] and "adjudication" in doc["r006_next_action"]
     assert "Re-acquire" in doc["integrator_next_action"]
 
 
