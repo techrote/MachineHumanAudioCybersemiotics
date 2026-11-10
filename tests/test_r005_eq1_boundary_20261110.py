@@ -129,6 +129,22 @@ def validate_receipt(s):
     assert s["source_full_text_reviewed"] is False
     assert s["human_screening_claimed"] is False
     assert len(s["pages"]) == 2
+    assert s["provenance"]["historical_reported_total"] == 9368
+    assert s["provenance"]["current_reported_total"] == 9275
+    assert s["provenance"]["historical_boundary_matched"] is False
+    assert s["provenance"]["new_search_occurrences_registered"] == 0
+    assert s["provenance"]["count_added_to_canonical_search_records"] == 0
+    assert s["provenance"]["tested_source_commit"] == "554541af7488b7f91d0fa22334026a63aa14b4ab"
+    assert [p["reported_total"] for p in s["pages"]] == [9275, 9275]
+    assert [p["raw_sha256"] for p in s["pages"]] == [
+        "99a557eac990811a3270faf7fb83f6723b9a797f35d821ae610d11f8ecda277a",
+        "7f17c8eb666c0f2d2bf52f6c336bd3748d173a6b2ff73e769f1b976ac587a4c8",
+    ]
+    assert s["pages"][0]["matches_historical_4200_boundary"] is False
+    assert s["pages"][0]["records"][-1]["openalex_id"] == "https://openalex.org/W4244593129"
+    assert s["pages"][1]["records"][0]["openalex_id"] == "https://openalex.org/W2551005744"
+    all_ids = [x["openalex_id"] for p in s["pages"] for x in p.get("records", [])]
+    assert len(all_ids) == len(set(all_ids)) == 200
     for p, n in zip(s["pages"], PAGES):
         assert p["page"] == n
         assert p["page_size"] == 100
@@ -165,6 +181,7 @@ class TestR005EQ1Boundary(unittest.TestCase):
             ("new_selected_studies_or_samples", 100),
             ("human_screening_claimed", True),
             ("source_full_text_reviewed", True),
+            ("historical_count", 9275),
         ):
             bad = copy.deepcopy(data)
             bad[key] = wrong
@@ -172,6 +189,8 @@ class TestR005EQ1Boundary(unittest.TestCase):
                 validate_receipt(bad)
 
     def test_once_per_issue_branch_live_source(self):
+        if RECEIPT.exists():
+            self.skipTest("First exact-source live receipt committed; subsequent CI verifies immutable saved data offline")
         if not (os.getenv("GITHUB_ACTIONS") == "true"
                 and os.getenv("GITHUB_HEAD_REF") == BRANCH):
             self.skipTest("Live OpenAlex fetch restricted to issue-scoped PR; never on main")
