@@ -69,7 +69,7 @@ class PrimaryPdfPendingTests(unittest.TestCase):
    with self.assertRaises(ValidationError):validate_graph([s,bad,f])
  def test_source_correction_requires_reassessment(self):
   for c,(s,t,f) in self.cases:
-   bad=copy.deepcopy(s);bad["revisions"][0]["data"]["manifestations"]=[{"id":"fake"}]
+   bad=copy.deepcopy(s);bad["revisions"][0]["data"]["manifestations"]=[{"id":"fake","sha256":"0"*64,"extent":1,"coordinate":"file_page_1based"}]
    with self.assertRaisesRegex(ValueError,"reassess"):check_chain(bad,t,f,c[4])
  def test_false_human_assessor_rejected(self):
   for c,(s,t,f) in self.cases:
