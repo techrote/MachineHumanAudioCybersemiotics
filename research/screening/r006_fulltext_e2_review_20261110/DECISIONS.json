@@ -1,0 +1,172 @@
+{
+  "tranche": "R006-CROSSLANE-FT-E2-20261110",
+  "issue": 6,
+  "base_commit": "06cad54301d34b699b95b8e8f45bb547bbebf233",
+  "cutoff": "2026-10-04",
+  "protocol": "research/protocol/PROTOCOL-v1.md: sections 4, 6.2-6.4; research/protocol/GLOSSARY-v1.md G01",
+  "stage": "provisional_source-located_fulltext_eligibility_handoff",
+  "registry_status": "not_registered_no_canonical_SCR",
+  "actor": {
+    "kind": "agent",
+    "id": "gpt6-r006-e2-review-20261110",
+    "model": "GPT-6",
+    "mode": "single-agent_web_reader_and_GitHub_records"
+  },
+  "access_method": "read public publisher HTML or institution-hosted published PDF through a web text reader; no bytes downloaded into the working tree; no new manifest hash verified",
+  "screened_on": "2026-11-10",
+  "source_reviews": [
+    {
+      "source_ref": {
+        "id": "SRC-REL-KUHNE-2020",
+        "rev": 1
+      },
+      "doi": "10.3389/fnbot.2020.593732",
+      "prior_title_abstract": "uncertain",
+      "new_stage": "full_text_provisional",
+      "proposed_decision": "exclude",
+      "rule_failure": "E-NOT-MACHINE-MESSAGE",
+      "assessment": {
+        "E1": "yes",
+        "E2": "no",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "observations": "Publisher's Materials and Methods / Audio Stimuli describes 15 isolated voice clips (five per synthesized/robot/human category), all repeating sentences from Sophia interviews. Procedure: an online survey asking listeners to assess first impressions of a person and speaker/voice ratings. No sound informed listeners of technical-system or task state and no sound requested a task action. The source is useful for Track G/voice-affect context but does not meet G01 and therefore E2 for Track E.",
+      "source_evidence": [
+        {
+          "url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.593732/full",
+          "locator": "Materials and Methods > Design, Audio Stimuli and Procedure; Abstract; Results",
+          "route": "publisher_html_selected_fulltext_sections",
+          "access_on": "2026-11-10",
+          "text_sections_consulted": true,
+          "publisher_pdf_sha_reverified": false,
+          "local_source_bytes_verified": false,
+          "page_image_checked": false
+        }
+      ],
+      "verification": "single_agent_preliminary_full_text_exclusion_not_second_pass",
+      "required_next_action": "Perform separately dated later-pass verification of E2 from the actual text/stimuli, including contrary possibility that a sampled utterance reports system state. Preserve Track G relevance; never treat this as an empirical source exclusion until integrator admits a valid SCR and verification.",
+      "study_or_sample_identity": "not_established"
+    },
+    {
+      "source_ref": {
+        "id": "SRC-REL-ROMEO-2025",
+        "rev": 1
+      },
+      "doi": "10.1145/3711938",
+      "prior_title_abstract": "include",
+      "new_stage": "full_text_provisional",
+      "proposed_decision": "include",
+      "rule_failure": null,
+      "assessment": {
+        "E1": "yes",
+        "E2": "yes",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "observations": "The publisher-version PDF text says the robot spoke junction options and recommended navigation actions, then delivered mistake and repair utterances. Its in-person maze study recruited 60 people in six between-subject voice×repair conditions (two robot voices × three repairs); behavioural choices and post-task trust measures are reported. The online pilot recruited 50 people via Prolific to judge video-recorded robot repair strategies. These are distinct experiment designs reported within one publication and must not be converted automatically into independent study/sample records.",
+      "source_evidence": [
+        {
+          "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+          "locator": "Published article §§1.4, 2.1–2.4 and 3; printed pp. 33:5–33:10 and 33:11 onward",
+          "route": "institutional_publisher_version_pdf_web_reader_text",
+          "access_on": "2026-11-10",
+          "text_sections_consulted": true,
+          "publisher_pdf_sha_reverified": false,
+          "local_source_bytes_verified": false,
+          "page_image_checked": false,
+          "limitation": "Web PDF text was accessible, but a separate page-image screenshot request returned HTTP 403; no figure/table transcriptions or numeric extraction relied on."
+        }
+      ],
+      "verification": "single_agent_provisional_full_text_inclusion_not_human_checked",
+      "required_next_action": "Integrator reviews exact E1–E6 interpretation and registers two-stage source-pinned SCR records if warranted; acquire stable hash-verified manifestation before numerical extraction or final appraisal. Investigate distinct 2023 publication and publication-to-study/sample overlap separately.",
+      "study_or_sample_identity": "not_established"
+    },
+    {
+      "source_ref": {
+        "id": "SRC-REL-BECKER-2025",
+        "rev": 1
+      },
+      "doi": "10.1145/3706066",
+      "prior_title_abstract": "include",
+      "new_stage": "full_text_access_disposition",
+      "proposed_decision": "awaiting_text",
+      "rule_failure": null,
+      "assessment": {
+        "E1": "yes_at_abstract",
+        "E2": "yes_at_abstract",
+        "E3": "yes_at_abstract",
+        "E4": "yes_at_abstract",
+        "E5": "yes_at_abstract",
+        "E6": "yes"
+      },
+      "observations": "ACM's public indexed article and university abstract identify an N=60 voice-choice pre-study and an N=68 robot-Battleship advice experiment. This is evidence for a planned two-experiment identity check, not two counted independent participant samples. The direct DOI full-text route returned HTTP 403 in this run; indexed/search text snippets and the abstract are not substituted for a verified full paper.",
+      "source_evidence": [
+        {
+          "url": "https://doi.org/10.1145/3706066",
+          "locator": "ACM indexed research article, Abstract and Methodology 3.1–3.2 (search-index text; publisher fetch refused 403); University of Surrey record Abstract",
+          "route": "publisher_index_and_university_abstract_only",
+          "access_on": "2026-11-10",
+          "text_sections_consulted": false,
+          "publisher_pdf_sha_reverified": false,
+          "local_source_bytes_verified": false,
+          "page_image_checked": false
+        }
+      ],
+      "verification": "single_agent_unresolved_full_text_retrieval",
+      "required_next_action": "Retrieve authorized complete article from open publisher route or lawful institutional copy; inspect actual voice messages, assignment, participant overlap and methods before a full-text include/exclude decision. Keep source in awaiting_text, not excluded for access.",
+      "study_or_sample_identity": "not_established"
+    }
+  ],
+  "dependencies": [
+    {
+      "pair": [
+        "SRC-REL-ROMEO-2023",
+        "SRC-REL-ROMEO-2025"
+      ],
+      "publication_relation": "distinct_verified_dois",
+      "study_or_sample_overlap": "unknown",
+      "basis": "The 2025 PDF documents pilot and in-person maze experiment, but a full side-by-side 2023 report/participant comparison was not performed."
+    },
+    {
+      "publication": "SRC-REL-ROMEO-2025",
+      "candidate_experiments": [
+        "online_repair_video_pilot",
+        "in_person_2voice_3repair_maze"
+      ],
+      "asserted_independent_samples": 0,
+      "notes": "Recruitment mechanisms differ (Prolific / campus), but absence of stated overlap check is not proof of independence."
+    },
+    {
+      "publication": "SRC-REL-BECKER-2025",
+      "candidate_experiments": [
+        "voice_selection_prestudy",
+        "robot_advice_main_game"
+      ],
+      "asserted_independent_samples": 0,
+      "notes": "Publication abstract identifies two experiments; numerical study/sample extraction awaits verified source."
+    }
+  ],
+  "counts": {
+    "sources_reviewed": 3,
+    "provisional_full_text_include": 1,
+    "provisional_full_text_exclude": 1,
+    "awaiting_verified_full_text": 1,
+    "canonical_screening_records_added": 0,
+    "study_records_added": 0,
+    "sample_records_added": 0,
+    "empirical_studies_selected": 0,
+    "independent_samples_counted": 0
+  },
+  "admission_status": "Draft_for_integrator_scientific_review_not_accepted_R006_corpus",
+  "gate_status": {
+    "R005_complete": false,
+    "R006_complete": false,
+    "R007_008_009_selected_corpus_ready": false,
+    "second_pass_exclusion_verification": false
+  }
+}
