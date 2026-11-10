@@ -16,7 +16,7 @@
       "awaiting_text": 1,
       "exclude": 1,
       "include": 0,
-      "pending": 2,
+      "pending": 3,
       "uncertain": 0
     },
     "title_abstract": {
@@ -33,7 +33,7 @@
         "awaiting_text": 1,
         "exclude": 1,
         "include": 0,
-        "pending": 2,
+        "pending": 3,
         "uncertain": 0
       },
       "title_abstract": {
@@ -72,7 +72,6 @@
         "missing_required_full_text": [
           "SRC-R006-EDWORTHY-2014-LEARNING",
           "SRC-R006-F-ARRABITO-URGENCY",
-          "SRC-R006-H-SABIC-UNDERSTANDING",
           "SRC-R006-NEES-2016-MEMORY"
         ],
         "missing_title_abstract": [],
@@ -92,7 +91,7 @@
             "title_abstract": "include"
           },
           {
-            "full_text": "not_recorded",
+            "full_text": "pending",
             "full_text_required": true,
             "source_id": "SRC-R006-H-SABIC-UNDERSTANDING",
             "title_abstract": "include"
