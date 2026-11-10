@@ -5,6 +5,8 @@ No source bytes are committed or uploaded. No full reading or screening occurs.
 This file is scoped to a draft-only diagnostic PR, to be closed after checkpoint.
 """
 import datetime
+import io
+import sys
 import hashlib
 import json
 import os
@@ -51,15 +53,31 @@ def observe(source_name, url):
         if not row["is_pdf_header"]:
             row["result"] = "BLOCKED: body is not original PDF bytes"
             return row
-        if shutil.which("pdfinfo"):
-            p = subprocess.run(["pdfinfo", "-"], input=buf, stdout=subprocess.PIPE,
-                               stderr=subprocess.PIPE, timeout=10)
-            m = re.search(rb"(?m)^Pages:\s+(\d+)\s*$", p.stdout)
-            row["pdfinfo_exit"] = p.returncode
-            row["pdf_pages"] = int(m.group(1)) if m else None
+        # Pin the parser installed on this *ephemeral* runner, for a real
+        # page-count derived from the exact bytes just SHA-256 hashed.
+        try:
+            from pypdf import PdfReader, __version__ as pypdf_version
+        except ImportError:
+            install = subprocess.run([sys.executable, "-m", "pip", "install",
+                                      "--disable-pip-version-check", "--quiet",
+                                      "pypdf==6.1.1"], stdout=subprocess.PIPE,
+                                     stderr=subprocess.PIPE, timeout=35)
+            row["pypdf_install_exit"] = install.returncode
+            if install.returncode:
+                row["pypdf_install_error"] = install.stderr.decode("utf-8", "replace")[:200]
+                PdfReader = None
+            else:
+                from pypdf import PdfReader, __version__ as pypdf_version
+        if PdfReader is not None:
+            try:
+                reader = PdfReader(io.BytesIO(buf), strict=False)
+                row["pdf_pages"] = len(reader.pages)
+                row["pypdf_version"] = pypdf_version
+            except Exception as exc:
+                row["pdf_pages"] = None
+                row["pdf_parse_error"] = str(exc)[:200]
         else:
             row["pdf_pages"] = None
-            row["pdfinfo_unavailable"] = True
         row["result"] = "RECEIVED_PDF_BYTES"
     except Exception as e:
         row["result"] = "BLOCKED: " + type(e).__name__ + ": " + str(e)[:300]
