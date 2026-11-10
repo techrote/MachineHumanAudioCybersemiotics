@@ -1,0 +1,114 @@
+{
+  "kind": "issue_scoped_noncanonical_later_pass_eligibility_audit",
+  "tranche": "R006-KUHNE-E2-LATERPASS-20261110",
+  "issue": 6,
+  "base_main_sha": "df6b1135b4a363acfc2f66101d8ea83b14b11475",
+  "evidence_cutoff": "2026-10-04",
+  "protocol": "research/protocol/PROTOCOL-v1.md frozen 2026-10-13 §§4,6.2,6.4,10,11; glossary G01",
+  "performed_at_utc": "2026-11-10T05:32:44.143Z",
+  "agent": {
+    "kind": "agent",
+    "id": "gpt6-r006-kuhne-e2-laterpass-20261110",
+    "tool": "GitHub connected repo plus web publisher HTML selected sections",
+    "prior_decision_visible": true,
+    "independent_human_reviewer": false,
+    "blinded_to_prior_screening": false
+  },
+  "prior_screening": {
+    "first_pass": {
+      "path": "research/screening/r006_r004_crosslane_20261110/DECISIONS.json",
+      "source_id": "SRC-REL-KUHNE-2020",
+      "decision": "uncertain",
+      "stage": "title_abstract"
+    },
+    "first_fulltext": {
+      "path": "research/screening/r006_fulltext_e2_review_20261110/DECISIONS.json",
+      "source_id": "SRC-REL-KUHNE-2020",
+      "decision": "exclude",
+      "reason": "E-NOT-MACHINE-MESSAGE",
+      "status": "provisional_not_registered"
+    },
+    "separation": "Later distinct source read after the earlier first/full-text passes and their integration, not a retrospective invention of another initial screener."
+  },
+  "source": {
+    "id": "SRC-REL-KUHNE-2020",
+    "rev": 1,
+    "doi": "10.3389/fnbot.2020.593732",
+    "repo_record": "research/sources/related/records/SRC-REL-KUHNE-2020.json",
+    "repo_record_git_blob_sha": "3a060b990ab6b52735b0cad9d7978bb5e6531efe",
+    "publisher_url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.593732/full",
+    "reading_scope": "publisher_HTML_selected_materials_methods_design_audio_stimuli_procedure_and_voice_rating_measures",
+    "source_format": "publisher_rendered_HTML",
+    "local_original_bytes_obtained": false,
+    "local_sha256_reverified": false,
+    "pdf_or_figures_inspected_this_pass": false,
+    "canonical_source_pdf_manifestation_hash_from_R004_not_independently_reverified": "4ab306db1904f12eadba34f697d0edc4965e587fa32f415bc898936ef28cebee",
+    "locators": [
+      {
+        "section": "Materials and Methods > Design",
+        "finding": "Within-subject voice categories: synthesised Watson, humanoid Sophia, and human speech; manipulation is voice rendering."
+      },
+      {
+        "section": "Materials and Methods > Materials > Audio Stimuli",
+        "finding": "Five repeated interview-derived utterance types per voice category, including an imperative social-media phrase and a robot persona self-description; audio content originates from prior Sophia interview clips, not the participant's current task state."
+      },
+      {
+        "section": "Materials and Methods > Materials > Voice Rating Measures",
+        "finding": "Participants judged perceived intelligibility, naturalness, trustworthiness, voice/speaker qualities and likability."
+      },
+      {
+        "section": "Materials and Methods > Procedure",
+        "finding": "Online randomly presented clip-listening and speaker-impression survey; no participant-facing machine status or instructed operational response was tested."
+      }
+    ]
+  },
+  "later_pass_rule_assessment": {
+    "E1": "yes",
+    "E2": "no",
+    "E3": "yes",
+    "E4": "yes",
+    "E5": "yes",
+    "E6": "yes"
+  },
+  "hard_negative_cases": [
+    {
+      "case": "imperative_social_phrase",
+      "why_plausible": "An isolated imperative phrase could appear to ask a listener to act.",
+      "why_not_G01_here": "The phrase is an interview excerpt used in a first-impression rating task; the experiment did not present it as a machine-issued task command, measure instruction compliance, or bind it to system/task state."
+    },
+    {
+      "case": "robot_self_description",
+      "why_plausible": "An utterance about a robot being tireless or helpful might superficially resemble a system-status statement.",
+      "why_not_G01_here": "The phrase expresses a generic fictional/quoted persona characteristic, not an actual technical-system condition or a state-coupled request in the participant's task."
+    },
+    {
+      "case": "synthesised_audio_stimulus",
+      "why_plausible": "The voice renderer is technical and audio representations are explicitly compared.",
+      "why_not_G01_here": "Production of sound by software is not sufficient; the frozen G01 definition also requires a system/task information or action-communication function."
+    }
+  ],
+  "result": {
+    "rechecked_proposed_fulltext_decision": "exclude",
+    "rechecked_frozen_reason": "E-NOT-MACHINE-MESSAGE",
+    "supports_prior_first_fulltext_decision": true,
+    "separate_later_reexamination_performed": true,
+    "verification_status": "same_model_class_AI_assisted_later_pass_not_independent_human",
+    "canonical_fulltext_SCR_created": false,
+    "canonical_SCR_created": 0,
+    "canonical_STUDY_created": 0,
+    "canonical_SAMPLE_created": 0,
+    "admitted_empirical_studies": 0,
+    "independent_samples_counted": 0,
+    "selected_corpus_ready": false,
+    "track_G_voice_affect_relevance_preserved": true,
+    "recheck_not_eligible_for_automatic_scientific_gate_closure": true
+  },
+  "limitations": [
+    "Recheck was not blinded and was performed by another GPT-6 run, not an independent human reviewer.",
+    "Publisher HTML sections were consulted, but a PDF byte-matched manifestation, entire paper, figures, audio files and complete original interview context were not obtained in this pass.",
+    "Rule interpretation can be revised by a documented source contradiction; changes require source revision re-validation and coordinated canonical SCR history.",
+    "The historical 95 participants are reported by the source, not entered as an MHAC independent sample or outcome extraction.",
+    "R005 search coverage and all-lane R006 selection remain incomplete."
+  ],
+  "next_integrator_action": "If independent technical/scientific source review agrees, admit accepted four first-pass TA SCR via the existing builder, then register a source-pinned Kühne FT exclusion revision with this later recheck evidence and correct original screening actor/timestamps. Integrator owns manifest/export and later R006 selection. Do not present the same agent class as independent human screening."
+}
