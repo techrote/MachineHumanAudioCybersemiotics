@@ -88,11 +88,11 @@ class R007PassageScopeTests(unittest.TestCase):
         self.assertIn("four knowledge interests", self.memo.lower())
         self.assertIn("not a superseded 2013 four-level model", self.memo.lower())
         self.assertIn("remove-brier counterfactual", self.memo.lower())
-        self.assertIn("not performed", self.memo.lower() + " " + "not_performed")
+        self.assertIn("Neither a second independent human reading", self.memo)
 
     def test_no_selected_corpus_or_empirical_claim(self):
         self.assertIn("no accepted selected Track G corpus", self.memo)
-        self.assertIn("No original PDF bytes", self.memo)
+        self.assertIn("original PDF bytes were not materialized", self.memo)
         self.assertIn("NONE ADMITTED", self.memo)
         self.assertIn("Refs #7", self.memo)
 
