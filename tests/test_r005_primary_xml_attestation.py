@@ -61,17 +61,27 @@ class AttestationTests(unittest.TestCase):
 
     def test_missing_or_conflicting_doi_rejected(self):
         self.xml.write_bytes(GOOD.replace(b"10.2478/v10053-008-0064-6", b"10.9999/incorrect-doi"))
-        with self.assertRaisesRegex(ValueError, "DOI and PMCID"):
+        with self.assertRaisesRegex(ValueError, "DOI missing"):
             mod.hash_local(self.xml)
 
     def test_other_pmcid_rejected(self):
         self.xml.write_bytes(GOOD.replace(b"PMC2865004", b"PMC1111111"))
-        with self.assertRaisesRegex(ValueError, "DOI and PMCID"):
+        with self.assertRaisesRegex(ValueError, "Conflicting embedded PMCID"):
             mod.hash_local(self.xml)
+
+    def test_optional_pmcid_is_not_fabricated(self):
+        self.xml.write_bytes(GOOD.replace(b'<article-id pub-id-type="pmc">PMC2865004</article-id>', b''))
+        rec = mod.capture(self.xml, **ARGS)
+        self.assertIsNone(rec["pmcid_in_local_xml"])
+
+    def test_numeric_pmcid_normalized(self):
+        self.xml.write_bytes(GOOD.replace(b'PMC2865004', b'2865004'))
+        rec = mod.capture(self.xml, **ARGS)
+        self.assertEqual(rec["pmcid_in_local_xml"], mod.PMCID)
 
     def test_dtd_rejected(self):
         self.xml.write_bytes(b'<!DOCTYPE article [<!ENTITY fake "no">]>' + GOOD)
-        with self.assertRaisesRegex(ValueError, "DTD"):
+        with self.assertRaisesRegex(ValueError, "Entity"):
             mod.hash_local(self.xml)
 
     def test_abstract_only_source_rejected(self):
