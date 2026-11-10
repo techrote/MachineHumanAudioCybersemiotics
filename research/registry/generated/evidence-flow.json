@@ -16,13 +16,13 @@
       "awaiting_text": 3,
       "exclude": 1,
       "include": 0,
-      "pending": 4,
+      "pending": 5,
       "uncertain": 0
     },
     "title_abstract": {
       "awaiting_text": 0,
       "exclude": 0,
-      "include": 5,
+      "include": 6,
       "pending": 0,
       "uncertain": 3
     }
@@ -33,13 +33,13 @@
         "awaiting_text": 3,
         "exclude": 1,
         "include": 0,
-        "pending": 4,
+        "pending": 5,
         "uncertain": 0
       },
       "title_abstract": {
         "awaiting_text": 0,
         "exclude": 0,
-        "include": 5,
+        "include": 6,
         "pending": 0,
         "uncertain": 3
       }
@@ -74,8 +74,14 @@
         "missing_required_full_text": [],
         "missing_title_abstract": [],
         "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
-        "source_count": 8,
+        "source_count": 9,
         "sources": [
+          {
+            "full_text": "pending",
+            "full_text_required": true,
+            "source_id": "SRC-R006-E-STEVENS-INFORMATIVE",
+            "title_abstract": "include"
+          },
           {
             "full_text": "awaiting_text",
             "full_text_required": true,
@@ -223,7 +229,6 @@
       "SRC-R006-E-MOULOUA-COCKPIT",
       "SRC-R006-E-SOUSA-CONTROL",
       "SRC-R006-E-STEINBORN-SHIFT",
-      "SRC-R006-E-STEVENS-INFORMATIVE",
       "SRC-R006-E-SUN-LYRICON",
       "SRC-R006-E-WALKER-MOBILE",
       "SRC-R006-E-WATSON-TAILORING",
@@ -437,7 +442,6 @@
       "SRC-R006-E-MOULOUA-COCKPIT",
       "SRC-R006-E-SOUSA-CONTROL",
       "SRC-R006-E-STEINBORN-SHIFT",
-      "SRC-R006-E-STEVENS-INFORMATIVE",
       "SRC-R006-E-SUN-LYRICON",
       "SRC-R006-E-WALKER-MOBILE",
       "SRC-R006-E-WATSON-TAILORING",
