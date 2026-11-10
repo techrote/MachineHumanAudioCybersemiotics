@@ -31,7 +31,7 @@ The existing 10 November observation contains metadata row selections, not raw H
 ```sh
 python3 research/searches/auditory/eq1-drift-audit-2026-11-10/audit.py
 python3 research/searches/auditory/eq1-drift-audit-2026-11-10/audit.py --require-append-safe  # expected exit 2
-python3 -m unittest tests.test_r005_eq1_immutable_overlap -v
+python3 -m unittest discover -s tests -p 'test_r005_eq1_immutable_overlap.py' -v
 python3 -m unittest discover -s tests
 python3 tools/validate.py
 python3 -m tools.build_record_fixtures --check
