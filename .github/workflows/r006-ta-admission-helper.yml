@@ -22,7 +22,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD^)" = "8f34dadfcb15e65db224fcc8f81ae5ab34f28ea7"
+          git merge-base --is-ancestor "8f34dadfcb15e65db224fcc8f81ae5ab34f28ea7" HEAD
           python3 - <<'PY'
           import json
           import subprocess
@@ -43,7 +43,7 @@ jobs:
           for suffix in sources:
               rid = "SCR-R006-REL-" + suffix + "-TA"
               output = subprocess.check_output([
-                  "python3", "research/screening/r006_scr_admission_bridge_20261110/build_candidates.py",
+                  "python3", "-m", "research.screening.r006_scr_admission_bridge_20261110.build_candidates",
                   "--at", at, "--actor-id", actor, "--record", rid
               ], text=True)
               record = json.loads(output)
