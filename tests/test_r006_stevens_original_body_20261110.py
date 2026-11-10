@@ -69,7 +69,7 @@ class StevensOriginalBodyBoundaryTests(unittest.TestCase):
         limitation = self.record["revisions"][1]["data"]["access_limitation"]
         self.assertIn("pmc.ncbi.nlm.nih.gov/articles/PMC2865004/", limitation)
         self.assertIn("not this agent", limitation.lower())
-        self.assertIn("74338", limitation)
+        self.assertIn("74,338", limitation)
         self.assertIn("1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b", limitation)
         self.assertIn("NOT verified", limitation)
         self.assertIn("web intermediary", limitation)
