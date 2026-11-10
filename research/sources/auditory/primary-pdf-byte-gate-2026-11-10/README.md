@@ -14,6 +14,20 @@ The first four canonical R006 title/abstract decisions were admitted previously;
 
 **Access timestamp precision:** The present cross-source review/checkpoint was assembled **2026-11-10 15:24 UTC**. This is **not** an HTTP retrieval timestamp or an original-file acquisition event. Existing records give their own bounded original observation times and tool limits. No new PDF bytes, complete paper, audio samples, or lawful private retention were obtained during this increment. Two earlier Heriot-Watt/Helsinki 2025 direct-file routes responded HTTP 403; the 2023 IEEE route responded HTTP 202 with empty HTML in [accepted PR #130](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/130). Those results are **route-specific**, not universal proof of publisher unavailability.
 
+## Independently rechecked original HTTP bytes receipts (historical, not newly fetched)
+
+During this R005 gate audit, the [original GitHub runner log for Actions #42812437569, job #129816985315](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42812437569/job/129816985315) was independently read at source. Its three `MHAC_R006_PDF_RECEIPT` lines preserve the following **previously observed original HTTP instances** (the runner did not retain original file bytes):
+
+| Actual runner HTTP Date UTC | Exact original-public-PDF instance | HTTP | PDF pages/bytes | SHA-256 of actual fetched bytes |
+|---|---|---|---|---|
+| 2026-11-10 12:03:09 | Becker 2025 Hamburg, DOI `10.1145/3706066` | 200, `application/pdf` | 25 / 10,436,314 | `e5a2429e47e15208e285c4f3c1aa35e86529b0591139ff36d46e94babe42f230` |
+| 2026-11-10 12:03:12 | Romeo 2025 Chalmers, attempt 1, DOI `10.1145/3711938` | 200, `application/pdf` | 23 / 3,445,682 | `ab894fbe2b707df1a140320910ed71dc2799e200c99a15ad373b07c712a5ea21` |
+| 2026-11-10 12:03:14 | Romeo 2025 Chalmers, attempt 2, same URL | 200, `application/pdf` | 23 / 3,445,682 | `1261fc33accc55c7098ddd59e4f507f95b4d79fa31e3a4b308feddfcb2a7c14c` |
+
+The Becker runner lists its **read completion at 12:03:10.966 UTC**; the Romeo attempts report completion at 12:03:14.002 and 12:03:15.581 UTC, respectively. These are source HTTP/byte-acquisition observations performed earlier on GitHub Actions, **not** this R005 PR's new acquisitions, full research readings, or a durable private archive. The two Romeo digests differ even though URL, byte length and PDF page count agree; **no one of those hashes can be designated the canonical Chalmers version without the particular retained file**. A later source custodian may obtain a third digest. The tool in this PR verifies that custodian's *actual* local instance, not that the bytes must equal any one of the historical receipts.
+
+This historical technical observation gives R006 precise original-file identities and a falsifiable acquisition receipt, but **not** lawful persistent custody, sample independence, an empirically qualified Methods reading, or a human reviewer.
+
 ## Executable acceptance bridge (R004/Integration as source custodian)
 
 [`scripts/attest_primary_pdf.py`](../scripts/attest_primary_pdf.py) accepts an **already lawfully acquired and privately held local original PDF**. It validates a PDF file signature/EOF, hashes the **actual local bytes** incrementally, records byte count, edition, source URL, operator-supplied timestamp, access/right evidence and reading boundary. It writes a JSON-only receipt in **create-new-only** mode: it will not overwrite previous observations. It never fetches or copies PDF bytes, emits participant data or records a screening decision. A later `verify` checks the precise local bytes against receipt.
