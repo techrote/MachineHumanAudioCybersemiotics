@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-NEES-2016-MEMORY-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T18:29:32Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-nees-author-manuscript-20261110",
+        "model": "GPT-6",
+        "tool": "Connected GitHub source/TA records; web.run original author-hosted 29-page manuscript PDF text and screenshots (PDF indices 9,10,13,14); no raw PDF bytes or source hash"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-NEES-2016-MEMORY",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-NEES-2016-MEMORY-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-NEES-2016-MEMORY",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §4 E1–E6, §6.2–6.4 and §10: original-author manuscript methods/results source-bounded eligibility preassessment only; canonical full-text inclusion requires truthful performed reading evidence under current v1 graph",
+        "decision": "pending",
+        "reason": "Original author-hosted manuscript of Nees, Helbein and Porter, Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride, was inspected via web PDF renderer on 2026-11-10. E1 appears satisfied: Methods Participants, PDF index 9/printed manuscript p. 10, reports recruited N=90 and analysed N=85 after five exclusions. E2/G01: original manuscript pp. 11–12 specifies machine-issued car-status/hazard alerts; speech via TTS engine versus naturalistic auditory icons (water, air hiss, horns, etc.), not merely ambient vehicle audio. E3: one between-subject study with three conditions, visual text control, auditory icons and speech; randomly assigned participants. E4: memory recall of alerted events, effort/workload, annoyance and confidence/usability ratings, with Results visible pp. 14–16. E5: original Methods and Results available, primary experiment, no review-only design. E6: original first-published online 2016-02-16 and printed May 2016; before cutoff 2026-10-04. Thus E1–E6 are provisionally supported for this AUTHOR MANUSCRIPT edition, not an authenticated SAGE version of record. There is ONE described experiment across three arms; multiple videos, tasks, analyses and arms are not independent studies or independent samples. No originality claim relative to other Nees papers, sample-independence determination or numeric extraction. Under protocol §10 tool-mediated reading can support eligibility screening, but current record_graph v1 requires performed manifestation-bound AID for full_text include/exclude and this source has no canonical manifestation or reading event. Therefore pending preserves the exact engineering/provenance gate rather than falsely asserting final admission.",
+        "access_limitation": "Original author manuscript URL https://static1.squarespace.com/static/51bb699de4b0820e6e77849b/t/56d63bd2a3360c6369802fc3/1456880594996/Nees+et+al+Human+Factors+2016+author+preprint.pdf ; corresponding-author listing https://michaelanees.com/publications ; SAGE article DOI 10.1177/0018720816629279, Human Factors 58(3) 416–426. In this run, consulted original manuscript cover/PDF indices 0–3, argument pp. 5–9, Methods printed pp. 10–14 with screenshots PDF indices 9 and 10, Results pp. 14–16 with screenshots PDF indices 13 and 14, plus selected Discussion/limitations pp. 17–18; not certified 29-page complete reading. Manuscript cover says submitted, other wrapper calls accepted preprint; textual/byte equivalence to SAGE VoR unknown. Publication DOI points to version of record, NOT a verified exact DOI identifier for identical author-manuscript bytes. No original source HTTP Date/status/headers, raw PDF bytes, SHA256, local storage custody, redistribution grant, audio playback or human review. SRC-R006-NEES-2016-MEMORY@1 metadata_only, manifestations=[]; R005 PR #144 supplies a draft same-route source memo, not yet accepted mainline source manifestation. Access time known only as 2026-11-10 during this tool-mediated run; decision timestamp above is NOT an HTTP acquisition timestamp.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
