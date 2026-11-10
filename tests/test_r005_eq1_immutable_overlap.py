@@ -31,6 +31,7 @@ class R005ImmutableOverlapTests(unittest.TestCase):
         cls.historical = read_json(HIST)
         cls.observed = read_json(OBS)
         cls.result = audit(cls.historical, cls.observed)
+        print("R005_EQ1_OFFLINE_RECONCILIATION=" + json.dumps(cls.result, sort_keys=True))
 
     def test_real_retained_historical_prefix_and_new_receipts_are_distinct(self):
         r = self.result
