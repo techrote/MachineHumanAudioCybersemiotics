@@ -1,0 +1,102 @@
+{
+  "artifact": "R005_C9_ATYEO_SANDERSON_ORIGINAL_PUBLISHER_FULLTEXT_OBSERVATION_20261110",
+  "issue": 5,
+  "downstream_issue": 6,
+  "observed_date_utc": "2026-11-10",
+  "original_http_acquisition_timestamp": null,
+  "access_route": "public publisher HTML read through web intermediary",
+  "reading_method": "tool_mediated_original_publisher_html",
+  "publisher_url": "https://associationofanaesthetists-publications.onlinelibrary.wiley.com/doi/10.1111/anae.13020",
+  "publication": {
+    "first_author": "J. Atyeo",
+    "coauthor": "P. M. Sanderson",
+    "title": "Comparison of the identification and ease of use of two alarm sound sets by critical and acute care nurses with little or no music training: a laboratory study",
+    "journal": "Anaesthesia",
+    "volume": "70",
+    "issue": "7",
+    "pages": "818-827",
+    "online_publication_date": "2015-03-04",
+    "doi": "10.1111/anae.13020",
+    "type": "original empirical laboratory article",
+    "edition": "publisher HTML version of record, Full Access label (not licence to redistribute)"
+  },
+  "route_to_discovery": {
+    "kind": "C9 backward reference source corroborated by original full-text",
+    "initial_citation": "Edworthy and Edworthy 2015 Audible medical alarms, Anaesthesia 70(10):1215, DOI 10.1111/anae.13205, References #1",
+    "internal_crosscheck": "Atyeo/Sanderson 2015 publisher text References #19 cites Edworthy et al. 2014 (DOI 10.1016/j.apergo.2013.10.003) by author/year/venue; DOI assignment from pinned R006 record",
+    "historical_or_new_canonical_hit_id": null,
+    "note": "No new production SRCH/HIT registered; R006 must reconcile occurrence and publication identity with all existing registry entries"
+  },
+  "accessed_text": {
+    "sections": [
+      "Summary",
+      "Introduction",
+      "Methods",
+      "Results",
+      "Discussion",
+      "Acknowledgements and Supporting information",
+      "References"
+    ],
+    "locators": [
+      "Publisher HTML Summary lines 106-109",
+      "Introduction 110-118",
+      "Methods lines 119-181, Tables 1-3, direct text (images not separately authenticated)",
+      "Results lines 182-228 and Tables 4-6 as tool text",
+      "Discussion lines 229-250",
+      "Supporting information lines 259-266, metadata and links only",
+      "References 267-343, item #19 (Edworthy 2014)"
+    ],
+    "scope": "Selected contiguous original publisher HTML body through intermediary; extensive Methods, Results and Discussion but no original raw HTML/PDF response bytes captured; no independent page-image or audio inspection",
+    "original_full_article_body_rendered_via_intermediary": true,
+    "authoritative_hashed_source_instance": false,
+    "original_html_sha256": null,
+    "original_pdf_sha256": null,
+    "original_response_headers_retained": false,
+    "publisher_page_label": "Original Article; Free Access",
+    "redistribution_permission_positively_established": false
+  },
+  "reported_study_identity": {
+    "publication_count": 1,
+    "main_study_design": "Between-subject alarm set, IEC 60601-1-8 vs Patterson-Edworthy; within-subject mild vs challenging distractor task; counterbalanced order",
+    "author_reported_main_n": 31,
+    "author_reported_conditions": {
+      "IEC": 16,
+      "Patterson-Edworthy": 15
+    },
+    "author_reported_separate_pilot_n": 12,
+    "pilot_role": "Pilot-calibration of dose-calculation distractor; expressly not used in main study",
+    "identity_limit": "One publication and author-reported main experimental cohort; distinct distractor-task pilot cannot be assumed separate eligible Track E study or independently admitted sample; alarm variants and repeated trials do not multiply independent samples",
+    "data_status": "Author-reported Method observations for screening triage only, not new empirical data extracted by MHAC"
+  },
+  "auditory_stimuli": {
+    "description": "Six alarm concepts in each set, high- and medium-priority forms; original Methods Tables 1-2 describe sound/stimulus design",
+    "supplemental_links": [
+      "https://associationofanaesthetists-publications.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fanae.13020&file=anae13020-sup-0001-AudioS1-S24.docx",
+      "https://associationofanaesthetists-publications.onlinelibrary.wiley.com/action/downloadSupplement?doi=10.1111%2Fanae.13020&file=anae13020-sup-0002-AudioS1-S24.zip"
+    ],
+    "supplemental_access": "Publisher supplementary items linked as 24 illustrative alarm examples. Direct download attempts returned 403; no bytes retained, no sound heard. Authors state experiment employed higher-quality .wav originals; no asserted stimulus-file equivalence.",
+    "audio_downloaded": false,
+    "audio_heard": false,
+    "audio_sha256": null
+  },
+  "critical_limits": [
+    "DOI/date and section boundaries are publisher text observation, not exact local raw-byte custody",
+    "No original PDF/HTML response headers or hash, actual HTTP acquisition timestamp not known",
+    "Free access does not grant public redistribution; no rights or supplementary audio licence verified",
+    "Publisher tables present as text by intermediary; not independently image checked",
+    "No human assessor, no independent scientific appraisal, no full-text screening decision by R006",
+    "Source reports are not MHAC empirical participant-level verification or quantitative extraction"
+  ],
+  "canonical_new_search_runs": 0,
+  "canonical_new_hits": 0,
+  "canonical_new_screenings": 0,
+  "canonical_admitted_publications": 0,
+  "canonical_new_studies": 0,
+  "canonical_new_experiments": 0,
+  "canonical_new_samples": 0,
+  "selected_track_e": 0,
+  "selected_track_g": 0,
+  "actual_human_second_reviewer": false,
+  "r006_action": "Compare candidate against existing R006/source and hit registry before assigning a new source/hit; evaluate E1-E6 for title-abstract then full-text using protocol §10 permission for tool-mediated original screening; preserve separate main cohort vs calibration pilot, no invented human assessor, no numerical effect estimate without hash-bound manifestation.",
+  "integration_action": "Independent source/rights/scope review; if lawful, retain exact publisher HTML or source PDF and original audio separately with UTC/hash and rights; do not modify R006 author branches or common exports on R005 lane."
+}
