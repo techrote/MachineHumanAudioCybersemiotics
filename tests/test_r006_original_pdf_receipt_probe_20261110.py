@@ -6,6 +6,8 @@ This file is scoped to a draft-only diagnostic PR, to be closed after checkpoint
 """
 import datetime
 import io
+import importlib
+import tempfile
 import sys
 import hashlib
 import json
@@ -58,16 +60,24 @@ def observe(source_name, url):
         try:
             from pypdf import PdfReader, __version__ as pypdf_version
         except ImportError:
+            vendor = tempfile.mkdtemp(prefix="mhac_pdf_parser_")
             install = subprocess.run([sys.executable, "-m", "pip", "install",
                                       "--disable-pip-version-check", "--quiet",
-                                      "pypdf==6.1.1"], stdout=subprocess.PIPE,
-                                     stderr=subprocess.PIPE, timeout=35)
+                                      "--target", vendor, "pypdf==6.1.1"],
+                                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                     timeout=35)
             row["pypdf_install_exit"] = install.returncode
             if install.returncode:
-                row["pypdf_install_error"] = install.stderr.decode("utf-8", "replace")[:200]
+                row["pypdf_install_error"] = install.stderr.decode("utf-8", "replace")[-280:]
                 PdfReader = None
             else:
-                from pypdf import PdfReader, __version__ as pypdf_version
+                sys.path.insert(0, vendor)
+                importlib.invalidate_caches()
+                try:
+                    from pypdf import PdfReader, __version__ as pypdf_version
+                except ImportError as exc:
+                    row["pypdf_import_error"] = str(exc)[:240]
+                    PdfReader = None
         if PdfReader is not None:
             try:
                 reader = PdfReader(io.BytesIO(buf), strict=False)
