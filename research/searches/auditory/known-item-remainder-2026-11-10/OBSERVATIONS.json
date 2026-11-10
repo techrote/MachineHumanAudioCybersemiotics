@@ -1,0 +1,233 @@
+{
+  "schema_version": "mhac-r005-known-item-remainder/1",
+  "run_id": "R005-C8-KNOWN-REMAINDER-20261110",
+  "observed_utc_date": "2026-11-10",
+  "actor": "ChatGPT GPT-6, AI-assisted web retrieval; no independent human verification",
+  "original_record": "research/searches/auditory/exports/KNOWN-ITEM-CHECK-R005.csv",
+  "preceding_supplement": "research/searches/auditory/known-item-recheck-2026-11-10/OBSERVATIONS.json",
+  "historical_snapshot": "69 known references: 38 located, 10 possible, 21 not located, fixed October benchmark",
+  "channel": "C8 targeted public web search and C9 reference navigation, not C1-C7 database execution",
+  "frozen_publication_cutoff": "2026-10-04",
+  "production_record_status": "supplementary bibliographic navigation only; search_run/search_hit not registered; R006 identity/eligibility not adjudicated",
+  "method": "Exact-title/author queries performed in web fast/slow search on 2026-11-10. Publisher, institutional, contemporary conference and curated bibliography pages were inspected where reachable. Original web-result export bytes, search rankings, response hashes and search timestamps were not provided. For search-indexed PDFs, only indexed title/author discovery was relied upon, NOT the PDF contents. URLs and exact queries enable an independent follow-up, not byte-identical replay.",
+  "scope_limits": [
+    "Historical 69-item 38/10/21 observations remain untouched. Earlier 10 candidate routes and R006 records are unchanged; this pass addresses the other 11 historical not_located IDs.",
+    "Ten routes have original publisher/institutional/conference or curated index support; K50 is only a third-party route with a conflicting page range and requires independent proceedings verification.",
+    "K12's proceedings and K33's institutional article routes are PDF links discovered via indexing, not downloaded/hashed full texts. No paper page inspection or extracted measurements.",
+    "Neither OpenAlex EQ1 (historically 4,200/9,368) nor remaining review/included-study backward chaining was completed. No new HTTP/OpenAlex quota test is implied.",
+    "This pass has no lossless provider-result export, so cannot claim exhaustive C8 recall, v1 production search-run completion or verified citation-by-citation source text.",
+    "No full-text assessment, Track E/Track G inclusion, resolved DOI identity, independent study/sample count, human screening or research conclusion is inferred."
+  ],
+  "observation_count": 11,
+  "observations": [
+    {
+      "known_item": 4,
+      "known_title": "Play It by Ear: A Case for Serendipitous Discovery of Places with Musicons",
+      "as_run_query": "\"Play It by Ear: A Case for Serendipitous Discovery of Places with Musicons\" Ankolekar Sandholm Yu 2013",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://chi2013.acm.org/program/by-day/wednesday/"
+      ],
+      "record_type": "conference_program",
+      "reading_extent": "published_conference_abstract",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1145/2470654.2481411",
+      "verification_notes": "Original CHI 2013 programme gives Ankolekar, Sandholm, Yu and the session abstract; exact pages and DOI are inherited from October citation, not independently resolved.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 9,
+      "known_title": "Conveying Browsing Context Through Audio on Digital Talking Books",
+      "as_run_query": "\"Conveying browsing context through audio on digital talking books\" Duarte Carrico 2007",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://dblp1.uni-trier.de/rec/conf/hci/DuarteC07.html"
+      ],
+      "record_type": "curated_bibliographic_index",
+      "reading_extent": "bibliographic_listing",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1007/978-3-540-73283-9_30",
+      "verification_notes": "DBLP identifies the conference item and DOI 10.1007/978-3-540-73283-9_30. Publication full text not read.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 12,
+      "known_title": "The Audioview – Providing a Glance at Java Source Code",
+      "as_run_query": "\"Finlayson\" \"Mellish\" \"AudioView\" 2005 ICAD site:repository.gatech.edu",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://repository.gatech.edu/bitstreams/b3a0dcce-fbf2-4d95-860c-6720ab90d146/download"
+      ],
+      "record_type": "institutional_proceedings_pdf_index",
+      "reading_extent": "search_indexed_title_and_author_preview",
+      "source_identity_status": "candidate_pdf_route_unverified",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": null,
+      "verification_notes": "A Georgia Tech ICAD 2005 proceedings PDF is indexed with Finlayson and Mellish and the article title. PDF bytes, publication segmentation, and page images were not fetched or hashed; do not claim a complete paper retrieval.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 33,
+      "known_title": "An Evaluation of the Communicative Ability of Auditory Icons and Earcons",
+      "as_run_query": "\"An evaluation of the communicative ability of auditory icons and earcons\" Lucas 1994 Georgia Tech",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://www.auditory.org/postings/1994/166.html"
+      ],
+      "record_type": "contemporaneous_conference_program",
+      "reading_extent": "preliminary_list",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": null,
+      "verification_notes": "The contemporaneous ICAD 1994 preliminary paper list names Lucas and this title. This is a conference-list match, not full-text inspection; institutional PDF route is available separately.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 35,
+      "known_title": "Exploration of Head Related Transfer Function and Environmental Sounds as a Means to Improve Auditory Scanning for Children Requiring Augmentative and Alternative Communication",
+      "as_run_query": "\"McCarthy\" \"DiGiovanni\" \"Ries\" \"Boster\" \"Riffle\" \"auditory scanning\" 2020",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30633645/"
+      ],
+      "record_type": "national_bibliographic_index",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1080/10400435.2018.1559897",
+      "verification_notes": "PubMed PMID 30633645 identifies 2020 Assistive Technology 32(6), 325-334 and DOI 10.1080/10400435.2018.1559897; publisher landing also available. PubMed abstract not treated as full-text reading or selected-study outcome.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 50,
+      "known_title": "An Empirical Investigation of Multimodal Interfaces for Browsing Internet Search Results",
+      "as_run_query": "\"An Empirical Investigation of Multimodal Interfaces for Browsing Internet Search Results\" \"Rigas\" \"Ciuffreda\"",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://www.researchgate.net/publication/228991147_An_empirical_investigation_of_multimodal_interfaces_for_browsing_internet_search_results"
+      ],
+      "record_type": "third_party_document_listing",
+      "reading_extent": "third_party_title_author_abstract",
+      "source_identity_status": "provisional_metadata_conflict",
+      "historical_outcome": "not_located",
+      "new_outcome": "provisional_route_with_conflict",
+      "doi_from_historical_citation": null,
+      "verification_notes": "ResearchGate shows Rigas and Ciuffreda and 2007. A later bibliography at https://www.naun.org/main/NAUN/computers/2015/a022007-154.pdf reports pp. 196-201; October's citation says 194-199. Publisher/proceedings identity, pagination, and manuscript bytes are unverified; preserve conflict, do not adopt a canonical page range.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 54,
+      "known_title": "Defining a Family of Feedback Signals for Multimedia Communication Devices",
+      "as_run_query": "\"Sikora\" \"Roberts\" \"Defining a Family of Feedback Signals\" 1997 publisher",
+      "web_mode": "slow",
+      "landing_urls": [
+        "https://link.springer.com/book/10.1007/978-0-387-35175-9?page=4"
+      ],
+      "record_type": "publisher_book_table_of_contents",
+      "reading_extent": "chapter_title_author_pages",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": null,
+      "verification_notes": "Springer INTERACT '97 book table of contents directly lists Sikora and Roberts, pp. 373-380. October known-item DOI literally '0' is malformed and must not be treated as resolved DOI; book-level DOI is not a chapter DOI.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 56,
+      "known_title": "Spearcons Improve Navigation Performance and Perceived Speediness in Korean Auditory Menus",
+      "as_run_query": "\"Spearcons Improve Navigation Performance and Perceived Speediness in Korean Auditory Menus\" Suh Jeon Walker",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/10.1177/1071181312561390"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/1071181312561390",
+      "verification_notes": "SAGE publisher landing confirms Suh, Jeon and Walker; proceedings 56(1), pp. 1361-1365 and matching DOI. Historical topic searches already had matching-title hits; this is not necessarily a newly discovered publication.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 64,
+      "known_title": "Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus",
+      "as_run_query": "\"Spearcons (Speech-Based Earcons) Improve Navigation Performance in Advanced Auditory Menus\" Walker Lindsay 2013",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/abs/10.1177/0018720812450587"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/0018720812450587",
+      "verification_notes": "SAGE publisher page confirms 2013 Human Factors 55(1), pp. 157-182, online publication 2012 and the cited DOI. Journal paper references related conference reports, but sample overlap remains entirely for R006 to determine.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 67,
+      "known_title": "Human Performance with Vocal Cueing of Automation State Changes in an Adaptive System",
+      "as_run_query": "\"Human Performance with Vocal Cueing of Automation State Changes in an Adaptive System\" \"Warren-Noell\"",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://journals.sagepub.com/doi/10.1177/154193120605000343"
+      ],
+      "record_type": "publisher_article_landing",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1177/154193120605000343",
+      "verification_notes": "Publisher confirms Warren-Noell, Kaber, Sheik-Nainar, 2006 HFES proceedings 50(3), pp. 415-419 and cited DOI. No complete paper, numerical outcomes or study identity adjudication.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    },
+    {
+      "known_item": 68,
+      "known_title": "Hold That Thought: Are Spearcons Less Disruptive than Spoken Reminders?",
+      "as_run_query": "\"Hold That Thought: Are Spearcons Less Disruptive than Spoken Reminders\" Wolters Isaac Doherty",
+      "web_mode": "fast",
+      "landing_urls": [
+        "https://www.research.ed.ac.uk/en/publications/hold-that-thought-are-spearcons-less-disruptive-than-spoken-remin/"
+      ],
+      "record_type": "institutional_publication_record",
+      "reading_extent": "abstract_and_bibliographic_metadata",
+      "source_identity_status": "strong_bibliographic_candidate",
+      "historical_outcome": "not_located",
+      "new_outcome": "located_bibliographic_candidate",
+      "doi_from_historical_citation": "10.1145/2212776.2223703",
+      "verification_notes": "University of Edinburgh identifies Wolters, Isaac, Doherty as 2012 conference contribution and provides abstract. Underlying paper bytes, exact page/figure contents and participant provenance not verified. Historical DOI is a citation assertion, not independently tested via publisher.",
+      "screening_status": "not_assessed",
+      "full_text_verified": false,
+      "independent_study_status": "unknown"
+    }
+  ]
+}
