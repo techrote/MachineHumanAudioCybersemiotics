@@ -1,0 +1,190 @@
+{
+  "tranche": "R006-R004-CROSSLANE-TA-20261110",
+  "issue": 6,
+  "repository_base_sha": "aae6776f73664d54d53371b9e5cf963a6a9f4ba8",
+  "protocol": "research/protocol/PROTOCOL-v1.md, frozen 2026-10-13, section 4 E1-E6 and section 6.2",
+  "evidence_cutoff": "2026-10-04",
+  "screened_on": "2026-11-10",
+  "kind": "provisional_first_pass_screening_handoff_not_registered_mhac_records_v1",
+  "actor": {
+    "kind": "agent",
+    "id": "gpt6-r006-crosslane-20261110",
+    "model": "GPT-6",
+    "tool": "GitHub connected repository and web-published abstracts"
+  },
+  "scope": "Four already verified R004 source records flagged in the R004-to-R006 empirical handoff; no general search recall or corpus-selection claim.",
+  "decisions": [
+    {
+      "source_ref": {
+        "id": "SRC-REL-BECKER-2025",
+        "rev": 1
+      },
+      "doi": "10.1145/3706066",
+      "track": "empirical",
+      "stage": "title_abstract",
+      "decision": "include",
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "yes",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "reason": "Human cooperative Battleship study compares natural versus mechanical robot speech, with verbal advice acceptance and response time; method and results described. Publisher DOI and University of Surrey abstract agree with the R004 source record. The voice pre-study and main study must not be treated as a single or two independently eligible samples without checking the report.",
+      "access_limitation": "R004 recorded abstract-only access and a refused ACM PDF (HTTP 403). This pass read an institutional publication abstract, not complete source pages or numerical tables.",
+      "reading_scope": "abstract_only_for_this_screening_pass",
+      "evidence": [
+        {
+          "url": "https://openresearch.surrey.ac.uk/esploro/outputs/journalArticle/Influence-of-Robots-Voice-Naturalness-on/991115568402346",
+          "locator": "Abstract",
+          "access_method": "web_publisher_or_institutional_abstract",
+          "access_date": "2026-11-10",
+          "local_bytes_verified": false
+        }
+      ],
+      "next_action": "Obtain lawful full text and the complete methods/results; determine which of the pre-study and main experiment independently meets E2/E3 and resolve study, experiment, sample and effect units without double-counting.",
+      "independent_study_count": "not_established",
+      "sample_overlap": "not_established",
+      "review_status": "single_agent_first_pass_unverified"
+    },
+    {
+      "source_ref": {
+        "id": "SRC-REL-ROMEO-2025",
+        "rev": 1
+      },
+      "doi": "10.1145/3711938",
+      "track": "empirical",
+      "stage": "title_abstract",
+      "decision": "include",
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "yes",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "reason": "The institutional abstract reports people assisting a robot through a maze, synthetic/default robot-voice comparison, repair strategies, in-game behaviour and trust questionnaires. It is an apparent comparative primary study with human voice-message interaction and measured outcomes.",
+      "access_limitation": "R004 recorded abstract-only access and a refused ACM PDF (HTTP 403); this pass used the Manchester publication abstract, not the full report or independent data.",
+      "reading_scope": "abstract_only_for_this_screening_pass",
+      "evidence": [
+        {
+          "url": "https://research.manchester.ac.uk/en/publications/the-effect-of-voice-and-repair-strategy-on-trust-formation-and-re/",
+          "locator": "Abstract",
+          "access_method": "web_publisher_or_institutional_abstract",
+          "access_date": "2026-11-10",
+          "local_bytes_verified": false
+        }
+      ],
+      "next_action": "Obtain and inspect lawful methods/results and voice exemplars; verify actual assignment, outcomes and participants; test possible overlap with the distinct Romeo 2023 publication before establishing independent samples.",
+      "independent_study_count": "not_established",
+      "sample_overlap": "not_established",
+      "review_status": "single_agent_first_pass_unverified"
+    },
+    {
+      "source_ref": {
+        "id": "SRC-REL-KUHNE-2020",
+        "rev": 1
+      },
+      "doi": "10.3389/fnbot.2020.593732",
+      "track": "empirical",
+      "stage": "title_abstract",
+      "decision": "uncertain",
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "uncertain",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "reason": "The abstract identifies 95 adult raters, human/humanoid/synthesized voice clips and human-likeness, eeriness and likability outcomes. Whether isolated voice-rating clips are machine-generated system messages under G01/E2, rather than decontextualized voice stimuli, is unresolved. Retain rather than exclude by preference or style.",
+      "access_limitation": "R004 records a hashed, available publisher PDF and selected abstract/results reading; this pass inspected the Frontiers abstract on the public HTML page only. It did not validate the previously retained PDF hash or complete-text eligibility.",
+      "reading_scope": "abstract_only_for_this_screening_pass",
+      "evidence": [
+        {
+          "url": "https://www.frontiersin.org/journals/neurorobotics/articles/10.3389/fnbot.2020.593732/full",
+          "locator": "Abstract",
+          "access_method": "web_publisher_or_institutional_abstract",
+          "access_date": "2026-11-10",
+          "local_bytes_verified": false
+        }
+      ],
+      "next_action": "Inspect stimulus transcripts/task context and protocol G01 against the full report; resolve E2 explicitly before any inclusion/exclusion or numerical extraction.",
+      "independent_study_count": "not_established",
+      "sample_overlap": "not_established",
+      "review_status": "single_agent_first_pass_unverified"
+    },
+    {
+      "source_ref": {
+        "id": "SRC-REL-ROMEO-2023",
+        "rev": 1
+      },
+      "doi": "10.1109/ro-man57019.2023.10309631",
+      "track": "empirical",
+      "stage": "title_abstract",
+      "decision": "uncertain",
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "uncertain",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "reason": "Institutional abstract describes two video-based online studies manipulating robot voice and empathic behaviour with context-dependent trust outcomes. E2 remains uncertain until the full study confirms what audio messages were delivered and whether they satisfy G01; video-based presentation is not an automatic exclusion.",
+      "access_limitation": "R004 stored metadata_only/no abstract; this pass accessed a Heriot-Watt hosted abstract, not a full paper. The repository source dates the conference at 2023-08-28; the institutional page labels publication 2023-11-13. This date disagreement is retained as metadata context, not silently corrected.",
+      "reading_scope": "abstract_only_for_this_screening_pass",
+      "evidence": [
+        {
+          "url": "https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/",
+          "locator": "Abstract",
+          "access_method": "web_publisher_or_institutional_abstract",
+          "access_date": "2026-11-10",
+          "local_bytes_verified": false
+        }
+      ],
+      "next_action": "Inspect full text, exact robot voice stimuli, and study design; resolve E2 and sample independence separately from Romeo 2025. Both publications have distinct verified DOIs; neither a duplicate-publication merge nor independent-study assertion is authorized.",
+      "independent_study_count": "not_established",
+      "sample_overlap": "not_established",
+      "review_status": "single_agent_first_pass_unverified"
+    }
+  ],
+  "publication_identity_review": {
+    "pair": [
+      "SRC-REL-ROMEO-2023",
+      "SRC-REL-ROMEO-2025"
+    ],
+    "verified_distinct_dois": [
+      "10.1109/ro-man57019.2023.10309631",
+      "10.1145/3711938"
+    ],
+    "publication_identity": "distinct_publications_by_verified_doi",
+    "shared_study_or_sample": "unknown_pending_full_report_comparison",
+    "basis": "Overlapping authors, different titles, years and described tasks (video-based contextual trust versus robot maze/repair); overlapping authors and distinct settings alone cannot establish same or independent participants.",
+    "action": "Do not alias sources, assert independent samples, count studies or create STUDY/SAMPLE records until a source-supported relationship is available."
+  },
+  "status": "provisional_first_pass_for_scientific_review_and_integrator_admission",
+  "acceptance": {
+    "decisions_by_stage": {
+      "title_abstract": {
+        "include": 2,
+        "uncertain": 2,
+        "exclude": 0
+      },
+      "full_text": {
+        "recorded": 0
+      }
+    },
+    "source_records_created": 0,
+    "canonical_screening_records_created": 0,
+    "study_records_created": 0,
+    "sample_records_created": 0,
+    "included_studies": 0,
+    "independent_samples": 0,
+    "corpus_snapshot_created": false,
+    "track_e_gate_satisfied": false,
+    "limitations": "This issue-scoped, noncanonical decision handoff is not loaded by the live registry or counted in generated evidence flow. Only the first-pass abstracts were accessed in this run; no second reviewer or human screening, data extraction, complete methods verification or publication-family adjudication is claimed."
+  }
+}
