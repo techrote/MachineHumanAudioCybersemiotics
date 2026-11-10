@@ -45,3 +45,34 @@ python -m tools.build_record_fixtures --check
 4. **Downstream:** R007/R008 have no selected Track G corpus; neither R005 #5 nor R006 #6 is accepted. Maintain Draft/HOLD on scientific acceptance until source and corpus gates are genuinely met.
 
 No recruitment, purchases, external contact, reviewer impersonation, new effect extraction, or protocol amendment.
+
+## Historical FT decision provenance and event ordering — 10 November 2026
+
+Additional source-scoped safeguards preserve the **real initial AI actors and
+timestamps** of the Kühne 2020 full-text E2 exclusion and Romeo 2023
+`awaiting_text` decision, plus Kühne's accepted source-located reading AID.
+A full-text `include`/`exclude` must cite a known performed reading event
+whose timestamp **and registered revision** are not later than the actual
+screening decision. RFC3339 times are compared as offset-aware instants,
+not strings. Six negative tests exercise a later appended reading revision,
+an impossibly late reading event, an unknown event time, and three attempts
+to relabel historical AI screeners/readers as humans.
+
+The checks target preserved first revisions without freezing legitimate later
+append-only source, reading or screening changes. They do not claim scientific
+agreement between agents or verify new source bytes. The common repository
+graph/history validator and deterministic export checks remain mandatory;
+this preflight cannot admit new studies or independent samples.
+
+**Current admission status remains unchanged:** four previously accepted
+title/abstract decisions, one full-text exclusion, one full-text access
+checkpoint, two lacking a full-text decision, zero full-text inclusions,
+zero admitted studies/experiments/samples and zero selected Track E/G corpus.
+[R005 #124](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/124)
+qualifies the original four-page Romeo 2023 *supplement*, **not** the missing
+six-page original IEEE report; do not alter Romeo 2023 `awaiting_text`.
+The diagnostic [R004/Integration original-file receipt](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/6#issuecomment-6766953989)
+identifies recovered but **ephemeral** Becker 2025 bytes and a mutable Romeo
+2025 PDF wrapper. R004/Integration must register lawfully retained, exact-byte
+source manifestations before R006 performs and records any further FT decision.
+Integration owns the shared manifest/export rebuild and guarded merge.
