@@ -13,7 +13,7 @@
   "samples": 0,
   "screening": {
     "full_text": {
-      "awaiting_text": 1,
+      "awaiting_text": 3,
       "exclude": 1,
       "include": 0,
       "pending": 4,
@@ -30,7 +30,7 @@
   "screening_by_track": {
     "empirical": {
       "full_text": {
-        "awaiting_text": 1,
+        "awaiting_text": 3,
         "exclude": 1,
         "include": 0,
         "pending": 4,
@@ -66,25 +66,24 @@
       {
         "acceptance": "not_evaluated",
         "awaiting_text": [
+          "SRC-R006-EDWORTHY-2014-LEARNING",
+          "SRC-R006-F-ARRABITO-URGENCY",
           "SRC-REL-ROMEO-2023"
         ],
         "boundary": "Only the explicitly supplied source scope is counted; retrieval, verification, source fidelity and search completeness are not inferred.",
-        "missing_required_full_text": [
-          "SRC-R006-EDWORTHY-2014-LEARNING",
-          "SRC-R006-F-ARRABITO-URGENCY"
-        ],
+        "missing_required_full_text": [],
         "missing_title_abstract": [],
         "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
         "source_count": 8,
         "sources": [
           {
-            "full_text": "not_recorded",
+            "full_text": "awaiting_text",
             "full_text_required": true,
             "source_id": "SRC-R006-EDWORTHY-2014-LEARNING",
             "title_abstract": "include"
           },
           {
-            "full_text": "not_recorded",
+            "full_text": "awaiting_text",
             "full_text_required": true,
             "source_id": "SRC-R006-F-ARRABITO-URGENCY",
             "title_abstract": "include"
