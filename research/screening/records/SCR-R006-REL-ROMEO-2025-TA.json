@@ -1,0 +1,40 @@
+{
+  "id": "SCR-R006-REL-ROMEO-2025-TA",
+  "issue": 6,
+  "kind": "screening",
+  "revisions": [
+    {
+      "actor": {
+        "id": "gpt6-r006-integration-registrar-20261110",
+        "kind": "agent",
+        "tool": "R006 source-pinned title/abstract admission bridge"
+      },
+      "at": "2026-11-10T08:11:16Z",
+      "basis": [
+        {
+          "id": "SRC-REL-ROMEO-2025",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_limitation": "R004 recorded abstract-only access and a refused ACM PDF (HTTP 403); this pass used the Manchester publication abstract, not the full report or independent data.",
+        "decision": "include",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "reading_refs": [],
+        "reason": "Transcribed from accepted single-agent 2026-11-10 TA ledger; not an independent second review. The institutional abstract reports people assisting a robot through a maze, synthetic/default robot-voice comparison, repair strategies, in-game behaviour and trust questionnaires. It is an apparent comparative primary study with human voice-message interaction and measured outcomes.",
+        "review_refs": [],
+        "rule": "Frozen protocol v1 E1-E6 and G01; source-limited first-pass title/abstract only",
+        "source_ref": {
+          "id": "SRC-REL-ROMEO-2025",
+          "rev": 1
+        },
+        "stage": "title_abstract",
+        "track": "empirical"
+      },
+      "factual_status": "researcher_interpretation",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}

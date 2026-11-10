@@ -1,0 +1,40 @@
+{
+  "id": "SCR-R006-REL-BECKER-2025-TA",
+  "issue": 6,
+  "kind": "screening",
+  "revisions": [
+    {
+      "actor": {
+        "id": "gpt6-r006-integration-registrar-20261110",
+        "kind": "agent",
+        "tool": "R006 source-pinned title/abstract admission bridge"
+      },
+      "at": "2026-11-10T08:11:16Z",
+      "basis": [
+        {
+          "id": "SRC-REL-BECKER-2025",
+          "rev": 1
+        }
+      ],
+      "data": {
+        "access_limitation": "R004 recorded abstract-only access and a refused ACM PDF (HTTP 403). This pass read an institutional publication abstract, not complete source pages or numerical tables.",
+        "decision": "include",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "reading_refs": [],
+        "reason": "Transcribed from accepted single-agent 2026-11-10 TA ledger; not an independent second review. Human cooperative Battleship study compares natural versus mechanical robot speech, with verbal advice acceptance and response time; method and results described. Publisher DOI and University of Surrey abstract agree with the R004 source record. The voice pre-study and main study must not be treated as a single or two independently eligible samples without checking the report.",
+        "review_refs": [],
+        "rule": "Frozen protocol v1 E1-E6 and G01; source-limited first-pass title/abstract only",
+        "source_ref": {
+          "id": "SRC-REL-BECKER-2025",
+          "rev": 1
+        },
+        "stage": "title_abstract",
+        "track": "empirical"
+      },
+      "factual_status": "researcher_interpretation",
+      "rev": 1
+    }
+  ],
+  "schema_version": 1,
+  "synthetic": false
+}
