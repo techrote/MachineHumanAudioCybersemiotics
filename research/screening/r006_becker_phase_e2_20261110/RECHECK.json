@@ -1,0 +1,134 @@
+{
+  "issue": 6,
+  "artifact_kind": "noncanonical_primary_source_phase_eligibility_audit",
+  "source_ref": {
+    "id": "SRC-REL-BECKER-2025",
+    "rev": 1
+  },
+  "source_record_git_blob_sha": "e3263ef88b5afc684318d4f4e49a414ad4144253",
+  "doi": "10.1145/3706066",
+  "title": "Influence of Robots’ Voice Naturalness on Trust and Compliance",
+  "edition": "ACM Transactions on Human-Robot Interaction 14(2), Article 29 (2025), printed pp. 29:1–29:25",
+  "protocol": "research/protocol/PROTOCOL-v1.md §§4, 6.2–6.5; G01",
+  "frozen_cutoff": "2026-10-04",
+  "assessment_date": "2026-11-10",
+  "actor": {
+    "kind": "agent",
+    "id": "gpt6-r006-becker-phase-20261110",
+    "method": "Web-extracted author-hosted original PDF text and PDF rendered-page inspection",
+    "independence": "additional AI source check, NOT independent human/blinded screening"
+  },
+  "source_access": {
+    "url": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+    "route": "author-hosted public ACM article, CC BY 4.0 declared on first page",
+    "extent": "selected passages from title/abstract, §§3.1–3.7, Appendices C–E; not a complete paper read, no sound playback",
+    "consulted_locators": [
+      "printed 29:1",
+      "printed 29:4–29:9",
+      "printed 29:22–29:24"
+    ],
+    "visually_checked_printed_pages": [
+      "29:8",
+      "29:24"
+    ],
+    "locally_downloaded_original_pdf": false,
+    "original_pdf_sha256_verified": false,
+    "audio_stimuli_checked": false,
+    "reviewer_human": false
+  },
+  "first_stage": {
+    "prior_ledger": "research/screening/r006_r004_crosslane_20261110/DECISIONS.json",
+    "source_status": "single_agent_first_pass_unverified",
+    "proposed_publication_decision": "include_for_full_text_only",
+    "canonical_scr_registered_by_this_artifact": false,
+    "scientific_status": "additional noncanonical source recheck; integration owns TA admission and shared exports"
+  },
+  "phases": [
+    {
+      "id": "online_voice_selection_prestudy",
+      "reported_analyzed_n": 60,
+      "reported_completed_n": 62,
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "no_provisional",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "proposed_track_e_phase_status": "not_eligible_as_standalone_machine_message_experiment",
+      "support": "§3.2 describes six TTS voice samples rated for perceived voice quality and future robot suitability, rather than operational system-status/action messaging during the survey.",
+      "locators": [
+        "§§3.1–3.2, printed 29:4–29:5",
+        "§3.7, printed 29:8"
+      ],
+      "limitation": "Voice-sample lexical content/audio not independently inspected. E2=no is an AI-assisted interpretation of the described task, not an accepted exclusion."
+    },
+    {
+      "id": "eight_person_setup_pilot",
+      "reported_n": 8,
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "provisionally_yes",
+        "E3": "unknown",
+        "E4": "yes",
+        "E5": "uncertain",
+        "E6": "yes"
+      },
+      "proposed_track_e_phase_status": "uncertain_not_independent_experiment_admission",
+      "support": "§3.4 describes a pilot assessing whether listeners distinguished the two voices and understood robot game rules/speech; methods and participant overlap with the main recruitment are insufficient to assert an independent comparative primary study.",
+      "locators": [
+        "§3.4, printed 29:8"
+      ],
+      "limitation": "Pilot participants' identity, overlap, complete outcomes and design details are not independently verified."
+    },
+    {
+      "id": "in_person_battleship_main",
+      "reported_analyzed_n": 68,
+      "reported_completed_n": 73,
+      "rule_assessment": {
+        "E1": "yes",
+        "E2": "yes",
+        "E3": "yes",
+        "E4": "yes",
+        "E5": "yes",
+        "E6": "yes"
+      },
+      "proposed_track_e_phase_status": "provisional_full_text_eligible_conditioned_on_canonical_TA_and_formal_source_review",
+      "support": "Robot issues live status/next-step guidance and selectable advice in a human-robot Battleship game; natural versus mechanical speech is the between-participant manipulation with identical gestures, utterances and facial-expression repertoire across arms; choices, response latencies and questionnaires are measured.",
+      "locators": [
+        "§3.1, printed 29:4",
+        "§3.3, printed 29:6–29:7",
+        "§§3.4–3.7, printed 29:7–29:9",
+        "Appendix E, printed 29:24"
+      ],
+      "limitation": "Voice lines are embedded in multimodal interaction; conditional messages are repeated within each participant, not independent samples. This document does not assess effect sizes."
+    }
+  ],
+  "participant_identity": {
+    "pre_study_to_main": "author_explicitly_excludes_prestudy_participants_from_main",
+    "pre_study_to_main_locator": "§3.7, printed 29:8",
+    "setup_pilot_overlap_with_main": "unknown",
+    "setup_pilot_overlap_with_prestudy": "unknown",
+    "independent_sample_records_admitted": 0,
+    "canonical_study_records_admitted": 0,
+    "canonical_experiment_records_admitted": 0,
+    "distinct_humans_independently_verified": false,
+    "caution": "The pre/main nonoverlap is author-reported, not a person-level verification; do not sum repeated trials, pilot, pre-study and main as independently verified samples."
+  },
+  "governance": {
+    "claims_empirical_extraction": false,
+    "canonical_SCR_added": 0,
+    "included_studies_added": 0,
+    "selected_corpus_ready": false,
+    "human_second_assessor": false,
+    "source_material_bytes_verified": false,
+    "proposed_next_action": "Integrator registers four authentic title/abstract SCR decisions and deterministic exports on complete checkout; R006 then conducts source-pinned full-text record and participant-family adjudication with distinct actor/time, retaining source-access limitations.",
+    "issue_status_required": "open",
+    "dependencies": [
+      "R005 #5 incomplete",
+      "R006 #6 canonical TA not serialized",
+      "R007 #7 and R008 #8 corpus not selected"
+    ]
+  }
+}
