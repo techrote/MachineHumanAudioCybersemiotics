@@ -10,7 +10,7 @@ Canonical existing source: \`SRC-R006-E-STEVENS-INFORMATIVE@1\`. Representative 
 
 ## Deliverable and exact boundary
 
-\`research/sources/auditory/scripts/attest_primary_xml.py\` operates on an **existing lawful private local XML file only**, with no outbound request, download, login, source redistribution or repository write. It computes SHA-256 directly on the local bytes, parses JATS XML, verifies both exact DOI and PMCID embedded in the article front matter, checks article body/back presence, and inventories actual section headings and exposed license hyperlinks. It rejects DTD/entity-bearing XML and oversized/invalid files. It cannot validate the provenance of an operator-supplied timestamp, copyright authorization, edition equivalence or performed reading.
+\`research/sources/auditory/scripts/attest_primary_xml.py\` operates on an **existing lawful private local XML file only**, with no outbound request, download, login, source redistribution or repository write. It computes SHA-256 directly on the local bytes, parses JATS XML, verifies the exact DOI embedded in article front matter and checks the PMCID when present (absence is marked unverified), checks article body/back presence, and inventories actual section headings and exposed license hyperlinks. It rejects XML entity declarations and oversized/invalid files. It cannot validate the provenance of an operator-supplied timestamp, copyright authorization, edition equivalence or performed reading.
 
 The operator must first establish a permissible **private retention location and license/attribution policy**. On that already obtained source, run from repo root with locally accurate details; do not copy the sample timestamp as a claimed new acquisition:
 
@@ -29,7 +29,7 @@ python3 research/sources/auditory/scripts/attest_primary_xml.py verify \
   --manifest /approved-private-path/stevens2009-receipt.json
 \`\`\`
 
-\`capture\` uses exclusive creation and refuses to replace a prior receipt. \`verify\` rehashes the original local XML, checks DOI/PMCID and rejects altered bytes or fabricated promotion flags. **Do not commit the original full article or unapproved private manifests to this public repository.**
+\`capture\` uses exclusive creation and refuses to replace a prior receipt. \`verify\` rehashes the original local XML, checks the DOI and any embedded PMCID and rejects altered bytes or fabricated promotion flags. **Do not commit the original full article or unapproved private manifests to this public repository.**
 
 ## Explicit source identity and gate handoff
 
@@ -48,4 +48,4 @@ python3 tools/validate.py
 python3 -m tools.build_record_fixtures --check
 \`\`\`
 
-The 11 new tests are synthetic fixture checks, including false DOI/PMCID, altered bytes, entity declarations, missing body, timestamp/URL contamination, false human or source-manifestation status, and receipt overwrite. Successful tests prove bounded software behavior **only**. Exact-PR-head Actions and Integration's separate source/rights review remain necessary; this is a Draft/HOLD handoff, not issue #5 or #6 completion.
+The 13 new tests are synthetic fixture checks, including false DOI/PMCID, altered bytes, entity declarations, missing body, timestamp/URL contamination, false human or source-manifestation status, and receipt overwrite. Successful tests prove bounded software behavior **only**. Exact-PR-head Actions and Integration's separate source/rights review remain necessary; this is a Draft/HOLD handoff, not issue #5 or #6 completion.
