@@ -1,0 +1,177 @@
+{
+  "kind": "r006_noncanonical_cross_publication_identity_adjudication_v1",
+  "issue": 6,
+  "date": "2026-11-10",
+  "evidence_cutoff": "2026-10-04",
+  "base_main_sha": "d3348fba38f01500a134593f9b64b268d62392af",
+  "actor": {
+    "kind": "agent",
+    "id": "chatgpt-gpt6-r006-20261110",
+    "review_type": "source-limited model-assisted primary/abstract comparison; not human review"
+  },
+  "canonical_admission": {
+    "screening_records_added": 0,
+    "study_records_added": 0,
+    "sample_records_added": 0,
+    "selected_corpus_ready": false,
+    "independent_human_screening": false,
+    "manifest_or_R005_history_modified": false
+  },
+  "source_consultation": [
+    {
+      "key": "cooper_2020_paper",
+      "title": "Subject matter experts’ feedback on a prototype development of an audio, visual, and haptic phishing email alert system",
+      "date": "2020-12-29",
+      "doi": "10.36965/OJAKM.2020.8(2)107-121",
+      "publication_type": "journal_article",
+      "urls": [
+        "https://www.iiakm.org/ojakm/articles/2020/OJAKM_Volume8_2pp107-121.php",
+        "https://www.iiakm.org/ojakm/articles/2020/Volume8_2/OJAKM_Volume8_2pp107-121.pdf"
+      ],
+      "reading_extent": "publisher landing-page abstract; PDF selected printed pp.110-111 (rendered web screenshots), PDF parsed text around Method and Results",
+      "locators": [
+        "Publisher landing-page Abstract (32 SMEs)",
+        "Published PDF printed p.110, Methodology; file page 4 / zero-based index 3",
+        "Published PDF printed p.111, Data Analysis and Results; file page 5 / zero-based index 4"
+      ],
+      "observations": [
+        "Describes 32 cybersecurity SMEs in an expert panel",
+        "Method reports one April 2020 Delphi-cycle survey evaluating prospective phishing warning components, including audio and visual pairings",
+        "No end-user intervention outcomes observed in inspected passages"
+      ],
+      "original_pdf_bytes_hashed": false,
+      "full_item_read": false,
+      "source_correction_checked": false
+    },
+    {
+      "key": "cooper_2020_thesis",
+      "title": "An Empirical Assessment of Audio/Visual/Haptic Alerts and Warnings to Mitigate Risk of Phishing Susceptibility in Emails on Mobile Devices",
+      "date": "2020",
+      "doi": null,
+      "publication_type": "doctoral_dissertation",
+      "urls": [
+        "https://nsuworks.nova.edu/gscis_etd/1121/",
+        "https://scholars.nova.edu/en/studentTheses/an-empirical-assessment-of-audiovisualhaptic-alerts-and-warnings-/"
+      ],
+      "reading_extent": "institutional abstract only; full-text PDF link attempted and web reader returned 403",
+      "locators": [
+        "NSUWorks abstract under CCAC Theses and Dissertations (three-phase design)",
+        "NSUWorks record 1121, Date of Award 2020"
+      ],
+      "observations": [
+        "Reports three PAWS programme phases: 32 SME experts, five pilot participants, and 205 end-user participants",
+        "Reports 20 simulated emails with no-warning versus audio/visual warning displays",
+        "This is an author description of phases; no separate participant registry or sample-ID information"
+      ],
+      "original_pdf_bytes_hashed": false,
+      "full_item_read": false,
+      "source_correction_checked": false
+    },
+    {
+      "key": "cooper_2021_paper",
+      "title": "Heads-up! An alert and warning system for phishing emails",
+      "date": "2021-10-21",
+      "doi": "10.1108/OCJ-03-2021-0006",
+      "publication_type": "journal_article",
+      "urls": [
+        "https://scholars.nova.edu/en/publications/heads-up-an-alert-and-warning-system-for-phishing-emails/",
+        "https://doi.org/10.1108/OCJ-03-2021-0006"
+      ],
+      "reading_extent": "institutional abstract and publication metadata only; institution-hosted final-published PDF link attempted and web reader returned 403",
+      "locators": [
+        "Nova Southeastern University institutional publication record: Abstract > Design/methodology/approach, Findings",
+        "Institutional record: publication 21 Oct 2021, journal volume 1(1), pp.47-68"
+      ],
+      "observations": [
+        "Reports same three-stage PAWS prototype programme design as thesis and 32 experts in phase one",
+        "States phase three involved 205 users, in addition to development/pilot phase two",
+        "No direct verification of participant IDs or protocol from unread full text"
+      ],
+      "original_pdf_bytes_hashed": false,
+      "full_item_read": false,
+      "source_correction_checked": false
+    }
+  ],
+  "cross_report_phase_map": [
+    {
+      "phase": "expert_panel",
+      "reports": [
+        "cooper_2020_paper",
+        "cooper_2020_thesis",
+        "cooper_2021_paper"
+      ],
+      "n_as_reported": 32,
+      "evidence": "2020 PDF printed pp.110-111; thesis institutional abstract; 2021 institutional abstract",
+      "inference": "same PAWS phase apparently re-reported; individual participant identity not byte-verified",
+      "overlap_status": "probable_reuse_not_verified",
+      "independent_sample_status": "unresolved_do_not_count"
+    },
+    {
+      "phase": "prototype_pilot",
+      "reports": [
+        "cooper_2020_thesis",
+        "cooper_2021_paper"
+      ],
+      "n_as_reported": 5,
+      "evidence": "thesis institutional abstract explicitly reports five; 2021 abstract acknowledges phase but does not provide pilot N",
+      "inference": "likely same programme phase; 2021 pilot sample size must not be inferred from its abstract alone",
+      "overlap_status": "probable_reuse_not_verified",
+      "independent_sample_status": "unresolved_do_not_count"
+    },
+    {
+      "phase": "end_user_intervention",
+      "reports": [
+        "cooper_2020_thesis",
+        "cooper_2021_paper"
+      ],
+      "n_as_reported": 205,
+      "evidence": "thesis and 2021 institutional abstracts both report PAWS mobile app third phase with 205 participants",
+      "inference": "strong programme and design congruence, but matched raw participant data and full reports absent",
+      "overlap_status": "probable_reuse_not_verified",
+      "independent_sample_status": "unresolved_do_not_count"
+    }
+  ],
+  "track_e_provisional": [
+    {
+      "publication": "cooper_2020_paper",
+      "stage": "source_limited_not_canonical",
+      "decision": "uncertain",
+      "rule_E2": "uncertain",
+      "rule_E3": "uncertain",
+      "reason": "SME preference/Delphi selection of prospective alert designs is not automatically an end-user system-message experiment; ascertain exact comparison/outcome in full report before frozen E2/E3 adjudication"
+    },
+    {
+      "publication": "cooper_2020_thesis",
+      "stage": "abstract_only_not_canonical",
+      "decision": "uncertain",
+      "rule_E2": "appears_yes_but_unverified",
+      "rule_E3": "appears_yes_but_unverified",
+      "reason": "Thesis abstracts report audio/visual PAWS interventions and no-alert comparisons, but full methods, report boundaries and source bytes are not verified"
+    },
+    {
+      "publication": "cooper_2021_paper",
+      "stage": "abstract_only_not_canonical",
+      "decision": "uncertain",
+      "rule_E2": "appears_yes_but_unverified",
+      "rule_E3": "appears_yes_but_unverified",
+      "reason": "Third phase appears relevant to E2/E3; multimodal contrast and study independence need full text and source-level screening"
+    }
+  ],
+  "decision": {
+    "publication_count": 3,
+    "named_procedural_phases": 3,
+    "independent_empirical_sample_count": "not_established",
+    "family_relation": "same_PAWS_project_probable_overlapping_reported_phases_not_confirmed_same_participants",
+    "automatic_doi_aliasing_permitted": false,
+    "admissibility": "R006_source_identity_handoff_only_not_selected_corpus",
+    "next_action": "Obtain and compare 2020 thesis and 2021 article full methods/sample recruitment; map 2020 SME section to both; determine E2/E3 and manuscript reuse, then create source-pinned canonical SCR and STUDY/SAMPLE only through authorized registration and integrator-owned manifest"
+  },
+  "scientific_limits": [
+    "Three distinct documents, not three independently admitted studies",
+    "32, 5 and 205 are author-reported programme phase sizes, not summed across reports or accepted sample totals",
+    "2020 journal article selected source pages were read via web PDF and rendered screenshots, not full report with local SHA-256",
+    "2021 article and dissertation only institutional abstracts; direct PDF retrieval returned web 403; no invented access or hashes",
+    "No individual participant ID crosswalk, exact study protocol, verified independent human screening, measured outcomes extraction, or R005 search export edit",
+    "Frozen pre-2026-10-04 publication cutoff unchanged; all three report dates before cutoff"
+  ]
+}
