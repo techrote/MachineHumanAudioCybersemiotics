@@ -32,3 +32,24 @@ python3 -m tools.build_record_fixtures --check
 ```
 
 Source receive/denial is to be verified from an actual exact-head GitHub Actions run and cannot be inferred from green tests. A successful source HTTP result still does not create a retained authenticated manifestation, full-text inclusion, admitted publication, experiment or sample. **R005 #5 and R006 #6 remain open; R007/R008 selected corpus remains unready.**
+
+
+## Actual original HTTP result — 21:11 UTC, 10 November 2026
+
+**Direct source acquisition succeeded**, recorded independently of the public web reader's prior rendering. Exact PR-head [GitHub Actions #42902552982 / job #130132051244](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42902552982/job/130132051244) emitted the full `MHAC_R005_NEES2016=` receipt, now preserved verbatim in [HTTP-RECEIPT.json](HTTP-RECEIPT.json).
+
+| Observed field | Actual PR-head runner result |
+|---|---|
+| UTC HTTP response opened | `2026-11-10T21:11:25.026+00:00` |
+| UTC read completed | `2026-11-10T21:11:25.033+00:00` |
+| HTTP Date | `Tue, 10 Nov 2026 21:11:25 GMT` |
+| Status / MIME | **200** / `application/pdf` |
+| Received original PDF bytes | **851,943** |
+| PDF header | `%PDF-1.3` |
+| SHA-256 over received original bytes | `012398a1a81c923c413454d7993e474e7389149b8e4199e2f8241cb35cbc3cfe` |
+| Requested and final URL | Exact author-hosted Squarespace PDF link above; no changed final URL |
+| Structural checks | `%PDF-` prefix and `%%EOF` in trailing 4 KiB |
+
+This is an **actual acquisition SHA-256 for one ephemeral HTTP instance**, not an invented original file, archival copy, SAGE VoR checksum, full 29-page semantic read, audio access or copyright/retention approval. No PDF source bytes were persisted. The owner-facing next action has narrowed: R004/Integration must obtain this exact **edition** lawfully into retention-appropriate private custody, independently compare with the original rendered manuscript (including title page), retain its *own* actual download hash/UTC, verify rights and register a manifestation; subsequent downloads may legitimately differ from the present digest. R006 then performs source-bound full-text reading and E1–E6/participant-overlap adjudication. There is still **no human second reviewer** and **no new admitted study/experiment/sample**.
+
+The first exact-head job reported **983 unit tests, four skips, PASS**, plus history-aware repository validator and deterministic fixtures passing. These are software checks only; the final PR head with committed receipt and anti-promotion tests requires a fresh independent check.
