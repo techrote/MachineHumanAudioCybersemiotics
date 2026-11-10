@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-SABIC-2021-NOISE-TA",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T15:33:58.305Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-ta-noise-urgency-20261110",
+        "model": "GPT-6",
+        "tool": "GitHub source identity/hit records + web.run original public SAGE and Taylor & Francis publisher HTML; source text tool-mediated, no publisher PDF bytes"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+          "rev": 1
+        },
+        "stage": "title_abstract",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen protocol v1 §4 E1–E6/G01 and §6.2; original publisher public text, single AI first pass; include to full-text retrieval only",
+        "decision": "include",
+        "reason": "Frozen v1 E1–E6 first-pass assessment. Publisher original article abstract explicitly describes two human-participant driving-simulator experiments comparing text-to-speech, spearcons and auditory icons across background-noise conditions, with warning recognition accuracy and reaction-time outcomes. E1–E6 appear satisfied at title/abstract stage; include solely to seek and verify complete original full text. The publisher HTML visibly exposes selected body sections, but only the Abstract, Current Study, Experiment 1 Method/Participants, and General Discussion were inspected through tool-mediated web rendering; no complete Experiment 2 review, participant-overlap adjudication, audio playback, numeric extraction, raw document custody or hashed manifestation occurred. Two reported experiments are not two independently admitted samples.",
+        "access_limitation": "Original publisher https://journals.sagepub.com/doi/abs/10.1177/0018720819879311; DOI 10.1177/0018720819879311; journal edition Human Factors 63(2), 312–335 (March 2021), first published online 2019-10-08. Read on 2026-11-10: entire displayed publisher Abstract (Objective through Application), plus selected publisher HTML sections Current Study, Experiment 1 > Method > Participants and General Discussion; not full article or complete Experiment 2. Tool-mediated rendered public text; publisher HTTP Date and original HTML/PDF bytes/hash were not captured, reproduction rights not inferred. Existing Crossref verified DOI identity SRC-R006-H-SABIC-UNDERSTANDING@1 was metadata_only; no new manifestation or reader AID registered. Publication DOI has one original discovery occurrence HIT-R005R-C1RECOVERY-EQ1-00046. No human verification, audiovisual inspection, study or participant sample admitted. Potential first-author thesis duplication remains unresolved.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
