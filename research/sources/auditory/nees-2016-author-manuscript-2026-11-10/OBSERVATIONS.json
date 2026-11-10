@@ -1,0 +1,100 @@
+{
+  "schema_version": "mhac-r005-primary-manuscript-source-navigation/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "track": "E",
+  "frozen_protocol": "research/protocol/PROTOCOL-v1.md §§4–6, 10–12",
+  "frozen_publication_cutoff": "2026-10-04",
+  "observer": {
+    "kind": "agent",
+    "model": "GPT-6",
+    "tool": "public web text reader, PDF page renderer/screenshots; no raw network response or audio",
+    "human_second_reviewer": false
+  },
+  "observed_time": {
+    "clock_checkpoint_utc": "2026-11-10T18:08:37+00:00",
+    "precision": "Clock reading obtained after source navigation, not per-HTTP-request Date/acquisition timestamp",
+    "observation_date_utc": "2026-11-10"
+  },
+  "source": {
+    "publication_title": "Speech Auditory Alerts Promote Memory for Alerted Events in a Video-Simulated Self-Driving Car Ride",
+    "authors": [
+      "Michael A. Nees",
+      "Benji Helbein",
+      "Anna Porter"
+    ],
+    "doi": "10.1177/0018720816629279",
+    "venue": "Human Factors",
+    "year": 2016,
+    "volume": 58,
+    "issue": 3,
+    "vor_pages": "416–426",
+    "vor_url": "https://journals.sagepub.com/doi/10.1177/0018720816629279",
+    "author_bibliography": "https://michaelanees.com/publications",
+    "author_bibliography_link_number": 35,
+    "author_manuscript_pdf_url": "https://static1.squarespace.com/static/51bb699de4b0820e6e77849b/t/56d63bd2a3360c6369802fc3/1456880594996/Nees+et+al+Human+Factors+2016+author+preprint.pdf",
+    "format": "PDF",
+    "pdf_pages_reported_by_web_reader": 29,
+    "edition_label": "Author-hosted author preprint/accepted-manuscript-labelled version, not established identical to SAGE version of record",
+    "source_titlepage_language": "Submitted for consideration for publication in Human Factors; internal note says 'authors’ accepted preprint version'; title page also has volume/issue/pages TBD",
+    "rights": "Publicly linked from corresponding author's publication page; lawful public navigation observed; explicit redistribution/private-retention licence NOT verified",
+    "original_response_headers_retained": false,
+    "original_bytes_retained": false,
+    "original_sha256": null,
+    "raw_pdf_archive_ref": null,
+    "licensed_redistribution": false,
+    "source_reading": "Selected original manuscript text only; initial/title/abstract, background context; Methods pp 10–14, Table 1 p11; Results pp 14–16 and Table 2 p16; selected Discussion/limitations pp 17–18. PDF physical page indices 0,2,8–17 examined through rendered text and selected images; visual checks were PDF pages indexed 9,10,13,14. No full 29-page cover-to-cover review, no full appendices, no audio listening.",
+    "visual_page_indices_checked": [
+      9,
+      10,
+      13,
+      14
+    ],
+    "text_section_locators": [
+      "Manuscript p10, Method > Participants, lines 116–127",
+      "Manuscript pp 10–14, Method > Stimuli / Alert conditions / Procedure, lines 127–218",
+      "Manuscript p11, Table 1, lines 150–163",
+      "Manuscript pp 14–16, Results and Table 2, lines 219–267",
+      "Manuscript pp 17–18, selected Discussion/Limitations, lines 306–325"
+    ]
+  },
+  "crosscheck": {
+    "sage_vor_online_first": "2016-02-16",
+    "sage_vor_issue": "May 2016",
+    "sage_access_extent": "Publisher article page abstract/metadata, restricted full text",
+    "premature_equivalence_forbidden": true
+  },
+  "verified_excerpts_as_author_reports": {
+    "participants_recruited": 90,
+    "participants_excluded_from_analyses": 5,
+    "participants_analyzed": 85,
+    "per_condition_analyzed": {
+      "visual": 30,
+      "auditory_icons": 28,
+      "speech": 27
+    },
+    "stimulus_conditions": "Three between-subject groups: visual text control, auditory icons, speech; simulated driving videos and visual word-search secondary task",
+    "protocol_note": "One publication with one described between-subject experiment/cohort; three alert conditions are not three independent samples. Cohort overlap with other reports has not been adjudicated.",
+    "method_note": "Brief training plus alert-recognition gate before 3 video/free-recall episodes; subjective annoyance, usefulness, confidence and TLX.",
+    "research_quality_note": "Reports no critical manual-driving intervention; memory for alerted events was surrogate for Level 1 situation awareness; restricted to undergraduate convenience sample and low-fidelity video scenario."
+  },
+  "original_search_provenance": [
+    "HIT-R005R-C1LOAD-EQ1-04051@1",
+    "HIT-R005R-C1RECOVERY-EQ1-00329@1",
+    "HIT-R005R-C1RECOVERY-EQ6-00308@1"
+  ],
+  "canonical_source": "SRC-R006-NEES-2016-MEMORY@1",
+  "canonical_ta": "SCR-R006-NEES-2016-MEMORY-TA@1",
+  "r006_decision_authority": "R006 alone; this artifact is R005 primary-source support, not a screening decision",
+  "status": {
+    "registered_source_manifestation": false,
+    "full_text_included": false,
+    "study_admitted": false,
+    "experiment_admitted": false,
+    "independent_sample_admitted": false,
+    "new_discovery_hit_registered": false,
+    "audio_observed": false,
+    "external_human_review": false
+  },
+  "further_action": "R004/Integration lawfully retain/attest the exact author manuscript privately and register its distinct manifestation with date/hash/access-rights; R006 compare version-of-record if available, record performed reading, adjudicate E1–E6 and publication/experiment/sample overlap; no automatic include."
+}
