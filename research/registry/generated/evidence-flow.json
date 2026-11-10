@@ -13,7 +13,7 @@
   "samples": 0,
   "screening": {
     "full_text": {
-      "awaiting_text": 0,
+      "awaiting_text": 1,
       "exclude": 1,
       "include": 0,
       "pending": 0,
@@ -30,7 +30,7 @@
   "screening_by_track": {
     "empirical": {
       "full_text": {
-        "awaiting_text": 0,
+        "awaiting_text": 1,
         "exclude": 1,
         "include": 0,
         "pending": 0,
@@ -65,11 +65,12 @@
     "decision_scopes": [
       {
         "acceptance": "not_evaluated",
-        "awaiting_text": [],
+        "awaiting_text": [
+          "SRC-REL-ROMEO-2023"
+        ],
         "boundary": "Only the explicitly supplied source scope is counted; retrieval, verification, source fidelity and search completeness are not inferred.",
         "missing_required_full_text": [
           "SRC-REL-BECKER-2025",
-          "SRC-REL-ROMEO-2023",
           "SRC-REL-ROMEO-2025"
         ],
         "missing_title_abstract": [],
@@ -89,7 +90,7 @@
             "title_abstract": "uncertain"
           },
           {
-            "full_text": "not_recorded",
+            "full_text": "awaiting_text",
             "full_text_required": true,
             "source_id": "SRC-REL-ROMEO-2023",
             "title_abstract": "uncertain"
