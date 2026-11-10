@@ -124,6 +124,60 @@ class AttestationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "fail-closed"):
                     mod.verify(self.xml, manifest)
 
+    def test_verified_bytes_cannot_inherit_tampered_source_derived_claims(self):
+        original = mod.capture(self.xml, **ARGS)
+        changes = (
+            ("section_heading_inventory_not_reading", ["Fictitious clinical conclusion"]),
+            ("licence_links_observed_not_independently_verified",
+             ["https://example.org/false-licence"]),
+            ("article_body_present", False),
+            ("article_back_present", False),
+        )
+        for field, value in changes:
+            with self.subTest(field=field):
+                changed = {**original, field: value}
+                manifest = self.home / "receipt.json"
+                manifest.write_text(json.dumps(changed), encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "source-derived receipt field"):
+                    mod.verify(self.xml, manifest)
+
+    def test_receipt_operator_provenance_and_source_pins_fail_closed(self):
+        original = mod.capture(self.xml, **ARGS)
+        changes = (
+            ("hit_id", "HIT-R005R-UNRELATED@1"),
+            ("issue", 6),
+            ("downstream_issue", 5),
+            ("frozen_cutoff", "2026-11-10"),
+            ("reported_edition", ""),
+            ("operator_id_operator_reported", None),
+            ("access_proof_operator_reported", ""),
+            ("rights_note_operator_reported_not_authorization", " "),
+            ("source_url_operator_reported", "https://example.org/file?token=abc"),
+            ("acquired_utc_operator_reported_not_network_verified", "nonsense"),
+            ("attestation_utc", "2020-01-01T00:00:00Z"),
+        )
+        for field, value in changes:
+            with self.subTest(field=field):
+                changed = {**original, field: value}
+                manifest = self.home / "receipt.json"
+                manifest.write_text(json.dumps(changed), encoding="utf-8")
+                with self.assertRaises(ValueError):
+                    mod.verify(self.xml, manifest)
+
+    def test_receipt_attestation_utc_is_canonical_and_ordered(self):
+        original = mod.capture(self.xml, **ARGS)
+        for field, value in (
+            ("attestation_utc", "2026-11-10T23:00:00+01:00"),
+            ("acquired_utc_operator_reported_not_network_verified",
+             "2026-11-10T20:15:16+00:00"),
+        ):
+            with self.subTest(field=field):
+                changed = {**original, field: value}
+                manifest = self.home / "receipt.json"
+                manifest.write_text(json.dumps(changed), encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "canonical UTC"):
+                    mod.verify(self.xml, manifest)
+
     def test_cli_no_overwriting_earlier_receipt(self):
         dest = self.home / "receipt.json"
         dest.write_text("immutable preexisting receipt", encoding="utf-8")
