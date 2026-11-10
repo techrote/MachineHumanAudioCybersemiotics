@@ -20,4 +20,4 @@ The unchanged 2026-10-04 publication cutoff, frozen protocol, human gates and in
 
 ## Check
 
-Run `python -m unittest tests.test_r005_known_item_recheck_20261110 -v` from the repository root to assert that the ten IDs were genuinely previously `not_located`, that the links/query evidence is present, and that no observation claims full-text, independent study or screening acceptance. This is integrity checking, not verification of remote page content.
+Run `python -m unittest discover -s tests -p 'test_r005_known_item_recheck_20261110.py' -v` from the repository root to assert that the ten IDs were genuinely previously `not_located`, that the links/query evidence is present, and that no observation claims full-text, independent study or screening acceptance. This is integrity checking, not verification of remote page content.
