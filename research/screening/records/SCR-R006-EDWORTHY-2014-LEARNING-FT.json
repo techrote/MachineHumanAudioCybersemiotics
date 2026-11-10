@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-EDWORTHY-2014-LEARNING-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T19:33:02Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-ft-access-nextpair-20261110",
+        "model": "GPT-6",
+        "tool": "Connected GitHub source/TA records; web.run primary institutional/publisher indexed Abstract and PubMed, restricted publisher full-text routes; no original PDF bytes, audio or human assessor"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-EDWORTHY-2014-LEARNING",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-EDWORTHY-2014-LEARNING-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-EDWORTHY-2014-LEARNING",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen v1 §4 E1–E6, §6.2(3), §6.3 and §10: abstract-only/metadata access cannot substantiate full-text eligibility; lawful original full text remains requested",
+        "decision": "awaiting_text",
+        "reason": "Original University of Plymouth journal article listing, Abstract section, was accessed on 2026-11-10; it describes non-anaesthetist participants comparing learnability of three eight-alarm sets across ten trial blocks. That ABSTRACT supports the prior title/abstract include-to-full-text decision, but no original Elsevier article Methods, Results, stimuli, participant identity, effect sizes or full-paper text was accessed. Direct ScienceDirect article route was disabled to this tool, not demonstrated unavailable to all readers. Under frozen §6.2(3) and §6.3 this report must remain awaiting_text until lawful original text is actually inspected. The three sets are three experimental conditions, not independent studies or samples; no full-text E1-E6 decision or Track E admission is inferred.",
+        "access_limitation": "DOI 10.1016/j.apergo.2013.10.003 (verified SRC revision 1); original issue 2014, online first 2013, not two publications. University of Plymouth institutional source https://researchportal.plymouth.ac.uk/en/publications/learning-three-sets-of-alarms-for-the-same-medical-functions-a-pe/ at HTML Abstract and citation lines only (public, uncredentialed viewing, 2026-11-10). Direct article attempt https://www.sciencedirect.com/science/article/abs/pii/S0003687013002249 returned tool DisabledError; that URL was an attempted candidate, NOT verified as this publication's PII. R005 PR #148 separately reports blocked Elsevier full article and is a Draft, not an admitted primary file. No publisher full article, original PDF bytes/SHA-256/HTTP Date, source manuscript, original audio, redistribution permission, human review, performed full-text reading or source manifestation. Source SRC@1 remains metadata_only, manifestations=[].",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
