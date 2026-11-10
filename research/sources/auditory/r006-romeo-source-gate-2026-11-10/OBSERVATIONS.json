@@ -1,0 +1,143 @@
+{
+  "schema": "mhac-r005-romeo-access-boundary/1",
+  "id": "R005-ROMEO23-SCRIPT-GATE-20261110",
+  "issue": 5,
+  "downstream_issue": 6,
+  "status": "source_access_checkpoint_not_search_export_or_canonical_screen",
+  "base_main_sha": "8f34dadfcb15e65db224fcc8f81ae5ab34f28ea7",
+  "frozen_search_cutoff": "2026-10-04",
+  "record_assembled_at_utc": "2026-11-10T08:15:00.166Z",
+  "time_note": "Record assembly timestamp is not an HTTP Date header or exact server retrieval time. The web and binary-download interfaces did not provide source-response timestamps or bytes.",
+  "researcher": {
+    "kind": "agent",
+    "id": "gpt6-r005-romeo-primary-boundary-20261110",
+    "method": "GitHub R006/R005 registry reconciliation, C8 web retrieval, tool-mediated 2025 publisher-PDF text, attempted PDF page images and Zenodo file download",
+    "independent_human_review": false
+  },
+  "sources": [
+    {
+      "id": "romeo_2023_ieee",
+      "source_ref": "SRC-REL-ROMEO-2023@1",
+      "doi": "10.1109/ro-man57019.2023.10309631",
+      "title": "Putting Robots in Context: Challenging the Influence of Voice and Empathic Behaviour on Trust",
+      "edition": "IEEE RO-MAN 2023, pp. 2045–2050; published online 13 November 2023 per Heriot-Watt repository",
+      "access": "institutional_html_abstract_only",
+      "url": "https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/",
+      "locator": "Abstract and publication details / DOI",
+      "observed": "Abstract reports two video-based online studies in general and task-specific contexts; does not detail exact script wording, participant recruitment overlap, or full E2 assessment",
+      "full_text_read": false,
+      "original_file_bytes_retained": false,
+      "source_sha256_verified": false
+    },
+    {
+      "id": "romeo_2023_supplement",
+      "parent_publication": "romeo_2023_ieee",
+      "doi": "10.5281/zenodo.8042317",
+      "concept_doi_not_file_hash": "10.5281/zenodo.8042316 (concept DOI surfaced by UKRI TAS publication list; do not substitute for version-specific DOI)",
+      "url": "https://zenodo.org/records/8042317",
+      "edition": "Zenodo public record v1, published 28 August 2023; record created 15 June 2023, metadata modified 11 July 2024",
+      "locator": "Description, Files, Details and Technical metadata",
+      "access": "public_repository_metadata_only",
+      "advertised_filename": "ROMAN2023_Ila_Marta.pdf",
+      "advertised_size": "103.3 kB",
+      "advertised_md5": "7137b64efa2e75ab9aec951ca03449fe",
+      "advertised_md5_independently_verified": false,
+      "full_file_read": false,
+      "original_file_bytes_retained": false,
+      "raw_response_hashed": false,
+      "access_proof": "Public Zenodo record shows OS1 affective/cognitive-empathy script and OS2 corn-maze video script description with a single file, size and MD5; neither script text nor audio has been accessed.",
+      "licence_observed": "Zenodo record Rights/License field displays no identified licence in web text; public reading is not a blanket redistribution licence."
+    },
+    {
+      "id": "romeo_2025_acm",
+      "source_ref": "SRC-REL-ROMEO-2025@1",
+      "doi": "10.1145/3711938",
+      "title": "The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction",
+      "edition": "ACM Transactions on Human-Robot Interaction 14(2), Article 33, 22 pages, February 2025 publisher-version layout",
+      "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+      "access": "institutional_publisher_version_pdf_web_extracted_selected_text",
+      "locator": "Printed article p.33:5, §2; §2.1 Pilot Study continuing onto p.33:6; bibliography [61] on p.33:21",
+      "observed": "2025 §2.1 reports a video of Pepper over a corn maze for judging repair strategies; 2025 bibliography [61] cites the distinct 2023 RO-MAN publication. These support a targeted stimulus comparison but not an assertion of identical video, utterance track, participants or experiment.",
+      "paper_licence": "CC BY-NC-SA 4.0 stated in published article header",
+      "full_text_read": false,
+      "original_file_bytes_retained": false,
+      "source_sha256_verified": false,
+      "page_images_verified": false,
+      "audio_files_heard": false
+    }
+  ],
+  "access_attempts": [
+    {
+      "channel": "C8_general_web_search",
+      "query": "\"Putting Robots in Context: Challenging the Influence of Voice and Empathic Behaviour on Trust\" pdf Romeo 2023",
+      "result": "institutional abstract and Zenodo metadata located; no article-body open PDF found",
+      "date_utc": "2026-11-10"
+    },
+    {
+      "channel": "C8_general_web_search",
+      "query": "\"Putting Robots in Context\" \"Zenodo\" Romeo \"OS2\" dataset pdf",
+      "result": "Zenodo version-specific record 8042317 found; file advertised but not parsed",
+      "date_utc": "2026-11-10"
+    },
+    {
+      "channel": "C8_source_navigation",
+      "url": "https://zenodo.org/records/8042317/files/ROMAN2023_Ila_Marta.pdf?download=1",
+      "result": "web click attempted PDF: Unicode decoding error (tool-level), not an HTTP server rejection",
+      "date_utc": "2026-11-10"
+    },
+    {
+      "channel": "C8_source_navigation",
+      "url": "https://zenodo.org/records/8042317/preview/ROMAN2023_Ila_Marta.pdf?include_deleted=0",
+      "result": "preview interface HTML only, no extracted PDF text",
+      "date_utc": "2026-11-10"
+    },
+    {
+      "channel": "C8_direct_binary_download",
+      "url": "https://zenodo.org/records/8042317/files/ROMAN2023_Ila_Marta.pdf?download=1",
+      "result": "download tool failed; no bytes saved, file hash not checked",
+      "date_utc": "2026-11-10"
+    },
+    {
+      "channel": "C8_source_navigation",
+      "url": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+      "result": "2025 PDF text available through web reader; rendered page-image screenshot attempted and received tool HTTP 403, no image verification",
+      "date_utc": "2026-11-10"
+    }
+  ],
+  "existing_discovery_ids": [
+    {
+      "id": "HIT-R004-LK3-VOICE-NATURALNESS-TRUST-02@1",
+      "source": "SRC-REL-ROMEO-2023@1"
+    },
+    {
+      "id": "HIT-R004-G06-07@1",
+      "source": "SRC-REL-ROMEO-2025@1"
+    },
+    {
+      "id": "HIT-R004-LK3-VOICE-REPAIR-TRUST-01@1",
+      "source": "SRC-REL-ROMEO-2025@1"
+    }
+  ],
+  "source_boundary": {
+    "publications_distinct_dois": true,
+    "supplement_is_independent_publication": false,
+    "supplement_is_new_study": false,
+    "stimulus_reuse_proven": false,
+    "participant_overlap_known": false,
+    "independent_sample_admission": false,
+    "accepted_eligibility_decision": false,
+    "canonical_scr_created": 0,
+    "canonical_study_created": 0,
+    "canonical_sample_created": 0,
+    "new_database_search_occurrences": 0,
+    "publisher_database_export_obtained": false
+  },
+  "R006_handoff": "R006 should retain ROMEO-2023 as uncertain E2; verify actual IEEE paper text and downloaded Zenodo scripts before changing its title/abstract/full-text or publication–study–sample record. 2025 §2.1 supports comparison of corn-maze scenarios only. No human screening, confirmed shared stimuli, sound listening or participant-overlap claim.",
+  "Integration_handoff": "Review source/rights scope and GitHub diff; if CI and permissions qualify this additive R005 access checkpoint, merge it without altering R006 state, registry manifests, generated exports or frozen search counts. Coordinate with R006 #6 and the prepared four TA decisions.",
+  "next_gates": [
+    "Obtain lawful original 2023 IEEE manuscript pages 2045–2050 (or authenticated authorized copy) and record exact accessed sections/rights.",
+    "Acquire Zenodo ROMAN2023_Ila_Marta.pdf bytes and verify its advertised MD5 locally; read scripts for OS1/OS2 and compare only actual wording and context with 2025 §2.1 or accessible stimuli.",
+    "Verify 2023 and 2025 participant recruitment/overlap with original Methods before count/adjudication; R006 alone owns E2 and sample decisions.",
+    "When external source access is not possible, preserve this access failure and resume existing EQ1 4,200/9,368 continuation only with genuine C1 response export or ICAD venue gaps with authentic C5 evidence."
+  ]
+}
