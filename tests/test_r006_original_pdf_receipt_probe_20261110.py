@@ -108,3 +108,58 @@ class R006EphemeralOriginalPdfReceiptProbe(unittest.TestCase):
         # Diagnostic verdicts are in the immutable CI log, not inferred from a
         # green structural suite; never fabricate a source or a receipt.
         self.assertTrue(all(row["requested_url"].startswith("https://") for row in rows))
+
+
+    def test_romeo_2023_public_zenodo_v1_supplementary(self):
+        if os.environ.get("GITHUB_ACTIONS") != "true":
+            self.skipTest("CI-only Zenodo record and authorised public file receipt")
+        url = "https://zenodo.org/api/records/8042317"
+        row = {"requested_url": url, "started_utc": utcnow(), "source": "romeo_2023_zenodo_v1"}
+        try:
+            req = request.Request(url, headers={
+                "User-Agent": "MHAC-source-recovery/2026-11-10",
+                "Accept": "application/json"})
+            with request.urlopen(req, timeout=18) as rsp:
+                raw = rsp.read(2000001)
+                row["http_status"] = rsp.status
+                row["http_date"] = rsp.headers.get("Date")
+                row["response_opened_utc"] = utcnow()
+            if len(raw) > 2000000:
+                row["result"] = "BLOCKED: oversized metadata"
+            else:
+                obj = json.loads(raw)
+                files = obj.get("files", [])
+                row.update({"result":"PUBLIC_API_RECEIVED",
+                            "raw_json_sha256": hashlib.sha256(raw).hexdigest(),
+                            "record_id": obj.get("id"), "doi": obj.get("doi"),
+                            "file_count": len(files),
+                            "files": [{"key": f.get("key"), "id": f.get("id"),
+                                       "checksum": f.get("checksum"), "size": f.get("size"),
+                                       "content_url": f.get("links", {}).get("content")}
+                                      for f in files[:8]]})
+                for f in files[:2]:
+                    link = f.get("links", {}).get("content")
+                    a = {"key": f.get("key"), "content_url": link, "started_utc": utcnow()}
+                    if not link or not link.startswith("https://zenodo.org/"):
+                        a["result"] = "BLOCKED: no declared public Zenodo file URL"
+                    else:
+                        try:
+                            with request.urlopen(request.Request(link, headers={
+                                    "User-Agent":"MHAC-source-recovery/2026-11-10"}), timeout=22) as resp:
+                                data = resp.read(MAX_BYTES + 1)
+                                a["status"] = resp.status
+                                a["http_date"] = resp.headers.get("Date")
+                                a["receipt_utc"] = utcnow()
+                            if len(data) > MAX_BYTES:
+                                a["result"] = "BLOCKED: >30 MiB"
+                            else:
+                                a.update({"result":"PUBLIC_FILE_RECEIVED", "bytes":len(data),
+                                          "sha256":hashlib.sha256(data).hexdigest()})
+                        except Exception as e:
+                            a["result"] = "BLOCKED: " + type(e).__name__ + ": " + str(e)[:180]
+                    print("MHAC_R006_ZENODO_FILE_RECEIPT " + json.dumps(a, sort_keys=True), flush=True)
+        except Exception as e:
+            row["result"] = "BLOCKED: " + type(e).__name__ + ": " + str(e)[:180]
+        row["completed_utc"] = utcnow()
+        print("MHAC_R006_ZENODO_RECORD_RECEIPT " + json.dumps(row, sort_keys=True), flush=True)
+        self.assertEqual(row["requested_url"], url)
