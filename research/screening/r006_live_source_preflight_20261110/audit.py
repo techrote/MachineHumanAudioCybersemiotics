@@ -102,11 +102,10 @@ def evaluate(sources, ta, ft, readings, flow):
                     if i["scheme"] == "doi" and i["status"] == "verified"}
         if doi not in verified or source["validity"] != "active":
             raise ValueError("Active source or exact DOI not verified: " + sid)
-        source_pin = {"id": sid, "rev": src_rev["rev"]}
         ta_id = "SCR-R006-" + sid.removeprefix("SRC-") + "-TA"
         ta_rev = record_checked(ta.get(sid), ta_id, "screening")
         t = ta_rev["data"]
-        if (t.get("source_ref") != source_pin or t.get("stage") != "title_abstract"
+        if (t.get("source_ref") != {"id": sid, "rev": 1} or t.get("stage") != "title_abstract"
                 or t.get("track") != "empirical" or t.get("protocol_version") != PROTOCOL
                 or t.get("decision") != TA_EXPECTED[sid]):
             raise ValueError("Title/abstract source pin, protocol or decision drift: " + sid)
@@ -119,12 +118,15 @@ def evaluate(sources, ta, ft, readings, flow):
             f_rev = record_checked(ft[sid], ft_id, "screening")
             f = f_rev["data"]
             decision = f["decision"]
+            pinned = next((r for r in sources[sid]["revisions"]
+                           if r["rev"] == f.get("source_ref", {}).get("rev")), None)
             if (f["stage"] != "full_text" or f.get("track") != "empirical"
-                    or f["protocol_version"] != PROTOCOL or f["source_ref"] != source_pin
-                    or f_rev["at"] < ta_rev["at"]):
+                    or f["protocol_version"] != PROTOCOL
+                    or f["source_ref"].get("id") != sid or pinned is None
+                    or f_rev["at"] < ta_rev["at"] or f_rev["at"] < pinned["at"]):
                 raise ValueError("FT source revision/protocol/chronology drift: " + sid)
             if decision in ("include", "exclude"):
-                verify_reading(sid, src_rev, f["reading_refs"], readings)
+                verify_reading(sid, pinned, f["reading_refs"], readings)
             elif decision not in ("uncertain", "pending", "awaiting_text"):
                 raise ValueError("Unrecognized full-text disposition: " + sid)
         rows[sid] = {
@@ -162,7 +164,7 @@ def evaluate(sources, ta, ft, readings, flow):
         "canonical_eligible_studies": flow["included_studies"],
         "canonical_experiments": flow["experiments"],
         "canonical_samples": flow["samples"],
-        "selected_track_g": sum(generated["full_text"].values()) * 0,
+        "theoretical_full_text_includes": flow["screening_by_track"]["theoretical"]["full_text"]["include"],
         "source_gate_rows": rows,
         "scientific_acceptance": "not_evaluated",
         "note": "Static source/decision/manifest checks; no original PDF hash, reviewer independence or scientific eligibility certified.",
