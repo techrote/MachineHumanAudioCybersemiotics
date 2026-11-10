@@ -1,0 +1,37 @@
+# R005 → R006: Romeo 2023 script-source access boundary (10 November 2026)
+
+**Refs [#5](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/5); downstream [#6](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/6).** This is a dated, **noncanonical source-access checkpoint**, not an IEEE full-paper review, sound-file hearing, screening decision, independent-sample census, completed C1/C4 search or source-file verification. Frozen search cutoff: **4 October 2026**.
+
+## Why this source is the immediate gate
+
+R006 already has two distinct publication identities in the accepted [Romeo-pair audit](../../../registry/identity/romeo_pair_20261110/README.md), and its four-candidate title/abstract proposals are still awaiting canonical screening registration. The critical missing evidence for `SRC-REL-ROMEO-2023@1` is the **actual six-page IEEE paper and the accompanying scripted utterances**, not another tertiary description or a new thematic contrary source.
+
+- **Romeo, Torre, Le Maguer, Cangelosi & Leite (2023)**, *Putting Robots in Context: Challenging the Influence of Voice and Empathic Behaviour on Trust*, IEEE RO-MAN 2023 **pp. 2045–2050**, DOI [10.1109/RO-MAN57019.2023.10309631](https://doi.org/10.1109/RO-MAN57019.2023.10309631). The [institutional repository page](https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/), Abstract and publication metadata, was readable. It describes **two video-based online studies**. This is **abstract-level reading**, not full paper Methods or a participant-overlap check.
+- **Romeo & Torre (2023) supplement**, **version-specific** DOI [10.5281/zenodo.8042317](https://doi.org/10.5281/zenodo.8042317). The publicly accessible [Zenodo record](https://zenodo.org/records/8042317) identifies `ROMAN2023_Ila_Marta.pdf` (advertised 103.3 kB; **repository-listed** MD5 `7137b64efa2e75ab9aec951ca03449fe`). Its description says this one file contains robot utterance scripts for three OS1 excerpts and an OS2 corn-maze navigation video. The file **was not downloaded/read**, and the MD5 **was not independently reproduced**. Do not confuse the separately listed concept DOI `10.5281/zenodo.8042316` with this version DOI or with the research-article DOI. The metadata's Rights field supplies no verified licence in our web text; public access is not permission to redistribute the file.
+- **Romeo et al. (2025)**, *The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction*, *ACM Transactions on Human-Robot Interaction* **14(2), Article 33**, DOI [10.1145/3711938](https://doi.org/10.1145/3711938). The [Heriot-Watt publisher-layout PDF](https://researchportal.hw.ac.uk/files/147098646/3711938.pdf) supplied tool-extracted selected text: **§2.1, printed pp. 33:5–33:6**, describes video-recorded Pepper overlaid on a corn-maze video and prospective repair-strategy judgments; **bibliography [61], p. 33:21**, references the 2023 paper. PDF page-image rendering returned 403, so **no figures, images or original bytes were verified**; no complete reading or effect estimate is claimed. The 2025 article itself states CC BY-NC-SA 4.0.
+
+The 2023 Zenodo metadata and 2025 §2.1 independently mention corn-maze video stimuli, making **stimulus-file comparison an efficient next test**. This is not evidence of identical utterances or recording files, shared recruitment, a conference-to-journal extension, shared participants, or two independent samples. Nor does having two DOI articles imply two eligible Track E studies.
+
+## Access attempts and reproducibility
+
+`OBSERVATIONS.json` preserves exact URLs, two actually executed C8 search queries, date, existing R004 hit IDs, source reading limits, and explicit failed acquisition attempts. The execution generated its ledger at **2026-11-10 08:15:00 UTC**. That is **record assembly**, not a fabricated per-request HTTP timestamp; neither the web interface nor binary acquisition exposed retrievable raw response headers or bytes. Do not use the listed Zenodo MD5 as if it were a locally checked source hash.
+
+Actual attempts: the Zenodo [download URL](https://zenodo.org/records/8042317/files/ROMAN2023_Ila_Marta.pdf?download=1) failed in the web reader with a **tool Unicode decoding error**; the preview exposed controls rather than PDF text; a separate direct binary-download attempt failed. The 2025 source provided selected PDF text, but a PDF-rendering attempt returned 403. These are **tool-access outcomes**, not certified publisher paywall refusals. No source PDF/audio was acquired in this run.
+
+Existing, **not newly harvested**, discovery links:
+
+| R004 hit at revision 1 | Identity |
+|---|---|
+| `HIT-R004-LK3-VOICE-NATURALNESS-TRUST-02` | 2023 RO-MAN |
+| `HIT-R004-G06-07` | 2025 THRI |
+| `HIT-R004-LK3-VOICE-REPAIR-TRUST-01` | 2025 THRI |
+
+The run searched these as C8 web/source navigation; it did **not** execute IEEE Xplore (C4), OpenAlex EQ1 (C1), or any new formal search. Historical **150 search records / 21,483 discovery occurrences** and sorted EQ1 **4,200 / 9,368** are previous checkpoints, not refreshed measurements. R006 canonical admissions change **0 SCR / 0 STUDY / 0 SAMPLE** from this R005 contribution.
+
+## Verification and precise handoff
+
+- **R006:** keep 2023 G01/E2 unsettled until the actual paper and scripts are checked. Distinguish the 2023 OS1 and OS2 procedures, the 2025 online pilot, and the 2025 in-person study without inventing participant independence. Check source amendments/version and eligibility under frozen protocol §§6.2–6.4; only R006 may create canonical decisions and publication→study→sample links.
+- **Integration:** review this new disjoint R005 source-access record and 14 negative tests for fidelity and scope; if exact-head Actions, source review and repository permissions allow, squash merge while retaining R006 canonical/manifest ownership. No generated aggregates, raw R005 history, identity-ledger files or worker branches were altered.
+- **Concrete unavailable-source gate:** retrieve the 2023 IEEE paper (2045–2050) and `ROMAN2023_Ila_Marta.pdf` via lawful authorized channels, record the exact version/section/MD5 verified on original bytes and compare the utterances with genuinely inspected 2025 materials. If they remain unavailable, leave the 2023 full-text eligibility unresolved, and pursue retained C1 EQ1 continuation or unresolved C5 ICAD year-level deposits only when actual query/response evidence is obtainable.
+
+`python -m unittest tests.test_r005_romeo_source_gate_20261110 -v` runs the source-boundary negative controls if the tests package is importable; the repository-wide supported alternative is `python -m unittest discover -s tests -p 'test_r005_romeo_source_gate_20261110.py' -v`. These check **internal truth labels**, not whether the external manuscript and scripts have been read.
