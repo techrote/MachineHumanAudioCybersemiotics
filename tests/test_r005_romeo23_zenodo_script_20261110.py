@@ -37,7 +37,7 @@ def inspect():
     try:
         req = request.Request(URL, headers={
             "User-Agent": "MHAC-R005-script-qualification/2026-11-10",
-            "Accept": "application/pdf", "Accept-Encoding": "identity"})
+            "Accept-Encoding": "identity"})
         with request.urlopen(req, timeout=25) as response:
             row.update({
                 "status": response.status, "final_url": response.url,
