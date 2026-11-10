@@ -137,5 +137,20 @@
     "No direct OpenAlex, ACM, IEEE, SAGE database-query, Crossref or paid-access API results are claimed in this batch.",
     "SAGE served corrected HTML. Original pre-correction article PDF and correction PDF were not downloaded or byte-hashed. No source-version diff was made.",
     "General web search can surface a navigable link but provides no lossless ordered response or reliable result total. Repeated access would be a fresh observation."
+  ],
+  "access_probes": [
+    {
+      "channel": "C1 access-only connectivity attempt; NOT frozen production EQ1",
+      "interface": "web rendered URL-open utility (not direct raw HTTP client)",
+      "url": "https://api.openalex.org/works?search=auditory%20warnings&per-page=1",
+      "attempted_date_utc": "2026-11-10",
+      "outcome": "URL not accessible via this tool",
+      "http_status": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "quota_observation": null,
+      "retrieval_completed": false,
+      "reason": "Tool-mediated URL rejection does not identify server-side API status or remaining quota; query is a connectivity probe, not a frozen search family"
+    }
   ]
 }
