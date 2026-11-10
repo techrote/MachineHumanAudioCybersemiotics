@@ -34,7 +34,9 @@ def verify(packet=None, source_lookup=None):
             raise ValueError("Unknown source revision or invalid source")
         ids = {i["value"].lower() for i in rev["data"]["identifiers"]
                if i["scheme"] == "doi" and i["status"] == "verified"}
-        if case["doi"].lower() not in ids or rev["data"]["title"].strip().casefold() != case["title"].strip().casefold():
+        if (case["doi"].lower() not in ids or
+            " ".join(rev["data"]["title"].split()).casefold().rstrip(".") !=
+            " ".join(case["title"].split()).casefold().rstrip(".")):
             raise ValueError("Source title/DOI mismatch")
         basis = {b["id"] for b in rev["basis"] if b["id"].startswith("HIT-")}
         if not set(case["source_discovery_hit_ids"]).issubset(basis) or not case["source_discovery_hit_ids"]:
