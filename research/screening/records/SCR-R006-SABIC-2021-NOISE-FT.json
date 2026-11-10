@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-SABIC-2021-NOISE-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T17:35:44.912Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-sage-publisher-html-20261110",
+        "model": "GPT-6",
+        "tool": "web.run public original SAGE publisher /doi/ HTML rendered sections; no raw HTML/PDF bytes downloaded"
+      },
+      "basis": [
+        {
+          "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-SABIC-2021-NOISE-TA",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-R006-H-SABIC-UNDERSTANDING",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "Frozen v1 §4 E1–E6/G01 and §6.2–6.4; selected original publisher article sections examined by web intermediary; exact-manifestation/reading qualification remains unresolved",
+        "decision": "pending",
+        "reason": "Original SAGE publisher /doi/ HTML for Šabić, Chen and MacDonald, Human Factors 63(2), 312–335 (issue 2021, online 2019-10-08), DOI 10.1177/0018720819879311, was rendered with visible Experiment 1 and Experiment 2 Methods, Results/Discussion, and Limitations on 2026-11-10. E1: human simulator participants; E2/G01: simulated car-status and hazard audio warnings (battery, braking, blind spot etc.); E3: TTS/spearcons/auditory-icon warning conditions and four background-noise blocks; E4: warning recognition, reaction time, perceived urgency and workload; E5: experimental methods/results present; E6: published before cutoff. Original Methods > Experiment 1 > Participants says 60 volunteers; Experiment 2 > Participants explicitly says 60 NEW participants and its Methods changes the prewarning tone. These are AUTHOR-REPORTED two cohorts within ONE journal publication, not independently verified participant identities and NOT two admitted samples. Paper acknowledges a first-author masters thesis, requiring separate cross-report duplication checks. Important: SAGE publisher page is marked 'Available access', in contrast to the earlier R006 /doi/full 403 route, but web rendering supplies neither original raw HTML/PDF bytes nor a retained hashed source manifestation. Under frozen §10, the tool-rendered text permits a bounded eligibility/overlap preassessment, not promoted decisive full-text inclusion or numerical extraction. E1–E6 appear satisfied provisionally; retain pending until source-custody and source-pinned reading/adjudication. No stimuli/audio heard or human screen performed.",
+        "access_limitation": "Source https://journals.sagepub.com/doi/10.1177/0018720819879311 (original publisher HTML, 'Available access'; separately restricted Nees 2016 page is not this article). Rendered sections: article header/abstract; The Current Study; Experiment 1 > Method > Experiment design, Participants, Stimuli, Procedure; selected Results and Discussion; Experiment 2 > Method > Participants, Apparatus/stimuli/design/procedure, selected Results and General Discussion/Limitations. Observed on 2026-11-10 at decision time; original publisher HTTP Date, raw HTML bytes, SHA-256, publisher PDF, actual file edition and redistribution licence NOT captured. Tool-rendered DOM line positions are not original printed pages. Existing SRC-R006-H-SABIC-UNDERSTANDING@1 remains Crossref-metadata-only with manifestations=[]; no performed manifestation-pinned AID, separate independent human review, numeric extraction, or authentic sample-linkage evidence. Original discovery occurrence HIT-R005R-C1RECOVERY-EQ1-00046. Printed journal citation 2021 differs from first-online 2019-10-08, not a second publication.",
+        "reading_refs": [],
+        "review_refs": []
+      }
+    }
+  ]
+}
