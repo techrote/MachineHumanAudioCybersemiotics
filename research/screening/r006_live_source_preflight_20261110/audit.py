@@ -109,7 +109,8 @@ def evaluate(sources, ta, ft, readings, flow):
                 or t.get("track") != "empirical" or t.get("protocol_version") != PROTOCOL
                 or t.get("decision") != TA_EXPECTED[sid]):
             raise ValueError("Title/abstract source pin, protocol or decision drift: " + sid)
-        if ta_rev.get("actor", {}).get("kind") not in ("agent", "human"):
+        if (ta_rev.get("actor", {}).get("kind") not in ("agent", "human")
+                or not ta_rev.get("actor", {}).get("id") or not ta_rev.get("at")):
             raise ValueError("Missing TA decision actor: " + sid)
         manifests = source.get("manifestations", [])
         decision = "not_recorded"
@@ -120,7 +121,8 @@ def evaluate(sources, ta, ft, readings, flow):
             decision = f["decision"]
             pinned = next((r for r in sources[sid]["revisions"]
                            if r["rev"] == f.get("source_ref", {}).get("rev")), None)
-            if (f["stage"] != "full_text" or f.get("track") != "empirical"
+            if (not f_rev.get("actor", {}).get("id") or not f_rev.get("at")
+                    or f["stage"] != "full_text" or f.get("track") != "empirical"
                     or f["protocol_version"] != PROTOCOL
                     or f["source_ref"].get("id") != sid or pinned is None
                     or f_rev["at"] < ta_rev["at"] or f_rev["at"] < pinned["at"]):
@@ -147,13 +149,40 @@ def evaluate(sources, ta, ft, readings, flow):
                  for k in ("include", "uncertain")}
     actual_ft = {k: sum(x["full_text"] == k for x in rows.values())
                  for k in ("include", "exclude", "awaiting_text", "uncertain", "pending")}
+    # The generated flow is GLOBAL. New legitimate R006 admissions may add
+    # publications, FT decisions, studies and samples beyond these four sources.
+    # Compare per-source decisions to the export's scoped coverage, not to a
+    # frozen global zero-admission checkpoint. Full graph and history validation
+    # (tools/validate.py) remains responsible for cross-record arithmetic.
+    coverage = flow.get("screening_coverage", {}).get("decision_scopes", [])
+    scoped = {}
+    for decision_scope in coverage:
+        if (decision_scope.get("protocol_version") != PROTOCOL
+                or decision_scope.get("track") != "empirical"):
+            continue
+        for source_row in decision_scope.get("sources", []):
+            sid = source_row.get("source_id")
+            if sid not in DOIS:
+                continue
+            if sid in scoped:
+                raise ValueError("STALE_EXPORT: duplicated source in scoped screening flow: " + sid)
+            scoped[sid] = source_row
+    for sid, row in rows.items():
+        if (sid not in scoped
+                or scoped[sid].get("title_abstract") != row["title_abstract"]
+                or scoped[sid].get("full_text") != row["full_text"]):
+            raise ValueError("STALE_EXPORT: per-source screening scope mismatch: " + sid)
+
     generated = flow["screening_by_track"]["empirical"]
-    if (any(actual_ta[k] != generated["title_abstract"][k] for k in actual_ta)
-            or any(actual_ft[k] != generated["full_text"][k] for k in actual_ft)):
-        raise ValueError("STALE_EXPORT: generated screening flow differs from canonical four-candidate records")
-    if any(flow.get(k) != 0 for k in ("included_publications", "included_studies", "experiments", "samples")):
-        # A future legitimate corpus change requires a separately reviewed, updated scoped audit.
-        raise ValueError("Corpus now contains records outside this zero-admission checkpoint; refresh audit")
+    if (any(generated["title_abstract"].get(k, 0) < n for k, n in actual_ta.items())
+            or any(generated["full_text"].get(k, 0) < n for k, n in actual_ft.items())):
+        raise ValueError("STALE_EXPORT: generated totals undercount canonical four-candidate decisions")
+    for k in ("included_publications", "included_studies", "experiments", "samples"):
+        n = flow.get(k)
+        if type(n) is not int or n < 0:
+            raise ValueError("STALE_EXPORT: invalid generated corpus counter: " + k)
+    if flow["included_publications"] < actual_ft["include"]:
+        raise ValueError("STALE_EXPORT: empirical included publications undercount full-text inclusions")
     return {
         "issue": 6,
         "protocol": PROTOCOL,
@@ -167,7 +196,8 @@ def evaluate(sources, ta, ft, readings, flow):
         "theoretical_full_text_includes": flow["screening_by_track"]["theoretical"]["full_text"]["include"],
         "source_gate_rows": rows,
         "scientific_acceptance": "not_evaluated",
-        "note": "Static source/decision/manifest checks; no original PDF hash, reviewer independence or scientific eligibility certified.",
+        "count_scope": "four_source_readonly_preflight; corpus counts transcribed from generated global flow",
+        "note": "Source-specific status checked against generated decision scopes. Global counts require full graph/history validator; no original PDF hash, reviewer independence or scientific eligibility certified.",
     }
 
 
