@@ -81,6 +81,9 @@ class PrivatePdfAttestationTest(unittest.TestCase):
     def test_url_with_credentials_rejected(self):
         self.assertEqual(attest.main(self.arg_changed("rights-url", "https://user:secret@example.org")), 2)
 
+    def test_signed_url_query_token_rejected(self):
+        self.assertEqual(attest.main(self.arg_changed("source-url", "https://example.org/fake.pdf?token=secret")), 2)
+
     def test_hash_tamper_rejected(self):
         self.assertEqual(attest.main(self.argv), 0)
         data = json.loads(self.receipt.read_text())
