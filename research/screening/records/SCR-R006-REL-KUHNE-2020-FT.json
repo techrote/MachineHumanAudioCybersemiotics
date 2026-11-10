@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "id": "SCR-R006-REL-KUHNE-2020-FT",
+  "issue": 6,
+  "kind": "screening",
+  "synthetic": false,
+  "revisions": [
+    {
+      "rev": 1,
+      "at": "2026-11-10T09:06:27Z",
+      "actor": {
+        "kind": "agent",
+        "id": "gpt6-r006-integration-source-review-20261110",
+        "model": "GPT-6",
+        "tool": "Source-level admission verification of existing R006 preliminary eligibility and later intra-agent recheck, web PDF reader and GitHub"
+      },
+      "basis": [
+        {
+          "id": "SRC-REL-KUHNE-2020",
+          "rev": 1
+        },
+        {
+          "id": "SCR-R006-REL-KUHNE-2020-TA",
+          "rev": 1
+        },
+        {
+          "id": "AID-R006-KUHNE-2020-FT-PAGES",
+          "rev": 1
+        }
+      ],
+      "factual_status": "researcher_interpretation",
+      "data": {
+        "source_ref": {
+          "id": "SRC-REL-KUHNE-2020",
+          "rev": 1
+        },
+        "stage": "full_text",
+        "track": "empirical",
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "rule": "E-NOT-MACHINE-MESSAGE; frozen v1 E2 / glossary G01 (all other E criteria not adjudicated as independent study admission)",
+        "decision": "exclude",
+        "reason": "The R006 proposed E2 exclusion and later 05:32 UTC nonblinded AI recheck were independently source-inspected for integration on 10 Nov 2026 using the original publisher's PDF pages 4–5. Materials and Methods identifies 15 decontextualized interview-derived clips (five across Watson, Sophia and human voices); Procedure instructs listeners to rate voice/speaker first impressions, not to receive operational machine/task status or obey system-issued action cues. The seemingly imperative Facebook phrase and robot-persona statements were assessed as contrary cases, but they are quoted interview stimuli rather than current task-action messages. Thus frozen G01/E2 fails for this Track E report; Track G interest in voice affect remains. The original preliminary and later checks were AI, not independent human screening; current registrar is an integration source reviewer, not the original assessor. Revisit if original text or stimuli establish a genuinely task-coupled machine message. No independent sample, experiment, outcomes or numerical finding admitted.",
+        "access_limitation": "Source PDF legally available; only page 1 plus selected original publisher Methods pages 4–5 were read via web PDF text and page images. The complete 15-page report, sound exemplars and original source-file bytes were not read/heard/downloaded by this integrator; inherited R004 SHA-256 not reverified here. This source-located E2 disposition is not a quantitative extraction or a whole-report review.",
+        "reading_refs": [
+          {
+            "id": "AID-R006-KUHNE-2020-FT-PAGES",
+            "rev": 1
+          }
+        ],
+        "review_refs": []
+      }
+    }
+  ]
+}
