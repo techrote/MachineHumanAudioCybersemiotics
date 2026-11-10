@@ -22,9 +22,9 @@
     "title_abstract": {
       "awaiting_text": 0,
       "exclude": 0,
-      "include": 0,
+      "include": 2,
       "pending": 0,
-      "uncertain": 0
+      "uncertain": 2
     }
   },
   "screening_by_track": {
@@ -39,9 +39,9 @@
       "title_abstract": {
         "awaiting_text": 0,
         "exclude": 0,
-        "include": 0,
+        "include": 2,
         "pending": 0,
-        "uncertain": 0
+        "uncertain": 2
       }
     },
     "theoretical": {
@@ -62,7 +62,49 @@
     }
   },
   "screening_coverage": {
-    "decision_scopes": [],
+    "decision_scopes": [
+      {
+        "acceptance": "not_evaluated",
+        "awaiting_text": [],
+        "boundary": "Only the explicitly supplied source scope is counted; retrieval, verification, source fidelity and search completeness are not inferred.",
+        "missing_required_full_text": [
+          "SRC-REL-BECKER-2025",
+          "SRC-REL-KUHNE-2020",
+          "SRC-REL-ROMEO-2023",
+          "SRC-REL-ROMEO-2025"
+        ],
+        "missing_title_abstract": [],
+        "protocol_version": "MHAC-Track-E-frozen-v1-2026-10-13",
+        "source_count": 4,
+        "sources": [
+          {
+            "full_text": "not_recorded",
+            "full_text_required": true,
+            "source_id": "SRC-REL-BECKER-2025",
+            "title_abstract": "include"
+          },
+          {
+            "full_text": "not_recorded",
+            "full_text_required": true,
+            "source_id": "SRC-REL-KUHNE-2020",
+            "title_abstract": "uncertain"
+          },
+          {
+            "full_text": "not_recorded",
+            "full_text_required": true,
+            "source_id": "SRC-REL-ROMEO-2023",
+            "title_abstract": "uncertain"
+          },
+          {
+            "full_text": "not_recorded",
+            "full_text_required": true,
+            "source_id": "SRC-REL-ROMEO-2025",
+            "title_abstract": "include"
+          }
+        ],
+        "track": "empirical"
+      }
+    ],
     "registered_publications_without_screening": [
       "SRC-AUD-MCFARLANE-2020-REVIEW",
       "SRC-AUD-NEES-LIEBMAN-2023-AM",
@@ -237,7 +279,6 @@
       "SRC-REL-BANSAL-2024",
       "SRC-REL-BARBIERI-2008",
       "SRC-REL-BATESON-1972",
-      "SRC-REL-BECKER-2025",
       "SRC-REL-BLATTNER-1989",
       "SRC-REL-BRANDT-1994",
       "SRC-REL-BRENNAN-HULTEEN-1995",
@@ -264,7 +305,6 @@
       "SRC-REL-JEKOSCH-2005",
       "SRC-REL-KOLCHINSKY-WOLPERT-2018",
       "SRC-REL-KOLCHINSKY-WOLPERT-2018-ARXIV",
-      "SRC-REL-KUHNE-2020",
       "SRC-REL-KULL-2009",
       "SRC-REL-LUHMANN-1995",
       "SRC-REL-MATURANA-1988A",
@@ -287,8 +327,6 @@
       "SRC-REL-PEIRCE-W",
       "SRC-REL-PICARD-1997",
       "SRC-REL-PRATES-2000",
-      "SRC-REL-ROMEO-2023",
-      "SRC-REL-ROMEO-2025",
       "SRC-REL-SANZSEGURA-2022",
       "SRC-REL-SANZSEGURA-2024",
       "SRC-REL-SCHEGLOFF-1977",
@@ -458,7 +496,6 @@
       "SRC-REL-BANSAL-2024",
       "SRC-REL-BARBIERI-2008",
       "SRC-REL-BATESON-1972",
-      "SRC-REL-BECKER-2025",
       "SRC-REL-BLATTNER-1989",
       "SRC-REL-BRANDT-1994",
       "SRC-REL-BRENNAN-HULTEEN-1995",
@@ -484,7 +521,6 @@
       "SRC-REL-JEKOSCH-2005",
       "SRC-REL-KOLCHINSKY-WOLPERT-2018",
       "SRC-REL-KOLCHINSKY-WOLPERT-2018-ARXIV",
-      "SRC-REL-KUHNE-2020",
       "SRC-REL-KULL-2009",
       "SRC-REL-LUHMANN-1995",
       "SRC-REL-MATURANA-1988A",
@@ -507,8 +543,6 @@
       "SRC-REL-PEIRCE-W",
       "SRC-REL-PICARD-1997",
       "SRC-REL-PRATES-2000",
-      "SRC-REL-ROMEO-2023",
-      "SRC-REL-ROMEO-2025",
       "SRC-REL-SANZSEGURA-2022",
       "SRC-REL-SANZSEGURA-2024",
       "SRC-REL-SCHEGLOFF-1977",
@@ -529,7 +563,9 @@
     ],
     "scope": "Registered canonical sources and recorded decision scopes; not an empirical eligibility denominator or a completion assertion."
   },
-  "screening_protocols": [],
+  "screening_protocols": [
+    "MHAC-Track-E-frozen-v1-2026-10-13"
+  ],
   "screening_scope": "screening aggregates all tracks for unresolved-stage gates; included_* counts use empirical full-text decisions only.",
   "search_details": [
     {
