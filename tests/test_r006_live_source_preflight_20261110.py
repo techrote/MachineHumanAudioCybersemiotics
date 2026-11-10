@@ -120,8 +120,26 @@ class LiveFourCandidatePreflightTests(unittest.TestCase):
             self.run_gate()
 
     def test_missing_decision_actor_id_rejected(self):
-        self.ta["SRC-REL-BECKER-2025"]["revisions"][-1]["actor"]["id"] = ""
+        # The initial accepted registrar is immutable; test a bad append instead.
+        history = self.ta["SRC-REL-BECKER-2025"]["revisions"]
+        new_revision = copy.deepcopy(history[-1])
+        new_revision["rev"] += 1
+        new_revision["at"] = "2026-11-10T09:45:00Z"
+        new_revision["actor"]["id"] = ""
+        history.append(new_revision)
         with self.assertRaisesRegex(ValueError, "Missing TA decision actor"):
+            self.run_gate()
+
+    def test_original_agent_registrar_cannot_be_relabelled_human(self):
+        initial = self.ta["SRC-REL-BECKER-2025"]["revisions"][0]
+        initial["actor"]["kind"] = "human"
+        with self.assertRaisesRegex(ValueError, "historical registration provenance"):
+            self.run_gate()
+
+    def test_original_agent_registration_timestamp_cannot_be_rewritten(self):
+        initial = self.ta["SRC-REL-BECKER-2025"]["revisions"][0]
+        initial["at"] = "2026-11-10T08:11:17Z"
+        with self.assertRaisesRegex(ValueError, "historical registration provenance"):
             self.run_gate()
 
     def test_original_title_abstract_pin_survives_later_source_revision(self):
