@@ -1,0 +1,119 @@
+{
+  "schema": "mhac-r005-independent-institutional-pdf-render-check/1",
+  "id": "R005-ROMEO25-CHALMERS-RENDER-20261110",
+  "issue": 5,
+  "downstream_issue": 6,
+  "basis_main_sha": "94c4a9d224e5667e57758810adea372176d58396",
+  "frozen_search_cutoff": "2026-10-04",
+  "observation_utc_date": "2026-11-10",
+  "exact_http_response_timestamp_utc": null,
+  "timestamp_limit": "The web PDF reader and screenshot renderer provide no raw response Date header or request receipt time; observation date only. Repository commit time is not the source's HTTP response time.",
+  "observer": {
+    "role": "AI_agent",
+    "model": "GPT-6",
+    "kind": "second_tool_mediated_page_check",
+    "human_second_reader": false,
+    "independent_human_review": false,
+    "empirical_reanalysis": false
+  },
+  "publication": {
+    "source_ref": "SRC-REL-ROMEO-2025@1",
+    "title": "The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction",
+    "doi": "10.1145/3711938",
+    "venue": "ACM Transactions on Human-Robot Interaction",
+    "volume": 14,
+    "issue_number": 2,
+    "article_number": 33,
+    "layout": "Publisher article pagination 33:1–33:22; February 2025 article header; institutional Chalmers PDF has a distinct added cover page.",
+    "institutional_pdf": "https://research.chalmers.se/publication/546010/file/546010_Fulltext.pdf",
+    "institutional_catalogue": "https://research.chalmers.se/en/publication/546010",
+    "earlier_institutional_copy": "https://researchportal.hw.ac.uk/files/147098646/3711938.pdf",
+    "licence_read_from_article": "Creative Commons Attribution-NonCommercial-ShareAlike International 4.0; article p.33:1",
+    "lawful_reading_basis": "The Chalmers University of Technology research repository publicly serves an original ACM publisher-layout article with its own repository wrapper and licence statement; only tool-rendered pages and text inspected, no source bytes redistributed.",
+    "chalmers_wrapper": "PDF page index 0 is a Chalmers institutional cover, which says downloaded from research.chalmers.se 2026-05-18 07:06 UTC; that printed wrapper date is NOT this run's network-response timestamp.",
+    "access_method": "tool_mediated_public_institutional_pdf_text_and_page_images",
+    "readable_pages_reproduced": true,
+    "original_pdf_bytes_retained": false,
+    "original_sha256_verified": false,
+    "source_files_byte_equivalent_proven": false,
+    "full_article_close_read": false,
+    "audio_heard": false,
+    "video_watched": false,
+    "supplements_read": false
+  },
+  "inspected_pages": [
+    {
+      "pdf_page_index_zero_based": 5,
+      "printed_page": "33:5",
+      "section": "§2 Materials and Methods; §2.1 Pilot Study",
+      "observed": "Author says one online video pilot and one in-person study; pilot uses six prerecorded Pepper direction videos over corn-maze video; 50 recruited via Prolific; response asks for preferred repair strategies.",
+      "author_reported_recruited": 50,
+      "activity": "pilot video ratings; not participant action following a live system instruction"
+    },
+    {
+      "pdf_page_index_zero_based": 6,
+      "printed_page": "33:6",
+      "section": "Figure 1; Table 2; §2.2 Maze Study",
+      "observed": "Figure 1 is a physical blue-fabric maze; pilot Table 2 lists repair alternatives; in-person participants at a separate workstation direct Pepper following its spoken left/right options and path advice; do not infer video/stimulus equivalence."
+    },
+    {
+      "pdf_page_index_zero_based": 7,
+      "printed_page": "33:7",
+      "section": "Figure 2 and §2.2 Maze Study",
+      "observed": "Figure 2 shows a physical maze with scripted right/wrong suggestions; Methods describe up to three programmed wrong recommendations followed by spoken justification/promise/denial; validates operational communication in physical condition."
+    },
+    {
+      "pdf_page_index_zero_based": 8,
+      "printed_page": "33:8",
+      "section": "§2.2 Maze Study; §2.3 Robot Voice Generation",
+      "observed": "Author reports 60 recruited in-person; six between-subject cells combining two synthetic voices with three repair strategies, 10 participants per cell; not a separate sample count for each cell.",
+      "author_reported_recruited": 60
+    },
+    {
+      "pdf_page_index_zero_based": 9,
+      "printed_page": "33:9",
+      "section": "Table 3; §2.4 Wizard-of-Oz Implementation",
+      "observed": "Table 3 reports differing acoustic voice features; visual page confirms no pure voice-human-likeness-only manipulation; investigator teleoperated Pepper rather than autonomous navigation."
+    },
+    {
+      "pdf_page_index_zero_based": 10,
+      "printed_page": "33:10",
+      "section": "Figure 3; §2.4 Wizard-of-Oz Implementation and start §3",
+      "observed": "Participant wore headphones at workstation, read subtitles, saw timer/battery display and made directional decisions by keyboard; .mp3 custom TTS or built-in Pepper voice was controlled by the wizard."
+    }
+  ],
+  "existing_discovery_links": [
+    "HIT-R004-G06-07@1",
+    "HIT-R004-LK3-VOICE-REPAIR-TRUST-01@1"
+  ],
+  "prior_r005_method_record": "research/sources/auditory/romeo2025-methods-2026-11-10/OBSERVATIONS.json",
+  "comparison_2023": {
+    "source_ref": "SRC-REL-ROMEO-2023@1",
+    "doi": "10.1109/ro-man57019.2023.10309631",
+    "supplement_version_doi": "10.5281/zenodo.8042317",
+    "concept_doi": "10.5281/zenodo.8042316",
+    "supplement_file": "ROMAN2023_Ila_Marta.pdf",
+    "advertised_md5": "7137b64efa2e75ab9aec951ca03449fe",
+    "advertised_md5_computed": false,
+    "source_full_text_read": false,
+    "supplement_file_read": false,
+    "retrieval_observation": "Current direct web click of public Zenodo file produced Unicode decoding error in the text reader; preview exposed controls only; separate file downloader failed. This does not prove HTTP paywall or server refusal.",
+    "eligibility_and_overlap": "2023 article and scripts remain unread; 2025 online video pilot must not be equated with 2023 OS1/OS2 experiments or participant samples."
+  },
+  "negative_claims": {
+    "new_R005_search_run": false,
+    "new_R005_hit": false,
+    "publisher_database_export": false,
+    "new_canonical_source_manifestation": false,
+    "new_canonical_screening_decision": false,
+    "independent_sample_admission": false,
+    "eligible_track_E_admission": false,
+    "selection_frozen": false,
+    "raw_response_hash_verified": false
+  },
+  "handoff": {
+    "R006": "Use Chalmers source URL and publisher article page indices 33:5–10 to register a truthful manifestation/reading if requirements permit; evaluate in-person E1–E6 separately from online opinion pilot. Retain distinct DOI/2023 OS1/OS2 and unknown participant overlap; do not count a sample from 6 cells or 2 papers. R006 exclusively owns eligibility and publication→study→experiment→sample decisions.",
+    "Integration": "Independently source-check public Chalmers PDF visuals and rights, review R005-only scope/tests/CI, then merge guarded. Do not rewrite earlier R005 first-pass access history, R006 source or screening records, or integrator exports.",
+    "outstanding": "2023 IEEE full paper and Zenodo script original bytes remain unverified; Chalmers source PDF original-byte hash and audio/video stimulus files remain unverified."
+  }
+}
