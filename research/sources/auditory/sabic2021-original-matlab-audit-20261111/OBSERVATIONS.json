@@ -1,0 +1,76 @@
+{
+  "schema": "mhac-r005-original-stimulus-processing-code-audit/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "frozen_publication_cutoff": "2026-10-04",
+  "accepted_base_sha": "2409361a17a84bcaec3caa4d7be3c70077ceb14c",
+  "observation_date_utc": "2026-11-11",
+  "inspection_clock_checkpoint_utc": "2026-11-11T12:17:30Z",
+  "inspection_clock_is_original_http_date": false,
+  "actor": {
+    "kind": "agent",
+    "model": "GPT-6",
+    "method": "AI-assisted public GitHub code inspection and publisher HTML reading; no original article bytes or audio"
+  },
+  "publication": {
+    "doi": "10.1177/0018720819879311",
+    "edition": "Human Factors 63(2), 312–335 (2021); first online 2019-10-08",
+    "publisher_original_url": "https://journals.sagepub.com/doi/10.1177/0018720819879311",
+    "publisher_reading_boundary": "The Current Study; Experiment 1 > Method > Stimuli, HTML lines 103–126; Experiment 2 > Method > Apparatus/stimuli lines 287–292; author repository pointer at line 126",
+    "source_id": "SRC-R006-H-SABIC-UNDERSTANDING@1",
+    "discovery_hit_id": "HIT-R005R-C1RECOVERY-EQ1-00046@1"
+  },
+  "author_code": {
+    "repository": "Edin-Sabic/Human-Factors-2019",
+    "commit_sha": "e5f8bf29ad225fa15d8969db40ce2b03b4295821",
+    "path": "RMS Standardization",
+    "git_blob_sha1": "3ff7a5d2da362cc2d3d332432c9d41b3606b628e",
+    "pinned_source_url": "https://github.com/Edin-Sabic/Human-Factors-2019/blob/e5f8bf29ad225fa15d8969db40ce2b03b4295821/RMS%20Standardization",
+    "readme_url": "https://github.com/Edin-Sabic/Human-Factors-2019/blob/e5f8bf29ad225fa15d8969db40ce2b03b4295821/README.md",
+    "repository_license_status": "No repository licence declared in public GitHub metadata; no code redistribution authorization inferred",
+    "lines": {
+      "first_pass_loop": "8–26",
+      "first_pass_hardcoded_read": 13,
+      "first_pass_peak_calculation": 23,
+      "global_peak": 29,
+      "second_pass_indexed_read": 35,
+      "second_pass_gain_and_write": "38–45"
+    },
+    "inspected_file_extent": "Complete 47 nonempty-or-empty lines of original MATLAB code through GitHub text API; no waveform files provided or inspected; Git blob SHA-1 is Git object identity, not an independently computed HTTP response SHA-256"
+  },
+  "finding": {
+    "type": "source_code_internal_inconsistency_not_empirical_finding",
+    "observed": "In first pass within loop over wave_number=1:29, the indexed read expression is fixed to 1.wav, whereas the second pass does use wave_number.wav. Consequently every first-pass peak is derived from 1.wav, not each separate WAV, and max_sample does not in general bound every processed file's normalized peak.",
+    "synthetic_counterexample": "File 1 has samples [1,-1] (RMS 1, crest factor 1). File 2 has [1,0,0,0] (RMS 0.5, crest factor 2). The written first-pass global scale is 1, so the computed second-pass file-2 peak is 2, above unity. This is a mathematical synthetic illustration, not a measurement of the authors' stimuli or MATLAB output behavior.",
+    "potential_consequence": "If a real other input has larger normalized peaks than 1.wav, the intended per-file/global peak bound cannot be guaranteed by this released script; output writer behavior, actual stimulus distortion and its effect on participants remain unverified.",
+    "source_code_executed_for_study": "unknown",
+    "original_audio_bytes_available": false,
+    "original_audio_played": false,
+    "published_results_recomputed": false,
+    "scientific_eligibility_decided": false,
+    "independent_human_review": false,
+    "rights_approval_granted": false
+  },
+  "handoff": {
+    "r006": "For the existing Šabić 2021 FT pending case, distinguish one publisher article and its two author-described experiments from its separate author-linked preprocessing code; do not add studies/samples. Inspect original audio and source/version chain if lawful access arises. This finding raises a stimulus implementation-fidelity question and is NOT sufficient to include/exclude under E1–E6.",
+    "integration": "Review source-pinned line 13 against line 35 and the paper's HTML Stimuli paragraph, check synthetic negative control, avoid copying third-party MATLAB source into MHAC, and merge only after exact-head CI; no R006 or shared exports change.",
+    "owner_gate": "Stevens 2009 owner-approved private retention directory and actual actor/UTC rights/attribution authorization still not recorded; no private original capture performed."
+  },
+  "canonical_r006_checkpoint": {
+    "title_abstract": 9,
+    "full_text_pending": 5,
+    "awaiting_text": 3,
+    "full_text_exclude": 1,
+    "full_text_include": 0,
+    "admitted_publications": 0,
+    "admitted_studies": 0,
+    "admitted_experiments": 0,
+    "admitted_samples": 0,
+    "delta": 0
+  },
+  "provenance_limits": [
+    "Exact Git commit/blob are source identity pins; no origin-server raw response capture, GitHub response headers, or SHA-256 is claimed",
+    "The publisher article is readable as rendered HTML without attesting original HTML response bytes",
+    "The third-party source repository is read-only; no local code/waveform copies are committed"
+  ]
+}
