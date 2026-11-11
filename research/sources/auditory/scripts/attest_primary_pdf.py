@@ -90,6 +90,44 @@ def verify(path, receipt):
     data = json.loads(Path(receipt).read_text(encoding="utf-8"))
     if data.get("schema") != SCHEMA or data.get("status") != "operator_attested_local_pdf_bytes_not_canonical_screening":
         raise ValueError("Wrong or promoted receipt schema")
+    # The receipt is a byte hash and operator statement, not a scientific or
+    # rights gate. A matching PDF must never validate an altered admission flag.
+    fixed = {
+        "issue": 5, "downstream_issue": 6, "frozen_cutoff": "2026-10-04",
+        "original_pdf_retained_in_manifest": False,
+        "verified_licence_or_source_URL": False,
+        "human_reviewer_claimed": False,
+        "original_audio_inspected": False,
+        "admitted_studies_experiments_samples": [0, 0, 0],
+    }
+    for key, expected in fixed.items():
+        actual = data.get(key)
+        if (type(actual) is not type(expected) or actual != expected
+                or (isinstance(expected, list) and
+                    any(type(item) is not int for item in actual))):
+            raise ValueError("Receipt research-state/identity guard failed: " + key)
+    if not isinstance(data.get("publication_doi"), str) or not re.fullmatch(
+            r"10\.\d{4,9}/\S+", data["publication_doi"], flags=re.I):
+        raise ValueError("Invalid operator-reported DOI")
+    for key in ("original_source_url", "rights_evidence_url"):
+        if not isinstance(data.get(key), str):
+            raise ValueError("Missing operator-reported URL: " + key)
+        require_url(data[key], key)
+    for key in ("edition_manifestation", "attester_operator_reported",
+                "access_proof_operator_reported", "rights_limit_operator_reported",
+                "source_reading_boundary_operator_reported"):
+        if not isinstance(data.get(key), str) or not data[key].strip():
+            raise ValueError("Missing operator-reported provenance: " + key)
+    for key in ("acquisition_utc_operator_reported", "attestation_utc"):
+        if not isinstance(data.get(key), str):
+            raise ValueError("Missing receipt timestamp: " + key)
+        parsed = parse_utc(data[key])
+        if parsed.isoformat().replace("+00:00", "Z") != data[key]:
+            raise ValueError("Receipt timestamp is not canonical UTC: " + key)
+        if parsed > datetime.now(timezone.utc):
+            raise ValueError("Receipt timestamp is in the future: " + key)
+    if parse_utc(data["acquisition_utc_operator_reported"]) > parse_utc(data["attestation_utc"]):
+        raise ValueError("Operator-reported acquisition postdates attestation")
     if not re.fullmatch(r"[0-9a-f]{64}", str(data.get("original_pdf_sha256", ""))):
         raise ValueError("Missing original PDF SHA256")
     digest, size = hash_pdf(path)
