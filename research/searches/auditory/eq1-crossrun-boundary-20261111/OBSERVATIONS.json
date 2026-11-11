@@ -1,0 +1,125 @@
+{
+  "schema": "mhac-r005-eq1-crossrun-boundary/1",
+  "issue": 5,
+  "analysis_date_utc": "2026-11-11",
+  "analysis_type": "offline recomputation from previously accepted manifests; no new HTTP request",
+  "actor": "GPT-6 R005 model-assisted technical provenance reconciliation; no human reviewer",
+  "accepted_base": "0fcdafff6e810c60acc7630c48ef2cd12d51b7d4",
+  "source_pins": [
+    {
+      "path": "research/searches/auditory/eq1-boundary-2026-11-10/OBSERVATIONS.json",
+      "git_blob_sha1": "443d3702bda94cb4fcd0cbfeda8b92354ec8b381",
+      "pages": [
+        42,
+        43
+      ],
+      "acquired_utc": "2026-11-10T13:11:32Z onward; exact per-page timestamps in source"
+    },
+    {
+      "path": "research/searches/auditory/eq1-pages44-47-20261111/OBSERVATIONS.json",
+      "git_blob_sha1": "b61a018a7ec8888811e918611e55ebd584bb8fdf",
+      "pages": [
+        44
+      ],
+      "acquired_utc": "2026-11-11T00:15:58.579+00:00",
+      "original_http_response_sha256": "24e4a8c62087b489ea9e038c8ca22cfa8d8b07ba93e0152c9d8ec19114d4103b",
+      "raw_response_gzip_sha256": "f2ff10b0ca8702180a9412bbe92f57945b90d16a6c3b288f1d8a437f128ee869",
+      "acquisition_job_url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42929964491/job/130225913549"
+    }
+  ],
+  "query_relation": "same EQ1 title_and_abstract.search filter, cutoff 2026-10-04, page_size=100 and sort=publication_date:asc,display_name:asc; later select restricts output fields only",
+  "crossrun_observations": {
+    "page42_source_count": 9275,
+    "page43_source_count": 9275,
+    "page44_source_count": 9280,
+    "page42_entries": 100,
+    "page43_entries": 100,
+    "page44_entries": 100,
+    "page42_vs_page44_shared_ids": [],
+    "page43_vs_page44_shared_ids": [
+      "https://openalex.org/W2581950186",
+      "https://openalex.org/W2624710547",
+      "https://openalex.org/W2585898071",
+      "https://openalex.org/W2585599366",
+      "https://openalex.org/W2743773571",
+      "https://openalex.org/W2804227035",
+      "https://openalex.org/W2586474848",
+      "https://openalex.org/W2588771879"
+    ],
+    "page43_suffix_equals_page44_prefix": true,
+    "duplicated_boundary_entries": [
+      {
+        "openalex_id": "https://openalex.org/W2581950186",
+        "previous_page43_ordinal": 93,
+        "new_page44_ordinal": 1,
+        "previous_page43_publication_date": "2017-01-27"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2624710547",
+        "previous_page43_ordinal": 94,
+        "new_page44_ordinal": 2,
+        "previous_page43_publication_date": "2017-02-01"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2585898071",
+        "previous_page43_ordinal": 95,
+        "new_page44_ordinal": 3,
+        "previous_page43_publication_date": "2017-02-01"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2585599366",
+        "previous_page43_ordinal": 96,
+        "new_page44_ordinal": 4,
+        "previous_page43_publication_date": "2017-02-02"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2743773571",
+        "previous_page43_ordinal": 97,
+        "new_page44_ordinal": 5,
+        "previous_page43_publication_date": "2017-02-08"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2804227035",
+        "previous_page43_ordinal": 98,
+        "new_page44_ordinal": 6,
+        "previous_page43_publication_date": "2017-02-09"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2586474848",
+        "previous_page43_ordinal": 99,
+        "new_page44_ordinal": 7,
+        "previous_page43_publication_date": "2017-02-09"
+      },
+      {
+        "openalex_id": "https://openalex.org/W2588771879",
+        "previous_page43_ordinal": 100,
+        "new_page44_ordinal": 8,
+        "previous_page43_publication_date": "2017-02-13"
+      }
+    ],
+    "page44_not_on_pages42_or43_count": 92
+  },
+  "failed_request": {
+    "page": 45,
+    "http_status": 429,
+    "request_started_utc": "2026-11-11T00:16:01.308+00:00",
+    "pages46_47_not_attempted": true
+  },
+  "claim_boundary_contiguous": false,
+  "claim_completed_eq1": false,
+  "claim_92_new_publications": false,
+  "new_source_readings": 0,
+  "new_title_abstract_screening_decisions": 0,
+  "new_admitted_publications_studies_experiments_samples": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "interpretation": "Eight exact OpenAlex work IDs occupy page43 positions 93–100 in the 10 Nov invocation and page44 positions 1–8 in the 11 Nov invocation. This proves naive cross-invocation page concatenation would double-count at least eight occurrences; it does not identify the underlying index-change cause or establish the unique contribution of the remaining 92 against earlier pages. The service count changed 9,275 to 9,280; page45 was rate-limited.",
+  "handoff": {
+    "R006": "No eligibility, duplicate-publication, experiment or sample adjudication from these metadata-only work IDs.",
+    "Integration": "Do not register page44 as a contiguous canonical EQ1 continuation; consider a distinct partial-invocation record only with transparent overlap/unknown earlier overlap. Shared generated records remain unchanged.",
+    "R005": "After legitimate quota recovery, verify an adjacent-page boundary in a single provider snapshot before claiming coverage; preserve earlier immutable invocations. Primary-source custody for Stevens/Becker/Romeo remains the higher-level scientific gate."
+  }
+}
