@@ -16,7 +16,7 @@ import urllib.request
 
 URL = "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf"
 DOI = "10.1145/3706066"
-MAX_BYTES = 5_000_000
+MAX_BYTES = 12_000_000
 
 
 class PrimaryBeckerAcquisitionProbe(unittest.TestCase):
