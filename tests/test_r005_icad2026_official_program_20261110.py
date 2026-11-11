@@ -59,6 +59,7 @@ def guard(d):
     assert d["integration_review_20261111"]["session_counts_reconfirmed"] == [6, 6, 6, 6, 5]
     assert d["integration_review_20261111"]["independent_human_assessor"] is False
     assert canonical["full_text_included"] == 0
+    assert canonical["full_text_pending"] == 2 and canonical["full_text_missing"] == 0
     assert canonical["original_romeo_2023_access_changed"] is False
     assert "R006" in d["handoff"] and "Integration" in d["handoff"]
     return True
