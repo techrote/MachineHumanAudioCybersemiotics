@@ -31,12 +31,14 @@ ORIGINAL = b"""<?xml version="1.0" encoding="UTF-8"?>
 class FakeResponse:
     status = 200
     def __init__(self, raw=ORIGINAL, *, status=200, url=mod.URL,
-                 content_type="application/xml", length=None):
+                 content_type="application/xml", length=None, http_date=None):
         self.raw = raw
         self.status = status
         self.url = url
         self.headers = {"Content-Type": content_type,
-                        "Date": "Tue, 10 Nov 2026 20:15:00 GMT",
+                        "Date": (http_date if http_date is not None
+                                 else datetime.now(timezone.utc).strftime(
+                                     "%a, %d %b %Y %H:%M:%S GMT")),
                         "Content-Length": str(len(raw) if length is None else length)}
     def __enter__(self):
         return self
@@ -139,6 +141,9 @@ class PrivateCaptureTests(unittest.TestCase):
             FakeResponse(status=403),
             FakeResponse(url="https://attacker.example/article.xml"),
             FakeResponse(content_type="text/html"),
+            FakeResponse(http_date="not-a-date"),
+            FakeResponse(http_date="Mon, 01 Jan 2000 00:00:00 GMT"),
+            FakeResponse(http_date="Sat, 01 Jan 2000 00:00:00 GMT"),
             FakeResponse(length=len(ORIGINAL)+1),
             FakeResponse(raw=ORIGINAL + b"x" * (mod.MAX_BODY+1)),
         ]
@@ -163,6 +168,36 @@ class PrivateCaptureTests(unittest.TestCase):
         self.receipt_path().unlink()
         (self.private / mod.XML_NAME).unlink()
         self.fetch()
+
+    def test_network_header_receipt_mutations_fail_closed(self):
+        self.fetch()
+        malformed = [
+            ("http_date_header", "not-a-date"),
+            ("http_date_header", "Mon, 01 Jan 2000 00:00:00 GMT"),
+            ("http_date_header", "Sat, 01 Jan 2000 00:00:00 GMT"),
+            ("content_type_header", "text/html"),
+            ("content_type_header", ""),
+            ("content_type_header", None),
+        ]
+        for field, value in malformed:
+            with self.subTest(field=field, value=value):
+                self.change_receipt(lambda r: r["network_original_response"].update(
+                    {field: value}))
+                with self.assertRaises(ValueError):
+                    mod.verify(self.private, self.approval)
+                self.fetch_receipt_reset()
+
+    def test_source_headers_and_utc_chronology_round_trip(self):
+        self.fetch()
+        receipt = json.loads(self.receipt_path().read_text())
+        response = receipt["network_original_response"]
+        self.assertEqual(response["content_type_header"], "application/xml")
+        self.assertTrue(mod.verify(self.private, self.approval)
+                        ["source_and_operator_note_fingerprints_checked"])
+        self.change_receipt(lambda r: r["network_original_response"].update(
+            http_date_header="Fri, 01 Jan 1999 00:00:00 GMT"))
+        with self.assertRaisesRegex(ValueError, "inconsistent"):
+            mod.verify(self.private, self.approval)
 
     def test_rights_note_change_invalidates_stored_receipt(self):
         self.fetch()
