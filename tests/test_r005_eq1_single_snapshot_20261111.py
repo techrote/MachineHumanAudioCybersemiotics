@@ -96,6 +96,67 @@ class Eq1SingleSnapshot(unittest.TestCase):
         with self.assertRaises(AssertionError):
             evaluate(45, clean)
 
+
+    def test_original_response_replay_sha_and_adjacent_identity(self):
+        manifest = ROOT / "research/searches/auditory/eq1-single-snapshot-20261111/OBSERVATIONS.json"
+        attempt = manifest.parent / "ATTEMPTED.json"
+        report = json.loads(manifest.read_text(encoding="utf-8"))
+        guard = json.loads(attempt.read_text(encoding="utf-8"))
+        self.assertEqual(report["schema"], "mhac-r005-eq1-same-invocation/1")
+        self.assertEqual(report["frozen_cutoff"], CUTOFF)
+        self.assertEqual(report["acquisition_run_id"], 42971784143)
+        self.assertEqual(report["acquisition_job_id"], 130361702053)
+        self.assertEqual(guard["attempted_pages"], [44, 45])
+        self.assertFalse(guard["next_live_probe_permitted_on_this_branch"])
+        self.assertFalse(report["eq1_search_complete"])
+        self.assertFalse(report["new_canonical_search_hit_registration"])
+        self.assertFalse(report["adjacency"]["broader_prefix_contiguity_verified"])
+        self.assertEqual(report["new_screening_decisions"], 0)
+        self.assertEqual(report["admitted_publications_studies_experiments_samples"], [0, 0, 0, 0])
+        self.assertFalse(report["independent_human_review"])
+        self.assertTrue(report["original_response_bytes_retained_as_gzip"])
+        self.assertEqual([x["page"] for x in report["pages"]], [44, 45])
+        replay = []
+        for actual_page, record in zip((44, 45), report["pages"]):
+            self.assertEqual(record["url"], source_urls()[actual_page - 44])
+            self.assertEqual(record["http_status"], 200)
+            self.assertEqual(record["frozen_cutoff"], CUTOFF)
+            path = manifest.parent / record["file"]
+            self.assertEqual(path.name, f"page-{actual_page}.json.gz")
+            packed = path.read_bytes()
+            self.assertEqual(len(packed), record["gzip_bytes"])
+            self.assertEqual(hashlib.sha256(packed).hexdigest(), record["gzip_sha256"])
+            raw = gzip.decompress(packed)
+            self.assertEqual(len(raw), record["raw_bytes"])
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), record["raw_sha256"])
+            count, ids = evaluate(actual_page, raw)
+            self.assertEqual(count, record["count"])
+            self.assertEqual(ids, record["ids"])
+            self.assertEqual(len(ids), 100)
+            replay.append({"page": actual_page, "count": count, "ids": ids})
+        measured = adjacent(*replay)
+        self.assertEqual(measured["adjacent_page_duplicates"], 0)
+        self.assertEqual(measured["same_invocation_count"], 9280)
+        self.assertEqual(report["adjacency"]["provider_reported_count"], 9280)
+        self.assertEqual(report["adjacency"]["shared_work_ids"], [])
+
+    def test_bad_original_body_and_unjustified_contiguity_fail_closed(self):
+        manifest = ROOT / "research/searches/auditory/eq1-single-snapshot-20261111/OBSERVATIONS.json"
+        report = json.loads(manifest.read_text(encoding="utf-8"))
+        record = report["pages"][0]
+        packed = (manifest.parent / record["file"]).read_bytes()
+        self.assertNotEqual(hashlib.sha256(packed + b"tamper").hexdigest(), record["gzip_sha256"])
+        raw = gzip.decompress(packed)
+        changed = raw + b" "
+        self.assertNotEqual(hashlib.sha256(changed).hexdigest(), record["raw_sha256"])
+        self.assertFalse(report["adjacency"]["broader_prefix_contiguity_verified"])
+        self.assertFalse(report["eq1_search_complete"])
+        fake = {"page": 45, "count": report["pages"][1]["count"],
+                "ids": report["pages"][0]["ids"][:]}
+        with self.assertRaisesRegex(AssertionError, "duplicated"):
+            adjacent({"page":44, "count":report["pages"][0]["count"],
+                      "ids":report["pages"][0]["ids"]}, fake)
+
     def test_one_bounded_real_source_acquisition(self):
         if (os.environ.get("GITHUB_ACTIONS") != "true"
                 or os.environ.get("GITHUB_EVENT_NAME") != "pull_request"
