@@ -1,0 +1,19 @@
+# R005 EQ1 bounded post-boundary evidence — 11 November 2026
+
+**Refs #5; handoff to R006 #6 and Integration.** Frozen protocol v1 EQ1, literature cutoff **2026-10-04**, OpenAlex C1 public unauthenticated REST. This is actual original HTTP response evidence, **not** a complete production run or a selected research corpus. Original R005 channel work and the existing R006 nine-screen ledger are unmodified.
+
+## Exact acquisition
+
+Source: accepted `research/searches/auditory/eq1-boundary-2026-11-10/OBSERVATIONS.json` page-42 URL (the full frozen EQ1 Boolean filter and date sort retained). Changed *only* page number and response `select` fields to `id,doi,display_name,publication_date,publication_year,type,language`; search semantics, cutoff, page size and sort remain unchanged. Queries, HTTP timestamps, headers, SHA-256, ordered IDs and source-boundary flags appear in [OBSERVATIONS.json](OBSERVATIONS.json).
+
+On 2026-11-11, GitHub Actions [job #130225913549](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42929964491/job/130225913549) made actual HTTP requests through public OpenAlex. **Page 44** yielded HTTP 200, 100 results and 100 unique IDs *within this page*, original response 39478 bytes / SHA-256 `24e4a8c62087b489ea9e038c8ca22cfa8d8b07ba93e0152c9d8ec19114d4103b`, gzip 8440 bytes / SHA-256 `f2ff10b0ca8702180a9412bbe92f57945b90d16a6c3b288f1d8a437f128ee869`, and provider reported a changed total of **9280**. Actual response bytes are retained as deterministic `page-44.json.gz`, transferred in logs using base64 chunks. `python3 -m unittest discover -s tests -p 'test_r005_eq1_pages44_47_20261111.py' -v` replays the original response offline, checks the SHA, byte sizes, page identity, field cutoff, result ordering and exact 100 IDs. Unlike earlier ephemeral web observations, these response bytes are now retained.
+
+**Page 45** returned HTTP **429 Too Many Requests** at 2026-11-11T00:16:01.308+00:00. Stop at the observed refusal; no key, paid account or request bypass was used. Pages 46–47 were not attempted. The 10 November earlier page-42/43 checkpoint reported 9,275 results, versus 9,280 in the new response; count/order drift and overlap are **not reconciled**. The retrieved 100 IDs must **not** be added as 100 new independent works, deemed a contiguous prefix, or counted as accepted search hits/studies. Although the original page has source metadata, it contains no article full text, audio or abstract due to the deliberate response `select`. Article source and full-text rights remain separate.
+
+## Handoff
+
+- **R006**: this is unscreened C1 metadata and an ordered discovery page, not a scientific decision. Only R006 may deduplicate occurrences into publications, distinguish actual experiments/cohorts from recurring papers, and perform E1–E6 screening. Canonical admitted Track E/G remains zero in accepted baseline, pending current live recheck.
+- **Integration**: independently inspect original response SHA via the retained gzip, read request headers in the linked Actions job, review the 429 and cross-invocation count drift, and decide whether to register a *partial* canonical search run and search-hit records in a separately guarded Integration step. Do not regenerate shared indexes or overwrite existing C1 invocations from this author branch.
+- **Next R005**: after quota legitimately recovers, continue from a freshly reconciled boundary (verify adjacent pages and monotonic ordering); do not retry a refused page in a loop. Higher-priority R006 original-file custody for Stevens/Becker/Romeo remains outstanding; do not misidentify this as progress toward that custody gate.
+
+This is a bounded immutable response artifact and offline checker; full repository validation and exact-final-head CI are still required after this new commit. No human assessor, original manuscript reading, numerical result or independent sample is claimed.
