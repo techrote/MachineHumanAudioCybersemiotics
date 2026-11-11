@@ -32,7 +32,7 @@ import hashlib
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -96,6 +96,35 @@ def write_exclusive(path: Path, raw: bytes) -> None:
         raise
 
 
+def check_original_http_headers(http_date: str, content_type: str,
+                                requested_utc: str, received_utc: str) -> None:
+    """Syntax and clock-consistency checks only; NOT server authentication.
+
+    Require the RFC 7231 preferred IMF-fixdate shape, including its weekday.
+    A five-minute tolerance allows ordinary network/server clock skew but
+    rejects dates unrelated to the observed request/receipt interval.
+    """
+    if not isinstance(http_date, str):
+        raise ValueError("Original response HTTP Date missing or malformed")
+    try:
+        parsed = datetime.strptime(http_date, "%a, %d %b %Y %H:%M:%S GMT")
+    except ValueError as exc:
+        raise ValueError("Original response HTTP Date is not IMF-fixdate") from exc
+    if parsed.strftime("%a, %d %b %Y %H:%M:%S GMT") != http_date:
+        raise ValueError("Original response HTTP Date weekday or canonical form differs")
+    if not isinstance(content_type, str) or (content_type.lower().split(";")[0].strip()
+            not in ("application/xml", "text/xml", "application/jats+xml")):
+        raise ValueError("Original response Content-Type is not JATS/XML")
+    started = datetime.fromisoformat(
+        xml_attester.require_utc(requested_utc).replace("Z", "+00:00"))
+    ended = datetime.fromisoformat(
+        xml_attester.require_utc(received_utc).replace("Z", "+00:00"))
+    server = parsed.replace(tzinfo=timezone.utc)
+    if (started > ended or server < started - timedelta(minutes=5)
+            or server > ended + timedelta(minutes=5)):
+        raise ValueError("Original response HTTP Date is inconsistent with UTC acquisition")
+
+
 def capture(directory: Path, approval: Path, operator: str, opener=urlopen) -> dict:
     directory = checked_dir(directory)
     rights, rights_sha = approval_record(approval, directory)
@@ -118,11 +147,7 @@ def capture(directory: Path, approval: Path, operator: str, opener=urlopen) -> d
     received = utc_now()
     if status != 200 or effective_url != URL:
         raise ValueError("Original Europe PMC source refused or redirected elsewhere")
-    if not (content_type.lower().split(";")[0].strip() in
-            ("application/xml", "text/xml", "application/jats+xml")):
-        raise ValueError("Unexpected original-source content type")
-    if http_date is None:
-        raise ValueError("No response HTTP Date: capture is not provenance-complete")
+    check_original_http_headers(http_date, content_type, request_start, received)
     if len(raw) > MAX_BODY or (declared_length is not None and
                                int(declared_length) != len(raw)):
         raise ValueError("Original XML truncated or exceeds bounded source size")
@@ -198,10 +223,10 @@ def verify(directory: Path, approval: Path) -> dict:
             or (n.get("content_length_header") is not None and
                 n["content_length_header"] != v["verified_bytes"])):
         raise ValueError("Original response receipt does not match retained source")
-    if not isinstance(n.get("http_date_header"), str) or not n["http_date_header"].strip():
-        raise ValueError("Original response HTTP date is missing")
     started = xml_attester.require_utc(n.get("request_start_utc", ""))
     ended = xml_attester.require_utc(n.get("received_utc", ""))
+    check_original_http_headers(
+        n.get("http_date_header"), n.get("content_type_header"), started, ended)
     if (started > ended or
             record.get("acquired_utc_operator_reported_not_network_verified") != ended):
         raise ValueError("Original response chronology mismatched")
