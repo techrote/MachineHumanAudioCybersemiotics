@@ -195,6 +195,12 @@ class TestStevensSectionPins(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Complete Method"):
             inspect_original(SYNTHETIC.replace(b"<title>Results</title>", b"<title>Claims</title>"))
 
+    def test_standard_jats_doctype_is_permitted_without_entity_expansion(self):
+        # An ordinary Europe PMC/JATS DOCTYPE is not an unsafe XML entity.
+        header = b'<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Publishing DTD//EN" "JATS.dtd">'
+        xml = SYNTHETIC.replace(b"<article>", header + b"\n<article>", 1)
+        self.assertEqual(inspect_original(xml)["doi_in_article"], DOI)
+
     def test_entity_declaration_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "Entity"):
             inspect_original(b"<!DOCTYPE article [<!ENTITY bad 'x'>]>" + SYNTHETIC)
