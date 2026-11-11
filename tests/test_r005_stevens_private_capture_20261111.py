@@ -199,6 +199,18 @@ class PrivateCaptureTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "inconsistent"):
             mod.verify(self.private, self.approval)
 
+    def test_plausible_mutated_date_disagrees_with_original_access_proof(self):
+        self.fetch()
+        recorded = json.loads(self.receipt_path().read_text())
+        observed = recorded["network_original_response"]["http_date_header"]
+        from datetime import timedelta
+        altered = (datetime.strptime(observed, "%a, %d %b %Y %H:%M:%S GMT")
+                   + timedelta(seconds=45)).strftime("%a, %d %b %Y %H:%M:%S GMT")
+        self.change_receipt(lambda r: r["network_original_response"].update(
+            http_date_header=altered))
+        with self.assertRaisesRegex(ValueError, "Date/access-proof"):
+            mod.verify(self.private, self.approval)
+
     def test_rights_note_change_invalidates_stored_receipt(self):
         self.fetch()
         self.rights["attribution_policy"] = "CHANGED-NOTE"
