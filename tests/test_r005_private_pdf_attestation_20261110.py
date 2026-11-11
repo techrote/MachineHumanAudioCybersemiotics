@@ -100,6 +100,7 @@ class PrivatePdfAttestationTest(unittest.TestCase):
             ("original_audio_inspected", True),
             ("original_pdf_retained_in_manifest", True),
             ("admitted_studies_experiments_samples", [1, 0, 1]),
+            ("admitted_studies_experiments_samples", [False, 0, False]),
             ("issue", 6),
             ("frozen_cutoff", "2026-11-11"),
         )
