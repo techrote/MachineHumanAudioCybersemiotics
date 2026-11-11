@@ -101,7 +101,7 @@
     "accepted_title_abstract_decisions": 4,
     "full_text_excluded": 1,
     "full_text_awaiting_text": 1,
-    "full_text_missing": 2,
+    "full_text_missing": 0,
     "full_text_included": 0,
     "independent_studies_admitted": 0,
     "independent_samples_admitted": 0,
@@ -111,7 +111,9 @@
     ],
     "original_romeo_2023_access_changed": false,
     "reconciled_as_of_utc": "2026-11-11",
-    "scope": "historical four-candidate SUBSET, not nine-publication aggregate"
+    "scope": "historical four-candidate SUBSET, not nine-publication aggregate",
+    "full_text_pending": 2,
+    "status_semantics": "Two Becker/Romeo 2025 full-text PENDING SCR records exist; neither is a missing required status nor an included full-text publication"
   },
   "negative_claims": {
     "new_openalex_eq1_run": false,
