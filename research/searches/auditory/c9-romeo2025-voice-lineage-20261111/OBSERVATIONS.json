@@ -37,7 +37,10 @@
     "individual_access_timestamps": null,
     "immutable_artifact": "This JSON in the Git commit pins the reported observations and URLs, not original HTTP response bytes.",
     "reproducible_query_results_boundary": "Queries exactly recorded; selected returned source landing URLs and donor page/anchor IDs only. Neither a complete SERP nor lossless provider response export.",
-    "rights": "Web-rendered public repository pages accessed without account. Item-level licences observed where listed; no private retention/redistribution permission inferred; no restricted original article committed."
+    "rights": "Web-rendered public repository pages accessed without account. Item-level licences observed where listed; no private retention/redistribution permission inferred; no restricted original article committed.",
+    "publisher_original_2023_full_text_access": false,
+    "publisher_blocker_clock_checkpoint_utc": "2026-11-11T04:18:33.341Z",
+    "publisher_blocker_time_note": "Observer clock at latest source-check checkpoint; not timestamp of publisher HTTP response."
   },
   "parent": {
     "source_id": "SRC-REL-ROMEO-2025",
@@ -70,13 +73,23 @@
       "edition": "32nd IEEE RO-MAN 2023, pp 2045–2050, six-page conference paper",
       "verification_urls": [
         "https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/",
-        "https://research.chalmers.se/en/publication/539223"
+        "https://research.chalmers.se/en/publication/539223",
+        "https://ieeexplore.ieee.org/document/10309631",
+        "https://dblp.dagstuhl.de/rec/conf/ro-man/RomeoTMCL23.html"
       ],
       "verification_extent": "Heriot-Watt institutional title, DOI, publication date, pp2045–2050, abstract and access-to-document section; Chalmers institutional metadata. The original six-page IEEE paper was NOT accessed; no original-paper Methods, Results or audio read.",
       "verified_relation": "2025 parent bibliographically cites the distinct 2023 IEEE publication as [61] in discussion of robot voice and trust; citation is not evidence that 2023 and 2025 participants or stimuli are identical.",
       "legal_access": "Public institutional HTML abstracts/metadata only; no publisher original full text; DOI links are not qualifying full-text access.",
       "r006_identity": "SRC-REL-ROMEO-2023 (separate publication); participant/stimulus independence unknown",
-      "status": "prior_candidate_direct_citation_verified; requires R006 dedup and primary full text"
+      "status": "prior_candidate_direct_citation_verified; requires R006 dedup and primary full text",
+      "publisher_attempt": {
+        "url": "https://ieeexplore.ieee.org/document/10309631",
+        "result": "Direct publisher HTML web-reader returned 'JavaScript is disabled' and bot-verification requirement rather than article text; original six-page methods/results unavailable in this session.",
+        "http_status": null,
+        "raw_html_retained": false,
+        "paid_access_attempted": false,
+        "automated_bypass_attempted": false
+      }
     },
     {
       "candidate_key": "C9-ROMEO2025-REF074",
