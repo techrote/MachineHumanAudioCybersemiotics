@@ -30,13 +30,13 @@ def _urls():
     previous = json.loads(PREVIOUS.read_text(encoding="utf-8"))
     assert previous["cutoff"] == CUT_OFF
     base = previous["pages"][0]["request_url"]
-    assert base.endswith("&page=42")
+    assert "&page=42&sort=" in base
     assert "to_publication_date:2026-10-04" in base
     assert "title_and_abstract.search:" in base
     assert "&sort=publication_date:asc,display_name:asc" in base
     assert "&per_page=100" in base
     base = re.sub(r"(?<=&)select=[^&]*", "select=" + FIELDS, base)
-    return {p:base[:-2] + str(p) for p in PAGES}
+    return {p:base.replace("&page=42&", "&page=" + str(p) + "&") for p in PAGES}
 
 
 def _sha256(data):
@@ -63,7 +63,7 @@ class Eq1PostBoundary(unittest.TestCase):
         urls = _urls()
         self.assertEqual(list(urls), list(PAGES))
         for n, url in urls.items():
-            self.assertTrue(url.endswith("&page=" + str(n)))
+            self.assertIn("&page=" + str(n) + "&sort=", url)
             self.assertIn("to_publication_date:2026-10-04", url)
             self.assertIn("title_and_abstract.search:", url)
             self.assertIn("sort=publication_date:asc,display_name:asc", url)
