@@ -227,6 +227,14 @@ def verify(directory: Path, approval: Path) -> dict:
     ended = xml_attester.require_utc(n.get("received_utc", ""))
     check_original_http_headers(
         n.get("http_date_header"), n.get("content_type_header"), started, ended)
+    # These two source/provenance fields are independently serialized at
+    # capture time; a plausible but edited HTTP Date cannot silently replace
+    # the Date header without also changing its operator-reported access proof.
+    # This is a consistency check, not tamper-proof HTTP authentication.
+    if (record.get("source_url_operator_reported") != URL
+            or record.get("access_proof_operator_reported") !=
+                "Direct unauthenticated HTTPS 200; HTTP Date " + n["http_date_header"]):
+        raise ValueError("Original source URL or Date/access-proof receipt disagrees")
     if (started > ended or
             record.get("acquired_utc_operator_reported_not_network_verified") != ended):
         raise ValueError("Original response chronology mismatched")
