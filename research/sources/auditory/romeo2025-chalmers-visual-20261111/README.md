@@ -1,0 +1,31 @@
+# R005 — visually checked Chalmers original-layout Romeo 2025 paper (11 November 2026)
+
+Refs #5; source/identity handoff to R006 #6 and Integration. **Research-provenance evidence, not a canonical eligibility decision.** Frozen v1 protocol and 2026-10-04 publication cutoff unchanged. Accepted main on branch creation: `e3a5a7d294da11030c30d9f0ec1823caa4544c97`.
+
+## Why this is new and material
+Earlier R005 records inspected selected text of the Romeo 2025 Heriot-Watt PDF but a page-image fetch returned HTTP 403; mirror attempts through Heriot-Watt and Helsinki returned HTTP 403. A separate Chalmers Library URL, **https://research.chalmers.se/publication/546010/file/546010_Fulltext.pdf**, was now opened through the public web PDF renderer. Its article title/DOI, source licence, pilot method, experimental maze figure and acoustic descriptor table were **visually inspected**, not just inferred from search snippets or repository metadata. This improves the source-reading boundary for R006 without replacing a retained original file.
+
+## Publication, lawful route and source boundaries
+- Romeo, Torre, Le Maguer, Sleat, Cangelosi & Leite (2025), *The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction*, ACM THRI **14(2), Article 33**, DOI **10.1145/3711938**. The institutional PDF has a **Chalmers cover sheet** (page index 0) and article pages (printed 33:1 onward). First article page **33:1** visibly states **CC BY-NC-SA 4.0**. Public viewing without credentials was possible; the licence statement alone is **not** project approval for private retention, redistribution or derivative publication.
+- **Actual visual reading:** PDF page indices **0, 1, 5, 6, 7, 8, 9**. Relevant parsed text: §§2.1–2.4, printed **33:5–33:9**. The whole article was **not** read end to end; no source bytes were downloaded/retained and no audio heard. The PDF is already web-readable, but a complete original-body hash, HTTP status/header timestamp and byte count are **unavailable** from this tool.
+- **Volatile cover-sheet caution:** the PDF text renderer displays an embedded Chalmers download label of **2026-05-18 07:06 UTC**, whereas the page-image rendering of index 0 displays **2026-11-10 10:58 UTC**. Those labels belong to *different cached render views*, **not to this 11 November acquisition**. Do not infer they are byte-identical, assign either as the present network retrieval timestamp, or adopt a cross-view SHA. Raw acquisition and a lawful durable custody decision remain separate gates. Observation was made on **2026-11-11 UTC**; exact network request time was not exposed.
+
+## Source-exact decision support (authors' reports, not new empirical estimates)
+
+| Locator | Precisely supported finding | R006 implication, not a decision |
+|---|---|---|
+| **§2.1, 33:5, PDF index 5** | Online pilot used six recorded Pepper utterance videos superimposed on corn-maze visuals; authors report **50 Prolific recruits** and selection of preferred repair strategies | Distinct candidate procedure; no assumption of independence from later recruitment |
+| **§2.2, 33:6–33:8, PDF indices 6–8; Fig. 2** | Physical robot maze with spoken navigation recommendations and deliberately wrong turns; authors report **60 in-person participants** divided across **2 voices × 3 strategies**, **10 per condition** | Potential E2/E3/E4 support but only R006 can determine eligibility, samples and identity |
+| **§2.3, 33:8–33:9, PDF indices 8–9; Table 3** | Both voices synthetic; duration/speech-rate controlled by design, but mean F0 **332.99 vs 225.67 Hz** and HNR **8.61 vs 14.83 dB** differ per authors' table | Do not treat "voice naturalness"/human likeness as a uniquely isolated acoustic variable |
+| **§2.4, 33:9, PDF index 9** | Wizard-of-Oz navigation; participants heard robot utterances through noise-cancelling headphones | No sound files inspected, and no independent acoustic validation |
+
+**Caution about units:** One DOI-verified 2025 publication, two described candidate procedures, six in-person arms and many navigation trials **do not imply** two new studies, six independent samples or trial-independent observations. The earlier Romeo 2023 paper (DOI **10.1109/RO-MAN57019.2023.10309631**, IEEE RO-MAN pp. 2045–2050) remains a distinct publication with the original six-page IEEE report unavailable to this run. Its Zenodo v1 scripts (**10.5281/zenodo.8042317**) are not the IEEE article. No cross-paper stimulus or participant identity has been established.
+
+## Handoff / exact gate
+**R006:** use the page-image-verified §2.1–2.4/figure/table locators for *provisional* E1–E6 review; make source-specific full-text decisions and publication→experiment→sample identity **only within R006-owned append-only records**, after adequate source custody and actual assessor provenance. Do not auto-admit or copy author N as independent-sample N.
+
+**R004/Integration:** establish an approved **private** retention location and rights/attribution policy, acquire an actual Chalmers/ACM source instance lawfully, record immutable original-byte SHA, UTC acquisition, edition and accessed sections, and register the source manifestation if qualified. Beware dynamic Chalmers cover sheets and never substitute the parsed-text/PDF-image tool views as one hash-stable original. Coordinate generated exports/manifests and guarded merge.
+
+**R005:** if this source gate remains custody-blocked, return to properly retained, single-invocation EQ1 adjacent-page retrieval when quotas allow; avoid cross-invocation count merging (accepted PR #167 demonstrates eight repeated work IDs between prior pages 43/44). No new EQ1 page, formal C3/C4 search, or citation-chain hit is claimed here.
+
+Verification is scoped offline test `python -m unittest discover -s tests -p 'test_r005_romeo_chalmers_visual_20261111.py' -v` plus full unit tests, `python tools/validate.py`, `python -m tools.build_record_fixtures --check`. Technical CI validates evidence-record invariants, **not scientific acceptance or source-custody rights**. Agent used connected GitHub plus public web PDF text and page images; **no human reviewer**. R005 #5 and R006 #6 remain open; canonical nine TA decisions, zero FT inclusions and zero independent samples unchanged.
