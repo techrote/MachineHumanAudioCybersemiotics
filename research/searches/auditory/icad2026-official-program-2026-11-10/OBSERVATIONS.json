@@ -1,0 +1,174 @@
+{
+  "schema": "mhac-r005-c5-program-navigation/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "protocol": "PROTOCOL-v1",
+  "frozen_publication_cutoff": "2026-10-04",
+  "base_main_sha": "7fdf1c718270691f8991a82d1a1124df7112c888",
+  "observation_date_utc": "2026-11-10",
+  "exact_http_response_time_utc": null,
+  "raw_http_status": null,
+  "raw_response_bytes_retained": false,
+  "raw_response_sha256": null,
+  "kind": "C5 official organiser HTML programme navigation; not complete proceedings export, indexed database search, source full-text reading, or canonical search execution",
+  "observer": {
+    "type": "AI-agent",
+    "human_assessor": false,
+    "independent_human_review": false
+  },
+  "provider": {
+    "name": "31st International Conference on Auditory Display (ICAD 2026)",
+    "organiser_site": "https://interactive-sonification.org/icad2026/",
+    "source_url": "https://interactive-sonification.org/icad2026/program/",
+    "source_format": "public_html_rendered_by_web_reader",
+    "source_boundary": "Preliminary Program page: introductory qualification; Tue 28 Jul Paper Sessions 1–2; Wed 29 Jul Papers Session 3; Thu 30 Jul Papers Session 4; Fri 31 Jul Paper Session 5; titles and presenter lines only; not original manuscripts, proceedings metadata, DOI or bibliographies",
+    "html_section_locators": [
+      "# Program (preliminary, corrections invited)",
+      "Tuesday July 28 — Paper Session 1, Paper Session 2",
+      "Wednesday July 29 — Papers Session 3",
+      "Thursday July 30 — Papers Session 4",
+      "Friday July 31 — Paper Session 5"
+    ],
+    "event_dates": "2026-07-28/2026-07-31",
+    "organiser_update_for_program": "2026-06-08",
+    "legal_access_basis": "public organiser-hosted programme HTML; read only; no restricted source, contact, or redistribution of PDF bytes",
+    "immutable_raw_capture": false
+  },
+  "observed_paper_sessions": [
+    {
+      "date": "2026-07-28",
+      "name": "Paper Session 1",
+      "presentations_listed": 6
+    },
+    {
+      "date": "2026-07-28",
+      "name": "Paper Session 2",
+      "presentations_listed": 6
+    },
+    {
+      "date": "2026-07-29",
+      "name": "Papers Session 3",
+      "presentations_listed": 6
+    },
+    {
+      "date": "2026-07-30",
+      "name": "Papers Session 4",
+      "presentations_listed": 6
+    },
+    {
+      "date": "2026-07-31",
+      "name": "Paper Session 5",
+      "presentations_listed": 5
+    }
+  ],
+  "derived_programme_paper_talk_slots": 29,
+  "count_unit": "scheduled paper-session presentation entries on a preliminary programme, NOT 29 published reports, DOI-matched publications, included studies, experiments, participants or unique samples",
+  "poster_demo_lightning_other_entries_counted": false,
+  "bounded_navigation_routes": [
+    {
+      "id": "R005-C5-ICAD26-REVIEW-NEES-SMITH",
+      "session": "Paper Session 2",
+      "date": "2026-07-28",
+      "authors": "Michael Nees; Alida Smith",
+      "title": "A Systematic Review, Thematic Analysis, and Critical Examination of Proposed General Sonification Guidelines",
+      "route": "organiser programme, Paper Session 2",
+      "status": "title_present_on_programme_only",
+      "full_review_text_read": false,
+      "bibliography_chained": false,
+      "track_e_included": false
+    },
+    {
+      "id": "R005-C5-ICAD26-REVIEW-BOEHRINGER",
+      "session": "Papers Session 4",
+      "date": "2026-07-30",
+      "authors": "Jorge Boehringer et al.",
+      "title": "The Interdisciplinary Landscape of Sonification at ICAD: A Literature Review",
+      "route": "organiser programme, Papers Session 4",
+      "status": "title_present_on_programme_only",
+      "full_review_text_read": false,
+      "bibliography_chained": false,
+      "track_e_included": false
+    }
+  ],
+  "exact_web_search_queries_executed": [
+    "2026 ICAD proceedings official full papers audio display 2026",
+    "A Systematic Review, Thematic Analysis, and Critical Examination of Proposed General Sonification Guidelines pdf",
+    "The Interdisciplinary Landscape of Sonification at ICAD A Literature Review pdf"
+  ],
+  "query_and_response_limitations": "General web indexed search and direct rendered official HTML. No lossless ordered search results, direct original HTTP response bytes, Date header, result-total or request receipt timestamp available; no SHA-256 can truthfully be supplied. Not a database page/export or complete C5 proceedings harvest.",
+  "preexisting_c5_gap": "3 November R005 Georgia Tech ICAD series enumerated 13 available bins but 2026 proceedings route returned 503; this programme is a separate lawful organiser route, not a repair or completion of that venue-year proceedings bin.",
+  "r006_four_candidate_gate": {
+    "accepted_title_abstract_decisions": 4,
+    "full_text_excluded": 1,
+    "full_text_awaiting_text": 1,
+    "full_text_missing": 0,
+    "full_text_included": 0,
+    "independent_studies_admitted": 0,
+    "independent_samples_admitted": 0,
+    "source_gates": [
+      "Romeo 2023 DOI 10.1109/RO-MAN57019.2023.10309631: complete original IEEE article unavailable, separate Zenodo supplementary PDF has a prior verified byte receipt and is NOT equivalent to the IEEE source paper",
+      "Becker 2025 DOI 10.1145/3706066 and Romeo 2025 DOI 10.1145/3711938: selected author/institutional page observations exist but original full-text manifestations and R006 performed-reading evidence remain insufficient for final included study/sample admission"
+    ],
+    "original_romeo_2023_access_changed": false,
+    "reconciled_as_of_utc": "2026-11-11",
+    "scope": "historical four-candidate SUBSET, not nine-publication aggregate",
+    "full_text_pending": 2,
+    "status_semantics": "Two Becker/Romeo 2025 full-text PENDING SCR records exist; neither is a missing required status nor an included full-text publication"
+  },
+  "negative_claims": {
+    "new_openalex_eq1_run": false,
+    "complete_icad_2026_proceedings": false,
+    "complete_backward_chaining": false,
+    "raw_response_hash_verified": false,
+    "canonical_search_or_hit_records_added": false,
+    "canonical_screening_or_source_records_added": false,
+    "publication_or_study_identity_adjudicated": false,
+    "empirical_outcomes_extracted": false,
+    "independent_sample_count_asserted": false,
+    "human_or_independent_assessor_asserted": false,
+    "selected_corpus_asserted": false
+  },
+  "handoff": {
+    "R006": "No Track E/G adjudication requested from programme metadata. Keep 2026 talks as discovery routes only; check genuine full papers, presentation-to-publication version/date, distinct studies/experiments/samples if subsequently retrieved. Four-candidate canonical gate unchanged.",
+    "Integration": "Source-check organiser URL and five programme session sections; check that 2026 is marked partial (not venue-complete) and no shared SRCH/HIT/source/SCR or generated aggregate changed. Guarded Draft review/merge only with exact-head Actions, complete unit/validator/fixtures and permissions.",
+    "R005_next": "Prioritise R006 original primary-source custody (Stevens Europe PMC original XML and Romeo 2023 IEEE original article), then quota-compliant EQ1 next-page continuity (page 44 original raw JSON now accepted on main; page 45 HTTP 429; 46–47 not acquired), then authentic ICAD 2026 proceedings or the two review manuscripts and C9 bibliographies. These talk slots supply neither original full text nor an export."
+  },
+  "accepted_main_nine_publication_gate_as_of_20261111": {
+    "base_main_sha": "fed5ac89ffef7d8939b9178ff14f755fa4ec66ca",
+    "ta_total": 9,
+    "ta_include_to_full_text": 6,
+    "ta_uncertain": 3,
+    "ft_pending": 5,
+    "ft_awaiting_text": 3,
+    "ft_exclude": 1,
+    "ft_include": 0,
+    "ft_missing_status": 0,
+    "admitted_publications": 0,
+    "admitted_studies": 0,
+    "admitted_experiments": 0,
+    "admitted_independent_samples": 0,
+    "selected_track_e": 0,
+    "selected_track_g": 0
+  },
+  "integration_review_20261111": {
+    "scope": "AI-assisted, independent tool-rendered verification of organiser public HTML paper sessions 1–5 on 2026-11-11; no raw HTTP response bytes/Date/header/SHA, no full proceedings or papers",
+    "source_url": "https://interactive-sonification.org/icad2026/program/",
+    "session_counts_reconfirmed": [
+      6,
+      6,
+      6,
+      6,
+      5
+    ],
+    "named_review_routes_reconfirmed": true,
+    "prior_r005_draft_pr": 122,
+    "original_draft_sha": "e9c496174876abbfacf891e99a5e38a48624fe7c",
+    "integrator_main_base": "fed5ac89ffef7d8939b9178ff14f755fa4ec66ca",
+    "source_original_blobs": {
+      "research/searches/auditory/icad2026-official-program-2026-11-10/OBSERVATIONS.json": "4a0fbc4b702e84f150e5b065a50608bbc87f2315",
+      "research/searches/auditory/icad2026-official-program-2026-11-10/README.md": "90a061f7f3c35cbff3580ab5e8184b4d5d10259f",
+      "tests/test_r005_icad2026_official_program_20261110.py": "51fd1eb6535add953d451eff91fb191444cb9d73"
+    },
+    "independent_human_assessor": false
+  }
+}
