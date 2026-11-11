@@ -1,0 +1,183 @@
+"""Synthetic-only tests for opt-in private Stevens original XML custody (Refs #5)."""
+from __future__ import annotations
+
+import copy
+import json
+import sys
+import tempfile
+import unittest
+from datetime import datetime, timezone
+from pathlib import Path
+
+SCRIPTS = Path(__file__).resolve().parents[1] / "research/sources/auditory/scripts"
+sys.path.insert(0, str(SCRIPTS))
+import capture_stevens_xml as mod  # noqa: E402
+
+ORIGINAL = b"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink">
+<front><article-meta>
+<article-id pub-id-type="doi">10.2478/v10053-008-0064-6</article-id>
+<article-id pub-id-type="pmc">PMC2865004</article-id>
+<permissions><license xlink:href="https://creativecommons.org/licenses/by/2.5/"/></permissions>
+</article-meta></front>
+<body><sec><title>Introduction</title><p>Test fixture, not a study.</p></sec>
+<sec><title>Method</title><p>Artificial fixture.</p></sec>
+<sec><title>Results</title><p>No actual observations.</p></sec></body>
+<back><ref-list><title>References</title></ref-list></back>
+</article>"""
+
+
+class FakeResponse:
+    status = 200
+    def __init__(self, raw=ORIGINAL, *, status=200, url=mod.URL,
+                 content_type="application/xml", length=None):
+        self.raw = raw
+        self.status = status
+        self.url = url
+        self.headers = {"Content-Type": content_type,
+                        "Date": "Tue, 10 Nov 2026 20:15:00 GMT",
+                        "Content-Length": str(len(raw) if length is None else length)}
+    def __enter__(self):
+        return self
+    def __exit__(self, exc_type, exc_value, traceback):
+        return False
+    def geturl(self):
+        return self.url
+    def read(self, size=-1):
+        return self.raw[:size]
+
+
+class PrivateCaptureTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        base = Path(self.temp.name)
+        self.private = base / "private"
+        self.private.mkdir()
+        self.approval = base / "rights.json"
+        self.rights = {
+            "approved_private_dir": str(self.private.resolve()),
+            "approved_by": "SYNTHETIC-RIGHTS-OPERATOR-NOT-A-REAL-APPROVAL",
+            "approved_at_utc": "2026-11-10T20:00:00Z",
+            "retention_basis": "SYNTHETIC-CC-BY-FIXTURE-NO-AUTHORIZATION",
+            "attribution_policy": "SYNTHETIC-ATTRIBUTION-ONLY",
+        }
+        self.save_rights()
+
+    def save_rights(self):
+        self.approval.write_text(json.dumps(self.rights), encoding="utf-8")
+
+    def fetch(self, response=None):
+        return mod.capture(self.private, self.approval, "synthetic-test-actor",
+                           opener=lambda req, timeout: response or FakeResponse())
+
+    def receipt_path(self):
+        return self.private / mod.RECEIPT_NAME
+
+    def change_receipt(self, fn):
+        receipt = json.loads(self.receipt_path().read_text())
+        fn(receipt)
+        self.receipt_path().write_text(json.dumps(receipt), encoding="utf-8")
+
+    def test_retained_original_is_byte_identical_and_receipt_verified(self):
+        receipt = self.fetch()
+        self.assertEqual((self.private / mod.XML_NAME).read_bytes(), ORIGINAL)
+        self.assertEqual(receipt["original_xml_bytes"], len(ORIGINAL))
+        self.assertEqual(receipt["network_original_response"]["http_status"], 200)
+        self.assertEqual(receipt["network_original_response"]["actual_body_sha256"],
+                         receipt["original_xml_sha256"])
+        self.assertFalse(receipt["source_custody_approved_by_software"])
+        self.assertFalse(receipt["human_review_performed"])
+        self.assertFalse(receipt["r006_scientific_admission"])
+        self.assertTrue(mod.verify(self.private, self.approval)
+                        ["source_and_operator_note_fingerprints_checked"])
+
+    def test_unapproved_or_misrouted_private_dir_never_fetches(self):
+        self.approval.unlink()
+        def forbidden(req, timeout):
+            self.fail("Network request must not occur without approval")
+        with self.assertRaises(ValueError):
+            mod.capture(self.private, self.approval, "actor", opener=forbidden)
+        self.save_rights()
+        self.rights["approved_private_dir"] = "/some/different/location"
+        self.save_rights()
+        with self.assertRaises(ValueError):
+            mod.capture(self.private, self.approval, "actor", opener=forbidden)
+
+    def test_missing_approval_fields_or_fake_future_time_fail_closed(self):
+        for field, replacement in (("approved_by", ""),
+                                   ("retention_basis", None),
+                                   ("approved_at_utc", "2999-01-01T00:00:00Z")):
+            with self.subTest(field=field):
+                baseline = copy.deepcopy(self.rights)
+                self.rights[field] = replacement
+                self.save_rights()
+                with self.assertRaises(ValueError):
+                    mod.capture(self.private, self.approval, "actor",
+                                opener=lambda req, timeout: self.fail("Unexpected fetch"))
+                self.rights = baseline
+        self.save_rights()
+
+    def test_no_overwrite_or_false_success_on_repeat(self):
+        self.fetch()
+        with self.assertRaisesRegex(ValueError, "already exists"):
+            self.fetch()
+        self.assertEqual((self.private / mod.XML_NAME).read_bytes(), ORIGINAL)
+
+    def test_bad_original_doi_and_missing_license_do_not_leave_source(self):
+        for raw in (ORIGINAL.replace(b"10.2478/v10053-008-0064-6",
+                                     b"10.9999/wrong"),
+                    ORIGINAL.replace(b"/licenses/by/2.5/", b"/licenses/by-nc/4.0/")):
+            with self.subTest(raw=raw[-35:]), self.assertRaises(ValueError):
+                self.fetch(FakeResponse(raw=raw))
+            self.assertFalse((self.private / mod.XML_NAME).exists())
+            self.assertFalse(self.receipt_path().exists())
+
+    def test_wrong_http_identity_and_truncation_refused(self):
+        cases = [
+            FakeResponse(status=403),
+            FakeResponse(url="https://attacker.example/article.xml"),
+            FakeResponse(content_type="text/html"),
+            FakeResponse(length=len(ORIGINAL)+1),
+            FakeResponse(raw=ORIGINAL + b"x" * (mod.MAX_BODY+1)),
+        ]
+        for response in cases:
+            with self.subTest(case=response.url + str(response.status)):
+                with self.assertRaises(ValueError):
+                    self.fetch(response)
+                self.assertFalse((self.private / mod.XML_NAME).exists())
+
+    def test_tampered_source_or_network_receipt_fails(self):
+        self.fetch()
+        self.change_receipt(lambda r: r["network_original_response"].update(
+            actual_body_sha256="0"*64))
+        with self.assertRaises(ValueError):
+            mod.verify(self.private, self.approval)
+        self.fetch_receipt_reset()
+        self.change_receipt(lambda r: r.update(r006_scientific_admission=True))
+        with self.assertRaises(ValueError):
+            mod.verify(self.private, self.approval)
+
+    def fetch_receipt_reset(self):
+        self.receipt_path().unlink()
+        (self.private / mod.XML_NAME).unlink()
+        self.fetch()
+
+    def test_rights_note_change_invalidates_stored_receipt(self):
+        self.fetch()
+        self.rights["attribution_policy"] = "CHANGED-NOTE"
+        self.save_rights()
+        with self.assertRaises(ValueError):
+            mod.verify(self.private, self.approval)
+
+    def test_source_change_invalidates_stored_receipt(self):
+        self.fetch()
+        (self.private / mod.XML_NAME).write_bytes(
+            ORIGINAL.replace(b"Artificial fixture.", b"Tampered fixture. "))
+        with self.assertRaises(ValueError):
+            mod.verify(self.private, self.approval)
+
+
+if __name__ == "__main__":
+    unittest.main()
