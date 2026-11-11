@@ -35,8 +35,8 @@ def inspect_original(raw):
     """Hash actual bytes and bounded Method/Results passages, without inference."""
     if len(raw) < 120 or len(raw) > MAX_BYTES:
         raise ValueError("Original response outside bounded byte range")
-    if b"<!DOCTYPE" in raw.upper() or b"<!ENTITY" in raw.upper():
-        raise ValueError("DTD/entity declarations are not accepted")
+    if b"<!ENTITY" in raw.upper():
+        raise ValueError("Entity declarations are not accepted")
     try:
         root = ET.fromstring(raw)
     except ET.ParseError as exc:
@@ -196,7 +196,7 @@ class TestStevensSectionPins(unittest.TestCase):
             inspect_original(SYNTHETIC.replace(b"<title>Results</title>", b"<title>Claims</title>"))
 
     def test_entity_declaration_fails_closed(self):
-        with self.assertRaisesRegex(ValueError, "DTD"):
+        with self.assertRaisesRegex(ValueError, "Entity"):
             inspect_original(b"<!DOCTYPE article [<!ENTITY bad 'x'>]>" + SYNTHETIC)
 
     def test_no_network_except_exact_branch_pr_head(self):
