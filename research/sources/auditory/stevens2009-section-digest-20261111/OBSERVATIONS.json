@@ -1,0 +1,84 @@
+{
+  "schema": "mhac-r005-stevens2009-source-section-boundary/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "accepted_base": "5e01f3c39232a46238f5333cfa1d1519c0f8995f",
+  "observed_source_head": "73acb54495b1b6e3cf993ee27ddd1596984501a2",
+  "source_evidence_ci_run": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42965672855",
+  "source_evidence_ci_job": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42965672855/job/130342294257",
+  "original_log_marker": "MHAC_R005_STEVENS_SECTION_PINS=",
+  "recorded_from_actual_actions_marker": true,
+  "original_source_bytes_saved": false,
+  "original_source_bytes_committed": false,
+  "original_source_hashed_response_not_legal_approval": true,
+  "historical_2026_11_10_same_bytes_sha256": "1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b",
+  "historic_and_new_byte_hash_match": true,
+  "accessed_text_boundary": "Automated complete top-level JATS /article/body/sec[2] Method and /article/body/sec[3] Results normalized text fingerprints and subsection locators, without publishing paragraph text or performing semantic/numerical outcome extraction.",
+  "r006_eligibility_adjudicated": false,
+  "r006_canonical_identity_changed": false,
+  "human_assessor": false,
+  "new_search_occurrences": 0,
+  "accepted_empirical_publications_studies_experiments_samples_delta": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "owner_gate": "R004/Integration approval of private original-XML custody/rights and retained attestation; then R006 source-pinned E1-E6 assessment",
+  "actual_receipt": {
+    "access_basis": "public unauthenticated Europe PMC full-text API",
+    "actor": "GPT-6 R005 on exact-branch GitHub Actions",
+    "bytes_retained": false,
+    "content_type": "application/xml",
+    "direct_original_fulltext_section_fingerprints": true,
+    "does_not_change_r006": true,
+    "doi_in_article": "10.2478/v10053-008-0064-6",
+    "edition": "Europe PMC JATS/NLM original-article XML (not publisher PDF)",
+    "finished_utc": "2026-11-11T05:26:06.595+00:00",
+    "frozen_publication_cutoff": "2026-10-04",
+    "http_date": "Wed, 11 Nov 2026 05:26:06 GMT",
+    "http_status": 200,
+    "human_or_second_assessor": false,
+    "method_results": [
+      {
+        "heading": "Method",
+        "nested_section_headings": [
+          "Participants",
+          "Stimuli",
+          "Equipment",
+          "Procedure"
+        ],
+        "normalized_text_characters": 7919,
+        "normalized_text_sha256": "0fa7e539fd127505e32d4fb2456be002180fc7813309fbd0258b59a14dbc8f8b",
+        "original_xpath": "/article/body/sec[2]",
+        "paragraph_elements": 11,
+        "reading": "machine inventory and full-section text fingerprint; not human semantic review"
+      },
+      {
+        "heading": "Results",
+        "nested_section_headings": [
+          "Learning Phase",
+          "Test Phase"
+        ],
+        "normalized_text_characters": 4673,
+        "normalized_text_sha256": "b56553a3a98a167b678c665380320f661b63b458d913f733879d3ba996139038",
+        "original_xpath": "/article/body/sec[3]",
+        "paragraph_elements": 8,
+        "reading": "machine inventory and full-section text fingerprint; not human semantic review"
+      }
+    ],
+    "numeric_outcome_extraction": false,
+    "opened_utc": "2026-11-11T05:26:06.381+00:00",
+    "original_response_bytes": 74338,
+    "original_response_sha256": "1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b",
+    "publication_study_experiment_sample_admissions": 0,
+    "representative_hit_id": "HIT-R005R-C1LOAD-EQ1-02138@2",
+    "request_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2865004/fullTextXML",
+    "response_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2865004/fullTextXML",
+    "rights_or_retention_approved": false,
+    "source_id": "SRC-R006-E-STEVENS-INFORMATIVE@1",
+    "source_manifestation_registered": false,
+    "started_utc": "2026-11-11T05:26:00.359+00:00",
+    "status": "ORIGINAL_METHOD_RESULTS_SECTION_FINGERPRINTS_OBSERVED"
+  }
+}
