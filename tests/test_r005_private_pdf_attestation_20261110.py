@@ -91,6 +91,53 @@ class PrivatePdfAttestationTest(unittest.TestCase):
         self.receipt.write_text(json.dumps(data))
         self.assertEqual(attest.main(["verify", "--file", str(self.pdf), "--manifest", str(self.receipt)]), 2)
 
+    def test_matching_bytes_cannot_promote_research_or_rights(self):
+        self.assertEqual(attest.main(self.argv), 0)
+        original = json.loads(self.receipt.read_text())
+        changes = (
+            ("human_reviewer_claimed", True),
+            ("verified_licence_or_source_URL", True),
+            ("original_audio_inspected", True),
+            ("original_pdf_retained_in_manifest", True),
+            ("admitted_studies_experiments_samples", [1, 0, 1]),
+            ("issue", 6),
+            ("frozen_cutoff", "2026-11-11"),
+        )
+        for field, promoted in changes:
+            with self.subTest(field=field):
+                self.receipt.write_text(json.dumps({**original, field: promoted}))
+                with self.assertRaisesRegex(ValueError, "research-state/identity guard"):
+                    attest.verify(self.pdf, self.receipt)
+
+    def test_matching_bytes_do_not_authenticate_operator_provenance(self):
+        self.assertEqual(attest.main(self.argv), 0)
+        original = json.loads(self.receipt.read_text())
+        changes = (
+            ("publication_doi", "not-a-doi"),
+            ("original_source_url", "https://site.invalid/file?token=secret"),
+            ("rights_evidence_url", "http://site.invalid/rights"),
+            ("edition_manifestation", " "),
+            ("attester_operator_reported", None),
+            ("rights_limit_operator_reported", ""),
+            ("source_reading_boundary_operator_reported", ""),
+            ("acquisition_utc_operator_reported", "2100-01-01T00:00:00Z"),
+            ("attestation_utc", "2020-01-01T00:00:00Z"),
+        )
+        for field, replacement in changes:
+            with self.subTest(field=field):
+                self.receipt.write_text(json.dumps({**original, field: replacement}))
+                with self.assertRaises(ValueError):
+                    attest.verify(self.pdf, self.receipt)
+
+    def test_original_reported_timestamp_must_be_canonical_utc(self):
+        self.assertEqual(attest.main(self.argv), 0)
+        original = json.loads(self.receipt.read_text())
+        self.receipt.write_text(json.dumps({
+            **original, "acquisition_utc_operator_reported": "2026-11-10T12:00:00+00:00"
+        }))
+        with self.assertRaisesRegex(ValueError, "canonical UTC"):
+            attest.verify(self.pdf, self.receipt)
+
     def test_unrecognized_receipt_schema_rejected(self):
         self.assertEqual(attest.main(self.argv), 0)
         data = json.loads(self.receipt.read_text())
