@@ -44,6 +44,14 @@ XML_NAME = "stevens2009-original.xml"
 RECEIPT_NAME = "stevens2009-network-receipt.json"
 MAX_BODY = 1_000_000
 SCHEMA = "mhac-r005-stevens-xml-private-capture/1"
+EDITION = "Europe PMC original-article JATS/XML; publisher PDF equivalence not checked"
+
+
+def operator_rights_note(approval_sha256: str) -> str:
+    """Pinned *operator-reported* approval reference, never a rights certification."""
+    return ("Operator-supplied approval file SHA-256 " + approval_sha256 +
+            "; the software cannot verify the signer's authority")
+
 
 
 def utc_now() -> str:
@@ -136,6 +144,10 @@ def capture(directory: Path, approval: Path, operator: str, opener=urlopen) -> d
         raise ValueError("Private source/receipt already exists; no overwrite allowed")
 
     request_start = utc_now()
+    if datetime.fromisoformat(
+            rights["approved_at_utc"].replace("Z", "+00:00")) > datetime.fromisoformat(
+                request_start.replace("Z", "+00:00")):
+        raise ValueError("Rights approval must precede original acquisition")
     req = Request(URL, headers={"User-Agent": "MHAC-R005-source-custody/1"})
     with opener(req, timeout=30) as response:
         status = response.status
@@ -162,11 +174,10 @@ def capture(directory: Path, approval: Path, operator: str, opener=urlopen) -> d
     try:
         base = xml_attester.capture(
             original, source_url=URL,
-            edition="Europe PMC original-article JATS/XML; publisher PDF equivalence not checked",
+            edition=EDITION,
             acquired_at=received, actor=operator,
             access_proof="Direct unauthenticated HTTPS 200; HTTP Date " + http_date,
-            rights_note="Operator-supplied approval file SHA-256 " + rights_sha +
-                        "; the software cannot verify the signer's authority")
+            rights_note=operator_rights_note(rights_sha))
         record = {
             **base,
             "capture_schema": SCHEMA,
@@ -208,6 +219,8 @@ def verify(directory: Path, approval: Path) -> dict:
     receipt_file = directory / RECEIPT_NAME
     if not original.is_file() or not receipt_file.is_file():
         raise ValueError("Original source and receipt must both exist")
+    if original.is_symlink() or receipt_file.is_symlink():
+        raise ValueError("Private original and receipt must not be symbolic links")
     record = json.loads(receipt_file.read_text(encoding="utf-8"))
     if record.get("capture_schema") != SCHEMA:
         raise ValueError("Private network-capture schema was changed")
@@ -225,6 +238,10 @@ def verify(directory: Path, approval: Path) -> dict:
         raise ValueError("Original response receipt does not match retained source")
     started = xml_attester.require_utc(n.get("request_start_utc", ""))
     ended = xml_attester.require_utc(n.get("received_utc", ""))
+    if datetime.fromisoformat(
+            rights["approved_at_utc"].replace("Z", "+00:00")) > datetime.fromisoformat(
+                started.replace("Z", "+00:00")):
+        raise ValueError("Recorded rights approval postdates original acquisition")
     check_original_http_headers(
         n.get("http_date_header"), n.get("content_type_header"), started, ended)
     # These two source/provenance fields are independently serialized at
@@ -238,6 +255,10 @@ def verify(directory: Path, approval: Path) -> dict:
     if (started > ended or
             record.get("acquired_utc_operator_reported_not_network_verified") != ended):
         raise ValueError("Original response chronology mismatched")
+    if (record.get("reported_edition") != EDITION
+            or record.get("rights_note_operator_reported_not_authorization") !=
+                operator_rights_note(rights_sha)):
+        raise ValueError("Source edition or approval-note receipt was altered")
     if (record.get("approval_file_sha256_operator_supplied") != rights_sha
             or record.get("approval_actor_operator_supplied_not_authenticated") != rights["approved_by"]
             or record.get("approval_at_utc_operator_supplied") != rights["approved_at_utc"]

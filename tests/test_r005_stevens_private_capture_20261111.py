@@ -218,6 +218,62 @@ class PrivateCaptureTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             mod.verify(self.private, self.approval)
 
+    def test_mutated_edition_and_approval_claims_are_not_verified(self):
+        # These fields were previously mutable while the original XML SHA held.
+        self.fetch()
+        for field, false_value in (
+                ("reported_edition", "publisher-certified edition of record"),
+                ("rights_note_operator_reported_not_authorization",
+                 "Verified owner permission and unrestricted redistribution")):
+            with self.subTest(field=field):
+                self.change_receipt(lambda r: r.update({field: false_value}))
+                with self.assertRaisesRegex(ValueError, "edition or approval-note"):
+                    mod.verify(self.private, self.approval)
+                self.fetch_receipt_reset()
+
+    def test_approval_must_predate_original_network_request(self):
+        from unittest.mock import patch
+        # No network activity is warranted when the approval is dated after
+        # the purported original request start, even if it is now in the past.
+        with patch.object(mod, "utc_now", return_value="2026-11-10T19:59:00Z"):
+            with self.assertRaisesRegex(ValueError, "must precede"):
+                mod.capture(self.private, self.approval, "synthetic-operator",
+                            opener=lambda req, timeout: self.fail("Unexpected fetch"))
+
+    def test_verify_rejects_later_substituted_approval(self):
+        import hashlib
+        self.fetch()
+        r = json.loads(self.receipt_path().read_text())
+        # It is genuinely later than request_start but already in the past by
+        # the time this offline verification takes place.
+        self.rights["approved_at_utc"] = r["network_original_response"]["received_utc"]
+        self.save_rights()
+        note_sha = hashlib.sha256(self.approval.read_bytes()).hexdigest()
+        def replace_rights_note(receipt):
+            receipt["approval_file_sha256_operator_supplied"] = note_sha
+            receipt["approval_at_utc_operator_supplied"] = self.rights["approved_at_utc"]
+            receipt["rights_note_operator_reported_not_authorization"] = (
+                mod.operator_rights_note(note_sha))
+        self.change_receipt(replace_rights_note)
+        with self.assertRaisesRegex(ValueError, "postdates original acquisition"):
+            mod.verify(self.private, self.approval)
+
+    def test_custody_source_and_receipt_must_not_be_symlinks(self):
+        self.fetch()
+        for name in (mod.XML_NAME, mod.RECEIPT_NAME):
+            with self.subTest(name=name):
+                path = self.private / name
+                copy_path = self.private / ("indirect-" + name)
+                path.rename(copy_path)
+                try:
+                    path.symlink_to(copy_path)
+                except OSError:
+                    self.skipTest("Symlinks unavailable on this platform")
+                with self.assertRaisesRegex(ValueError, "symbolic links"):
+                    mod.verify(self.private, self.approval)
+                path.unlink()
+                copy_path.rename(path)
+
     def test_source_change_invalidates_stored_receipt(self):
         self.fetch()
         (self.private / mod.XML_NAME).write_bytes(
