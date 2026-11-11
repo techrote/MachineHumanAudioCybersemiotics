@@ -1,0 +1,21 @@
+{
+  "schema": "mhac-r005-eq1-one-time-attempt/1",
+  "issue": 5,
+  "branch": "mhac-r005/eq1-45to47-20261111-0708",
+  "original_job": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42978112350/job/130381869391",
+  "probe_head": "cac89849f27c4d02c3aa92df3437d954d4e31d0b",
+  "attempted_pages": [
+    45,
+    46,
+    47
+  ],
+  "statuses": [
+    200,
+    200,
+    200
+  ],
+  "stopped_after_page": 47,
+  "no_retries": true,
+  "next_live_probe_permitted_on_this_branch": false,
+  "frozen_cutoff": "2026-10-04"
+}
