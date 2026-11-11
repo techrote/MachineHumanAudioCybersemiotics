@@ -1,0 +1,65 @@
+{
+  "schema": "mhac-r005-public-pdf-direct-probe/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "edition": "Hamburg institutional author-hosted publisher-layout ACM THRI 14(2) Article 29 (2025), 25 printed pages",
+  "doi": "10.1145/3706066",
+  "url": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+  "frozen_cutoff": "2026-10-04",
+  "http": {
+    "status": 200,
+    "request_utc": "2026-11-11T01:20:21.272933+00:00",
+    "response_http_date": "Wed, 11 Nov 2026 01:20:21 GMT",
+    "finished_utc": "2026-11-11T01:20:23.038218+00:00",
+    "effective_url": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+    "content_type": "application/pdf",
+    "content_length_header": 10436314,
+    "original_body_bytes": 10436314,
+    "raw_body_sha256": "e5a2429e47e15208e285c4f3c1aa35e86529b0591139ff36d46e94babe42f230",
+    "pdf_magic": true
+  },
+  "receipt_source": {
+    "job": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42938201965/job/130253391166",
+    "exact_probe_head": "33b25580a347e4866c0ce4a92a8faf8c8831f8a8",
+    "prior_bounded_probe": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42937937920/job/130252528805",
+    "prior_cap_outcome": "HTTP 200, Content-Length 10436314 but stopped at 5000001 bytes; no full original hash",
+    "client": "GitHub Actions Ubuntu Python urllib, unauthenticated public HTTP GET"
+  },
+  "access_boundary": {
+    "license_basis": "First page of ACM-layout author-hosted PDF expressly states Creative Commons Attribution International 4.0; verified visually in public web renderer on 2026-11-11",
+    "license_page_url": "https://www2.informatik.uni-hamburg.de/wtm/publications/2025/BBCKOAGSFW25/3706066.pdf",
+    "private_retention_authorized": false,
+    "full_original_retained": false,
+    "pdf_file_saved": false,
+    "bytes_copied_to_public_repo": false,
+    "original_contents_read_by_direct_probe": false,
+    "prior_distinct_web_assisted_reading": "R005-PRIMARY-BECKER-2025-20261110, selected Methods/Results/appendix pages; that prior reading is not byte-pinned to this newly observed response",
+    "audio_files_listened": false,
+    "source_hash_confirms_edition_text_semantics": false
+  },
+  "existing_hits": [
+    "HIT-R004-G06-03@1",
+    "HIT-R004-G06-04@1",
+    "HIT-R004-LK3-VOICE-NATURALNESS-TRUST-01@1",
+    "HIT-R002-PA3-04"
+  ],
+  "new_canonical_hit_count": 0,
+  "source_custody_final_gate": false,
+  "canonical_screen_changed": false,
+  "identity_note": "One 2025 publication, author reports voice selection pre-study N1=60 and cooperative-game main experiment N2=68; this receipt does not establish independent samples, participant overlap, or E1-E6 inclusion.",
+  "handoff": "R004/Integration: approve durable rights-compliant source storage, acquire and hash exact actual bytes, register manifestation and performed source reading. R006 alone adjudicates full text, E1-E6, experiments and independent samples. Do not equate this transient Actions hash with retained custody.",
+  "actor": {
+    "kind": "agent",
+    "id": "gpt6-r005-becker-direct-probe-20261111",
+    "human_reviewer": false,
+    "tool": "GitHub Actions Python urllib + separate web PDF page 0 visual check"
+  },
+  "research_outcomes": {
+    "new_eligible_publications": 0,
+    "new_admitted_studies": 0,
+    "new_admitted_experiments": 0,
+    "new_independent_samples": 0,
+    "new_audio_observations": 0,
+    "new_database_exports": 0
+  }
+}
