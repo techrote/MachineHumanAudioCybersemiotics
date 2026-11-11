@@ -18,6 +18,26 @@ The machine obtains original HTTP Date/status, request/completion UTC, content t
 
 These are **machine-readable section-bound fingerprints, not human or independent assessor reading, peer review, performed semantic eligibility assessment, source manifestation, rights/retention approval, or numeric extraction**. A complete successful request must be proven by the actual `MHAC_R005_STEVENS_SECTION_PINS=` row in the CI log; green CI alone does not prove network access. A source/response error remains a precise recorded blocker, not evidence of absence of the paper.
 
+
+## Observed exact-source acquisition and full-section fingerprints
+
+On **11 November 2026** the actual branch-head [Actions #42965672855, job #130342294257](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42965672855/job/130342294257) acquired the real original Europe PMC JATS XML by unauthenticated HTTP 200. The source HTTP Date was **05:26:06 GMT**; request started **05:26:00.359 UTC**, response opened **05:26:06.381 UTC**, and read finished **05:26:06.595 UTC**. The **74,338 received original bytes** hash to SHA-256 **`1390d7a4def94ad6b0926a5f1ae2608999f31713fb3ee5dad20b9e3fcc52658b`**, an exact byte-hash match to the earlier 10 November independent response. The full live original `MHAC_R005_STEVENS_SECTION_PINS=` marker is preserved verbatim as structured fields in [OBSERVATIONS.json](OBSERVATIONS.json), with run, job and source-head pins.
+
+The original body was parsed, its **entire top-level Method and Results text traversed**, whitespace-normalized and fingerprinted; these are actual original-text section hashes, **not** a Methods/Results human interpretation or quantitative findings:
+
+| Original JATS locator | Sections included | Normalized text characters / paragraph elements | SHA-256 of normalized complete section text |
+|---|---|---:|---|
+| `/article/body/sec[2]` **Method** | Participants; Stimuli; Equipment; Procedure | 7,919 / 11 | `0fa7e539fd127505e32d4fb2456be002180fc7813309fbd0258b59a14dbc8f8b` |
+| `/article/body/sec[3]` **Results** | Learning Phase; Test Phase | 4,673 / 8 | `b56553a3a98a167b678c665380320f661b63b458d913f733879d3ba996139038` |
+
+The source text/byte fingerprints are reproducible **only after acquiring the exact JATS XML response**: normalize `" ".join(" ".join(section.itertext()).split())`, UTF-8 encode, SHA-256. New original responses may change and must not inherit this digest without verification. The page/section fingerprints make later source custody and source-pinned R006 re-reading falsifiable. The raw article bytes remain **not retained** and private custody/right approval remains **blocked**.
+
+A first Actions attempt at [#42965334957](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/42965334957) returned original HTTP 200 but its **local parser** wrongly rejected an ordinary JATS `<!DOCTYPE>` as dangerous. The parser was corrected to allow regular DOCTYPE while still rejecting XML entity declarations, with a synthetic regression. This was a **code-level source access false negative**, not a publisher refusal. The successful source-head CI of 1,078 unit tests, six skipped, repository validator PASS and deterministic fixture PASS is attached to #42965672855; the later receipt commit is not covered by that earlier source-head qualification.
+
+The new offline receipt-negative-controls test `tests/test_r005_stevens2009_section_receipt_20261111.py` binds this observation to the original log/head, DOI, raw and section hashes, response timestamp/length, the 2026-10-04 cutoff and immutable nonadmission flags. CI qualification of its final added commit must be inspected separately.
+
+**R006:** An already known publication now has hashed **original Methods and Results section text boundaries**, but not private retained article bytes or an approved performed-reading event. Source-pinned E1–E6/independent sample decisions remain R006-only after the R004/Integration custody gate. Nothing authorizes promotion of the earlier 36 and 40 reported counts to two admitted samples.
+
 ## R006 / Integration gate and next action
 
 **R004 / Integration:** Designate approved private custody and an actual rights/attribution basis for a new original Europe PMC XML copy. Retain that copy privately with original response timing and headers. Use the existing [offline XML attester](../scripts/attest_primary_xml.py) to bind its *actual* SHA-256 to a local receipt (never substitute a historical hash if bytes have changed). Register its source manifestation and controlled reading event using Integration's ownership of canonical source records, manifests and generated exports. The source's link to CC BY 2.5 is **licence metadata, not blanket self-authorization of retention**.
@@ -34,4 +54,4 @@ python tools/validate.py
 python -m tools.build_record_fixtures --check
 ```
 
-This document is a **pre-acquisition design and negative-control record**; an actual observed result, acquisition timestamp, hash and Actions link must be added only after reading the source-exact CI marker. Do not claim final-head qualification or merged-main CI until the actual final head and relevant checks are successful. R005/R006 and the owner-only custody/rights gate remain OPEN.
+The actual acquired section observations are recorded above and pinned in [OBSERVATIONS.json](OBSERVATIONS.json). This document does not assert final-head qualification or merged-main CI for the later observation/test additions. R005/R006 and the owner-only custody/rights gate remain OPEN.
