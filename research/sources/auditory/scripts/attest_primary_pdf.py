@@ -101,7 +101,10 @@ def verify(path, receipt):
         "admitted_studies_experiments_samples": [0, 0, 0],
     }
     for key, expected in fixed.items():
-        if type(data.get(key)) is not type(expected) or data[key] != expected:
+        actual = data.get(key)
+        if (type(actual) is not type(expected) or actual != expected
+                or (isinstance(expected, list) and
+                    any(type(item) is not int for item in actual))):
             raise ValueError("Receipt research-state/identity guard failed: " + key)
     if not isinstance(data.get("publication_doi"), str) or not re.fullmatch(
             r"10\.\d{4,9}/\S+", data["publication_doi"], flags=re.I):
