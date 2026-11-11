@@ -1,0 +1,185 @@
+{
+  "schema": "mhac-r005-c9-romeo-voice-lineage/1",
+  "issue": 5,
+  "downstream_issue": 6,
+  "base_sha": "2a5c480daa5f0ade8f0d76df66cf499174c60fa1",
+  "frozen_protocol": "research/protocol/PROTOCOL-v1.md §§5.1 (C8/C9), 6, 11, 12; no amendment",
+  "publication_cutoff": "2026-10-04",
+  "observation_date_utc": "2026-11-11",
+  "observation_clock_checkpoint_utc": "2026-11-11T04:12:28.365Z",
+  "clock_note": "Clock checkpoint after web retrieval, not a per-request capture or original HTTP Date; exact individual request timestamps unavailable.",
+  "channel": "C9 selected backward citations from article's own bibliography, cross-verified via C8 web/source navigation; not an ACM, IEEE or OpenAlex database search",
+  "actor": {
+    "kind": "AI-assisted research",
+    "model": "GPT-6",
+    "human_reviewer": false,
+    "screening_decisions": false
+  },
+  "discovery_queries": [
+    "\"Putting Robots in Context\" \"Romeo\" filetype:pdf",
+    "\"Putting Robots in Context\" robot voice full text preprint",
+    "\"Putting Robots in Context\" Romeo Torre \"pdf\" 2023",
+    "\"If your device could smile: People trust happy-sounding artificial agents more\" 2020 DOI",
+    "\"How context shapes the appropriateness of a robot's voice\" 2020 DOI",
+    "\"Trust in artificial voices: A congruency effect\" 2018 DOI",
+    "site:tara.tcd.ie \"Putting Robots in Context\""
+  ],
+  "capture": {
+    "raw_web_search_response_bytes_retained": false,
+    "raw_article_pdf_bytes_retained": false,
+    "original_http_response_sha256": null,
+    "original_http_date": null,
+    "original_http_status": null,
+    "direct_external_api_export": false,
+    "complete_reference_list_transcribed": false,
+    "web_rendered_text_available": true,
+    "page_images_visually_examined": true,
+    "individual_access_timestamps": null,
+    "immutable_artifact": "This JSON in the Git commit pins the reported observations and URLs, not original HTTP response bytes.",
+    "reproducible_query_results_boundary": "Queries exactly recorded; selected returned source landing URLs and donor page/anchor IDs only. Neither a complete SERP nor lossless provider response export.",
+    "rights": "Web-rendered public repository pages accessed without account. Item-level licences observed where listed; no private retention/redistribution permission inferred; no restricted original article committed.",
+    "publisher_original_2023_full_text_access": false,
+    "publisher_blocker_clock_checkpoint_utc": "2026-11-11T04:18:33.341Z",
+    "publisher_blocker_time_note": "Observer clock at latest source-check checkpoint; not timestamp of publisher HTTP response."
+  },
+  "parent": {
+    "source_id": "SRC-REL-ROMEO-2025",
+    "doi": "10.1145/3711938",
+    "title": "The Effect of Voice and Repair Strategy on Trust Formation and Repair in Human-Robot Interaction",
+    "edition": "ACM Transactions on Human-Robot Interaction 14(2), Article 33 (February 2025), publisher-layout text with Chalmers cover sheet",
+    "institutional_pdf": "https://research.chalmers.se/publication/546010/file/546010_Fulltext.pdf",
+    "publisher_rights_printed": "CC BY-NC-SA 4.0 on printed 33:1; this is a source statement, not approval of repository redistribution",
+    "examined_pdf_page_indices": [
+      4,
+      20,
+      21
+    ],
+    "examined_printed_page_numbers": [
+      "33:4",
+      "33:20",
+      "33:21"
+    ],
+    "reading_boundary": "Visual inspection of §1.3 single page 33:4 and selected references numbered 61,74,75,76 on pp33:20-21; not full article, whole reference list, article audio or Methods/Results review in this tranche."
+  },
+  "links": [
+    {
+      "candidate_key": "C9-ROMEO2025-REF061",
+      "reference_number": 61,
+      "donor_locator": "§1.3, printed 33:4 (PDF index 4), text cites [61]; References printed 33:20 (PDF index 20)",
+      "title": "Putting Robots in Context: Challenging the Influence of Voice and Empathic Behaviour on Trust",
+      "authors": "Marta Romeo; Ilaria Torre; Sébastien Le Maguer; Angelo Cangelosi; Iolanda Leite",
+      "year": 2023,
+      "doi": "10.1109/RO-MAN57019.2023.10309631",
+      "edition": "32nd IEEE RO-MAN 2023, pp 2045–2050, six-page conference paper",
+      "verification_urls": [
+        "https://researchportal.hw.ac.uk/en/publications/putting-robots-in-context-challenging-the-influence-of-voice-and-/",
+        "https://research.chalmers.se/en/publication/539223",
+        "https://ieeexplore.ieee.org/document/10309631",
+        "https://dblp.dagstuhl.de/rec/conf/ro-man/RomeoTMCL23.html"
+      ],
+      "verification_extent": "Heriot-Watt institutional title, DOI, publication date, pp2045–2050, abstract and access-to-document section; Chalmers institutional metadata. The original six-page IEEE paper was NOT accessed; no original-paper Methods, Results or audio read.",
+      "verified_relation": "2025 parent bibliographically cites the distinct 2023 IEEE publication as [61] in discussion of robot voice and trust; citation is not evidence that 2023 and 2025 participants or stimuli are identical.",
+      "legal_access": "Public institutional HTML abstracts/metadata only; no publisher original full text; DOI links are not qualifying full-text access.",
+      "r006_identity": "SRC-REL-ROMEO-2023 (separate publication); participant/stimulus independence unknown",
+      "status": "prior_candidate_direct_citation_verified; requires R006 dedup and primary full text",
+      "publisher_attempt": {
+        "url": "https://ieeexplore.ieee.org/document/10309631",
+        "result": "Direct publisher HTML web-reader returned 'JavaScript is disabled' and bot-verification requirement rather than article text; original six-page methods/results unavailable in this session.",
+        "http_status": null,
+        "raw_html_retained": false,
+        "paid_access_attempted": false,
+        "automated_bypass_attempted": false
+      }
+    },
+    {
+      "candidate_key": "C9-ROMEO2025-REF074",
+      "reference_number": 74,
+      "donor_locator": "§1.3 printed 33:4 discusses joyful voices and cites [74]; References printed 33:21, PDF index 21",
+      "title": "If your device could smile: People trust happy-sounding artificial agents more",
+      "authors": "Ilaria Torre; Jeremy Goslin; Laurence White",
+      "year": 2020,
+      "doi": "10.1016/j.chb.2019.106215",
+      "edition": "Computers in Human Behavior 105, article 106215 (April 2020)",
+      "verification_urls": [
+        "https://eprints.ncl.ac.uk/263737",
+        "https://pearl.plymouth.ac.uk/psy-research/350/"
+      ],
+      "verification_extent": "Newcastle institutional metadata and accepted-version PDF link and rights statement; Plymouth original repository metadata and DOI. Full PDF not opened, downloaded or read.",
+      "legal_access": "Public Newcastle repository metadata indicates linked accepted-version PDF and CC BY-NC-ND 4.0; publisher version/redistribution rights not established.",
+      "r006_identity": "Not resolved against existing canonical hits; R006 owns matching and eligibility",
+      "status": "C9_candidate_source_route; not screened"
+    },
+    {
+      "candidate_key": "C9-ROMEO2025-REF075",
+      "reference_number": 75,
+      "donor_locator": "§1.3 printed 33:4 cites [75] for artificial-voice trust; References printed 33:21, PDF index 21",
+      "title": "Trust in artificial voices: a congruency effect of first impressions and behavioural experience",
+      "authors": "Ilaria Torre; Jeremy Goslin; Laurence White; Davide Zanatto",
+      "year": 2018,
+      "doi": "10.1145/3183654.3183691",
+      "edition": "Technology, Mind and Society (TechMindSociety '18), ACM, Article 40, 2018",
+      "verification_urls": [
+        "https://eprints.ncl.ac.uk/257694"
+      ],
+      "verification_extent": "Newcastle repository record displays publication type, title, DOI, Article 40, and accepted-manuscript PDF link. No source PDF or original proceedings full text read.",
+      "legal_access": "Public accepted manuscript navigation; Newcastle explicitly refers reuse to ACM terms; no permission to redistribute inferred.",
+      "r006_identity": "Not resolved; R006 owns matching and eligibility",
+      "status": "C9_candidate_source_route; not screened"
+    },
+    {
+      "candidate_key": "C9-ROMEO2025-REF076",
+      "reference_number": 76,
+      "donor_locator": "§1.3 printed 33:4 discusses context and cites [9,61], while References printed 33:21, PDF index 21 contains [76] as a closely related voice-context route; not claim that [76] is cited in the selected §1.3 paragraph",
+      "title": "How context shapes the appropriateness of a robot's voice",
+      "authors": "Ilaria Torre; Adrian Benigno Latupeirissa; Conor McGinn",
+      "year": 2020,
+      "doi": "10.1109/RO-MAN47096.2020.9223449",
+      "edition": "29th IEEE RO-MAN (2020), pp 215–222",
+      "verification_urls": [
+        "https://www.tara.tcd.ie/items/f47eb94c-e26d-4d33-9d6d-50e4652e8a31",
+        "https://dblp.uni-trier.de/rec/conf/ro-man/0002LM20.html"
+      ],
+      "verification_extent": "Trinity College Dublin TARA landing: PDF file link, openAccess label, item-level CC BY-SA and abstract; dblp metadata DOI and pages. Original eight-page PDF not opened/read or hashed.",
+      "legal_access": "Public institutional TARA record marks openAccess and item-level CC BY-SA; check actual file rights before reuse or permanent copy.",
+      "r006_identity": "Not resolved; R006 owns matching and eligibility",
+      "status": "C9_candidate_source_route; not screened"
+    }
+  ],
+  "related_2023_supplement": {
+    "doi": "10.5281/zenodo.8042317",
+    "url": "https://zenodo.org/records/8042317",
+    "role": "Scripts of utterances used in the 2023 paper's OS1/OS2; not the original article, not voice audio, not proof of participant overlap",
+    "source_boundary": "Zenodo repository description and file listing only; prior R005 byte-verification separate and not repeated."
+  },
+  "canonical_hit_handling": {
+    "new_canonical_hit_ids": [],
+    "existing_parent_source_ids": [
+      "SRC-REL-ROMEO-2025",
+      "SRC-REL-ROMEO-2023"
+    ],
+    "candidate_keys_are_not_HIT_ids": true,
+    "claimed_unique_new_publications": 0,
+    "screening_changes": 0,
+    "eligibility_changes": 0,
+    "independent_samples_added": 0,
+    "identity_adjudication": "R006 only"
+  },
+  "handoff": {
+    "r006": "Cite chain verified: Romeo 2025 §1.3 p33:4 and Ref [61] p33:20 explicitly link prior Romeo 2023 DOI; they are distinct publications but 2023 original full text remains absent, and neither sample/stimulus identity nor E1–E6 is adjudicated. Three additional voice-trust/context bibliography routes [74–76] have publisher/institutional identifiers for R006 dedup, not admission.",
+    "integration": "No common manifest/index or identity-ledger edit. Review R005-only citation navigation and source-rights boundaries. No canonical search-hit registration or report count change. Next external owner gate remains private retained Stevens XML source; this C9 work does not substitute for it."
+  },
+  "scientific_gate": {
+    "r006_title_abstract_accepted_before": 9,
+    "r006_title_abstract_after": 9,
+    "r006_full_text_included_before": 0,
+    "r006_full_text_included_after": 0,
+    "r006_admitted_publications_before": 0,
+    "r006_admitted_publications_after": 0,
+    "r006_admitted_studies_after": 0,
+    "r006_admitted_experiments_after": 0,
+    "r006_independent_samples_after": 0,
+    "track_E_selected_after": 0,
+    "track_G_selected_after": 0
+  },
+  "next": "Rights-compliant private original-byte custody for Stevens 2009 via owner-designated location / R004 and independent source manifestation; Romeo 2023 original IEEE 6pp full text; when R006 needs are supplied or blocked, pursue legitimate single-invocation EQ1 boundary or complete C9 reference chains with raw responses."
+}
