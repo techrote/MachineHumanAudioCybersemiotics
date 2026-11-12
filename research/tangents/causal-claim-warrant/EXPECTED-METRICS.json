@@ -1,0 +1,55 @@
+{
+  "case_count": 32,
+  "origin": "Independent JavaScript accounting pass over frozen case labels; compare against Python implementation, not empirical outcomes",
+  "fixture_git_blob_sha1": "7839ba365794c888e19263a70ffe9b6254446f23",
+  "expected_policy_totals": {
+    "naive": {
+      "candidate_narrations": 0,
+      "factually_wrong_cause": 11,
+      "invalid_observation_claim": 4,
+      "omitted_valid_observation": 0,
+      "over_constructed_word_budget": 0,
+      "unsupported_action_offer": 28,
+      "unsupported_cause": 22,
+      "withheld_warranted_action": 0,
+      "withheld_warranted_diagnosis": 0,
+      "word_tokens": 305
+    },
+    "state_only": {
+      "candidate_narrations": 0,
+      "factually_wrong_cause": 0,
+      "invalid_observation_claim": 0,
+      "omitted_valid_observation": 0,
+      "over_constructed_word_budget": 0,
+      "unsupported_action_offer": 0,
+      "unsupported_cause": 0,
+      "withheld_warranted_action": 4,
+      "withheld_warranted_diagnosis": 16,
+      "word_tokens": 96
+    },
+    "alternatives": {
+      "candidate_narrations": 28,
+      "factually_wrong_cause": 0,
+      "invalid_observation_claim": 0,
+      "omitted_valid_observation": 0,
+      "over_constructed_word_budget": 16,
+      "unsupported_action_offer": 0,
+      "unsupported_cause": 0,
+      "withheld_warranted_action": 4,
+      "withheld_warranted_diagnosis": 16,
+      "word_tokens": 320
+    },
+    "warranted": {
+      "candidate_narrations": 0,
+      "factually_wrong_cause": 0,
+      "invalid_observation_claim": 0,
+      "omitted_valid_observation": 0,
+      "over_constructed_word_budget": 2,
+      "unsupported_action_offer": 0,
+      "unsupported_cause": 0,
+      "withheld_warranted_action": 0,
+      "withheld_warranted_diagnosis": 0,
+      "word_tokens": 190
+    }
+  }
+}
