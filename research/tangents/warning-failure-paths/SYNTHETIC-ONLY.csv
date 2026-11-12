@@ -1,0 +1,13 @@
+case_id,dataset_kind,scenario,emitted,measured_audible,reported_detection,identified_correctly,interpreted_request_correctly,selected_correct_action,action_latency_s,deadline_s,urgency_rating
+S01,synthetic_fixture,baseline,true,true,true,true,true,true,1.0,3.0,3
+S02,synthetic_fixture,modelled_masking,true,false,false,,,,,3.0,4
+S03,synthetic_fixture,audible_prediction_omission,true,true,false,,,,,3.0,4
+S04,synthetic_fixture,overlap_wrong_identity,true,true,true,false,,,,3.0,4
+S05,synthetic_fixture,high_urgency_wrong_identity,true,true,true,false,,,,3.0,7
+S06,synthetic_fixture,wrong_request_interpretation,true,true,true,true,false,,,3.0,3
+S07,synthetic_fixture,wrong_action_choice,true,true,true,true,true,false,,3.0,3
+S08,synthetic_fixture,late_correct_action,true,true,true,true,true,true,4.5,3.0,5
+S09,synthetic_fixture,unknown_action_time,true,true,true,true,true,true,,3.0,5
+S10,synthetic_fixture,missing_audibility_measurement,true,,false,,,,,3.0,3
+S11,synthetic_fixture,near_deadline_success,true,true,true,true,true,true,2.8,3.0,3
+S12,synthetic_fixture,identity_not_assessed,true,true,true,,,,,3.0,3
