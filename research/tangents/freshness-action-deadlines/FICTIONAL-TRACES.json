@@ -1,0 +1,905 @@
+{
+  "schema": "t010-fictional-v1",
+  "disclaimer": "Invented traces; no audio, humans or observations. Model clock units are arbitrary integers.",
+  "cases": [
+    {
+      "id": "T01",
+      "description": "One replaceable status, no requested action",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "status",
+          "source": "s1"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": []
+      }
+    },
+    {
+      "id": "T02",
+      "description": "Later status can supersede queued earlier status",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "status",
+          "source": "s1"
+        },
+        {
+          "id": "s2",
+          "kind": "status",
+          "at": 2,
+          "group": "status",
+          "source": "s1"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": []
+      }
+    },
+    {
+      "id": "T03",
+      "description": "Independent status groups retain separate meanings",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "temp",
+          "source": "s1"
+        },
+        {
+          "id": "s2",
+          "kind": "status",
+          "at": 2,
+          "group": "door",
+          "source": "s1"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": []
+      }
+    },
+    {
+      "id": "T04",
+      "description": "Short event deadline before ordinary deferral",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 1,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T05",
+      "description": "Long event deadline supports bounded deferral",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T06",
+      "description": "Active event followed by source-authoritative resolution",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "resolve",
+          "target": "e1",
+          "at": 2
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": [
+          "e1"
+        ]
+      }
+    },
+    {
+      "id": "T07",
+      "description": "Newer status does not cancel unresolved action",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 1,
+          "group": "status",
+          "source": "s1"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T08",
+      "description": "Release before delayed dispatch means obsolete instruction",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "resolve",
+          "target": "e1",
+          "at": 1
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": [
+          "e1"
+        ]
+      }
+    },
+    {
+      "id": "T09",
+      "description": "Explicit source revocation distinct from acknowledgement",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 10,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "revoke",
+          "target": "e1",
+          "at": 2
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": [
+          "e1"
+        ]
+      }
+    },
+    {
+      "id": "T10",
+      "description": "Acknowledgement does not resolve an obligation",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "ack",
+          "target": "e1",
+          "at": 1
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T11",
+      "description": "Handover invalidates delayed old-authority dispatch",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "handover",
+          "at": 2,
+          "actor": "operator-B"
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T12",
+      "description": "Event addressed to post-handover actor",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 3,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-B"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "handover",
+          "at": 2,
+          "actor": "operator-B"
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T13",
+      "description": "Two independent sources each own an obligation",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 7,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e2",
+          "kind": "obligation",
+          "at": 1,
+          "deadline": 7,
+          "source": "s2",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1",
+          "e2"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T14",
+      "description": "Burst of four obligations cannot be latest-wins",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e2",
+          "kind": "obligation",
+          "at": 1,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e3",
+          "kind": "obligation",
+          "at": 2,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e4",
+          "kind": "obligation",
+          "at": 3,
+          "deadline": 9,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1",
+          "e2",
+          "e3",
+          "e4"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T15",
+      "description": "Duplicate packet delivery risks duplicated action",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 1,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T16",
+      "description": "Next task boundary lies beyond safe deadline",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 2,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        8
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T17",
+      "description": "Task boundary exactly on deadline is model-timely",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 5,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T18",
+      "description": "Unknown event deadline cannot be declared timely",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": null,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T19",
+      "description": "Unknown actor cannot be declared authorized",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": null
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T20",
+      "description": "Untrusted source/recipient clock mapping blocks deadline guarantee",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      },
+      "clock_valid": false
+    },
+    {
+      "id": "T21",
+      "description": "Expired status must not be treated as fresh",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "status",
+          "source": "s1",
+          "expires": 1
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": []
+      }
+    },
+    {
+      "id": "T22",
+      "description": "Immediate-only is sufficient in simple no-backlog case",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 3,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        0
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T23",
+      "description": "Old replaceable status followed by durable obligation",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "status",
+          "source": "s1"
+        },
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 1,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T24",
+      "description": "Durable event followed by newer snapshot same source",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 6,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 1,
+          "group": "status",
+          "source": "s1"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T25",
+      "description": "Event cleared then a new different event is required",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e2",
+          "kind": "obligation",
+          "at": 3,
+          "deadline": 8,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "resolve",
+          "target": "e1",
+          "at": 2
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e2"
+        ],
+        "released": [
+          "e1"
+        ]
+      }
+    },
+    {
+      "id": "T26",
+      "description": "Boundary unavailable: fallback bounded deferral",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 2,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T27",
+      "description": "Status arrivals from different sources do not coalesce",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "status",
+          "source": "a"
+        },
+        {
+          "id": "s2",
+          "kind": "status",
+          "at": 1,
+          "group": "status",
+          "source": "b"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": []
+      }
+    },
+    {
+      "id": "T28",
+      "description": "Acknowledged old event and newer status are separate",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 7,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 2,
+          "group": "status",
+          "source": "s1"
+        }
+      ],
+      "changes": [
+        {
+          "kind": "ack",
+          "target": "e1",
+          "at": 1
+        }
+      ],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [
+          "e1"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T29",
+      "description": "Same source emits two independent event IDs",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "e1",
+          "kind": "obligation",
+          "at": 0,
+          "deadline": 10,
+          "source": "s1",
+          "actor": "operator-A"
+        },
+        {
+          "id": "e2",
+          "kind": "obligation",
+          "at": 2,
+          "deadline": 10,
+          "source": "s1",
+          "actor": "operator-A"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        6
+      ],
+      "truth": {
+        "required": [
+          "e1",
+          "e2"
+        ],
+        "released": []
+      }
+    },
+    {
+      "id": "T30",
+      "description": "No status coalescing across declared semantic groups",
+      "fictional": true,
+      "messages": [
+        {
+          "id": "s1",
+          "kind": "status",
+          "at": 0,
+          "group": "certainty",
+          "source": "s1"
+        },
+        {
+          "id": "s2",
+          "kind": "status",
+          "at": 1,
+          "group": "urgency",
+          "source": "s1"
+        }
+      ],
+      "changes": [],
+      "boundaries": [
+        5
+      ],
+      "truth": {
+        "required": [],
+        "released": []
+      }
+    }
+  ]
+}
