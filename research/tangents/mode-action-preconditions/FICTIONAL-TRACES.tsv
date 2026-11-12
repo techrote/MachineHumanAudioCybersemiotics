@@ -1,0 +1,31 @@
+source_id	event_id	message_ver	attested	id	scenario	event_mode	compile_mode	delivery_mode	action_mode	observed_mode	true_ver	observed_ver	origin	action	allowed	actor	authorized	source_truth	required	clock	deadline	action_time	ack	completed	duplicate	visual_sufficient
+fictional-workstation	E-M01	1	yes	M01	stable paused resume	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M02	1	yes	M02	stable running resume invalid	running	running	running	running	running	1	1	commanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M03	1	no	M03	change after event	paused	running	running	running	paused	2	1	uncommanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M04	1	yes	M04	change after compile	paused	paused	running	running	running	2	2	uncommanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M05	1	no	M05	change after delivery	paused	paused	paused	running	paused	2	1	uncommanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M06	2	yes	M06	return to permitted mode	running	paused	paused	paused	paused	2	2	commanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M07	1	no	M07	unknown action mode	paused	paused	paused	?	paused	2	2	unknown	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M08	1	no	M08	unknown observation	paused	paused	paused	paused	?	2	?	unknown	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M09	1	no	M09	conflicting sensors	paused	paused	paused	paused	conflict	2	2	conflicting	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M10	1	no	M10	stale observed mode	paused	paused	paused	paused	paused	3	2	commanded	resume_job	paused	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M11	1	yes	M11	mode independent active	running	running	running	running	?	2	?	commanded	ack_status	*	op1	op1	true	yes	known	10	5	yes	no	no	no
+fictional-workstation	E-M12	1	yes	M12	mode independent idle	idle	idle	idle	idle	idle	1	1	commanded	ack_status	*	op1	op1	true	yes	known	10	5	no	yes	no	yes
+fictional-workstation	E-M13	1	yes	M13	mode independent change	idle	running	paused	paused	?	3	?	uncommanded	ack_status	*	op1	op1	true	yes	known	10	5	no	no	no	yes
+fictional-workstation	E-M14	1	yes	M14	wrong actor	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op2	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M15	2	yes	M15	actor handover	paused	paused	paused	paused	paused	2	2	commanded	resume_job	paused	op2	op2	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M16	1	yes	M16	unknown actor	paused	paused	paused	paused	paused	1	1	unknown	resume_job	paused	?	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M17	1	yes	M17	unknown authority	paused	paused	paused	paused	paused	1	1	unknown	resume_job	paused	op1	?	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M18	1	yes	M18	expired deadline	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	yes	known	4	5	no	no	no	no
+fictional-workstation	E-M19	1	yes	M19	unknown deadline	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	yes	known	?	5	no	no	no	no
+fictional-workstation	E-M20	1	yes	M20	unknown clock	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	yes	unknown	10	5	no	no	no	no
+fictional-workstation	E-M21	1	yes	M21	false source estimate	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	false	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M22	1	yes	M22	unknown source estimate	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	unknown	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M23	1	yes	M23	revoked obligation	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	no	known	10	5	yes	yes	no	yes
+fictional-workstation	E-M24	1	yes	M24	duplicate still unresolved	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	yes	known	10	5	yes	no	yes	no
+fictional-workstation	E-M25	1	yes	M25	acknowledgment not resolution	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	yes	known	10	5	yes	no	no	no
+fictional-workstation	E-M26	1	yes	M26	completed action	paused	paused	paused	paused	paused	1	1	commanded	resume_job	paused	op1	op1	true	no	known	10	5	yes	yes	no	yes
+aux-controller	E-M27	1	yes	M27	simultaneous independent source	running	running	running	running	running	1	1	external	ack_status	*	op2	op1,op2	true	yes	known	10	5	no	no	no	yes
+fictional-workstation	E-M28	1	yes	M28	maintenance only permitted	maintenance	maintenance	maintenance	maintenance	maintenance	1	1	commanded	reset_preview	maintenance	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M29	1	yes	M29	maintenance only invalid	running	running	running	running	running	1	1	commanded	reset_preview	maintenance	op1	op1	true	yes	known	10	5	no	no	no	no
+fictional-workstation	E-M30	1	yes	M30	visual only sufficient null	idle	idle	idle	idle	idle	1	1	commanded	ack_status	*	op1	op1	true	no	known	10	5	no	no	no	yes

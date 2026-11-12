@@ -1,0 +1,7 @@
+{
+  "case_count": 30,
+  "fixture_sha256": "096d0387f9919d17c620cae7ec794711614aad8f9df2d9b78cfb6dc38eb9581b",
+  "hashing": "sha256 of raw TSV bytes and canonical JSON with sorted keys, compact separators and trailing newline",
+  "report_sha256": "3746e3473bd63410d0791e7360549520b61316ef47947b2d7c08594123fe74c6",
+  "reproduce": "python research/tangents/mode-action-preconditions/oracle.py --check"
+}
