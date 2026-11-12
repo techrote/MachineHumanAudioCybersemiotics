@@ -1,0 +1,630 @@
+[
+  {
+    "id": "trained-serial",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "heldout-serial",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "stopped",
+        "source_token": "s:pump",
+        "event_token": "e:stopped",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "heldout-parallel-tagged",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "door",
+        "event": "fault",
+        "source_token": "s:door",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "parallel",
+        "binding": "tagged"
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "heldout-hybrid",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "fan",
+        "event": "fault",
+        "source_token": "s:fan",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "hybrid",
+        "fallback": "explicit"
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "trained-flat",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "flat",
+        "flat_token": "flat:1"
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "heldout-flat",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "stopped",
+        "source_token": "s:pump",
+        "event_token": "e:stopped",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "flat",
+        "flat_token": "flat:unknown"
+      }
+    ],
+    "expected": {
+      "status": "unresolved",
+      "reason": "flat-untrained"
+    }
+  },
+  {
+    "id": "swapped-fields",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "e:fault",
+        "event_token": "s:pump",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "field-binding-mismatch"
+    }
+  },
+  {
+    "id": "unknown-source",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "unknown",
+        "event": "fault",
+        "source_token": "s:unknown",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-field"
+    }
+  },
+  {
+    "id": "unknown-event",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "unknown",
+        "source_token": "s:pump",
+        "event_token": "e:unknown",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-field"
+    }
+  },
+  {
+    "id": "oov-source",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "heat",
+        "event": "fault",
+        "source_token": "s:heat",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "out-of-vocabulary"
+    }
+  },
+  {
+    "id": "illegal-pair",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "door",
+        "event": "stopped",
+        "source_token": "s:door",
+        "event_token": "e:stopped",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "illegal-pair"
+    }
+  },
+  {
+    "id": "parallel-untagged",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "parallel",
+        "binding": "underdetermined"
+      }
+    ],
+    "expected": {
+      "status": "unresolved",
+      "reason": "parallel-binding-underdetermined"
+    }
+  },
+  {
+    "id": "serial-swapped-order",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "event",
+          "source"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "serial-order"
+    }
+  },
+  {
+    "id": "hybrid-no-fallback",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "hybrid",
+        "fallback": "missing"
+      }
+    ],
+    "expected": {
+      "status": "unresolved",
+      "reason": "fallback-unavailable"
+    }
+  },
+  {
+    "id": "concurrent-separate-messages",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      },
+      {
+        "source": "door",
+        "event": "open",
+        "source_token": "s:door",
+        "event_token": "e:open",
+        "event_id": "b",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "concurrent-same-pair-independent-ids",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      },
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "b",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "batch-duplicate-identity",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      },
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "batch-identity-collision"
+    }
+  },
+  {
+    "id": "stale-replay",
+    "fictional": true,
+    "previous": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "stale-or-replay"
+    }
+  },
+  {
+    "id": "version-advance",
+    "fictional": true,
+    "previous": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 2,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-batch-only"
+    }
+  },
+  {
+    "id": "event-id-reused-different-event",
+    "fictional": true,
+    "previous": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "stopped",
+        "source_token": "s:pump",
+        "event_token": "e:stopped",
+        "event_id": "a",
+        "version": 2,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "event-identity-reuse"
+    }
+  },
+  {
+    "id": "batch-atomic-invalid-second",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      },
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "e:fault",
+        "event_token": "e:fault",
+        "event_id": "b",
+        "version": 1,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "field-binding-mismatch"
+    }
+  },
+  {
+    "id": "invalid-bool-version",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump",
+        "event": "fault",
+        "source_token": "s:pump",
+        "event_token": "e:fault",
+        "event_id": "a",
+        "version": true,
+        "mechanism": "serial",
+        "order": [
+          "source",
+          "event"
+        ]
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "malformed"
+    }
+  },
+  {
+    "id": "empty-batch",
+    "fictional": true,
+    "previous": [],
+    "messages": [],
+    "expected": {
+      "status": "reject",
+      "reason": "malformed-case"
+    }
+  },
+  {
+    "id": "missing-field",
+    "fictional": true,
+    "previous": [],
+    "messages": [
+      {
+        "source": "pump"
+      }
+    ],
+    "expected": {
+      "status": "reject",
+      "reason": "malformed"
+    }
+  }
+]
