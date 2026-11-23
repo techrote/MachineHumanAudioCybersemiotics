@@ -92,7 +92,7 @@ The implementation [frame_oracle.py](frame_oracle.py) is standard-library Python
 | --- | ---: |
 | Untagged action set contains a single world direction | 4 of 64 scenes |
 | Untagged action set contains more than one direction | 60 of 64 scenes |
-| Blind "recipient-left" default matches all three truth-labeled frame cases | 96 of 192 case pairs |
+| Blind "recipient-left" default matches the selected truth-labeled action | 96 of 192 case pairs |
 | Blind recipient default conflicts with labeled true action | 96 of 192 case pairs |
 | Conservative untagged policy commits correctly | 12 of 192 case pairs |
 | Conservative untagged policy abstains | 180 of 192 case pairs |
