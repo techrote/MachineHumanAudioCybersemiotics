@@ -13,21 +13,23 @@ import wave
 try:
     from .silence_oracle import (
         DURATION, SAMPLE_RATE, LeaseState, World, async_counterexample,
-        bec_output, build_quartet, classify_lease, finite_eventuality_verdict,
-        heartbeat_suspicion, indistinguishable_at, observed_prefix,
-        open_world_query, partition_by_prefix,
-        posterior_event_probability_after_no_detections,
-        property_factors_through_prefix, receipt, scene_samples,
+        bec_output, build_quartet, classify_lease, entropy_bits,
+        finite_eventuality_verdict, heartbeat_suspicion, indistinguishable_at,
+        mutual_information_bits, observed_prefix, open_world_query,
+        partition_by_prefix, posterior_event_probability_after_no_detections,
+        property_factors_through_prefix, quartet_shared_silence_information_bits,
+        receipt, scene_samples,
         silence_window_pcm, timeout_claim_sound,
     )
 except ImportError:
     from silence_oracle import (
         DURATION, SAMPLE_RATE, LeaseState, World, async_counterexample,
-        bec_output, build_quartet, classify_lease, finite_eventuality_verdict,
-        heartbeat_suspicion, indistinguishable_at, observed_prefix,
-        open_world_query, partition_by_prefix,
-        posterior_event_probability_after_no_detections,
-        property_factors_through_prefix, receipt, scene_samples,
+        bec_output, build_quartet, classify_lease, entropy_bits,
+        finite_eventuality_verdict, heartbeat_suspicion, indistinguishable_at,
+        mutual_information_bits, observed_prefix, open_world_query,
+        partition_by_prefix, posterior_event_probability_after_no_detections,
+        property_factors_through_prefix, quartet_shared_silence_information_bits,
+        receipt, scene_samples,
         silence_window_pcm, timeout_claim_sound,
     )
 
@@ -143,6 +145,26 @@ class SoundOfNothingTests(unittest.TestCase):
                 ),
                 0.37,
             )
+
+    def test_shared_silence_carries_zero_world_identity_information(self):
+        self.assertAlmostEqual(quartet_shared_silence_information_bits(), 0.0)
+
+    def test_unique_observations_recover_full_uniform_world_identity(self):
+        states = ("a", "b", "c", "d")
+        prior = {state: 0.25 for state in states}
+        channel = {state: {state: 1.0} for state in states}
+        self.assertAlmostEqual(entropy_bits(list(prior.values())), 2.0)
+        self.assertAlmostEqual(mutual_information_bits(prior, channel), 2.0)
+
+    def test_partial_observation_has_intermediate_information(self):
+        prior = {"a": 0.5, "b": 0.5}
+        channel = {
+            "a": {"silence": 0.5, "tone": 0.5},
+            "b": {"silence": 1.0},
+        }
+        info = mutual_information_bits(prior, channel)
+        self.assertGreater(info, 0.0)
+        self.assertLess(info, 1.0)
 
     def test_timeout_requires_explicit_delay_bound(self):
         self.assertFalse(timeout_claim_sound(
