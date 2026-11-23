@@ -137,6 +137,46 @@ Not reused: the grammatical, circle-harmonic, Kaluza–Klein or moving-probe sce
 
 Use here: documented internal exaptation rather than pretending X005 independently invented the same theorem.
 
+
+## X005-S13 — Alpern & Schneider (1985), liveness
+
+Bowen Alpern and Fred B. Schneider, “Defining Liveness,” Information Processing Letters 21(4):181–185; Cornell TR 85-650.
+
+Actually inspected: Cornell technical-report text, especially the abstract and sections 2–3. The paper formalises liveness so that every partial execution can be extended to satisfy the property; guaranteed service (“every request is eventually satisfied”) is given as an example.
+
+Use here: a clean formal reason that an unbounded “eventually delivered” obligation cannot be refuted merely by observing a finite quiet prefix.
+
+Limit: X005's finite three-valued monitor is an original didactic simplification, not the paper's full topology or proof framework.
+
+## X005-S14 — Reiter (1977/1978), open and closed worlds
+
+Raymond Reiter, “On Closed World Data Bases,” UBC Technical Report 77-16 (October 1977), later in *Logic and Data Bases* (1978), DOI 10.1007/978-1-4684-3384-5_3.
+
+Actually inspected: UBC public technical-report abstract/record and its statement of the two assumptions. Under the closed-world convention, failure to prove a positive ground literal licenses assuming its negation in the stated database setting; the report also discusses conditions and inconsistency risks.
+
+Use here: makes explicit that “missing fact -> false” can be a **reasoning policy** rather than a discovery about reality.
+
+Limit: X005's open_world_query helper is not a logic-programming/database implementation and does not inherit Reiter's Horn-database results.
+
+## X005-S15 — W3C OWL 2 open-world example
+
+W3C OWL 2 Structural Specification / archived Structural Reference Experiment.
+
+Actually inspected: W3C text explaining the open-world assumption with an example in which the ontology says an individual is a dog but says nothing about whether it is a bird; lack of the bird assertion does not entail the complement because the ontology may simply lack that information.
+
+Use here: an official knowledge-representation counterpoint to closed-world negation-from-failure.
+
+Limit: no claim that MHAC semantic state should be encoded in OWL.
+
+## X005-S16 — runtime-monitoring / finite-trace inconclusiveness
+
+Alpern–Schneider supplies the historical liveness foundation; a modern runtime-verification discussion was also inspected for the familiar finite-prefix idea that a monitor can remain inconclusive when both satisfying and violating infinite continuations are still possible.
+
+Use here: terminology support for X005's SATISFIED / VIOLATED / INCONCLUSIVE toy monitor.
+
+Limit: X005 does not implement LTL, Büchi automata or predictive runtime verification.
+
+
 ## Source conclusion
 
 The useful cross-domain pattern is not that all these literatures “say the same thing.” They do not.
