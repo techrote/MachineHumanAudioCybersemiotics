@@ -1,0 +1,332 @@
+[
+  {
+    "id": "F01",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 0,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F02",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 0,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F03",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 0,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F04",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 1,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F05",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 1,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F06",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 1,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F07",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 2,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F08",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 2,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F09",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 0,
+      "hazard": 2,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F10",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 0,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F11",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 0,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F12",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 0,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F13",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 1,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F14",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 1,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F15",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 1,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F16",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 2,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F17",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 2,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F18",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 1,
+      "hazard": 2,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F19",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 0,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F20",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 0,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F21",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 0,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F22",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 1,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F23",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 1,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F24",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 1,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F25",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 2,
+      "urgency": 0,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F26",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 2,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "F27",
+    "kind": "factorial",
+    "truth": {
+      "certainty": 2,
+      "hazard": 2,
+      "urgency": 2,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "U28",
+    "kind": "unknown",
+    "truth": {
+      "certainty": null,
+      "hazard": 1,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "U29",
+    "kind": "unknown",
+    "truth": {
+      "certainty": 1,
+      "hazard": null,
+      "urgency": 1,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  },
+  {
+    "id": "U30",
+    "kind": "unknown",
+    "truth": {
+      "certainty": 1,
+      "hazard": 1,
+      "urgency": null,
+      "requested_action": "inspect",
+      "addressee": "operator-A"
+    }
+  }
+]
