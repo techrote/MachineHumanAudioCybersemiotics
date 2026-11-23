@@ -50,6 +50,9 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
             (root / "docs" / "a.md").write_text(
                 "Observer context meaning. Distinguish state from action.", encoding="utf-8"
             )
+            (root / "docs" / "a2.md").write_text(
+                "Observer context meaning. Keep state distinct from action.", encoding="utf-8"
+            )
             (root / "research" / "analysis" / "b.md").write_text(
                 "Observer context meaning. Separate certainty from urgency.", encoding="utf-8"
             )
@@ -57,7 +60,7 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
                 "Observer context meaning. Do not conflate frame with identity.", encoding="utf-8"
             )
             result = atlas.build(root)
-            self.assertEqual(result["corpus"]["documents"], 3)
+            self.assertEqual(result["corpus"]["documents"], 4)
             phrases = {x["phrase"]: x for x in result["top_bridges"]}
             self.assertIn("observer", phrases)
             self.assertEqual(phrases["observer"]["family_count"], 3)
