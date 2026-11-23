@@ -28,7 +28,8 @@ class EchoOneWitnessTests(unittest.TestCase):
     def test_mixed_two_roots(self):
         s = lab.scenario_summary('mixed')
         self.assertEqual(s['known_root_count'], 2)
-        self.assertEqual(s['messages'][6]['known_roots'], ['S2'])
+        self.assertEqual(s['messages'][6]['known_roots'], ['S1'])
+        self.assertEqual(s['messages'][7]['known_roots'], ['S2'])
 
     def test_unknown_ancestry_forbids_complete_count(self):
         s = lab.scenario_summary('untraced')
