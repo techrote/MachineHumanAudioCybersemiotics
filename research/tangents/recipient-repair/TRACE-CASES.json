@@ -1,0 +1,1504 @@
+{
+  "dataset_kind": "synthetic-only",
+  "issue": "MHAC-T003/#33",
+  "fictional_time_unit": "arbitrary tick; not seconds",
+  "cases": [
+    {
+      "id": "receipt_does_not_imply_understanding",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "receipt",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        }
+      ],
+      "expected": {
+        "delivery": "reported_received",
+        "interpretation": "unknown",
+        "acknowledged": false,
+        "resolution": "unverified"
+      }
+    },
+    {
+      "id": "acknowledgement_without_interpretation",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "ack",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        }
+      ],
+      "expected": {
+        "acknowledged": true,
+        "interpretation": "unknown",
+        "action": "not_reported",
+        "resolution": "unverified"
+      }
+    },
+    {
+      "id": "reported_understanding_without_action",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "interpret",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "status": "understood"
+        }
+      ],
+      "expected": {
+        "interpretation": "understood",
+        "action": "not_reported",
+        "resolution": "unverified"
+      }
+    },
+    {
+      "id": "action_completed_without_acknowledgement",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "action",
+          "at": 15,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "status": "completed"
+        }
+      ],
+      "expected": {
+        "action": "completed",
+        "timely_action": true,
+        "acknowledged": false,
+        "resolution": "unverified"
+      }
+    },
+    {
+      "id": "source_clarification_from_known_identity",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 8,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "responses": 1,
+        "pending": 0,
+        "control": "repair_reply_available",
+        "interpretation": "unknown"
+      }
+    },
+    {
+      "id": "cannot_answer_event_ambiguity",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": null,
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_event",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 5,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": null,
+          "status": "cannot_answer"
+        }
+      ],
+      "expected": {
+        "responses": 1,
+        "control": "cannot_answer",
+        "interpretation": "unknown"
+      }
+    },
+    {
+      "id": "two_bounded_repairs",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        },
+        {
+          "op": "repair_request",
+          "at": 5,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q2",
+          "kind": "repeat",
+          "channel": "text"
+        },
+        {
+          "op": "repair_response",
+          "at": 6,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q2",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "requests": 2,
+        "responses": 2,
+        "pending": 0
+      }
+    },
+    {
+      "id": "third_request_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        },
+        {
+          "op": "repair_request",
+          "at": 5,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q2",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 6,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q2",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        },
+        {
+          "op": "repair_request",
+          "at": 7,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q3",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "error": "repair_budget_exceeded"
+      }
+    },
+    {
+      "id": "concurrent_repair_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_request",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q2",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "error": "unresolved_request"
+      }
+    },
+    {
+      "id": "wrong_source_binding_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-router",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "error": "source_event_binding_mismatch"
+      }
+    },
+    {
+      "id": "unknown_source_cannot_be_promoted_by_reply",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": null,
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": null,
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "error": "unverified_unknown_promotion"
+      }
+    },
+    {
+      "id": "stale_reply_after_version_change",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "state_update",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": "fictional-sensor-v2"
+        },
+        {
+          "op": "repair_response",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "error": "message_or_version_mismatch"
+      }
+    },
+    {
+      "id": "nonsequential_state_version_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "state_update",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 3,
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": "fictional-sensor-v2"
+        }
+      ],
+      "expected": {
+        "error": "nonsequential_version"
+      }
+    },
+    {
+      "id": "deadline_forces_fallback_not_repair",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 29,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "requests": 0,
+        "pending": 0,
+        "control": "deadline_fallback"
+      }
+    },
+    {
+      "id": "unknown_deadline_forces_fallback",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": null,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "requests": 0,
+        "control": "deadline_unknown_fallback"
+      }
+    },
+    {
+      "id": "unavailable_fallback_explicit",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": false
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 29,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "requests": 0,
+        "control": "fallback_unavailable"
+      }
+    },
+    {
+      "id": "expired_message_repair_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 100,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "error": "expired_message"
+      }
+    },
+    {
+      "id": "late_reply_discarded",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 31,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "late_responses": 1,
+        "responses": 0,
+        "interpretation": "unknown",
+        "control": "late_reply_discarded"
+      }
+    },
+    {
+      "id": "lost_reply_timeout",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "timeout",
+          "at": 7,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1"
+        }
+      ],
+      "expected": {
+        "pending": 0,
+        "control": "response_timeout_fallback"
+      }
+    },
+    {
+      "id": "premature_timeout_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "timeout",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1"
+        }
+      ],
+      "expected": {
+        "error": "premature_timeout"
+      }
+    },
+    {
+      "id": "resolution_is_not_action",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "resolve",
+          "at": 8,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "status": "resolved",
+          "evidence_ref": "fictional-verification"
+        }
+      ],
+      "expected": {
+        "resolution": "resolved",
+        "action": "not_reported",
+        "acknowledged": false
+      }
+    },
+    {
+      "id": "ack_stale_version_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "state_update",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": "fictional-sensor-v2"
+        },
+        {
+          "op": "ack",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        }
+      ],
+      "expected": {
+        "error": "message_or_version_mismatch"
+      }
+    },
+    {
+      "id": "duplicate_reply_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        },
+        {
+          "op": "repair_response",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "error": "no_matching_pending_request"
+      }
+    },
+    {
+      "id": "duplicate_request_id_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        },
+        {
+          "op": "repair_request",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "error": "duplicate_request_id"
+      }
+    },
+    {
+      "id": "time_reversal_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "receipt",
+          "at": 6,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        },
+        {
+          "op": "ack",
+          "at": 5,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        }
+      ],
+      "expected": {
+        "error": "time_reversal"
+      }
+    },
+    {
+      "id": "late_action_is_not_timely",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "tick",
+          "at": 31,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        },
+        {
+          "op": "action",
+          "at": 35,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "status": "completed"
+        }
+      ],
+      "expected": {
+        "deadline_missed": true,
+        "timely_action": false,
+        "control": "deadline_missed_fallback"
+      }
+    },
+    {
+      "id": "version_change_resets_comprehension",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "interpret",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "status": "understood"
+        },
+        {
+          "op": "ack",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        },
+        {
+          "op": "state_update",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "source_id": "fictional-printer2",
+          "event_id": "fictional-warning",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": "fictional-sensor-v2"
+        }
+      ],
+      "expected": {
+        "version": 2,
+        "interpretation": "unknown",
+        "acknowledged": false,
+        "invalidated": 0,
+        "control": "state_changed"
+      }
+    },
+    {
+      "id": "version_change_invalidates_pending",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "state_update",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": "fictional-sensor-v2"
+        }
+      ],
+      "expected": {
+        "version": 2,
+        "invalidated": 1,
+        "pending": 0,
+        "requests": 1
+      }
+    },
+    {
+      "id": "unsupported_channel_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "unobserved"
+        }
+      ],
+      "expected": {
+        "error": "unsupported_channel"
+      }
+    },
+    {
+      "id": "unanswered_request_expiry",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "tick",
+          "at": 100,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        }
+      ],
+      "expected": {
+        "invalidated": 1,
+        "pending": 0,
+        "control": "message_expired_fallback"
+      }
+    },
+    {
+      "id": "accessible_text_request",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "text"
+        },
+        {
+          "op": "repair_response",
+          "at": 6,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "responses": 1,
+        "control": "repair_reply_available"
+      }
+    },
+    {
+      "id": "unknown_event_acknowledgement_stays_unknown",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": null,
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "ack",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1
+        }
+      ],
+      "expected": {
+        "acknowledged": true,
+        "interpretation": "unknown",
+        "action": "not_reported"
+      }
+    },
+    {
+      "id": "explicit_invalid_intent_rejected",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "do_it_for_me",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "error": "unsupported_repair_kind"
+      }
+    },
+    {
+      "id": "unknown_reply_is_not_understanding",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "why",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 5,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "cannot_answer"
+        }
+      ],
+      "expected": {
+        "control": "cannot_answer",
+        "interpretation": "unknown"
+      }
+    },
+    {
+      "id": "unsupported_resolution_evidence",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "resolve",
+          "at": 3,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "status": "resolved",
+          "evidence_ref": ""
+        }
+      ],
+      "expected": {
+        "error": "invalid_evidence_ref"
+      }
+    },
+    {
+      "id": "state_promotion_requires_provenance",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "state_update",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "source_id": "new",
+          "event_id": "new",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": ""
+        }
+      ],
+      "expected": {
+        "error": "invalid_provenance"
+      }
+    },
+    {
+      "id": "repair_can_be_completed_after_new_version",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "state_update",
+          "at": 2,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "expires_at": 120,
+          "latest_safe_action": 60,
+          "fallback_available": true,
+          "provenance": "fictional-sensor-v2"
+        },
+        {
+          "op": "repair_request",
+          "at": 4,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "request_id": "q2",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 6,
+          "message_id": "fictional-m1",
+          "state_version": 2,
+          "request_id": "q2",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "version": 2,
+        "invalidated": 1,
+        "responses": 1
+      }
+    },
+    {
+      "id": "reply_exceeds_timeout_without_explicit_tick",
+      "fictional": true,
+      "classification": "positive",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "repair_response",
+          "at": 8,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "source_id": "fictional-printer",
+          "event_id": "fictional-paused",
+          "status": "existing_info"
+        }
+      ],
+      "expected": {
+        "responses": 0,
+        "late_responses": 1,
+        "control": "late_reply_discarded"
+      }
+    },
+    {
+      "id": "no_repair_restart_after_fallback",
+      "fictional": true,
+      "classification": "negative",
+      "message": {
+        "message_id": "fictional-m1",
+        "source_id": "fictional-printer",
+        "event_id": "fictional-paused",
+        "state_version": 1,
+        "issued_at": 0,
+        "expires_at": 100,
+        "latest_safe_action": 30,
+        "fallback_available": true
+      },
+      "events": [
+        {
+          "op": "repair_request",
+          "at": 1,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1",
+          "kind": "which_source",
+          "channel": "button"
+        },
+        {
+          "op": "timeout",
+          "at": 7,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q1"
+        },
+        {
+          "op": "repair_request",
+          "at": 8,
+          "message_id": "fictional-m1",
+          "state_version": 1,
+          "request_id": "q2",
+          "kind": "repeat",
+          "channel": "button"
+        }
+      ],
+      "expected": {
+        "error": "fallback_terminal"
+      }
+    }
+  ]
+}
