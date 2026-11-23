@@ -65,6 +65,39 @@ The absolute difference is approximately 1.3065629649. A single additional probe
 - For continuous arbitrary functions, any finite sample set still leaves vast unobserved degrees of freedom.
 - If n=0, the moving-observer audio contains a DC component, not a pitched tone. This is permitted mathematically but not a suitable listening comparator.
 
+
+## 3a. An exact best extra witness for the default pair
+
+The previous shifted point δ=π/16 reveals an absolute difference ≈1.30656. But we can ask a sharper question: **if we may add exactly one new noiseless probe at any position, where is the contrast between modes 2 and 10 largest?**
+
+Let t=cos(2θ), with t in [−1,1]. The fifth Chebyshev polynomial satisfies
+
+    cos(10θ) = T₅(cos(2θ)) = 16t⁵ − 20t³ + 5t.
+
+Thus the signed difference at one angular probe is
+
+    Δ(t) = t − T₅(t) = −16t⁵ + 20t³ − 4t.
+
+Any global maximum of |Δ| on [−1,1] occurs at an endpoint or at a stationary point of Δ where Δ is nonzero. Differentiate:
+
+    Δ'(t) = −80t⁴ + 60t² − 4
+           = −4(20t⁴ − 15t² + 1).
+
+Set z=t². The critical values satisfy 20z²−15z+1=0, hence
+
+    z_± = (15 ± √145) / 40.
+
+Both lie between 0 and 1. At t=±1 the contrast is 0. The critical points with z_+ give |Δ|≈**1.81571610422442**; those with z_- give ≈0.70934831279146. Therefore the larger value is the **exact global maximum of the absolute contrast** for these two modes, up to numerical display rounding.
+
+One maximising witness position is
+
+    θ* = ½ arccos( sqrt((15 + √145)/40) )
+       ≈ 0.302751036338607 radians ≈ 17.34636°.
+
+The best new observation of this *chosen pair* increases its contrast over our arbitrary shifted witness. The meaning is modest but useful: instead of demanding a more confident verdict from the original eight samples, the observer can **choose a new measurement that maximally distinguishes two explicit hypotheses**.
+
+That is a constructive design strategy, not a universal decoder. In a physical experiment with noise, finite spatial resolution or observation cost, optimum placement may differ. For arbitrary mode indices, the included Python function uses a dense deterministic search and local refinement; it **does not prove global optimality** for those other pairs. The exact analytic proof applies only to 2 versus 10.
+
 ## 4. What Kaluza–Klein actually contributes
 
 In Jan Louis (2016), *Introduction to Supersymmetry and Supergravity*, **§17.1, printed p. 64, equations (17.3)–(17.6)**, a scalar field on a background of the form four-dimensional Minkowski spacetime × a compact circle is periodic in the coordinate y with period 2πR. The circle dependence admits Fourier modes exp(iny/R). In the simplest massless five-dimensional scalar example, after separating variables the four-dimensional modes have squared masses
