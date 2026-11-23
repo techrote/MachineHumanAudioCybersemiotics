@@ -242,6 +242,15 @@ BALANCED = (
 )
 FRUSTRATED = BALANCED[:3] + (Edge("e4", "D", "A", 0),)
 FLIPS = {"A": 1, "B": 0, "C": 1, "D": 1}
+ORDER_FIRST = (
+    Edge("ab", "A", "B", 1),
+    Edge("ac", "A", "C", 0),
+    Edge("ad", "A", "D", 0),
+    Edge("bc", "B", "C", 0),
+    Edge("bd", "B", "D", 0),
+    Edge("cd", "C", "D", 0),
+)
+ORDER_LAST = ORDER_FIRST[1:] + ORDER_FIRST[:1]
 
 
 def generate(out: Path) -> dict:
@@ -250,6 +259,8 @@ def generate(out: Path) -> dict:
         "balanced": BALANCED,
         "frustrated": FRUSTRATED,
         "switched_frustrated": gauge_switch(FRUSTRATED, FLIPS),
+        "order_ab_first": ORDER_FIRST,
+        "order_ab_last": ORDER_LAST,
     }
     payload: dict = {
         "schema": "mhac-x007-v1",
@@ -278,7 +289,17 @@ def generate(out: Path) -> dict:
     balanced = payload["scenarios"]["balanced"]["audio"]["sha256"]
     if first != switched or first == balanced:
         raise AssertionError("gauge invariance or sound distinction failed")
+    order_first = payload["scenarios"]["order_ab_first"]
+    order_last = payload["scenarios"]["order_ab_last"]
+    if (
+        cycle_notes(analyse(VERTICES, ORDER_FIRST)) != (1, 1, 0)
+        or cycle_notes(analyse(VERTICES, ORDER_LAST)) != (0, 0, 1)
+        or order_first["audio"]["sha256"] == order_last["audio"]["sha256"]
+        or {e.id for e in ORDER_FIRST} != {e.id for e in ORDER_LAST}
+    ):
+        raise AssertionError("same-graph stream-order negative control failed")
     payload["verified"] = {
+        "same_graph_stream_order_can_change_sound": True,
         "gauge_invariant_wav_sha256_equal": True,
         "single_edge_flip_changes_wav_sha256": True,
         "all_cycle_certificates_verified": True,
