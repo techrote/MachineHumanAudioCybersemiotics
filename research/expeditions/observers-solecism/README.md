@@ -21,6 +21,7 @@ The Kaluza–Klein connection is **restricted to the well-established Fourier de
 | [AFTERWORD.md](AFTERWORD.md) | Original speculative post-human essay; not a factual scientific paper |
 | [TRANSFER.md](TRANSFER.md) | Synth design, semiotic/HCI crossover, negative conclusions and future trails |
 | [mode_alias_lab.py](mode_alias_lab.py) | Dependency-free deterministic sensor and PCM-stereo generator |
+| [observer_lab.html](observer_lab.html) | Self-contained interactive polar field, sensor offset and optional stereo synthesis; browser acceptance pending |
 | [test_mode_alias_lab.py](test_mode_alias_lab.py) | Focused numerical, edge-case and WAV structural assertions |
 | [EVIDENCE.md](EVIDENCE.md) | Execution receipts and boundaries; what was actually checked |
 
@@ -39,6 +40,12 @@ The generator creates four **disposable** files in the selected output directory
 - receipt.json — inputs, eigenvalues, maximum errors and WAV hash.
 
 By default, the circle contains **N=8** sensors and compares **n=2** versus **n+N=10**. With a chosen rotating probe at 55 revolutions/second, the left and right channels are mathematically generated at **110 Hz** and **550 Hz**. Their audibility and artistic value are not validated by participant testing.
+
+## Original interactive instrument
+
+Open [observer_lab.html](observer_lab.html) in a modern browser directly from the filesystem. It shows both continuous harmonic curves, the limited fixed witnesses, a separate moving probe, and optional synthesized stereo tones. Change the observer offset to distinguish the otherwise aliased modes, or alter the number of witnesses. The visual moving-probe speed is deliberately reduced relative to the audio scan, so it remains inspectable.
+
+**Status:** source built and manually reviewed for obvious structure; no independent graphical/browser acceptance performed yet. The polar drawing is not a physical Kaluza–Klein measurement or scientifically validated visual representation.
 
 ## Why the sound is interesting
 
