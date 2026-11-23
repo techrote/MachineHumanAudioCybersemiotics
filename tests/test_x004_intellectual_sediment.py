@@ -119,6 +119,9 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
             result = shadow.analyze_shadow(root)
             self.assertEqual(result["branch_or_history_only_paths"], 1)
             self.assertEqual(result["witnesses_loaded"], 1)
+            self.assertEqual(result["unique_content_blobs"], 1)
+            self.assertEqual(result["duplicate_content_paths"], 0)
+            self.assertGreater(result["unique_content_words"], 0)
             self.assertEqual(
                 result["high_motif_witnesses"][0]["path"],
                 "research/tangents/ghost/NOTE.md",
@@ -136,7 +139,9 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
             key: result[key]
             for key in (
                 "head_sha", "historical_markdown_paths", "current_markdown_paths",
-                "branch_or_history_only_paths", "witnesses_loaded", "truncated",
+                "branch_or_history_only_paths", "witnesses_loaded",
+                "unique_content_blobs", "duplicate_content_paths",
+                "total_path_words", "unique_content_words", "truncated",
                 "families", "fine_families", "latest_content_dates",
                 "refs_by_witness_count", "motif_documents", "motif_hits",
                 "high_motif_witnesses",
