@@ -34,6 +34,12 @@ NONINVOLUTIVE_ACTIONS: dict[str, tuple[int, ...]] = {
     "A": (1, 2, 0),  # advance 0->1->2->0
     "B": (0, 2, 1),
 }
+# A third interpretation keeps its codebook fixed but is state-dependent:
+# the same audible phrase closes state 3, but moves states 0, 1, 2.
+CONDITIONAL_ACTIONS: dict[str, tuple[int, ...]] = {
+    "A": (1, 2, 0, 3),
+    "B": (0, 2, 1, 3),
+}
 PITCHES = {"A": (293.66, 587.33), "B": (440.0, 659.25)}
 
 
@@ -166,6 +172,7 @@ def run_lab(directory: Path) -> dict:
     cases = (
         ("closed_involutions", INVOLUTIVE_ACTIONS),
         ("open_rotation", NONINVOLUTIVE_ACTIONS),
+        ("conditional_four_states", CONDITIONAL_ACTIONS),
     )
     records = []
     for name, actions in cases:
@@ -185,8 +192,16 @@ def run_lab(directory: Path) -> dict:
         ),
         "effect_identity": records[0]["effects_all_states"]
                            == records[1]["effects_all_states"],
+        "all_three_wavs_identical": len({
+            (directory / (name + ".wav")).read_bytes() for name, _ in cases
+        }) == 1,
         "closed_case": records[0],
         "open_case": records[1],
+        "conditional_case": records[2],
+        "conditional_returning_states": [
+            state for state, image in enumerate(records[2]["effects_all_states"])
+            if state == image
+        ],
         "nonpalindromic_identity_witness": {
             "tokens": ["A", "A", "B", "B"],
             "is_palindrome": is_palindrome(("A", "A", "B", "B")),
@@ -222,6 +237,9 @@ def main() -> None:
     print(json.dumps({
         "rendered_byte_identity": out["rendered_byte_identity"],
         "effect_identity": out["effect_identity"],
+        "all_three_wavs_identical": out["all_three_wavs_identical"],
+        "conditional_effects": out["conditional_case"]["effects_all_states"],
+        "conditional_returning_states": out["conditional_returning_states"],
         "closed_effects": out["closed_case"]["effects_all_states"],
         "open_effects": out["open_case"]["effects_all_states"],
         "a_b_commute": out["closed_case"]["a_b_commute"],
