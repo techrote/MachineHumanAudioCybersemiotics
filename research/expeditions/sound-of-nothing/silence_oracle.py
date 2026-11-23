@@ -414,6 +414,8 @@ def receipt(quartet: dict[str, bytes]) -> dict:
         "shared_window_sha256": next(iter(unique_windows)),
         "shared_window_identical": len(unique_windows) == 1,
         "shared_window_all_zero": all(set(x) <= {0} for x in windows.values()),
+        "shared_window_hidden_world_information_bits":
+            quartet_shared_silence_information_bits(),
         "files": {
             name + ".wav": {
                 "sha256": hashlib.sha256(data).hexdigest(),
