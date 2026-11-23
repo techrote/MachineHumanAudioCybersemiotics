@@ -15,6 +15,14 @@ import distinction_miner as distinctions  # noqa: E402
 
 
 class IntellectualSedimentAtlasTests(unittest.TestCase):
+    def test_atlas_excludes_its_own_research_bundle(self):
+        self.assertFalse(atlas.eligible(
+            "research/expeditions/intellectual-sediment/README.md"
+        ))
+        self.assertTrue(atlas.eligible(
+            "research/expeditions/observers-solecism/README.md"
+        ))
+
     def test_family_partition(self):
         self.assertEqual(atlas.family("docs/PROGRAMME.md"), "governance_foundations")
         self.assertEqual(atlas.family("research/analysis/brier/a.md"), "theory_analysis")
