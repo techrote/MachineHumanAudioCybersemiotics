@@ -1,0 +1,149 @@
+{
+  "schema": "unchosen-note/v1",
+  "checks": 396,
+  "fullAlphabet": [
+    "B",
+    "C",
+    "D"
+  ],
+  "totalFamilies": 127,
+  "fullTraceClass": 109,
+  "fullTraceClassNoGuarantee": 84,
+  "byUnion": {
+    "1": 1,
+    "2": 1,
+    "3": 5,
+    "4": 1,
+    "5": 5,
+    "6": 5,
+    "7": 109
+  },
+  "fullIntersectionCounts": {
+    "0": 84,
+    "1": 7,
+    "2": 7,
+    "3": 1,
+    "4": 7,
+    "5": 1,
+    "6": 1,
+    "7": 1
+  },
+  "examples": {
+    "open": {
+      "menus": [
+        [
+          "B",
+          "C",
+          "D"
+        ]
+      ],
+      "possible": [
+        "B",
+        "C",
+        "D"
+      ],
+      "guaranteed": [
+        "B",
+        "C",
+        "D"
+      ],
+      "completedTraces": [
+        "AB",
+        "AC",
+        "AD"
+      ],
+      "minMenuSize": 3,
+      "maxMenuSize": 3,
+      "possibleMask": 7,
+      "guaranteedMask": 7
+    },
+    "split": {
+      "menus": [
+        [
+          "B"
+        ],
+        [
+          "C"
+        ],
+        [
+          "D"
+        ]
+      ],
+      "possible": [
+        "B",
+        "C",
+        "D"
+      ],
+      "guaranteed": [],
+      "completedTraces": [
+        "AB",
+        "AC",
+        "AD"
+      ],
+      "minMenuSize": 1,
+      "maxMenuSize": 1,
+      "possibleMask": 7,
+      "guaranteedMask": 0
+    },
+    "overlapping": {
+      "menus": [
+        [
+          "B",
+          "C"
+        ],
+        [
+          "B",
+          "D"
+        ],
+        [
+          "C",
+          "D"
+        ]
+      ],
+      "possible": [
+        "B",
+        "C",
+        "D"
+      ],
+      "guaranteed": [],
+      "completedTraces": [
+        "AB",
+        "AC",
+        "AD"
+      ],
+      "minMenuSize": 2,
+      "maxMenuSize": 2,
+      "possibleMask": 7,
+      "guaranteedMask": 0
+    },
+    "partial": {
+      "menus": [
+        [
+          "B",
+          "C"
+        ],
+        [
+          "B",
+          "D"
+        ]
+      ],
+      "possible": [
+        "B",
+        "C",
+        "D"
+      ],
+      "guaranteed": [
+        "B"
+      ],
+      "completedTraces": [
+        "AB",
+        "AC",
+        "AD"
+      ],
+      "minMenuSize": 2,
+      "maxMenuSize": 2,
+      "possibleMask": 7,
+      "guaranteedMask": 1
+    }
+  }
+}
