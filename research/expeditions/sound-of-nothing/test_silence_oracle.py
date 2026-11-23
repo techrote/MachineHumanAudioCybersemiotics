@@ -13,16 +13,20 @@ import wave
 try:
     from .silence_oracle import (
         DURATION, SAMPLE_RATE, LeaseState, World, async_counterexample,
-        bec_output, build_quartet, classify_lease, heartbeat_suspicion,
-        indistinguishable_at, observed_prefix, partition_by_prefix,
+        bec_output, build_quartet, classify_lease, finite_eventuality_verdict,
+        heartbeat_suspicion, indistinguishable_at, observed_prefix,
+        open_world_query, partition_by_prefix,
+        posterior_event_probability_after_no_detections,
         property_factors_through_prefix, receipt, scene_samples,
         silence_window_pcm, timeout_claim_sound,
     )
 except ImportError:
     from silence_oracle import (
         DURATION, SAMPLE_RATE, LeaseState, World, async_counterexample,
-        bec_output, build_quartet, classify_lease, heartbeat_suspicion,
-        indistinguishable_at, observed_prefix, partition_by_prefix,
+        bec_output, build_quartet, classify_lease, finite_eventuality_verdict,
+        heartbeat_suspicion, indistinguishable_at, observed_prefix,
+        open_world_query, partition_by_prefix,
+        posterior_event_probability_after_no_detections,
         property_factors_through_prefix, receipt, scene_samples,
         silence_window_pcm, timeout_claim_sound,
     )
@@ -66,6 +70,79 @@ class SoundOfNothingTests(unittest.TestCase):
             worlds, 11.0,
             {"no_event": "NO_ALERT", "delayed_event": "ALERT_EXISTS"},
         ))
+
+    def test_unbounded_eventuality_stays_inconclusive_on_quiet_prefixes(self):
+        for horizon in (0.0, 1.0, 1000.0):
+            self.assertEqual(
+                finite_eventuality_verdict([], horizon),
+                "INCONCLUSIVE",
+            )
+        self.assertEqual(
+            finite_eventuality_verdict([1001.0], 1000.0),
+            "INCONCLUSIVE",
+        )
+        self.assertEqual(
+            finite_eventuality_verdict([999.0], 1000.0),
+            "SATISFIED",
+        )
+
+    def test_deadline_makes_eventuality_finitely_refutable(self):
+        self.assertEqual(
+            finite_eventuality_verdict([], 4.99, deadline=5.0),
+            "INCONCLUSIVE",
+        )
+        self.assertEqual(
+            finite_eventuality_verdict([], 5.0, deadline=5.0),
+            "VIOLATED",
+        )
+        self.assertEqual(
+            finite_eventuality_verdict([4.8], 5.0, deadline=5.0),
+            "SATISFIED",
+        )
+
+    def test_open_world_absence_is_unknown_until_closed_world_rule(self):
+        self.assertEqual(
+            open_world_query(set(), set(), "ALERT_EXISTS"),
+            "UNKNOWN",
+        )
+        self.assertEqual(
+            open_world_query(set(), set(), "ALERT_EXISTS", closed_world=True),
+            "FALSE",
+        )
+        self.assertEqual(
+            open_world_query({"ALERT_EXISTS"}, set(), "ALERT_EXISTS"),
+            "TRUE",
+        )
+        self.assertEqual(
+            open_world_query(set(), {"ALERT_EXISTS"}, "ALERT_EXISTS"),
+            "FALSE",
+        )
+
+    def test_bayesian_non_detection_can_reduce_belief_without_proving_absence(self):
+        prior = 0.5
+        one = posterior_event_probability_after_no_detections(
+            prior, detection_if_event=0.8, false_positive_if_no_event=0.05,
+            opportunities=1,
+        )
+        five = posterior_event_probability_after_no_detections(
+            prior, detection_if_event=0.8, false_positive_if_no_event=0.05,
+            opportunities=5,
+        )
+        self.assertGreater(one, 0.0)
+        self.assertLess(one, prior)
+        self.assertGreater(five, 0.0)
+        self.assertLess(five, one)
+
+    def test_uninformative_detector_leaves_prior_unchanged(self):
+        for opportunities in (0, 1, 7):
+            self.assertAlmostEqual(
+                posterior_event_probability_after_no_detections(
+                    0.37, detection_if_event=0.2,
+                    false_positive_if_no_event=0.2,
+                    opportunities=opportunities,
+                ),
+                0.37,
+            )
 
     def test_timeout_requires_explicit_delay_bound(self):
         self.assertFalse(timeout_claim_sound(
