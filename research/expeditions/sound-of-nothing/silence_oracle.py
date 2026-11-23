@@ -314,6 +314,66 @@ def heartbeat_suspicion(
     return now - max(arrivals) > timeout
 
 
+@dataclass(frozen=True)
+class VersionedReplicaValue:
+    version: int
+    state: str
+
+    def validate(self) -> None:
+        if not isinstance(self.version, int) or self.version < 0:
+            raise ValueError("version must be a nonnegative integer")
+        if self.state not in {"LIVE", "TOMBSTONE"}:
+            raise ValueError("unsupported replica state")
+
+
+def repair_replicas(
+    replicas: list[VersionedReplicaValue | None],
+) -> list[VersionedReplicaValue | None]:
+    """Toy last-version-wins repair.
+
+    None means literal absence of a record/marker. It carries no version and
+    therefore cannot defeat an older live replica during repair.
+    """
+    for value in replicas:
+        if value is not None:
+            value.validate()
+    observed = [value for value in replicas if value is not None]
+    if not observed:
+        return [None for _ in replicas]
+    winner = max(observed, key=lambda x: x.version)
+    return [winner for _ in replicas]
+
+
+def replicated_delete_demo(use_tombstone: bool) -> dict:
+    """Three-replica toy showing deletion resurrection vs explicit tombstone."""
+    old = VersionedReplicaValue(1, "LIVE")
+    replicas: list[VersionedReplicaValue | None] = [old, old, old]
+    # Replica 3 is offline during delete. Two reachable replicas process it.
+    if use_tombstone:
+        deleted = VersionedReplicaValue(2, "TOMBSTONE")
+        replicas[0] = deleted
+        replicas[1] = deleted
+    else:
+        replicas[0] = None
+        replicas[1] = None
+    before = [None if x is None else asdict(x) for x in replicas]
+    repaired = repair_replicas(replicas)
+    after = [None if x is None else asdict(x) for x in repaired]
+    return {
+        "use_tombstone": use_tombstone,
+        "before_repair": before,
+        "after_repair": after,
+        "live_after_repair": any(x is not None and x.state == "LIVE" for x in repaired),
+        "deleted_after_repair": all(
+            x is not None and x.state == "TOMBSTONE" for x in repaired
+        ),
+        "warning": (
+            "Synthetic last-version-wins demonstration only; not Cassandra's "
+            "full storage/repair algorithm."
+        ),
+    }
+
+
 def _add_sine(samples: list[float], start: float, length: float, freq: float, amp: float) -> None:
     first = max(0, round(start * SAMPLE_RATE))
     count = max(0, round(length * SAMPLE_RATE))
