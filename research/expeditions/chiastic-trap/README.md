@@ -63,6 +63,8 @@ Function composition is conventionally read right to left. Here the event list h
 
 **Case 2: departure under exactly the same sound.** Keep B as the swap of 1 and 2, but let A be the three-cycle 0→1→2→0. Now B² = I but A² ≠ I. Consequently ABBA = A² ≠ I. For starting state 0, the final state is 2, not 0. Exhaustively, the effects on starting states 0,1,2 are (2,0,1); Case 1 gives (0,1,2).
 
+**Case 3: conditional return without changing the codebook.** Expand the state set to S = {0,1,2,3}. Let A cycle the first three states while keeping 3 fixed; let B swap 1 and 2 while keeping 0 and 3 fixed. The same ABBA sequence transforms the four possible starts as (2,0,1,3). **State 3 returns, while states 0,1,2 do not**. This strengthens the witness: different starting states, with exactly the same codebook and the same sonic phrase, can yield different return verdicts. It is not only a problem of migrating a learned motif dictionary; the initial state matters even when the mapping stays fixed.
+
 **Logical qualifications.**
 
 - Both A and B being involutive is **sufficient**, not **necessary**, for this ABBA cancellation. For example, two inverse three-cycles can also give an identity composite.
@@ -98,8 +100,10 @@ Reproduce from the repo root:
 | --- | --- | --- |
 | closed_involutions.wav | original PCM | A B B A motifs, reversible-state interpretation |
 | open_rotation.wav | original PCM | **byte-identical** A B B A motifs, nonreturning interpretation |
+| conditional_four_states.wav | original PCM | **byte-identical** A B B A motifs, fixed codebook and partially returning state space |
 | closed_involutions.json | machine-readable | permutations, state path, SHA-256 |
 | open_rotation.json | machine-readable | different effects, identical WAV digest |
+| conditional_four_states.json | machine-readable | state-conditional closure: only starting state 3 returns |
 | comparative-report.json | comparison | invariants, countercontrols, precise nonclaims |
 
 Byte identity is a **constructed result** of the renderer's deliberate independence from semantic actions. It is verifiable by hashing or binary comparison. The toy does not discover unknown auditory behaviour; it exposes how an unannounced mapping difference can alter an event phrase's semantics without affecting its sound.
@@ -124,7 +128,9 @@ A strong opposing interpretation is that nobody would treat these four beeps as 
 
 ### 7. Adversarial cases
 
-**Sufficiency fails:** ABBA with a three-cycle A moves every state. Formal palindrome is not enough.
+**Sufficiency fails:** ABBA with a three-cycle A moves every state in the three-state model. Formal palindrome is not enough.
+
+**Initial state matters:** in the four-state case a *single fixed* assignment to A and B returns only one of four initial states. The playback and codebook are identical across all four possibilities.
 
 **Necessity fails:** AABB, with A and B involutive, restores every state despite not being a token palindrome.
 
@@ -163,7 +169,7 @@ No transfer has been accepted as a production requirement. This is a research se
 | C3 | source-description | sampled unfiltered chiasmus candidates had 0/100 true | [S5], Table 1 §3.1 | actual paper correction or changed retrieval |
 | C4 | finite theorem | noncommuting involutions can make ABBA identity | explicit algebra, exhaustive 3-state enumeration | contradictory state in declared permutation |
 | C5 | finite counterexample | ABBA is not always identity | three-cycle witness | contradictory state in declared permutation |
-| C6 | synthetic witness | distinct event semantics can have identical WAV bytes | source and generated SHA-256 comparisons | unequal output bytes |
+| C6 | synthetic witness | different mappings or starting states can have identical WAV bytes yet different return outcomes | source and generated SHA-256 comparisons | unequal output bytes or wrong state effects |
 | C7 | interpretation | symmetric closure may suggest false operational closure | argument, with explicit opposition | contrary conceptual critique or human evidence |
 | C8 | design hypothesis | closure inspector may aid review | proposal only | independent implementation and evaluation |
 
