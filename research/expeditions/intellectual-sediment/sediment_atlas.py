@@ -63,7 +63,7 @@ def first_dates(root):
 def head(root):
  try:return subprocess.run(['git','-C',str(root),'rev-parse','HEAD'],capture_output=True,text=True,check=True).stdout.strip()
  except Exception:return None
-def eligible(rel):return rel.endswith('.md') and not rel.startswith(('.git/','.github/','build/','tests/fixtures/','research/registry/generated/'))
+def eligible(rel):return rel.endswith('.md') and not rel.startswith(('.git/','.github/','build/','tests/fixtures/','research/registry/generated/','research/expeditions/intellectual-sediment/'))
 def entropy(c):
  n=sum(c.values())
  if n==0 or len(c)<2:return 0.0
