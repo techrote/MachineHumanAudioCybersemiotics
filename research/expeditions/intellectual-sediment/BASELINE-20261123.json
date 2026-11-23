@@ -1,0 +1,143 @@
+{
+  "schema": "mhac-x004-baseline-v1",
+  "observed_date": "2026-11-23",
+  "workflow_run_id": 45246032759,
+  "workflow_job_id": 137943058035,
+  "x004_source_head": "c050ffc10c8ca4efbbd225bf056eae7f6a934577",
+  "ci_checkout_head": "edd1701215ecf856d860b3777b089aba3f7fd464",
+  "corpus": {
+    "documents": 128,
+    "words": 121777,
+    "sha256": "a72cabb0d87f5b252022e9bae8beded6d9ee7d283492e51f7280114ec13e3474",
+    "families": {
+      "evidence_retrieval": 69,
+      "exploratory_research": 15,
+      "governance_foundations": 19,
+      "method_novelty": 14,
+      "other": 3,
+      "theory_analysis": 8
+    }
+  },
+  "shadow": {
+    "historical_markdown_paths": 283,
+    "current_markdown_paths": 128,
+    "branch_or_history_only_paths": 155,
+    "witnesses_loaded": 155,
+    "unique_content_blobs": 150,
+    "duplicate_content_paths": 5,
+    "total_path_words": 183747,
+    "unique_content_words": 176641,
+    "families": {
+      "evidence_retrieval": 2,
+      "exploratory_research": 108,
+      "other": 44,
+      "theory_analysis": 1
+    },
+    "fine_families": {
+      "analysis": 1,
+      "expeditions": 14,
+      "other": 44,
+      "searches": 2,
+      "tangents": 94
+    },
+    "latest_content_dates": {
+      "2026-10-07": 14,
+      "2026-10-08": 26,
+      "2026-11-03": 40,
+      "2026-11-04": 36,
+      "2026-11-05": 22,
+      "2026-11-10": 3,
+      "2026-11-23": 14
+    }
+  },
+  "scouting_ledgers": {
+    "branch": "origin/research/hourly-scope-expansion",
+    "files": [
+      {
+        "path": "research/scouting/hourly/2026-11-03.md",
+        "tokenized_words": 40996
+      },
+      {
+        "path": "research/scouting/hourly/2026-11-04.md",
+        "tokenized_words": 39736
+      },
+      {
+        "path": "research/scouting/hourly/2026-11-05.md",
+        "tokenized_words": 13722
+      }
+    ],
+    "tokenized_words_total": 94454
+  },
+  "distinction_ledger": {
+    "records": 206,
+    "paired_records": 40,
+    "families": {
+      "evidence_retrieval": 84,
+      "exploratory_research": 23,
+      "governance_foundations": 41,
+      "method_novelty": 18,
+      "other": 2,
+      "theory_analysis": 38
+    }
+  },
+  "current_style_per_1000": {
+    "governance_foundations": {
+      "anti_collapse": 4.6459,
+      "provenance": 6.4444,
+      "adversariality": 1.3488
+    },
+    "exploratory_research": {
+      "anti_collapse": 3.667,
+      "provenance": 0.7802,
+      "adversariality": 1.8725
+    },
+    "theory_analysis": {
+      "anti_collapse": 3.3789,
+      "provenance": 3.7308,
+      "adversariality": 1.1967
+    },
+    "evidence_retrieval": {
+      "anti_collapse": 3.1293,
+      "provenance": 6.1021,
+      "adversariality": 0.7667
+    },
+    "method_novelty": {
+      "anti_collapse": 1.9976,
+      "provenance": 4.1884,
+      "adversariality": 0.1933
+    }
+  },
+  "current_motif_documents": {
+    "action_urgency_consequence": 82,
+    "affect_anthropomorphism": 47,
+    "composition_binding_mapping": 62,
+    "exaptation_transfer": 40,
+    "failure_ambiguity_conflict": 82,
+    "meaning_semiosis": 54,
+    "observer_context_frame": 60,
+    "provenance_identity_authority": 118,
+    "repair_grounding": 63,
+    "state_lifecycle_time": 74,
+    "uncertainty_epistemics": 75
+  },
+  "shadow_motif_documents": {
+    "action_urgency_consequence": 132,
+    "affect_anthropomorphism": 24,
+    "composition_binding_mapping": 91,
+    "exaptation_transfer": 61,
+    "failure_ambiguity_conflict": 110,
+    "meaning_semiosis": 91,
+    "observer_context_frame": 64,
+    "provenance_identity_authority": 133,
+    "repair_grounding": 68,
+    "state_lifecycle_time": 111,
+    "uncertainty_epistemics": 112
+  },
+  "limits": [
+    "Current documents are accepted-HEAD paths; shadow paths are noncanonical and may be rejected, obsolete or duplicated.",
+    "Shadow observations depend on the remote refs visible to the CI checkout at observation time; the archive can change without X004 source changes.",
+    "Counts are lexical/documentary observations, not conceptual independence, authorship, consciousness or novelty.",
+    "Current and shadow motif denominators are different populations and should not be compared as effect sizes.",
+    "The X004 directory is excluded from both measured corpora to avoid self-observation."
+  ]
+}
