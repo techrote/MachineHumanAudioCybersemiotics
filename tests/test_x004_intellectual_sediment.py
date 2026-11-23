@@ -275,5 +275,24 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
             )
 
 
+    def test_frozen_baseline_and_visual_are_self_describing(self):
+        base_dir = ROOT / "research" / "expeditions" / "intellectual-sediment"
+        baseline = json.loads(
+            (base_dir / "BASELINE-20261123.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(baseline["schema"], "mhac-x004-baseline-v1")
+        self.assertEqual(len(baseline["corpus"]["sha256"]), 64)
+        self.assertGreater(baseline["shadow"]["unique_content_blobs"], 0)
+        self.assertLessEqual(
+            baseline["shadow"]["unique_content_blobs"],
+            baseline["shadow"]["witnesses_loaded"],
+        )
+        html = (base_dir / "sediment_map.html").read_text(encoding="utf-8")
+        self.assertIn("Intellectual Sediment Atlas", html)
+        self.assertIn("persistent agent philosophy", html)
+        self.assertNotIn("<script src=", html)
+        self.assertNotIn("fetch(", html)
+
+
 if __name__ == "__main__":
     unittest.main()
