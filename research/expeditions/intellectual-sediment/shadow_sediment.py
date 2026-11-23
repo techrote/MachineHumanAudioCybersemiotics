@@ -11,6 +11,7 @@ from collections import Counter
 from pathlib import Path
 import argparse
 import json
+import os
 import subprocess
 import sys
 
@@ -23,19 +24,35 @@ def git(root: Path, *args: str, check: bool = True) -> str:
     proc = subprocess.run(
         ["git", "-C", str(root), *args],
         capture_output=True, text=True, check=check,
+        env={**os.environ, "TZ": "UTC"},
     )
     return proc.stdout
 
 
+def latest_content_index(root: Path) -> dict[str, tuple[str, str]]:
+    """Return latest reachable add/modify commit and UTC date for Markdown paths."""
+    out = git(
+        root, "log", "--all", "--diff-filter=AM",
+        "--date=format-local:%Y-%m-%d", "--format=@@%H\t%ad",
+        "--name-only", "--", "*.md",
+    )
+    current_sha = None
+    current_date = None
+    result: dict[str, tuple[str, str]] = {}
+    for raw in out.splitlines():
+        if raw.startswith("@@"):
+            payload = raw[2:].split("\t", 1)
+            current_sha = payload[0].strip()
+            current_date = payload[1].strip() if len(payload) > 1 else ""
+            continue
+        path = raw.strip()
+        if path and current_sha and path.endswith(".md") and base.eligible(path):
+            result.setdefault(path, (current_sha, current_date or ""))
+    return result
+
+
 def historical_markdown_paths(root: Path) -> set[str]:
-    """Return Markdown paths ever touched on any locally available ref."""
-    out = git(root, "log", "--all", "--format=", "--name-only", "--", "*.md")
-    return {
-        line.strip()
-        for line in out.splitlines()
-        if line.strip().endswith(".md")
-        and base.eligible(line.strip())
-    }
+    return set(latest_content_index(root))
 
 
 def current_markdown_paths(root: Path) -> set[str]:
@@ -46,20 +63,6 @@ def current_markdown_paths(root: Path) -> set[str]:
         if line.strip().endswith(".md")
         and base.eligible(line.strip())
     }
-
-
-def latest_content_commit(root: Path, path: str) -> str | None:
-    out = git(
-        root, "log", "--all", "--diff-filter=AM", "-1", "--format=%H", "--", path,
-        check=False,
-    ).strip()
-    return out or None
-
-
-def commit_date(root: Path, sha: str) -> str | None:
-    out = git(root, "show", "-s", "--format=%ad", "--date=format-local:%Y-%m-%d",
-              sha, check=False).strip()
-    return out or None
 
 
 def blob_text(root: Path, sha: str, path: str) -> str | None:
@@ -86,16 +89,18 @@ def refs_containing(root: Path, sha: str) -> list[str]:
 
 def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
     root = root.resolve()
-    historical = historical_markdown_paths(root)
+    content_index = latest_content_index(root)
+    historical = set(content_index)
     current = current_markdown_paths(root)
     absent = sorted(historical - current)
     witnesses = []
     skipped = []
     for path in absent[:max_docs]:
-        sha = latest_content_commit(root, path)
-        if not sha:
+        entry = content_index.get(path)
+        if not entry:
             skipped.append({"path": path, "reason": "no_add_or_modify_commit"})
             continue
+        sha, date = entry
         text = blob_text(root, sha, path)
         if text is None:
             skipped.append({"path": path, "reason": "blob_unreadable_at_latest_content_commit"})
@@ -104,8 +109,8 @@ def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
         witnesses.append({
             "path": path,
             "sha": sha,
-            "date": commit_date(root, sha),
-            "refs": refs_containing(root, sha),
+            "date": date or None,
+            "refs": [],
             "family": base.family(path),
             "fine_family": base.fine(path),
             "words": len(words),
@@ -143,6 +148,10 @@ def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
             w["path"],
         ),
     )
+    # Ref membership is comparatively expensive. Resolve it only for the most
+    # information-rich witnesses that will actually be shown.
+    for witness in ranked[:30]:
+        witness["refs"] = refs_containing(root, witness["sha"])
     return {
         "schema": "mhac-intellectual-sediment-shadow-v1",
         "head_sha": base.head(root),
