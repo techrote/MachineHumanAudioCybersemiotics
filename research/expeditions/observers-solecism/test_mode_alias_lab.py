@@ -128,6 +128,33 @@ class SolecismWitnessTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             make_stereo_wav(2, 10, duration=0)
 
+    def test_cli_creates_reproducible_files(self):
+        import hashlib
+        import json
+        from pathlib import Path
+        import subprocess
+        import sys
+        import tempfile
+
+        script = Path(__file__).with_name("mode_alias_lab.py")
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "output"
+            subprocess.run(
+                [sys.executable, str(script), "--out", str(destination),
+                 "--seconds", "0.08"],
+                check=True, capture_output=True, text=True,
+            )
+            self.assertEqual(
+                {p.name for p in destination.iterdir()},
+                {"fixed-probes.csv", "shifted-probes.csv",
+                 "moving-witness-stereo.wav", "receipt.json"},
+            )
+            receipt = json.loads((destination / "receipt.json").read_text())
+            wav = (destination / "moving-witness-stereo.wav").read_bytes()
+            self.assertEqual(hashlib.sha256(wav).hexdigest(), receipt["wav_sha256"])
+            self.assertTrue(receipt["validity"]["discrete_alias"])
+            self.assertTrue(receipt["validity"]["shift_breaks_pair"])
+
 
 if __name__ == "__main__":
     unittest.main()
