@@ -72,6 +72,34 @@ class GraphTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             DEMO_GRAPH.precedes("unknown", "A.emit")
 
+    def test_all_4_event_dags_agree_with_extension_oracle(self):
+        # All 2^12 directed edge subsets on four labelled events;
+        # retain only acyclic graphs. The oracle and independent extension
+        # check must agree on all 12 ordered distinct-pair claims.
+        nodes = ("a", "b", "c", "d")
+        arcs = tuple((a, b) for a in nodes for b in nodes if a != b)
+        accepted = 0
+        for mask in range(1 << len(arcs)):
+            edges = tuple(e for i, e in enumerate(arcs) if mask & (1 << i))
+            try:
+                graph = EventGraph(nodes, edges)
+            except ValueError:
+                continue
+            accepted += 1
+            orders = list(graph.linear_extensions())
+            self.assertGreater(len(orders), 0)
+            for a in nodes:
+                for b in nodes:
+                    if a == b:
+                        continue
+                    first = any(order.index(a) < order.index(b) for order in orders)
+                    second = any(order.index(b) < order.index(a) for order in orders)
+                    expected = ("entailed" if first and not second else
+                                "contradicted" if second and not first else
+                                "not_entailed_either_way")
+                    self.assertEqual(graph.order_claim(a, b), expected)
+        self.assertEqual(accepted, 543)
+
     def test_deterministic_stereo_render_and_receipt(self):
         with tempfile.TemporaryDirectory() as a, tempfile.TemporaryDirectory() as b:
             left = generate(Path(a))
