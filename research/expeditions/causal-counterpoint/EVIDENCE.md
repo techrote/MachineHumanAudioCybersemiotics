@@ -8,12 +8,12 @@ Local environment: Python **3.13.5**, standard library; command from the new exp
 
 ```text
 python -m unittest discover -s . -p 'test_*.py' -v
-Ran 13 tests in 0.062s
+Ran 14 tests in 0.106s
 OK
 python causal_counterpoint.py --out /mnt/data/mhac_x003/run
 ```
 
-Results: **6** exhaustive linear extensions of a 5-event DAG; `A.emit` versus `B.emit` is `not_entailed_either_way`. The generated original `two-legal-tellings.wav` is PCM16 22,050 Hz, two channels, 42,336 frames, 1.92 s. Its SHA-256 in this environment was `4b85b819c1ccb1617345f3814e213e9329091a53aaf24d535553890c06ee2dd8`. The test suite generated the demo twice in independent temporary directories and asserted exact WAV and CSV byte identity, parsed the WAV header, checked required ordering, and verified negative cases for cycles, duplicates, invalid IDs and the eight-event enumeration bound.
+Results: **6** exhaustive linear extensions of a 5-event DAG; `A.emit` versus `B.emit` is `not_entailed_either_way`. The generated original `two-legal-tellings.wav` is PCM16 22,050 Hz, two channels, 42,336 frames, 1.92 s. Its SHA-256 in this environment was `4b85b819c1ccb1617345f3814e213e9329091a53aaf24d535553890c06ee2dd8`. The test suite generated the demo twice in independent temporary directories and asserted exact WAV and CSV byte identity, parsed the WAV header, checked required ordering, and exhaustively cross-checked causal-order warrants on all **543 labelled four-event DAGs** (all directed edge subsets filtered for acyclicity), alongside negative cases for cycles, duplicates, invalid IDs and the eight-event enumeration bound.
 
 The six orders were **computed** rather than invented human measurements; no controlled auditory test, browser UI inspection, CI result, full repository test suite or independent human verification is claimed by the local commands above. Later PR CI, if present, must be inspected separately on the final head before any merge.
 
