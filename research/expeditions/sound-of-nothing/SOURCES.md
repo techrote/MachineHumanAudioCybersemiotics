@@ -177,6 +177,18 @@ Use here: terminology support for X005's SATISFIED / VIOLATED / INCONCLUSIVE toy
 Limit: X005 does not implement LTL, Büchi automata or predictive runtime verification.
 
 
+
+## X005-S17 — Shannon (1948), information and mutual information
+
+Claude E. Shannon, “A Mathematical Theory of Communication,” Bell System Technical Journal 27, parts I and II (1948), DOI 10.1002/j.1538-7305.1948.tb01338.x and 10.1002/j.1538-7305.1948.tb00917.x.
+
+Actually inspected: publisher identity/metadata and a public corrected reprint, including the communication framing and later measure of dependence between transmitted/received variables.
+
+Use here: basis for the deliberately elementary entropy/mutual-information calculation in INFORMATION.md.
+
+Limit: Shannon explicitly abstracts away semantic meaning for the engineering theory. X005 therefore does not equate zero mutual information about **scene identity** with “meaningless silence.”
+
+
 ## Source conclusion
 
 The useful cross-domain pattern is not that all these literatures “say the same thing.” They do not.
