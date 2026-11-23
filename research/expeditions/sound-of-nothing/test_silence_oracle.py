@@ -18,7 +18,8 @@ try:
         mutual_information_bits, observed_prefix, open_world_query,
         partition_by_prefix, posterior_event_probability_after_no_detections,
         property_factors_through_prefix, quartet_shared_silence_information_bits,
-        receipt, scene_samples,
+        receipt, repair_replicas, replicated_delete_demo, scene_samples,
+        VersionedReplicaValue,
         silence_window_pcm, timeout_claim_sound,
     )
 except ImportError:
@@ -29,7 +30,8 @@ except ImportError:
         mutual_information_bits, observed_prefix, open_world_query,
         partition_by_prefix, posterior_event_probability_after_no_detections,
         property_factors_through_prefix, quartet_shared_silence_information_bits,
-        receipt, scene_samples,
+        receipt, repair_replicas, replicated_delete_demo, scene_samples,
+        VersionedReplicaValue,
         silence_window_pcm, timeout_claim_sound,
     )
 
@@ -243,6 +245,38 @@ class SoundOfNothingTests(unittest.TestCase):
                 self.assertEqual(w.getsampwidth(), 2)
                 self.assertEqual(w.getframerate(), SAMPLE_RATE)
                 self.assertEqual(w.getnframes(), round(DURATION * SAMPLE_RATE))
+
+    def test_delete_by_absence_can_resurrect_stale_replica(self):
+        demo = replicated_delete_demo(use_tombstone=False)
+        self.assertTrue(demo["live_after_repair"])
+        self.assertFalse(demo["deleted_after_repair"])
+        self.assertEqual(
+            [x["state"] if x else None for x in demo["before_repair"]],
+            [None, None, "LIVE"],
+        )
+        self.assertEqual(
+            [x["state"] if x else None for x in demo["after_repair"]],
+            ["LIVE", "LIVE", "LIVE"],
+        )
+
+    def test_explicit_newer_tombstone_survives_repair(self):
+        demo = replicated_delete_demo(use_tombstone=True)
+        self.assertFalse(demo["live_after_repair"])
+        self.assertTrue(demo["deleted_after_repair"])
+        self.assertEqual(
+            [x["state"] if x else None for x in demo["after_repair"]],
+            ["TOMBSTONE", "TOMBSTONE", "TOMBSTONE"],
+        )
+
+    def test_replica_repair_chooses_highest_version(self):
+        values = [
+            VersionedReplicaValue(2, "LIVE"),
+            VersionedReplicaValue(5, "TOMBSTONE"),
+            VersionedReplicaValue(4, "LIVE"),
+        ]
+        repaired = repair_replicas(values)
+        self.assertTrue(all(x == VersionedReplicaValue(5, "TOMBSTONE")
+                            for x in repaired))
 
     def test_scene_refuses_unknown_name(self):
         with self.assertRaises(ValueError):
