@@ -23,7 +23,7 @@ Run from the repo root with Python 3.11+:
     python -m unittest discover -s research/expeditions/frustrated-choir -p 'test_*.py' -v
     python research/expeditions/frustrated-choir/choir.py --out build/mhac-x007
 
-The command generates three original stereo WAVs plus a JSON receipt in disposable \`build/\`. A narrow bridge in \`tests/test_mhac_x007.py\` runs the exact local tests under the standard repository CI. Outputs are **not committed as fabricated baseline evidence**; anyone can reproduce them.
+The command generates five original stereo WAVs plus a JSON receipt in disposable \`build/\`. A narrow bridge in \`tests/test_mhac_x007.py\` runs the exact local tests under the standard repository CI. Outputs are **not committed as fabricated baseline evidence**; anyone can reproduce them.
 
 ## 2. A worked four-edge collision
 
