@@ -11,6 +11,7 @@ sys.path.insert(0, str(EXPEDITION))
 
 import sediment_atlas as atlas  # noqa: E402
 import shadow_sediment as shadow  # noqa: E402
+import distinction_miner as distinctions  # noqa: E402
 
 
 class IntellectualSedimentAtlasTests(unittest.TestCase):
@@ -133,6 +134,32 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
             )
         }
         print("MHAC_X004_SHADOW=" + json.dumps(compact, sort_keys=True))
+
+
+    def test_distinction_miner_extracts_pairs_and_boundaries(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "docs").mkdir()
+            (root / "docs" / "a.md").write_text(
+                "Distinguish urgency from hazard. A receipt is not the same as resolution.\n"
+                "Do not conflate source identity with action authority.\n",
+                encoding="utf-8",
+            )
+            result = distinctions.build(root)
+            self.assertGreaterEqual(result["summary"]["records"], 3)
+            pairs = [r for r in result["records"] if r["paired"]]
+            self.assertTrue(any(r["kind"] == "distinguish_from" for r in pairs))
+            self.assertTrue(any(r["kind"] == "not_same_as" for r in pairs))
+            self.assertTrue(any(r["kind"] == "do_not_conflate"
+                                for r in result["records"]))
+
+    def test_live_distinction_ledger_emits_summary(self):
+        result = distinctions.build(ROOT)
+        self.assertGreater(result["summary"]["records"], 50)
+        self.assertGreater(result["summary"]["paired_records"], 10)
+        self.assertGreaterEqual(len(result["summary"]["families"]), 5)
+        print("MHAC_X004_DISTINCTIONS=" +
+              json.dumps(result["summary"], sort_keys=True))
 
 
 if __name__ == "__main__":
