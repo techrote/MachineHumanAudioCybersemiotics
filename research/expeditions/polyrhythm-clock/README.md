@@ -63,6 +63,34 @@ Unlike #199, this is not a feature-collision question; unlike #195, it is not a 
 
 The intriguing semiotic implication is a hypothesis, not a finding: a perfectly truthful pulse count can conceal the local timing price paid to make multiple truthful streams coexist. A future system may wish to communicate scheduling debt separately from quantity. A human study would need its own authorization and construct validation.
 
+
+## Second-stage experiment: exact discrepancy-band dynamic programming
+
+The exhaustive Pareto solver is deliberately small-scale. A second independent search procedure finds the least maximum excess for collision-free schedules without enumerating all pairs of binary words. It is also a feasibility oracle for asymmetric discrepancy caps.
+
+For any feasible schedule, rotate both words together so A's prefix error attains its minimum at the initial boundary. Rotation preserves pulse counts, overlap and cyclic discrepancy, so A's allowed band may be fixed at [0, D_A]. B's prefix error is still measured from zero; its minimum L is a multiple of gcd(q,r) with -D_B <= L <= 0. Enumerating these lower endpoints is complete. For each candidate L, traverse layers t=0..q of reachable cumulative counts (i,j). At each layer permit only idle, A, or B, and retain states whose scaled prefix errors satisfy both bands and whose remaining required pulses fit. The state is sufficient because all future constraints depend only on t,i,j and the two fixed bands. Every path ending at (p,r) is a feasible witness, and every feasible schedule has a representation in some enumerated band. Thus an exhausted search proves infeasibility under the stated finite assumptions. Monotone feasibility allows integer binary search of the minimax cap; block placement supplies a feasible upper bound.
+
+This is a pseudopolynomial finite dynamic program in the period and numerical caps, not a general scalable scheduler for arbitrary continuous or multi-channel tasks. It solves a different objective from the full Pareto enumeration; it returns one minimax witness, not the entire frontier or a guaranteed secondary-optimal point.
+
+All eight test methods passed locally after adding this solver (0.319 s in one run, no timing guarantee). The two solvers agree on the minimax value in all 95 census cases; returned witnesses were rechecked for counts, exclusivity and objective, and when the optimum is positive the immediately smaller cap was rejected. Asymmetric caps for the six-slot witness and the proved odd family through q=126 also passed.
+
+Selected additional exact observations (scaled excess is in units of 1/q pulse):
+
+| q | p | r | minimax excess | witness excess A,B |
+| ---: | ---: | ---: | ---: | --- |
+| 14 | 2 | 7 | 2 | 2,0 |
+| 30 | 2 | 15 | 2 | 2,0 |
+| 62 | 2 | 31 | 2 | 2,0 |
+| 126 | 2 | 63 | 2 | 2,0 |
+| 127 | 31 | 58 | 25 | 25,25 |
+| 128 | 41 | 64 | 40 | 40,0 |
+| 101 | 31 | 61 | 26 | 26,26 |
+| 256 | 81 | 128 | 80 | 80,0 |
+
+These are selected synthetic cases, not a statistical population. The final q=256 example ran in 0.525 s locally in a single observation. No generic speed claim is made. The useful exaptation is a certificate-producing bounded feasibility oracle for finite two-stream arbitration rather than just an aesthetic rhythm generator.
+
+Reproduce the combined suite with python -m unittest -v test_clock test_band_solver. Local tested blobs: band_solver.py 788f0e75d5eca5fa35b6efd2a4fa52c9adbebf71; test_band_solver.py 338802392a00d14cda3abc8e4531656b8baf7c32. The existing generated audio/results are unchanged.
+
 ## Acceptance boundary
 
 This package is Draft for review. Exact final-head repository CI, independent mathematical critique, any broader generalization and empirical claims are separate. No human action is currently required to reproduce the synthetic result.
