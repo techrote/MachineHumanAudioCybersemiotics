@@ -9,7 +9,7 @@ import wave
 
 try:
     from .mode_alias_lab import (
-        make_experiment, make_stereo_wav, max_abs_difference, mode_value, sensor_values
+        make_experiment, make_stereo_wav, max_abs_difference, mode_value, sensor_values, recommend_additional_probe
     )
 except ImportError:
     from mode_alias_lab import (
@@ -127,6 +127,28 @@ class SolecismWitnessTests(unittest.TestCase):
             make_experiment(low_mode=2, sensors=2)
         with self.assertRaises(ValueError):
             make_stereo_wav(2, 10, duration=0)
+
+
+    def test_additional_witness_matches_exact_default_optimum(self):
+        # See the independent Chebyshev derivation in MATHEMATICS.md.
+        z = (15 + math.sqrt(145)) / 40
+        theta = 0.5 * math.acos(math.sqrt(z))
+        exact_global_contrast = abs(math.cos(2 * theta) - math.cos(10 * theta))
+        optimum = recommend_additional_probe(2, 10)
+        self.assertAlmostEqual(optimum["contrast"], exact_global_contrast, places=9)
+        self.assertAlmostEqual(exact_global_contrast, 1.81571610422442, places=12)
+        self.assertGreater(optimum["contrast"], 1.30656)
+        self.assertIn("numerical candidate", optimum["optimality_claim"])
+
+    def test_additional_witness_is_separate_from_reconstruction(self):
+        for a, b in ((1, 6), (3, 12), (5, 13), (0, 7)):
+            candidate = recommend_additional_probe(a, b)
+            self.assertGreater(candidate["contrast"], 0.1)
+            self.assertGreaterEqual(candidate["angle_radians"], 0)
+            self.assertLess(candidate["angle_radians"], 2 * math.pi)
+        for args in ((2, 2), (-1, 8), (1.5, 9)):
+            with self.assertRaises(ValueError):
+                recommend_additional_probe(*args)
 
     def test_cli_creates_reproducible_files(self):
         import hashlib
