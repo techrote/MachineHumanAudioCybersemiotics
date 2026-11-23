@@ -185,3 +185,20 @@ The largest limitation turned into the next research target: accepted main conta
 The shadow-sediment analyzer was added to inspect them without pretending they are accepted findings.
 
 That may be the more revealing archive: sediment includes not only what survives selection, but what nearly became rock.
+
+## Shadow sediment changed the scale of the result
+
+A later exact shadow pass (workflow #45246032759) found **155 branch/history-only Markdown paths**, of which **150 were unique text blobs** totaling **176,641 tokenized words** after exact-content deduplication.
+
+The shadow family distribution was dominated by **108 exploratory paths**: 94 tangents and 14 expeditions. This is more exploratory material by path count than the entire current narrative corpus contains documents.
+
+Three branch-only hourly scouting ledgers from 3–5 November contain **94,454 tokenized words** by themselves. Their repeated parallel/orthogonal/perpendicular lead structure and explicit endpoint distinctions provide a historical precursor to today's anti-collapse expeditions.
+
+This changes the earlier same-day caveat:
+
+- accepted-main exploratory work is indeed a 23 November burst;
+- **MHAC's broader exploratory history is not**. It survives primarily off-main.
+
+The shadow archive must remain noncanonical. Its value is archaeology and negative retrieval, not silent promotion into accepted findings.
+
+See [SHADOW-SEDIMENT.md](SHADOW-SEDIMENT.md) and the frozen [BASELINE-20261123.json](BASELINE-20261123.json).
