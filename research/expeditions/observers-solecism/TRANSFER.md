@@ -23,7 +23,7 @@ It offers a nonstandard musical action: **move the observer rather than editing 
 
 ### Counterfactual instrument panel
 
-Allow a player to ask "what hidden mode would produce the same current readings?" Show several compatible field hypotheses. Move a virtual probe, revealing differences. Sound could accompany the expanding distinction.
+Allow a player to ask "what hidden mode would produce the same current readings?" Show several compatible field hypotheses. Move a virtual probe, revealing differences. Sound could accompany the expanding distinction. For the default harmonic pair, the proof in MATHEMATICS.md even identifies the single most informative next probe at about 17.35°, demonstrating that **active choice of where to observe** can matter more than adding confidence to a fixed grid.
 
 Importantly, this is not a proof that any particular real-world source contains such a hidden mode, and listening would not by itself certify an epistemic repair.
 

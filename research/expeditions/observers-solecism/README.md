@@ -37,13 +37,13 @@ The generator creates four **disposable** files in the selected output directory
 - fixed-probes.csv — eight spatial positions, modes 2 and 10, their differences (almost zero).
 - shifted-probes.csv — same sensors with a common non-grid angular offset; modes become separable.
 - moving-witness-stereo.wav — original 3-second PCM16 stereo: low mode in left channel, higher in right.
-- receipt.json — inputs, eigenvalues, maximum errors and WAV hash.
+- receipt.json — inputs, eigenvalues, maximum errors, an estimated high-contrast additional witness, and WAV hash.
 
 By default, the circle contains **N=8** sensors and compares **n=2** versus **n+N=10**. With a chosen rotating probe at 55 revolutions/second, the left and right channels are mathematically generated at **110 Hz** and **550 Hz**. Their audibility and artistic value are not validated by participant testing.
 
 ## Original interactive instrument
 
-Open [observer_lab.html](observer_lab.html) in a modern browser directly from the filesystem. It shows both continuous harmonic curves, the limited fixed witnesses, a separate moving probe, and optional synthesized stereo tones. Change the observer offset to distinguish the otherwise aliased modes, or alter the number of witnesses. The visual moving-probe speed is deliberately reduced relative to the audio scan, so it remains inspectable.
+Open [observer_lab.html](observer_lab.html) in a modern browser directly from the filesystem. It shows both continuous harmonic curves, the limited fixed witnesses, a separate moving probe, and optional synthesized stereo tones. Change the observer offset to distinguish the otherwise aliased modes, or alter the number of witnesses. The visual moving-probe speed is deliberately reduced relative to the audio scan, so it remains inspectable. The **PLACE INFORMATIVE WITNESS** control performs a bounded grid search of candidate additional angular positions, while [MATHEMATICS.md](MATHEMATICS.md) separately proves the exact optimum for the original 2-versus-10 pair.
 
 **Status:** source built and manually reviewed for obvious structure; no independent graphical/browser acceptance performed yet. The polar drawing is not a physical Kaluza–Klein measurement or scientifically validated visual representation.
 

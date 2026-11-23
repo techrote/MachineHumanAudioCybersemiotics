@@ -2,6 +2,17 @@
 
 **Epistemic classification:** the propositions and proofs in §§1–3 are elementary original deductions from definitions; the Kaluza–Klein Fourier result in §4 is attributed to a source, and all communication/music links are analogies or proposals. This document makes no claim of fundamental new physics.
 
+## Contents
+
+| Section | Short description |
+| --- | --- |
+| [1. Grammatical relation](#1-the-grammatical-defect-that-belongs-to-a-relation) | Why a well-formed fragment can be judged differently with different context |
+| [2. Observational factorisation](#2-observational-factorisation-theorem) | Necessary and sufficient condition for recovering a full-state judgement |
+| [3. Circle alias](#3-eight-stationary-witnesses-and-a-moving-witness) | Why two different continuous harmonics can agree on every fixed probe |
+| [3a. Best additional witness](#3a-an-exact-best-extra-witness-for-the-default-pair) | Chebyshev proof of a maximal distinguishing probe location |
+| [4. Kaluza–Klein limits](#4-what-kaluza-klein-actually-contributes) | Compact-circle mathematics without speculative physics claims |
+| [5. Philosophical transfer](#5-the-one-way-philosophical-move) | What the analogy may and may not explain about interpretation |
+
 ## 1. The grammatical defect that belongs to a relation
 
 Quintilian, *Institutio Oratoria* I.5.34–38, distinguishes an isolated lexical item from an error arising in its **combination** with other elements or a speech context. Among his examples, a command morphology addressed to the wrong number of people may be problematic even when the word itself is well formed. His analysis is richer than a modern binary grammar oracle; correctness depends on the relevant usage norm and interaction.
