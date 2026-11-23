@@ -32,6 +32,13 @@ This spot check does **not** execute the deposited Python source, validate socia
 - One tiny existing-test discovery adapter invokes the focused suite in repository CI. No new workflow, dependency or audio renderer added.
 - After observed exact-head CI, append run ID, test count, and precise output here. Do not retroactively declare a test run executed when it was only intended.
 
+## Verified GitHub execution
+
+- Existing [GitHub Research integrity workflow run #45174544512](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/45174544512) completed successfully on code head `42a2c184ef6d1174f90b082f034e50d8b2ba408e`, prior to this evidence-only update.
+- The run includes **11 AffectiveFeedbackToyTests passing**, **1,132 repository unit tests total passing**, `tools/validate.py` reporting `structural_result: pass`, and deterministic fixture byte verification.
+- These results validate arithmetic/code invariants and repository integrity **only**. No real LLM runs, model correctness measurements, human outcomes, or independent human source verification were performed.
+- This update creates a new head; do not infer the new head passes until its own workflow finishes.
+
 ## Open scientific gates
 
 The real causal effect of expressed emotion on a model requires controlled repeated runs. The effect of model replies on user emotion/willingness requires actual human evidence and privacy/consent. The toy model's apparent "frustration" variable is just dimensionless arithmetic; there is no demonstrated mapping to any individual person's experience.
