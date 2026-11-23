@@ -1,0 +1,336 @@
+{
+  "examples": [
+    {
+      "code": [
+        "0",
+        "10",
+        "11"
+      ],
+      "kind": "prefix_free",
+      "states": 4,
+      "collision": null,
+      "cycle": null,
+      "max_shared_prefix": 1,
+      "longest_witness": {
+        "first": [
+          "10",
+          "11"
+        ],
+        "bits": "1"
+      }
+    },
+    {
+      "code": [
+        "0",
+        "01"
+      ],
+      "kind": "ud_finite",
+      "states": 3,
+      "collision": null,
+      "cycle": null,
+      "max_shared_prefix": 1,
+      "longest_witness": {
+        "first": [
+          "0",
+          "01"
+        ],
+        "bits": "0"
+      }
+    },
+    {
+      "code": [
+        "0",
+        "01",
+        "11"
+      ],
+      "kind": "ud_unbounded",
+      "states": 9,
+      "collision": null,
+      "cycle": {
+        "stem": "0",
+        "period": "11",
+        "first": [
+          "0",
+          "01"
+        ],
+        "states": [
+          "11|1",
+          "1|11"
+        ]
+      },
+      "max_shared_prefix": null,
+      "longest_witness": null
+    },
+    {
+      "code": [
+        "0",
+        "01",
+        "10"
+      ],
+      "kind": "non_ud",
+      "states": 16,
+      "collision": {
+        "bits": "010",
+        "first": [
+          "0",
+          "01"
+        ]
+      },
+      "cycle": {
+        "stem": "01",
+        "period": "0",
+        "first": [
+          "0",
+          "01"
+        ],
+        "states": [
+          "0|0"
+        ]
+      },
+      "max_shared_prefix": null,
+      "longest_witness": null
+    },
+    {
+      "code": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "kind": "prefix_free",
+      "states": 7,
+      "collision": null,
+      "cycle": null,
+      "max_shared_prefix": 1,
+      "longest_witness": {
+        "first": [
+          "00",
+          "01"
+        ],
+        "bits": "0"
+      }
+    },
+    {
+      "code": [
+        "00",
+        "10",
+        "100",
+        "11",
+        "110"
+      ],
+      "kind": "ud_unbounded",
+      "states": 23,
+      "collision": null,
+      "cycle": {
+        "stem": "1",
+        "period": "00",
+        "first": [
+          "10",
+          "100"
+        ],
+        "states": [
+          "0|00",
+          "00|0"
+        ]
+      },
+      "max_shared_prefix": null,
+      "longest_witness": null
+    }
+  ],
+  "census": {
+    "non_ud": 612,
+    "ud_unbounded": 186,
+    "ud_finite": 800,
+    "prefix_free": 2462
+  },
+  "tested": 4060,
+  "collisionChecks": 612,
+  "cycleChecks": 798,
+  "prefixChecks": 364,
+  "maxima": {
+    "ud_finite": 10
+  },
+  "maxExamples": {
+    "ud_finite": {
+      "code": [
+        "011",
+        "0110",
+        "1101"
+      ],
+      "kind": "ud_finite",
+      "states": 40,
+      "collision": null,
+      "cycle": null,
+      "max_shared_prefix": 10,
+      "longest_witness": {
+        "first": [
+          "011",
+          "0110"
+        ],
+        "bits": "0110110111"
+      }
+    }
+  },
+  "family": [
+    {
+      "m": 1,
+      "kind": "ud_finite",
+      "max_shared_prefix": 3
+    },
+    {
+      "m": 2,
+      "kind": "ud_finite",
+      "max_shared_prefix": 4
+    },
+    {
+      "m": 3,
+      "kind": "ud_finite",
+      "max_shared_prefix": 5
+    },
+    {
+      "m": 4,
+      "kind": "ud_finite",
+      "max_shared_prefix": 6
+    },
+    {
+      "m": 5,
+      "kind": "ud_finite",
+      "max_shared_prefix": 7
+    },
+    {
+      "m": 6,
+      "kind": "ud_finite",
+      "max_shared_prefix": 8
+    },
+    {
+      "m": 7,
+      "kind": "ud_finite",
+      "max_shared_prefix": 9
+    },
+    {
+      "m": 8,
+      "kind": "ud_finite",
+      "max_shared_prefix": 10
+    },
+    {
+      "m": 9,
+      "kind": "ud_finite",
+      "max_shared_prefix": 11
+    },
+    {
+      "m": 10,
+      "kind": "ud_finite",
+      "max_shared_prefix": 12
+    },
+    {
+      "m": 11,
+      "kind": "ud_finite",
+      "max_shared_prefix": 13
+    },
+    {
+      "m": 12,
+      "kind": "ud_finite",
+      "max_shared_prefix": 14
+    },
+    {
+      "m": 13,
+      "kind": "ud_finite",
+      "max_shared_prefix": 15
+    },
+    {
+      "m": 14,
+      "kind": "ud_finite",
+      "max_shared_prefix": 16
+    },
+    {
+      "m": 15,
+      "kind": "ud_finite",
+      "max_shared_prefix": 17
+    },
+    {
+      "m": 16,
+      "kind": "ud_finite",
+      "max_shared_prefix": 18
+    },
+    {
+      "m": 17,
+      "kind": "ud_finite",
+      "max_shared_prefix": 19
+    },
+    {
+      "m": 18,
+      "kind": "ud_finite",
+      "max_shared_prefix": 20
+    },
+    {
+      "m": 19,
+      "kind": "ud_finite",
+      "max_shared_prefix": 21
+    },
+    {
+      "m": 20,
+      "kind": "ud_finite",
+      "max_shared_prefix": 22
+    },
+    {
+      "m": 21,
+      "kind": "ud_finite",
+      "max_shared_prefix": 23
+    },
+    {
+      "m": 22,
+      "kind": "ud_finite",
+      "max_shared_prefix": 24
+    },
+    {
+      "m": 23,
+      "kind": "ud_finite",
+      "max_shared_prefix": 25
+    },
+    {
+      "m": 24,
+      "kind": "ud_finite",
+      "max_shared_prefix": 26
+    },
+    {
+      "m": 25,
+      "kind": "ud_finite",
+      "max_shared_prefix": 27
+    },
+    {
+      "m": 26,
+      "kind": "ud_finite",
+      "max_shared_prefix": 28
+    },
+    {
+      "m": 27,
+      "kind": "ud_finite",
+      "max_shared_prefix": 29
+    },
+    {
+      "m": 28,
+      "kind": "ud_finite",
+      "max_shared_prefix": 30
+    },
+    {
+      "m": 29,
+      "kind": "ud_finite",
+      "max_shared_prefix": 31
+    },
+    {
+      "m": 30,
+      "kind": "ud_finite",
+      "max_shared_prefix": 32
+    },
+    {
+      "m": 31,
+      "kind": "ud_finite",
+      "max_shared_prefix": 33
+    },
+    {
+      "m": 32,
+      "kind": "ud_finite",
+      "max_shared_prefix": 34
+    }
+  ]
+}
