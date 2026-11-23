@@ -218,6 +218,58 @@ def open_world_query(
     return "FALSE" if closed_world else "UNKNOWN"
 
 
+def entropy_bits(probabilities: list[float]) -> float:
+    """Shannon entropy for a declared finite probability distribution."""
+    if not probabilities:
+        raise ValueError("probability distribution must be nonempty")
+    if any((not math.isfinite(p) or p < 0) for p in probabilities):
+        raise ValueError("probabilities must be finite and nonnegative")
+    total = sum(probabilities)
+    if abs(total - 1.0) > 1e-9:
+        raise ValueError("probabilities must sum to 1")
+    return -sum(p * math.log2(p) for p in probabilities if p > 0)
+
+
+def mutual_information_bits(
+    prior: dict[str, float],
+    channel: dict[str, dict[str, float]],
+) -> float:
+    """Mutual information I(hidden; observation) for a finite channel."""
+    if not prior or set(prior) != set(channel):
+        raise ValueError("prior/channel hidden-state keys must match and be nonempty")
+    entropy_bits(list(prior.values()))
+    outputs: set[str] = set()
+    for state, distribution in channel.items():
+        if not distribution:
+            raise ValueError("each state needs an observation distribution")
+        entropy_bits(list(distribution.values()))
+        outputs.update(distribution)
+    p_y = {y: 0.0 for y in outputs}
+    for x, px in prior.items():
+        for y, py_x in channel[x].items():
+            p_y[y] += px * py_x
+    info = 0.0
+    for x, px in prior.items():
+        for y, py_x in channel[x].items():
+            joint = px * py_x
+            if joint > 0:
+                info += joint * math.log2(joint / (px * p_y[y]))
+    return info
+
+
+def quartet_shared_silence_information_bits() -> float:
+    """Uniform four-world prior + one identical silent-window observation."""
+    states = (
+        "explicit_resolved",
+        "channel_failed",
+        "alert_delayed",
+        "intentional_rest",
+    )
+    prior = {state: 0.25 for state in states}
+    channel = {state: {"SAME_DIGITAL_ZERO_WINDOW": 1.0} for state in states}
+    return mutual_information_bits(prior, channel)
+
+
 def posterior_event_probability_after_no_detections(
     prior_event_probability: float,
     detection_if_event: float,
