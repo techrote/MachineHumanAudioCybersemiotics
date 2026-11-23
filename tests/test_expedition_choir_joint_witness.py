@@ -47,6 +47,20 @@ class JointWitnessTests(unittest.TestCase):
         self.assertEqual(C.bounds(1, (3,)), (0, 3))
         self.assertEqual(C.bounds(1, (0,)), (0, 0))
 
+    def test_population_width_bound_is_sharp(self):
+        for n in range(2, 9):
+            half = 1 << (n-1)
+            for total in (0, half-1, half, half+1, 3*half-1, 3*half):
+                copies, remainder = divmod(total, half)
+                a, b = ([copies*v for v in C.parity_hist(n, p)] for p in (0, 1))
+                a[0] += remainder
+                b[0] += remainder
+                ma, mb = C.moments(n, a), C.moments(n, b)
+                self.assertEqual(ma[:-1], mb[:-1])
+                lo, hi = C.bounds(n, ma[:-1])
+                self.assertEqual(hi-lo, copies)
+                self.assertEqual(hi-lo, total//half)
+
     def test_invalid(self):
         for n, p in [(2, (1, 2, 0)), (2, (2, -1, 1)), (2, (2, True, 1)),
                      (2, (3, 1)), (0, ()), (13, ())]:
