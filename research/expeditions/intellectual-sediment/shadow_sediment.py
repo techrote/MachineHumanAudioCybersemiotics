@@ -123,6 +123,11 @@ def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
             },
             "sha256": __import__("hashlib").sha256(text.encode("utf-8")).hexdigest(),
         })
+    unique_by_hash = {}
+    for witness in witnesses:
+        unique_by_hash.setdefault(witness["sha256"], witness)
+    total_words = sum(w["words"] for w in witnesses)
+    unique_content_words = sum(w["words"] for w in unique_by_hash.values())
     motif_docs = Counter()
     motif_hits = Counter()
     families = Counter()
@@ -159,6 +164,10 @@ def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
         "current_markdown_paths": len(current),
         "branch_or_history_only_paths": len(absent),
         "witnesses_loaded": len(witnesses),
+        "unique_content_blobs": len(unique_by_hash),
+        "duplicate_content_paths": len(witnesses) - len(unique_by_hash),
+        "total_path_words": total_words,
+        "unique_content_words": unique_content_words,
         "truncated": len(absent) > max_docs,
         "families": dict(sorted(families.items())),
         "fine_families": dict(sorted(fine.items())),
@@ -206,7 +215,9 @@ def main() -> None:
             k: result[k]
             for k in (
                 "head_sha", "historical_markdown_paths", "current_markdown_paths",
-                "branch_or_history_only_paths", "witnesses_loaded", "truncated",
+                "branch_or_history_only_paths", "witnesses_loaded",
+                "unique_content_blobs", "duplicate_content_paths",
+                "total_path_words", "unique_content_words", "truncated",
                 "families", "fine_families", "latest_content_dates",
                 "refs_by_witness_count", "motif_documents", "motif_hits",
                 "high_motif_witnesses",
