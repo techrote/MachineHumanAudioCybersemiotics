@@ -190,7 +190,7 @@ def scenario(name: str) -> tuple[list[Node], list[str]]:
         ], outputs
     if name == "mixed":
         return [Node("S1", "observation", polarity="support"), Node("S2", "observation", polarity="support")] + [
-            Node(m, "derivative", ("S1" if i < 7 else "S2",)) for i, m in enumerate(outputs, 1)
+            Node(m, "derivative", ("S1" if i < 8 else "S2",)) for i, m in enumerate(outputs, 1)
         ], outputs
     if name == "untraced":
         return [Node("S1", "observation", polarity="support"), Node("U1", "untraced")] + [
