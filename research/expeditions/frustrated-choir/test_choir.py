@@ -195,6 +195,12 @@ class FrustratedChoirTests(unittest.TestCase):
             self.assertEqual(
                 result["scenarios"]["balanced"]["brute_force"]["assignment_count"], 2)
             self.assertTrue((Path(temporary) / "receipt.json").exists())
+            self.assertEqual(result["scenarios"]["order_ab_first"]["audio"]["flux_notes"], [1, 1, 0])
+            self.assertEqual(result["scenarios"]["order_ab_last"]["audio"]["flux_notes"], [0, 0, 1])
+            self.assertNotEqual(
+                (Path(temporary) / "order_ab_first.wav").read_bytes(),
+                (Path(temporary) / "order_ab_last.wav").read_bytes(),
+            )
 
 
 if __name__ == "__main__":
