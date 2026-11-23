@@ -55,6 +55,14 @@ class ChiasticTrapTests(unittest.TestCase):
         self.assertFalse(lab.is_palindrome(seq))
         self.assertTrue(lab.is_identity(seq, lab.INVOLUTIVE_ACTIONS))
 
+    def test_inverse_noninvolutive_cycles_can_still_return(self):
+        # The sufficient condition "both tokens involutive" is not necessary.
+        actions = {"A": (1, 2, 0), "B": (2, 0, 1)}
+        self.assertFalse(lab.involution(actions["A"]))
+        self.assertFalse(lab.involution(actions["B"]))
+        self.assertTrue(lab.is_identity(lab.CHI, actions))
+        self.assertEqual(lab.effects(lab.CHI, actions), (0, 1, 2))
+
     def test_noncommutativity_is_not_necessary_for_control(self):
         actions = {"A": (1, 0, 2), "B": (0, 1, 2)}
         self.assertTrue(lab.commute(actions))
