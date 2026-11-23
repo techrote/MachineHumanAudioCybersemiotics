@@ -30,9 +30,16 @@
 - The audio generator's rotation-to-frequency transposition is a design choice, not a measurement of physical KK mass.
 - No empirical listener data, no preregistered study and no proof of novel physics.
 
+## Verified GitHub execution and current visual boundary
+
+- Existing [GitHub Research integrity workflow run #45175135487](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/45175135487) completed successfully on commit `f2116b8b7ed4780450e56b2c4aa2437e30110439` (the interactive HTML source head before this evidence/README update). Its job log records **13 SolecismWitnessTests passing**, **1,134 repository unit tests total passing**, `structural_result: pass`, and **byte-identical synthetic fixtures**.
+- The CLI end-to-end test confirmed successful writing and hashing of the generated WAV, CSVs and receipt, using a temporary output directory. This validates reproducible source output on the CI host, **not** audio perception.
+- [observer_lab.html](observer_lab.html) is an original offline SVG/WebAudio interactive visual instrument. **Its actual browser rendering, accessibility and sound output have not been tested on a target browser.** GitHub unit-test success does not certify it.
+- The evidence-update commit itself requires the normal exact-head checks before any merge; do not treat the prior head as the final head.
+
 ## Execution / review checkpoint
 
 - **Issue:** [MHAC-X001 #178](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/178).
 - **Parent work:** additive expedition source/essay/proof and independent tests; frozen MHAC protocol and canonical registries untouched.
-- **Exact PR head and checks:** pending PR creation and inspection.
+- **PR:** [#179](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/179). **Last independently observed CI:** green at `f2116b8b7ed4780450e56b2c4aa2437e30110439`; verify the actual final PR head again before merging.
 - **Review boundary:** synthetic and literary work is permissible as standalone research sediment; downstream integration into MHAC science requires evidence/protocol decisions.
