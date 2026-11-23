@@ -134,8 +134,6 @@ def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
         fine[w["fine_family"]] += 1
         if w["date"]:
             dates[w["date"]] += 1
-        for ref in w["refs"]:
-            refs[ref] += 1
         for motif, hits in w["motifs"].items():
             motif_docs[motif] += 1
             motif_hits[motif] += hits
@@ -152,6 +150,8 @@ def analyze_shadow(root: Path, max_docs: int = 400) -> dict:
     # information-rich witnesses that will actually be shown.
     for witness in ranked[:30]:
         witness["refs"] = refs_containing(root, witness["sha"])
+        for ref in witness["refs"]:
+            refs[ref] += 1
     return {
         "schema": "mhac-intellectual-sediment-shadow-v1",
         "head_sha": base.head(root),
