@@ -198,16 +198,16 @@ by("bestBtn").addEventListener("click",()=>{
  let bestAngle=0, bestContrast=-1;
  const samples=Math.max(2048,64*m);
  for(let j=0;j<samples;j++){
-  const a=TAU*j/samples;
+  const a=Math.PI*j/samples;
   const contrast=Math.abs(wave(n,a)-wave(m,a));
   if(contrast>bestContrast){bestContrast=contrast;bestAngle=a;}
  }
  // The slider represents rotations of the complete sensor grid.
  // First witness at bestAngle; no guarantee of global optimality for other pairs.
  ctl.offset.step="any";
- ctl.offset.value=String((bestAngle/TAU)%0.5);
+ ctl.offset.value=String(bestAngle/TAU);
  draw();updateSound();
- by("soundStatus").textContent="Placed a grid-search witness; contrast≈"+bestContrast.toFixed(3)+" (not a global guarantee).";
+ by("soundStatus").textContent="Placed a witness from 0..180° grid search; contrast≈"+bestContrast.toFixed(3)+" (not a global guarantee).";
 });
 by("soundBtn").addEventListener("click",toggleSound);
 by("zeroBtn").addEventListener("click",()=>{
