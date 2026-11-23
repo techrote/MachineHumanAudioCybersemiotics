@@ -52,6 +52,13 @@ def phrases(ws):
    g=ws[i:i+n]
    if all(len(x)>=3 and x not in STOP for x in g):out.add(' '.join(g))
  return out
+def motif_hits(text):
+ z=clean(text).lower();out={}
+ for name,ps in MOTIFS.items():
+  n=sum(len(re.findall(p,z,re.I)) for p in ps)
+  if n:out[name]=n
+ return out
+
 def first_dates(root):
  try:o=subprocess.run(['git','-C',str(root),'log','--reverse','--all','--date=format-local:%Y-%m-%d','--format=@@%ad','--name-status','--diff-filter=A'],capture_output=True,text=True,check=True,env={**os.environ,'TZ':'UTC'}).stdout
  except Exception:return {}
