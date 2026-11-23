@@ -17,6 +17,9 @@ That proposition is formalized for a tiny asynchronous trace model, rendered as 
 | FORMAL.md | Finite-prefix indistinguishability theorem and assumption table |
 | SOURCES.md | Source ledger with actual reading/access limits |
 | SYNTHESIS.md | Cross-domain analysis without collapsing the source disciplines |
+| NEGATIVE-INFORMATION.md | Liveness, open/closed-world and Bayesian non-detection distinctions |
+| INFORMATION.md | Exact mutual-information result for the constructed silence quartet |
+| ADVERSARIAL.md | Twelve objections and counterexamples against overbroad silence claims |
 | NEGATIVE-SPACE-PROTOCOL.md | Candidate lease/status design extracted from the research |
 | TYPE-SYSTEM.md | Reusable distinction discipline for NO_DELIVERY, ERASURE, STALE, UNKNOWN, suspicion and resolution |
 | EXAPTATION.md | Exact reuse of X001's observation-fibre theorem inside X005 |
