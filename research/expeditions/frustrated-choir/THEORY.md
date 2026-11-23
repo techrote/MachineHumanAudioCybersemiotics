@@ -2,6 +2,17 @@
 
 **Claim classes:** mathematical theorem for a stipulated finite model; executed synthetic result only when [EVIDENCE.md](EVIDENCE.md) records actual checks; interpretive cross-domain hypotheses; artistic convention. None is empirical evidence about human sound recognition or machine truthfulness.
 
+## Contents
+
+| Section | Contribution |
+| --- | --- |
+| [1. The graph in which every assertion is local](#1-the-graph-in-which-every-assertion-is-local) | Binary sign model and balance theorem proof |
+| [2. Why an edge can sound innocent until it closes a walk](#2-why-an-edge-can-sound-innocent-until-it-closes-a-walk) | Streaming certificates and their limits |
+| [3. The local-code gauge](#3-the-local-code-gauge-what-survives-when-every-node-renames-its-bits) | Switching invariance under local recoding |
+| [4. The deliberately austere stereo score](#4-the-deliberately-austere-stereo-score) | Exact audio mapping and evidence boundary |
+| [5. Counterexamples and failed inferences](#5-counterexamples-and-failed-inferences) | Failure cases for truth, blame, optimality and order |
+| [6. Experimental and transfer boundary](#6-experimental-and-transfer-boundary) | Finite tests and conditional exaptations |
+
 ## 1. The graph in which every assertion is local
 
 Let \`V\` be a finite set of named symbolic nodes. Each identified undirected edge \`e=(u,v,p)\` asserts that its endpoint labels, each in GF(2) = {0,1}, have XOR \`p\`. Thus
