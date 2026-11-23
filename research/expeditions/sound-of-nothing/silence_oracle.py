@@ -175,6 +175,75 @@ def classify_lease(messages: list[LeaseState], now: float) -> str:
     return "ACTIVE" if now <= latest.valid_until else "UNKNOWN"
 
 
+def finite_eventuality_verdict(
+    delivery_times: list[float],
+    horizon: float,
+    deadline: float | None = None,
+) -> str:
+    """Three-valued finite monitor for 'a delivery eventually occurs'.
+
+    Without a deadline, a quiet finite prefix is INCONCLUSIVE because a future
+    delivery can still satisfy the property. A deadline converts the bounded
+    requirement into a finitely refutable obligation.
+    """
+    if not math.isfinite(horizon) or horizon < 0:
+        raise ValueError("horizon must be finite and nonnegative")
+    if any((not math.isfinite(t) or t < 0) for t in delivery_times):
+        raise ValueError("delivery times must be finite/nonnegative")
+    if any(t <= horizon for t in delivery_times):
+        return "SATISFIED"
+    if deadline is None:
+        return "INCONCLUSIVE"
+    if not math.isfinite(deadline) or deadline < 0:
+        raise ValueError("deadline must be finite and nonnegative")
+    return "VIOLATED" if horizon >= deadline else "INCONCLUSIVE"
+
+
+def open_world_query(
+    positive_facts: set[str],
+    negative_facts: set[str],
+    proposition: str,
+    *,
+    closed_world: bool = False,
+) -> str:
+    """Tiny didactic open/closed-world contrast, not an OWL reasoner."""
+    if not proposition:
+        raise ValueError("proposition must be nonempty")
+    if proposition in positive_facts and proposition in negative_facts:
+        return "INCONSISTENT"
+    if proposition in positive_facts:
+        return "TRUE"
+    if proposition in negative_facts:
+        return "FALSE"
+    return "FALSE" if closed_world else "UNKNOWN"
+
+
+def posterior_event_probability_after_no_detections(
+    prior_event_probability: float,
+    detection_if_event: float,
+    false_positive_if_no_event: float,
+    opportunities: int,
+) -> float:
+    """Bayesian countercase: silence can be probabilistic evidence.
+
+    Assumes conditionally independent opportunities and fixed per-opportunity
+    detection/false-positive rates. These are modelling assumptions, not MHAC
+    empirical estimates.
+    """
+    vals = (prior_event_probability, detection_if_event, false_positive_if_no_event)
+    if any((not math.isfinite(x) or not 0 <= x <= 1) for x in vals):
+        raise ValueError("probabilities must be finite within [0,1]")
+    if not isinstance(opportunities, int) or opportunities < 0:
+        raise ValueError("opportunities must be a nonnegative integer")
+    likelihood_no_given_event = (1.0 - detection_if_event) ** opportunities
+    likelihood_no_given_absent = (1.0 - false_positive_if_no_event) ** opportunities
+    numerator = prior_event_probability * likelihood_no_given_event
+    denominator = numerator + (1.0 - prior_event_probability) * likelihood_no_given_absent
+    if denominator == 0:
+        raise ValueError("conditioning event has zero probability under both hypotheses")
+    return numerator / denominator
+
+
 def heartbeat_suspicion(
     arrivals: list[float],
     now: float,
