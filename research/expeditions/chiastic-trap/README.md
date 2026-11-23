@@ -92,7 +92,7 @@ The original [chiastic_lab.py](chiastic_lab.py) is deliberately austere: 16 kHz,
 Reproduce from the repo root:
 
     python3 research/expeditions/chiastic-trap/chiastic_lab.py --out build/mhac-x006
-    python3 -m unittest tests.test_x006_chiastic_trap -v
+    python3 -m unittest discover -s tests -p 'test_x006_chiastic_trap.py' -v
 
 | File in build/mhac-x006/ | Type | Meaning |
 | --- | --- | --- |
