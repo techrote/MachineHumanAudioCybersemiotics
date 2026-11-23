@@ -37,15 +37,51 @@ The tests require:
 - explicit RESOLVED remains explicit;
 - heartbeat timeout is a suspicion policy and can be reversed by a later arrival.
 
-## Pending at this document's initial creation
+## Observed exact research-head qualification
 
-- exact final-head GitHub Actions;
-- full repository validator;
-- deterministic fixture check;
+GitHub Research integrity workflow **#45247604203** executed commit
+`d3870cc5255611ccb74460e78cba7abfc13c8cac` after the full research/code
+bundle was assembled.
+
+Observed job evidence:
+
+- **30 X005-specific tests passed** (28 `SoundOfNothingTests` plus 2 artifact/offline checks).
+- **1,205 repository tests passed in 39.090 s**.
+- `tools/validate.py` reported **`structural_result: pass`** and retained
+  **`research_state: in_progress`**.
+- the repository's deterministic synthetic v1 fixtures reproduced
+  **byte-for-byte**.
+- no legacy commit status was treated as a substitute for the Actions run.
+
+The shared silence interval is 1.5 s × 24,000 mono frames/s × 2 bytes/frame =
+**72,000 zero bytes**. Its deterministic SHA-256 is
+`36438cefa7206dac9ef150b613418d5912c3eb69ed4e0084798602985b43470d`.
+The program independently records this same shared-window digest in its
+generated receipt; the CI tests assert that every scene's extracted window is
+identical and all-zero.
+
+The code/test qualification establishes software invariants only. It does not
+validate listener interpretation, metaphysics, production safety, or the
+usefulness of any proposed auditory rendering.
+
+## Final-head qualification rule
+
+This evidence update itself creates a newer **evidence-only** commit. The PR
+must therefore obtain one additional successful Research integrity run on that
+actual final head before merge. The final run result should be recorded in the
+PR/issue metadata without editing this file again, so qualification does not
+create an infinite self-referential commit loop.
+
+## Still intentionally unvalidated
+
 - external human listening/visual review;
-- any programme-level adoption.
+- real-system failure-detector performance;
+- participant comprehension or action;
+- programme-level adoption into R012/R013;
+- any claim that the philosophical/artistic comparisons are scientifically
+  established.
 
-Green CI, when obtained, will validate software/repository invariants only. It will not validate human interpretation, metaphysics, or production safety.
+Green CI validates software/repository integrity only.
 
 ## Nonclaims
 
