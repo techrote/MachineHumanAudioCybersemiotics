@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MHAC-X007 · The Frustrated Choir</title>
+<style>
+:root {color-scheme:dark;--bg:#11191f;--surface:#1b2831;--edge:#324957;--ink:#e7edf0;--muted:#a4b9c2;--good:#68c8ac;--bad:#ffba71}
+* {box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.52 system-ui, sans-serif}
+main{max-width:1050px;margin:auto;padding:28px 20px 45px}h1{font-size:clamp(28px,4.5vw,46px);letter-spacing:-.04em;line-height:1.1;margin:10px 0}h2{font-size:18px;margin:10px 0 15px}
+p{color:var(--muted);max-width:75ch}a{color:var(--good)}.kicker{color:var(--good);font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:12px}
+.layout{display:grid;grid-template-columns:minmax(260px,1.1fr) minmax(270px,1fr);gap:18px;margin-top:24px}
+.panel{border:1px solid var(--edge);border-radius:13px;background:var(--surface);padding:20px}
+svg{display:block;width:100%;height:auto;max-height:460px}
+.edge-text{font:700 15px system-ui;fill:var(--ink);text-anchor:middle}.node-text{font:700 27px system-ui;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.nodes circle{stroke:var(--muted);stroke-width:2;fill:var(--surface)}
+.lines line{stroke-width:7;stroke-linecap:round}.muted{color:var(--muted);font-size:14px}
+.status{display:flex;gap:14px;align-items:center;margin:15px 0 9px}
+.big{font-size:38px;font-weight:750;line-height:1;font-variant-numeric:tabular-nums}
+.bad{color:var(--bad)}.good{color:var(--good)}
+.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+button{font:inherit;border:1px solid #556673;cursor:pointer;color:var(--ink);background:#263743;border-radius:8px;padding:11px;text-align:left}
+button:hover,button:focus-visible{border-color:var(--good);outline:2px solid transparent;background:#304553}
+button:focus-visible{outline:2px solid #e9dfab}button strong{display:block;font-size:14px}
+button span{display:block;color:var(--muted);font-size:12px}
+.controls{margin-top:20px}button[data-on="1"]{border-color:var(--bad)}button[data-on="1"] strong{color:var(--bad)}
+button.primary{background:#14675b;color:white;font-weight:700;padding:13px 15px;border-color:#35ac91}
+.two{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.two>*{flex:1}
+code{background:#142129;color:#e9eabc;padding:2px 5px;border-radius:3px;overflow-wrap:anywhere}
+output{display:block;background:#101a20;color:#d4e1e6;border-radius:8px;padding:14px;font:13px/1.7 ui-monospace,monospace;white-space:pre-wrap;margin-top:15px}
+.note{margin-top:22px;border-left:3px solid var(--good);padding-left:13px}
+@media(max-width:720px){.layout{grid-template-columns:1fr}main{padding:18px 14px}}
+</style>
+</head>
+<body>
+<main>
+<div class="kicker">Machine · Human · Audio · Cybersemiotics / X007</div>
+<h1>The Frustrated Choir</h1>
+<p>A small interactive instrument for a paradox hidden in a ring of four binary relations. Change a <b>claim</b> to make a genuine new contradiction. Flip a <b>local naming convention</b> to alter displayed relations without changing the closed-loop result.</p>
+<div class="layout">
+<section class="panel" aria-label="Graph, loop parity and audio">
+<h2>The same/different ring</h2>
+<svg viewBox="0 0 400 385" role="img" aria-label="Four symbolic nodes joined into a square with four parity-marked edges">
+<g class="lines">
+<line id="line0" x1="100" y1="70" x2="300" y2="70"/>
+<line id="line1" x1="300" y1="70" x2="300" y2="270"/>
+<line id="line2" x1="300" y1="270" x2="100" y2="270"/>
+<line id="line3" x1="100" y1="270" x2="100" y2="70"/>
+</g>
+<g class="nodes">
+<circle cx="100" cy="70" r="30"/><circle cx="300" cy="70" r="30"/>
+<circle cx="300" cy="270" r="30"/><circle cx="100" cy="270" r="30"/>
+</g>
+<g>
+<text class="node-text" x="100" y="70">A</text>
+<text class="node-text" x="300" y="70">B</text>
+<text class="node-text" x="300" y="270">C</text>
+<text class="node-text" x="100" y="270">D</text>
+</g>
+<g>
+<text class="edge-text" x="200" y="51" id="svg0">same</text>
+<text class="edge-text" x="355" y="175" id="svg1">diff</text>
+<text class="edge-text" x="200" y="312" id="svg2">same</text>
+<text class="edge-text" x="45" y="175" id="svg3">diff</text>
+</g>
+<text x="200" y="162" fill="#a4b9c2" text-anchor="middle" font-size="13">XOR A→B→C→D→A</text>
+<text x="200" y="206" text-anchor="middle" font-weight="800" font-size="39" fill="#68c8ac" id="centerFlux">0</text>
+</svg>
+<div class="status">
+<div id="bigFlux" class="big good">0</div>
+<div><b id="statusLabel">Balanced loop</b><div class="muted" id="assignmentLabel">2 compatible vertex labelings</div></div>
+</div>
+<div class="two">
+<button class="primary" id="play" type="button">Play loop in stereo</button>
+<button id="reset" type="button">Restore example</button>
+</div>
+<p class="muted">Left oscillator: 440 Hz. Right: 440 Hz for XOR 0, 466.16 Hz for XOR 1. This is a synthetic musical convention, not a validated alarm code. Audio begins only after you press Play.</p>
+</section>
+<section class="panel">
+<h2>Change the assertions</h2>
+<p class="muted">Changing a claim changes the stipulated mathematical relation. Each button flips exactly one canonical edge parity.</p>
+<div class="actions" id="claims"></div>
+<div class="controls">
+<h2>Change only the local names</h2>
+<p class="muted">Switching the meaning of zero/one at a node changes its incident edge labels, but never the XOR of the whole cycle.</p>
+<div class="actions" id="switches"></div>
+</div>
+<h2 class="controls">Inspectable certificate</h2>
+<output aria-live="polite" id="certificate"></output>
+</section>
+</div>
+<div class="note"><b>What it does not decide.</b><p>A frustrated loop demonstrates incompatible <i>stipulated</i> binary constraints, not which source is lying. A balanced loop does not mean that the statements are truthful. Reordering assertions can change which edge a greedy stream rejects. See the <a href="THEORY.md">finite theorem and counterexamples</a>, <a href="SOURCES.md">primary-source ledger</a> and <a href="choir.py">reproducible Python/WAV generator</a>.</p></div>
+</main>
+<script>
+"use strict";
+const canonical = [0,1,0,1];
+const local = [0,0,0,0];
+const names = ["A","B","C","D"];
+const $ = id => document.getElementById(id);
+const observed = i => canonical[i] ^ local[i] ^ local[(i+1)%4];
+const flux = () => observed(0) ^ observed(1) ^ observed(2) ^ observed(3);
+const possibleAssignments = () => {
+  let total = 0;
+  for(let mask=0;mask<16;mask++){
+    let okay=true;
+    for(let i=0;i<4;i++){
+      const a=(mask>>i)&1, b=(mask>>((i+1)%4))&1;
+      if((a^b)!==observed(i))okay=false;
+    }
+    if(okay)total++;
+  }
+  return total;
+};
+function makeButtons(target, labels, kind){
+  for(let i=0;i<4;i++){
+    const button=document.createElement("button");
+    button.type="button";
+    button.id=kind+i;
+    button.addEventListener("click",()=>{
+      if(kind==="claim")canonical[i]^=1;
+      else local[i]^=1;
+      refresh();
+    });
+    button.innerHTML="<strong>"+labels[i]+"</strong><span></span>";
+    $(target).appendChild(button);
+  }
+}
+makeButtons("claims",["A — B","B — C","C — D","D — A"],"claim");
+makeButtons("switches",names,"switch");
+function refresh(){
+  for(let i=0;i<4;i++){
+    const p=observed(i);
+    $("line"+i).setAttribute("stroke",p?"#ffba71":"#68c8ac");
+    $("svg"+i).textContent=p?"different":"same";
+    $("claim"+i).querySelector("span").textContent="Canonical: "+(canonical[i]?"different":"same")+" · shown: "+(p?"different":"same");
+    $("claim"+i).dataset.on=String(canonical[i]);
+    $("switch"+i).querySelector("span").textContent="Local 0/1 inverted: "+(local[i]?"yes":"no");
+    $("switch"+i).dataset.on=String(local[i]);
+    $("switch"+i).setAttribute("aria-pressed",String(Boolean(local[i])));
+  }
+  const p=flux(), assignments=possibleAssignments();
+  $("centerFlux").textContent=String(p);
+  $("centerFlux").setAttribute("fill",p?"#ffba71":"#68c8ac");
+  $("bigFlux").textContent=String(p);
+  $("bigFlux").className="big "+(p?"bad":"good");
+  $("statusLabel").textContent=p?"Frustrated loop":"Balanced loop";
+  $("assignmentLabel").textContent=assignments+" compatible vertex labeling"+(assignments===1?"":"s");
+  const fromPath=observed(0)^observed(1)^observed(2);
+  const declared=observed(3);
+  $("certificate").textContent=
+    "Path A→B→C→D\n"+
+    "edge parity: "+observed(0)+" ⊕ "+observed(1)+" ⊕ "+observed(2)+" = "+fromPath+"\n"+
+    "closing D→A: "+declared+"\n"+
+    "cycle flux: "+fromPath+" ⊕ "+declared+" = "+p+"\n"+
+    (p?"No assignment satisfies all four claims.":"There are "+assignments+" compatible assignments.")+"\n"+
+    "Local flips: "+local.join(", ")+"\n"+
+    "All node frames are artificial and known.";
+}
+let context=null;
+$("play").addEventListener("click",async()=>{
+  const Audio=window.AudioContext||window.webkitAudioContext;
+  if(!Audio){$("certificate").textContent+="\nWeb Audio unavailable.";return;}
+  if(!context)context=new Audio();
+  await context.resume();
+  const now=context.currentTime+.03;
+  const envelope=context.createGain();
+  envelope.gain.setValueAtTime(.00001,now);
+  envelope.gain.linearRampToValueAtTime(.16,now+.055);
+  envelope.gain.setValueAtTime(.16,now+.48);
+  envelope.gain.linearRampToValueAtTime(.00001,now+.60);
+  envelope.connect(context.destination);
+  for(const [frequency,pan] of [[440,-1],[flux()?466.16:440,1]]){
+    const osc=context.createOscillator();
+    osc.type="sine";osc.frequency.setValueAtTime(frequency,now);
+    const stereo=context.createStereoPanner();
+    stereo.pan.value=pan;
+    osc.connect(stereo);
+    stereo.connect(envelope);
+    osc.start(now);osc.stop(now+.61);
+  }
+});
+$("reset").addEventListener("click",()=>{
+  [0,1,0,1].forEach((v,i)=>canonical[i]=v);
+  local.fill(0);refresh();
+});
+refresh();
+</script>
+</body>
+</html>
