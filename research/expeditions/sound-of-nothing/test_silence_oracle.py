@@ -316,11 +316,21 @@ class SoundOfNothingTests(unittest.TestCase):
                 "explicit_resolved.wav", "channel_failed.wav",
                 "alert_delayed.wav", "intentional_rest.wav",
                 "receipt.json", "trace-counterexample.json",
+                "tombstone-counterexample.json",
             }
             self.assertEqual({p.name for p in out.iterdir()}, expected)
             rec = json.loads((out / "receipt.json").read_text(encoding="utf-8"))
             self.assertTrue(rec["shared_window_all_zero"])
             self.assertTrue(rec["shared_window_identical"])
+            tombstone = json.loads(
+                (out / "tombstone-counterexample.json").read_text(encoding="utf-8")
+            )
+            self.assertTrue(
+                tombstone["delete_by_absence"]["live_after_repair"]
+            )
+            self.assertTrue(
+                tombstone["explicit_tombstone"]["deleted_after_repair"]
+            )
 
 
 if __name__ == "__main__":
