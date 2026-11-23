@@ -201,6 +201,22 @@ Use here: direct engineering analogy for **explicit negative state**. An absent 
 Limit: X005's three-replica last-version-wins counterexample is deliberately much simpler than Cassandra's SSTables, compaction, hinted handoff, repair, timestamp rules and operational failure modes. It must not be described as an implementation model of Cassandra.
 
 
+
+## X005-S19 — RTP silence suppression, sequence/timestamp distinction and comfort noise
+
+IETF RFC 3550, *RTP: A Transport Protocol for Real-Time Applications* (2003); RFC 3551, *RTP Profile for Audio and Video Conferences with Minimal Control* (2003); RFC 3389, *Real-time Transport Protocol (RTP) Payload for Comfort Noise (CN)* (2002); and RFC 4867, *RTP Payload Format for AMR and AMR-WB* (2007).
+
+Actually inspected:
+- RFC 3551's encoding-independent audio rule explaining that sequence numbers and timestamps allow receivers to distinguish packet loss from periods in which no data was transmitted under silence suppression;
+- RFC 3550's packet-loss/reception-report sections, including the stated limit that a receiver cannot tell whether packets were lost **after the last packet received** merely from current reception accounting;
+- RFC 3389's CN payload and guidance for sending comfort-noise/SID information at the beginning of inactive voice segments, plus its description of detecting suppression after the next packet through timestamp discontinuity without sequence-number discontinuity;
+- RFC 4867 frame-type descriptions for SID/comfort-noise, SPEECH_LOST and NO_DATA.
+
+Use here: a real network-audio precedent for representing intentional media silence with protocol metadata rather than assigning all semantics to packet non-arrival.
+
+Limit: RTP metadata describes media transport, loss and codec behavior. It does not establish application-level alarm resolution, listener understanding or a general MHAC state protocol.
+
+
 ## Source conclusion
 
 The useful cross-domain pattern is not that all these literatures “say the same thing.” They do not.
