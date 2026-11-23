@@ -9,11 +9,13 @@ import wave
 
 try:
     from .mode_alias_lab import (
-        make_experiment, make_stereo_wav, max_abs_difference, mode_value, sensor_values, recommend_additional_probe
+        make_experiment, make_stereo_wav, max_abs_difference, mode_value,
+        sensor_values, recommend_additional_probe
     )
 except ImportError:
     from mode_alias_lab import (
-        make_experiment, make_stereo_wav, max_abs_difference, mode_value, sensor_values
+        make_experiment, make_stereo_wav, max_abs_difference, mode_value,
+        sensor_values, recommend_additional_probe
     )
 
 
