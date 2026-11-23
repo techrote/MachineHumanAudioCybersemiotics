@@ -1,5 +1,7 @@
 # MHAC-X002 — When "left" has no agreed origin
 
+**Companion speculative essay:** [*The compass is a pronoun*](AFTERWORD.md). The source-bounded formal argument and execution receipts remain in this directory.
+
 **Status (23 November 2026):** an original, source-bounded interdisciplinary expedition and **exhaustive fictional C4 coordinate-frame oracle**. This is neither an acoustic intelligibility experiment, a human-action safety finding, a completed R008 comparison, nor a new result in physics. Refs [issue #181](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/181).
 
 ## Contents
