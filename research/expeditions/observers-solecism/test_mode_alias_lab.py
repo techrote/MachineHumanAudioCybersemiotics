@@ -75,7 +75,8 @@ class SolecismWitnessTests(unittest.TestCase):
         self.assertEqual(len(shifted), 8)
         self.assertEqual(receipt["tone_a_hz"], 110)
         self.assertEqual(receipt["tone_b_hz"], 550)
-        self.assertIn("sha256", receipt["wav_sha256"])
+        self.assertEqual(len(receipt["wav_sha256"]), 64)
+        self.assertTrue(all(c in "0123456789abcdef" for c in receipt["wav_sha256"]))
         self.assertEqual(receipt["validity"], {
             "discrete_alias": True,
             "shift_breaks_pair": True,
