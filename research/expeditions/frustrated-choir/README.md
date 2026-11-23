@@ -12,6 +12,7 @@ Our small instrument exposes that property, supplies an auditable inconsistency 
 | --- | --- |
 | [THEORY.md](THEORY.md) | Formal signed-graph translation, proof, switching symmetry, countercases and transfer |
 | [SOURCES.md](SOURCES.md) | Consulted primary literature, metadata and exact reading limits |
+| [choir_lab.html](choir_lab.html) | Open locally in a modern browser for edge toggles, local binary relabelling and user-initiated Web Audio; browser visual acceptance pending |
 | [choir.py](choir.py) | Standard-library, finite graph analyser, certificate verifier, brute-force comparator, gauge switch, deterministic stereo PCM |
 | [test_choir.py](test_choir.py) | Exhaustive 729-graph and 16-local-switch stress tests plus boundary controls |
 | [AFTERWORD.md](AFTERWORD.md) | Deliberately speculative aesthetic essay |
