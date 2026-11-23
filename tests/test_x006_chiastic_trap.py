@@ -43,6 +43,17 @@ class ChiasticTrapTests(unittest.TestCase):
         self.assertEqual(lab.effects(lab.CHI, lab.NONINVOLUTIVE_ACTIONS), (2, 0, 1))
         self.assertEqual(lab.state_history(lab.CHI, lab.NONINVOLUTIVE_ACTIONS, 0)[-1], 2)
 
+    def test_same_codebook_can_close_one_initial_state_but_not_others(self):
+        actions = lab.CONDITIONAL_ACTIONS
+        self.assertEqual(lab.effects(lab.CHI, actions), (2, 0, 1, 3))
+        self.assertNotEqual(lab.execute(lab.CHI, actions, 0), 0)
+        self.assertEqual(lab.execute(lab.CHI, actions, 3), 3)
+        self.assertFalse(lab.is_identity(lab.CHI, actions))
+        self.assertEqual(
+            lab.provenance_record("conditional", actions)["wav_sha256"],
+            lab.provenance_record("closed", lab.INVOLUTIVE_ACTIONS)["wav_sha256"],
+        )
+
     def test_abab_is_not_abba_when_noncommuting(self):
         self.assertFalse(lab.is_identity(("A", "B", "A", "B"), lab.INVOLUTIVE_ACTIONS))
         self.assertNotEqual(
@@ -107,12 +118,15 @@ class ChiasticTrapTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as a, tempfile.TemporaryDirectory() as b:
             result_a = lab.run_lab(Path(a))
             result_b = lab.run_lab(Path(b))
-            for name in ("closed_involutions", "open_rotation"):
+            for name in ("closed_involutions", "open_rotation", "conditional_four_states"):
                 audio_a = (Path(a) / (name + ".wav")).read_bytes()
                 audio_b = (Path(b) / (name + ".wav")).read_bytes()
                 self.assertEqual(audio_a, audio_b)
                 recorded = json.loads((Path(a) / (name + ".json")).read_text())
                 self.assertEqual(recorded["wav_sha256"], hashlib.sha256(audio_a).hexdigest())
+            self.assertTrue(result_a["all_three_wavs_identical"])
+            self.assertEqual(result_a["conditional_returning_states"], [3])
+            self.assertEqual(result_a["conditional_case"]["effects_all_states"], [2, 0, 1, 3])
             self.assertTrue(result_a["rendered_byte_identity"])
             self.assertFalse(result_a["effect_identity"])
             self.assertEqual(result_a, result_b)
