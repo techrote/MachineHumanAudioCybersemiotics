@@ -513,7 +513,17 @@ def main() -> None:
     (args.out / "trace-counterexample.json").write_text(
         json.dumps(proof, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    print(json.dumps({"out": str(args.out), "quartet": rec, "proof": proof}, indent=2))
+    tombstone = {
+        "delete_by_absence": replicated_delete_demo(False),
+        "explicit_tombstone": replicated_delete_demo(True),
+    }
+    (args.out / "tombstone-counterexample.json").write_text(
+        json.dumps(tombstone, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    print(json.dumps({
+        "out": str(args.out), "quartet": rec, "proof": proof,
+        "tombstone": tombstone,
+    }, indent=2))
 
 
 if __name__ == "__main__":
