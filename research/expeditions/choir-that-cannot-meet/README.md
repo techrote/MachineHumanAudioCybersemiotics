@@ -57,6 +57,14 @@ For two constraints with population N, individual counts a and b, this reduces t
 
 Another positive countercase: if all nonempty opportunity sets are closed intervals on a common line, pairwise intersection implies global intersection. Choose the greatest left endpoint and smallest right endpoint; pairwise intersection between the intervals supplying those extrema ensures they are ordered. Arbitrary disconnected availability windows do not obey that premise. Do not assume a calendar consists of single intervals.
 
+### A sharp population threshold for hidden conjunctions
+
+There is a further consequence of the one-dimensional kernel. Let two compatible histograms have joint counts x and x+d, where d>0. Their cell differences alternate between +d and -d, with exactly 2^(n-1) cells of each sign. Nonnegativity forces the first histogram to have at least d candidates in every cell that decreases. Hence N ≥ d 2^(n-1).
+
+Taking the extreme compatible histograms gives the sharp uncertainty-width bound H-L ≤ floor(N/2^(n-1)). In particular, if N < 2^(n-1), complete proper conjunction counts determine the missing full count uniquely (or are inconsistent). This does not mean a low-order summary, such as pairwise counts alone for n>3, is sufficient. The parity examples attain the bound: repeat each parity tuple q times and add the same r arbitrary candidates to both worlds, with N=q 2^(n-1)+r and 0≤r<2^(n-1). Their full counts differ by q, achieving the upper bound. No probabilistic independence assumption is used.
+
+Thus a small candidate population can defeat the apparent worst-case marginal alias. For six constraints the full proper summary has 63 entries, yet hidden joint-count ambiguity requires at least 32 candidates. One would generally rather send the conjunction count than all 63 entries; the result is a compression diagnostic for situations where the proper counts already exist, not a recommendation to generate them.
+
 ## Source lenses and reading boundaries
 
 Access date 2026-11-23. No third-party text or audio copied into this expedition; bibliographic links only.
