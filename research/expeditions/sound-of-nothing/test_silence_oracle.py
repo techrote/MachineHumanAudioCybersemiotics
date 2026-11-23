@@ -14,14 +14,16 @@ try:
     from .silence_oracle import (
         DURATION, SAMPLE_RATE, LeaseState, World, async_counterexample,
         bec_output, build_quartet, classify_lease, heartbeat_suspicion,
-        indistinguishable_at, observed_prefix, receipt, scene_samples,
+        indistinguishable_at, observed_prefix, partition_by_prefix,
+        property_factors_through_prefix, receipt, scene_samples,
         silence_window_pcm, timeout_claim_sound,
     )
 except ImportError:
     from silence_oracle import (
         DURATION, SAMPLE_RATE, LeaseState, World, async_counterexample,
         bec_output, build_quartet, classify_lease, heartbeat_suspicion,
-        indistinguishable_at, observed_prefix, receipt, scene_samples,
+        indistinguishable_at, observed_prefix, partition_by_prefix,
+        property_factors_through_prefix, receipt, scene_samples,
         silence_window_pcm, timeout_claim_sound,
     )
 
@@ -40,6 +42,30 @@ class SoundOfNothingTests(unittest.TestCase):
             self.assertTrue(indistinguishable_at(a, b, horizon))
             self.assertLess(b.emit_time, horizon)
             self.assertGreater(b.deliver_time, horizon)
+
+    def test_observation_fibre_blocks_conflicting_verdicts(self):
+        no_emit, delayed = async_counterexample(5.0)
+        worlds = [no_emit, delayed]
+        fibres = partition_by_prefix(worlds, 5.0)
+        self.assertEqual(list(fibres.values()), [["no_event", "delayed_event"]])
+        self.assertFalse(property_factors_through_prefix(
+            worlds, 5.0,
+            {"no_event": "NO_ALERT", "delayed_event": "ALERT_EXISTS"},
+        ))
+        self.assertTrue(property_factors_through_prefix(
+            worlds, 5.0,
+            {"no_event": "NO_DELIVERY_YET", "delayed_event": "NO_DELIVERY_YET"},
+        ))
+
+    def test_later_delivery_refines_the_observation_partition(self):
+        no_emit, delayed = async_counterexample(5.0)
+        worlds = [no_emit, delayed]
+        self.assertEqual(len(partition_by_prefix(worlds, 5.0)), 1)
+        self.assertEqual(len(partition_by_prefix(worlds, 11.0)), 2)
+        self.assertTrue(property_factors_through_prefix(
+            worlds, 11.0,
+            {"no_event": "NO_ALERT", "delayed_event": "ALERT_EXISTS"},
+        ))
 
     def test_timeout_requires_explicit_delay_bound(self):
         self.assertFalse(timeout_claim_sound(
