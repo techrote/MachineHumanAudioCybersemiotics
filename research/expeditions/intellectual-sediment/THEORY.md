@@ -108,3 +108,46 @@ That description is intentionally compatible with mundane explanations. It leave
 The interesting object may not be the agent.
 
 It may be the sediment.
+
+
+## Stigmergy may be the least anthropomorphic mechanism
+
+Distributed cognition and active externalism are philosophically interesting, but they tempt a premature question: “whose mind is extended?”
+
+Stigmergy starts somewhere more mechanical. An action alters a medium; the altered medium changes subsequent action. That much is directly visible in MHAC:
+
+1. a worker writes an issue, source note, proof, fixture or critique;
+2. Git preserves the trace;
+3. later workers are explicitly instructed to reconcile those traces;
+4. their available actions and claims are consequently changed.
+
+No persistent private memory, simultaneous team awareness or shared subjective viewpoint is required for that minimal loop.
+
+This makes a **stigmergic research ecology** a useful working description. It still has limits. MHAC also has direct prompts, repository governance, a human owner, scheduled agents and explicit RAG routing. Its coordination is partly designed rather than spontaneously self-organized.
+
+A future experiment could remove explicit cross-links and compare whether useful conceptual continuity survives through environmental traces alone. X004 does not perform that intervention.
+
+## Some artifacts may be boundary objects—but most are probably not
+
+Star and Griesemer's original boundary-object account is attractive because MHAC crosses incompatible local languages: philosophy, auditory HCI, software engineering, mathematics and speculative art. A fixture, schema, issue or distinction can sometimes support work in several of those worlds.
+
+But Susan Leigh Star's later warning is more useful than enthusiastic adoption. Interpretive flexibility alone does not make something a boundary object.
+
+Therefore X004 proposes a strict test before using the label:
+
+- at least two materially different work domains must use the artifact;
+- the artifact must preserve enough identity to coordinate work across those domains;
+- each domain must be able to tailor or interpret it locally;
+- some actual work-process consequence must be demonstrated.
+
+By this test, “observer” as a recurring word is not a boundary object. X001's observation-fibre theorem might eventually become one if it is independently reused to structure an HCI diagnostic or another technical instrument. At present that is only a candidate exaptation.
+
+## Transactive memory is probably the wrong abstraction
+
+MHAC certainly externalizes knowledge. It also has RAG/index files telling workers where different kinds of records live.
+
+But transactive-memory systems usually concern differentiated knowledge held across members plus shared knowledge about who knows what. The relevant continuity in MHAC seems less interpersonal: a fresh model instance can read the record directly.
+
+The repository is closer to an addressable archive plus stigmergic work surface than to a demonstrated transactive-memory group.
+
+This negative comparison matters because a useful atlas should reduce conceptual inflation, not merely accumulate elegant labels.
