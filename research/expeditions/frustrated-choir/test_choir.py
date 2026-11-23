@@ -78,6 +78,27 @@ class FrustratedChoirTests(unittest.TestCase):
         self.assertEqual(brute["minimum_unsatisfied_edges"], 1)
         self.assertTrue(choir.verify_cycles(edges, a))
 
+    def test_cycle_space_dimension_and_noninvariant_dissonance_count(self):
+        vertices = choir.VERTICES
+        edges = (
+            Edge("ab", "A", "B", 1),
+            Edge("ac", "A", "C", 0),
+            Edge("ad", "A", "D", 0),
+            Edge("bc", "B", "C", 0),
+            Edge("bd", "B", "D", 0),
+            Edge("cd", "C", "D", 0),
+        )
+        first = choir.analyse(vertices, edges)
+        last = choir.analyse(vertices, edges[1:] + edges[:1])
+        self.assertEqual(choir.cycle_notes(first), (1, 1, 0))
+        self.assertEqual(choir.cycle_notes(last), (0, 0, 1))
+        self.assertFalse(first["satisfiable"])
+        self.assertFalse(last["satisfiable"])
+        self.assertEqual(len(first["cycles"]), 6 - 4 + 1)
+        self.assertEqual(len(last["cycles"]), 6 - 4 + 1)
+        self.assertTrue(choir.verify_cycles(edges, first))
+        self.assertTrue(choir.verify_cycles(edges[1:] + edges[:1], last))
+
     def test_forest_has_no_closed_loop_sound_and_is_satisfiable(self):
         edges = (Edge("ab", "A", "B", 1), Edge("bc", "B", "C", 1))
         analysis = choir.analyse(("A", "B", "C"), edges)
