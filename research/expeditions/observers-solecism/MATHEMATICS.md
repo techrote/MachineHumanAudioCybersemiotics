@@ -10,7 +10,7 @@ A toy abstraction (not a historical Latin grammar engine) has a state x = (utter
 
 ## 2. Observational factorisation theorem
 
-Let X be a set of complete states, O a set of observable messages, P:X→O an observation function, and V:X→Y any verdict, property or action decision.
+Let X be a **nonempty** set of complete states, O a set of observable messages, **Y a nonempty set of possible verdicts**, P:X→O an observation function, and V:X→Y any verdict, property or action decision.
 
 **Claim.** There exists a deterministic function D:O→Y with V = D ∘ P *if and only if* V is constant on every fibre P⁻¹(o).
 
@@ -20,7 +20,7 @@ Let X be a set of complete states, O a set of observable messages, P:X→O an ob
 
 **Consequence.** If two complete states with the *same observed surface* require different judgements, no deterministic decoder of that surface alone can be correct on both. A second observation capable of separating those states can restore that particular distinction. This is not a universal lower bound on all language comprehension.
 
-This theorem is valid for arbitrary sets and total functions; it needs no probability distribution, cognition hypothesis, physical geometry or extra spatial dimension. If distributions are supplied instead, a Bayesian predictor may do better *on average* without eliminating the indistinguishability.
+The nonempty-verdict assumption matters only when O contains observations that no state produces: there must be some value available to assign those unreachable observations. Without it, the “if” direction can fail in the degenerate case X=Y=∅ and nonempty O. Apart from that stated domain boundary, the theorem needs no probability distribution, cognition hypothesis, physical geometry or extra spatial dimension. If distributions are supplied instead, a Bayesian predictor may do better *on average* without eliminating the indistinguishability.
 
 ## 3. Eight stationary witnesses and a moving witness
 
