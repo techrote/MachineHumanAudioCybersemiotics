@@ -12,6 +12,7 @@ sys.path.insert(0, str(EXPEDITION))
 import sediment_atlas as atlas  # noqa: E402
 import shadow_sediment as shadow  # noqa: E402
 import distinction_miner as distinctions  # noqa: E402
+import atlas_diff  # noqa: E402
 
 
 class IntellectualSedimentAtlasTests(unittest.TestCase):
@@ -168,6 +169,57 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
         self.assertGreaterEqual(len(result["summary"]["families"]), 5)
         print("MHAC_X004_DISTINCTIONS=" +
               json.dumps(result["summary"], sort_keys=True))
+
+
+    def test_snapshot_diff_reports_growth_and_bridge_churn(self):
+        before = {
+            "head_sha": "a",
+            "corpus": {"documents": 2, "words": 100,
+                       "families": {"exploratory_research": 1}},
+            "style": {"by_family": {
+                "exploratory_research": {
+                    "anti_collapse": {"per_1000": 1.0}
+                }
+            }},
+            "motifs": {
+                "meaning_semiosis": {
+                    "documents": 1, "family_count": 1,
+                    "families": {"exploratory_research": 1}
+                }
+            },
+            "top_bridges": [{"phrase": "old bridge"}],
+            "sparse_bridges": [],
+        }
+        after = {
+            "head_sha": "b",
+            "corpus": {"documents": 4, "words": 180,
+                       "families": {"exploratory_research": 3}},
+            "style": {"by_family": {
+                "exploratory_research": {
+                    "anti_collapse": {"per_1000": 1.5}
+                }
+            }},
+            "motifs": {
+                "meaning_semiosis": {
+                    "documents": 3, "family_count": 1,
+                    "families": {"exploratory_research": 3}
+                }
+            },
+            "top_bridges": [{"phrase": "new bridge"}],
+            "sparse_bridges": [{"phrase": "rare bridge"}],
+        }
+        result = atlas_diff.compare(before, after)
+        self.assertEqual(result["corpus"]["documents"], 2)
+        self.assertEqual(result["corpus"]["words"], 80)
+        self.assertAlmostEqual(
+            result["style_per_1000_deltas"]["exploratory_research"]
+                  ["anti_collapse"], 0.5
+        )
+        self.assertEqual(
+            result["motif_deltas"]["meaning_semiosis"]["documents"], 2
+        )
+        self.assertEqual(result["bridges"]["new_top"], ["new bridge"])
+        self.assertEqual(result["bridges"]["lost_top"], ["old bridge"])
 
 
 if __name__ == "__main__":
