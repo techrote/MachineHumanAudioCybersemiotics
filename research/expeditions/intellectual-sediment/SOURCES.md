@@ -184,3 +184,17 @@ Actually inspected: publisher abstract. The review describes transactive-memory 
 Use here: a negative comparator. MHAC has indexing/RAG machinery that can locate externalized knowledge, but successive model instances do not obviously maintain a stable interpersonal map of “who knows what.” Calling the repository a transactive-memory system would therefore overstate the evidence.
 
 Limit: abstract-level reading only; no empirical transfer to AI agents.
+
+
+### X004-S16 — Howison, Østerlund, Crowston & Bolici (2012)
+
+James Howison, Carsten Østerlund, Kevin Crowston & Francesco Bolici, “Stigmergy and Implicit Coordination in Software Development,” CSCW 2012.
+
+Accessible PDF:
+https://crowston.syr.edu/sites/crowston.syr.edu/files/stigmergy.pdf
+
+Actually inspected: PDF first page visually and the full short paper text exposed by the browser. The authors contrast explicit, implicit and stigmergic coordination; describe the shared work product as a coordination mechanism; characterize a code contribution as both conditioned by prior work and projecting toward future work; and identify transparency, provenance and experimentability as useful material characteristics of collaborative software systems.
+
+Use here: a direct software-development comparator for MHAC's Git-mediated work. It supports asking whether issues, commits, proofs, fixtures and PRs do more than store results—whether their visible state helps later workers decide what to do next.
+
+Limit: the paper analyzes human distributed software practice and “lore,” not autonomous LLM workers. MHAC also contains much more explicit orchestration than a pure stigmergic model.
