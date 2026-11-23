@@ -109,13 +109,33 @@ Use here: preserve the distinction between **citing an absence in an explanation
 
 Limit: X005 is not a contribution to the metaphysics of causation.
 
-## X005-S10 — internal MHAC comparators
+## X005-S10 — Cage's 4′33″ as an artistic counterpoint
+
+Museum of Modern Art collection/exhibition materials on John Cage's *4′33″* and the John Cage Trust's 4′33″ project were inspected.
+
+Actually inspected: MoMA's description of the work as three timed movements in which the performer intentionally produces no sound, redirecting attention toward ambient/environmental sound; John Cage Trust project description identifying the work and recordings of environmental performances.
+
+Use here: a useful artistic correction to the phrase “pure silence.” Cage's work structures an interval of **no intentional performer sound** while making surrounding sound newly salient. That is different from X005's deliberately manufactured PCM-zero window.
+
+Limit: no musicological claim about Cage's complete aesthetics is made, and no score/manuscript copyright material is reproduced. The connection is conceptual/artistic, not empirical evidence about machine interfaces.
+
+## X005-S11 — internal MHAC comparators
 
 - T005 #36: persistent-state audio, discrete events, change deafness and all-clear failure; specifically warns against inferring cleared state merely from sound cessation.
 - T010 #47: freshness/deferral versus durable action obligations.
 - T003 #33: repair, acknowledgement, understanding, resolution and deadlines.
 
 Use here: keep ownership boundaries explicit.
+
+## X005-S12 — internal exaptation source: MHAC-X001
+
+MHAC-X001, *The Observer's Solecism*, `research/expeditions/observers-solecism/MATHEMATICS.md`, provides the already-authored observation-factorisation theorem used by X005.
+
+Actually reused: only the abstract criterion that a hidden-state verdict is recoverable from an observation exactly when it is constant on each observation fibre.
+
+Not reused: the grammatical, circle-harmonic, Kaluza–Klein or moving-probe scenery.
+
+Use here: documented internal exaptation rather than pretending X005 independently invented the same theorem.
 
 ## Source conclusion
 
