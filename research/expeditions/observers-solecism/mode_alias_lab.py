@@ -52,6 +52,44 @@ def max_abs_difference(left: tuple[float, ...], right: tuple[float, ...]) -> flo
     return max(abs(a - b) for a, b in zip(left, right))
 
 
+def recommend_additional_probe(low_mode: int, high_mode: int) -> dict:
+    """Find a high-contrast angular witness by deterministic grid/refinement.
+
+    This is a numerical candidate, not a general proof of global optimality.
+    For default modes (2,10), MATHEMATICS.md separately derives exact optimum.
+    """
+    if not isinstance(low_mode, int) or not isinstance(high_mode, int):
+        raise ValueError("mode indices must be integers")
+    if low_mode < 0 or high_mode < 0 or low_mode == high_mode:
+        raise ValueError("distinct nonnegative mode indices required")
+    points = max(2048, 64 * max(low_mode, high_mode))
+    step = 2 * math.pi / points
+
+    def contrast(theta: float) -> float:
+        return abs(mode_value(low_mode, theta) - mode_value(high_mode, theta))
+
+    best = max(range(points), key=lambda j: contrast(j * step))
+    # Golden-section refine the strongest sampled peak locally.
+    left, right = best * step - step, best * step + step
+    ratio = (math.sqrt(5) - 1) / 2
+    x1, x2 = right - ratio * (right - left), left + ratio * (right - left)
+    for _ in range(52):
+        if contrast(x1) < contrast(x2):
+            left, x1 = x1, x2
+            x2 = left + ratio * (right - left)
+        else:
+            right, x2 = x2, x1
+            x1 = right - ratio * (right - left)
+    angle = ((left + right) * 0.5) % (2 * math.pi)
+    return {
+        "angle_radians": angle,
+        "contrast": contrast(angle),
+        "method": "deterministic_coarse_grid_plus_local_golden_refinement",
+        "coarse_grid_points": points,
+        "optimality_claim": "numerical candidate, exact global bound only proven for 2 vs 10",
+    }
+
+
 def make_stereo_wav(
     low_mode: int,
     high_mode: int,
@@ -118,6 +156,7 @@ def make_experiment(
     high = sensor_values(high_mode, sensors)
     shifted_low = sensor_values(low_mode, sensors, shift)
     shifted_high = sensor_values(high_mode, sensors, shift)
+    suggested = recommend_additional_probe(low_mode, high_mode)
     exact_error = max_abs_difference(low, high)
     shifted_error = max_abs_difference(shifted_low, shifted_high)
     if exact_error > 1e-10:
@@ -147,6 +186,7 @@ def make_experiment(
         "equispaced_max_abs_error": exact_error,
         "shifted_max_abs_error": shifted_error,
         "shifted_offset_radians": shift,
+        "recommended_additional_probe": suggested,
         "eigenvalue_a_of_minus_d2_dy2": (low_mode / radius) ** 2,
         "eigenvalue_b_of_minus_d2_dy2": (high_mode / radius) ** 2,
         "wav_rate_hz": sample_rate,
