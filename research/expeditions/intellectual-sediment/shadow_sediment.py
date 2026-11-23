@@ -34,7 +34,7 @@ def historical_markdown_paths(root: Path) -> set[str]:
         line.strip()
         for line in out.splitlines()
         if line.strip().endswith(".md")
-        and not line.strip().startswith((".github/", "tests/fixtures/"))
+        and base.eligible(line.strip())
     }
 
 
