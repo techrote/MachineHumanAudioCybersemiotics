@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MHAC-X005 · Silence Observatory</title>
+<style>
+:root{color-scheme:dark;--bg:#05080b;--panel:#0d161d;--line:#263944;--fg:#eaf2ef;--muted:#9eb0ae;--cyan:#79ebe2;--amber:#f6cb6c;--red:#ff8c7a;--blue:#8fb8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#19313b 0,#071016 36%,#030608 75%);color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1180px;margin:auto;padding:28px 22px 50px}
+.kicker{font:12px ui-monospace,Consolas,monospace;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(2rem,5vw,4.4rem);line-height:.95;letter-spacing:-.06em;margin:.18em 0 .35em;font-weight:620}
+.lead{max-width:860px;color:#b9c8c6;font-size:1.05rem}
+.grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.75fr);gap:18px;margin-top:24px}
+.card,.controls{border:1px solid #314751;border-radius:12px;background:#091218d9;box-shadow:0 18px 60px #0007}
+.card{padding:18px}.controls{padding:18px;display:flex;flex-direction:column;gap:16px}
+.timeline{position:relative;height:100px;border:1px solid #253740;border-radius:8px;background:linear-gradient(90deg,#0d1c23,#081017);overflow:hidden;margin:11px 0 16px}
+.silent{position:absolute;top:0;bottom:0;left:25%;width:37.5%;background:repeating-linear-gradient(135deg,#ffffff05 0 8px,#ffffff0b 8px 16px);border-left:1px dashed #6f858a66;border-right:1px dashed #6f858a66}
+.cursor{position:absolute;top:0;bottom:0;width:2px;background:#fff2;box-shadow:0 0 14px #fff7;left:0}
+.lane{position:relative;height:58px;border-top:1px solid #1b2b32}
+.lane:first-of-type{border-top:0}.lane-name{position:absolute;left:8px;top:6px;font:11px ui-monospace,Consolas,monospace;color:#aebfc0;z-index:3}
+.event{position:absolute;top:31px;width:8px;height:8px;border-radius:50%;transform:translateX(-50%);box-shadow:0 0 14px currentColor}
+.event.hb{color:var(--cyan);background:currentColor}.event.resolve{color:var(--blue);background:currentColor;width:12px;height:12px}.event.fault{color:var(--red);background:currentColor}.event.alert{color:var(--amber);background:currentColor}.event.rest{color:#d2aadf;background:currentColor}
+.scene{display:grid;grid-template-columns:150px 1fr auto;gap:13px;align-items:center;padding:12px 0;border-top:1px solid #24343b}.scene:first-child{border-top:0}.scene h3{font-size:.94rem;margin:0}.obs{font:12px ui-monospace,Consolas,monospace;color:#a8b8b8}.truth{font-size:12px;min-width:130px;text-align:right}.unknown{color:var(--amber)}.resolved{color:var(--blue)}.failed{color:var(--red)}.rested{color:#d8b5e4}
+button{border:1px solid #42616b;background:#14313a;color:#e9f8f4;border-radius:6px;padding:11px 12px;font-weight:650;cursor:pointer}button:hover{background:#1b4650}button:focus-visible,input:focus-visible{outline:3px solid #a8fff5;outline-offset:3px}
+label{display:flex;justify-content:space-between;gap:16px;color:#c5d4d1}input[type=range]{width:100%;accent-color:#70dcd4}.readout{font:13px ui-monospace,monospace;color:var(--cyan)}
+.box{border:1px solid #2b414b;border-radius:8px;padding:12px;background:#071016}.box b{display:block;margin-bottom:5px}.box p{margin:0;color:#aebfbc;font-size:13px}
+.status{font:12px ui-monospace,monospace;color:#a8b8b8}.legend{display:flex;flex-wrap:wrap;gap:12px;color:#9fb0ae;font-size:12px}.sw{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px}
+.rule{margin-top:20px;padding:16px 18px;border-left:3px solid var(--cyan);background:#0b171d;color:#b9c9c7}
+footer{margin-top:24px;color:#7f9493;font-size:12px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.scene{grid-template-columns:120px 1fr}.truth{grid-column:1/3;text-align:left}.timeline{height:110px}}
+</style>
+</head>
+<body>
+<main>
+<div class="kicker">Machine / Human / Audio / Cybersemiotics · X005</div>
+<h1>The Silence Observatory</h1>
+<p class="lead">Four hidden worlds share the same central silence. Move the observation time through them. During the shared interval, the receiver hears exactly the same thing: nothing. The labels disagree because the labels come from protocol and history, not acoustic zero alone.</p>
+
+<div class="grid">
+<section class="card">
+  <div class="legend">
+    <span><i class="sw" style="background:var(--cyan)"></i>heartbeat</span>
+    <span><i class="sw" style="background:var(--blue)"></i>explicit resolution</span>
+    <span><i class="sw" style="background:var(--red)"></i>fault reveal</span>
+    <span><i class="sw" style="background:var(--amber)"></i>late alert</span>
+    <span><i class="sw" style="background:#d2aadf"></i>intentional rest context</span>
+  </div>
+  <div id="timeline" class="timeline" aria-label="Four synthetic timelines">
+    <div class="silent" title="Byte-identical digital silence: 1.0 to 2.5 seconds"></div>
+    <div id="cursor" class="cursor"></div>
+    <div class="lane" id="lane-resolved"><span class="lane-name">EXPLICIT RESOLVED</span></div>
+    <div class="lane" id="lane-failed"><span class="lane-name">CHANNEL FAILED</span></div>
+    <div class="lane" id="lane-delayed"><span class="lane-name">ALERT DELAYED</span></div>
+    <div class="lane" id="lane-rest"><span class="lane-name">INTENTIONAL REST</span></div>
+  </div>
+  <div id="scenes"></div>
+</section>
+
+<aside class="controls">
+  <div>
+    <label for="time">Observation horizon <output class="readout" id="timeVal">1.75 s</output></label>
+    <input id="time" type="range" min="0" max="4" step=".01" value="1.75">
+  </div>
+  <button id="play">PLAY ALL FOUR SCENES</button>
+  <button id="reveal">HIDE HIDDEN-WORLD LABELS</button>
+  <div class="box">
+    <b>Receiver observation</b>
+    <p id="observation">No delivered acoustic event inside the shared interval.</p>
+  </div>
+  <div class="box">
+    <b>Conservative inference</b>
+    <p id="inference">The waveform alone does not select one hidden cause.</p>
+  </div>
+  <div class="status" id="audioStatus">Sound stopped. WebAudio is optional; the visual model remains usable.</div>
+</aside>
+</div>
+
+<div class="rule"><strong>Negative-space rule:</strong> ACTIVE followed by silence may become STALE or UNKNOWN when its lease expires. RESOLVED should require an explicit resolution event unless the application has a stronger declared contract that makes cessation unambiguous.</div>
+
+<footer>Original synthetic instrument. No external assets, network requests or participant measurements. Audio timing mirrors the Python silence quartet conceptually but browser synthesis is not a byte-for-byte reproduction of the generated WAVs.</footer>
+</main>
+
+<script>
+"use strict";
+const scenes=[
+ {id:"resolved",name:"Explicit resolution",truth:"RESOLVED",cls:"resolved",events:[["hb",.12],["hb",.36],["hb",.60],["hb",.84],["resolve",.94]],explain:"A resolution marker arrives before silence."},
+ {id:"failed",name:"Channel failure",truth:"UNKNOWN / later fault",cls:"failed",events:[["hb",.12],["hb",.36],["hb",.60],["hb",.84],["fault",2.70]],explain:"Heartbeats stop; later side evidence reveals failure."},
+ {id:"delayed",name:"Delayed alert",truth:"UNKNOWN / later alert",cls:"unknown",events:[["hb",.12],["hb",.36],["hb",.60],["hb",.84],["alert",2.70]],explain:"An alert exists but is delivered after the silent interval."},
+ {id:"rest",name:"Intentional rest",truth:"REST IN SCORE",cls:"rested",events:[["hb",.12],["hb",.36],["hb",.60],["hb",.84],["rest",2.62],["rest",2.86],["rest",3.10],["rest",3.34]],explain:"Silence is deliberate because a musical structure frames it."}
+];
+const by=id=>document.getElementById(id), time=by("time"), scenesEl=by("scenes");
+let reveal=true,audio=null;
+
+function placeEvents(){
+ for(const s of scenes){
+  const lane=by("lane-"+s.id);
+  for(const e of s.events){
+   const d=document.createElement("i");
+   d.className="event "+e[0];
+   d.style.left=(e[1]/4*100)+"%";
+   d.title=e[0]+" at "+e[1].toFixed(2)+" s";
+   lane.appendChild(d);
+  }
+ }
+}
+function sceneObservation(s,t){
+ const delivered=s.events.filter(e=>e[1]<=t).map(e=>e[0]);
+ if(t>=1 && t<=2.5)return "silence at receiver";
+ if(!delivered.length)return "nothing delivered yet";
+ return "latest: "+delivered[delivered.length-1];
+}
+function render(){
+ const t=Number(time.value);
+ by("timeVal").textContent=t.toFixed(2)+" s";
+ by("cursor").style.left=(t/4*100)+"%";
+ scenesEl.innerHTML="";
+ for(const s of scenes){
+  const row=document.createElement("div");row.className="scene";
+  const title=document.createElement("h3");title.textContent=s.name;
+  const obs=document.createElement("div");obs.className="obs";obs.textContent=sceneObservation(s,t);
+  const truth=document.createElement("div");truth.className="truth "+s.cls;
+  truth.textContent=reveal?s.truth:"hidden";
+  row.append(title,obs,truth);scenesEl.appendChild(row);
+ }
+ if(t>=1 && t<=2.5){
+  by("observation").textContent="All four scenes are acoustically silent in the shared window.";
+  by("inference").textContent="Without prior protocol/history, the current samples alone do not identify resolution, failure, delay or intentional rest.";
+ }else if(t<1){
+  by("observation").textContent="Heartbeat-like context is still arriving in all four scenes.";
+  by("inference").textContent="The scenes have not yet diverged enough to justify the later labels.";
+ }else{
+  by("observation").textContent="Post-silence context begins to distinguish some worlds.";
+  by("inference").textContent="New observations can break an earlier indistinguishability; they do not retroactively make the silent samples different.";
+ }
+}
+time.addEventListener("input",render);
+by("reveal").addEventListener("click",()=>{reveal=!reveal;by("reveal").textContent=reveal?"HIDE HIDDEN-WORLD LABELS":"REVEAL HIDDEN-WORLD LABELS";render();});
+
+function tone(ctx,dest,at,dur,freq,amp){
+ const o=ctx.createOscillator(),g=ctx.createGain();
+ o.frequency.value=freq;o.type="sine";
+ g.gain.setValueAtTime(0,at);
+ g.gain.linearRampToValueAtTime(amp,at+.008);
+ g.gain.setValueAtTime(amp,Math.max(at+.009,at+dur-.012));
+ g.gain.linearRampToValueAtTime(0,at+dur);
+ o.connect(g);g.connect(dest);o.start(at);o.stop(at+dur+.01);
+}
+async function playAll(){
+ if(audio){try{await audio.close();}catch(e){}audio=null;}
+ const C=window.AudioContext||window.webkitAudioContext;
+ if(!C){by("audioStatus").textContent="WebAudio unavailable.";return;}
+ const ctx=new C();audio=ctx;await ctx.resume();
+ const master=ctx.createGain();master.gain.value=.13;master.connect(ctx.destination);
+ const start=ctx.currentTime+.08;
+ for(const at of [.12,.36,.60,.84])tone(ctx,master,start+at,.055,880,.18);
+ tone(ctx,master,start+.91,.07,1320,.14);tone(ctx,master,start+.96,.03,1760,.10);
+ tone(ctx,master,start+2.70,.45,110,.12);
+ for(const x of [[2.70,440],[2.84,554.37],[2.98,659.25]])tone(ctx,master,start+x[0],.10,x[1],.15);
+ for(const at of [2.62,2.86,3.10,3.34])tone(ctx,master,start+at,.055,880,.18);
+ const t0=performance.now();
+ const timer=setInterval(()=>{const elapsed=(performance.now()-t0)/1000;if(elapsed<=4){time.value=String(elapsed);render();}else{clearInterval(timer);}},30);
+ by("audioStatus").textContent="Playing a composite demonstration. The Python generator writes separate scene WAVs.";
+ setTimeout(()=>{if(audio===ctx){ctx.close();audio=null;by("audioStatus").textContent="Playback complete."; }},4300);
+}
+by("play").addEventListener("click",playAll);
+placeEvents();render();
+</script>
+</body>
+</html>
