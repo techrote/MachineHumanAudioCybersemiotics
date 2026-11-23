@@ -10,6 +10,7 @@ EXPEDITION = ROOT / "research" / "expeditions" / "intellectual-sediment"
 sys.path.insert(0, str(EXPEDITION))
 
 import sediment_atlas as atlas  # noqa: E402
+import shadow_sediment as shadow  # noqa: E402
 
 
 class IntellectualSedimentAtlasTests(unittest.TestCase):
@@ -79,6 +80,59 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
         self.assertTrue(result["top_bridges"])
         self.assertEqual(len(result["corpus"]["sha256"]), 64)
         print("MHAC_X004_SUMMARY=" + json.dumps(atlas.ci(result), sort_keys=True))
+
+
+    def test_shadow_archive_synthetic_git_branch(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            subprocess.run(["git", "init", "-b", "main", str(root)], check=True,
+                           capture_output=True, text=True)
+            subprocess.run(["git", "-C", str(root), "config", "user.email",
+                            "x004@example.invalid"], check=True)
+            subprocess.run(["git", "-C", str(root), "config", "user.name",
+                            "MHAC X004 fixture"], check=True)
+            (root / "README.md").write_text("meaning context\n", encoding="utf-8")
+            subprocess.run(["git", "-C", str(root), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(root), "commit", "-m", "main"],
+                           check=True, capture_output=True, text=True)
+            subprocess.run(["git", "-C", str(root), "checkout", "-b", "shadow"],
+                           check=True, capture_output=True, text=True)
+            note = root / "research" / "tangents" / "ghost" / "NOTE.md"
+            note.parent.mkdir(parents=True)
+            note.write_text("observer uncertainty repair context\n", encoding="utf-8")
+            subprocess.run(["git", "-C", str(root), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(root), "commit", "-m", "shadow note"],
+                           check=True, capture_output=True, text=True)
+            subprocess.run(["git", "-C", str(root), "checkout", "main"],
+                           check=True, capture_output=True, text=True)
+            result = shadow.analyze_shadow(root)
+            self.assertEqual(result["branch_or_history_only_paths"], 1)
+            self.assertEqual(result["witnesses_loaded"], 1)
+            self.assertEqual(
+                result["high_motif_witnesses"][0]["path"],
+                "research/tangents/ghost/NOTE.md",
+            )
+            self.assertIn("uncertainty_epistemics",
+                          result["high_motif_witnesses"][0]["motifs"])
+
+    def test_live_shadow_archive_emits_summary(self):
+        result = shadow.analyze_shadow(ROOT, max_docs=400)
+        self.assertGreaterEqual(result["historical_markdown_paths"],
+                                result["current_markdown_paths"])
+        self.assertGreater(result["branch_or_history_only_paths"], 0)
+        self.assertGreater(result["witnesses_loaded"], 0)
+        compact = {
+            key: result[key]
+            for key in (
+                "head_sha", "historical_markdown_paths", "current_markdown_paths",
+                "branch_or_history_only_paths", "witnesses_loaded", "truncated",
+                "families", "fine_families", "latest_content_dates",
+                "refs_by_witness_count", "motif_documents", "motif_hits",
+                "high_motif_witnesses",
+            )
+        }
+        print("MHAC_X004_SHADOW=" + json.dumps(compact, sort_keys=True))
 
 
 if __name__ == "__main__":
