@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MHAC-X001 · The Moving Witness</title>
+<style>
+:root{color-scheme:dark;--bg:#030a10;--panel:#101e26;--fg:#e7f4ef;--muted:#a4b9b8;--cyan:#6cebe8;--coral:#ff957a;--line:#33444d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 60% 30%,#142934 0,#040c13 50%,#020608 100%);color:var(--fg);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1260px;margin:auto;padding:26px 25px 40px}
+.top{display:flex;justify-content:space-between;align-items:start;gap:25px;flex-wrap:wrap}
+.mono{font:12px/1.45 ui-monospace,Consolas,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan)}
+h1{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:600;letter-spacing:-.05em;margin:6px 0 0}
+.intro{max-width:760px;margin:12px 0 22px;color:var(--muted)}
+.tag{border:1px solid #3e5761;border-radius:4px;padding:7px 10px;white-space:nowrap;font-size:12px;color:#d5e8e1}
+.layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.8fr);gap:18px}
+.stage{position:relative;min-height:560px;border:1px solid #344b52;border-radius:12px;overflow:hidden;background:radial-gradient(circle at 50% 44%,#09202a,#03090f 65%);box-shadow:0 0 65px #0007 inset}
+.stage svg{display:block;width:100%;height:570px}
+.stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 31px,#7a9eb90c 32px),repeating-linear-gradient(90deg,transparent 0 31px,#7a9eb90c 32px)}
+.stage-label{position:absolute;left:20px;top:17px;z-index:2}
+.legend{position:absolute;bottom:17px;left:21px;z-index:2;color:var(--muted);font-size:12px}
+.panel{background:#0a151bde;border:1px solid #344b52;border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:15px}
+h2{font-size:1rem;letter-spacing:.04em;font-weight:600;margin:0}
+.control{display:grid;grid-template-columns:1fr auto;gap:5px 12px}
+label{font-size:13px;color:#cbdfdc}
+.value{font:13px ui-monospace,Consolas,monospace;color:var(--cyan);min-width:65px;text-align:right}
+input[type=range]{grid-column:1/3;accent-color:#80dcd3;width:100%;cursor:pointer}
+button{background:#173943;border:1px solid #50858d;color:#dffcf7;border-radius:5px;padding:12px;cursor:pointer;font-weight:600;letter-spacing:.04em}button:hover{background:#23535d}button:focus-visible,input:focus-visible{outline:3px solid #a7fff4;outline-offset:3px}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.metric{background:#0c1a20;border:1px solid #334b53;padding:15px 16px;border-radius:9px;min-width:0}.metric b{font:clamp(15px,2vw,22px) ui-monospace,monospace;white-space:nowrap}.metric .mono{display:block;margin-bottom:6px;color:#afc4c0;font-size:10px}
+small{color:var(--muted)}.note{margin:20px 0 0;max-width:1050px;color:#a9beba}.note strong{color:#dceeed}
+.dash{stroke-dasharray:3 8}
+.status{font:12px/1.5 ui-monospace,Consolas,monospace;color:#a9c9bf}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.stage{min-height:410px}.stage svg{height:470px}.metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){main{padding:14px}.metrics{grid-template-columns:1fr}.stage svg{height:360px}.stage{min-height:350px}}
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <div><div class="mono">Machine / Human / Audio / Cybersemiotics · X001</div><h1>The Moving Witness</h1></div>
+    <span class="tag">MATHEMATICAL INSTRUMENT · SYNTHETIC ONLY</span>
+  </div>
+  <p class="intro">Two genuinely different waveforms agree at every one of a limited set of fixed sensors. Move the observer and their hidden differences appear. The coloured curves are the full fields; the dots are all the stationary court can testify to.</p>
+  <div class="layout">
+    <section class="stage" aria-label="Interactive polar diagram of sampled cosine harmonics">
+      <div class="stage-label mono">S¹ · TWO HARMONICS · ONE INCOMPLETE OBSERVER</div>
+      <svg id="scope" viewBox="0 0 760 570" role="img" aria-label="Cyan and coral waves around a circular track, with sensor nodes and a moving probe">
+        <defs>
+          <filter id="soft"><feGaussianBlur stdDeviation="4"/></filter>
+          <radialGradient id="field"><stop offset="0" stop-color="#1c6670" stop-opacity=".22"/><stop offset="1" stop-color="#091b23" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="380" cy="285" r="252" fill="url(#field)"/>
+        <g stroke="#4e8186" fill="none" opacity=".17">
+          <circle cx="380" cy="285" r="158"/>
+          <circle cx="380" cy="285" r="108"/>
+          <circle cx="380" cy="285" r="208"/>
+          <path d="M80 285 H680 M380 22 V550" class="dash"/>
+        </g>
+        <path id="cGlow" fill="none" stroke="#6cebe8" stroke-width="8" opacity=".28" filter="url(#soft)"/>
+        <path id="oGlow" fill="none" stroke="#ff957a" stroke-width="8" opacity=".28" filter="url(#soft)"/>
+        <path id="cLine" fill="none" stroke="#6cebe8" stroke-width="2.3" opacity=".95"/>
+        <path id="oLine" fill="none" stroke="#ff957a" stroke-width="1.7" opacity=".94"/>
+        <g id="sensors"></g>
+        <path id="probeLine" stroke="#f8efc4" stroke-width="1" opacity=".75"/>
+        <circle id="probe" r="6" fill="#f8efc4" stroke="#fbf6db" stroke-width="1.2"/>
+        <circle cx="380" cy="285" r="3" fill="#e3d6bd"/>
+      </svg>
+      <div class="legend"><span style="color:var(--cyan)">● Mode A</span> &nbsp; <span style="color:var(--coral)">● Mode B</span> &nbsp; <span style="color:#fff0bc">◆ Moving probe</span><br><span>Diagram is shown in slow motion relative to audio scan.</span></div>
+    </section>
+    <section class="panel">
+      <h2>Observer controls</h2>
+      <div class="control"><label for="sensorsCtl">Fixed witnesses</label><output id="sensorsVal" class="value">8</output><input id="sensorsCtl" type="range" min="4" max="24" step="1" value="8"></div>
+      <div class="control"><label for="modeCtl">Base harmonic</label><output id="modeVal" class="value">2</output><input id="modeCtl" type="range" min="1" max="16" step="1" value="2"></div>
+      <div class="control"><label for="offsetCtl">Rotate fixed witnesses</label><output id="offsetVal" class="value">0.000</output><input id="offsetCtl" type="range" min="0" max="0.5" step=".0025" value="0"></div>
+      <div class="control"><label for="ampCtl">Radial deformation</label><output id="ampVal" class="value">54</output><input id="ampCtl" type="range" min="12" max="85" step="1" value="54"></div>
+      <div class="control"><label for="speedCtl">Audio probe rotations / second</label><output id="speedVal" class="value">55</output><input id="speedCtl" type="range" min="-90" max="90" step="5" value="55"></div>
+      <button id="soundBtn" type="button" aria-pressed="false">START STEREO WITNESS</button>
+      <button id="zeroBtn" type="button">RESTORE EXACT-ALIAS VIEW</button>
+      <div class="status" id="soundStatus" role="status">Sound disabled. The display remains interactive.</div>
+    </section>
+  </div>
+  <div class="metrics" aria-live="polite">
+    <div class="metric"><span class="mono">At fixed probes · max |A−B|</span><b id="maxDiff">≈0</b></div>
+    <div class="metric"><span class="mono">At moving probe · |A−B|</span><b id="movingDiff">0.000</b></div>
+    <div class="metric"><span class="mono">Harmonic indices</span><b id="indices">n=2 / n=10</b></div>
+  </div>
+  <p class="note"><strong>Reading contract:</strong> When witness offset is zero, the two waves coincide exactly at all N equispaced sensor positions, even though their continuous forms differ. A nonzero offset can break this alias. The stereo tones are an original artistic mapping of moving-probe sampling to audible frequencies, <em>not</em> Kaluza–Klein particle masses or a test of human understanding. This page works without a network connection or a scientific dataset.</p>
+</main>
+<script>
+"use strict";
+const ns="http://www.w3.org/2000/svg";
+const by=id=>document.getElementById(id);
+const ctl={count:by("sensorsCtl"),mode:by("modeCtl"),offset:by("offsetCtl"),amp:by("ampCtl"),speed:by("speedCtl")};
+const TAU=2*Math.PI, CX=380, CY=285, BASE=158;
+const plotA=by("cLine"),plotB=by("oLine"),glowA=by("cGlow"),glowB=by("oGlow");
+let startTime=performance.now(), audio=null, lastTime=0;
+const number=(k)=>Number(ctl[k].value);
+const fmt=(x)=>Math.abs(x)<1e-10?"≈0":x.toFixed(3);
+function wave(mode,theta){return Math.cos(mode*theta)}
+function polar(theta,r){return [CX+r*Math.cos(theta),CY+r*Math.sin(theta)]}
+function pathFor(mode,amp){
+ let d="";
+ for(let i=0;i<=1024;i++){const theta=TAU*i/1024,r=BASE+amp*wave(mode,theta),p=polar(theta,r);
+ d+=(i===0?"M":"L")+p[0].toFixed(3)+" "+p[1].toFixed(3)+" ";}
+ return d+"Z";
+}
+function addSensor(x,y,r){
+ const dot=document.createElementNS(ns,"circle");
+ dot.setAttribute("cx",x);dot.setAttribute("cy",y);
+ dot.setAttribute("r",r);dot.setAttribute("fill","#d8f2e2");
+ dot.setAttribute("stroke","#122329");dot.setAttribute("stroke-width","1.5");
+ by("sensors").appendChild(dot);
+}
+function updateSound(){
+ if(!audio)return;
+ const f=number("speed"),n=number("mode"),N=number("count");
+ const t=audio.ctx.currentTime;
+ audio.oscA.frequency.setTargetAtTime(Math.max(0.01,Math.abs(f)*n),t,.025);
+ audio.oscB.frequency.setTargetAtTime(Math.max(0.01,Math.abs(f)*(n+N)),t,.025);
+ const g=Math.abs(f)>0?.14:0;
+ audio.master.gain.setTargetAtTime(g,t,.04);
+}
+function draw(){
+ const N=number("count"),n=number("mode"),m=n+N,amp=number("amp"),offset=number("offset")*TAU;
+ const shapeA=pathFor(n,amp),shapeB=pathFor(m,amp);
+ plotA.setAttribute("d",shapeA);plotB.setAttribute("d",shapeB);
+ glowA.setAttribute("d",shapeA);glowB.setAttribute("d",shapeB);
+ by("sensors").replaceChildren();
+ let err=0;
+ for(let j=0;j<N;j++){
+    const angle=TAU*j/N+offset,a=wave(n,angle),b=wave(m,angle);
+    err=Math.max(err,Math.abs(a-b));
+    const mid=polar(angle,BASE+amp*(a+b)/2);
+    addSensor(mid[0],mid[1],3.4);
+ }
+ const elapsed=(performance.now()-startTime)/1000;
+ // The slow-motion drawing is a geometrical aid, not the actual audio sampling rate.
+ const moving=TAU*(number("speed")/100)*elapsed+.27;
+ const a=wave(n,moving),b=wave(m,moving), p=polar(moving,BASE+amp*a);
+ by("probe").setAttribute("cx",p[0]);by("probe").setAttribute("cy",p[1]);
+ const centre=polar(moving,BASE);
+ by("probeLine").setAttribute("x1",centre[0]);
+ by("probeLine").setAttribute("y1",centre[1]);
+ by("probeLine").setAttribute("x2",p[0]);
+ by("probeLine").setAttribute("y2",p[1]);
+ by("maxDiff").textContent=fmt(err);
+ by("movingDiff").textContent=fmt(Math.abs(a-b));
+ by("indices").textContent="n="+n+" / n="+m;
+ by("sensorsVal").textContent=String(N);
+ by("modeVal").textContent=String(n);
+ by("offsetVal").textContent=number("offset").toFixed(3)+" turns";
+ by("ampVal").textContent=String(amp);
+ by("speedVal").textContent=String(number("speed"));
+ updateSound();
+}
+function loop(t){
+ if(t-lastTime>1000/30){draw();lastTime=t;}
+ requestAnimationFrame(loop);
+}
+async function toggleSound(){
+ const button=by("soundBtn");
+ if(audio){
+    const old=audio; audio=null; old.master.gain.setTargetAtTime(0,old.ctx.currentTime,.02);
+    old.oscA.stop(old.ctx.currentTime+.12);old.oscB.stop(old.ctx.currentTime+.12);
+    setTimeout(()=>old.ctx.close(),220);
+    button.textContent="START STEREO WITNESS";button.setAttribute("aria-pressed","false");
+    by("soundStatus").textContent="Sound stopped.";
+    return;
+ }
+ const Context=window.AudioContext||window.webkitAudioContext;
+ if(!Context){by("soundStatus").textContent="AudioContext unavailable; visual experiment still works.";return;}
+ try{
+  const ctx=new Context();
+  const oscA=ctx.createOscillator(),oscB=ctx.createOscillator();
+  const left=ctx.createStereoPanner(),right=ctx.createStereoPanner();
+  const gainA=ctx.createGain(),gainB=ctx.createGain(),master=ctx.createGain();
+  oscA.type="sine";oscB.type="sine";
+  left.pan.value=-1;right.pan.value=1;
+  gainA.gain.value=.65;gainB.gain.value=.65;master.gain.value=0;
+  oscA.connect(gainA);gainA.connect(left);left.connect(master);
+  oscB.connect(gainB);gainB.connect(right);right.connect(master);
+  master.connect(ctx.destination);
+  oscA.start();oscB.start();
+  audio={ctx,oscA,oscB,master};updateSound();
+  await ctx.resume();
+  button.textContent="STOP STEREO WITNESS";button.setAttribute("aria-pressed","true");
+  by("soundStatus").textContent="Stereo moving-probe tones (headphones help). Audio is synthetic.";
+ }catch(error){by("soundStatus").textContent="Audio could not start: "+String(error);}
+}
+for(const element of Object.values(ctl))element.addEventListener("input",draw);
+by("soundBtn").addEventListener("click",toggleSound);
+by("zeroBtn").addEventListener("click",()=>{
+ ctl.count.value="8";ctl.mode.value="2";ctl.offset.value="0";
+ ctl.amp.value="54";ctl.speed.value="55";startTime=performance.now();draw();
+});
+if(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)ctl.speed.value="0";
+draw();requestAnimationFrame(loop);
+</script>
+</body>
+</html>
