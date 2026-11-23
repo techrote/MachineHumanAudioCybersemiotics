@@ -2,7 +2,7 @@
 
 *Speculative writing. This is an original artistic meditation, not evidence about cognition, musicians or machines.*
 
-An archive acquires a speaking voice. It knows the first relay closed, that a bell sounded, that a second relay closed, that another bell sounded, and that a final lamp came on only after both bells. Its technician asks: “Which bell came first?”
+An archive acquires a speaking voice. It knows relay A closed and its bell sounded; relay B closed and its bell sounded; and a final lamp came on only after both bells. Its technician asks: “Which bell came first?”
 
 The archive has seen two streams entering a junction. It has not seen the bridge between them, because there was no bridge. It cannot say which bell came first. Yet a voice cannot say two different syllables at exactly the same position in an ordinary sentence. So it produces a sentence, and the sentence quietly pretends to be a clock.
 
