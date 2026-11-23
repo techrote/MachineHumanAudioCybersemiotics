@@ -13,6 +13,7 @@ import sediment_atlas as atlas  # noqa: E402
 import shadow_sediment as shadow  # noqa: E402
 import distinction_miner as distinctions  # noqa: E402
 import atlas_diff  # noqa: E402
+import quotient_guard  # noqa: E402
 
 
 class IntellectualSedimentAtlasTests(unittest.TestCase):
@@ -225,6 +226,53 @@ class IntellectualSedimentAtlasTests(unittest.TestCase):
         )
         self.assertEqual(result["bridges"]["new_top"], ["new bridge"])
         self.assertEqual(result["bridges"]["lost_top"], ["old bridge"])
+
+
+    def test_quotient_guard_finds_lost_decision_distinction(self):
+        rows = [
+            {"id": "a", "message": "m1", "version": 1,
+             "action": "inspect", "resolved": False},
+            {"id": "b", "message": "m1", "version": 2,
+             "action": "stop", "resolved": False},
+            {"id": "c", "message": "m2", "version": 1,
+             "action": "inspect", "resolved": True},
+        ]
+        collapsed = quotient_guard.audit(
+            rows, ["message"], ["action", "resolved"]
+        )
+        self.assertEqual(collapsed["status"], "insufficient")
+        self.assertEqual(collapsed["conflict_group_count"], 1)
+        self.assertIn(
+            "version",
+            collapsed["conflicts"][0]["varying_nonretained_fields"],
+        )
+        repaired = quotient_guard.audit(
+            rows, ["message", "version"], ["action", "resolved"]
+        )
+        self.assertEqual(repaired["status"], "sufficient")
+
+    def test_quotient_guard_minimal_sets_are_table_specific(self):
+        rows = [
+            {"id": "a", "source": "s1", "version": 1, "mode": "x",
+             "action": "go"},
+            {"id": "b", "source": "s1", "version": 2, "mode": "x",
+             "action": "stop"},
+            {"id": "c", "source": "s2", "version": 1, "mode": "y",
+             "action": "go"},
+            {"id": "d", "source": "s2", "version": 2, "mode": "y",
+             "action": "stop"},
+        ]
+        result = quotient_guard.minimal_sufficient_field_sets(
+            rows, ["source", "version", "mode"], ["action"]
+        )
+        self.assertEqual(result, [["version"]])
+
+    def test_quotient_guard_rejects_combinatorial_overreach(self):
+        rows = [{"id": "x", "decision": "a", **{f"f{i}": 0 for i in range(13)}}]
+        with self.assertRaises(ValueError):
+            quotient_guard.minimal_sufficient_field_sets(
+                rows, [f"f{i}" for i in range(13)], ["decision"]
+            )
 
 
 if __name__ == "__main__":
