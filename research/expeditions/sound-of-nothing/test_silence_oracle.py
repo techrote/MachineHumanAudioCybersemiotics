@@ -227,6 +227,9 @@ class SoundOfNothingTests(unittest.TestCase):
         rec = receipt(quartet)
         self.assertTrue(rec["shared_window_identical"])
         self.assertTrue(rec["shared_window_all_zero"])
+        self.assertAlmostEqual(
+            rec["shared_window_hidden_world_information_bits"], 0.0
+        )
         self.assertEqual(rec["sample_rate"], SAMPLE_RATE)
         self.assertEqual(rec["duration_seconds"], DURATION)
         for filename, meta in rec["files"].items():
