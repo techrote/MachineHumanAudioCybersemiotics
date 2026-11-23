@@ -48,7 +48,7 @@ Both original 7.5-second WAV files contain **180,000 samples at 24,000 Hz, 16-bi
 | mixed.json | 546586049ceb8121dd04023fe96d09deda1f5ed4514187eaa523d321c5477929 |
 | untraced.json | c6325a83aa00a275998147a0c2b2f8a514a589424ae688998674277ac253b842 |
 | opposing.json | 6c9d3639f038d67a10958d6dd5e83b8f13f386477191f8b9671c6b1c76fd7dc4 |
-| message_lineage.csv | 7eb0c496306a6d22e04831b535f41f20349b84e2f02af193fb1d778a3acf68aa |
+| message_lineage.csv | 8e6abc06a227e62f086d82d1f900b32a7838fa24c3f69a7ed7f2abd28579d715 |
 
 Regenerate with the published Python file to confirm those local hashes; the generator's RECEIPT.json is the authority for any machine-run, not a copied documentation row. Byte-identical PCM does not establish equivalent human experience or a valid semantic codebook.
 
