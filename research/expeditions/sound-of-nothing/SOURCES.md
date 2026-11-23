@@ -189,6 +189,18 @@ Use here: basis for the deliberately elementary entropy/mutual-information calcu
 Limit: Shannon explicitly abstracts away semantic meaning for the engineering theory. X005 therefore does not equate zero mutual information about **scene identity** with “meaningless silence.”
 
 
+
+## X005-S18 — Apache Cassandra tombstones
+
+Apache Cassandra documentation, “Tombstones” and compaction/deletion documentation.
+
+Actually inspected: official Apache Cassandra documentation explaining that deletion is represented as a time-stamped tombstone written through the normal write path, retained during a grace period, and used to prevent stale replicas from resurrecting deleted data after they recover.
+
+Use here: direct engineering analogy for **explicit negative state**. An absent value does not preserve the fact that a deletion occurred; a propagated marker can.
+
+Limit: X005's three-replica last-version-wins counterexample is deliberately much simpler than Cassandra's SSTables, compaction, hinted handoff, repair, timestamp rules and operational failure modes. It must not be described as an implementation model of Cassandra.
+
+
 ## Source conclusion
 
 The useful cross-domain pattern is not that all these literatures “say the same thing.” They do not.
