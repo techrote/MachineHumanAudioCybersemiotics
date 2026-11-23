@@ -151,3 +151,23 @@ But transactive-memory systems usually concern differentiated knowledge held acr
 The repository is closer to an addressable archive plus stigmergic work surface than to a demonstrated transactive-memory group.
 
 This negative comparison matters because a useful atlas should reduce conceptual inflation, not merely accumulate elegant labels.
+
+
+## Transparency, provenance and experimentability are a productive audit triad
+
+Howison and colleagues' software-development account makes the stigmergy comparison materially testable. They emphasize three characteristics of collaborative work systems:
+
+- **transparency** — enough of the work product is visible for another participant to interpret it;
+- **provenance** — history and source remain available so current work can be understood as a trajectory rather than a snapshot;
+- **experimentability** — a participant can try possible next moves and expose dependencies before committing them to shared work.
+
+MHAC already has explicit machinery corresponding to all three:
+- public issue/PR/document state and RAG routes increase transparency;
+- Git history plus source/provenance records preserve lineage;
+- issue-scoped branches, synthetic fixtures and Draft PRs make experiments reversible before merge.
+
+That does not prove stigmergic coordination causes MHAC's outcomes. It does give X004 a stronger future falsifier:
+
+> remove or degrade one of these affordances and test whether later agents lose continuity, duplicate work, make more provenance errors, or explore less effectively.
+
+The present expedition does not perform that destructive intervention. It records the mechanism and leaves the repository intact.
