@@ -75,9 +75,9 @@ class EventGraph:
             return "contradicted"
         return "not_entailed_either_way"
 
-    def linear_extensions(self, max_nodes: int = 8) -> Iterator[tuple[str, ...]]:
+    def linear_extensions(self) -> Iterator[tuple[str, ...]]:
         """Enumerate all valid serial orders; deliberately refuse factorial blowups."""
-        if len(self.nodes) > max_nodes:
+        if len(self.nodes) > 8:
             raise ValueError("finite exhaustive oracle supports at most 8 events")
         parents = {n: set() for n in self.nodes}
         for source, target in self.edges:
