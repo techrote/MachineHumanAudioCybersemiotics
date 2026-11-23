@@ -4,8 +4,6 @@ Mask bit i denotes satisfaction of constraint i by one candidate. Histogram
 cells count candidates, not probabilities; candidate identity is omitted.
 No external dependencies, no human or empirical data.
 """
-from collections import Counter
-from itertools import product
 import argparse
 import hashlib
 import io
@@ -73,6 +71,7 @@ def bounds(n, proper):
 
 
 def reconstruct(n, proper, x):
+    proper = tuple(proper)
     lo, hi = bounds(n, proper)
     if type(x) is not int or not lo <= x <= hi:
         raise ValueError("joint count outside feasible integer range")
