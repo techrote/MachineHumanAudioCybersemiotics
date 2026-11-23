@@ -138,3 +138,49 @@ Limit: MHAC intentionally includes art, fiction and humanities, so Lakatosian sc
 ## Source-policy conclusion
 
 These lenses are intentionally heterogeneous. Their role is to sharpen questions, not to synthesize one grand theory. X004 should prefer a useful negative comparison over pretending that distributed cognition, cultural attraction, commonplace books and AI-research-agent benchmarks are four names for the same process.
+
+
+## Stigmergy, boundary objects and group memory
+
+### X004-S12 — Francis Heylighen (2016), stigmergy I/II
+
+Francis Heylighen, “Stigmergy as a universal coordination mechanism I: Definition and components,” Cognitive Systems Research 38 (2016), 4–13, DOI 10.1016/j.cogsys.2015.12.002; and “II: Varieties and evolution,” pp. 50–59, DOI 10.1016/j.cogsys.2015.12.007.
+
+Actually inspected: publisher/search-accessible abstracts. The first defines stigmergy as indirect coordination in which traces left by actions in a medium stimulate subsequent action, explicitly ranging across social insects, robotics, web communities and human society. The second describes collaborative websites and external memory as applications.
+
+Use here: this is a more operationally direct analogy than an “extended mind.” Git issues, commits and research notes are persistent traces in a shared medium that alter later agent work, even without simultaneous presence or mutual awareness.
+
+Limit: the breadth of the stigmergy proposal is itself controversial and the publisher body was not accessible here. A Git workflow also contains explicit instructions, direct communication and centralized controls, so MHAC is not a pure stigmergic system.
+
+### X004-S13 — Star & Griesemer (1989), boundary objects
+
+Susan Leigh Star and James R. Griesemer, “Institutional Ecology, ‘Translations’ and Boundary Objects: Amateurs and Professionals in Berkeley's Museum of Vertebrate Zoology, 1907–39,” Social Studies of Science 19(3):387–420. DOI 10.1177/030631289019003001.
+
+Accessible PDF:
+https://griesemer.net/wp-content/uploads/2020/12/07-star-griesemer-1989-sss19-3387-420-boundary-objects.pdf
+
+Actually inspected: PDF first page visually, abstract, and opening pp. 387–390 in extracted text. The paper treats heterogeneous scientific work as cooperation across divergent social worlds and develops boundary objects plus standardized methods as mechanisms that support coordination. It explicitly describes boundary objects as adaptable to different viewpoints while robust enough to retain identity.
+
+Use here: some MHAC artifacts may function as cross-domain coordination objects: a distinction, fixture, schema or issue can mean somewhat different things to philosophy, audio, software and mathematical workers while preserving an identity sufficient for collaboration.
+
+Limit: MHAC's worker ecology is not the historical museum ecology and model instances need not constitute social worlds in Star and Griesemer's sense.
+
+### X004-S14 — Susan Leigh Star (2010), “This is Not a Boundary Object”
+
+Susan Leigh Star, “This is Not a Boundary Object: Reflections on the Origin of a Concept,” Science, Technology, & Human Values 35(5):601–617. DOI 10.1177/0162243910377624.
+
+Actually inspected: publisher abstract only. Star explicitly warns that later uses often reduce the concept to interpretive flexibility while omitting the work-process structure and dynamics between ill-structured and tailored uses.
+
+Use here: direct inoculation against calling every reusable MHAC note a “boundary object.”
+
+Limit: full article body not read.
+
+### X004-S15 — Peltokorpi (2008), transactive memory systems review
+
+Vesa Peltokorpi, “Transactive Memory Systems,” Review of General Psychology 12(4):378–394. DOI 10.1037/1089-2680.12.4.378.
+
+Actually inspected: publisher abstract. The review describes transactive-memory theory across dyads, groups and teams and notes conceptual ambiguity.
+
+Use here: a negative comparator. MHAC has indexing/RAG machinery that can locate externalized knowledge, but successive model instances do not obviously maintain a stable interpersonal map of “who knows what.” Calling the repository a transactive-memory system would therefore overstate the evidence.
+
+Limit: abstract-level reading only; no empirical transfer to AI agents.
