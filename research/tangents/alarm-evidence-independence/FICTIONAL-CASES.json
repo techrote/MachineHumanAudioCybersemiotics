@@ -1,0 +1,1961 @@
+{
+  "dataset_kind": "fictional_constructed_not_listener_data",
+  "frozen_author_labels": true,
+  "case_count": 40,
+  "legend": {
+    "independence": "verified_independent means distinct observation and asserted independent upstream lineages; no inference from device or cue IDs",
+    "unknown": "null means unverified upstream origin, not a common cause or a second independent source",
+    "action": "eligibility is a fictional externally supplied truth/authorization oracle, not a capability inferred from sensors"
+  },
+  "cases": [
+    {
+      "id": "T015-001",
+      "scenario": "Exact repeated payload",
+      "case_kind": "test",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-002",
+      "scenario": "Relayed same sensor through two devices",
+      "case_kind": "test",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-003",
+      "scenario": "Two distinct cues of one observation",
+      "case_kind": "test",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-004",
+      "scenario": "Time-offset exact repetition",
+      "case_kind": "negative",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "far",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 122,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-005",
+      "scenario": "One reading warrants two different actions",
+      "case_kind": "test",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1",
+          "E1/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-006",
+      "scenario": "One reading warrants two different events",
+      "case_kind": "test",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-007",
+      "scenario": "Silent duplicate with no required action",
+      "case_kind": "negative",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-008",
+      "scenario": "Duplicate plus false event report",
+      "case_kind": "negative",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E2",
+          "event_truth": "false",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-009",
+      "scenario": "Duplicate plus wrong actor message",
+      "case_kind": "negative",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-B",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-010",
+      "scenario": "Duplicate plus expired second message",
+      "case_kind": "negative",
+      "dependency_relation": "same_observation",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 99,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-011",
+      "scenario": "Shared pipeline, distinct sensor observations",
+      "case_kind": "test",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-012",
+      "scenario": "Shared fault, two distinct events",
+      "case_kind": "test",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-013",
+      "scenario": "Common cause, same event needs two actions",
+      "case_kind": "test",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1",
+          "E1/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-014",
+      "scenario": "One device, two common-cause observations",
+      "case_kind": "test",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-015",
+      "scenario": "Delayed common-cause alarms",
+      "case_kind": "negative",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "far",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 122,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-016",
+      "scenario": "Common cause with second false alert",
+      "case_kind": "negative",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E2",
+          "event_truth": "false",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-017",
+      "scenario": "Common cause with unknown second event",
+      "case_kind": "negative",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E2",
+          "event_truth": "unknown",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-018",
+      "scenario": "Two urgent obligations from common cause",
+      "case_kind": "test",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 110,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 110,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-019",
+      "scenario": "Common cause wrong-actor control",
+      "case_kind": "negative",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-B",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-020",
+      "scenario": "Common cause no-action control",
+      "case_kind": "negative",
+      "dependency_relation": "common_cause",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "ROOT-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "shared",
+        "required_obligations": [],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-021",
+      "scenario": "Independent sensors, one event and action",
+      "case_kind": "test",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-022",
+      "scenario": "Independent observations under one device",
+      "case_kind": "test",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-023",
+      "scenario": "One device, independently sourced events",
+      "case_kind": "test",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-024",
+      "scenario": "Two devices and two independent events",
+      "case_kind": "test",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-025",
+      "scenario": "Independent sources, distinct required actions",
+      "case_kind": "test",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1",
+          "E1/A2"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-026",
+      "scenario": "Offset independent observations",
+      "case_kind": "negative",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "far",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 122,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-027",
+      "scenario": "Two independently sourced urgent events",
+      "case_kind": "test",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 110,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 110,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": [
+          "M1",
+          "M2"
+        ]
+      }
+    },
+    {
+      "id": "T015-028",
+      "scenario": "Independent false-positive control",
+      "case_kind": "negative",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E2",
+          "event_truth": "false",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": [
+          "M1"
+        ]
+      }
+    },
+    {
+      "id": "T015-029",
+      "scenario": "Independent but expired second report",
+      "case_kind": "negative",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 99,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": [
+          "M1"
+        ]
+      }
+    },
+    {
+      "id": "T015-030",
+      "scenario": "Independent no-obligation control",
+      "case_kind": "negative",
+      "dependency_relation": "verified_independent",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": "LINE-A",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": "LINE-B",
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "verified_independent",
+        "required_obligations": [],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-031",
+      "scenario": "Unresolved provenance, distinct devices",
+      "case_kind": "test",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-032",
+      "scenario": "Unresolved same device, two events",
+      "case_kind": "test",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-033",
+      "scenario": "Unknown lineage, two actions for one event",
+      "case_kind": "test",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1",
+          "E1/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-034",
+      "scenario": "Unknown lineage, temporal offset",
+      "case_kind": "negative",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "far",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 122,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-035",
+      "scenario": "Unknown lineage, unknown second event",
+      "case_kind": "negative",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E2",
+          "event_truth": "unknown",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-036",
+      "scenario": "Unknown lineage, wrong actor",
+      "case_kind": "negative",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-B",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-037",
+      "scenario": "Unknown provenance, second message expired",
+      "case_kind": "negative",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 99,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-038",
+      "scenario": "Unknown provenance, two urgent actions",
+      "case_kind": "test",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 110,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E2",
+          "event_truth": "true",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 110,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1",
+          "E2/A2"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-039",
+      "scenario": "Unknown lineage, second false positive",
+      "case_kind": "negative",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-B",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E2",
+          "event_truth": "false",
+          "action_id": "A2",
+          "action_obligation": "required",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-b"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [
+          "E1/A1"
+        ],
+        "independent_eligible_message_ids": []
+      }
+    },
+    {
+      "id": "T015-040",
+      "scenario": "Unknown lineage, no warranted instruction",
+      "case_kind": "negative",
+      "dependency_relation": "unknown",
+      "delivery_proximity": "near",
+      "alerts": [
+        {
+          "message_id": "M1",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-A",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 100,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        },
+        {
+          "message_id": "M2",
+          "source_device": "DEV-A",
+          "observation_id": "OBS-B",
+          "upstream_lineage_id": null,
+          "event_id": "E1",
+          "event_truth": "true",
+          "action_id": "A1",
+          "action_obligation": "none",
+          "authorized_actor": "OP-A",
+          "emitted_at_s": 101,
+          "expires_at_s": 160,
+          "deadline_s": 160,
+          "delivery_group": "G1",
+          "cue_identity": "cue-a"
+        }
+      ],
+      "gold": {
+        "independent_support": "unknown",
+        "required_obligations": [],
+        "independent_eligible_message_ids": []
+      }
+    }
+  ]
+}
