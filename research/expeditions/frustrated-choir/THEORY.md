@@ -78,6 +78,8 @@ Therefore:
 
 Byte-level uniqueness is not a proxy for human detection. Stereo reproduction, channel summation, headphones, masking, hearing, loudness, and context were not tested. The 440/466.16 Hz mapping is **not** a universal sign for error. There is no claim that listeners naturally hear a semitone as a contradiction, or even that the note is audible in a particular workplace.
 
+The generator also renders `order_ab_first.wav` and `order_ab_last.wav` from the **same six-edge relation graph** in different assertion orders. Their loop-flux scores `[1,1,0]` and `[0,0,1]` are mechanically different, despite identical underlying constraints. This audible contrast is a deliberately adversarial demonstration that **the number of dissonant notes is not intrinsic contradiction severity**.
+
 The renderer creates no musical quotation or reproduced recording. It is an authored procedural experiment.
 
 ## 5. Counterexamples and failed inferences
