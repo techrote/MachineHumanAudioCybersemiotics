@@ -74,6 +74,34 @@ def indistinguishable_at(world_a: World, world_b: World, horizon: float) -> bool
     return observed_prefix(world_a, horizon) == observed_prefix(world_b, horizon)
 
 
+def partition_by_prefix(worlds: list[World], horizon: float) -> dict[tuple[tuple[float, str], ...], list[str]]:
+    """Group finite hidden worlds into receiver-observation fibres."""
+    result: dict[tuple[tuple[float, str], ...], list[str]] = {}
+    for world in worlds:
+        key = observed_prefix(world, horizon)
+        result.setdefault(key, []).append(world.name)
+    return result
+
+
+def property_factors_through_prefix(
+    worlds: list[World],
+    horizon: float,
+    labels: dict[str, str],
+) -> bool:
+    """Finite check of X001's observation-factorisation criterion.
+
+    The property is recoverable from the receiver prefix iff every observation
+    fibre contains only one property label.
+    """
+    fibres: dict[tuple[tuple[float, str], ...], set[str]] = {}
+    for world in worlds:
+        if world.name not in labels:
+            raise ValueError("missing property label for " + world.name)
+        key = observed_prefix(world, horizon)
+        fibres.setdefault(key, set()).add(labels[world.name])
+    return all(len(values) == 1 for values in fibres.values())
+
+
 def async_counterexample(horizon: float = 5.0) -> tuple[World, World]:
     """Construct no-emission vs emitted-but-delayed worlds with same finite prefix."""
     if not math.isfinite(horizon) or horizon <= 0:
