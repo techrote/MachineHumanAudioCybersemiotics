@@ -18,6 +18,8 @@ That proposition is formalized for a tiny asynchronous trace model, rendered as 
 | SOURCES.md | Source ledger with actual reading/access limits |
 | SYNTHESIS.md | Cross-domain analysis without collapsing the source disciplines |
 | NEGATIVE-SPACE-PROTOCOL.md | Candidate lease/status design extracted from the research |
+| TYPE-SYSTEM.md | Reusable distinction discipline for NO_DELIVERY, ERASURE, STALE, UNKNOWN, suspicion and resolution |
+| EXAPTATION.md | Exact reuse of X001's observation-fibre theorem inside X005 |
 | AFTERWORD.md | Original speculative essay; explicitly not scientific evidence |
 | EVIDENCE.md | Execution receipts, CI state and nonclaims |
 | silence_observatory.html | Optional self-contained interactive visual/audio artwork |
