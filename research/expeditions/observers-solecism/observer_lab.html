@@ -75,6 +75,7 @@ small{color:var(--muted)}.note{margin:20px 0 0;max-width:1050px;color:#a9beba}.n
       <div class="control"><label for="offsetCtl">Rotate fixed witnesses</label><output id="offsetVal" class="value">0.000</output><input id="offsetCtl" type="range" min="0" max="0.5" step=".0025" value="0"></div>
       <div class="control"><label for="ampCtl">Radial deformation</label><output id="ampVal" class="value">54</output><input id="ampCtl" type="range" min="12" max="85" step="1" value="54"></div>
       <div class="control"><label for="speedCtl">Audio probe rotations / second</label><output id="speedVal" class="value">55</output><input id="speedCtl" type="range" min="-90" max="90" step="5" value="55"></div>
+      <button id="bestBtn" type="button">PLACE INFORMATIVE WITNESS</button>
       <button id="soundBtn" type="button" aria-pressed="false">START STEREO WITNESS</button>
       <button id="zeroBtn" type="button">RESTORE EXACT-ALIAS VIEW</button>
       <div class="status" id="soundStatus" role="status">Sound disabled. The display remains interactive.</div>
@@ -192,6 +193,22 @@ async function toggleSound(){
  }catch(error){by("soundStatus").textContent="Audio could not start: "+String(error);}
 }
 for(const element of Object.values(ctl))element.addEventListener("input",()=>{draw();updateSound();});
+by("bestBtn").addEventListener("click",()=>{
+ const N=number("count"),n=number("mode"),m=n+N;
+ let bestAngle=0, bestContrast=-1;
+ const samples=Math.max(2048,64*m);
+ for(let j=0;j<samples;j++){
+  const a=TAU*j/samples;
+  const contrast=Math.abs(wave(n,a)-wave(m,a));
+  if(contrast>bestContrast){bestContrast=contrast;bestAngle=a;}
+ }
+ // The slider represents rotations of the complete sensor grid.
+ // First witness at bestAngle; no guarantee of global optimality for other pairs.
+ ctl.offset.step="any";
+ ctl.offset.value=String((bestAngle/TAU)%0.5);
+ draw();updateSound();
+ by("soundStatus").textContent="Placed a grid-search witness; contrast≈"+bestContrast.toFixed(3)+" (not a global guarantee).";
+});
 by("soundBtn").addEventListener("click",toggleSound);
 by("zeroBtn").addEventListener("click",()=>{
  ctl.count.value="8";ctl.mode.value="2";ctl.offset.value="0";
