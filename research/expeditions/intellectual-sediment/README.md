@@ -48,16 +48,26 @@ If it does propagate, the cautious conclusion is **a stable research style is be
 
 | Artifact | Purpose |
 | --- | --- |
-| sediment_atlas.py | Transparent corpus baseline |
+| sediment_atlas.py | Transparent accepted-main narrative corpus baseline |
+| shadow_sediment.py | Noncanonical branch/history archaeology with exact-content deduplication |
+| distinction_miner.py | Provenance-preserving candidate “do not collapse X into Y” retrieval |
+| quotient_guard.py | Exact finite-table decision-sufficiency / unsafe-collapse witnesses |
+| atlas_diff.py | Longitudinal comparison of two frozen atlas snapshots |
 | SOURCES.md | External theoretical and methodological lenses, with access limits |
-| THEORY.md | Distributed-cognition, cultural-attractor and research-programme comparison |
-| OBSERVED-ATLAS.md | To be written from exact CI-derived corpus results |
-| ADVERSARIAL.md | Planned argument against over-reading recurrence |
-| EXAPTATION.md | Planned concrete transfers from discovered sparse bridges |
-| sediment_map.html | Planned self-contained visual atlas after results are frozen |
+| THEORY.md | Archive / distributed-memory / stigmergy / programme comparisons |
+| OBSERVED-ATLAS.md | Interpretation of the exact current-corpus CI measurement |
+| SHADOW-SEDIMENT.md | Interpretation of branch-only sediment and hourly scouting ancestry |
+| GENEALOGIES.md | Manual repair / unknown / binding transformations across main and branches |
+| QUOTIENT-GUARD.md | Formal bridge from anti-collapse rhetoric to decision-safe representation |
+| ADVERSARIAL.md | Deliberate demolition of the “persistent agent philosophy” overclaim |
+| EXAPTATION.md | Reusable machinery and explicitly declined infrastructure |
+| BASELINE-20261123.json | Frozen dated current/shadow/distinction observation |
+| sediment_map.html | Self-contained interactive visual of the frozen baseline |
 | tests/test_x004_intellectual_sediment.py | Synthetic and live-corpus structural checks |
 
-Generated JSON is disposable unless explicitly frozen with an exact corpus SHA. Interpretation should cite the actual run head rather than assume future repository contents are identical.
+Generated JSON is disposable unless explicitly frozen with an exact corpus SHA. [BASELINE-20261123.json](BASELINE-20261123.json) freezes one such observation, including its workflow run and explicit shadow-archive limitations. Future snapshots can be compared with `atlas_diff.py`.
+
+The shadow archive is **live remote state**: new branches can change its result without a main-branch change. A shadow observation therefore needs a run/time context, not just a source commit.
 
 ## Boundaries
 

@@ -198,3 +198,42 @@ Actually inspected: PDF first page visually and the full short paper text expose
 Use here: a direct software-development comparator for MHAC's Git-mediated work. It supports asking whether issues, commits, proofs, fixtures and PRs do more than store results—whether their visible state helps later workers decide what to do next.
 
 Limit: the paper analyzes human distributed software practice and “lore,” not autonomous LLM workers. MHAC also contains much more explicit orchestration than a pure stigmergic model.
+
+
+## Decision-preserving abstraction and sufficiency — comparators for the quotient guard
+
+### X004-S17 — Li, Walsh & Littman (2006), state abstraction for MDPs
+
+Lihong Li, Thomas J. Walsh & Michael L. Littman, “Towards a Unified Theory of State Abstraction for MDPs,” AI&M 2006.
+
+Open author/Microsoft-hosted PDF:
+https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/camera-ready-9.pdf
+
+Actually inspected: abstract, introduction, and accessible state-abstraction sections. The paper asks what information is lost under state abstraction and when planning/learning properties such as optimal policies remain preserved; its hierarchy distinguishes model-, value- and action-preserving abstractions.
+
+Use here: closest technical comparator for X004's finite “can these states be merged without changing the declared decision?” question.
+
+Limit: X004's quotient_guard.py does not model transition kernels, rewards, Q-values or learning. It gives no MDP optimality guarantee.
+
+### X004-S18 — Blackwell-style comparison of experiments
+
+M. Ali Khan, Haomiao Yu & Zhixiang Zhang (2025), “A simple proof of Blackwell's theorem on the comparison of experiments for a general state space,” *Economics Letters* 247:112146, DOI 10.1016/j.econlet.2024.112146.
+
+Prem K. Goel & Morris H. DeGroot (1979), “Comparison of Experiments and Information Measures,” *Annals of Statistics* 7(5):1066–1077, DOI 10.1214/aos/1176344790.
+
+Actually inspected: public abstracts; for Khan/Yu/Zhang, accessible introductory definition material describing sufficiency through a stochastic transformation and the relation to informativeness for decision problems.
+
+Use here: decision-theoretic reminder that “more information” can be defined by what decisions an information structure supports.
+
+Limit: quotient_guard has no probability distributions, priors, utilities or stochastic garbling. Calling it Blackwell sufficiency would be false.
+
+### X004-S19 — statistical sufficiency / Fisher–Neyman factorization
+
+A public Purdue statistics text, *Exponential Families and Theoretical Foundations*, was consulted at its sufficient-statistic/factorization discussion:
+https://www.stat.purdue.edu/~dasgupta/expfamily.pdf
+
+Actually inspected: section defining sufficiency as data reduction without losing information about the model parameter and its Fisher–Neyman factorization statement.
+
+Use here: terminological boundary. “Decision-sufficient” in X004 is ordinary descriptive language for an exact finite verdict-preservation property.
+
+Limit: no statistical family or unknown parameter is supplied to quotient_guard; it is **not** a sufficient-statistic test.
