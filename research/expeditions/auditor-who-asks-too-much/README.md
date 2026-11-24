@@ -3,6 +3,15 @@
 
 **Refs #250 · 24 November 2026.** Exploratory mathematical model and synthetic experiment with interpretive commentary and fiction. No human observations, Track E/G evidence, accepted design rule, or assertion of mathematical priority.
 
+## Contents
+
+1. **Archaeology** — distinguish missing outcomes from missing utterances.
+2. **Sharp paired score bounds** — derive exact extrema with and without a known count.
+3. **The audit theorem** — prove the optimal fixed plan and minimax equivalence.
+4. **A contrary case** — demonstrate a strict expected-width gain from adaptivity.
+5. **Source boundary and exaptation** — distinguish previous research and propose an audit receipt.
+6. **Reproducibility and claim status** — record actual tests and remaining gates.
+
 ### 1. Archaeology: the missing answer, not the missing utterance
 
 The [quotient guard](../intellectual-sediment/QUOTIENT-GUARD.md) tests whether a declared decision is constant across states collapsed by a representation. It does not say which additional observations to obtain when a decision is not constant. The Examiner of Silences (draft [#235](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/235), head 7d5bdf8643639700d40e279f94e21ca540d67f4e) studies unobserved fallback losses for abstained cases. The Warning That Makes Itself False (draft [#227](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/227), head c501a4ed3e3b1f15b6e2ab2a3d1b978230f7c332) questions the outcome law itself. The Bell That Cannot Promise (draft [#243](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/243), head 54b547c8fe1f04f6d79fa99eedf867c5f8488ba8) separates incentives from representation; its audit model concerns penalties for false reports, not acquisition of comparative evaluation data. Consensus calibration [#221](https://github.com/techrote/MachineHumanAudioCybersemiotics/pull/221) assumes a fixed roster for its identities. This expedition asks something distinct: **both forecasters spoke, the target is shared and static, but some outcomes were never recorded. Which observations are worth recovering?**
