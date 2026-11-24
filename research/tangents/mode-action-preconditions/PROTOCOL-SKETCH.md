@@ -1,0 +1,11 @@
+# Conditional R014 protocol sketch — no real study performed
+
+**Research question:** For carefully counterbalanced fictional-workstation episodes, do conditional spoken mode preconditions improve **correct first/final action and mode understanding**, versus unqualified speech, continuous mode call-outs, and inspectable visual state with an external action guard? Are any benefits explained by extra information, interruption, cue length or attention rather than actual mode semantics?
+
+Proposed, not executed: preregistration-ready design with mode-sensitive versus independent actions, event→compilation→delivery→action transitions, unknown and conflicting mode evidence, authorization, deadlines and no-action controls. Predeclare hypotheses, primary contrasts, decision thresholds, meaningful effect sizes, handling of false/unknown responses and multiplicity. Independently label machine truth; counterbalance material, order, acoustic level, speaking rate, terminology, training, sound duration and the matched *information available* per arm. If visual versus speech cannot be equated, explicitly treat modality as a confound rather than attributing effect to a mode precondition.
+
+**Primary outcomes:** correct first and final action including omission and wrong-mode error (report failures, do not exclude them from latency); independent mode comprehension and unknown-state handling. **Secondary:** detection, time to appropriate action, correction/repair, workload, interruption, retention, intelligibility, language and hearing/accommodation effects. Sample/precision planning must use defensible uncertainty estimates, not made-up pilot values.
+
+**Falsifiers:** no gain over simpler guard/display, worse decisions with call-outs, inaccurate mode beliefs, excessive burden, inaccessible presentation, or no trusted action-time mode authority. Consider alternative text/visual/on-demand confirmation routes.
+
+**Hard gates:** This is merely an input suggestion to R014. R011–R013 evidence/design dependencies remain. R005/R006 screening and identity remain open. R020 requires explicit human authorization, appropriate oversight/consent/privacy, accessible alternatives and safe listening arrangements. No participants, testing, recruitment, ethical approval or external preregistration occurred.
