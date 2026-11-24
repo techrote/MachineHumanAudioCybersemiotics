@@ -86,7 +86,10 @@ export function pairBound(h) {
 export function diskOracle(h) {
   validate(h);
   if(h.some(z=>norm(z)===0))return 1;
+  const scale=Math.max(...h.map(norm));
+  h=h.map(z=>[z[0]/scale,z[1]/scale]);
   const c=h.map(inv),w=h.map(norm);
+  if(Math.min(...w)<1e-6||scale<1e-100)throw new RangeError("unsupported gain dynamic range");
   function feasible(t){
     const rr=w.map(x=>t/x);
     const ok=p=>c.every((z,i)=>norm(sub(p,z))<=rr[i]+1e-11*Math.max(1,rr[i],norm(z)));
