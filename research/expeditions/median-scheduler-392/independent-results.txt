@@ -1,0 +1,27 @@
+{
+  "inputs": 8184,
+  "terminalPairs": 18036,
+  "multiple": 4894,
+  "snapshotUnreachable": 2654,
+  "twoCycles": 10,
+  "audio": {
+    "same-start.wav": {
+      "sha256": "6dbe0dbbc163095efb343b6e7be033b523e0b48265690099a336d3ad083257b5",
+      "peak": 21573,
+      "frames": 38400,
+      "final_ones": [
+        0,
+        12
+      ]
+    },
+    "snapshot-vs-in-place.wav": {
+      "sha256": "0465b5f8fb6c4155f44f29d55242bc35f1165f7fadbcadbd471785be07924515",
+      "peak": 12340,
+      "frames": 32000,
+      "final_ones": [
+        3,
+        2
+      ]
+    }
+  }
+}
