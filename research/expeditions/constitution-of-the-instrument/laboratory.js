@@ -1,0 +1,10 @@
+"use strict";
+function validate(n,q){if(!Number.isInteger(n)||n<1||!Number.isInteger(q)||q<1||q>n)throw Error("invalid electorate or threshold")}
+
+function ratify(n,q,r,c,mode){validate(n,q);validate(n,r);if(!Number.isInteger(c)||c<0||c>n)throw Error("invalid vote count");if(mode==="old")return c>=q;if(mode==="candidate")return c>=r;if(mode==="dual")return c>=q&&c>=r;throw Error("invalid mode")}
+
+function reachable(n,q,c,mode){validate(n,q);const seen=new Set([q]),todo=[q];while(todo.length){let a=todo.pop();for(let b=1;b<=n;b++)if(!seen.has(b)&&ratify(n,a,b,c,mode)){seen.add(b);todo.push(b)}}return [...seen].sort((a,b)=>a-b)}
+
+function run(){let assertions=0;function check(v){assertions++;if(!v)throw Error("check "+assertions)}const rows=[];const modes=["old","candidate","dual"];for(let n=1;n<=8;n++){let votes=0,oldOnly=0,newOnly=0,both=0,neither=0;for(let q=1;q<=n;q++)for(let r=1;r<=n;r++)for(let mask=0;mask<(1<<n);mask++){const c=mask.toString(2).replace(/0/g,"").length;const a=ratify(n,q,r,c,"old"),b=ratify(n,q,r,c,"candidate"),d=ratify(n,q,r,c,"dual");check(d===(a&&b));check(a===!(c<q));check(b===!(c<r));votes++;if(a&&b)both++;else if(a)oldOnly++;else if(b)newOnly++;else neither++}let theoretical=0;for(let mask=0;mask<(1<<n);mask++){let c=mask.toString(2).replace(/0/g,"").length;theoretical+=c*(n-c)}check(oldOnly===theoretical&&newOnly===theoretical);check(votes===n*n*(1<<n));for(let q=1;q<=n;q++)for(let c=0;c<=n;c++)for(const m of modes){let expected=[];for(let r=1;r<=n;r++)if(r===q||(m==="old"&&c>=q)||(m==="candidate"&&r<=c)||(m==="dual"&&q<=c&&r<=c))expected.push(r);check(JSON.stringify(reachable(n,q,c,m))===JSON.stringify(expected))}rows.push({n,votes,oldOnly,newOnly,both,neither})}check(ratify(3,2,1,1,"candidate"));check(!ratify(3,2,1,1,"old"));check(ratify(3,2,3,2,"old"));check(!ratify(3,2,3,2,"dual"));check(reachable(3,3,2,"old").length===1);return {assertions,rows}}
+
+if(typeof module!=="undefined"){module.exports={ratify,reachable,run};if(require.main===module)console.log(JSON.stringify(run(),null,2));}
