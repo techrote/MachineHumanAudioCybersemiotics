@@ -1,0 +1,12 @@
+Executed on 2026-11-24 using eSpeak 1.48.15, NumPy 2.3.5 and SciPy 1.17.0.
+Two render passes; matching WAV hashes, PCM round trips and invariant target tails.
+8b46409bfde06dc8625c19c18e52353a579594abe83b7a0b1fa7ee9c5175bf17 01-target.wav
+5d884d54380196767beb5cb20e377ccea2b7b0b27d426fa7b3b025ee68df1f43 02-target-12bands.wav
+a7c9cba90b2467ed9781f7f1d38e8b301fd1084d2aa9a7634ec59cd85938f7eb 03-neutral.wav
+2693b962e8d448bcbbeb6ef792785d3364fe03dc6b7668b08c08729010edb114 04-congruent.wav
+1b40f7fdbbfbe7fc8a659e88cc9d4456ddbc2bd9d5276eb3096c6e74df25900a 05-incongruent.wav
+ce8bfc8424da7bdbee1ca7c03ab0f736ad1df3f11ffa547f811b2213204b87eb 06-triplet-target.wav
+1b232a360f70f73a7e8fb31144268e027828bd48a885ca097ec8fd96b7484f84 07-close-prime.wav
+69583b60b202524ba3edbb500644a62c74d43a2cf5042a3c7e5239341985e78d 08-wide-prime.wav
+PCM frames: 01/02 49445; 03/04/05 113972; 06 86400; 07/08 259200.
+Local reproducibility only, not cross-platform bit-exact guarantee. No listening judgments.
