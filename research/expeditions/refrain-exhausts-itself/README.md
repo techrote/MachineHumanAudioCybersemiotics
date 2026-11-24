@@ -13,7 +13,7 @@ Gertrude Stein's 1934 Vassar lecture supplies a more radical challenge. In the p
 
 The finite instrument in this essay adopts a deliberately impoverished opposite position: equality of a fixed-length symbol window is all that counts as recurrence. In such a system it is possible to certify novelty by counting. This is a useful technical construction precisely because it excludes so much of what Stein is interested in. An invariant PCM sequence can be a new event in a different listening situation, while a never-before-emitted symbol word can be experienced as a banal reiteration of a genre.
 
-Oulipo supplies a different relation between constraint and abundance. Its CMMP page describes Queneau's ten compatible fourteen-line sonnets; one independent choice at each line position gives 10^14 possible recombinations. The constraints are not an enemy of production but a construction of the field in which production can occur. It is tempting to confuse that count with artistic variety: ten trillion syntactically admissible poems need not have ten trillion distinguishable interpretations. Counting objects and counting experiences are different undertakings.
+Oulipo supplies a different relation between constraint and abundance. Its CMMP page describes Queneau's ten compatible fourteen-line sonnets; one independent choice at each line position gives 10^14 possible recombinations. The constraints are not an enemy of production but a construction of the field in which production can occur. It is tempting to confuse that count with artistic variety: one hundred trillion syntactically admissible poems need not have one hundred trillion distinguishable interpretations. Counting objects and counting experiences are different undertakings.
 
 ## 2. A score that refuses to repeat a phrase
 
@@ -39,7 +39,7 @@ The executable census recursively explores all legal histories, compares that co
 | 2 | 5 | 32 | 4096 | 4096/65536 (6.25%) |
 | 3 | 2 | 9 | 72 | 72/216 (33.333333333333336%) |
 
-Run node lab.js; results.json contains the actual full census, including terminal lengths and weights. Each terminal weight uses common denominator D=(k!)^V; no simulated random numbers are needed. Exhaustive verification is bounded to these five configurations; the proof gives the broader exact result. No claim of physical audio or human testing.
+Run `node lab.js`; `results.json` contains the actual full census, including terminal lengths and weights. Each terminal weight uses common denominator D=(k!)^V; no simulated random numbers are needed. Exhaustive verification is bounded to these five configurations; the proof gives the broader exact result. No claim of physical audio or human testing.
 
 The first mode refuses to repeat. The second mode sometimes refuses a currently novel event in order to preserve the ability to be novel later. That is a distinct kind of rest: the composer is not forbidden to repeat because the event is old; the composer is forbidden to innovate because the event would foreclose future innovation.
 
