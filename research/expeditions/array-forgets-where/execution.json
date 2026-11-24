@@ -1,0 +1,242 @@
+{
+  "model": "synthetic projective phase, exact integer lattice",
+  "square": [
+    {
+      "n": 2,
+      "N": 4,
+      "primes": [
+        2
+      ],
+      "subset_checks": 15,
+      "nonidentifying_subsets": 10,
+      "largest_bad": 2,
+      "distance": 2
+    },
+    {
+      "n": 3,
+      "N": 9,
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "subset_checks": 511,
+      "nonidentifying_subsets": 146,
+      "largest_bad": 6,
+      "distance": 3
+    },
+    {
+      "n": 4,
+      "N": 16,
+      "primes": [
+        2,
+        3,
+        5,
+        7,
+        11,
+        13,
+        17
+      ],
+      "subset_checks": 65535,
+      "nonidentifying_subsets": 1921,
+      "largest_bad": 8,
+      "distance": 8
+    }
+  ],
+  "sparse": [
+    {
+      "M": 3,
+      "aperture": 8,
+      "subset_checks": 11440,
+      "distance": 8,
+      "spatial_separation": 0.3333333333333333,
+      "phase_error_cycles": 0.16666666666666666,
+      "max_chord_error": 0.9999999999999999
+    },
+    {
+      "M": 5,
+      "aperture": 12,
+      "subset_checks": 11440,
+      "distance": 8,
+      "spatial_separation": 0.4,
+      "phase_error_cycles": 0.1,
+      "max_chord_error": 0.6180339887498948
+    },
+    {
+      "M": 11,
+      "aperture": 24,
+      "subset_checks": 11440,
+      "distance": 8,
+      "spatial_separation": 0.45454545454545453,
+      "phase_error_cycles": 0.045454545454545456,
+      "max_chord_error": 0.2846296765465703
+    },
+    {
+      "M": 101,
+      "aperture": 204,
+      "subset_checks": 11440,
+      "distance": 8,
+      "spatial_separation": 0.49504950495049505,
+      "phase_error_cycles": 0.0049504950495049506,
+      "max_chord_error": 0.031103623840701745
+    },
+    {
+      "M": 1001,
+      "aperture": 2004,
+      "subset_checks": 11440,
+      "distance": 8,
+      "spatial_separation": 0.4995004995004995,
+      "phase_error_cycles": 0.0004995004995004995,
+      "max_chord_error": 0.003138452911330412
+    },
+    {
+      "M": 10001,
+      "aperture": 20004,
+      "subset_checks": 11440,
+      "distance": 8,
+      "spatial_separation": 0.49995000499950004,
+      "phase_error_cycles": 0.00004999500049995001,
+      "max_chord_error": 0.00031412785128218123
+    }
+  ],
+  "finite_phase_grids": [
+    {
+      "n": 2,
+      "q": 2,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 3,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 4,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 5,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 6,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 7,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 8,
+      "distance": 2
+    },
+    {
+      "n": 2,
+      "q": 9,
+      "distance": 2
+    },
+    {
+      "n": 3,
+      "q": 2,
+      "distance": 3
+    },
+    {
+      "n": 3,
+      "q": 3,
+      "distance": 6
+    },
+    {
+      "n": 3,
+      "q": 4,
+      "distance": 3
+    },
+    {
+      "n": 3,
+      "q": 5,
+      "distance": 6
+    },
+    {
+      "n": 3,
+      "q": 6,
+      "distance": 3
+    },
+    {
+      "n": 3,
+      "q": 7,
+      "distance": 6
+    },
+    {
+      "n": 3,
+      "q": 8,
+      "distance": 3
+    },
+    {
+      "n": 3,
+      "q": 9,
+      "distance": 6
+    },
+    {
+      "n": 4,
+      "q": 2,
+      "distance": 8
+    },
+    {
+      "n": 4,
+      "q": 3,
+      "distance": 8
+    },
+    {
+      "n": 4,
+      "q": 4,
+      "distance": 8
+    },
+    {
+      "n": 4,
+      "q": 5,
+      "distance": 12
+    },
+    {
+      "n": 4,
+      "q": 6,
+      "distance": 8
+    },
+    {
+      "n": 4,
+      "q": 7,
+      "distance": 12
+    },
+    {
+      "n": 4,
+      "q": 8,
+      "distance": 8
+    },
+    {
+      "n": 4,
+      "q": 9,
+      "distance": 8
+    }
+  ],
+  "audio": {
+    "full_distinct": true,
+    "erased_identical": true,
+    "near_distinct": true,
+    "near_max_pcm_difference": 311,
+    "full_bytes": 12844,
+    "erased_bytes": 6444,
+    "fnv1a": [
+      "45f0cd4d",
+      "efd8a40d",
+      "f41cce35",
+      "f41cce35",
+      "45f0cd4d",
+      "fd4dbadd"
+    ]
+  },
+  "assertion_failures": 0
+}
