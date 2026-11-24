@@ -79,7 +79,8 @@ function step(entries,remaining,stationary){
  return out;
 }
 const observe=(x,a)=>x===(a+1)%5?a:x;
-let decoderChecks=0,pairChecks=0,stopWitnesses=0,causalityChecks=0;
+let decoderChecks=0,pairChecks=0,stopWitnesses=0,causalityChecks=0,flushChecks=0;
+const flushed=[];
 function check(entries,n,direct){
  const byTag=groupBy(entries,e=>e.tags.join(""));
  let debt=false;
@@ -110,6 +111,27 @@ function run(n,stationary){
   entries=step(entries,n-t+1,stationary);
   for(const e of entries){assert(old.get(e.x.slice(0,-1).join(""))===e.tags.slice(0,-1).join(""),"causality");causalityChecks++;}
   counts.push(check(entries,t,t<=4));
+  if(stationary){
+   // A source-free flush colours each old-history group, reusing the labels.
+   const complete=[];
+   for(const bucket of groupBy(entries,e=>e.tags.join("")).values()){
+    for(const g of groupBy(bucket,e=>e.x.slice(0,-1).join("")).values()){
+     const S=g.map(e=>e.x[e.x.length-1]),k=type(S),b=k===2?bip(S):null;
+     for(const e of g){const x=e.x[e.x.length-1],c=k===1?0:k===2?b.get(x):scalar[x];
+      complete.push({x:e.x,tags:[...e.tags,c]});}
+    }
+   }
+   const cnt=groupBy(complete,e=>e.tags.join("")).size;
+   assert(BigInt(cnt)===fib[2*t+2],"flush optimum");flushed.push(cnt);
+   if(t<=4){
+    const obs=new Map(),actions=words(X,t);
+    for(const e of complete)for(const a of actions){
+     const key=e.tags.join("")+"|"+a.join("")+"|"+e.x.map((x,i)=>observe(x,a[i])).join("");
+     const target=e.x.join("");flushChecks++;
+     assert(!obs.has(key)||obs.get(key)===target,"direct flush decoder");obs.set(key,target);
+    }
+   }
+  }
  }
  return counts;
 }
@@ -118,5 +140,5 @@ for(let n=1;n<=6;n++)assert(BigInt(stationary[n-1])===fib[2*n+1],"stationary cou
 const finite=[];
 for(let n=1;n<=6;n++){const c=run(n,false);assert(BigInt(c[n-1])===fib[2*n],"finite optimum witness");finite.push(c[n-1]);}
 assert(stopWitnesses>0,"must not confuse deadline with stop");
-return {local:V.slice(1),stationary,finite,decoderChecks,pairChecks,causalityChecks,stopWitnesses,dpHorizons:50};
+return {local:V.slice(1),stationary,finite,flushed,decoderChecks,flushChecks,pairChecks,causalityChecks,stopWitnesses,dpHorizons:50};
 })()));
