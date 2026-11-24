@@ -1,0 +1,228 @@
+{
+  "model": "synthetic finite nonnegative relay weights; no human data",
+  "cases": [
+    {
+      "n": 2,
+      "total": 4,
+      "ensembles": 15,
+      "majorClasses": 15,
+      "nontrivialMajorClasses": 0,
+      "largestClass": 1,
+      "reachableStates": 4,
+      "firstReversals": 90,
+      "historyComparisons": 60,
+      "majorPairs": 0,
+      "pairPathChecks": 0
+    },
+    {
+      "n": 3,
+      "total": 4,
+      "ensembles": 126,
+      "majorClasses": 105,
+      "nontrivialMajorClasses": 20,
+      "largestClass": 3,
+      "reachableStates": 8,
+      "firstReversals": 1260,
+      "historyComparisons": 1008,
+      "majorPairs": 22,
+      "pairPathChecks": 176
+    },
+    {
+      "n": 4,
+      "total": 4,
+      "ensembles": 715,
+      "majorClasses": 490,
+      "nontrivialMajorClasses": 164,
+      "largestClass": 5,
+      "reachableStates": 16,
+      "firstReversals": 10725,
+      "historyComparisons": 11440,
+      "majorPairs": 310,
+      "pairPathChecks": 4960
+    }
+  ],
+  "witnesses": [
+    {
+      "r": 1,
+      "total": 2,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 1
+    },
+    {
+      "r": 2,
+      "total": 3,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 2
+    },
+    {
+      "r": 3,
+      "total": 4,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 3
+    },
+    {
+      "r": 4,
+      "total": 5,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 4
+    },
+    {
+      "r": 5,
+      "total": 6,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 5
+    },
+    {
+      "r": 8,
+      "total": 9,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 8
+    },
+    {
+      "r": 15,
+      "total": 16,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 15
+    },
+    {
+      "r": 31,
+      "total": 32,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 31
+    },
+    {
+      "r": 63,
+      "total": 64,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 63
+    }
+  ],
+  "amplification": [
+    {
+      "r": 1,
+      "total": 2,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 1
+    },
+    {
+      "r": 2,
+      "total": 6,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 3
+    },
+    {
+      "r": 3,
+      "total": 10,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 5
+    },
+    {
+      "r": 4,
+      "total": 14,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 7
+    },
+    {
+      "r": 5,
+      "total": 18,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 9
+    },
+    {
+      "r": 8,
+      "total": 30,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 15
+    },
+    {
+      "r": 15,
+      "total": 58,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 29
+    },
+    {
+      "r": 31,
+      "total": 122,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 61
+    },
+    {
+      "r": 63,
+      "total": 250,
+      "firstReversalDifferenceNumerator": 1,
+      "nestedDifferenceNumerator": 125
+    }
+  ],
+  "audio": {
+    "major-a.wav": {
+      "bytes": 42284,
+      "fnv1a32": "4478b173"
+    },
+    "major-b.wav": {
+      "bytes": 42284,
+      "fnv1a32": "4478b173"
+    },
+    "nested-a.wav": {
+      "bytes": 19244,
+      "fnv1a32": "7ec5470b"
+    },
+    "nested-b.wav": {
+      "bytes": 19244,
+      "fnv1a32": "33646de5"
+    }
+  },
+  "audioNestedPath": [
+    0,
+    15,
+    1,
+    14,
+    2,
+    13,
+    3,
+    12,
+    4,
+    11,
+    5,
+    10,
+    6,
+    9,
+    7
+  ],
+  "audioNestedOutputs": {
+    "A": [
+      0,
+      7,
+      1,
+      7,
+      2,
+      7,
+      3,
+      7,
+      4,
+      7,
+      5,
+      7,
+      6,
+      7,
+      7
+    ],
+    "B": [
+      0,
+      7,
+      0,
+      6,
+      0,
+      5,
+      0,
+      4,
+      0,
+      3,
+      0,
+      2,
+      0,
+      1,
+      0
+    ]
+  },
+  "assertions": "pass"
+}
