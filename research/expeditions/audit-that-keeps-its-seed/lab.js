@@ -108,8 +108,26 @@ function revealWidth(w,query,positive){
  if(seen)return 0;
  const a=[...remaining].map(i=>w[i]);return Math.max(...a)-Math.min(...a);
 }
+
+// Restrict all seed/world widths to at most one lattice step.
+// Matching construction + cover certificate for the path graph.
+function capped(n,step=1){
+ const m=regular(n,step).m;
+ const k=Math.floor(n/2),D=BigInt(step);
+ const pairs=Array.from({length:k},(_,i)=>[2*i,2*i+1]);
+ const cover=Array.from({length:n},(_,i)=>i%2===1?1:0);
+ for(const {i,j,d} of m.edges)if(d===D)assert(cover[i]+cover[j]===1);
+ assert(cover.reduce((a,b)=>a+b,0)===k);
+ const w=m.w.map(Number);
+ for(let z=0;z<n;z++){
+  let sum=0;for(const [i,j] of pairs)sum+=revealWidth(w,w.map((_,t)=>t).filter(t=>t!==i&&t!==j),z);
+  assert(sum<=step);
+ }
+ return ratio(D,BigInt(k));
+}
+
 function tests(){
- let general=0,systems=0,leaves=0,regularChecks=0,gridChecks=0,revealChecks=0;
+ let general=0,systems=0,leaves=0,regularChecks=0,gridChecks=0,revealChecks=0,capChecks=0;
  for(let n=2;n<=5;n++)for(const w of subsets(6,n)){
   const m=model(w),p=primal(m),d=dual(m);
   assert(p.score===d.score);checkCertificate(m,p.u,d.y);general++;systems+=d.systems;leaves+=p.leaves;
@@ -118,7 +136,7 @@ function tests(){
   const r=regular(n,step);
   assert(r.width===(n%2?ratio(4n*BigInt(step),BigInt(2*n-1)):ratio(2n*BigInt(step),BigInt(n))));
   if(n<=7){let p=primal(r.m);assert(p.score===r.y.reduce((a,b)=>a+b,0n));leaves+=p.leaves}
-  regularChecks++;
+  assert(capped(n,step)===ratio(BigInt(step),BigInt(Math.floor(n/2))));capChecks++;regularChecks++;
  }
  for(const n of [3,4]){
   const w=Array.from({length:n},(_,i)=>i),r=regular(n),D=10;
@@ -149,6 +167,6 @@ function tests(){
  for(const bad of [[],[1],[1,1.5],[NaN,2],null]){
   try{model(bad)}catch{refusals++;continue}throw Error('invalid input accepted');
  }
- return {general,systems,leaves,regularChecks,gridChecks,revealChecks,refusals,three:(({width,hardPrior,worldWidths,pairProbabilities})=>({width,hardPrior,worldWidths,pairProbabilities}))(regular(3))};
+ return {general,systems,leaves,regularChecks,capChecks,gridChecks,revealChecks,refusals,three:(({width,hardPrior,worldWidths,pairProbabilities})=>({width,hardPrior,worldWidths,pairProbabilities}))(regular(3))};
 }
 if(typeof module!=='undefined'){module.exports={model,primal,dual,checkCertificate,regular,tests};if(require.main===module)console.log(JSON.stringify(tests(),null,2))}
