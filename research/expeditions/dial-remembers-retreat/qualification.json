@@ -1,0 +1,94 @@
+{
+  "model": "synthetic, same-agent independent implementation",
+  "python": "3.13.5",
+  "census": [
+    {
+      "m": 2,
+      "shapes": 6,
+      "permutations": 2,
+      "evaluations": 12,
+      "best_gap_numerators": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "m": 3,
+      "shapes": 20,
+      "permutations": 6,
+      "evaluations": 120,
+      "best_gap_numerators": [
+        0,
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "m": 4,
+      "shapes": 70,
+      "permutations": 24,
+      "evaluations": 1680,
+      "best_gap_numerators": [
+        0,
+        2,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "m": 5,
+      "shapes": 252,
+      "permutations": 120,
+      "evaluations": 30240,
+      "best_gap_numerators": [
+        0,
+        2,
+        3,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "m": 6,
+      "shapes": 924,
+      "permutations": 720,
+      "evaluations": 665280,
+      "best_gap_numerators": [
+        0,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5
+      ]
+    }
+  ],
+  "recordings": {
+    "major-a.wav": {
+      "bytes": 42284,
+      "fnv1a32": "4478b173",
+      "sha256": "36a9b415437905b3e6ee1594f901ee519cbe514fea10dc4f008c76acba0ad64a"
+    },
+    "major-b.wav": {
+      "bytes": 42284,
+      "fnv1a32": "4478b173",
+      "sha256": "36a9b415437905b3e6ee1594f901ee519cbe514fea10dc4f008c76acba0ad64a"
+    },
+    "nested-a.wav": {
+      "bytes": 19244,
+      "fnv1a32": "7ec5470b",
+      "sha256": "cfe3c267f1fc038ad2beeb38f3c0e5f39b1d5df47c5285ee952264972a07c355"
+    },
+    "nested-b.wav": {
+      "bytes": 19244,
+      "fnv1a32": "33646de5",
+      "sha256": "bc33d755993ccddcb24d621b7db8fe94424feac585c374aa3e7ae6b08c262350"
+    }
+  },
+  "assertions": "pass"
+}
