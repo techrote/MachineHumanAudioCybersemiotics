@@ -1,0 +1,48 @@
+{
+  "words": 86854,
+  "groups": 7010,
+  "profiles": 136,
+  "tradeoffProfiles": 12,
+  "examples": [
+    {
+      "m": 3,
+      "n": 12,
+      "k": 4,
+      "possible": [
+        {
+          "c": 1,
+          "words": 4,
+          "orders": 1
+        },
+        {
+          "c": 2,
+          "words": 2,
+          "orders": 2
+        }
+      ]
+    },
+    {
+      "m": 3,
+      "n": 15,
+      "k": 4,
+      "possible": [
+        {
+          "c": 1,
+          "words": 7,
+          "orders": 1
+        },
+        {
+          "c": 2,
+          "words": 20,
+          "orders": 2
+        },
+        {
+          "c": 3,
+          "words": 6,
+          "orders": 6
+        }
+      ]
+    }
+  ],
+  "assertion_failures": 0
+}
