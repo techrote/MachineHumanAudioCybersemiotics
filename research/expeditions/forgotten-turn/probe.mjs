@@ -5,7 +5,7 @@ function lcm(a,b){return a/gcd(a,b)*b;}
 function mod(a,b){return ((a%b)+b)%b;}
 
 function probePlan(width,denominators,stateBudget=100000){
-  if(!Number.isInteger(width)||width<1||width>1000000||!Array.isArray(denominators)||denominators.some(q=>!Number.isInteger(q)||q<2||q>64)||!Number.isSafeInteger(stateBudget)||stateBudget<1)throw RangeError("invalid probe domain");
+  if(!Number.isInteger(width)||width<1||width>1000000||!Array.isArray(denominators)||Array.from(denominators).some(q=>!Number.isInteger(q)||q<2||q>64)||!Number.isSafeInteger(stateBudget)||stateBudget<1)throw RangeError("invalid probe domain");
   if(width===1)return {status:"optimal",denominators:[],period:1,visited:1};
   const qs=[...new Set(denominators)].sort((a,b)=>a-b);
   const queue=[{period:1,path:[]}],seen=new Set([1]);
@@ -41,7 +41,7 @@ function decodeProbe(M,start,residue,q,observedNumerator,errorNumerator){
 }
 
 function combineResidues(lo,hi,observations){
-  if(!Number.isInteger(lo)||!Number.isInteger(hi)||lo>hi||hi-lo>=1000000||Math.abs(lo)>1000000000||Math.abs(hi)>1000000000||!Array.isArray(observations)||observations.some(o=>!o||!Number.isInteger(o.q)||o.q<2||o.q>64||!Number.isInteger(o.residue)||o.residue<0||o.residue>=o.q))throw RangeError("invalid residue system");
+  if(!Number.isInteger(lo)||!Number.isInteger(hi)||lo>hi||hi-lo>=1000000||Math.abs(lo)>1000000000||Math.abs(hi)>1000000000||!Array.isArray(observations)||Array.from(observations).some(o=>!o||!Number.isInteger(o.q)||o.q<2||o.q>64||!Number.isInteger(o.residue)||o.residue<0||o.residue>=o.q))throw RangeError("invalid residue system");
   let count=0,first=null,last=null;
   for(let k=lo;k<=hi;k++)if(observations.every(o=>mod(k,o.q)===o.residue)){count++;if(first===null)first=k;last=k;}
   return {status:count===0?"inconsistent":count===1?"unique":"ambiguous",count,first,last};
