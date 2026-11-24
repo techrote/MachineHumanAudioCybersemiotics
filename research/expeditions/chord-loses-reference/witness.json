@@ -1,0 +1,55 @@
+{
+  "status": "pass",
+  "census": {
+    "graphs": 74,
+    "support_cases": 738
+  },
+  "recordings": {
+    "chain-a": {
+      "bytes": 8044,
+      "sha256": "250ced8e783a3b56d826ab5bb968d60c56736940c2d04432091c9a7ceb90be93",
+      "powers": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    "chain-b": {
+      "bytes": 8044,
+      "sha256": "250ced8e783a3b56d826ab5bb968d60c56736940c2d04432091c9a7ceb90be93",
+      "powers": [
+        1,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    "bridge-a": {
+      "bytes": 9644,
+      "sha256": "ef7d724ee02824688c0b24383abecf6127c9bcd8ba1cea5d54f3bd7a94ac7148",
+      "powers": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        4
+      ]
+    },
+    "bridge-b": {
+      "bytes": 9644,
+      "sha256": "3ecaeab484e9838918d4552bcf9c95586116c8ce4326c2b25bd2b9504da01f24",
+      "powers": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  }
+}
