@@ -1,0 +1,249 @@
+{
+  "audio": {
+    "exact_autocorrelation_lags": 1920,
+    "recordings": [
+      {
+        "bytes": 3884,
+        "name": "forward",
+        "sha256": "6c71baeaa52e6e8401c4ea47f736e99bf9b077f3e06f26df6c716fae7a6ea837",
+        "word": "001011"
+      },
+      {
+        "bytes": 3884,
+        "name": "retrograde",
+        "sha256": "7ae12264c28948a4ccee558e8a65f4faa8f0cfa2fc9aa8d55a6076d1f512d6da",
+        "word": "110100"
+      }
+    ],
+    "samples": 1920
+  },
+  "cyclic": [
+    {
+      "irreversible_at_4": 0,
+      "max_tv": "0",
+      "period": 1,
+      "witness": null,
+      "words": 2
+    },
+    {
+      "irreversible_at_4": 0,
+      "max_tv": "0",
+      "period": 2,
+      "witness": null,
+      "words": 4
+    },
+    {
+      "irreversible_at_4": 0,
+      "max_tv": "0",
+      "period": 3,
+      "witness": null,
+      "words": 8
+    },
+    {
+      "irreversible_at_4": 0,
+      "max_tv": "0",
+      "period": 4,
+      "witness": null,
+      "words": 16
+    },
+    {
+      "irreversible_at_4": 0,
+      "max_tv": "0",
+      "period": 5,
+      "witness": null,
+      "words": 32
+    },
+    {
+      "irreversible_at_4": 12,
+      "max_tv": "2/3",
+      "period": 6,
+      "witness": "001011",
+      "words": 64
+    },
+    {
+      "irreversible_at_4": 28,
+      "max_tv": "4/7",
+      "period": 7,
+      "witness": "0001011",
+      "words": 128
+    },
+    {
+      "irreversible_at_4": 64,
+      "max_tv": "1/2",
+      "period": 8,
+      "witness": "00001011",
+      "words": 256
+    },
+    {
+      "irreversible_at_4": 144,
+      "max_tv": "4/9",
+      "period": 9,
+      "witness": "000001011",
+      "words": 512
+    },
+    {
+      "irreversible_at_4": 320,
+      "max_tv": "2/5",
+      "period": 10,
+      "witness": "0000001011",
+      "words": 1024
+    },
+    {
+      "irreversible_at_4": 704,
+      "max_tv": "4/11",
+      "period": 11,
+      "witness": "00000001011",
+      "words": 2048
+    },
+    {
+      "irreversible_at_4": 1500,
+      "max_tv": "2/3",
+      "period": 12,
+      "witness": "001011001011",
+      "words": 4096
+    }
+  ],
+  "grid": [
+    {
+      "levels": [
+        0,
+        2,
+        4
+      ],
+      "max_tv": "0",
+      "order": 1,
+      "reversible": 3,
+      "tables": 3
+    },
+    {
+      "levels": [
+        1,
+        2,
+        3
+      ],
+      "max_tv": "0",
+      "order": 1,
+      "reversible": 3,
+      "tables": 3
+    },
+    {
+      "levels": [
+        0,
+        2,
+        4
+      ],
+      "max_tv": "0",
+      "order": 2,
+      "reversible": 9,
+      "tables": 9
+    },
+    {
+      "levels": [
+        1,
+        2,
+        3
+      ],
+      "max_tv": "0",
+      "order": 2,
+      "reversible": 9,
+      "tables": 9
+    },
+    {
+      "levels": [
+        0,
+        2,
+        4
+      ],
+      "max_tv": "1/2",
+      "order": 3,
+      "reversible": 27,
+      "tables": 81
+    },
+    {
+      "levels": [
+        1,
+        2,
+        3
+      ],
+      "max_tv": "1/4",
+      "order": 3,
+      "reversible": 27,
+      "tables": 81
+    },
+    {
+      "levels": [
+        0,
+        2,
+        4
+      ],
+      "max_tv": "1/2",
+      "order": 4,
+      "reversible": 729,
+      "tables": 6561
+    },
+    {
+      "levels": [
+        1,
+        2,
+        3
+      ],
+      "max_tv": "1/4",
+      "order": 4,
+      "reversible": 729,
+      "tables": 6561
+    }
+  ],
+  "matched": [
+    {
+      "block_lengths": 10,
+      "entropy_bits": 0.811278124459,
+      "first_arrow": 4,
+      "kl_bits_per_step": 0.39624062518,
+      "max_uniform_tv": "1/2",
+      "order": 3,
+      "tv_at_first": "1/4",
+      "word_weights_checked": 2046
+    },
+    {
+      "block_lengths": 11,
+      "entropy_bits": 0.811278124459,
+      "first_arrow": 5,
+      "kl_bits_per_step": 0.39624062518,
+      "max_uniform_tv": "1/2",
+      "order": 4,
+      "tv_at_first": "1/4",
+      "word_weights_checked": 4094
+    },
+    {
+      "block_lengths": 12,
+      "entropy_bits": 0.811278124459,
+      "first_arrow": 6,
+      "kl_bits_per_step": 0.59436093777,
+      "max_uniform_tv": "3/4",
+      "order": 5,
+      "tv_at_first": "3/8",
+      "word_weights_checked": 8190
+    },
+    {
+      "block_lengths": 13,
+      "entropy_bits": 0.811278124459,
+      "first_arrow": 7,
+      "kl_bits_per_step": 0.59436093777,
+      "max_uniform_tv": "3/4",
+      "order": 6,
+      "tv_at_first": "3/8",
+      "word_weights_checked": 16382
+    },
+    {
+      "block_lengths": 14,
+      "entropy_bits": 0.811278124459,
+      "first_arrow": 8,
+      "kl_bits_per_step": 0.693421094066,
+      "max_uniform_tv": "7/8",
+      "order": 7,
+      "tv_at_first": "7/16",
+      "word_weights_checked": 32766
+    }
+  ],
+  "model": "synthetic"
+}
