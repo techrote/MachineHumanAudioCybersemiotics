@@ -1,0 +1,119 @@
+{
+  "census": [
+    {
+      "n": 2,
+      "cases": 1,
+      "groups": 1,
+      "biased": 0,
+      "strictBoth": 0,
+      "attainsUniversalLo": 0,
+      "attainsUniversalHi": 0,
+      "checks": 8
+    },
+    {
+      "n": 3,
+      "cases": 18,
+      "groups": 4,
+      "biased": 12,
+      "strictBoth": 0,
+      "attainsUniversalLo": 0,
+      "attainsUniversalHi": 0,
+      "checks": 116
+    },
+    {
+      "n": 4,
+      "cases": 251,
+      "groups": 16,
+      "biased": 132,
+      "strictBoth": 1,
+      "attainsUniversalLo": 6,
+      "attainsUniversalHi": 6,
+      "checks": 1538
+    },
+    {
+      "n": 5,
+      "cases": 2652,
+      "groups": 32,
+      "biased": 2004,
+      "strictBoth": 4,
+      "attainsUniversalLo": 42,
+      "attainsUniversalHi": 42,
+      "checks": 15976
+    },
+    {
+      "n": 6,
+      "cases": 24105,
+      "groups": 83,
+      "biased": 15948,
+      "strictBoth": 16,
+      "attainsUniversalLo": 174,
+      "attainsUniversalHi": 174,
+      "checks": 144796
+    },
+    {
+      "n": 7,
+      "cases": 205998,
+      "groups": 140,
+      "biased": 152580,
+      "strictBoth": 32,
+      "attainsUniversalLo": 648,
+      "attainsUniversalHi": 648,
+      "checks": 1236268
+    }
+  ],
+  "traceCensus": {
+    "tables": 50625,
+    "valid": 3004,
+    "groups": 1988,
+    "nonidentified": 824,
+    "opposite": 616
+  },
+  "historyPosteriorControl": {
+    "assignments": 256,
+    "checks": 618
+  },
+  "witness": {
+    "counts": [
+      4,
+      4,
+      4,
+      4
+    ],
+    "positiveHigh": [
+      0,
+      3,
+      3,
+      1
+    ],
+    "positiveLow": [
+      3,
+      0,
+      0,
+      4
+    ],
+    "selectedHigh": "7/12",
+    "selectedLow": "4/12",
+    "p": "1/2",
+    "other": "3/8"
+  },
+  "audio": {
+    "publicHigh": {
+      "bytes": 51244,
+      "fnv1a": "f80d85c1"
+    },
+    "publicLow": {
+      "bytes": 51244,
+      "fnv1a": "f80d85c1"
+    },
+    "pairedHigh": {
+      "bytes": 102444,
+      "fnv1a": "b5ae7e09"
+    },
+    "pairedLow": {
+      "bytes": 102444,
+      "fnv1a": "87fd7589"
+    },
+    "publicEqual": true,
+    "pairedEqual": false
+  }
+}
