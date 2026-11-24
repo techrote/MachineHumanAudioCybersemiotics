@@ -1,0 +1,66 @@
+{
+  "aperiodic": [
+    {
+      "minimum_block": 3,
+      "states": 44,
+      "strong": false,
+      "reversible": false,
+      "pairLags": {
+        "equal": true,
+        "bound": 45
+      },
+      "words": {
+        "equal": false,
+        "witness": "000",
+        "p": "1/7",
+        "q": "1/8",
+        "rank": 4,
+        "tested": 6
+      }
+    },
+    {
+      "minimum_block": 4,
+      "states": 112,
+      "strong": false,
+      "reversible": false,
+      "pairLags": {
+        "equal": true,
+        "bound": 113
+      },
+      "words": {
+        "equal": false,
+        "witness": "0000",
+        "p": "5/72",
+        "q": "1/16",
+        "rank": 8,
+        "tested": 10
+      }
+    }
+  ],
+  "cross": [
+    {
+      "states": 2,
+      "total": 4,
+      "word_equivalent": 4,
+      "weak_only": 0,
+      "all_pair_lags_but_not_words": 0,
+      "reversible": 4
+    },
+    {
+      "states": 3,
+      "total": 108,
+      "word_equivalent": 48,
+      "weak_only": 12,
+      "all_pair_lags_but_not_words": 0,
+      "reversible": 54
+    },
+    {
+      "states": 4,
+      "total": 4032,
+      "word_equivalent": 672,
+      "weak_only": 144,
+      "all_pair_lags_but_not_words": 96,
+      "reversible": 798
+    }
+  ]
+}
