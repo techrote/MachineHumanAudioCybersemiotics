@@ -1,0 +1,285 @@
+{
+  "scope": "synthetic only",
+  "execution": "Core laboratory function executed in JavaScript isolate on 2026-11-24; Node filesystem wrapper not executed",
+  "cycle": [
+    {
+      "n": 4,
+      "nominal_length": 2,
+      "known_length": 2,
+      "unknown_length": 3,
+      "nominal": 64,
+      "known": 512,
+      "scenarios": 8,
+      "universal": 192
+    },
+    {
+      "n": 6,
+      "nominal_length": 3,
+      "known_length": 3,
+      "unknown_length": 5,
+      "nominal": 384,
+      "known": 4608,
+      "scenarios": 12,
+      "universal": 1152
+    },
+    {
+      "n": 8,
+      "nominal_length": 4,
+      "known_length": 4,
+      "unknown_length": 7,
+      "nominal": 2048,
+      "known": 32768,
+      "scenarios": 16,
+      "universal": 6144
+    },
+    {
+      "n": 10,
+      "nominal_length": 5,
+      "known_length": 5,
+      "unknown_length": 9,
+      "nominal": 10240,
+      "known": 204800,
+      "scenarios": 20,
+      "universal": 30720
+    }
+  ],
+  "clique": [
+    {
+      "n": 2,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 2,
+      "stale_length": 2,
+      "nominal": 8,
+      "known": 16,
+      "scenarios": 2,
+      "universal": 16,
+      "stale": 16
+    },
+    {
+      "n": 3,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 2,
+      "stale_length": 3,
+      "nominal": 24,
+      "known": 144,
+      "scenarios": 6,
+      "universal": 72,
+      "stale": 72
+    },
+    {
+      "n": 4,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 3,
+      "stale_length": 3,
+      "nominal": 64,
+      "known": 768,
+      "scenarios": 12,
+      "universal": 256,
+      "stale": 256
+    },
+    {
+      "n": 5,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 3,
+      "stale_length": 4,
+      "nominal": 160,
+      "known": 3200,
+      "scenarios": 20,
+      "universal": 800,
+      "stale": 800
+    },
+    {
+      "n": 6,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 3,
+      "stale_length": 4,
+      "nominal": 384,
+      "known": 11520,
+      "scenarios": 30,
+      "universal": 2304,
+      "stale": 2304
+    },
+    {
+      "n": 7,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 3,
+      "stale_length": 4,
+      "nominal": 896,
+      "known": 37632,
+      "scenarios": 42,
+      "universal": 6272,
+      "stale": 6272
+    },
+    {
+      "n": 8,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 4,
+      "stale_length": 4,
+      "nominal": 2048,
+      "known": 114688,
+      "scenarios": 56,
+      "universal": 16384,
+      "stale": 16384
+    },
+    {
+      "n": 9,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 4,
+      "stale_length": 5,
+      "nominal": 4608,
+      "known": 331776,
+      "scenarios": 72,
+      "universal": 41472,
+      "stale": 41472
+    },
+    {
+      "n": 10,
+      "nominal_length": 1,
+      "known_length": 2,
+      "unknown_length": 4,
+      "stale_length": 5,
+      "nominal": 10240,
+      "known": 921600,
+      "scenarios": 90,
+      "universal": 102400,
+      "stale": 102400
+    }
+  ],
+  "small_fibers": [
+    {
+      "graph": "clique",
+      "n": 2,
+      "mode": "fixed",
+      "max": 2,
+      "examined": 15,
+      "lengthLower": 1
+    },
+    {
+      "graph": "clique",
+      "n": 2,
+      "mode": "erase",
+      "max": 1,
+      "examined": 15,
+      "lengthLower": 2
+    },
+    {
+      "graph": "clique",
+      "n": 2,
+      "mode": "stale",
+      "max": 1,
+      "examined": 15,
+      "lengthLower": 2
+    },
+    {
+      "graph": "clique",
+      "n": 3,
+      "mode": "fixed",
+      "max": 4,
+      "examined": 255,
+      "lengthLower": 1
+    },
+    {
+      "graph": "clique",
+      "n": 3,
+      "mode": "erase",
+      "max": 2,
+      "examined": 255,
+      "lengthLower": 2
+    },
+    {
+      "graph": "clique",
+      "n": 3,
+      "mode": "stale",
+      "max": 1,
+      "examined": 255,
+      "lengthLower": 3
+    },
+    {
+      "graph": "clique",
+      "n": 4,
+      "mode": "fixed",
+      "max": 8,
+      "examined": 65535,
+      "lengthLower": 1
+    },
+    {
+      "graph": "clique",
+      "n": 4,
+      "mode": "erase",
+      "max": 2,
+      "examined": 65535,
+      "lengthLower": 3
+    },
+    {
+      "graph": "clique",
+      "n": 4,
+      "mode": "stale",
+      "max": 2,
+      "examined": 65535,
+      "lengthLower": 3
+    },
+    {
+      "graph": "cycle",
+      "n": 4,
+      "mode": "fixed",
+      "max": 4,
+      "examined": 65535,
+      "lengthLower": 2
+    },
+    {
+      "graph": "cycle",
+      "n": 4,
+      "mode": "erase",
+      "max": 2,
+      "examined": 65535,
+      "lengthLower": 3
+    }
+  ],
+  "audio": {
+    "nominal_A": {
+      "bytes": 3244,
+      "fnv1a": "3d14d0a9"
+    },
+    "nominal_B": {
+      "bytes": 3244,
+      "fnv1a": "3d14d0a9"
+    },
+    "robust_A": {
+      "bytes": 4844,
+      "fnv1a": "8b9f584d"
+    },
+    "robust_B": {
+      "bytes": 4844,
+      "fnv1a": "3b4fcb8d"
+    },
+    "nominal_identical": true,
+    "robust_distinct": true
+  },
+  "witness": {
+    "states": [
+      0,
+      12
+    ],
+    "receiver": 2,
+    "missing": 3,
+    "known": 1,
+    "nominal": [
+      0,
+      0
+    ],
+    "robust": [
+      0,
+      2
+    ]
+  },
+  "total_observations": 2073360,
+  "total_fibers": 328485
+}
