@@ -1,0 +1,156 @@
+{
+  "rows": [
+    {
+      "n": 2,
+      "k": 1,
+      "events": 4,
+      "observations": 1,
+      "bothSetCells": 4,
+      "oneSetParents": 2,
+      "bothSetParents": 1,
+      "rankOnlyEvents": 4
+    },
+    {
+      "n": 3,
+      "k": 1,
+      "events": 18,
+      "observations": 2,
+      "bothSetCells": 18,
+      "oneSetParents": 3,
+      "bothSetParents": 1,
+      "rankOnlyEvents": 9
+    },
+    {
+      "n": 3,
+      "k": 2,
+      "events": 18,
+      "observations": 1,
+      "bothSetCells": 9,
+      "oneSetParents": 6,
+      "bothSetParents": 2,
+      "rankOnlyEvents": 18
+    },
+    {
+      "n": 4,
+      "k": 1,
+      "events": 96,
+      "observations": 6,
+      "bothSetCells": 96,
+      "oneSetParents": 4,
+      "bothSetParents": 1,
+      "rankOnlyEvents": 16
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "events": 144,
+      "observations": 2,
+      "bothSetCells": 72,
+      "oneSetParents": 12,
+      "bothSetParents": 2,
+      "rankOnlyEvents": 72
+    },
+    {
+      "n": 4,
+      "k": 3,
+      "events": 96,
+      "observations": 1,
+      "bothSetCells": 16,
+      "oneSetParents": 24,
+      "bothSetParents": 6,
+      "rankOnlyEvents": 96
+    },
+    {
+      "n": 5,
+      "k": 1,
+      "events": 600,
+      "observations": 24,
+      "bothSetCells": 600,
+      "oneSetParents": 5,
+      "bothSetParents": 1,
+      "rankOnlyEvents": 25
+    },
+    {
+      "n": 5,
+      "k": 2,
+      "events": 1200,
+      "observations": 6,
+      "bothSetCells": 600,
+      "oneSetParents": 20,
+      "bothSetParents": 2,
+      "rankOnlyEvents": 200
+    },
+    {
+      "n": 5,
+      "k": 3,
+      "events": 1200,
+      "observations": 2,
+      "bothSetCells": 200,
+      "oneSetParents": 60,
+      "bothSetParents": 6,
+      "rankOnlyEvents": 600
+    },
+    {
+      "n": 6,
+      "k": 1,
+      "events": 4320,
+      "observations": 120,
+      "bothSetCells": 4320,
+      "oneSetParents": 6,
+      "bothSetParents": 1,
+      "rankOnlyEvents": 36
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "events": 10800,
+      "observations": 24,
+      "bothSetCells": 5400,
+      "oneSetParents": 30,
+      "bothSetParents": 2,
+      "rankOnlyEvents": 450
+    },
+    {
+      "n": 6,
+      "k": 3,
+      "events": 14400,
+      "observations": 6,
+      "bothSetCells": 2400,
+      "oneSetParents": 120,
+      "bothSetParents": 6,
+      "rankOnlyEvents": 2400
+    },
+    {
+      "n": 7,
+      "k": 1,
+      "events": 35280,
+      "observations": 720,
+      "bothSetCells": 35280,
+      "oneSetParents": 7,
+      "bothSetParents": 1,
+      "rankOnlyEvents": 49
+    },
+    {
+      "n": 7,
+      "k": 2,
+      "events": 105840,
+      "observations": 120,
+      "bothSetCells": 52920,
+      "oneSetParents": 42,
+      "bothSetParents": 2,
+      "rankOnlyEvents": 882
+    },
+    {
+      "n": 7,
+      "k": 3,
+      "events": 176400,
+      "observations": 24,
+      "bothSetCells": 29400,
+      "oneSetParents": 210,
+      "bothSetParents": 6,
+      "rankOnlyEvents": 7350
+    }
+  ],
+  "totalEvents": 350416,
+  "assertions": "all passed"
+}
