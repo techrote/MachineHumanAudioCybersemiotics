@@ -1,0 +1,47 @@
+{
+  "audio": {
+    "pairwise-tutti": {
+      "count_histogram": {
+        "2": 45,
+        "3": 60,
+        "6": 15
+      },
+      "frames": 120,
+      "sha256": "4adf61c9da06b472d5f6791bb3d44d9b8bb83d65d034c4ffa0ff3e3e596b52b3"
+    },
+    "triple-balanced": {
+      "count_histogram": {
+        "0": 10,
+        "3": 100,
+        "6": 10
+      },
+      "frames": 120,
+      "sha256": "685829fa737a136ab0c3ea84780af2f0883a79d368f81cb60c772e2ff37c4eeb"
+    },
+    "triple-silence": {
+      "count_histogram": {
+        "0": 6,
+        "2": 30,
+        "3": 60,
+        "5": 24
+      },
+      "frames": 120,
+      "sha256": "e5aa9546b9f515b34d6fe3ccf57db14c3b3524ef0756aa842c79b998d7e152e3"
+    },
+    "triple-tutti": {
+      "count_histogram": {
+        "1": 24,
+        "3": 60,
+        "4": 30,
+        "6": 6
+      },
+      "frames": 120,
+      "sha256": "fca43deee66b51421b8f17a862d04810b265ac8e41d871485a858c68754d7496"
+    }
+  },
+  "labelled_lp_checks": 312,
+  "literal_marginal_cells": 768,
+  "max_abs_error": 3.279765348196406e-12,
+  "python": "3.13.5",
+  "scipy": "1.17.0"
+}
