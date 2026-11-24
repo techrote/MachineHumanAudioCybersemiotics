@@ -1,0 +1,357 @@
+{
+  "population": "synthetic quantized cyclic observations, first phase zero; no participant data",
+  "cases": 4454,
+  "feasible": 3096,
+  "ambiguous": 2416,
+  "infeasible": 1358,
+  "targets": 12135,
+  "minimaxChecks": 2750,
+  "nonuniform": 550,
+  "byModulus": [
+    {
+      "M": 2,
+      "cases": 70,
+      "feasible": 49,
+      "ambiguous": 43,
+      "infeasible": 21
+    },
+    {
+      "M": 3,
+      "cases": 234,
+      "feasible": 186,
+      "ambiguous": 140,
+      "infeasible": 48
+    },
+    {
+      "M": 4,
+      "cases": 588,
+      "feasible": 412,
+      "ambiguous": 341,
+      "infeasible": 176
+    },
+    {
+      "M": 5,
+      "cases": 1240,
+      "feasible": 885,
+      "ambiguous": 663,
+      "infeasible": 355
+    },
+    {
+      "M": 6,
+      "cases": 2322,
+      "feasible": 1564,
+      "ambiguous": 1229,
+      "infeasible": 758
+    }
+  ],
+  "familyChecks": 155,
+  "alias": {
+    "phases": [
+      0,
+      6,
+      12,
+      2,
+      8,
+      14,
+      4,
+      10
+    ],
+    "uniform": {
+      "status": "complete",
+      "min": -5,
+      "max": 11,
+      "counts": [
+        "1",
+        "8",
+        "36",
+        "112",
+        "266",
+        "504",
+        "784",
+        "1016",
+        "1107",
+        "1016",
+        "784",
+        "504",
+        "266",
+        "112",
+        "36",
+        "8",
+        "1"
+      ],
+      "total": "6561",
+      "cells": 81
+    },
+    "mixed": {
+      "status": "complete",
+      "min": 1,
+      "max": 5,
+      "counts": [
+        "1",
+        "2",
+        "3",
+        "2",
+        "1"
+      ],
+      "total": "9",
+      "cells": 33
+    },
+    "minimax": [
+      {
+        "winding": -5,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": -4,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": -3,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          6,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": -2,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          6,
+          6,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": -1,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          6,
+          6,
+          6,
+          -10,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 0,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 1,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 2,
+        "status": "optimal",
+        "budget": 10,
+        "steps": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          -10
+        ]
+      },
+      {
+        "winding": 3,
+        "status": "optimal",
+        "budget": 6,
+        "steps": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      {
+        "winding": 4,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          6,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 5,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          -10,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 6,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          6,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 7,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          -10,
+          -10
+        ]
+      },
+      {
+        "winding": 8,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          6,
+          -10
+        ]
+      },
+      {
+        "winding": 9,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          -10
+        ]
+      },
+      {
+        "winding": 10,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          6
+        ]
+      },
+      {
+        "winding": 11,
+        "status": "optimal",
+        "budget": 22,
+        "steps": [
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22,
+          22
+        ]
+      }
+    ]
+  }
+}
