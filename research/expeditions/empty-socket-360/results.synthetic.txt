@@ -1,0 +1,86 @@
+[
+  {
+    "n": 1,
+    "permutations": 1,
+    "even": 1,
+    "odd": 0,
+    "vacancyMoves": 0,
+    "evenMoves": 0,
+    "strictEvenImprovement": 0,
+    "gramChecks": 0,
+    "bfsStates": 2,
+    "maxVacancyMoves": 0
+  },
+  {
+    "n": 2,
+    "permutations": 2,
+    "even": 1,
+    "odd": 1,
+    "vacancyMoves": 3,
+    "evenMoves": 0,
+    "strictEvenImprovement": 0,
+    "gramChecks": 6,
+    "bfsStates": 6,
+    "maxVacancyMoves": 3
+  },
+  {
+    "n": 3,
+    "permutations": 6,
+    "even": 3,
+    "odd": 3,
+    "vacancyMoves": 17,
+    "evenMoves": 2,
+    "strictEvenImprovement": 0,
+    "gramChecks": 57,
+    "bfsStates": 24,
+    "maxVacancyMoves": 4
+  },
+  {
+    "n": 4,
+    "permutations": 24,
+    "even": 12,
+    "odd": 12,
+    "vacancyMoves": 98,
+    "evenMoves": 14,
+    "strictEvenImprovement": 3,
+    "gramChecks": 448,
+    "bfsStates": 120,
+    "maxVacancyMoves": 6
+  },
+  {
+    "n": 5,
+    "permutations": 120,
+    "even": 60,
+    "odd": 60,
+    "vacancyMoves": 634,
+    "evenMoves": 106,
+    "strictEvenImprovement": 39,
+    "gramChecks": 3700,
+    "bfsStates": 720,
+    "maxVacancyMoves": 7
+  },
+  {
+    "n": 6,
+    "permutations": 720,
+    "even": 360,
+    "odd": 360,
+    "vacancyMoves": 4644,
+    "evenMoves": 878,
+    "strictEvenImprovement": 279,
+    "gramChecks": 33132,
+    "bfsStates": 5040,
+    "maxVacancyMoves": 9
+  },
+  {
+    "n": 7,
+    "permutations": 5040,
+    "even": 2520,
+    "odd": 2520,
+    "vacancyMoves": 38268,
+    "evenMoves": 7966,
+    "strictEvenImprovement": 2169,
+    "gramChecks": 323638,
+    "bfsStates": 40320,
+    "maxVacancyMoves": 10
+  }
+]
