@@ -1,0 +1,87 @@
+{
+  "nominal-flat": {
+    "intervals": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "onset_samples": [
+      0,
+      960,
+      1920,
+      2880,
+      3840
+    ],
+    "bytes": 9644,
+    "sha256": "7826d0b5c4462faf06bd2aa917df493e2388d2a15791a0a4b4c1544712e9f7b5"
+  },
+  "nominal-ramp": {
+    "intervals": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "onset_samples": [
+      0,
+      960,
+      2880,
+      6720,
+      14400
+    ],
+    "bytes": 30764,
+    "sha256": "be4fe26a78e8a16a10cedc20c10de1849ca4ee6c9618acd46bda9787e1149528"
+  },
+  "observed-flat": {
+    "intervals": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "onset_samples": [
+      0,
+      960,
+      1920,
+      2880,
+      3840
+    ],
+    "bytes": 9644,
+    "sha256": "7826d0b5c4462faf06bd2aa917df493e2388d2a15791a0a4b4c1544712e9f7b5"
+  },
+  "observed-ramp": {
+    "intervals": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "onset_samples": [
+      0,
+      960,
+      1920,
+      2880,
+      3840
+    ],
+    "bytes": 9644,
+    "sha256": "7826d0b5c4462faf06bd2aa917df493e2388d2a15791a0a4b4c1544712e9f7b5"
+  },
+  "curvature": {
+    "intervals": [
+      1,
+      2,
+      2,
+      1
+    ],
+    "onset_samples": [
+      0,
+      960,
+      2880,
+      4800,
+      5760
+    ],
+    "bytes": 13484,
+    "sha256": "0586824807a73d171415b873fab296a3a0d21564ae0dfa5454163962e89e907f"
+  }
+}
