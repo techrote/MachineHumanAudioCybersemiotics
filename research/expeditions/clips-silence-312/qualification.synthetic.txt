@@ -1,0 +1,21 @@
+Synthetic execution receipt; not a live research record.
+Python 3.13.5, two local executions, all assertions passed.
+n,final_fits,clip_free_exists,some_correct_endpoint,all_correct_endpoints,hidden_clip_possible,tree_beats_sequence,tree_oracle_replays,sequence_oracle_replays
+2,4,4,4,4,0,0,4,8
+3,40,32,32,0,0,0,120,240
+4,12,10,12,0,2,0,180,288
+5,120,80,96,0,16,0,12600,14400
+6,28,20,28,0,8,0,26460,20160
+n,coordinates,tree_peak,sequential_peak
+2,1,1,1
+4,3,2,2
+6,10,2,3
+8,35,3,4
+10,126,4,5
+12,462,4,6
+Git blob mixer.py f933c7955605adaa54915e1f1a376f6c73b8bc19
+Git blob verify.py 513f3da7c4c9a391c41dcb4f63d327c3a15b8817
+Generated SHA256:
+27097ba68b18231cdec10272e98c7275a8d082a17611a63161ca5d9418c7baa0  run/results.synthetic.txt
+f17af489f03554195cd0cabb88008ac1a868401fa90b8067a435919d76e54f1c  run/silence-that-clips.wav
+d3ad9d04a08223c3b43c46d63cd3ccc59d13090bca5d3c5ed798ffac1fda42d3  run/three-voices.wav
