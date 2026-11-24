@@ -1,0 +1,24 @@
+{
+  "sample_rate": 16000,
+  "stride_samples": 240,
+  "delay_steps": 8,
+  "a": 0.875,
+  "frames": 64000,
+  "max_residual_identity_error": 1.1232334506949826e-16,
+  "finite_window_energy_ratio": 1,
+  "theoretical_error_gain": 0.34360891580581665,
+  "files": {
+    "same-magnitude.wav": {
+      "sha256": "0c91c5893df48a7444ec9b4ab63d6749fcf256caba43daff7c11414b09796ce0",
+      "peak": 0.35996069312388
+    },
+    "preview-recovery.wav": {
+      "sha256": "5272bb683ccd26e7e887371453b250aa02791640a5dd7ec722e65eb0861a9db7",
+      "peak": 0.35996069312388
+    },
+    "recovery-residual.wav": {
+      "sha256": "3c4528648ef8a341dc85eaf14d62101283115fb73820a393e5d10be43f5f05a1",
+      "peak": 0.35996069312388
+    }
+  }
+}
