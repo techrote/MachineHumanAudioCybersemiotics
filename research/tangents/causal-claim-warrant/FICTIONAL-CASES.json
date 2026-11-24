@@ -1,0 +1,1126 @@
+{
+  "kind": "fictional_constructed_cases_not_people",
+  "schema_version": "t016-1",
+  "cases": [
+    {
+      "id": "T016-001",
+      "family": "symptom_only",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-1"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "none",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-002",
+      "family": "symptom_only",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-1"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "none",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-003",
+      "family": "symptom_only",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-1"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "ambiguous",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-004",
+      "family": "symptom_only",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-1"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "conflicting",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-005",
+      "family": "discriminated_no_remedy",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-2"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-006",
+      "family": "discriminated_no_remedy",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-2"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-007",
+      "family": "discriminated_no_remedy",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-2"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-008",
+      "family": "discriminated_no_remedy",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-2"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-009",
+      "family": "bad_measurement",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": false,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-3"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": false,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-010",
+      "family": "bad_measurement",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": false,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-3"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": false,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-011",
+      "family": "bad_measurement",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": false,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-3"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "none",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": false,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-012",
+      "family": "bad_measurement",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": false,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-3"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "stale",
+        "supports": "nozzle",
+        "current": false
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": false,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-013",
+      "family": "stale_conflicting",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-4"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "stale",
+        "supports": "feed",
+        "current": false
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-014",
+      "family": "stale_conflicting",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-4"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "stale",
+        "supports": "nozzle",
+        "current": false
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-015",
+      "family": "stale_conflicting",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-4"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "conflicting",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-016",
+      "family": "stale_conflicting",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-4"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "conflicting",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-017",
+      "family": "supported_action",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-5"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": true
+      }
+    },
+    {
+      "id": "T016-018",
+      "family": "supported_action",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-5"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": true
+      }
+    },
+    {
+      "id": "T016-019",
+      "family": "supported_action",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-5"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": true
+      }
+    },
+    {
+      "id": "T016-020",
+      "family": "supported_action",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-5"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": true
+      }
+    },
+    {
+      "id": "T016-021",
+      "family": "remedy_separate",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-6"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "refuted",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-022",
+      "family": "remedy_separate",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-6"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-023",
+      "family": "remedy_separate",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-6"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": false,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-024",
+      "family": "remedy_separate",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-6"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": false,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-025",
+      "family": "deadline_and_no_test",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-7"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": false
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-026",
+      "family": "deadline_and_no_test",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-7"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": false
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-027",
+      "family": "deadline_and_no_test",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-7"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "none",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-028",
+      "family": "deadline_and_no_test",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-7"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "ambiguous",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-029",
+      "family": "independent_controls",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-8"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "none",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "refuted",
+        "actor_authorized": false,
+        "mode_permits": false,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-030",
+      "family": "independent_controls",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-8"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "none",
+        "supports": null,
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "unknown",
+        "actor_authorized": true,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "routine",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": null,
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-031",
+      "family": "independent_controls",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-8"
+      },
+      "hypothesis": {
+        "favored": "nozzle",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "feed",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": true,
+        "mode_permits": false,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "feed",
+        "warranted_observation": true,
+        "warranted_cause": "feed",
+        "warranted_action_offer": false
+      }
+    },
+    {
+      "id": "T016-032",
+      "family": "independent_controls",
+      "observation": {
+        "anomaly": "low extrusion",
+        "valid": true,
+        "source": "fictional printer sensor",
+        "event": "fictional-print-run-8"
+      },
+      "hypothesis": {
+        "favored": "feed",
+        "candidates": [
+          "feed",
+          "nozzle"
+        ]
+      },
+      "test": {
+        "kind": "diagnostic",
+        "supports": "nozzle",
+        "current": true
+      },
+      "intervention": {
+        "effect_evidence": "validated",
+        "actor_authorized": false,
+        "mode_permits": true,
+        "deadline_feasible": true
+      },
+      "urgency": "urgent",
+      "ground_truth": {
+        "actual_cause": "nozzle",
+        "warranted_observation": true,
+        "warranted_cause": "nozzle",
+        "warranted_action_offer": false
+      }
+    }
+  ]
+}

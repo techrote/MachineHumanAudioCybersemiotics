@@ -1,0 +1,9 @@
+# Conditional R014 protocol idea — NOT executed or preregistered
+
+**Go gate:** only if R005/R006 evidence selection, R008/R011 synthesis, R012/R013 contracts and relevant R014 readiness make spoken diagnosis a justified comparison; R020 independently authorizes actual people, ethics, recruitment and safe listening. Synthetic traces here do not satisfy any gate.
+
+A potential 2×2×2 design would vary (1) observation-only versus candidate-conditional explanation, (2) independent discriminating evidence available versus ambiguous/stale evidence, and (3) time pressure and verification affordance. Include a separately warranted diagnosis and a wrong-but-fluent single-cause control only under human-reviewed safe fictional stimuli. Balance lengths, number of causes, speaker properties, urgency, acoustic intelligibility, source/event bindings and chance correctness.
+
+**Prospective endpoints:** source/state recognition, correct causal-claim classification, appropriate uncertainty admission, first/final action correctness and omission, participant-requested verification, latency from start/end of message, workload, recall and perceived trust calibrated against observed outcomes. Accessibility conditions must account for hearing/language and visual fallback; no inferred universal prosody. Separate dependent variables and error denominators before data collection. No fabricated sample size, effect size, simulation-as-power, ethical clearance or human results.
+
+**Falsifiers:** state-only messages could yield equally correct decisions with less burden; alternatives could improve diagnosis without actionable gain; conditional diagnosis might mislead under pressure. A positive, null or contradictory real study could each narrow later R013 choices. Comparators from Müller et al. concern a visual packaging simulation and cannot be treated as expected MHAC speech effects.
