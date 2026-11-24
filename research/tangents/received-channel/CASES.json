@@ -1,0 +1,30 @@
+{
+  "schema":"mhac-t007-adversarial-cases-v1",
+  "cases":[
+    {"id":"C01", "test":"truth_invariant", "cue":"P_FAST", "transform":"identity"},
+    {"id":"C02", "test":"truth_invariant", "cue":"P_FAST", "transform":"reflection"},
+    {"id":"C03", "test":"truth_invariant", "cue":"F_MIX", "transform":"fast_compression"},
+    {"id":"C04", "test":"truth_invariant", "cue":"S_LEFT", "transform":"mono"},
+    {"id":"C05", "test":"repeatable", "cue":"P_ALT", "transform":"noise_gate"},
+    {"id":"C06", "test":"repeatable", "cue":"F_MIX", "transform":"reflection"},
+    {"id":"C07", "test":"gain_normalized", "cue":"P_FAST", "transform":"gain_half"},
+    {"id":"C08", "test":"gain_normalized", "cue":"F_LOW", "transform":"gain_half"},
+    {"id":"C09", "test":"spatial_collapse", "left":"S_LEFT", "right":"S_RIGHT", "transform":"mono"},
+    {"id":"C10", "test":"spatial_separated", "left":"S_LEFT", "right":"S_RIGHT", "transform":"identity"},
+    {"id":"C11", "test":"mute_collapse", "left":"P_FAST", "right":"F_HIGH", "transform":"mute"},
+    {"id":"C12", "test":"mute_undefined", "cue":"S_LEFT", "transform":"mute"},
+    {"id":"C13", "test":"spectral_separation", "left":"F_LOW", "right":"F_HIGH", "transform":"identity"},
+    {"id":"C14", "test":"lowpass_high_attenuation", "left":"F_LOW", "right":"F_HIGH", "transform":"lowpass"},
+    {"id":"C15", "test":"reflection_tail", "cue":"P_FAST", "transform":"reflection"},
+    {"id":"C16", "test":"masker_tail", "cue":"P_FAST", "transform":"masker"},
+    {"id":"C17", "test":"nonmonotonic_gate", "cue":"P_ALT", "transform":"noise_gate"},
+    {"id":"C18", "test":"compression_peak", "cue":"P_FAST", "transform":"fast_compression"},
+    {"id":"C19", "test":"compression_distinct", "cue":"P_FAST", "transform":"slow_compression"},
+    {"id":"C20", "test":"no_silent_zero_ild", "cue":"S_CENTER", "transform":"mute"},
+    {"id":"C21", "test":"unknown_transform_error", "cue":"P_FAST"},
+    {"id":"C22", "test":"truth_invariant", "cue":"P_ALT", "transform":"noise_gate"},
+    {"id":"C23", "test":"pulse_divergence", "left":"P_FAST", "right":"P_SLOW", "transform":"identity"},
+    {"id":"C24", "test":"cross_axis_non_equivalence", "left":"S_LEFT", "right":"S_RIGHT", "transform":"lowpass"},
+    {"id":"C25", "test":"rank_reversal", "cue":"P_ALT", "left":"P_WIDE", "right":"P_SLOW", "transform":"noise_gate", "axis":"pulse_groups_proxy"}
+  ]
+}

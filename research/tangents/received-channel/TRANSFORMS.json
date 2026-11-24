@@ -1,0 +1,15 @@
+{
+  "schema":"mhac-t007-toy-transforms-v1",
+  "transforms": [
+    {"id":"identity", "kind":"identity", "reference":true},
+    {"id":"gain_half", "kind":"gain", "gain_linear":0.5, "reference":true},
+    {"id":"mono", "kind":"mono", "mode":"arithmetic_mean_then_duplicate", "spatial_measure_defined":false},
+    {"id":"lowpass", "kind":"moving_average_fir", "taps":13, "causal":true, "gain_at_dc":1},
+    {"id":"reflection", "kind":"reflection", "delay_samples":320, "reflection_gain":0.5, "normalization":"none"},
+    {"id":"masker", "kind":"masker", "frequency_hz":1100, "amplitude":0.055, "phase_radians":0, "correlation":"same_both_channels"},
+    {"id":"fast_compression", "kind":"compressor", "attack_ms":2, "release_ms":30, "threshold_linear":0.1, "ratio":3, "makeup_linear":1.0},
+    {"id":"slow_compression", "kind":"compressor", "attack_ms":100, "release_ms":400, "threshold_linear":0.1, "ratio":3, "makeup_linear":1.0},
+    {"id":"noise_gate", "kind":"gate", "threshold_linear":0.14},
+    {"id":"mute", "kind":"mute", "negative_control":true}
+  ]
+}
