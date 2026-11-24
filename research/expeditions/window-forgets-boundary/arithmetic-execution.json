@@ -1,0 +1,33 @@
+{
+  "families": [
+    {
+      "n": 2,
+      "subsets": 4,
+      "smithIndexHistogram": {
+        "1": 1
+      }
+    },
+    {
+      "n": 3,
+      "subsets": 64,
+      "smithIndexHistogram": {
+        "1": 38,
+        "2": 1
+      }
+    },
+    {
+      "n": 4,
+      "subsets": 4096,
+      "smithIndexHistogram": {
+        "1": 3529,
+        "2": 56,
+        "3": 1
+      }
+    }
+  ],
+  "maximalMinorEvaluations": 516,
+  "connectedFullRank": 3626,
+  "targetChecks": 49544,
+  "coprimeLengthChecks": 71,
+  "unitErrorChecks": 1468
+}
