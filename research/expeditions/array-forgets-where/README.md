@@ -1,0 +1,115 @@
+# The Array That Forgets Where
+
+*MHAC exploratory expedition, 24 November 2026. Refs #308. Original bounded mathematics, computation and speculative instrument, not a selected Track E/G finding.*
+
+## Abstract
+
+A sparse phase-sensitive microphone array can have the best possible exact resilience to lost or arbitrarily corrupted sensors while two substantially separated spatial frequencies produce arbitrarily similar observations. Exact identifiability and stable identification are separate contracts. A finite alphabet of permissible directions can change the exact fault distance discontinuously according to the alphabet's least prime factor.
+
+## Reconciliation and source ledger
+
+Base main: 495a98ca12bae467a507031f04931aa4254b1866; repository-integrity check on that base succeeded. Read AGENTS.md, RAG.md, README.md, docs/PROGRAMME.md, AGENT_RUNBOOK, RESEARCH_INTEGRITY, VALIDATION and research/README. Examined open issue and PR title listings (up to 100), branch listing (first 100), main expedition directory, and search for spatial aliasing. Newly created issue #308 read with comments (none). X001 investigates spatial Fourier observer aliasing; X002 #181 investigates reference frames; #272 phase winding is temporal; #296 nonlinear mixing; #300 blind convolution; #304 shared equalization. No title-level duplication found; this is not an exhaustive priority search. One fresh branch and one new expedition directory only. Core programme remains in progress; no registry, manifest, frozen protocol or other branch edited.
+
+Sources accessed 2026-11-24 by GPT-6.2, no independent reviewer. All derivations below are supplied independently; no claim of scholarly priority.
+- C. R. Harris, [Solution of the aliasing and least squares problems of spaced antenna interferometric measurements using lattice methods](https://doi.org/10.1029/2002RS002732), Radio Science 38(2), 12 March 2003. Publisher HTML read: abstract and §§2–5, especially paragraphs 5–6, 10–16. Integer sounding matrices, wrapped phase, torus interpretation and sensitivity near region boundaries are established antecedents. Equations embedded as images were not transcribed; our model is simpler and explicitly defined here.
+- D. Tucker, S. Zhao, R. Ahmad, L. C. Potter, [Alias-Free Arrays](https://doi.org/10.1109/LSP.2022.3224834), IEEE Signal Processing Letters 29 (2022), 2457–2461. [PubMed metadata and abstract](https://pubmed.ncbi.nlm.nih.gov/36530478/) read; [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC9757818/) returned a browser challenge on direct open. The abstract establishes the topic of exact alias-free direction sets; no detailed theorem is attributed from unread sections.
+- H. Chen, T. Ballal, T. Y. Al-Naffouri, [DOA Estimation with Non-Uniform Linear Arrays: A Phase-Difference Projection Approach](https://arxiv.org/abs/2102.03650), 2021 preprint abstract consulted. Phase wrapping and dependence on noise and calibration are relevant; no performance numbers used.
+
+## Contents
+
+- [1 — A phase-only channel](#1--a-phase-only-channel): establish the source and observation model.
+- [2 — Exact arithmetic of lost sensors](#2--exact-arithmetic-of-lost-sensors): lattice and modular certificates, corruption and erasure distance.
+- [3 — Sharp arrays and a finite vocabulary](#3--sharp-arrays-and-a-finite-vocabulary): square-grid and least-prime formulas.
+- [4 — Optimal exact distance with arbitrarily bad conditioning](#4--optimal-exact-distance-with-arbitrarily-bad-conditioning): sparse near-collision construction.
+- [5 — Synthetic experiment](#5--synthetic-experiment): reproducible census and scope limits.
+- [6 — The compass organ](#6--the-compass-organ-art-and-design-hypothesis): authored phase sonification and prospective interface.
+
+## 1 — A phase-only channel
+
+Let S be N distinct integer lattice points in Z². A single ideal coherent source has normalized spatial frequency u in T² = R²/Z², and its sensor phases in cycles are
+
+    z_s = phi + s·u (mod 1).
+
+The common source phase phi is unknown. No amplitude, time-of-flight, multiple sources, reflections or sensor position error is modeled. Compare two possible spatial frequencies by minimizing the number of unequal sensor phases over a relative common phase. Define D as the minimum of this projective Hamming distance over distinct u,v in the torus. This deliberately treats exact real equality as a symbol test, not a noise model.
+
+The torus is a model of normalized projected spatial frequency, not the entire three-dimensional direction sphere. For a planar array with grid unit half a wavelength, a projected direction disk of radius 1/2 is physically accessible in an ideal far-field model. All torus differences have representatives of norm at most sqrt(1/2), realizable by opposite points ±delta/2 in that disk. The ambiguity witnesses used here fit inside that disk, and do not require out-of-range directions. A narrower directional field of view or different scale can change the minimum. Front/back and elevation ambiguities not represented in u remain outside this claim.
+
+## 2 — Exact arithmetic of lost sensors
+
+For a nonempty subset A of S choose anchor a0. Let L_A be the subgroup of Z² generated by the differences a-a0. Two distinct spatial frequencies can agree on A (with suitable common phase) iff L_A is a proper subgroup of Z².
+
+Proof: their nonzero difference delta on the torus annihilates every generator under the dot product. A full lattice forces delta=0. A rank-deficient subgroup admits a nonzero annihilator, as does a proper rank-two subgroup (e.g. by Smith normal form or by the finite quotient). A rank-two subgroup is full iff the gcd of its two-by-two minors is one. A deficient-rank subgroup has all minors zero. This yields an integer-only certificate.
+
+Equivalently, A is nonidentifying iff its reduction lies on an affine line over F_p for some prime p. If A lies on a line, a nonzero normal divided by p gives delta. Conversely, if rank is deficient, reduce modulo 2: the difference matrix has rank at most one. If rank two but index >1, any prime divisor of the index makes all minors vanish modulo p. In dimension two the reduced difference vectors then lie in a one-dimensional subspace, or are all zero. This also handles singleton subsets.
+
+Therefore:
+
+    D = N - max_{prime p, affine line ell in F_p²} |{s in S : s mod p lies in ell}|.
+
+This infinite-prime expression has a finite search for bounded coordinates: any rank-two nonidentifying subset has a prime divisor of one of its nonzero determinants, hence at most the largest absolute triangle determinant; rank-deficient subsets are covered by p=2. Always include p=2 even for small determinant bounds.
+
+An exact erasure and corruption corollary: any pattern of e detected erasures and t arbitrary phase substitutions on distinct remaining channels has unique underlying u iff 2t+e < D, in the worst-case guarantee sense. For sufficiency, two explanations for one received word could differ in at most 2t+e entries after choosing their respective common phases, contradicting D. Necessity: choose a pair attaining D, erase min(e,D) differing coordinates and partition the remaining differences between the two candidate error supports of size at most t each. Extra erasures can be assigned anywhere if required and e<=N. The discrete set of possible distances ensures attainment; no decoder or finite-precision recovery is claimed. If D=0 no such positive guarantee exists.
+
+## 3 — Sharp arrays and a finite vocabulary
+
+For S={0,...,n-1}², any nonvertical line over F_p contains at most n ceil(n/p) points (fix x, count eligible y); the same for vertical lines. The parity line with x even attains n ceil(n/2). Thus
+
+    D = n² - n ceil(n/2) = n floor(n/2).
+
+For even n this is globally optimal among all arrays with the same N=n²: for any array, one of the two vertical parity lines contains at least N/2 points, so D<=N/2. This bound does not establish optimality for odd n.
+
+Finite direction alphabets yield another exact formula. Restrict u to (Z/qZ)²/q, q>=2. Let p be the smallest prime dividing q. Then
+
+    D_q = n² - n ceil(n/p).
+
+Proof: a nonzero delta on the q-grid has finite additive order k>1 dividing q. Write delta=(a,b)/k with gcd(a,b,k)=1. For any prime r dividing k, multiply the equal-phase differences by k and reduce modulo r; at least one coefficient remains nonzero. An agreement set lies on an affine line over F_r and contains at most n ceil(n/r) <= n ceil(n/p). The difference (1/p,0) belongs to the q-grid and attains the upper bound on agreement.
+
+For 16 sensors, q=4 has distance 8, q=5 or 7 has distance 12, q=12 returns to 8. With q a prime greater than n the distance is n²-n. Enlarging an alphabet by increasing q need not monotonically change distance because the alphabets need not be nested; under actual set inclusion the minimum distance cannot increase. This is a finite source restriction, not a proof of improved physical resolution. A designer could intentionally restrict symbolic spatial messages to a well-separated codebook and test its actual continuous phase margins.
+
+## 4 — Optimal exact distance with arbitrarily bad conditioning
+
+Let M>=3 be odd and B={0,M,M+2,2M+2}. Consider S=B×B, 16 sensors. Every triple in B has differences with gcd one: each triple has a pair of differences equivalent to M and 2 or M+2 and 2. No prime residue contains three members. For every nonvertical affine line over any prime, each of the four x-values contributes at most two y-values; vertical lines contain at most 2*4 points. The parity line attains eight. Thus D=8, globally optimal, independent of M.
+
+However set delta=((M-1)/(2M),0). The four x phase differences before adjustment are 0,0,-1/M,-1/M modulo one; choose relative common phase +1/(2M) to center them. Every sensor now has circular phase error exactly 1/(2M) cycles. The spatial-frequency separation tends to 1/2 while the maximum complex phasor difference is
+
+    2 sin(pi/(2M)) -> 0.
+
+The aperture grows as 2M+2 along each axis. Thus exact correction of up to three arbitrary sensor errors (with no erasures), or any seven known erasures (with no errors), coexists with arbitrarily small noise margins for separated directions. A received complex vector at the componentwise midpoint is consistent with both worlds under bounded additive complex noise of half that chord distance; even an oracle cannot always select the right direction. For phase-only circular noise the midpoint needs only 1/(4M) cycles per sensor.
+
+The sparse family is not a fixed-aperture impossibility, nor evidence that sparse arrays are usually bad. The construction trades aperture for near collisions. A fixed finite exact-identifying layout has a positive continuous minimum separation on any compact set of pairs bounded away from equality, by compactness and continuity after quotienting common phase. The absence of a uniform bound across layouts is the actual negative result.
+
+## 5 — Synthetic experiment
+
+Execute with Node 18+:
+
+    node laboratory.mjs
+    node finite-grid.mjs
+
+The two functions were executed directly in the tool's JavaScript engine; their function source was committed with a Node console wrapper. Native Node CLI, full repo tests and independent human review have not been run here. Receipts are [execution.json](execution.json) and [finite-grid-execution.json](finite-grid-execution.json). No external data or packages. Integer calculations remain within safe JS integer bounds in all tested cases. Floating trigonometry is used only for a numerical chord bound and original PCM.
+
+- All 66,061 nonempty subsets across 2×2, 3×3 and 4×4 dense grids: gcd-minor classification independently matched closure of modular line masks. Largest nonidentifying sets: 2,6,8. Nonidentifying subset counts: 10,146,1921.
+- All 11,440 nine-sensor subsets in each of six sparse layouts M=3,5,11,101,1001,10001: 68,640 lattice checks, all full index one. The explicit eight-sensor parity obstruction checked in every layout.
+- Separate finite alphabet enumeration: 245 (n,q) cases, 113,190 nonzero differences, n=2..8 and q=2..36; all matched least-prime formula. Main script additionally checks 24 smaller alphabet cases against the continuous bound.
+- Zero assertion failures. These are exact synthetic censuses, not measured localization rates.
+
+## 6 — The compass organ (art and design hypothesis)
+
+A 16-slot original sonification emits a short 400 Hz tone at each sensor's phase, with a simple envelope and deterministic 16-bit mono PCM at 8 kHz. Full array: 12,844 bytes per WAV. Half-array: 6,444. The algorithm is a serial display of phase samples, not a simulated sound field or localization test.
+
+At M=101, compare source u=0 and u=(1/2,0). All sensor phases agree on even x positions; the complete wave arrays differ (FNV-1a 45f0cd4d vs efd8a40d) but after removing odd-x sensors they are byte-identical (f41cce35). The near-alias pair delta=50/101 with compensating common phase yields full WAVs differing by at most 311 PCM integer units for an amplitude of 10,000. No perceptual threshold is implied by these figures. Byte comparisons are direct; FNV is only a reproducibility fingerprint. The code generates arrays in memory and does not yet export WAV files.
+
+Speculative instrument: let a performer move a hidden spatial-frequency cursor on a torus and alter the sensor lattice. A sequencer can sonify the lattice syndrome, make exactly missing channels silent, and optionally sound alternative interpretations. The musical grammar is a set of congruences rather than conventional notes. Near-collision mode intentionally navigates two competing invisible locations, with a separate authored cue for confidence. No listener trial; sound alone does not establish the semantic interpretation.
+
+## Interpretation, refusal and next work
+
+The sign can be algebraically unique while functionally indecipherable under a realistic channel. An explicit phase localization receipt could retain geometry, normalization, admissible domain, shared phase nuisance parameter, exact erasure distance, bounded-noise separation for a minimum relevant spatial distinction, active sensor mask, and frequency/calibration assumptions. A distance certificate is not a confidence score and does not imply a human can distinguish the signals.
+
+A particularly interesting bridge is codebook design for auditory spatial deixis: a finite symbolic direction vocabulary may choose its own modular grid, but a target word and a physical source location are different objects. The least-prime effect pertains to exact phase-symbol equality, not natural linguistic categories. A proper next experiment would maximize a continuous minimum projective chord margin at fixed aperture with exact erasure distance as a constraint; compare against a dense baseline and include off-grid sources and sensor calibration errors. No such optimization has been completed here.
+
+Negative sediment: odd square optimality not proved; multiple sources and reverberation excluded; no general finite alphabet optimum outside the square family; no noise-uniform guarantee without geometry and resolution constraints; no human perception claim. A single successful localization is not evidence of a robust decoder. No canonical MHAC stages advanced.
+
+## Fiction — The surveyor's choir
+
+The surveyor had sixteen listening posts, four in each of four rows. His certificate permitted seven of them to go dark. He kept lengthening the rows until the countryside grew huge around the choir. One day a bell rang far to the west; the posts sang a tune indistinguishable, within their instrument tolerances, from a bell far to the east. He asked for a seventeenth post. The apprentice asked instead for the distance between two possible readings. The certificate was correct. It had never measured that distance.
+
+*AI assistance: GPT-6.2 performed source reading, derivation, execution and self-review; no subagents or external reviewers. Original report and code; no third-party source copies. Not peer-reviewed. Refs #308; merge subject to exact-head CI and integrator review.*
