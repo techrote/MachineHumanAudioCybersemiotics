@@ -1,0 +1,828 @@
+{
+  "rows": [
+    {
+      "n": 4,
+      "r": 1,
+      "status": "complete",
+      "count": 3,
+      "frontier": [
+        {
+          "switches": 1,
+          "peak": 2,
+          "leakage": 4,
+          "word": "++--"
+        },
+        {
+          "switches": 2,
+          "peak": 1,
+          "leakage": 2,
+          "word": "+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 2,
+        "peak": 1,
+        "leakage": 2,
+        "word": "+--+"
+      },
+      "minSwitch": {
+        "switches": 1,
+        "peak": 2,
+        "leakage": 4,
+        "word": "++--"
+      }
+    },
+    {
+      "n": 4,
+      "r": 2,
+      "status": "complete",
+      "count": 1,
+      "frontier": [
+        {
+          "switches": 2,
+          "peak": 1,
+          "leakage": 2,
+          "word": "+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 2,
+        "peak": 1,
+        "leakage": 2,
+        "word": "+--+"
+      },
+      "minSwitch": {
+        "switches": 2,
+        "peak": 1,
+        "leakage": 2,
+        "word": "+--+"
+      }
+    },
+    {
+      "n": 4,
+      "r": 3,
+      "status": "complete",
+      "count": 0,
+      "frontier": [],
+      "minLeak": null,
+      "minSwitch": null
+    },
+    {
+      "n": 8,
+      "r": 2,
+      "status": "complete",
+      "count": 4,
+      "frontier": [
+        {
+          "switches": 2,
+          "peak": 2,
+          "leakage": 16,
+          "word": "++----++"
+        },
+        {
+          "switches": 4,
+          "peak": 1,
+          "leakage": 4,
+          "word": "+--++--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 4,
+        "peak": 1,
+        "leakage": 4,
+        "word": "+--++--+"
+      },
+      "minSwitch": {
+        "switches": 2,
+        "peak": 2,
+        "leakage": 16,
+        "word": "++----++"
+      }
+    },
+    {
+      "n": 8,
+      "r": 3,
+      "status": "complete",
+      "count": 1,
+      "frontier": [
+        {
+          "switches": 5,
+          "peak": 1,
+          "leakage": 8,
+          "word": "+--+-++-"
+        }
+      ],
+      "minLeak": {
+        "switches": 5,
+        "peak": 1,
+        "leakage": 8,
+        "word": "+--+-++-"
+      },
+      "minSwitch": {
+        "switches": 5,
+        "peak": 1,
+        "leakage": 8,
+        "word": "+--+-++-"
+      }
+    },
+    {
+      "n": 8,
+      "r": 4,
+      "status": "complete",
+      "count": 0,
+      "frontier": [],
+      "minLeak": null,
+      "minSwitch": null
+    },
+    {
+      "n": 12,
+      "r": 2,
+      "status": "complete",
+      "count": 29,
+      "frontier": [
+        {
+          "switches": 2,
+          "peak": 3,
+          "leakage": 54,
+          "word": "+++------+++"
+        },
+        {
+          "switches": 4,
+          "peak": 2,
+          "leakage": 14,
+          "word": "+---++++---+"
+        },
+        {
+          "switches": 6,
+          "peak": 1,
+          "leakage": 6,
+          "word": "+--++--++--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 6,
+        "peak": 1,
+        "leakage": 6,
+        "word": "+--++--++--+"
+      },
+      "minSwitch": {
+        "switches": 2,
+        "peak": 3,
+        "leakage": 54,
+        "word": "+++------+++"
+      }
+    },
+    {
+      "n": 12,
+      "r": 3,
+      "status": "complete",
+      "count": 1,
+      "frontier": [
+        {
+          "switches": 7,
+          "peak": 2,
+          "leakage": 33,
+          "word": "+-+---+++-+-"
+        }
+      ],
+      "minLeak": {
+        "switches": 7,
+        "peak": 2,
+        "leakage": 33,
+        "word": "+-+---+++-+-"
+      },
+      "minSwitch": {
+        "switches": 7,
+        "peak": 2,
+        "leakage": 33,
+        "word": "+-+---+++-+-"
+      }
+    },
+    {
+      "n": 16,
+      "r": 2,
+      "status": "complete",
+      "count": 263,
+      "frontier": [
+        {
+          "switches": 2,
+          "peak": 4,
+          "leakage": 128,
+          "word": "++++--------++++"
+        },
+        {
+          "switches": 4,
+          "peak": 2,
+          "leakage": 32,
+          "word": "++----++++----++"
+        },
+        {
+          "switches": 6,
+          "peak": 2,
+          "leakage": 16,
+          "word": "+---++++---++--+"
+        },
+        {
+          "switches": 8,
+          "peak": 1,
+          "leakage": 8,
+          "word": "+--++--++--++--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 8,
+        "peak": 1,
+        "leakage": 8,
+        "word": "+--++--++--++--+"
+      },
+      "minSwitch": {
+        "switches": 2,
+        "peak": 4,
+        "leakage": 128,
+        "word": "++++--------++++"
+      }
+    },
+    {
+      "n": 16,
+      "r": 3,
+      "status": "complete",
+      "count": 7,
+      "frontier": [
+        {
+          "switches": 5,
+          "peak": 2,
+          "leakage": 128,
+          "word": "++----++--++++--"
+        },
+        {
+          "switches": 8,
+          "peak": 2,
+          "leakage": 50,
+          "word": "+---++++--+--+-+"
+        },
+        {
+          "switches": 9,
+          "peak": 1,
+          "leakage": 32,
+          "word": "+--++--+-++--++-"
+        },
+        {
+          "switches": 10,
+          "peak": 1,
+          "leakage": 16,
+          "word": "+--+-++--++-+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 10,
+        "peak": 1,
+        "leakage": 16,
+        "word": "+--+-++--++-+--+"
+      },
+      "minSwitch": {
+        "switches": 5,
+        "peak": 2,
+        "leakage": 128,
+        "word": "++----++--++++--"
+      }
+    },
+    {
+      "n": 16,
+      "r": 4,
+      "status": "complete",
+      "count": 1,
+      "frontier": [
+        {
+          "switches": 10,
+          "peak": 1,
+          "leakage": 64,
+          "word": "+--+-++--++-+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 10,
+        "peak": 1,
+        "leakage": 64,
+        "word": "+--+-++--++-+--+"
+      },
+      "minSwitch": {
+        "switches": 10,
+        "peak": 1,
+        "leakage": 64,
+        "word": "+--+-++--++-+--+"
+      }
+    },
+    {
+      "n": 16,
+      "r": 5,
+      "status": "complete",
+      "count": 0,
+      "frontier": [],
+      "minLeak": null,
+      "minSwitch": null
+    },
+    {
+      "n": 20,
+      "r": 3,
+      "status": "complete",
+      "count": 24,
+      "frontier": [
+        {
+          "switches": 8,
+          "peak": 3,
+          "leakage": 115,
+          "word": "+-+---+-+++++-----++"
+        },
+        {
+          "switches": 9,
+          "peak": 2,
+          "leakage": 65,
+          "word": "+-+---++++----+++-+-"
+        },
+        {
+          "switches": 12,
+          "peak": 2,
+          "leakage": 41,
+          "word": "+--+-++--+-+++---+-+"
+        },
+        {
+          "switches": 13,
+          "peak": 2,
+          "leakage": 33,
+          "word": "+--+-+-+++---+-+-++-"
+        }
+      ],
+      "minLeak": {
+        "switches": 13,
+        "peak": 2,
+        "leakage": 33,
+        "word": "+--+-+-+++---+-+-++-"
+      },
+      "minSwitch": {
+        "switches": 8,
+        "peak": 3,
+        "leakage": 115,
+        "word": "+-+---+-+++++-----++"
+      }
+    },
+    {
+      "n": 24,
+      "r": 3,
+      "status": "complete",
+      "count": 296,
+      "frontier": [
+        {
+          "switches": 5,
+          "peak": 3,
+          "leakage": 648,
+          "word": "+++------+++---++++++---"
+        },
+        {
+          "switches": 5,
+          "peak": 4,
+          "leakage": 332,
+          "word": "+----+++++++-------++++-"
+        },
+        {
+          "switches": 7,
+          "peak": 3,
+          "leakage": 132,
+          "word": "++-----+++++--++----+++-"
+        },
+        {
+          "switches": 8,
+          "peak": 2,
+          "leakage": 154,
+          "word": "+---++++----++++-+----++"
+        },
+        {
+          "switches": 9,
+          "peak": 2,
+          "leakage": 92,
+          "word": "+---++++---+-+++----+++-"
+        },
+        {
+          "switches": 10,
+          "peak": 2,
+          "leakage": 64,
+          "word": "+--++---++++---++--++--+"
+        },
+        {
+          "switches": 13,
+          "peak": 1,
+          "leakage": 72,
+          "word": "+--++--++--+-++--++--++-"
+        },
+        {
+          "switches": 13,
+          "peak": 2,
+          "leakage": 56,
+          "word": "+--++---++++--+--+-+-++-"
+        },
+        {
+          "switches": 14,
+          "peak": 1,
+          "leakage": 40,
+          "word": "+--+-++--++--++-+--++--+"
+        },
+        {
+          "switches": 15,
+          "peak": 1,
+          "leakage": 24,
+          "word": "+--+-++--++-+--++--+-++-"
+        }
+      ],
+      "minLeak": {
+        "switches": 16,
+        "peak": 1,
+        "leakage": 24,
+        "word": "+--+-++--++-+--+-++-+--+"
+      },
+      "minSwitch": {
+        "switches": 5,
+        "peak": 4,
+        "leakage": 332,
+        "word": "+----+++++++-------++++-"
+      }
+    },
+    {
+      "n": 24,
+      "r": 4,
+      "status": "complete",
+      "count": 8,
+      "frontier": [
+        {
+          "switches": 10,
+          "peak": 2,
+          "leakage": 220,
+          "word": "+---++++-+----+-++++---+"
+        },
+        {
+          "switches": 13,
+          "peak": 2,
+          "leakage": 164,
+          "word": "+--++---++++--+--+-+-++-"
+        },
+        {
+          "switches": 16,
+          "peak": 1,
+          "leakage": 264,
+          "word": "+--++--+-+-++-+-+--++--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 13,
+        "peak": 2,
+        "leakage": 164,
+        "word": "+--++---++++--+--+-+-++-"
+      },
+      "minSwitch": {
+        "switches": 10,
+        "peak": 2,
+        "leakage": 220,
+        "word": "+---++++-+----+-++++---+"
+      }
+    },
+    {
+      "n": 28,
+      "r": 3,
+      "status": "complete",
+      "count": 1443,
+      "frontier": [
+        {
+          "switches": 8,
+          "peak": 4,
+          "leakage": 551,
+          "word": "++-----+-+++++-+++-------+++"
+        },
+        {
+          "switches": 9,
+          "peak": 3,
+          "leakage": 197,
+          "word": "++-----+++++-+-+-----+++++--"
+        },
+        {
+          "switches": 10,
+          "peak": 3,
+          "leakage": 147,
+          "word": "+-+---++++----+-+++++-----++"
+        },
+        {
+          "switches": 11,
+          "peak": 2,
+          "leakage": 97,
+          "word": "+-+---++++----++++----+++-+-"
+        },
+        {
+          "switches": 13,
+          "peak": 2,
+          "leakage": 81,
+          "word": "+-+---+++--++-++----+++--++-"
+        },
+        {
+          "switches": 14,
+          "peak": 2,
+          "leakage": 73,
+          "word": "+--+-++--+-+++----++++---+-+"
+        },
+        {
+          "switches": 15,
+          "peak": 2,
+          "leakage": 51,
+          "word": "+--+-+-+++----++++---+-+-++-"
+        },
+        {
+          "switches": 17,
+          "peak": 2,
+          "leakage": 49,
+          "word": "+--+-++--+-+++---+-++--+-++-"
+        },
+        {
+          "switches": 18,
+          "peak": 2,
+          "leakage": 41,
+          "word": "+--+-+-+++---+-+-++--++-+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 18,
+        "peak": 2,
+        "leakage": 41,
+        "word": "+--+-+-+++---+-+-++--++-+--+"
+      },
+      "minSwitch": {
+        "switches": 8,
+        "peak": 4,
+        "leakage": 551,
+        "word": "++-----+-+++++-+++-------+++"
+      }
+    },
+    {
+      "n": 32,
+      "r": 3,
+      "status": "complete",
+      "count": 17444,
+      "frontier": [
+        {
+          "switches": 5,
+          "peak": 4,
+          "leakage": 2048,
+          "word": "++++--------++++----++++++++----"
+        },
+        {
+          "switches": 7,
+          "peak": 5,
+          "leakage": 1568,
+          "word": "++++--------+--+++++++++-----++-"
+        },
+        {
+          "switches": 8,
+          "peak": 3,
+          "leakage": 370,
+          "word": "++-----+++++----+++++----++---++"
+        },
+        {
+          "switches": 9,
+          "peak": 2,
+          "leakage": 512,
+          "word": "++----++++----++--++++----++++--"
+        },
+        {
+          "switches": 9,
+          "peak": 3,
+          "leakage": 282,
+          "word": "++-----++++++----++----+++++--+-"
+        },
+        {
+          "switches": 10,
+          "peak": 2,
+          "leakage": 256,
+          "word": "++----++--++++----++++--++----++"
+        },
+        {
+          "switches": 11,
+          "peak": 2,
+          "leakage": 210,
+          "word": "+--+--++++---+++----++++----+++-"
+        },
+        {
+          "switches": 11,
+          "peak": 3,
+          "leakage": 144,
+          "word": "+--+--+++++------+++++-+----+++-"
+        },
+        {
+          "switches": 12,
+          "peak": 2,
+          "leakage": 114,
+          "word": "+---++++--+---++++----++++---+-+"
+        },
+        {
+          "switches": 13,
+          "peak": 2,
+          "leakage": 96,
+          "word": "+--++---++++---+-+++----+++--++-"
+        },
+        {
+          "switches": 15,
+          "peak": 2,
+          "leakage": 72,
+          "word": "+--++---++++---++--++--++--+-++-"
+        },
+        {
+          "switches": 17,
+          "peak": 1,
+          "leakage": 128,
+          "word": "+--++--++--++--+-++--++--++--++-"
+        },
+        {
+          "switches": 18,
+          "peak": 1,
+          "leakage": 64,
+          "word": "+--++--+-++--++--++--++-+--++--+"
+        },
+        {
+          "switches": 19,
+          "peak": 1,
+          "leakage": 48,
+          "word": "+--+-++--++--++-+--++--++--+-++-"
+        },
+        {
+          "switches": 20,
+          "peak": 1,
+          "leakage": 32,
+          "word": "+--+-++--++-+--++--+-++--++-+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 22,
+        "peak": 1,
+        "leakage": 32,
+        "word": "+--+-++--++-+--+-++-+--+-++-+--+"
+      },
+      "minSwitch": {
+        "switches": 5,
+        "peak": 4,
+        "leakage": 2048,
+        "word": "++++--------++++----++++++++----"
+      }
+    },
+    {
+      "n": 32,
+      "r": 4,
+      "status": "complete",
+      "count": 39,
+      "frontier": [
+        {
+          "switches": 10,
+          "peak": 2,
+          "leakage": 2048,
+          "word": "++----++--++++----++++--++----++"
+        },
+        {
+          "switches": 15,
+          "peak": 2,
+          "leakage": 1600,
+          "word": "++----++--+++--++-++-+---+--+++-"
+        },
+        {
+          "switches": 16,
+          "peak": 2,
+          "leakage": 536,
+          "word": "+---++++--+--+-++-+--+--++++---+"
+        },
+        {
+          "switches": 18,
+          "peak": 1,
+          "leakage": 512,
+          "word": "+--++--+-++--++--++--++-+--++--+"
+        },
+        {
+          "switches": 18,
+          "peak": 2,
+          "leakage": 452,
+          "word": "+--++--+-+-+++----+++-+-+--++--+"
+        },
+        {
+          "switches": 20,
+          "peak": 1,
+          "leakage": 128,
+          "word": "+--+-++--++-+--++--+-++--++-+--+"
+        }
+      ],
+      "minLeak": {
+        "switches": 20,
+        "peak": 1,
+        "leakage": 128,
+        "word": "+--+-++--++-+--++--+-++--++-+--+"
+      },
+      "minSwitch": {
+        "switches": 10,
+        "peak": 2,
+        "leakage": 2048,
+        "word": "++----++--++++----++++--++----++"
+      }
+    },
+    {
+      "n": 32,
+      "r": 5,
+      "status": "complete",
+      "count": 1,
+      "frontier": [
+        {
+          "switches": 21,
+          "peak": 1,
+          "leakage": 1024,
+          "word": "+--+-++--++-+--+-++-+--++--+-++-"
+        }
+      ],
+      "minLeak": {
+        "switches": 21,
+        "peak": 1,
+        "leakage": 1024,
+        "word": "+--+-++--++-+--+-++-+--++--+-++-"
+      },
+      "minSwitch": {
+        "switches": 21,
+        "peak": 1,
+        "leakage": 1024,
+        "word": "+--+-++--++-+--+-++-+--++--+-++-"
+      }
+    }
+  ],
+  "bruteChecks": 20418,
+  "witnessChecks": 67,
+  "family": [
+    {
+      "r": 1,
+      "n": 2,
+      "switches": 1,
+      "peak": 1,
+      "leakage": 1
+    },
+    {
+      "r": 2,
+      "n": 4,
+      "switches": 2,
+      "peak": 1,
+      "leakage": 2
+    },
+    {
+      "r": 3,
+      "n": 8,
+      "switches": 5,
+      "peak": 1,
+      "leakage": 8
+    },
+    {
+      "r": 4,
+      "n": 16,
+      "switches": 10,
+      "peak": 1,
+      "leakage": 64
+    },
+    {
+      "r": 5,
+      "n": 32,
+      "switches": 21,
+      "peak": 1,
+      "leakage": 1024
+    },
+    {
+      "r": 6,
+      "n": 64,
+      "switches": 42,
+      "peak": 1,
+      "leakage": 32768
+    },
+    {
+      "r": 7,
+      "n": 128,
+      "switches": 85,
+      "peak": 1,
+      "leakage": 2097152
+    },
+    {
+      "r": 8,
+      "n": 256,
+      "switches": 170,
+      "peak": 1,
+      "leakage": 268435456
+    },
+    {
+      "r": 9,
+      "n": 512,
+      "switches": 341,
+      "peak": 1,
+      "leakage": 68719476736
+    },
+    {
+      "r": 10,
+      "n": 1024,
+      "switches": 682,
+      "peak": 1,
+      "leakage": 35184372088832
+    }
+  ],
+  "budgetControl": "budget_exhausted"
+}
