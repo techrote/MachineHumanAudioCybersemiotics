@@ -1,0 +1,224 @@
+{
+  "schema": "mhac-r005-c8-clinical-priority-tradeoff/1",
+  "issue": 5,
+  "protocol": "PROTOCOL-v1",
+  "cutoff": "2026-10-04",
+  "observation_date_utc": "2026-11-10",
+  "activity": "Supplementary C8 public web discovery and targeted primary-source navigation; not an executed EQ1 or C6 database search, not a completed protocol C9 chain",
+  "actor": {
+    "type": "AI assistant",
+    "model": "GPT-6",
+    "interface": "web indexed search and web-rendered HTML; GitHub repository code search",
+    "human_verification": false,
+    "independent_human_review": false
+  },
+  "retrieval_integrity": {
+    "ordered_web_result_export": false,
+    "original_http_response_bytes": false,
+    "original_http_sha256": null,
+    "original_pdf_bytes": false,
+    "source_pdf_sha256": null,
+    "server_http_status_confirmed": false,
+    "complete_primary_pdf_read": false,
+    "canonical_search_runs_added": 0,
+    "canonical_search_hits_added": 0,
+    "canonical_screening_decisions_added": 0,
+    "independent_studies_admitted": 0,
+    "independent_samples_admitted": 0,
+    "baseline_counts_recomputed": false,
+    "prior_inventory_crossmatch": "GitHub indexed-code search for Hunn and DOI found no matching text; compressed R005 OpenAlex exports were not exhaustively searched, so uniqueness is unverified"
+  },
+  "exact_web_queries": [
+    "site:pmc.ncbi.nlm.nih.gov/articles \"auditory warnings\" \"review\" \"References\" sonification alerts 2023",
+    "site:pmc.ncbi.nlm.nih.gov/articles \"systematic review\" \"auditory alarms\" sound design patient 2022",
+    "ICAD auditory alarm systematic literature review public references 2024 speech non speech",
+    "\"Improved pointer in auditory alarms enhances response accuracy\" authors doi 2025",
+    "site:mdpi.com/2227-9032/13/23/3033 \"User-Centered Redesign of Monitoring Alarms\" recognition",
+    "site:pmc.ncbi.nlm.nih.gov/articles/PMC12692177 \"Limitations\" \"Follow\"",
+    "\"Improved pointer in auditory alarms enhances response accuracy\" DOI",
+    "site:pmc.ncbi.nlm.nih.gov/articles/PMC11952019 \"Improved pointer\" reference"
+  ],
+  "source_routes": [
+    {
+      "id": "R005-C8-CLINICAL-HUNN-2025",
+      "doi": "10.3390/healthcare13233033",
+      "pmcid": "PMC12692177",
+      "pmid": "41373249",
+      "title": "User-Centered Redesign of Monitoring Alarms: A Pre–Post Study on Perception, Functionality, and Recognizability Following Real-Life Clinical Implementation",
+      "publication_date": "2025-11-24",
+      "publication": "Healthcare (Basel) 13(23):3033",
+      "publisher_url": "https://www.mdpi.com/2227-9032/13/23/3033",
+      "text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12692177/",
+      "reading_extent": "Web-rendered public full-article HTML: abstract, Methods §§2.1–2.8, Results §§3.1–3.6, Discussion §4, Conclusions §5; tables were available as HTML text, but original PDF bytes, supplement audio, image-rendered figures and source data not verified",
+      "locators": [
+        "Abstract",
+        "§2.4 Study Participants",
+        "§2.5 Study Procedure",
+        "§2.6 Outcomes",
+        "§2.8 Statistical Analysis",
+        "§3.1 Participants and Table 1 (HTML text)",
+        "§3.2 Sound Appeal",
+        "§3.3 Functionality",
+        "§3.4 Recognizability (HTML numeric list)",
+        "§3.5 Sensitivity Analysis",
+        "§3.6 Preferences",
+        "§4 Discussion > limitations"
+      ],
+      "author_reported_not_independently_extracted": {
+        "participants_pre": 90,
+        "participants_paired_post": 77,
+        "not_paired_post": 13,
+        "same_people_two_phases": true,
+        "distinct_experimental_samples_claimed": null,
+        "study_context": "single-centre hospital implementation of revised patient-monitoring alarm sounds; recognition test conducted with laptop and simulated OR noise, not observation of live clinical responses",
+        "training_preexposure": "34/77 reported attending January 2024 training; authors reported separate sensitivity re-analysis",
+        "per_priority_sound_trials_per_phase": 231,
+        "outcomes": [
+          {
+            "label": "sound appeal (primary) difference, four-point scale",
+            "new_minus_old": 0.51,
+            "ci_95": [
+              0.37,
+              0.64
+            ],
+            "source": "§3.2",
+            "truth_class": "author_reported_only"
+          },
+          {
+            "label": "perceived functionality difference, four-point scale",
+            "new_minus_old": -0.15,
+            "ci_95": [
+              -0.27,
+              -0.03
+            ],
+            "source": "§3.3",
+            "truth_class": "author_reported_only"
+          },
+          {
+            "label": "all-priority recognition rate ratio",
+            "rate_ratio": 0.93,
+            "ci_95": [
+              0.83,
+              1.04
+            ],
+            "source": "§3.4",
+            "truth_class": "author_reported_only"
+          },
+          {
+            "label": "low-priority correct classification",
+            "old_correct": 220,
+            "new_correct": 202,
+            "per_phase_trials": 231,
+            "source": "§3.4",
+            "truth_class": "author_reported_only"
+          },
+          {
+            "label": "medium-priority correct classification",
+            "old_correct": 187,
+            "new_correct": 143,
+            "per_phase_trials": 231,
+            "source": "§3.4",
+            "truth_class": "author_reported_only"
+          },
+          {
+            "label": "high-priority correct classification",
+            "old_correct": 188,
+            "new_correct": 205,
+            "per_phase_trials": 231,
+            "source": "§3.4",
+            "truth_class": "author_reported_only"
+          }
+        ],
+        "preference_respondents": {
+          "prefer_refined": 55,
+          "total": 77
+        },
+        "scale_reliability": {
+          "sound_appeal_omega": 0.489,
+          "functionality_omega": 0.652,
+          "locator": "§§3.2–3.3"
+        }
+      },
+      "cautions": [
+        "Two measurements on the same 77 re-enrolled people are not 154 independent participants; 231 per-priority sound responses are trials, not people.",
+        "Clinical introduction, calendar time, repeated testing and training covary with the alarm redesign; pre–post association does not isolate the acoustic redesign as a causal agent.",
+        "Main pooled recognizability interval includes 1; three priority-specific contrasts must not be transformed into an all-priority superiority claim.",
+        "Participants' perception that alarms were less distressing is not an observed patient stress or safety outcome.",
+        "MacBook playback was not formally calibrated for SPL/frequency response and test conditions are not identical to live operating-room events.",
+        "Author-reported numbers need R006 selection and R009 source-manifest/figure/supplement appraisal before quantitative incorporation."
+      ]
+    },
+    {
+      "id": "R005-C8-CLINICAL-SHIN-2025",
+      "doi": "10.1016/j.bjao.2025.100379",
+      "pmid": "40161967",
+      "pmcid": "PMC11952019",
+      "openalex_id": "https://openalex.org/W4408394855",
+      "title": "Improved pointer in auditory alarms enhances response accuracy",
+      "publication_date": "2025-03-13",
+      "publication": "BJA Open 14:100379",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40161967/",
+      "publisher_pdf_route": "https://www.bjaopen.org/article/S2772-6096%2825%2900003-6/pdf",
+      "reading_extent": "PubMed indexed metadata and full abstract; selected publicly indexed PMC text excerpts describing Methods and Results; publisher fulltext request returned 403 in the web interface; no complete PDF or image-checked result figures",
+      "locators": [
+        "PubMed abstract > Methods and Results",
+        "PMC indexed excerpt > Results and response-time inclusion description"
+      ],
+      "author_reported_not_independently_extracted": {
+        "clinicians": 26,
+        "nonclinicians": 19,
+        "participants_total": 45,
+        "pointer_accuracy_new": 0.9,
+        "pointer_accuracy_comparator": 0.8,
+        "response_time_analysis_subset": "Public indexed PMC methods excerpt reports 22/26 clinicians and 16/19 non-clinicians eligible for a response-time subset; verify source before any R009 numerical extraction",
+        "truth_class": "author_reported_abstract_and_indexed_excerpts_only"
+      },
+      "cautions": [
+        "Controlled laboratory pointer manipulation, not real clinical implementation; cannot be pooled directly with the pre–post hospital redesign study.",
+        "Accuracy improvement in the specific pointer task is not evidence that any less-emotional or more-pleasant audio universally improves comprehension.",
+        "Only abstract and web-indexed fragments were consulted, not a hash-bound full paper; response-time subset must be independently checked.",
+        "Comparator is an earlier pointer design and does not establish participant reuse or independence relative to previous publications."
+      ]
+    }
+  ],
+  "cross_source_interpretation": {
+    "classification": "hypothesis-generating contrast, not a meta-analysis, matched replication, or cross-paper pooled study",
+    "statement": "One clinical pre/post investigation reports improved sound appeal with degraded low/medium-priority recognition; a different short laboratory pointer experiment reports improved accuracy. Effects depend on actual message/priority mapping, cue manipulation, task and evaluation context.",
+    "not_inferred": [
+      "equal samples",
+      "independent cohorts established",
+      "patient safety improvement",
+      "universal voice/tone ranking",
+      "a measured benefit of emotionally neutral voice"
+    ]
+  },
+  "protocol_controls": {
+    "channel": "C8 only",
+    "formal_c9_complete": false,
+    "eq1_checkpoint": "2026-11-03 final sorted EQ1 prefix 4200/9368; not remeasured",
+    "frozen_cutoff": "2026-10-04",
+    "unresolved_channels": [
+      "C1 EQ1 remainder",
+      "C3 ACM",
+      "C4 IEEE",
+      "C6 publisher databases",
+      "C7 bibliographic databases",
+      "C9 full included-study and EQ8-review chains"
+    ]
+  },
+  "c1_attempt": {
+    "interface": "web URL open",
+    "url": "https://api.openalex.org/works?filter=to_publication_date%3A2026-10-04%26per-page=1",
+    "date_utc": "2026-11-10",
+    "tool_result": "URL not accessible via this tool; no API response obtained; query probe only, not EQ1 production query",
+    "server_http_status": null,
+    "quota_remaining": null,
+    "response_sha256": null,
+    "eq1_executed": false
+  },
+  "handoff": [
+    "R006: Verify Hunn 2025 DOI/publication and existing C1/C5/C9 occurrence paths; compare Shin 2025 to its earlier-pointer predecessor for version/participant relationships before counting samples; screening and independence remain unresolved.",
+    "R009: If eligible and selected, hash exact article manifestations; inspect result figures, supplemental audio and model specification; retain the trial-versus-person denominator and missing calibration/time-confound limitations.",
+    "MHAC Integration: Retain baseline 150/21483 counts, EQ1 4200/9368, no new canonical hits or independent samples; decide whether to fold this coverage note into shared index."
+  ]
+}
