@@ -1,0 +1,14 @@
+# Executed laboratory receipt — 2026-11-24
+
+Run: python lab.py (Python standard library; local container). Git blob of locally executed source: 66bf5909caf0df479e35b6e312c58dc21b4c8b5f. Reproduce by invoking the script; audio/ is generated locally, not committed.
+
+BFS-verified ordered pairs: 17576 (n=1..8; every weight class). All BFS/formula equality and diameter assertions passed. Route: 11110000 → 11101000 → 11011000 → 10111000 → 01111000 → 01110100 → 01101100 → 01011100 → 00111100 → 00111010 → 00110110 → 00101110 → 00011110 → 00011101 → 00011011 → 00010111 → 00001111.
+
+Two render passes matched file SHA-256. All WAVs reopened with correct 16-bit stereo PCM, 16000 Hz and exact written frames. First three: 53760 frames each, 3.36 s. Fourth: 913920 frames, 57.12 s. Hashes (same environment; cross-platform libm bitwise reproducibility not promised):
+
+    cd3a44bb1caca971c12bbde2545f2bf0f2135a82e8158a2a7fb1d26edea80aee  01-first-dialect.wav
+    6137e36d78878d0ddb4ceb128407b28ced5005036b4642607999debb2f59f006  02-second-dialect.wav
+    719daa69bf070f7a586a53c4df97e4262822151438865e290499bd80cf6d3057  03-counterpoint.wav
+    c69ab8decb635c581cebf1946e26c7480cc3f3abd9b579d6d3d2f78b63af8840  04-sixteen-transfers.wav
+
+No listening experiment, audio-device measurement, independent review or canonical corpus validation. These are original synthetic tones. The dedicated oracle is not repository-wide CI.
