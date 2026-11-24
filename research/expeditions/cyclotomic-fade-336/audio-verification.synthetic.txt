@@ -1,0 +1,25 @@
+{
+  "classification": "synthetic",
+  "census_rows": 64,
+  "candidates": 814384,
+  "census_fnv1a64": "c34520fd0834cf30",
+  "census_sha256": "20ef97b48a26ff26a8825564952d88034dccf3f04704cb5a4daee4b78f574b1e",
+  "audio": {
+    "short-vs-exact": {
+      "left": [1,1,1,1],
+      "right": [1,1,1,1,1],
+      "gain": [0.25000000000000006,4.9650683064945465e-17],
+      "tail_pcm_peak": [4500,0],
+      "sha256": "758fa8423e15f3317e57a08fff9b3dbfb6eb2ecc1a31d7b24cbc83743d4a54a6",
+      "bytes": 128044
+    },
+    "same-deadline": {
+      "left": [1,1,1,1],
+      "right": [21,8,8,21],
+      "gain": [0.25000000000000006,0.000593825064631539],
+      "tail_pcm_peak": [4500,11],
+      "sha256": "65809b63ea8ece404fc9f7b92bc74fe173cd3a12e72623b59e2f0853c89a2f50",
+      "bytes": 128044
+    }
+  }
+}
