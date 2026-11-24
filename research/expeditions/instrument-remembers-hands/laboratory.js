@@ -27,7 +27,7 @@ function run(){
       const compatible=ps.filter(p=>p.slice(0,k).every((x,i)=>x===i));
       eq(compatible.length,fact(n-k));
       const numerator=Array.from({length:n},(_,target)=>Math.max(...Array.from({length:n},(_,key)=>compatible.filter(p=>p[key]===target).length))).reduce((a,b)=>a+b,0);
-      eq(numerator*n*0+numerator,(k+1)*compatible.length);
+      eq(numerator,(k+1)*compatible.length);
       eq(compatible.filter(p=>p.every((x,i)=>x===i)).length,1);
       if(n===4)rows.push({k,stableSingle:`${numerator}/${n*compatible.length}`,stablePhrase:`1/${compatible.length}`,freshSingle:`1/${n}`,freshPhrase:`1/${fact(n)}`});
     }
