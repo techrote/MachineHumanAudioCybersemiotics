@@ -6,6 +6,16 @@ Exploratory mathematical and artistic research · 2026-11-24 · Refs #356
 
 This is an exploration of the geometry of lossy descriptors, not a claim about the performance of any listener, an auditory safety standard, or a new general moment theorem. The title means passing every moment in a chosen finite list, not equality of the entire infinite moment sequence.
 
+## Contents
+
+1. [Scope and provenance](#1-scope-provenance-and-reconciliation) — repository isolation and research status.
+2. [Formal model](#2-formal-model-and-why-the-boundary-matters) — exact moment observations and minimax ambiguity.
+3. [Constructive obstruction](#3-exact-constructive-obstruction-and-finite-grid-certificate) — rational witnesses, finite-grid optima and duality.
+4. [Exclusion band](#4-a-true-exclusion-band-and-the-surprising-parity-plateau) — sharp low-order results and general repair bound.
+5. [Experiments](#5-executed-computational-experiments) — exact census and independent numerical LP comparison.
+6. [Acoustic witness](#6-original-acoustic-witness-and-synthesis-idea) — original PCM and the Boundary Organ concept.
+7. [Cross-domain bridge](#7-intellectual-cross-domain-bridge-contrary-cases-and-sources) — implications, negative cases and source ledger.
+
 ## 1. Scope, provenance and reconciliation
 
 - Base: main at 495a98ca12bae467a507031f04931aa4254b1866.
