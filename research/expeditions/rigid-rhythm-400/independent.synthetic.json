@@ -1,0 +1,67 @@
+{
+  "cases": 497,
+  "outside": 294,
+  "histogram": {
+    "1": 42,
+    "2": 154,
+    "3": 178,
+    "4": 95,
+    "5": 28
+  },
+  "audio": [
+    {
+      "file": "rigid-voices.wav",
+      "seconds": 10.5,
+      "sha256": "54c85e28231b0ad8afb93336cdbc9f652a3538e187e7cc081418e59a861824a3",
+      "channels": [
+        {
+          "peak_concurrency": 3,
+          "events": 71,
+          "max_abs_pcm": 22883,
+          "histogram": {
+            "0": 153,
+            "1": 44,
+            "2": 12,
+            "3": 1
+          }
+        },
+        {
+          "peak_concurrency": 2,
+          "events": 71,
+          "max_abs_pcm": 16044,
+          "histogram": {
+            "0": 144,
+            "1": 61,
+            "2": 5
+          }
+        }
+      ]
+    },
+    {
+      "file": "gcd-geometry.wav",
+      "seconds": 3.0,
+      "sha256": "368716ab1bea7a551fce6b0e15c8984d2c1da9344cb530553dd34dd82784ca54",
+      "channels": [
+        {
+          "peak_concurrency": 3,
+          "events": 20,
+          "max_abs_pcm": 22883,
+          "histogram": {
+            "0": 44,
+            "1": 14,
+            "3": 2
+          }
+        },
+        {
+          "peak_concurrency": 1,
+          "events": 20,
+          "max_abs_pcm": 8659,
+          "histogram": {
+            "0": 40,
+            "1": 20
+          }
+        }
+      ]
+    }
+  ]
+}
