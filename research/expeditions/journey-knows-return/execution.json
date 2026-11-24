@@ -1,0 +1,42 @@
+{
+  "instances": 1714,
+  "worlds": 30232,
+  "queries": 95862,
+  "pairChecks": 11052,
+  "strictGains": 948,
+  "symmetric": 118,
+  "strictTransport": 8632,
+  "zeroNontrivial": 1008,
+  "route": {
+    "a": [
+      3,
+      3,
+      3
+    ],
+    "b": [
+      2,
+      5,
+      2
+    ],
+    "total": 9
+  },
+  "audio": {
+    "physical-a": {
+      "bytes": 15724,
+      "fnv1a": "676fa25a"
+    },
+    "physical-b": {
+      "bytes": 15724,
+      "fnv1a": "ea77db5a"
+    },
+    "receipt-a": {
+      "bytes": 15724,
+      "fnv1a": "676fa25a"
+    },
+    "receipt-b": {
+      "bytes": 15724,
+      "fnv1a": "676fa25a"
+    }
+  },
+  "assertionFailures": 0
+}
