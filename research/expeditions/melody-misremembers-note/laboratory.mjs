@@ -74,7 +74,7 @@ function laboratory(maxN=8) {
       mapNumerator:maxSum,mapDenominator:M*n*n,mapSuccess:Number((maxSum/(M*n*n)).toFixed(10)),
       oneCoordinateSuccess:1/n,conditionalEntropy:Number(entropyFormula.toFixed(10)),uniformParentGuess:1/(n*n-2*n+2)});
   }
-  // Synthetic rank renderer: 80 samples per period (rank-dependent integer triangle), 800 per note.
+  // Synthetic rank renderer: rank-dependent integer period (40 - 4*rank samples), 800 samples per note.
   // This is intentionally a canonicalization demonstration, not a perceptual model.
   function wav(p){
     const count=800*p.length, a=new Uint8Array(44+2*count),d=new DataView(a.buffer);
