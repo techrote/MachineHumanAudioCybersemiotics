@@ -1,0 +1,492 @@
+{
+  "model": "synthetic binary vector, decoder-known path unless noted",
+  "comparisons": 124828,
+  "census": [
+    {
+      "d": 2,
+      "T": 1,
+      "minimumSwitchHistogram": [
+        4
+      ]
+    },
+    {
+      "d": 2,
+      "T": 2,
+      "minimumSwitchHistogram": [
+        10,
+        6
+      ]
+    },
+    {
+      "d": 2,
+      "T": 3,
+      "minimumSwitchHistogram": [
+        22,
+        30,
+        12
+      ]
+    },
+    {
+      "d": 2,
+      "T": 4,
+      "minimumSwitchHistogram": [
+        46,
+        102,
+        84,
+        24
+      ]
+    },
+    {
+      "d": 2,
+      "T": 5,
+      "minimumSwitchHistogram": [
+        94,
+        294,
+        372,
+        216,
+        48
+      ]
+    },
+    {
+      "d": 2,
+      "T": 6,
+      "minimumSwitchHistogram": [
+        190,
+        774,
+        1332,
+        1176,
+        528,
+        96
+      ]
+    },
+    {
+      "d": 2,
+      "T": 7,
+      "minimumSwitchHistogram": [
+        382,
+        1926,
+        4212,
+        5016,
+        3408,
+        1248,
+        192
+      ]
+    },
+    {
+      "d": 2,
+      "T": 8,
+      "minimumSwitchHistogram": [
+        766,
+        4614,
+        12276,
+        18456,
+        16848,
+        9312,
+        2880,
+        384
+      ]
+    },
+    {
+      "d": 3,
+      "T": 1,
+      "minimumSwitchHistogram": [
+        8
+      ]
+    },
+    {
+      "d": 3,
+      "T": 2,
+      "minimumSwitchHistogram": [
+        64,
+        0
+      ]
+    },
+    {
+      "d": 3,
+      "T": 3,
+      "minimumSwitchHistogram": [
+        344,
+        168,
+        0
+      ]
+    },
+    {
+      "d": 3,
+      "T": 4,
+      "minimumSwitchHistogram": [
+        1576,
+        2520,
+        0,
+        0
+      ]
+    },
+    {
+      "d": 3,
+      "T": 5,
+      "minimumSwitchHistogram": [
+        6728,
+        22008,
+        4032,
+        0,
+        0
+      ]
+    }
+  ],
+  "maxima": [
+    {
+      "d": 2,
+      "T": 2,
+      "s": 0,
+      "good": 6,
+      "max": 4,
+      "nodes": 4,
+      "book": [
+        0,
+        14,
+        9,
+        7
+      ],
+      "decoderObservations": 12
+    },
+    {
+      "d": 2,
+      "T": 3,
+      "s": 1,
+      "good": 12,
+      "max": 4,
+      "nodes": 4,
+      "book": [
+        0,
+        59,
+        38,
+        29
+      ],
+      "decoderObservations": 60
+    },
+    {
+      "d": 2,
+      "T": 4,
+      "s": 1,
+      "good": 108,
+      "max": 8,
+      "nodes": 84,
+      "book": [
+        0,
+        239,
+        216,
+        177,
+        134,
+        105,
+        94,
+        55
+      ],
+      "decoderObservations": 168
+    },
+    {
+      "d": 2,
+      "T": 4,
+      "s": 2,
+      "good": 24,
+      "max": 4,
+      "nodes": 4,
+      "book": [
+        0,
+        238,
+        153,
+        119
+      ],
+      "decoderObservations": 228
+    },
+    {
+      "d": 2,
+      "T": 5,
+      "s": 2,
+      "good": 264,
+      "max": 5,
+      "nodes": 1114,
+      "book": [
+        0,
+        958,
+        633,
+        479,
+        103
+      ],
+      "decoderObservations": 495
+    },
+    {
+      "d": 2,
+      "T": 5,
+      "s": 3,
+      "good": 48,
+      "max": 4,
+      "nodes": 4,
+      "book": [
+        0,
+        955,
+        614,
+        477
+      ],
+      "decoderObservations": 780
+    },
+    {
+      "d": 2,
+      "T": 6,
+      "s": 3,
+      "good": 624,
+      "max": 4,
+      "nodes": 6135,
+      "book": [
+        0,
+        3835,
+        3485,
+        2918
+      ],
+      "decoderObservations": 1572
+    }
+  ],
+  "independentSixWordRefusal": {
+    "found": false,
+    "nodes": 22624
+  },
+  "threshold": [
+    {
+      "d": 2,
+      "s": 0,
+      "T": 2,
+      "messages": 4,
+      "pairs": 6
+    },
+    {
+      "d": 2,
+      "s": 1,
+      "T": 3,
+      "messages": 4,
+      "pairs": 6
+    },
+    {
+      "d": 2,
+      "s": 2,
+      "T": 4,
+      "messages": 4,
+      "pairs": 6
+    },
+    {
+      "d": 2,
+      "s": 3,
+      "T": 5,
+      "messages": 4,
+      "pairs": 6
+    },
+    {
+      "d": 2,
+      "s": 4,
+      "T": 6,
+      "messages": 4,
+      "pairs": 6
+    },
+    {
+      "d": 3,
+      "s": 0,
+      "T": 3,
+      "messages": 8,
+      "pairs": 28
+    },
+    {
+      "d": 3,
+      "s": 1,
+      "T": 5,
+      "messages": 8,
+      "pairs": 28
+    },
+    {
+      "d": 3,
+      "s": 2,
+      "T": 7,
+      "messages": 8,
+      "pairs": 28
+    },
+    {
+      "d": 3,
+      "s": 3,
+      "T": 9,
+      "messages": 8,
+      "pairs": 28
+    },
+    {
+      "d": 3,
+      "s": 4,
+      "T": 11,
+      "messages": 8,
+      "pairs": 28
+    },
+    {
+      "d": 4,
+      "s": 0,
+      "T": 4,
+      "messages": 16,
+      "pairs": 120
+    },
+    {
+      "d": 4,
+      "s": 1,
+      "T": 7,
+      "messages": 16,
+      "pairs": 120
+    },
+    {
+      "d": 4,
+      "s": 2,
+      "T": 10,
+      "messages": 16,
+      "pairs": 120
+    },
+    {
+      "d": 4,
+      "s": 3,
+      "T": 13,
+      "messages": 16,
+      "pairs": 120
+    },
+    {
+      "d": 4,
+      "s": 4,
+      "T": 16,
+      "messages": 16,
+      "pairs": 120
+    },
+    {
+      "d": 5,
+      "s": 0,
+      "T": 5,
+      "messages": 32,
+      "pairs": 496
+    },
+    {
+      "d": 5,
+      "s": 1,
+      "T": 9,
+      "messages": 32,
+      "pairs": 496
+    },
+    {
+      "d": 5,
+      "s": 2,
+      "T": 13,
+      "messages": 32,
+      "pairs": 496
+    },
+    {
+      "d": 5,
+      "s": 3,
+      "T": 17,
+      "messages": 32,
+      "pairs": 496
+    },
+    {
+      "d": 5,
+      "s": 4,
+      "T": 21,
+      "messages": 32,
+      "pairs": 496
+    },
+    {
+      "d": 6,
+      "s": 0,
+      "T": 6,
+      "messages": 64,
+      "pairs": 2016
+    },
+    {
+      "d": 6,
+      "s": 1,
+      "T": 11,
+      "messages": 64,
+      "pairs": 2016
+    },
+    {
+      "d": 6,
+      "s": 2,
+      "T": 16,
+      "messages": 64,
+      "pairs": 2016
+    },
+    {
+      "d": 6,
+      "s": 3,
+      "T": 21,
+      "messages": 64,
+      "pairs": 2016
+    },
+    {
+      "d": 6,
+      "s": 4,
+      "T": 26,
+      "messages": 64,
+      "pairs": 2016
+    }
+  ],
+  "spreads": [
+    {
+      "d": 2,
+      "T": 2,
+      "messages": 2,
+      "distinctOutputs": 4
+    },
+    {
+      "d": 2,
+      "T": 4,
+      "messages": 6,
+      "distinctOutputs": 16
+    },
+    {
+      "d": 2,
+      "T": 6,
+      "messages": 22,
+      "distinctOutputs": 64
+    },
+    {
+      "d": 2,
+      "T": 8,
+      "messages": 86,
+      "distinctOutputs": 256
+    },
+    {
+      "d": 2,
+      "T": 10,
+      "messages": 342,
+      "distinctOutputs": 1024
+    }
+  ],
+  "audio": {
+    "fixedA": {
+      "bits": "00",
+      "bytes": 3244,
+      "fnv1a": "dbe47ac1"
+    },
+    "fixedB": {
+      "bits": "10",
+      "bytes": 3244,
+      "fnv1a": "6a252c49"
+    },
+    "switchedA": {
+      "bits": "00",
+      "bytes": 3244,
+      "fnv1a": "dbe47ac1"
+    },
+    "switchedB": {
+      "bits": "00",
+      "bytes": 3244,
+      "fnv1a": "dbe47ac1"
+    },
+    "repairedA": {
+      "bits": "000",
+      "bytes": 4844,
+      "fnv1a": "7dbf6aac"
+    },
+    "repairedB": {
+      "bits": "001",
+      "bytes": 4844,
+      "fnv1a": "79b349f4"
+    }
+  }
+}
