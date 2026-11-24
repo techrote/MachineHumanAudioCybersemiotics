@@ -1,0 +1,64 @@
+{
+  "census": {
+    "3": {
+      "total": 2024,
+      "obstructed": 784,
+      "pairwise_only": 360,
+      "all_improve": 1240,
+      "antipodal": 424
+    },
+    "4": {
+      "total": 10626,
+      "obstructed": 7026,
+      "pairwise_only": 2904,
+      "all_improve": 3600,
+      "antipodal": 4122
+    }
+  },
+  "audio": {
+    "sample_rate": 16000,
+    "block_samples": 9600,
+    "receiver_order": [
+      0,
+      1,
+      2
+    ],
+    "carrier_hz": [
+      300,
+      400,
+      500
+    ],
+    "pcm_gain": 10000,
+    "channels": {
+      "same-magnitude.wav": {
+        "sha256": "ad1ae2547ce6e54b710d8b9a164a04b1441785596b7fcf4039ecce27de85fca2",
+        "frames": 28800,
+        "peak": 10000
+      },
+      "split-residual.wav": {
+        "sha256": "cc38f30dd2516575678bd750305d6ca95c0cde332e009375b5c0d5a2bdadcf93",
+        "frames": 28800,
+        "peak": 10000
+      }
+    },
+    "split_gain": [
+      [
+        0.25,
+        0.4330127018922193
+      ],
+      [
+        -0.5,
+        -0.8660254037844386
+      ],
+      [
+        0.25,
+        0.4330127018922193
+      ]
+    ],
+    "split_residual_magnitudes": [
+      0.8660254037844386,
+      1.1102230246251565e-16,
+      0.8660254037844386
+    ]
+  }
+}
