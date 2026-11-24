@@ -1,0 +1,232 @@
+{
+  "model": "uniform permutation and independent uniform single deletion, exact surviving ranks",
+  "maxN": 8,
+  "totals": {
+    "parents": 46232,
+    "observations": 5913,
+    "forwardEvents": 362878,
+    "inverseEvents": 362878,
+    "fibers": 282240
+  },
+  "table": [
+    {
+      "n": 2,
+      "observations": 1,
+      "parentsPerObservation": 2,
+      "longestHist": {
+        "1": 1
+      },
+      "multiplicityHist": {
+        "2": 2
+      },
+      "mapNumerator": 2,
+      "mapDenominator": 4,
+      "mapSuccess": 0.5,
+      "oneCoordinateSuccess": 0.5,
+      "conditionalEntropy": 1,
+      "uniformParentGuess": 0.5
+    },
+    {
+      "n": 3,
+      "observations": 2,
+      "parentsPerObservation": 5,
+      "longestHist": {
+        "2": 2
+      },
+      "multiplicityHist": {
+        "1": 4,
+        "2": 4,
+        "3": 2
+      },
+      "mapNumerator": 6,
+      "mapDenominator": 18,
+      "mapSuccess": 0.3333333333,
+      "oneCoordinateSuccess": 0.3333333333333333,
+      "conditionalEntropy": 2.1971597234,
+      "uniformParentGuess": 0.2
+    },
+    {
+      "n": 4,
+      "observations": 6,
+      "parentsPerObservation": 10,
+      "longestHist": {
+        "2": 4,
+        "3": 2
+      },
+      "multiplicityHist": {
+        "1": 32,
+        "2": 22,
+        "3": 4,
+        "4": 2
+      },
+      "mapNumerator": 20,
+      "mapDenominator": 96,
+      "mapSuccess": 0.2083333333,
+      "oneCoordinateSuccess": 0.25,
+      "conditionalEntropy": 3.1768796874,
+      "uniformParentGuess": 0.1
+    },
+    {
+      "n": 5,
+      "observations": 24,
+      "parentsPerObservation": 17,
+      "longestHist": {
+        "1": 2,
+        "2": 16,
+        "3": 4,
+        "4": 2
+      },
+      "multiplicityHist": {
+        "1": 252,
+        "2": 128,
+        "3": 22,
+        "4": 4,
+        "5": 2
+      },
+      "mapNumerator": 78,
+      "mapDenominator": 600,
+      "mapSuccess": 0.13,
+      "oneCoordinateSuccess": 0.2,
+      "conditionalEntropy": 3.9508115131,
+      "uniformParentGuess": 0.058823529411764705
+    },
+    {
+      "n": 6,
+      "observations": 120,
+      "parentsPerObservation": 26,
+      "longestHist": {
+        "1": 14,
+        "2": 78,
+        "3": 22,
+        "4": 4,
+        "5": 2
+      },
+      "multiplicityHist": {
+        "1": 2112,
+        "2": 852,
+        "3": 128,
+        "4": 22,
+        "5": 4,
+        "6": 2
+      },
+      "mapNumerator": 382,
+      "mapDenominator": 4320,
+      "mapSuccess": 0.0884259259,
+      "oneCoordinateSuccess": 0.16666666666666666,
+      "conditionalEntropy": 4.5759241421,
+      "uniformParentGuess": 0.038461538461538464
+    },
+    {
+      "n": 7,
+      "observations": 720,
+      "parentsPerObservation": 37,
+      "longestHist": {
+        "1": 90,
+        "2": 480,
+        "3": 122,
+        "4": 22,
+        "5": 4,
+        "6": 2
+      },
+      "multiplicityHist": {
+        "1": 19200,
+        "2": 6432,
+        "3": 852,
+        "4": 128,
+        "5": 22,
+        "6": 4,
+        "7": 2
+      },
+      "mapNumerator": 2256,
+      "mapDenominator": 35280,
+      "mapSuccess": 0.0639455782,
+      "oneCoordinateSuccess": 0.14285714285714285,
+      "conditionalEntropy": 5.0961180552,
+      "uniformParentGuess": 0.02702702702702703
+    },
+    {
+      "n": 8,
+      "observations": 5040,
+      "parentsPerObservation": 50,
+      "longestHist": {
+        "1": 646,
+        "2": 3436,
+        "3": 802,
+        "4": 128,
+        "5": 22,
+        "6": 4,
+        "7": 2
+      },
+      "multiplicityHist": {
+        "1": 190080,
+        "2": 54480,
+        "3": 6432,
+        "4": 852,
+        "5": 128,
+        "6": 22,
+        "7": 4,
+        "8": 2
+      },
+      "mapNumerator": 15624,
+      "mapDenominator": 322560,
+      "mapSuccess": 0.0484375,
+      "oneCoordinateSuccess": 0.125,
+      "conditionalEntropy": 5.5401993695,
+      "uniformParentGuess": 0.02
+    }
+  ],
+  "audio": {
+    "rawA": {
+      "bytes": 4844,
+      "fnv1a": "808dd748"
+    },
+    "rawB": {
+      "bytes": 4844,
+      "fnv1a": "ae7bb638"
+    },
+    "ordinalA": {
+      "bytes": 4844,
+      "fnv1a": "ae7bb638"
+    },
+    "ordinalB": {
+      "bytes": 4844,
+      "fnv1a": "ae7bb638"
+    }
+  },
+  "witness": {
+    "parentA": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "parentB": [
+      4,
+      1,
+      2,
+      3
+    ],
+    "erasedPosition": 1,
+    "rawA": [
+      2,
+      3,
+      4
+    ],
+    "rawB": [
+      1,
+      2,
+      3
+    ],
+    "qA": [
+      1,
+      2,
+      3
+    ],
+    "qB": [
+      1,
+      2,
+      3
+    ]
+  },
+  "assertions": "all passed"
+}
