@@ -3,6 +3,15 @@
 
 **Refs #362 · 24 November 2026 · finite mathematics and synthetic qualification.** AI-authored and self-reviewed by ChatGPT GPT-6.2. No participant data, acoustic performance, adopted production policy, accepted Track E/G finding or mathematical priority claim.
 
+## Contents
+
+1. Excavation — recover the longer finite-horizon question.
+2. Model — prove the local ambiguity-propagation threshold.
+3. Closed horizon — derive exact costs and narrow-suffix factorization.
+4. Flush — recover block savings using a source-free coda.
+5. Countercontrols — distinguish termination, support and action deadlines.
+6. Evidence — record source extent and synthetic qualification.
+
 ## 1. Excavation and disagreement
 
 [The Receipt That Needs a Wider Second Tick (#355)](https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/24e2500e7d0926aae5dcfa67c703c68c24cb38d3/research/expeditions/receipt-wider-second-tick/README.md), §§3–5, proves a two-tick peak-alphabet obstruction for a pentagon collision graph, expressly leaving longer streaming horizons unresolved. Its paired-digit pipeline can use a flush tick. The gap is whether a long finite stream with unrestricted decoding delay, but no flush and a narrow alphabet, can eventually extinguish earlier ambiguity. It cannot under the following conditions. This strengthens the closed-horizon result without claiming the open-ended one-tick streaming problem is solved.
@@ -67,7 +76,7 @@ Fiction: the museum's final customer arrives with a new object while the archivi
 
 Source comparison, single AI reader, accessed 2026-11-24: H. S. Witsenhausen, *The zero-error side information problem and chromatic numbers*, IEEE TIT 22(5), 592–593 (1976), DOI 10.1109/TIT.1976.1055607, publisher abstract at https://ieeexplore.ieee.org/document/1055607/ inspected (graph colouring and possible block savings when decoder alone has side information). L. Lovász, *On the Shannon capacity of a graph*, IEEE TIT 25(1), 1–7 (1979), DOI 10.1109/TIT.1979.1055985, publisher abstract at https://ieeexplore.ieee.org/abstract/document/1055985/ inspected (pentagon capacity). Full texts and comprehensive novelty search not performed. Two-fold colouring is defined and its relationship proved directly above; no claim of priority. No source excerpts committed. The asymptotic lower bound invokes Lovász's established theorem rather than purporting to derive it from finite enumeration.
 
-Run `node lab.js` in this directory. The exact finite oracle builds causal tag-fibre partitions without assuming the propagation theorem, computes the terminal chromatic cost with exact search, and checks the narrow closed frontier for labelled graphs up to three vertices over horizons up to three. It separately tests the two-fold colouring threshold on every labelled simple graph with one to five vertices; the direct intervention maps verify product adjacency and the four-origin flush witness against every action vector at the two deadlines. Causality is checked against every unseen continuation for that fixture. The repeated-origin support control is checked directly. Counts from the precommit JavaScript runtime:
+Run `node lab.js` in this directory. The exact finite oracle builds causal tag-fibre partitions without assuming the propagation theorem, computes the terminal chromatic cost with exact search, and checks the narrow closed frontier for labelled graphs up to three vertices over horizons up to three. It separately tests the two-fold colouring threshold on every labelled simple graph with one to five vertices; the direct intervention maps verify product adjacency and the four-origin flush witness against every action vector at the two deadlines. Causality is checked against every unseen continuation for that fixture. The repeated-origin support control is checked directly. Counts from the precommit JavaScript runtime, reproduced by replay of the lab fetched at af5c42d52fd71b7f2447678002057b87c16720ca:
 
 | Check | Count |
 | --- | ---: |
