@@ -1,0 +1,28 @@
+{
+  "plans": 12800,
+  "observations": 32835,
+  "systems": 3240,
+  "example41cap6": {
+    "status": "optimal",
+    "denominators": [
+      3,
+      4,
+      5
+    ],
+    "period": 60,
+    "visited": 11
+  },
+  "example41cap8": {
+    "status": "optimal",
+    "denominators": [
+      6,
+      7
+    ],
+    "period": 42,
+    "visited": 19
+  },
+  "exampleNested": {
+    "status": "impossible",
+    "visited": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "rate_hz": 16000,
+  "frames": 32000,
+  "channels_hz": [
+    150,
+    550
+  ],
+  "anchor_rate_hz": 400,
+  "equal_anchor_pcm_pairs": 800,
+  "total_anchor_pairs": 800,
+  "equal_midpoint_pcm_pairs": 0,
+  "total_midpoint_pairs": 800,
+  "equal_all_pcm_pairs": 801,
+  "different_all_pcm_pairs": 31199,
+  "sha256": "f2d2b8352ac9cf0c55a5f08bc4d556e4abafc1c0738fde67cbbc51df7d7f013f"
+}
