@@ -1,6 +1,6 @@
 function validate(M,phases,budgets){
-  if(!Number.isInteger(M)||M<2||M>1000000||!Array.isArray(phases)||phases.length<2||phases.length>4096||phases.some(p=>!Number.isInteger(p)||p<0||p>=M)) throw new RangeError("invalid phase grid");
-  if(!Array.isArray(budgets)||budgets.length!==phases.length||budgets.some(b=>!Number.isInteger(b)||b<0||b>1000000000)) throw new RangeError("invalid slew budget");
+  if(!Number.isInteger(M)||M<2||M>1000000||!Array.isArray(phases)||phases.length<2||phases.length>4096||Array.from(phases).some(p=>!Number.isInteger(p)||p<0||p>=M)) throw new RangeError("invalid phase grid");
+  if(!Array.isArray(budgets)||budgets.length!==phases.length||Array.from(budgets).some(b=>!Number.isInteger(b)||b<0||b>1000000000)) throw new RangeError("invalid slew budget");
 }
 
 function ranges(M,phases,budgets){
