@@ -7,8 +7,9 @@ function laboratory(run=true){
   const monomial=d=>Array(d).fill(0).concat(1);
   const divide=(p,a)=>{const q=Array(p.length-1).fill(0);for(let i=q.length-1;i>=0;i--)q[i]=p[i+1]+a*(q[i+1]||0);return {q,remainder:p[0]+a*q[0]}};
   function design(a,d,n=1){
-    if(!(a>0&&a<1)||!Number.isInteger(d)||d<0||![1,2].includes(n))throw Error("domain: 0<a<1, integer d>=0, n=1 or 2");
+    if(!(a>0&&a<1)||!Number.isSafeInteger(d)||d<0||d>4096||![1,2].includes(n))throw Error("domain: 0<a<1, integer 0<=d<=4096, n=1 or 2");
     const c=a**d, hnum=[-a,1], hden=[1,-a];
+    if (!(c>0)) throw Error("numeric underflow: use higher precision");
     if(n===1){
       const q=d?Array.from({length:d},(_,i)=>a**(d-1-i)):[0];
       return {gain:c,gnum:conv(q,hden),gden:[1],enum:[c],eden:[1]};
@@ -16,6 +17,7 @@ function laboratory(run=true){
     if(d<2)return {gain:1,gnum:[0],gden:[1],enum:monomial(d),eden:[1]};
     const b=d*a**(d-1)*(1-a*a), m=(b+Math.hypot(b,2*c))/2, rr=c/m;
     const eden=[1-rr*a,rr-a], en=[m*(rr-a),m*(1-rr*a)];
+    if (!(m>0 && Math.abs(eden[1])<Math.abs(eden[0]))) throw Error("numerically ill-conditioned equalizer");
     const v=sub(conv(monomial(d),eden),en);
     const f=divide(v,a), g=divide(f.q,a);
     assert(Math.abs(f.remainder)<1e-10&&Math.abs(g.remainder)<1e-10,"zero cancellation");
@@ -74,7 +76,7 @@ function laboratory(run=true){
     }
   }
   assert(design(.5,1,2).gain===1&&design(.5,1,1).gain===.5,"repeated zero control");
-  for(const args of [[0,1,1],[1,1,1],[.5,-1,1],[.5,1.2,1],[.5,1,3]]){let rejected=false;try{design(...args)}catch{rejected=true}assert(rejected,"invalid input accepted")}
+  for(const args of [[0,1,1],[1,1,1],[.5,-1,1],[.5,1.2,1],[.5,1,3],[.5,4097,1],[.1,4096,2]]){let rejected=false;try{design(...args)}catch{rejected=true}assert(rejected,"invalid input accepted")}
   return {designs,freqChecks,impulseChecks,witnessChecks,maxFrequencyError,maxTimeError,maxWitnessError,rows};
 }
 const {design, filter} = laboratory(false);
