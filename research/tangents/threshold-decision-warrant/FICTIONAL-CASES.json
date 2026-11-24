@@ -1,0 +1,1599 @@
+{
+  "kind": "fictional_t017_not_participant_data",
+  "base_commit": "423649d18c54cbf90bf7bf79d49ba69b29f03848",
+  "truth_origin": "Hand-assigned scenario-level labels and explicit comparator expectations; not computed by policy implementation, and not independent human review.",
+  "cases": [
+    {
+      "id": "T017-001",
+      "family": "clear-accept",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 450,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 450
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 450,
+        "world_conforming": true,
+        "permitted_class": "conforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": "conforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-002",
+      "family": "clear-accept",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 480,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 480
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 520,
+        "world_conforming": false,
+        "permitted_class": "conforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": "conforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-003",
+      "family": "clear-accept",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 490,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 490
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 485,
+        "world_conforming": true,
+        "permitted_class": "conforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": "conforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-004",
+      "family": "clear-accept",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 470,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 470
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 475,
+        "world_conforming": true,
+        "permitted_class": "conforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": "conforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-005",
+      "family": "clear-reject",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 530,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 530
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 530,
+        "world_conforming": false,
+        "permitted_class": "nonconforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": "nonconforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-006",
+      "family": "clear-reject",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 510,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 510
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": "nonconforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": "nonconforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-007",
+      "family": "clear-reject",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 550,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 550
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 510,
+        "world_conforming": false,
+        "permitted_class": "nonconforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": "nonconforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-008",
+      "family": "clear-reject",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 525,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 525
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 530,
+        "world_conforming": false,
+        "permitted_class": "nonconforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": "nonconforming"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-009",
+      "family": "indeterminate",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 499,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 499
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 498,
+        "world_conforming": true,
+        "permitted_class": "indeterminate",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "indeterminate",
+        "upstream_warrant": "indeterminate"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-010",
+      "family": "indeterminate",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 500
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 510,
+        "world_conforming": false,
+        "permitted_class": "indeterminate",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "indeterminate",
+        "upstream_warrant": "indeterminate"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-011",
+      "family": "indeterminate",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 501,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 501
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 490,
+        "world_conforming": true,
+        "permitted_class": "indeterminate",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "indeterminate",
+        "upstream_warrant": "indeterminate"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-012",
+      "family": "indeterminate",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 505,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 505
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 520,
+        "world_conforming": false,
+        "permitted_class": "indeterminate",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "indeterminate",
+        "upstream_warrant": "indeterminate"
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-013",
+      "family": "no-rule",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 480,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 480
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": null,
+      "upstream": {
+        "decision": null,
+        "authorized": false,
+        "current": true,
+        "evidence_trace": false,
+        "rule_id": null,
+        "rule_version": null
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-014",
+      "family": "no-rule",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 520,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 520
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": null,
+      "upstream": {
+        "decision": null,
+        "authorized": false,
+        "current": true,
+        "evidence_trace": false,
+        "rule_id": null,
+        "rule_version": null
+      },
+      "ground_truth": {
+        "actual_tenths": 520,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-015",
+      "family": "no-rule",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 500
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": null,
+      "upstream": {
+        "decision": null,
+        "authorized": false,
+        "current": true,
+        "evidence_trace": false,
+        "rule_id": null,
+        "rule_version": null
+      },
+      "ground_truth": {
+        "actual_tenths": 500,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-016",
+      "family": "no-rule",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 450,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 450
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": null,
+      "upstream": {
+        "decision": null,
+        "authorized": false,
+        "current": true,
+        "evidence_trace": false,
+        "rule_id": null,
+        "rule_version": null
+      },
+      "ground_truth": {
+        "actual_tenths": 530,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-017",
+      "family": "authority-version",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 480,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 480
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": false,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-018",
+      "family": "authority-version",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 520,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 520
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 2,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 520,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-019",
+      "family": "authority-version",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 460,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 460
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": false,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 460,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-020",
+      "family": "authority-version",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 540,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 540
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": false,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 540,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-021",
+      "family": "measurement-quality",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 480,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": false,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 480
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-022",
+      "family": "measurement-quality",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 520,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "unknown",
+        "spoken_value_tenths": 520
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 520,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-023",
+      "family": "measurement-quality",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 505,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": false,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 505
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 500,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-024",
+      "family": "measurement-quality",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 470,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": false,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 470
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 530,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-025",
+      "family": "binding-conflict",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 480,
+        "quantity": "pressure_index",
+        "unit": "TI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 480
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-026",
+      "family": "binding-conflict",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 530,
+        "quantity": "temperature_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 530
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 530,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": null,
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-027",
+      "family": "binding-conflict",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 480,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 480
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "nonconforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-028",
+      "family": "binding-conflict",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 530,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 530
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 530,
+        "world_conforming": false,
+        "permitted_class": null,
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "nonconforming",
+        "upstream_warrant": null
+      },
+      "contrast_note": ""
+    },
+    {
+      "id": "T017-029",
+      "family": "rule-risk-choice",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 485,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 485
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-CONS",
+        "version": 1,
+        "active": true,
+        "accept_max": 480,
+        "reject_min": 510,
+        "risk": "false-accept-cost-prioritized",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-CONS",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 486,
+        "world_conforming": true,
+        "permitted_class": "indeterminate",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "indeterminate",
+        "upstream_warrant": "indeterminate"
+      },
+      "contrast_note": "Same measured value; different declared fictional acceptance boundary; no bound inferred from risk text."
+    },
+    {
+      "id": "T017-030",
+      "family": "rule-risk-choice",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 485,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 485
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-PERM",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 520,
+        "risk": "false-reject-cost-prioritized",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-PERM",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 486,
+        "world_conforming": true,
+        "permitted_class": "conforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": "conforming"
+      },
+      "contrast_note": "Same measured value; different declared fictional acceptance boundary; no bound inferred from risk text."
+    },
+    {
+      "id": "T017-031",
+      "family": "numeric-rendering",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 489,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 490
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "conforming",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 497,
+        "world_conforming": true,
+        "permitted_class": "conforming",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "conforming",
+        "local_rule": "conforming",
+        "upstream_warrant": "conforming"
+      },
+      "contrast_note": "Displayed whole-tenth-unit conversion is a deliberately lossy naive message."
+    },
+    {
+      "id": "T017-032",
+      "family": "numeric-rendering",
+      "scenario": "Entirely fictional bench pressure-index report; not a real device or safety condition.",
+      "measurement": {
+        "value_tenths": 505,
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "valid": true,
+        "current": true,
+        "uncertainty": "declared",
+        "spoken_value_tenths": 510
+      },
+      "specification": {
+        "upper_tenths": 500,
+        "quantity": "pressure_index",
+        "unit": "PI"
+      },
+      "rule": {
+        "id": "PI-R1",
+        "version": 1,
+        "active": true,
+        "accept_max": 490,
+        "reject_min": 510,
+        "risk": "balanced",
+        "quantity": "pressure_index",
+        "unit": "PI",
+        "context": "fictional_bench"
+      },
+      "upstream": {
+        "decision": "indeterminate",
+        "authorized": true,
+        "current": true,
+        "evidence_trace": true,
+        "rule_id": "PI-R1",
+        "rule_version": 1
+      },
+      "ground_truth": {
+        "actual_tenths": 480,
+        "world_conforming": true,
+        "permitted_class": "indeterminate",
+        "no_action_authorized": false
+      },
+      "independent_policy_expectations": {
+        "value_only": null,
+        "naive": "nonconforming",
+        "local_rule": "indeterminate",
+        "upstream_warrant": "indeterminate"
+      },
+      "contrast_note": "Displayed whole-tenth-unit conversion is a deliberately lossy naive message."
+    }
+  ]
+}
