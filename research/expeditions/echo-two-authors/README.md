@@ -93,12 +93,27 @@ This is a counterexample to universal identification by two early taps, not a cl
 
 A separate sufficient condition: if the observations have a known admissible decomposition with coprime residuals over the real polynomial ring, their ordinary GCD is exactly H up to scale. If coprimeness is imposed on all explanations, the normalized solution is unique. If it is not imposed, a smaller candidate may still exist. When every real irreducible factor of both outputs is itself nonnegative after normalization (for example strictly Hurwitz-stable probability polynomials), the normalized GCD is admissible and is greatest even under the stronger positive-extension order. These are useful positive regimes; do not generalize the obstruction to them.
 
+### Unbounded ambiguity even after exact two-tap calibration
+
+Choose a geometric progression 2+a_i=C R^i for i=0,...,m-1, with C=5/2 and R=1+1/(10m). All a_i lie in (1/4,1], since R^(m-1)<exp(1/10) and (5/2)exp(1/10)<3. Use the strictly positive beta construction from §3. A maximal normalized filter with exponent vector e then satisfies
+
+    H(0)=C^(-k) R^(-w), H'(0)=k H(0), w=sum_i i e_i.
+
+Thus the first two actual normalized taps depend only on w, which ranges over every integer from 0 to (m-1)k (distribute w among k choices of an integer in [0,m-1]). Since R>1, there are exactly (m-1)k+1 early-tap classes. Distinct exponent vectors remain distinct full filters by unique factorization. The pigeonhole principle guarantees at least one class with at least
+
+    ceil(binomial(m+k-1,m-1)/((m-1)k+1))
+
+distinct filters. This diverges for any fixed m>=3 as k increases, with order k^(m-2). In particular for m=3,w=k the exponents are (j,k-2j,j) for 0<=j<=floor(k/2), giving exactly floor(k/2)+1 distinct filters sharing the two measured taps. Therefore two-tap calibration cannot provide even a universal constant bound on the remaining ambiguity. Full lengths and gain agree as before.
+
+The separate [early-taps.mjs](early-taps.mjs) laboratory independently enumerates exact weak compositions and uses reduced BigInt rational keys for the two taps and complete normalized filters. It checks 4,990 distinct maximal filters across 40 parameter instances (m=2..6, k=1..8), all exact weight-class identities and the pigeonhole bound. At m=6,k=8 there are 1,287 maximal filters, 41 early-tap classes, and the largest class contains 73 distinct filters (weight 20). At m=3,k=8 the largest class contains five. See [early-taps-execution.json](early-taps-execution.json); the core was executed, not the native CLI wrapper.
+
 ## 5. Executable qualification
 
-Files: [laboratory.mjs](laboratory.mjs), [execution.json](execution.json). Run from this directory with Node 18+:
+Files: [laboratory.mjs](laboratory.mjs), [execution.json](execution.json), [early-taps.mjs](early-taps.mjs), [early-taps-execution.json](early-taps-execution.json). Run from this directory with Node 18+:
 
     node laboratory.mjs > rerun.json
     node laboratory.mjs --wav
+    node early-taps.mjs > early-taps-rerun.json
 
 The second command writes six original mono PCM files to echo-wavs/. The committed receipt is the core output, not a certificate that the Node wrapper or full repository suite has run.
 
@@ -144,7 +159,7 @@ Fingerprints are noncryptographic; the lab also compares every byte directly. Th
 
 Reconciled live main at 495a98ca12bae467a507031f04931aa4254b1866; read AGENTS, RAG, programme, runbook, integrity and validation documents. Inspected 50 most recently updated open issues and PRs, the first 100 branches and a focused echo branch search; searched for blind deconvolution overlap. Existing #193/#194 is epistemic copying, #199/#200 spectral homometry, #288/#289 moment-null leakage, not this common-factor model. Recent worker #298/#299 handles version-blind reconstruction, not this path. This new issue had zero comments at opening. Branch mhac-300/echo-two-authors; only this directory is owned. No canonical data, manifests, programme files, other workers' branches or production code modified.
 
-ChatGPT (GPT-6.2) performed source reading, derivation, implementation, execution and self-review. No independent human or agent review. Core executed in a bare JavaScript runtime; exact receipt committed. Full native Node CLI and repository CI must be distinguished from core execution. Draft PR with Refs #300 until those and independent conceptual critique are qualified; no merge or scientific acceptance claimed.
+ChatGPT (GPT-6.2) performed source reading, derivation, implementation, execution and self-review. No independent human or agent review. Core executed in a bare JavaScript runtime; both exact receipts committed. Full native Node CLI and repository CI must be distinguished from core execution. Draft PR with Refs #300 until those and independent conceptual critique are qualified; no merge or scientific acceptance claimed.
 
 ## 8. Fiction: the room that composed the tune
 
