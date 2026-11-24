@@ -67,4 +67,28 @@ for(let n=2;n<=8;n++){
 }
 return counts;
 }
-console.log(JSON.stringify(laboratory(),null,2));
+function bundledControl(){
+ const actions=Array.from({length:5},()=>[]);
+ let n=0;
+ for(let i=0;i<5;i++)for(let j=i+1;j<5;j++)for(let k=j+1;k<5;k++){
+  actions[i].push([n,n+1]);actions[j].push([n+1,n+2]);actions[k].push([n,n+2]);n+=3;
+ }
+ function bipartite(edges){
+  const adj=Array.from({length:n},()=>[]),colors=Array(n).fill(-1);
+  for(const [a,b] of edges){adj[a].push(b);adj[b].push(a)}
+  for(let i=0;i<n;i++)if(colors[i]<0){colors[i]=0;let q=[i];for(let j=0;j<q.length;j++)for(const x of adj[q[j]]){if(colors[x]===colors[q[j]])return false;if(colors[x]<0){colors[x]=1-colors[q[j]];q.push(x)}}}
+  return true;
+ }
+ let subsets=0,assignments=0;
+ for(let mask=0;mask<32;mask++){
+  const selected=actions.filter((_,i)=>mask>>i&1);
+  if(bipartite(selected.flat())!==(selected.length<=2))throw Error("bundle subset");
+  if(bipartite(selected.flat())&&bipartite(actions.filter((_,i)=>!(mask>>i&1)).flat()))throw Error("2 hint should fail");
+  subsets++;assignments++;
+ }
+ if(![actions.slice(0,2),actions.slice(2,4),actions.slice(4)].every(x=>bipartite(x.flat())))throw Error("3 hint should work");
+ for(const a of actions)if(new Set(a.flat()).size!==2*a.length)throw Error("not matching");
+ if(n!==30||actions.flat().some(([a,b])=>a%3===b%3))throw Error("not triangle union");
+ return {bundleSubsets:subsets,twoHintAssignments:assignments,threeHintWitness:1};
+}
+console.log(JSON.stringify({...laboratory(),...bundledControl()},null,2));
