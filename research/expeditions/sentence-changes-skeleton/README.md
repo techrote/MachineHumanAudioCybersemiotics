@@ -3,6 +3,15 @@
 
 Exploratory expedition, 2026-11-24, [issue #366](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/366). Original interpretation and artistic research, not a selected Track E/G extraction, a protocol amendment, or a validated machine-warning design.
 
+## Contents
+
+1. [The unfinished sentence](#1-the-unfinished-sentence-is-not-necessarily-a-failed-sentence) — broken grammar versus successful redirection.
+2. [Four ways to leave a phrase](#2-four-ways-to-leave-a-phrase) — interruption, resumption, revision and refunctioning.
+3. [Historical detour](#3-historical-detour-a-musical-sentence-that-stops) — musical rhetoric and the counterposition from disfluency research.
+4. [Finite construction and audio experiment](#4-a-finite-construction-and-a-small-audio-experiment) — invariant canonical phrase and distinguishable editorial histories.
+5. [The Anacoluthon Console](#5-exaptation-the-anacoluthon-console) — design proposal and future falsification.
+6. [Source notes and reconciliation](#6-source-notes-and-scope-reconciliation) — provenance, scope and limitations.
+
 ## 1. The unfinished sentence is not necessarily a failed sentence
 
 A speaker begins: "When the last oscillator has—listen, the casing is singing." The initial subordinate clause does not receive its expected completion. The new imperative is not its grammatical continuation. Yet something has been accomplished: the speaker redirects attention from an explanation to a phenomenon. A fluent replacement ("Listen to the casing") might convey the request while erasing the change of direction.
