@@ -1,0 +1,52 @@
+{
+  "matrixCases": 7290,
+  "tiedCases": 3267,
+  "anchorCases": 80,
+  "candidates": 32520,
+  "tiedOptima": 80,
+  "refusals": 5,
+  "frontier": [
+    {
+      "n": 4,
+      "hardE4": 8192,
+      "rampE4": 4096,
+      "hardS2": 64,
+      "rampS2": 32
+    },
+    {
+      "n": 8,
+      "hardE4": 8192,
+      "rampE4": 2048,
+      "hardS2": 64,
+      "rampS2": 16
+    },
+    {
+      "n": 16,
+      "hardE4": 8192,
+      "rampE4": 1024,
+      "hardS2": 64,
+      "rampS2": 8
+    },
+    {
+      "n": 32,
+      "hardE4": 8192,
+      "rampE4": 512,
+      "hardS2": 64,
+      "rampS2": 4
+    },
+    {
+      "n": 64,
+      "hardE4": 8192,
+      "rampE4": 256,
+      "hardS2": 64,
+      "rampS2": 2
+    },
+    {
+      "n": 128,
+      "hardE4": 8192,
+      "rampE4": 128,
+      "hardS2": 64,
+      "rampS2": 1
+    }
+  ]
+}
