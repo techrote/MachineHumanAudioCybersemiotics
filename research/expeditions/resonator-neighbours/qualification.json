@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-24",
+  "runtime": "Python 3.13.5",
+  "scope": "synthetic same-agent native execution",
+  "command": "python laboratory.py results > execution.json",
+  "source_git_blob": "b74cb717730a3a7b598c329fa44e725329d53709",
+  "source_sha256": "acefe895166a40bede0c7cd131f029fd90a9dcb784015876a5f2876bc850cc09",
+  "full_receipt_sha256": "f34a7ad472087107281875b892bae7a5c31a4eca4d060822891bec71fd465685",
+  "repeated_native_execution_byte_identical": true,
+  "assertion_failures": 0,
+  "counts": {
+    "ordered_pairs": 512,
+    "root_time": 416,
+    "unordered_pairs": 240,
+    "triples": 1120,
+    "four_subsets": 3640,
+    "quotient_states": 4000
+  },
+  "rook": {
+    "four_cliques": 8,
+    "pair_witness": {
+      "0:0": 72,
+      "1:2": 48
+    },
+    "triple_witness": {
+      "0:0": 96,
+      "1:1": 288,
+      "2:0": 144,
+      "3:1": 32
+    }
+  },
+  "shrikhande": {
+    "four_cliques": 0,
+    "pair_witness": {
+      "0:0": 24,
+      "0:2": 48,
+      "1:0": 48
+    },
+    "triple_witness": {
+      "0:0": 64,
+      "0:1": 32,
+      "1:0": 96,
+      "1:1": 192,
+      "2:0": 48,
+      "2:1": 96,
+      "3:0": 32
+    }
+  },
+  "audio_sha256": {
+    "rook-intervention.wav": "9332f6341b2d6b64c8b62afee468756b67a5ea60c10d5078263f3807c7a88cc9",
+    "rook-linear.wav": "b4ab56e9676d8fdc351fe000d329a5ee468d5f38e11e661c278e983be113d012",
+    "shrikhande-intervention.wav": "998c973cdb25b344081e61196c4c075acd4a69a1d3a02a8ffb96b1736dafc4fc",
+    "shrikhande-linear.wav": "b4ab56e9676d8fdc351fe000d329a5ee468d5f38e11e661c278e983be113d012"
+  },
+  "limitations": [
+    "No human listeners or hardware evaluation",
+    "Full repository CI not established at native run",
+    "No independent review"
+  ]
+}
