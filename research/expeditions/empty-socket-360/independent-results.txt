@@ -1,0 +1,21 @@
+Python 3.13.5 / NumPy 2.3.5; seed 360; synthetic only
+BFS (active n, endpoints, states):
+1,1,2
+2,2,6
+3,6,24
+4,24,120
+5,120,720
+6,720,5040
+7,5040,40320
+SVD comparisons: 3000
+Max numerical absolute discrepancy: 1.1087672007271538e-15
+Signed path minimum: 0.9999999999999996
+PCM16; 48000 frames at 16000 Hz; three files byte-identical on repeat
+direct-3ch.wav SHA256 980033cfe78d3ed10c904168acde22396703ee0be2828655e54c46b287014b61
+vacancy-3ch.wav SHA256 5ee3ae19d3b3ed57c46d819b81da7a8cd1e943b3118fd387e09babc72293d6bd
+energy-monitor.wav SHA256 14044a01863edecd04f14d654a15d56944a33189b6455278f4f465723297a67e
+Middle block nonzero PCM sample counts by channel:
+direct [0,0,0]
+vacancy [15199,15198,15200]
+monitor [0,15200]
+Python local Git blob: 51cb41e66ac05699383d0d82f1b5b654a902f1e7; fetched-back matches.
