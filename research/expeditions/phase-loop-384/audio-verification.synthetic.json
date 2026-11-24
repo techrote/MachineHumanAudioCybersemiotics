@@ -1,0 +1,38 @@
+{
+  "direct_operator_checks": 1550,
+  "max_absolute_error": 1.822153010689655e-14,
+  "cases": [
+    {
+      "area": 0,
+      "phase_degrees": 0,
+      "word": "",
+      "complex_energy": 21.92,
+      "sum_peak": 1.5
+    },
+    {
+      "area": 16,
+      "phase_degrees": 90,
+      "word": "EEEENNNNWWWWSSSS",
+      "complex_energy": 21.91999999999998,
+      "sum_peak": 1.0606601717798219
+    },
+    {
+      "area": 32,
+      "phase_degrees": 180,
+      "word": "EEEENNNNNNNNWWWWSSSSSSSS",
+      "complex_energy": 21.919999999999963,
+      "sum_peak": 2.1262455755944137e-14
+    },
+    {
+      "area": -16,
+      "phase_degrees": -90,
+      "word": "NNNNEEEESSSSWWWW",
+      "complex_energy": 21.920000000000027,
+      "sum_peak": 1.0606601717798207
+    }
+  ],
+  "sha256": {
+    "phase-reference.wav": "49c9a79265850c6bb551754cd0df04912207ad013f8d20669e81f9c2b5847514",
+    "interference.wav": "57ff16bf7fe9ab5c21a24fb911a63a1918e38dc9a56191a0ba2a904dc10122e7"
+  }
+}
