@@ -3,6 +3,15 @@
 
 **Refs #330 · 24 November 2026 · mathematical/synthetic expedition, one ChatGPT GPT-6.2 author and self-review.** No empirical auditory findings, production privacy guarantee, priority claim or Track E/G acceptance.
 
+## Contents
+
+1. Excavation — recover the unresolved proper-score comparison from #323.
+2. Moment region — derive and attain the sharp variance/half-spread inequalities.
+3. Privacy implications — identify the exact score-conditioned leakage envelope.
+4. Counterexamples — equal scores, strict ranking reversal and the Blackwell control.
+5. Exaptation — propose a task-specific forecast receipt and preserve its limitations.
+6. Qualification — exact finite arithmetic, source-reading extent and disposition.
+
 ## 1. Excavation and challenge
 
 [Draft #323](https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/de0b34e21bbf6185525e174026023b528af7414d/research/expeditions/forecast-hides-arrival/README.md), §§2–4, shows two previews with identical hard classification accuracy and different optimal privacy. Its example has unequal Brier loss; it explicitly refuses to discredit proper scoring. That refusal is sound, but leaves a sharper question: can equally calibrated forecasts with identical Brier loss still have different downstream utility? Can *better* Brier loss even reverse the downstream preference?
