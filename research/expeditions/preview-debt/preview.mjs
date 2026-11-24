@@ -1,4 +1,5 @@
-function laboratory(){
+import {pathToFileURL} from 'node:url';
+function laboratory(run=true){
   const assert=(ok,msg)=>{if(!ok)throw Error(msg)};
   const close=(a,b,tol=1e-9)=>Math.abs(a-b)<=tol;
   const conv=(p,q)=>{const z=Array(p.length+q.length-1).fill(0);p.forEach((v,i)=>q.forEach((u,j)=>z[i+j]+=v*u));return z};
@@ -29,6 +30,7 @@ function laboratory(){
   function filter(x,b,c){
     const y=[];for(let t=0;t<x.length;t++){let v=0;for(let i=0;i<b.length&&i<=t;i++)v+=b[i]*x[t-i];for(let i=1;i<c.length&&i<=t;i++)v-=c[i]*y[t-i];y.push(v/c[0]);}return y;
   }
+  if (!run) return {design, filter};
   let designs=0, freqChecks=0, impulseChecks=0, witnessChecks=0;
   let maxFrequencyError=0,maxTimeError=0, maxWitnessError=0;
   const rows=[];
@@ -75,4 +77,6 @@ function laboratory(){
   for(const args of [[0,1,1],[1,1,1],[.5,-1,1],[.5,1.2,1],[.5,1,3]]){let rejected=false;try{design(...args)}catch{rejected=true}assert(rejected,"invalid input accepted")}
   return {designs,freqChecks,impulseChecks,witnessChecks,maxFrequencyError,maxTimeError,maxWitnessError,rows};
 }
-console.log(JSON.stringify(laboratory(), null, 2));
+const {design, filter} = laboratory(false);
+export {design, filter, laboratory};
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) console.log(JSON.stringify(laboratory(), null, 2));
