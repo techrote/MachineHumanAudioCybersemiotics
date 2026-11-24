@@ -15,6 +15,15 @@ Sources accessed 2026-11-24 by GPT-6.2, no independent reviewer. All derivations
 - D. Tucker, S. Zhao, R. Ahmad, L. C. Potter, [Alias-Free Arrays](https://doi.org/10.1109/LSP.2022.3224834), IEEE Signal Processing Letters 29 (2022), 2457–2461. [PubMed metadata and abstract](https://pubmed.ncbi.nlm.nih.gov/36530478/) read; [PMC full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC9757818/) returned a browser challenge on direct open. The abstract establishes the topic of exact alias-free direction sets; no detailed theorem is attributed from unread sections.
 - H. Chen, T. Ballal, T. Y. Al-Naffouri, [DOA Estimation with Non-Uniform Linear Arrays: A Phase-Difference Projection Approach](https://arxiv.org/abs/2102.03650), 2021 preprint abstract consulted. Phase wrapping and dependence on noise and calibration are relevant; no performance numbers used.
 
+## Contents
+
+- [1 — A phase-only channel](#1--a-phase-only-channel): establish the source and observation model.
+- [2 — Exact arithmetic of lost sensors](#2--exact-arithmetic-of-lost-sensors): lattice and modular certificates, corruption and erasure distance.
+- [3 — Sharp arrays and a finite vocabulary](#3--sharp-arrays-and-a-finite-vocabulary): square-grid and least-prime formulas.
+- [4 — Optimal exact distance with arbitrarily bad conditioning](#4--optimal-exact-distance-with-arbitrarily-bad-conditioning): sparse near-collision construction.
+- [5 — Synthetic experiment](#5--synthetic-experiment): reproducible census and scope limits.
+- [6 — The compass organ](#6--the-compass-organ-art-and-design-hypothesis): authored phase sonification and prospective interface.
+
 ## 1 — A phase-only channel
 
 Let S be N distinct integer lattice points in Z². A single ideal coherent source has normalized spatial frequency u in T² = R²/Z², and its sensor phases in cycles are
