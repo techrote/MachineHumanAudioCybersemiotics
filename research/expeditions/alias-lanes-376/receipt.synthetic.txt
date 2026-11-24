@@ -1,0 +1,16 @@
+Run: 2026-11-24; Node v22.16.0, NumPy 2.3.5.
+Rank sets 8177; exact character gap checks 81858; initially rank-failing sets 322.
+66 conditioning populations; 10866 candidate-pattern evaluations; consecutive pattern strictly improved in 36 populations (14 with one erasure).
+Separate NumPy SVD oracle checked all 10866 candidates via 5715 unique retained subsets; max discrepancy 1.690875399860767e-15. Witness and numerical tie counts agree. Difference-set, blind-support and refusal controls pass.
+Bad analytic peak 1.1748264483811652e-11; good complex least-squares reconstruction max error 4.975464484980682e-19.
+Audio lost-lanes nonzero PCM [0,3200], peak [0,19767]; recovered nonzero [12800,12800], peak [19767,19767].
+Repeated rendering gave identical hashes.
+SHA-256:
+dc42320dccddd857107aaed29c2e266faaa89f6199a0ec1c73b637617991d610  lost-lanes.wav
+8d08a8576ddc4300968d0927e449ab9a70d8f4ba3566d1ece07515013330a9b1  recovered.wav
+69ad4085d8445f5ef57b7b3ec68a874f6eefad6b91a972a38034ba1190f935fa  results.synthetic.txt
+3edf380f3dd8fe87aae143dfb8cd1e71023b126224981a9f26539e385395dd05  independent.synthetic.txt
+Git blob IDs of locally executed sources:
+5fbf72b8035a97c4c77a0993e846a79242b5cd14 lanes.mjs
+321f9e290ba9bf219a86b6f0e7b2304107518aa8 verify.mjs
+f9c5b120649307a6a97be94930bdbdfdb1e4ab46 independent.py
