@@ -1,0 +1,126 @@
+{
+  "census": {
+    "fixed_first_schedules": 480,
+    "labelled_schedules": 50400,
+    "single_fault_checks": 5760,
+    "nonbipartite_schedules": 336,
+    "nonbipartite_witness": [
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          7
+        ]
+      ],
+      [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          6
+        ]
+      ]
+    ],
+    "probe_max_coordinate": 5,
+    "butterfly16_probe": [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      0,
+      5,
+      0,
+      4,
+      0,
+      7,
+      0,
+      6,
+      0,
+      11
+    ],
+    "four_node_graphs": 64,
+    "four_node_feasible": 10,
+    "two_fault_interaction_numerator": [
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "butterfly_sizes": [
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ]
+  },
+  "audio": {
+    "file": "early-vs-late.wav",
+    "sha256": "a0454c9d1fc5ea8236fa15efd40615614fb52e540840dda8d57151b65e88748d",
+    "frames": 32000,
+    "sample_rate": 16000,
+    "channels": 2
+  }
+}
