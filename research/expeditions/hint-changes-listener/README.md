@@ -3,6 +3,15 @@
 
 **Refs #306 · 24 November 2026.** Original finite mathematical expedition; one AI author, no empirical, participant or acoustic data, no priority claim, no Track E/G admission.
 
+## Contents
+
+1. [Archaeological premise](#1-archaeological-premise-and-scope) — recover the missing noisy-observer model.
+2. [Universal reduction](#2-theorem-a-all-observer-channels-admit-the-same-one-parameter-reduction) — prove a single parameter suffices.
+3. [Interpolation falsifier](#3-a-falsifier-for-interpolation-between-endpoint-optima) — an asymmetric cue reverses the optimizer ordering.
+4. [Minimax regret](#4-theorem-b-a-universal-minimax-regret-compromise) — derive an exact robust compromise.
+5. [Negative memo and score](#5-negative-memo-exaptation-and-artistic-distinction) — separate shared randomness, design and fiction.
+6. [Source and execution receipt](#6-source-and-execution-receipt) — record bounded evidence and qualification.
+
 ## 1. Archaeological premise and scope
 
 [Draft #299, The Law That Cannot Introduce Itself](https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/7658412a47302facf5810613ff785b0a4543e688/research/expeditions/law-cannot-introduce-itself/README.md), §4, distinguishes an observer who knows the source law from an observer who sees only pooled announcements. Its three-recipient, fair-bit example proves a conflict between the two optimal encoders. This report removes the artificially binary choice of observer: what if the observer receives a noisy, asymmetric hint about the law? Is the optimal policy merely an interpolation between the two previous optima? No. Can there still be a rigorous compromise across all possible hint channels? Yes, for a precisely defined regret criterion.
@@ -53,7 +62,7 @@ Take G=3, p=1/2, so B=1/4 and L=2. Consider the asymmetric binary cue q_0=(3/5,2
 
 This does not violate data processing. For a fixed encoder, garbling the cue cannot increase worst-pair TV, as follows directly from applying the triangle inequality to the stochastic postprocessing. The minima obey the same order. What does not obey that order is the minimizing encoder's parameter. Here the asymmetric cue is a garbling of the revealing cue, and the uninformative cue is a garbling of the asymmetric one. Their optimal t values are 0, 5/3, 1: not monotone. The distinction between comparing optimal values and comparing optimizers is essential.
 
-For a binary symmetric cue with crossover e in [0,1/2], the clipped optimum is min(L,e/(1-e)), with a tie at e=1/2 only where the absolute deviation objective permits it. This restricted family happens to interpolate monotonically; using it alone to validate a general design would conceal the asymmetric counterexample.
+For a binary symmetric cue with crossover e in [0,1/2], the clipped optimum is min(L,e/(1-e)). This restricted family happens to interpolate monotonically; using it alone to validate a general design would conceal the asymmetric counterexample.
 
 ## 4. Theorem B: a universal minimax-regret compromise
 
