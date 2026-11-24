@@ -1,0 +1,51 @@
+{
+  "schema": "mhac-t012-results-v1",
+  "cases": 34,
+  "policies": {
+    "silent_replacement": {
+      "offers": 31,
+      "wrong_referent": 7,
+      "wrong_priority": 8,
+      "wrong_action": 9,
+      "invalid_or_unknown_offers": 7,
+      "expired_or_revoked_offers": 3,
+      "false_compatibility_offers": 10,
+      "unresolved": 3,
+      "omitted_valid": 3
+    },
+    "frozen_legacy": {
+      "offers": 29,
+      "wrong_referent": 1,
+      "wrong_priority": 1,
+      "wrong_action": 3,
+      "invalid_or_unknown_offers": 7,
+      "expired_or_revoked_offers": 3,
+      "false_compatibility_offers": 10,
+      "unresolved": 5,
+      "omitted_valid": 5
+    },
+    "versioned_manifest": {
+      "offers": 13,
+      "wrong_referent": 0,
+      "wrong_priority": 0,
+      "wrong_action": 0,
+      "invalid_or_unknown_offers": 0,
+      "expired_or_revoked_offers": 0,
+      "false_compatibility_offers": 0,
+      "unresolved": 21,
+      "omitted_valid": 14
+    },
+    "alternate_family_unknown": {
+      "offers": 0,
+      "wrong_referent": 0,
+      "wrong_priority": 0,
+      "wrong_action": 0,
+      "invalid_or_unknown_offers": 0,
+      "expired_or_revoked_offers": 0,
+      "false_compatibility_offers": 0,
+      "unresolved": 34,
+      "omitted_valid": 27
+    }
+  },
+  "warning": "fictional symbolic offers only; listener recognition and actual action unmeasured"
+}
