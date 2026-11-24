@@ -1,0 +1,166 @@
+{
+  "record_type": "preparatory_passage_navigation_not_canonical_extraction",
+  "issue": "Refs #8",
+  "date_utc": "2026-11-10",
+  "source": {
+    "author": "Clarisse Sieckenius de Souza",
+    "title": "Semiotic engineering: bringing designers and users together at interaction time",
+    "journal": "Interacting with Computers",
+    "volume": "17",
+    "issue": "3",
+    "printed_pages": "317-341",
+    "year": 2005,
+    "doi": "10.1016/j.intcom.2005.01.007",
+    "original_url": "https://www-di.inf.puc-rio.br/~clarisse/docs/2005desouzaIwC.pdf",
+    "publisher_url": "https://academic.oup.com/iwc/article-abstract/17/3/317/703528",
+    "not_the_2005_book": true
+  },
+  "method": {
+    "agent": "OpenAI GPT-6",
+    "actor_kind": "AI_assisted",
+    "consulted": "Selected web-intermediary PDF-extracted text, printed 317-322 and 333-340; no visual verification",
+    "render_attempts": [
+      {
+        "pdf_zero_based_page": 0,
+        "result": "timeout"
+      },
+      {
+        "pdf_zero_based_page": 11,
+        "result": "timeout"
+      },
+      {
+        "pdf_zero_based_page": 19,
+        "result": "timeout"
+      }
+    ],
+    "sha256": null,
+    "bytes_obtained": false,
+    "physical_manifestation_verified": false,
+    "human_reviewer": false,
+    "full_item_read": false,
+    "selected_track_g_corpus": false,
+    "passage_quotes_reproduced": false,
+    "figures_verified": false,
+    "source_claim_promotion": false
+  },
+  "observations": [
+    {
+      "id": "DS05-01",
+      "printed_pages": "317-318",
+      "section": "Abstract and introductory argument",
+      "paraphrase": "Designer-to-user one-shot communication through interactive system, contrasted with transparent machine-output model",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-02",
+      "printed_pages": "318-321",
+      "section": "Section 1 and 1.1",
+      "paraphrase": "Interactive computer artefacts are linguistically encoded designer-intention products requiring interpretation",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-03",
+      "printed_pages": "333-334",
+      "section": "Section 2, Acrobat example",
+      "paraphrase": "Better task strategy may be undiscovered even when conventional operation-level usability checks appear satisfied",
+      "classification": "author_illustration",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-04",
+      "printed_pages": "334-335",
+      "section": "Section 3, metacommunication",
+      "paraphrase": "One-shot applies to encoded design message, which is progressively unfolded by human users in interaction",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-05",
+      "printed_pages": "335-337",
+      "section": "Section 3, Excel discussion and examination questions",
+      "paraphrase": "Questions about interlocutor roles, turn cues, assumptions and negotiated meanings' duration and revision",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-06",
+      "printed_pages": "337-338",
+      "section": "Section 3, ontological limitation",
+      "paraphrase": "Human open-ended interpretation is contrasted with algorithmic processing; category boundary is part of de Souza's theory",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-07",
+      "printed_pages": "338-339",
+      "section": "Section 3, epistemological limitation",
+      "paraphrase": "Complete prediction of user interpretation and culturally contingent meanings is rejected; safeguards against relativism proposed",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    },
+    {
+      "id": "DS05-08",
+      "printed_pages": "339-340",
+      "section": "Section 4, negotiation costs",
+      "paraphrase": "Authors identify barriers to explanation-seeking and trade-offs involving expected effort, benefit and misinterpretation",
+      "classification": "author_argument",
+      "evidence_status": "non_decisive",
+      "locator_kind": "printed_page_from_parsed_pdf",
+      "reading_route": "web_intermediary_text",
+      "manifestation_sha256": null,
+      "original_bytes_verified": false,
+      "human_checked": false,
+      "study_or_sample_count": null
+    }
+  ],
+  "notes": [
+    "Eight observations are author-argument or anecdote navigation, not empirical Track E data.",
+    "Existing R008 memo uses 2005 article abstract only; do not overwrite it.",
+    "Figures 9-11 and diagrams unverified; screenshot timeouts recorded; no full article or book reading.",
+    "Research decisions and numerical design requirements are not promoted from this ledger."
+  ]
+}
