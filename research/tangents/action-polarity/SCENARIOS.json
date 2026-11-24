@@ -1,0 +1,1803 @@
+[
+  {
+    "id": "simple-direct",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": "Ordinary positive action baseline; truth-bound but not measured as better."
+  },
+  {
+    "id": "simple-prohibition",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "prohibit",
+      "operator_scope": "action",
+      "action": "restart",
+      "tokens": [
+        "DO",
+        "NOT",
+        "restart"
+      ]
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": "Truthful distinct action prohibition."
+  },
+  {
+    "id": "truthful-correction",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "correction",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop",
+        "NOT",
+        "restart"
+      ],
+      "avoid_action": "restart"
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": "Correction requires B and prohibits A."
+  },
+  {
+    "id": "active-status",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "ACTIVE"
+      ],
+      "claim": "active"
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "negative-factual-status",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "NOT",
+        "CLEARED"
+      ],
+      "claim": "not_cleared"
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "inactive-all-clear",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "inactive",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "all_clear",
+      "operator_scope": "clearance",
+      "action": "stop",
+      "tokens": [
+        "ALL",
+        "CLEAR"
+      ]
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "truthful-unknown",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "unknown",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "UNKNOWN"
+      ],
+      "claim": "unknown"
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "inactive-factual",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "inactive",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "CLEARED"
+      ],
+      "claim": "inactive"
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "different-source-truthful",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-B",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-B",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "different-event-truthful",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "pressure",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "pressure",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "accept",
+      "reason": "symbolic-truth-only"
+    },
+    "note": ""
+  },
+  {
+    "id": "forbidden-action-request",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "restart",
+      "tokens": [
+        "DO",
+        "restart"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "unauthorized-positive-action"
+    },
+    "note": ""
+  },
+  {
+    "id": "unsupported-prohibition",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "prohibit",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "NOT",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "unsupported-prohibition"
+    },
+    "note": ""
+  },
+  {
+    "id": "lost-negator",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "prohibit",
+      "operator_scope": "action",
+      "action": "restart",
+      "tokens": [
+        "DO",
+        "restart"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "operator-token-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "missing-verb",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "operator-token-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "negation-scope-swapped",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "prohibit",
+      "operator_scope": "factual",
+      "action": "restart",
+      "tokens": [
+        "DO",
+        "NOT",
+        "restart"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "operator-scope-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "factual-negation-scope-swapped",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "NOT",
+        "CLEARED"
+      ],
+      "claim": "not_cleared"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "operator-scope-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "swapped-operator-target",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "correction",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "restart",
+        "NOT",
+        "stop"
+      ],
+      "avoid_action": "restart"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "operator-token-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "wrong-source",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-B",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "source-event-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "wrong-event",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "pressure",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "source-event-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "stale-version",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 2,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "stale-version"
+    },
+    "note": ""
+  },
+  {
+    "id": "future-version",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 4,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "future-version"
+    },
+    "note": ""
+  },
+  {
+    "id": "older-prohibition-after-new-required",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 4,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "permitted",
+        "restart": "required"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "prohibit",
+      "operator_scope": "action",
+      "action": "restart",
+      "tokens": [
+        "DO",
+        "NOT",
+        "restart"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "stale-version"
+    },
+    "note": ""
+  },
+  {
+    "id": "predates-current-authority",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 90,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "predates-authority"
+    },
+    "note": ""
+  },
+  {
+    "id": "expired-message",
+    "fictional": true,
+    "now": 180,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "expired-message"
+    },
+    "note": ""
+  },
+  {
+    "id": "expired-authority",
+    "fictional": true,
+    "now": 200,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 200,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "expired-message"
+    },
+    "note": ""
+  },
+  {
+    "id": "future-issuance",
+    "fictional": true,
+    "now": 105,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "future-message"
+    },
+    "note": ""
+  },
+  {
+    "id": "unsupported-expiry",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 201,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "unsupported-expiry"
+    },
+    "note": ""
+  },
+  {
+    "id": "false-all-clear-active",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "all_clear",
+      "operator_scope": "clearance",
+      "action": "stop",
+      "tokens": [
+        "ALL",
+        "CLEAR"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "false-all-clear"
+    },
+    "note": ""
+  },
+  {
+    "id": "unknown-all-clear",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "unknown",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "all_clear",
+      "operator_scope": "clearance",
+      "action": "stop",
+      "tokens": [
+        "ALL",
+        "CLEAR"
+      ]
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-clearance"
+    },
+    "note": ""
+  },
+  {
+    "id": "unknown-negative-status",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "unknown",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "NOT",
+        "CLEARED"
+      ],
+      "claim": "not_cleared"
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-clearance"
+    },
+    "note": ""
+  },
+  {
+    "id": "false-negative-status-after-clear",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "inactive",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "NOT",
+        "CLEARED"
+      ],
+      "claim": "not_cleared"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "false-state-claim"
+    },
+    "note": ""
+  },
+  {
+    "id": "false-unknown-status",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "HAZARD",
+        "UNKNOWN"
+      ],
+      "claim": "unknown"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "false-state-claim"
+    },
+    "note": ""
+  },
+  {
+    "id": "unknown-action-authorization",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "vent",
+      "tokens": [
+        "DO",
+        "vent"
+      ]
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-authorization"
+    },
+    "note": ""
+  },
+  {
+    "id": "unlisted-action",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "purge",
+      "tokens": [
+        "DO",
+        "purge"
+      ]
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-action"
+    },
+    "note": ""
+  },
+  {
+    "id": "correction-not-prohibition",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "correction",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop",
+        "NOT",
+        "inspect"
+      ],
+      "avoid_action": "inspect"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "unsupported-correction"
+    },
+    "note": ""
+  },
+  {
+    "id": "correction-unknown-target",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "correction",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop",
+        "NOT",
+        "vent"
+      ],
+      "avoid_action": "vent"
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "unknown-contrast-target"
+    },
+    "note": ""
+  },
+  {
+    "id": "self-contradictory-correction",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "correction",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop",
+        "NOT",
+        "stop"
+      ],
+      "avoid_action": "stop"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "invalid-message"
+    },
+    "note": ""
+  },
+  {
+    "id": "unsupported-affirmative-paraphrase",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "permitted",
+        "restart": "prohibited"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "unauthorized-positive-action"
+    },
+    "note": ""
+  },
+  {
+    "id": "no-message-is-not-clearance",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": null,
+    "expected": {
+      "status": "unresolved",
+      "reason": "silence-is-not-clearance"
+    },
+    "note": ""
+  },
+  {
+    "id": "ack-is-not-resolution",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "ack",
+      "operator_scope": "acknowledgement",
+      "action": "stop",
+      "tokens": [
+        "ACKNOWLEDGED"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "ack-not-resolution"
+    },
+    "note": ""
+  },
+  {
+    "id": "unconfirmed-clearance-not-inferable",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "CLEARANCE",
+        "NOT",
+        "CONFIRMED"
+      ],
+      "claim": "clearance_unconfirmed"
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "no-clearance-evidence"
+    },
+    "note": ""
+  },
+  {
+    "id": "unknown-state-not-equal-unknown-clearance-record",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "unknown",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "CLEARANCE",
+        "NOT",
+        "CONFIRMED"
+      ],
+      "claim": "clearance_unconfirmed"
+    },
+    "expected": {
+      "status": "unresolved",
+      "reason": "no-clearance-evidence"
+    },
+    "note": ""
+  },
+  {
+    "id": "boolean-version-rejected",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": true,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "invalid-truth"
+    },
+    "note": ""
+  },
+  {
+    "id": "boolean-clock-rejected",
+    "fictional": true,
+    "now": true,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "invalid-clock"
+    },
+    "note": ""
+  },
+  {
+    "id": "missing-tokens-rejected",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": null
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "invalid-message"
+    },
+    "note": ""
+  },
+  {
+    "id": "misplaced-negator-in-status",
+    "fictional": true,
+    "now": 120,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "status",
+      "operator_scope": "factual",
+      "action": "stop",
+      "tokens": [
+        "NOT",
+        "HAZARD",
+        "CLEARED"
+      ],
+      "claim": "not_cleared"
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "operator-token-mismatch"
+    },
+    "note": ""
+  },
+  {
+    "id": "exact-expiry-boundary",
+    "fictional": true,
+    "now": 180,
+    "truth": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 100,
+      "expires_at": 200,
+      "state": "active",
+      "actions": {
+        "stop": "required",
+        "restart": "prohibited",
+        "inspect": "permitted",
+        "vent": "unknown"
+      }
+    },
+    "message": {
+      "source": "pump-A",
+      "event": "overheat",
+      "version": 3,
+      "issued_at": 110,
+      "expires_at": 180,
+      "kind": "require",
+      "operator_scope": "action",
+      "action": "stop",
+      "tokens": [
+        "DO",
+        "stop"
+      ]
+    },
+    "expected": {
+      "status": "reject",
+      "reason": "expired-message"
+    },
+    "note": ""
+  }
+]
