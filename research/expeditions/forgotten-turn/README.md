@@ -2,6 +2,15 @@
 
 Synthetic expedition, 2026-11-24, Refs #272. Base 495a98ca12bae467a507031f04931aa4254b1866. AI-assisted mathematical derivation, implementation and self-check by ChatGPT; no human review, participants, live empirical records or claim of priority. This folder alone is owned by the expedition.
 
+## Contents
+
+1. [Phase is not winding](#1-model-phase-is-not-winding) — define exact observations and the hidden signed lifts.
+2. [Exact winding range](#2-exact-winding-range-multiplicity-and-minimax-lift) — derive range, multiplicities and optimal common slew.
+3. [Fractional probes](#3-a-second-instrument-fractional-probes-as-a-residue-code) — plan minimum-cardinality diagnostic sampling with bounded phase error.
+4. [Topological obstruction](#4-a-topological-obstruction-to-hiding-the-difference) — distinguish continuous morphs from sample equality.
+5. [Reproduction](#5-reproduction-and-evidence) — executable checks, audio receipt and limitations.
+6. [Provenance](#6-provenance-and-exaptation-boundaries) — source access and explicitly conditional applications.
+
 ## 1. Model: phase is not winding
 
 Take M integer ticks per turn, N cyclic observations p_i in [0,M-1], with p_N=p_0. Observations are exact modulo M. Each edge i lasts one normalized interval and admits a signed net lift d_i bounded by |d_i|<=B_i. A continuous lift with instantaneous slew at most B_i exists for every admissible d_i (linear interpolation suffices); conversely integrating such a bound implies the net constraint. Arbitrary admissible paths need not be linear and may reverse within edges. Multiplicity below counts integer edge-increment vectors, not continuous trajectories or probabilities. All edges, including closure, are part of the model.
