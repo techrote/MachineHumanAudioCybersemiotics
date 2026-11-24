@@ -1,0 +1,183 @@
+{
+  "population": {
+    "description": "all 4^6 off-diagonal chronological transition weights in {0,1/2,1,2}; zero diagonal; zero modes replaced by nonzero maps from an unreachable fourth coordinate",
+    "histogram": {
+      "strictly-decaying": 856,
+      "bounded-neutral": 1049,
+      "growing": 2191
+    },
+    "pair_strictly_decaying_but_global": {
+      "neutral": 88,
+      "growing": 56
+    },
+    "minimum_strict_guard_cost": {
+      "0": 856,
+      "1": 1938,
+      "2": 1086,
+      "3": 216
+    }
+  },
+  "qualification": {
+    "direct_matrix_rate_checks": 4160,
+    "direct_matrix_peak_checks": 1933,
+    "exhaustive_guard_oracle_checks": 256,
+    "explicit_negative_controls": 5
+  },
+  "ring": {
+    "weights": [
+      [
+        0,
+        16,
+        0
+      ],
+      [
+        0,
+        0,
+        16
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "denominator": 4,
+    "rate": {
+      "path": [
+        0,
+        1,
+        2
+      ],
+      "num": "256",
+      "den": "64",
+      "edges": [
+        "0:1",
+        "1:2",
+        "2:0"
+      ],
+      "root": 3,
+      "status": "growing"
+    },
+    "minimum_guard": {
+      "status": "optimal",
+      "cost": 1,
+      "solutions": [
+        [
+          "0:1"
+        ],
+        [
+          "1:2"
+        ],
+        [
+          "2:0"
+        ]
+      ],
+      "visited": 4
+    },
+    "choices": [
+      {
+        "blocked": [
+          "0:1"
+        ],
+        "rate": {
+          "num": "0",
+          "den": "1",
+          "path": [],
+          "edges": [],
+          "root": 1,
+          "status": "strictly-decaying"
+        },
+        "peak": {
+          "num": "256",
+          "den": "16",
+          "path": [
+            1,
+            2
+          ],
+          "unbounded": false
+        }
+      },
+      {
+        "blocked": [
+          "1:2"
+        ],
+        "rate": {
+          "num": "0",
+          "den": "1",
+          "path": [],
+          "edges": [],
+          "root": 1,
+          "status": "strictly-decaying"
+        },
+        "peak": {
+          "num": "16",
+          "den": "4",
+          "path": [
+            1
+          ],
+          "unbounded": false
+        }
+      },
+      {
+        "blocked": [
+          "2:0"
+        ],
+        "rate": {
+          "num": "0",
+          "den": "1",
+          "path": [],
+          "edges": [],
+          "root": 1,
+          "status": "strictly-decaying"
+        },
+        "peak": {
+          "num": "256",
+          "den": "16",
+          "path": [
+            1,
+            2
+          ],
+          "unbounded": false
+        }
+      }
+    ],
+    "peak_cap_four": {
+      "status": "optimal",
+      "cost": 1,
+      "solutions": [
+        [
+          "1:2"
+        ]
+      ],
+      "visited": 5
+    }
+  },
+  "neutral": {
+    "path": [
+      0,
+      1
+    ],
+    "num": "4",
+    "den": "4",
+    "edges": [
+      "0:1",
+      "1:0"
+    ],
+    "root": 2,
+    "status": "bounded-neutral"
+  },
+  "decaying": {
+    "path": [
+      0,
+      1
+    ],
+    "num": "4",
+    "den": "16",
+    "edges": [
+      "0:1",
+      "1:0"
+    ],
+    "root": 2,
+    "status": "strictly-decaying"
+  }
+}
