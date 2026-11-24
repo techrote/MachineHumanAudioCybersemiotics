@@ -1,0 +1,83 @@
+{
+  "supportChecks": 237336,
+  "feasibleVertices": 25654,
+  "momentChecks": 96720,
+  "cornerChecks": 207,
+  "tailChecks": 477,
+  "profiles": 57,
+  "examples": [
+    {
+      "n": 3,
+      "k": 2,
+      "maxUnanimity": "1/4",
+      "perfectWitness": "1/4"
+    },
+    {
+      "n": 3,
+      "k": 3,
+      "maxUnanimity": "1/4",
+      "perfectWitness": "0/1"
+    },
+    {
+      "n": 4,
+      "k": 2,
+      "maxUnanimity": "1/4",
+      "perfectWitness": "1/6"
+    },
+    {
+      "n": 4,
+      "k": 3,
+      "maxUnanimity": "1/4",
+      "perfectWitness": "0/1"
+    },
+    {
+      "n": 6,
+      "k": 2,
+      "maxUnanimity": "1/6",
+      "perfectWitness": "1/8"
+    },
+    {
+      "n": 6,
+      "k": 3,
+      "maxUnanimity": "1/6",
+      "perfectWitness": "1/20"
+    },
+    {
+      "n": 7,
+      "k": 2,
+      "maxUnanimity": "1/8",
+      "perfectWitness": "1/8"
+    },
+    {
+      "n": 7,
+      "k": 3,
+      "maxUnanimity": "1/8",
+      "perfectWitness": "5/96"
+    },
+    {
+      "n": 16,
+      "k": 2,
+      "maxUnanimity": "1/16",
+      "perfectWitness": "1/18"
+    },
+    {
+      "n": 16,
+      "k": 3,
+      "maxUnanimity": "1/16",
+      "perfectWitness": "1/35"
+    },
+    {
+      "n": 30,
+      "k": 2,
+      "maxUnanimity": "1/30",
+      "perfectWitness": "1/32"
+    },
+    {
+      "n": 30,
+      "k": 3,
+      "maxUnanimity": "1/30",
+      "perfectWitness": "13/812"
+    }
+  ],
+  "assertionFailures": 0
+}
