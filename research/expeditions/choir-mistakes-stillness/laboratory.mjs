@@ -4,7 +4,7 @@ function assert(ok,msg){if(!ok)throw Error(msg)}
 function parameters(t){
   assert(Array.isArray(t)&&t.length===4&&t.every(x=>Number.isSafeInteger(x)&&x>=0),"invalid table");
   const [a,b,c,d]=t,n=a+b+c+d;
-  assert(n>=2&&n<=60_000,"unsupported roster size");
+  assert(n>=2&&n<=10_000,"unsupported roster size");
   const r0=a+b,r1=c+d,c0=a+c,c1=b+d;
   assert(r0*r1*c0*c1>0,"constant partition");
   const determinant=a*d-b*c;
@@ -40,11 +40,20 @@ function verifyTable(t,p,full){
   assert(equalOccupied(t,y,x.map(v=>v*num)),"direct contrast recurrence");
   assert(connected===(num<den),"connectivity mismatch");
   if(!full)return;
+  const rowDen=p.r0*p.r1,pr=projectScaled(t,x,0);
+  const diff=x.map((v,i)=>v*rowDen-pr[i]);
+  const sq=v=>t.reduce((sum,w,i)=>sum+w*v[i]**2,0);
+  const left=den*sq(diff),right=(den-num)*rowDen**2*sq(x);
+  assert(Number.isSafeInteger(left)&&Number.isSafeInteger(right)&&left===right,"half-step movement identity");
+  assert(equalOccupied(t,roundScaled(t,diff),[0,0,0,0]),"one-pass erasure witness");
+  if(num>0&&num<den){
+    const rev=projectScaled(t,projectScaled(t,diff,1),0);
+    assert(!equalOccupied(t,rev,[0,0,0,0]),"reverse-order preservation witness");
+  }
   for(let i=0;i<4;i++){
     if(!t[i])continue;
     const e=[0,0,0,0];e[i]=1;
     const z=roundScaled(t,e),zz=roundScaled(t,z);
-    assert(n*zz[0]===n*zz[0],"finite arithmetic");
     assert(t.every((w,j)=>!w||n*zz[j]-t[i]*den**2===num*(n*z[j]-t[i]*den)),"general two-round recurrence");
     const reverse=projectScaled(t,projectScaled(t,e,1),0);
     const same=equalOccupied(t,z,reverse);
