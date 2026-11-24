@@ -63,6 +63,17 @@ Gneiting and Resin, *Regression Diagnostics meets Forecast Evaluation: Condition
 
 **Positive theorem.** If F_t is an increasing history including all information used by the alert selector, and P_t=E[Y|F_t], then for a bounded stopping time tau, P_tau=E[Y|F_tau]. For every event B in F_tau, partition B by tau=t. Each B intersect {tau=t} lies in F_t, hence E[Y 1(B,tau=t)]=E[P_t 1(B,tau=t)]. Sum over t. Conditioning on P_tau and, where relevant, the observed stop event therefore preserves the probability. For the first-hit rule, apply this to tau=min(first hit,T); the actual hit indicator is known at tau, so E[Y|H]=p whenever H has positive mass. This result depends on the selector's information being contained in the filtration and the event definition remaining fixed. Merely having a martingale of forecasts without terminal outcome consistency is insufficient; a constant 1/2 process with Y always 1 is a trivial counterexample.
 
+**Stronger negative result: even an exact martingale test can miss first-hit bias.** Consider 32 equally weighted cases and first-tick forecasts 1/2 and 1/4. Second-tick forecast values are 0, 1/4, 1/2, 3/4. The trace count matrix (rows in that first-tick order) is
+
+| First forecast | 0 | 1/4 | 1/2 | 3/4 |
+|---|---:|---:|---:|---:|
+| 1/2 | 0 | 4 | 8 | 4 |
+| 1/4 | 4 | 8 | 4 | 0 |
+
+The conditional means of the second forecast in the two rows are exactly 1/2 and 1/4: the forecast process itself is a martingale. The positive-count matrix can nevertheless be either the ideal matrix ((0,1,4,3),(0,2,2,0)) or the family ((0,1+d,4-d,3),(0,2-d,2+d,0)) for integer -1<=d<=2. The row sums remain (8,4) and column sums remain (0,3,6,3); hence each forecast is calibrated in isolation and every world has the same forecast-path law. Only d=0 is history-conditioned at tick 2. For the first hit of 1/2, all 16 first-row cases and the 4 second-row cases in the 1/2 column are selected, yielding exactly (10+d)/20 positives. The range is 45% to 60%, with 50% for the history-conditioned world. A test of the forecast martingale property alone, even with perfect fixed-time calibration and full unlabelled forecast histories, cannot distinguish these worlds. It must also test consistency with the terminal outcome given the history. This directly illustrates the terminal condition in Wilkinson/Ferro Proposition 2.4, not a counterexample to that proposition.
+
+The independent small integer enumeration in martingale-counterexample.mjs checked all 5*9*5*5*9*5=50,625 cell allocations and found exactly four calibrated matrices; all four have the stated first-hit rates, only one is history-conditioned. The execution receipt is martingale-execution.json. This is a separate executed computation by the same assistant, not an independent human audit.
+
 **Converse with a terminal reveal.** Append P_(T+1)=Y. If every bounded history-adapted stopping time yields a calibrated stopped forecast, then for every interior forecast value p and measurable history event B contained in {P_t=p}, select tau=t on B and T+1 otherwise. The only cases with stopped p are B, so E[Y|B]=p. More generally choose B within arbitrary history events and interior forecast-value ranges; the stopped conditional moment identity gives E[(Y-P_t)1(B)]=0. Endpoints are already pure by fixed-time calibration. Thus history-conditioned calibration is necessary in this augmented model. This is not a converse without the terminal reveal assumption.
 
 ### Executed laboratory and contrary evidence
