@@ -122,4 +122,12 @@ function run(){
   return {schema:"mhac-deletion-reset-v1",traceChecks,largeConstructionChecks:large,family,counts};
 }
 
-console.log(JSON.stringify(run(),null,2));
+
+if(process.argv[2]==="--solve"){
+  const maps=JSON.parse(process.argv[3]), k=Number(process.argv[4]);
+  const result=solve(maps,k,{certificate:process.argv.includes("--certificate")});
+  if(result.status==="found")result.directTargets=direct(maps,result.word,k);
+  console.log(JSON.stringify(result,null,2));
+}else if(process.argv.length===2){
+  console.log(JSON.stringify(run(),null,2));
+}else{throw Error("Usage: node reset.mjs [--solve JSON_MAPS K [--certificate]]");}
