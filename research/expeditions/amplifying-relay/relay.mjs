@@ -67,7 +67,7 @@ export function peak(g,blocked=new Set()){
 export function guards(g,{strict=true,cap=null,costs={},locked=[],budget=100000}={}){
  if(!Number.isSafeInteger(budget)||budget<1)throw Error("positive integer budget required");
  if(cap&&(typeof cap.num!=="bigint"||typeof cap.den!=="bigint"||cap.num<0n||cap.den<=0n))throw Error("nonnegative rational cap required");
- const locks=new Set(locked);for(const e of Object.keys(costs))if(!Number.isSafeInteger(costs[e])||costs[e]<1)throw Error("positive integer costs required");
+ const locks=new Set(locked);for(const e of Object.keys(costs))if(!Number.isSafeInteger(costs[e])||costs[e]<1||costs[e]>Math.floor(Number.MAX_SAFE_INTEGER/(g.n*g.n)))throw Error("positive integer costs with safe total required");
  let best=Infinity,visited=0,exhausted=false;const seen=new Set(),solutions=[];
  function visit(blocked,cost){
   if(cost>best||exhausted)return;
