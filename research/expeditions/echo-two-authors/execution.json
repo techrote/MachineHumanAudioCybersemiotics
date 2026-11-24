@@ -1,0 +1,532 @@
+{
+  "model": "exact nonnegative finite linear convolution",
+  "rows": [
+    {
+      "m": 2,
+      "k": 1,
+      "strictMode": false,
+      "total": 4,
+      "feasible": 3,
+      "maximal": 2,
+      "strictFeasible": 1,
+      "negative": 1
+    },
+    {
+      "m": 2,
+      "k": 1,
+      "strictMode": true,
+      "total": 4,
+      "feasible": 3,
+      "maximal": 2,
+      "strictFeasible": 3,
+      "negative": 1
+    },
+    {
+      "m": 2,
+      "k": 2,
+      "strictMode": false,
+      "total": 9,
+      "feasible": 6,
+      "maximal": 3,
+      "strictFeasible": 3,
+      "negative": 3
+    },
+    {
+      "m": 2,
+      "k": 2,
+      "strictMode": true,
+      "total": 9,
+      "feasible": 6,
+      "maximal": 3,
+      "strictFeasible": 6,
+      "negative": 3
+    },
+    {
+      "m": 2,
+      "k": 3,
+      "strictMode": false,
+      "total": 16,
+      "feasible": 10,
+      "maximal": 4,
+      "strictFeasible": 6,
+      "negative": 6
+    },
+    {
+      "m": 2,
+      "k": 3,
+      "strictMode": true,
+      "total": 16,
+      "feasible": 10,
+      "maximal": 4,
+      "strictFeasible": 10,
+      "negative": 6
+    },
+    {
+      "m": 2,
+      "k": 4,
+      "strictMode": false,
+      "total": 25,
+      "feasible": 15,
+      "maximal": 5,
+      "strictFeasible": 10,
+      "negative": 10
+    },
+    {
+      "m": 2,
+      "k": 4,
+      "strictMode": true,
+      "total": 25,
+      "feasible": 15,
+      "maximal": 5,
+      "strictFeasible": 15,
+      "negative": 10
+    },
+    {
+      "m": 2,
+      "k": 5,
+      "strictMode": false,
+      "total": 36,
+      "feasible": 21,
+      "maximal": 6,
+      "strictFeasible": 15,
+      "negative": 15
+    },
+    {
+      "m": 2,
+      "k": 5,
+      "strictMode": true,
+      "total": 36,
+      "feasible": 21,
+      "maximal": 6,
+      "strictFeasible": 21,
+      "negative": 15
+    },
+    {
+      "m": 3,
+      "k": 1,
+      "strictMode": false,
+      "total": 8,
+      "feasible": 4,
+      "maximal": 3,
+      "strictFeasible": 1,
+      "negative": 4
+    },
+    {
+      "m": 3,
+      "k": 1,
+      "strictMode": true,
+      "total": 8,
+      "feasible": 4,
+      "maximal": 3,
+      "strictFeasible": 4,
+      "negative": 4
+    },
+    {
+      "m": 3,
+      "k": 2,
+      "strictMode": false,
+      "total": 27,
+      "feasible": 10,
+      "maximal": 6,
+      "strictFeasible": 4,
+      "negative": 17
+    },
+    {
+      "m": 3,
+      "k": 2,
+      "strictMode": true,
+      "total": 27,
+      "feasible": 10,
+      "maximal": 6,
+      "strictFeasible": 10,
+      "negative": 17
+    },
+    {
+      "m": 3,
+      "k": 3,
+      "strictMode": false,
+      "total": 64,
+      "feasible": 20,
+      "maximal": 10,
+      "strictFeasible": 10,
+      "negative": 44
+    },
+    {
+      "m": 3,
+      "k": 3,
+      "strictMode": true,
+      "total": 64,
+      "feasible": 20,
+      "maximal": 10,
+      "strictFeasible": 20,
+      "negative": 44
+    },
+    {
+      "m": 3,
+      "k": 4,
+      "strictMode": false,
+      "total": 125,
+      "feasible": 35,
+      "maximal": 15,
+      "strictFeasible": 20,
+      "negative": 90
+    },
+    {
+      "m": 3,
+      "k": 4,
+      "strictMode": true,
+      "total": 125,
+      "feasible": 35,
+      "maximal": 15,
+      "strictFeasible": 35,
+      "negative": 90
+    },
+    {
+      "m": 3,
+      "k": 5,
+      "strictMode": false,
+      "total": 216,
+      "feasible": 56,
+      "maximal": 21,
+      "strictFeasible": 35,
+      "negative": 160
+    },
+    {
+      "m": 3,
+      "k": 5,
+      "strictMode": true,
+      "total": 216,
+      "feasible": 56,
+      "maximal": 21,
+      "strictFeasible": 56,
+      "negative": 160
+    },
+    {
+      "m": 4,
+      "k": 1,
+      "strictMode": false,
+      "total": 16,
+      "feasible": 5,
+      "maximal": 4,
+      "strictFeasible": 1,
+      "negative": 11
+    },
+    {
+      "m": 4,
+      "k": 1,
+      "strictMode": true,
+      "total": 16,
+      "feasible": 5,
+      "maximal": 4,
+      "strictFeasible": 5,
+      "negative": 11
+    },
+    {
+      "m": 4,
+      "k": 2,
+      "strictMode": false,
+      "total": 81,
+      "feasible": 15,
+      "maximal": 10,
+      "strictFeasible": 5,
+      "negative": 66
+    },
+    {
+      "m": 4,
+      "k": 2,
+      "strictMode": true,
+      "total": 81,
+      "feasible": 15,
+      "maximal": 10,
+      "strictFeasible": 15,
+      "negative": 66
+    },
+    {
+      "m": 4,
+      "k": 3,
+      "strictMode": false,
+      "total": 256,
+      "feasible": 35,
+      "maximal": 20,
+      "strictFeasible": 15,
+      "negative": 221
+    },
+    {
+      "m": 4,
+      "k": 3,
+      "strictMode": true,
+      "total": 256,
+      "feasible": 35,
+      "maximal": 20,
+      "strictFeasible": 35,
+      "negative": 221
+    },
+    {
+      "m": 4,
+      "k": 4,
+      "strictMode": false,
+      "total": 625,
+      "feasible": 70,
+      "maximal": 35,
+      "strictFeasible": 35,
+      "negative": 555
+    },
+    {
+      "m": 4,
+      "k": 4,
+      "strictMode": true,
+      "total": 625,
+      "feasible": 70,
+      "maximal": 35,
+      "strictFeasible": 70,
+      "negative": 555
+    },
+    {
+      "m": 4,
+      "k": 5,
+      "strictMode": false,
+      "total": 1296,
+      "feasible": 126,
+      "maximal": 56,
+      "strictFeasible": 70,
+      "negative": 1170
+    },
+    {
+      "m": 4,
+      "k": 5,
+      "strictMode": true,
+      "total": 1296,
+      "feasible": 126,
+      "maximal": 56,
+      "strictFeasible": 126,
+      "negative": 1170
+    },
+    {
+      "m": 5,
+      "k": 1,
+      "strictMode": false,
+      "total": 32,
+      "feasible": 6,
+      "maximal": 5,
+      "strictFeasible": 1,
+      "negative": 26
+    },
+    {
+      "m": 5,
+      "k": 1,
+      "strictMode": true,
+      "total": 32,
+      "feasible": 6,
+      "maximal": 5,
+      "strictFeasible": 6,
+      "negative": 26
+    },
+    {
+      "m": 5,
+      "k": 2,
+      "strictMode": false,
+      "total": 243,
+      "feasible": 21,
+      "maximal": 15,
+      "strictFeasible": 6,
+      "negative": 222
+    },
+    {
+      "m": 5,
+      "k": 2,
+      "strictMode": true,
+      "total": 243,
+      "feasible": 21,
+      "maximal": 15,
+      "strictFeasible": 21,
+      "negative": 222
+    },
+    {
+      "m": 5,
+      "k": 3,
+      "strictMode": false,
+      "total": 1024,
+      "feasible": 56,
+      "maximal": 35,
+      "strictFeasible": 21,
+      "negative": 968
+    },
+    {
+      "m": 5,
+      "k": 3,
+      "strictMode": true,
+      "total": 1024,
+      "feasible": 56,
+      "maximal": 35,
+      "strictFeasible": 56,
+      "negative": 968
+    },
+    {
+      "m": 5,
+      "k": 4,
+      "strictMode": false,
+      "total": 3125,
+      "feasible": 126,
+      "maximal": 70,
+      "strictFeasible": 56,
+      "negative": 2999
+    },
+    {
+      "m": 5,
+      "k": 4,
+      "strictMode": true,
+      "total": 3125,
+      "feasible": 126,
+      "maximal": 70,
+      "strictFeasible": 126,
+      "negative": 2999
+    },
+    {
+      "m": 5,
+      "k": 5,
+      "strictMode": false,
+      "total": 7776,
+      "feasible": 252,
+      "maximal": 126,
+      "strictFeasible": 126,
+      "negative": 7524
+    },
+    {
+      "m": 5,
+      "k": 5,
+      "strictMode": true,
+      "total": 7776,
+      "feasible": 252,
+      "maximal": 126,
+      "strictFeasible": 252,
+      "negative": 7524
+    }
+  ],
+  "totals": {
+    "total": 30008,
+    "feasible": 1784,
+    "maximal": 902,
+    "strictFeasible": 1333,
+    "negative": 28224
+  },
+  "probeFamily": {
+    "m": 3,
+    "k": 2,
+    "strictMode": true,
+    "total": 27,
+    "feasible": 10,
+    "maximal": 6,
+    "strictFeasible": 10,
+    "negative": 17
+  },
+  "probe": {
+    "rawA": [
+      "625",
+      "1250",
+      "1440",
+      "815",
+      "226"
+    ],
+    "rawB": [
+      "625",
+      "1250",
+      "1425",
+      "800",
+      "256"
+    ],
+    "sumA": "4356",
+    "sumB": "4356",
+    "firstTwoEqual": true,
+    "thirdEqual": false
+  },
+  "witness": {
+    "p": [
+      "1",
+      "1",
+      "1"
+    ],
+    "r": [
+      "2",
+      "2",
+      "1"
+    ],
+    "q": [
+      "1",
+      "-1",
+      "1"
+    ],
+    "observations": [
+      [
+        "2",
+        "2",
+        "3",
+        "2",
+        "3",
+        "2",
+        "1"
+      ],
+      [
+        "2",
+        "4",
+        "5",
+        "3",
+        "1"
+      ]
+    ],
+    "aSources": [
+      [
+        "2",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "2",
+        "1"
+      ]
+    ],
+    "bSources": [
+      [
+        "1",
+        "0",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "audio": {
+    "observed1A": {
+      "bytes": 12844,
+      "fnv1a": "19988656"
+    },
+    "observed1B": {
+      "bytes": 12844,
+      "fnv1a": "19988656"
+    },
+    "observed2A": {
+      "bytes": 12844,
+      "fnv1a": "64a29b2c"
+    },
+    "observed2B": {
+      "bytes": 12844,
+      "fnv1a": "64a29b2c"
+    },
+    "pilotA": {
+      "bytes": 12844,
+      "fnv1a": "472f38d0"
+    },
+    "pilotB": {
+      "bytes": 12844,
+      "fnv1a": "ee3b6be8"
+    }
+  },
+  "assertionFailures": 0
+}
