@@ -1,0 +1,54 @@
+{
+  "profiles": [
+    {
+      "n": 3,
+      "histories": 3,
+      "pairs": 3,
+      "maxQueries": 3,
+      "querySum": 7,
+      "adaptiveBound": 3
+    },
+    {
+      "n": 4,
+      "histories": 18,
+      "pairs": 6,
+      "maxQueries": 5,
+      "querySum": 69,
+      "adaptiveBound": 5
+    },
+    {
+      "n": 5,
+      "histories": 180,
+      "pairs": 10,
+      "maxQueries": 8,
+      "querySum": 987,
+      "adaptiveBound": 8
+    },
+    {
+      "n": 6,
+      "histories": 2700,
+      "pairs": 15,
+      "maxQueries": 11,
+      "querySum": 19530,
+      "adaptiveBound": 11
+    }
+  ],
+  "totalHistories": 2901,
+  "oneOmissionProjections": 42417,
+  "twoOmissionDictionaries": 168,
+  "weightedCensuses": 45,
+  "negativeControl": {
+    "a": [
+      1,
+      3,
+      3
+    ],
+    "b": [
+      2,
+      3,
+      3
+    ],
+    "contract": "untrusted barcode"
+  },
+  "status": "PASS"
+}
