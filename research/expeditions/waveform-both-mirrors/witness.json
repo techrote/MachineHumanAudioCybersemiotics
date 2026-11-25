@@ -1,0 +1,65 @@
+{
+  "qualification": [
+    {
+      "depth": 1,
+      "members": 2,
+      "length": 3,
+      "correlation_cells": 6
+    },
+    {
+      "depth": 2,
+      "members": 4,
+      "length": 9,
+      "correlation_cells": 36
+    },
+    {
+      "depth": 3,
+      "members": 8,
+      "length": 27,
+      "correlation_cells": 216
+    },
+    {
+      "depth": 4,
+      "members": 16,
+      "length": 81,
+      "correlation_cells": 1296
+    },
+    {
+      "depth": 5,
+      "members": 32,
+      "length": 243,
+      "correlation_cells": 7776
+    },
+    {
+      "depth": 6,
+      "members": 64,
+      "length": 729,
+      "correlation_cells": 46656
+    }
+  ],
+  "audio": [
+    {
+      "file": "a.wav",
+      "bits": 0,
+      "samples": 9600,
+      "energy": 35331469056,
+      "sha256": "e50ac70b07ac043a9bacd2c0cfdceb8d82bb78f761fadd1536f6b77d4436c986"
+    },
+    {
+      "file": "b.wav",
+      "bits": 1,
+      "samples": 9600,
+      "energy": 35331469056,
+      "sha256": "6b40416595fc8674ba1420429647b2da88ce079c753cb9da4baa04252302d379"
+    },
+    {
+      "file": "c.wav",
+      "bits": 2,
+      "samples": 9600,
+      "energy": 35331469056,
+      "sha256": "441fb5a2bd1ee341f84879f8cf603945f3455db6eaca854c8e061e7cedf4846f"
+    }
+  ],
+  "assertion_failures": 0,
+  "audio_note": "Exact per-sample magnitudes for entire PCM; exact aperiodic autocorrelation for 432-sample block checked directly. Common zero-padding and repetition preserve magnitude by convolution."
+}
