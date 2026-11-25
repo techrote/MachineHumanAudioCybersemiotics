@@ -1,0 +1,7798 @@
+{
+  "schema": "mhac-debt-qualification-v1",
+  "parent": "85ca2185a0481512c903b08d55c4e5dd6ed738e9",
+  "assertions": 140460,
+  "runs": 1003,
+  "factorialScenarios": 162,
+  "named": {
+    "saturated": {
+      "preempt": {
+        "complete": [
+          0,
+          39,
+          0
+        ],
+        "expired": [
+          1,
+          0,
+          1
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          80,
+          2,
+          80
+        ],
+        "used": 80,
+        "useful": 78
+      },
+      "priority": {
+        "complete": [
+          0,
+          39,
+          1
+        ],
+        "expired": [
+          1,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          80,
+          3,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "aging": {
+        "complete": [
+          1,
+          38,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          1,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          68,
+          4,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "edf": {
+        "complete": [
+          1,
+          38,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          1,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          62,
+          4,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "debt": {
+        "complete": [
+          1,
+          38,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          1,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          70,
+          4,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "debt-guard": {
+        "complete": [
+          1,
+          38,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          1,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          70,
+          4,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      }
+    },
+    "bursty": {
+      "preempt": {
+        "complete": [
+          7,
+          16,
+          7
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          1,
+          0,
+          0
+        ],
+        "gap": [
+          15,
+          5,
+          15
+        ],
+        "used": 66,
+        "useful": 60
+      },
+      "priority": {
+        "complete": [
+          7,
+          16,
+          7
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          1,
+          0,
+          0
+        ],
+        "gap": [
+          14,
+          6,
+          15
+        ],
+        "used": 60,
+        "useful": 60
+      },
+      "aging": {
+        "complete": [
+          7,
+          16,
+          7
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          1,
+          0,
+          0
+        ],
+        "gap": [
+          14,
+          6,
+          15
+        ],
+        "used": 60,
+        "useful": 60
+      },
+      "edf": {
+        "complete": [
+          8,
+          16,
+          6
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          1
+        ],
+        "gap": [
+          14,
+          6,
+          15
+        ],
+        "used": 60,
+        "useful": 60
+      },
+      "debt": {
+        "complete": [
+          7,
+          16,
+          7
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          1,
+          0,
+          0
+        ],
+        "gap": [
+          14,
+          6,
+          15
+        ],
+        "used": 60,
+        "useful": 60
+      },
+      "debt-guard": {
+        "complete": [
+          7,
+          16,
+          7
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          1,
+          0,
+          0
+        ],
+        "gap": [
+          14,
+          6,
+          15
+        ],
+        "used": 60,
+        "useful": 60
+      }
+    },
+    "overload": {
+      "preempt": {
+        "complete": [
+          0,
+          39,
+          0
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          26,
+          0,
+          19
+        ],
+        "pending": [
+          1,
+          1,
+          1
+        ],
+        "gap": [
+          80,
+          2,
+          80
+        ],
+        "used": 80,
+        "useful": 78
+      },
+      "priority": {
+        "complete": [
+          0,
+          39,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          26,
+          0,
+          18
+        ],
+        "pending": [
+          1,
+          1,
+          1
+        ],
+        "gap": [
+          80,
+          3,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "aging": {
+        "complete": [
+          0,
+          39,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          26,
+          0,
+          18
+        ],
+        "pending": [
+          1,
+          1,
+          1
+        ],
+        "gap": [
+          80,
+          3,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "edf": {
+        "complete": [
+          0,
+          39,
+          1
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          26,
+          0,
+          18
+        ],
+        "pending": [
+          1,
+          1,
+          1
+        ],
+        "gap": [
+          80,
+          3,
+          78
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "debt": {
+        "complete": [
+          6,
+          24,
+          10
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          20,
+          15,
+          9
+        ],
+        "pending": [
+          1,
+          1,
+          1
+        ],
+        "gap": [
+          12,
+          6,
+          10
+        ],
+        "used": 80,
+        "useful": 80
+      },
+      "debt-guard": {
+        "complete": [
+          6,
+          24,
+          10
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          20,
+          15,
+          9
+        ],
+        "pending": [
+          1,
+          1,
+          1
+        ],
+        "gap": [
+          12,
+          6,
+          10
+        ],
+        "used": 80,
+        "useful": 80
+      }
+    },
+    "light": {
+      "preempt": {
+        "complete": [
+          5,
+          8,
+          5
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          0
+        ],
+        "gap": [
+          19,
+          11,
+          20
+        ],
+        "used": 37,
+        "useful": 36
+      },
+      "priority": {
+        "complete": [
+          5,
+          8,
+          5
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          0
+        ],
+        "gap": [
+          19,
+          11,
+          20
+        ],
+        "used": 36,
+        "useful": 36
+      },
+      "aging": {
+        "complete": [
+          5,
+          8,
+          5
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          0
+        ],
+        "gap": [
+          19,
+          11,
+          20
+        ],
+        "used": 36,
+        "useful": 36
+      },
+      "edf": {
+        "complete": [
+          5,
+          8,
+          5
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          0
+        ],
+        "gap": [
+          19,
+          11,
+          20
+        ],
+        "used": 36,
+        "useful": 36
+      },
+      "debt": {
+        "complete": [
+          5,
+          8,
+          5
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          0
+        ],
+        "gap": [
+          19,
+          11,
+          20
+        ],
+        "used": 36,
+        "useful": 36
+      },
+      "debt-guard": {
+        "complete": [
+          5,
+          8,
+          5
+        ],
+        "expired": [
+          0,
+          0,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          0,
+          0
+        ],
+        "gap": [
+          19,
+          11,
+          20
+        ],
+        "used": 36,
+        "useful": 36
+      }
+    },
+    "tight": {
+      "preempt": {
+        "complete": [
+          0,
+          39,
+          0
+        ],
+        "expired": [
+          1,
+          0,
+          1
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          80,
+          2,
+          80
+        ],
+        "used": 80,
+        "useful": 78
+      },
+      "priority": {
+        "complete": [
+          1,
+          37,
+          1
+        ],
+        "expired": [
+          0,
+          2,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          76,
+          6,
+          78
+        ],
+        "used": 79,
+        "useful": 78
+      },
+      "aging": {
+        "complete": [
+          1,
+          37,
+          1
+        ],
+        "expired": [
+          0,
+          2,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          76,
+          6,
+          78
+        ],
+        "used": 79,
+        "useful": 78
+      },
+      "edf": {
+        "complete": [
+          1,
+          37,
+          1
+        ],
+        "expired": [
+          0,
+          2,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          76,
+          6,
+          78
+        ],
+        "used": 79,
+        "useful": 78
+      },
+      "debt": {
+        "complete": [
+          1,
+          37,
+          1
+        ],
+        "expired": [
+          0,
+          2,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          76,
+          6,
+          78
+        ],
+        "used": 79,
+        "useful": 78
+      },
+      "debt-guard": {
+        "complete": [
+          1,
+          37,
+          1
+        ],
+        "expired": [
+          0,
+          2,
+          0
+        ],
+        "coalesced": [
+          0,
+          0,
+          0
+        ],
+        "pending": [
+          0,
+          1,
+          0
+        ],
+        "gap": [
+          76,
+          6,
+          78
+        ],
+        "used": 79,
+        "useful": 78
+      }
+    }
+  },
+  "aggregate": {
+    "preempt": {
+      "zeroPump": 144,
+      "zeroRelay": 108,
+      "complete": [
+        54,
+        2538,
+        378
+      ],
+      "expired": [
+        0,
+        342,
+        0
+      ],
+      "coalesced": [
+        3024,
+        684,
+        1395
+      ],
+      "pending": [
+        162,
+        81,
+        117
+      ]
+    },
+    "priority": {
+      "zeroPump": 120,
+      "zeroRelay": 54,
+      "complete": [
+        230,
+        2340,
+        642
+      ],
+      "expired": [
+        0,
+        540,
+        0
+      ],
+      "coalesced": [
+        2853,
+        684,
+        1144
+      ],
+      "pending": [
+        157,
+        81,
+        104
+      ]
+    },
+    "aging": {
+      "zeroPump": 113,
+      "zeroRelay": 36,
+      "complete": [
+        265,
+        2217,
+        731
+      ],
+      "expired": [
+        0,
+        579,
+        0
+      ],
+      "coalesced": [
+        2818,
+        768,
+        1055
+      ],
+      "pending": [
+        157,
+        81,
+        104
+      ]
+    },
+    "edf": {
+      "zeroPump": 94,
+      "zeroRelay": 48,
+      "complete": [
+        425,
+        2247,
+        540
+      ],
+      "expired": [
+        0,
+        540,
+        0
+      ],
+      "coalesced": [
+        2672,
+        777,
+        1227
+      ],
+      "pending": [
+        143,
+        81,
+        123
+      ]
+    },
+    "debt": {
+      "zeroPump": 0,
+      "zeroRelay": 0,
+      "complete": [
+        657,
+        1628,
+        928
+      ],
+      "expired": [
+        0,
+        750,
+        0
+      ],
+      "coalesced": [
+        2459,
+        1180,
+        869
+      ],
+      "pending": [
+        124,
+        87,
+        93
+      ]
+    },
+    "debt-guard": {
+      "zeroPump": 36,
+      "zeroRelay": 18,
+      "complete": [
+        543,
+        1897,
+        773
+      ],
+      "expired": [
+        0,
+        540,
+        0
+      ],
+      "coalesced": [
+        2561,
+        1121,
+        1015
+      ],
+      "pending": [
+        136,
+        87,
+        102
+      ]
+    }
+  },
+  "peak": 2334,
+  "witnesses": {
+    "overload": {
+      "schema": "mhac-attention-debt-v1",
+      "config": {
+        "name": "overload",
+        "horizon": 80,
+        "periods": [
+          3,
+          2,
+          4
+        ],
+        "phases": [
+          0,
+          1,
+          0
+        ],
+        "deadlines": [
+          20,
+          6,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ]
+      },
+      "policy": "debt",
+      "until": 80,
+      "extra": [],
+      "metrics": {
+        "pump": {
+          "offered": 27,
+          "complete": 6,
+          "expired": 0,
+          "coalesced": 20,
+          "pending": 1,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 4
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 24,
+          "expired": 0,
+          "coalesced": 15,
+          "pending": 1,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 3
+        },
+        "relay": {
+          "offered": 20,
+          "complete": 10,
+          "expired": 0,
+          "coalesced": 9,
+          "pending": 1,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 3.8
+        }
+      },
+      "used": 80,
+      "useful": 80,
+      "records": [
+        {
+          "id": "pump:1",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 0,
+          "deadline": 20,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 3,
+          "starts": 0
+        },
+        {
+          "id": "relay:1",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 2,
+          "starts": 1
+        },
+        {
+          "id": "fan:1",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 1,
+          "deadline": 7,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 4,
+          "starts": 1
+        },
+        {
+          "id": "pump:2",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 3,
+          "deadline": 23,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 6,
+          "starts": 0
+        },
+        {
+          "id": "fan:2",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 3,
+          "deadline": 9,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 6,
+          "starts": 1
+        },
+        {
+          "id": "relay:2",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 4,
+          "deadline": 24,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 8,
+          "starts": 0
+        },
+        {
+          "id": "fan:3",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 5,
+          "deadline": 11,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 8,
+          "starts": 1
+        },
+        {
+          "id": "pump:3",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 6,
+          "deadline": 26,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 10,
+          "starts": 1
+        },
+        {
+          "id": "fan:4",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 7,
+          "deadline": 13,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 9,
+          "starts": 0
+        },
+        {
+          "id": "relay:3",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 8,
+          "deadline": 28,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 12,
+          "starts": 1
+        },
+        {
+          "id": "pump:4",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 9,
+          "deadline": 29,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 12,
+          "starts": 0
+        },
+        {
+          "id": "fan:5",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 9,
+          "deadline": 15,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 11,
+          "starts": 0
+        },
+        {
+          "id": "fan:6",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 11,
+          "deadline": 17,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 14,
+          "starts": 1
+        },
+        {
+          "id": "pump:5",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 12,
+          "deadline": 32,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 15,
+          "starts": 0
+        },
+        {
+          "id": "relay:4",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 12,
+          "deadline": 32,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 16,
+          "starts": 0
+        },
+        {
+          "id": "fan:7",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 13,
+          "deadline": 19,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 16,
+          "starts": 1
+        },
+        {
+          "id": "pump:6",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 15,
+          "deadline": 35,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 18,
+          "starts": 0
+        },
+        {
+          "id": "fan:8",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 15,
+          "deadline": 21,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 18,
+          "starts": 1
+        },
+        {
+          "id": "relay:5",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 16,
+          "deadline": 36,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 20,
+          "starts": 1
+        },
+        {
+          "id": "fan:9",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 17,
+          "deadline": 23,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 19,
+          "starts": 0
+        },
+        {
+          "id": "pump:7",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 18,
+          "deadline": 38,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 22,
+          "starts": 1
+        },
+        {
+          "id": "fan:10",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 19,
+          "deadline": 25,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 21,
+          "starts": 0
+        },
+        {
+          "id": "relay:6",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 20,
+          "deadline": 40,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 24,
+          "starts": 0
+        },
+        {
+          "id": "pump:8",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 21,
+          "deadline": 41,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 24,
+          "starts": 0
+        },
+        {
+          "id": "fan:11",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 21,
+          "deadline": 27,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 24,
+          "starts": 1
+        },
+        {
+          "id": "fan:12",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 23,
+          "deadline": 29,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 26,
+          "starts": 1
+        },
+        {
+          "id": "pump:9",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 24,
+          "deadline": 44,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 27,
+          "starts": 0
+        },
+        {
+          "id": "relay:7",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 24,
+          "deadline": 44,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 28,
+          "starts": 1
+        },
+        {
+          "id": "fan:13",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 25,
+          "deadline": 31,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 27,
+          "starts": 0
+        },
+        {
+          "id": "pump:10",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 27,
+          "deadline": 47,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 30,
+          "starts": 0
+        },
+        {
+          "id": "fan:14",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 27,
+          "deadline": 33,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 30,
+          "starts": 1
+        },
+        {
+          "id": "relay:8",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 28,
+          "deadline": 48,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 32,
+          "starts": 0
+        },
+        {
+          "id": "fan:15",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 29,
+          "deadline": 35,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 32,
+          "starts": 1
+        },
+        {
+          "id": "pump:11",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 30,
+          "deadline": 50,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 34,
+          "starts": 1
+        },
+        {
+          "id": "fan:16",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 31,
+          "deadline": 37,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 33,
+          "starts": 0
+        },
+        {
+          "id": "relay:9",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 32,
+          "deadline": 52,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 36,
+          "starts": 1
+        },
+        {
+          "id": "pump:12",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 33,
+          "deadline": 53,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 36,
+          "starts": 0
+        },
+        {
+          "id": "fan:17",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 33,
+          "deadline": 39,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 35,
+          "starts": 0
+        },
+        {
+          "id": "fan:18",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 35,
+          "deadline": 41,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 38,
+          "starts": 1
+        },
+        {
+          "id": "pump:13",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 36,
+          "deadline": 56,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 39,
+          "starts": 0
+        },
+        {
+          "id": "relay:10",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 36,
+          "deadline": 56,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 40,
+          "starts": 0
+        },
+        {
+          "id": "fan:19",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 37,
+          "deadline": 43,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 40,
+          "starts": 1
+        },
+        {
+          "id": "pump:14",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 39,
+          "deadline": 59,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 42,
+          "starts": 0
+        },
+        {
+          "id": "fan:20",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 39,
+          "deadline": 45,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 42,
+          "starts": 1
+        },
+        {
+          "id": "relay:11",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 40,
+          "deadline": 60,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 44,
+          "starts": 1
+        },
+        {
+          "id": "fan:21",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 41,
+          "deadline": 47,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 43,
+          "starts": 0
+        },
+        {
+          "id": "pump:15",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 42,
+          "deadline": 62,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 46,
+          "starts": 1
+        },
+        {
+          "id": "fan:22",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 43,
+          "deadline": 49,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 45,
+          "starts": 0
+        },
+        {
+          "id": "relay:12",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 44,
+          "deadline": 64,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 48,
+          "starts": 0
+        },
+        {
+          "id": "pump:16",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 45,
+          "deadline": 65,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 48,
+          "starts": 0
+        },
+        {
+          "id": "fan:23",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 45,
+          "deadline": 51,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 48,
+          "starts": 1
+        },
+        {
+          "id": "fan:24",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 47,
+          "deadline": 53,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 50,
+          "starts": 1
+        },
+        {
+          "id": "pump:17",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 48,
+          "deadline": 68,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 51,
+          "starts": 0
+        },
+        {
+          "id": "relay:13",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 48,
+          "deadline": 68,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 52,
+          "starts": 1
+        },
+        {
+          "id": "fan:25",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 49,
+          "deadline": 55,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 51,
+          "starts": 0
+        },
+        {
+          "id": "pump:18",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 51,
+          "deadline": 71,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 54,
+          "starts": 0
+        },
+        {
+          "id": "fan:26",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 51,
+          "deadline": 57,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 54,
+          "starts": 1
+        },
+        {
+          "id": "relay:14",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 52,
+          "deadline": 72,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 56,
+          "starts": 0
+        },
+        {
+          "id": "fan:27",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 53,
+          "deadline": 59,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 56,
+          "starts": 1
+        },
+        {
+          "id": "pump:19",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 54,
+          "deadline": 74,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 58,
+          "starts": 1
+        },
+        {
+          "id": "fan:28",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 55,
+          "deadline": 61,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 57,
+          "starts": 0
+        },
+        {
+          "id": "relay:15",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 56,
+          "deadline": 76,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 60,
+          "starts": 1
+        },
+        {
+          "id": "pump:20",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 57,
+          "deadline": 77,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 60,
+          "starts": 0
+        },
+        {
+          "id": "fan:29",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 57,
+          "deadline": 63,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 59,
+          "starts": 0
+        },
+        {
+          "id": "fan:30",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 59,
+          "deadline": 65,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 62,
+          "starts": 1
+        },
+        {
+          "id": "pump:21",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 60,
+          "deadline": 80,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 63,
+          "starts": 0
+        },
+        {
+          "id": "relay:16",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 60,
+          "deadline": 80,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 64,
+          "starts": 0
+        },
+        {
+          "id": "fan:31",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 61,
+          "deadline": 67,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 64,
+          "starts": 1
+        },
+        {
+          "id": "pump:22",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 63,
+          "deadline": 83,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 66,
+          "starts": 0
+        },
+        {
+          "id": "fan:32",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 63,
+          "deadline": 69,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 66,
+          "starts": 1
+        },
+        {
+          "id": "relay:17",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 64,
+          "deadline": 84,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 68,
+          "starts": 1
+        },
+        {
+          "id": "fan:33",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 65,
+          "deadline": 71,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 67,
+          "starts": 0
+        },
+        {
+          "id": "pump:23",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 66,
+          "deadline": 86,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 70,
+          "starts": 1
+        },
+        {
+          "id": "fan:34",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 67,
+          "deadline": 73,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 69,
+          "starts": 0
+        },
+        {
+          "id": "relay:18",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 68,
+          "deadline": 88,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 72,
+          "starts": 0
+        },
+        {
+          "id": "pump:24",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 69,
+          "deadline": 89,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 72,
+          "starts": 0
+        },
+        {
+          "id": "fan:35",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 69,
+          "deadline": 75,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 72,
+          "starts": 1
+        },
+        {
+          "id": "fan:36",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 71,
+          "deadline": 77,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 74,
+          "starts": 1
+        },
+        {
+          "id": "pump:25",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 72,
+          "deadline": 92,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 75,
+          "starts": 0
+        },
+        {
+          "id": "relay:19",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 72,
+          "deadline": 92,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 76,
+          "starts": 1
+        },
+        {
+          "id": "fan:37",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 73,
+          "deadline": 79,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 75,
+          "starts": 0
+        },
+        {
+          "id": "pump:26",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 75,
+          "deadline": 95,
+          "remaining": 2,
+          "outcome": "coalesced",
+          "terminal": 78,
+          "starts": 0
+        },
+        {
+          "id": "fan:38",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 75,
+          "deadline": 81,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 78,
+          "starts": 1
+        },
+        {
+          "id": "relay:20",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 76,
+          "deadline": 96,
+          "remaining": 2,
+          "outcome": "pending",
+          "terminal": null,
+          "starts": 0
+        },
+        {
+          "id": "fan:39",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 77,
+          "deadline": 83,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 80,
+          "starts": 1
+        },
+        {
+          "id": "pump:27",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 78,
+          "deadline": 98,
+          "remaining": 2,
+          "outcome": "pending",
+          "terminal": null,
+          "starts": 0
+        },
+        {
+          "id": "fan:40",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 79,
+          "deadline": 85,
+          "remaining": 2,
+          "outcome": "pending",
+          "terminal": null,
+          "starts": 0
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 0,
+          "type": "start",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 1,
+          "type": "offer",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 2,
+          "type": "complete",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 2,
+          "type": "start",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 3,
+          "type": "offer",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "coalesced",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "offer",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 4,
+          "type": "complete",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 4,
+          "type": "offer",
+          "id": "relay:2",
+          "agent": "relay"
+        },
+        {
+          "t": 4,
+          "type": "start",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 5,
+          "type": "offer",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 6,
+          "type": "complete",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 6,
+          "type": "offer",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "coalesced",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "start",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 7,
+          "type": "offer",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 8,
+          "type": "complete",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 8,
+          "type": "offer",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 8,
+          "type": "coalesced",
+          "id": "relay:2",
+          "agent": "relay"
+        },
+        {
+          "t": 8,
+          "type": "start",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 9,
+          "type": "offer",
+          "id": "pump:4",
+          "agent": "pump"
+        },
+        {
+          "t": 9,
+          "type": "offer",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 9,
+          "type": "coalesced",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 10,
+          "type": "complete",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 10,
+          "type": "start",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 11,
+          "type": "offer",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 11,
+          "type": "coalesced",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 12,
+          "type": "complete",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 12,
+          "type": "offer",
+          "id": "pump:5",
+          "agent": "pump"
+        },
+        {
+          "t": 12,
+          "type": "coalesced",
+          "id": "pump:4",
+          "agent": "pump"
+        },
+        {
+          "t": 12,
+          "type": "offer",
+          "id": "relay:4",
+          "agent": "relay"
+        },
+        {
+          "t": 12,
+          "type": "start",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 13,
+          "type": "offer",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 14,
+          "type": "complete",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 14,
+          "type": "start",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 15,
+          "type": "offer",
+          "id": "pump:6",
+          "agent": "pump"
+        },
+        {
+          "t": 15,
+          "type": "coalesced",
+          "id": "pump:5",
+          "agent": "pump"
+        },
+        {
+          "t": 15,
+          "type": "offer",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 16,
+          "type": "complete",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 16,
+          "type": "offer",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 16,
+          "type": "coalesced",
+          "id": "relay:4",
+          "agent": "relay"
+        },
+        {
+          "t": 16,
+          "type": "start",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 17,
+          "type": "offer",
+          "id": "fan:9",
+          "agent": "fan"
+        },
+        {
+          "t": 18,
+          "type": "complete",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 18,
+          "type": "offer",
+          "id": "pump:7",
+          "agent": "pump"
+        },
+        {
+          "t": 18,
+          "type": "coalesced",
+          "id": "pump:6",
+          "agent": "pump"
+        },
+        {
+          "t": 18,
+          "type": "start",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 19,
+          "type": "offer",
+          "id": "fan:10",
+          "agent": "fan"
+        },
+        {
+          "t": 19,
+          "type": "coalesced",
+          "id": "fan:9",
+          "agent": "fan"
+        },
+        {
+          "t": 20,
+          "type": "complete",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 20,
+          "type": "offer",
+          "id": "relay:6",
+          "agent": "relay"
+        },
+        {
+          "t": 20,
+          "type": "start",
+          "id": "pump:7",
+          "agent": "pump"
+        },
+        {
+          "t": 21,
+          "type": "offer",
+          "id": "pump:8",
+          "agent": "pump"
+        },
+        {
+          "t": 21,
+          "type": "offer",
+          "id": "fan:11",
+          "agent": "fan"
+        },
+        {
+          "t": 21,
+          "type": "coalesced",
+          "id": "fan:10",
+          "agent": "fan"
+        },
+        {
+          "t": 22,
+          "type": "complete",
+          "id": "pump:7",
+          "agent": "pump"
+        },
+        {
+          "t": 22,
+          "type": "start",
+          "id": "fan:11",
+          "agent": "fan"
+        },
+        {
+          "t": 23,
+          "type": "offer",
+          "id": "fan:12",
+          "agent": "fan"
+        },
+        {
+          "t": 24,
+          "type": "complete",
+          "id": "fan:11",
+          "agent": "fan"
+        },
+        {
+          "t": 24,
+          "type": "offer",
+          "id": "pump:9",
+          "agent": "pump"
+        },
+        {
+          "t": 24,
+          "type": "coalesced",
+          "id": "pump:8",
+          "agent": "pump"
+        },
+        {
+          "t": 24,
+          "type": "offer",
+          "id": "relay:7",
+          "agent": "relay"
+        },
+        {
+          "t": 24,
+          "type": "coalesced",
+          "id": "relay:6",
+          "agent": "relay"
+        },
+        {
+          "t": 24,
+          "type": "start",
+          "id": "fan:12",
+          "agent": "fan"
+        },
+        {
+          "t": 25,
+          "type": "offer",
+          "id": "fan:13",
+          "agent": "fan"
+        },
+        {
+          "t": 26,
+          "type": "complete",
+          "id": "fan:12",
+          "agent": "fan"
+        },
+        {
+          "t": 26,
+          "type": "start",
+          "id": "relay:7",
+          "agent": "relay"
+        },
+        {
+          "t": 27,
+          "type": "offer",
+          "id": "pump:10",
+          "agent": "pump"
+        },
+        {
+          "t": 27,
+          "type": "coalesced",
+          "id": "pump:9",
+          "agent": "pump"
+        },
+        {
+          "t": 27,
+          "type": "offer",
+          "id": "fan:14",
+          "agent": "fan"
+        },
+        {
+          "t": 27,
+          "type": "coalesced",
+          "id": "fan:13",
+          "agent": "fan"
+        },
+        {
+          "t": 28,
+          "type": "complete",
+          "id": "relay:7",
+          "agent": "relay"
+        },
+        {
+          "t": 28,
+          "type": "offer",
+          "id": "relay:8",
+          "agent": "relay"
+        },
+        {
+          "t": 28,
+          "type": "start",
+          "id": "fan:14",
+          "agent": "fan"
+        },
+        {
+          "t": 29,
+          "type": "offer",
+          "id": "fan:15",
+          "agent": "fan"
+        },
+        {
+          "t": 30,
+          "type": "complete",
+          "id": "fan:14",
+          "agent": "fan"
+        },
+        {
+          "t": 30,
+          "type": "offer",
+          "id": "pump:11",
+          "agent": "pump"
+        },
+        {
+          "t": 30,
+          "type": "coalesced",
+          "id": "pump:10",
+          "agent": "pump"
+        },
+        {
+          "t": 30,
+          "type": "start",
+          "id": "fan:15",
+          "agent": "fan"
+        },
+        {
+          "t": 31,
+          "type": "offer",
+          "id": "fan:16",
+          "agent": "fan"
+        },
+        {
+          "t": 32,
+          "type": "complete",
+          "id": "fan:15",
+          "agent": "fan"
+        },
+        {
+          "t": 32,
+          "type": "offer",
+          "id": "relay:9",
+          "agent": "relay"
+        },
+        {
+          "t": 32,
+          "type": "coalesced",
+          "id": "relay:8",
+          "agent": "relay"
+        },
+        {
+          "t": 32,
+          "type": "start",
+          "id": "pump:11",
+          "agent": "pump"
+        },
+        {
+          "t": 33,
+          "type": "offer",
+          "id": "pump:12",
+          "agent": "pump"
+        },
+        {
+          "t": 33,
+          "type": "offer",
+          "id": "fan:17",
+          "agent": "fan"
+        },
+        {
+          "t": 33,
+          "type": "coalesced",
+          "id": "fan:16",
+          "agent": "fan"
+        },
+        {
+          "t": 34,
+          "type": "complete",
+          "id": "pump:11",
+          "agent": "pump"
+        },
+        {
+          "t": 34,
+          "type": "start",
+          "id": "relay:9",
+          "agent": "relay"
+        },
+        {
+          "t": 35,
+          "type": "offer",
+          "id": "fan:18",
+          "agent": "fan"
+        },
+        {
+          "t": 35,
+          "type": "coalesced",
+          "id": "fan:17",
+          "agent": "fan"
+        },
+        {
+          "t": 36,
+          "type": "complete",
+          "id": "relay:9",
+          "agent": "relay"
+        },
+        {
+          "t": 36,
+          "type": "offer",
+          "id": "pump:13",
+          "agent": "pump"
+        },
+        {
+          "t": 36,
+          "type": "coalesced",
+          "id": "pump:12",
+          "agent": "pump"
+        },
+        {
+          "t": 36,
+          "type": "offer",
+          "id": "relay:10",
+          "agent": "relay"
+        },
+        {
+          "t": 36,
+          "type": "start",
+          "id": "fan:18",
+          "agent": "fan"
+        },
+        {
+          "t": 37,
+          "type": "offer",
+          "id": "fan:19",
+          "agent": "fan"
+        },
+        {
+          "t": 38,
+          "type": "complete",
+          "id": "fan:18",
+          "agent": "fan"
+        },
+        {
+          "t": 38,
+          "type": "start",
+          "id": "fan:19",
+          "agent": "fan"
+        },
+        {
+          "t": 39,
+          "type": "offer",
+          "id": "pump:14",
+          "agent": "pump"
+        },
+        {
+          "t": 39,
+          "type": "coalesced",
+          "id": "pump:13",
+          "agent": "pump"
+        },
+        {
+          "t": 39,
+          "type": "offer",
+          "id": "fan:20",
+          "agent": "fan"
+        },
+        {
+          "t": 40,
+          "type": "complete",
+          "id": "fan:19",
+          "agent": "fan"
+        },
+        {
+          "t": 40,
+          "type": "offer",
+          "id": "relay:11",
+          "agent": "relay"
+        },
+        {
+          "t": 40,
+          "type": "coalesced",
+          "id": "relay:10",
+          "agent": "relay"
+        },
+        {
+          "t": 40,
+          "type": "start",
+          "id": "fan:20",
+          "agent": "fan"
+        },
+        {
+          "t": 41,
+          "type": "offer",
+          "id": "fan:21",
+          "agent": "fan"
+        },
+        {
+          "t": 42,
+          "type": "complete",
+          "id": "fan:20",
+          "agent": "fan"
+        },
+        {
+          "t": 42,
+          "type": "offer",
+          "id": "pump:15",
+          "agent": "pump"
+        },
+        {
+          "t": 42,
+          "type": "coalesced",
+          "id": "pump:14",
+          "agent": "pump"
+        },
+        {
+          "t": 42,
+          "type": "start",
+          "id": "relay:11",
+          "agent": "relay"
+        },
+        {
+          "t": 43,
+          "type": "offer",
+          "id": "fan:22",
+          "agent": "fan"
+        },
+        {
+          "t": 43,
+          "type": "coalesced",
+          "id": "fan:21",
+          "agent": "fan"
+        },
+        {
+          "t": 44,
+          "type": "complete",
+          "id": "relay:11",
+          "agent": "relay"
+        },
+        {
+          "t": 44,
+          "type": "offer",
+          "id": "relay:12",
+          "agent": "relay"
+        },
+        {
+          "t": 44,
+          "type": "start",
+          "id": "pump:15",
+          "agent": "pump"
+        },
+        {
+          "t": 45,
+          "type": "offer",
+          "id": "pump:16",
+          "agent": "pump"
+        },
+        {
+          "t": 45,
+          "type": "offer",
+          "id": "fan:23",
+          "agent": "fan"
+        },
+        {
+          "t": 45,
+          "type": "coalesced",
+          "id": "fan:22",
+          "agent": "fan"
+        },
+        {
+          "t": 46,
+          "type": "complete",
+          "id": "pump:15",
+          "agent": "pump"
+        },
+        {
+          "t": 46,
+          "type": "start",
+          "id": "fan:23",
+          "agent": "fan"
+        },
+        {
+          "t": 47,
+          "type": "offer",
+          "id": "fan:24",
+          "agent": "fan"
+        },
+        {
+          "t": 48,
+          "type": "complete",
+          "id": "fan:23",
+          "agent": "fan"
+        },
+        {
+          "t": 48,
+          "type": "offer",
+          "id": "pump:17",
+          "agent": "pump"
+        },
+        {
+          "t": 48,
+          "type": "coalesced",
+          "id": "pump:16",
+          "agent": "pump"
+        },
+        {
+          "t": 48,
+          "type": "offer",
+          "id": "relay:13",
+          "agent": "relay"
+        },
+        {
+          "t": 48,
+          "type": "coalesced",
+          "id": "relay:12",
+          "agent": "relay"
+        },
+        {
+          "t": 48,
+          "type": "start",
+          "id": "fan:24",
+          "agent": "fan"
+        },
+        {
+          "t": 49,
+          "type": "offer",
+          "id": "fan:25",
+          "agent": "fan"
+        },
+        {
+          "t": 50,
+          "type": "complete",
+          "id": "fan:24",
+          "agent": "fan"
+        },
+        {
+          "t": 50,
+          "type": "start",
+          "id": "relay:13",
+          "agent": "relay"
+        },
+        {
+          "t": 51,
+          "type": "offer",
+          "id": "pump:18",
+          "agent": "pump"
+        },
+        {
+          "t": 51,
+          "type": "coalesced",
+          "id": "pump:17",
+          "agent": "pump"
+        },
+        {
+          "t": 51,
+          "type": "offer",
+          "id": "fan:26",
+          "agent": "fan"
+        },
+        {
+          "t": 51,
+          "type": "coalesced",
+          "id": "fan:25",
+          "agent": "fan"
+        },
+        {
+          "t": 52,
+          "type": "complete",
+          "id": "relay:13",
+          "agent": "relay"
+        },
+        {
+          "t": 52,
+          "type": "offer",
+          "id": "relay:14",
+          "agent": "relay"
+        },
+        {
+          "t": 52,
+          "type": "start",
+          "id": "fan:26",
+          "agent": "fan"
+        },
+        {
+          "t": 53,
+          "type": "offer",
+          "id": "fan:27",
+          "agent": "fan"
+        },
+        {
+          "t": 54,
+          "type": "complete",
+          "id": "fan:26",
+          "agent": "fan"
+        },
+        {
+          "t": 54,
+          "type": "offer",
+          "id": "pump:19",
+          "agent": "pump"
+        },
+        {
+          "t": 54,
+          "type": "coalesced",
+          "id": "pump:18",
+          "agent": "pump"
+        },
+        {
+          "t": 54,
+          "type": "start",
+          "id": "fan:27",
+          "agent": "fan"
+        },
+        {
+          "t": 55,
+          "type": "offer",
+          "id": "fan:28",
+          "agent": "fan"
+        },
+        {
+          "t": 56,
+          "type": "complete",
+          "id": "fan:27",
+          "agent": "fan"
+        },
+        {
+          "t": 56,
+          "type": "offer",
+          "id": "relay:15",
+          "agent": "relay"
+        },
+        {
+          "t": 56,
+          "type": "coalesced",
+          "id": "relay:14",
+          "agent": "relay"
+        },
+        {
+          "t": 56,
+          "type": "start",
+          "id": "pump:19",
+          "agent": "pump"
+        },
+        {
+          "t": 57,
+          "type": "offer",
+          "id": "pump:20",
+          "agent": "pump"
+        },
+        {
+          "t": 57,
+          "type": "offer",
+          "id": "fan:29",
+          "agent": "fan"
+        },
+        {
+          "t": 57,
+          "type": "coalesced",
+          "id": "fan:28",
+          "agent": "fan"
+        },
+        {
+          "t": 58,
+          "type": "complete",
+          "id": "pump:19",
+          "agent": "pump"
+        },
+        {
+          "t": 58,
+          "type": "start",
+          "id": "relay:15",
+          "agent": "relay"
+        },
+        {
+          "t": 59,
+          "type": "offer",
+          "id": "fan:30",
+          "agent": "fan"
+        },
+        {
+          "t": 59,
+          "type": "coalesced",
+          "id": "fan:29",
+          "agent": "fan"
+        },
+        {
+          "t": 60,
+          "type": "complete",
+          "id": "relay:15",
+          "agent": "relay"
+        },
+        {
+          "t": 60,
+          "type": "offer",
+          "id": "pump:21",
+          "agent": "pump"
+        },
+        {
+          "t": 60,
+          "type": "coalesced",
+          "id": "pump:20",
+          "agent": "pump"
+        },
+        {
+          "t": 60,
+          "type": "offer",
+          "id": "relay:16",
+          "agent": "relay"
+        },
+        {
+          "t": 60,
+          "type": "start",
+          "id": "fan:30",
+          "agent": "fan"
+        },
+        {
+          "t": 61,
+          "type": "offer",
+          "id": "fan:31",
+          "agent": "fan"
+        },
+        {
+          "t": 62,
+          "type": "complete",
+          "id": "fan:30",
+          "agent": "fan"
+        },
+        {
+          "t": 62,
+          "type": "start",
+          "id": "fan:31",
+          "agent": "fan"
+        },
+        {
+          "t": 63,
+          "type": "offer",
+          "id": "pump:22",
+          "agent": "pump"
+        },
+        {
+          "t": 63,
+          "type": "coalesced",
+          "id": "pump:21",
+          "agent": "pump"
+        },
+        {
+          "t": 63,
+          "type": "offer",
+          "id": "fan:32",
+          "agent": "fan"
+        },
+        {
+          "t": 64,
+          "type": "complete",
+          "id": "fan:31",
+          "agent": "fan"
+        },
+        {
+          "t": 64,
+          "type": "offer",
+          "id": "relay:17",
+          "agent": "relay"
+        },
+        {
+          "t": 64,
+          "type": "coalesced",
+          "id": "relay:16",
+          "agent": "relay"
+        },
+        {
+          "t": 64,
+          "type": "start",
+          "id": "fan:32",
+          "agent": "fan"
+        },
+        {
+          "t": 65,
+          "type": "offer",
+          "id": "fan:33",
+          "agent": "fan"
+        },
+        {
+          "t": 66,
+          "type": "complete",
+          "id": "fan:32",
+          "agent": "fan"
+        },
+        {
+          "t": 66,
+          "type": "offer",
+          "id": "pump:23",
+          "agent": "pump"
+        },
+        {
+          "t": 66,
+          "type": "coalesced",
+          "id": "pump:22",
+          "agent": "pump"
+        },
+        {
+          "t": 66,
+          "type": "start",
+          "id": "relay:17",
+          "agent": "relay"
+        },
+        {
+          "t": 67,
+          "type": "offer",
+          "id": "fan:34",
+          "agent": "fan"
+        },
+        {
+          "t": 67,
+          "type": "coalesced",
+          "id": "fan:33",
+          "agent": "fan"
+        },
+        {
+          "t": 68,
+          "type": "complete",
+          "id": "relay:17",
+          "agent": "relay"
+        },
+        {
+          "t": 68,
+          "type": "offer",
+          "id": "relay:18",
+          "agent": "relay"
+        },
+        {
+          "t": 68,
+          "type": "start",
+          "id": "pump:23",
+          "agent": "pump"
+        },
+        {
+          "t": 69,
+          "type": "offer",
+          "id": "pump:24",
+          "agent": "pump"
+        },
+        {
+          "t": 69,
+          "type": "offer",
+          "id": "fan:35",
+          "agent": "fan"
+        },
+        {
+          "t": 69,
+          "type": "coalesced",
+          "id": "fan:34",
+          "agent": "fan"
+        },
+        {
+          "t": 70,
+          "type": "complete",
+          "id": "pump:23",
+          "agent": "pump"
+        },
+        {
+          "t": 70,
+          "type": "start",
+          "id": "fan:35",
+          "agent": "fan"
+        },
+        {
+          "t": 71,
+          "type": "offer",
+          "id": "fan:36",
+          "agent": "fan"
+        },
+        {
+          "t": 72,
+          "type": "complete",
+          "id": "fan:35",
+          "agent": "fan"
+        },
+        {
+          "t": 72,
+          "type": "offer",
+          "id": "pump:25",
+          "agent": "pump"
+        },
+        {
+          "t": 72,
+          "type": "coalesced",
+          "id": "pump:24",
+          "agent": "pump"
+        },
+        {
+          "t": 72,
+          "type": "offer",
+          "id": "relay:19",
+          "agent": "relay"
+        },
+        {
+          "t": 72,
+          "type": "coalesced",
+          "id": "relay:18",
+          "agent": "relay"
+        },
+        {
+          "t": 72,
+          "type": "start",
+          "id": "fan:36",
+          "agent": "fan"
+        },
+        {
+          "t": 73,
+          "type": "offer",
+          "id": "fan:37",
+          "agent": "fan"
+        },
+        {
+          "t": 74,
+          "type": "complete",
+          "id": "fan:36",
+          "agent": "fan"
+        },
+        {
+          "t": 74,
+          "type": "start",
+          "id": "relay:19",
+          "agent": "relay"
+        },
+        {
+          "t": 75,
+          "type": "offer",
+          "id": "pump:26",
+          "agent": "pump"
+        },
+        {
+          "t": 75,
+          "type": "coalesced",
+          "id": "pump:25",
+          "agent": "pump"
+        },
+        {
+          "t": 75,
+          "type": "offer",
+          "id": "fan:38",
+          "agent": "fan"
+        },
+        {
+          "t": 75,
+          "type": "coalesced",
+          "id": "fan:37",
+          "agent": "fan"
+        },
+        {
+          "t": 76,
+          "type": "complete",
+          "id": "relay:19",
+          "agent": "relay"
+        },
+        {
+          "t": 76,
+          "type": "offer",
+          "id": "relay:20",
+          "agent": "relay"
+        },
+        {
+          "t": 76,
+          "type": "start",
+          "id": "fan:38",
+          "agent": "fan"
+        },
+        {
+          "t": 77,
+          "type": "offer",
+          "id": "fan:39",
+          "agent": "fan"
+        },
+        {
+          "t": 78,
+          "type": "complete",
+          "id": "fan:38",
+          "agent": "fan"
+        },
+        {
+          "t": 78,
+          "type": "offer",
+          "id": "pump:27",
+          "agent": "pump"
+        },
+        {
+          "t": 78,
+          "type": "coalesced",
+          "id": "pump:26",
+          "agent": "pump"
+        },
+        {
+          "t": 78,
+          "type": "start",
+          "id": "fan:39",
+          "agent": "fan"
+        },
+        {
+          "t": 79,
+          "type": "offer",
+          "id": "fan:40",
+          "agent": "fan"
+        },
+        {
+          "t": 80,
+          "type": "complete",
+          "id": "fan:39",
+          "agent": "fan"
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "id": "relay:1",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 1,
+          "id": "relay:1",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 2,
+          "id": "fan:1",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 3,
+          "id": "fan:1",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 4,
+          "id": "fan:2",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 5,
+          "id": "fan:2",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 6,
+          "id": "fan:3",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 7,
+          "id": "fan:3",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 8,
+          "id": "pump:3",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 9,
+          "id": "pump:3",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 10,
+          "id": "relay:3",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 11,
+          "id": "relay:3",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 12,
+          "id": "fan:6",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 13,
+          "id": "fan:6",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 14,
+          "id": "fan:7",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 15,
+          "id": "fan:7",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 16,
+          "id": "fan:8",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 17,
+          "id": "fan:8",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 18,
+          "id": "relay:5",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 19,
+          "id": "relay:5",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 20,
+          "id": "pump:7",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 21,
+          "id": "pump:7",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 22,
+          "id": "fan:11",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 23,
+          "id": "fan:11",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 24,
+          "id": "fan:12",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 25,
+          "id": "fan:12",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 26,
+          "id": "relay:7",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 27,
+          "id": "relay:7",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 28,
+          "id": "fan:14",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 29,
+          "id": "fan:14",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 30,
+          "id": "fan:15",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 31,
+          "id": "fan:15",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 32,
+          "id": "pump:11",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 33,
+          "id": "pump:11",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 34,
+          "id": "relay:9",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 35,
+          "id": "relay:9",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 36,
+          "id": "fan:18",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 37,
+          "id": "fan:18",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 38,
+          "id": "fan:19",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 39,
+          "id": "fan:19",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 40,
+          "id": "fan:20",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 41,
+          "id": "fan:20",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 42,
+          "id": "relay:11",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 43,
+          "id": "relay:11",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 44,
+          "id": "pump:15",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 45,
+          "id": "pump:15",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 46,
+          "id": "fan:23",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 47,
+          "id": "fan:23",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 48,
+          "id": "fan:24",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 49,
+          "id": "fan:24",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 50,
+          "id": "relay:13",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 51,
+          "id": "relay:13",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 52,
+          "id": "fan:26",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 53,
+          "id": "fan:26",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 54,
+          "id": "fan:27",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 55,
+          "id": "fan:27",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 56,
+          "id": "pump:19",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 57,
+          "id": "pump:19",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 58,
+          "id": "relay:15",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 59,
+          "id": "relay:15",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 60,
+          "id": "fan:30",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 61,
+          "id": "fan:30",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 62,
+          "id": "fan:31",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 63,
+          "id": "fan:31",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 64,
+          "id": "fan:32",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 65,
+          "id": "fan:32",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 66,
+          "id": "relay:17",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 67,
+          "id": "relay:17",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 68,
+          "id": "pump:23",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 69,
+          "id": "pump:23",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 70,
+          "id": "fan:35",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 71,
+          "id": "fan:35",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 72,
+          "id": "fan:36",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 73,
+          "id": "fan:36",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 74,
+          "id": "relay:19",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 75,
+          "id": "relay:19",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 76,
+          "id": "fan:38",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 77,
+          "id": "fan:38",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 78,
+          "id": "fan:39",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 79,
+          "id": "fan:39",
+          "agent": "fan",
+          "part": 1
+        }
+      ],
+      "debtHistory": [
+        {
+          "t": 0,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            "pump:1",
+            null,
+            null
+          ],
+          "serving": "relay:1"
+        },
+        {
+          "t": 1,
+          "debt": [
+            1,
+            0,
+            0
+          ],
+          "queued": [
+            "pump:1",
+            "fan:1",
+            null
+          ],
+          "serving": "relay:1"
+        },
+        {
+          "t": 2,
+          "debt": [
+            2,
+            1,
+            0
+          ],
+          "queued": [
+            "pump:1",
+            null,
+            null
+          ],
+          "serving": "fan:1"
+        },
+        {
+          "t": 3,
+          "debt": [
+            3,
+            1,
+            0
+          ],
+          "queued": [
+            "pump:2",
+            "fan:2",
+            null
+          ],
+          "serving": "fan:1"
+        },
+        {
+          "t": 4,
+          "debt": [
+            4,
+            0,
+            0
+          ],
+          "queued": [
+            "pump:2",
+            null,
+            "relay:2"
+          ],
+          "serving": "fan:2"
+        },
+        {
+          "t": 5,
+          "debt": [
+            5,
+            0,
+            1
+          ],
+          "queued": [
+            "pump:2",
+            "fan:3",
+            "relay:2"
+          ],
+          "serving": "fan:2"
+        },
+        {
+          "t": 6,
+          "debt": [
+            6,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:3",
+            null,
+            "relay:2"
+          ],
+          "serving": "fan:3"
+        },
+        {
+          "t": 7,
+          "debt": [
+            7,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:3",
+            "fan:4",
+            "relay:2"
+          ],
+          "serving": "fan:3"
+        },
+        {
+          "t": 8,
+          "debt": [
+            8,
+            0,
+            4
+          ],
+          "queued": [
+            null,
+            "fan:4",
+            "relay:3"
+          ],
+          "serving": "pump:3"
+        },
+        {
+          "t": 9,
+          "debt": [
+            8,
+            1,
+            5
+          ],
+          "queued": [
+            "pump:4",
+            "fan:5",
+            "relay:3"
+          ],
+          "serving": "pump:3"
+        },
+        {
+          "t": 10,
+          "debt": [
+            0,
+            2,
+            6
+          ],
+          "queued": [
+            "pump:4",
+            "fan:5",
+            null
+          ],
+          "serving": "relay:3"
+        },
+        {
+          "t": 11,
+          "debt": [
+            1,
+            3,
+            6
+          ],
+          "queued": [
+            "pump:4",
+            "fan:6",
+            null
+          ],
+          "serving": "relay:3"
+        },
+        {
+          "t": 12,
+          "debt": [
+            2,
+            4,
+            0
+          ],
+          "queued": [
+            "pump:5",
+            null,
+            "relay:4"
+          ],
+          "serving": "fan:6"
+        },
+        {
+          "t": 13,
+          "debt": [
+            3,
+            4,
+            1
+          ],
+          "queued": [
+            "pump:5",
+            "fan:7",
+            "relay:4"
+          ],
+          "serving": "fan:6"
+        },
+        {
+          "t": 14,
+          "debt": [
+            4,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:5",
+            null,
+            "relay:4"
+          ],
+          "serving": "fan:7"
+        },
+        {
+          "t": 15,
+          "debt": [
+            5,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:6",
+            "fan:8",
+            "relay:4"
+          ],
+          "serving": "fan:7"
+        },
+        {
+          "t": 16,
+          "debt": [
+            6,
+            0,
+            4
+          ],
+          "queued": [
+            "pump:6",
+            null,
+            "relay:5"
+          ],
+          "serving": "fan:8"
+        },
+        {
+          "t": 17,
+          "debt": [
+            7,
+            0,
+            5
+          ],
+          "queued": [
+            "pump:6",
+            "fan:9",
+            "relay:5"
+          ],
+          "serving": "fan:8"
+        },
+        {
+          "t": 18,
+          "debt": [
+            8,
+            0,
+            6
+          ],
+          "queued": [
+            "pump:7",
+            "fan:9",
+            null
+          ],
+          "serving": "relay:5"
+        },
+        {
+          "t": 19,
+          "debt": [
+            9,
+            1,
+            6
+          ],
+          "queued": [
+            "pump:7",
+            "fan:10",
+            null
+          ],
+          "serving": "relay:5"
+        },
+        {
+          "t": 20,
+          "debt": [
+            10,
+            2,
+            0
+          ],
+          "queued": [
+            null,
+            "fan:10",
+            "relay:6"
+          ],
+          "serving": "pump:7"
+        },
+        {
+          "t": 21,
+          "debt": [
+            10,
+            3,
+            1
+          ],
+          "queued": [
+            "pump:8",
+            "fan:11",
+            "relay:6"
+          ],
+          "serving": "pump:7"
+        },
+        {
+          "t": 22,
+          "debt": [
+            0,
+            4,
+            2
+          ],
+          "queued": [
+            "pump:8",
+            null,
+            "relay:6"
+          ],
+          "serving": "fan:11"
+        },
+        {
+          "t": 23,
+          "debt": [
+            1,
+            4,
+            3
+          ],
+          "queued": [
+            "pump:8",
+            "fan:12",
+            "relay:6"
+          ],
+          "serving": "fan:11"
+        },
+        {
+          "t": 24,
+          "debt": [
+            2,
+            0,
+            4
+          ],
+          "queued": [
+            "pump:9",
+            null,
+            "relay:7"
+          ],
+          "serving": "fan:12"
+        },
+        {
+          "t": 25,
+          "debt": [
+            3,
+            0,
+            5
+          ],
+          "queued": [
+            "pump:9",
+            "fan:13",
+            "relay:7"
+          ],
+          "serving": "fan:12"
+        },
+        {
+          "t": 26,
+          "debt": [
+            4,
+            0,
+            6
+          ],
+          "queued": [
+            "pump:9",
+            "fan:13",
+            null
+          ],
+          "serving": "relay:7"
+        },
+        {
+          "t": 27,
+          "debt": [
+            5,
+            1,
+            6
+          ],
+          "queued": [
+            "pump:10",
+            "fan:14",
+            null
+          ],
+          "serving": "relay:7"
+        },
+        {
+          "t": 28,
+          "debt": [
+            6,
+            2,
+            0
+          ],
+          "queued": [
+            "pump:10",
+            null,
+            "relay:8"
+          ],
+          "serving": "fan:14"
+        },
+        {
+          "t": 29,
+          "debt": [
+            7,
+            2,
+            1
+          ],
+          "queued": [
+            "pump:10",
+            "fan:15",
+            "relay:8"
+          ],
+          "serving": "fan:14"
+        },
+        {
+          "t": 30,
+          "debt": [
+            8,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:11",
+            null,
+            "relay:8"
+          ],
+          "serving": "fan:15"
+        },
+        {
+          "t": 31,
+          "debt": [
+            9,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:11",
+            "fan:16",
+            "relay:8"
+          ],
+          "serving": "fan:15"
+        },
+        {
+          "t": 32,
+          "debt": [
+            10,
+            0,
+            4
+          ],
+          "queued": [
+            null,
+            "fan:16",
+            "relay:9"
+          ],
+          "serving": "pump:11"
+        },
+        {
+          "t": 33,
+          "debt": [
+            10,
+            1,
+            5
+          ],
+          "queued": [
+            "pump:12",
+            "fan:17",
+            "relay:9"
+          ],
+          "serving": "pump:11"
+        },
+        {
+          "t": 34,
+          "debt": [
+            0,
+            2,
+            6
+          ],
+          "queued": [
+            "pump:12",
+            "fan:17",
+            null
+          ],
+          "serving": "relay:9"
+        },
+        {
+          "t": 35,
+          "debt": [
+            1,
+            3,
+            6
+          ],
+          "queued": [
+            "pump:12",
+            "fan:18",
+            null
+          ],
+          "serving": "relay:9"
+        },
+        {
+          "t": 36,
+          "debt": [
+            2,
+            4,
+            0
+          ],
+          "queued": [
+            "pump:13",
+            null,
+            "relay:10"
+          ],
+          "serving": "fan:18"
+        },
+        {
+          "t": 37,
+          "debt": [
+            3,
+            4,
+            1
+          ],
+          "queued": [
+            "pump:13",
+            "fan:19",
+            "relay:10"
+          ],
+          "serving": "fan:18"
+        },
+        {
+          "t": 38,
+          "debt": [
+            4,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:13",
+            null,
+            "relay:10"
+          ],
+          "serving": "fan:19"
+        },
+        {
+          "t": 39,
+          "debt": [
+            5,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:14",
+            "fan:20",
+            "relay:10"
+          ],
+          "serving": "fan:19"
+        },
+        {
+          "t": 40,
+          "debt": [
+            6,
+            0,
+            4
+          ],
+          "queued": [
+            "pump:14",
+            null,
+            "relay:11"
+          ],
+          "serving": "fan:20"
+        },
+        {
+          "t": 41,
+          "debt": [
+            7,
+            0,
+            5
+          ],
+          "queued": [
+            "pump:14",
+            "fan:21",
+            "relay:11"
+          ],
+          "serving": "fan:20"
+        },
+        {
+          "t": 42,
+          "debt": [
+            8,
+            0,
+            6
+          ],
+          "queued": [
+            "pump:15",
+            "fan:21",
+            null
+          ],
+          "serving": "relay:11"
+        },
+        {
+          "t": 43,
+          "debt": [
+            9,
+            1,
+            6
+          ],
+          "queued": [
+            "pump:15",
+            "fan:22",
+            null
+          ],
+          "serving": "relay:11"
+        },
+        {
+          "t": 44,
+          "debt": [
+            10,
+            2,
+            0
+          ],
+          "queued": [
+            null,
+            "fan:22",
+            "relay:12"
+          ],
+          "serving": "pump:15"
+        },
+        {
+          "t": 45,
+          "debt": [
+            10,
+            3,
+            1
+          ],
+          "queued": [
+            "pump:16",
+            "fan:23",
+            "relay:12"
+          ],
+          "serving": "pump:15"
+        },
+        {
+          "t": 46,
+          "debt": [
+            0,
+            4,
+            2
+          ],
+          "queued": [
+            "pump:16",
+            null,
+            "relay:12"
+          ],
+          "serving": "fan:23"
+        },
+        {
+          "t": 47,
+          "debt": [
+            1,
+            4,
+            3
+          ],
+          "queued": [
+            "pump:16",
+            "fan:24",
+            "relay:12"
+          ],
+          "serving": "fan:23"
+        },
+        {
+          "t": 48,
+          "debt": [
+            2,
+            0,
+            4
+          ],
+          "queued": [
+            "pump:17",
+            null,
+            "relay:13"
+          ],
+          "serving": "fan:24"
+        },
+        {
+          "t": 49,
+          "debt": [
+            3,
+            0,
+            5
+          ],
+          "queued": [
+            "pump:17",
+            "fan:25",
+            "relay:13"
+          ],
+          "serving": "fan:24"
+        },
+        {
+          "t": 50,
+          "debt": [
+            4,
+            0,
+            6
+          ],
+          "queued": [
+            "pump:17",
+            "fan:25",
+            null
+          ],
+          "serving": "relay:13"
+        },
+        {
+          "t": 51,
+          "debt": [
+            5,
+            1,
+            6
+          ],
+          "queued": [
+            "pump:18",
+            "fan:26",
+            null
+          ],
+          "serving": "relay:13"
+        },
+        {
+          "t": 52,
+          "debt": [
+            6,
+            2,
+            0
+          ],
+          "queued": [
+            "pump:18",
+            null,
+            "relay:14"
+          ],
+          "serving": "fan:26"
+        },
+        {
+          "t": 53,
+          "debt": [
+            7,
+            2,
+            1
+          ],
+          "queued": [
+            "pump:18",
+            "fan:27",
+            "relay:14"
+          ],
+          "serving": "fan:26"
+        },
+        {
+          "t": 54,
+          "debt": [
+            8,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:19",
+            null,
+            "relay:14"
+          ],
+          "serving": "fan:27"
+        },
+        {
+          "t": 55,
+          "debt": [
+            9,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:19",
+            "fan:28",
+            "relay:14"
+          ],
+          "serving": "fan:27"
+        },
+        {
+          "t": 56,
+          "debt": [
+            10,
+            0,
+            4
+          ],
+          "queued": [
+            null,
+            "fan:28",
+            "relay:15"
+          ],
+          "serving": "pump:19"
+        },
+        {
+          "t": 57,
+          "debt": [
+            10,
+            1,
+            5
+          ],
+          "queued": [
+            "pump:20",
+            "fan:29",
+            "relay:15"
+          ],
+          "serving": "pump:19"
+        },
+        {
+          "t": 58,
+          "debt": [
+            0,
+            2,
+            6
+          ],
+          "queued": [
+            "pump:20",
+            "fan:29",
+            null
+          ],
+          "serving": "relay:15"
+        },
+        {
+          "t": 59,
+          "debt": [
+            1,
+            3,
+            6
+          ],
+          "queued": [
+            "pump:20",
+            "fan:30",
+            null
+          ],
+          "serving": "relay:15"
+        },
+        {
+          "t": 60,
+          "debt": [
+            2,
+            4,
+            0
+          ],
+          "queued": [
+            "pump:21",
+            null,
+            "relay:16"
+          ],
+          "serving": "fan:30"
+        },
+        {
+          "t": 61,
+          "debt": [
+            3,
+            4,
+            1
+          ],
+          "queued": [
+            "pump:21",
+            "fan:31",
+            "relay:16"
+          ],
+          "serving": "fan:30"
+        },
+        {
+          "t": 62,
+          "debt": [
+            4,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:21",
+            null,
+            "relay:16"
+          ],
+          "serving": "fan:31"
+        },
+        {
+          "t": 63,
+          "debt": [
+            5,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:22",
+            "fan:32",
+            "relay:16"
+          ],
+          "serving": "fan:31"
+        },
+        {
+          "t": 64,
+          "debt": [
+            6,
+            0,
+            4
+          ],
+          "queued": [
+            "pump:22",
+            null,
+            "relay:17"
+          ],
+          "serving": "fan:32"
+        },
+        {
+          "t": 65,
+          "debt": [
+            7,
+            0,
+            5
+          ],
+          "queued": [
+            "pump:22",
+            "fan:33",
+            "relay:17"
+          ],
+          "serving": "fan:32"
+        },
+        {
+          "t": 66,
+          "debt": [
+            8,
+            0,
+            6
+          ],
+          "queued": [
+            "pump:23",
+            "fan:33",
+            null
+          ],
+          "serving": "relay:17"
+        },
+        {
+          "t": 67,
+          "debt": [
+            9,
+            1,
+            6
+          ],
+          "queued": [
+            "pump:23",
+            "fan:34",
+            null
+          ],
+          "serving": "relay:17"
+        },
+        {
+          "t": 68,
+          "debt": [
+            10,
+            2,
+            0
+          ],
+          "queued": [
+            null,
+            "fan:34",
+            "relay:18"
+          ],
+          "serving": "pump:23"
+        },
+        {
+          "t": 69,
+          "debt": [
+            10,
+            3,
+            1
+          ],
+          "queued": [
+            "pump:24",
+            "fan:35",
+            "relay:18"
+          ],
+          "serving": "pump:23"
+        },
+        {
+          "t": 70,
+          "debt": [
+            0,
+            4,
+            2
+          ],
+          "queued": [
+            "pump:24",
+            null,
+            "relay:18"
+          ],
+          "serving": "fan:35"
+        },
+        {
+          "t": 71,
+          "debt": [
+            1,
+            4,
+            3
+          ],
+          "queued": [
+            "pump:24",
+            "fan:36",
+            "relay:18"
+          ],
+          "serving": "fan:35"
+        },
+        {
+          "t": 72,
+          "debt": [
+            2,
+            0,
+            4
+          ],
+          "queued": [
+            "pump:25",
+            null,
+            "relay:19"
+          ],
+          "serving": "fan:36"
+        },
+        {
+          "t": 73,
+          "debt": [
+            3,
+            0,
+            5
+          ],
+          "queued": [
+            "pump:25",
+            "fan:37",
+            "relay:19"
+          ],
+          "serving": "fan:36"
+        },
+        {
+          "t": 74,
+          "debt": [
+            4,
+            0,
+            6
+          ],
+          "queued": [
+            "pump:25",
+            "fan:37",
+            null
+          ],
+          "serving": "relay:19"
+        },
+        {
+          "t": 75,
+          "debt": [
+            5,
+            1,
+            6
+          ],
+          "queued": [
+            "pump:26",
+            "fan:38",
+            null
+          ],
+          "serving": "relay:19"
+        },
+        {
+          "t": 76,
+          "debt": [
+            6,
+            2,
+            0
+          ],
+          "queued": [
+            "pump:26",
+            null,
+            "relay:20"
+          ],
+          "serving": "fan:38"
+        },
+        {
+          "t": 77,
+          "debt": [
+            7,
+            2,
+            1
+          ],
+          "queued": [
+            "pump:26",
+            "fan:39",
+            "relay:20"
+          ],
+          "serving": "fan:38"
+        },
+        {
+          "t": 78,
+          "debt": [
+            8,
+            0,
+            2
+          ],
+          "queued": [
+            "pump:27",
+            null,
+            "relay:20"
+          ],
+          "serving": "fan:39"
+        },
+        {
+          "t": 79,
+          "debt": [
+            9,
+            0,
+            3
+          ],
+          "queued": [
+            "pump:27",
+            "fan:40",
+            "relay:20"
+          ],
+          "serving": "fan:39"
+        }
+      ]
+    },
+    "tightGuard": {
+      "schema": "mhac-attention-debt-v1",
+      "config": {
+        "name": "tight",
+        "horizon": 80,
+        "periods": [
+          80,
+          2,
+          80
+        ],
+        "phases": [
+          0,
+          1,
+          0
+        ],
+        "deadlines": [
+          12,
+          2,
+          12
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ]
+      },
+      "policy": "debt-guard",
+      "until": 80,
+      "extra": [],
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 4
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 37,
+          "expired": 2,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 79,
+      "useful": 78,
+      "records": [
+        {
+          "id": "pump:1",
+          "agent": "pump",
+          "priority": 0,
+          "arrived": 0,
+          "deadline": 12,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 4,
+          "starts": 1
+        },
+        {
+          "id": "relay:1",
+          "agent": "relay",
+          "priority": 1,
+          "arrived": 0,
+          "deadline": 12,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 2,
+          "starts": 1
+        },
+        {
+          "id": "fan:1",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 1,
+          "deadline": 3,
+          "remaining": 2,
+          "outcome": "expired",
+          "terminal": 2,
+          "starts": 0
+        },
+        {
+          "id": "fan:2",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 3,
+          "deadline": 5,
+          "remaining": 2,
+          "outcome": "expired",
+          "terminal": 4,
+          "starts": 0
+        },
+        {
+          "id": "fan:3",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 5,
+          "deadline": 7,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 7,
+          "starts": 1
+        },
+        {
+          "id": "fan:4",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 7,
+          "deadline": 9,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 9,
+          "starts": 1
+        },
+        {
+          "id": "fan:5",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 9,
+          "deadline": 11,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 11,
+          "starts": 1
+        },
+        {
+          "id": "fan:6",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 11,
+          "deadline": 13,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 13,
+          "starts": 1
+        },
+        {
+          "id": "fan:7",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 13,
+          "deadline": 15,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 15,
+          "starts": 1
+        },
+        {
+          "id": "fan:8",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 15,
+          "deadline": 17,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 17,
+          "starts": 1
+        },
+        {
+          "id": "fan:9",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 17,
+          "deadline": 19,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 19,
+          "starts": 1
+        },
+        {
+          "id": "fan:10",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 19,
+          "deadline": 21,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 21,
+          "starts": 1
+        },
+        {
+          "id": "fan:11",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 21,
+          "deadline": 23,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 23,
+          "starts": 1
+        },
+        {
+          "id": "fan:12",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 23,
+          "deadline": 25,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 25,
+          "starts": 1
+        },
+        {
+          "id": "fan:13",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 25,
+          "deadline": 27,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 27,
+          "starts": 1
+        },
+        {
+          "id": "fan:14",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 27,
+          "deadline": 29,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 29,
+          "starts": 1
+        },
+        {
+          "id": "fan:15",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 29,
+          "deadline": 31,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 31,
+          "starts": 1
+        },
+        {
+          "id": "fan:16",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 31,
+          "deadline": 33,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 33,
+          "starts": 1
+        },
+        {
+          "id": "fan:17",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 33,
+          "deadline": 35,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 35,
+          "starts": 1
+        },
+        {
+          "id": "fan:18",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 35,
+          "deadline": 37,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 37,
+          "starts": 1
+        },
+        {
+          "id": "fan:19",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 37,
+          "deadline": 39,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 39,
+          "starts": 1
+        },
+        {
+          "id": "fan:20",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 39,
+          "deadline": 41,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 41,
+          "starts": 1
+        },
+        {
+          "id": "fan:21",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 41,
+          "deadline": 43,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 43,
+          "starts": 1
+        },
+        {
+          "id": "fan:22",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 43,
+          "deadline": 45,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 45,
+          "starts": 1
+        },
+        {
+          "id": "fan:23",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 45,
+          "deadline": 47,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 47,
+          "starts": 1
+        },
+        {
+          "id": "fan:24",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 47,
+          "deadline": 49,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 49,
+          "starts": 1
+        },
+        {
+          "id": "fan:25",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 49,
+          "deadline": 51,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 51,
+          "starts": 1
+        },
+        {
+          "id": "fan:26",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 51,
+          "deadline": 53,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 53,
+          "starts": 1
+        },
+        {
+          "id": "fan:27",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 53,
+          "deadline": 55,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 55,
+          "starts": 1
+        },
+        {
+          "id": "fan:28",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 55,
+          "deadline": 57,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 57,
+          "starts": 1
+        },
+        {
+          "id": "fan:29",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 57,
+          "deadline": 59,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 59,
+          "starts": 1
+        },
+        {
+          "id": "fan:30",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 59,
+          "deadline": 61,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 61,
+          "starts": 1
+        },
+        {
+          "id": "fan:31",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 61,
+          "deadline": 63,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 63,
+          "starts": 1
+        },
+        {
+          "id": "fan:32",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 63,
+          "deadline": 65,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 65,
+          "starts": 1
+        },
+        {
+          "id": "fan:33",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 65,
+          "deadline": 67,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 67,
+          "starts": 1
+        },
+        {
+          "id": "fan:34",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 67,
+          "deadline": 69,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 69,
+          "starts": 1
+        },
+        {
+          "id": "fan:35",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 69,
+          "deadline": 71,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 71,
+          "starts": 1
+        },
+        {
+          "id": "fan:36",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 71,
+          "deadline": 73,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 73,
+          "starts": 1
+        },
+        {
+          "id": "fan:37",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 73,
+          "deadline": 75,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 75,
+          "starts": 1
+        },
+        {
+          "id": "fan:38",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 75,
+          "deadline": 77,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 77,
+          "starts": 1
+        },
+        {
+          "id": "fan:39",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 77,
+          "deadline": 79,
+          "remaining": 0,
+          "outcome": "complete",
+          "terminal": 79,
+          "starts": 1
+        },
+        {
+          "id": "fan:40",
+          "agent": "fan",
+          "priority": 2,
+          "arrived": 79,
+          "deadline": 81,
+          "remaining": 1,
+          "outcome": "pending",
+          "terminal": null,
+          "starts": 1
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 0,
+          "type": "start",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 1,
+          "type": "offer",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 2,
+          "type": "complete",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 2,
+          "type": "expired",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 2,
+          "type": "start",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "offer",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 4,
+          "type": "complete",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 4,
+          "type": "expired",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 5,
+          "type": "offer",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 5,
+          "type": "start",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 7,
+          "type": "complete",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 7,
+          "type": "offer",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 7,
+          "type": "start",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 9,
+          "type": "complete",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 9,
+          "type": "offer",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 9,
+          "type": "start",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 11,
+          "type": "complete",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 11,
+          "type": "offer",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 11,
+          "type": "start",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 13,
+          "type": "complete",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 13,
+          "type": "offer",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 13,
+          "type": "start",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 15,
+          "type": "complete",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 15,
+          "type": "offer",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 15,
+          "type": "start",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 17,
+          "type": "complete",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 17,
+          "type": "offer",
+          "id": "fan:9",
+          "agent": "fan"
+        },
+        {
+          "t": 17,
+          "type": "start",
+          "id": "fan:9",
+          "agent": "fan"
+        },
+        {
+          "t": 19,
+          "type": "complete",
+          "id": "fan:9",
+          "agent": "fan"
+        },
+        {
+          "t": 19,
+          "type": "offer",
+          "id": "fan:10",
+          "agent": "fan"
+        },
+        {
+          "t": 19,
+          "type": "start",
+          "id": "fan:10",
+          "agent": "fan"
+        },
+        {
+          "t": 21,
+          "type": "complete",
+          "id": "fan:10",
+          "agent": "fan"
+        },
+        {
+          "t": 21,
+          "type": "offer",
+          "id": "fan:11",
+          "agent": "fan"
+        },
+        {
+          "t": 21,
+          "type": "start",
+          "id": "fan:11",
+          "agent": "fan"
+        },
+        {
+          "t": 23,
+          "type": "complete",
+          "id": "fan:11",
+          "agent": "fan"
+        },
+        {
+          "t": 23,
+          "type": "offer",
+          "id": "fan:12",
+          "agent": "fan"
+        },
+        {
+          "t": 23,
+          "type": "start",
+          "id": "fan:12",
+          "agent": "fan"
+        },
+        {
+          "t": 25,
+          "type": "complete",
+          "id": "fan:12",
+          "agent": "fan"
+        },
+        {
+          "t": 25,
+          "type": "offer",
+          "id": "fan:13",
+          "agent": "fan"
+        },
+        {
+          "t": 25,
+          "type": "start",
+          "id": "fan:13",
+          "agent": "fan"
+        },
+        {
+          "t": 27,
+          "type": "complete",
+          "id": "fan:13",
+          "agent": "fan"
+        },
+        {
+          "t": 27,
+          "type": "offer",
+          "id": "fan:14",
+          "agent": "fan"
+        },
+        {
+          "t": 27,
+          "type": "start",
+          "id": "fan:14",
+          "agent": "fan"
+        },
+        {
+          "t": 29,
+          "type": "complete",
+          "id": "fan:14",
+          "agent": "fan"
+        },
+        {
+          "t": 29,
+          "type": "offer",
+          "id": "fan:15",
+          "agent": "fan"
+        },
+        {
+          "t": 29,
+          "type": "start",
+          "id": "fan:15",
+          "agent": "fan"
+        },
+        {
+          "t": 31,
+          "type": "complete",
+          "id": "fan:15",
+          "agent": "fan"
+        },
+        {
+          "t": 31,
+          "type": "offer",
+          "id": "fan:16",
+          "agent": "fan"
+        },
+        {
+          "t": 31,
+          "type": "start",
+          "id": "fan:16",
+          "agent": "fan"
+        },
+        {
+          "t": 33,
+          "type": "complete",
+          "id": "fan:16",
+          "agent": "fan"
+        },
+        {
+          "t": 33,
+          "type": "offer",
+          "id": "fan:17",
+          "agent": "fan"
+        },
+        {
+          "t": 33,
+          "type": "start",
+          "id": "fan:17",
+          "agent": "fan"
+        },
+        {
+          "t": 35,
+          "type": "complete",
+          "id": "fan:17",
+          "agent": "fan"
+        },
+        {
+          "t": 35,
+          "type": "offer",
+          "id": "fan:18",
+          "agent": "fan"
+        },
+        {
+          "t": 35,
+          "type": "start",
+          "id": "fan:18",
+          "agent": "fan"
+        },
+        {
+          "t": 37,
+          "type": "complete",
+          "id": "fan:18",
+          "agent": "fan"
+        },
+        {
+          "t": 37,
+          "type": "offer",
+          "id": "fan:19",
+          "agent": "fan"
+        },
+        {
+          "t": 37,
+          "type": "start",
+          "id": "fan:19",
+          "agent": "fan"
+        },
+        {
+          "t": 39,
+          "type": "complete",
+          "id": "fan:19",
+          "agent": "fan"
+        },
+        {
+          "t": 39,
+          "type": "offer",
+          "id": "fan:20",
+          "agent": "fan"
+        },
+        {
+          "t": 39,
+          "type": "start",
+          "id": "fan:20",
+          "agent": "fan"
+        },
+        {
+          "t": 41,
+          "type": "complete",
+          "id": "fan:20",
+          "agent": "fan"
+        },
+        {
+          "t": 41,
+          "type": "offer",
+          "id": "fan:21",
+          "agent": "fan"
+        },
+        {
+          "t": 41,
+          "type": "start",
+          "id": "fan:21",
+          "agent": "fan"
+        },
+        {
+          "t": 43,
+          "type": "complete",
+          "id": "fan:21",
+          "agent": "fan"
+        },
+        {
+          "t": 43,
+          "type": "offer",
+          "id": "fan:22",
+          "agent": "fan"
+        },
+        {
+          "t": 43,
+          "type": "start",
+          "id": "fan:22",
+          "agent": "fan"
+        },
+        {
+          "t": 45,
+          "type": "complete",
+          "id": "fan:22",
+          "agent": "fan"
+        },
+        {
+          "t": 45,
+          "type": "offer",
+          "id": "fan:23",
+          "agent": "fan"
+        },
+        {
+          "t": 45,
+          "type": "start",
+          "id": "fan:23",
+          "agent": "fan"
+        },
+        {
+          "t": 47,
+          "type": "complete",
+          "id": "fan:23",
+          "agent": "fan"
+        },
+        {
+          "t": 47,
+          "type": "offer",
+          "id": "fan:24",
+          "agent": "fan"
+        },
+        {
+          "t": 47,
+          "type": "start",
+          "id": "fan:24",
+          "agent": "fan"
+        },
+        {
+          "t": 49,
+          "type": "complete",
+          "id": "fan:24",
+          "agent": "fan"
+        },
+        {
+          "t": 49,
+          "type": "offer",
+          "id": "fan:25",
+          "agent": "fan"
+        },
+        {
+          "t": 49,
+          "type": "start",
+          "id": "fan:25",
+          "agent": "fan"
+        },
+        {
+          "t": 51,
+          "type": "complete",
+          "id": "fan:25",
+          "agent": "fan"
+        },
+        {
+          "t": 51,
+          "type": "offer",
+          "id": "fan:26",
+          "agent": "fan"
+        },
+        {
+          "t": 51,
+          "type": "start",
+          "id": "fan:26",
+          "agent": "fan"
+        },
+        {
+          "t": 53,
+          "type": "complete",
+          "id": "fan:26",
+          "agent": "fan"
+        },
+        {
+          "t": 53,
+          "type": "offer",
+          "id": "fan:27",
+          "agent": "fan"
+        },
+        {
+          "t": 53,
+          "type": "start",
+          "id": "fan:27",
+          "agent": "fan"
+        },
+        {
+          "t": 55,
+          "type": "complete",
+          "id": "fan:27",
+          "agent": "fan"
+        },
+        {
+          "t": 55,
+          "type": "offer",
+          "id": "fan:28",
+          "agent": "fan"
+        },
+        {
+          "t": 55,
+          "type": "start",
+          "id": "fan:28",
+          "agent": "fan"
+        },
+        {
+          "t": 57,
+          "type": "complete",
+          "id": "fan:28",
+          "agent": "fan"
+        },
+        {
+          "t": 57,
+          "type": "offer",
+          "id": "fan:29",
+          "agent": "fan"
+        },
+        {
+          "t": 57,
+          "type": "start",
+          "id": "fan:29",
+          "agent": "fan"
+        },
+        {
+          "t": 59,
+          "type": "complete",
+          "id": "fan:29",
+          "agent": "fan"
+        },
+        {
+          "t": 59,
+          "type": "offer",
+          "id": "fan:30",
+          "agent": "fan"
+        },
+        {
+          "t": 59,
+          "type": "start",
+          "id": "fan:30",
+          "agent": "fan"
+        },
+        {
+          "t": 61,
+          "type": "complete",
+          "id": "fan:30",
+          "agent": "fan"
+        },
+        {
+          "t": 61,
+          "type": "offer",
+          "id": "fan:31",
+          "agent": "fan"
+        },
+        {
+          "t": 61,
+          "type": "start",
+          "id": "fan:31",
+          "agent": "fan"
+        },
+        {
+          "t": 63,
+          "type": "complete",
+          "id": "fan:31",
+          "agent": "fan"
+        },
+        {
+          "t": 63,
+          "type": "offer",
+          "id": "fan:32",
+          "agent": "fan"
+        },
+        {
+          "t": 63,
+          "type": "start",
+          "id": "fan:32",
+          "agent": "fan"
+        },
+        {
+          "t": 65,
+          "type": "complete",
+          "id": "fan:32",
+          "agent": "fan"
+        },
+        {
+          "t": 65,
+          "type": "offer",
+          "id": "fan:33",
+          "agent": "fan"
+        },
+        {
+          "t": 65,
+          "type": "start",
+          "id": "fan:33",
+          "agent": "fan"
+        },
+        {
+          "t": 67,
+          "type": "complete",
+          "id": "fan:33",
+          "agent": "fan"
+        },
+        {
+          "t": 67,
+          "type": "offer",
+          "id": "fan:34",
+          "agent": "fan"
+        },
+        {
+          "t": 67,
+          "type": "start",
+          "id": "fan:34",
+          "agent": "fan"
+        },
+        {
+          "t": 69,
+          "type": "complete",
+          "id": "fan:34",
+          "agent": "fan"
+        },
+        {
+          "t": 69,
+          "type": "offer",
+          "id": "fan:35",
+          "agent": "fan"
+        },
+        {
+          "t": 69,
+          "type": "start",
+          "id": "fan:35",
+          "agent": "fan"
+        },
+        {
+          "t": 71,
+          "type": "complete",
+          "id": "fan:35",
+          "agent": "fan"
+        },
+        {
+          "t": 71,
+          "type": "offer",
+          "id": "fan:36",
+          "agent": "fan"
+        },
+        {
+          "t": 71,
+          "type": "start",
+          "id": "fan:36",
+          "agent": "fan"
+        },
+        {
+          "t": 73,
+          "type": "complete",
+          "id": "fan:36",
+          "agent": "fan"
+        },
+        {
+          "t": 73,
+          "type": "offer",
+          "id": "fan:37",
+          "agent": "fan"
+        },
+        {
+          "t": 73,
+          "type": "start",
+          "id": "fan:37",
+          "agent": "fan"
+        },
+        {
+          "t": 75,
+          "type": "complete",
+          "id": "fan:37",
+          "agent": "fan"
+        },
+        {
+          "t": 75,
+          "type": "offer",
+          "id": "fan:38",
+          "agent": "fan"
+        },
+        {
+          "t": 75,
+          "type": "start",
+          "id": "fan:38",
+          "agent": "fan"
+        },
+        {
+          "t": 77,
+          "type": "complete",
+          "id": "fan:38",
+          "agent": "fan"
+        },
+        {
+          "t": 77,
+          "type": "offer",
+          "id": "fan:39",
+          "agent": "fan"
+        },
+        {
+          "t": 77,
+          "type": "start",
+          "id": "fan:39",
+          "agent": "fan"
+        },
+        {
+          "t": 79,
+          "type": "complete",
+          "id": "fan:39",
+          "agent": "fan"
+        },
+        {
+          "t": 79,
+          "type": "offer",
+          "id": "fan:40",
+          "agent": "fan"
+        },
+        {
+          "t": 79,
+          "type": "start",
+          "id": "fan:40",
+          "agent": "fan"
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "id": "relay:1",
+          "agent": "relay",
+          "part": 0
+        },
+        {
+          "t": 1,
+          "id": "relay:1",
+          "agent": "relay",
+          "part": 1
+        },
+        {
+          "t": 2,
+          "id": "pump:1",
+          "agent": "pump",
+          "part": 0
+        },
+        {
+          "t": 3,
+          "id": "pump:1",
+          "agent": "pump",
+          "part": 1
+        },
+        {
+          "t": 4,
+          "id": null
+        },
+        {
+          "t": 5,
+          "id": "fan:3",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 6,
+          "id": "fan:3",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 7,
+          "id": "fan:4",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 8,
+          "id": "fan:4",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 9,
+          "id": "fan:5",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 10,
+          "id": "fan:5",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 11,
+          "id": "fan:6",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 12,
+          "id": "fan:6",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 13,
+          "id": "fan:7",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 14,
+          "id": "fan:7",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 15,
+          "id": "fan:8",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 16,
+          "id": "fan:8",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 17,
+          "id": "fan:9",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 18,
+          "id": "fan:9",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 19,
+          "id": "fan:10",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 20,
+          "id": "fan:10",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 21,
+          "id": "fan:11",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 22,
+          "id": "fan:11",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 23,
+          "id": "fan:12",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 24,
+          "id": "fan:12",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 25,
+          "id": "fan:13",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 26,
+          "id": "fan:13",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 27,
+          "id": "fan:14",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 28,
+          "id": "fan:14",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 29,
+          "id": "fan:15",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 30,
+          "id": "fan:15",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 31,
+          "id": "fan:16",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 32,
+          "id": "fan:16",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 33,
+          "id": "fan:17",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 34,
+          "id": "fan:17",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 35,
+          "id": "fan:18",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 36,
+          "id": "fan:18",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 37,
+          "id": "fan:19",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 38,
+          "id": "fan:19",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 39,
+          "id": "fan:20",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 40,
+          "id": "fan:20",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 41,
+          "id": "fan:21",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 42,
+          "id": "fan:21",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 43,
+          "id": "fan:22",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 44,
+          "id": "fan:22",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 45,
+          "id": "fan:23",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 46,
+          "id": "fan:23",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 47,
+          "id": "fan:24",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 48,
+          "id": "fan:24",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 49,
+          "id": "fan:25",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 50,
+          "id": "fan:25",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 51,
+          "id": "fan:26",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 52,
+          "id": "fan:26",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 53,
+          "id": "fan:27",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 54,
+          "id": "fan:27",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 55,
+          "id": "fan:28",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 56,
+          "id": "fan:28",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 57,
+          "id": "fan:29",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 58,
+          "id": "fan:29",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 59,
+          "id": "fan:30",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 60,
+          "id": "fan:30",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 61,
+          "id": "fan:31",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 62,
+          "id": "fan:31",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 63,
+          "id": "fan:32",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 64,
+          "id": "fan:32",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 65,
+          "id": "fan:33",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 66,
+          "id": "fan:33",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 67,
+          "id": "fan:34",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 68,
+          "id": "fan:34",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 69,
+          "id": "fan:35",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 70,
+          "id": "fan:35",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 71,
+          "id": "fan:36",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 72,
+          "id": "fan:36",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 73,
+          "id": "fan:37",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 74,
+          "id": "fan:37",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 75,
+          "id": "fan:38",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 76,
+          "id": "fan:38",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 77,
+          "id": "fan:39",
+          "agent": "fan",
+          "part": 0
+        },
+        {
+          "t": 78,
+          "id": "fan:39",
+          "agent": "fan",
+          "part": 1
+        },
+        {
+          "t": 79,
+          "id": "fan:40",
+          "agent": "fan",
+          "part": 0
+        }
+      ],
+      "debtHistory": [
+        {
+          "t": 0,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            "pump:1",
+            null,
+            null
+          ],
+          "serving": "relay:1"
+        },
+        {
+          "t": 1,
+          "debt": [
+            1,
+            0,
+            0
+          ],
+          "queued": [
+            "pump:1",
+            "fan:1",
+            null
+          ],
+          "serving": "relay:1"
+        },
+        {
+          "t": 2,
+          "debt": [
+            2,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "pump:1"
+        },
+        {
+          "t": 3,
+          "debt": [
+            2,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            "fan:2",
+            null
+          ],
+          "serving": "pump:1"
+        },
+        {
+          "t": 4,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": null
+        },
+        {
+          "t": 5,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:3"
+        },
+        {
+          "t": 6,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:3"
+        },
+        {
+          "t": 7,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:4"
+        },
+        {
+          "t": 8,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:4"
+        },
+        {
+          "t": 9,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:5"
+        },
+        {
+          "t": 10,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:5"
+        },
+        {
+          "t": 11,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:6"
+        },
+        {
+          "t": 12,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:6"
+        },
+        {
+          "t": 13,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:7"
+        },
+        {
+          "t": 14,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:7"
+        },
+        {
+          "t": 15,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:8"
+        },
+        {
+          "t": 16,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:8"
+        },
+        {
+          "t": 17,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:9"
+        },
+        {
+          "t": 18,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:9"
+        },
+        {
+          "t": 19,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:10"
+        },
+        {
+          "t": 20,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:10"
+        },
+        {
+          "t": 21,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:11"
+        },
+        {
+          "t": 22,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:11"
+        },
+        {
+          "t": 23,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:12"
+        },
+        {
+          "t": 24,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:12"
+        },
+        {
+          "t": 25,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:13"
+        },
+        {
+          "t": 26,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:13"
+        },
+        {
+          "t": 27,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:14"
+        },
+        {
+          "t": 28,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:14"
+        },
+        {
+          "t": 29,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:15"
+        },
+        {
+          "t": 30,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:15"
+        },
+        {
+          "t": 31,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:16"
+        },
+        {
+          "t": 32,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:16"
+        },
+        {
+          "t": 33,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:17"
+        },
+        {
+          "t": 34,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:17"
+        },
+        {
+          "t": 35,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:18"
+        },
+        {
+          "t": 36,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:18"
+        },
+        {
+          "t": 37,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:19"
+        },
+        {
+          "t": 38,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:19"
+        },
+        {
+          "t": 39,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:20"
+        },
+        {
+          "t": 40,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:20"
+        },
+        {
+          "t": 41,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:21"
+        },
+        {
+          "t": 42,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:21"
+        },
+        {
+          "t": 43,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:22"
+        },
+        {
+          "t": 44,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:22"
+        },
+        {
+          "t": 45,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:23"
+        },
+        {
+          "t": 46,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:23"
+        },
+        {
+          "t": 47,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:24"
+        },
+        {
+          "t": 48,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:24"
+        },
+        {
+          "t": 49,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:25"
+        },
+        {
+          "t": 50,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:25"
+        },
+        {
+          "t": 51,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:26"
+        },
+        {
+          "t": 52,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:26"
+        },
+        {
+          "t": 53,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:27"
+        },
+        {
+          "t": 54,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:27"
+        },
+        {
+          "t": 55,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:28"
+        },
+        {
+          "t": 56,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:28"
+        },
+        {
+          "t": 57,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:29"
+        },
+        {
+          "t": 58,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:29"
+        },
+        {
+          "t": 59,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:30"
+        },
+        {
+          "t": 60,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:30"
+        },
+        {
+          "t": 61,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:31"
+        },
+        {
+          "t": 62,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:31"
+        },
+        {
+          "t": 63,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:32"
+        },
+        {
+          "t": 64,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:32"
+        },
+        {
+          "t": 65,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:33"
+        },
+        {
+          "t": 66,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:33"
+        },
+        {
+          "t": 67,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:34"
+        },
+        {
+          "t": 68,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:34"
+        },
+        {
+          "t": 69,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:35"
+        },
+        {
+          "t": 70,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:35"
+        },
+        {
+          "t": 71,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:36"
+        },
+        {
+          "t": 72,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:36"
+        },
+        {
+          "t": 73,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:37"
+        },
+        {
+          "t": 74,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:37"
+        },
+        {
+          "t": 75,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:38"
+        },
+        {
+          "t": 76,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:38"
+        },
+        {
+          "t": 77,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:39"
+        },
+        {
+          "t": 78,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:39"
+        },
+        {
+          "t": 79,
+          "debt": [
+            0,
+            0,
+            0
+          ],
+          "queued": [
+            null,
+            null,
+            null
+          ],
+          "serving": "fan:40"
+        }
+      ]
+    }
+  },
+  "limits": "synthetic finite scheduling; gap includes idle time and right-censored tail, not waiting-time estimate"
+}
