@@ -1,0 +1,87 @@
+{
+  "audio_receipts": {
+    "a": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "b": [
+      2,
+      0,
+      0,
+      2,
+      0
+    ]
+  },
+  "audio_sha256": {
+    "bound-a": "e7389001380b8b7a460925142ebad436893b91e86beabeae8ab91973d7ad42bb",
+    "bound-b": "9f3bfc604f9b4a2cfd8a43e28e36e6717b9c2394d4724d9788f4bd073020a5ef",
+    "raw-a": "26a30b2146ffb9d6f5e4265589523d42b8f299f7b62cac6d83c5ae7f4dc3d585",
+    "raw-b": "26a30b2146ffb9d6f5e4265589523d42b8f299f7b62cac6d83c5ae7f4dc3d585",
+    "stereo-a": "715049fab74a2fde6d0df6443fdcc99cf7741ec31a16678ce3a3b9dbab527e73",
+    "stereo-b": "2173324529080956f183a0ecc2f9a3d807c8b14854d27563178db898a85248d1"
+  },
+  "collision_rows": 2066,
+  "graph_cuts": 8166,
+  "hamming_cuts": 8166,
+  "literal_pair_distances": 833,
+  "optima": [
+    {
+      "candidates": 1,
+      "cuts": 1,
+      "m": 2,
+      "optimum": 1,
+      "search_nodes": 2,
+      "witness": [
+        3
+      ]
+    },
+    {
+      "candidates": 4,
+      "cuts": 6,
+      "m": 3,
+      "optimum": 3,
+      "search_nodes": 18,
+      "witness": [
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "candidates": 11,
+      "cuts": 25,
+      "m": 4,
+      "optimum": 5,
+      "search_nodes": 652,
+      "witness": [
+        3,
+        5,
+        10,
+        12,
+        15
+      ]
+    },
+    {
+      "candidates": 26,
+      "cuts": 90,
+      "m": 5,
+      "optimum": 8,
+      "search_nodes": 732114,
+      "witness": [
+        3,
+        5,
+        9,
+        18,
+        20,
+        26,
+        28,
+        31
+      ]
+    }
+  ],
+  "raw_fibres": 360,
+  "three_field_fault_profiles": 70342
+}
