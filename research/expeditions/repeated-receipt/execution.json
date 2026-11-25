@@ -1,0 +1,303 @@
+{
+  "status": "PASS",
+  "counts": {
+    "profiles": 461,
+    "exact_histograms": 2305,
+    "labelled_cells": 13855,
+    "convex_tests": 55420,
+    "peak_floor_profiles": 378,
+    "mean_checks": 2305,
+    "posterior_tests": 4610
+  },
+  "examples": [
+    {
+      "false_candidates": 2,
+      "balanced_mean_T_exact": "3/1",
+      "balanced_mean_T_approx": 3,
+      "burst_mean_T": 2,
+      "deadline": [
+        {
+          "t": 1,
+          "balanced_unique": 0,
+          "burst_unique": 0.5
+        },
+        {
+          "t": 2,
+          "balanced_unique": 0.5,
+          "burst_unique": 0.75
+        },
+        {
+          "t": 3,
+          "balanced_unique": 0.75,
+          "burst_unique": 0.875
+        },
+        {
+          "t": 4,
+          "balanced_unique": 0.875,
+          "burst_unique": 0.9375
+        },
+        {
+          "t": 5,
+          "balanced_unique": 0.9375,
+          "burst_unique": 0.96875
+        },
+        {
+          "t": 6,
+          "balanced_unique": 0.96875,
+          "burst_unique": 0.984375
+        },
+        {
+          "t": 7,
+          "balanced_unique": 0.984375,
+          "burst_unique": 0.9921875
+        },
+        {
+          "t": 8,
+          "balanced_unique": 0.992187,
+          "burst_unique": 0.99609375
+        }
+      ]
+    },
+    {
+      "false_candidates": 4,
+      "balanced_mean_T_exact": "19/5",
+      "balanced_mean_T_approx": 3.8,
+      "burst_mean_T": 2,
+      "deadline": [
+        {
+          "t": 1,
+          "balanced_unique": 0,
+          "burst_unique": 0.5
+        },
+        {
+          "t": 2,
+          "balanced_unique": 0.166666,
+          "burst_unique": 0.75
+        },
+        {
+          "t": 3,
+          "balanced_unique": 0.527777,
+          "burst_unique": 0.875
+        },
+        {
+          "t": 4,
+          "balanced_unique": 0.754629,
+          "burst_unique": 0.9375
+        },
+        {
+          "t": 5,
+          "balanced_unique": 0.875771,
+          "burst_unique": 0.96875
+        },
+        {
+          "t": 6,
+          "balanced_unique": 0.937628,
+          "burst_unique": 0.984375
+        },
+        {
+          "t": 7,
+          "balanced_unique": 0.968771,
+          "burst_unique": 0.9921875
+        },
+        {
+          "t": 8,
+          "balanced_unique": 0.984378,
+          "burst_unique": 0.99609375
+        }
+      ]
+    },
+    {
+      "false_candidates": 8,
+      "balanced_mean_T_exact": "45949/9867",
+      "balanced_mean_T_approx": 4.656835,
+      "burst_mean_T": 2,
+      "deadline": [
+        {
+          "t": 1,
+          "balanced_unique": 0,
+          "burst_unique": 0.5
+        },
+        {
+          "t": 2,
+          "balanced_unique": 0.014285,
+          "burst_unique": 0.75
+        },
+        {
+          "t": 3,
+          "balanced_unique": 0.255306,
+          "burst_unique": 0.875
+        },
+        {
+          "t": 4,
+          "balanced_unique": 0.557583,
+          "burst_unique": 0.9375
+        },
+        {
+          "t": 5,
+          "balanced_unique": 0.762546,
+          "burst_unique": 0.96875
+        },
+        {
+          "t": 6,
+          "balanced_unique": 0.877703,
+          "burst_unique": 0.984375
+        },
+        {
+          "t": 7,
+          "balanced_unique": 0.93808,
+          "burst_unique": 0.9921875
+        },
+        {
+          "t": 8,
+          "balanced_unique": 0.968874,
+          "burst_unique": 0.99609375
+        }
+      ]
+    },
+    {
+      "false_candidates": 16,
+      "balanced_mean_T_exact": "22018296160661/3977989803315",
+      "balanced_mean_T_approx": 5.53503,
+      "burst_mean_T": 2,
+      "deadline": [
+        {
+          "t": 1,
+          "balanced_unique": 0,
+          "burst_unique": 0.5
+        },
+        {
+          "t": 2,
+          "balanced_unique": 0.000077,
+          "burst_unique": 0.75
+        },
+        {
+          "t": 3,
+          "balanced_unique": 0.059128,
+          "burst_unique": 0.875
+        },
+        {
+          "t": 4,
+          "balanced_unique": 0.303569,
+          "burst_unique": 0.9375
+        },
+        {
+          "t": 5,
+          "balanced_unique": 0.577549,
+          "burst_unique": 0.96875
+        },
+        {
+          "t": 6,
+          "balanced_unique": 0.768811,
+          "burst_unique": 0.984375
+        },
+        {
+          "t": 7,
+          "balanced_unique": 0.879462,
+          "burst_unique": 0.9921875
+        },
+        {
+          "t": 8,
+          "balanced_unique": 0.938548,
+          "burst_unique": 0.99609375
+        }
+      ]
+    },
+    {
+      "false_candidates": 32,
+      "balanced_mean_T_exact": "66722122433454388238555665497216340088206858688140162004684598005497/10335586438805383812720596953180352963412269426919039547613303100783",
+      "balanced_mean_T_approx": 6.455572,
+      "burst_mean_T": 2,
+      "deadline": [
+        {
+          "t": 1,
+          "balanced_unique": 0,
+          "burst_unique": 0.5
+        },
+        {
+          "t": 2,
+          "balanced_unique": 0,
+          "burst_unique": 0.75
+        },
+        {
+          "t": 3,
+          "balanced_unique": 0.003155,
+          "burst_unique": 0.875
+        },
+        {
+          "t": 4,
+          "balanced_unique": 0.089867,
+          "burst_unique": 0.9375
+        },
+        {
+          "t": 5,
+          "balanced_unique": 0.331158,
+          "burst_unique": 0.96875
+        },
+        {
+          "t": 6,
+          "balanced_unique": 0.589777,
+          "burst_unique": 0.984375
+        },
+        {
+          "t": 7,
+          "balanced_unique": 0.772934,
+          "burst_unique": 0.9921875
+        },
+        {
+          "t": 8,
+          "balanced_unique": 0.880692,
+          "burst_unique": 0.99609375
+        }
+      ]
+    },
+    {
+      "false_candidates": 64,
+      "balanced_mean_T_exact": "1549035937038512717103835803259503064848921193351319719036288278069156275860448753642133087039097802484594306298128319159060777719419852463499423452679141012766235508471439861997973237193419909174536903342449797376212277979921106857435924703251397/209183388990616007863384048147422288261835350294867863911238590594758757397409822218988517132743851812410965439442230767750231808432172000607902076691272695760676671548668465247041631743769187356336756175236253510061104117818023001320786222099075",
+      "balanced_mean_T_approx": 7.405157,
+      "burst_mean_T": 2,
+      "deadline": [
+        {
+          "t": 1,
+          "balanced_unique": 0,
+          "burst_unique": 0.5
+        },
+        {
+          "t": 2,
+          "balanced_unique": 0,
+          "burst_unique": 0.75
+        },
+        {
+          "t": 3,
+          "balanced_unique": 0.000008,
+          "burst_unique": 0.875
+        },
+        {
+          "t": 4,
+          "balanced_unique": 0.00787,
+          "burst_unique": 0.9375
+        },
+        {
+          "t": 5,
+          "balanced_unique": 0.108851,
+          "burst_unique": 0.96875
+        },
+        {
+          "t": 6,
+          "balanced_unique": 0.347045,
+          "burst_unique": 0.984375
+        },
+        {
+          "t": 7,
+          "balanced_unique": 0.597006,
+          "burst_unique": 0.9921875
+        },
+        {
+          "t": 8,
+          "balanced_unique": 0.77545,
+          "burst_unique": 0.99609375
+        }
+      ]
+    }
+  ],
+  "notes": "Exact BigInt labelled-mask propagation versus binomial inversion; denominator-four profiles, m=1..6, five independent draws. Decimal display values truncated to six places."
+}
