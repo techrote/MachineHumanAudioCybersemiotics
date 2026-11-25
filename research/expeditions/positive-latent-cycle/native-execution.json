@@ -1,0 +1,129 @@
+{
+  "assertions": "PASS",
+  "audio": [
+    {
+      "decoded_slots": 64,
+      "forbidden": 0,
+      "left_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "name": "target",
+      "right_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "sha256": "650207de48c6e9f15890e1659ed3d7fe62646a90a4d4e80a828622e94a85baaf"
+    },
+    {
+      "decoded_slots": 64,
+      "forbidden": 16,
+      "left_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "name": "four-parents",
+      "right_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "sha256": "1eca3706791762b050558e1afc5cadbb6160c0e24b18009acc1ed20fb1e1eb2f"
+    },
+    {
+      "decoded_slots": 64,
+      "forbidden": 48,
+      "left_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "name": "one-parent",
+      "right_counts": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "sha256": "913b9c4cca06b68c41241bba90d0d69b97627aa95704b09d4fcc3dab077a9858"
+    }
+  ],
+  "cap": {
+    "pairs": 82158,
+    "profiles": 180
+  },
+  "tensor": [
+    {
+      "d": 1,
+      "max_rectangle": 2,
+      "n": 3,
+      "rectangles": 12
+    },
+    {
+      "d": 1,
+      "max_rectangle": 2,
+      "n": 4,
+      "rectangles": 16
+    },
+    {
+      "d": 1,
+      "max_rectangle": 2,
+      "n": 6,
+      "rectangles": 24
+    },
+    {
+      "d": 1,
+      "max_rectangle": 2,
+      "n": 8,
+      "rectangles": 32
+    },
+    {
+      "d": 2,
+      "max_rectangle": 4,
+      "n": 3,
+      "rectangles": 252
+    },
+    {
+      "d": 2,
+      "max_rectangle": 4,
+      "n": 4,
+      "rectangles": 448
+    }
+  ],
+  "tv": {
+    "four_parents": "1/4",
+    "one_parent": "3/4"
+  }
+}
