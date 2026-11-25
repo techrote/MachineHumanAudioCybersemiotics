@@ -63,13 +63,13 @@ inline bool decode(const State& a,Params& p) noexcept {
 class Engine {
     Params p_=defaults;
     Socket socket_{};
-    double sr_=48000., fraction_=0., increment_=0., gain_=1., slew_=1./240.;
+    double sr_=48000., fraction_=0., error_=0., increment_=0., gain_=1., slew_=1./240.;
     void updateRate() noexcept { increment_=.25*std::exp2(6*p_[Rate])/sr_; }
 public:
     Engine() noexcept { reset(48000.); }
     void reset(double sr) noexcept {
         sr_=validSampleRate(sr)?sr:48000.;
-        socket_={};fraction_=0.;gain_=1.;slew_=std::min(1.,200./sr_);updateRate();
+        socket_={};fraction_=0.;error_=0.;gain_=1.;slew_=std::min(1.,200./sr_);updateRate();
     }
     const Params& params() const noexcept { return p_; }
     void set(unsigned id,double value) noexcept {
@@ -91,8 +91,15 @@ public:
         gain_+=std::clamp(target-gain_,-slew_,slew_);
         gain_=std::clamp(gain_,0.,1.);
         if(!socket_.paused()) {
-            fraction_+=increment_;
-            if(fraction_>=1.-1e-12){fraction_=std::max(0.,fraction_-1.);socket_.tick();}
+            // Compensated addition prevents long low-rate steps from accumulating
+            // enough rounding error to miss an exact sample boundary. Carry the
+            // tiny signed residual across wraps; do not repeatedly truncate it.
+            const double delta=increment_-error_;
+            const double next=fraction_+delta;
+            error_=(next-fraction_)-delta;
+            fraction_=next;
+            constexpr double boundaryTolerance=8.*std::numeric_limits<double>::epsilon();
+            if(fraction_>=1.-boundaryTolerance){fraction_-=1.;socket_.tick();}
         }
         return gain_;
     }
