@@ -31,6 +31,23 @@ int main(int argc,char** argv){
     check(!a.on(8,60,0,1,p)&&!a.on(0,60,0,1,p));
     std::array<float,1024> l{},r{},ll{},rr{};a.render(l.data(),r.data(),1024);for(int i=0;i<1024;i+=17)b.render(ll.data()+i,rr.data()+i,std::min(17,1024-i));check(l==ll&&r==rr);for(unsigned i=0;i<l.size();++i)check(std::abs(l[i])+std::abs(r[i])<=.400001f);
     a.reset();a.render(l.data(),static_cast<float*>(nullptr),1024);for(auto x:l)check(x==0);
+    Engine held,reference;check(held.prepare(48000)&&reference.prepare(48000));p=defaults;
+    check(held.on(1,60,0,1,p)&&reference.on(1,60,0,1,p));
+    for(unsigned i=0;i<Count;++i)set(p,i,1);
+    for(int i=0;i<5000;++i){const auto x=held.tick(),y=reference.tick();check(x.l==y.l&&x.r==y.r);}
+    held.off(1);reference.off(1);for(int i=0;i<1921;++i){const auto x=held.tick(),y=reference.tick();check(x.l==y.l&&x.r==y.r);}
+    check(held.tick().l==0&&held.on(1,60,0,1,p));held.reset();
+    check(!held.on(1,127,NAN,INFINITY,p)&&held.on(1,999,NAN,2,p));
+    held.off(1);for(int i=0;i<1922;++i){auto x=held.tick();check(x.l==0&&x.r==0);}
+    check(held.on(1,127,1200,2,p));for(int i=0;i<123;++i){auto x=held.tick();check(std::isfinite(x.l)&&std::abs(x.l)<=.05&&x.l==x.r);}held.off(1);for(int i=0;i<1921;++i){auto x=held.tick();check(std::isfinite(x.l)&&std::abs(x.l)<=.05);}check(held.tick().l==0);
+    held.reset();reference.reset();p=defaults;check(held.on(1,69,0,1,p)&&reference.on(1,69,0,1,p));
+    std::array<double,1024> dl{},dr{};held.render(l.data(),r.data(),1024);reference.render(dl.data(),dr.data(),1024);for(unsigned i=0;i<l.size();++i)check(l[i]==float(dl[i])&&r[i]==float(dr[i]));
+    held.reset();reference.reset();check(held.on(1,69,0,1,p)&&reference.on(1,69,0,1,p));held.render(l.data(),static_cast<float*>(nullptr),1024);reference.render(dl.data(),dr.data(),1024);for(unsigned i=0;i<l.size();++i)check(l[i]==float((dl[i]+dr[i])*.5));
+    Engine bench;check(bench.prepare(48000));for(int i=0;i<8;++i)check(bench.on(i,60+i,0,1,defaults));
+    const auto begin=std::chrono::steady_clock::now();double sum=0;
+    for(int i=0;i<480000;++i){const auto x=bench.tick();sum+=std::abs(x.l)+std::abs(x.r);}
+    const auto elapsed=std::chrono::duration<double>(std::chrono::steady_clock::now()-begin).count();check(sum>1&&std::isfinite(sum));
+    std::cout<<"eight voice 10s offline benchmark="<<elapsed<<" s, latch, release, extreme notes, format and mono PASS\n";
     std::cout<<"clip cases="<<cases<<" max reclip error="<<err<<" paired frames="<<frames<<" max residual difference="<<delta<<"; state, capacity, partition, silence PASS\n";
     if(argc>1){std::string d=argv[1];demo(d+"/split-low.wav",0,false);demo(d+"/split-high.wav",1,false);demo(d+"/reconstructed.wav",1,true);}
 }
