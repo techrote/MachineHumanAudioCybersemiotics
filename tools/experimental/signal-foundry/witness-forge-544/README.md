@@ -1,3 +1,27 @@
+# Witness Forge 0.2.0 — live quality integration
+
+Refs #560, #552 / #553, #544 / #547, and originating formal draft #297 at c66c128ae550aadd16a46ddc7559406dbbc65be9. Creative engineering extension and measurement instrument; no new formal theorem, empirical result or human evidence. Parent 246da42d4f84a8dcfdc9e8c2c4bdd12a960f0d29; live main inspected 495a98ca12bae467a507031f04931aa4254b1866; instrument lane #559 inspected. Existing isolated workflow, class IDs and SDK root/dependency lock retained. Historical 0.1.0 README preserved below; this addendum supersedes earlier claims about latency, sample rates, state, controls and oversampling for 0.2.0.
+
+## Current controls and behavior
+
+Quality ID 606 is stepped normalized 0 = 1x, 0.5 = 2x, 1 = 4x. New instances default to 2x; WF01 state migrates to 1x with the original six control targets. WF02 stores 32 bytes: magic WF02 plus seven little-endian IEEE float32 values. Old versions cannot read WF02. No class IDs or original parameter IDs change. Fixed 32-sample latency (0.667 ms at 48 kHz), conservative 64-sample tail, including protected bypass. Host PDC must account for the new latency; re-audition old sessions. Aligned 1x is not necessarily sample-identical to the old zero-latency processor under parameter automation. Stereo only, Float32/Float64.
+
+All three quality paths run continuously so their histories remain valid. A quality target change starts a 5 ms linear crossfade from the current weights; interruption retargets from the current blend, without reset or history clearing. The choice of quality therefore does not reduce CPU cost in this implementation. Bounded fixed-array processing with no heap allocation, disk/network I/O or locks in the DSP callback. Quality paths have independent output protection before blending; final output is protected too. No guarantee of zero audible artifacts under arbitrary automation; filters attenuate near Nyquist and final clipping can alias. 2x remains the recommended starting mode from #552's targeted alias test. The finite setup range now includes 1,000–2,000,000 Hz to address the original validator's unusual rates; high-rate setup and short native render tests do not imply real-time performance at 2 MHz.
+
+Suggested patches in normalized order Drive/Coupling/Isolate/Mix/Gain/Bypass/Quality:
+- Shared Warmth 0.3/1/0/0.7/0.8/0/0.5
+- Cross Witness 1/1/1/1/1/0/0.5
+- Raw Cubic Control 1/1/0/1/1/0/0
+- Filtered Cubic 1/1/0/1/1/0/1
+
+## Local native qualification — 2026-11-25
+
+Same-agent GPT-6.2 implementation and verification. Linux x64 GNU 14.2 CMake 3.31.6 Release with -Wall -Wextra -Wpedantic -Werror: 3/3 CTest PASS (original, oversampling, live). New live test ASan/UBSan PASS. Ten sample rates (including 1234.568 and 1234567.8 Hz), independently calculated interrupted transition weights applied to fixed-quality reference paths, exact delayed Float32 bypass impulse under per-sample quality changes, extremes, finite tail, legacy/new state and rejection. Native raw 4 s stereo 48 kHz sweep reproduced byte-identically; peak 0.352768 FS, offline render 0.109–0.112 s (including PCM writes), not a callback deadline guarantee. Run forge_live_test with an existing output-directory argument to generate quality-sweep.raw; wrap PCM16 little-endian stereo at 48000 Hz with Python wave. The four seconds select 1x, 2x, 4x, 1x in order; sample boundaries 48000, 96000, 144000. Original analytic I/Q signal, no listening test. Actual host automation, bus handling, DAW session migration, latency compensation and Windows validator execution remain outstanding at commit time.
+
+Fresh SDK tag resolution matched official v3.8.0_build_66 root 9fad9770f2ae8542ab1a548a68c1ad1ac690abe0. Seven gitlink pins and license packaging unchanged. Local SDK git ls-remote failed DNS, no local adapter compilation and no new binary claimed. Inherited Windows workflow will execute all three native suites through CTest. Read the actual validator transcript: previous #547 reported 47/0 yet had four setupProcessing errors for unusual rates; do not call this repaired until exact-head Windows log is clean. #553's inherited Windows and research integrity runs succeeded, but its standalone oversampling tests were not wired into the inherited CTest then.
+
+## Historical 0.1.0 documentation (not the current contract)
+
 # Witness Forge 0.1.0 — MHAC-FX-005
 
 Refs #544; originating research #296 / draft #297, pinned c66c128ae550aadd16a46ddc7559406dbbc65be9. Direct realization of the ideal analytic cubic channel when stereo is deliberately treated as I/Q; creative extension for ordinary stereo audio. Not an empirical finding, a calibrated receiver or human evidence. Base main 495a98ca12bae467a507031f04931aa4254b1866; adapter and CI pattern derived from qualified Projector Lattice #529 at cfcf31c4a230016088314baacc2e665da74704b5, without depending on its branch.

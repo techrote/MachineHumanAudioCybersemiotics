@@ -11,7 +11,7 @@ using Params = std::array<float,Count>;
 inline constexpr Params defaults{.75f,1.f,0.f,.5f,.75f,0.f};
 using State = std::array<std::uint8_t,4+4*Count>;
 static_assert(sizeof(float)==4 && std::numeric_limits<float>::is_iec559,"IEEE binary32 required");
-inline bool validSampleRate(double r){return std::isfinite(r)&&r>=8000&&r<=384000;}
+inline bool validSampleRate(double r){return std::isfinite(r)&&r>=1000&&r<=2000000;}
 inline bool valid(const Params& p){for(float x:p)if(!std::isfinite(x)||x<0||x>1)return false;return true;}
 inline State encode(const Params& p){State s{'W','F','0','1'};for(unsigned i=0;i<Count;++i){std::uint32_t u;std::memcpy(&u,&p[i],4);for(unsigned j=0;j<4;++j)s[4+4*i+j]=std::uint8_t(u>>(8*j));}return s;}
 inline bool decode(const State& s,Params& p){if(s[0]!='W'||s[1]!='F'||s[2]!='0'||s[3]!='1')return false;Params q{};for(unsigned i=0;i<Count;++i){std::uint32_t u=0;for(unsigned j=0;j<4;++j)u|=std::uint32_t(s[4+4*i+j])<<(8*j);std::memcpy(&q[i],&u,4);}if(!valid(q))return false;p=q;return true;}

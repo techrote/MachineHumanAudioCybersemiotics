@@ -1,4 +1,4 @@
-#include "forge.hpp"
+#include "live-560/live.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
 #include "public.sdk/source/vst/vstparameters.h"
@@ -13,9 +13,12 @@ namespace {
 const FUID processorID(0xA24008FA,0x624B4652,0x8086C6A0,0xCBE6FF09);
 const FUID controllerID(0xDA636A8D,0x6F8F401B,0x9E0A3B69,0xAC061313);
 constexpr ParamID firstID=600;
-bool readParams(IBStream* stream,fx::Params& p){
-    fx::State bytes{};int32 n=0;
-    return stream&&stream->read(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())&&fx::decode(bytes,p);
+bool readParams(IBStream* stream,fx::LiveParams& p){
+    fx::LiveState bytes{};int32 n=0;
+    if(!stream||stream->read(bytes.data(),4,&n)!=kResultOk||n!=4)return false;
+    if(bytes[0]!='W'||bytes[1]!='F'||bytes[2]!='0'||(bytes[3]!='1'&&bytes[3]!='2'))return false;
+    const int32 size=bytes[3]=='1'?int32(fx::State{}.size()):int32(bytes.size());
+    return stream->read(bytes.data()+4,size-4,&n)==kResultOk&&n==size-4&&fx::decodeLive(bytes.data(),size,p);
 }
 struct Cursor {
     IParamValueQueue* queue=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
@@ -24,20 +27,20 @@ struct Cursor {
         while(index<count){if(queue->getPoint(index++,offset,value)==kResultTrue){pending=true;break;}}
     }
     void init(IParamValueQueue* q){queue=q;count=q->getPointCount();next();}
-    void apply(fx::Forge& e,unsigned id,int32 sample,bool flush=false){
+    void apply(fx::LiveForge& e,unsigned id,int32 sample,bool flush=false){
         while(pending&&(flush||offset<=sample)){e.set(id,value);next();}
     }
 };
 class Processor final : public AudioEffect {
-    fx::Forge engine;
+    fx::LiveForge engine;
     double sampleRate=48000.;
-    using Cursors=std::array<Cursor,fx::Count>;
+    using Cursors=std::array<Cursor,fx::LiveCount>;
     template<class T> tresult audio(ProcessData& d,T** in,T** out,Cursors& cursors){
         if(!out||d.outputs[0].numChannels!=2||(in&&d.inputs[0].numChannels!=2)||!out[0]||!out[1])return kResultFalse;
         const uint64 inputSilence=in?d.inputs[0].silenceFlags:~uint64(0);
         uint64 silent=3;
         for(int32 i=0;i<d.numSamples;++i){
-            for(unsigned k=0;k<fx::Count;++k)cursors[k].apply(engine,k,i);
+            for(unsigned k=0;k<fx::LiveCount;++k)cursors[k].apply(engine,k,i);
             const T l=(!in||!in[0]||(inputSilence&1))?T(0):in[0][i];
             const T r=(!in||!in[1]||(inputSilence&2))?T(0):in[1][i];
             const auto y=engine.process(l,r);
@@ -64,22 +67,22 @@ public:
         auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sampleRate=setup.sampleRate;engine.reset(sampleRate);}return r;
     }
     tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)engine.reset(sampleRate);return r;}
-    uint32 PLUGIN_API getLatencySamples() override {return 0;}
-    uint32 PLUGIN_API getTailSamples() override {return 0;}
-    tresult PLUGIN_API setState(IBStream* stream) override {fx::Params p{};if(!readParams(stream,p))return kResultFalse;engine.restore(p);return kResultOk;}
+    uint32 PLUGIN_API getLatencySamples() override {return fx::LiveForge::latency;}
+    uint32 PLUGIN_API getTailSamples() override {return fx::LiveForge::tail;}
+    tresult PLUGIN_API setState(IBStream* stream) override {fx::LiveParams p{};if(!readParams(stream,p))return kResultFalse;engine.restore(p);return kResultOk;}
     tresult PLUGIN_API getState(IBStream* stream) override {
-        if(!stream)return kResultFalse;auto bytes=fx::encode(engine.params());int32 n=0;
+        if(!stream)return kResultFalse;auto bytes=fx::encodeLive(engine.params());int32 n=0;
         return stream->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;
     }
     tresult PLUGIN_API process(ProcessData& d) override {
         Cursors cursors{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){
             auto* q=d.inputParameterChanges->getParameterData(i);if(!q)continue;
-            auto id=q->getParameterId();if(id>=firstID&&id<firstID+fx::Count&&!cursors[id-firstID].queue)cursors[id-firstID].init(q);
+            auto id=q->getParameterId();if(id>=firstID&&id<firstID+fx::LiveCount&&!cursors[id-firstID].queue)cursors[id-firstID].init(q);
         }
         if(d.numSamples<0)return kResultFalse;
-        if(d.numSamples==0){for(unsigned k=0;k<fx::Count;++k)cursors[k].apply(engine,k,0,true);return kResultOk;}
-        if(d.numOutputs==0){for(int32 i=0;i<d.numSamples;++i){for(unsigned k=0;k<fx::Count;++k)cursors[k].apply(engine,k,i);engine.process(0.,0.);}return kResultOk;}
+        if(d.numSamples==0){for(unsigned k=0;k<fx::LiveCount;++k)cursors[k].apply(engine,k,0,true);return kResultOk;}
+        if(d.numOutputs==0){for(int32 i=0;i<d.numSamples;++i){for(unsigned k=0;k<fx::LiveCount;++k)cursors[k].apply(engine,k,i);engine.process(0.,0.);}return kResultOk;}
         if(!d.outputs||d.numOutputs!=1||d.numInputs>1||(d.numInputs&&!d.inputs))return kResultFalse;
         if(d.symbolicSampleSize==kSample32)return audio(d,d.numInputs?d.inputs[0].channelBuffers32:nullptr,d.outputs[0].channelBuffers32,cursors);
         if(d.symbolicSampleSize==kSample64)return audio(d,d.numInputs?d.inputs[0].channelBuffers64:nullptr,d.outputs[0].channelBuffers64,cursors);
@@ -92,24 +95,25 @@ public:
     tresult PLUGIN_API initialize(FUnknown* ctx) override {
         auto r=EditController::initialize(ctx);if(r!=kResultOk)return r;
         constexpr int32 autoFlag=ParameterInfo::kCanAutomate;
-        auto add=[&](const TChar* name,unsigned id,int32 steps=0,int32 flags=ParameterInfo::kCanAutomate){parameters.addParameter(name,nullptr,steps,fx::defaults[id],flags,firstID+id);};
+        auto add=[&](const TChar* name,unsigned id,int32 steps=0,int32 flags=ParameterInfo::kCanAutomate){parameters.addParameter(name,nullptr,steps,fx::liveDefaults[id],flags,firstID+id);};
         add(STR16("Signed drive (0.5 neutral)"),fx::Drive);
         add(STR16("Stereo energy coupling"),fx::Coupling);
         add(STR16("Cross-only isolation"),fx::Isolate);
         add(STR16("Wet mix"),fx::Mix);
         add(STR16("Wet gain"),fx::Gain);
         add(STR16("Bypass"),fx::Bypass,1,autoFlag|ParameterInfo::kIsBypass);
+        add(STR16("Quality (1x / 2x / 4x)"),fx::Quality,2);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* stream) override {
-        fx::Params p{};if(!readParams(stream,p))return kResultFalse;
-        for(unsigned i=0;i<fx::Count;++i)setParamNormalized(firstID+i,p[i]);return kResultOk;
+        fx::LiveParams p{};if(!readParams(stream,p))return kResultFalse;
+        for(unsigned i=0;i<fx::LiveCount;++i)setParamNormalized(firstID+i,p[i]);return kResultOk;
     }
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Witness Forge", Vst::kDistributable, "Fx|Distortion", "0.1.0", kVstVersionString, Processor::create)
+           "MHAC Witness Forge", Vst::kDistributable, "Fx|Distortion", "0.2.0", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Witness Forge Controller", 0, "", "0.1.0", kVstVersionString, Controller::create)
+           "MHAC Witness Forge Controller", 0, "", "0.2.0", kVstVersionString, Controller::create)
 END_FACTORY
