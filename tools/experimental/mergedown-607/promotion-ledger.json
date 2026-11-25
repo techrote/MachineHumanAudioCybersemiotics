@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "0b93531cce6c9ee273566d096517bbca36e43d99",
+      "observedLaterHead": "7f06ab778df0c3d43f2bcad8bda5a7a70acb8d68",
       "observedLaterIntegrityCI": {
-        "run": 45713138409,
+        "run": 45720492205,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "5289debc32e11e76d8ba546ccbe6a76a2b9e2151",
+      "observedLaterHead": "a126f8ffd9a14899a6d15d332696820d54461b6a",
       "observedLaterIntegrityCI": {
-        "run": 45711792121,
+        "run": 45720056135,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "d70aa68fb60608efab8ff34089e8e3dc66fe2d11",
+      "observedLaterHead": "43fe2097fd9bd35949682f42335da721d5e5f9d8",
       "observedLaterIntegrityCI": {
-        "run": 45715371280,
+        "run": 45723271350,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "e06897558d142d13cfad1200693bc96d40816550",
+      "observedLaterHead": "38dd6d7323f65230d3711ab16573efd97819be88",
       "observedLaterIntegrityCI": {
-        "run": 45714518450,
+        "run": 45721761765,
         "conclusion": "success"
       }
     }
@@ -179,8 +179,8 @@
     "recommendation": "Close trace-repair qualification gap only. HOLD overall #608 for canonical location, full workbench and ordinary browser/Windows gates. Owner authorization required. Next qualify legacy/selective workbench; preserve v1 and v2 pins."
   },
   "previousConsolidationIntegrityCI": {
-    "head": "8413827920ffa2c78235cf98c64065eba36cb91a",
-    "run": 45709872932,
+    "head": "92fc56bb42aba1b4f51f1398a31bfd379b3f48c0",
+    "run": 45717436375,
     "conclusion": "success"
   },
   "selectiveTransferBatch": {
@@ -234,5 +234,96 @@
     "exclusions": "Full legacy CLI also requires index.html, phase-fit.cjs, matched-fp.cjs; --with-reconstruction additionally invokes joined-workbench.cjs and its six pinned modules. Those detector/operating/reconstruction paths, generated package manifest, HTML launch, physical audition and Windows not qualified in this run. Waveforms depict true onsets; shift is feature-domain only. Finite equally weighted synthetic conditions, no human evidence, no new license.",
     "transfer": "git ls-remote exited 128 Could not resolve host: github.com. Raw source web retrieval DisabledError; connector source read succeeded but complete dependency files not transferred to native sandbox. Native Node 22.16.0 present. Native Python independent oracle executed; native original JS CLI remains outstanding.",
     "recommendation": "Numerical transfer result independently reproduced. HOLD software promotion until native original CLI, package and legacy operating-point detector are qualified. Preserve frozen pin and source; no source duplication or merge."
+  },
+  "matchedFPBatch": {
+    "id": "OBS-MATCHED-FP-004",
+    "disposition": "HOLD",
+    "qualificationScope": "native bounded detector module and independent receipt accounting PASS; browser and owner promotion gates remain",
+    "sourcePR": 443,
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "sourceIntegrityCI": 45690234347,
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/",
+    "blobs": {
+      "phase-fit.cjs": "fd0fbca5bc784fadb9227baa628fb290506b841c",
+      "matched-fp.cjs": "e2c5e29240844a643ba966e5a261909d39f07862"
+    },
+    "harness": "check_matched_fp.py",
+    "harnessBlob": "b36ae12a60bf3b57e576fcbd2461a08021953e12",
+    "command": "python tools/experimental/mergedown-607/check_matched_fp.py NEW_OUTPUT --source-dir PINNED_SOURCE_DIR (omit --source-dir when pinned Git objects are locally available; Git path not exercised here)",
+    "runtime": "Linux Node v22.16.0, Python 3.13.5 standard library",
+    "native": "Exact connector source transfer (both Git hashes verified). Four native CLI exports, six files each byte-identical; harness independently checks 936 maximum-cardinality match decisions, 456 recorded development curve accounting cells, 12 selected thresholds against recorded curves, 21 evaluation group aggregates at witness budget .25 (not product counts), four WAV hashes/format/peaks, four deliberate receipt corruptions rejected. 80270 upstream assertions per run; not independent DSP or full curve reconstruction.",
+    "receiptSHA256": "092ffa40eefe8e4e472f565ddae6bb0981850099056d3828eccb815fb815d6a5",
+    "files": {
+      "index.html": "09aed3cb861fe2933738c2f690ae28222d863fe1517cb38d347e49097608b7d3",
+      "receipt.json": "092ffa40eefe8e4e472f565ddae6bb0981850099056d3828eccb815fb815d6a5",
+      "witness-0.wav": "c9afbe8ad3b8d120d87d46851df4a9a4d35723e13da3d907138df1a0825e885e",
+      "witness-216.wav": "c5b435742cc46e019f4b6bb3173371752fe89ebef76ef19c5c09d4c8f581d1db",
+      "witness-24.wav": "7f65b9a6e08632d453f454db5986eda6a98953480f6072b0e34c5874e92a737e",
+      "witness-40.wav": "8b9ff0e1f62f8a9311870fd1c5e2853019490f66bab6c230c2cb24e5bf158ed5"
+    },
+    "findings": {
+      "developmentPackets": 152,
+      "evaluationPackets": 312,
+      "knownTruthEvents": 576,
+      "unseenTruthEvents": 288,
+      "devBudget025": {
+        "thresholds": [
+          0.73,
+          0.85,
+          0.31
+        ],
+        "devFP": [
+          31,
+          18,
+          30
+        ],
+        "knownTP": [
+          211,
+          240,
+          332
+        ],
+        "knownFP": [
+          50,
+          32,
+          52
+        ],
+        "unseenTP": [
+          0,
+          0,
+          0
+        ]
+      },
+      "zeroBudget": "All select threshold 100 and reject everything.",
+      "budget05": {
+        "knownTP": [
+          225,
+          372,
+          508
+        ],
+        "knownFP": [
+          101,
+          101,
+          61
+        ],
+        "knownProducts": [
+          180053120,
+          360042240,
+          420839040
+        ],
+        "unseenTP": [
+          0,
+          0,
+          0
+        ]
+      },
+      "peakPCM16": 1261
+    },
+    "limitations": [
+      "Development FP caps are not equal realized FP or compute budgets; no population inference. Unseen 650 Hz is also sine instead of triangle, so frequency and waveform morphology confounded. Onset match does not require correct frequency identity.",
+      "Git ls-remote exit 128 Could not resolve host: github.com; exact two source files transferred and verified. Other frozen legacy/phase/selective and joined dependencies excluded from this bounded package.",
+      "Chromium 144 ordinary file launch via headless --dump-dom timed out after 20 seconds exit 124, DBus socket missing, no DOM output; no browser pass, physical audition or Windows execution. Gallery opt-in, maximum exported peak 1261/32768; not SPL calibration.",
+      "No source duplication committed, original artifacts retained upstream, no new rights asserted; generated outputs only in scratch package. No merge or scientific acceptance."
+    ],
+    "recommendation": "Keep full Observatory HOLD. Native dependency closure for matched-FP achieved; next native phase/selective and full legacy wrapper export. Owner gate stays closed."
   }
 }
