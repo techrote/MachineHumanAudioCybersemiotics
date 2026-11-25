@@ -1,0 +1,88 @@
+{
+  "byN": [
+    {
+      "n": 2,
+      "instances": 27,
+      "classes": 21
+    },
+    {
+      "n": 3,
+      "instances": 162,
+      "classes": 108
+    },
+    {
+      "n": 4,
+      "instances": 810,
+      "classes": 462
+    },
+    {
+      "n": 5,
+      "instances": 3645,
+      "classes": 1715
+    },
+    {
+      "n": 6,
+      "instances": 15309,
+      "classes": 5928
+    },
+    {
+      "n": 7,
+      "instances": 61236,
+      "classes": 19740
+    }
+  ],
+  "audio": {
+    "file": "same-hold-different-excitation.wav",
+    "sha256": "6ca2e28056dd3ad0b072284745d7696156e9d993fcbcdb619cad2cb499deb779",
+    "frames": 76800,
+    "sample_rate": 16000,
+    "pcm_energy": [
+      3538975617024,
+      884743904256
+    ],
+    "pcm_peak": [
+      9600,
+      9600
+    ],
+    "dense": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "sparse": [
+      4,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "control_widths": [
+      5,
+      8
+    ]
+  }
+}
