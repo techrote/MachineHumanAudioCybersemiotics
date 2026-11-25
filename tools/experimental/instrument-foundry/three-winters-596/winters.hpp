@@ -54,7 +54,7 @@ struct Engine {
         return false; // refuse excess notes rather than abruptly stealing a sounding voice
     }
     void noteOff(int id) noexcept {for(auto& v:voices)if(v.active&&v.id==id)v.releasing=true;}
-    std::array<double,3> sample() noexcept {
+    template<class Render> std::array<double,3> sampleWith(Render render) noexcept {
         std::array<double,3> out{};
         for(auto& v:voices)if(v.active){
             v.env=v.releasing?std::max(0.,v.env-releaseStep):std::min(1.,v.env+attack);
@@ -63,11 +63,12 @@ struct Engine {
             for(int i=0;i<3;++i){
                 v.inc[i]+=std::clamp(v.target[i]-v.inc[i],-glide*.45,glide*.45);
                 v.phase[i]+=v.inc[i];if(v.phase[i]>=1)v.phase[i]-=1;
-                out[i]+=.05*v.velocity*v.env*std::sin(2*pi*v.phase[i]);
+                out[i]+=.05*v.velocity*v.env*render(v.phase[i],v.inc[i],i);
             }
         }
         return out;
     }
+    std::array<double,3> sample() noexcept {return sampleWith([](double phase,double,int){return std::sin(2*pi*phase);});}
     template<class T> void process(T* left,T* right,unsigned n) noexcept {
         for(unsigned i=0;i<n;++i){const auto s=sample();const double l=s[0]+.5*s[1],r=s[2]+.5*s[1];
             if(left&&right&&left==right)left[i]=static_cast<T>((l+r)*.5);

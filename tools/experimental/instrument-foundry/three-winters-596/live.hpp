@@ -55,11 +55,12 @@ public:
         return true;
     }
     void off(int id) noexcept {e.noteOff(id);}
-    Frame tick() noexcept {
+    template<class Render> Frame tickWith(Render render) noexcept {
         if(p[6]){if(phase>=1-1e-10){phase=std::max(0.,phase-1);e.score.tick();retune();}phase+=(.5+7.5*p[7])/e.rate;}
-        auto s=e.sample();for(int i=0;i<3;++i){gain[i]+=std::clamp(p[8+i]-gain[i],-e.attack,e.attack);s[i]*=gain[i];}
+        auto s=e.sampleWith(render);for(int i=0;i<3;++i){gain[i]+=std::clamp(p[8+i]-gain[i],-e.attack,e.attack);s[i]*=gain[i];}
         return {s[0]+.5*s[1],s[2]+.5*s[1],s[0],s[1],s[2]};
     }
+    Frame tick() noexcept {return tickWith([](double phase,double,int){return std::sin(2*winters::Engine::pi*phase);});}
 };
 template<class T> void write(const Frame& f,T* const* main,unsigned channels,T* primary,T* middle,T* deep,unsigned i) noexcept {
     if(main&&channels==1&&main[0])main[0][i]=T((f.l+f.r)*.5);
