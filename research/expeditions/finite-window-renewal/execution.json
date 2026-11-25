@@ -1,0 +1,43 @@
+{
+  "model": "exact integer weights; independent alternating renewal; circular score separate",
+  "counts": {
+    "profiles": 1050,
+    "wordComparisons": 130200,
+    "signatureChecks": 5250,
+    "stopLossBounds": 966,
+    "jointFeasibleGridPoints": 300,
+    "jointInfeasibleGridPoints": 5950,
+    "jointConstructed": 300
+  },
+  "distinctWindowLaws": {
+    "2": 153,
+    "3": 525,
+    "4": 825,
+    "5": 1050,
+    "6": 1050
+  },
+  "score": {
+    "slots": 180,
+    "rawOnSlots": [
+      100,
+      100
+    ],
+    "gatedOnSlots": [
+      20,
+      20
+    ],
+    "gatedEpisodes": [
+      20,
+      1
+    ],
+    "matchedWindowLengths": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "firstDifference": 6
+  },
+  "assertions": "passed"
+}

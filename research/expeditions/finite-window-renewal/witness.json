@@ -1,0 +1,39 @@
+{
+  "score": {
+    "raw-a": {
+      "slots": 180,
+      "active": 100,
+      "episodes": 20,
+      "frames": 57600,
+      "sum_squares": 215324412600,
+      "sha256": "68e75124105b692323fb5ad8c149f06da007767ebade9128076d29d836d41df3"
+    },
+    "raw-b": {
+      "slots": 180,
+      "active": 100,
+      "episodes": 20,
+      "frames": 57600,
+      "sum_squares": 215324412600,
+      "sha256": "f8efea810c2eaac667ac5f9fd54472beae48f44888d1a60c466d832646843855"
+    },
+    "gated-a": {
+      "slots": 180,
+      "active": 20,
+      "episodes": 20,
+      "frames": 57600,
+      "sum_squares": 43064882520,
+      "sha256": "a4ceee237b7f3b71d87ad416b223f52deac96f5228c94d5a0e346e31d80f45ee"
+    },
+    "gated-b": {
+      "slots": 180,
+      "active": 20,
+      "episodes": 1,
+      "frames": 57600,
+      "sum_squares": 43064882520,
+      "sha256": "a9b1cfe6a6f2394122efffa4b60fe7c9cc6ec0323e288e462b03ff05c2ccf4d3"
+    }
+  },
+  "boundary_family_checks": 1024,
+  "equal_histograms_through": 5,
+  "assertions": "passed"
+}
