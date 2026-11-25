@@ -29,7 +29,7 @@ function channel(p,fault,slot){
 }
 // Fixed capture windows independent of scheduled slot boundaries. 2.5 s overlap > 1.96 s frame.
 function rescan(pcm){const hop=88000, win=128000, hits=[];for(let start=0;start<pcm.length;start+=hop){for(const h of v2.acquire(pcm.slice(start,Math.min(start+win,pcm.length))))if(h.start<hop&&h.status==='ok')hits.push({...h,start:start+h.start});}return hits;}
-function simulate(name,policy){
+function simulate(name,policy,slotReceiver=v2.acquire){
   if(!policies.includes(policy))throw Error('policy');
   const cfg=config(name), current=new Map(), records=new Map(), queue=[], received=new Set(), returns=new Map();
   const trace=[], audio=[];const metrics={offered:0,dataAttempts:0,retries:0,acks:0,uniqueReceipts:0,duplicates:0,confirmations:0,genuineConfirmations:0,invalid:0,freshAtAck:0,genuineFreshAtAck:0,staleAtAck:0,unmatchedAck:0,replayAck:0,expiredAck:0,droppedAck:0,refusedData:0,noDecodedPacket:0,currentConfirmed:0,genuineCurrentConfirmed:0,idleSlots:0};
@@ -50,7 +50,7 @@ function simulate(name,policy){
     }
     if(p&&p.kind===1){metrics.acks++;const k=key(p),n=(returns.get(k)||0)+1;returns.set(k,n);if(name==='ack-loss'&&p.source===1&&n===1)fault='lost';}
     const pcm=p?channel(p,fault,slot):new Int16Array(STEP);audio.push(pcm);if(!p)metrics.idleSlots++;
-    const hits=v2.acquire(pcm);if(p&&!packetHits(hits).length)metrics.noDecodedPacket++;
+    const hits=slotReceiver(pcm);if(p&&!packetHits(hits).length)metrics.noDecodedPacket++;
     for(const r of packetHits(hits)){
       const k=key(r);
       if(r.kind===0){const route=r.source===1?[2,1]:r.source===2?[3,2]:null;const accepted=route&&r.actor===route[0]&&r.event===route[1]&&r.version===current.get(r.source);
@@ -73,8 +73,8 @@ function simulate(name,policy){
   metrics.currentConfirmed=[...records.values()].filter(r=>r.confirmed&&current.get(r.packet.source)===r.packet.version).length;
   metrics.genuineCurrentConfirmed=[...records.entries()].filter(([k,r])=>received.has(k)&&r.confirmed&&current.get(r.packet.source)===r.packet.version).length;
   metrics.unconfirmed=[...records.values()].filter(r=>!r.confirmed).length;metrics.returnBacklog=queue.length;
-  const pcm=v1.join(...audio), scanned=rescan(pcm), expected=trace.flatMap(t=>packetHits(t.hits));
-  const continuousMatch=eq(packetHits(scanned),expected);return {name,policy,config:cfg,metrics,continuousMatch,samples:pcm.length,trace,continuous:scanned,pcm};
+  const pcm=v1.join(...audio), scanned=slotReceiver===v2.acquire?rescan(pcm):null, expected=trace.flatMap(t=>packetHits(t.hits));
+  const continuousMatch=scanned===null?null:eq(packetHits(scanned),expected);return {name,policy,config:cfg,metrics,continuousMatch,samples:pcm.length,trace,continuous:scanned,pcm};
 }
 function qualify(){let assertions=0;const check=(v,m)=>{assertions++;if(!v)throw Error(m);};const sessions=[];
   for(const name of cases)for(const policy of policies){const s=simulate(name,policy),m=s.metrics;check(s.samples===HORIZON*STEP,'budget');check(s.continuousMatch,'continuous '+name+' '+policy);check(m.dataAttempts<=MAX_ATTEMPTS*m.offered,'retry cap');check(m.confirmations<=m.offered,'confirmation cap');check(m.freshAtAck+m.staleAtAck===m.confirmations,'fresh partition');check(m.genuineConfirmations+m.invalid===m.confirmations,'genuineness partition');check(m.uniqueReceipts<=m.dataAttempts,'receipt count');check(s.trace.every(t=>t.returnQueue.length<=CAP),'queue cap');check(s.pcm.every(x=>Math.abs(x)<=8192),'peak');

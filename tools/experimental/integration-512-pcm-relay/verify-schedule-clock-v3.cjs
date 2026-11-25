@@ -1,0 +1,6 @@
+'use strict';
+// Replay exported samples using the declared 2-second receiver window, not TX metadata.
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict'),{receive}=require('./schedule-clock-v3.cjs');
+const dir=process.argv[2]||'scheduled-clock-v3-output',m=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json')));let slots=0;
+for(const r of m.rows){const stem=r.name+'-'+r.policy,b=fs.readFileSync(path.join(dir,stem+'.wav')),t=JSON.parse(fs.readFileSync(path.join(dir,stem+'.json')));assert.equal(crypto.createHash('sha256').update(b).digest('hex'),r.sha256);assert.equal(b.length,640044);assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,16),'WAVEfmt ');assert.equal(b.readUInt16LE(22),1);assert.equal(b.readUInt32LE(24),16000);assert.equal(b.readUInt16LE(34),16);assert.equal(b.toString('ascii',36,40),'data');assert.equal(b.readUInt32LE(40),640000);for(let i=0;i<10;i++){const p=Int16Array.from({length:32000},(_,j)=>b.readInt16LE(44+2*(i*32000+j)));assert.deepEqual(receive(p),t.trace[i].hits);slots++;}}
+console.log(JSON.stringify({sessions:m.rows.length,slots,qualification:'known-slot WAV replay; not unsegmented acquisition'}));
