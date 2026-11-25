@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - 'tools/experimental/signal-foundry/phase-cycle-prism-568/live-576/**'
+      - 'tools/experimental/signal-foundry/phase-cycle-prism-568/integrated-590/**'
+      - 'tools/experimental/signal-foundry/phase-cycle-prism-568/residual-582/**'
       - '.github/workflows/mhac-phase-cycle-prism-windows.yml'
   workflow_dispatch:
 permissions:
@@ -40,6 +42,16 @@ jobs:
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           ctest --test-dir build-original -C Release --output-on-failure
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Residual and integrated regression
+        run: |
+          foreach ($part in @('residual-582','integrated-590')) {
+            cmake -S "tools/experimental/signal-foundry/phase-cycle-prism-568/$part" -B "build-$part" -A x64
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+            cmake --build "build-$part" --config Release
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+            ctest --test-dir "build-$part" -C Release --output-on-failure
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
       - name: Exact SDK checkout
         run: |
           $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-prism'
@@ -80,7 +92,7 @@ jobs:
           "sdk=$(git -C $env:SDK380 rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Encoding utf8
           "source=$(git rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Append -Encoding utf8
           Copy-Item validator.txt delivery/
-          Copy-Item tools/experimental/signal-foundry/phase-cycle-prism-568/live-576/README.md delivery/
+          Copy-Item tools/experimental/signal-foundry/phase-cycle-prism-568/integrated-590/README.md delivery/
           foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
             $root = Join-Path $env:SDK380 $part
             Get-ChildItem $root -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("delivery/SDK-" + $part + "-" + $_.Name) }
