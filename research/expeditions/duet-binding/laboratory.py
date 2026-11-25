@@ -4,6 +4,7 @@ from collections import defaultdict
 import argparse, hashlib, json, math, struct, wave
 from pathlib import Path
 
+
 def parity(x):
     return x.bit_count() & 1
 
