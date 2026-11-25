@@ -3,7 +3,7 @@
   "measurementClasses": 79170,
   "peakWitnesses": 158340,
   "thresholdChecks": 554190,
-  "refusals": 8,
+  "refusals": 9,
   "byN": {
     "1": {
       "traces": 6,
@@ -109,5 +109,23 @@
       0,
       0
     ]
+  },
+  "multiwayRepair": {
+    "widths": [
+      6,
+      10,
+      15
+    ],
+    "pairGcd": [
+      2,
+      3,
+      5
+    ],
+    "pairMaxPeak": [
+      2,
+      3,
+      5
+    ],
+    "allGcd": 1
   }
 }
