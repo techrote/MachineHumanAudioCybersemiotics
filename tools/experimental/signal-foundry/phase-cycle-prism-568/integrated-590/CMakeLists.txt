@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(PrismIntegrated LANGUAGES CXX)
+enable_testing()
+add_executable(prism_integrated_test test.cpp)
+target_compile_features(prism_integrated_test PRIVATE cxx_std_17)
+add_test(NAME prism_integrated COMMAND prism_integrated_test)
