@@ -2,7 +2,7 @@
 
 Refs #437; origin: [#422](https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/422) / [PR #423, pinned report](https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/03e3f121fbb2362d76db4d6cd597d27ae087ea8b/research/expeditions/metaphor-becomes-socket/README.md). The finite transport, latch and snapshot contracts are directly realized; mapping them to a four-step attenuator is a creative audio interpretation. This is not a spectral/waveform freeze or a validated human interface. No canonical records changed.
 
-**Status:** native DSP and demonstration tested on Linux x86_64. The VST3 adapter is provisional source, not an installed or qualified plug-in. No Windows/macOS build or host validation yet.
+**Status:** The parent source `fe3a3f4268e59d68698d34b8fd45f43ea2c9e0f2` passed Windows x64 SDK 3.8.0 build and official validator (47/47); [parent artifact](https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/45534581573/artifacts/14986731404). This clock-corrected follow-up (#466) has native Linux regression evidence in [CLOCK-QUALIFICATION.md](CLOCK-QUALIFICATION.md); its own Windows build/validator and DAW audition are still required. Do not attribute the parent binary to this revision.
 
 ## The effect
 
@@ -44,7 +44,7 @@ ctest --test-dir build -C Release --output-on-failure
 
 The optional argument is a filename prefix, producing mode-0.wav, mode-1.wav and mode-2.wav: three original 5-second stereo 48 kHz PCM16 renders from an identical additive sine carrier and timed gestures. No third-party audio assets. See [qualification receipt](QUALIFICATION.md).
 
-## Native VST3 build (not executed here)
+## Native VST3 build (parent qualified; follow-up requires requalification)
 
 Use the official SDK only. The CMake guard requires a clean checkout of the exact release commit and all recursive gitlinks. Do not substitute a floating tag or SDK from a framework.
 
