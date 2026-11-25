@@ -9,7 +9,7 @@ struct CycleVoice {
     double phase=0, increment=0, excursion=0, width=1, velocity=0, releaseStart=0;
     std::uint16_t mask=0;
     bool start(double sr,int note,double cents,double vel,CyclePatch p) noexcept {
-        if(!std::isfinite(sr)||sr<8000||sr>384000)return false;
+        if(!std::isfinite(sr)||sr<1000||sr>2000000)return false;
         *this=CycleVoice{}; active=true;
         period=std::uint64_t(std::llround(bound(p.period,.025,2)*sr));
         attack=std::uint64_t(std::llround(.005*sr)); release=std::uint64_t(std::llround(.04*sr));
