@@ -1,0 +1,51 @@
+{
+  "audio_sha256": {
+    "calibration-a": "f42b5f3b062b918f3182677d30be9b693da8993402f6b6f60e5e218e719c7e86",
+    "calibration-b": "f42b5f3b062b918f3182677d30be9b693da8993402f6b6f60e5e218e719c7e86",
+    "challenge-a": "5135b6582ab363b0f296cb57896e093f255454701168856a8496427e565e278c",
+    "challenge-b": "47ae3d179b838b155802385b8bac963ce2ac83355eb5c78e0b116e6b179c5c65"
+  },
+  "calibration": [
+    "7/8",
+    "-5/16"
+  ],
+  "challenge": [
+    [
+      "211/320",
+      "-143/320"
+    ],
+    [
+      "43/65",
+      "-119/260"
+    ]
+  ],
+  "counts": {
+    "complex_cases": 18,
+    "extra_probe_checks": 36,
+    "magnitude_cases": 18,
+    "shared_receipt_checks": 135,
+    "spectral_factor_forward_checks": 180
+  },
+  "example_profiles": [
+    [
+      [
+        "2",
+        "15/32"
+      ],
+      [
+        "4",
+        "17/32"
+      ]
+    ],
+    [
+      [
+        "1",
+        "1/16"
+      ],
+      [
+        "3",
+        "15/16"
+      ]
+    ]
+  ]
+}
