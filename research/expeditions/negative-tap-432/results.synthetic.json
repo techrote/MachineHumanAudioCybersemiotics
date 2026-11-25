@@ -1,0 +1,50 @@
+{
+  "quadraticCases": 5355,
+  "quadraticCandidates": 134400,
+  "halfCases": 255,
+  "halfCandidates": 17550,
+  "dualChecks": 40596,
+  "refused": 5,
+  "examples": [
+    {
+      "L": 1,
+      "cubic": "1/8",
+      "quintic": null
+    },
+    {
+      "L": 2,
+      "cubic": "1/24",
+      "quintic": "25/128"
+    },
+    {
+      "L": 4,
+      "cubic": "1/80",
+      "quintic": "27/512"
+    },
+    {
+      "L": 8,
+      "cubic": "1/288",
+      "quintic": "289/20160"
+    },
+    {
+      "L": 16,
+      "cubic": "1/1088",
+      "quintic": "33/8960"
+    },
+    {
+      "L": 32,
+      "cubic": "1/4224",
+      "quintic": "169/178112"
+    },
+    {
+      "L": 64,
+      "cubic": "1/16640",
+      "quintic": "1849/7691200"
+    },
+    {
+      "L": 128,
+      "cubic": "1/66048",
+      "quintic": "66049/1090514880"
+    }
+  ]
+}
