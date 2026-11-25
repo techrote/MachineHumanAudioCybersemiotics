@@ -97,3 +97,7 @@ The original `laboratory` function was executed in the JavaScript tool isolate b
   "assertions": 45097
 }
 ```
+
+## Subsequent native confirmation
+
+Reconstructed the exact committed source from GitHub readback; `git hash-object laboratory.cjs` returned `8678bcfb1796bd08704ee944580e413bccefcf40`, matching the committed blob. Native Node v22.16.0 executed `node laboratory.cjs` successfully (exit 0), reproducing every numerical field above, including 45,097 assertions, 4,096 refinements and both extremal probabilities. This qualifies the finite oracle only. Repository-wide checks and independent review remain separate.
