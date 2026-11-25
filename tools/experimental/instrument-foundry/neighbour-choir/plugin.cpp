@@ -13,7 +13,14 @@ namespace {
 const FUID processorID(0x2F7A9F84,0x9CC647D7,0xBA593DF5,0x7932AF08);
 const FUID controllerID(0x810BF3A6,0x33774E8D,0x9AA90B36,0x6CF0782C);
 constexpr ParamID firstID=500;
-bool readParams(IBStream* s,g::Params& p){g::State bytes{};int32 n=0;return s&&s->read(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())&&g::decode(bytes,p);}
+bool readParams(IBStream* s,g::Params& p){
+    g::State bytes{};int32 n=0;
+    if(!s||s->read(bytes.data(),24,&n)!=kResultOk||n!=24)return false;
+    if(bytes[3]=='1')return g::decodeBytes(bytes.data(),24,p);
+    if(bytes[3]!='2')return false;
+    constexpr int32 remaining=int32(g::State{}.size())-24;
+    return s->read(bytes.data()+24,remaining,&n)==kResultOk&&n==remaining&&g::decode(bytes,p);
+}
 struct Cursor {
     IParamValueQueue* queue=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
     void next(){pending=false;while(index<count){if(queue->getPoint(index++,offset,value)==kResultTrue){pending=true;break;}}}
@@ -96,14 +103,16 @@ public:
         const auto r=EditController::initialize(ctx);if(r!=kResultOk)return r;
         auto add=[&](const TChar* n,unsigned i,int32 steps=0){parameters.addParameter(n,nullptr,steps,g::defaults[i],ParameterInfo::kCanAutomate,firstID+i);};
         add(STR16("Topology (Rook/Shrikhande)"),g::Topology,1);add(STR16("Internal intervention"),g::Intervention,1);
-        add(STR16("Phase coupling"),g::Coupling);add(STR16("Decay (0.12-1.5 s)"),g::Decay);add(STR16("Gain"),g::Gain);return kResultOk;
+        add(STR16("Phase coupling"),g::Coupling);add(STR16("Decay (0.12-1.5 s)"),g::Decay);add(STR16("Gain"),g::Gain);
+        add(STR16("Root anchor (0-15)"),g::RootAnchor,15);add(STR16("Second anchor (0-15)"),g::SecondAnchor,15);
+        add(STR16("Intervention time (0-2 s)"),g::Timing);add(STR16("Intervention strength"),g::Strength);return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* s) override {g::Params p{};if(!readParams(s,p))return kResultFalse;for(unsigned i=0;i<g::Count;++i)setParamNormalized(firstID+i,p[i]);return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,
-"MHAC Neighbour Choir",Vst::kDistributable,"Instrument|Synth","0.1.0",kVstVersionString,Processor::create)
+"MHAC Neighbour Choir",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,
-"MHAC Neighbour Choir Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+"MHAC Neighbour Choir Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY
