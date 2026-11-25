@@ -1,4 +1,4 @@
-#include "live.hpp"
+#include "integrated.hpp"
 #include <type_traits>
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
@@ -13,22 +13,24 @@ namespace {
 const FUID processorID(0xD1195E6E,0x292C442C,0xB550AE83,0x4977E4CD);
 const FUID controllerID(0x992821A7,0xB1114FB3,0x8B69B059,0xEC25C81C);
 constexpr ParamID firstID=1000;
-bool readParams(IBStream* s,winters::live::Params& p){
-    winters::live::State bytes{};int32 n=0;
-    return s&&s->read(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())&&winters::live::decode(bytes.data(),bytes.size(),p);
+bool readParams(IBStream* s,winters::integrated::Params& p){
+    winters::integrated::State bytes{};int32 n=0;
+    if(!s||s->read(bytes.data(),4,&n)!=kResultOk||n!=4)return false;
+    const int32 size=bytes[3]=='1'?int32(winters::live::State{}.size()):bytes[3]=='2'?int32(bytes.size()):0;
+    return size>4&&s->read(bytes.data()+4,size-4,&n)==kResultOk&&n==size-4&&winters::integrated::decode(bytes.data(),size,p);
 }
 struct Cursor {
     IParamValueQueue* queue=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
     void next(){pending=false;while(index<count){if(queue->getPoint(index++,offset,value)==kResultTrue){pending=true;break;}}}
     void init(IParamValueQueue* q){queue=q;count=q->getPointCount();next();}
-    void apply(winters::live::Engine& e,unsigned id,int32 sample,bool flush=false){while(pending&&(flush||offset<=sample)){e.parameter(id,value);next();}}
+    void apply(winters::integrated::Engine& e,unsigned id,int32 sample,bool flush=false){while(pending&&(flush||offset<=sample)){e.parameter(id,value);next();}}
 };
 int key(int id,int channel,int pitch){return id>=0?id:-1-128*std::clamp(channel,0,15)-std::clamp(pitch,0,127);}
 struct Events {
     IEventList* list=nullptr;int32 index=0,count=0;Event event{};bool pending=false;
     explicit Events(IEventList* l):list(l),count(l?l->getEventCount():0){next();}
     void next(){pending=false;while(index<count){if(list->getEvent(index++,event)==kResultOk){pending=true;break;}}}
-    void apply(winters::live::Engine& e,int32 sample){
+    void apply(winters::integrated::Engine& e,int32 sample){
         while(pending&&event.sampleOffset<=sample){
             if(event.busIndex==0){
                 if(event.type==Event::kNoteOnEvent){const auto& n=event.noteOn;const int k=key(n.noteId,n.channel,n.pitch);if(n.velocity>0)e.on(k,n.pitch,n.tuning,n.velocity);else e.off(k);}
@@ -39,9 +41,9 @@ struct Events {
     }
 };
 class Processor final: public AudioEffect {
-    winters::live::Engine engine;double sr=48000.;
-    using Cursors=std::array<Cursor,winters::live::Count>;
-    winters::live::Frame step(Cursors& c,Events& ev,int32 i){for(unsigned k=0;k<winters::live::Count;++k)c[k].apply(engine,k,i);ev.apply(engine,i);return engine.tick();}
+    winters::integrated::Engine engine;double sr=48000.;
+    using Cursors=std::array<Cursor,winters::integrated::Count>;
+    winters::live::Frame step(Cursors& c,Events& ev,int32 i){for(unsigned k=0;k<winters::integrated::Count;++k)c[k].apply(engine,k,i);ev.apply(engine,i);return engine.tick();}
     template<class T> tresult audio(ProcessData& d,Cursors& c,Events& ev){
         std::array<std::array<T*,2>,4> buffers{};
         std::array<unsigned,4> channels{};
@@ -97,16 +99,16 @@ public:
     tresult PLUGIN_API setProcessing(TBool active) override {if(!active)engine.reset();return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr*.041));}
-    tresult PLUGIN_API setState(IBStream* s) override {winters::live::Params p{};if(!readParams(s,p))return kResultFalse;engine.restore(p);return kResultOk;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=winters::live::encode(engine.parameters());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* s) override {winters::integrated::Params p{};if(!readParams(s,p))return kResultFalse;engine.restore(p);return kResultOk;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=winters::integrated::encode(engine.parameters());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>4)return kResultFalse;
         Cursors c{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){
             auto* q=d.inputParameterChanges->getParameterData(i);if(!q)continue;
-            auto id=q->getParameterId();if(id>=firstID&&id<firstID+winters::live::Count&&!c[id-firstID].queue)c[id-firstID].init(q);
+            auto id=q->getParameterId();if(id>=firstID&&id<firstID+winters::integrated::Count&&!c[id-firstID].queue)c[id-firstID].init(q);
         }
-        if(d.numSamples==0){for(unsigned k=0;k<winters::live::Count;++k)c[k].apply(engine,k,0,true);return kResultOk;}
+        if(d.numSamples==0){for(unsigned k=0;k<winters::integrated::Count;++k)c[k].apply(engine,k,0,true);return kResultOk;}
         Events ev(d.inputEvents);
         if(d.numOutputs==0){for(int32 i=0;i<d.numSamples;++i)step(c,ev,i);return kResultOk;}
         if(!d.outputs)return kResultFalse;
@@ -120,18 +122,20 @@ public:
     static FUnknown* create(void*){return static_cast<IEditController*>(new Controller);}
     tresult PLUGIN_API initialize(FUnknown* ctx) override {
         const auto r=EditController::initialize(ctx);if(r!=kResultOk)return r;
-        auto add=[&](const TChar* n,unsigned i,int32 steps=0){parameters.addParameter(n,nullptr,steps,winters::live::defaults[i],ParameterInfo::kCanAutomate,firstID+i);};
+        auto add=[&](const TChar* n,unsigned i,int32 steps=0){parameters.addParameter(n,nullptr,steps,winters::integrated::defaults[i],ParameterInfo::kCanAutomate,firstID+i);};
         add(STR16("Bank slot 1"),0,3);add(STR16("Bank slot 2"),1,3);add(STR16("Bank slot 3"),2,3);add(STR16("Bank slot 4"),3,3);
         add(STR16("Hold"),4,1);add(STR16("Tick (rising edge)"),5,1);add(STR16("Internal clock"),6,1);add(STR16("Clock (0.5-8 Hz)"),7);
         add(STR16("Latch gain"),8);add(STR16("Pause gain"),9);add(STR16("Snapshot gain"),10);
+        add(STR16("Timbre slot 1"),11);add(STR16("Timbre slot 2"),12);add(STR16("Timbre slot 3"),13);add(STR16("Timbre slot 4"),14);
+        add(STR16("Timbre hold"),15,1);add(STR16("Timbre tick (edge)"),16,1);add(STR16("Timbre clock"),17,1);add(STR16("Timbre speed (0.5-8 Hz)"),18);
         return kResultOk;
     }
-    tresult PLUGIN_API setComponentState(IBStream* s) override {winters::live::Params p{};if(!readParams(s,p))return kResultFalse;for(unsigned i=0;i<winters::live::Count;++i)setParamNormalized(firstID+i,p[i]);return kResultOk;}
+    tresult PLUGIN_API setComponentState(IBStream* s) override {winters::integrated::Params p{};if(!readParams(s,p))return kResultFalse;for(unsigned i=0;i<winters::integrated::Count;++i)setParamNormalized(firstID+i,p[i]);return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,
-"MHAC Three Winters",Vst::kDistributable,"Instrument|Synth","0.1.1",kVstVersionString,Processor::create)
+"MHAC Three Winters",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,
-"MHAC Three Winters Controller",0,"","0.1.1",kVstVersionString,Controller::create)
+"MHAC Three Winters Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY
