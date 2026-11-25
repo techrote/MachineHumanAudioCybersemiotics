@@ -1,0 +1,14 @@
+# Readiness-aware return lifetimes — Interaction #456 / Run 007
+
+Exploratory synthetic-only, Draft/HOLD. Parent cc4aad9db4862af40709d3272bc3c915e3224325; main 495a98ca12bae467a507031f04931aa4254b1866. Source: complete return-window.js read at parent, additive fork; 80 fixed-mode traces compared exactly with original. Existing files unchanged. Integration #513 at 4d2d0b2c067924305675e92eabd2b9cc28676842 reviewed metadata/file list only; no shared code or dependency. One GPT-6.2 agent, no subagents or independent review.
+
+Run `node lifetime.js lifetime-output` with Node 18+; open lifetime.html beside lifetime.js for interactive scenario and policy changes, timeline, playback (explicit user action, 25% player gain, original PCM peak 2130/32768), trace/WAV export. No dependencies. CLI emits qualification, traces, WAVs and SHA-256 manifest. Browser inline script syntax checked; native CLI/filesystem/DOM/listening not performed this run (git ls-remote failed DNS). Prior native return-window qualification remains separate.
+
+## Design
+
+Same shared half-duplex symbolic receipt model, loss function, 250 ms ticks, 2-tick data, 1-tick ACK, 6-entry queue, 8-tick ACK lifetime and two-attempt ceiling. Fixed: expiry relative to receipt, original timeout. Ready-ttl: expiry relative to batched readiness. Timing-only: sender uses configured delay and batch to wait at least until expected readiness plus two ticks, regardless of receipt outcome. Combined: both. Renew: combined plus coalesced duplicate updates attempt and extends expiry while preserving earliest readiness. Both endpoints share configured timings; no implemented on-wire negotiation, no guaranteed return slot. Longer waits can eliminate retry opportunities before semantic expiry. Losses remain modeled, not decoded from WAV. Workloads and seeds held identical, full factorial evaluation is descriptive (no optimization). Fresh ticks: integer per-agent tick samples after offers, valid current version with recorded confirmation at or before that tick; denominator is ticks with a current unexpired offer. Retrospective, not an oracle used by policy.
+
+## Results
+
+756880 assertions, 5849 verified executions, 576 scenarios, two identical receipts, 80 baseline trace matches. See lifetime-qualification.json for all metrics and negative witnesses. Fixed expiry-before-readiness witness reproduced; ready-ttl restores confirmation; combined avoids premature retry in this particular single-message fixture. Complete ACK loss remains unconfirmed; late receipts preserve history without treating it as current. Longer retention can increase stale traffic, and the nominal waiting allowance cannot bound queue service under overload. No general reliability or human comprehension claim. Next: vary sender/receiver timing agreement and add bounded adaptive reservations, compare with pinned Integration transport.
+
