@@ -1,0 +1,294 @@
+{
+  "schema": "mhac-recursive-clauses-v1",
+  "assertions": 48107,
+  "catalogByNodes": [
+    4,
+    28,
+    228,
+    2044
+  ],
+  "metrics": {
+    "prefix": {
+      "clean": 2304,
+      "slots": 8920,
+      "deletion": {
+        "correct": 0,
+        "wrong": 5208,
+        "refused": 3712
+      },
+      "substitution": {
+        "correct": 0,
+        "wrong": 40976,
+        "refused": 74984
+      },
+      "knownErasure": {
+        "wrong": 0,
+        "refused": 8920,
+        "correct": 0
+      }
+    },
+    "closed": {
+      "clean": 2304,
+      "slots": 14832,
+      "deletion": {
+        "correct": 0,
+        "wrong": 0,
+        "refused": 14832
+      },
+      "substitution": {
+        "correct": 0,
+        "wrong": 40976,
+        "refused": 151840
+      },
+      "knownErasure": {
+        "wrong": 0,
+        "refused": 14832,
+        "correct": 0
+      }
+    }
+  },
+  "pcmCases": 120,
+  "phases": [
+    0,
+    0.3,
+    1.5707963267948966,
+    3.141592653589793,
+    5.7
+  ],
+  "slotMs": 80,
+  "rate": 16000,
+  "frequencies": {
+    "fault": 400,
+    "open": 500,
+    "stopped": 600,
+    "overload": 700,
+    "not": 800,
+    "quote": 900,
+    "question": 1000,
+    "verify": 1100,
+    "pump-reports": 1200,
+    "relay-reports": 1300,
+    "uncertain": 1400,
+    "and": 1500,
+    "if": 1600,
+    "end": 1700
+  },
+  "peakLimit": 4096,
+  "witnesses": {
+    "prefix-substitution": {
+      "tree": [
+        "fault"
+      ],
+      "input": [
+        "fault"
+      ],
+      "received": [
+        "open"
+      ],
+      "decoded": [
+        "open"
+      ]
+    },
+    "prefix-deletion": {
+      "tree": [
+        "not",
+        [
+          "fault"
+        ]
+      ],
+      "input": [
+        "not",
+        "fault"
+      ],
+      "received": [
+        "fault"
+      ],
+      "decoded": [
+        "fault"
+      ]
+    },
+    "closed-substitution": {
+      "tree": [
+        "fault"
+      ],
+      "input": [
+        "fault"
+      ],
+      "received": [
+        "open"
+      ],
+      "decoded": [
+        "open"
+      ]
+    }
+  },
+  "doubleDeletionWitness": {
+    "sent": [
+      "not",
+      "fault",
+      "end"
+    ],
+    "received": [
+      "fault"
+    ],
+    "decoded": [
+      "fault"
+    ]
+  },
+  "specimens": [
+    {
+      "name": "negation-outside-quotation",
+      "tree": [
+        "not",
+        [
+          "quote",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        "not",
+        "quote",
+        "fault",
+        "end",
+        "end"
+      ],
+      "prefix": [
+        "not",
+        "quote",
+        "fault"
+      ]
+    },
+    {
+      "name": "negation-inside-quotation",
+      "tree": [
+        "quote",
+        [
+          "not",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        "quote",
+        "not",
+        "fault",
+        "end",
+        "end"
+      ],
+      "prefix": [
+        "quote",
+        "not",
+        "fault"
+      ]
+    },
+    {
+      "name": "relay-questions-pump-report",
+      "tree": [
+        "question",
+        [
+          "pump-reports",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        "question",
+        "pump-reports",
+        "fault",
+        "end",
+        "end"
+      ],
+      "prefix": [
+        "question",
+        "pump-reports",
+        "fault"
+      ]
+    },
+    {
+      "name": "relay-reports-pump-question",
+      "tree": [
+        "relay-reports",
+        [
+          "question",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        "relay-reports",
+        "question",
+        "fault",
+        "end",
+        "end"
+      ],
+      "prefix": [
+        "relay-reports",
+        "question",
+        "fault"
+      ]
+    },
+    {
+      "name": "conditional-verification",
+      "tree": [
+        "if",
+        [
+          "fault"
+        ],
+        [
+          "verify",
+          [
+            "overload"
+          ]
+        ]
+      ],
+      "closed": [
+        "if",
+        "fault",
+        "verify",
+        "overload",
+        "end",
+        "end"
+      ],
+      "prefix": [
+        "if",
+        "fault",
+        "verify",
+        "overload"
+      ]
+    },
+    {
+      "name": "uncertain-conjunction",
+      "tree": [
+        "uncertain",
+        [
+          "and",
+          [
+            "open"
+          ],
+          [
+            "stopped"
+          ]
+        ]
+      ],
+      "closed": [
+        "uncertain",
+        "and",
+        "open",
+        "stopped",
+        "end",
+        "end"
+      ],
+      "prefix": [
+        "uncertain",
+        "and",
+        "open",
+        "stopped"
+      ]
+    }
+  ]
+}
