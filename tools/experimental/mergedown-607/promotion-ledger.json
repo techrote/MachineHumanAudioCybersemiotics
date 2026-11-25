@@ -11,7 +11,11 @@
       "ci": 45690234347,
       "disposition": "HOLD",
       "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified",
-      "observedLaterHead": "e7b396e2f7e4e9d04e72b9aec62e93c1cd5b7c66"
+      "observedLaterHead": "272a9922996a858acd5661a6263dd669e4990736",
+      "observedLaterIntegrityCI": {
+        "run": 45716932453,
+        "conclusion": "success"
+      }
     },
     {
       "pr": 453,
@@ -19,7 +23,11 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "d0a7c818b1ec9070cb539422a04b01c5d0c63d64"
+      "observedLaterHead": "0b93531cce6c9ee273566d096517bbca36e43d99",
+      "observedLaterIntegrityCI": {
+        "run": 45713138409,
+        "conclusion": "success"
+      }
     },
     {
       "pr": 449,
@@ -27,7 +35,11 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "334c1581798636331469f6b49734f0ed98de7163"
+      "observedLaterHead": "5289debc32e11e76d8ba546ccbe6a76a2b9e2151",
+      "observedLaterIntegrityCI": {
+        "run": 45711792121,
+        "conclusion": "success"
+      }
     },
     {
       "pr": 457,
@@ -35,7 +47,11 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "66141259400d2e6d5581e0aeddbd6f57aeeefde4"
+      "observedLaterHead": "d70aa68fb60608efab8ff34089e8e3dc66fe2d11",
+      "observedLaterIntegrityCI": {
+        "run": 45715371280,
+        "conclusion": "success"
+      }
     },
     {
       "pr": 513,
@@ -43,7 +59,11 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "ae2eb5ca2ce7d85ebabd89ef96672de98ed41c08"
+      "observedLaterHead": "e06897558d142d13cfad1200693bc96d40816550",
+      "observedLaterIntegrityCI": {
+        "run": 45714518450,
+        "conclusion": "success"
+      }
     }
   ],
   "ciScope": "Research integrity workflow completed successfully at each pinned head; not runtime or scientific acceptance.",
@@ -159,8 +179,60 @@
     "recommendation": "Close trace-repair qualification gap only. HOLD overall #608 for canonical location, full workbench and ordinary browser/Windows gates. Owner authorization required. Next qualify legacy/selective workbench; preserve v1 and v2 pins."
   },
   "previousConsolidationIntegrityCI": {
-    "head": "14119ef9ec05979fba96433ab3a9823cb41b56fb",
-    "run": 45700155882,
+    "head": "8413827920ffa2c78235cf98c64065eba36cb91a",
+    "run": 45709872932,
     "conclusion": "success"
+  },
+  "selectiveTransferBatch": {
+    "id": "OBS-SELECTIVE-003",
+    "disposition": "HOLD",
+    "sourcePR": 443,
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "sourceIntegrityCI": {
+      "run": 45690234347,
+      "conclusion": "success"
+    },
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/",
+    "blobs": {
+      "core.js": "47938c769604ae56a1f8cb92e5d4ccc3e20f8d59",
+      "phase.html": "c8f8631a9e76318a271d811e471af75e5c372acf",
+      "legacy-workbench.cjs": "71766ee6194f36f16aca6459fcf64966105844ce",
+      "selective-transfer.cjs": "ea1b41bda016082a4ff4754beb8da9b062a2736d"
+    },
+    "sourceExecution": "Exact connector-retrieved UTF-8 source at frozen ref, module exports executed in V8 via new Function; no filesystem shims or native upstream Node CLI claim. Phase embedded qualification JSON exactly reproduced with JSON.stringify({qualification:phase.tests(),deterministicReexecution:true,...phase.run()},null,2). 7,455 phase assertions, 1,036 core assertions, 84,811 selective assertions.",
+    "oracle": {
+      "runtime": "native Python 3.13.5 standard library Fraction, hashlib, struct",
+      "path": "check_selective_transfer.py",
+      "blob": "a2147663908d534d98a354f652a69c3f30543fde",
+      "sourceSHA256": "eb4b95a714e9c348d54461aa6899ed11db21273135e763e90f391cfe80c446a9",
+      "command": "python tools/experimental/mergedown-607/check_selective_transfer.py",
+      "outputSHA256": "64b64d2df413cb2e103af77f86ca26ef7ee2e6b44545e530c6615287be7044e2",
+      "repeat": "identical output SHA256 on second execution",
+      "conditions": 2304,
+      "cells": 24467,
+      "frameModelFingerprints": 16,
+      "nominalTiedCells": 54,
+      "wavHashes": 5,
+      "uniqueWavHashes": 4
+    },
+    "fingerprintContract": "Group upstream transfer rows in original iteration order by condition.frame+'|'+model; sort each row's cells lexicographically by samples.join(',') using ASCII comparisons; record [[p,q,rate,ms],cells.map(x=>[x.samples,x.mass.map(q),q(x.confidence),q(x.oracleCorrect)])] where q(null)=null and q(x)=Math.round(1e8*x). Hash compact ASCII JSON of the group. Python independently integrates each deletion over exact rational intervals, then applies independent discrete shift probabilities. Fingerprints cover cell keys, deletion masses, nominal confidence and oracle correct mass at 1e-8 quantization; not bytewise whole receipts or every curve/decision. V8 check: 54 nominal tied cells, all chose first tied index. Exact rational certainty summaries match observed V8 numerical results.",
+    "findings": {
+      "nominalReceiptCertaintyCoverage": 0.5033467717525334,
+      "nominalReceiptCertaintyWrong": 0,
+      "lateOneSampleReceipt": {
+        "coverage": 0.24764346275205978,
+        "wrongMass": 0.047927959739437614,
+        "conditionalError": 0.19353613944343448,
+        "outOfSupport": 0.540613706927229
+      },
+      "lateOneSampleFixed": {
+        "coverage": 0.3726826356335975,
+        "wrongMass": 0,
+        "outOfSupport": 0.6273173643664028
+      }
+    },
+    "exclusions": "Full legacy CLI also requires index.html, phase-fit.cjs, matched-fp.cjs; --with-reconstruction additionally invokes joined-workbench.cjs and its six pinned modules. Those detector/operating/reconstruction paths, generated package manifest, HTML launch, physical audition and Windows not qualified in this run. Waveforms depict true onsets; shift is feature-domain only. Finite equally weighted synthetic conditions, no human evidence, no new license.",
+    "transfer": "git ls-remote exited 128 Could not resolve host: github.com. Raw source web retrieval DisabledError; connector source read succeeded but complete dependency files not transferred to native sandbox. Native Node 22.16.0 present. Native Python independent oracle executed; native original JS CLI remains outstanding.",
+    "recommendation": "Numerical transfer result independently reproduced. HOLD software promotion until native original CLI, package and legacy operating-point detector are qualified. Preserve frozen pin and source; no source duplication or merge."
   }
 }
