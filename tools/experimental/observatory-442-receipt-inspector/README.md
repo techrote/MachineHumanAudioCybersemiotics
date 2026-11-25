@@ -1,6 +1,6 @@
 # Observatory — affine receipt quantisation inspector
 
-Refs #undefined, #428, [draft #429 at pinned source](https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/07fb2f67a5a2cf26312699410f00152033cae843/research/expeditions/missing-beat/README.md). Base main `495a98ca12bae467a507031f04931aa4254b1866`. Synthetic-only apparatus, AI-assisted single-agent implementation and computation, 2026-11-25; no human study, independent review or accepted empirical evidence.
+Refs #442, #428, [draft #429 at pinned source](https://github.com/techrote/MachineHumanAudioCybersemiotics/blob/07fb2f67a5a2cf26312699410f00152033cae843/research/expeditions/missing-beat/README.md). Base main `495a98ca12bae467a507031f04931aa4254b1866`. Synthetic-only apparatus, AI-assisted single-agent implementation and computation, 2026-11-25; no human study, independent review or accepted empirical evidence.
 
 ## Run
 
