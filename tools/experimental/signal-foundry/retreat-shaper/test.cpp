@@ -23,7 +23,7 @@ int main(int argc,char** argv){
         e.reset(sr);check(e.mass(0)==0&&e.mass(1)==0);
     }
     Engine a,b;for(unsigned i=0;i<10000;++i){const double x=std::sin(i*.051);if(i%113==0){a.set(Coupling,double(i%100)/100);b.set(Coupling,double(i%100)/100);}check(a.process(0,x)==b.process(0,x));b.process(1,1.);}
-    auto p=defaults;p[Drive]=.123456;p[Coupling]=.25;auto s=encode(p);Params q{};check(decode(s,q)&&q==p);s[4]=2;check(!decode(s,q)&&q==p);s=encode(p);s[8]=255;s[9]=255;s[10]=255;check(!decode(s,q)&&q==p);
+    auto p=defaults;p[Drive]=.123456;p[Coupling]=.25;auto s=encode(p);Params q{};check(decode(s,q)&&q==p);s[4]=3;check(!decode(s,q)&&q==p);s=encode(p);s[8]=255;s[9]=255;s[10]=255;check(!decode(s,q)&&q==p);
     if(argc==2){for(unsigned k=0;k<3;++k){std::ofstream f(std::string(argv[1])+"/retreat-"+std::to_string(k)+".pcm",std::ios::binary);check(bool(f));Engine e;e.set(Coupling,double(k==1));e.set(Depth,1);e.set(Mix,k==2?0.:1.);for(unsigned level:path)for(unsigned i=0;i<4800;++i){double x=level/16.*(i%96<48?1.:-1.);auto y=e.process(0,x);auto v=std::uint16_t(std::int16_t(std::lround(y*16000.)));f.put(char(v&255));f.put(char(v>>8));}check(bool(f));}}
     std::cout<<checks<<" assertions passed\n";
 }
