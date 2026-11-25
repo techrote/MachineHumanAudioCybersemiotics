@@ -10,35 +10,40 @@
       "head": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
       "ci": 45690234347,
       "disposition": "HOLD",
-      "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified"
+      "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified",
+      "observedLaterHead": "92db2601aae859f0860eecb0acd03f44049688db"
     },
     {
       "pr": 453,
       "issue": 452,
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
-      "disposition": "UNASSESSED"
+      "disposition": "UNASSESSED",
+      "observedLaterHead": "915baf07d49e22d01bd651579a00f41f0071bc82"
     },
     {
       "pr": 449,
       "issue": 448,
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
-      "disposition": "UNASSESSED"
+      "disposition": "UNASSESSED",
+      "observedLaterHead": "1e5a6e0873ceddc95a6d58e13bfd9b8ad7b1a395"
     },
     {
       "pr": 457,
       "issue": 456,
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
-      "disposition": "UNASSESSED"
+      "disposition": "UNASSESSED",
+      "observedLaterHead": "b44f11b425a0e42d2ed245057c8afbb42d4e0cec"
     },
     {
       "pr": 513,
       "issue": 512,
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
-      "disposition": "UNASSESSED"
+      "disposition": "UNASSESSED",
+      "observedLaterHead": "20b8bbd684f140886d5f17ec256d9272e7898c7b"
     }
   ],
   "ciScope": "Research integrity workflow completed successfully at each pinned head; not runtime or scientific acceptance.",
@@ -67,6 +72,36 @@
       "Ordinary file:// load, physical audition, Windows execution, independent human review and full repository native validation unverified",
       "No owner approval or merge",
       "No new license granted"
+    ],
+    "integrityCI": {
+      "head": "b5ae15eddf5012a781e8f5e18e1deedee3d94709",
+      "run": 45691276111,
+      "result": "success"
+    }
+  },
+  "onsetBatch": {
+    "id": "OBS-ONSET-002",
+    "disposition": "REWORK",
+    "sourcePR": 443,
+    "sourceHead": "92db2601aae859f0860eecb0acd03f44049688db",
+    "sourceIntegrityCI": 45699548702,
+    "blob": "198ce7fc4c350cd2ec1fc2fa3f85968dc8a7ac96",
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/onset-calibration.cjs",
+    "nativeNode": "22.16.0",
+    "oracle": {
+      "evaluationRows": 960,
+      "developmentRows": 144,
+      "metricGroups": 26,
+      "wavPCMComparisons": 4
+    },
+    "receiptSHA256": "de8b1855af8dca6067ae83f898660ae5bf85a3efe5e29956251bc7934bac7d19",
+    "browser": "Chromium 144.0.7559.96; 24 table rows verified via real DOM fixture; file URI blocked",
+    "defect": "Development trace spreads score then estimates; template score overwritten by null in all 144 development rows. Frozen calibration thresholds independently reproduced; evaluation outcomes unaffected. Preserve original; request additive corrected trace in upstream lane.",
+    "limitations": [
+      "Known template, onset window and phase; synthetic isolated pulse only",
+      "Shared noise across gains; pooled trial counts are not independent population evidence",
+      "No actual playback, local file launch, Windows or human qualification",
+      "Original snapshot retained for provenance; canonical software path unresolved"
     ]
   }
 }
