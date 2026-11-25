@@ -1,0 +1,65 @@
+{
+  "schema": "mhac-native-integration-receipt-v1",
+  "date": "2026-11-25",
+  "environment": {
+    "os": "Linux x86_64",
+    "node": "22.16.0",
+    "chromium": "144.0.7559.96",
+    "gitCheckout": "github.com DNS failure",
+    "browserFileLaunch": "ERR_BLOCKED_BY_ADMINISTRATOR"
+  },
+  "commands": [
+    "node relay.cjs output",
+    "node inspect.cjs output"
+  ],
+  "sourceBlobs": {
+    "relay.cjs": "3ba457f85f496e4d57d9789a2dc3b7d68fe2c071",
+    "inspect.cjs": "63f5451a4eba1b0f5df8c6a05ad1ff494235eb87",
+    "index.html": "d0dbf2f4b79774baa3e93047f41c1cef4414102b"
+  },
+  "assertions": 150,
+  "wavFiles": 28,
+  "continuousMatches": 28,
+  "continuousMismatches": 0,
+  "splice": {
+    "metadata": {
+      "kind": 0,
+      "source": 1,
+      "version": 2,
+      "actor": 2,
+      "event": 1,
+      "seq": 3
+    },
+    "tree": [
+      "quote",
+      [
+        "open"
+      ]
+    ],
+    "status": "ok"
+  },
+  "forgery": {
+    "confirmed": true,
+    "actualReceipts": 0
+  },
+  "browser": {
+    "loadedHTMLViaSetContent": true,
+    "localFilePairs": 3,
+    "timeline": true,
+    "policySwitch": true,
+    "mediaDurationSeconds": 2.787875,
+    "playheadAdvanced": true,
+    "mutedHeadless": true,
+    "traceDownload": true,
+    "pageErrors": []
+  },
+  "sha256": {
+    "clean-bound.wav": "5371584e2241ac678aa5f27bcf39e9bf26cf9d354feb010df21499dcb6be5f9c",
+    "forged-bound.wav": "87427d9cb3be071b52505fe66f3c7699ac93a251e5a7c74484762ff68eef5afb",
+    "splice.wav": "a62e454ab9e1ef4434d7c625614cad1d52fce8b005d9b90867a8fe74fe9abde1",
+    "native-inspection.json": "0e3af7cd1bff947aa733516e55cfc678c35938b116156a54da8c3605cbe4601b",
+    "qualification.json": "22ac4c1427f3ce1211dd95b7de197274d3a7f53567d2e8012cf571f45d7d5890",
+    "stimuli.json": "2140f78594352af12b0d5a11c974a6c0e94b0a98bbd4c7970e9b1a2d15440078"
+  },
+  "note": "Hashes name native generated files in output, not the augmented repository qualification.json. All observations from one AI author; no listening, independent review, Windows or full-checkout validation."
+}
