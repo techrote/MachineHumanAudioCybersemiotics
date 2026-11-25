@@ -8,6 +8,7 @@
 namespace mhac::golden {
 constexpr double pi=3.14159265358979323846;
 constexpr double phi=1.6180339887498948482;
+constexpr bool validRate(double rate){return rate>=1000.&&rate<=2000000.;}
 enum Param: unsigned { Shape, Delete, Span, Width, Gain, Count };
 using Params=std::array<double,Count>;
 constexpr Params defaults{0,0,.4,.5,.7};
@@ -34,7 +35,7 @@ public:
     const Params& params() const{return p;}
     void set(unsigned id,double v){if(id<Count)p[id]=unit(v,p[id]);}
     void restore(const Params& q){for(unsigned i=0;i<Count;++i)set(i,q[i]);}
-    bool reset(double rate){if(!std::isfinite(rate)||rate<8000||rate>384000)return false;sr=rate;voices={};gain=p[Gain];releaseSamples=std::uint32_t(std::round(sr*.01));return true;}
+    bool reset(double rate){if(!validRate(rate))return false;sr=rate;voices={};gain=p[Gain];releaseSamples=std::uint32_t(std::round(sr*.01));return true;}
     bool noteOn(int channel,int pitch,int id,double vel,double tuning=0){
         if(pitch<0||pitch>127||channel<0||channel>15||!std::isfinite(vel)||vel<=0)return false;
         Voice* slot=nullptr;for(auto& v:voices)if(!v.active){slot=&v;break;}if(!slot)return false; // drop excess, no discontinuous steals

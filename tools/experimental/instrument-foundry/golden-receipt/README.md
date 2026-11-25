@@ -2,6 +2,10 @@
 
 Experimental VST3 instrument source and standalone C++17 pulse-motif generator. Refs #446; research #428 / draft #429 at 07fb2f67a5a2cf26312699410f00152033cae843. The source expedition is not accepted empirical research. This is a direct implementation of its normalized timing fingerprints, with a creative sine-pulse audio mapping, not a human perception or priority claim.
 
+## Qualification status
+
+The initial Windows build compiled the instrument and obtained the exact SDK, but the official validator emitted setupProcessing errors at 1234.568 and 1234567.800 Hz even though its final summary counted 47 passes. A nonzero exit prevented artifact publication. The shared engine/adapter sample-rate predicate now accepts 1000–2000000 Hz, and new native regression tests exercise both fractional rates and the range endpoints. Windows requalification is mandatory; do not treat this README as evidence that a bundle has passed. A successful CI artifact includes validator.txt, BUILD-SOURCE.txt, and SDK-GITLINKS.txt.
+
 ## Musical behavior
 
 Each note starts an independent one-shot motif; hold the note until the last pulse has sounded. Four equal-amplitude, phase-reset sine pulses encode the selected timing shape. Deleting an onset removes it and positively affine-normalizes the remaining first and last onset to the same span. Golden intervals (phi,1,phi) yield normalized interior positions 1/phi^2 or 1/phi after deletion. First/third deletions are the same waveform, as are second/fourth, at identical settings and note events. The renderer deliberately uses the exact same floating-point expression for each alias class before integer sample rounding; this is a faithful symbolic implementation, not proof that physical recordings remain indistinguishable.
@@ -47,7 +51,7 @@ cmake -S . -B vst-build -DMHAC_BUILD_VST3=ON -DMHAC_VST3_SDK=/absolute/path/sdk-
 cmake --build vst-build --config Release --target MHACGoldenReceipt
 ```
 
-On Windows with Visual Studio use an x64 generator (-A x64 for VS). Preserve the entire generated .vst3 bundle and install to the host's scanned VST3 path (Windows commonly C:/Program Files/Common Files/VST3); rescan and insert on an instrument track. These plugin build/install instructions are proposed and not yet executed. Native adapter source targets SDK 3.8.0 but is uncompiled. No DAW compatibility, validator success or distributable binary claimed. See QUALIFICATION.md.
+On Windows with Visual Studio use an x64 generator (-A x64 for VS). Preserve the entire generated .vst3 bundle and install to the host's scanned VST3 path (Windows commonly C:/Program Files/Common Files/VST3); rescan and insert on an instrument track. The original Windows adapter compiled but failed the validator's sample-rate test; the repair requires fresh exact-head qualification. No DAW compatibility or distributable binary is claimed by this source document alone. See QUALIFICATION.md.
 
 ## Follow-up
 

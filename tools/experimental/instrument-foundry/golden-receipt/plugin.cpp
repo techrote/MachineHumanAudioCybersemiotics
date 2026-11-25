@@ -64,7 +64,7 @@ public:
     }
     tresult PLUGIN_API canProcessSampleSize(int32 size) override{return size==kSample32||size==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
-        if(!std::isfinite(setup.sampleRate)||setup.sampleRate<8000||setup.sampleRate>384000)return kResultFalse;
+        if(!g::validRate(setup.sampleRate))return kResultFalse;
         const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;engine.reset(sr);}return r;
     }
     tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk)engine.reset(sr);return r;}
