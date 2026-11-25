@@ -3,7 +3,7 @@
 Original text score, 25 November 2026. For three performers and optional observer. Duration freely chosen; no strenuous sounds, amplification, microphones, or real instructions outside the performance. May be played with cards in silence. No human performance has been conducted.
 
 ## I. Separate rooms
-Assign each musician two cards marked 0 and 1; designate one card in each pair a true fact for this performance. Let A see only the first pair, B only the second. The fixed rule: a rising fifth may be played if either musician's two facts are both 1. Set all four to 1. Each performer plays a rising fifth once, together if convenient. Do not make the private cards public. A witness may report whether the fifths agreed, but not which cards anyone saw.
+Prepare four fact cards, each bearing a distinct identifier and a value of either 0 or 1. Let A see only the first pair, B only the second. The fixed rule: a rising fifth may be played if either musician's two facts are both 1. Set all four to 1. Each performer plays a rising fifth once, together if convenient. Do not make the private cards public. A witness may report whether the fifths agreed, but not which cards anyone saw.
 
 ## II. The public invoice
 Repeat the same note after showing one complete pair of cards to everyone. The third musician sounds a short, quiet wooden click for each fact made public. No change to the principal phrase is required. Reverse which pair is public in a third rendition. The observer may describe the reasons that are now available, but must distinguish them from a claim about the reasons actually used.
