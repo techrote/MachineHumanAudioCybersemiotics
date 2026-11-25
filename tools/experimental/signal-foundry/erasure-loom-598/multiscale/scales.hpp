@@ -5,39 +5,48 @@ using namespace loom;
 inline constexpr unsigned latency=9*1024, tail=2*latency;
 using Plans=std::array<std::array<Plan,nodes>,4>;
 // Each ring is both capture and scheduled playback. Frames divide the ring exactly.
-template<unsigned S> class Path {
+template<unsigned S,bool Incremental> class Path {
     static constexpr unsigned F=nodes*S;
     static_assert(latency%F==0,"aligned frames required");
     std::array<Stereo,latency> ring{};
     ProbeParams latched{};
-    void finish(unsigned start,const Plans& plans) noexcept {
-        const auto& p=plans[latched.base.separation-1][latched.base.rotation];
-        const auto rows=probeRows(p,latched.base.budget,latched.base.repair,latched.probe);
-        const auto w0=weights(p,0,latched.base.budget),w1=weights(p,1,latched.base.budget);
-        for(unsigned lane=0;lane<S;++lane){
+    std::array<Row,2> rows{},legacy{};
+    void prepareRows(const Plan& p) noexcept {
+        rows=probeRows(p,latched.base.budget,latched.base.repair,latched.probe);
+        legacy={weights(p,0,latched.base.budget),weights(p,1,latched.base.budget)};
+    }
+    void finishLane(unsigned start,unsigned lane,const Plan& p) noexcept {
             Stereo v[2]{};
             for(unsigned k=0;k<2;++k)for(unsigned ch=0;ch<2;++ch){
                 double x=0;
-                if(latched.probe==0){const auto& w=k==0?w0:w1;for(unsigned j=0;j<nodes;++j)x+=w[j]*ring[start+j*S+lane][ch];x*=latched.base.repair;}
+                if(latched.probe==0){const auto& w=legacy[k];for(unsigned j=0;j<nodes;++j)x+=w[j]*ring[start+j*S+lane][ch];x*=latched.base.repair;}
                 else for(unsigned j=0;j<nodes;++j)x+=rows[k][j]*ring[start+j*S+lane][ch];
                 if(latched.edge>0){const double a=std::min(1.,double(std::min(lane,S-1-lane))/(latched.edge*(S*.5)));x=a*x+(1-a)*ring[start+p.missing[k]*S+lane][ch];}
                 v[k][ch]=clean(x);
             }
             for(unsigned k=0;k<2;++k)ring[start+p.missing[k]*S+lane]=v[k];
-        }
     }
 public:
     void reset() noexcept {ring.fill({});latched={};}
     Stereo step(unsigned pos,Stereo input,const ProbeParams& target,const Plans& plans) noexcept {
-        if(pos%F==0)latched=target;
+        const unsigned offset=pos%F;
+        if(offset==0){latched=target;if constexpr(Incremental)prepareRows(plans[latched.base.separation-1][latched.base.rotation]);}
         const auto y=ring[pos];ring[pos]=input;
-        if(pos%F==F-1)finish(pos+1-F,plans);
+        const auto& p=plans[latched.base.separation-1][latched.base.rotation];
+        // Lane j becomes complete on arrival of node eight, lane j. All playback
+        // from this capture frame is still in the future; read old output first.
+        if constexpr(Incremental){
+            if(offset>=8*S)finishLane(pos-offset,offset-8*S,p);
+        }else if(offset==F-1){
+            prepareRows(p);
+            for(unsigned lane=0;lane<S;++lane)finishLane(pos-offset,lane,p);
+        }
         return y;
     }
 };
-class Engine {
+template<bool Incremental> class BasicEngine {
     Plans plans{};
-    Path<16> fine;Path<128> medium;Path<1024> coarse;
+    Path<16,Incremental> fine;Path<128,Incremental> medium;Path<1024,Incremental> coarse;
     std::array<Stereo,latency> dry{};
     ProbeParams target{};unsigned pos=0,selection=0,remaining=0,fade=960;
     std::array<double,3> mix{1,0,0};
@@ -71,4 +80,6 @@ public:
         return y;
     }
 };
+using Engine=BasicEngine<true>;
+using BurstReference=BasicEngine<false>;
 }
