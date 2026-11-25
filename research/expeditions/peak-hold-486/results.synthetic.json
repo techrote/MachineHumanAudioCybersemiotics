@@ -1,0 +1,129 @@
+{
+  "instances": 81189,
+  "classes": 27974,
+  "extremalReplays": 55948,
+  "forcedChecks": 27974,
+  "erasureChecks": 27974,
+  "inconsistent": 1060,
+  "feasibleArbitrary": 578,
+  "invalid": 5,
+  "byN": [
+    {
+      "n": 2,
+      "instances": 27,
+      "classes": 21
+    },
+    {
+      "n": 3,
+      "instances": 162,
+      "classes": 108
+    },
+    {
+      "n": 4,
+      "instances": 810,
+      "classes": 462
+    },
+    {
+      "n": 5,
+      "instances": 3645,
+      "classes": 1715
+    },
+    {
+      "n": 6,
+      "instances": 15309,
+      "classes": 5928
+    },
+    {
+      "n": 7,
+      "instances": 61236,
+      "classes": 19740
+    }
+  ],
+  "flatExample": {
+    "status": "feasible",
+    "cap": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "sparse": [
+      4,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    "forced": [],
+    "erasureLimit": 4,
+    "certificates": [
+      {
+        "level": 4,
+        "minimum": 4,
+        "positions": [
+          0,
+          5,
+          10,
+          15
+        ]
+      }
+    ]
+  },
+  "contradiction": {
+    "status": "inconsistent",
+    "row": 0,
+    "cap": [
+      1,
+      1,
+      0
+    ]
+  },
+  "triangle": {
+    "status": "feasible",
+    "cap": [
+      1,
+      1,
+      1
+    ],
+    "sparse": [
+      1,
+      0,
+      1
+    ],
+    "forced": [],
+    "erasureLimit": 1,
+    "certificates": [
+      {
+        "level": 1,
+        "minimum": 2,
+        "positions": [
+          0,
+          2
+        ]
+      }
+    ]
+  }
+}
