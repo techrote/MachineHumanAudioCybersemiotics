@@ -25,7 +25,7 @@ S=0 or g=1 implies unique reconstruction; otherwise the number of traces is C(S+
 
 Let R[r] = max b[i] in residue r, Rmax=max R. The peak of a feasible trace is max_r(R[r]+z[r]). Its maximum is Rmax+S, attained by placing all S into a class attaining Rmax.
 
-A candidate peak H is feasible iff H>=Rmax and sum(H-R[r])>=S: the offsets have integer capacities H-R[r], so a greedy fill can allocate exactly S iff their capacities suffice. Hence
+A candidate upper bound H on the peak is feasible iff H>=Rmax and sum(H-R[r])>=S: the offsets have integer capacities H-R[r], so a greedy fill can allocate exactly S iff their capacities suffice. Hence
 
     Hmin = max(Rmax, ceil((S+sum(R))/g))
     Hmax = Rmax+S.
