@@ -1,0 +1,468 @@
+{
+  "profiles": [
+    {
+      "n": 2,
+      "cases": 2205,
+      "feasible": 1193,
+      "assignments": 1645,
+      "maskChecks": 9544,
+      "greedyChecks": 1193,
+      "disagreements": 0,
+      "maxGap": 0
+    },
+    {
+      "n": 3,
+      "cases": 6125,
+      "feasible": 3663,
+      "assignments": 10085,
+      "maskChecks": 58608,
+      "greedyChecks": 3663,
+      "disagreements": 826,
+      "maxGap": 1
+    },
+    {
+      "n": 4,
+      "cases": 6125,
+      "feasible": 4095,
+      "assignments": 30972,
+      "maskChecks": 131040,
+      "greedyChecks": 4095,
+      "disagreements": 1616,
+      "maxGap": 1
+    },
+    {
+      "n": 5,
+      "cases": 2205,
+      "feasible": 1645,
+      "assignments": 43984,
+      "maskChecks": 105280,
+      "greedyChecks": 1645,
+      "disagreements": 860,
+      "maxGap": 2
+    }
+  ],
+  "uniformChecks": 1120,
+  "uniform": [
+    {
+      "n": 2,
+      "displacementOverSpacing": 0,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 0.5,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 1,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 1.5,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 2,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 2.5,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 3,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 3.5,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 4,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 2,
+      "displacementOverSpacing": 4.5,
+      "assignments": 2,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 0,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 0.5,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 1,
+      "assignments": 3,
+      "sortedAnchors": 1,
+      "universalAnchors": 1
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 1.5,
+      "assignments": 4,
+      "sortedAnchors": 1,
+      "universalAnchors": 2
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 2,
+      "assignments": 6,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 2.5,
+      "assignments": 6,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 3,
+      "assignments": 6,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 3.5,
+      "assignments": 6,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 4,
+      "assignments": 6,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 3,
+      "displacementOverSpacing": 4.5,
+      "assignments": 6,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 0,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 0.5,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 1,
+      "assignments": 5,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 1.5,
+      "assignments": 7,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 2,
+      "assignments": 14,
+      "sortedAnchors": 2,
+      "universalAnchors": 3
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 2.5,
+      "assignments": 18,
+      "sortedAnchors": 2,
+      "universalAnchors": 3
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 3,
+      "assignments": 24,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 3.5,
+      "assignments": 24,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 4,
+      "assignments": 24,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 4,
+      "displacementOverSpacing": 4.5,
+      "assignments": 24,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 0,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 0.5,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 1,
+      "assignments": 8,
+      "sortedAnchors": 2,
+      "universalAnchors": 2
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 1.5,
+      "assignments": 13,
+      "sortedAnchors": 2,
+      "universalAnchors": 3
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 2,
+      "assignments": 31,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 2.5,
+      "assignments": 46,
+      "sortedAnchors": 3,
+      "universalAnchors": 4
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 3,
+      "assignments": 78,
+      "sortedAnchors": 3,
+      "universalAnchors": 4
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 3.5,
+      "assignments": 96,
+      "sortedAnchors": 3,
+      "universalAnchors": 4
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 4,
+      "assignments": 120,
+      "sortedAnchors": 4,
+      "universalAnchors": 4
+    },
+    {
+      "n": 5,
+      "displacementOverSpacing": 4.5,
+      "assignments": 120,
+      "sortedAnchors": 4,
+      "universalAnchors": 4
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 0,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 0.5,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 1,
+      "assignments": 13,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 1.5,
+      "assignments": 24,
+      "sortedAnchors": 3,
+      "universalAnchors": 4
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 2,
+      "assignments": 73,
+      "sortedAnchors": 4,
+      "universalAnchors": 4
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 2.5,
+      "assignments": 115,
+      "sortedAnchors": 4,
+      "universalAnchors": 4
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 3,
+      "assignments": 230,
+      "sortedAnchors": 4,
+      "universalAnchors": 5
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 3.5,
+      "assignments": 330,
+      "sortedAnchors": 4,
+      "universalAnchors": 5
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 4,
+      "assignments": 504,
+      "sortedAnchors": 4,
+      "universalAnchors": 5
+    },
+    {
+      "n": 6,
+      "displacementOverSpacing": 4.5,
+      "assignments": 600,
+      "sortedAnchors": 4,
+      "universalAnchors": 5
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 0,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 0.5,
+      "assignments": 1,
+      "sortedAnchors": 0,
+      "universalAnchors": 0
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 1,
+      "assignments": 21,
+      "sortedAnchors": 3,
+      "universalAnchors": 3
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 1.5,
+      "assignments": 44,
+      "sortedAnchors": 3,
+      "universalAnchors": 4
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 2,
+      "assignments": 172,
+      "sortedAnchors": 4,
+      "universalAnchors": 5
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 2.5,
+      "assignments": 301,
+      "sortedAnchors": 4,
+      "universalAnchors": 5
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 3,
+      "assignments": 675,
+      "sortedAnchors": 5,
+      "universalAnchors": 5
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 3.5,
+      "assignments": 1066,
+      "sortedAnchors": 5,
+      "universalAnchors": 6
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 4,
+      "assignments": 1902,
+      "sortedAnchors": 5,
+      "universalAnchors": 6
+    },
+    {
+      "n": 7,
+      "displacementOverSpacing": 4.5,
+      "assignments": 2616,
+      "sortedAnchors": 5,
+      "universalAnchors": 6
+    }
+  ],
+  "status": "pass"
+}
