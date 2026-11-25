@@ -1,0 +1,59 @@
+{
+  "classification": "synthetic only",
+  "census": {
+    "rings": 52,
+    "kernel_states": 872,
+    "transition_comparisons": 39790,
+    "pilot_masks": 39790,
+    "budget_contracts": 408,
+    "impossible": 144,
+    "odd_surcharge": 3,
+    "feasible_contracts": 264
+  },
+  "example": {
+    "stage_words": [
+      [
+        150,
+        165,
+        8
+      ],
+      [
+        187,
+        238,
+        8
+      ],
+      [
+        204,
+        51,
+        8
+      ],
+      [
+        85,
+        85,
+        8
+      ]
+    ],
+    "six_pilot_mask": 207,
+    "seven_pilot_mask": 239
+  },
+  "width_final_words": [
+    0,
+    65537
+  ],
+  "audio": {
+    "shared-future.wav": {
+      "frames": 46080,
+      "rate": 16000,
+      "peak": 10495,
+      "unequal_frames": 22768,
+      "sha256": "c98531baae2442eec31347ff84bd737a87906c539b8223a7bdc2c0d5d44ed3f6"
+    },
+    "one-extra-cell.wav": {
+      "frames": 161840,
+      "rate": 16000,
+      "peak": 10493,
+      "unequal_frames": 1106,
+      "sha256": "e774597d3be773926b2ed6ab98e9042d205c910b0aa76c74c03e0f60225de48a"
+    }
+  }
+}
