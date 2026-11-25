@@ -1,0 +1,46 @@
+{
+  "assertions": "passed",
+  "audio": {
+    "common.wav": {
+      "channels": 5,
+      "frames": 4000,
+      "max_coherence_error": 2.59491e-05,
+      "sha256": "cb23132514dfc43f1b7ce7efdb57bcc410af03d99f4c7072e77325807ae898ab"
+    },
+    "local-1-2.wav": {
+      "channels": 4,
+      "frames": 4000,
+      "max_coherence_error": 2.35404e-05,
+      "sha256": "f6a387e13f045fc7b5e85256eed99595351b7214329bbf0bd9998d58fc7171f7"
+    },
+    "local-1-3.wav": {
+      "channels": 4,
+      "frames": 4000,
+      "max_coherence_error": 2.35404e-05,
+      "sha256": "2ffb3c4ecbbc7bba5b849130ca1427f58510de4274a1d3fe92f09bb65beffade"
+    },
+    "local-2-3.wav": {
+      "channels": 4,
+      "frames": 4000,
+      "max_coherence_error": 1.52999e-05,
+      "sha256": "53d8d20abaf725203482a2282f4d2be9a5620e950f8e93eb10434e000c17c17f"
+    }
+  },
+  "counts": {
+    "depth_checks": 20072,
+    "equal_radius_profiles": 20072,
+    "false_pair_accepts": 8,
+    "gauge_checks": 600,
+    "gram_constructions": 10876,
+    "phase_sets": 2509,
+    "triple_checks": 8011,
+    "unequal_radius_profiles": 600
+  },
+  "equilateral": {
+    "global_rho_limit": 0.7071067811865475,
+    "max_consistent_relays": 2,
+    "pair_rho_limit": 0.7320508075688773,
+    "tested_rho": 0.72
+  },
+  "method": "arc and literal circle-arrangement checks; numerical tolerance 1e-9; no independent peer review"
+}
