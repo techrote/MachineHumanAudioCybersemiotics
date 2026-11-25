@@ -2,6 +2,16 @@
 
 **Expedition #548 · 25 November 2026 · exploratory humanities/art, not frozen Track E/G evidence.**
 
+## Contents
+
+1. [The workshop](#1-the-workshop-has-two-outputs) — residual material as a second creative domain.
+2. [Source encounters](#2-source-encounters) — historically situated art and design readings.
+3. [Exact construction](#3-exact-construction-the-offcut-is-a-constrained-complement) — the finite clipping ambiguity.
+4. [Sound construction](#4-native-sound-construction) — executable audio witness.
+5. [Second workshop](#5-the-second-workshop-a-playable-instrument) — Offcut Loom proposal.
+6. [Transfer and limits](#6-transfer-and-limits) — competing explanations and scope.
+7. [Reconciliation](#7-reconciliation-and-qualification) — repository and verification receipt.
+
 ## 1. The workshop has two outputs
 
 A carpenter cuts a shape out of a sheet. The client buys the shape; a second artist buys the sheet around it. Neither gets a derivative illustration of the other's object. They acquire complementary objects whose relation is a consequence of the cut.
