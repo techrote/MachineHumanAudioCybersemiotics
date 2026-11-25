@@ -1,0 +1,136 @@
+{
+  "audio": [
+    {
+      "distances": [
+        1,
+        5,
+        5,
+        7,
+        7,
+        7,
+        7,
+        5,
+        5,
+        7,
+        7,
+        7,
+        7,
+        2,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        3,
+        6,
+        6,
+        6,
+        6,
+        4
+      ],
+      "histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 4,
+        "6": 4,
+        "7": 16
+      },
+      "max_energy_error": 0.0007642399999987504,
+      "max_squared_distance_error": 0.001453580000003285,
+      "name": "families-a",
+      "nearest": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4
+      ],
+      "sha256": "03d0ddff91118c63e7b8c71da4081d2c2d8f28dd6bf1740de3796bc2b6678822"
+    },
+    {
+      "distances": [
+        1,
+        7,
+        7,
+        5,
+        5,
+        7,
+        7,
+        7,
+        7,
+        5,
+        5,
+        7,
+        7,
+        2,
+        7,
+        7,
+        6,
+        6,
+        7,
+        7,
+        6,
+        6,
+        3,
+        7,
+        7,
+        7,
+        7,
+        4
+      ],
+      "histogram": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 4,
+        "6": 4,
+        "7": 16
+      },
+      "max_energy_error": 0.0004406800000005262,
+      "max_squared_distance_error": 0.0009767999999965582,
+      "name": "families-b",
+      "nearest": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4
+      ],
+      "sha256": "cb55d109ca890efc25b5e28504fe4582daac6fda598cbab08c98e319fe43759a"
+    }
+  ],
+  "changed_pairs": 16,
+  "native_census": [
+    {
+      "exact_two_coordinate_supports": 3,
+      "histories": 3,
+      "literal_matrix_pairs": 3,
+      "n": 3
+    },
+    {
+      "exact_two_coordinate_supports": 15,
+      "histories": 18,
+      "literal_matrix_pairs": 153,
+      "n": 4
+    },
+    {
+      "exact_two_coordinate_supports": 45,
+      "histories": 180,
+      "literal_matrix_pairs": 16110,
+      "n": 5
+    }
+  ],
+  "status": "PASS"
+}
