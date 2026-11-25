@@ -2,6 +2,15 @@
 
 Foley, audiovisual contracts and fictional causality — exploratory expedition #556, 25 November 2026. Draft/HOLD; not part of the frozen evidence registry.
 
+## Contents
+
+1. Essay — fictional bodies for an invariant sound.
+2. Source encounters — film sound, ecology and audiovisual timing.
+3. Relations — provenance, depiction, alignment and causality.
+4. Apparatus — reproducible audiovisual score and qualification.
+5. Exaptation — creative instrument and falsifiable interface questions.
+6. Reconciliation — overlap checks and outstanding gates.
+
 ## 1. Essay: a machine without a surface
 
 Imagine a machine whose sound is entirely synthetic. Its display shows a brass lever moving downwards whenever a short resonant impact sounds. Next it displays a ball landing on a plate. Nothing in the audio renderer changes. Eventually the display goes blank, but the impacts continue.
@@ -46,9 +55,9 @@ The counterexample is deliberately mundane. Synchronous output is insufficient e
 
 Save [index.html](index.html) locally and open in a current desktop browser. No build, server, third-party assets or network are required. Play initiates a single 6.5-second audio buffer; Stop cancels it. Select lever, ball, shutter or absent body; vary visual lag from −300 to +300 ms; optionally omit a contact. Restart applies the selection. The WAV export saves the invariant mono soundtrack.
 
-The stage is deliberately abstract. Contact times are intended animation maxima, not sensor measurements. The small timeline exposes the scheduled discrepancy; it is not an independent clock or proof of actual device latency. Browser audio/display timing has not been measured or visually inspected in this run. Sound is two damped sinusoids and short deterministic noise bursts, not a physical model of any depicted object.
+The stage is deliberately abstract. Contact times are intended animation maxima, not sensor measurements. The small timeline exposes the scheduled discrepancy; it is not an independent clock or proof of actual device latency. Browser audio/display timing has not been measured. The abstract stage and its timing tracks were visually inspected in headless Chromium screenshots. Sound is two damped sinusoids and short deterministic noise bursts, not a physical model of any depicted object.
 
-The model was run in a JavaScript execution environment prior to commit: 156,000 mono PCM frames at 24 kHz, peak integer magnitude 15,704, 50,042 nonzero samples, word-wise FNV-style checksum 8c880489 (noncryptographic, not a WAV hash). 262,425 assertions passed: repeat generation, silence outside scheduled support, contact count/order/range across 140 scenes, amplitude and malformed scene rejection. The same model is embedded in the HTML; a Node reproduction script [check.cjs](check.cjs) extracts it. Native Node and browser execution are not claimed. The 140 scenes are four modes × five representative offsets × seven omission settings, not the full slider domain or independent human observations.
+The model was run in a JavaScript execution environment prior to commit: 156,000 mono PCM frames at 24 kHz, peak integer magnitude 15,704, 50,042 nonzero samples, word-wise FNV-style checksum 8c880489 (noncryptographic, not a WAV hash). 262,425 assertions passed: repeat generation, silence outside scheduled support, contact count/order/range across 140 scenes, amplitude and malformed scene rejection. The same model is embedded in the HTML; a Node reproduction script [check.cjs](check.cjs) extracts it. Native Node v22.16.0 reproduced the exact result using the two Git-blob-matched files. Headless Chromium 144.0.7559.96 exercised all four bodies, stop/restart, natural completion and four WAV exports; all exports were byte-identical and their PCM headers passed Python wave readback. The browser was muted, and no physical latency or auditory experience was measured. See [RECEIPT.md](RECEIPT.md). The 140 scenes are four modes × five representative offsets × seven omission settings, not the full slider domain or independent human observations.
 
 ## 5. Exaptation and rival explanations
 
@@ -64,4 +73,4 @@ The prior-art subtraction is substantial: film sound, Foley, audiovisual install
 
 Read live AGENTS, README, RAG, programme, runbook, integrity and validation; inspected 65 requested recent PR results (60 returned) and 40 open issue search results. Base main 495a98ca12bae467a507031f04931aa4254b1866. Initial palindrome/chiasmus direction abandoned after #188 and #340 overlap; meter direction abandoned after #382. Targeted searches for Foley, Chion, synchresis, acousmatic listening and source bonding found #230 as closest source-allocation predecessor. Read #230, #471 and #530 issue bodies and comments. Their formal targets differ: additive partition, cue response and anonymous temporal association respectively. This project instead varies depicted bodies with one fixed waveform, and does not claim a new association theorem. #548 concerns discarded signals, not fictional depiction. New issue #556 and its comments were checked before writing.
 
-Four files in this isolated directory; no canonical records, manifests, licenses or protocol changes. [SCORE.md](SCORE.md) is original unperformed artistic material. AI authored the apparatus and source notes, performed the reported finite checks and self-review. No independent reviewer, native browser run, full repository validation, CI or empirical effects are asserted. Draft for integration; no merge until exact-head checks and review requirements are met.
+Five files in this isolated directory; no canonical records, manifests, licenses or protocol changes. [SCORE.md](SCORE.md) is original unperformed artistic material. AI authored the apparatus and source notes, performed the reported finite checks and self-review. No independent reviewer, physical listening, full repository validation, CI or empirical effects are asserted. Draft for integration; no merge until exact-head checks and review requirements are met.
