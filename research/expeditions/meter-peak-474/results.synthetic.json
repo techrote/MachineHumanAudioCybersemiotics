@@ -1,0 +1,113 @@
+{
+  "traces": 83655,
+  "measurementClasses": 79170,
+  "peakWitnesses": 158340,
+  "thresholdChecks": 554190,
+  "refusals": 8,
+  "byN": {
+    "1": {
+      "traces": 6,
+      "classes": 6
+    },
+    "2": {
+      "traces": 63,
+      "classes": 48
+    },
+    "3": {
+      "traces": 336,
+      "classes": 286
+    },
+    "4": {
+      "traces": 1260,
+      "classes": 1070
+    },
+    "5": {
+      "traces": 3780,
+      "classes": 3534
+    },
+    "6": {
+      "traces": 9702,
+      "classes": 8784
+    },
+    "7": {
+      "traces": 22176,
+      "classes": 21390
+    },
+    "8": {
+      "traces": 46332,
+      "classes": 44052
+    }
+  },
+  "example": {
+    "status": "ambiguous",
+    "g": 8,
+    "base": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "range": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "budget": 8,
+    "count": "6435",
+    "minPeak": 1,
+    "maxPeak": 8,
+    "lowWitness": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "highWitness": [
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
