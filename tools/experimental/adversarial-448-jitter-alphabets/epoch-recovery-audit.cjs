@@ -39,14 +39,14 @@ function run(v1,v2,v4,hash){
   const floor=Int16Array.from({length:24000},()=>rnd()<.5?-32:32);
   const interrupted=z(24000);interrupted[12000]=256;
   for(const scenario of scenarios){
-   let pcm,expected,after;
-   if(scenario==='clean'){pcm=v1.join(z(offset),a,z(24000),b,z(1600));expected=[A,B];after=expected;}
+   let pcm,expected;
+   if(scenario==='clean'){pcm=v1.join(z(offset),a,z(24000),b,z(1600));expected=[A,B];}
    else{
     const gap=scenario==='short-quiet'?z(8000):scenario==='quiet-floor'?floor:scenario==='interrupted-quiet'?interrupted:z(24000);
     const prefix=scenario==='prehistory'?v1.join(c,z(24000)):z(0);
     const second=scenario==='second-overflow'?v1.join(flood,z(24000),c):z(0);
     pcm=v1.join(z(offset),prefix,flood,gap,b,z(24000),second,z(1600));
-    expected=scenario==='prehistory'?[C,B]:scenario==='second-overflow'?[B,C]:[B];after=expected;
+    expected=scenario==='prehistory'?[C,B]:scenario==='second-overflow'?[B,C]:[B];
    }
    const raw=v4.decode(pcm); // EOF reference separately reported; padding allows regular release.
    const rawEvents=raw.events.filter(e=>e.status==='ok').map(e=>e.packet);
@@ -71,15 +71,16 @@ module.exports={run,epochDecode};
 if(require.main===module){
  const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
  const dir=path.resolve(process.argv[2]||'.'),out=path.resolve(process.argv[3]||'epoch-output');
- for(const [f,sha] of Object.entries(BLOBS)){const b=fs.readFileSync(path.join(dir,f));if(crypto.createHash('sha1').update('blob '+b.length+'\\0').update(b).digest('hex')!==sha)throw Error('wrong pinned blob '+f);}
+ for(const [f,sha] of Object.entries(BLOBS)){const b=fs.readFileSync(path.join(dir,f));if(crypto.createHash('sha1').update('blob '+b.length+'\0').update(b).digest('hex')!==sha)throw Error('wrong pinned blob '+f);}
  const v1=require(path.join(dir,'relay.cjs')),v2=require(path.join(dir,'bound-v2.cjs')),v4=require(path.join(dir,'stream-v4.cjs'));
  const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),r=run(v1,v2,v4,hash);fs.mkdirSync(out,{recursive:true});
  const stimuli=Object.entries(r.specimens).map(([id,p])=>{const b=v1.wav(p);fs.writeFileSync(path.join(out,id+'.wav'),b);return {id,samples:p.length,sha256:hash(b)};});
- fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify({ref:REF,blobs:BLOBS,seeds,assertions:r.assertions,summary:r.summary,rows:r.rows,stimuli},null,2)+'\\n');
+ fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify({ref:REF,blobs:BLOBS,seeds,assertions:r.assertions,summary:r.summary,rows:r.rows,stimuli},null,2)+'\n');
  console.log(JSON.stringify({assertions:r.assertions,summary:r.summary,stimuli},null,2));
 }
 
-/* Executed V8 receipt: two identical full traces, SHA256 shim verified against abc and empty. Native Node CLI not executed. Pinned connector Git blob IDs; CLI verifies them. No claim of acoustic hardware, human evidence, or safe generic reset: threshold is arbitrary, an interruption restarts the count, low-energy valid signals can be mistaken for quiet, and a new epoch does not resolve lost history. No EOF used in candidate.\n{
+/* Executed V8 receipt: two identical full traces, SHA256 shim verified against abc and empty. Native Node CLI not executed. Pinned connector Git blob IDs; CLI verifies them. No claim of acoustic hardware, human evidence, or safe generic reset: threshold is arbitrary, an interruption restarts the count, low-energy valid signals can be mistaken for quiet, and a new epoch does not resolve lost history. No EOF used in candidate.
+{
   "assertions": 175,
   "summary": [
     {
