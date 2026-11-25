@@ -1,0 +1,42 @@
+'use strict';
+// MHAC #442 Measurement lane. Original synthetic-only apparatus; no human evidence.
+const fs=require('node:fs'), path=require('node:path'), crypto=require('node:crypto'), assert=require('node:assert/strict');
+const parent='205673a07a3197db6f3543350dd3ba8af1a86f11';
+const rate=8000,N=3200,L=160,E=240000000,step=4,cap=4,tol=8;
+const frequencies=[500,800], methods=['fixed','quadrature','joint-refit'];
+const grid=[.05,.075,.1,.125,.15,.175,.2,.25,.3,.4,.55,.7];
+const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0), energy=a=>dot(a,a);
+function unit(a){const d=Math.sqrt(energy(a));return Float64Array.from(a,x=>x/d);}
+function shape(f,phase,sine=false){return Float64Array.from({length:L},(_,i)=>{const p=(i*f/rate+phase)%1;return Math.min(i,L-1-i)/(L/2)*(sine?Math.sin(2*Math.PI*p):1-4*Math.abs(p-.5));});}
+const bank=frequencies.map(f=>{const a=unit(shape(f,0)),b=shape(f,.25),d=dot(a,b);return [a,unit(b.map((v,i)=>v-d*a[i]))];});
+function rng(seed){let x=seed>>>0;return ()=>{x=(x+0x6D2B79F5)|0;let z=x;z=Math.imul(z^z>>>15,z|1);z^=z+Math.imul(z^z>>>7,z|61);return ((z^z>>>14)>>>0)/4294967296;};}
+function make(c){const rand=rng(c.seed),pcm=new Int16Array(N),raw=new Float64Array(N);let truth=[];
+ if(c.f){truth=[400+Math.floor(rand()*300),0,2200+Math.floor(rand()*200)];truth[1]=truth[0]+(c.overlap?96:500)+Math.floor(rand()*9)-4;
+ for(let k=0;k<truth.length;k++){const h=unit(shape(c.f,c.phases[k],c.f===650));for(let j=0;j<L;j++)raw[truth[k]+j]+=Math.sqrt(E)*c.gain*h[j];}}
+ for(let i=0;i<N;i++){const v=Math.round(raw[i]+(2*rand()-1)*c.noise);assert(Math.abs(v)<10000);pcm[i]=v;}return {truth,pcm};}
+function fit(pcm,method){const r=Float64Array.from(pcm),events=[];let products=0,searches=0;const phases=method==='fixed'?1:2;
+ function at(t,k){const h=bank[k];let a=0,b=0;for(let j=0;j<L;j++)a+=r[t+j]*h[0][j];products+=L;if(phases===2){for(let j=0;j<L;j++)b+=r[t+j]*h[1][j];products+=L;}else a=Math.max(a,0);return {t,k,a,b,score:Math.hypot(a,b)/Math.sqrt(E)};}
+ function apply(e,sign){for(let j=0;j<L;j++)r[e.t+j]+=sign*(e.a*bank[e.k][0][j]+e.b*bank[e.k][1][j]);}
+ function best(lo,hi,delta,exclude){let z=null;searches++;for(let t=lo;t<=hi;t+=delta){if(exclude.some(e=>Math.abs(e.t-t)<40))continue;for(let k=0;k<2;k++){const e=at(t,k);if(!z||e.score>z.score)z=e;}}return z;}
+ const snapshots=[];for(let i=0;i<cap;i++){const e=best(0,N-L,step,events);if(!e||e.score===0)break;const before=energy(r);apply(e,-1);events.push(e);assert(energy(r)<=before+1e-4);
+ if(method==='joint-refit')for(let pass=0;pass<2;pass++)for(let j=0;j<events.length;j++){const old=events[j],prior=energy(r);apply(old,1);const other=events.filter((_,k)=>k!==j);const refined=best(Math.max(0,old.t-12),Math.min(N-L,old.t+12),1,other);assert(refined);events[j]=refined;apply(events[j],-1);assert(energy(r)<=prior+1e-3);}
+ snapshots.push({entryScore:e.score,events:events.map(v=>({...v})),residualEnergy:energy(r)});}
+ return {snapshots,products,searches,initialEnergy:energy(pcm)};}
+function measure(truth,fitResult,threshold){let chosen=[];for(const s of fitResult.snapshots){if(s.entryScore<=threshold)break;chosen=s.events;}const seen=chosen.map(e=>e.t).sort((a,b)=>a-b);let i=0,j=0,tp=0,abs=0;while(i<truth.length&&j<seen.length){if(seen[j]<truth[i]-tol)j++;else if(truth[i]<seen[j]-tol)i++;else{tp++;abs+=Math.abs(truth[i++]-seen[j++]);}}return {seen,tp,fp:seen.length-tp,fn:truth.length-tp,abs,events:chosen};}
+function conditions(base,evalSet){const rows=[];for(const noise of [300,1200])for(let i=0;i<8;i++)rows.push({f:0,noise,seed:base+10000+noise+i});
+ for(const f of evalSet?[500,800,650]:[500,800])for(const gain of [.3,1])for(const noise of [300,1200])for(const overlap of [false,true])for(const phase of ['fixed','shifted'])for(let i=0;i<3;i++)rows.push({f,gain,noise,overlap,phase,phases:phase==='fixed'?[0,0,0]:evalSet?[.137,.381,.719]:[.25,.5,.75],seed:base+i});return rows;}
+function wave(pcm){const b=Buffer.alloc(44+2*pcm.length);b.write('RIFF');b.writeUInt32LE(b.length-8,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(1,22);b.writeUInt32LE(rate,24);b.writeUInt32LE(2*rate,28);b.writeUInt16LE(2,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(2*pcm.length,40);pcm.forEach((v,i)=>b.writeInt16LE(v,44+2*i));return b;}
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+function totals(rows,m,threshold,filter=()=>true){const z={packets:0,tp:0,fp:0,fn:0,exact:0,nullFalse:0,products:0,absSamples:0};for(const row of rows.filter(filter)){const o=measure(row.truth,row.fits[m],threshold);z.packets++;for(const k of ['tp','fp','fn'])z[k]+=o[k];z.exact+=+(o.fp===0&&o.fn===0);z.nullFalse+=+(row.c.f===0&&o.fp>0);z.products+=row.fits[m].products;z.absSamples+=o.abs;}return z;}
+function run(){let assertions=0;const ok=(v,m)=>{assert(v,m);assertions++;};for(const [a,b] of bank){ok(Math.abs(energy(a)-1)<1e-12,'unit a');ok(Math.abs(energy(b)-1)<1e-12,'unit b');ok(Math.abs(dot(a,b))<1e-12,'orthogonal');}
+ const dev=conditions(610000,false),test=conditions(720000,true);ok(test.every(c=>!dev.some(d=>d.seed===c.seed)),'disjoint seeds');
+ const prepare=cs=>cs.map(c=>{const a=make(c),fits=methods.map(m=>fit(a.pcm,m));for(const f of fits){ok(f.snapshots.length<=cap,'cap');let prev=f.initialEnergy;for(const s of f.snapshots){ok(s.residualEnergy<=prev+1e-3,'energy descent');prev=s.residualEnergy;}}return {c,truth:a.truth,fits,sha256:hash(wave(a.pcm)),peak:a.pcm.reduce((a,b)=>Math.max(a,Math.abs(b)),0)};});
+ const d=prepare(dev),e=prepare(test),calibration=methods.map((_,m)=>grid.map(threshold=>{const z=totals(d,m,threshold);return {threshold,...z,f1:2*z.tp/(2*z.tp+z.fp+z.fn)};}));
+ const selected=calibration.map(a=>a.filter(z=>z.nullFalse<=1).sort((a,b)=>b.f1-a.f1||b.threshold-a.threshold)[0]);ok(selected.every(Boolean),'feasible');
+ const groups={all:()=>true,known:r=>r.c.f===500||r.c.f===800,shifted:r=>r.c.f!==650&&r.c.phase==='shifted',fixed:r=>r.c.f!==650&&r.c.phase==='fixed',overlap:r=>r.c.f!==650&&r.c.overlap,unseen:r=>r.c.f===650,null:r=>r.c.f===0};
+ const summary=methods.map((name,m)=>({name,threshold:selected[m].threshold,groups:Object.fromEntries(Object.entries(groups).map(([k,f])=>[k,totals(e,m,selected[m].threshold,f)])),sameThreshold:totals(e,m,.2)}));
+ const rows=e.map(r=>{const outcomes=r.fits.map((f,m)=>{const o=measure(r.truth,f,selected[m].threshold);ok(o.tp+o.fn===r.truth.length&&o.tp+o.fp===o.seen.length,'partition');return {...o,products:f.products,residual:f.snapshots.map(s=>s.residualEnergy)};});return {condition:r.c,truth:r.truth,sha256:r.sha256,peak:r.peak,outcomes};});
+ const witnesses=[rows.findIndex(r=>r.condition.phase==='shifted'&&r.outcomes[2].tp>r.outcomes[0].tp),rows.findIndex(r=>r.condition.f!==0&&r.outcomes[2].fp>r.outcomes[0].fp),rows.findIndex(r=>r.condition.f===650),rows.findIndex(r=>r.condition.f===0)].filter(i=>i>=0);
+ ok(witnesses.length===4,'witnesses');return {schema:'mhac-phase-fit-v1',claimClass:'finite synthetic detector comparison',parent,rate,N,L,E,step,cap,tol,methods,grid,dev,test,calibration,summary,rows,witnesses,assertions};}
+function cli(out){fs.mkdirSync(out,{recursive:true});const receipt=run();fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify(receipt,null,2)+'\n');const cards=[];for(const i of receipt.witnesses){const row=receipt.rows[i],b=wave(make(row.condition).pcm),name='witness-'+i+'.wav';assert.equal(hash(b),row.sha256);fs.writeFileSync(path.join(out,name),b);cards.push('<h2>'+name+'</h2><p>Peak PCM counts: '+row.peak+'; SHA-256: '+row.sha256+'</p><audio controls preload="none" src="'+name+'"></audio><pre>'+JSON.stringify({condition:row.condition,truth:row.truth,outcomes:row.outcomes.map(o=>({seen:o.seen,tp:o.tp,fp:o.fp,fn:o.fn}))},null,2)+'</pre>');}fs.writeFileSync(path.join(out,'index.html'),'<!doctype html><meta charset="utf-8"><title>MHAC phase fitting specimens</title><style>body{font:16px system-ui;max-width:900px;margin:2rem auto;padding:1rem}pre{background:#eee;padding:1rem;overflow:auto}audio{width:100%}</style><h1>Phase fitting — synthetic specimens</h1><p>Playback opt-in; begin at low hardware volume. Digital levels are not SPL calibration. Onsets in samples at 8 kHz. All receivers use identical PCM.</p>'+cards.join(''));console.log(JSON.stringify({assertions:receipt.assertions,summary:receipt.summary,witnesses:receipt.witnesses},null,2));return receipt;}
+module.exports={run,make,fit,measure,wave,cli};if(require.main===module)cli(process.argv[2]||'phase-fit-output');
