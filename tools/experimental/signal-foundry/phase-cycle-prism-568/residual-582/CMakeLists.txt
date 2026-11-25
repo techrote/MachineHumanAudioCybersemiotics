@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(PrismResidual LANGUAGES CXX)
+enable_testing()
+add_executable(prism_residual_test test.cpp)
+target_compile_features(prism_residual_test PRIVATE cxx_std_17)
+add_test(NAME prism_residual COMMAND prism_residual_test)
+add_executable(prism_residual_demo demo.cpp)
+target_compile_features(prism_residual_demo PRIVATE cxx_std_17)
