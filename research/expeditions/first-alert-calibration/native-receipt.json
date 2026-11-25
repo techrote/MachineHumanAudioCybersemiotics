@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "environment": "Python 3.13.5",
+  "native_runs": 2,
+  "source_blob": "8a19b4225833efe00ff6b4f396af81e9145678fe",
+  "full_local_receipt_sha256": "32ac20f7474ffadc8eaae81687dd75c74892ef6700f2ebf1d63c1264bff5379c",
+  "schedules": 4096,
+  "profiles": 125,
+  "nested_first": [
+    [
+      4,
+      3
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "rotating_first": [
+    [
+      4,
+      3
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "nested_precision": "3/4",
+  "rotating_precision": "3/7",
+  "audio": {
+    "nested-raw.wav": {
+      "sha256": "d784628dbd84ba120e0baa72241f48cb61915e30f15f62eebaf37120a995bd93",
+      "energy": 88127052320
+    },
+    "nested-first.wav": {
+      "sha256": "06564fb0341b55e291f0cf7c8f5e66d4feccf06c77b132f7e7033ec7ad5cdf72",
+      "energy": 11015921344
+    },
+    "rotating-raw.wav": {
+      "sha256": "12efd5b7d3ccf8c85bc1b654e59a268957ff8f77ce489af967f0516d2108d747",
+      "energy": 88127052320
+    },
+    "rotating-first.wav": {
+      "sha256": "ed7d289c62d18d13797188dabe67d4441609f68700b1671e3c52da50e6758642",
+      "energy": 19277862352
+    }
+  },
+  "notes": "All WAVs are 48000 samples, 8 kHz mono PCM16, generated locally rather than committed. Run witness.py to generate full receipt and WAVs. Native checkout failed DNS; no full repository tests locally. Same-agent cross-check."
+}
