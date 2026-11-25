@@ -1,0 +1,52 @@
+{
+  "byN": {
+    "1": {
+      "traces": 6,
+      "classes": 6
+    },
+    "2": {
+      "traces": 63,
+      "classes": 48
+    },
+    "3": {
+      "traces": 336,
+      "classes": 286
+    },
+    "4": {
+      "traces": 1260,
+      "classes": 1070
+    },
+    "5": {
+      "traces": 3780,
+      "classes": 3534
+    },
+    "6": {
+      "traces": 9702,
+      "classes": 8784
+    },
+    "7": {
+      "traces": 22176,
+      "classes": 21390
+    },
+    "8": {
+      "traces": 46332,
+      "classes": 44052
+    }
+  },
+  "traces": 83655,
+  "measurementClasses": 79170,
+  "audio": {
+    "sample_rate": 16000,
+    "frames": 51200,
+    "peak_left": 1000,
+    "peak_right": 4000,
+    "energy_per_period": 1720000000,
+    "windows_samples": [
+      5120,
+      10240
+    ],
+    "equal_window_pairs": 10240,
+    "distinguishing_width_samples": 4800,
+    "sha256": "d99d21701bf44534b0b0f319bcb42223321d6a509b2cceae92434fb8342ad6d9"
+  }
+}
