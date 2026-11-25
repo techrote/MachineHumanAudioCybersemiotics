@@ -1,0 +1,194 @@
+{
+  "schema": "mhac-relay-v2-vectors",
+  "rate": 16000,
+  "frameSamples": 31360,
+  "preambleSamples": 640,
+  "symbolSamples": 1280,
+  "hashDomainHex": "4d4841432d72656c61792d763200",
+  "vectors": [
+    {
+      "packet": {
+        "kind": 0,
+        "source": 1,
+        "version": 2,
+        "actor": 2,
+        "event": 1,
+        "seq": 3,
+        "tree": [
+          "verify",
+          [
+            "fault"
+          ]
+        ]
+      },
+      "frame": [
+        0,
+        1,
+        2,
+        2,
+        1,
+        3,
+        1,
+        7,
+        1,
+        7,
+        0,
+        13,
+        13,
+        13,
+        4,
+        0
+      ],
+      "digest": "66e50044a635127fd1e0aadaf7600b275e93d2597388d17def4ae261a8e776f4",
+      "hash32BE": 1726283844,
+      "tag": [
+        8,
+        8,
+        10,
+        14,
+        13,
+        8,
+        7,
+        0
+      ]
+    },
+    {
+      "packet": {
+        "kind": 1,
+        "source": 1,
+        "version": 2,
+        "actor": 2,
+        "event": 1,
+        "seq": 3,
+        "tree": [
+          "verify",
+          [
+            "fault"
+          ]
+        ]
+      },
+      "frame": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        3,
+        11,
+        13,
+        1,
+        7,
+        0,
+        13,
+        13,
+        13,
+        4,
+        0
+      ],
+      "digest": "2365cb4ecea984d0ce00274fb3cf2b3987cfcb68fe83bf9900d62ae43c09aa6e",
+      "hash32BE": 593873742,
+      "tag": [
+        9,
+        7,
+        0,
+        8,
+        4,
+        10,
+        1,
+        12
+      ]
+    },
+    {
+      "packet": {
+        "kind": 0,
+        "source": 1,
+        "version": 1,
+        "actor": 9,
+        "event": 6,
+        "seq": 15,
+        "tree": [
+          "verify",
+          [
+            "fault"
+          ]
+        ]
+      },
+      "frame": [
+        0,
+        1,
+        1,
+        9,
+        6,
+        15,
+        7,
+        12,
+        1,
+        7,
+        0,
+        13,
+        13,
+        13,
+        4,
+        0
+      ],
+      "digest": "424bb97f5c8e83ee49f8c73dce669c565a15b112d765339a91b0d07c92f1f00f",
+      "hash32BE": 1112258943,
+      "tag": [
+        11,
+        14,
+        16,
+        1,
+        6,
+        1,
+        7,
+        12
+      ]
+    },
+    {
+      "packet": {
+        "kind": 0,
+        "source": 1,
+        "version": 2,
+        "actor": 5,
+        "event": 9,
+        "seq": 16,
+        "tree": [
+          "verify",
+          [
+            "fault"
+          ]
+        ]
+      },
+      "frame": [
+        0,
+        1,
+        2,
+        5,
+        9,
+        16,
+        7,
+        11,
+        1,
+        7,
+        0,
+        13,
+        13,
+        13,
+        4,
+        0
+      ],
+      "digest": "02fe14d31c8a435d875b513b924310bccb7fd36807e92d6fc4f04cbc638a9372",
+      "hash32BE": 50205907,
+      "tag": [
+        11,
+        14,
+        16,
+        1,
+        6,
+        1,
+        7,
+        12
+      ]
+    }
+  ]
+}
