@@ -1,0 +1,72 @@
+{
+  "schema": "mhac-promotion-ledger-v1",
+  "date": "2026-11-25",
+  "base": "495a98ca12bae467a507031f04931aa4254b1866",
+  "issue": 607,
+  "records": [
+    {
+      "pr": 443,
+      "issue": 442,
+      "head": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+      "ci": 45690234347,
+      "disposition": "HOLD",
+      "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified"
+    },
+    {
+      "pr": 453,
+      "issue": 452,
+      "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
+      "ci": 45685466346,
+      "disposition": "UNASSESSED"
+    },
+    {
+      "pr": 449,
+      "issue": 448,
+      "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
+      "ci": 45683269989,
+      "disposition": "UNASSESSED"
+    },
+    {
+      "pr": 457,
+      "issue": 456,
+      "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
+      "ci": 45687855197,
+      "disposition": "UNASSESSED"
+    },
+    {
+      "pr": 513,
+      "issue": 512,
+      "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
+      "ci": 45686454676,
+      "disposition": "UNASSESSED"
+    }
+  ],
+  "ciScope": "Research integrity workflow completed successfully at each pinned head; not runtime or scientific acceptance.",
+  "batch": {
+    "id": "OBS-AFFINE-001",
+    "disposition": "QUALIFIED FOR OWNER REVIEW",
+    "sourcePR": 443,
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/",
+    "blobs": {
+      "core.js": "47938c769604ae56a1f8cb92e5d4ccc3e20f8d59",
+      "index.html": "5ee12f884479425acf8d3137a1974ff6df9c8cb4"
+    },
+    "nativeNode": "22.16.0",
+    "nativeAssertions": 1036,
+    "oracleRows": 1152,
+    "conditions": 288,
+    "receiptSha256": "bf7befcceafa98161cd13651a31cb3e9921fc1b07f577d600e6a4afc35cac1f8",
+    "chromium": "144.0.7559.96",
+    "browserMode": "real headless DOM with verified core script inlined into verified HTML as test fixture; file navigation blocked by administrator",
+    "browserControls": "initial table; no autoplay source; two WAV downloads; fixed-frame recompute; JSON export; self-test; invalid input; zero page errors",
+    "wavSha256": "dd6f445ee7276f08d44417192645f82d3072e6704e3911e8c4dde47b7ad7d7e1",
+    "peakPCM16": 2962,
+    "limitations": [
+      "Only two self-contained files; 23 other files omitted from initial batch and retained upstream; no phase or selective-transfer reproduction yet",
+      "Git DNS failure; connector transfer verified via Git blob identity",
+      "Ordinary file:// load, physical audition, Windows execution, independent human review and full repository native validation unverified",
+      "No owner approval or merge",
+      "No new license granted"
+    ]
+  }
+}
