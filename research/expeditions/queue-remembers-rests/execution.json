@@ -1,0 +1,292 @@
+{
+  "census": {
+    "words": 4720,
+    "cap_checks": 16314,
+    "inventory_fibres": 226,
+    "histogram_fibres": 157,
+    "profiles": [
+      {
+        "n": 2,
+        "words": 2,
+        "inventory_fibres": 1,
+        "long_run_histogram_fibres": 1
+      },
+      {
+        "n": 3,
+        "words": 3,
+        "inventory_fibres": 1,
+        "long_run_histogram_fibres": 1
+      },
+      {
+        "n": 4,
+        "words": 10,
+        "inventory_fibres": 3,
+        "long_run_histogram_fibres": 4
+      },
+      {
+        "n": 5,
+        "words": 15,
+        "inventory_fibres": 3,
+        "long_run_histogram_fibres": 4
+      },
+      {
+        "n": 6,
+        "words": 41,
+        "inventory_fibres": 7,
+        "long_run_histogram_fibres": 9
+      },
+      {
+        "n": 7,
+        "words": 63,
+        "inventory_fibres": 8,
+        "long_run_histogram_fibres": 9
+      },
+      {
+        "n": 8,
+        "words": 162,
+        "inventory_fibres": 17,
+        "long_run_histogram_fibres": 17
+      },
+      {
+        "n": 9,
+        "words": 255,
+        "inventory_fibres": 20,
+        "long_run_histogram_fibres": 17
+      },
+      {
+        "n": 10,
+        "words": 637,
+        "inventory_fibres": 37,
+        "long_run_histogram_fibres": 27
+      },
+      {
+        "n": 11,
+        "words": 1023,
+        "inventory_fibres": 46,
+        "long_run_histogram_fibres": 27
+      },
+      {
+        "n": 12,
+        "words": 2509,
+        "inventory_fibres": 83,
+        "long_run_histogram_fibres": 41
+      }
+    ]
+  },
+  "reduction": {
+    "profiles": 31,
+    "yes": 26,
+    "no": 5,
+    "orderings": 15465,
+    "examples": [
+      {
+        "items": [
+          4,
+          4,
+          4,
+          6,
+          6,
+          6
+        ],
+        "B": 15,
+        "a": 1,
+        "minimum": 17,
+        "partition": false
+      },
+      {
+        "items": [
+          4,
+          4,
+          4,
+          6,
+          6,
+          6
+        ],
+        "B": 15,
+        "a": 2,
+        "minimum": 18,
+        "partition": false
+      },
+      {
+        "items": [
+          4,
+          4,
+          4,
+          6,
+          6,
+          6
+        ],
+        "B": 15,
+        "a": 4,
+        "minimum": 20,
+        "partition": false
+      },
+      {
+        "items": [
+          4,
+          4,
+          5,
+          5,
+          6,
+          6
+        ],
+        "B": 15,
+        "a": 1,
+        "minimum": 16,
+        "partition": true
+      },
+      {
+        "items": [
+          4,
+          4,
+          5,
+          5,
+          6,
+          6
+        ],
+        "B": 15,
+        "a": 2,
+        "minimum": 17,
+        "partition": true
+      },
+      {
+        "items": [
+          4,
+          4,
+          5,
+          5,
+          6,
+          6
+        ],
+        "B": 15,
+        "a": 4,
+        "minimum": 19,
+        "partition": true
+      }
+    ]
+  },
+  "witness": {
+    "good": {
+      "word": "111100001111000011001100",
+      "trace": [
+        1,
+        2,
+        3,
+        4,
+        3,
+        2,
+        1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        3,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "loss": 0,
+      "peak": 4,
+      "capped": {
+        "trace": [
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "loss": 0,
+        "peak": 4
+      }
+    },
+    "bad": {
+      "word": "111100111100110000110000",
+      "trace": [
+        1,
+        2,
+        3,
+        4,
+        3,
+        2,
+        3,
+        4,
+        5,
+        6,
+        5,
+        4,
+        5,
+        6,
+        5,
+        4,
+        3,
+        2,
+        3,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "loss": 0,
+      "peak": 6,
+      "capped": {
+        "trace": [
+          1,
+          2,
+          3,
+          4,
+          3,
+          2,
+          3,
+          4,
+          4,
+          4,
+          3,
+          2,
+          3,
+          4,
+          3,
+          2,
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0,
+          0
+        ],
+        "loss": 2,
+        "peak": 4
+      }
+    }
+  }
+}
