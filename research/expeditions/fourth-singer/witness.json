@@ -1,0 +1,123 @@
+{
+  "profiles": [
+    {
+      "m": 3,
+      "r": 2,
+      "k": 3,
+      "simple": false,
+      "multisets": 120,
+      "fibres": 120,
+      "ambiguous": 0,
+      "max_fibre": 1
+    },
+    {
+      "m": 3,
+      "r": 2,
+      "k": 4,
+      "simple": false,
+      "multisets": 330,
+      "fibres": 329,
+      "ambiguous": 1,
+      "max_fibre": 2
+    },
+    {
+      "m": 4,
+      "r": 2,
+      "k": 3,
+      "simple": false,
+      "multisets": 816,
+      "fibres": 816,
+      "ambiguous": 0,
+      "max_fibre": 1
+    },
+    {
+      "m": 4,
+      "r": 2,
+      "k": 4,
+      "simple": false,
+      "multisets": 3876,
+      "fibres": 3856,
+      "ambiguous": 20,
+      "max_fibre": 2
+    },
+    {
+      "m": 5,
+      "r": 2,
+      "k": 3,
+      "simple": false,
+      "multisets": 5984,
+      "fibres": 5984,
+      "ambiguous": 0,
+      "max_fibre": 1
+    },
+    {
+      "m": 5,
+      "r": 2,
+      "k": 4,
+      "simple": false,
+      "multisets": 52360,
+      "fibres": 52100,
+      "ambiguous": 260,
+      "max_fibre": 2
+    },
+    {
+      "m": 4,
+      "r": 3,
+      "k": 8,
+      "simple": true,
+      "multisets": 12870,
+      "fibres": 12869,
+      "ambiguous": 1,
+      "max_fibre": 2
+    }
+  ],
+  "audio": {
+    "even-raw": {
+      "counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sha256": "18105668d94b838d0469babd1de3897dbd9fabd2580d1ee6066da30797ce88a5"
+    },
+    "even-repaired": {
+      "counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0
+      ],
+      "sha256": "a9cc8888cf5a618ebb74d727c2f062307b00364f754ecd89ea7b0cbf4d2d1210"
+    },
+    "odd-raw": {
+      "counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "sha256": "18105668d94b838d0469babd1de3897dbd9fabd2580d1ee6066da30797ce88a5"
+    },
+    "odd-repaired": {
+      "counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        4
+      ],
+      "sha256": "9115923cb8f78aff92e2ab0016be71bcf7472fa408f98acc0db281e1f25daca0"
+    }
+  },
+  "status": "pass"
+}
