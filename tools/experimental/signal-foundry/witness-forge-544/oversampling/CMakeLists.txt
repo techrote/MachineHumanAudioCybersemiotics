@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(WitnessForgeOversampling LANGUAGES CXX)
+add_executable(oversampling_test test.cpp)
+target_compile_features(oversampling_test PRIVATE cxx_std_17)
+enable_testing()
+add_test(NAME oversampling_native COMMAND oversampling_test)
