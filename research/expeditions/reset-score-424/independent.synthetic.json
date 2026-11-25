@@ -1,0 +1,92 @@
+{
+  "oracle": [
+    {
+      "capacity": 1,
+      "profiles": 2,
+      "visited": 6,
+      "min": 2,
+      "max": 2
+    },
+    {
+      "capacity": 2,
+      "profiles": 4,
+      "visited": 19,
+      "min": 4,
+      "max": 4
+    },
+    {
+      "capacity": 3,
+      "profiles": 8,
+      "visited": 74,
+      "min": 6,
+      "max": 8
+    },
+    {
+      "capacity": 4,
+      "profiles": 16,
+      "visited": 211,
+      "min": 8,
+      "max": 12
+    },
+    {
+      "capacity": 5,
+      "profiles": 32,
+      "visited": 642,
+      "min": 10,
+      "max": 18
+    },
+    {
+      "capacity": 6,
+      "profiles": 64,
+      "visited": 1667,
+      "min": 12,
+      "max": 24
+    },
+    {
+      "capacity": 7,
+      "profiles": 128,
+      "visited": 4482,
+      "min": 14,
+      "max": 32
+    }
+  ],
+  "ascending_word": "+-+-+-+-+-+-+-+-+-+-+-+---------++++++++",
+  "alternating_word": "++++--------+++++++------+++++----+++--+",
+  "ascending_final": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "alternating_final": [
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4
+  ],
+  "convergence_tick": 12,
+  "audio": [
+    {
+      "file": "same-input-different-score.wav",
+      "frames": 60800,
+      "rate": 16000,
+      "peak_pcm": 26213,
+      "sha256": "b6828dce11573486e43bb6a1e026e48e7a654178da863b3bdab688111dc6917c"
+    },
+    {
+      "file": "forgetting-in-stereo.wav",
+      "frames": 60800,
+      "rate": 16000,
+      "peak_pcm": 26213,
+      "sha256": "ad277548469050676edf86992352bca306e51fa1c203d19f3236f050f2a1ef27"
+    }
+  ]
+}

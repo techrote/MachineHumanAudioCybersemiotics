@@ -1,0 +1,121 @@
+{
+  "words": 8191,
+  "images": 65528,
+  "profiles": 254,
+  "sparse": 6527,
+  "bfsStates": 7101,
+  "invalid": 6,
+  "bfsRows": [
+    {
+      "R": 1,
+      "profiles": 2,
+      "min": 2,
+      "max": 2,
+      "states": 6
+    },
+    {
+      "R": 2,
+      "profiles": 4,
+      "min": 4,
+      "max": 4,
+      "states": 19
+    },
+    {
+      "R": 3,
+      "profiles": 8,
+      "min": 6,
+      "max": 8,
+      "states": 74
+    },
+    {
+      "R": 4,
+      "profiles": 16,
+      "min": 8,
+      "max": 12,
+      "states": 211
+    },
+    {
+      "R": 5,
+      "profiles": 32,
+      "min": 10,
+      "max": 18,
+      "states": 642
+    },
+    {
+      "R": 6,
+      "profiles": 64,
+      "min": 12,
+      "max": 24,
+      "states": 1667
+    },
+    {
+      "R": 7,
+      "profiles": 128,
+      "min": 14,
+      "max": 32,
+      "states": 4482
+    }
+  ],
+  "witnesses": {
+    "ascending": {
+      "word": "--------++++++++",
+      "length": 16,
+      "targets": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "recordDirections": "++++++++"
+    },
+    "alternating": {
+      "word": "++++--------+++++++------+++++----+++--+",
+      "length": 40,
+      "targets": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4,
+        4
+      ],
+      "recordDirections": "+-+-+-+-"
+    },
+    "sparse": {
+      "word": "----++++++++-------+++++---+",
+      "length": 28,
+      "targets": [
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        3,
+        4
+      ],
+      "recordDirections": "+--++--+"
+    },
+    "reverse": {
+      "word": "----++++++++-------++++++-----++++---++-",
+      "length": 40,
+      "targets": [
+        0,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        4
+      ],
+      "recordDirections": "-+-+-+-+"
+    }
+  }
+}
