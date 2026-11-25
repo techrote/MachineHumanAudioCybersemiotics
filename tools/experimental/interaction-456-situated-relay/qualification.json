@@ -1,0 +1,574 @@
+{
+  "schema": "situated-relay-qualification-v1",
+  "assertions": 479,
+  "totals": {
+    "cases": 64,
+    "bound": {
+      "accepted": 4,
+      "wrong": 0,
+      "rejectedValid": 0
+    },
+    "latest": {
+      "accepted": 64,
+      "wrong": 62,
+      "rejectedValid": 2
+    }
+  },
+  "peak": 2918,
+  "witness": {
+    "mask": 1,
+    "inputs": [
+      {
+        "op": "publish",
+        "message": {
+          "id": "P",
+          "version": 1,
+          "actor": "operator",
+          "priority": 0,
+          "scope": "request",
+          "deadline": 12,
+          "content": "fault",
+          "source": "pump"
+        }
+      },
+      {
+        "op": "tick"
+      },
+      {
+        "op": "tick"
+      },
+      {
+        "op": "publish",
+        "message": {
+          "id": "F",
+          "version": 1,
+          "actor": "relay",
+          "priority": 2,
+          "scope": "question",
+          "deadline": 12,
+          "content": "fault",
+          "source": "fan"
+        }
+      },
+      {
+        "op": "tick"
+      },
+      {
+        "op": "tick"
+      },
+      {
+        "op": "respond",
+        "kind": "ack",
+        "actor": "operator",
+        "receipt": "r1"
+      }
+    ],
+    "trace": [
+      {
+        "seq": 1,
+        "t": 0,
+        "type": "publish",
+        "message": {
+          "id": "P",
+          "version": 1,
+          "actor": "operator",
+          "priority": 0,
+          "scope": "request",
+          "deadline": 12,
+          "content": "fault",
+          "source": "pump"
+        }
+      },
+      {
+        "seq": 2,
+        "t": 0,
+        "type": "start",
+        "key": "P@1",
+        "repair": false
+      },
+      {
+        "seq": 3,
+        "t": 1,
+        "type": "complete",
+        "receipt": {
+          "id": "r1",
+          "key": "P@1",
+          "message": {
+            "id": "P",
+            "version": 1,
+            "actor": "operator",
+            "priority": 0,
+            "scope": "request",
+            "deadline": 12,
+            "content": "fault",
+            "source": "pump"
+          },
+          "completed": 2,
+          "repair": false
+        }
+      },
+      {
+        "seq": 4,
+        "t": 2,
+        "type": "publish",
+        "message": {
+          "id": "F",
+          "version": 1,
+          "actor": "relay",
+          "priority": 2,
+          "scope": "question",
+          "deadline": 12,
+          "content": "fault",
+          "source": "fan"
+        }
+      },
+      {
+        "seq": 5,
+        "t": 2,
+        "type": "start",
+        "key": "F@1",
+        "repair": false
+      },
+      {
+        "seq": 6,
+        "t": 3,
+        "type": "complete",
+        "receipt": {
+          "id": "r2",
+          "key": "F@1",
+          "message": {
+            "id": "F",
+            "version": 1,
+            "actor": "relay",
+            "priority": 2,
+            "scope": "question",
+            "deadline": 12,
+            "content": "fault",
+            "source": "fan"
+          },
+          "completed": 4,
+          "repair": false
+        }
+      },
+      {
+        "seq": 7,
+        "t": 4,
+        "type": "response",
+        "kind": "ack",
+        "actor": "operator",
+        "requested": "r1",
+        "target": "F@1",
+        "accepted": true,
+        "reason": "latest-id-only"
+      }
+    ]
+  },
+  "interruptionTrace": [
+    {
+      "seq": 1,
+      "t": 0,
+      "type": "publish",
+      "message": {
+        "id": "P",
+        "version": 1,
+        "actor": "operator",
+        "priority": 0,
+        "scope": "request",
+        "deadline": 20,
+        "content": "fault",
+        "source": "pump"
+      }
+    },
+    {
+      "seq": 2,
+      "t": 0,
+      "type": "start",
+      "key": "P@1",
+      "repair": false
+    },
+    {
+      "seq": 3,
+      "t": 1,
+      "type": "publish",
+      "message": {
+        "id": "F",
+        "version": 1,
+        "actor": "relay",
+        "priority": 2,
+        "scope": "question",
+        "deadline": 20,
+        "content": "fault",
+        "source": "fan"
+      }
+    },
+    {
+      "seq": 4,
+      "t": 1,
+      "type": "interrupted",
+      "key": "P@1",
+      "reason": "priority"
+    },
+    {
+      "seq": 5,
+      "t": 1,
+      "type": "start",
+      "key": "F@1",
+      "repair": false
+    },
+    {
+      "seq": 6,
+      "t": 2,
+      "type": "complete",
+      "receipt": {
+        "id": "r1",
+        "key": "F@1",
+        "message": {
+          "id": "F",
+          "version": 1,
+          "actor": "relay",
+          "priority": 2,
+          "scope": "question",
+          "deadline": 20,
+          "content": "fault",
+          "source": "fan"
+        },
+        "completed": 3,
+        "repair": false
+      }
+    },
+    {
+      "seq": 7,
+      "t": 3,
+      "type": "start",
+      "key": "P@1",
+      "repair": false
+    },
+    {
+      "seq": 8,
+      "t": 4,
+      "type": "complete",
+      "receipt": {
+        "id": "r2",
+        "key": "P@1",
+        "message": {
+          "id": "P",
+          "version": 1,
+          "actor": "operator",
+          "priority": 0,
+          "scope": "request",
+          "deadline": 20,
+          "content": "fault",
+          "source": "pump"
+        },
+        "completed": 5,
+        "repair": false
+      }
+    },
+    {
+      "seq": 9,
+      "t": 5,
+      "type": "response",
+      "kind": "ack",
+      "actor": "relay",
+      "requested": "r2",
+      "target": "P@1",
+      "accepted": false,
+      "reason": "unbound-or-stale"
+    },
+    {
+      "seq": 10,
+      "t": 5,
+      "type": "response",
+      "kind": "repair",
+      "actor": "operator",
+      "requested": "r2",
+      "target": "P@1",
+      "accepted": true,
+      "reason": "bounded-repair"
+    },
+    {
+      "seq": 11,
+      "t": 5,
+      "type": "response",
+      "kind": "repair",
+      "actor": "operator",
+      "requested": "r2",
+      "target": "P@1",
+      "accepted": false,
+      "reason": "budget-or-deadline"
+    },
+    {
+      "seq": 12,
+      "t": 5,
+      "type": "start",
+      "key": "P@1",
+      "repair": true
+    },
+    {
+      "seq": 13,
+      "t": 6,
+      "type": "complete",
+      "receipt": {
+        "id": "r3",
+        "key": "P@1",
+        "message": {
+          "id": "P",
+          "version": 1,
+          "actor": "operator",
+          "priority": 0,
+          "scope": "request",
+          "deadline": 20,
+          "content": "fault",
+          "source": "pump",
+          "ack": false,
+          "repairUsed": false,
+          "action": "unknown",
+          "resolved": false
+        },
+        "completed": 7,
+        "repair": true
+      }
+    },
+    {
+      "seq": 14,
+      "t": 7,
+      "type": "response",
+      "kind": "ack",
+      "actor": "operator",
+      "requested": "r3",
+      "target": "P@1",
+      "accepted": true,
+      "reason": "bound-receipt"
+    },
+    {
+      "seq": 15,
+      "t": 7,
+      "type": "response",
+      "kind": "action",
+      "actor": "operator",
+      "requested": "r3",
+      "target": "P@1",
+      "accepted": true,
+      "reason": "explicit-fictional-action"
+    },
+    {
+      "seq": 16,
+      "t": 7,
+      "type": "resolution",
+      "key": "P@1",
+      "evidence": "synthetic-world-clear"
+    },
+    {
+      "seq": 17,
+      "t": 7,
+      "type": "response",
+      "kind": "ack",
+      "actor": "relay",
+      "requested": "r1",
+      "target": "F@1",
+      "accepted": true,
+      "reason": "bound-receipt"
+    },
+    {
+      "seq": 18,
+      "t": 7,
+      "type": "response",
+      "kind": "action",
+      "actor": "relay",
+      "requested": "r1",
+      "target": "F@1",
+      "accepted": false,
+      "reason": "scope-or-ack"
+    },
+    {
+      "seq": 19,
+      "t": 7,
+      "type": "superseded",
+      "key": "P@1",
+      "replacement": "P@2"
+    },
+    {
+      "seq": 20,
+      "t": 7,
+      "type": "publish",
+      "message": {
+        "id": "P",
+        "version": 2,
+        "actor": "relay",
+        "priority": 0,
+        "scope": "quotation",
+        "deadline": 20,
+        "content": "fault",
+        "source": "pump"
+      }
+    },
+    {
+      "seq": 21,
+      "t": 7,
+      "type": "response",
+      "kind": "ack",
+      "actor": "operator",
+      "requested": "r3",
+      "target": "P@1",
+      "accepted": false,
+      "reason": "unbound-or-stale"
+    },
+    {
+      "seq": 22,
+      "t": 7,
+      "type": "start",
+      "key": "P@2",
+      "repair": false
+    },
+    {
+      "seq": 23,
+      "t": 8,
+      "type": "superseded",
+      "key": "P@2",
+      "replacement": "P@3"
+    },
+    {
+      "seq": 24,
+      "t": 8,
+      "type": "interrupted",
+      "key": "P@2",
+      "reason": "revision"
+    },
+    {
+      "seq": 25,
+      "t": 8,
+      "type": "publish",
+      "message": {
+        "id": "P",
+        "version": 3,
+        "actor": "relay",
+        "priority": 0,
+        "scope": "report",
+        "deadline": 20,
+        "content": "fault",
+        "source": "pump"
+      }
+    },
+    {
+      "seq": 26,
+      "t": 8,
+      "type": "start",
+      "key": "P@3",
+      "repair": false
+    },
+    {
+      "seq": 27,
+      "t": 9,
+      "type": "complete",
+      "receipt": {
+        "id": "r4",
+        "key": "P@3",
+        "message": {
+          "id": "P",
+          "version": 3,
+          "actor": "relay",
+          "priority": 0,
+          "scope": "report",
+          "deadline": 20,
+          "content": "fault",
+          "source": "pump"
+        },
+        "completed": 10,
+        "repair": false
+      }
+    }
+  ],
+  "segments": [
+    {
+      "t": 0,
+      "key": "P@1",
+      "source": "pump",
+      "scope": "request",
+      "content": "fault",
+      "part": 0,
+      "repair": false
+    },
+    {
+      "t": 1,
+      "key": "F@1",
+      "source": "fan",
+      "scope": "question",
+      "content": "fault",
+      "part": 0,
+      "repair": false
+    },
+    {
+      "t": 2,
+      "key": "F@1",
+      "source": "fan",
+      "scope": "question",
+      "content": "fault",
+      "part": 1,
+      "repair": false
+    },
+    {
+      "t": 3,
+      "key": "P@1",
+      "source": "pump",
+      "scope": "request",
+      "content": "fault",
+      "part": 0,
+      "repair": false
+    },
+    {
+      "t": 4,
+      "key": "P@1",
+      "source": "pump",
+      "scope": "request",
+      "content": "fault",
+      "part": 1,
+      "repair": false
+    },
+    {
+      "t": 5,
+      "key": "P@1",
+      "source": "pump",
+      "scope": "request",
+      "content": "fault",
+      "part": 0,
+      "repair": true
+    },
+    {
+      "t": 6,
+      "key": "P@1",
+      "source": "pump",
+      "scope": "request",
+      "content": "fault",
+      "part": 1,
+      "repair": true
+    },
+    {
+      "t": 7,
+      "key": "P@2",
+      "source": "pump",
+      "scope": "quotation",
+      "content": "fault",
+      "part": 0,
+      "repair": false
+    },
+    {
+      "t": 8,
+      "key": "P@3",
+      "source": "pump",
+      "scope": "report",
+      "content": "fault",
+      "part": 0,
+      "repair": false
+    },
+    {
+      "t": 9,
+      "key": "P@3",
+      "source": "pump",
+      "scope": "report",
+      "content": "fault",
+      "part": 1,
+      "repair": false
+    }
+  ],
+  "limits": "scripted events, perfect symbolic receipts, no human or waveform decoding"
+}
