@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(PrismLive LANGUAGES CXX)
+enable_testing()
+add_executable(prism_live_test test.cpp)
+target_compile_features(prism_live_test PRIVATE cxx_std_17)
+add_test(NAME prism_live COMMAND prism_live_test)
+add_executable(prism_live_demo demo.cpp)
+target_compile_features(prism_live_demo PRIVATE cxx_std_17)
