@@ -1,0 +1,63 @@
+# The Score That Can Be Counterfeited Without a Wrong Note
+
+**Expedition #471 — 25 November 2026.** Exploratory interpretation, original artistic score and synthetic mathematics. This is not an accepted Track G extraction, an empirical study or a proposed authenticity standard. AI-assisted writing and source consultation by one GPT-6.2 assistant.
+
+## 1. The unplayed alternative
+
+A conductor raises a numbered card. A machine plays the corresponding phrase. An apparently identical machine plays a phrase from a tape prepared before the card was raised. By accident, the two performances agree. If the concert is a recital of phrases, both may be perfectly satisfactory. If it is an exercise in responsiveness to an independently made choice, the tape has not executed the exercise. If it is knowingly advertised as doing so, its presentation is misleading. The title's counterfeit is conditional upon that explicit contract, not a condemnation of recordings, playback artists or composed music.
+
+What is the object being preserved: the sequence of notes, the repertoire of possible sequences, the rule connecting circumstances to notes, the time at which decisions were taken, or the fact that a particular person made those decisions? They are five different objects. A museum can preserve the first two and lose the third. A software port can preserve the third but no longer support the fourth or fifth.
+
+An open score can be read as a distribution of decisions rather than a distribution of notes. The decisions that do not happen today may matter as much as the ones that do.
+
+## 2. Source encounters, with reading limits
+
+- **Nelson Goodman**, *Languages of Art*, 2nd ed. (1976), via the [Stanford Encyclopedia of Philosophy, Goodman's Aesthetics, §4.3](https://plato.stanford.edu/entries/goodman-aesthetics/#ConIdeWorArt). Consulted the secondary exposition of the autographic/allographic distinction, with its references to pp. 113, 183, 186–190, 210–212. Goodman separates work identity from artistic merit and acknowledges departures from ordinary usage; in his technical treatment a notation can specify compliance conditions for performances. The primary book was not read. The entry also discusses Cage's alternative notation and historically projected structures; do not infer that all music must be individuated by a conventional pitch score. Our extension is a hypothetical response contract, not an argument Goodman himself made.
+- **Lydia Goehr**, [*The Imaginary Museum of Musical Works*, 2007 edition, publisher abstract](https://doi.org/10.1093/oso/9780195324785.001.0001). Consulted abstract only. Goehr's historical thesis locates the crystallization of the work concept around 1800 and connects it to the norms of classical musical practice. Treat this as her thesis rather than a settled chronology or a general statement about non-European musics. The point for us: a culture's criteria of fidelity are not inevitably identical to its notation.
+- **Earle Brown**, [Earle Brown Music Foundation biography, opening paragraph](https://earle-brown.org/bio/) and [*Available Forms I* (1961), Duration, Program Notes and More Information](https://earle-brown.org/work/available-forms-i/). Institutional account, not a close reading of the score. The foundation describes written events alongside conductor cues determining order and phrasing during performance. Open form is substantial prior art for separating materials from their arrangement. This expedition does not reproduce Brown's score or assume that every performance must choose in real time.
+- **TOPLAP**, [original draft manifesto, demands, preferences and acknowledgements](https://toplap.org/wiki/ManifestoDraft.html). Primary movement text: it advocates making algorithms visible and values extemporaneous programming, while recognizing gradations of interaction. It is a manifesto, not an experiment or a universally binding definition of music.
+- **Alan F. Blackwell, Emma Cocker, Geoff Cox, Alex McLean and Thor Magnusson**, [*Live Coding: A User's Manual* (MIT Press, 2022), historical discussion immediately following the reproduced manifesto, notes 25–29](https://livecodingbook.toplap.org/book/). Passage-level reading of the manifesto discussion, not the complete book. The authors describe disagreement about what screen visibility accomplishes and the provisional, partly parodic character of the manifesto. Counterpoint: a visible program may facilitate understanding without certifying how the sound was generated; a hidden program may be genuinely responsive. Transparency and responsiveness must not be collapsed.
+
+Interpretive synthesis: Goodman raises the question of what belongs to a work's identity; Goehr asks how such criteria became normative; Brown supplies a practice in which performers receive consequential decisions; TOPLAP makes some aspects of the process visible. None of these independently entails our finite mathematical model. The model supplies a small, inspectable distinction, not a proof of the historical or philosophical claims.
+
+## 3. Exact synthetic construction: the six doors
+
+Let C and R both be the labels 0 through 5. Each response is a distinct four-note phrase consisting of two low and two high notes, in the six possible orders. At the start of a phrase a cue is supplied, and a deterministic time-invariant binding p selects a phrase. In the restricted family p is a permutation. The intended contract is p(i)=i.
+
+Every one of the 6! = 720 permutations produces the same unordered repertoire. Given a uniform cue distribution, every response also has probability 1/6. These are exact equalities, not judgments about auditory similarity. For the particular family, a cue sequence visiting every label exactly once produces every response exactly once, regardless of binding.
+
+A correct binding and a transposition of labels 4 and 5 agree exactly for cues 0–3. If the audience observes these four performances only, even with known cues, it has no evidence of the swap. A full repertoire demonstration with no cue labels also cannot resolve it.
+
+After k distinct successful cue tests, the remaining permutations number (6-k)!, because the tested labels are fixed and all remaining labels can be permuted freely. Five distinct tests suffice to establish identity *within this assumed family*; with four or fewer, swapping two untested labels is a counterexample. Repeated testing of one cue adds no new constraints. If the actual binding need not be a permutation, all six are required even for time-invariant deterministic functions: a single untested cue may have an arbitrary wrong response.
+
+The number of bindings with exactly j correct cues is choose(6,j) D(6-j), where D is the derangement count (inclusion-exclusion, D(m)=m! sum_{r=0}^m (-1)^r/r!). For j=0..6 the counts are 265,264,135,40,15,0,1. Exactly five correct cues is impossible in this family. The average correct-cue count under a uniform random permutation is one; it is not a prediction about performers.
+
+An independent uniformly selected prerecorded phrase matches a uniform cue with probability 1/6. A matching phrase proves neither live responsiveness nor human authorship. With independent repeated trials and a fresh uniform cue selected after each tape response has been fixed, the probability of all matches for such a cue-independent tape is (1/6)^k. This does not apply to correlated cues, rehearsal, a tape selected after the cue, dishonest instrumentation or adaptive lookup. Indeed a pre-rendered library selected correctly after each cue is responsive by this contract; it does not have to synthesize audio live.
+
+The oracle exhaustively checks every permutation and every subset of tested cues; its count is compared with factorial predictions, and explicit hidden-transposition witnesses and unrestricted-function witnesses are tested. See [execution receipt](RECEIPT.md) and [oracle](oracle.cjs). Elementary permutation mathematics; no priority claim.
+
+## 4. A recording of an open door
+
+Consider a third machine. It responds to a card using a perfectly ordinary pre-recorded library, indexed at the moment of cue. The live performance has not disappeared: a live decision remains causally relevant. By comparison, an elaborate live algorithm that produces a different random phrase for every performance might be completely unresponsive to the card.
+
+Liveness is therefore not a scalar in this construction. One can compose the timing of selection, generation, parameter editing, human choice and rule revision separately. There is no requirement that all of them be live. Nor should a performer be forced to expose their complete working environment in order to prove artistic legitimacy. A relevant test is narrower than compulsory transparency.
+
+The more interesting art might be the reverse of the original demand: a performance in which an audience member is invited to choose, but whose choices explicitly have no effect until the final movement. Their accumulated sequence is then released as a new score. This is a genuine delayed relationship if disclosed as such. It is not the same as claiming immediate responsiveness. Temporal placement of decision rights is itself a compositional resource.
+
+A score could even ask for two copies of a phrase: first with its cue supplied in advance and then with the cue selected in public. The two may sound identical. The difference is in the disclosed history and the availability of alternatives, not in a spectral property awaiting a sufficiently clever classifier.
+
+## 5. Exaptation: the Contingency Patchbay
+
+Prototype a local software instrument with a phrase bank, cue router, versioned binding table, optional freeze of the binding at phrase start, and a counterfactual audition panel. The six original motifs are sufficient for a first prototype. Preserve raw cue and selected phrase events separately; an audio export is not a provenance export. Allow live lookup, fixed tape, intentionally mismatched routing and deferred cue queue as artist-selected modes. Record what was actually executed rather than inferring it from waveforms.
+
+The artist can mutate the binding without changing any recorded motif. A separate performer may compose the mismatch structure: leave some cue responses intact, exchange others, delay the rest. A useful comparison view renders the same cue through two bindings at one moment; it must not imply the unrealized alternative actually happened.
+
+A future MHAC experiment might present a machine status message selected from a fixed sound vocabulary after a synthetic state event. Compare outcome-only testing, paired cue/response testing and explicit challenge cases. Measure rule comprehension and incorrect attribution of responsiveness, not human authenticity. If ordinary input/output tests already cover all relevant states, no novel interface component is necessary. A false operational message is not acceptable just because it is a valid member of the vocabulary. No live device control is required.
+
+Counterarguments: no finite black-box audit proves an unrestricted stateful implementation; it may behave correctly only in rehearsals. Even a correct lookup can be ethically problematic if its data source was misrepresented. A response contract proves neither artistic merit nor meaningful participation. An audience may prefer a fixed work. The proposal should be abandoned or narrowed wherever the distinction adds burden without an artistic or operational purpose.
+
+[Original score and speculative fiction](SCORE.md).
+
+## Reconciliation and disposition
+
+Base main: 495a98ca12bae467a507031f04931aa4254b1866. Read AGENTS, RAG, programme, runbook, integrity, validation, root and research README; reviewed 100 recent PR titles and 70 open issue results, then targeted searches for joint action, coalition, middle voice, allography, authenticity, live coding, forgery and improvisation. The coalition/credit direction was abandoned when issue #238 (The Silent Coauthor) surfaced. Related #414 concerns reciprocal environmental system identification; #358 concerns rhythmic translation and living archives; #460 concerns source quotation/adoption. This work instead examines a permutation of externally supplied cues over an unchanged repertoire and the aesthetic role of procedural fidelity. This is overlap triage, not proof of novelty. New issue #471 and its empty comment set were read before writing. Only this fresh directory is touched. Frozen protocol, registry, accepted programme stages and shared manifests are unchanged. Draft pending integrator and exact-head CI; no independent review, full source appraisal, actual performance, human study or production software claim.
