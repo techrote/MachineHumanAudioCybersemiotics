@@ -1,0 +1,49 @@
+{
+  "audio_coefficients": {
+    "masked-a": [
+      "1",
+      "2",
+      "5/4",
+      "1/4"
+    ],
+    "masked-b": [
+      "1",
+      "5/2",
+      "2",
+      "1/2"
+    ],
+    "raw-a": [
+      "1",
+      "3",
+      "3",
+      "1"
+    ],
+    "raw-b": [
+      "1",
+      "3",
+      "3",
+      "1"
+    ]
+  },
+  "audio_sha256": {
+    "masked-a": "9b725e72bd4fe7ba9e3af7afb0befc573a405240ab5f3ebdb0fd87b12bd8a7cc",
+    "masked-b": "3b114575ea51002feffc18ec2700763b741ecd021ccc8d3475fb300e674f298b",
+    "raw-a": "799d376f2e03ac271c90b440aa5b272b41d322d310a8273e73f95fc5dfb4e569",
+    "raw-b": "799d376f2e03ac271c90b440aa5b272b41d322d310a8273e73f95fc5dfb4e569"
+  },
+  "baseline_fibres": 302,
+  "dictionary_distance_histogram": {
+    "0": 40,
+    "1": 96,
+    "2": 92,
+    "3": 24,
+    "4": 4
+  },
+  "distinct_row_difference_masks": 4,
+  "histories": 627,
+  "mask_dictionaries": 256,
+  "one_error_one_erasure_decodes": 1200,
+  "ramp_recoveries": 627,
+  "same_baseline_pairs": 395,
+  "signed_recoveries": 193
+}
