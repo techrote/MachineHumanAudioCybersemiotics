@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Native core
         run: |
           cmake -S tools/experimental/instrument-foundry/golden-receipt -B build-core -A x64
@@ -57,8 +58,8 @@ jobs:
           Copy-Item -Recurse $bundles[0].FullName delivery/
           Copy-Item "$env:SDK380/LICENSE.txt" delivery/Steinberg-SDK-LICENSE.txt
           git -C $env:SDK380 submodule status --recursive | Out-File delivery/SDK-GITLINKS.txt -Encoding utf8
-          "source=$env:GITHUB_SHA" | Out-File delivery/BUILD-SOURCE.txt -Encoding utf8
-          git rev-parse HEAD | Out-File delivery/BUILD-SOURCE.txt -Append -Encoding utf8
+          "workflow_ref=$env:GITHUB_SHA" | Out-File delivery/BUILD-SOURCE.txt -Encoding utf8
+          "source=$(git rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Append -Encoding utf8
           Copy-Item tools/experimental/instrument-foundry/golden-receipt/README.md delivery/
           Compress-Archive -Path delivery/* -DestinationPath MHACGoldenReceipt-Windows-x64.zip
       - uses: actions/upload-artifact@v4
