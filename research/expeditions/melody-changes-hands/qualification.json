@@ -1,0 +1,70 @@
+{
+  "profiles": [
+    {
+      "n": 2,
+      "cases": 900,
+      "feasible": 470,
+      "assignments": 618,
+      "checks": 3908,
+      "first_gap": null
+    },
+    {
+      "n": 3,
+      "cases": 1600,
+      "feasible": 954,
+      "assignments": 2338,
+      "checks": 15914,
+      "first_gap": {
+        "x": [
+          0,
+          1,
+          2
+        ],
+        "y": [
+          0,
+          1,
+          3
+        ],
+        "v": 2,
+        "sorted_min": 1,
+        "universal_min": 2
+      }
+    },
+    {
+      "n": 4,
+      "cases": 900,
+      "feasible": 620,
+      "assignments": 3904,
+      "checks": 20347,
+      "first_gap": {
+        "x": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "y": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "v": 2,
+        "sorted_min": 2,
+        "universal_min": 3
+      }
+    }
+  ],
+  "audio": {
+    "rate": 8000,
+    "frames": 8000,
+    "splice": 4000,
+    "sha256": {
+      "cross-stereo": "f935c60fc5f9a94f457208817577baf1ddc34ca113aba8d9360d47a134f0669b",
+      "cross-mono": "1c122065ae6b5f3b430cb1aa88861e5545037afbe6ecee7689daeb8741aadf08",
+      "bounce-stereo": "5d1260334fb07ed7286e52212da5c962c52eb04b65874a0191d0e45a5ddbcd3c",
+      "bounce-mono": "1c122065ae6b5f3b430cb1aa88861e5545037afbe6ecee7689daeb8741aadf08"
+    }
+  },
+  "status": "pass"
+}
