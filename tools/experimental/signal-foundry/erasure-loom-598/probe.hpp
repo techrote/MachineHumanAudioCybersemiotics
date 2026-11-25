@@ -31,7 +31,7 @@ inline std::array<Row,2> probeRows(const Plan& p,double budget,double repair,dou
     b[p.missing[1]]=probe;
     return {a,b};
 }
-struct ProbeParams { Params base{}; double probe=0; };
+struct ProbeParams { Params base{}; double probe=0, edge=0; };
 class ProbeEngine {
     std::array<std::array<Plan,nodes>,4> plans{};
     std::array<Stereo,frames> capture{},dry{},effect{};
@@ -48,7 +48,12 @@ class ProbeEngine {
             // Preserve original arithmetic in the zero-probe endpoint.
             if(latched.probe==0){for(unsigned j=0;j<nodes;++j)v+=w[j]*capture[j*stride+lane][ch];v*=latched.base.repair;}
             else for(unsigned j=0;j<nodes;++j)v+=rows[k][j]*capture[j*stride+lane][ch];
-            effect[p.missing[k]*stride+lane][ch]=clean(v);
+            const auto index=p.missing[k]*stride+lane;
+            if(latched.edge>0){
+                const double a=std::min(1.,double(std::min(lane,stride-1-lane))/(latched.edge*8));
+                v=a*v+(1-a)*capture[index][ch];
+            }
+            effect[index][ch]=clean(v);
         }}
     }
 public:
@@ -62,7 +67,7 @@ public:
         auto& b=p.base;b.separation=std::clamp(b.separation,1u,4u);b.rotation%=nodes;
         b.budget=std::isfinite(b.budget)?std::clamp(b.budget,1.,16.):target.base.budget;
         b.repair=unit(b.repair,target.base.repair);b.wet=unit(b.wet,target.base.wet);b.gain=unit(b.gain,target.base.gain);
-        p.probe=unit(p.probe,target.probe);target=p;
+        p.probe=unit(p.probe,target.probe);p.edge=unit(p.edge,target.edge);target=p;
     }
     void reset() noexcept {capture={};dry={};effect={};pos=0;latched=target;wet=target.base.bypass?0:target.base.wet;gain=target.base.gain;}
     Stereo step(double l,double r) noexcept {
