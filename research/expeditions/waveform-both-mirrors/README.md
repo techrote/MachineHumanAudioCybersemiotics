@@ -49,7 +49,7 @@ Both have the same pointwise squared magnitudes and the same autocorrelation (36
 
 Write a(n) for the m-bit mask with bit j set when d_j(n) is not one. Then
 \[
- x_b[n]=x_0[n](-1)^{a(n)\cdot b}.
+ x_b[n]=x_0[n] * (-1)^{a(n)\cdot b}.
 \]
 The dot product is over F_2. A polarity-invariant pair intensity M_{ij}=(x_b[i]+x_b[j])^2 is equivalent, given the already known squared magnitudes, to measuring the signed product x_b[i]x_b[j]. After removing the known reference polarity, it returns exactly the parity (a(i) XOR a(j)) dot b. This holds for all distinct indices. A zero mask gives no information.
 
