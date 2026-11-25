@@ -27,6 +27,17 @@ int main(){
         e.restore(formal());e.reset(sr);check(e.process(1e99,-1e99)==std::array<double,2>{1.,-1.},"clipping");
         auto p=e.params();State s=encode(p);Params decoded{};check(decode(s,decoded)&&decoded==p,"state");s[0]=0;check(!decode(s,decoded)&&decoded==p,"state header");s=encode(p);s[4]=0;s[5]=0;s[6]=0xc0;s[7]=0x7f;check(!decode(s,decoded)&&decoded==p,"state NaN");check(!e.reset(0),"invalid rate");
     }
+    // Independent-channel negative control, symmetry, impulse/silence and nontrivial state.
+    Forge e;Params patch{.8f,.37f,.23f,.6f,.42f,0.f},decoded{};
+    check(e.restore(patch)&&decode(encode(patch),decoded)&&decoded==patch,"nontrivial state");
+    auto invalid=patch;invalid[Mix]=2;check(!e.restore(invalid)&&e.params()==patch,"transactional restore");
+    e.set(Drive,std::numeric_limits<double>::quiet_NaN());check(e.params()==patch,"invalid automation");
+    e.restore({1,0,0,1,1,0});e.reset(48000);
+    auto x=e.process(.25,.5),y=e.process(.25,-.125);check(x[0]==y[0],"uncoupled channel independence");
+    check(e.process(.5,0.)==std::array<double,2>{.625,0.},"impulse");
+    check(e.process(0.,0.)==std::array<double,2>{0.,0.},"zero tail");
+    e.restore(formal());e.reset(48000);x=e.process(.25,-.5);y=e.process(-.5,.25);check(x[0]==y[1]&&x[1]==y[0],"stereo symmetry");
+    auto xf=e.process(.25f,-.5f);check(double(xf[0])==x[0]&&double(xf[1])==x[1],"float and double dyadic");
     // Same event timeline with different caller partitions and sample types.
     auto render=[](unsigned block,auto type){using T=decltype(type);Forge e;std::vector<std::array<T,2>> out;for(unsigned start=0;start<10000;start+=block)for(unsigned n=start;n<std::min(10000u,start+block);++n){if(n==0)e.set(Drive,1);if(n==127)e.set(Coupling,.2);if(n==1024)e.set(Isolate,1);if(n==3000)e.set(Bypass,1);if(n==4500)e.set(Bypass,0);if(n==6000)e.set(Mix,0);auto y=e.process(T(.4*std::sin(n*.1)),T(.3*std::cos(n*.073)));check(std::isfinite(y[0])&&std::abs(y[0])<=1&&std::abs(y[1])<=1,"bounds");out.push_back(y);}return out;};
     auto d=render(1,0.);auto f=render(1,0.f);for(unsigned b:{7u,64u,257u,1024u}){check(render(b,0.)==d,"double partition");check(render(b,0.f)==f,"float partition");}
