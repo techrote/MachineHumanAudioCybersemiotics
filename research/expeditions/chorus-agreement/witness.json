@@ -1,0 +1,219 @@
+{
+  "audio_sha256": {
+    "independent.wav": "4d117428df150be4343bb69522663be9cf75d142f0ae2fce3885601ea7e3e9de",
+    "shared.wav": "fd806f9dd265b7235cb845614a5f03c1acf585ac74b452ba1312f005be0af6e7"
+  },
+  "direct_deletion_checks": 6141,
+  "joint_frontier": [
+    {
+      "budget": 0,
+      "closed_states": 7,
+      "frontier": {
+        "1": {
+          "length": 4,
+          "word": "baab"
+        },
+        "2": {
+          "length": 4,
+          "word": "baab"
+        },
+        "3": {
+          "length": 4,
+          "word": "baab"
+        }
+      }
+    },
+    {
+      "budget": 1,
+      "closed_states": 27,
+      "frontier": {
+        "1": {
+          "length": 9,
+          "word": "baababaab"
+        },
+        "2": {
+          "length": 9,
+          "word": "baababaab"
+        },
+        "3": {
+          "length": 8,
+          "word": "baabbaab"
+        }
+      }
+    },
+    {
+      "budget": 2,
+      "closed_states": 67,
+      "frontier": {
+        "2": {
+          "length": 14,
+          "word": "baabbaababaabb"
+        },
+        "3": {
+          "length": 12,
+          "word": "baabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 3,
+      "closed_states": 126,
+      "frontier": {
+        "2": {
+          "length": 19,
+          "word": "baabbaabbaababaabbb"
+        },
+        "3": {
+          "length": 16,
+          "word": "baabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 4,
+      "closed_states": 208,
+      "frontier": {
+        "2": {
+          "length": 24,
+          "word": "baabbaabbaabbaababaabbbb"
+        },
+        "3": {
+          "length": 20,
+          "word": "baabbaabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 5,
+      "closed_states": 316,
+      "frontier": {
+        "2": {
+          "length": 29,
+          "word": "baabbaabbaabbaabbaababaabbbbb"
+        },
+        "3": {
+          "length": 24,
+          "word": "baabbaabbaabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 6,
+      "closed_states": 453,
+      "frontier": {
+        "2": {
+          "length": 34,
+          "word": "baabbaabbaabbaabbaabbaababaabbbbbb"
+        },
+        "3": {
+          "length": 28,
+          "word": "baabbaabbaabbaabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 7,
+      "closed_states": 622,
+      "frontier": {
+        "2": {
+          "length": 39,
+          "word": "baabbaabbaabbaabbaabbaabbaababaabbbbbbb"
+        },
+        "3": {
+          "length": 32,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 8,
+      "closed_states": 826,
+      "frontier": {
+        "2": {
+          "length": 44,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaababaabbbbbbbb"
+        },
+        "3": {
+          "length": 36,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 9,
+      "closed_states": 1068,
+      "frontier": {
+        "2": {
+          "length": 49,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaabbaababaabbbbbbbbb"
+        },
+        "3": {
+          "length": 40,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaabbaabbaab"
+        }
+      }
+    },
+    {
+      "budget": 10,
+      "closed_states": 1351,
+      "frontier": {
+        "2": {
+          "length": 54,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaabbaabbaababaabbbbbbbbbb"
+        },
+        "3": {
+          "length": 44,
+          "word": "baabbaabbaabbaabbaabbaabbaabbaabbaabbaabbaab"
+        }
+      }
+    }
+  ],
+  "score_word": "baabbaabbaab",
+  "traces": {
+    "independent": [
+      2,
+      0,
+      1,
+      2,
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "left": [
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      1,
+      2,
+      0
+    ],
+    "shared": [
+      2,
+      0,
+      1,
+      2,
+      0,
+      0,
+      1,
+      2,
+      0,
+      0,
+      1,
+      2,
+      0
+    ]
+  }
+}

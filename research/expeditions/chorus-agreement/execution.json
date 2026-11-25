@@ -1,0 +1,319 @@
+{
+  "model": "synthetic complete deterministic binary automata",
+  "census": [
+    {
+      "n": 2,
+      "automata": 16,
+      "synchronizing": 12,
+      "absorbing": 6,
+      "strongEditOne": 6,
+      "ordinaryNoStrongEditOne": 6
+    },
+    {
+      "n": 3,
+      "automata": 729,
+      "synchronizing": 549,
+      "absorbing": 165,
+      "strongEditOne": 165,
+      "ordinaryNoStrongEditOne": 384
+    }
+  ],
+  "cerny": [
+    {
+      "n": 2,
+      "d": 0,
+      "weak": {
+        "word": "1",
+        "length": 1,
+        "visited": 2
+      },
+      "strong": {
+        "word": "1",
+        "length": 1,
+        "visited": 2
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 2,
+      "d": 1,
+      "weak": {
+        "word": "11",
+        "length": 2,
+        "visited": 3
+      },
+      "strong": {
+        "word": "11",
+        "length": 2,
+        "visited": 4
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 2,
+      "d": 2,
+      "weak": {
+        "word": "111",
+        "length": 3,
+        "visited": 4
+      },
+      "strong": {
+        "word": "111",
+        "length": 3,
+        "visited": 5
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 2,
+      "d": 3,
+      "weak": {
+        "word": "1111",
+        "length": 4,
+        "visited": 5
+      },
+      "strong": {
+        "word": "1111",
+        "length": 4,
+        "visited": 6
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 3,
+      "d": 0,
+      "weak": {
+        "word": "1001",
+        "length": 4,
+        "visited": 5
+      },
+      "strong": {
+        "word": "1001",
+        "length": 4,
+        "visited": 5
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 3,
+      "d": 1,
+      "weak": {
+        "word": "10011001",
+        "length": 8,
+        "visited": 16
+      },
+      "strong": {
+        "word": "100101001",
+        "length": 9,
+        "visited": 13
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 3,
+      "d": 2,
+      "weak": {
+        "word": "100110011001",
+        "length": 12,
+        "visited": 32
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 17
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 3,
+      "d": 3,
+      "weak": {
+        "word": "1001100110011001",
+        "length": 16,
+        "visited": 54
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 21
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 3,
+      "d": 4,
+      "weak": {
+        "word": "10011001100110011001",
+        "length": 20,
+        "visited": 83
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 25
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 3,
+      "d": 5,
+      "weak": {
+        "word": "100110011001100110011001",
+        "length": 24,
+        "visited": 120
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 29
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 3,
+      "d": 6,
+      "weak": {
+        "word": "1001100110011001100110011001",
+        "length": 28,
+        "visited": 166
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 33
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 4,
+      "d": 0,
+      "weak": {
+        "word": "100010001",
+        "length": 9,
+        "visited": 12
+      },
+      "strong": {
+        "word": "100010001",
+        "length": 9,
+        "visited": 12
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 4,
+      "d": 1,
+      "weak": {
+        "word": "1000101001010001",
+        "length": 16,
+        "visited": 91
+      },
+      "strong": {
+        "word": "1000101001010001",
+        "length": 16,
+        "visited": 39
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 4,
+      "d": 2,
+      "weak": {
+        "word": "10001010010101001010001",
+        "length": 23,
+        "visited": 313
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 58
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 4,
+      "d": 3,
+      "weak": {
+        "word": "100010100101010010101001010001",
+        "length": 30,
+        "visited": 673
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 73
+      },
+      "weakUnion": 4
+    },
+    {
+      "n": 5,
+      "d": 0,
+      "weak": {
+        "word": "1000010000100001",
+        "length": 16,
+        "visited": 27
+      },
+      "strong": {
+        "word": "1000010000100001",
+        "length": 16,
+        "visited": 27
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 5,
+      "d": 1,
+      "weak": {
+        "word": "1000010100010100010100001",
+        "length": 25,
+        "visited": 673
+      },
+      "strong": {
+        "word": "1000010100010100010100001",
+        "length": 25,
+        "visited": 112
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 5,
+      "d": 2,
+      "weak": {
+        "word": "1000010100010101001010100010100001",
+        "length": 34,
+        "visited": 4865
+      },
+      "strong": {
+        "impossible": true,
+        "visited": 194
+      },
+      "weakUnion": 3
+    },
+    {
+      "n": 6,
+      "d": 0,
+      "weak": {
+        "word": "1000001000001000001000001",
+        "length": 25,
+        "visited": 58
+      },
+      "strong": {
+        "word": "1000001000001000001000001",
+        "length": 25,
+        "visited": 58
+      },
+      "weakUnion": 1
+    },
+    {
+      "n": 6,
+      "d": 1,
+      "weak": {
+        "word": "100000101000010100001010000101000001",
+        "length": 36,
+        "visited": 6210
+      },
+      "strong": {
+        "word": "100000101000010100001010000101000001",
+        "length": 36,
+        "visited": 313
+      },
+      "weakUnion": 1
+    }
+  ],
+  "directDeletionChecks": 140805,
+  "directEditChecks": 11175,
+  "highBudgetChecks": 561,
+  "threeStateWordChecks": 65535
+}
