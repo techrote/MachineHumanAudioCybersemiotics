@@ -1,0 +1,161 @@
+{
+  "audio": [
+    {
+      "file": "balanced-phase-2.wav",
+      "gap": 5,
+      "hits": [
+        1,
+        2
+      ],
+      "phase": 2,
+      "sha256": "7908777337ff00537f3f8e6c4baaa23d56f48ff18b2fe3cee34299de8281abb9"
+    },
+    {
+      "file": "uneven-phase-2.wav",
+      "gap": 4,
+      "hits": [
+        1,
+        2,
+        3
+      ],
+      "phase": 2,
+      "sha256": "ba5e74ffb0468f760640f39c16a4cbc87bb93542d561d67a5b8b475583c54c5a"
+    },
+    {
+      "file": "balanced-phase-0.wav",
+      "gap": 3,
+      "hits": [
+        0,
+        1,
+        3
+      ],
+      "phase": 0,
+      "sha256": "ffbff6060e110f1887f4a337cc9bd527e7ca4bd89418d91997b2ed88e4e89fa9"
+    },
+    {
+      "file": "uneven-phase-0.wav",
+      "gap": 4,
+      "hits": [
+        1,
+        3
+      ],
+      "phase": 0,
+      "sha256": "77ec5038037c7094f7b8d5e27ca9478c69c77240da8dc5df37ee522f86dbcc9c"
+    }
+  ],
+  "counts": {
+    "balanced_latency_failures": 32,
+    "divisible_density_checks": 24,
+    "duty_budget_profiles": 570,
+    "explicit_deletion_profiles": 3852,
+    "fault_certificates": 110604,
+    "graph_certificates": 98332,
+    "joint_optimum_failures": 0,
+    "mask_window_profiles": 40960,
+    "nondivisible_density_checks": 19,
+    "special_density_checks": 17
+  },
+  "domain": "N=2..11, a=1..N, all masks, e=0..min(2,a-1)",
+  "first_balanced_failures": [
+    [
+      6,
+      4,
+      4,
+      5,
+      4
+    ],
+    [
+      7,
+      4,
+      5,
+      6,
+      5
+    ],
+    [
+      7,
+      5,
+      5,
+      5,
+      4
+    ],
+    [
+      8,
+      4,
+      5,
+      7,
+      6
+    ],
+    [
+      8,
+      5,
+      6,
+      6,
+      5
+    ],
+    [
+      8,
+      6,
+      5,
+      5,
+      4
+    ],
+    [
+      9,
+      4,
+      6,
+      8,
+      7
+    ],
+    [
+      9,
+      5,
+      7,
+      8,
+      7
+    ],
+    [
+      9,
+      6,
+      4,
+      7,
+      6
+    ],
+    [
+      9,
+      6,
+      7,
+      6,
+      5
+    ],
+    [
+      9,
+      7,
+      6,
+      5,
+      4
+    ],
+    [
+      10,
+      4,
+      6,
+      9,
+      8
+    ]
+  ],
+  "six_slot_examples": [
+    [
+      2,
+      [
+        5,
+        6
+      ]
+    ],
+    [
+      2,
+      [
+        4,
+        6
+      ]
+    ]
+  ]
+}
