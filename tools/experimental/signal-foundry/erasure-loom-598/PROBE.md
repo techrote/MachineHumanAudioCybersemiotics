@@ -1,0 +1,19 @@
+# FX-007C — Restored Probe Laboratory
+
+Refs #598 / #320 / #321. Research pin 332e1029b30f20cf3f9eab52ac0b21c65c8688e8, section 2 of research/expeditions/erasure-amplification-320/README.md. This is a direct realization of the redundant single-erasure coefficient law and a creative continuous-audio extension, not a general repair system.
+
+Probe=0 preserves 0.1.0; probe=1 restores the second observation and reconstructs the first with weights -cos(2*pi*4*(j-e)/9). The exact worst-case norm drops from 15.5817 (adjacent pair) to 4.75877 (one remaining erasure), equal to the best separated pair. Intermediate values convexly mix the two bounded row operators. Repair affects synthesized observations only, not the restored direct observation. The bound covers the coefficient row before output clipping, and intermediate modes deliberately admit the second original observation. The first missing sample never contributes to either reconstruction row. Arbitrary audio need not satisfy the periodic degree-three model. No human effect or listening claim.
+
+Host-independent ProbeEngine shares the 144-sample latency, 288-sample tail, independent stereo, 5 ms gain/mix/bypass smoothing, and fixed-size buffers of Erasure Loom. Probe and geometry are latched per frame; discontinuities/aliasing are possible. No new adapter, persistent state or parameter ID in this iteration. The 0.1.0 VST3 is unchanged. Concurrent state access remains unqualified.
+
+## Build and audition
+
+From this directory, run cmake -S . -B build -DCMAKE_BUILD_TYPE=Release; cmake --build build --config Release; ctest --test-dir build -C Release --output-on-failure. Run build/probe_demo (Windows multi-config: build/Release/probe_demo.exe) from a writable directory. Four original PCM16 stereo WAVs: reference (wet 0), absent (probe 0), restored (probe 1), and sweep (0 to 1 to 0). All use adjacent geometry, budget 16, repair 1, gain 1, 48 kHz, four seconds plus tail. For guarded patches use budget 2; repair 0 creates a dropout whose second node is progressively restored by probe.
+
+Local GNU 14.2 Linux x64 Release -Wall -Wextra -Werror CTest 3/3; new probe_test ASan/UBSan PASS. 5,400 row-norm cases; maximum budget excess 1.77636e-15; maximum basis error 2.33147e-15; 53,424 exact legacy paired frames at seven sample rates. Original four WAVs regenerate byte-identically in two local runs. Peaks reference/absent/restored/sweep 0.179978 / 0.26971 / 0.179978 / 0.232794 FS; RMS 0.0707299 / 0.0689067 / 0.0692624 / 0.0690138 FS. Approx 5.14 ms for 10 s offline, not a callback deadline measurement. AI-assisted implementation and same-agent tests.
+
+## Previous binary receipt
+
+PR #599 predecessor e6fa86ae25be1b134eb84820ae167874bcf329ec: Windows workflow 45687471912 completed successfully, artifact 15056338572 exact head, outer SHA256 3e343145074582b9f9d207d12647481e5cfa17c88cfc6246d579eed957d642e8, inner SHA256 cc90a9b45203fe660a148e99b2bf4c1826ccda9c2f9cc874e565bdd2f4d4e742. Recovered ZIP passes integrity, PE x64 DLL, moduleinfo 0.1.0/VST 3.8.0, validator 47 passed/0 failed, no explicit errors. Integrity workflow 45687471683 successful. Copy full MHACErasureLoom.vst3 bundle into C:\Program Files\Common Files\VST3 and rescan; stereo only. Actual DAW audition outstanding.
+
+Official tag v3.8.0_build_66 resolved again to 9fad9770f2ae8542ab1a548a68c1ad1ac690abe0, seven inherited SDK-GITLINKS revisions independently resolved upstream and matched artifact. Local SDK git access DNS-blocked; no substitute. The new laboratory has no SDK requirement. Windows binary is predecessor only, not the new probe lab. Next: integrate probe with backward-compatible state and stable parameter ID, independently qualify host lifecycle and add softened boundaries/timescale. Draft/HOLD; no independent review or scientific acceptance.
