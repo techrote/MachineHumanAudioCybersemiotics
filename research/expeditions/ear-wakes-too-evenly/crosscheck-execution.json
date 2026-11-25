@@ -1,0 +1,50 @@
+{
+  "domain": "N=2..10, all interval lengths, masks and phases; literal forward window search",
+  "counts": {
+    "profiles": 18432,
+    "explicit_window_fault_checks": 49164,
+    "near_bound_graph_checks": 43036,
+    "budgets": 438,
+    "balanced_failures": 20,
+    "joint_optimum_failures": 0
+  },
+  "byN": {
+    "2": {
+      "profiles": 8,
+      "balanced_failures": 0
+    },
+    "3": {
+      "profiles": 24,
+      "balanced_failures": 0
+    },
+    "4": {
+      "profiles": 64,
+      "balanced_failures": 0
+    },
+    "5": {
+      "profiles": 160,
+      "balanced_failures": 0
+    },
+    "6": {
+      "profiles": 384,
+      "balanced_failures": 1
+    },
+    "7": {
+      "profiles": 896,
+      "balanced_failures": 2
+    },
+    "8": {
+      "profiles": 2048,
+      "balanced_failures": 3
+    },
+    "9": {
+      "profiles": 4608,
+      "balanced_failures": 5
+    },
+    "10": {
+      "profiles": 10240,
+      "balanced_failures": 9
+    }
+  },
+  "noncontiguous_pairs_failed": 15
+}
