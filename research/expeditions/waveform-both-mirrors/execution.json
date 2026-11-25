@@ -1,0 +1,233 @@
+{
+  "schema": "mhac-502-exact-v1",
+  "stats": {
+    "family_members": 62,
+    "autocorrelation_cells": 9330,
+    "pointwise_energy_cells": 9330,
+    "pair_parity_checks": 995694,
+    "prefix_profiles": 363,
+    "adjacent_checks": 9268,
+    "sign_census_candidates": 260,
+    "hamming_codewords": 8190,
+    "hamming_fault_receipts": 6104
+  },
+  "rows": [
+    {
+      "m": 1,
+      "N": 3,
+      "partners": 2,
+      "up_to_reversal": 1,
+      "first_full_prefix": 2,
+      "energy": 6,
+      "small_full_fibre": 2,
+      "maximum_products_by_parity_weight": [
+        2
+      ],
+      "adjacent_max_products": [
+        2
+      ]
+    },
+    {
+      "m": 2,
+      "N": 9,
+      "partners": 4,
+      "up_to_reversal": 2,
+      "first_full_prefix": 4,
+      "energy": 36,
+      "small_full_fibre": 4,
+      "maximum_products_by_parity_weight": [
+        8,
+        4
+      ],
+      "adjacent_max_products": [
+        8,
+        2
+      ]
+    },
+    {
+      "m": 3,
+      "N": 27,
+      "partners": 8,
+      "up_to_reversal": 4,
+      "first_full_prefix": 10,
+      "energy": 216,
+      "small_full_fibre": null,
+      "maximum_products_by_parity_weight": [
+        32,
+        16,
+        8
+      ],
+      "adjacent_max_products": [
+        32,
+        8,
+        2
+      ]
+    },
+    {
+      "m": 4,
+      "N": 81,
+      "partners": 16,
+      "up_to_reversal": 8,
+      "first_full_prefix": 28,
+      "energy": 1296,
+      "small_full_fibre": null,
+      "maximum_products_by_parity_weight": [
+        128,
+        64,
+        32,
+        16
+      ],
+      "adjacent_max_products": [
+        128,
+        32,
+        8,
+        2
+      ]
+    },
+    {
+      "m": 5,
+      "N": 243,
+      "partners": 32,
+      "up_to_reversal": 16,
+      "first_full_prefix": 82,
+      "energy": 7776,
+      "small_full_fibre": null,
+      "maximum_products_by_parity_weight": [
+        512,
+        256,
+        128,
+        64,
+        32
+      ],
+      "adjacent_max_products": [
+        512,
+        128,
+        32,
+        8,
+        2
+      ]
+    }
+  ],
+  "codeRows": [
+    {
+      "m": 1,
+      "n": 3,
+      "redundancy": 2,
+      "distance": 3,
+      "adjacent_only_triplication": 3
+    },
+    {
+      "m": 2,
+      "n": 5,
+      "redundancy": 3,
+      "distance": 3,
+      "adjacent_only_triplication": 6
+    },
+    {
+      "m": 3,
+      "n": 6,
+      "redundancy": 3,
+      "distance": 3,
+      "adjacent_only_triplication": 9
+    },
+    {
+      "m": 4,
+      "n": 7,
+      "redundancy": 3,
+      "distance": 3,
+      "adjacent_only_triplication": 12
+    },
+    {
+      "m": 5,
+      "n": 9,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 15
+    },
+    {
+      "m": 6,
+      "n": 10,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 18
+    },
+    {
+      "m": 7,
+      "n": 11,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 21
+    },
+    {
+      "m": 8,
+      "n": 12,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 24
+    },
+    {
+      "m": 9,
+      "n": 13,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 27
+    },
+    {
+      "m": 10,
+      "n": 14,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 30
+    },
+    {
+      "m": 11,
+      "n": 15,
+      "redundancy": 4,
+      "distance": 3,
+      "adjacent_only_triplication": 33
+    },
+    {
+      "m": 12,
+      "n": 17,
+      "redundancy": 5,
+      "distance": 3,
+      "adjacent_only_triplication": 36
+    }
+  ],
+  "example": {
+    "a": [
+      1,
+      2,
+      -1,
+      2,
+      4,
+      -2,
+      -1,
+      -2,
+      1
+    ],
+    "b": [
+      -1,
+      2,
+      1,
+      -2,
+      4,
+      2,
+      1,
+      -2,
+      -1
+    ],
+    "autocorrelation": [
+      36,
+      0,
+      -6,
+      0,
+      1,
+      0,
+      -6,
+      0,
+      1
+    ]
+  },
+  "assertion_failures": 0
+}
