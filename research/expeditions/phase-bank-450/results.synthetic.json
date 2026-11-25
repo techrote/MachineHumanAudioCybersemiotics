@@ -1,0 +1,23 @@
+{
+  "audio": {
+    "M": 64,
+    "aligned_peak_count_error": 5,
+    "fixed_final_debt_numerator": 0,
+    "moving_final_debt_numerator": -160000,
+    "n": 8,
+    "rate": 16000,
+    "sha256": {
+      "aligned-vs-staggered.wav": "246c7a05a181361354959bda047214a4a1ffeadbf66dee16a7ad8db356d03255",
+      "fixed-vs-moving-loss.wav": "0d1c43571c4e0762c88eac56df67aab6ec8ddb2f33a7f4757c918f9d5fcc805e"
+    },
+    "staggered_peak_count_error": 0,
+    "ticks": 32000
+  },
+  "verification": {
+    "constant_contract_checks": 45003,
+    "explicit_subset_cases": 3391,
+    "layout_residue_erasure_cases": 236643,
+    "layouts": 6420,
+    "variable_stream_windows": 205920
+  }
+}
