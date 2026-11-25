@@ -10,6 +10,11 @@ enum Param : unsigned { Rate, Depth, Mix, Mode, Hold, A, B, C, D, Bypass, Count 
 using Params = std::array<double, Count>;
 inline constexpr Params defaults{.5,.8,1,0,0,1,.25,.75,.1,0};
 enum class Contract { Latch, Pause, Snapshot };
+// One shared rate contract for native DSP and the host adapter. No buffers
+// scale with sample rate; the clock remains stable at the SDK stress rate.
+inline bool validSampleRate(double sr) noexcept {
+    return std::isfinite(sr) && sr >= 1000. && sr <= 2000000.;
+}
 using Bank = std::array<double,4>;
 inline double unit(double x) noexcept { return std::isfinite(x) ? std::clamp(x,0.,1.) : 0.; }
 
@@ -63,7 +68,7 @@ class Engine {
 public:
     Engine() noexcept { reset(48000.); }
     void reset(double sr) noexcept {
-        sr_=(std::isfinite(sr)&&sr>=1000.&&sr<=768000.)?sr:48000.;
+        sr_=validSampleRate(sr)?sr:48000.;
         socket_={};fraction_=0.;gain_=1.;slew_=std::min(1.,200./sr_);updateRate();
     }
     const Params& params() const noexcept { return p_; }

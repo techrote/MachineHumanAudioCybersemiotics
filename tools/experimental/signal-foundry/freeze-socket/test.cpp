@@ -77,6 +77,38 @@ void audio(){
     Socket s;s.configure({0.,.25,.5,1.},true,Contract::Latch);s.tick();close(s.token(),0.);
     s.configure({.2,.8,.5,1.},true,Contract::Snapshot);close(s.token(),.8);s.tick();close(s.token(),.5);
 }
+// Exercise fractional and extreme SDK validator sample rates. A fallback to
+// 48 kHz would silently advance the modulation clock too quickly at high rates.
+void sampleRateContract(){
+    check(!validSampleRate(999.));check(validSampleRate(1000.));
+    check(validSampleRate(2000000.));check(!validSampleRate(2000001.));
+    check(!validSampleRate(std::numeric_limits<double>::infinity()));
+    check(!validSampleRate(std::numeric_limits<double>::quiet_NaN()));
+    Engine e;
+    for(double sr:{1000.,1234.5678,44100.1,768000.,1234567.8,2000000.}){
+        e.reset(sr);e.set(Rate,1);e.set(Hold,0);e.set(Bypass,0);
+        e.set(A,0);e.set(Depth,1);e.set(Mix,1);
+        const auto first=static_cast<unsigned>(std::ceil(sr/16.));
+        check(e.slot()==0);
+        double prev=1.;
+        for(unsigned i=0;i<first;++i){
+            const auto g=e.nextGain();
+            check(std::isfinite(g)&&g>=0.&&g<=1.);
+            check(std::abs(g-prev)<=200./sr+1e-12);
+            if(i+1<first)check(e.slot()==0);
+            prev=g;
+        }
+        check(e.slot()==1);
+        check(prev<=1e-8);
+        e.set(Mode,.5);e.set(Hold,1);
+        for(unsigned i=0;i<first+1;++i)e.nextGain();
+        check(e.slot()==1);
+    }
+    e.reset(std::numeric_limits<double>::quiet_NaN());e.set(Hold,0);
+    for(unsigned i=0;i<2999;++i)e.nextGain();
+    check(e.slot()==0);e.nextGain();check(e.slot()==1);
+}
+
 void u16(std::ostream& o,unsigned v){o.put(char(v));o.put(char(v>>8));}
 void u32(std::ostream& o,unsigned v){u16(o,v);u16(o,v>>16);}
 // Identical original carrier, same timed gestures, three separate mode renders.
@@ -102,7 +134,7 @@ void demo(const std::string& prefix){
     }
 }
 int main(int argc,char** argv){
-    finite();states();audio();if(argc==2)demo(argv[1]);
+    finite();states();audio();sampleRateContract();if(argc==2)demo(argv[1]);
     std::cout<<"PASS "<<checks<<" assertions\n";
     Engine e;double sink=0.;auto begin=std::chrono::steady_clock::now();
     for(unsigned i=0;i<4800000;++i)sink+=e.nextGain();

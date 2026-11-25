@@ -70,3 +70,7 @@ Read official tag CMakeLists.txt, .gitmodules and LICENSE.txt through GitHub, pl
 ## Remaining qualification
 
 Native SDK checkout, Windows x64 build, validator, actual mono/stereo float/double DAW or test-host processing, sample-accurate queue and zero-sample flush verification, state/automation/bypass/load checks, portable ZIP, host-independent code review and exact-head repository checks. Host-level concurrency, lifecycle and parameter display need independent scrutiny. Target Linux and macOS subsequently. The test suite covers the control engine, not the VST3 bus/stream API. Treat the adapter as Draft/HOLD until validated.
+
+## Windows build recovery (qualification candidate)
+
+The scoped Windows workflow `.github/workflows/mhac-freeze-socket-windows.yml` uses one standard Windows 2022 runner, exact PR HEAD, the pinned SDK, Release native tests, a native bundle build, and a **mandatory** standalone official validator run. It preserves the validator transcript, root and recursive gitlink receipts and packages the full bundle only after all checks succeed. The separate validator step is not a bypass. The accepted rate range is now 1,000–2,000,000 Hz (finite fractional rates included), shared by core and adapter, to cover the unusual high-rate SDK stress case observed in instrument-lane CI run 45531129635. No parameter/state format or ordinary audible behavior changes intended. See the run and receipt for actual qualification, not this description.

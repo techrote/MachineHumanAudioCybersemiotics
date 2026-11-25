@@ -32,7 +32,10 @@ if(MHAC_BUILD_VST3)
     set(public_sdk_SOURCE_DIR "${SDK_ROOT}/public.sdk")
     smtg_setup_platform_toolset()
     smtg_setup_symbol_visibility()
-    set(SMTG_RUN_VST_VALIDATOR ON)
+    # The qualification workflow runs the official validator as a separate,
+    # mandatory step, preserving its log and exit status.
+    option(MHAC_VALIDATE_POST_BUILD "Run SDK validator after build" ON)
+    set(SMTG_RUN_VST_VALIDATOR ${MHAC_VALIDATE_POST_BUILD})
     smtg_add_vst3plugin(MHACFreezeSocket plugin.cpp)
     target_include_directories(MHACFreezeSocket PRIVATE "${SDK_ROOT}")
     target_link_libraries(MHACFreezeSocket PRIVATE sdk)
