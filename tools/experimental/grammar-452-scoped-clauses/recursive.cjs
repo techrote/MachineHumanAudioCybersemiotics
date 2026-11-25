@@ -41,8 +41,8 @@ function wav(pcm){const bytes=new Uint8Array(44+pcm.length*2),v=new DataView(byt
 function examples(){return [
  {name:"negation-outside-quotation",tree:["not",["quote",["fault"]]]},
  {name:"negation-inside-quotation",tree:["quote",["not",["fault"]]]},
- {name:"relay-questions-pump-report",tree:["question",["pump-reports",["fault"]]]},
- {name:"relay-reports-pump-question",tree:["relay-reports",["question",["fault"]]]},
+ {name:"question-of-pump-report",tree:["question",["pump-reports",["fault"]]]},
+ {name:"relay-reports-question",tree:["relay-reports",["question",["fault"]]]},
  {name:"conditional-verification",tree:["if",["fault"],["verify",["overload"]]]},
  {name:"uncertain-conjunction",tree:["uncertain",["and",["open"],["stopped"]]]}
  ];}
