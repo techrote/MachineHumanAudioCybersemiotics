@@ -55,12 +55,12 @@ public:
         for(auto& v:voices)if(v.active){
             double envelope=1.;if(v.releasing)envelope=1.-double(v.release)/releaseSamples;
             double y=0;for(unsigned i=0;i<v.count;++i)if(v.age>=v.onset[i]){const auto dt=v.age-v.onset[i];if(dt<v.width){const double w=std::sin(pi*dt/v.width);y+=w*w*std::sin(v.omega*dt);}}
-            // Divide by four even when a beat is deleted; peak <= 0.5 across 16 voices.
-            sum+=y*v.velocity*envelope/128.;
+            // Same per-pulse gain for complete and damaged motifs. Soft-bound the voice sum.
+            sum+=y*v.velocity*envelope/8.;
             ++v.age;if(v.releasing)++v.release;
             if(v.age>=v.end||(v.releasing&&v.release>=releaseSamples))v.active=false;
         }
-        const double y=sum*gain;return std::abs(y)<1e-20?0.:y;
+        const double y=(sum/(1.+2.*std::abs(sum)))*gain;return std::abs(y)<1e-20?0.:y;
     }
 };
 }
