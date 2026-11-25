@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(ErasureLoom LANGUAGES CXX)
+enable_testing()
+foreach(target loom_test loom_demo)
+  add_executable(${target} ${target}.cpp)
+  target_compile_features(${target} PRIVATE cxx_std_17)
+endforeach()
+add_test(NAME loom_native COMMAND loom_test)
