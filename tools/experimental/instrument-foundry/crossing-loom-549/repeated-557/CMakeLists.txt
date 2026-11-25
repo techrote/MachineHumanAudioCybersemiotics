@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16)
+project(CrossingLoomCycles LANGUAGES CXX)
+add_executable(cycle_test test.cpp)
+target_compile_features(cycle_test PRIVATE cxx_std_17)
+enable_testing()
+add_test(NAME cycle_test COMMAND cycle_test)
