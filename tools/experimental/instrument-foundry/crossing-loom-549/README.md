@@ -1,4 +1,28 @@
-# Crossing Loom 0.1.0 — experimental instrument
+# Crossing Loom 0.2.0 — polyphonic identity scores (Draft/HOLD)
+
+Refs #566, #557/#559 (8beaf68fd5fe043c23e8d542254857a26777a26a), #549/#551 and #530/#531 (ede894814753cbbeb815047d771674d14c24f941). The single-meeting witness realizes the pinned research's phase-aligned source ambiguity; cyclic scores and polyphonic musical use are creative extensions, not authenticated identity receipts or scientific acceptance.
+
+## Play
+
+Eight shared note slots; choose Single (legacy linear glides) or Cycle (sinusoidal opposed trajectories). Each note latches the mode, spread, timing, width and identity policy/score at note-on. In Cycle mode the timing control is the full period between phase-aligned meetings; exchanges occur at its end, step 1 first, wrapping after step 16. The original Cross/Bounce selector has no effect in Cycle mode. A score with odd parity changes the source assignment after each score repetition. Both trajectories share one envelope and equal amplitude; stereo source identity can change without changing the mathematical mono sum. Polyphonic floating-point summation and separately quantized stereo outputs need not be bit-identical in mono.
+
+| ID | Control |
+|---|---|
+| 700–703 | Original parameters unchanged |
+| 704 | Trajectory: Single (0, default) / Cycle (1) |
+| 705–720 | Exchange 01–16, binary, default off |
+
+Cycle starter patches at 48 kHz: 40% pitch spread (normalized .5), .16 s period (normalized (.16-.025)/1.975), width 1, mode Cycle; no exchanges (0x0000), odd-numbered exchanges (0x5555), all exchanges (0xffff). The original default remains Single. State CL02 is 88 bytes (header plus 21 IEEE little-endian float32 normalized values); CL01 migrates to Single with all new controls off. Class IDs unchanged. Old versions cannot load CL02. State migration at DAW level still requires testing. No gain, latency or envelope change: eight slots, .05 FS per voice/channel, .4 FS aggregate, zero latency, conservative 41 ms tail. No stealing or duplicate active note IDs. No host transport dependency. Legacy absolute phase longevity limitation remains.
+
+## Build and receipt
+
+Use the SDK root and seven recursive gitlinks recorded below, clean recursive checkout; no SDK substitution. The existing scoped Windows workflow now builds all three CTest targets and rejects explicit ERROR: lines in validator output even when the aggregate count is green. It includes SDK notices and the exact source receipt in the portable ZIP. New rate setup accepts finite 1–2000 kHz (including the two unusual validator rates), not a real-time performance guarantee. The original 0.1 binary had validator 47/0 with explicit rate errors; #559 inherited Windows workflow success did not execute its new standalone cycle tests. Do not confuse these with 0.2 host validation.
+
+Native GNU 14.2 Linux x64 Release: 3/3 CTest PASS; new live_test warning-clean AddressSanitizer/UBSan PASS. 501114 paired frames at 10 rates including 1234.568 and 1234567.8 Hz: exact mono and expected stereo assignment, peak stereo delta .0899288; legacy reference equality, mixed mode capacity, partition invariance, Float32 stereo and reset/mono silence, invalid state and CL01 migration. Local source blobs live.hpp c8faf653fd11155ab1db41eee494e116c48d2e28; live_test.cpp 81f544f2bc5ce3199a8034b3b9fa8e5eb8acc059; cycle.hpp d44021096a0ae51a8a2789d2ce7ded7faab998b5. Original core/test/params unchanged. CMake native test section used locally; full SDK build not executed locally (GitHub DNS failure). Exact Windows adapter/validator, host events, session migration, callback deadlines and independent review outstanding.
+
+Run loom_live_test with an existing demos directory to generate two original four-second stereo PCM16 48 kHz chord renders (MIDI notes 48,55,64 at staggered onsets; 0x0000 vs 0x5555; release at frame 160000). Both reproduced byte-for-byte on repeat. SHA256 cross a18e38f31a31a8624b0d983fdbfbc7a38323059ae397de2a857032398ce7ae2f; score 070c9d26b2f43b543b500190c5e88ea26949b989254962c5b6a3968b65205cc4. Peak .11997 FS. Mono PCM stereo-sum differs by up to one integer count, not exact multivoice PCM equality. No listening claim. Same ChatGPT agent implemented and tested; no independent review. No canonical/shared manifest changes.
+
+## Historical 0.1.0 implementation and SDK instructions
 
 Refs #549, #530 and draft #531 at ede894814753cbbeb815047d771674d14c24f941. The phase-aligned crossing/bouncing collision directly realizes the acoustic witness in the pinned expedition; polyphony, pitch-relative spread and stereo width are original creative extensions. No human perception, scientific priority or research acceptance claim.
 
