@@ -1,0 +1,116 @@
+{
+  "profiles": [
+    {
+      "m": 3,
+      "r": 1,
+      "k": 2,
+      "repeat": true,
+      "multisets": 36,
+      "fibres": 27,
+      "ambiguous": 7,
+      "max_fibre": 4,
+      "transversal_checks": 0
+    },
+    {
+      "m": 4,
+      "r": 1,
+      "k": 2,
+      "repeat": true,
+      "multisets": 136,
+      "fibres": 81,
+      "ambiguous": 33,
+      "max_fibre": 8,
+      "transversal_checks": 0
+    },
+    {
+      "m": 5,
+      "r": 1,
+      "k": 2,
+      "repeat": true,
+      "multisets": 528,
+      "fibres": 243,
+      "ambiguous": 131,
+      "max_fibre": 16,
+      "transversal_checks": 0
+    },
+    {
+      "m": 3,
+      "r": 2,
+      "k": 3,
+      "repeat": true,
+      "multisets": 120,
+      "fibres": 120,
+      "ambiguous": 0,
+      "max_fibre": 1,
+      "transversal_checks": 0
+    },
+    {
+      "m": 3,
+      "r": 2,
+      "k": 4,
+      "repeat": true,
+      "multisets": 330,
+      "fibres": 329,
+      "ambiguous": 1,
+      "max_fibre": 2,
+      "transversal_checks": 1
+    },
+    {
+      "m": 4,
+      "r": 2,
+      "k": 3,
+      "repeat": true,
+      "multisets": 816,
+      "fibres": 816,
+      "ambiguous": 0,
+      "max_fibre": 1,
+      "transversal_checks": 0
+    },
+    {
+      "m": 4,
+      "r": 2,
+      "k": 4,
+      "repeat": true,
+      "multisets": 3876,
+      "fibres": 3856,
+      "ambiguous": 20,
+      "max_fibre": 2,
+      "transversal_checks": 80
+    },
+    {
+      "m": 5,
+      "r": 2,
+      "k": 3,
+      "repeat": true,
+      "multisets": 5984,
+      "fibres": 5984,
+      "ambiguous": 0,
+      "max_fibre": 1,
+      "transversal_checks": 0
+    },
+    {
+      "m": 5,
+      "r": 2,
+      "k": 4,
+      "repeat": true,
+      "multisets": 52360,
+      "fibres": 52100,
+      "ambiguous": 260,
+      "max_fibre": 2,
+      "transversal_checks": 2600
+    },
+    {
+      "m": 4,
+      "r": 3,
+      "k": 8,
+      "repeat": false,
+      "multisets": 12870,
+      "fibres": 12869,
+      "ambiguous": 1,
+      "max_fibre": 2,
+      "transversal_checks": 1
+    }
+  ],
+  "omitted_probe_checks": 63010,
+  "status": "pass"
+}
