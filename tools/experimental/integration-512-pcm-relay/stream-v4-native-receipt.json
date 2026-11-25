@@ -1,0 +1,63 @@
+{
+  "schema": "mhac-stream-v4-native",
+  "date": "2026-11-25",
+  "parent": "a62f4d485998dca3d64baa9ed8a87fda982f7aea",
+  "environment": "Linux x86_64 Node 22.16.0",
+  "assertions": 571,
+  "generatedWavHashAndFormatChecks": 103,
+  "matchedFixtures": 96,
+  "v3Intended": 40,
+  "v4Intended": 56,
+  "falsePreamble": {
+    "total": 16,
+    "v3": 0,
+    "v4": 16
+  },
+  "multipleCutOrMixedRefused": 40,
+  "priorV3Replay": {
+    "total": 176,
+    "unchanged": 175,
+    "intentionalChanged": "competing-preamble"
+  },
+  "scheduled": {
+    "captures": 45,
+    "matched": 45,
+    "accepted": 180,
+    "refusedRegions": 9,
+    "scanSteps": 898245,
+    "lateRelativeToPriorSlotEnd": {
+      "count": 180,
+      "minSamples": 426,
+      "medianSamples": 458,
+      "maxSamples": 538
+    }
+  },
+  "allDemodulationHypotheses": 1501,
+  "incrementalCliEvidenceMatches": 2,
+  "ringBytes": 153600,
+  "peakPCM": 5692,
+  "browser": {
+    "version": "144.0.7559.96",
+    "fileNavigation": "blocked by administrator",
+    "fallback": "set_content",
+    "rows": 148,
+    "mutedPlayheadAdvanced": true,
+    "exportReread": true,
+    "webCrypto": "unavailable",
+    "pageErrors": []
+  },
+  "sourceBlobs": {
+    "stream-v4.cjs": "31769f808469b4416412be25a41eb238bfc1fdde",
+    "stream-v4-test.cjs": "1ff5cb646343af8f5e9825fd88c356162a65ac93",
+    "stream-v4-cli.cjs": "5d6d4154f1f107406498500ac9bf925ffc614293",
+    "stream-inspector.html": "b08004ab2346a7819db0ccc89b01270a97206419",
+    "README-stream-v4.md": "44bc6892afda9f991633ff79dc8baeab9b45eed2"
+  },
+  "limitations": [
+    "synthetic only",
+    "no live scheduler substitution",
+    "no Windows or hardware test",
+    "no independent review",
+    "whole repository checkout DNS blocked"
+  ]
+}
