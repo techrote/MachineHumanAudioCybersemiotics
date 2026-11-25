@@ -9,8 +9,8 @@ A reader marks a poem with two pencils. One marks the line breaks; the other mar
 
 Consider an original miniature:
 
-> The machine keeps a record of the
-> door it has forgotten. The door keeps
+> The machine keeps a record of the  
+> door it has forgotten. The door keeps  
 > a record of the machine.
 
 The first line suspends an object; the second contains a grammatical ending and starts another sentence. Now distribute the same words across two lines, each a complete sentence. The words and their order are unchanged, but an editorial arrangement has disappeared. Do not claim a universal listener response: these are invitations to read differently.
@@ -35,7 +35,7 @@ Build a bipartite **multigraph**: a vertex for each block of either partition, a
 
 Open: E = p + q - 1 - c, V = p + q, components = c + 1. Hence E - V + components = 0; the graph is a forest. Consecutive atomic intervals share a block at single cuts and share none at common cuts. A block cannot cross a common cut, so these are exactly the connected components.
 
-Cyclic: E = p + q - c, V = p + q, components = max(1,c). If c > 0, the graph is a forest; if c = 0, the graph is connected and unicyclic, including a two-edge multigraph cycle when applicable. The same argument works on the circle because a common cut separates component runs; if there is precisely one shared cut the remaining chain is connected. No shared cut means the chain wraps around.
+Cyclic: E = p + q - c, V = p + q, components = max(1,c). If c > 0, the graph is a forest; if c = 0, the graph is connected and unicyclic, including a two-edge multigraph cycle when applicable. If c > 0, open the circle at any shared cut, keeping the named block identities; the other c-1 common cuts separate the resulting linear component runs. This also covers a single full-circle block with a named start. If c = 0 the chain wraps around, sharing at least one vertex across each successive pair of atomic intervals.
 
 A second result follows from the weighted degree constraints. Given the overlap topology and each block's total duration, a forest's edge weights are unique: a leaf determines its single edge, which can be subtracted from its neighbour's total, recursively. Consistency and positivity remain necessary. In the unicyclic case, peel all leaves; the remaining bipartite cycle has even length. Alternately add and subtract delta to its edge weights. All block totals stay unchanged. The difference of any two solutions must vanish on peeled edges and alternate on the cycle, so this is the complete one-dimensional real ambiguity (for positive weights, there is an open interval of allowed delta around any solution). For positive integer weights, delta may range from 1 - min(plus-edge weights) through min(minus-edge weights) - 1 inclusive. This interval may contain only zero.
 
@@ -68,6 +68,6 @@ For MHAC, a renderer could preserve message membership while presenting a differ
 
 ## Qualification and checkpoint
 
-Oracle: 21,845 open and 86,368 cyclic marked partition pairs for n=1..8 (108,213 exhaustive cases); five additional witnesses/controls. It checks edge count, components, cycle rank, positive durations, independent per-slot degree totals, leaf reconstruction, alternating kernel and allowable integer shifts. 99,386 forest cases and 8,832 unicycle cases include the five additional witnesses/controls. Of the latter, 4,156 admit a nonzero integer shift in the tested representation. 1,367,618 checks passed in the JavaScript execution environment. This count is software checks, not independent experiments. Native Node execution and repository-wide validation were not performed in that environment.
+Oracle: 21,845 open and 86,368 cyclic marked partition pairs for n=1..8 (108,213 exhaustive cases); five additional witnesses/controls. It checks edge count, components, cycle rank, positive durations, independent per-slot degree totals, leaf reconstruction, alternating kernel and allowable integer shifts. 99,386 forest cases and 8,832 unicycle cases include the five additional witnesses/controls. Of the latter, 4,156 admit a nonzero integer shift in the tested representation. 1,367,618 checks passed in the JavaScript execution environment. This count is software checks, not independent experiments. Native Node execution and repository-wide validation were not performed in that environment. The separate native Python audio demonstration generated five six-second WAVs; see [receipt](RECEIPT.md) and [renderer](render.py).
 
 Repository reconciliation: read AGENTS, README, RAG, programme, runbook, integrity and validation; main pinned at 495a98ca12bae467a507031f04931aa4254b1866. Read issue #572 and empty comment list. Reviewed 65 recent PR titles, 45 open issue titles, targeted searches for enjambment, line break, phrase boundary, phrasing, grouping, punctuation, caesura, prosody, metrical and earlier alternatives. No direct title match for enjambment or caesura; #334 perceptual framing and #444 mereology/group edits are adjacent; recent #532 closure concerns matching concurrent lifetimes, not overlap partition topology. Search is not a proof of novelty. Additive expedition only; no canonical evidence, shared manifest, frozen protocol or other worker files changed. No full CI, external review, or participant validation claimed. Keep Draft/HOLD pending integration.
