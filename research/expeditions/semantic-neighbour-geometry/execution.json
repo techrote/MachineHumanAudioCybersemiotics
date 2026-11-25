@@ -1,0 +1,15 @@
+{
+  "profiles": 1805,
+  "coordinatePairChecks": 565326,
+  "inverseEnergyCases": 1710,
+  "balancedSubsetChecks": 2470,
+  "assertions": 613396,
+  "maxAbsoluteNumericError": 3.9968028886505635e-15,
+  "example": {
+    "m": 2,
+    "n": 6,
+    "unconstrainedCrossSquared": 2.666666666666667,
+    "equalEnergyMinimum": 3.3333333333333335,
+    "equalEnergy8": 2.6833437630412145
+  }
+}

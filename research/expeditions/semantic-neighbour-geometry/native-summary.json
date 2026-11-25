@@ -1,0 +1,20 @@
+{
+  "python": "3.13.5",
+  "runs": 2,
+  "byte_identical_repeat": true,
+  "source_git_blob": "f96a7917d5934c5db9e78d40bebc6f62fc323e42",
+  "generated_receipt_sha256": "1436f9039c63cceb2228b09a63cfc8c60d1649465d7ab2411406c435344782ef",
+  "gram_profiles": 64,
+  "gram_certificates": 320,
+  "equal_energy_gram_profiles": 320,
+  "ternary_profiles": 27,
+  "first_class_sets_examined": 46298,
+  "maximum_pcm_squared_distance_error": 0.00040544180257917617,
+  "generated_wav_sha256": {
+    "equal-high.wav": "633c8acb35177daa502ffda1f184b37a87a8f7635f09adc72caf34df3b9c751d",
+    "equal-low.wav": "84ee8e64321dd7ce3700dcf1eb81b54aa8eea6b7e5028fcb8395fc024b9a5dd6",
+    "free.wav": "e5b118f6b7e0e50e973b94f7084a2bb9b2681d970d743c01ff70653941907875",
+    "max-coordinate.wav": "7d0bf65ac615512854c91faec336c6ac8bde05597b924e4f62db51d90e88a102"
+  },
+  "note": "Summary of actual native receipt; full generated receipt and WAV files are local outputs, reproducible with witness.py. Hashes may depend on floating-point libm implementation across platforms."
+}
