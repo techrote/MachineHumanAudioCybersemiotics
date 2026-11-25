@@ -4,8 +4,10 @@ const {Stream}=require('./stream-v4.cjs');
 const cfg=Array.from({length:13},(_,k)=>{const s=1+(k-6)*.0025;return {s,n:Math.round(320*s),body:Array.from({length:17},(_,i)=>2*Math.cos(2*Math.PI*(400+100*i)/(16000*s)))};});
 class AdmissionStream extends Stream {
   constructor(emit){super(emit);Object.assign(this.stats,{prefixSymbols:0,prefixHypothesesRejected:0,prefixCandidatesRejected:0});}
+  readiness(){return {sample:this.total,acquisition:this.overflow?'overloaded':this.cluster||this.pending.length?'pending':'clear'};}
+  finish(){if(this.closed)throw Error('already finished');this.closed=true;return this.readiness();}
   drain(eof){
-    // No prefix decisions at EOF: the same live sample availability rule applies.
+    // Prefix decisions require complete observation windows from received samples.
     for(let i=0;i<this.pending.length;){const c=this.pending[i];if(c.done){i++;continue;}
       if(!c.prefix)c.prefix=c.best.filter(Boolean).map(h=>({h,words:[],erasures:0,rejected:null}));
       for(const p of c.prefix){if(p.rejected)continue;const {s,n,body}=cfg[p.h.k];while(p.words.length<6){const j=p.words.length,at=Math.round(p.h.start+(640+j*1280+320)*s);if(at+n>this.total)break;
