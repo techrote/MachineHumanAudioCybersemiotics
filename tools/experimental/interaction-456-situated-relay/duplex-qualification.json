@@ -1,0 +1,1681 @@
+{
+  "schema": "mhac-duplex-qualification-v1",
+  "parent": "209f222aa6c248444b483460a1e9b1054f8a15c5",
+  "assertions": 96642,
+  "runs": 788,
+  "scenarios": 192,
+  "named": {
+    "light": {
+      "free": {
+        "offered": 10,
+        "received": 9,
+        "confirmed": 5,
+        "currentConfirmed": 0,
+        "unconfirmed": 4,
+        "retries": 4,
+        "duplicates": 3,
+        "ackLost": 6,
+        "ackDiscarded": 0,
+        "dataTicks": 28,
+        "ackTicks": 0,
+        "freeAcks": 11,
+        "byAgent": [
+          3,
+          3,
+          3
+        ]
+      },
+      "data-first": {
+        "offered": 10,
+        "received": 9,
+        "confirmed": 3,
+        "currentConfirmed": 0,
+        "unconfirmed": 6,
+        "retries": 4,
+        "duplicates": 3,
+        "ackLost": 4,
+        "ackDiscarded": 1,
+        "dataTicks": 28,
+        "ackTicks": 7,
+        "freeAcks": 0,
+        "byAgent": [
+          3,
+          3,
+          3
+        ]
+      },
+      "ack-first": {
+        "offered": 10,
+        "received": 8,
+        "confirmed": 5,
+        "currentConfirmed": 0,
+        "unconfirmed": 3,
+        "retries": 4,
+        "duplicates": 3,
+        "ackLost": 6,
+        "ackDiscarded": 0,
+        "dataTicks": 27,
+        "ackTicks": 11,
+        "freeAcks": 0,
+        "byAgent": [
+          3,
+          3,
+          2
+        ]
+      },
+      "alternate": {
+        "offered": 10,
+        "received": 8,
+        "confirmed": 5,
+        "currentConfirmed": 0,
+        "unconfirmed": 3,
+        "retries": 4,
+        "duplicates": 3,
+        "ackLost": 6,
+        "ackDiscarded": 0,
+        "dataTicks": 27,
+        "ackTicks": 11,
+        "freeAcks": 0,
+        "byAgent": [
+          3,
+          3,
+          2
+        ]
+      }
+    },
+    "overload": {
+      "free": {
+        "offered": 44,
+        "received": 5,
+        "confirmed": 2,
+        "currentConfirmed": 0,
+        "unconfirmed": 3,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 3,
+        "ackDiscarded": 0,
+        "dataTicks": 40,
+        "ackTicks": 0,
+        "freeAcks": 5,
+        "byAgent": [
+          0,
+          0,
+          5
+        ]
+      },
+      "data-first": {
+        "offered": 44,
+        "received": 5,
+        "confirmed": 0,
+        "currentConfirmed": 0,
+        "unconfirmed": 5,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 4,
+        "dataTicks": 40,
+        "ackTicks": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          0,
+          0,
+          5
+        ]
+      },
+      "ack-first": {
+        "offered": 44,
+        "received": 9,
+        "confirmed": 4,
+        "currentConfirmed": 0,
+        "unconfirmed": 5,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 5,
+        "ackDiscarded": 0,
+        "dataTicks": 31,
+        "ackTicks": 9,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          4,
+          4
+        ]
+      },
+      "alternate": {
+        "offered": 44,
+        "received": 9,
+        "confirmed": 4,
+        "currentConfirmed": 0,
+        "unconfirmed": 5,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 5,
+        "ackDiscarded": 0,
+        "dataTicks": 31,
+        "ackTicks": 9,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          4,
+          4
+        ]
+      }
+    },
+    "bursty": {
+      "free": {
+        "offered": 16,
+        "received": 13,
+        "confirmed": 7,
+        "currentConfirmed": 1,
+        "unconfirmed": 6,
+        "retries": 4,
+        "duplicates": 2,
+        "ackLost": 8,
+        "ackDiscarded": 0,
+        "dataTicks": 39,
+        "ackTicks": 0,
+        "freeAcks": 15,
+        "byAgent": [
+          4,
+          6,
+          3
+        ]
+      },
+      "data-first": {
+        "offered": 16,
+        "received": 13,
+        "confirmed": 0,
+        "currentConfirmed": 0,
+        "unconfirmed": 13,
+        "retries": 5,
+        "duplicates": 3,
+        "ackLost": 0,
+        "ackDiscarded": 11,
+        "dataTicks": 40,
+        "ackTicks": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          4,
+          6,
+          3
+        ]
+      },
+      "ack-first": {
+        "offered": 16,
+        "received": 9,
+        "confirmed": 3,
+        "currentConfirmed": 0,
+        "unconfirmed": 6,
+        "retries": 1,
+        "duplicates": 0,
+        "ackLost": 6,
+        "ackDiscarded": 0,
+        "dataTicks": 31,
+        "ackTicks": 9,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          6,
+          2
+        ]
+      },
+      "alternate": {
+        "offered": 16,
+        "received": 9,
+        "confirmed": 3,
+        "currentConfirmed": 0,
+        "unconfirmed": 6,
+        "retries": 1,
+        "duplicates": 0,
+        "ackLost": 6,
+        "ackDiscarded": 0,
+        "dataTicks": 31,
+        "ackTicks": 9,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          6,
+          2
+        ]
+      }
+    },
+    "tight": {
+      "free": {
+        "offered": 22,
+        "received": 17,
+        "confirmed": 9,
+        "currentConfirmed": 0,
+        "unconfirmed": 8,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 8,
+        "ackDiscarded": 0,
+        "dataTicks": 39,
+        "ackTicks": 0,
+        "freeAcks": 17,
+        "byAgent": [
+          1,
+          15,
+          1
+        ]
+      },
+      "data-first": {
+        "offered": 22,
+        "received": 17,
+        "confirmed": 0,
+        "currentConfirmed": 0,
+        "unconfirmed": 17,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 1,
+        "ackDiscarded": 12,
+        "dataTicks": 39,
+        "ackTicks": 1,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          15,
+          1
+        ]
+      },
+      "ack-first": {
+        "offered": 22,
+        "received": 10,
+        "confirmed": 3,
+        "currentConfirmed": 0,
+        "unconfirmed": 7,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 7,
+        "ackDiscarded": 0,
+        "dataTicks": 23,
+        "ackTicks": 10,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          8,
+          1
+        ]
+      },
+      "alternate": {
+        "offered": 22,
+        "received": 10,
+        "confirmed": 3,
+        "currentConfirmed": 0,
+        "unconfirmed": 7,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 7,
+        "ackDiscarded": 0,
+        "dataTicks": 23,
+        "ackTicks": 10,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          8,
+          1
+        ]
+      }
+    }
+  },
+  "aggregate": {
+    "free": {
+      "offered": 4416,
+      "received": 2079,
+      "confirmed": 1460,
+      "currentConfirmed": 106,
+      "unconfirmed": 619,
+      "retries": 163,
+      "duplicates": 99,
+      "ackLost": 669,
+      "ackDiscarded": 0,
+      "dataTicks": 6547,
+      "ackTicks": 0,
+      "freeAcks": 2129
+    },
+    "data-first": {
+      "offered": 4416,
+      "received": 2079,
+      "confirmed": 330,
+      "currentConfirmed": 0,
+      "unconfirmed": 1749,
+      "retries": 309,
+      "duplicates": 210,
+      "ackLost": 153,
+      "ackDiscarded": 1184,
+      "dataTicks": 6801,
+      "ackTicks": 483,
+      "freeAcks": 0
+    },
+    "ack-first": {
+      "offered": 4416,
+      "received": 1797,
+      "confirmed": 1270,
+      "currentConfirmed": 75,
+      "unconfirmed": 527,
+      "retries": 119,
+      "duplicates": 66,
+      "ackLost": 587,
+      "ackDiscarded": 0,
+      "dataTicks": 5076,
+      "ackTicks": 1857,
+      "freeAcks": 0
+    },
+    "alternate": {
+      "offered": 4416,
+      "received": 1797,
+      "confirmed": 1270,
+      "currentConfirmed": 75,
+      "unconfirmed": 527,
+      "retries": 119,
+      "duplicates": 66,
+      "ackLost": 587,
+      "ackDiscarded": 0,
+      "dataTicks": 5076,
+      "ackTicks": 1857,
+      "freeAcks": 0
+    }
+  },
+  "peak": 2130,
+  "witnesses": {
+    "lostAck": {
+      "schema": "mhac-duplex-v1",
+      "config": {
+        "name": "light",
+        "horizon": 20,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          20,
+          20,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "seed": 1105
+      },
+      "policy": "ack-first",
+      "until": 20,
+      "manual": [
+        {
+          "op": "drop-ack",
+          "t": 2
+        }
+      ],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 0,
+          "attempts": 2,
+          "received": 2,
+          "confirmed": 8,
+          "timeout": null
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": true,
+          "free": false
+        },
+        {
+          "t": 5,
+          "type": "timeout",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 5,
+          "type": "retry-queued",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 5,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 7,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 7,
+          "type": "data-duplicate",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 7,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 7,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 8,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 8,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 2,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 6,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 7,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "unconfirmed": 0,
+        "retries": 1,
+        "duplicates": 1,
+        "ackLost": 1,
+        "ackDiscarded": 0,
+        "dataTicks": 4,
+        "ackTicks": 2,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "late": {
+      "schema": "mhac-duplex-v1",
+      "config": {
+        "name": "light",
+        "horizon": 20,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          20,
+          20,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "seed": 1105
+      },
+      "policy": "data-first",
+      "until": 20,
+      "manual": [
+        {
+          "op": "offer",
+          "t": 2,
+          "agent": "fan"
+        },
+        {
+          "op": "offer",
+          "t": 2,
+          "agent": "pump"
+        }
+      ],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 0,
+          "attempts": 1,
+          "received": 2,
+          "confirmed": 7,
+          "timeout": null
+        },
+        {
+          "id": "fan:1",
+          "i": 1,
+          "agent": "fan",
+          "version": 1,
+          "arrived": 2,
+          "deadline": 22,
+          "priority": 2,
+          "attempts": 2,
+          "received": 4,
+          "confirmed": 12,
+          "timeout": null
+        },
+        {
+          "id": "pump:2",
+          "i": 0,
+          "agent": "pump",
+          "version": 2,
+          "arrived": 2,
+          "deadline": 22,
+          "priority": 0,
+          "attempts": 2,
+          "received": 6,
+          "confirmed": 13,
+          "timeout": null
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "offer",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 2,
+          "type": "superseded",
+          "id": "pump:1",
+          "agent": "pump",
+          "by": "pump:2"
+        },
+        {
+          "t": 2,
+          "type": "offer",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "data-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 4,
+          "type": "data-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 4,
+          "type": "received",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 4,
+          "type": "ack-queued",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 4,
+          "type": "data-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 5,
+          "type": "timeout",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 5,
+          "type": "retry-unavailable",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "data-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 6,
+          "type": "received",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "ack-queued",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 6,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 7,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 7,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": false
+        },
+        {
+          "t": 7,
+          "type": "timeout",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 7,
+          "type": "retry-queued",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 7,
+          "type": "data-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 2
+        },
+        {
+          "t": 9,
+          "type": "data-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 9,
+          "type": "data-duplicate",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 9,
+          "type": "ack-coalesced",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 9,
+          "type": "timeout",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 9,
+          "type": "retry-queued",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 9,
+          "type": "data-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 11,
+          "type": "data-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 11,
+          "type": "data-duplicate",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 11,
+          "type": "ack-coalesced",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 11,
+          "type": "ack-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 12,
+          "type": "ack-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 12,
+          "type": "confirmed",
+          "id": "fan:1",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 12,
+          "type": "ack-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 13,
+          "type": "ack-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 13,
+          "type": "confirmed",
+          "id": "pump:2",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 3,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 4,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 5,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 6,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 7,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 8,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 9,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 10,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 11,
+          "kind": "ack",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 12,
+          "kind": "ack",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 3,
+        "received": 3,
+        "confirmed": 3,
+        "currentConfirmed": 2,
+        "unconfirmed": 0,
+        "retries": 2,
+        "duplicates": 2,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 10,
+        "ackTicks": 3,
+        "freeAcks": 0,
+        "byAgent": [
+          2,
+          1,
+          0
+        ]
+      },
+      "pending": {
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "allLost": {
+      "schema": "mhac-duplex-v1",
+      "config": {
+        "name": "light",
+        "horizon": 20,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          20,
+          20,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 100,
+        "timeout": 3,
+        "seed": 1105
+      },
+      "policy": "ack-first",
+      "until": 20,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 0,
+          "attempts": 2,
+          "received": 2,
+          "confirmed": null,
+          "timeout": null
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": true,
+          "free": false
+        },
+        {
+          "t": 5,
+          "type": "timeout",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 5,
+          "type": "retry-queued",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 5,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 7,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 7,
+          "type": "data-duplicate",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 7,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 7,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 8,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": true,
+          "free": false
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 2,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 6,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 7,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 0,
+        "currentConfirmed": 0,
+        "unconfirmed": 1,
+        "retries": 1,
+        "duplicates": 1,
+        "ackLost": 2,
+        "ackDiscarded": 0,
+        "dataTicks": 4,
+        "ackTicks": 2,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "cut": {
+      "schema": "mhac-duplex-v1",
+      "config": {
+        "name": "light",
+        "horizon": 20,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          20,
+          20,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "seed": 1105
+      },
+      "policy": "ack-first",
+      "until": 2,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 0,
+          "attempts": 1,
+          "received": 2,
+          "confirmed": null,
+          "timeout": 5
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 0,
+        "currentConfirmed": 0,
+        "unconfirmed": 1,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 2,
+        "ackTicks": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [
+          {
+            "id": "pump:1",
+            "expires": 10,
+            "attempt": 1
+          }
+        ],
+        "free": [],
+        "active": null
+      }
+    }
+  },
+  "limits": "synthetic perfect identity/current-version oracle, independently modeled erasures, no waveform decoding, no human evidence"
+}
