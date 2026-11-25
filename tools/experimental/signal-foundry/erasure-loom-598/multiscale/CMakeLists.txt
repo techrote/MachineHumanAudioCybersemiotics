@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(ErasureLoomScales LANGUAGES CXX)
+enable_testing()
+add_executable(scales_test scales_test.cpp)
+target_compile_features(scales_test PRIVATE cxx_std_17)
+add_test(NAME loom_scales_native COMMAND scales_test)
+add_executable(scales_demo scales_demo.cpp)
+target_compile_features(scales_demo PRIVATE cxx_std_17)
