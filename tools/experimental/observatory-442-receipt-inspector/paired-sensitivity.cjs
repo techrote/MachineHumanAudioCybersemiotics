@@ -38,7 +38,7 @@ function audit(inputs){
  check(av.tp+av.fn===n&&bv.tp+bv.fn===n&&av.tp+av.fp===p.fits[ai].length&&bv.tp+bv.fp===p.fits[bi].length,'count identity');
  return {packet:j,group:p.condition.group,seed:p.condition.seed,n,a:av.tp,b:bv.tp,fpA:av.fp,fpB:bv.fp};
  });
- return {a,b,criterion:k,...compare(rows),rows};
+ return {methodA:a,methodB:b,criterion:k,...compare(rows),rows};
  }));
  return {name,blob,rate:r.rate,comparisons};
  });
@@ -60,7 +60,7 @@ function selfTest(){
 function browser(d){
  const $=x=>document.getElementById(x),entries=d.runs.flatMap(r=>r.comparisons.map(c=>({run:r.name,...c})));
  const opt=(v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v;return o};
- entries.forEach((c,i)=>$('pair').append(opt(c.run+' / '+c.a+' vs '+c.b+' / '+c.criterion,i)));
+ entries.forEach((c,i)=>$('pair').append(opt(c.run+' / '+c.methodA+' vs '+c.methodB+' / '+c.criterion,i)));
  const fmt=x=>x===null?'—':x.toFixed(3);
  function table(node,rows){const t=document.createElement('table');for(const [i,row] of rows.entries()){const tr=t.insertRow();for(const v of row){const cell=document.createElement(i?'td':'th');cell.textContent=v;tr.append(cell)}}node.replaceChildren(t)}
  function show(){
