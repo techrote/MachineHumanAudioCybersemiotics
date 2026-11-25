@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(PhaseCyclePrism LANGUAGES CXX)
+enable_testing()
+add_executable(prism_test test.cpp)
+add_executable(prism_demo demo.cpp)
+target_compile_features(prism_test PRIVATE cxx_std_17)
+target_compile_features(prism_demo PRIVATE cxx_std_17)
+add_test(NAME prism_native COMMAND prism_test)
