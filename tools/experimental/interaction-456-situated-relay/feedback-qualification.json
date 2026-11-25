@@ -1,0 +1,1092 @@
+{
+  "schema": "mhac-feedback-qualification-v1",
+  "parent": "857b7e8a6db9032b38cfcd1458d3d515b658e656",
+  "assertions": 51024,
+  "runs": 449,
+  "factorialScenarios": 144,
+  "named": {
+    "light": {
+      "optimistic": {
+        "offered": 10,
+        "received": 7,
+        "claimed": 10,
+        "falseClaims": 3,
+        "unconfirmed": 0,
+        "retries": 0,
+        "used": 20
+      },
+      "confirmed": {
+        "offered": 10,
+        "received": 7,
+        "claimed": 6,
+        "falseClaims": 0,
+        "unconfirmed": 1,
+        "retries": 0,
+        "used": 20
+      },
+      "repair": {
+        "offered": 10,
+        "received": 7,
+        "claimed": 7,
+        "falseClaims": 0,
+        "unconfirmed": 0,
+        "retries": 2,
+        "used": 22
+      }
+    },
+    "overload": {
+      "optimistic": {
+        "offered": 44,
+        "received": 5,
+        "claimed": 20,
+        "falseClaims": 15,
+        "unconfirmed": 0,
+        "retries": 0,
+        "used": 40
+      },
+      "confirmed": {
+        "offered": 44,
+        "received": 5,
+        "claimed": 0,
+        "falseClaims": 0,
+        "unconfirmed": 5,
+        "retries": 0,
+        "used": 40
+      },
+      "repair": {
+        "offered": 44,
+        "received": 5,
+        "claimed": 0,
+        "falseClaims": 0,
+        "unconfirmed": 5,
+        "retries": 0,
+        "used": 40
+      }
+    },
+    "bursty": {
+      "optimistic": {
+        "offered": 16,
+        "received": 11,
+        "claimed": 15,
+        "falseClaims": 4,
+        "unconfirmed": 0,
+        "retries": 0,
+        "used": 31
+      },
+      "confirmed": {
+        "offered": 16,
+        "received": 11,
+        "claimed": 11,
+        "falseClaims": 0,
+        "unconfirmed": 0,
+        "retries": 0,
+        "used": 31
+      },
+      "repair": {
+        "offered": 16,
+        "received": 12,
+        "claimed": 11,
+        "falseClaims": 0,
+        "unconfirmed": 1,
+        "retries": 2,
+        "used": 35
+      }
+    },
+    "tight": {
+      "optimistic": {
+        "offered": 22,
+        "received": 14,
+        "claimed": 19,
+        "falseClaims": 5,
+        "unconfirmed": 0,
+        "retries": 0,
+        "used": 39
+      },
+      "confirmed": {
+        "offered": 22,
+        "received": 14,
+        "claimed": 2,
+        "falseClaims": 0,
+        "unconfirmed": 12,
+        "retries": 0,
+        "used": 39
+      },
+      "repair": {
+        "offered": 22,
+        "received": 14,
+        "claimed": 2,
+        "falseClaims": 0,
+        "unconfirmed": 12,
+        "retries": 0,
+        "used": 39
+      }
+    }
+  },
+  "aggregate": {
+    "optimistic": {
+      "offered": 3312,
+      "received": 1299,
+      "claimed": 2304,
+      "falseClaims": 1005,
+      "unconfirmed": 0,
+      "retries": 0,
+      "used": 4680
+    },
+    "confirmed": {
+      "offered": 3312,
+      "received": 1299,
+      "claimed": 568,
+      "falseClaims": 0,
+      "unconfirmed": 731,
+      "retries": 0,
+      "used": 4680
+    },
+    "repair": {
+      "offered": 3312,
+      "received": 1349,
+      "claimed": 586,
+      "falseClaims": 0,
+      "unconfirmed": 763,
+      "retries": 135,
+      "used": 4908
+    }
+  },
+  "peak": 2334,
+  "witnesses": {
+    "forcedLoss": {
+      "optimistic": {
+        "schema": "mhac-situated-feedback-v1",
+        "config": {
+          "name": "light",
+          "horizon": 12,
+          "periods": [
+            400,
+            400,
+            400
+          ],
+          "phases": [
+            0,
+            400,
+            400
+          ],
+          "deadlines": [
+            12,
+            12,
+            12
+          ],
+          "priorities": [
+            0,
+            2,
+            1
+          ],
+          "loss": 0,
+          "delay": 1,
+          "seed": 1105
+        },
+        "policy": "optimistic",
+        "until": 12,
+        "manual": [
+          {
+            "op": "drop",
+            "t": 1
+          }
+        ],
+        "metrics": {
+          "pump": {
+            "offered": 1,
+            "received": 0,
+            "claimed": 1,
+            "falseClaims": 1,
+            "unconfirmed": 0,
+            "retries": 0
+          },
+          "fan": {
+            "offered": 0,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          },
+          "relay": {
+            "offered": 0,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          }
+        },
+        "records": [
+          {
+            "id": "pump:1",
+            "agent": "pump",
+            "i": 0,
+            "version": 1,
+            "arrived": 0,
+            "deadline": 12,
+            "priority": 0,
+            "attempts": 1,
+            "received": null,
+            "claim": 2
+          }
+        ],
+        "trace": [
+          {
+            "t": 0,
+            "type": "offer",
+            "id": "pump:1",
+            "agent": "pump"
+          },
+          {
+            "t": 0,
+            "type": "start",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 1
+          },
+          {
+            "t": 2,
+            "type": "sent",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 1,
+            "lost": true,
+            "ok": false
+          },
+          {
+            "t": 2,
+            "type": "assumed-delivery",
+            "id": "pump:1",
+            "agent": "pump"
+          }
+        ],
+        "segments": [
+          {
+            "t": 0,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 0,
+            "attempt": 1
+          },
+          {
+            "t": 1,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 1,
+            "attempt": 1
+          },
+          {
+            "t": 2,
+            "id": null
+          },
+          {
+            "t": 3,
+            "id": null
+          },
+          {
+            "t": 4,
+            "id": null
+          },
+          {
+            "t": 5,
+            "id": null
+          },
+          {
+            "t": 6,
+            "id": null
+          },
+          {
+            "t": 7,
+            "id": null
+          },
+          {
+            "t": 8,
+            "id": null
+          },
+          {
+            "t": 9,
+            "id": null
+          },
+          {
+            "t": 10,
+            "id": null
+          },
+          {
+            "t": 11,
+            "id": null
+          }
+        ],
+        "pendingFeedback": [],
+        "used": 2
+      },
+      "confirmed": {
+        "schema": "mhac-situated-feedback-v1",
+        "config": {
+          "name": "light",
+          "horizon": 12,
+          "periods": [
+            400,
+            400,
+            400
+          ],
+          "phases": [
+            0,
+            400,
+            400
+          ],
+          "deadlines": [
+            12,
+            12,
+            12
+          ],
+          "priorities": [
+            0,
+            2,
+            1
+          ],
+          "loss": 0,
+          "delay": 1,
+          "seed": 1105
+        },
+        "policy": "confirmed",
+        "until": 12,
+        "manual": [
+          {
+            "op": "drop",
+            "t": 1
+          }
+        ],
+        "metrics": {
+          "pump": {
+            "offered": 1,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          },
+          "fan": {
+            "offered": 0,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          },
+          "relay": {
+            "offered": 0,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          }
+        },
+        "records": [
+          {
+            "id": "pump:1",
+            "agent": "pump",
+            "i": 0,
+            "version": 1,
+            "arrived": 0,
+            "deadline": 12,
+            "priority": 0,
+            "attempts": 1,
+            "received": null,
+            "claim": null
+          }
+        ],
+        "trace": [
+          {
+            "t": 0,
+            "type": "offer",
+            "id": "pump:1",
+            "agent": "pump"
+          },
+          {
+            "t": 0,
+            "type": "start",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 1
+          },
+          {
+            "t": 2,
+            "type": "sent",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 1,
+            "lost": true,
+            "ok": false
+          },
+          {
+            "t": 3,
+            "type": "feedback",
+            "id": "pump:1",
+            "agent": "pump",
+            "ok": false,
+            "attempt": 1
+          },
+          {
+            "t": 3,
+            "type": "repair-unavailable",
+            "id": "pump:1",
+            "agent": "pump"
+          }
+        ],
+        "segments": [
+          {
+            "t": 0,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 0,
+            "attempt": 1
+          },
+          {
+            "t": 1,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 1,
+            "attempt": 1
+          },
+          {
+            "t": 2,
+            "id": null
+          },
+          {
+            "t": 3,
+            "id": null
+          },
+          {
+            "t": 4,
+            "id": null
+          },
+          {
+            "t": 5,
+            "id": null
+          },
+          {
+            "t": 6,
+            "id": null
+          },
+          {
+            "t": 7,
+            "id": null
+          },
+          {
+            "t": 8,
+            "id": null
+          },
+          {
+            "t": 9,
+            "id": null
+          },
+          {
+            "t": 10,
+            "id": null
+          },
+          {
+            "t": 11,
+            "id": null
+          }
+        ],
+        "pendingFeedback": [],
+        "used": 2
+      },
+      "repair": {
+        "schema": "mhac-situated-feedback-v1",
+        "config": {
+          "name": "light",
+          "horizon": 12,
+          "periods": [
+            400,
+            400,
+            400
+          ],
+          "phases": [
+            0,
+            400,
+            400
+          ],
+          "deadlines": [
+            12,
+            12,
+            12
+          ],
+          "priorities": [
+            0,
+            2,
+            1
+          ],
+          "loss": 0,
+          "delay": 1,
+          "seed": 1105
+        },
+        "policy": "repair",
+        "until": 12,
+        "manual": [
+          {
+            "op": "drop",
+            "t": 1
+          }
+        ],
+        "metrics": {
+          "pump": {
+            "offered": 1,
+            "received": 1,
+            "claimed": 1,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 1
+          },
+          "fan": {
+            "offered": 0,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          },
+          "relay": {
+            "offered": 0,
+            "received": 0,
+            "claimed": 0,
+            "falseClaims": 0,
+            "unconfirmed": 0,
+            "retries": 0
+          }
+        },
+        "records": [
+          {
+            "id": "pump:1",
+            "agent": "pump",
+            "i": 0,
+            "version": 1,
+            "arrived": 0,
+            "deadline": 12,
+            "priority": 0,
+            "attempts": 2,
+            "received": 5,
+            "claim": 6
+          }
+        ],
+        "trace": [
+          {
+            "t": 0,
+            "type": "offer",
+            "id": "pump:1",
+            "agent": "pump"
+          },
+          {
+            "t": 0,
+            "type": "start",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 1
+          },
+          {
+            "t": 2,
+            "type": "sent",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 1,
+            "lost": true,
+            "ok": false
+          },
+          {
+            "t": 3,
+            "type": "feedback",
+            "id": "pump:1",
+            "agent": "pump",
+            "ok": false,
+            "attempt": 1
+          },
+          {
+            "t": 3,
+            "type": "retry-queued",
+            "id": "pump:1",
+            "agent": "pump"
+          },
+          {
+            "t": 3,
+            "type": "start",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 2
+          },
+          {
+            "t": 5,
+            "type": "sent",
+            "id": "pump:1",
+            "agent": "pump",
+            "attempt": 2,
+            "lost": false,
+            "ok": true
+          },
+          {
+            "t": 5,
+            "type": "received",
+            "id": "pump:1",
+            "agent": "pump"
+          },
+          {
+            "t": 6,
+            "type": "feedback",
+            "id": "pump:1",
+            "agent": "pump",
+            "ok": true,
+            "attempt": 2
+          },
+          {
+            "t": 6,
+            "type": "confirmed",
+            "id": "pump:1",
+            "agent": "pump"
+          }
+        ],
+        "segments": [
+          {
+            "t": 0,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 0,
+            "attempt": 1
+          },
+          {
+            "t": 1,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 1,
+            "attempt": 1
+          },
+          {
+            "t": 2,
+            "id": null
+          },
+          {
+            "t": 3,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 0,
+            "attempt": 2
+          },
+          {
+            "t": 4,
+            "id": "pump:1",
+            "agent": "pump",
+            "part": 1,
+            "attempt": 2
+          },
+          {
+            "t": 5,
+            "id": null
+          },
+          {
+            "t": 6,
+            "id": null
+          },
+          {
+            "t": 7,
+            "id": null
+          },
+          {
+            "t": 8,
+            "id": null
+          },
+          {
+            "t": 9,
+            "id": null
+          },
+          {
+            "t": 10,
+            "id": null
+          },
+          {
+            "t": 11,
+            "id": null
+          }
+        ],
+        "pendingFeedback": [],
+        "used": 4
+      }
+    },
+    "lateFeedback": {
+      "schema": "mhac-situated-feedback-v1",
+      "config": {
+        "name": "light",
+        "horizon": 12,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          12,
+          12,
+          12
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "loss": 0,
+        "delay": 3,
+        "seed": 1105
+      },
+      "policy": "repair",
+      "until": 12,
+      "manual": [
+        {
+          "op": "offer",
+          "t": 3,
+          "agent": "pump"
+        }
+      ],
+      "metrics": {
+        "pump": {
+          "offered": 2,
+          "received": 2,
+          "claimed": 1,
+          "falseClaims": 0,
+          "unconfirmed": 1,
+          "retries": 0
+        },
+        "fan": {
+          "offered": 0,
+          "received": 0,
+          "claimed": 0,
+          "falseClaims": 0,
+          "unconfirmed": 0,
+          "retries": 0
+        },
+        "relay": {
+          "offered": 0,
+          "received": 0,
+          "claimed": 0,
+          "falseClaims": 0,
+          "unconfirmed": 0,
+          "retries": 0
+        }
+      },
+      "records": [
+        {
+          "id": "pump:1",
+          "agent": "pump",
+          "i": 0,
+          "version": 1,
+          "arrived": 0,
+          "deadline": 12,
+          "priority": 0,
+          "attempts": 1,
+          "received": 2,
+          "claim": null
+        },
+        {
+          "id": "pump:2",
+          "agent": "pump",
+          "i": 0,
+          "version": 2,
+          "arrived": 3,
+          "deadline": 15,
+          "priority": 0,
+          "attempts": 1,
+          "received": 5,
+          "claim": 8
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "sent",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "superseded",
+          "id": "pump:1",
+          "agent": "pump",
+          "by": "pump:2"
+        },
+        {
+          "t": 3,
+          "type": "offer",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 5,
+          "type": "sent",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 5,
+          "type": "received",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 5,
+          "type": "feedback",
+          "id": "pump:1",
+          "agent": "pump",
+          "ok": true,
+          "attempt": 1
+        },
+        {
+          "t": 5,
+          "type": "feedback-stale",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 8,
+          "type": "feedback",
+          "id": "pump:2",
+          "agent": "pump",
+          "ok": true,
+          "attempt": 1
+        },
+        {
+          "t": 8,
+          "type": "confirmed",
+          "id": "pump:2",
+          "agent": "pump"
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "id": "pump:1",
+          "agent": "pump",
+          "part": 0,
+          "attempt": 1
+        },
+        {
+          "t": 1,
+          "id": "pump:1",
+          "agent": "pump",
+          "part": 1,
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "id": null
+        },
+        {
+          "t": 3,
+          "id": "pump:2",
+          "agent": "pump",
+          "part": 0,
+          "attempt": 1
+        },
+        {
+          "t": 4,
+          "id": "pump:2",
+          "agent": "pump",
+          "part": 1,
+          "attempt": 1
+        },
+        {
+          "t": 5,
+          "id": null
+        },
+        {
+          "t": 6,
+          "id": null
+        },
+        {
+          "t": 7,
+          "id": null
+        },
+        {
+          "t": 8,
+          "id": null
+        },
+        {
+          "t": 9,
+          "id": null
+        },
+        {
+          "t": 10,
+          "id": null
+        },
+        {
+          "t": 11,
+          "id": null
+        }
+      ],
+      "pendingFeedback": [],
+      "used": 4
+    },
+    "horizon": {
+      "schema": "mhac-situated-feedback-v1",
+      "config": {
+        "name": "light",
+        "horizon": 12,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          12,
+          12,
+          12
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "loss": 0,
+        "delay": 1,
+        "seed": 1105
+      },
+      "policy": "confirmed",
+      "until": 2,
+      "manual": [],
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "received": 1,
+          "claimed": 0,
+          "falseClaims": 0,
+          "unconfirmed": 1,
+          "retries": 0
+        },
+        "fan": {
+          "offered": 0,
+          "received": 0,
+          "claimed": 0,
+          "falseClaims": 0,
+          "unconfirmed": 0,
+          "retries": 0
+        },
+        "relay": {
+          "offered": 0,
+          "received": 0,
+          "claimed": 0,
+          "falseClaims": 0,
+          "unconfirmed": 0,
+          "retries": 0
+        }
+      },
+      "records": [
+        {
+          "id": "pump:1",
+          "agent": "pump",
+          "i": 0,
+          "version": 1,
+          "arrived": 0,
+          "deadline": 12,
+          "priority": 0,
+          "attempts": 1,
+          "received": 2,
+          "claim": null
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "sent",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "id": "pump:1",
+          "agent": "pump",
+          "part": 0,
+          "attempt": 1
+        },
+        {
+          "t": 1,
+          "id": "pump:1",
+          "agent": "pump",
+          "part": 1,
+          "attempt": 1
+        }
+      ],
+      "pendingFeedback": [
+        {
+          "id": "pump:1",
+          "due": 3,
+          "ok": true,
+          "attempt": 1
+        }
+      ],
+      "used": 2
+    }
+  },
+  "limits": "synthetic oracle and reliable out-of-band feedback; no human evidence"
+}
