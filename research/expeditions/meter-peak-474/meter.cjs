@@ -18,7 +18,7 @@ function solve(n, streams){
   for(const s of streams){
     if(!s||!Number.isInteger(s.width)||s.width<1||s.width>n||widths.has(s.width)||
        !Array.isArray(s.sums)||s.sums.length!==n||
-       s.sums.some(v=>!Number.isInteger(v)||v<0||v>1e9))
+       Array.from(s.sums).some(v=>!Number.isInteger(v)||v<0||v>1e9))
       throw new RangeError("invalid width or reading (integer 0..1e9)");
     widths.add(s.width);
   }
