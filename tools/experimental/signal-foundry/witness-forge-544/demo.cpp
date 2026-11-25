@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <utility>
 using namespace mhac::forge;
 constexpr double pi=3.14159265358979323846;
 static void sample(std::ofstream& o,double x){auto u=static_cast<std::uint16_t>(static_cast<std::int16_t>(std::lround(32767*x)));o.put(static_cast<char>(u&255));o.put(static_cast<char>(u>>8));}
