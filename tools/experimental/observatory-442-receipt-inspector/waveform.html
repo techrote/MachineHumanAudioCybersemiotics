@@ -38,7 +38,7 @@ function score(pcm){
  const coarse=[];for(let t=0;t<=pcm.length-pulse;t+=4)coarse.push(corr(t));
  const peaks=[];
  for(let i=0;i<coarse.length;i++)if(coarse[i]>=(coarse[i-1]??-Infinity)&&coarse[i]>(coarse[i+1]??-Infinity)&&coarse[i]>=thresholds[0]*0.5){
-  let t=i*4,best=coarse[i];for(let j=Math.max(0,t-4);j<=Math.min(pcm.length-pulse,t+4);j++){let v=corr(j);if(v>best){best=v;t=j;}}
+  const center=i*4;let t=center,best=coarse[i];for(let j=Math.max(0,center-4);j<=Math.min(pcm.length-pulse,center+4);j++){let v=corr(j);if(v>best){best=v;t=j;}}
   peaks.push({t,score:best});
  }
  return peaks.sort((a,b)=>b.score-a.score||a.t-b.t);
