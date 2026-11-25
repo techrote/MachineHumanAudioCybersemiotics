@@ -47,8 +47,11 @@ public:
     }
     bool on(int id,int note,double tuning,double velocity) noexcept {
         if(!std::isfinite(velocity)||velocity<=0){if(velocity==0)off(id);return false;}
-        if(!std::isfinite(tuning)||!e.noteOn(id,note,velocity))return false;
-        for(unsigned i=0;i<e.voices.size();++i)if(e.voices[i].active&&e.voices[i].id==id){cents[i]=std::clamp(tuning,-1200.,1200.);retune();e.voices[i].inc=e.voices[i].target;break;}
+        if(!std::isfinite(tuning))return false;
+        bool retrigger=false;
+        for(const auto& v:e.voices)if(v.active&&v.id==id&&v.releasing)retrigger=true;
+        if(!e.noteOn(id,note,velocity))return false;
+        for(unsigned i=0;i<e.voices.size();++i)if(e.voices[i].active&&e.voices[i].id==id){cents[i]=std::clamp(tuning,-1200.,1200.);retune();if(!retrigger)e.voices[i].inc=e.voices[i].target;break;}
         return true;
     }
     void off(int id) noexcept {e.noteOff(id);}

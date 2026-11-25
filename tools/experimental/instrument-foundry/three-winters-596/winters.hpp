@@ -22,7 +22,7 @@ struct Score {
 struct Engine {
     static constexpr int capacity=4;
     static constexpr double pi=3.14159265358979323846;
-    struct Voice { bool active=false, releasing=false; int id=0, note=0; double velocity=0, env=0; std::array<double,3> phase{},inc{},target{}; };
+    struct Voice { bool active=false, releasing=false; int id=0, note=0; double velocity=0, velocityTarget=0, env=0; std::array<double,3> phase{},inc{},target{}; };
     Score score{};
     std::array<Voice,capacity> voices{};
     double rate=48000, attack=1./240, releaseStep=1./1920, glide=1./240;
@@ -43,8 +43,14 @@ struct Engine {
     void edit(int slot,int token) noexcept {score.edit(slot,token);retarget();}
     bool noteOn(int id,int note,double velocity) noexcept {
         if(!std::isfinite(velocity)||velocity<=0||note<0||note>127)return false;
-        for(const auto& v:voices)if(v.active&&v.id==id)return false;
-        for(auto& v:voices)if(!v.active){v=Voice{};v.active=true;v.id=id;v.note=note;v.velocity=std::min(1.,velocity);for(int i=0;i<3;++i)v.inc[i]=v.target[i]=frequency(note,i);return true;}
+        for(auto& v:voices)if(v.active&&v.id==id){
+            if(!v.releasing)return false;
+            // Re-articulate the releasing voice without resetting phase or envelope.
+            v.releasing=false;v.note=note;v.velocityTarget=std::min(1.,velocity);
+            for(int i=0;i<3;++i)v.target[i]=frequency(note,i);
+            return true;
+        }
+        for(auto& v:voices)if(!v.active){v=Voice{};v.active=true;v.id=id;v.note=note;v.velocity=v.velocityTarget=std::min(1.,velocity);for(int i=0;i<3;++i)v.inc[i]=v.target[i]=frequency(note,i);return true;}
         return false; // refuse excess notes rather than abruptly stealing a sounding voice
     }
     void noteOff(int id) noexcept {for(auto& v:voices)if(v.active&&v.id==id)v.releasing=true;}
@@ -53,6 +59,7 @@ struct Engine {
         for(auto& v:voices)if(v.active){
             v.env=v.releasing?std::max(0.,v.env-releaseStep):std::min(1.,v.env+attack);
             if(v.releasing&&v.env<=0){v=Voice{};continue;}
+            v.velocity+=std::clamp(v.velocityTarget-v.velocity,-attack,attack);
             for(int i=0;i<3;++i){
                 v.inc[i]+=std::clamp(v.target[i]-v.inc[i],-glide*.45,glide*.45);
                 v.phase[i]+=v.inc[i];if(v.phase[i]>=1)v.phase[i]-=1;
