@@ -1,0 +1,71 @@
+{
+  "normalization": 8,
+  "integer_scale": 840,
+  "profiles": 2940,
+  "allocation_witnesses": 215663,
+  "curve_knots": 26460,
+  "coarsenings": 84378,
+  "dual_equalities": 84378,
+  "area_equalities": 84378,
+  "lossless_equivalences": 84378,
+  "dp_comparisons": 12446,
+  "noncontiguous_improvements": 194,
+  "first_noncontiguous": {
+    "p": [
+      1,
+      1,
+      4,
+      2
+    ],
+    "q": [
+      2,
+      1,
+      4,
+      1
+    ],
+    "k": 2,
+    "contiguous": 600,
+    "arbitrary": 560,
+    "groups": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  },
+  "by_dimension": {
+    "2": 49,
+    "3": 441,
+    "4": 1225,
+    "5": 1225
+  },
+  "sign_only_witness": {
+    "p": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "p_total": 10,
+    "q": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "q_total": 4,
+    "delta": "1/10",
+    "B": "9/40",
+    "A": "19/100",
+    "gap": "-7/200",
+    "fine_lower_at_quarter": "1/10",
+    "coarse_lower_at_quarter": "3/20",
+    "restricted_coarse_A": "47/200",
+    "restricted_gap": "1/100",
+    "TV": "1/5"
+  }
+}
