@@ -40,7 +40,8 @@ function compile(n, windows) {
       const chosen=[anchor];let last=0;
       for(const arc of remaining)if(last<arc.left){chosen.push(arc.last);last=arc.right;}
       // candidate points share a common level, so interval membership is exact.
-      if(!sets.every(s=>s.some(i=>chosen.includes(i))))throw Error('internal stabbing failure');
+      const chosenSet=new Set(chosen);
+      if(!sets.every(s=>s.some(i=>chosenSet.has(i))))throw Error('internal stabbing failure');
       if(best===null||chosen.length<best.length)best=chosen;
     }
     for(const i of best)sparse[i]=h;
