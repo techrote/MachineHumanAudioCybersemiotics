@@ -1,0 +1,3522 @@
+{
+  "schema": "mhac-attention-qualification-v1",
+  "assertions": 11197,
+  "cases": 180,
+  "summary": [
+    {
+      "name": "saturated",
+      "policy": "preempt",
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 0,
+          "expired": 1,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 39,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 0,
+          "expired": 1,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        }
+      },
+      "used": 80,
+      "useful": 78,
+      "peak": 2334
+    },
+    {
+      "name": "saturated",
+      "policy": "priority",
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 0,
+          "expired": 1,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 39,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 3
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 80,
+      "useful": 80,
+      "peak": 2334
+    },
+    {
+      "name": "saturated",
+      "policy": "aging",
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 12,
+          "meanCompletedLatency": 12
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 38,
+          "expired": 0,
+          "coalesced": 1,
+          "pending": 1,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 3
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 80,
+      "useful": 80,
+      "peak": 2334
+    },
+    {
+      "name": "bursty",
+      "policy": "preempt",
+      "metrics": {
+        "pump": {
+          "offered": 8,
+          "complete": 7,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 10,
+          "meanCompletedLatency": 5.714285714285714
+        },
+        "fan": {
+          "offered": 16,
+          "complete": 16,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 7,
+          "complete": 7,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 5,
+          "meanCompletedLatency": 3.2857142857142856
+        }
+      },
+      "used": 66,
+      "useful": 60,
+      "peak": 2334
+    },
+    {
+      "name": "bursty",
+      "policy": "priority",
+      "metrics": {
+        "pump": {
+          "offered": 8,
+          "complete": 7,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 6,
+          "meanCompletedLatency": 3.7142857142857144
+        },
+        "fan": {
+          "offered": 16,
+          "complete": 16,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 2.25
+        },
+        "relay": {
+          "offered": 7,
+          "complete": 7,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 2.4285714285714284
+        }
+      },
+      "used": 60,
+      "useful": 60,
+      "peak": 2334
+    },
+    {
+      "name": "bursty",
+      "policy": "aging",
+      "metrics": {
+        "pump": {
+          "offered": 8,
+          "complete": 7,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 6,
+          "meanCompletedLatency": 3.7142857142857144
+        },
+        "fan": {
+          "offered": 16,
+          "complete": 16,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 2.25
+        },
+        "relay": {
+          "offered": 7,
+          "complete": 7,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 2.4285714285714284
+        }
+      },
+      "used": 60,
+      "useful": 60,
+      "peak": 2334
+    },
+    {
+      "name": "overload",
+      "policy": "preempt",
+      "metrics": {
+        "pump": {
+          "offered": 27,
+          "complete": 0,
+          "expired": 0,
+          "coalesced": 26,
+          "pending": 1,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 39,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 20,
+          "complete": 0,
+          "expired": 0,
+          "coalesced": 19,
+          "pending": 1,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        }
+      },
+      "used": 80,
+      "useful": 78,
+      "peak": 2334
+    },
+    {
+      "name": "overload",
+      "policy": "priority",
+      "metrics": {
+        "pump": {
+          "offered": 27,
+          "complete": 0,
+          "expired": 0,
+          "coalesced": 26,
+          "pending": 1,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 39,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 3
+        },
+        "relay": {
+          "offered": 20,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 18,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 80,
+      "useful": 80,
+      "peak": 2334
+    },
+    {
+      "name": "overload",
+      "policy": "aging",
+      "metrics": {
+        "pump": {
+          "offered": 27,
+          "complete": 0,
+          "expired": 0,
+          "coalesced": 26,
+          "pending": 1,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 39,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 3
+        },
+        "relay": {
+          "offered": 20,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 18,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 80,
+      "useful": 80,
+      "peak": 2334
+    },
+    {
+      "name": "light",
+      "policy": "preempt",
+      "metrics": {
+        "pump": {
+          "offered": 5,
+          "complete": 5,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 7,
+          "meanCompletedLatency": 3.6
+        },
+        "fan": {
+          "offered": 8,
+          "complete": 8,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 5,
+          "complete": 5,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 5,
+          "meanCompletedLatency": 2.8
+        }
+      },
+      "used": 37,
+      "useful": 36,
+      "peak": 2334
+    },
+    {
+      "name": "light",
+      "policy": "priority",
+      "metrics": {
+        "pump": {
+          "offered": 5,
+          "complete": 5,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 6,
+          "meanCompletedLatency": 3.4
+        },
+        "fan": {
+          "offered": 8,
+          "complete": 8,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 2.125
+        },
+        "relay": {
+          "offered": 5,
+          "complete": 5,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 2.2
+        }
+      },
+      "used": 36,
+      "useful": 36,
+      "peak": 2334
+    },
+    {
+      "name": "light",
+      "policy": "aging",
+      "metrics": {
+        "pump": {
+          "offered": 5,
+          "complete": 5,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 6,
+          "meanCompletedLatency": 3.4
+        },
+        "fan": {
+          "offered": 8,
+          "complete": 8,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 2.125
+        },
+        "relay": {
+          "offered": 5,
+          "complete": 5,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 3,
+          "meanCompletedLatency": 2.2
+        }
+      },
+      "used": 36,
+      "useful": 36,
+      "peak": 2334
+    },
+    {
+      "name": "tight",
+      "policy": "preempt",
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 0,
+          "expired": 1,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 39,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 0,
+          "expired": 1,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": null,
+          "meanCompletedLatency": null
+        }
+      },
+      "used": 80,
+      "useful": 78,
+      "peak": 2334
+    },
+    {
+      "name": "tight",
+      "policy": "priority",
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 4
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 37,
+          "expired": 2,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 79,
+      "useful": 78,
+      "peak": 2334
+    },
+    {
+      "name": "tight",
+      "policy": "aging",
+      "metrics": {
+        "pump": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 4,
+          "meanCompletedLatency": 4
+        },
+        "fan": {
+          "offered": 40,
+          "complete": 37,
+          "expired": 2,
+          "coalesced": 0,
+          "pending": 1,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        },
+        "relay": {
+          "offered": 1,
+          "complete": 1,
+          "expired": 0,
+          "coalesced": 0,
+          "pending": 0,
+          "maxCompletedLatency": 2,
+          "meanCompletedLatency": 2
+        }
+      },
+      "used": 79,
+      "useful": 78,
+      "peak": 2334
+    }
+  ],
+  "witnesses": {
+    "strict": [
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 0,
+        "type": "start",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 1,
+        "type": "offer",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 1,
+        "type": "interrupted",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 1,
+        "type": "start",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 3,
+        "type": "complete",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 3,
+        "type": "offer",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 3,
+        "type": "start",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "complete",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "offer",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "start",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "complete",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "offer",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "start",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "complete",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "offer",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "start",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "complete",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "offer",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "start",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "complete",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "offer",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "start",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "complete",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "offer",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "start",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "complete",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "offer",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "start",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "complete",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "expired",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 19,
+        "type": "expired",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 19,
+        "type": "offer",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "start",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "complete",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "offer",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "start",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "complete",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "offer",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "start",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "complete",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "offer",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "start",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "complete",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "offer",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "start",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "complete",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "offer",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "start",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "complete",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "offer",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "start",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "complete",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "offer",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "start",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "complete",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "offer",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "start",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "complete",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "offer",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "start",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "complete",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "offer",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "start",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "complete",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "offer",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "start",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "complete",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "offer",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "start",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "complete",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "offer",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "start",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "complete",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "offer",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "start",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "complete",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "offer",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "start",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "complete",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "offer",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "start",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "complete",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "offer",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "start",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "complete",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "offer",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "start",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "complete",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "offer",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "start",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "complete",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "offer",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "start",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "complete",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "offer",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "start",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "complete",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "offer",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "start",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "complete",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "offer",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "start",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "complete",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "offer",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "start",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "complete",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "offer",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "start",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "complete",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "offer",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "start",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "complete",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "offer",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "start",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "complete",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "offer",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "start",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "complete",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "offer",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "start",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "complete",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "offer",
+        "id": "fan:40",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "start",
+        "id": "fan:40",
+        "agent": "fan"
+      }
+    ],
+    "nonpreempt": [
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 0,
+        "type": "start",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 1,
+        "type": "offer",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 2,
+        "type": "complete",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 2,
+        "type": "start",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 3,
+        "type": "offer",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 4,
+        "type": "complete",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 4,
+        "type": "start",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "offer",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 6,
+        "type": "complete",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 6,
+        "type": "start",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "offer",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 8,
+        "type": "complete",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 8,
+        "type": "start",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "offer",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 10,
+        "type": "complete",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 10,
+        "type": "start",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "offer",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 12,
+        "type": "complete",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 12,
+        "type": "start",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "offer",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 14,
+        "type": "complete",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 14,
+        "type": "start",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "offer",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 16,
+        "type": "complete",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 16,
+        "type": "start",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "offer",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 18,
+        "type": "complete",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 18,
+        "type": "start",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "expired",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 19,
+        "type": "offer",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 20,
+        "type": "complete",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 20,
+        "type": "start",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "offer",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 22,
+        "type": "complete",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 22,
+        "type": "start",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "offer",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 24,
+        "type": "complete",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 24,
+        "type": "start",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "offer",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 26,
+        "type": "complete",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 26,
+        "type": "start",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "offer",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 28,
+        "type": "complete",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 28,
+        "type": "start",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "offer",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 30,
+        "type": "complete",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 30,
+        "type": "start",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "offer",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 32,
+        "type": "complete",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 32,
+        "type": "start",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "offer",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 34,
+        "type": "complete",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 34,
+        "type": "start",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "offer",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 36,
+        "type": "complete",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 36,
+        "type": "start",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "offer",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 38,
+        "type": "complete",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 38,
+        "type": "start",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "offer",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 40,
+        "type": "complete",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 40,
+        "type": "start",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "offer",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 42,
+        "type": "complete",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 42,
+        "type": "start",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "offer",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 44,
+        "type": "complete",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 44,
+        "type": "start",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "offer",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 46,
+        "type": "complete",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 46,
+        "type": "start",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "offer",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 48,
+        "type": "complete",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 48,
+        "type": "start",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "offer",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 50,
+        "type": "complete",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 50,
+        "type": "start",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "offer",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 52,
+        "type": "complete",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 52,
+        "type": "start",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "offer",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 54,
+        "type": "complete",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 54,
+        "type": "start",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "offer",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 56,
+        "type": "complete",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 56,
+        "type": "start",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "offer",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 58,
+        "type": "complete",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 58,
+        "type": "start",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "offer",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 60,
+        "type": "complete",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 60,
+        "type": "start",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "offer",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 62,
+        "type": "complete",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 62,
+        "type": "start",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "offer",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 64,
+        "type": "complete",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 64,
+        "type": "start",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "offer",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 66,
+        "type": "complete",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 66,
+        "type": "start",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "offer",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 68,
+        "type": "complete",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 68,
+        "type": "start",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "offer",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 70,
+        "type": "complete",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 70,
+        "type": "start",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "offer",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 72,
+        "type": "complete",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 72,
+        "type": "start",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "offer",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 74,
+        "type": "complete",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 74,
+        "type": "start",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "offer",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 76,
+        "type": "complete",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 76,
+        "type": "start",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "offer",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 78,
+        "type": "complete",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 78,
+        "type": "start",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "offer",
+        "id": "fan:40",
+        "agent": "fan"
+      },
+      {
+        "t": 80,
+        "type": "complete",
+        "id": "fan:39",
+        "agent": "fan"
+      }
+    ],
+    "aging": [
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 0,
+        "type": "start",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 1,
+        "type": "offer",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 2,
+        "type": "complete",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 2,
+        "type": "start",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 3,
+        "type": "offer",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 4,
+        "type": "complete",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 4,
+        "type": "start",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "offer",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 6,
+        "type": "complete",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 6,
+        "type": "start",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "offer",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 8,
+        "type": "complete",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 8,
+        "type": "start",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "offer",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 10,
+        "type": "complete",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 10,
+        "type": "start",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 11,
+        "type": "offer",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "coalesced",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 12,
+        "type": "complete",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 12,
+        "type": "start",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "offer",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 14,
+        "type": "complete",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 14,
+        "type": "start",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "offer",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 16,
+        "type": "complete",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 16,
+        "type": "start",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "offer",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 18,
+        "type": "complete",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 18,
+        "type": "start",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "offer",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 20,
+        "type": "complete",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 20,
+        "type": "start",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "offer",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 22,
+        "type": "complete",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 22,
+        "type": "start",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "offer",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 24,
+        "type": "complete",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 24,
+        "type": "start",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "offer",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 26,
+        "type": "complete",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 26,
+        "type": "start",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "offer",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 28,
+        "type": "complete",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 28,
+        "type": "start",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "offer",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 30,
+        "type": "complete",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 30,
+        "type": "start",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "offer",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 32,
+        "type": "complete",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 32,
+        "type": "start",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "offer",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 34,
+        "type": "complete",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 34,
+        "type": "start",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "offer",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 36,
+        "type": "complete",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 36,
+        "type": "start",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "offer",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 38,
+        "type": "complete",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 38,
+        "type": "start",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "offer",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 40,
+        "type": "complete",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 40,
+        "type": "start",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "offer",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 42,
+        "type": "complete",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 42,
+        "type": "start",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "offer",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 44,
+        "type": "complete",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 44,
+        "type": "start",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "offer",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 46,
+        "type": "complete",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 46,
+        "type": "start",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "offer",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 48,
+        "type": "complete",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 48,
+        "type": "start",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "offer",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 50,
+        "type": "complete",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 50,
+        "type": "start",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "offer",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 52,
+        "type": "complete",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 52,
+        "type": "start",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "offer",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 54,
+        "type": "complete",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 54,
+        "type": "start",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "offer",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 56,
+        "type": "complete",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 56,
+        "type": "start",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "offer",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 58,
+        "type": "complete",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 58,
+        "type": "start",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "offer",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 60,
+        "type": "complete",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 60,
+        "type": "start",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "offer",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 62,
+        "type": "complete",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 62,
+        "type": "start",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "offer",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 64,
+        "type": "complete",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 64,
+        "type": "start",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "offer",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 66,
+        "type": "complete",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 66,
+        "type": "start",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "offer",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 68,
+        "type": "complete",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 68,
+        "type": "start",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "offer",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 70,
+        "type": "complete",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 70,
+        "type": "start",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "offer",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 72,
+        "type": "complete",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 72,
+        "type": "start",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "offer",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 74,
+        "type": "complete",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 74,
+        "type": "start",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "offer",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 76,
+        "type": "complete",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 76,
+        "type": "start",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "offer",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 78,
+        "type": "complete",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 78,
+        "type": "start",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "offer",
+        "id": "fan:40",
+        "agent": "fan"
+      },
+      {
+        "t": 80,
+        "type": "complete",
+        "id": "fan:39",
+        "agent": "fan"
+      }
+    ],
+    "tight": [
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 0,
+        "type": "offer",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 0,
+        "type": "start",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 1,
+        "type": "offer",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 2,
+        "type": "complete",
+        "id": "relay:1",
+        "agent": "relay"
+      },
+      {
+        "t": 2,
+        "type": "expired",
+        "id": "fan:1",
+        "agent": "fan"
+      },
+      {
+        "t": 2,
+        "type": "start",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 3,
+        "type": "offer",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 4,
+        "type": "complete",
+        "id": "pump:1",
+        "agent": "pump"
+      },
+      {
+        "t": 4,
+        "type": "expired",
+        "id": "fan:2",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "offer",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 5,
+        "type": "start",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "complete",
+        "id": "fan:3",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "offer",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 7,
+        "type": "start",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "complete",
+        "id": "fan:4",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "offer",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 9,
+        "type": "start",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "complete",
+        "id": "fan:5",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "offer",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 11,
+        "type": "start",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "complete",
+        "id": "fan:6",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "offer",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 13,
+        "type": "start",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "complete",
+        "id": "fan:7",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "offer",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 15,
+        "type": "start",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "complete",
+        "id": "fan:8",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "offer",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 17,
+        "type": "start",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "complete",
+        "id": "fan:9",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "offer",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 19,
+        "type": "start",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "complete",
+        "id": "fan:10",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "offer",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 21,
+        "type": "start",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "complete",
+        "id": "fan:11",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "offer",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 23,
+        "type": "start",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "complete",
+        "id": "fan:12",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "offer",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 25,
+        "type": "start",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "complete",
+        "id": "fan:13",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "offer",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 27,
+        "type": "start",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "complete",
+        "id": "fan:14",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "offer",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 29,
+        "type": "start",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "complete",
+        "id": "fan:15",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "offer",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 31,
+        "type": "start",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "complete",
+        "id": "fan:16",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "offer",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 33,
+        "type": "start",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "complete",
+        "id": "fan:17",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "offer",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 35,
+        "type": "start",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "complete",
+        "id": "fan:18",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "offer",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 37,
+        "type": "start",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "complete",
+        "id": "fan:19",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "offer",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 39,
+        "type": "start",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "complete",
+        "id": "fan:20",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "offer",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 41,
+        "type": "start",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "complete",
+        "id": "fan:21",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "offer",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 43,
+        "type": "start",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "complete",
+        "id": "fan:22",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "offer",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 45,
+        "type": "start",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "complete",
+        "id": "fan:23",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "offer",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 47,
+        "type": "start",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "complete",
+        "id": "fan:24",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "offer",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 49,
+        "type": "start",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "complete",
+        "id": "fan:25",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "offer",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 51,
+        "type": "start",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "complete",
+        "id": "fan:26",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "offer",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 53,
+        "type": "start",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "complete",
+        "id": "fan:27",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "offer",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 55,
+        "type": "start",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "complete",
+        "id": "fan:28",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "offer",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 57,
+        "type": "start",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "complete",
+        "id": "fan:29",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "offer",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 59,
+        "type": "start",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "complete",
+        "id": "fan:30",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "offer",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 61,
+        "type": "start",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "complete",
+        "id": "fan:31",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "offer",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 63,
+        "type": "start",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "complete",
+        "id": "fan:32",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "offer",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 65,
+        "type": "start",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "complete",
+        "id": "fan:33",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "offer",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 67,
+        "type": "start",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "complete",
+        "id": "fan:34",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "offer",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 69,
+        "type": "start",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "complete",
+        "id": "fan:35",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "offer",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 71,
+        "type": "start",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "complete",
+        "id": "fan:36",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "offer",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 73,
+        "type": "start",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "complete",
+        "id": "fan:37",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "offer",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 75,
+        "type": "start",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "complete",
+        "id": "fan:38",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "offer",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 77,
+        "type": "start",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "complete",
+        "id": "fan:39",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "offer",
+        "id": "fan:40",
+        "agent": "fan"
+      },
+      {
+        "t": 79,
+        "type": "start",
+        "id": "fan:40",
+        "agent": "fan"
+      }
+    ]
+  },
+  "limits": "synthetic arrivals; no waveform reception, perception, or safety claim"
+}
