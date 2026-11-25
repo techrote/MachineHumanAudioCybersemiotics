@@ -15,7 +15,11 @@ const FUID controllerID(0x67FB91AE,0x15E34C72,0xBBD98E24,0x7CA53F10);
 constexpr ParamID firstID=100;
 bool readParams(IBStream* stream,fx::Params& p){
     fx::State bytes{};int32 n=0;
-    return stream&&stream->read(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())&&fx::decode(bytes,p);
+    if(!stream||stream->read(bytes.data(),8,&n)!=kResultOk||n!=8)return false;
+    const auto version=fx::get(bytes,4);
+    const int32 size=version==1?int32(fx::legacySize):version==2?int32(bytes.size()):0;
+    if(!size)return false;
+    return stream->read(bytes.data()+8,size-8,&n)==kResultOk&&n==size-8&&fx::decode(bytes,p,unsigned(size));
 }
 struct Cursor {
     IParamValueQueue* queue=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
@@ -102,6 +106,8 @@ public:
         add(STR16("Depth"),fx::Depth);
         add(STR16("Mix"),fx::Mix);
         add(STR16("Bypass"),fx::Bypass,1,autoFlag|ParameterInfo::kIsBypass);
+        add(STR16("Attack (0-100 ms)"),fx::Attack);
+        add(STR16("Release (0-500 ms)"),fx::Release);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* stream) override {
@@ -112,7 +118,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Retreat Shaper", Vst::kDistributable, "Fx|Dynamics", "0.1.0", kVstVersionString, Processor::create)
+           "MHAC Retreat Shaper", Vst::kDistributable, "Fx|Dynamics", "0.2.0", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Retreat Shaper Controller", 0, "", "0.1.0", kVstVersionString, Controller::create)
+           "MHAC Retreat Shaper Controller", 0, "", "0.2.0", kVstVersionString, Controller::create)
 END_FACTORY
