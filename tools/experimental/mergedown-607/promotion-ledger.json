@@ -11,7 +11,7 @@
       "ci": 45690234347,
       "disposition": "HOLD",
       "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified",
-      "observedLaterHead": "92db2601aae859f0860eecb0acd03f44049688db"
+      "observedLaterHead": "e7b396e2f7e4e9d04e72b9aec62e93c1cd5b7c66"
     },
     {
       "pr": 453,
@@ -19,7 +19,7 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "915baf07d49e22d01bd651579a00f41f0071bc82"
+      "observedLaterHead": "d0a7c818b1ec9070cb539422a04b01c5d0c63d64"
     },
     {
       "pr": 449,
@@ -27,7 +27,7 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "1e5a6e0873ceddc95a6d58e13bfd9b8ad7b1a395"
+      "observedLaterHead": "334c1581798636331469f6b49734f0ed98de7163"
     },
     {
       "pr": 457,
@@ -35,7 +35,7 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "b44f11b425a0e42d2ed245057c8afbb42d4e0cec"
+      "observedLaterHead": "66141259400d2e6d5581e0aeddbd6f57aeeefde4"
     },
     {
       "pr": 513,
@@ -43,7 +43,7 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "20b8bbd684f140886d5f17ec256d9272e7898c7b"
+      "observedLaterHead": "ae2eb5ca2ce7d85ebabd89ef96672de98ed41c08"
     }
   ],
   "ciScope": "Research integrity workflow completed successfully at each pinned head; not runtime or scientific acceptance.",
@@ -102,6 +102,65 @@
       "Shared noise across gains; pooled trial counts are not independent population evidence",
       "No actual playback, local file launch, Windows or human qualification",
       "Original snapshot retained for provenance; canonical software path unresolved"
-    ]
+    ],
+    "repairDisposition": "REWORK resolved at separately pinned v2; frozen v1 remains REWORK as historical evidence"
+  },
+  "onsetV2Batch": {
+    "id": "OBS-ONSET-002-V2",
+    "disposition": "QUALIFIED FOR OWNER REVIEW",
+    "qualificationScope": "bounded native source and full numerical receipt only; no overall PR promotion or scientific acceptance",
+    "sourcePR": 443,
+    "sourceHead": "e7b396e2f7e4e9d04e72b9aec62e93c1cd5b7c66",
+    "sourceIntegrityCI": {
+      "run": 45708415660,
+      "conclusion": "success"
+    },
+    "supersedesForSoftwareUse": "92db2601aae859f0860eecb0acd03f44049688db",
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/",
+    "blobs": {
+      "onset-calibration.cjs": "82f576e19936e3b8cecf193f01d891788c0647e0",
+      "onset-calibration-test.cjs": "44553d014be7e809792854bcb8e21f3a5be4f621"
+    },
+    "sourceDelta": "two commits, 49 additions / 4 deletions across the two CJS files; no other upstream files in delta",
+    "dependencies": "Node 22.16.0, standard library only; independent oracle Python 3.13 / NumPy 2.3.5",
+    "harness": "check_onset_v2.py",
+    "harnessBlob": "b0a71d4ea94bcc46815d659c74339614b4865eb7",
+    "command": "python check_onset_v2.py PINNED_SOURCE_DIR NEW_OUTPUT_DIR",
+    "native": "both exact source blobs executed; upstream regression PASS (8 negative controls, 5 preserved JSON payload hashes, 5 preserved gallery hashes, 7 repeat files); independent Python oracle full 144 dev rows including WAV SHA256, 960 eval rows, 26 metric groups, all 4 WAV byte streams, 6 manifest hashes PASS",
+    "receiptSHA256": "28f6762125d31531a8b632991d6b62dd15a81b8b0ec0283da28b3b5077b813ec",
+    "scriptSHA256": "a92be2c59d0596fcb4838fda36c8b1dcd1dbb968a948e7bc0fade6ceac689692",
+    "thresholdWitnesses": [
+      {
+        "rate": 8000,
+        "seed": 111,
+        "score": 0.06183924045432287,
+        "at": 168,
+        "wavSHA256": "696a4adbcd9ca74a03fa3d6cf66e2675688b4c43ec21810cfbe215b1231e8276"
+      },
+      {
+        "rate": 16000,
+        "seed": 107,
+        "score": 0.041592618736875815,
+        "at": 365,
+        "wavSHA256": "a87afef8ad1f69ea33a5fb466498a8a8e11cdc348ff9225231b0c3740b8e53a4"
+      },
+      {
+        "rate": 48000,
+        "seed": 100,
+        "score": 0.018540120137737027,
+        "at": 960,
+        "wavSHA256": "29419a08098c0d612e903db1496bf65f6f6d80dbe757c8d006959b07a0161d6e"
+      }
+    ],
+    "scopeControl": "--verify-development accepts a deliberately corrupted evaluation row (as expected for its documented scope); use full oracle for evaluation. Not authentication.",
+    "browser": "Fresh file URI and loopback HTTP navigation attempts both ERR_BLOCKED_BY_ADMINISTRATOR. Gallery byte-identical to v1 previously tested via actual DOM fixture. No actual listening or Windows test.",
+    "transfer": "git ls-remote exit 128 Could not resolve host: github.com; exact connector transfer, verified git blob SHA before native execution",
+    "exclusions": "Do not copy v2 into a second permanent implementation: qualify pinned original two files; retain existing v1 snapshot and evidence; other 25 current Measurement paths deferred for separate dependency-closed batches. No new rights asserted; source attribution to #442/#443.",
+    "recommendation": "Close trace-repair qualification gap only. HOLD overall #608 for canonical location, full workbench and ordinary browser/Windows gates. Owner authorization required. Next qualify legacy/selective workbench; preserve v1 and v2 pins."
+  },
+  "previousConsolidationIntegrityCI": {
+    "head": "14119ef9ec05979fba96433ab3a9823cb41b56fb",
+    "run": 45700155882,
+    "conclusion": "success"
   }
 }
