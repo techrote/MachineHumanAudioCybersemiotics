@@ -1,0 +1,14 @@
+Native local execution, 2026-11-25; Python 3.13.5.
+Command: python laboratory.py
+Local source Git blob: fe43116c6e140ca34cc6de5c5e059d9191745079
+One ChatGPT-assisted author; no independent review or human listening.
+invocation 5768a584934dbaf8bc28d81b496c8cbcc33c5274a445d22bcac53415196632f5 | empty chair | no reply requested
+unanswered 5768a584934dbaf8bc28d81b496c8cbcc33c5274a445d22bcac53415196632f5 | fictional correspondent | required reply absent
+reflection fb7937eeeec0328781badc902a586b7ce395c51e4b6ef9ca0393d75483468018 | stone | no reply requested
+staged-reply fb7937eeeec0328781badc902a586b7ce395c51e4b6ef9ca0393d75483468018 | fictional correspondent | staged response (not verified uptake)
+witness-variation d8fb99aa379b414766efcfffd8dee52fc1d41cbccfd31901a5e31d0794d1d206 | future archive | staged response (not verified uptake)
+PASS: five reproducible files; three distinct byte sequences; two collision pairs; four negative/status controls.
+All WAVs: 96000 frames, 16-bit mono, 16000 Hz, six seconds.
+Each repeated PCM render matched; WAV header and payload readback and sample bounds passed.
+SHA-256 hashes characterize this execution only, not cross-platform libm equivalence.
+Full repository validation and exact-head CI are not claimed here.
