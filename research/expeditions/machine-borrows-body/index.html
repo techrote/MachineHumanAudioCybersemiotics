@@ -46,7 +46,7 @@ function draw(t,mode,cs){
   let motion=Math.max(approach,release);
   if(mode==="lever"){
     rect(220,245,360,22,"#708083");rect(395,170,20,75,"#708083");
-    ctx.save();ctx.translate(405,170);ctx.rotate(.42-.64*motion);rect(-160,-10,320,20,"#d6ae68");circle(-155,0,24,"#d6ae68");ctx.restore();circle(405,170,12,"#aab6b5");
+    ctx.save();ctx.translate(405,170);ctx.rotate(-.30+.73*motion);rect(-160,-10,320,20,"#d6ae68");circle(-155,0,24,"#d6ae68");ctx.restore();circle(405,170,12,"#aab6b5");
   }else if(mode==="ball"){
     rect(220,245,360,22,"#708083");circle(400,75+140*motion,30,"#d6ae68");
   }else if(mode==="shutter"){
