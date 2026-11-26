@@ -5,6 +5,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/host_audition.py'
       - 'tools/experimental/vst-acceleration/native-chain/loom_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/winters_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -103,6 +104,9 @@ jobs:
           set(SMTG_ENABLE_VST3_PLUGIN_EXAMPLES OFF CACHE BOOL "" FORCE)
           set(SMTG_ENABLE_VST3_HOSTING_EXAMPLES OFF CACHE BOOL "" FORCE)
           set(SMTG_RUN_VST_VALIDATOR OFF CACHE BOOL "" FORCE)
+          # CMake reparses source path arguments; native Windows backslashes can be escapes.
+          string(REPLACE "\\" "/" SDK380 "${SDK380}")
+          string(REPLACE "\\" "/" PROBE_SOURCE "${PROBE_SOURCE}")
           add_subdirectory("${SDK380}" sdk EXCLUDE_FROM_ALL)
           add_executable(winters_sdk_probe "${PROBE_SOURCE}" "${SDK380}/public.sdk/source/vst/hosting/module_win32.cpp")
           target_compile_features(winters_sdk_probe PRIVATE cxx_std_17)
@@ -110,9 +114,9 @@ jobs:
           target_link_libraries(winters_sdk_probe PRIVATE sdk_hosting)
           '@ | Set-Content sdk-probe-src/CMakeLists.txt -Encoding utf8
           $src = (Resolve-Path tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp).Path
-          cmake -S sdk-probe-src -B sdk-probe-build -A x64 "-DSDK380=$sdk" "-DPROBE_SOURCE=$src"
+          cmake -S sdk-probe-src -B sdk-probe-build -A x64 "-DSDK380=$sdk" "-DPROBE_SOURCE=$src" 2>&1 | Tee-Object winters-audition/sdk-probe-configure.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build sdk-probe-build --config Release --target winters_sdk_probe --parallel 2
+          cmake --build sdk-probe-build --config Release --target winters_sdk_probe --parallel 2 2>&1 | Tee-Object winters-audition/sdk-probe-build.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           $bundle = (Resolve-Path winters-audition/plugin/MHACThreeWinters.vst3).Path
           & sdk-probe-build/Release/winters_sdk_probe.exe $bundle 2>&1 | Tee-Object winters-audition/sdk-probe.txt
