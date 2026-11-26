@@ -8,6 +8,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp'
       - 'tools/experimental/vst-acceleration/native-chain/afterimage_receipt_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/receipt_fold_upgrade_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -155,6 +156,23 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/receipt_fold_upgrade_host.py --old receipt-fold.zip --new receipt-fold-upgrade.zip --out receipt-upgrade
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact Afterimage Choir 0.2.0 upgrade package
+        if: ${{ !cancelled() && steps.afterimage_packages.outcome == 'success' }}
+        id: afterimage_depth_package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage-depth.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15135667500/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Afterimage Choir legacy and memory depth spectral matrix
+        if: ${{ !cancelled() && steps.afterimage_depth_package.outcome == 'success' }}
+        shell: pwsh
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py --old afterimage.zip --new afterimage-depth.zip --out afterimage-depth
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -171,5 +189,6 @@ jobs:
             winters-audition/sdk-probe*.txt
             afterimage-audition/afterimage-receipt-host.json
             receipt-upgrade/receipt-upgrade.json
+            afterimage-depth/afterimage-depth.json
           if-no-files-found: ignore
           retention-days: 7
