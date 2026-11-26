@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "jet_checks": 255,
+  "recurrence_checks": 300,
+  "reflection_checks": 315,
+  "polynomial_profiles": 600,
+  "rational_evaluation_checks": 4200,
+  "parity": [
+    {
+      "m": 2,
+      "matched_moment_degree": 2,
+      "first_unmatched": 3,
+      "center_information_nats": 0.10278221162734956,
+      "off_center_difference": 0.015668594556454862
+    },
+    {
+      "m": 3,
+      "matched_moment_degree": 4,
+      "first_unmatched": 5,
+      "center_information_nats": 0.0749944076808541,
+      "off_center_difference": 0.0013895416790148454
+    },
+    {
+      "m": 4,
+      "matched_moment_degree": 6,
+      "first_unmatched": 7,
+      "center_information_nats": 0.05813709094616826,
+      "off_center_difference": 0.00016854099418794205
+    },
+    {
+      "m": 5,
+      "matched_moment_degree": 8,
+      "first_unmatched": 9,
+      "center_information_nats": 0.04729573350253062,
+      "off_center_difference": 0.00002455149558368286
+    },
+    {
+      "m": 6,
+      "matched_moment_degree": 10,
+      "first_unmatched": 11,
+      "center_information_nats": 0.03981967566818581,
+      "off_center_difference": 0.0000040103335654899375
+    },
+    {
+      "m": 7,
+      "matched_moment_degree": 12,
+      "first_unmatched": 13,
+      "center_information_nats": 0.03437113428413928,
+      "off_center_difference": 7.068036629170882e-7
+    },
+    {
+      "m": 8,
+      "matched_moment_degree": 14,
+      "first_unmatched": 15,
+      "center_information_nats": 0.030228938232707912,
+      "off_center_difference": 1.3141590107790257e-7
+    },
+    {
+      "m": 9,
+      "matched_moment_degree": 16,
+      "first_unmatched": 17,
+      "center_information_nats": 0.026975292685807443,
+      "off_center_difference": 2.541911893472193e-8
+    },
+    {
+      "m": 10,
+      "matched_moment_degree": 18,
+      "first_unmatched": 19,
+      "center_information_nats": 0.02435268613400349,
+      "off_center_difference": 5.068183744211252e-9
+    },
+    {
+      "m": 11,
+      "matched_moment_degree": 20,
+      "first_unmatched": 21,
+      "center_information_nats": 0.022194094368658338,
+      "off_center_difference": 1.0350830956240564e-9
+    },
+    {
+      "m": 12,
+      "matched_moment_degree": 22,
+      "first_unmatched": 23,
+      "center_information_nats": 0.02038655288362107,
+      "off_center_difference": 2.15553710297689e-10
+    },
+    {
+      "m": 13,
+      "matched_moment_degree": 24,
+      "first_unmatched": 25,
+      "center_information_nats": 0.01885096301307986,
+      "off_center_difference": 4.56172287444101e-11
+    },
+    {
+      "m": 14,
+      "matched_moment_degree": 26,
+      "first_unmatched": 27,
+      "center_information_nats": 0.01753030318083484,
+      "off_center_difference": 9.785410329254951e-12
+    },
+    {
+      "m": 15,
+      "matched_moment_degree": 28,
+      "first_unmatched": 29,
+      "center_information_nats": 0.016382437198209098,
+      "off_center_difference": 2.1234194957919783e-12
+    },
+    {
+      "m": 16,
+      "matched_moment_degree": 30,
+      "first_unmatched": 31,
+      "center_information_nats": 0.015375558878830175,
+      "off_center_difference": 4.6537773634725e-13
+    }
+  ],
+  "conditioning": [
+    {
+      "h": 0.25,
+      "grid_max_information_gap_nats": 0.016476205885875735,
+      "decision_value_gap": 0.125,
+      "ratio": 7.586698106701649
+    },
+    {
+      "h": 0.125,
+      "grid_max_information_gap_nats": 0.001605311383137048,
+      "decision_value_gap": 0.0625,
+      "ratio": 38.93325659839557
+    },
+    {
+      "h": 0.0625,
+      "grid_max_information_gap_nats": 0.00019093244497087568,
+      "decision_value_gap": 0.03125,
+      "ratio": 163.6704542528997
+    },
+    {
+      "h": 0.03125,
+      "grid_max_information_gap_nats": 0.000023584640087428478,
+      "decision_value_gap": 0.015625,
+      "ratio": 662.5074600281362
+    },
+    {
+      "h": 0.015625,
+      "grid_max_information_gap_nats": 0.00000293942237643589,
+      "decision_value_gap": 0.0078125,
+      "ratio": 2657.83511162925
+    },
+    {
+      "h": 0.0078125,
+      "grid_max_information_gap_nats": 3.671584105041474e-7,
+      "decision_value_gap": 0.00390625,
+      "ratio": 10639.140731207286
+    },
+    {
+      "h": 0.00390625,
+      "grid_max_information_gap_nats": 4.5886392034157064e-8,
+      "decision_value_gap": 0.001953125,
+      "ratio": 42564.361969146026
+    },
+    {
+      "h": 0.001953125,
+      "grid_max_information_gap_nats": 5.735536284898635e-9,
+      "decision_value_gap": 0.0009765625,
+      "ratio": 170265.24661194065
+    }
+  ],
+  "limitations": "Exact integer assertions except information, curvature and decision numerical illustrations; sampled prior grid is not a continuous optimization. Same-agent synthetic checks."
+}

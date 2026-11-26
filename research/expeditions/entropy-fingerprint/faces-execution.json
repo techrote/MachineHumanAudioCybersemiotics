@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "projection_checks": 28488,
+  "row_checks": 84,
+  "shortlist_checks": 294,
+  "information_checks": 112,
+  "moment_checks": 196,
+  "examples": [
+    {
+      "n": 3,
+      "plus_nats": 0.09271359339679708,
+      "minus_nats": 0.08257358866227914,
+      "gap": 0.01014000473451794
+    },
+    {
+      "n": 4,
+      "plus_nats": 0.09810902695585272,
+      "minus_nats": 0.09922809353917368,
+      "gap": -0.0011190665833209629
+    },
+    {
+      "n": 5,
+      "plus_nats": 0.10529657742712083,
+      "minus_nats": 0.10515269295124423,
+      "gap": 0.00014388447587659892
+    },
+    {
+      "n": 6,
+      "plus_nats": 0.10955448878692253,
+      "minus_nats": 0.1095746563417122,
+      "gap": -0.000020167554789674025
+    },
+    {
+      "n": 7,
+      "plus_nats": 0.11264923046996475,
+      "minus_nats": 0.11264624182022645,
+      "gap": 0.000002988649738300264
+    },
+    {
+      "n": 8,
+      "plus_nats": 0.11495012307869767,
+      "minus_nats": 0.1149505835674983,
+      "gap": -4.604888006187746e-7
+    },
+    {
+      "n": 9,
+      "plus_nats": 0.11673531126531046,
+      "minus_nats": 0.11673523823923226,
+      "gap": 7.302607819836826e-8
+    }
+  ],
+  "limits": "Exact integer projections, moments and shortlist numerators; floating point MI sign checks on selected priors only."
+}
