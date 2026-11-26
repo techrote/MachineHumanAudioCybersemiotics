@@ -1,0 +1,79 @@
+{
+  "audio": {
+    "cubed-minus.wav": {
+      "frames": 15400,
+      "peak": 12167,
+      "sha256": "66f2c3696cd793fc506c74f2fde088a670f0930bf2bb10f07276eb2f64487ca3"
+    },
+    "cubed-plus.wav": {
+      "frames": 15400,
+      "peak": 12167,
+      "sha256": "a91ec2863e9adb18165ba08644a1346599cf063fea3348925e68b9c2ba07e907"
+    },
+    "filtered-minus.wav": {
+      "frames": 15400,
+      "peak": 11500,
+      "sha256": "df9be942c4d6ea3cf7186b44baa15097bbbc6c6548917aa91257533b543c1557"
+    },
+    "filtered-plus.wav": {
+      "frames": 15400,
+      "peak": 11500,
+      "sha256": "5ab46f38e9ef61f9c8379ee6c952af86bea0775c2d171a2cc4a310021f94268d"
+    }
+  },
+  "counts": {
+    "aperture_optima": 225,
+    "candidate_apertures": 13195,
+    "gain_checks": 26,
+    "literal_receipts": 722,
+    "local_mixed_moments": 1436,
+    "one_tap_negative": 7087
+  },
+  "five_prime_collision": [
+    {
+      "lagged_cubic": "-1422360",
+      "power": "106",
+      "raw_sixth": "5111904",
+      "signs": [
+        1,
+        1,
+        1,
+        -1,
+        1
+      ]
+    },
+    {
+      "lagged_cubic": "-1682460",
+      "power": "106",
+      "raw_sixth": "5111904",
+      "signs": [
+        1,
+        1,
+        1,
+        -1,
+        -1
+      ]
+    }
+  ],
+  "small_pcm": [
+    {
+      "lagged_cubic": "-169488",
+      "signs": [
+        1,
+        1,
+        1
+      ],
+      "zero_lag_cubic": "2061766"
+    },
+    {
+      "lagged_cubic": "-213588",
+      "signs": [
+        1,
+        -1,
+        1
+      ],
+      "zero_lag_cubic": "2061766"
+    }
+  ],
+  "status": "pass"
+}
