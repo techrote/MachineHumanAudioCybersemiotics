@@ -12,6 +12,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/upgraded_chain_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/phase_balanced_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/rotation_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/three_plugin_host.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -218,6 +219,11 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/rotation_host.py --old afterimage-phase.zip --new afterimage-rotation.zip --out rotation
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Three-plugin group routing and balanced receipt audition
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/three_plugin_host.py --afterimage afterimage-rotation.zip --winters winters.zip --receipt receipt-balanced.zip --out three-plugin
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -238,5 +244,7 @@ jobs:
             upgraded-chain/upgraded-chain.json
             phase-balanced/phase-balanced.json
             rotation/rotation.json
+            three-plugin/three-plugin.json
+            three-plugin/*.wav
           if-no-files-found: ignore
           retention-days: 7
