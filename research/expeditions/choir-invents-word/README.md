@@ -5,6 +5,15 @@ Mondegreens, minimal boundary testimony and the art of an unauthorized lexicon.
 **2026-11-26 | Exploratory humanities/art and synthetic mathematics | Refs #713 | Draft/HOLD.**
 This is neither a frozen Track E/G extraction nor a validated acoustic communication design.
 
+## Contents
+
+- [The error that refuses to die](#1-the-error-that-refuses-to-die) — interpretation of Wright's creative misreading.
+- [Source encounters and disagreement](#2-source-encounters-and-disagreement) — bounded source readings and contrary accounts.
+- [Exact construction](#3-exact-construction-the-cost-of-identifying-a-grouping) — proof of minimal signed testimony.
+- [Original score](#4-original-score-five-versions-of-a-word-that-has-no-name) — five stereo movements and native validation.
+- [Exaptation](#5-exaptation-the-mondegreen-choir) — proposed instruments and interfaces.
+- [Research implications, dissent and handoff](#6-research-implications-dissent-and-handoff) — falsification proposals, counterargument and checkpoint.
+
 ## 1. The error that refuses to die
 
 Sylvia Wright's Lady Mondegreen is more than the consequence of a bad transcription. In her remembered childhood encounter with a ballad, Wright heard an additional person where the received text describes the disposition of the Earl. By the time the reader is told what the conventional reading is, the other woman has already acquired a costume, an attitude and a relationship. The correction arrives too late to prevent an act of fiction.
