@@ -1,0 +1,27 @@
+{
+  "profiles": 323,
+  "literal_product_knot_checks": 10932,
+  "negative_controls": 646,
+  "audio": {
+    "plus": {
+      "frames": 33,
+      "counts": [
+        8,
+        12,
+        10,
+        3
+      ],
+      "sha256": "e956c62c5b62de34dc83da4f44718151df98256fa353cd2b205d6d86f6e13cf8"
+    },
+    "minus": {
+      "frames": 135,
+      "counts": [
+        64,
+        48,
+        20,
+        3
+      ],
+      "sha256": "561a840f3c960d3cdb37f9d63dcdc31484051869f11c6aec361771963dc42299"
+    }
+  }
+}
