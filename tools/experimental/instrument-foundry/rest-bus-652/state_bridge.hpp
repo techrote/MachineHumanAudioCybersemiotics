@@ -65,7 +65,7 @@ public:
     bool begin(Live& engine) noexcept {
         StateMailbox::Snapshot s;
         if(!requested_.read(s)||s.sequence==applied_)return false;
-        if(!engine.restore(s.params))return false;
+        if(!engine.applyPatch(s.params))return false;
         applied_=s.sequence;return true;
     }
     void end(const Live& engine) noexcept {

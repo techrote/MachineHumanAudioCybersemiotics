@@ -13,13 +13,13 @@ int main(){
     auto a=uniform(.25),b=uniform(.75);
     check(bridge.request(a)&&bridge.request(b));check(bridge.save(p)&&p==b);
     check(e.parameters()==defaults);for(int i=0;i<128;++i)check(e.tick()==ref.tick());
-    check(bridge.begin(e)&&e.parameters()==b&&e.index()==0&&e.partial()==0&&e.tick()==0);
+    check(bridge.begin(e)&&e.parameters()==b&&e.index()==0&&e.partial()==0&&e.tick()==ref.tick());
     check(!bridge.begin(e));bridge.end(e);check(bridge.save(p)&&p==b);
     check(e.parameter(3,.5));bridge.end(e);check(bridge.save(p)&&p==Params{.75,.75,.5});
     auto invalid=b;invalid[2]=std::numeric_limits<double>::quiet_NaN();
     check(!bridge.request(invalid)&&bridge.save(p)&&p==Params{.75,.75,.5});
     check(bridge.request(defaults)&&bridge.begin(e));bridge.end(e);
-    check(e.on(1,57,0,.8));check(!bridge.begin(e));check(e.tick()!=0);
+    e.reset();check(e.on(1,57,0,.8));check(!bridge.begin(e));check(e.tick()!=0);
     // Accepted mailbox reads must be coherent even during publication.
     StateMailbox mail;mail.publish(a,1);std::atomic<bool> ready{false},done{false};
     unsigned accepted=0,rejected=0;

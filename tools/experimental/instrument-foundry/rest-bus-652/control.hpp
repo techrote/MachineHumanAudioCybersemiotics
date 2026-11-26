@@ -38,6 +38,12 @@ public:
         if(!valid(p[0])||!valid(p[1])||!valid(p[2]))return false;
         p_=p;engine_.domain(domain(p_[0]));engine_.period(seconds(p_[1]));engine_.destination(destination(p_[2]));reset();return true;
     }
+    // Apply a patch at a processing boundary without killing existing notes.
+    // Equivalent to persistent-control automation; manual edge remains transient.
+    bool applyPatch(const Params& p) noexcept {
+        if(!valid(p[0])||!valid(p[1])||!valid(p[2]))return false;
+        parameter(0,p[0]);parameter(1,p[1]);parameter(3,p[2]);return true;
+    }
     bool parameter(unsigned id,double v) noexcept {
         if(id>=Count||!valid(v))return false;
         if(id==2){bool high=v>=.5;if(high&&!stepHigh_)engine_.step();stepHigh_=high;return true;}
