@@ -16,7 +16,7 @@ jobs:
   audition:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'mhac-vst-632/native-chain'
     runs-on: windows-2022
-    timeout-minutes: 12
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
         with:
@@ -63,9 +63,59 @@ jobs:
           curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o winters.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15068070040/zip"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Three Winters continuous MIDI and independent timbre witness
+        id: winters
         shell: pwsh
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/winters_host.py --archive winters.zip --out winters-audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Direct SDK bus and MIDI diagnostic (preserve original failure)
+        if: failure() && steps.winters.outcome == 'failure'
+        shell: pwsh
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-accel'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if ((git -C $sdk rev-parse HEAD) -ne '9fad9770f2ae8542ab1a548a68c1ad1ac690abe0') { throw 'SDK root mismatch' }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $pins = @{
+            base='3d2e82f8e6bff59c1d8b7a27491a29c2286b5206'
+            cmake='de6e54eeaaab35b7145f5c32c279b5e892146e04'
+            doc='6d4737c9e70750056e731d88d49aa06eefc8a1a4'
+            pluginterfaces='31d6eeba6daaa3e2a8bfbe3e7a90ca0b7fbfbc1c'
+            'public.sdk'='a3911a4615dabbfdfd9d181ee26b05c70c289a95'
+            tutorials='33b73dfbb87f3fde3bce8c0a10cae934dc66ad34'
+            vstgui4='76823bdbe286e4bdb9f79ab8986af5ce7202336c'
+          }
+          foreach ($k in $pins.Keys) {
+            $actual = git -C (Join-Path $sdk $k) rev-parse HEAD
+            if ($LASTEXITCODE -or $actual -ne $pins[$k]) { throw "SDK gitlink mismatch: $k" }
+          }
+          git -C $sdk submodule status --recursive | Out-File winters-audition/sdk-probe-gitlinks.txt
+          New-Item -ItemType Directory -Force sdk-probe-src | Out-Null
+          @'
+          cmake_minimum_required(VERSION 3.25)
+          project(MHACWintersSDKProbe LANGUAGES C CXX)
+          if(NOT WIN32)
+            message(FATAL_ERROR "This target currently qualifies Windows x64 only")
+          endif()
+          set(SMTG_ENABLE_VSTGUI_SUPPORT OFF CACHE BOOL "" FORCE)
+          set(SMTG_ENABLE_VST3_PLUGIN_EXAMPLES OFF CACHE BOOL "" FORCE)
+          set(SMTG_ENABLE_VST3_HOSTING_EXAMPLES OFF CACHE BOOL "" FORCE)
+          set(SMTG_RUN_VST_VALIDATOR OFF CACHE BOOL "" FORCE)
+          add_subdirectory("${SDK380}" sdk EXCLUDE_FROM_ALL)
+          add_executable(winters_sdk_probe "${PROBE_SOURCE}" "${SDK380}/public.sdk/source/vst/hosting/module_win32.cpp")
+          target_compile_features(winters_sdk_probe PRIVATE cxx_std_17)
+          target_compile_definitions(winters_sdk_probe PRIVATE NOMINMAX)
+          target_link_libraries(winters_sdk_probe PRIVATE sdk_hosting)
+          '@ | Set-Content sdk-probe-src/CMakeLists.txt -Encoding utf8
+          $src = (Resolve-Path tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp).Path
+          cmake -S sdk-probe-src -B sdk-probe-build -A x64 "-DSDK380=$sdk" "-DPROBE_SOURCE=$src"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build sdk-probe-build --config Release --target winters_sdk_probe --parallel 2
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $bundle = (Resolve-Path winters-audition/plugin/MHACThreeWinters.vst3).Path
+          & sdk-probe-build/Release/winters_sdk_probe.exe $bundle 2>&1 | Tee-Object winters-audition/sdk-probe.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
@@ -80,5 +130,6 @@ jobs:
             winters-audition/winters-receipt.json
             winters-audition/*.wav
             winters-audition/*.vstpreset
+            winters-audition/sdk-probe*.txt
           if-no-files-found: ignore
           retention-days: 7
