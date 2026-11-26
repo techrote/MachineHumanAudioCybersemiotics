@@ -19,14 +19,38 @@ using namespace Steinberg::Vst;
 namespace {
 void check(bool ok,const char* stage){if(!ok)throw std::runtime_error(stage);}
 void result(tresult v,const char* stage){std::cout<<stage<<"="<<v<<std::endl;check(v==kResultOk,stage);}
+constexpr double expected[3][6]={{0,.25,.25,.25,.25,.5},{0,.25,.25,.875,.875,.875},{0,.25,.25,.25,.75,.5}};
+double witness(const std::vector<float>& x,int rate,int end,double target){
+    constexpr double tau=6.283185307179586;
+    const int n=rate/10,start=end-n;
+    std::array<double,2> re{},im{};
+    for(int i=start;i<end;++i)for(int k=0;k<2;++k){
+        double t=tau*440*(k+1)*i/rate;
+        re[k]+=x[i]*std::cos(t);im[k]+=x[i]*std::sin(t);
+    }
+    double a=2*std::hypot(re[0],im[0])/n,b=2*std::hypot(re[1],im[1])/n;
+    check(a+b>1e-4,"silent timbre witness");
+    check(std::abs(b/(a+b)-target)<.003,"timbre mixture");
+    double err=0;
+    for(int i=start;i<end;++i){
+        double v=x[i];
+        for(int k=0;k<2;++k){
+            double t=tau*440*(k+1)*i/rate;
+            v-=2*(re[k]*std::cos(t)+im[k]*std::sin(t))/n;
+        }
+        err+=v*v;
+    }
+    check(std::sqrt(err/n)<2e-4,"timbre residual");
+    return b/(a+b);
+}
 struct Observation {std::vector<float> left,right;double peak=0,stemError=0;int rejected=0;};
 struct Lifecycle {
     IComponent* c; IAudioProcessor* p; bool initialized=false,active=false,running=false;
     ~Lifecycle(){if(running)p->setProcessing(false);if(active)c->setActive(false);if(initialized)c->terminate();}
 };
 Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassInfo& info,
-                HostApplication* host,int rate,int block,bool aux,bool malformed,bool inactiveMemory=false){
-    std::cout<<"case rate="<<rate<<" block="<<block<<" aux="<<aux<<" malformed="<<malformed<<" inactive_memory="<<inactiveMemory<<std::endl;
+                HostApplication* host,int rate,int block,bool aux,bool malformed,bool inactiveMemory=false,int lane=-1){
+    std::cout<<"case rate="<<rate<<" block="<<block<<" aux="<<aux<<" malformed="<<malformed<<" inactive_memory="<<inactiveMemory<<" timbre_lane="<<lane<<std::endl;
     auto c=factory.createInstance<IComponent>(info.ID());
     check(bool(c),"component create");
     FUnknownPtr<IAudioProcessor> p(c.get());check(p.getInterface()!=nullptr,"processor interface");
@@ -60,18 +84,31 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
     Observation obs;
     // The foundry gain smoother settles in 5 ms. Allow silent pre-roll so
     // lane isolation is not falsely rejected by the legitimate default-gain ramp.
-    const int total=rate*2/5,on=rate/50+17,off=rate/5+13;
+    const int section=rate/5,total=lane<0?rate*2/5:7*section,on=rate/50+17,off=lane<0?rate/5+13:6*section+17;
     obs.left.reserve(total);obs.right.reserve(total);
     for(int pos=0;pos<total;pos+=block){
         int n=std::min(block,total-pos);data.numSamples=n;events.clear();params.clearQueue();
         for(auto& s:samples)std::fill(s.begin(),s.end(),-0.75f);
         for(auto& bus:buses)bus.silenceFlags=0;
+        auto point=[&](int sample,ParamID id,double value){
+            if(sample<pos||sample>=pos+n)return;
+            int32 qi=0,pi=0;auto* q=params.addParameterData(id,qi);check(q!=nullptr,"parameter queue");
+            result(q->addPoint(sample-pos,value,pi),"parameter point");
+        };
         if(pos==0){
-            // All pitch slots unison, manual clocks; only latch gain active.
-            for(ParamID id=1000;id<1019;++id){
-                int32 qi=0,pi=0;auto* q=params.addParameterData(id,qi);check(q!=nullptr,"parameter queue");
-                result(q->addPoint(0,id==1008?1.0:0.0,pi),"parameter point");
-            }
+            // All pitch slots unison; independent timbre lane for the extended score.
+            std::array<double,19> v{};
+            v[8+(lane<0?0:lane)]=1.;
+            if(lane>=0){v[7]=.25;v[12]=.25;v[13]=.75;v[14]=1.;v[18]=.25;}
+            for(ParamID id=1000;id<1019;++id)point(0,id,v[id-1000]);
+        }
+        if(lane>=0){
+            // Non-block-aligned events exercise actual sample-offset queues.
+            point(section+17,1016,1.);
+            point(2*section+17,1015,1.);point(2*section+17,1016,0.);
+            point(3*section+17,1012,.875);point(3*section+17,1013,.5);
+            point(4*section+17,1016,1.);
+            point(5*section+17,1015,0.);point(5*section+17,1016,0.);
         }
         if(on>=pos&&on<pos+n){
             Event e{};e.busIndex=0;e.sampleOffset=on-pos;e.type=Event::kNoteOnEvent;
@@ -105,7 +142,18 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
             }
         }
     }
-    if(!malformed){
+    if(lane>=0){
+        for(int i=0;i<total;++i){
+            if(i<on||i>=total-rate/10)
+                check(std::abs(obs.left[i])<1e-6&&std::abs(obs.right[i])<1e-6,"timbre pre-note/release");
+            if(lane==1)check(std::abs(obs.left[i]-obs.right[i])<2e-6,"pause stereo");
+            else check(std::abs(lane==0?obs.right[i]:obs.left[i])<2e-6,"inactive timbre lane");
+        }
+        for(int k=0;k<6;++k){
+            double measured=witness(lane==2?obs.right:obs.left,rate,(k+1)*section,expected[lane][k]);
+            std::cout<<"TIMBRE_WITNESS rate="<<rate<<" block="<<block<<" lane="<<lane<<" section="<<k<<" ratio="<<measured<<std::endl;
+        }
+    }else if(!malformed){
         check(obs.peak>1e-4,"silent note");
         for(int i=0;i<on;++i)check(std::abs(obs.left[i])<1e-7,"pre-note signal");
         for(float v:obs.right)check(std::abs(v)<1e-6,"inactive lane audible");
@@ -150,6 +198,14 @@ int main(int argc,char** argv){
             }
             auto negative=run(factory,info,host.get(),44100,257,false,true);
             std::cout<<"SDK_PROBE_PASS positives="<<positive<<" negative_rejected="<<negative.rejected<<std::endl;
+            int timbreCases=0;
+            for(int rate:{44100,48000,96000})for(int lane=0;lane<3;++lane){
+                auto a=run(factory,info,host.get(),rate,257,false,false,false,lane);
+                auto b=run(factory,info,host.get(),rate,1024,false,false,false,lane);
+                check(a.left==b.left&&a.right==b.right,"timbre block partition mismatch");
+                timbreCases+=2;
+            }
+            std::cout<<"TIMBRE_PROBE_PASS cases="<<timbreCases<<" windows="<<timbreCases*6<<std::endl;
             return 0;
         }
         throw std::runtime_error("no audio processor class");
