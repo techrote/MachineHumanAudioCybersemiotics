@@ -5,6 +5,17 @@
 
 **Proposition (artistic, not empirical):** compose an instrument's verbs rather than only its voices. A single gesture can act on unlike musical objects, each interpreting the gesture in its own way. The artist can choose whether the resulting conjunction is a productive constraint, a temporary obstacle, or an inadmissible coupling.
 
+### Contents
+
+- [I. A word with two occupations](#i-a-word-with-two-occupations) — the rhetorical analogy and artistic premise.
+- [II. Source encounters and reading limits](#ii-source-encounters-and-reading-limits) — prior art and limits of interpretation.
+- [III. The exact toy model](#iii-the-exact-toy-model) — joint reachability and minimum trim cost.
+- [IV. Artistic score](#iv-artistic-score-counsel-and-tea-three-hearings) — three original stereo movements.
+- [V. Native qualification](#v-native-qualification-and-reproducibility) — oracle results and audio receipts.
+- [VI. Exaptation](#vi-exaptation-the-yoke-loom) — instrument architecture and counterargument.
+- [VII. MHAC boundary](#vii-mhac-boundary-and-second-rabbit-hole) — operational implications and speculative miniature.
+- [VIII. Reconciliation](#viii-reconciliation-and-delivery-boundary) — provenance, scope and review status.
+
 ### I. A word with two occupations
 
 In Pope's court, counsel and tea share a verb. This small syntactic economy is also an encounter between registers of activity. The listener supplies different meanings for the same occurrence of the word. The rhetorical effect is not simply a saving of syllables: duplicating the verb would preserve many of the sentence's facts but alter its architecture.
