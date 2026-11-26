@@ -1,0 +1,42 @@
+{
+  "python": "3.13.5",
+  "scipy": "1.17.0",
+  "weighted_budget_lp_pairs": 480,
+  "max_lp_error": 2.3314683517128287e-15,
+  "pcm_releases_decoded": 24,
+  "pcm_hashes": {
+    "comb-A.wav": "689d4a7b0c436c41e497295be91e2e6232c72696e8c0ecabb8a7de6aae517471",
+    "comb-B.wav": "49b95d0e842dfce1d42442d38285f6f7dbd83fb8a0f968410affd4812f31d0ff"
+  },
+  "decoded_scores": [
+    [
+      8,
+      5,
+      36,
+      13,
+      0,
+      25,
+      32,
+      17,
+      40,
+      29,
+      44,
+      21
+    ],
+    [
+      38,
+      27,
+      18,
+      43,
+      6,
+      47,
+      22,
+      31,
+      2,
+      35,
+      14,
+      11
+    ]
+  ],
+  "failures": 0
+}
