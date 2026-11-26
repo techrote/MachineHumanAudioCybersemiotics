@@ -26,13 +26,15 @@ public:
         if(!std::isfinite(sr)||sr<1000||sr>2000000||!std::isfinite(carrier)||carrier<=0||carrier>100000||
            !std::isfinite(ratio)||ratio<1||ratio>3||!std::isfinite(beta)||beta<0||beta>1.5)return false;
         double sum=0;
+        std::array<double,7> coefficients{};
+        for(unsigned k=0;k<coefficients.size();++k)coefficients[k]=bessel(k,beta);
         for(int k=-6;k<=6;++k){
             const double hz=carrier*(1+k*ratio), step=hz/sr;
             const auto order=static_cast<unsigned>(std::abs(k));
             const double sign=k<0&&order%2? -1:1;
             const double taper=std::clamp((.45-std::abs(step))/.05,0.,1.);
             auto& side=sides[static_cast<unsigned>(k+6)];
-            side={0,step,sign*bessel(order,beta)*taper};sum+=std::abs(side.gain);
+            side={0,step,sign*coefficients[order]*taper};sum+=std::abs(side.gain);
         }
         scale=1/std::max(1.,sum);
         for(auto& side:sides){

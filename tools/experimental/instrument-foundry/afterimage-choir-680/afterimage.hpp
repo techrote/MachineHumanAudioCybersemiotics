@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstdint>
 #include "phase_memory.hpp"
+#include "additive_memory.hpp"
 namespace mhac::afterimage {
 // Shared native/host rate contract. No rate-sized buffers are allocated.
 inline bool supportsRate(double sr) noexcept {
@@ -28,7 +29,7 @@ class Engine {
     struct Voice {
         bool used=false, held=false; int id=0; unsigned original=0, tag=0, mask=0, captured=0;
         Pair pair; Mode mode=Mode::fixed; std::uint64_t age=0, minimum=0;
-        double velocity=0, gain=0; std::array<double,4> phase{},step{},weight{};
+        double velocity=0, gain=0; AdditiveMemory additive;
         PhaseMemory pm; double pmMix=0;
     };
     std::array<Voice,8> voices{}, fading{};
@@ -115,9 +116,12 @@ public:
             }
             const std::array<double,4> ratios{1,2.0+h1*.25,3.0+h2*.5,5.0+h3*.75};
             const std::array<double,4> w{1,.5*patch.memory,.3*patch.memory,.2*patch.memory};
-            double sum=0;
-            for(unsigned k=0;k<4;++k) { const double hz=f*ratios[k]; v.step[k]=hz/rate; v.weight[k]=w[k]*std::clamp((.45-hz/rate)/.05,0.0,1.0); sum+=v.weight[k]; }
-            for(auto& a:v.weight) a/=std::max(1.0,sum);
+            if(v.pmMix<1){
+                std::array<double,4> step{},weight{};double sum=0;
+                for(unsigned k=0;k<4;++k) { const double hz=f*ratios[k]; step[k]=hz/rate; weight[k]=w[k]*std::clamp((.45-hz/rate)/.05,0.0,1.0); sum+=weight[k]; }
+                for(auto& a:weight) a/=std::max(1.0,sum);
+                v.additive.configure(step,weight);
+            }
             return true;
         }
         return false; // all slots occupied or already crossfading
@@ -127,8 +131,7 @@ private:
         if(v.used) {
             if(v.held) { v.gain=std::min(1.0,v.gain+attack); if(v.age<v.minimum) ++v.age; }
             else { v.gain=std::max(0.0,v.gain-(forced?attack:release)); if(v.gain<=1e-12) { v={}; return 0; } }
-            double y=0;
-            for(unsigned k=0;k<4;++k) if(v.weight[k]>0) { y+=v.weight[k]*std::sin(6.2831853071795864769*v.phase[k]); v.phase[k]+=v.step[k]; if(v.phase[k]>=1) v.phase[k]-=1; }
+            double y=v.pmMix<1?v.additive.tick():0;
             if(v.pmMix>0)y=(1-v.pmMix)*y+v.pmMix*v.pm.tick();
             return .065*v.velocity*v.gain*y;
         }
