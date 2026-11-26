@@ -10,10 +10,10 @@
       "head": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
       "ci": 45690234347,
       "disposition": "HOLD",
-      "batch": "affine and bounded frozen legacy/selective package independently qualified for owner inspection; overall lane HOLD (browser, Windows, scope and approval)",
-      "observedLaterHead": "dfa83c9af0e4fc30703ee3e8523f51a97d2e3105",
+      "batch": "Frozen Observatory core, legacy and selective package qualified for owner inspection on hosted Linux including ordinary file navigation and DOM controls; overall lane HOLD (Windows, source placement, approval).",
+      "observedLaterHead": "9c69d4d11ecb5f84630d44b7a92800eb830de56a",
       "observedLaterIntegrityCI": {
-        "run": 45764849368,
+        "run": 45778504358,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "aca863378e825b26921388cfaab890f9eac86279",
+      "observedLaterHead": "e500334db2d6f03ff6e788084dc09e5e3cd2d85d",
       "observedLaterIntegrityCI": {
-        "run": 45768076669,
+        "run": 45775218723,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "09654d45a051960e8f7a27d51d82469f9d1e7b8e",
+      "observedLaterHead": "f4ecd30005c123d39452cac7937ca6266f791179",
       "observedLaterIntegrityCI": {
-        "run": 45766419457,
+        "run": 45774194690,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "3defc6747918bf17598f153742f7fd80530ec101",
+      "observedLaterHead": "2bd38aef335bdcf7bdc7cd31a17e58929b695f10",
       "observedLaterIntegrityCI": {
-        "run": 45770486775,
+        "run": 45777776117,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "80b134c62900a7d76d8510f3e2c885d2c9239c19",
+      "observedLaterHead": "371222d0b3aa34551fc98f013db2f88685157971",
       "observedLaterIntegrityCI": {
-        "run": 45768646395,
+        "run": 45776431872,
         "conclusion": "success"
       }
     }
@@ -731,5 +731,81 @@
       "No browser PASS until actual receipt; no user playback or export download check in this smoke test.",
       "Windows and physical audition untested; overall #608 Draft/HOLD."
     ]
+  },
+  "packageBrowserQualification": {
+    "id": "OBS-PACKAGE-012",
+    "disposition": "QUALIFIED FOR OWNER REVIEW",
+    "qualificationScope": "Frozen bounded Linux package plus ordinary headless Chrome file navigation and DOM interactions, not overall PR approval.",
+    "head": "ab92c6eb94f695024b372b31e5c44b5896617e6b",
+    "base": "495a98ca12bae467a507031f04931aa4254b1866",
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "integrityRun": 45771992174,
+    "nativeRun": 45771992305,
+    "job": 139746587453,
+    "receipt": {
+      "status": "PASS",
+      "browser": {
+        "Browser": "Chrome/158.0.8127.36",
+        "File-Path-Style": "posix",
+        "Protocol-Version": "1.3",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.0.0 Safari/537.36",
+        "V8-Version": "15.8.62.31",
+        "WebKit-Version": "537.36 (@14d6f648e8cd7ad750a4044200ce94d3321be260)"
+      },
+      "checks": [
+        "file navigation index.html",
+        "four entry links",
+        "file navigation source/index.html",
+        "affine initial rows and external script",
+        "affine recompute",
+        "file navigation source/phase.html",
+        "phase initial rows",
+        "phase slider",
+        "file navigation legacy/index.html",
+        "legacy initial rows",
+        "legacy frame select",
+        "legacy condition select",
+        "legacy fixed condition result",
+        "legacy detector operating point change",
+        "file navigation selective/index.html",
+        "selective initial rows",
+        "selective model change",
+        "selective selected witness",
+        "selective frame change",
+        "selective witness cleared"
+      ],
+      "errors": [],
+      "scope": "ordinary file navigation, DOM controls, no actual playback or download validation"
+    },
+    "runtime": {
+      "host": "Ubuntu 24.04",
+      "python": "3.12.3",
+      "node": "22.23.5",
+      "nativeUnitTests": 11
+    },
+    "artifact": {
+      "id": 15094366767,
+      "bytes": 697174,
+      "sha256": "18c339ce5d5059b3576c298cf11fcd0fc45c0f5f28c810d837a1b722184ca770",
+      "expires": "2026-12-10T06:59:43Z"
+    },
+    "localVerification": {
+      "archiveCRC": "PASS",
+      "archiveHash": "PASS",
+      "previousArtifactContent": "28/28 files identical to artifact 15088338814",
+      "manifestEntries": "26/26",
+      "sourcePins": "7/7",
+      "nativeLegacy": "10/10 identical",
+      "nativeSelective": "8/8 identical",
+      "runtime": "Linux Node v22.16.0 Python 3.13.5",
+      "packageManifestSHA256": "ffcd6fea32658a5f0a5e7c26007bb367b376637441cc47afdc4cb999a02f09c7",
+      "qualificationJSONSHA256": "7f0c8f0e8649b510057f89b6ac28711d6e8cf86e17c5422ac80576a207263d51"
+    },
+    "limits": [
+      "Headless ordinary filesystem navigation and scripted DOM interactions, not physical audition or browser download validation.",
+      "Local Git DNS remains blocked (exit 128 Could not resolve host github.com); prior local browser policy block preserved.",
+      "No Windows execution yet; no permanent source placement or owner authorization."
+    ],
+    "next": "Temporarily replace single bounded Linux workflow job with native Windows job; no added matrix or concurrent runner. Preserve all Linux evidence. Windows result pending. Later research deltas not promoted."
   }
 }
