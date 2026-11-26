@@ -1,0 +1,53 @@
+{
+  "schema": "mhac-638-laboratory-v1",
+  "counts": {
+    "channels": 123,
+    "loss_matrices": 53182,
+    "positive_baseline_cases": 44624,
+    "lower_witnesses": 523,
+    "upper_witnesses": 523,
+    "repeat_profiles": 220,
+    "repeat_coverage_checks": 3876,
+    "fixed_size_profiles": 112
+  },
+  "example": {
+    "n": 5,
+    "s": 3,
+    "denominator": 6,
+    "cover2": 3,
+    "cover3": 1,
+    "cover4": 0,
+    "reveal_p": "1/2",
+    "two_action_risks": [
+      "1/10",
+      "1/10"
+    ],
+    "three_action_risks": [
+      "1/10",
+      "1/30"
+    ]
+  },
+  "counter": {
+    "tag_channel": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "merged_channel": [
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "tag_risk": 0,
+    "merged_risk": 0.5
+  },
+  "assertion_failures": 0
+}
