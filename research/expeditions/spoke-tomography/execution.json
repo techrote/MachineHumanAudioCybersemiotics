@@ -1,0 +1,15 @@
+{
+  "schema": "mhac-690-census-v1",
+  "equal_weight_grid_triples": 2300,
+  "three_direction_signature_checks": 80500,
+  "three_direction_duplicate_insertions": 61,
+  "four_direction_signature_checks": 80500,
+  "one_error_one_erasure_dictionary_decodes": 100,
+  "quantitative_tv_checks": 1280,
+  "agreement_bound_checks": 1280,
+  "random_tight_instances": 0,
+  "arbitrary_planar_hexagon_projection_checks": 105,
+  "sharp_quantitative_example": true,
+  "assertion_failures": 0,
+  "scope": "Finite integer measures and exact projected counts. Not empirical audio or independent review."
+}
