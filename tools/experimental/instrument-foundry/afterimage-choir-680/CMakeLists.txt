@@ -86,3 +86,13 @@ if(MHAC_BUILD_VST3)
     endif()
     smtg_target_add_plugin_resources(MHACAfterimage RESOURCES "${SDK_ROOT}/LICENSE.txt")
 endif()
+
+# Offline preset bank: independent of SDK and host, including native audio roundtrip.
+add_executable(afterimage_preset_bank preset_bank.cpp)
+target_link_libraries(afterimage_preset_bank PRIVATE Threads::Threads)
+if(MSVC)
+    target_compile_options(afterimage_preset_bank PRIVATE /W4 /WX)
+else()
+    target_compile_options(afterimage_preset_bank PRIVATE -Wall -Wextra -Werror)
+endif()
+add_test(NAME afterimage_presets COMMAND afterimage_preset_bank)
