@@ -1032,5 +1032,122 @@
       "No paid services, new workflow, source-lane writes, canonical edits, merge or owner authorization."
     ],
     "next": "Independently verify the full version-bridge cross-menu census and version-bound payload decoder boundaries; then qualify ordinary browser and Windows portable package with small dependencies. Keep upstream heads separate."
+  },
+  "grammarVersionBatch": {
+    "id": "GRAM-VERSION-017",
+    "disposition": "HOLD",
+    "sourcePR": 453,
+    "sourceHead": "9e45f77a11c637c03f7e1ac50b6b6802ffc97cfc",
+    "sourceBlobs": {
+      "version-bridge.py": "6400cf4c1b42fbe958b0265da43ef657bb355401",
+      "version-bound-payload.py": "7ef6881cefa9c34355d024aeea671d021b674a55",
+      "control-namespace.py": "8e27fe89f2734a0b5fd666bb2018b0d379736493",
+      "migration-namespace.py": "b3562781a974c47b41cbe066ceb755288a51b6b1",
+      "distributed-profile.py": "a780404e8c76820976ad6fb407429ec895a6313f"
+    },
+    "harness": "check_version_bound.py",
+    "harnessBlob": "228800f2e281715d52fbd7e007fd62c97a3722c5",
+    "harnessSHA256": "3257b212ce0e248a86b94eba5cde8be4df67a4a7b3338f71ad80425c2baa0423",
+    "native": "Linux Python 3.13.5 NumPy 2.3.5; five source blobs verified against exact connector metadata. Git ls-remote exit 128 DNS failure. Existing artifact materialized locally.",
+    "commands": [
+      "python version-bound-payload.py . bound-reproduced",
+      "python check_version_bound.py . bridge-reproduced/receipt.json bound-reproduced/receipt.json"
+    ],
+    "results": {
+      "bridgePairs": 126850560,
+      "histogramBins": 172,
+      "menuDesignCombinations": 16,
+      "minimaBaseline": [
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        7,
+        5
+      ],
+      "minimaGlobal": [
+        5,
+        7,
+        7,
+        6,
+        6,
+        7,
+        7,
+        5
+      ],
+      "menuOrder": [
+        "tag-pair",
+        "free-cubic",
+        "reserved-cubic",
+        "uniform-quartic",
+        "selective-quartic",
+        "relocated-cubic",
+        "unified",
+        "historical-eight"
+      ],
+      "versionDecisions": 1728,
+      "aliases": 51999,
+      "incompatibleAliases": 2031,
+      "manifestChecks": "20/20",
+      "PCMChecks": "16/16",
+      "repeatAudit": "byte identical",
+      "tamperedBridgeHistogram": "rejected with exit 1 ValueError: bridge/tag-pair",
+      "negative": "Old row 56 ACK(2,16) profile 0 aliases new row 53700 clause 45478. For both marker and polynomial extensions, complete tail erasure abstains under union but uniquely decodes the wrong meaning under incorrect supplied version 1. Three targeted tail substitutions also admit wrong version at radius two."
+    },
+    "receiptSHA256": {
+      "bridge": "8ed5dae6b05a0f070931555594d6bb9da7852a23850469705bd81ac3ab4efdf6",
+      "bound": "e98d1dde27214890cc2acc156b1f9cd5db5e952b88e7eca16da99fb7fd83398d",
+      "audit": "2f21142f2826819bfa6a11fd78159d506dad1016fdfbb6c9c4f8c387e6b508c9"
+    },
+    "archive": {
+      "name": "MHAC-grammar-consolidation-017.zip",
+      "bytes": 250627,
+      "files": 49,
+      "wavs": 24,
+      "sha256": "1d9414c75ee13d49128a68aab6349f583a12d4d029e1e87aae1b501d8b2c5142",
+      "delivery": "local owner artifact, not GitHub release"
+    },
+    "limits": "Reuses upstream catalogue builders and RNG scenario construction, independent coordinate census and decoder and Lagrange extension. Historical CJS transcription not independently executed. No new held-out corpus, Windows/browser/physical audition, streaming or authenticated version context. No license granted, no canonical edits.",
+    "next": "Qualify ordinary offline browser and Windows grammar package; require explicit provenance/freshness of version cue before using known-version distance guarantees. Retain new causal-frame delta separately."
+  },
+  "liveReconciliation017": {
+    "base": "495a98ca12bae467a507031f04931aa4254b1866",
+    "predecessor": {
+      "head": "0138eaa4dc4dc041bad6a7fc8c80a64271c88d4c",
+      "integrity": 45807894945,
+      "nativePackage": 45807894873,
+      "conclusions": "success/success",
+      "mergeable": true
+    },
+    "sources": [
+      {
+        "pr": 443,
+        "head": "e761ce3eb971ffcaf1edf2f50ecfe24e4f161377",
+        "ci": 45806079754
+      },
+      {
+        "pr": 449,
+        "head": "9486d2db02cc8bd0cea3f1e4d440ff38e7304683",
+        "ci": 45809189357
+      },
+      {
+        "pr": 453,
+        "head": "80e65d26ab3e209fb0bf345a2ee9fc67fa743a8a",
+        "ci": 45809939069
+      },
+      {
+        "pr": 457,
+        "head": "b4854cfe5d18be39b3c4e85b519dda28d5b3b814",
+        "ci": 45813678427
+      },
+      {
+        "pr": 513,
+        "head": "58c2c76ce6d727c20fbf140fe14db840a926918a",
+        "ci": 45812209529
+      }
+    ],
+    "scope": "All five draft, mergeable, exact-head integrity success at inspection; new deltas not promoted. OBS-PROMOTION-001 still qualified for owner review, temporary workflow disposition and explicit owner authorization outstanding."
   }
 }
