@@ -34,3 +34,12 @@ jobs:
           python3 build_observatory.py "$RUNNER_TEMP/observatory-one"
           python3 build_observatory.py "$RUNNER_TEMP/observatory-two"
           python3 verify_native_package.py "$RUNNER_TEMP/observatory-one" "$RUNNER_TEMP/observatory-two" | tee "$RUNNER_TEMP/observatory-qualification.json"
+      - name: Retain qualified owner laboratory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Observatory-607-${{ github.event.pull_request.head.sha }}
+          path: |
+            ${{ runner.temp }}/observatory-one/
+            ${{ runner.temp }}/observatory-qualification.json
+          if-no-files-found: error
+          retention-days: 14

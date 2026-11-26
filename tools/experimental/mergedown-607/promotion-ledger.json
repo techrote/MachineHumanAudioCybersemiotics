@@ -587,5 +587,33 @@
       "Physical audition",
       "Owner authorization"
     ]
+  },
+  "packageHostedQualification": {
+    "id": "OBS-PACKAGE-009",
+    "disposition": "HOLD",
+    "qualifiedHead": "37c60b93762bf273059b762d518c35a34897cffe",
+    "acceptedBase": "495a98ca12bae467a507031f04931aa4254b1866",
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "run": 45752199179,
+    "job": 139682384228,
+    "integrityRun": 45752199082,
+    "runtime": "Hosted Ubuntu 24.04; Python 3.12.3, Node v22.23.5",
+    "tests": "11/11 fixture tests PASS; two actual original Node package builds PASS; exact repeated inventory and independent verifier PASS",
+    "receipt": "OBS-PACKAGE-009-hosted-receipt.json",
+    "manifestSHA256": "ffcd6fea32658a5f0a5e7c26007bb367b376637441cc47afdc4cb999a02f09c7",
+    "packageFiles": 27,
+    "sourceBlobs": 7,
+    "rows": 2304,
+    "cells": 24467,
+    "fingerprints": 16,
+    "certaintySummaryComparisons": 96,
+    "oracleWavHashes": 5,
+    "limitations": [
+      "Frozen bounded legacy/selective package only; joined reconstruction and later research deltas excluded.",
+      "Original job retained no downloadable artifact; follow-on same single job adds artifact retention. No ordinary browser, Windows, physical audition or human evidence established.",
+      "Nine original WAVs; maximum peak 2993/32768; no RMS matching or SPL calibration. No redistribution license granted.",
+      "Outer-format migration remains HOLD: later #607 handoff 7183015554 reports cross-format collisions; do not treat new cubic code as migration-safe."
+    ],
+    "next": "Verify new exact-head artifact upload and downloadable archive; qualify ordinary browser and platform behavior before owner promotion. No merge."
   }
 }
