@@ -43,3 +43,9 @@ jobs:
             ${{ runner.temp }}/observatory-qualification.json
           if-no-files-found: error
           retention-days: 14
+      - name: Ordinary offline browser smoke test
+        working-directory: tools/experimental/mergedown-607
+        shell: bash
+        run: |
+          set -euo pipefail
+          node check_browser.cjs "$RUNNER_TEMP/observatory-one" google-chrome

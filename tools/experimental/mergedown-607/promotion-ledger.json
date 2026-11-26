@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "b248075765aa1f47e2aaf7af86349a11b989c0f1",
+      "observedLaterHead": "aca863378e825b26921388cfaab890f9eac86279",
       "observedLaterIntegrityCI": {
-        "run": 45761092255,
+        "run": 45768076669,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "8f75cb3484fedab4017de56a3a7485a718507690",
+      "observedLaterHead": "09654d45a051960e8f7a27d51d82469f9d1e7b8e",
       "observedLaterIntegrityCI": {
-        "run": 45759607966,
+        "run": 45766419457,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "3c991baa6ebece18aeb48f751ef42ff2d0533f5b",
+      "observedLaterHead": "3defc6747918bf17598f153742f7fd80530ec101",
       "observedLaterIntegrityCI": {
-        "run": 45763278919,
+        "run": 45770486775,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "0a90d3d399bacd9880033e620f7ccf3832130b7c",
+      "observedLaterHead": "80b134c62900a7d76d8510f3e2c885d2c9239c19",
       "observedLaterIntegrityCI": {
-        "run": 45763231217,
+        "run": 45768646395,
         "conclusion": "success"
       }
     }
@@ -660,5 +660,76 @@
     ],
     "laterDeltaTriage": "Measurement #443 dfa83c9a reports one strict d2 profile-only conflict in tag/relocated and tag/selective, 5652 wrong-meaning exact reserved/relocated pairs; Grammar #453 b2480757 reports semantic-distance improvements conditional on supporting tag plus one replacement. Adversarial #449 8f75cb34 and Interaction #457 3c991baa provide further scoped witnesses. These are reported upstream findings, not independently reproduced in this run; no promotion. Integration and Foundry separate.",
     "recommendation": "Owner may inspect exact downloadable frozen package now; HOLD merge. Use ordinary hosted browser qualification with exact pinned package and then bounded Windows run if authorized/available, not broader research fan-out. Preserve negative evidence and source pins."
+  },
+  "grammarControlBoundary": {
+    "id": "GRAM-CONTROL-011",
+    "disposition": "HOLD",
+    "date": "2026-11-26",
+    "sourcePR": 453,
+    "sourceHead": "aca863378e825b26921388cfaab890f9eac86279",
+    "sourceIntegrityCI": 45768076669,
+    "sourceBlobs": {
+      "control-namespace.py": "8e27fe89f2734a0b5fd666bb2018b0d379736493",
+      "migration-namespace.py": "b3562781a974c47b41cbe066ceb755288a51b6b1",
+      "distributed-profile.py": "a780404e8c76820976ad6fb407429ec895a6313f"
+    },
+    "native": "Linux Python 3.13.5 NumPy 2.3.5. Exact source ZIP files match connector Git blobs. Executed python control-namespace.py . reproduced; diff -qr output reproduced exit 0 (6/6 files). Receipt SHA256 aaf7793a58979fcc54ecc887fe42b49c3e5cde0a7a9acf9da4ed57874ae72d47.",
+    "oracle": "check_control_boundary.py PINNED_SOURCE_DIRECTORY (Python and NumPy, assertions enabled). Uses original build for data, independent tuple equality, first-four-coordinate Lagrange interpolation, sorted five-coordinate projection joins; counts incompatible cross-format distance-five pairs exactly because all distinct polynomial bodies disagree at >=5 of eight positions. Same row identity excluded. 120204 interpolation rows; 252 masks; 82889 cross incompatible d5 pairs, exact minimum 5. 2604 inherited legacy same-body d2 pairs. 68204 unique new words, 2031 naive duplicate rows. Oracle receipt SHA256 1cc2d2e2d026d25dfdd11817bf71b21fdd146ae78d1246caf9e56f34b6ac178c.",
+    "witness": {
+      "newRow": 46,
+      "tagRow": 96,
+      "newIdentity": [
+        "('ack', 2, 6)",
+        0
+      ],
+      "tagIdentity": [
+        "('ack', 4, 16)",
+        0
+      ],
+      "newWord": [
+        0,
+        0,
+        2,
+        12,
+        2,
+        12,
+        14,
+        14,
+        1,
+        15
+      ],
+      "tagWord": [
+        0,
+        0,
+        2,
+        0,
+        5,
+        11,
+        12,
+        2,
+        1,
+        15
+      ]
+    },
+    "limitations": [
+      "Independent check of generated catalogue not independent original historical CJS catalogue transcription. No claim of native CJS source equivalence; no streaming acquisition, real channel, human evidence or scientific acceptance.",
+      "Whole-menu minimum remains two because legacy conflicts; cross-only guarantee does not imply union recovery. Retired format support remains excluded.",
+      "No source copy beyond existing upstream ZIP and no new license. No owner approval."
+    ]
+  },
+  "packageBrowserBridge": {
+    "id": "OBS-PACKAGE-011",
+    "disposition": "HOLD",
+    "parent": "3488832f552bd7af485c67242be95eeb90468dd8",
+    "previousNativeRun": 45765581257,
+    "previousIntegrityRun": 45765581265,
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "command": "node check_browser.cjs PACKAGE_DIRECTORY google-chrome",
+    "local": "Node v22.16.0 syntax check PASS; root launch exit 1 (Running as root without --no-sandbox is not supported); ordinary nonroot Chromium DevTools launch connected but Page.navigate returned net::ERR_BLOCKED_BY_ADMINISTRATOR. Zero page checks completed. No sandbox or policy override.",
+    "hosted": "One step in existing bounded Ubuntu native package job after artifact upload; ordinary file navigation on five pages and actual DOM control changes; pending execution. No additional runner, dependencies or matrix. Browser failure fails job while already uploaded native artifact remains.",
+    "limitations": [
+      "No browser PASS until actual receipt; no user playback or export download check in this smoke test.",
+      "Windows and physical audition untested; overall #608 Draft/HOLD."
+    ]
   }
 }
