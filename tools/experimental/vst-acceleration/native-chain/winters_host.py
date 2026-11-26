@@ -1,4 +1,6 @@
-"""ACCEL-008: isolated Three Winters 0.2.0 pitch/timbre host witness.
+"""ACCEL-024: corrected Three Winters 0.2.1 pitch/timbre host witness.
+The original 0.2.0 failure remains archived in run 45886564159 / artifact 15149861653.
+The original continuous edit/restore oracle is unchanged.
 Boundary edits on a continuous MIDI stream; not sample-offset queue injection.
 """
 import argparse
@@ -15,8 +17,9 @@ import numpy as np
 import host_audition as h
 import preset_bank as bank
 
-SOURCE = "91dc53aca2076665693cbef9f0c61fd913b28745"
-DIGEST = "a694d73fa2080685984e43d3fcaa3245744d9ae7fd0e210b3bbef3f0abe1a97d"
+SOURCE = "4d7dbfe0ff330b50e52d70920407eb519748c503"
+DIGEST = "f47449a0a9bbf626cbdebb0acd68713acc01e4130815697ee4ab92f14581c8b9"
+BINARY_DIGEST = "5de9cae05307d7dd99e7b6b0d665a3a0342d930921e4a160ff91e4cc9e938c89"
 CID = "D1195E6E292C442CB550AE834977E4CD"
 NAME = "MHACThreeWinters"
 EXPECTED = ((0, .25, .25, .25, .25, .5),
@@ -39,7 +42,7 @@ def extract(path, dest):
                     z.read(root+"/Contents/Resources/moduleinfo.json").decode("utf-8-sig")))
         classes = [c for c in info["Classes"] if c["Category"]=="Audio Module Class"]
         h.require(len(classes)==1 and classes[0]["CID"]==CID and
-                  classes[0]["Version"]=="0.2.0" and classes[0]["SDKVersion"]=="VST 3.8.0",
+                  classes[0]["Version"]=="0.2.1" and classes[0]["SDKVersion"]=="VST 3.8.0",
                   "module identity")
         seen=set()
         for item in z.infolist():
@@ -55,6 +58,7 @@ def extract(path, dest):
             target.write_bytes(z.read(item))
     bundle=(dest/root).resolve(strict=True)
     binary=bundle/"Contents"/"x86_64-win"/root
+    h.require(h.sha(binary.read_bytes())==BINARY_DIGEST,"exact independently qualified binary")
     return bundle,dict(source=SOURCE,sdk=h.SDK,outer_sha256=DIGEST,
         inner_sha256=h.sha(inner),binary_sha256=h.sha(binary.read_bytes()),processor_cid=CID)
 

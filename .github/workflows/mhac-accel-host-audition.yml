@@ -62,20 +62,20 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/loom_host.py --standard loom.zip --xl loomxl.zip --out loom-audition
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-      - name: Recover exact Three Winters package
+      - name: Recover exact corrected Three Winters 0.2.1 package (PR 726)
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o winters.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15068070040/zip"
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o winters.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15156181930/zip"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-      - name: Three Winters continuous MIDI and independent timbre witness
+      - name: Corrected Three Winters continuous MIDI and independent timbre witness
         id: winters
         shell: pwsh
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/winters_host.py --archive winters.zip --out winters-audition
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-      - name: Direct SDK bus and MIDI diagnostic (preserve original failure)
+      - name: Direct SDK bus and MIDI diagnostic on new failure
         if: failure() && steps.winters.outcome == 'failure'
         shell: pwsh
         run: |
