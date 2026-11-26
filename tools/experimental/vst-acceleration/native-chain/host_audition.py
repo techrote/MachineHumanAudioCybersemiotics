@@ -262,6 +262,85 @@ def run_preset_matrix(gpath, fpath, out, report):
     persist()
 
 
+# Explicit controller edits BETWEEN streaming calls, not sample-offset host queues.
+# Expected steady-state gain derived from the pinned Freeze Socket clock:
+# rate=.5 -> 2 slots/s; hold at .75 s in slot B; mutate B,C at 1 s;
+# release at 1.75 s. The paused clock resumes from its fractional position.
+HOLD_WINDOWS = (.60, .85, 1.15, 1.65, 1.85, 2.10)
+HOLD_EXPECTED = (
+    (.25, .25, .25, .25, .10, 1.),
+    (.25, .25, .90, .90, .90, .05),
+    (.25, .25, .75, .10, .10, 1.),
+)
+
+
+def hold_witness(signal, rate, mode):
+    checked(signal, int(2.25*rate))
+    measured = []
+    for start, expected in zip(HOLD_WINDOWS, HOLD_EXPECTED[mode]):
+        # Stay far from events and the 5 ms maximum full-scale slew.
+        window = signal[:, int(start*rate):int((start+.02)*rate)]
+        require(np.max(np.abs(window[0]/.125-window[1]/(-.25))) < 2e-6,
+                "Hold test stereo gain mismatch")
+        gain = window[0]/.125
+        require(np.max(np.abs(gain-expected)) < 2e-4,
+                f"Hold mode {mode} at {start}s: expected {expected}, got {float(np.mean(gain))}")
+        measured.append(float(np.mean(gain)))
+    return measured
+
+
+def run_hold_matrix(bundle, out, report):
+    report["hold_matrix"] = []
+    report["hold_scope"] = "Host controller edits between contiguous processing calls; not sample-offset queue automation."
+    def persist():
+        (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+    for rate in (44100,48000,96000):
+        for mode in range(3):
+            p = open_plugin(bundle)
+            values = [.5,1.,1.,mode/2,0.,1.,.25,.75,.1,0.]
+            p.preset_data = bank.preset(bank.F, values)
+            verify_component(p,bank.F,bank.state(bank.F,values))
+            case = dict(rate=rate, mode=mode, status="started", parameters=list(p.parameters))
+            report["hold_matrix"].append(case)
+            persist()
+            pieces = []
+            def render(seconds):
+                frames = round(seconds*rate)
+                x = np.empty((2,frames),dtype=np.float32)
+                x[0] = .125
+                x[1] = -.25
+                pieces.append(checked(p(x,rate,buffer_size=257,reset=not pieces),frames))
+            def edit(name,index,value):
+                require(name in p.parameters, "missing controller parameter: "+name)
+                p.parameters[name].raw_value = value
+                require(abs(p.parameters[name].raw_value-value) < 1e-6, "controller readback mismatch")
+                values[index] = value
+            try:
+                render(.75)
+                edit("hold",4,1.)
+                render(.25)
+                edit("step_b",6,.90)
+                edit("step_c",7,.05)
+                render(.75)
+                edit("hold",4,0.)
+                render(.50)
+                signal = np.concatenate(pieces,axis=1)
+                case["gain_windows"] = hold_witness(signal,rate,mode)
+                verify_component(p,bank.F,bank.state(bank.F,values))
+                case["final_component_retained"] = True
+                case["output"] = metrics(signal)
+                case["status"] = "pass"
+            except Exception as exc:
+                case["status"] = "fail"
+                case["error"] = str(exc)
+                raise
+            finally:
+                persist()
+                print("HOLD MATRIX:",json.dumps(case),flush=True)
+    report["hold_matrix_complete"] = True
+    persist()
+
+
 def run(gold, freeze, out):
     require(platform.system() == "Windows" and platform.machine().lower() in ("amd64","x86_64"),
             "exact packages require native Windows x64")
@@ -306,6 +385,7 @@ def run(gold, freeze, out):
             wav(out/"wet.wav", wet)
     diagnose_golden_state(gpath, out, report)
     run_preset_matrix(gpath, fpath, out, report)
+    run_hold_matrix(fpath, out, report)
 
 
 class Tests(unittest.TestCase):
@@ -321,6 +401,24 @@ class Tests(unittest.TestCase):
         for dry, processed in ((x,x),(x,x*2),(x*0,x*0),(x+.1,x)):
             with self.assertRaises(ValueError):
                 compare(dry,processed)
+
+    def test_hold_witness_and_negative_controls(self):
+        rate = 48000
+        for mode, expected in enumerate(HOLD_EXPECTED):
+            signal = np.zeros((2,int(2.25*rate)),dtype=np.float32)
+            for start,gain in zip(HOLD_WINDOWS,expected):
+                a,b = int(start*rate),int((start+.02)*rate)
+                signal[0,a:b] = .125*gain
+                signal[1,a:b] = -.25*gain
+            np.testing.assert_allclose(hold_witness(signal,rate,mode),expected,atol=1e-6)
+            for other in range(3):
+                if other != mode:
+                    with self.assertRaises(ValueError):
+                        hold_witness(signal,rate,other)
+            broken = signal.copy()
+            broken[1] = 0
+            with self.assertRaises(ValueError):
+                hold_witness(broken,rate,mode)
 
     def test_wav(self):
         import tempfile
