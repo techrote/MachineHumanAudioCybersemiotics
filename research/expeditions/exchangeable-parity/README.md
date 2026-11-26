@@ -70,7 +70,7 @@ The correction is nonnegative and O(N^-3): the neighboring squared grid magnitud
 | 5 | 1/3 | -1/5 | 1/3 |
 | 6 | 1/5 | -1/9 | 1/3 |
 | 7 | 1/5 | -3/35 | 1/5 |
-| 8 | 1/7 | -1/15 | 1/5 |
+| 8 | 1/7 | -1/21 | 1/5 |
 | 9 | 1/7 | -1/21 | 1/7 |
 
 For the positive fourth coefficient the maximum horizon is the largest even N<=3+1/c. For negative c, use the exact lower endpoint; it is not obtained by reflecting all signs, since a four-sign product is complement invariant. This is unlike odd-order parity.
@@ -91,7 +91,7 @@ A direct joint lookup or deliberate block protocol is an essential engineering c
 
 Run node laboratory.cjs for the standalone integer census. On a moment polytope with k constraints (including normalization), every vertex has at most k positive count weights: otherwise a nonzero null vector supported on positive weights permits a two-sided perturbation. Enumerating exactly k distinct nodes includes degenerate smaller supports with zero weights. Expectation of each Lagrange basis polynomial gives the unique corresponding weight; its numerator and denominator are integers. Nonnegative weights characterize feasibility. The support polynomial then yields the next moment directly. All arithmetic is safe integer arithmetic for N<=40.
 
-Executed the JavaScript core in V8 (not native Node CLI): 75 population/order profiles, 962,596 candidate supports, 81,681 feasible support instances including duplicates. All third/fourth extrema agree exactly with the proofs, zero assertion failures. See execution.json. Census is corroboration, not the proof.
+Executed the JavaScript core in V8 (not native Node CLI): 75 population/order profiles, 962,596 candidate supports, 81,681 feasible support instances including duplicates. All third/fourth extrema agree exactly with the proofs, zero assertion failures. See execution.json. Fetched committed JavaScript core replay reproduced the committed receipt exactly. Census is corroboration, not the proof.
 
 A separate native Python witness (delivered with the audio package) uses exact rational hypergeometric marginals for endpoint distributions through N=64: 246 endpoint witnesses and 2,944 full marginal cells. It also uses SciPy HiGHS on the labelled bit cube, without imposing count symmetry: constraints on every proper subset's sign product, objective the average over all k-subsets. Permutation averaging preserves these constraints and objective. Thirty LPs for N<=10 agreed with the analytical endpoints to maximum absolute discrepancy 1.7733037260825313e-13. Python 3.13.5, SciPy 1.17.0, NumPy 2.3.5. Repeated native run gave byte-identical receipt; PCM hashes in receipt. Same AI agent, different methods, not independent peer review. Native witness source Git blob SHA da7ac0e221fc90555d40e64ba9b1e06ddf2e2569; receipt 25d9bd82f6ea1150e4416cf449720cc5be102ca0.
 
