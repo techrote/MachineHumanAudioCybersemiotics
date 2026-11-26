@@ -40,7 +40,10 @@ constexpr Entry bank[]{
     {"07 Flicker Memory",pack(16,2,0,500)},
     {"08 Parity Separation",pack(11,1,80,1000)},
     {"09 Dual Echo",pack(16,3,0,1000,2)},
-    {"10 Archive Choir",pack(16,3,0,1000,3)}
+    {"10 Archive Choir",pack(16,3,0,1000,3)},
+    {"11 Phase Veil",pack(16,3,0,1000,3,1)},
+    {"12 Phase Alloy",pack(16,3,0,1000,3,2)},
+    {"13 Phase Archive",pack(16,3,0,1000,3,3)}
 };
 void require(bool ok){if(!ok)throw std::runtime_error("preset regression failed");}
 void test(){

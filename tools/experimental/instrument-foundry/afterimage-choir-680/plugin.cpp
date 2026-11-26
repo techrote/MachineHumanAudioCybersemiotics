@@ -83,12 +83,13 @@ public:
         parameters.addParameter(STR16("Minimum duration (0..2000 ms)"),nullptr,2000,normalized(Default,2),ParameterInfo::kCanAutomate,firstID+2);
         parameters.addParameter(STR16("Memory influence"),nullptr,1000,normalized(Default,3),ParameterInfo::kCanAutomate,firstID+3);
         parameters.addParameter(STR16("Cancel releases (gate)"),nullptr,1,0,ParameterInfo::kCanAutomate,firstID+4);
-        parameters.addParameter(STR16("Memory depth (latest/dual/archive)"),nullptr,2,normalized(Default,5),ParameterInfo::kCanAutomate,firstID+5);return kResultOk;
+        parameters.addParameter(STR16("Memory depth (latest/dual/archive)"),nullptr,2,normalized(Default,5),ParameterInfo::kCanAutomate,firstID+5);
+        parameters.addParameter(STR16("Phase memory mix (0/33/67/100%)"),nullptr,3,normalized(Default,6),ParameterInfo::kCanAutomate,firstID+6);return kResultOk;
     }
-    tresult PLUGIN_API setComponentState(IBStream* s) override {Word w{};if(!readParams(s,w))return kResultFalse;for(unsigned i=0;i<4;++i)setParamNormalized(firstID+i,normalized(w,i));setParamNormalized(firstID+4,0);setParamNormalized(firstID+5,normalized(w,5));return kResultOk;}
+    tresult PLUGIN_API setComponentState(IBStream* s) override {Word w{};if(!readParams(s,w))return kResultFalse;for(unsigned i=0;i<4;++i)setParamNormalized(firstID+i,normalized(w,i));setParamNormalized(firstID+4,0);setParamNormalized(firstID+5,normalized(w,5));setParamNormalized(firstID+6,normalized(w,6));return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Afterimage Choir",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Afterimage Choir Controller",0,"","0.2.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Afterimage Choir",Vst::kDistributable,"Instrument|Synth","0.3.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Afterimage Choir Controller",0,"","0.3.0",kVstVersionString,Controller::create)
 END_FACTORY

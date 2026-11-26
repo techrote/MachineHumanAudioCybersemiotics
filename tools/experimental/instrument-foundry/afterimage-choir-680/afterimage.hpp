@@ -47,7 +47,7 @@ public:
         if(!p.pair.valid()||static_cast<unsigned>(p.mode)>3||!std::isfinite(p.minimumMs)||p.minimumMs<0||p.minimumMs>2000||!std::isfinite(p.memory)||p.memory<0||p.memory>1) return false;
         patch=p; return true;
     }
-    // Native laboratory only: captured at note-on, never changes existing voices.
+    // Captured at note-on, never changes existing voices.
     bool setPhaseMix(double mix) noexcept {
         if(!std::isfinite(mix)||mix<0||mix>1)return false;
         phaseMix=mix;return true;
