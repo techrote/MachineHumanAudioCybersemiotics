@@ -1,0 +1,610 @@
+{
+  "method": "integer Lagrange support enumeration",
+  "max_n": 40,
+  "profiles": 75,
+  "supports": 962596,
+  "feasible": 81681,
+  "assertion_failures": 0,
+  "rows": [
+    {
+      "n": 3,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 4,
+      "min_numerator": -6,
+      "max_numerator": 6,
+      "denominator": 6
+    },
+    {
+      "n": 4,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 6,
+      "min_numerator": -8,
+      "max_numerator": 8,
+      "denominator": 24
+    },
+    {
+      "n": 4,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 5,
+      "min_numerator": -24,
+      "max_numerator": 24,
+      "denominator": 24
+    },
+    {
+      "n": 5,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 12,
+      "min_numerator": -20,
+      "max_numerator": 20,
+      "denominator": 60
+    },
+    {
+      "n": 5,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 8,
+      "min_numerator": -24,
+      "max_numerator": 40,
+      "denominator": 120
+    },
+    {
+      "n": 6,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 12,
+      "min_numerator": -24,
+      "max_numerator": 24,
+      "denominator": 120
+    },
+    {
+      "n": 6,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 14,
+      "min_numerator": -40,
+      "max_numerator": 120,
+      "denominator": 360
+    },
+    {
+      "n": 7,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 24,
+      "min_numerator": -42,
+      "max_numerator": 42,
+      "denominator": 210
+    },
+    {
+      "n": 7,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 17,
+      "min_numerator": -72,
+      "max_numerator": 168,
+      "denominator": 840
+    },
+    {
+      "n": 8,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 31,
+      "min_numerator": -48,
+      "max_numerator": 48,
+      "denominator": 336
+    },
+    {
+      "n": 8,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 35,
+      "min_numerator": -80,
+      "max_numerator": 336,
+      "denominator": 1680
+    },
+    {
+      "n": 9,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 46,
+      "min_numerator": -72,
+      "max_numerator": 72,
+      "denominator": 504
+    },
+    {
+      "n": 9,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 65,
+      "min_numerator": -144,
+      "max_numerator": 432,
+      "denominator": 3024
+    },
+    {
+      "n": 10,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 42,
+      "min_numerator": -80,
+      "max_numerator": 80,
+      "denominator": 720
+    },
+    {
+      "n": 10,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 80,
+      "min_numerator": -144,
+      "max_numerator": 720,
+      "denominator": 5040
+    },
+    {
+      "n": 11,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 66,
+      "min_numerator": -110,
+      "max_numerator": 110,
+      "denominator": 990
+    },
+    {
+      "n": 11,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 80,
+      "min_numerator": -192,
+      "max_numerator": 880,
+      "denominator": 7920
+    },
+    {
+      "n": 12,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 75,
+      "min_numerator": -120,
+      "max_numerator": 120,
+      "denominator": 1320
+    },
+    {
+      "n": 12,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 149,
+      "min_numerator": -232,
+      "max_numerator": 1320,
+      "denominator": 11880
+    },
+    {
+      "n": 13,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 92,
+      "min_numerator": -156,
+      "max_numerator": 156,
+      "denominator": 1716
+    },
+    {
+      "n": 13,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 148,
+      "min_numerator": -264,
+      "max_numerator": 1560,
+      "denominator": 17160
+    },
+    {
+      "n": 14,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 92,
+      "min_numerator": -168,
+      "max_numerator": 168,
+      "denominator": 2184
+    },
+    {
+      "n": 14,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 218,
+      "min_numerator": -344,
+      "max_numerator": 2184,
+      "denominator": 24024
+    },
+    {
+      "n": 15,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 144,
+      "min_numerator": -210,
+      "max_numerator": 210,
+      "denominator": 2730
+    },
+    {
+      "n": 15,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 218,
+      "min_numerator": -360,
+      "max_numerator": 2520,
+      "denominator": 32760
+    },
+    {
+      "n": 16,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 151,
+      "min_numerator": -224,
+      "max_numerator": 224,
+      "denominator": 3360
+    },
+    {
+      "n": 16,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 419,
+      "min_numerator": -480,
+      "max_numerator": 3360,
+      "denominator": 43680
+    },
+    {
+      "n": 17,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 176,
+      "min_numerator": -272,
+      "max_numerator": 272,
+      "denominator": 4080
+    },
+    {
+      "n": 17,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 362,
+      "min_numerator": -480,
+      "max_numerator": 3808,
+      "denominator": 57120
+    },
+    {
+      "n": 18,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 173,
+      "min_numerator": -288,
+      "max_numerator": 288,
+      "denominator": 4896
+    },
+    {
+      "n": 18,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 530,
+      "min_numerator": -576,
+      "max_numerator": 4896,
+      "denominator": 73440
+    },
+    {
+      "n": 19,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 218,
+      "min_numerator": -342,
+      "max_numerator": 342,
+      "denominator": 5814
+    },
+    {
+      "n": 19,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 526,
+      "min_numerator": -624,
+      "max_numerator": 5472,
+      "denominator": 93024
+    },
+    {
+      "n": 20,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 236,
+      "min_numerator": -360,
+      "max_numerator": 360,
+      "denominator": 6840
+    },
+    {
+      "n": 20,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 724,
+      "min_numerator": -696,
+      "max_numerator": 6840,
+      "denominator": 116280
+    },
+    {
+      "n": 21,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 296,
+      "min_numerator": -420,
+      "max_numerator": 420,
+      "denominator": 7980
+    },
+    {
+      "n": 21,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 776,
+      "min_numerator": -792,
+      "max_numerator": 7560,
+      "denominator": 143640
+    },
+    {
+      "n": 22,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 267,
+      "min_numerator": -440,
+      "max_numerator": 440,
+      "denominator": 9240
+    },
+    {
+      "n": 22,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 960,
+      "min_numerator": -840,
+      "max_numerator": 9240,
+      "denominator": 175560
+    },
+    {
+      "n": 23,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 342,
+      "min_numerator": -506,
+      "max_numerator": 506,
+      "denominator": 10626
+    },
+    {
+      "n": 23,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 946,
+      "min_numerator": -984,
+      "max_numerator": 10120,
+      "denominator": 212520
+    },
+    {
+      "n": 24,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 382,
+      "min_numerator": -528,
+      "max_numerator": 528,
+      "denominator": 12144
+    },
+    {
+      "n": 24,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 1308,
+      "min_numerator": -1008,
+      "max_numerator": 12144,
+      "denominator": 255024
+    },
+    {
+      "n": 25,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 420,
+      "min_numerator": -600,
+      "max_numerator": 600,
+      "denominator": 13800
+    },
+    {
+      "n": 25,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 1516,
+      "min_numerator": -1200,
+      "max_numerator": 13200,
+      "denominator": 303600
+    },
+    {
+      "n": 26,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 415,
+      "min_numerator": -624,
+      "max_numerator": 624,
+      "denominator": 15600
+    },
+    {
+      "n": 26,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 1650,
+      "min_numerator": -1200,
+      "max_numerator": 15600,
+      "denominator": 358800
+    },
+    {
+      "n": 27,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 522,
+      "min_numerator": -702,
+      "max_numerator": 702,
+      "denominator": 17550
+    },
+    {
+      "n": 27,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 1747,
+      "min_numerator": -1360,
+      "max_numerator": 16848,
+      "denominator": 421200
+    },
+    {
+      "n": 28,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 510,
+      "min_numerator": -728,
+      "max_numerator": 728,
+      "denominator": 19656
+    },
+    {
+      "n": 28,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 2250,
+      "min_numerator": -1416,
+      "max_numerator": 19656,
+      "denominator": 491400
+    },
+    {
+      "n": 29,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 584,
+      "min_numerator": -812,
+      "max_numerator": 812,
+      "denominator": 21924
+    },
+    {
+      "n": 29,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 2218,
+      "min_numerator": -1544,
+      "max_numerator": 21112,
+      "denominator": 570024
+    },
+    {
+      "n": 30,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 557,
+      "min_numerator": -840,
+      "max_numerator": 840,
+      "denominator": 24360
+    },
+    {
+      "n": 30,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 2788,
+      "min_numerator": -1656,
+      "max_numerator": 24360,
+      "denominator": 657720
+    },
+    {
+      "n": 31,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 660,
+      "min_numerator": -930,
+      "max_numerator": 930,
+      "denominator": 26970
+    },
+    {
+      "n": 31,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 2681,
+      "min_numerator": -1752,
+      "max_numerator": 26040,
+      "denominator": 755160
+    },
+    {
+      "n": 32,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 718,
+      "min_numerator": -960,
+      "max_numerator": 960,
+      "denominator": 29760
+    },
+    {
+      "n": 32,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 3372,
+      "min_numerator": -1920,
+      "max_numerator": 29760,
+      "denominator": 863040
+    },
+    {
+      "n": 33,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 792,
+      "min_numerator": -1056,
+      "max_numerator": 1056,
+      "denominator": 32736
+    },
+    {
+      "n": 33,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 3398,
+      "min_numerator": -1984,
+      "max_numerator": 31680,
+      "denominator": 982080
+    },
+    {
+      "n": 34,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 765,
+      "min_numerator": -1088,
+      "max_numerator": 1088,
+      "denominator": 35904
+    },
+    {
+      "n": 34,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 3986,
+      "min_numerator": -2208,
+      "max_numerator": 35904,
+      "denominator": 1113024
+    },
+    {
+      "n": 35,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 926,
+      "min_numerator": -1190,
+      "max_numerator": 1190,
+      "denominator": 39270
+    },
+    {
+      "n": 35,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 4025,
+      "min_numerator": -2240,
+      "max_numerator": 38080,
+      "denominator": 1256640
+    },
+    {
+      "n": 36,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 922,
+      "min_numerator": -1224,
+      "max_numerator": 1224,
+      "denominator": 42840
+    },
+    {
+      "n": 36,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 5365,
+      "min_numerator": -2520,
+      "max_numerator": 42840,
+      "denominator": 1413720
+    },
+    {
+      "n": 37,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 1012,
+      "min_numerator": -1332,
+      "max_numerator": 1332,
+      "denominator": 46620
+    },
+    {
+      "n": 37,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 4892,
+      "min_numerator": -2520,
+      "max_numerator": 45288,
+      "denominator": 1585080
+    },
+    {
+      "n": 38,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 982,
+      "min_numerator": -1368,
+      "max_numerator": 1368,
+      "denominator": 50616
+    },
+    {
+      "n": 38,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 6000,
+      "min_numerator": -2760,
+      "max_numerator": 50616,
+      "denominator": 1771560
+    },
+    {
+      "n": 39,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 1174,
+      "min_numerator": -1482,
+      "max_numerator": 1482,
+      "denominator": 54834
+    },
+    {
+      "n": 39,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 5985,
+      "min_numerator": -2824,
+      "max_numerator": 53352,
+      "denominator": 1974024
+    },
+    {
+      "n": 40,
+      "order": 3,
+      "feasible_vertices_with_multiplicity": 1191,
+      "min_numerator": -1520,
+      "max_numerator": 1520,
+      "denominator": 59280
+    },
+    {
+      "n": 40,
+      "order": 4,
+      "feasible_vertices_with_multiplicity": 7183,
+      "min_numerator": -3024,
+      "max_numerator": 59280,
+      "denominator": 2193360
+    }
+  ]
+}
