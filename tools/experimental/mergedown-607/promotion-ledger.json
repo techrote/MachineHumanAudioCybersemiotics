@@ -11,9 +11,9 @@
       "ci": 45690234347,
       "disposition": "HOLD",
       "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified",
-      "observedLaterHead": "ed648880b0588b2852a0b691a8f603a2a0a49a13",
+      "observedLaterHead": "0a298d30d8e5b9b7bf16b3b074fd120fc9048d7d",
       "observedLaterIntegrityCI": {
-        "run": 45731582810,
+        "run": 45738570192,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "0fe95f804a20a8f3a6e59a2f8089d8b83f438204",
+      "observedLaterHead": "7773a123a29881a22d7c1893df1dd609c4ef25d1",
       "observedLaterIntegrityCI": {
-        "run": 45727908686,
+        "run": 45735443588,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "5d4406c5179880a48290700de3577edc2afa22c5",
+      "observedLaterHead": "92325206f21934a1a517d8876ba26e6ccaafccf8",
       "observedLaterIntegrityCI": {
-        "run": 45726528338,
+        "run": 45734707861,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "a51d73f23306b6974542dce54840b8b52520b996",
+      "observedLaterHead": "b42943bae17b2d5478e747d1a146ce5169f2ae7a",
       "observedLaterIntegrityCI": {
-        "run": 45730469796,
+        "run": 45737718148,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "d3a2fa118db659c845fe0962201be47a08692a6d",
+      "observedLaterHead": "3216676812a42edb9bf45cd1e1214af00345e8f7",
       "observedLaterIntegrityCI": {
-        "run": 45729764724,
+        "run": 45736618339,
         "conclusion": "success"
       }
     }
@@ -179,8 +179,8 @@
     "recommendation": "Close trace-repair qualification gap only. HOLD overall #608 for canonical location, full workbench and ordinary browser/Windows gates. Owner authorization required. Next qualify legacy/selective workbench; preserve v1 and v2 pins."
   },
   "previousConsolidationIntegrityCI": {
-    "head": "c44fc99858bb022ae0d1457ea4cfa9d86d66c543",
-    "run": 45725013361,
+    "head": "9dba164b7721d1a07574dfc78b2b5b9cfddbd505",
+    "run": 45732888258,
     "conclusion": "success"
   },
   "selectiveTransferBatch": {
@@ -450,5 +450,90 @@
       "No full native upstream grammar DSP, no legacy/selective full package yet. Frozen older source pins unchanged; newer Measurement delta contains five additive files. No new license or merge."
     ],
     "recommendation": "Retain as independently reproduced regression evidence and bounded native apparatus for owner inspection. HOLD full promotion; do not treat corruption counts as human/channel evidence. Next close original legacy/selective dependency transfer and ordinary browser gate."
+  },
+  "profileAmbiguityBatch": {
+    "id": "OBS-PROFILE-006",
+    "disposition": "HOLD",
+    "qualificationScope": "Independent exact finite projection accounting and native standalone export PASS; not whole Observatory workbench or scientific qualification.",
+    "sourcePR": 443,
+    "sourceHead": "0a298d30d8e5b9b7bf16b3b074fd120fc9048d7d",
+    "sourceIntegrityCI": 45738570192,
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/profile-ambiguity.py",
+    "sourceBlob": "0e76ae849d4184c192d76285f15c3f0420827d4b",
+    "sourceSHA256": "7074387c952d4641a99a4e1a94f32c1f4f97afee7bb8589f8997f2f01bc420bc",
+    "grammar": {
+      "pr": 453,
+      "head": "7773a123a29881a22d7c1893df1dd609c4ef25d1",
+      "blob": "d1f598e10a79f4ca09f45eb88d26e7422e69ec81",
+      "integrityCI": 45735443588
+    },
+    "harness": "check_profile_ambiguity.py",
+    "harnessBlob": "2cfe2bce40a297c275cc137c8010f7e9a1cb9224",
+    "harnessSHA256": "cc6ae03d2fdde8094c1c9b9e9f81cf8342357fc6e975da834e4a7a8c14a635fb",
+    "runtime": "Linux native Python 3.13.5; NumPy 2.3.5 independent oracle only",
+    "native": "Verified original Git blob after connector text transfer. Original CLI completed twice, all five files byte-identical (diff -qr exit 0). Manifest 4/4 hashes, WAV 2/2 16 kHz mono PCM16 10240 samples, both peak 2048/32768. Independent oracle recursively generates legal grammar prefix set and enumerates coefficient vectors, uses sorted numeric projection keys rather than upstream dictionaries/sets. All 127 masks x 3 source populations x 13 metrics = 4953 exact count checks including zeros. A second oracle run did not finish within tool time limit; first completed run PASS. No repeat-oracle PASS asserted.",
+    "receiptSHA256": "00045b369a1da7a7ea9b84380b242a07ba6113466cb48ddd2c37fe97e8673084",
+    "manifestSHA256": "7ba068a9968485beac18f682e100ac9b2b73ca4df82b66b986b6ca1d4d361d40",
+    "oracleOutputSHA256": "ebe251fe7a601500f075c58e48dd1b274ecd8753fa9723fd77c26c9c37348209",
+    "reproduction": [
+      "From a local checkout containing exact source commit, use git show 0a298d30d8e5b9b7bf16b3b074fd120fc9048d7d:tools/experimental/observatory-442-receipt-inspector/profile-ambiguity.py > profile-ambiguity.py (Git Bash or byte-preserving extraction). Verify Git blob before executing.",
+      "python profile-ambiguity.py NEW_OUTPUT_DIR",
+      "python tools/experimental/mergedown-607/check_profile_ambiguity.py NEW_OUTPUT_DIR/receipt.json (NumPy, assertions enabled; no -O)"
+    ],
+    "findings": {
+      "fullProtectedWrongMeaning": 2603,
+      "fullProtectedSharedWords": 2604,
+      "fullProtectedCount": 4000,
+      "masks": 127,
+      "distinctProfileMessageMaskConfigurations": 6604000,
+      "repeatedMatchedSubsetConfigurations": 508000,
+      "totalCountingMatchedSubset": 7112000,
+      "threeSurvivorLegacy": {
+        "trials": 2688000,
+        "wrongFallback": 2295118,
+        "correctFallback": 85,
+        "abstained": 392797,
+        "semanticSingleton": 0
+      },
+      "threeSurvivorLegacyMatched": {
+        "trials": 224000,
+        "wrongFallback": 191185,
+        "correctFallback": 85,
+        "abstained": 32730
+      },
+      "threeSurvivorProtected": {
+        "trials": 224000,
+        "semanticSingleton": 24255,
+        "knownKindAddressSingleton": 219488
+      },
+      "witness": {
+        "body": [
+          0,
+          1,
+          4,
+          9,
+          16,
+          8,
+          2,
+          15
+        ],
+        "protected": [
+          "ack",
+          0,
+          1
+        ],
+        "legacy": [
+          "ack",
+          28,
+          9
+        ]
+      }
+    },
+    "limitations": [
+      "Uniform exhaustive clean erasure only; no substitution, unknown acoustic alignment, receiver acquisition cost, or physical error rate claim. Matched subset repeats legacy observations, not independent additional trials. Perfect contextual filter is oracle information.",
+      "Grammar protected-profile.py source definitions read at exact ref; original upstream Grammar CLI not executed here. Original Measurement gallery output verified by hash/header, not ordinary browser or physical audition. Windows not tested. No new license or redistribution rights asserted.",
+      "Fresh git ls-remote failed exit 128 Could not resolve host github.com. Exact standalone source transfer succeeded. Large legacy phase.html (114045 bytes) includes embedded generated JSON, full dependency closure not transferred; no native legacy/selective claim. Earlier frozen source pins unchanged. No merge or owner approval."
+    ],
+    "recommendation": "Keep fallback prohibited for semantic authorization in ambiguous multi-profile channels; preserve consensus/abstention comparison and clean shared-codeword witness. HOLD overall #608. Next transfer frozen legacy/selective dependency set, produce native consolidated package, then qualify browser and prepare finite owner batch."
   }
 }
