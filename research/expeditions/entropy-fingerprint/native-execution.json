@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "counts": {
+    "exact_moment_matches": 143,
+    "exact_hankel_reconstructions_on_known_grid": 22,
+    "literal_entropy_reflection_checks": 165,
+    "proper_support_counter_checks": 238,
+    "literal_shortlist_checks": 25,
+    "pcm_symbol_bits": 128
+  },
+  "positive_parity_examples": [
+    {
+      "states": 3,
+      "plus_minus_nats": 0.010140004734517802
+    },
+    {
+      "states": 4,
+      "plus_minus_nats": -0.0011190665833209629
+    },
+    {
+      "states": 5,
+      "plus_minus_nats": 0.0001438844758765434
+    },
+    {
+      "states": 6,
+      "plus_minus_nats": -2.016755478970178e-05
+    },
+    {
+      "states": 7,
+      "plus_minus_nats": 2.9886497383974087e-06
+    }
+  ],
+  "audio": {
+    "A": {
+      "counts": [
+        [
+          1,
+          15
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "sha256": "f293f1809178ad0463d24a772d4f83fd34768c845ca4f395888feb23f92b4867",
+      "frames": 32,
+      "seconds": 2.56
+    },
+    "B": {
+      "counts": [
+        [
+          9,
+          7
+        ],
+        [
+          15,
+          1
+        ]
+      ],
+      "sha256": "bbf53367d865bfab7278d516916f86cd83e08a061f284ea6b1398b693e579b39",
+      "frames": 32,
+      "seconds": 2.56
+    }
+  },
+  "limits": "Hankel root search uses the known fixture grid; numerical entropy checks are not proofs. Synthetic PCM only; no physical channel or human listening."
+}
