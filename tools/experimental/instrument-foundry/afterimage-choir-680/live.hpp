@@ -32,7 +32,8 @@ inline bool decode(const unsigned char* s,unsigned n,Word& out) {
 class Live {
     Engine engine; Word controls=Default; bool cancel=false;
     struct Note {bool held=false;int host=0;int token=0;};
-    std::array<Note,8> notes{};
+    // Eight held voices plus one spare token for atomic replacement.
+    std::array<Note,9> notes{};
 public:
     Live(){engine.configure(patch(controls));}
     bool prepare(double sr){if(!engine.prepare(sr))return false;reset();return true;}
@@ -54,7 +55,9 @@ public:
         for(auto& n:notes)if(!n.held){
             // Token reuse is harmless for released voices: off() only matches held voices.
             int token=static_cast<int>(&n-notes.data());
-            if(!engine.on(token,pitch,velocity,cents))return false;
+            int displaced=-1;
+            if(!engine.on(token,pitch,velocity,cents,&displaced))return false;
+            if(displaced>=0) notes[static_cast<unsigned>(displaced)]={};
             n={true,host,token};return true;
         }
         return false;

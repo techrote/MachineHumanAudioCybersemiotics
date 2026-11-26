@@ -29,7 +29,9 @@ class Engine {
         Pair pair; Mode mode=Mode::fixed; std::uint64_t age=0, minimum=0;
         double velocity=0, gain=0; std::array<double,4> phase{},step{},weight{};
     };
-    std::array<Voice,8> voices{};
+    std::array<Voice,8> voices{}, fading{};
+    // One bounded fade slot per voice. Oldest-first order never overflows.
+    std::array<unsigned,8> order{0,1,2,3,4,5,6,7};
     Patch patch{}; double rate=48000, attack=1.0/240, release=1.0/1440;
     unsigned history=0; bool ambiguous=false;
 public:
@@ -37,14 +39,14 @@ public:
         if(!supportsRate(sr)) return false;
         rate=sr; attack=1/(.005*sr); release=1/(.030*sr); reset(); return true;
     }
-    void reset() { voices={}; history=0; ambiguous=false; }
+    void reset() { voices={}; fading={}; order={0,1,2,3,4,5,6,7}; history=0; ambiguous=false; }
     bool configure(Patch p) {
         if(!p.pair.valid()||static_cast<unsigned>(p.mode)>3||!std::isfinite(p.minimumMs)||p.minimumMs<0||p.minimumMs>2000||!std::isfinite(p.memory)||p.memory<0||p.memory>1) return false;
         patch=p; return true;
     }
     unsigned remembered() const { return history; }
     bool lastAmbiguous() const { return ambiguous; }
-    unsigned active() const { unsigned n=0; for(const auto& v:voices) n+=v.used; return n; }
+    unsigned active() const { unsigned n=0; for(unsigned i=0;i<voices.size();++i) n+=voices[i].used||fading[i].used; return n; }
     bool off(int id, bool commit=true) {
         for(auto& v:voices) if(v.used&&v.held&&v.id==id) {
             v.held=false;
@@ -57,11 +59,30 @@ public:
         }
         return false;
     }
-    bool on(int id, int pitch, double velocity, double cents=0) {
+    // A non-null displaced pointer opts into bounded replacement. A held
+    // victim is cancelled (never commits history); released victims already
+    // completed their gesture. Negative displaced means no held victim.
+    bool on(int id, int pitch, double velocity, double cents=0, int* displaced=nullptr) {
+        if(displaced) *displaced=-1;
         if(id<0||pitch<0||pitch>127||!std::isfinite(velocity)||velocity<0||velocity>1||!std::isfinite(cents)||std::abs(cents)>1200) return false;
         if(velocity==0) return off(id);
         for(const auto& v:voices) if(v.used&&v.held&&v.id==id) return false;
-        for(auto& v:voices) if(!v.used) {
+        unsigned slot=static_cast<unsigned>(voices.size());
+        for(unsigned i=0;i<voices.size();++i) if(!voices[i].used&&!fading[i].used) { slot=i; break; }
+        if(slot==voices.size()&&displaced) {
+            // Releasing voices first; then oldest held voice. A slot already
+            // crossfading cannot be replaced until its fade has completed.
+            for(unsigned i:order) if(!fading[i].used&&!voices[i].held) { slot=i; break; }
+            if(slot==voices.size()) for(unsigned i:order) if(!fading[i].used) { slot=i; break; }
+        }
+        if(slot<voices.size()) {
+            auto& v=voices[slot];
+            if(v.used) {
+                if(v.held) *displaced=v.id;
+                if(v.gain>0) { fading[slot]=v; fading[slot].held=false; }
+            }
+            const auto pos=std::find(order.begin(),order.end(),slot);
+            std::rotate(pos,pos+1,order.end());
             v={}; v.used=v.held=true; v.id=id; v.velocity=velocity; v.original=static_cast<unsigned>(pitch)%8;
             v.mode=patch.mode; v.pair=patch.pair; v.mask=mask(v.mode,v.pair); v.tag=v.original&v.mask;
             v.captured=history; v.minimum=static_cast<std::uint64_t>(std::ceil(rate*patch.minimumMs/1000));
@@ -73,16 +94,25 @@ public:
             for(auto& a:v.weight) a/=std::max(1.0,sum);
             return true;
         }
-        return false; // bounded admission, no stealing
+        return false; // all slots occupied or already crossfading
     }
-    double tick() {
-        double out=0;
-        for(auto& v:voices) if(v.used) {
+private:
+    double tickVoice(Voice& v, bool forced) {
+        if(v.used) {
             if(v.held) { v.gain=std::min(1.0,v.gain+attack); if(v.age<v.minimum) ++v.age; }
-            else { v.gain=std::max(0.0,v.gain-release); if(v.gain<=1e-12) { v={}; continue; } }
+            else { v.gain=std::max(0.0,v.gain-(forced?attack:release)); if(v.gain<=1e-12) { v={}; return 0; } }
             double y=0;
             for(unsigned k=0;k<4;++k) if(v.weight[k]>0) { y+=v.weight[k]*std::sin(6.2831853071795864769*v.phase[k]); v.phase[k]+=v.step[k]; if(v.phase[k]>=1) v.phase[k]-=1; }
-            out+=.065*v.velocity*v.gain*y;
+            return .065*v.velocity*v.gain*y;
+        }
+        return 0;
+    }
+public:
+    double tick() {
+        double out=0;
+        for(unsigned i=0;i<voices.size();++i) {
+            out+=tickVoice(voices[i],false);
+            if(fading[i].used) out+=tickVoice(fading[i],true);
         }
         return std::clamp(out,-.52,.52);
     }
