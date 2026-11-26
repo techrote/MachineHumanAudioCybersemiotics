@@ -1,0 +1,173 @@
+{
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "seed": 694,
+  "directional_garbling_LPs": 320,
+  "max_LP_error": 2.858824288409778e-15,
+  "random_menu_checks": 3840,
+  "grid_receipt_checks": 3450,
+  "sharp_factor_profiles": 5,
+  "sharp_grid_profiles": 10,
+  "exact_moment_checks": 323,
+  "exact_hinge_checks": 306,
+  "fixture": {
+    "two_actions": "1/20",
+    "three_actions": "3/40",
+    "reward_A": "33/40",
+    "reward_B": "3/4"
+  },
+  "binomial_family": [
+    {
+      "m": 2,
+      "matched_moments": 2,
+      "entropy_gap_upper": 0.16666666666666666,
+      "decision_gap_lower": 0.07142857142857142,
+      "W1": 0.3333333333333333,
+      "actual_D": 0.07142857142857142
+    },
+    {
+      "m": 3,
+      "matched_moments": 4,
+      "entropy_gap_upper": 0.0125,
+      "decision_gap_lower": 0.03409090909090909,
+      "W1": 0.2,
+      "actual_D": 0.03409090909090909
+    },
+    {
+      "m": 4,
+      "matched_moments": 6,
+      "entropy_gap_upper": 0.001488095238095238,
+      "decision_gap_lower": 0.020833333333333332,
+      "W1": 0.14285714285714285,
+      "actual_D": 0.020833333333333332
+    },
+    {
+      "m": 5,
+      "matched_moments": 8,
+      "entropy_gap_upper": 0.00021701388888888888,
+      "decision_gap_lower": 0.014391447368421052,
+      "W1": 0.1111111111111111,
+      "actual_D": 0.014391447368421052
+    },
+    {
+      "m": 6,
+      "matched_moments": 10,
+      "entropy_gap_upper": 3.5511363636363635e-05,
+      "decision_gap_lower": 0.010699728260869566,
+      "W1": 0.09090909090909091,
+      "actual_D": 0.010699728260869566
+    },
+    {
+      "m": 7,
+      "matched_moments": 12,
+      "entropy_gap_upper": 6.2600160256410254e-06,
+      "decision_gap_lower": 0.008355034722222222,
+      "W1": 0.07692307692307693,
+      "actual_D": 0.008355034722222222
+    },
+    {
+      "m": 8,
+      "matched_moments": 14,
+      "entropy_gap_upper": 1.1625744047619049e-06,
+      "decision_gap_lower": 0.006757182459677419,
+      "W1": 0.06666666666666667,
+      "actual_D": 0.006757182459677419
+    },
+    {
+      "m": 9,
+      "matched_moments": 16,
+      "entropy_gap_upper": 2.2439395680147059e-07,
+      "decision_gap_lower": 0.005610874720982143,
+      "W1": 0.058823529411764705,
+      "actual_D": 0.005610874720982143
+    },
+    {
+      "m": 10,
+      "matched_moments": 18,
+      "entropy_gap_upper": 4.4616342288011693e-08,
+      "decision_gap_lower": 0.004755655924479167,
+      "W1": 0.05263157894736842,
+      "actual_D": 0.004755655924479167
+    },
+    {
+      "m": 11,
+      "matched_moments": 20,
+      "entropy_gap_upper": 9.082612537202382e-09,
+      "decision_gap_lower": 0.004097605860510538,
+      "W1": 0.047619047619047616,
+      "actual_D": 0.004097605860510538
+    },
+    {
+      "m": 12,
+      "matched_moments": 22,
+      "entropy_gap_upper": 1.884731850605237e-09,
+      "decision_gap_lower": 0.0035784701083568815,
+      "W1": 0.043478260869565216,
+      "actual_D": 0.0035784701083568815
+    },
+    {
+      "m": 13,
+      "matched_moments": 24,
+      "entropy_gap_upper": 3.973642985026042e-10,
+      "decision_gap_lower": 0.003160397211710612,
+      "W1": 0.04,
+      "actual_D": 0.003160397211710612
+    },
+    {
+      "m": 14,
+      "matched_moments": 26,
+      "entropy_gap_upper": 8.490690138944534e-11,
+      "decision_gap_lower": 0.002817836674776944,
+      "W1": 0.037037037037037035,
+      "actual_D": 0.002817836674776944
+    },
+    {
+      "m": 15,
+      "matched_moments": 28,
+      "entropy_gap_upper": 1.8351183736265587e-11,
+      "decision_gap_lower": 0.0025329827252080885,
+      "W1": 0.034482758620689655,
+      "actual_D": 0.0025329827252080885
+    },
+    {
+      "m": 16,
+      "matched_moments": 30,
+      "entropy_gap_upper": 4.0056884929698e-12,
+      "decision_gap_lower": 0.0022930864776883808,
+      "W1": 0.03225806451612903,
+      "actual_D": 0.0022930864776883808
+    },
+    {
+      "m": 17,
+      "matched_moments": 32,
+      "entropy_gap_upper": 8.819342562646577e-13,
+      "decision_gap_lower": 0.0020888049864390894,
+      "W1": 0.030303030303030304,
+      "actual_D": 0.0020888049864390894
+    },
+    {
+      "m": 18,
+      "matched_moments": 34,
+      "entropy_gap_upper": 1.956560030704787e-13,
+      "decision_gap_lower": 0.0019131515430889918,
+      "W1": 0.02857142857142857,
+      "actual_D": 0.0019131515430889918
+    }
+  ],
+  "audio": [
+    {
+      "file": "spread.wav",
+      "frames": 40,
+      "symbols_decoded": 80,
+      "sha256": "62fc600e0802c5bdc02868a718f3bbe15ceb31fe2c5c87195616c9ce8fa24f76"
+    },
+    {
+      "file": "concentrated.wav",
+      "frames": 40,
+      "symbols_decoded": 80,
+      "sha256": "93fbb24fb8235de9764f596c97edccda9388f7f469c7daba9ed78f8f4c8a1b58"
+    }
+  ],
+  "status": "PASS"
+}
