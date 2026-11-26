@@ -1,6 +1,7 @@
 #include "clock.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <memory>
 #include <limits>
 #include <vector>
 using namespace mhac::clock_fold;
@@ -16,7 +17,8 @@ int main(){
         for(std::size_t j=0;j<4;++j){ require(p.boundary[j+1]>p.boundary[j]); require(std::abs(p.source(p.boundary[j])-.25*j)<1e-14); }
         for(int j=0;j<100;++j) require(p.source(j*.01)<=p.source((j+1)*.01));
     }
-    Engine e,f; Controls c;
+    auto owner=std::make_unique<Engine>(), other=std::make_unique<Engine>();
+    auto& e=*owner; auto& f=*other; Controls c;
     for(double rate:{1000.,1234.568,44100.,48000.,96000.,192000.,1234567.8,2000000.}){
         require(e.prepare(rate));
         for(std::size_t i=0;i<3*frameSize;++i){ auto y=e.tick({i==0?.5:0,0},c); require(y[0]==(i==frameSize?.5:0)&&y[1]==0); }

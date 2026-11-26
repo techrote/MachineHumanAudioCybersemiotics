@@ -1,11 +1,13 @@
 #include "clock_live.hpp"
 #include <cstdlib>
 #include <iostream>
+#include <memory>
 using namespace mhac::clock_fold;
 static unsigned checks=0;
 static void require(bool ok){++checks;if(!ok){std::cerr<<"failure "<<checks<<'\n';std::exit(1);}}
 int main(){
-    auto live=Live{};auto direct=Engine{};
+    auto owner=std::make_unique<Live>(); auto directOwner=std::make_unique<Engine>();
+    auto& live=*owner; auto& direct=*directOwner;
     Normalized p{.92,.16,.25,.8,.12,0},q=defaults;
     auto bytes=encode(p);require(bytes.size()==52&&decode(bytes.data(),bytes.size(),q)&&q==p);
     require(!decode(bytes.data(),bytes.size()-1,q)&&q==p);

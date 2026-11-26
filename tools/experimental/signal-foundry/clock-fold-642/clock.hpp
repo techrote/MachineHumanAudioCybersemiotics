@@ -56,7 +56,11 @@ public:
         if (!std::isfinite(rate) || rate<1000 || rate>2000000) return false;
         step_=1/std::max(1.,.005*rate); reset(); return true;
     }
-    void reset() noexcept { frames_={}; plans_={}; edges_={}; pos_=capture_=0; wet_=1; }
+    void reset() noexcept {
+        // Clear in place: aggregate assignment may create a 256 KiB stack temporary.
+        for (auto& frame : frames_) frame.fill(Stereo{});
+        plans_={}; edges_={}; pos_=capture_=0; wet_=1;
+    }
     Stereo tick(Stereo x, Controls c) noexcept {
         if (!pos_) { plans_[capture_]=Plan::make(c); edges_[capture_]=bounded(c.edge,0,.25,.03); }
         for (double& v:x) { v=bounded(v,-1,1); if (std::abs(v)<1e-30) v=0; }

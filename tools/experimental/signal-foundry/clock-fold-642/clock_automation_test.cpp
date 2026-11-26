@@ -2,11 +2,12 @@
 #include <chrono>
 #include <cstdlib>
 #include <iostream>
+#include <memory>
 using namespace mhac::clock_fold;
 static unsigned checks=0;
 static void require(bool ok){++checks;if(!ok){std::cerr<<"failure at check "<<checks<<'\n';std::exit(1);}}
 int main(){
-    Engine e;require(e.prepare(48000));
+    auto owner=std::make_unique<Engine>(); auto& e=*owner;require(e.prepare(48000));
     Controls a,b;a.drift=.5;a.curvature=.25;a.edge=0;b.drift=-.5;b.curvature=-.25;b.edge=0;
     const auto pa=Plan::make(a),pb=Plan::make(b);
     for(std::size_t i=0;i<3*frameSize;++i){
@@ -25,7 +26,8 @@ int main(){
         if(i>=frameSize+1241)require(y[0]==t&&y[1]==-t);
     }
     // Log sweep, deliberately no anti-alias guarantee. Check finite, bounded and distinct render.
-    Engine dry,wet; require(dry.prepare(48000)&&wet.prepare(48000));
+    auto dryOwner=std::make_unique<Engine>(), wetOwner=std::make_unique<Engine>();
+    auto& dry=*dryOwner; auto& wet=*wetOwner; require(dry.prepare(48000)&&wet.prepare(48000));
     double phase=0,diff=0;constexpr double pi=3.14159265358979323846;
     for(std::size_t i=0;i<4*frameSize;++i){
         double hz=30*std::pow(20000./30,double(i)/(4*frameSize-1));phase+=2*pi*hz/48000;
@@ -33,6 +35,15 @@ int main(){
         require(std::isfinite(v[0])&&std::abs(v[0])<=1&&v[1]==0);diff+=std::abs(u[0]-v[0]);
     }
     require(diff>100);
+    // Reset after both buffers contain history, including partial capture.
+    for (std::size_t offset : {std::size_t(0),std::size_t(1),frameSize/2,frameSize-1}) {
+        for (std::size_t i=0;i<2*frameSize+offset;++i) e.tick({.75,-.5},a);
+        e.reset();
+        for (std::size_t i=0;i<2*frameSize;++i) {
+            const auto y=e.tick({i==0?.25:0,0},Controls{});
+            require(y[0]==(i==frameSize?.25:0)&&y[1]==0);
+        }
+    }
     // Observational native benchmark, not a deadline assertion. No I/O inside measured blocks.
     e.reset();double checksum=0,maximum=0,total=0;
     using clock=std::chrono::steady_clock;
