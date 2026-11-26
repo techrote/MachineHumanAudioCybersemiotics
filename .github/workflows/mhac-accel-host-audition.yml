@@ -11,6 +11,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/upgraded_chain_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/phase_balanced_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/rotation_host.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -202,6 +203,21 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/phase_balanced_host.py --a2 afterimage-depth.zip --f2 receipt-fold-upgrade.zip --a3 afterimage-phase.zip --f3 receipt-balanced.zip --out phase-balanced
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover optimized Afterimage 0.3.1
+        if: ${{ !cancelled() && steps.phase_balanced_packages.outcome == 'success' }}
+        id: rotation_package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage-rotation.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15148180211/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Afterimage 0.3.1 dense MIDI rotation regression
+        if: ${{ !cancelled() && steps.rotation_package.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/rotation_host.py --old afterimage-phase.zip --new afterimage-rotation.zip --out rotation
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -221,5 +237,6 @@ jobs:
             afterimage-depth/afterimage-depth.json
             upgraded-chain/upgraded-chain.json
             phase-balanced/phase-balanced.json
+            rotation/rotation.json
           if-no-files-found: ignore
           retention-days: 7
