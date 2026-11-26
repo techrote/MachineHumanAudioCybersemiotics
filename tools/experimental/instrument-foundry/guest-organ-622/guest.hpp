@@ -4,12 +4,14 @@
 #include <cmath>
 #include <cstdint>
 #include "spectral.hpp"
+#include "fm.hpp"
 namespace guest {
 constexpr double pi=3.14159265358979323846;
 struct Patch {
     std::array<int,4> motif{0,7,3,10};
     double stepsPerSecond=4, counterGain=.65;
-    bool cite=false, adopt=false, spectral=false;
+    bool cite=false, adopt=false, spectral=false, fm=false;
+    double fmDepth=.5;
 };
 struct Frame {double left=0,right=0,base=0,counter=0;};
 class Engine {
@@ -21,6 +23,7 @@ class Engine {
         double incA=0,incB=0;
         Patch patch{};
         SpectralBank spectrum{};
+        FmBank fmBank{};
     };
     std::array<Voice,8> voices{};
     Patch patch{};
@@ -44,9 +47,10 @@ public:
     }
     void reset() noexcept {voices={};}
     bool configure(Patch p) noexcept {
-        if(!std::isfinite(p.stepsPerSecond)||!std::isfinite(p.counterGain))return false;
+        if(!std::isfinite(p.stepsPerSecond)||!std::isfinite(p.counterGain)||!std::isfinite(p.fmDepth))return false;
         p.stepsPerSecond=std::clamp(p.stepsPerSecond,1.,12.);
         p.counterGain=std::clamp(p.counterGain,0.,1.);
+        p.fmDepth=std::clamp(p.fmDepth,0.,1.);
         for(int& x:p.motif)x=std::clamp(x,-12,12);
         patch=p;return true;
     }
@@ -58,7 +62,8 @@ public:
             v=Voice{};v.active=true;v.id=id;v.note=note;v.tuning=std::clamp(tuning,-1200.,1200.);
             v.velocity=std::min(1.,velocity);v.patch=patch;
             v.length=unsigned(std::lround(rate/patch.stepsPerSecond));retune(v);
-            if(v.patch.spectral&&v.patch.adopt)v.spectrum.prepare(rate,440*std::exp2((v.note-69+v.tuning/100)/12),v.patch.motif);
+            if(v.patch.fm&&v.patch.adopt)v.fmBank.prepare(rate,440*std::exp2((v.note-69+v.tuning/100)/12),v.patch.motif,v.patch.fmDepth);
+            else if(v.patch.spectral&&v.patch.adopt)v.spectrum.prepare(rate,440*std::exp2((v.note-69+v.tuning/100)/12),v.patch.motif);
             return true;
         }
         return false;
@@ -72,7 +77,7 @@ public:
             const double target=v.continuation&&v.patch.adopt?v.patch.counterGain:0;
             v.blend+=std::clamp(target-v.blend,-attack,attack);
             f.base+=.04*v.velocity*v.env*oscillator(v.a,v.incA);
-            const double counter=v.patch.spectral&&v.patch.adopt?v.spectrum.tick():oscillator(v.b,v.incB);
+            const double counter=v.patch.fm&&v.patch.adopt?v.fmBank.tick():v.patch.spectral&&v.patch.adopt?v.spectrum.tick():oscillator(v.b,v.incB);
             f.counter+=.025*v.velocity*v.env*v.blend*counter;
             if(++v.position==v.length){v.position=0;v.slot=(v.slot+1)%4;if(v.slot==0)v.continuation=true;retune(v);}
         }

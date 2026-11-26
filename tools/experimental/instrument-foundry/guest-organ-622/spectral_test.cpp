@@ -7,6 +7,7 @@ int main(){
     CHECK(decode(bytes.data(),bytes.size(),q)&&encode(q)==bytes);
     auto old=bytes;old[3]='1';CHECK(decode(old.data(),36,q)&&q[7]==1&&q[8]==0);
     CHECK(!decode(old.data(),40,q));CHECK(!decode(bytes.data(),36,q));
+    old[3]='2';CHECK(decode(old.data(),40,q)&&q[8]==1&&q[9]==0&&q[10]==.5);
     guest::SpectralBank bank;bank.prepare(48000,440,{0,0,0,0});
     for(unsigned i=1;i<=48000;++i)CHECK(std::abs(bank.tick()-std::sin(2*guest::pi*880*i/48000))<1e-10);
     bank.prepare(1000,440,{0,7,3,10});for(unsigned i=0;i<1000;++i)CHECK(bank.tick()==0);
@@ -35,5 +36,5 @@ int main(){
         for(unsigned i=0;i<4*unsigned(std::lround(sr/4))+16;++i){auto f=spectral.tick();CHECK(std::isfinite(f.right)&&std::abs(f.right)<=.52);}
         spectral.reset();CHECK(spectral.tick().right==0);
     }
-    std::cout<<"PASS: GO01 neutral migration, GO02 roundtrip, direct partials and Nyquist guard; "<<prefix<<" exact prefix and "<<continuation<<" continuation frames at nine rates\n";
+    std::cout<<"PASS: GO01 neutral migration, GO02 migration, GO03 roundtrip, direct partials and Nyquist guard; "<<prefix<<" exact prefix and "<<continuation<<" continuation frames at nine rates\n";
 }
