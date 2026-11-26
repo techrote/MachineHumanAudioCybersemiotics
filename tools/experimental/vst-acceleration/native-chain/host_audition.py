@@ -121,27 +121,47 @@ def open_plugin(bundle):
     raise RuntimeError("\n".join(errors)+f"\nWinDLL probe exit={diagnostic.returncode}: {diagnostic.stdout} {diagnostic.stderr}")
 
 
-def load(bundle, cid, index):
+def prepare_instrument(p, rate, block):
+    # Pedalboard 0.9.23's cold/reset instrument path overwrote restored
+    # component state with defaults. Prepare a silent stream first, then
+    # restore the requested preset and continue with reset=False.
+    silence = p([], duration=.05, sample_rate=rate, num_channels=2, buffer_size=block)
+    require(np.isfinite(silence).all() and np.max(np.abs(silence)) < 1e-7,
+            "instrument preparation not silent")
+
+
+def component(raw):
+    sig, version, cid, offset = bank.HEADER.unpack_from(raw)
+    require(sig == b"VST3" and version == 1, "host preset header")
+    tag, count = bank.LIST.unpack_from(raw,offset)
+    require(tag == b"List" and 0 <= count <= 32, "host preset list")
+    chunks = {}
+    for i in range(count):
+        name, start, size = bank.ENTRY.unpack_from(raw,offset+bank.LIST.size+i*bank.ENTRY.size)
+        require(start >= bank.HEADER.size and size >= 0 and start+size <= offset, "host chunk extent")
+        chunks[name.decode("ascii")] = raw[start:start+size].hex()
+    return dict(class_id=cid.decode("ascii"),chunks=chunks)
+
+
+def verify_component(p, cid, expected):
+    state = component(p.preset_data)
+    require(state["class_id"] == cid, "host-export class mismatch")
+    require(state["chunks"].get("Comp") == expected.hex(), "host component parameters differ from request")
+
+
+def load(bundle, cid, index, rate=RATE, block=257):
     p = open_plugin(bundle)
     _, _, values = bank.BANK[index]
     require(bank.BANK[index][0] == cid, "preset class mismatch")
+    if cid == bank.G:
+        prepare_instrument(p,rate,block)
     p.preset_data = bank.preset(cid, values)
+    verify_component(p,cid,bank.state(cid,values))
     return p
 
 
 def diagnose_golden_state(bundle, out, report):
     """Locate whether imported instrument state is lost before or during process."""
-    def component(raw):
-        sig, version, cid, offset = bank.HEADER.unpack_from(raw)
-        require(sig == b"VST3" and version == 1, "host preset header")
-        tag, count = bank.LIST.unpack_from(raw,offset)
-        require(tag == b"List" and 0 <= count <= 32, "host preset list")
-        chunks = {}
-        for i in range(count):
-            name, start, size = bank.ENTRY.unpack_from(raw,offset+bank.LIST.size+i*bank.ENTRY.size)
-            require(start >= bank.HEADER.size and size >= 0 and start+size <= offset, "host chunk extent")
-            chunks[name.decode("ascii")] = raw[start:start+size].hex()
-        return dict(class_id=cid.decode("ascii"),chunks=chunks)
     report["golden_state_diagnostic"] = []
     for method in ("cold_preset", "prepared_preset", "controller_gain"):
         p = open_plugin(bundle)
@@ -183,7 +203,7 @@ def run_preset_matrix(gpath, fpath, out, report):
     for rate in (44100, 48000, 96000):
         n = int(rate*DURATION)
         source = None
-        gold_hashes = set()
+        gold_hashes = []
         for index, (cid, name, values) in enumerate(bank.BANK):
             instrument = cid == bank.G
             bundle = gpath if instrument else fpath
@@ -193,18 +213,20 @@ def run_preset_matrix(gpath, fpath, out, report):
             report["preset_matrix"].append(case)
             persist()
             try:
-                p = load(bundle, cid, index)
+                p = load(bundle, cid, index, rate, 257)
                 require(p.is_instrument if instrument else p.is_effect, "category mismatch")
                 def render(plugin):
                     return checked(plugin(MIDI, duration=DURATION, sample_rate=rate,
-                                          num_channels=2, buffer_size=257) if instrument else
+                                          num_channels=2, buffer_size=257, reset=False) if instrument else
                                    plugin(source.copy(), rate, buffer_size=257), n)
                 signal = render(p)
                 case["output"] = metrics(signal)
+                verify_component(p,cid,bank.state(cid,values))
+                case["requested_component_retained"] = True
                 case["tail_peak"] = float(np.max(np.abs(signal[:,-480:])))
                 require(case["output"]["rms"] > 1e-5, "silent preset")
                 if instrument:
-                    gold_hashes.add(case["output"]["float32_sha256"])
+                    gold_hashes.append(case["output"]["float32_sha256"])
                     if index == 0:
                         source = signal.copy()
                     require(case["tail_peak"] < 1e-5, "instrument did not release")
@@ -218,8 +240,12 @@ def run_preset_matrix(gpath, fpath, out, report):
                 saved = p.preset_data
                 case["host_export_sha256"] = sha(saved)
                 fresh = open_plugin(bundle)
+                if instrument:
+                    prepare_instrument(fresh,rate,257)
                 fresh.preset_data = saved
+                verify_component(fresh,cid,bank.state(cid,values))
                 restored = render(fresh)
+                verify_component(fresh,cid,bank.state(cid,values))
                 case["restore_max_error"] = float(np.max(np.abs(restored-signal)))
                 require(case["restore_max_error"] < 2e-5, "fresh-instance preset audio mismatch")
                 case["status"] = "pass"
@@ -230,7 +256,8 @@ def run_preset_matrix(gpath, fpath, out, report):
             finally:
                 persist()
                 print("PRESET MATRIX:", json.dumps(case), flush=True)
-        require(len(gold_hashes) > 1, "all instrument presets rendered identically")
+        require(len(set(gold_hashes)) == 5, "unexpected instrument preset equivalence classes")
+        require(gold_hashes[1] == gold_hashes[2], "designed affine deletion collision absent")
     report["preset_matrix_complete"] = True
     persist()
 
@@ -246,12 +273,14 @@ def run(gold, freeze, out):
     (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
     n = int(RATE*DURATION)
     for block in (64, 257, 1024):
-        g = load(gpath, bank.G, 0)
+        g = load(gpath, bank.G, 0, RATE, block)
         f = load(fpath, bank.F, 6)
         require(g.is_instrument and f.is_effect, "wrong plugin category")
-        dry = checked(g(MIDI, duration=DURATION, sample_rate=RATE, num_channels=2, buffer_size=block), n)
+        dry = checked(g(MIDI, duration=DURATION, sample_rate=RATE, num_channels=2, buffer_size=block, reset=False), n)
         wet = checked(f(dry.copy(), RATE, buffer_size=block), n)
         case = compare(dry, wet)
+        verify_component(g,bank.G,bank.state(bank.G,bank.BANK[0][2]))
+        verify_component(f,bank.F,bank.state(bank.F,bank.BANK[6][2]))
         bypass = load(fpath, bank.F, 11)
         reference = checked(bypass(dry.copy(), RATE, buffer_size=block), n)
         require(np.max(np.abs(reference-dry)) < 2e-6, "bypass not transparent")
@@ -259,8 +288,10 @@ def run(gold, freeze, out):
         for p, bundle, signal, instrument in ((g,gpath,dry,True),(f,fpath,wet,False)):
             saved = p.preset_data
             new = open_plugin(bundle)
+            if instrument:
+                prepare_instrument(new,RATE,block)
             new.preset_data = saved
-            again = (new(MIDI, duration=DURATION, sample_rate=RATE, num_channels=2, buffer_size=block)
+            again = (new(MIDI, duration=DURATION, sample_rate=RATE, num_channels=2, buffer_size=block, reset=False)
                      if instrument else new(dry.copy(), RATE, buffer_size=block))
             checked(again,n)
             error = float(np.max(np.abs(again-signal)))
