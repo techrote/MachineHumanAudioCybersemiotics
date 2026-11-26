@@ -1,3 +1,7 @@
+# Current candidate — Afterimage Choir 0.2.0
+
+See [DEPTH.md](DEPTH.md) and [LIVE.md](LIVE.md) for the current VST3 candidate, native build, installation, six controls, state migration, voice replacement and qualification limitations. The following original laboratory description is preserved as historical context.
+
 # Afterimage Choir — INST-010A
 
 Refs #680, #338/#339 at f8b9bddd89c2d174b28f060bf34b42d2ca9a0e64, research/expeditions/undo-needs-forecast/README.md sections 2–3 and the original unrendered score in section 5. Restricted pair-collapse encode/decode is a direct formal realization; gesture history and synthesis are creative extensions. No research acceptance or human effects claimed. Signal Foundry #675 applies the same finite model to amplitude; this instrument is independent and applies it to completed musical gestures instead.

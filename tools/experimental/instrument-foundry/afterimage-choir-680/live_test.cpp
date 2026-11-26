@@ -41,6 +41,6 @@ int main(){
     Live e;Bridge s;std::atomic<bool> stop{false};std::atomic<unsigned> bad{0},blocks{0};
     std::thread audio([&]{while(!stop.load()){s.begin(e);for(unsigned j=0;j<64;++j)e.tick();s.end(e);++blocks;}});
     while(!blocks.load())std::this_thread::yield();
-    for(unsigned i=0;i<30000;++i){auto w=pack(i%28,i%4,i%2001,i%1001);check(s.request(w));if(s.save()!=w)++bad;}
+    for(unsigned i=0;i<30000;++i){auto w=pack(i%28,i%4,i%2001,i%1001,1+i%3);check(s.request(w));if(s.save()!=w)++bad;}
     stop=true;audio.join();check(!bad&&blocks>0);std::printf("%u checks; 30000 state transactions; %u audio blocks\n",checks,blocks.load());
 }

@@ -14,7 +14,7 @@ void put(Bytes& b,unsigned at,std::uint64_t x,unsigned n){
     for(unsigned j=0;j<n;++j)b[at+j]=static_cast<unsigned char>(x>>(8*j));
 }
 Bytes wrap(Word w){
-    if(!valid(w))throw std::invalid_argument("invalid AC01 patch");
+    if(!valid(w))throw std::invalid_argument("invalid Afterimage patch");
     Bytes b{};
     std::memcpy(b.data(),"VST3",4);put(b,4,1,4);
     std::memcpy(b.data()+8,cid,32);put(b,40,56,8);
@@ -38,7 +38,9 @@ constexpr Entry bank[]{
     {"05 Wide Collapse",pack(6,0,25,1000)},
     {"06 Slow Commit",pack(16,3,600,900)},
     {"07 Flicker Memory",pack(16,2,0,500)},
-    {"08 Parity Separation",pack(11,1,80,1000)}
+    {"08 Parity Separation",pack(11,1,80,1000)},
+    {"09 Dual Echo",pack(16,3,0,1000,2)},
+    {"10 Archive Choir",pack(16,3,0,1000,3)}
 };
 void require(bool ok){if(!ok)throw std::runtime_error("preset regression failed");}
 void test(){

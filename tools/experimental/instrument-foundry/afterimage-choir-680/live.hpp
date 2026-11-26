@@ -5,28 +5,29 @@
 #include <mutex>
 namespace mhac::afterimage::live {
 // Stable native control indices: pair rank, receipt, minimum ms, memory permille.
-// 28 bits suffice for exact discrete controls. No floating point state tearing.
-constexpr unsigned FirstID=1600, Count=5;
+// 30 bits suffice for exact discrete controls. No floating point state tearing.
+constexpr unsigned FirstID=1600, Count=6;
 using Word=std::uint32_t;
-constexpr Word pack(unsigned pair,unsigned mode,unsigned ms,unsigned memory) {
-    return pair | (mode<<5) | (ms<<7) | (memory<<18);
+constexpr Word pack(unsigned pair,unsigned mode,unsigned ms,unsigned memory,unsigned depth=1) {
+    return pair | (mode<<5) | (ms<<7) | (memory<<18) | ((depth-1u)<<28);
 }
 constexpr Word Default=pack(16,1,80,800); // pair (2,6): rank 13+3
-inline bool valid(Word w) { return !(w>>28) && (w&31)<28 && ((w>>7)&2047)<=2000 && ((w>>18)&1023)<=1000; }
+inline unsigned depthOf(Word w) { return 1u+((w>>28)&3u); }
+inline bool valid(Word w) { return !(w>>30) && depthOf(w)<=3 && (w&31)<28 && ((w>>7)&2047)<=2000 && ((w>>18)&1023)<=1000; }
 inline Pair pairAt(unsigned rank) {
     for(unsigned l=0;l<7;++l) for(unsigned h=l+1;h<8;++h) if(rank--==0) return {l,h};
     return {};
 }
 inline Patch patch(Word w) { return {pairAt(w&31),static_cast<Mode>((w>>5)&3),double((w>>7)&2047),double((w>>18)&1023)/1000}; }
 inline double normalized(Word w,unsigned i) {
-    switch(i){case 0:return double(w&31)/27;case 1:return double((w>>5)&3)/3;case 2:return double((w>>7)&2047)/2000;case 3:return double((w>>18)&1023)/1000;default:return 0;}
+    switch(i){case 0:return double(w&31)/27;case 1:return double((w>>5)&3)/3;case 2:return double((w>>7)&2047)/2000;case 3:return double((w>>18)&1023)/1000;case 5:return double(depthOf(w)-1)/2;default:return 0;}
 }
 using State=std::array<unsigned char,8>;
-inline State encode(Word w) { State s{'A','C','0','1',0,0,0,0}; for(unsigned i=0;i<4;++i)s[i+4]=static_cast<unsigned char>(w>>(8*i)); return s; }
+inline State encode(Word w) { State s{'A','C','0',static_cast<unsigned char>(depthOf(w)==1?'1':'2'),0,0,0,0}; for(unsigned i=0;i<4;++i)s[i+4]=static_cast<unsigned char>(w>>(8*i)); return s; }
 inline bool decode(const unsigned char* s,unsigned n,Word& out) {
-    if(!s||n!=8||std::memcmp(s,"AC01",4))return false;
+    if(!s||n!=8||std::memcmp(s,"AC0",3)||(s[3]!='1'&&s[3]!='2'))return false;
     Word w=0;for(unsigned i=0;i<4;++i)w|=Word(s[4+i])<<(8*i);
-    if(!valid(w))return false;
+    if(!valid(w)||(s[3]=='1'&&depthOf(w)!=1)||(s[3]=='2'&&depthOf(w)==1))return false;
     out=w;return true;
 }
 class Live {
@@ -39,11 +40,12 @@ public:
     bool prepare(double sr){if(!engine.prepare(sr))return false;reset();return true;}
     void reset(){engine.reset();notes={};cancel=false;}
     Word parameters()const{return controls;}
-    bool applyPatch(Word w){if(!valid(w)||!engine.configure(patch(w)))return false;controls=w;return true;}
+    bool applyPatch(Word w){if(!valid(w)||!engine.configure(patch(w)))return false;engine.setHistoryDepth(depthOf(w));controls=w;return true;}
     bool restorePatch(Word w){if(!applyPatch(w))return false;cancel=false;return true;}
     bool parameter(unsigned i,double x){
         if(i>=Count||!std::isfinite(x)||x<0||x>1)return false;
         if(i==4){cancel=x>=.5;return true;}
+        if(i==5)return applyPatch((controls&~(Word(3)<<28))|(Word(std::lround(x*2))<<28));
         constexpr unsigned max[]{27,3,2000,1000},shift[]{0,5,7,18},bits[]{31,3,2047,1023};
         return applyPatch((controls&~(Word(bits[i])<<shift[i]))|(Word(std::lround(x*max[i]))<<shift[i]));
     }
@@ -67,7 +69,7 @@ public:
     unsigned remembered()const{return engine.remembered();}
     unsigned active()const{return engine.active();}
 };
-// The two packed mailboxes each hold generation + complete 28-bit patch.
+// The two packed mailboxes each hold generation + complete 30-bit patch.
 // Non-audio callers serialize; audio reads and publishes once per block.
 class Bridge {
     static_assert(std::atomic<std::uint64_t>::is_always_lock_free,"64-bit lock-free atomics required");
