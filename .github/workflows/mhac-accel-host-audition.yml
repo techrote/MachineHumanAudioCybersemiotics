@@ -9,6 +9,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/afterimage_receipt_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/receipt_fold_upgrade_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/upgraded_chain_host.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -173,6 +174,14 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py --old afterimage.zip --new afterimage-depth.zip --out afterimage-depth
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Exact upgraded Afterimage and Receipt Fold musical chain
+        if: ${{ !cancelled() && steps.afterimage_depth_package.outcome == 'success' && steps.receipt_upgrade_package.outcome == 'success' }}
+        shell: pwsh
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/upgraded_chain_host.py --instrument afterimage-depth.zip --effect receipt-fold-upgrade.zip --out upgraded-chain
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -190,5 +199,6 @@ jobs:
             afterimage-audition/afterimage-receipt-host.json
             receipt-upgrade/receipt-upgrade.json
             afterimage-depth/afterimage-depth.json
+            upgraded-chain/upgraded-chain.json
           if-no-files-found: ignore
           retention-days: 7
