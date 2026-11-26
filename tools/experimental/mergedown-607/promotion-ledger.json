@@ -11,9 +11,9 @@
       "ci": 45690234347,
       "disposition": "HOLD",
       "batch": "Frozen seven-file Observatory package qualified for owner review on hosted Linux and Windows, including ordinary file navigation and real DOM interactions. Entire advancing source PR stays HOLD; placement coordination, approval and later deltas remain.",
-      "observedLaterHead": "d628756682460ab95d95e0c96ff95be3dae0ecd8",
+      "observedLaterHead": "e761ce3eb971ffcaf1edf2f50ecfe24e4f161377",
       "observedLaterIntegrityCI": {
-        "run": 45796102255,
+        "run": 45806079754,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "7c40f0e533245d129881729722210ac6e9a65d9c",
+      "observedLaterHead": "9e45f77a11c637c03f7e1ac50b6b6802ffc97cfc",
       "observedLaterIntegrityCI": {
-        "run": 45791113924,
+        "run": 45800677362,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "cd3d36265f8208ee7d9b488028c2c541c79f012c",
+      "observedLaterHead": "71910f5f4a8f07cce0786deb4d65b8006f56778b",
       "observedLaterIntegrityCI": {
-        "run": 45790502260,
+        "run": 45799740162,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "3482edad4147c1c18976345387c7e0894c4d83e6",
+      "observedLaterHead": "95caf9103c190c0dab07f7e0e08a8ccbcc8e3145",
       "observedLaterIntegrityCI": {
-        "run": 45794317207,
+        "run": 45804519720,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "abb0803b34aa0a1c38c4a2560611e9fb3b8ed6ad",
+      "observedLaterHead": "500d6d55a98b64fc979d0c853b7253ef33a79ec0",
       "observedLaterIntegrityCI": {
-        "run": 45792498888,
+        "run": 45801915707,
         "conclusion": "success"
       }
     }
@@ -881,8 +881,8 @@
   },
   "ownerReviewPacket": {
     "id": "OBS-PROMOTION-001",
-    "disposition": "HOLD",
-    "recommendedDecision": "Accept bounded frozen Observatory software for owner evaluation; do not merge broader #608 as-is until placement is agreed and exact final-head checks pass. Retain issue-scoped snapshot as immutable archival/release input, not a second maintained implementation; prefer source lane namespace as future canonical evolving implementation. Coordinate with #442 before changing placement. No merge authority inferred.",
+    "disposition": "QUALIFIED FOR OWNER REVIEW",
+    "recommendedDecision": "Bounded seven-file Observatory release input is qualified for owner evaluation, placement agreed and prior documentation-head checks successful. No owner merge authorization. Broader #608 remains Draft/HOLD pending review of the final diff, exact-head checks, and explicit disposition of temporary qualification workflow; do not promote the entire advancing source lane.",
     "candidatePR": 608,
     "qualifiedHead": "825b285cd1a25399bb253039dc703f1d8371d679",
     "base": "495a98ca12bae467a507031f04931aa4254b1866",
@@ -927,6 +927,110 @@
       "node check_browser.cjs /path/to/new-package-one /path/to/chrome"
     ],
     "ownerUse": "Extract artifact 15102520233 and open observatory-one/index.html; four workbenches and nine PCM specimens. No build needed for inspection. Opt-in playback; start with low hardware volume.",
-    "next": "Placement coordination with Measurement #442; assess final-head checks; proceed to bounded Grammar/bridge validation without merging or waiting for human scientific acceptance."
+    "next": "Preserve prior exact-head receipts; review broader candidate scope and temporary workflow before any owner-authorized merge. New Grammar audit is a separate evidence batch, not a source promotion.",
+    "placementAgreement": {
+      "issue": 442,
+      "checkpoint": "https://github.com/techrote/MachineHumanAudioCybersemiotics/issues/607#issuecomment-7190073009",
+      "decision": "Measurement lane agreed to immutable #607 release input, evolving source stays in #442 namespace. This is lane coordination, not owner approval."
+    },
+    "finalReviewedPredecessor": {
+      "head": "4bc0e9fa7a3e8baefec05dcd03b01369c80b827b",
+      "integrityCI": 45796800886,
+      "nativePackageCI": 45796800797,
+      "conclusions": "success/success",
+      "mergeable": true,
+      "ahead": 22,
+      "behind": 0
+    }
+  },
+  "grammarPrefixBatch": {
+    "id": "GRAM-PREFIX-016",
+    "disposition": "HOLD",
+    "qualificationScope": "Exact pinned Linux symbolic implementation and independently reproduced numerical results; no native Windows/browser or streaming qualification; not an overall source PR promotion.",
+    "sourcePR": 453,
+    "sourceHead": "9e45f77a11c637c03f7e1ac50b6b6802ffc97cfc",
+    "sourceIntegrityCI": 45800677362,
+    "sourcePath": "tools/experimental/grammar-452-scoped-clauses/",
+    "sourceBlobs": {
+      "control-namespace.py": "8e27fe89f2734a0b5fd666bb2018b0d379736493",
+      "distributed-profile.py": "a780404e8c76820976ad6fb407429ec895a6313f",
+      "migration-namespace.py": "b3562781a974c47b41cbe066ceb755288a51b6b1",
+      "version-bridge.py": "6400cf4c1b42fbe958b0265da43ef657bb355401",
+      "version-bound-payload.py": "7ef6881cefa9c34355d024aeea671d021b674a55",
+      "frame-length-commit.py": "1538e258e53b62fc62315ca11eb9ba34496c5919",
+      "prefix-disjoint.py": "f9dd2ae4d62c91584c9c3beeac6fe25daf2d6942"
+    },
+    "dependencyClosure": "Prefix experiment invokes version-bound-payload, which invokes control-namespace, migration-namespace, distributed-profile and verifies version-bridge. Frame-length-commit retained comparator source, not invoked in this run. Version-bridge separately executed. Seven of 39 changed paths retained locally; other 32 paths remain at pinned source, including historical CJS, documentation and other experiments, no new rights or duplicate source committed.",
+    "runtime": "Linux Python 3.13.5 / NumPy 2.3.5. Git ls-remote exit 128 Could not resolve host github.com; existing upstream artifact CRC and all 7 Git blob hashes verified with exact connector metadata.",
+    "commands": [
+      "python prefix-disjoint.py . reproduced",
+      "diff -qr prefix1 reproduced",
+      "python check_prefix_disjoint.py . reproduced",
+      "python version-bridge.py . bridge-reproduced"
+    ],
+    "native": "12/12 regenerated upstream files byte-identical; source archive SHA256 6bc3f049da509f2c59cf29708c5dfe6598da9e157b67316923b5fd2b4f44c59b. No retained upstream bridge receipt for byte comparison.",
+    "harness": "check_prefix_disjoint.py",
+    "harnessBlob": "a3b8d3455e484ac6b6bd0bc6a6b90a00a7bd5c6c",
+    "harnessSHA256": "08d8ee079b9dfba8d71fdef16116513ffc1a34ff1c1ca981a7695de51115e7e2",
+    "independentReceiptSHA256": "a7920bc4537ae1867db6cf0e8f73974d49a633780b17ded34395d05f6ded897d",
+    "prefixReceiptSHA256": "50060c1252fc9c2e3be54c119d478e8838663a2d7f2f7007c4506ed16bc6d86f",
+    "independent": "Upstream catalogue builder reused, separate Lagrange interpolation, exact finite enumeration of all 83521 cubic differences against quartic offset; histogram distances 0..10 = [0,0,0,0,0,0,210,1200,8145,28400,45566]. Verifies complete trace key set and every decision (37152), both collision counts, exact closest witness and radius-two substitution path, 11 manifest entries and 8 PCM hashes, peak 2048/32768. Repeated oracle stdout byte-identical; tampered trace with recomputed manifest rejected (trace decision). Not independent historical CJS catalogue reconstruction or new held-out observations.",
+    "findings": {
+      "uniqueShortBodiesInExtendedPrefixes": [
+        52000,
+        0
+      ],
+      "minimumCrossLengthPrefixDistance": [
+        3,
+        9
+      ],
+      "wrongInterrupted": [
+        320,
+        0
+      ],
+      "correctComplete": [
+        480,
+        480
+      ],
+      "withheldComplete": [
+        816,
+        816
+      ],
+      "targetedFirstWrongRadius2": [
+        1,
+        7
+      ]
+    },
+    "bridgeNative": {
+      "receiptSHA256": "8ed5dae6b05a0f070931555594d6bb9da7852a23850469705bd81ac3ab4efdf6",
+      "manifest": "10/10",
+      "localSpare": 15317,
+      "allMenuSpare": 10726,
+      "roundtrips": 800,
+      "minimumCrossMenuDistances": {
+        "tag-pair": 5,
+        "free-cubic": 7,
+        "reserved-cubic": 7,
+        "uniform-quartic": 6,
+        "selective-quartic": 6,
+        "relocated-cubic": 7,
+        "unified": 7,
+        "historical-eight": 5
+      },
+      "negative": "Three targeted substitutions into radius-two ball of bridge PROPOSE, unified-to-relocated, token 1, from tag-pair row 48720. Native upstream test only; independent census pending."
+    },
+    "ownerArchive": {
+      "files": 34,
+      "bytes": 193160,
+      "sha256": "19a440f1ab723d82e872957993aaf82d407d23b49cf84fcf7bc23dbf91429f45",
+      "contents": "Seven frozen upstream source files, original prefix receipt/gallery, freshly regenerated bridge gallery, independent harness/receipt and instructions; 16 original synthetic WAVs total. Local delivery, not an uploaded GitHub release."
+    },
+    "limits": [
+      "Prefix decoder given aligned symbols and exact endpoint; cannot establish streaming release, insertion/deletion tolerance, noisy PCM decoding or authentication. Zero interrupted acceptances only on sampled header-corruption corpus; target paths show failure beyond distance bound.",
+      "Bridge codewords do not implement a negotiation state machine, and bridge-vs-menu cross-distance does not prove safety across legacy formats or stale context. Historical CJS equivalence not established.",
+      "Chromium headless ordinary file launch: root exit 1 (sandbox), nonroot exit 124 after 15s, zero DOM bytes, missing DBus socket. No policy bypass, browser qualification, Windows execution, physical audition, human evidence or scientific acceptance.",
+      "No paid services, new workflow, source-lane writes, canonical edits, merge or owner authorization."
+    ],
+    "next": "Independently verify the full version-bridge cross-menu census and version-bound payload decoder boundaries; then qualify ordinary browser and Windows portable package with small dependencies. Keep upstream heads separate."
   }
 }
