@@ -1,0 +1,66 @@
+{
+  "classification": "synthetic, same-agent cross-check; conditional bridge coupling not independent trajectories",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matrix_checks": 642,
+  "max_matrix_row_error": 7.882583474838611e-15,
+  "coarse_identical": true,
+  "detail_disagreements": 143,
+  "bridge_attempts": [
+    74,
+    96
+  ],
+  "accepted_path_jumps": [
+    174,
+    197
+  ],
+  "skeleton": [
+    2,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    2,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    2,
+    0,
+    2,
+    0,
+    1,
+    0,
+    1
+  ],
+  "audio": {
+    "reversible-coarse.wav": {
+      "frames": 25,
+      "decoded": 25,
+      "sha256": "74bff9baa2798de5eb16a3993535e3cbaae09fcc6c12714603c4b8b9a41a7772"
+    },
+    "reversible-detail.wav": {
+      "frames": 241,
+      "decoded": 241,
+      "sha256": "ea66e762fd3e430969797bc7f6fd4c9545991c5e7c7b2934a571ea28505d7d11"
+    },
+    "circulating-coarse.wav": {
+      "frames": 25,
+      "decoded": 25,
+      "sha256": "74bff9baa2798de5eb16a3993535e3cbaae09fcc6c12714603c4b8b9a41a7772"
+    },
+    "circulating-detail.wav": {
+      "frames": 241,
+      "decoded": 241,
+      "sha256": "bbacb8232e6844c0bcab1b0c9cdb405e8d28a3931e12974325a4335bb50970e8"
+    }
+  }
+}
