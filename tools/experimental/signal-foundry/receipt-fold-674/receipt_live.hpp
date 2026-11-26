@@ -44,7 +44,7 @@ public:
     Live() noexcept {reset();}
     const Patch& patch() const noexcept {return patch_;}
     bool prepare(double rate) noexcept {
-        if(!std::isfinite(rate)||rate<8000||rate>384000)return false;
+        if(!std::isfinite(rate)||rate<1000||rate>2000000)return false;
         length_=static_cast<unsigned>(std::ceil(rate*.005));reset();return true;
     }
     void reset() noexcept {current_=start_=goal_=table(patch_);remaining_=0;wet_=0;}
