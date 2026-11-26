@@ -78,7 +78,8 @@ def main(root):
     for n,h in BLOBS.items():
         b=(root/n).read_bytes(); need(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()==h,'source blob mismatch: '+n)
     run=root/'run1'; receipt=(run/'receipt.json').read_bytes(); need(hashlib.sha256(receipt).hexdigest()==RECEIPT,'frozen receipt mismatch')
-    manifest=json.loads((run/'manifest.json').read_text()); need(set(manifest)=={p.name for p in run.iterdir() if p.name!='manifest.json'},'manifest inventory')
+    manifest_bytes=(run/'manifest.json').read_bytes(); need(hashlib.sha256(manifest_bytes).hexdigest()=='e619850702050f6cc61091dd350244a67615bfec058ddd7c50540bd1a8f8e505','frozen manifest mismatch')
+    manifest=json.loads(manifest_bytes); need(set(manifest)=={p.name for p in run.iterdir() if p.name!='manifest.json'},'manifest inventory')
     for n,h in manifest.items(): need(hashlib.sha256((run/n).read_bytes()).hexdigest()==h,'manifest hash: '+n)
     r=json.loads(receipt); spec=importlib.util.spec_from_file_location('candidate',root/'deadline-clarification.py'); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
     totals=C.defaultdict(C.Counter); checked=0
