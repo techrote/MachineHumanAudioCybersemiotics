@@ -48,7 +48,7 @@ jobs:
         run: |
           cmake -S tools/experimental/instrument-foundry/three-winters-596 -B build-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VALIDATE_POST_BUILD=OFF "-DMHAC_VST3_SDK=$env:SDK380"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build build-vst --config Release --target MHACThreeWinters validator
+          cmake --build build-vst --config Release --target MHACThreeWinters validator winters_compat_abi
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Official validator (mandatory)
         run: |
@@ -93,4 +93,33 @@ jobs:
           name: MHACThreeWinters-Windows-x64
           path: MHACThreeWinters-Windows-x64.zip
           if-no-files-found: error
+          retention-days: 7
+
+      - name: Corrected direct SDK ABI witness
+        run: |
+          $probe = Get-ChildItem build-vst -Recurse -File -Filter winters_compat_abi.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $probe) { throw 'ABI probe missing' }
+          & $probe.FullName $env:BUNDLE 2>&1 | Tee-Object -FilePath compat-abi.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path compat-abi.txt -Pattern 'COMPAT_ABI_PASS shaped_cases=48 invalid_active_cases=24')) { throw 'ABI matrix receipt missing' }
+          if (-not (Select-String -Path compat-abi.txt -Pattern 'TIMBRE_PROBE_PASS cases=36 windows=216')) { throw 'Timbre receipt missing' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACThreeWinters-compat-abi
+          path: compat-abi.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Independent host compatibility witness
+        run: |
+          py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 tools/experimental/instrument-foundry/three-winters-596/host_compat_test.py --bundle "$env:BUNDLE" --out host-compat.json
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACThreeWinters-host-compat
+          path: host-compat.json
+          if-no-files-found: ignore
           retention-days: 7
