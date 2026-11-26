@@ -2,6 +2,15 @@
 
 **Expedition #705 | 26 November 2026 | Exploratory humanities / artistic research | Draft for mergedown**
 
+## Contents
+
+- 1 — The anthem: speculative fiction about inherited musical associations.
+- 2 — Source encounters: contrafactum, prosody and limits of the reading.
+- 3 — Accent budget: exact counterexample and generalized bound.
+- 4 — Six ceremonies: original performance score.
+- 5 — Qualification: executed mathematical and PCM checks.
+- 6 — Design proposals: instruments and controlled experiment.
+
 ## 1. The anthem of the gate (original speculative essay)
 
 The city replaces its gatekeeper with a singing machine. The machine has only one tune. The city has several governments. Each government purchases a new set of words, but the instrument maker has guaranteed that the tune will remain unchanged.
@@ -74,7 +83,5 @@ A larger score with overlapping requests could have a different bound; a weighte
 **Counterargument:** A familiar tune may be useful precisely because it acquires a new meaning, and prosodic clashes may be witty, expressive or memorable. Preserving the old text's accent map is not always desirable. The artistic control is the option to conserve, transfer or contradict it. Revise the operational hypothesis if ordinary explicit words dominate every tested condition, or if the specific mappings do not affect interpretation.
 
 ## Reconciliation and checkpoint
-
-Contents: 1 — fictional premise; 2 — bounded source encounters; 3 — formal construction; 4 — original performance; 5 — executed fixture; 6 — proposed instruments and test.
 
 Base inspected: 495a98ca12bae467a507031f04931aa4254b1866. Read AGENTS, RAG, programme, runbook, integrity and validation; reviewed recent 35 PR and 30 open issue titles, searched issue corpus for contrafactum, parody, accent, prosody, syllable and alternative topics. Closest leads: #382 (retrospective accent/metrical role), #514 (polyphonic syllable binding), #177 (affective feedback), #701 (poetic recurrence), #668 (delegated assertion). Distinction: text replacement on fixed melody, separately stipulated emphasis preferences, simultaneous resource feasibility rather than metric inference or role authentication. This is bounded overlap screening, not a novelty claim. Alternative tuning and homometry directions were abandoned after finding #286/#508 and #199. No shared manifest, protocol, canonical records or other worker's branch touched. No external human review, participant data, external submission, production firmware or licence grant. One ChatGPT assistant performed source reading, writing, code and native execution. No additional workers claimed. Independent review and exact-head CI remain required before landing; retain open issue and draft PR for integrator.
