@@ -34,6 +34,10 @@ public:
         sr_=sr;attack_=1/std::max(1.,sr*.005);release_=1/std::max(1.,sr*.03);
         clock_.period(unsigned(std::lround(sr*seconds)));reset();return true;
     }
+    bool period(double seconds) noexcept {
+        if(!std::isfinite(seconds)||seconds<.01||seconds>10)return false;
+        return clock_.period(unsigned(std::lround(sr_*seconds)));
+    }
     void reset() noexcept {voices_={};clock_.reset();}
     void domain(Domain d) noexcept {clock_.domain(d);}
     void step() noexcept {clock_.step();}
