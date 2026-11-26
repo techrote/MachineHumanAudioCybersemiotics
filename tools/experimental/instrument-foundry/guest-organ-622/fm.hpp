@@ -36,11 +36,12 @@ public:
             for(unsigned i=0;i<7;++i)partials[7*pair+i].gain*=.5/std::max(1.,norm);
         }
     }
-    double tick() noexcept {
+    // Advance identical phase history even when the bank is inaudible.
+    double tick(bool audible=true) noexcept {
         double y=0;
         for(auto& p:partials)if(p.gain!=0){
             p.phase+=p.inc;if(p.phase>=1)p.phase-=1;else if(p.phase<0)p.phase+=1;
-            y+=p.gain*std::sin(6.28318530717958647692*p.phase);
+            if(audible)y+=p.gain*std::sin(6.28318530717958647692*p.phase);
         }
         return y;
     }

@@ -18,11 +18,12 @@ public:
             inc[i]=x;gain[i]=.25*std::clamp((.45-x)/.05,0.,1.);
         }
     }
-    double tick() noexcept {
+    // Advance identical phase history even when the bank is inaudible.
+    double tick(bool audible=true) noexcept {
         double y=0;
         for(unsigned i=0;i<4;++i)if(gain[i]>0){
             phase[i]+=inc[i];if(phase[i]>=1)phase[i]-=1;
-            y+=gain[i]*std::sin(6.28318530717958647692*phase[i]);
+            if(audible)y+=gain[i]*std::sin(6.28318530717958647692*phase[i]);
         }
         return y;
     }

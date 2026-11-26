@@ -77,7 +77,7 @@ public:
             const double target=v.continuation&&v.patch.adopt?v.patch.counterGain:0;
             v.blend+=std::clamp(target-v.blend,-attack,attack);
             f.base+=.04*v.velocity*v.env*oscillator(v.a,v.incA);
-            const double counter=v.patch.fm&&v.patch.adopt?v.fmBank.tick():v.patch.spectral&&v.patch.adopt?v.spectrum.tick():oscillator(v.b,v.incB);
+            const double counter=v.patch.fm&&v.patch.adopt?v.fmBank.tick(v.blend!=0):v.patch.spectral&&v.patch.adopt?v.spectrum.tick(v.blend!=0):oscillator(v.b,v.incB);
             f.counter+=.025*v.velocity*v.env*v.blend*counter;
             if(++v.position==v.length){v.position=0;v.slot=(v.slot+1)%4;if(v.slot==0)v.continuation=true;retune(v);}
         }

@@ -133,7 +133,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,
-"MHAC Guest Organ",Vst::kDistributable,"Instrument|Synth","0.3.0",kVstVersionString,Processor::create)
+"MHAC Guest Organ",Vst::kDistributable,"Instrument|Synth","0.3.1",kVstVersionString,Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,
-"MHAC Guest Organ Controller",0,"","0.3.0",kVstVersionString,Controller::create)
+"MHAC Guest Organ Controller",0,"","0.3.1",kVstVersionString,Controller::create)
 END_FACTORY
