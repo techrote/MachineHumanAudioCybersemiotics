@@ -129,6 +129,48 @@ def load(bundle, cid, index):
     return p
 
 
+def diagnose_golden_state(bundle, out, report):
+    """Locate whether imported instrument state is lost before or during process."""
+    def component(raw):
+        sig, version, cid, offset = bank.HEADER.unpack_from(raw)
+        require(sig == b"VST3" and version == 1, "host preset header")
+        tag, count = bank.LIST.unpack_from(raw,offset)
+        require(tag == b"List" and 0 <= count <= 32, "host preset list")
+        chunks = {}
+        for i in range(count):
+            name, start, size = bank.ENTRY.unpack_from(raw,offset+bank.LIST.size+i*bank.ENTRY.size)
+            require(start >= bank.HEADER.size and size >= 0 and start+size <= offset, "host chunk extent")
+            chunks[name.decode("ascii")] = raw[start:start+size].hex()
+        return dict(class_id=cid.decode("ascii"),chunks=chunks)
+    report["golden_state_diagnostic"] = []
+    for method in ("cold_preset", "prepared_preset", "controller_gain"):
+        p = open_plugin(bundle)
+        case = dict(method=method, before=component(p.preset_data))
+        report["golden_state_diagnostic"].append(case)
+        try:
+            if method == "prepared_preset":
+                p([],duration=.05,sample_rate=RATE,num_channels=2,buffer_size=257)
+            if method == "controller_gain":
+                case["parameter_names"] = list(p.parameters)
+                p.parameters["gain"].raw_value = .1
+                case["controller_gain_readback"] = p.parameters["gain"].raw_value
+            else:
+                _, _, values = bank.BANK[4]
+                raw = bank.preset(bank.G,values)
+                case["requested"] = component(raw)
+                p.preset_data = raw
+            case["before_process"] = component(p.preset_data)
+            signal = checked(p(MIDI,duration=DURATION,sample_rate=RATE,num_channels=2,
+                               buffer_size=257,reset=(method != "prepared_preset")), int(RATE*DURATION))
+            case["after_process"] = component(p.preset_data)
+            case["signal"] = metrics(signal)
+        except Exception as e:
+            case["error"] = repr(e)
+        finally:
+            (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+            print("GOLDEN STATE DIAGNOSTIC:",json.dumps(case),flush=True)
+
+
 def run_preset_matrix(gpath, fpath, out, report):
     """Exercise every delivered preset in fresh real host instances, at three rates."""
     report["preset_matrix"] = []
@@ -231,6 +273,7 @@ def run(gold, freeze, out):
         if block == 257:
             wav(out/"dry.wav", dry)
             wav(out/"wet.wav", wet)
+    diagnose_golden_state(gpath, out, report)
     run_preset_matrix(gpath, fpath, out, report)
 
 
