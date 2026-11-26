@@ -1,0 +1,152 @@
+{
+  "circulant_profiles": 764,
+  "circulant_lag_checks": 6112,
+  "max_floating_error": 4.440892098500626e-16,
+  "exact_eight_state_checks": 161,
+  "delayed_coupling": [
+    {
+      "intermediate_kernel_directions": 0,
+      "states": 8,
+      "last_equal_lag": 2,
+      "first_distinct_lag": 3
+    },
+    {
+      "intermediate_kernel_directions": 1,
+      "states": 8,
+      "last_equal_lag": 3,
+      "first_distinct_lag": 4
+    },
+    {
+      "intermediate_kernel_directions": 2,
+      "states": 8,
+      "last_equal_lag": 4,
+      "first_distinct_lag": 5
+    },
+    {
+      "intermediate_kernel_directions": 3,
+      "states": 8,
+      "last_equal_lag": 5,
+      "first_distinct_lag": 6
+    },
+    {
+      "intermediate_kernel_directions": 4,
+      "states": 16,
+      "last_equal_lag": 6,
+      "first_distinct_lag": 7
+    },
+    {
+      "intermediate_kernel_directions": 5,
+      "states": 16,
+      "last_equal_lag": 7,
+      "first_distinct_lag": 8
+    },
+    {
+      "intermediate_kernel_directions": 6,
+      "states": 16,
+      "last_equal_lag": 8,
+      "first_distinct_lag": 9
+    },
+    {
+      "intermediate_kernel_directions": 7,
+      "states": 16,
+      "last_equal_lag": 9,
+      "first_distinct_lag": 10
+    }
+  ],
+  "arrow_receipts": [
+    {
+      "length": 2,
+      "words": 36,
+      "differences": 0
+    },
+    {
+      "length": 3,
+      "words": 216,
+      "differences": 0
+    },
+    {
+      "length": 4,
+      "words": 1296,
+      "differences": 72
+    }
+  ],
+  "entropy_frontier": [
+    {
+      "t": 0.2,
+      "spread": 0.02013495655195012,
+      "concentrated": 0.02027325540540821,
+      "ratio": 1.006868594580836,
+      "min_concentrated": 0.1
+    },
+    {
+      "t": 0.4,
+      "spread": 0.08224197441561273,
+      "concentrated": 0.08472978603872038,
+      "ratio": 1.030249901474099,
+      "min_concentrated": 0.075
+    },
+    {
+      "t": 0.6,
+      "spread": 0.19214101125326039,
+      "concentrated": 0.2079441541679836,
+      "ratio": 1.0822476305898752,
+      "min_concentrated": 0.05
+    },
+    {
+      "t": 0.8,
+      "spread": 0.3626920045396277,
+      "concentrated": 0.43944491546724396,
+      "ratio": 1.2116200797562116,
+      "min_concentrated": 0.024999999999999994
+    },
+    {
+      "t": 0.9,
+      "spread": 0.4786292213241177,
+      "concentrated": 0.6624987703124492,
+      "ratio": 1.3841586363650347,
+      "min_concentrated": 0.012499999999999997
+    },
+    {
+      "t": 0.99,
+      "spread": 0.607190366875944,
+      "concentrated": 1.3100929441193117,
+      "ratio": 2.157631305746619,
+      "min_concentrated": 0.0012500000000000011
+    },
+    {
+      "t": 0.999,
+      "spread": 0.6216040122380813,
+      "concentrated": 1.898200483041475,
+      "ratio": 3.0537133700392576,
+      "min_concentrated": 0.0001250000000000001
+    },
+    {
+      "t": 0.9999,
+      "spread": 0.6230629376135504,
+      "concentrated": 2.4756118018827666,
+      "ratio": 3.973293310247005,
+      "min_concentrated": 0.000012499999999998623
+    },
+    {
+      "t": 0.99999,
+      "spread": 0.6232090080878264,
+      "concentrated": 3.0514863962114425,
+      "ratio": 4.896409321126835,
+      "min_concentrated": 0.0000012499999999943112
+    },
+    {
+      "t": 0.999999,
+      "spread": 0.6232236169169901,
+      "concentrated": 3.627160682459525,
+      "ratio": 5.819998767701773,
+      "min_concentrated": 1.2500000000359446e-7
+    }
+  ],
+  "triple_repair_checks": 4935,
+  "negative_controls": {
+    "three_block_relative_orientation": "two disjoint current triangles indistinguishable through length 3, distinguished at length 4",
+    "two_lag_general": "delayed-coupling witnesses disprove two-lag sufficiency outside circulant class",
+    "directed_pair": "ordered one-step law recovers full transition matrix",
+    "physical_dissipation": "not measured"
+  }
+}
