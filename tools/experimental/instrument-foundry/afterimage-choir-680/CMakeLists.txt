@@ -137,3 +137,13 @@ else()
     target_compile_options(afterimage_phase_host_test PRIVATE -Wall -Wextra -Werror)
 endif()
 add_test(NAME afterimage_phase_host COMMAND afterimage_phase_host_test)
+
+# Offline timing diagnostic; never linked into the VST3 processor.
+add_executable(afterimage_deadline_probe deadline_probe.cpp)
+target_link_libraries(afterimage_deadline_probe PRIVATE Threads::Threads)
+if(MSVC)
+    target_compile_options(afterimage_deadline_probe PRIVATE /W4 /WX)
+else()
+    target_compile_options(afterimage_deadline_probe PRIVATE -Wall -Wextra -Werror)
+endif()
+add_test(NAME afterimage_deadline_probe COMMAND afterimage_deadline_probe --self-test)
