@@ -43,14 +43,21 @@ double witness(const std::vector<float>& x,int rate,int end,double target){
     check(std::sqrt(err/n)<2e-4,"timbre residual");
     return b/(a+b);
 }
+// Derived host profiles: a disabled bus is not an absent arrangement.
+constexpr bool activeAux(int bus,int mask){return bus==0||(mask&(1<<(bus-1)))!=0;}
+constexpr int hostChannels(int bus,int mask,bool zeroDisabled){return bus==0?2:(zeroDisabled&&!activeAux(bus,mask)?0:1);}
+static_assert(hostChannels(1,0,false)==1&&hostChannels(1,0,true)==0&&hostChannels(1,1,true)==1);
 struct Observation {std::vector<float> left,right;double peak=0,stemError=0;int rejected=0;};
 struct Lifecycle {
     IComponent* c; IAudioProcessor* p; bool initialized=false,active=false,running=false;
     ~Lifecycle(){if(running)p->setProcessing(false);if(active)c->setActive(false);if(initialized)c->terminate();}
 };
 Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassInfo& info,
-                HostApplication* host,int rate,int block,bool aux,bool malformed,bool inactiveMemory=false,int lane=-1){
-    std::cout<<"case rate="<<rate<<" block="<<block<<" aux="<<aux<<" malformed="<<malformed<<" inactive_memory="<<inactiveMemory<<" timbre_lane="<<lane<<std::endl;
+                HostApplication* host,int rate,int block,bool aux,bool malformed,bool inactiveMemory=false,int lane=-1,int activeMask=-1,bool juceShape=false,bool offline=false){
+    const int mask=activeMask<0?(aux?7:0):activeMask;
+    check(mask>=0&&mask<=7&&(!juceShape||malformed),"host profile");
+    const auto mode=offline||juceShape?kOffline:kRealtime;
+    std::cout<<"case rate="<<rate<<" block="<<block<<" aux="<<aux<<" malformed="<<malformed<<" inactive_memory="<<inactiveMemory<<" timbre_lane="<<lane<<" mask="<<mask<<" juce_shape="<<juceShape<<" mode="<<mode<<std::endl;
     auto c=factory.createInstance<IComponent>(info.ID());
     check(bool(c),"component create");
     FUnknownPtr<IAudioProcessor> p(c.get());check(p.getInterface()!=nullptr,"processor interface");
@@ -63,11 +70,11 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
     for(int i=0;i<4;++i){
         BusInfo b{};result(c->getBusInfo(kAudio,kOutput,i,b),"getBusInfo");
         check(b.channelCount==(i==0?2:1),"channel count");
-        result(c->activateBus(kAudio,kOutput,i,i==0||aux),"activate audio");
+        result(c->activateBus(kAudio,kOutput,i,activeAux(i,mask)),"activate audio");
     }
     result(c->activateBus(kEvent,kInput,0,true),"activate event");
     result(p->canProcessSampleSize(kSample32),"sample format");
-    ProcessSetup setup{kRealtime,kSample32,block,double(rate)};
+    ProcessSetup setup{mode,kSample32,block,double(rate)};
     result(p->setupProcessing(setup),"setupProcessing");
     result(c->setActive(true),"setActive");guard.active=true;
     result(p->setProcessing(true),"setProcessing");guard.running=true;
@@ -76,10 +83,10 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
     std::array<std::vector<float>,5> samples;
     for(auto& s:samples)s.resize(block);
     pointers[0]={samples[0].data(),samples[1].data()};
-    for(int i=1;i<4;++i)pointers[i][0]=(aux||inactiveMemory)?samples[i+1].data():nullptr;
+    for(int i=1;i<4;++i)pointers[i][0]=(activeAux(i,mask)||inactiveMemory)?samples[i+1].data():nullptr;
     std::array<AudioBusBuffers,4> buses{};
-    for(int i=0;i<4;++i){buses[i].numChannels=i==0?2:(malformed?0:1);buses[i].channelBuffers32=pointers[i].data();}
-    ProcessData data{};data.processMode=kRealtime;data.symbolicSampleSize=kSample32;
+    for(int i=0;i<4;++i){buses[i].numChannels=hostChannels(i,mask,malformed);buses[i].channelBuffers32=juceShape&&buses[i].numChannels==0?nullptr:pointers[i].data();}
+    ProcessData data{};data.processMode=mode;data.symbolicSampleSize=kSample32;
     data.numOutputs=4;data.outputs=buses.data();data.inputEvents=&events;data.inputParameterChanges=&params;
     Observation obs;
     // The foundry gain smoother settles in 5 ms. Allow silent pre-roll so
@@ -88,7 +95,7 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
     obs.left.reserve(total);obs.right.reserve(total);
     for(int pos=0;pos<total;pos+=block){
         int n=std::min(block,total-pos);data.numSamples=n;events.clear();params.clearQueue();
-        for(auto& s:samples)std::fill(s.begin(),s.end(),-0.75f);
+        for(auto& s:samples)std::fill(s.begin(),s.end(),juceShape?0.f:-0.75f);
         for(auto& bus:buses)bus.silenceFlags=0;
         auto point=[&](int sample,ParamID id,double value){
             if(sample<pos||sample>=pos+n)return;
@@ -122,10 +129,17 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
         }
         auto rc=p->process(data);
         if(rc!=kResultOk){++obs.rejected;std::cout<<"process rejected pos="<<pos<<" rc="<<rc<<std::endl;}
-        if(malformed)continue;
+        if(malformed){
+            if(juceShape){
+                check(rc!=kResultOk,"JUCE-shaped block unexpectedly accepted by pinned strict module");
+                for(int k=0;k<2;++k)for(int j=0;j<n;++j)check(samples[k][j]==0.f,"rejected cleared main buffer changed");
+            }
+            continue;
+        }
         check(rc==kResultOk,"process valid buffers");
-        if(!aux){
+        {
             for(int k=1;k<4;++k){
+                if(activeAux(k,mask))continue;
                 check((buses[k].silenceFlags&1u)!=0,"inactive stem silence flag");
                 if(inactiveMemory)for(int j=0;j<n;++j)
                     check(samples[k+1][j]==0.f,"inactive stem poison not cleared");
@@ -135,7 +149,12 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
             float l=samples[0][j],r=samples[1][j];check(std::isfinite(l)&&std::isfinite(r),"nonfinite output");
             check(std::abs(l)<=1.f&&std::abs(r)<=1.f,"output bound");
             obs.left.push_back(l);obs.right.push_back(r);obs.peak=std::max(obs.peak,double(std::abs(l)));
-            if(aux){
+            if(lane<0){
+                if(activeAux(1,mask))check(std::abs(samples[2][j]-l)<2e-6,"latch stem mismatch");
+                if(activeAux(2,mask))check(std::abs(samples[3][j])<2e-6,"pause stem leak");
+                if(activeAux(3,mask))check(std::abs(samples[4][j])<2e-6,"snapshot stem leak");
+            }
+            if(mask==7){
                 for(int k=2;k<5;++k)check(std::isfinite(samples[k][j]),"nonfinite stem");
                 obs.stemError=std::max(obs.stemError,std::abs(double(l)-samples[2][j]-.5*samples[3][j]));
                 obs.stemError=std::max(obs.stemError,std::abs(double(r)-samples[4][j]-.5*samples[3][j]));
@@ -167,6 +186,7 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
     }else{
         // Deliberately nonconformant: this is a diagnostic negative, not a host acceptance case.
         check(obs.rejected>0,"expected rejection of zero-channel inactive auxiliaries");
+        if(juceShape)check(obs.rejected==(total+block-1)/block,"JUCE-shaped rejection count");
         std::cout<<"negative rejected_blocks="<<obs.rejected<<std::endl;
     }
     return obs;
@@ -198,6 +218,23 @@ int main(int argc,char** argv){
             }
             auto negative=run(factory,info,host.get(),44100,257,false,true);
             std::cout<<"SDK_PROBE_PASS positives="<<positive<<" negative_rejected="<<negative.rejected<<std::endl;
+            // Source-derived JUCE host shape, not an intercepted Pedalboard call.
+            // Disabled layouts are mapped to zero channels and a null channel array,
+            // even though the last enabled (mono) arrangements remain negotiated.
+            // The pinned strict processor should reject this, leaving the precleared
+            // output silent. The conformant offline twin must actually sound.
+            int shaped=0,mixed=0,rejected=0;
+            for(int rate:{44100,48000,96000})for(int block:{257,1024}){
+                auto baseline=run(factory,info,host.get(),rate,block,false,false,false,-1,0,false,true);
+                for(int mask=1;mask<7;++mask){
+                    auto m=run(factory,info,host.get(),rate,block,false,false,true,-1,mask,false,true);
+                    check(m.left==baseline.left&&m.right==baseline.right,"mixed activation changed main waveform");
+                    ++mixed;
+                }
+                auto j=run(factory,info,host.get(),rate,block,false,true,false,-1,0,true);
+                rejected+=j.rejected;++shaped;
+            }
+            std::cout<<"HOST_SHAPE_PROBE_PASS cases="<<shaped<<" rejected_blocks="<<rejected<<" mixed_activation_cases="<<mixed<<std::endl;
             int timbreCases=0;
             for(int rate:{44100,48000,96000})for(int lane=0;lane<3;++lane){
                 auto a=run(factory,info,host.get(),rate,257,false,false,false,lane);
