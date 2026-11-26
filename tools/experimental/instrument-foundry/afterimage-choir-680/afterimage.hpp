@@ -34,17 +34,27 @@ class Engine {
     std::array<unsigned,8> order{0,1,2,3,4,5,6,7};
     Patch patch{}; double rate=48000, attack=1.0/240, release=1.0/1440;
     unsigned history=0; bool ambiguous=false;
+    std::array<unsigned,3> archive{}; unsigned archiveSize=0, historyDepth=1;
 public:
     bool prepare(double sr) {
         if(!supportsRate(sr)) return false;
         rate=sr; attack=1/(.005*sr); release=1/(.030*sr); reset(); return true;
     }
-    void reset() { voices={}; fading={}; order={0,1,2,3,4,5,6,7}; history=0; ambiguous=false; }
+    void reset() { voices={}; fading={}; order={0,1,2,3,4,5,6,7}; history=0; ambiguous=false; archive={}; archiveSize=0; }
     bool configure(Patch p) {
         if(!p.pair.valid()||static_cast<unsigned>(p.mode)>3||!std::isfinite(p.minimumMs)||p.minimumMs<0||p.minimumMs>2000||!std::isfinite(p.memory)||p.memory<0||p.memory>1) return false;
         patch=p; return true;
     }
     unsigned remembered() const { return history; }
+    // Native experimental control; affects future note onsets only.
+    bool setHistoryDepth(unsigned depth) noexcept {
+        if(depth<1||depth>3) return false;
+        historyDepth=depth; return true;
+    }
+    unsigned rememberedCount() const noexcept { return archiveSize; }
+    unsigned rememberedAt(unsigned index) const noexcept {
+        return index<archiveSize?archive[index]:history;
+    }
     bool lastAmbiguous() const { return ambiguous; }
     unsigned active() const { unsigned n=0; for(unsigned i=0;i<voices.size();++i) n+=voices[i].used||fading[i].used; return n; }
     bool off(int id, bool commit=true) {
@@ -54,6 +64,8 @@ public:
                 const Pair p=v.mode==Mode::preview?v.pair:patch.pair;
                 const auto r=decode(v.original==p.high?p.low:v.original,v.tag,v.mask,p);
                 history=r.state; ambiguous=r.ambiguous;
+                archive[2]=archive[1]; archive[1]=archive[0]; archive[0]=history;
+                archiveSize=std::min(3u,archiveSize+1u);
             }
             return true;
         }
@@ -87,7 +99,9 @@ public:
             v.mode=patch.mode; v.pair=patch.pair; v.mask=mask(v.mode,v.pair); v.tag=v.original&v.mask;
             v.captured=history; v.minimum=static_cast<std::uint64_t>(std::ceil(rate*patch.minimumMs/1000));
             const double f=440*std::exp2((pitch-69+cents/100)/12);
-            const std::array<double,4> ratios{1,2.0+history*.25,3.0+history*.5,5.0+history*.75};
+            const unsigned h1=rememberedAt(0), h2=rememberedAt(historyDepth>=2?1:0),
+                           h3=rememberedAt(historyDepth>=3?2:0);
+            const std::array<double,4> ratios{1,2.0+h1*.25,3.0+h2*.5,5.0+h3*.75};
             const std::array<double,4> w{1,.5*patch.memory,.3*patch.memory,.2*patch.memory};
             double sum=0;
             for(unsigned k=0;k<4;++k) { const double hz=f*ratios[k]; v.step[k]=hz/rate; v.weight[k]=w[k]*std::clamp((.45-hz/rate)/.05,0.0,1.0); sum+=v.weight[k]; }
