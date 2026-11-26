@@ -101,7 +101,71 @@ def key_for(p,prefix):
     h.require(len(keys)==1,"missing/ambiguous parameter "+prefix+": "+repr(list(p.parameters)))
     return keys[0]
 
-def perform(bundle,rate,block,lane,saved=None):
+def signal_summary(audio, rate):
+    """Unthresholded observables for a failed host witness, not an acceptance test."""
+    x = np.asarray(audio)
+    result = {"shape": list(x.shape), "finite": bool(np.isfinite(x).all())}
+    if x.ndim != 2 or x.shape[1] == 0 or not result["finite"]:
+        return result
+    result["channels"] = []
+    for channel in x.astype(np.float64):
+        nonzero = np.flatnonzero(np.abs(channel) > 1e-7)
+        settled = channel[-min(len(channel), rate//10):]
+        t = np.arange(len(settled), dtype=np.float64)/rate
+        coeff = [float(abs(2*np.mean(settled*np.exp(-2j*np.pi*f*t)))) for f in (440,880)]
+        peak = float(np.max(np.abs(channel)))
+        result["channels"].append(dict(peak=peak, rms=float(np.sqrt(np.mean(channel**2))),
+            first_above_1e7=int(nonzero[0]) if len(nonzero) else None,
+            last_above_1e7=int(nonzero[-1]) if len(nonzero) else None,
+            settled_peak=float(np.max(np.abs(settled))),
+            settled_440=coeff[0], settled_880=coeff[1]))
+    return result
+
+def diagnose_host_failure(bundle, rate, block, lane, report, persist):
+    """Isolate cold/default, preparation, preset, call boundary and mono routing.
+    A successful probe is evidence only for that path, never a matrix PASS.
+    """
+    probes = report.setdefault("failure_probes", [])
+    for method in ("cold_default", "prepared_default", "prepared_preset",
+                   "prepared_split_delayed", "cold_default_mono"):
+        case = dict(method=method, rate=rate, block=block, lane=lane)
+        probes.append(case)
+        persist()
+        try:
+            p = h.open_plugin(bundle)
+            case["initial_component"] = h.component(p.preset_data)
+            case["parameters"] = list(p.parameters)
+            channels = 1 if method.endswith("_mono") else 2
+            prepared = method.startswith("prepared")
+            if prepared:
+                h.prepare_instrument(p,rate,block)
+            if method in ("prepared_preset", "prepared_split_delayed"):
+                p.preset_data = preset(initial(lane))
+                h.verify_component(p,CID,state(initial(lane)))
+            case["before_note"] = h.component(p.preset_data)
+            def render(events, duration, reset=False):
+                return p(events,duration=duration,sample_rate=rate,num_channels=channels,
+                         buffer_size=block,reset=reset)
+            on=(bytes((0x90,69,100)),.02)
+            if method == "prepared_split_delayed":
+                x=render([on],.2)
+                case["first"] = signal_summary(x,rate)
+                case["after_first"] = h.component(p.preset_data)
+                persist()
+                case["continuation"] = signal_summary(render([],.2),rate)
+                case["release"] = signal_summary(render([(bytes((0x80,69,0)),.02)],.2),rate)
+            else:
+                x=render([on,(bytes((0x80,69,0)),.25)],.4,reset=not prepared)
+                case["full"] = signal_summary(x,rate)
+                case["sustain"] = signal_summary(x[:,rate//10:rate//5],rate)
+            case["after_note"] = h.component(p.preset_data)
+        except Exception as exc:
+            case["error"] = repr(exc)
+        finally:
+            persist()
+            print("WINTERS DIAGNOSTIC:",json.dumps(case),flush=True)
+
+def perform(bundle,rate,block,lane,saved=None,receipt=None):
     p=h.open_plugin(bundle)
     h.require(p.is_instrument,"not an instrument")
     h.prepare_instrument(p,rate,block)
@@ -111,10 +175,16 @@ def perform(bundle,rate,block,lane,saved=None):
     initial_export=p.preset_data
     pieces=[]
     measured=[]
+    if receipt is not None:
+        receipt['before_note'] = h.component(initial_export)
+        receipt['observations'] = []
     def render(events,expected):
         x=h.checked(p(events,duration=.2,sample_rate=rate,num_channels=2,
                        buffer_size=block,reset=False),rate//5)
         pieces.append(x)
+        if receipt is not None:
+            receipt['observations'].append(dict(index=len(pieces)-1, expected=expected,
+                signal=signal_summary(x,rate), component=h.component(p.preset_data)))
         measured.append(check_piece(x,rate,lane,expected))
     def edit(prefix,i,value):
         key=key_for(p,prefix)
@@ -163,8 +233,10 @@ def run(archive,out):
                 report["cases"].append(case)
                 persist()
                 try:
-                    x,m,saved=perform(bundle,rate,block,lane)
-                    y,_,_=perform(bundle,rate,block,lane,saved)
+                    case['original']={}
+                    case['restored']={}
+                    x,m,saved=perform(bundle,rate,block,lane,receipt=case['original'])
+                    y,_,_=perform(bundle,rate,block,lane,saved,receipt=case['restored'])
                     case["restore_max_error"]=float(np.max(np.abs(x-y)))
                     h.require(case["restore_max_error"]<2e-5,"host-export restore mismatch")
                     if baseline is None: baseline=x.copy()
@@ -180,6 +252,8 @@ def run(archive,out):
                 except Exception as exc:
                     case["status"]="fail"
                     case["error"]=repr(exc)
+                    persist()
+                    diagnose_host_failure(bundle,rate,block,lane,report,persist)
                     raise
                 finally:
                     persist()
@@ -188,6 +262,33 @@ def run(archive,out):
     persist()
 
 class Tests(unittest.TestCase):
+    def test_signal_summary(self):
+        for rate in (44100,48000,96000):
+            t=np.arange(rate//5)/rate
+            z=np.zeros_like(t)
+            fundamental=.04*np.sin(2*np.pi*440*t)
+            second=.03*np.sin(2*np.pi*880*t)
+            x=signal_summary(np.stack((fundamental,second)),rate)
+            self.assertAlmostEqual(x['channels'][0]['settled_440'],.04,places=10)
+            self.assertAlmostEqual(x['channels'][0]['settled_880'],0,places=10)
+            self.assertAlmostEqual(x['channels'][1]['settled_880'],.03,places=10)
+            x=signal_summary(np.stack((z,z)),rate)
+            self.assertIsNone(x['channels'][0]['first_above_1e7'])
+            self.assertEqual(x['channels'][1]['peak'],0)
+            pulse=z.copy();pulse[27:31]=.12
+            x=signal_summary(pulse[None,:],rate)
+            self.assertEqual(x['channels'][0]['first_above_1e7'],27)
+            self.assertEqual(x['channels'][0]['last_above_1e7'],30)
+            self.assertEqual(x['channels'][0]['settled_peak'],0)
+            wrong=.05*np.sin(2*np.pi*660*t)
+            x=signal_summary(wrong[None,:],rate)
+            self.assertGreater(x['channels'][0]['peak'],.04)
+            self.assertLess(x['channels'][0]['settled_440'],1e-9)
+            self.assertLess(x['channels'][0]['settled_880'],1e-9)
+        self.assertFalse(signal_summary(np.array([[np.nan]]),48000)['finite'])
+        self.assertNotIn('channels',signal_summary(np.zeros((2,0)),48000))
+        self.assertNotIn('channels',signal_summary(np.zeros(20),48000))
+
     def test_oracle(self):
         for rate in (44100,48000,96000):
             t=np.arange(rate//5)/rate
