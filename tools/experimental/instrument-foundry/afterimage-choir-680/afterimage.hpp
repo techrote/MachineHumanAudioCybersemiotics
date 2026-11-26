@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
+#include "phase_memory.hpp"
 namespace mhac::afterimage {
 // Shared native/host rate contract. No rate-sized buffers are allocated.
 inline bool supportsRate(double sr) noexcept {
@@ -28,12 +29,13 @@ class Engine {
         bool used=false, held=false; int id=0; unsigned original=0, tag=0, mask=0, captured=0;
         Pair pair; Mode mode=Mode::fixed; std::uint64_t age=0, minimum=0;
         double velocity=0, gain=0; std::array<double,4> phase{},step{},weight{};
+        PhaseMemory pm; double pmMix=0;
     };
     std::array<Voice,8> voices{}, fading{};
     // One bounded fade slot per voice. Oldest-first order never overflows.
     std::array<unsigned,8> order{0,1,2,3,4,5,6,7};
     Patch patch{}; double rate=48000, attack=1.0/240, release=1.0/1440;
-    unsigned history=0; bool ambiguous=false;
+    unsigned history=0; bool ambiguous=false; double phaseMix=0;
     std::array<unsigned,3> archive{}; unsigned archiveSize=0, historyDepth=1;
 public:
     bool prepare(double sr) {
@@ -44,6 +46,11 @@ public:
     bool configure(Patch p) {
         if(!p.pair.valid()||static_cast<unsigned>(p.mode)>3||!std::isfinite(p.minimumMs)||p.minimumMs<0||p.minimumMs>2000||!std::isfinite(p.memory)||p.memory<0||p.memory>1) return false;
         patch=p; return true;
+    }
+    // Native laboratory only: captured at note-on, never changes existing voices.
+    bool setPhaseMix(double mix) noexcept {
+        if(!std::isfinite(mix)||mix<0||mix>1)return false;
+        phaseMix=mix;return true;
     }
     unsigned remembered() const { return history; }
     // Native experimental control; affects future note onsets only.
@@ -101,6 +108,11 @@ public:
             const double f=440*std::exp2((pitch-69+cents/100)/12);
             const unsigned h1=rememberedAt(0), h2=rememberedAt(historyDepth>=2?1:0),
                            h3=rememberedAt(historyDepth>=3?2:0);
+            if(phaseMix>0&&patch.memory>0){
+                const double beta=.2+.12*h1+.06*h3, ratio=1.25+.25*h2;
+                if(v.pm.configure(rate,f,ratio,beta))
+                    v.pmMix=phaseMix*patch.memory*std::clamp((.45-f/rate)/.05,0.,1.);
+            }
             const std::array<double,4> ratios{1,2.0+h1*.25,3.0+h2*.5,5.0+h3*.75};
             const std::array<double,4> w{1,.5*patch.memory,.3*patch.memory,.2*patch.memory};
             double sum=0;
@@ -117,6 +129,7 @@ private:
             else { v.gain=std::max(0.0,v.gain-(forced?attack:release)); if(v.gain<=1e-12) { v={}; return 0; } }
             double y=0;
             for(unsigned k=0;k<4;++k) if(v.weight[k]>0) { y+=v.weight[k]*std::sin(6.2831853071795864769*v.phase[k]); v.phase[k]+=v.step[k]; if(v.phase[k]>=1) v.phase[k]-=1; }
+            if(v.pmMix>0)y=(1-v.pmMix)*y+v.pmMix*v.pm.tick();
             return .065*v.velocity*v.gain*y;
         }
         return 0;
