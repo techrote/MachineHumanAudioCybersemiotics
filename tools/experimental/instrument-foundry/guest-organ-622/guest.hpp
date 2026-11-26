@@ -37,7 +37,7 @@ class Engine {
 public:
     static constexpr unsigned capacity=8;
     bool prepare(double sr) noexcept {
-        if(!std::isfinite(sr)||sr<1000||sr>192000)return false;
+        if(!std::isfinite(sr)||sr<1000||sr>2000000)return false;
         rate=sr;attack=1/std::max(1.,rate*.005);release=1/std::max(1.,rate*.03);reset();return true;
     }
     void reset() noexcept {voices={};}
@@ -51,7 +51,7 @@ public:
     bool on(int id,int note,double tuning,double velocity) noexcept {
         if(!std::isfinite(velocity)||!std::isfinite(tuning)||note<0||note>127)return false;
         if(velocity==0){off(id);return false;}if(velocity<0)return false;
-        for(const auto& v:voices)if(v.active&&v.id==id)return false;
+        for(const auto& v:voices)if(v.active&&!v.releasing&&v.id==id)return false;
         for(auto& v:voices)if(!v.active){
             v=Voice{};v.active=true;v.id=id;v.note=note;v.tuning=std::clamp(tuning,-1200.,1200.);
             v.velocity=std::min(1.,velocity);v.patch=patch;
@@ -59,7 +59,7 @@ public:
         }
         return false;
     }
-    void off(int id) noexcept {for(auto& v:voices)if(v.active&&v.id==id)v.releasing=true;}
+    void off(int id) noexcept {for(auto& v:voices)if(v.active&&!v.releasing&&v.id==id)v.releasing=true;}
     Frame tick() noexcept {
         Frame f{};
         for(auto& v:voices)if(v.active){
