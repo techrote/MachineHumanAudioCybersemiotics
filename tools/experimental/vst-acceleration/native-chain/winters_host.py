@@ -19,9 +19,9 @@ SOURCE = "91dc53aca2076665693cbef9f0c61fd913b28745"
 DIGEST = "a694d73fa2080685984e43d3fcaa3245744d9ae7fd0e210b3bbef3f0abe1a97d"
 CID = "D1195E6E292C442CB550AE834977E4CD"
 NAME = "MHACThreeWinters"
-EXPECTED = ((0, .25, .25, .25, .5),
-            (0, .25, .875, .875, .875),
-            (0, .25, .875, .75, .5))
+EXPECTED = ((0, .25, .25, .25, .25, .5),
+            (0, .25, .25, .875, .875, .875),
+            (0, .25, .25, .25, .75, .5))
 TRANSIENT = (4,5,15,16)
 
 def extract(path, dest):
@@ -131,14 +131,15 @@ def perform(bundle,rate,block,lane,saved=None):
     render([],EXPECTED[lane][1])
     edit("timbre_hold",15,1.)
     edit("timbre_tick",16,0.)
+    render([],EXPECTED[lane][2])  # Capture old bank before simultaneous edits.
     edit("timbre_slot_2",12,.875)
     edit("timbre_slot_3",13,.5)
-    render([],EXPECTED[lane][2])
-    tick()
     render([],EXPECTED[lane][3])
+    tick()
+    render([],EXPECTED[lane][4])
     edit("timbre_hold",15,0.)
     edit("timbre_tick",16,0.)
-    render([],EXPECTED[lane][4])
+    render([],EXPECTED[lane][5])
     release=h.checked(p([(bytes((0x80,69,0)),0.)],duration=.2,sample_rate=rate,
                          num_channels=2,buffer_size=block,reset=False),rate//5)
     h.require(np.max(np.abs(release[:,-rate//10:]))<1e-6,"note release failed")
