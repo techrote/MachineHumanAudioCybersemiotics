@@ -11,9 +11,9 @@
       "ci": 45690234347,
       "disposition": "HOLD",
       "batch": "Frozen Observatory core, legacy and selective package qualified for owner inspection on hosted Linux including ordinary file navigation and DOM controls; overall lane HOLD (Windows, source placement, approval).",
-      "observedLaterHead": "9c69d4d11ecb5f84630d44b7a92800eb830de56a",
+      "observedLaterHead": "8f8ebb033f5ba76e9406f7227b982c7aeab28c1f",
       "observedLaterIntegrityCI": {
-        "run": 45778504358,
+        "run": 45787624063,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "e500334db2d6f03ff6e788084dc09e5e3cd2d85d",
+      "observedLaterHead": "2515199a231bf95a9d20b74129af44008fc8233e",
       "observedLaterIntegrityCI": {
-        "run": 45775218723,
+        "run": 45783127384,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "f4ecd30005c123d39452cac7937ca6266f791179",
+      "observedLaterHead": "3e234a74cc4e5fc00307a73a270cd731249ff254",
       "observedLaterIntegrityCI": {
-        "run": 45774194690,
+        "run": 45781496082,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "2bd38aef335bdcf7bdc7cd31a17e58929b695f10",
+      "observedLaterHead": "c8d9c3aca353c8a3fea2c697bdc8b9539fb0e4e1",
       "observedLaterIntegrityCI": {
-        "run": 45777776117,
+        "run": 45784834242,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "371222d0b3aa34551fc98f013db2f88685157971",
+      "observedLaterHead": "a35efda4478bc1efd3b1f3177916a941d0068482",
       "observedLaterIntegrityCI": {
-        "run": 45776431872,
+        "run": 45783435238,
         "conclusion": "success"
       }
     }
@@ -807,5 +807,23 @@
       "No Windows execution yet; no permanent source placement or owner authorization."
     ],
     "next": "Temporarily replace single bounded Linux workflow job with native Windows job; no added matrix or concurrent runner. Preserve all Linux evidence. Windows result pending. Later research deltas not promoted."
+  },
+  "packageWindowsCheckout": {
+    "id": "OBS-PACKAGE-013",
+    "attemptHead": "e991120ebc69ab3ea4b770a90f958b0c04fa5fc3",
+    "run": 45778989934,
+    "job": 139769540251,
+    "integrityRun": 45778989719,
+    "platform": "Windows-2025",
+    "python": "3.12.10",
+    "node": "22.23.5",
+    "unitTests": "11/11 PASS",
+    "nativePackage": "FAIL: Frozen source mismatch: core.js; use byte-preserving checkout",
+    "artifact": "skipped",
+    "browser": "skipped",
+    "localReproduction": "Git 2.47.3 on Linux, root attributes and 7 exact frozen source blobs, fresh checkout with core.autocrlf=true: 7/7 mismatched; with snapshot-local * -text: 7/7 exact. Native Node 22.16.0 rerun from repaired checkout reproduced all 18 exports byte-for-byte vs qualified Linux archive; 26/26 archive manifest hashes match.",
+    "fix": "affine-snapshot/.gitattributes only, * -text. Existing build hash gate intact; no frozen blob changes.",
+    "disposition": "HOLD",
+    "next": "Requalify the repaired exact head on existing single Windows job; recover package and real Chrome receipts. Permanent source placement and owner gate remain."
   }
 }
