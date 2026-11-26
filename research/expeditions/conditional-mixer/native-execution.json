@@ -1,0 +1,225 @@
+{
+  "rational_word_checks": 60,
+  "cycles": [
+    {
+      "alpha": "0",
+      "word": "ABC",
+      "reset": true,
+      "worst_row_tv": "0"
+    },
+    {
+      "alpha": "0",
+      "word": "ACB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "0",
+      "word": "BAC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "0",
+      "word": "BCA",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "0",
+      "word": "CAB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "0",
+      "word": "CBA",
+      "reset": true,
+      "worst_row_tv": "0"
+    },
+    {
+      "alpha": "3/5",
+      "word": "ABC",
+      "reset": false,
+      "worst_row_tv": "3/160"
+    },
+    {
+      "alpha": "3/5",
+      "word": "ACB",
+      "reset": false,
+      "worst_row_tv": "1/40"
+    },
+    {
+      "alpha": "3/5",
+      "word": "BAC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "3/5",
+      "word": "BCA",
+      "reset": false,
+      "worst_row_tv": "7/160"
+    },
+    {
+      "alpha": "3/5",
+      "word": "CAB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "3/5",
+      "word": "CBA",
+      "reset": false,
+      "worst_row_tv": "3/160"
+    },
+    {
+      "alpha": "-3/5",
+      "word": "ABC",
+      "reset": false,
+      "worst_row_tv": "3/160"
+    },
+    {
+      "alpha": "-3/5",
+      "word": "ACB",
+      "reset": false,
+      "worst_row_tv": "1/40"
+    },
+    {
+      "alpha": "-3/5",
+      "word": "BAC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-3/5",
+      "word": "BCA",
+      "reset": false,
+      "worst_row_tv": "7/160"
+    },
+    {
+      "alpha": "-3/5",
+      "word": "CAB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-3/5",
+      "word": "CBA",
+      "reset": false,
+      "worst_row_tv": "3/160"
+    },
+    {
+      "alpha": "1",
+      "word": "ABC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "1",
+      "word": "ACB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "1",
+      "word": "BAC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "1",
+      "word": "BCA",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "1",
+      "word": "CAB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "1",
+      "word": "CBA",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-1",
+      "word": "ABC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-1",
+      "word": "ACB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-1",
+      "word": "BAC",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-1",
+      "word": "BCA",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-1",
+      "word": "CAB",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    },
+    {
+      "alpha": "-1",
+      "word": "CBA",
+      "reset": false,
+      "worst_row_tv": "1/32"
+    }
+  ],
+  "hidden_mixture_exact": true,
+  "assertion_failures": 0,
+  "audio": [
+    {
+      "file": "retain-positive.wav",
+      "frames": 64,
+      "decoded_bits": 128,
+      "inventory": {
+        "(-1, -1)": 20,
+        "(-1, 1)": 12,
+        "(1, -1)": 12,
+        "(1, 1)": 20
+      },
+      "sha256": "a2493c2847702336d9bdb7e2ea6da0bf5e76a8ba1ce01593b65d5d7a85f8dbf1"
+    },
+    {
+      "file": "retain-negative.wav",
+      "frames": 64,
+      "decoded_bits": 128,
+      "inventory": {
+        "(-1, -1)": 15,
+        "(-1, 1)": 17,
+        "(1, -1)": 17,
+        "(1, 1)": 15
+      },
+      "sha256": "cb1792f4883fd96b1d9b4e708b3a2bc40c87047739a2fa8c8fb90568ec1d99c1"
+    },
+    {
+      "file": "hidden-mixture.wav",
+      "frames": 320,
+      "decoded_bits": 640,
+      "inventory": {
+        "(-1, -1)": 80,
+        "(-1, 1)": 80,
+        "(1, -1)": 80,
+        "(1, 1)": 80
+      },
+      "sha256": "098f521761698e4bbc68d5a055f9cfb0ede9363707c4e72f6508fda2c0f00965"
+    }
+  ]
+}

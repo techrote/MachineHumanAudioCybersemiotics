@@ -1,0 +1,195 @@
+{
+  "wordChecks": 3825,
+  "rowChecks": 61200,
+  "cycleChecks": 30,
+  "omissionChecks": 2294,
+  "mixtureChecks": 256,
+  "profiles": [
+    {
+      "alphaNumerator": 0,
+      "betaNumerator": 5,
+      "denominator": 5,
+      "cycles": [
+        {
+          "word": "ABC",
+          "reset": true,
+          "worstRowTV": "0/1"
+        },
+        {
+          "word": "ACB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BAC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BCA",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CAB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CBA",
+          "reset": true,
+          "worstRowTV": "0/1"
+        }
+      ]
+    },
+    {
+      "alphaNumerator": 3,
+      "betaNumerator": 4,
+      "denominator": 5,
+      "cycles": [
+        {
+          "word": "ABC",
+          "reset": false,
+          "worstRowTV": "3/160"
+        },
+        {
+          "word": "ACB",
+          "reset": false,
+          "worstRowTV": "1/40"
+        },
+        {
+          "word": "BAC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BCA",
+          "reset": false,
+          "worstRowTV": "7/160"
+        },
+        {
+          "word": "CAB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CBA",
+          "reset": false,
+          "worstRowTV": "3/160"
+        }
+      ]
+    },
+    {
+      "alphaNumerator": -3,
+      "betaNumerator": 4,
+      "denominator": 5,
+      "cycles": [
+        {
+          "word": "ABC",
+          "reset": false,
+          "worstRowTV": "3/160"
+        },
+        {
+          "word": "ACB",
+          "reset": false,
+          "worstRowTV": "1/40"
+        },
+        {
+          "word": "BAC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BCA",
+          "reset": false,
+          "worstRowTV": "7/160"
+        },
+        {
+          "word": "CAB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CBA",
+          "reset": false,
+          "worstRowTV": "3/160"
+        }
+      ]
+    },
+    {
+      "alphaNumerator": 5,
+      "betaNumerator": 0,
+      "denominator": 5,
+      "cycles": [
+        {
+          "word": "ABC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "ACB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BAC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BCA",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CAB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CBA",
+          "reset": false,
+          "worstRowTV": "1/32"
+        }
+      ]
+    },
+    {
+      "alphaNumerator": -5,
+      "betaNumerator": 0,
+      "denominator": 5,
+      "cycles": [
+        {
+          "word": "ABC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "ACB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BAC",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "BCA",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CAB",
+          "reset": false,
+          "worstRowTV": "1/32"
+        },
+        {
+          "word": "CBA",
+          "reset": false,
+          "worstRowTV": "1/32"
+        }
+      ]
+    }
+  ],
+  "assertionFailures": 0
+}
