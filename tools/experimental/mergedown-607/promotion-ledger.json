@@ -1,6 +1,6 @@
 {
   "schema": "mhac-promotion-ledger-v1",
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "base": "495a98ca12bae467a507031f04931aa4254b1866",
   "issue": 607,
   "records": [
@@ -11,9 +11,9 @@
       "ci": 45690234347,
       "disposition": "HOLD",
       "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified",
-      "observedLaterHead": "272a9922996a858acd5661a6263dd669e4990736",
+      "observedLaterHead": "ed648880b0588b2852a0b691a8f603a2a0a49a13",
       "observedLaterIntegrityCI": {
-        "run": 45716932453,
+        "run": 45731582810,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "7f06ab778df0c3d43f2bcad8bda5a7a70acb8d68",
+      "observedLaterHead": "0fe95f804a20a8f3a6e59a2f8089d8b83f438204",
       "observedLaterIntegrityCI": {
-        "run": 45720492205,
+        "run": 45727908686,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "a126f8ffd9a14899a6d15d332696820d54461b6a",
+      "observedLaterHead": "5d4406c5179880a48290700de3577edc2afa22c5",
       "observedLaterIntegrityCI": {
-        "run": 45720056135,
+        "run": 45726528338,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "43fe2097fd9bd35949682f42335da721d5e5f9d8",
+      "observedLaterHead": "a51d73f23306b6974542dce54840b8b52520b996",
       "observedLaterIntegrityCI": {
-        "run": 45723271350,
+        "run": 45730469796,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "38dd6d7323f65230d3711ab16573efd97819be88",
+      "observedLaterHead": "d3a2fa118db659c845fe0962201be47a08692a6d",
       "observedLaterIntegrityCI": {
-        "run": 45721761765,
+        "run": 45729764724,
         "conclusion": "success"
       }
     }
@@ -179,8 +179,8 @@
     "recommendation": "Close trace-repair qualification gap only. HOLD overall #608 for canonical location, full workbench and ordinary browser/Windows gates. Owner authorization required. Next qualify legacy/selective workbench; preserve v1 and v2 pins."
   },
   "previousConsolidationIntegrityCI": {
-    "head": "92fc56bb42aba1b4f51f1398a31bfd379b3f48c0",
-    "run": 45717436375,
+    "head": "c44fc99858bb022ae0d1457ea4cfa9d86d66c543",
+    "run": 45725013361,
     "conclusion": "success"
   },
   "selectiveTransferBatch": {
@@ -325,5 +325,130 @@
       "No source duplication committed, original artifacts retained upstream, no new rights asserted; generated outputs only in scratch package. No merge or scientific acceptance."
     ],
     "recommendation": "Keep full Observatory HOLD. Native dependency closure for matched-FP achieved; next native phase/selective and full legacy wrapper export. Owner gate stays closed."
+  },
+  "crossActBatch": {
+    "id": "OBS-CROSS-ACT-005",
+    "disposition": "HOLD",
+    "qualificationScope": "Native bounded numerical apparatus and independent direct enumeration PASS; owner-facing browser and integrated workbench still HOLD.",
+    "sourcePR": 443,
+    "sourceHead": "ed648880b0588b2852a0b691a8f603a2a0a49a13",
+    "sourceIntegrityCI": 45731582810,
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/cross-act-audit.py",
+    "sourceBlob": "6788b2a9d3df49eea24737062d414a19e95bb29b",
+    "grammar": {
+      "pr": 453,
+      "head": "0fe95f804a20a8f3a6e59a2f8089d8b83f438204",
+      "blob": "dae13404d68c00bbe537d128802a1848aac2d952",
+      "integrityCI": 45727908686
+    },
+    "harness": "check_cross_act.py",
+    "harnessBlob": "4ac93b9f971cd2397d6164f9133f31b3633501dd",
+    "runtime": "Linux Python 3.13.5, NumPy 2.3.5 for independent oracle only",
+    "native": "Exact upstream source transferred from connector and Git blob verified; two native CLI executions, 6/6 gallery outputs identical; original 3840 literal checks, 5/5 manifest hashes, 3/3 WAV header/peak/hash checks. Independent enumeration of all 17^4 polynomial coefficient vectors and all 70 four-survivor masks × 4 substituted positions × 16 wrong values × 48,000 words. 16/16 full confusion and 16/16 same-address matrix cells match original native receipt. Independent script repeated byte-identically.",
+    "upstreamReceiptSHA256": "5914839f5c15b24f699be97a177bcf6269b74743c7c82a96b2cfb72ab98ea118",
+    "upstreamManifestSHA256": "850e6ff8d395c7d35e653a8a876a97ad5f1bbe82ef502fc574e0c1c23c768420",
+    "oracleReceiptSHA256": "89d68f2786591c5eb3bd4e694549b1e6a09267b828cc5f2a35c57ee5a62bde7e",
+    "findings": {
+      "attempts": 215040000,
+      "wrong": 149148710,
+      "rejected": 65891290,
+      "crossKind": 35190280,
+      "wrongMatrix": [
+        [
+          5361100,
+          583915,
+          506745,
+          5024795
+        ],
+        [
+          583915,
+          5361100,
+          503530,
+          5020455
+        ],
+        [
+          506745,
+          503530,
+          3814360,
+          5955700
+        ],
+        [
+          5024795,
+          5020455,
+          5955700,
+          99421870
+        ]
+      ],
+      "sameAddressMatrix": [
+        [
+          254990,
+          82390,
+          2620,
+          26925
+        ],
+        [
+          82390,
+          254990,
+          6920,
+          27175
+        ],
+        [
+          2620,
+          6920,
+          250330,
+          26125
+        ],
+        [
+          26925,
+          27175,
+          26125,
+          9992230
+        ]
+      ],
+      "maskDenominator": 3072000,
+      "minWrong": {
+        "survivors": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "count": 1699610
+      },
+      "maxWrong": {
+        "survivors": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "count": 2627172
+      },
+      "minSameAddress": {
+        "survivors": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "count": 906
+      },
+      "maxSameAddress": {
+        "survivors": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "count": 968708
+      }
+    },
+    "transfer": "git ls-remote exit 128 Could not resolve host github.com. Exact connector text transfer of standalone upstream Python script verified by git hash-object. Original pinned grammar encoding/decoding excerpt executed in V8, not native Node. Both full catalogue rolling fingerprints and published witness matched.",
+    "limitations": [
+      "Uniform finite symbol-fault counts only, not channel error rates. Mask analysis exposes sensitivity to which positions survive; side information is not free.",
+      "Three original aligned FSK specimens, peak 2048/32768, no autoplay; not matched RMS or SPL. Chromium --headless --dump-dom file:// timed out exit 124 after 15s, no DOM output, missing D-Bus sockets. Physical audition and Windows not tested.",
+      "No full native upstream grammar DSP, no legacy/selective full package yet. Frozen older source pins unchanged; newer Measurement delta contains five additive files. No new license or merge."
+    ],
+    "recommendation": "Retain as independently reproduced regression evidence and bounded native apparatus for owner inspection. HOLD full promotion; do not treat corruption counts as human/channel evidence. Next close original legacy/selective dependency transfer and ordinary browser gate."
   }
 }
