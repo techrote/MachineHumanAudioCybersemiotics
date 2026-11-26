@@ -48,7 +48,7 @@ jobs:
         run: |
           cmake -S tools/experimental/signal-foundry/erasure-loom-598/vst3 -B build-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VALIDATE_POST_BUILD=OFF "-DMHAC_VST3_SDK=$env:SDK380"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build build-vst --config Release --target MHACErasureLoom validator
+          cmake --build build-vst --config Release --target MHACErasureLoom MHACErasureLoomXL validator
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Official validator (mandatory)
         run: |
@@ -91,5 +91,48 @@ jobs:
         with:
           name: MHACErasureLoom-Windows-x64
           path: MHACErasureLoom-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+      - name: Official XL validator (mandatory)
+        run: |
+          $bundles = @(Get-ChildItem build-vst -Recurse -Directory -Filter 'MHACErasureLoomXL.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACErasureLoomXL.vst3') })
+          if ($bundles.Count -ne 1) { throw "Expected one x64 plugin bundle; found $($bundles.Count)" }
+          $validator = Get-ChildItem build-vst -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Official Release validator not found' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object -FilePath validator-xl.txt
+          $code = $LASTEXITCODE
+          if ($code -ne 0) { exit $code }
+          if (-not (Select-String -Path validator-xl.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing successful validator summary' }
+          if (Select-String -Path validator-xl.txt -Pattern '^\s*ERROR:') { throw 'Validator transcript contains explicit errors despite aggregate result' }
+          "BUNDLE_XL=$($bundles[0].FullName)" >> $env:GITHUB_ENV
+      - name: Package portable XL bundle and evidence
+        run: |
+          New-Item -ItemType Directory -Path delivery-xl | Out-Null
+          Copy-Item -Recurse $env:BUNDLE_XL delivery-xl/
+          Copy-Item "$env:SDK380/LICENSE.txt" delivery-xl/Steinberg-SDK-LICENSE.txt
+          git -C $env:SDK380 submodule status --recursive | Out-File delivery-xl/SDK-GITLINKS.txt -Encoding utf8
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          "sdk=$(git -C $env:SDK380 rev-parse HEAD)" | Out-File delivery-xl/BUILD-SOURCE.txt -Encoding utf8
+          "source=$(git rev-parse HEAD)" | Out-File delivery-xl/BUILD-SOURCE.txt -Append -Encoding utf8
+          Copy-Item validator-xl.txt delivery-xl/
+          Copy-Item tools/experimental/signal-foundry/erasure-loom-598/multiscale/XL.md delivery-xl/
+          foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
+            $root = Join-Path $env:SDK380 $part
+            Get-ChildItem $root -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("delivery-xl/SDK-" + $part + "-" + $_.Name) }
+          }
+          python -c "from pathlib import Path; import zipfile; r=Path('delivery-xl'); z=zipfile.ZipFile('MHACErasureLoomXL-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACErasureLoomXL-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACErasureLoomXL-validator-log
+          path: validator-xl.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MHACErasureLoomXL-Windows-x64
+          path: MHACErasureLoomXL-Windows-x64.zip
           if-no-files-found: error
           retention-days: 7
