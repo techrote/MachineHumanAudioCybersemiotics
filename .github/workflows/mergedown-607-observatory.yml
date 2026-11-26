@@ -1,0 +1,36 @@
+# Temporary issue #607 qualification; not a general research workflow.
+name: Observatory 607 native package
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/**'
+      - '.github/workflows/mergedown-607-observatory.yml'
+permissions:
+  contents: read
+concurrency:
+  group: observatory-607-native
+  cancel-in-progress: false
+jobs:
+  native-package:
+    if: github.event.pull_request.number == 608 && github.event.pull_request.head.ref == 'mhac-607/mergedown-observatory' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Native package and independent verification
+        working-directory: tools/experimental/mergedown-607
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD
+          python3 --version
+          node --version
+          python3 -m unittest -v test_build_observatory verify_native_package
+          python3 build_observatory.py "$RUNNER_TEMP/observatory-one"
+          python3 build_observatory.py "$RUNNER_TEMP/observatory-two"
+          python3 verify_native_package.py "$RUNNER_TEMP/observatory-one" "$RUNNER_TEMP/observatory-two" | tee "$RUNNER_TEMP/observatory-qualification.json"

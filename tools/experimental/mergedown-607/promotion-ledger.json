@@ -568,5 +568,24 @@
       "python build_observatory.py NEW_OUTPUT_DIRECTORY"
     ],
     "recommendation": "HOLD. Run actual frozen upstream package in native checkout and compare prior independent oracle before owner review."
+  },
+  "packageNativeBridge": {
+    "id": "OBS-PACKAGE-008",
+    "disposition": "HOLD",
+    "parent": "658d6c0ea02c9f4996f0446878121fe12a99794f",
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "verifier": "verify_native_package.py",
+    "verifierBlob": "dab65214ccd19088d98de59e8f09109cee78d7ea",
+    "localTests": "5/5 synthetic fixture tests native Python 3.13.5",
+    "localBlocker": "git ls-remote exit 128 Could not resolve host github.com",
+    "workflow": ".github/workflows/mergedown-607-observatory.yml",
+    "qualification": "Exact-head hosted original execution pending; no native original package PASS claimed. Temporary single Ubuntu job; exclude from general promotion unless owner explicitly authorizes.",
+    "remaining": [
+      "Actual hosted receipt and exact-head integrity checks",
+      "Ordinary browser",
+      "Windows",
+      "Physical audition",
+      "Owner authorization"
+    ]
   }
 }
