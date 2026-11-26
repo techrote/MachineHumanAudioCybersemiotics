@@ -4,6 +4,7 @@ on:
     paths:
       - 'tools/experimental/vst-acceleration/native-chain/host_audition.py'
       - 'tools/experimental/vst-acceleration/native-chain/loom_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/winters_host.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -54,6 +55,18 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/loom_host.py --standard loom.zip --xl loomxl.zip --out loom-audition
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact Three Winters package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o winters.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15068070040/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Three Winters continuous MIDI and independent timbre witness
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/winters_host.py --archive winters.zip --out winters-audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -64,5 +77,8 @@ jobs:
             audition/wet.wav
             loom-audition/loom-receipt.json
             loom-audition/*.wav
+            winters-audition/winters-receipt.json
+            winters-audition/*.wav
+            winters-audition/*.vstpreset
           if-no-files-found: ignore
           retention-days: 7
