@@ -1,0 +1,71 @@
+{
+  "complete_literal_correlation_entries": 1675862,
+  "decoded_frames": 79600,
+  "larger_sampled_fifth_entries": 256,
+  "numpy": "2.3.5",
+  "records": [
+    {
+      "file": "six-30-plus.wav",
+      "frames": 9000,
+      "normalized_sixth_sum": 97260,
+      "peak": 10800,
+      "rate": 9000,
+      "scale": 1800,
+      "sha256": "7b7ebf56a970899edf308b88fe4e6e5d1cfd6dc1b5c912bffd4fee208dcd3069"
+    },
+    {
+      "file": "six-30-minus.wav",
+      "frames": 9000,
+      "normalized_sixth_sum": 68460,
+      "peak": 9000,
+      "rate": 9000,
+      "scale": 1800,
+      "sha256": "bb7a4cbf0be67b18311f6fa3c540a8c986e9a203109832b81964d993a77a9d09"
+    },
+    {
+      "file": "six-770-pp.wav",
+      "frames": 15400,
+      "normalized_sixth_sum": 300943720,
+      "peak": 12000,
+      "rate": 15400,
+      "scale": 600,
+      "sha256": "7e514968b7cf15a7feec4e4f548bf10fcc4648237ccd5b770172e1fa041c7525"
+    },
+    {
+      "file": "six-770-pm.wav",
+      "frames": 15400,
+      "normalized_sixth_sum": 184519720,
+      "peak": 7200,
+      "rate": 15400,
+      "scale": 600,
+      "sha256": "b4d5ca6aaf0f9d53fdc7aeb32e7e39ea3187d360f9662b5030111ea74ce3945f"
+    },
+    {
+      "file": "six-770-mp.wav",
+      "frames": 15400,
+      "normalized_sixth_sum": 206695720,
+      "peak": 9000,
+      "rate": 15400,
+      "scale": 600,
+      "sha256": "15c79dc1a0c1ad468b4dd8deb822b7343c10b79be2ee03cd56c069be1768a9b9"
+    },
+    {
+      "file": "six-770-mm.wav",
+      "frames": 15400,
+      "normalized_sixth_sum": 256591720,
+      "peak": 10200,
+      "rate": 15400,
+      "scale": 600,
+      "sha256": "021d352e1b5547bfbd903ea39ca3e846ebe7527a5a9982c815ecad83d164da99"
+    }
+  ],
+  "scalar_collision_period": 170170,
+  "scalar_collision_sixth_sum": 869892703680,
+  "sixth_sums_770": [
+    300943720,
+    184519720,
+    206695720,
+    256591720
+  ],
+  "weighted_scalar_codes": 16
+}
