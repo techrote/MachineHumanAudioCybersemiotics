@@ -1,0 +1,51 @@
+name: MHAC acceleration Windows host audition
+on:
+  pull_request:
+    paths:
+      - 'tools/experimental/vst-acceleration/native-chain/host_audition.py'
+      - '.github/workflows/mhac-accel-host-audition.yml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: mhac-accel-host-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  audition:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'mhac-vst-632/native-chain'
+    runs-on: windows-2022
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Install bounded host dependencies
+        shell: pwsh
+        run: |
+          py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact original Windows artifacts
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o golden.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/14987637390/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o freeze.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/14986731404/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Real host load, render and fresh instance restore
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/host_audition.py --gold golden.zip --freeze freeze.zip --out audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-host-audition-evidence
+          path: |
+            audition/host-receipt.json
+            audition/dry.wav
+            audition/wet.wav
+          if-no-files-found: ignore
+          retention-days: 7
