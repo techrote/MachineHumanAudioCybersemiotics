@@ -57,7 +57,7 @@ public:
     tresult PLUGIN_API initialize(FUnknown* ctx) override {const auto r=AudioEffect::initialize(ctx);if(r!=kResultOk)return r;addAudioOutput(STR16("Output"),SpeakerArr::kStereo);addEventInput(STR16("Notes"),16);return kResultOk;}
     tresult PLUGIN_API setBusArrangements(SpeakerArrangement* in,int32 ni,SpeakerArrangement* out,int32 no) override {if(ni!=0||no!=1||!out||(out[0]!=SpeakerArr::kMono&&out[0]!=SpeakerArr::kStereo))return kResultFalse;return AudioEffect::setBusArrangements(in,ni,out,no);}
     tresult PLUGIN_API canProcessSampleSize(int32 n) override{return n==kSample32||n==kSample64?kResultTrue:kResultFalse;}
-    tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {if(!std::isfinite(setup.sampleRate)||setup.sampleRate<8000||setup.sampleRate>192000)return kResultFalse;const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;engine.prepare(sr);}return r;}
+    tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {if(!mhac::afterimage::supportsRate(setup.sampleRate))return kResultFalse;const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;engine.prepare(sr);}return r;}
     tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk)engine.reset();return r;}
     tresult PLUGIN_API setProcessing(TBool active) override {if(!active)engine.reset();return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override{return 0;}

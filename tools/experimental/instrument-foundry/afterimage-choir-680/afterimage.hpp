@@ -4,6 +4,10 @@
 #include <cmath>
 #include <cstdint>
 namespace mhac::afterimage {
+// Shared native/host rate contract. No rate-sized buffers are allocated.
+inline bool supportsRate(double sr) noexcept {
+    return std::isfinite(sr)&&sr>=1000.0&&sr<=2000000.0;
+}
 enum class Mode { absent, fixed, preview, full };
 struct Pair { unsigned low=2, high=6; bool valid() const { return low<high && high<8; } };
 inline unsigned mask(Mode m, Pair p) {
@@ -30,7 +34,7 @@ class Engine {
     unsigned history=0; bool ambiguous=false;
 public:
     bool prepare(double sr) {
-        if(!std::isfinite(sr)||sr<8000||sr>192000) return false;
+        if(!supportsRate(sr)) return false;
         rate=sr; attack=1/(.005*sr); release=1/(.030*sr); reset(); return true;
     }
     void reset() { voices={}; history=0; ambiguous=false; }
