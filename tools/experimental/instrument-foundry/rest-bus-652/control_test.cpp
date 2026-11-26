@@ -30,7 +30,7 @@ int main(){
         ck(!decode(s.data(),s.size()-1,p)&&!decode(nullptr,s.size(),p));
         bad=encode({0.,std::numeric_limits<double>::quiet_NaN()});ck(!decode(bad.data(),bad.size(),p)&&p==saved);
         ck(!a.restore({1.,2.})&&a.parameters()==saved);
-        ck(!a.parameter(3,0)&&!a.parameter(0,-1)&&!a.parameter(1,std::numeric_limits<double>::infinity()));
+        ck(!a.parameter(4,0)&&!a.parameter(0,-1)&&!a.parameter(1,std::numeric_limits<double>::infinity()));
     }
     // Offset ordering: controls, then notes, then sample. Partitioning is irrelevant.
     Live a,b;ck(a.prepare(1000)&&b.prepare(1000));

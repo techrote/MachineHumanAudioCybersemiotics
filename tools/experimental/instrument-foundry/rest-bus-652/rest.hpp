@@ -3,8 +3,10 @@
 #include <array>
 #include <cmath>
 #include <cstdint>
+#include "resonance/modal.hpp"
 namespace restbus {
 enum class Domain { idle, held, rendered, manual };
+enum class Destination { pitch, resonance, both };
 class Clock {
     unsigned period_=1, partial_=0, index_=0;
     Domain domain_=Domain::idle;
@@ -22,9 +24,10 @@ public:
     }
 };
 class Engine {
-    struct Voice {bool active=false,held=false;int id=0;double phase=0,inc=0,env=0,velocity=0;};
+    struct Voice {bool active=false,held=false;int id=0;double phase=0,inc=0,env=0,velocity=0;bool modal=false;resonance::Bank bank{};};
     std::array<Voice,8> voices_{};
     Clock clock_;
+    Destination destination_=Destination::pitch;
     double sr_=48000, attack_=1./240, release_=1./1440;
     static constexpr double tau=6.28318530717958647692;
 public:
@@ -41,24 +44,29 @@ public:
     void reset() noexcept {voices_={};clock_.reset();}
     void domain(Domain d) noexcept {clock_.domain(d);}
     void step() noexcept {clock_.step();}
+    void destination(Destination d) noexcept {destination_=d;}
     unsigned index() const noexcept {return clock_.index();}
     unsigned partial() const noexcept {return clock_.partial();}
     bool on(int id,int note,double tuning,double velocity) noexcept {
         if(note<0||note>127||!std::isfinite(tuning)||!std::isfinite(velocity)||velocity<=0)return false;
         for(const auto& v:voices_)if(v.held&&v.id==id)return false;
         for(auto& v:voices_)if(!v.active){
-            double hz=440*std::exp2((note+offsets[index()]-69+std::clamp(tuning,-1200.,1200.)/100)/12);
-            v={true,true,id,0,std::min(.45,hz/sr_),0,std::min(1.,velocity)};return true;
+            double hz=440*std::exp2((note+(destination_==Destination::resonance?0:offsets[index()])-69+std::clamp(tuning,-1200.,1200.)/100)/12);
+            v={true,true,id,0,std::min(.45,hz/sr_),0,std::min(1.,velocity)};
+            v.modal=destination_!=Destination::pitch;
+            if(v.modal&&!v.bank.strike(sr_,hz,velocity,index())){v={};return false;}
+            return true;
         }
         return false;
     }
-    void off(int id) noexcept {for(auto& v:voices_)if(v.held&&v.id==id)v.held=false;}
+    void off(int id) noexcept {for(auto& v:voices_)if(v.held&&v.id==id){v.held=false;if(v.modal)v.bank.release();}}
     double tick() noexcept {
         bool held=false;double y=0;
         for(auto& v:voices_)if(v.active){
             held|=v.held;
             v.env=v.held?std::min(1.,v.env+attack_):std::max(0.,v.env-release_);
             if(!v.held&&v.env<=0){v={};continue;}
+            if(v.modal){y+=v.bank.tick();continue;}
             v.phase+=v.inc;if(v.phase>=1)v.phase-=1;
             y+=.06*v.velocity*v.env*std::sin(tau*v.phase);
         }

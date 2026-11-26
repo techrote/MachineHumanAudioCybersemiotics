@@ -17,7 +17,9 @@ constexpr auto firstID=restbus::control::FirstID;
 constexpr auto count=restbus::control::Count;
 bool readParams(IBStream* s,restbus::control::Params& p){
     restbus::control::State bytes{};int32 n=0;
-    return s&&s->read(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())&&restbus::control::decode(bytes.data(),bytes.size(),p);
+    if(!s||s->read(bytes.data(),4,&n)!=kResultOk||n!=4)return false;
+    const int32 length=std::memcmp(bytes.data(),"RB01",4)==0?20:std::memcmp(bytes.data(),"RB02",4)==0?28:0;
+    return length&&s->read(bytes.data()+4,length-4,&n)==kResultOk&&n==length-4&&restbus::control::decode(bytes.data(),length,p);
 }
 struct Cursor {
     IParamValueQueue* q=nullptr;int32 index=0,size=0,offset=0;ParamValue value=0;bool pending=false;
@@ -80,12 +82,13 @@ public:
     tresult PLUGIN_API initialize(FUnknown* ctx) override {const auto r=EditController::initialize(ctx);if(r!=kResultOk)return r;
         parameters.addParameter(STR16("Clock domain (idle/held/rendered/manual)"),nullptr,3,0,ParameterInfo::kCanAutomate,firstID);
         parameters.addParameter(STR16("Tick period (0.01..10 s)"),nullptr,0,restbus::control::defaults[1],ParameterInfo::kCanAutomate,firstID+1);
-        parameters.addParameter(STR16("Manual step (rising edge)"),nullptr,1,0,ParameterInfo::kCanAutomate,firstID+2);return kResultOk;
+        parameters.addParameter(STR16("Manual step (rising edge)"),nullptr,1,0,ParameterInfo::kCanAutomate,firstID+2);
+        parameters.addParameter(STR16("Destination (pitch/resonance/both)"),nullptr,2,0,ParameterInfo::kCanAutomate,firstID+3);return kResultOk;
     }
-    tresult PLUGIN_API setComponentState(IBStream* s) override {restbus::control::Params p{};if(!readParams(s,p))return kResultFalse;for(unsigned i=0;i<p.size();++i)setParamNormalized(firstID+i,p[i]);setParamNormalized(firstID+2,0);return kResultOk;}
+    tresult PLUGIN_API setComponentState(IBStream* s) override {restbus::control::Params p{};if(!readParams(s,p))return kResultFalse;setParamNormalized(firstID,p[0]);setParamNormalized(firstID+1,p[1]);setParamNormalized(firstID+2,0);setParamNormalized(firstID+3,p[2]);return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Rest Bus",Vst::kDistributable,"Instrument|Synth","0.1.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Rest Bus Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Rest Bus",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Rest Bus Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY
