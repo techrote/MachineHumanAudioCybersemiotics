@@ -10,10 +10,10 @@
       "head": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
       "ci": 45690234347,
       "disposition": "HOLD",
-      "batch": "affine snapshot separately qualified for owner review; full workbench not yet qualified",
-      "observedLaterHead": "0a298d30d8e5b9b7bf16b3b074fd120fc9048d7d",
+      "batch": "affine and bounded frozen legacy/selective package independently qualified for owner inspection; overall lane HOLD (browser, Windows, scope and approval)",
+      "observedLaterHead": "dfa83c9af0e4fc30703ee3e8523f51a97d2e3105",
       "observedLaterIntegrityCI": {
-        "run": 45738570192,
+        "run": 45764849368,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "7773a123a29881a22d7c1893df1dd609c4ef25d1",
+      "observedLaterHead": "b248075765aa1f47e2aaf7af86349a11b989c0f1",
       "observedLaterIntegrityCI": {
-        "run": 45735443588,
+        "run": 45761092255,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "92325206f21934a1a517d8876ba26e6ccaafccf8",
+      "observedLaterHead": "8f75cb3484fedab4017de56a3a7485a718507690",
       "observedLaterIntegrityCI": {
-        "run": 45734707861,
+        "run": 45759607966,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "b42943bae17b2d5478e747d1a146ce5169f2ae7a",
+      "observedLaterHead": "3c991baa6ebece18aeb48f751ef42ff2d0533f5b",
       "observedLaterIntegrityCI": {
-        "run": 45737718148,
+        "run": 45763278919,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "3216676812a42edb9bf45cd1e1214af00345e8f7",
+      "observedLaterHead": "0a90d3d399bacd9880033e620f7ccf3832130b7c",
       "observedLaterIntegrityCI": {
-        "run": 45736618339,
+        "run": 45763231217,
         "conclusion": "success"
       }
     }
@@ -615,5 +615,50 @@
       "Outer-format migration remains HOLD: later #607 handoff 7183015554 reports cross-format collisions; do not treat new cubic code as migration-safe."
     ],
     "next": "Verify new exact-head artifact upload and downloadable archive; qualify ordinary browser and platform behavior before owner promotion. No merge."
+  },
+  "packageDelivery": {
+    "id": "OBS-PACKAGE-010",
+    "date": "2026-11-26",
+    "disposition": "QUALIFIED FOR OWNER REVIEW",
+    "qualificationScope": "Downloaded frozen bounded Linux laboratory and native byte-for-byte export reproduction only; overall #608 remains HOLD, not merge-ready.",
+    "qualifiedHead": "81b280dee75fadf7ce099005c7cdabef6164432d",
+    "acceptedBase": "495a98ca12bae467a507031f04931aa4254b1866",
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "integrityRun": 45758413460,
+    "nativeRun": 45758413511,
+    "artifact": {
+      "id": 15088338814,
+      "bytes": 697174,
+      "sha256": "57d8ba095bc56aef01e0c67a49b7a3b04510ef79aa8e27aa2fd84a05dbdc734c",
+      "expires": "2026-12-10T04:57:36Z",
+      "url": "https://github.com/techrote/MachineHumanAudioCybersemiotics/actions/runs/45758413511/artifacts/15088338814"
+    },
+    "localRuntime": "Linux Node v22.16.0, Python 3.13.5; artifact materialized through connector",
+    "verification": {
+      "archiveCRC": "PASS",
+      "archiveSHA256": "exact match to GitHub digest",
+      "packageFiles": 27,
+      "manifestEntriesVerified": 26,
+      "sourceGitBlobsVerified": 7,
+      "manifestSHA256": "ffcd6fea32658a5f0a5e7c26007bb367b376637441cc47afdc4cb999a02f09c7",
+      "qualificationJSONSHA256": "7f0c8f0e8649b510057f89b6ac28711d6e8cf86e17c5422ac80576a207263d51",
+      "nativeCLI": "Both original scripts executed from extracted source directory; local legacy 10/10 and selective 8/8 generated files including their manifests byte-identical to hosted exports. No reconstruction shims.",
+      "audio": "All nine WAV rate, frames, mono PCM16 and peak matched package metadata; max peak 2993/32768."
+    },
+    "reproduction": [
+      "Extract hosted ZIP into a fresh directory; open observatory-one/index.html for owner inspection.",
+      "cd observatory-one/source",
+      "node legacy-workbench.cjs ../../local-legacy",
+      "node selective-transfer.cjs ../../local-selective",
+      "Compare recursive relative-path SHA256 inventories of local-legacy against observatory-one/legacy and local-selective against observatory-one/selective. All 18 files matched in the local run."
+    ],
+    "limitations": [
+      "Ordinary Chromium 144.0.7559.96 file:///tmp/mhac607/observatory-one/index.html navigation and ordinary loopback HTTP both failed net::ERR_BLOCKED_BY_ADMINISTRATOR; no policy override, no browser PASS.",
+      "Git ls-remote exit 128 Could not resolve host github.com; recovered exact source via authenticated artifact, not a full local checkout.",
+      "Windows native execution, actual audition, matched loudness/SPL, external review and owner authorization remain unverified.",
+      "No joined reconstruction or later Measurement deltas; no license change. Preserve pinned copies as evidence, coordinate canonical placement before merge. Temporary workflow excluded from general promotion absent authorization."
+    ],
+    "laterDeltaTriage": "Measurement #443 dfa83c9a reports one strict d2 profile-only conflict in tag/relocated and tag/selective, 5652 wrong-meaning exact reserved/relocated pairs; Grammar #453 b2480757 reports semantic-distance improvements conditional on supporting tag plus one replacement. Adversarial #449 8f75cb34 and Interaction #457 3c991baa provide further scoped witnesses. These are reported upstream findings, not independently reproduced in this run; no promotion. Integration and Foundry separate.",
+    "recommendation": "Owner may inspect exact downloadable frozen package now; HOLD merge. Use ordinary hosted browser qualification with exact pinned package and then bounded Windows run if authorized/available, not broader research fan-out. Preserve negative evidence and source pins."
   }
 }
