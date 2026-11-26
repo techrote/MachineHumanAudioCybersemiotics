@@ -30,7 +30,14 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           persist-credentials: false
+      # The frozen overlap receipt includes sys.version.split()[0].
+      - name: Select exact reference Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+          architecture: x64
       - name: Native reconstruction and independent audit
+        id: rebuild
         working-directory: tools/experimental/mergedown-607/adversarial-001
         shell: pwsh
         run: |
@@ -38,9 +45,31 @@ jobs:
           $PSNativeCommandUseErrorActionPreference = $true
           git rev-parse HEAD
           python --version
+          python -c "import sys; assert sys.version_info[:3] == (3, 13, 5), sys.version"
           node --version
           python -m pip install --disable-pip-version-check numpy==2.3.5
           python -B build_adversarial.py (Join-Path $env:RUNNER_TEMP 'adversarial 607') --source-root source-inputs
+      # Failure evidence is diagnostic only; this never converts a failed strict build into a pass.
+      - name: Capture failed reconstruction evidence
+        if: failure() && steps.rebuild.outcome == 'failure'
+        working-directory: tools/experimental/mergedown-607/adversarial-001
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $diag = Join-Path $env:RUNNER_TEMP 'adversarial-diagnostic'
+          New-Item -ItemType Directory -Path $diag | Out-Null
+          python -c "import sys,numpy; print(sys.version); print(numpy.__version__)" | Set-Content -Encoding utf8 (Join-Path $diag 'runtime.txt')
+          python -B source-inputs/binding/source-binding-boundary.py source-inputs/binding (Join-Path $diag 'binding')
+          python -B source-inputs/overlap/overlap-admission-audit.py source-inputs/overlap (Join-Path $diag 'overlap')
+      - name: Retain failure diagnostics (not an owner package)
+        if: failure() && steps.rebuild.outcome == 'failure'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Adversarial-607-DIAGNOSTIC-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/adversarial-diagnostic/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Native filesystem and ordinary browser checks
         working-directory: tools/experimental/mergedown-607/adversarial-001
         shell: pwsh
