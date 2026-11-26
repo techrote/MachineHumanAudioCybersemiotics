@@ -1,0 +1,86 @@
+{
+  "scope": "synthetic finite-field and numerical cross-check; not human validation",
+  "numpy": "2.3.5",
+  "finite_field": [
+    {
+      "N": 24,
+      "prime": 97,
+      "classes": 2,
+      "time_domain_triple_entries_checked": 1152,
+      "quartic_witnesses_checked": 2
+    },
+    {
+      "N": 96,
+      "prime": 193,
+      "classes": 4,
+      "time_domain_triple_entries_checked": 36864,
+      "quartic_witnesses_checked": 8
+    },
+    {
+      "N": 384,
+      "prime": 769,
+      "classes": 8,
+      "time_domain_triple_entries_checked": 1179648,
+      "quartic_witnesses_checked": 24
+    }
+  ],
+  "audio": [
+    {
+      "file": "parliament-00.wav",
+      "bits": 0,
+      "sha256": "2105460c5edf8fa901ad4fffb753e41a84f8c0e502b3c17ca97c67b81d6a9e9f",
+      "sample_rate": 9600,
+      "samples": 11520,
+      "peak_pcm": 26214,
+      "ideal_bispectrum_max_delta": 0,
+      "pcm_bispectrum_max_delta": 0,
+      "quartic_real": [
+        0.0000062501720337940565,
+        0.0000062501671207936
+      ]
+    },
+    {
+      "file": "parliament-01.wav",
+      "bits": 1,
+      "sha256": "82886a41626fa43705247f2a6a54112f966a609c209045964bbfdeed8dfa2307",
+      "sample_rate": 9600,
+      "samples": 11520,
+      "peak_pcm": 19660,
+      "ideal_bispectrum_max_delta": 1.6596791585795268e-18,
+      "pcm_bispectrum_max_delta": 1.4837244746165141e-8,
+      "quartic_real": [
+        -0.0000062506322295929805,
+        0.000006250225300081881
+      ]
+    },
+    {
+      "file": "parliament-10.wav",
+      "bits": 2,
+      "sha256": "bf978965f76d2fc2390c865ab67d93b3826311b1d336d2fe40f1dfa00364d65f",
+      "sample_rate": 9600,
+      "samples": 11520,
+      "peak_pcm": 19660,
+      "ideal_bispectrum_max_delta": 1.784733499431183e-18,
+      "pcm_bispectrum_max_delta": 1.351092277223102e-8,
+      "quartic_real": [
+        0.0000062498735205831345,
+        -0.000006249828471589927
+      ]
+    },
+    {
+      "file": "parliament-11.wav",
+      "bits": 3,
+      "sha256": "129726b0a2a117c1c2ae6fa8ac5a78bc4ec333e63eb81970f2c7f5935c944430",
+      "sample_rate": 9600,
+      "samples": 11520,
+      "peak_pcm": 18956,
+      "ideal_bispectrum_max_delta": 1.2817549506036063e-18,
+      "pcm_bispectrum_max_delta": 2.021913311680678e-8,
+      "quartic_real": [
+        -0.000006250033407821991,
+        -0.000006250094400194898
+      ]
+    }
+  ],
+  "assertion_failures": 0
+}
