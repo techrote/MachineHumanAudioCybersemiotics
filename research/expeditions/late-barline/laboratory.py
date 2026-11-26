@@ -78,7 +78,7 @@ def main():
     assert len({v[:PREFIX*PULSE*4] for v in payloads.values()}) == 1
     assert len({b''.join(v[i:i+2] for i in range(0,len(v),4)) for v in payloads.values()}) == 1
     assert len(set(payloads.values())) == 4
-    assert not any(payloads['unresolved'][i] for i in range(2,len(payloads['unresolved']),4))
+    assert all(payloads['unresolved'][i:i+2] == b'\x00\x00' for i in range(2,len(payloads['unresolved']),4))
     try:
         render('invalid')
     except ValueError:
