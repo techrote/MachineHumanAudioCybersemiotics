@@ -1,0 +1,49 @@
+{
+  "assertions": "PASS",
+  "audio": {
+    "crossing": {
+      "decoded_frames": 180,
+      "episodes": 90,
+      "sha256": "084a3881cf9a6ca329c8476fa5f4bb91ff99b84400f755b53006f7e0c7f3191b"
+    },
+    "stable": {
+      "decoded_frames": 180,
+      "episodes": 90,
+      "sha256": "64cf552ecca29b4d1d31ca3920cfe7f384cc90a5430564ccbbebafd89d64fe9f"
+    }
+  },
+  "cohort_profiles": 198,
+  "exact_prefix_checks": 76686,
+  "examples": [
+    {
+      "gap": 0.4998500199980002,
+      "rotating": 0.9999000099990001,
+      "stable": 0.5000499900009999,
+      "supremum": 0.5,
+      "ticks": 2
+    },
+    {
+      "gap": 0.7497000522167782,
+      "rotating": 0.9998500222200002,
+      "stable": 0.250149970003222,
+      "supremum": 0.75,
+      "ticks": 4
+    },
+    {
+      "gap": 0.8744001985305567,
+      "rotating": 0.9997500685586955,
+      "stable": 0.12534987002813883,
+      "supremum": 0.875,
+      "ticks": 8
+    },
+    {
+      "gap": 0.9157671183384605,
+      "rotating": 0.9996501417782232,
+      "stable": 0.08388302343976277,
+      "supremum": 0.9166666666666666,
+      "ticks": 12
+    }
+  ],
+  "two_tick_profiles": 99,
+  "vertex_instances": 891
+}
