@@ -7,9 +7,12 @@ namespace mhac::afterimage {
 // Fixed cost: 13 oscillators, coefficient work only at note onset.
 class PhaseMemory {
     static constexpr double tau=6.2831853071795864769;
-    struct Side { double phase=0, step=0, gain=0; };
+    // Gain-weighted complex rotation; the wrapped reference phase anchors
+    // both coordinates every 256 ticks, bounding accumulated rotation error.
+    struct Side { double phase=0, step=0, gain=0, x=0, y=0, c=1, s=0; };
     std::array<Side,13> sides{};
     double scale=1;
+    unsigned ticks=0;
     static double bessel(unsigned k,double beta) noexcept {
         double t=1;
         for(unsigned i=1;i<=k;++i)t*=beta/(2*i);
@@ -32,17 +35,31 @@ public:
             side={0,step,sign*bessel(order,beta)*taper};sum+=std::abs(side.gain);
         }
         scale=1/std::max(1.,sum);
-        for(auto& side:sides)side.gain*=scale;
+        for(auto& side:sides){
+            side.gain*=scale;
+            side.x=side.gain;
+            if(side.gain!=0){side.c=std::cos(tau*side.step);side.s=std::sin(tau*side.step);}
+        }
+        ticks=0;
         return true;
     }
     double normalization()const noexcept{return scale;}
     double tick() noexcept {
         double y=0;
         for(auto& side:sides)if(side.gain!=0){
-            y+=side.gain*std::sin(tau*side.phase);side.phase+=side.step;
+            if(ticks==0){
+                side.x=side.gain*std::cos(tau*side.phase);
+                side.y=side.gain*std::sin(tau*side.phase);
+            }
+            y+=side.y;
+            const double x=side.x*side.c-side.y*side.s;
+            side.y=side.y*side.c+side.x*side.s;
+            side.x=x;
+            side.phase+=side.step;
             if(side.phase>=1)side.phase-=1;
             else if(side.phase<0)side.phase+=1;
         }
+        ticks=(ticks+1u)&255u;
         return std::clamp(y,-1.,1.);
     }
 };

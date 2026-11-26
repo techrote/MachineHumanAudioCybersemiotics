@@ -25,7 +25,51 @@ static void demo(const std::string& path,double mix){
     }
     check(bool(o));
 }
+// Independent direct-trigonometric oracle for the previous finite sideband law.
+static void rotationRegression(){
+    constexpr double tau=6.2831853071795864769;
+    struct Probe{double sr,carrier,ratio,beta;unsigned frames;};
+    const Probe probes[]{
+        {48000,110,2,1.46,1000000}, {96000,13200,1.25,1.5,131072},
+        {2000000,8.1758,3,.2,131072}, {1000,400,1,1.5,131072},
+        {44100,440,2,0,131072}, {48000,48000*.449,1.5,1.2,131072}
+    };
+    double worst=0,anchorWorst=0;
+    for(const auto& p:probes){
+        std::array<double,13> phase{},step{},gain{};
+        double total=0;
+        for(int k=-6;k<=6;++k){
+            const auto i=static_cast<unsigned>(k+6), order=static_cast<unsigned>(std::abs(k));
+            // Longer long-double power series, separate from the production coefficient code.
+            long double t=1;
+            for(unsigned j=1;j<=order;++j)t*=static_cast<long double>(p.beta)/(2*j);
+            long double b=t;
+            for(unsigned j=1;j<=18;++j){t*=-static_cast<long double>(p.beta)*p.beta/(4*j*(j+order));b+=t;}
+            step[i]=p.carrier*(1+k*p.ratio)/p.sr;
+            gain[i]=static_cast<double>(b)*(k<0&&order%2?-1.:1.)*std::clamp((.45-std::abs(step[i]))/.05,0.,1.);
+            total+=std::abs(gain[i]);
+        }
+        for(auto& g:gain)g/=std::max(1.,total);
+        PhaseMemory oscillator,copy;check(oscillator.configure(p.sr,p.carrier,p.ratio,p.beta));
+        for(unsigned frame=0;frame<p.frames;++frame){
+            if(frame==513){copy=oscillator;check(!oscillator.configure(p.sr,0,p.ratio,p.beta));}
+            double expected=0;
+            for(unsigned i=0;i<13;++i)if(gain[i]!=0){
+                expected+=gain[i]*std::sin(tau*phase[i]);phase[i]+=step[i];
+                if(phase[i]>=1)phase[i]-=1;else if(phase[i]<0)phase[i]+=1;
+            }
+            const double actual=oscillator.tick();
+            const double error=std::abs(actual-std::clamp(expected,-1.,1.));
+            worst=std::max(worst,error);if(frame%256==0)anchorWorst=std::max(anchorWorst,error);
+            check(std::isfinite(actual)&&std::abs(actual)<=1&&error<2e-11);
+            if(frame>=513&&frame<4096)check(copy.tick()==actual);
+        }
+        check(oscillator.configure(p.sr,p.carrier,p.ratio,p.beta));check(oscillator.tick()==0);
+    }
+    std::printf("Rotation oracle: worst absolute error %.9g; anchor error %.9g; 1655360 samples\n",worst,anchorWorst);
+}
 int main(int argc,char** argv){
+    rotationRegression();
     constexpr double tau=6.2831853071795864769;
     double worst=0;
     for(double beta:{0.,.2,.8,1.5})for(double ratio:{1.25,1.75,3.}){
