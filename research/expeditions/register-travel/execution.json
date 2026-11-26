@@ -1,0 +1,407 @@
+{
+  "schedules": 3066,
+  "rows": 49056,
+  "reverseChecks": 2177,
+  "dense": 66,
+  "dpChecks": 143,
+  "hiddenChecks": 40,
+  "dpProfiles": [
+    {
+      "h": 2,
+      "expectedSteps": 3,
+      "profiles": [
+        {
+          "steps": 2,
+          "survivalNumerator": "2",
+          "denominator": "4",
+          "probabilityNotForgotten": 0.5
+        },
+        {
+          "steps": 4,
+          "survivalNumerator": "2",
+          "denominator": "16",
+          "probabilityNotForgotten": 0.125
+        },
+        {
+          "steps": 8,
+          "survivalNumerator": "2",
+          "denominator": "256",
+          "probabilityNotForgotten": 0.0078125
+        },
+        {
+          "steps": 16,
+          "survivalNumerator": "2",
+          "denominator": "65536",
+          "probabilityNotForgotten": 0.000030517578125
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "2",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 1.5777218104420236e-30
+        }
+      ]
+    },
+    {
+      "h": 3,
+      "expectedSteps": 6,
+      "profiles": [
+        {
+          "steps": 3,
+          "survivalNumerator": "6",
+          "denominator": "8",
+          "probabilityNotForgotten": 0.75
+        },
+        {
+          "steps": 6,
+          "survivalNumerator": "22",
+          "denominator": "64",
+          "probabilityNotForgotten": 0.34375
+        },
+        {
+          "steps": 12,
+          "survivalNumerator": "190",
+          "denominator": "4096",
+          "probabilityNotForgotten": 0.04638671875
+        },
+        {
+          "steps": 24,
+          "survivalNumerator": "12286",
+          "denominator": "16777216",
+          "probabilityNotForgotten": 0.0007323026657104492
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "3377699720527870",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 2.664535259100374e-15
+        }
+      ]
+    },
+    {
+      "h": 4,
+      "expectedSteps": 10,
+      "profiles": [
+        {
+          "steps": 4,
+          "survivalNumerator": "14",
+          "denominator": "16",
+          "probabilityNotForgotten": 0.875
+        },
+        {
+          "steps": 8,
+          "survivalNumerator": "130",
+          "denominator": "256",
+          "probabilityNotForgotten": 0.5078125
+        },
+        {
+          "steps": 16,
+          "survivalNumerator": "7594",
+          "denominator": "65536",
+          "probabilityNotForgotten": 0.115875244140625
+        },
+        {
+          "steps": 32,
+          "survivalNumerator": "18258322",
+          "denominator": "4294967296",
+          "probabilityNotForgotten": 0.004251096863299608
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "3001037694714071638682",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 2.367401312454521e-9
+        }
+      ]
+    },
+    {
+      "h": 5,
+      "expectedSteps": 15,
+      "profiles": [
+        {
+          "steps": 5,
+          "survivalNumerator": "30",
+          "denominator": "32",
+          "probabilityNotForgotten": 0.9375
+        },
+        {
+          "steps": 10,
+          "survivalNumerator": "668",
+          "denominator": "1024",
+          "probabilityNotForgotten": 0.65234375
+        },
+        {
+          "steps": 20,
+          "survivalNumerator": "218248",
+          "denominator": "1048576",
+          "probabilityNotForgotten": 0.20813751220703125
+        },
+        {
+          "steps": 40,
+          "survivalNumerator": "15404671664",
+          "denominator": "1099511627776",
+          "probabilityNotForgotten": 0.014010467260959558
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "3347189568156231622094608",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.0000026404669926820526
+        }
+      ]
+    },
+    {
+      "h": 6,
+      "expectedSteps": 21,
+      "profiles": [
+        {
+          "steps": 6,
+          "survivalNumerator": "62",
+          "denominator": "64",
+          "probabilityNotForgotten": 0.96875
+        },
+        {
+          "steps": 12,
+          "survivalNumerator": "3026",
+          "denominator": "4096",
+          "probabilityNotForgotten": 0.73876953125
+        },
+        {
+          "steps": 24,
+          "survivalNumerator": "5051602",
+          "denominator": "16777216",
+          "probabilityNotForgotten": 0.30109894275665283
+        },
+        {
+          "steps": 48,
+          "survivalNumerator": "9024951324906",
+          "denominator": "281474976710656",
+          "probabilityNotForgotten": 0.03206306802250225
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "202292484363946066843824360",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.00015958063233474987
+        }
+      ]
+    },
+    {
+      "h": 7,
+      "expectedSteps": 28,
+      "profiles": [
+        {
+          "steps": 7,
+          "survivalNumerator": "126",
+          "denominator": "128",
+          "probabilityNotForgotten": 0.984375
+        },
+        {
+          "steps": 14,
+          "survivalNumerator": "13354",
+          "denominator": "16384",
+          "probabilityNotForgotten": 0.8150634765625
+        },
+        {
+          "steps": 28,
+          "survivalNumerator": "105677242",
+          "denominator": "268435456",
+          "probabilityNotForgotten": 0.3936784043908119
+        },
+        {
+          "steps": 56,
+          "survivalNumerator": "4263318405920122",
+          "denominator": "72057594037927936",
+          "probabilityNotForgotten": 0.059165428194509234
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "2717364906668483555596615022",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.0021436229400903103
+        }
+      ]
+    },
+    {
+      "h": 8,
+      "expectedSteps": 36,
+      "profiles": [
+        {
+          "steps": 8,
+          "survivalNumerator": "254",
+          "denominator": "256",
+          "probabilityNotForgotten": 0.9921875
+        },
+        {
+          "steps": 16,
+          "survivalNumerator": "56322",
+          "denominator": "65536",
+          "probabilityNotForgotten": 0.859405517578125
+        },
+        {
+          "steps": 32,
+          "survivalNumerator": "2036810954",
+          "denominator": "4294967296",
+          "probabilityNotForgotten": 0.47423200542107224
+        },
+        {
+          "steps": 64,
+          "survivalNumerator": "1725759751758854938",
+          "denominator": "18446744073709551616",
+          "probabilityNotForgotten": 0.09355362360224977
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "15096011900290305280725368898",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.011908653612890176
+        }
+      ]
+    },
+    {
+      "h": 9,
+      "expectedSteps": 45,
+      "profiles": [
+        {
+          "steps": 9,
+          "survivalNumerator": "510",
+          "denominator": "512",
+          "probabilityNotForgotten": 0.99609375
+        },
+        {
+          "steps": 18,
+          "survivalNumerator": "235882",
+          "denominator": "262144",
+          "probabilityNotForgotten": 0.8998184204101562
+        },
+        {
+          "steps": 36,
+          "survivalNumerator": "37703351762",
+          "denominator": "68719476736",
+          "probabilityNotForgotten": 0.54865597866592
+        },
+        {
+          "steps": 72,
+          "survivalNumerator": "632919993925304421258",
+          "denominator": "4722366482869645213696",
+          "probabilityNotForgotten": 0.13402602195768112
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "48893949255312642469486336808",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.038570525069376145
+        }
+      ]
+    },
+    {
+      "h": 10,
+      "expectedSteps": 55,
+      "profiles": [
+        {
+          "steps": 10,
+          "survivalNumerator": "1022",
+          "denominator": "1024",
+          "probabilityNotForgotten": 0.998046875
+        },
+        {
+          "steps": 20,
+          "survivalNumerator": "968002",
+          "denominator": "1048576",
+          "probabilityNotForgotten": 0.9231586456298828
+        },
+        {
+          "steps": 40,
+          "survivalNumerator": "671303285370",
+          "denominator": "1099511627776",
+          "probabilityNotForgotten": 0.6105467813267751
+        },
+        {
+          "steps": 80,
+          "survivalNumerator": "214945948791539231345698",
+          "denominator": "1208925819614629174706176",
+          "probabilityNotForgotten": 0.17779912158717714
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "111501511742943190925970401974",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.08795918348704944
+        }
+      ]
+    },
+    {
+      "h": 11,
+      "expectedSteps": 66,
+      "profiles": [
+        {
+          "steps": 11,
+          "survivalNumerator": "2046",
+          "denominator": "2048",
+          "probabilityNotForgotten": 0.9990234375
+        },
+        {
+          "steps": 22,
+          "survivalNumerator": "3963430",
+          "denominator": "4194304",
+          "probabilityNotForgotten": 0.9449553489685059
+        },
+        {
+          "steps": 44,
+          "survivalNumerator": "11725229851544",
+          "denominator": "17592186044416",
+          "probabilityNotForgotten": 0.6665021516905654
+        },
+        {
+          "steps": 88,
+          "survivalNumerator": "69325003529371583087442396",
+          "denominator": "309485009821345068724781056",
+          "probabilityNotForgotten": 0.2240011675182281
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "202211447330860080082826067814",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.15951670538747323
+        }
+      ]
+    },
+    {
+      "h": 12,
+      "expectedSteps": 78,
+      "profiles": [
+        {
+          "steps": 12,
+          "survivalNumerator": "4094",
+          "denominator": "4096",
+          "probabilityNotForgotten": 0.99951171875
+        },
+        {
+          "steps": 24,
+          "survivalNumerator": "16064386",
+          "denominator": "16777216",
+          "probabilityNotForgotten": 0.9575120210647583
+        },
+        {
+          "steps": 48,
+          "survivalNumerator": "200500034830146",
+          "denominator": "281474976710656",
+          "probabilityNotForgotten": 0.7123192163410366
+        },
+        {
+          "steps": 96,
+          "survivalNumerator": "21416092431918722822685655666",
+          "denominator": "79228162514264337593543950336",
+          "probabilityNotForgotten": 0.2703090889942442
+        },
+        {
+          "steps": 100,
+          "survivalNumerator": "312500109172671071060763842666",
+          "denominator": "1267650600228229401496703205376",
+          "probabilityNotForgotten": 0.2465191190036183
+        }
+      ]
+    }
+  ],
+  "assertionFailures": 0
+}
