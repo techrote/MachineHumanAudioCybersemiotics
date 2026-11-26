@@ -6,7 +6,7 @@
 #include "public.sdk/source/vst/hosting/parameterchanges.h"
 #include "pluginterfaces/vst/ivstaudioprocessor.h"
 #include "pluginterfaces/vst/ivstcomponent.h"
-#include "pluginterfaces/vst/ivstspeaker.h"
+#include "pluginterfaces/vst/vstspeaker.h"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -25,8 +25,8 @@ struct Lifecycle {
     ~Lifecycle(){if(running)p->setProcessing(false);if(active)c->setActive(false);if(initialized)c->terminate();}
 };
 Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassInfo& info,
-                HostApplication* host,int rate,int block,bool aux,bool malformed){
-    std::cout<<"case rate="<<rate<<" block="<<block<<" aux="<<aux<<" malformed="<<malformed<<std::endl;
+                HostApplication* host,int rate,int block,bool aux,bool malformed,bool inactiveMemory=false){
+    std::cout<<"case rate="<<rate<<" block="<<block<<" aux="<<aux<<" malformed="<<malformed<<" inactive_memory="<<inactiveMemory<<std::endl;
     auto c=factory.createInstance<IComponent>(info.ID());
     check(bool(c),"component create");
     FUnknownPtr<IAudioProcessor> p(c.get());check(p.getInterface()!=nullptr,"processor interface");
@@ -52,13 +52,15 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
     std::array<std::vector<float>,5> samples;
     for(auto& s:samples)s.resize(block);
     pointers[0]={samples[0].data(),samples[1].data()};
-    for(int i=1;i<4;++i)pointers[i][0]=aux?samples[i+1].data():nullptr;
+    for(int i=1;i<4;++i)pointers[i][0]=(aux||inactiveMemory)?samples[i+1].data():nullptr;
     std::array<AudioBusBuffers,4> buses{};
     for(int i=0;i<4;++i){buses[i].numChannels=i==0?2:(malformed?0:1);buses[i].channelBuffers32=pointers[i].data();}
     ProcessData data{};data.processMode=kRealtime;data.symbolicSampleSize=kSample32;
     data.numOutputs=4;data.outputs=buses.data();data.inputEvents=&events;data.inputParameterChanges=&params;
     Observation obs;
-    const int total=rate*2/5,on=17,off=rate/5+13;
+    // The foundry gain smoother settles in 5 ms. Allow silent pre-roll so
+    // lane isolation is not falsely rejected by the legitimate default-gain ramp.
+    const int total=rate*2/5,on=rate/50+17,off=rate/5+13;
     obs.left.reserve(total);obs.right.reserve(total);
     for(int pos=0;pos<total;pos+=block){
         int n=std::min(block,total-pos);data.numSamples=n;events.clear();params.clearQueue();
@@ -85,6 +87,13 @@ Observation run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting:
         if(rc!=kResultOk){++obs.rejected;std::cout<<"process rejected pos="<<pos<<" rc="<<rc<<std::endl;}
         if(malformed)continue;
         check(rc==kResultOk,"process valid buffers");
+        if(!aux){
+            for(int k=1;k<4;++k){
+                check((buses[k].silenceFlags&1u)!=0,"inactive stem silence flag");
+                if(inactiveMemory)for(int j=0;j<n;++j)
+                    check(samples[k+1][j]==0.f,"inactive stem poison not cleared");
+            }
+        }
         for(int j=0;j<n;++j){
             float l=samples[0][j],r=samples[1][j];check(std::isfinite(l)&&std::isfinite(r),"nonfinite output");
             check(std::abs(l)<=1.f&&std::abs(r)<=1.f,"output bound");
@@ -131,10 +140,12 @@ int main(int argc,char** argv){
                 for(int block:{257,1024}){
                     auto off=run(factory,info,host.get(),rate,block,false,false);
                     auto on=run(factory,info,host.get(),rate,block,true,false);
+                    auto supplied=run(factory,info,host.get(),rate,block,false,false,true);
+                    check(off.left==supplied.left&&off.right==supplied.right,"inactive stem memory changed main waveform");
                     check(off.left==on.left&&off.right==on.right,"aux activation changed main waveform");
                     if(block==257)reference=off;
                     else check(reference.left==off.left&&reference.right==off.right,"block partition mismatch");
-                    positive+=2;
+                    positive+=3;
                 }
             }
             auto negative=run(factory,info,host.get(),44100,257,false,true);
