@@ -1,0 +1,28 @@
+{
+  "adaptive_profiles": 180,
+  "assertion_failures": 0,
+  "audio": {
+    "prism-A.wav": {
+      "duration_seconds": 2.88,
+      "frames": 36,
+      "sha256": "f1315153a7712aed04b08abaac99bdf7a9b6243594282352d1ed21290e254683",
+      "symbol_bits_not_claimed": true,
+      "symbols_decoded": 72
+    },
+    "prism-B.wav": {
+      "duration_seconds": 2.88,
+      "frames": 36,
+      "sha256": "63d7112c1ffa1569f9f8f1453e7488b345d4d6b3eaf3d6dfa10e636fb252deec",
+      "symbol_bits_not_claimed": true,
+      "symbols_decoded": 72
+    }
+  },
+  "axis_curvature_exact_checks": 447,
+  "decision_gap_exact": "1/36",
+  "max_candidate_grid": 768,
+  "max_integer_direction_parameter": 9,
+  "max_raw_info_spoke_gap_nats": 0,
+  "off_spoke_info_A_minus_B_nats": -0.00016372161099376115,
+  "schema": "mhac-690-native-v1",
+  "scope": "Exact synthetic fixtures; numerical raw mutual information; no human or physical transmission tests."
+}
