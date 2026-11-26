@@ -1,0 +1,39 @@
+{
+  "assertion_failures": 0,
+  "audio": {
+    "early": {
+      "deadline_slot": 2,
+      "frames": 63,
+      "histogram": {
+        "1": 30,
+        "7": 33
+      },
+      "moments": [
+        "29/7",
+        "183/7"
+      ],
+      "sha256": "d600914724089194d45754f3b88d90dbc4580c862099b00912e23a8e16dc862f",
+      "success": "10/21"
+    },
+    "late": {
+      "deadline_slot": 2,
+      "frames": 63,
+      "histogram": {
+        "3": 55,
+        "12": 8
+      },
+      "moments": [
+        "29/7",
+        "183/7"
+      ],
+      "sha256": "7ea5761b29ae48b42a69107b395a74eaddab61a2d199cc679d2fc51f4fa6adc8",
+      "success": "0"
+    }
+  },
+  "decoded_episodes": 126,
+  "lp_checks": 275,
+  "max_lp_error": 3.469446951953612e-14,
+  "numpy": "2.3.5",
+  "python": "3.13.5",
+  "scipy": "1.17.0"
+}
