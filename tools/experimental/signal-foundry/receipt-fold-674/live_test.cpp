@@ -20,16 +20,16 @@ static void render(bool smooth,const char* name){
 template<class T> static void test(double rate){
     const auto n=static_cast<unsigned>(std::ceil(rate*.005));Live a,b;check(a.prepare(rate)&&b.prepare(rate));
     Patch p{{0,7},Mode::preview,false,1};check(a.apply(p)&&b.apply(p));
-    for(unsigned i=0;i<n+1;++i){T l=.9,r=.9;a.frame(l,r);b.frame(l,r);}
+    for(unsigned i=0;i<n+1;++i){T l=T(.9),r=T(.9);a.frame(l,r);b.frame(l,r);}
     p.mode=Mode::absent;check(a.apply(p)&&b.apply(p));double previous=.4375;
-    for(unsigned i=0;i<n;++i){T l=.9,r=.9,ll=l,rr=r;check(b.apply(p));a.frame(l,r);b.frame(ll,rr);
+    for(unsigned i=0;i<n;++i){T l=T(.9),r=T(.9),ll=l,rr=r;check(b.apply(p));a.frame(l,r);b.frame(ll,rr);
         check(l==r&&l==ll&&r==rr&&std::abs(double(l)-previous)<=.875/n+1e-7);previous=l;}
     check(previous==-.4375);
     // Retarget every three samples, including bypass and malformed audio.
     for(unsigned i=0;i<4096;++i){if(i%3==0){p.mode=static_cast<Mode>((i/3)%4);p.action=pair(i%8,(i/8)%8);p.bypass=i%7==0;check(a.apply(p)&&b.apply(p));}
         T l=static_cast<T>(std::sin(i*.19)),r=static_cast<T>(std::cos(i*.31)),ll=l,rr=r;a.frame(l,r);b.frame(ll,rr);check(l==ll&&r==rr&&std::abs(l)<=1&&std::abs(r)<=1);}
     T l=std::numeric_limits<T>::infinity(),r=std::numeric_limits<T>::quiet_NaN();a.frame(l,r);check(l==0&&r==0);
-    p.bypass=true;check(a.apply(p));for(unsigned i=0;i<n+2;++i){l=.625;r=-.75;a.frame(l,r);}check(l==T(.625)&&r==T(-.75));
+    p.bypass=true;check(a.apply(p));for(unsigned i=0;i<n+2;++i){l=T(.625);r=T(-.75);a.frame(l,r);}check(l==T(.625)&&r==T(-.75));
     a.reset();l=0;r=0;a.frame(l,r);check(l==0&&r==0);
 }
 int main(int argc,char** argv){
