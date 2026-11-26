@@ -15,7 +15,9 @@ const FUID controllerID(0x6B53AF12,0x58934F5E,0xACCCEA11,0x9A27AB09);
 constexpr ParamID firstID=1200;
 bool readParams(IBStream* s,guest::control::Params& p){
     guest::control::State bytes{};int32 n=0;
-    return s&&s->read(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())&&guest::control::decode(bytes.data(),bytes.size(),p);
+    if(!s||s->read(bytes.data(),4,&n)!=kResultOk||n!=4)return false;
+    const int32 size=bytes[3]=='1'?36:bytes[3]=='2'?int32(bytes.size()):0;
+    return size&&s->read(bytes.data()+4,size-4,&n)==kResultOk&&n==size-4&&guest::control::decode(bytes.data(),size,p);
 }
 struct Cursor {
     IParamValueQueue* queue=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
@@ -122,7 +124,7 @@ public:
         auto add=[&](const TChar* n,unsigned i,int32 steps=0){parameters.addParameter(n,nullptr,steps,guest::control::defaults[i],ParameterInfo::kCanAutomate,firstID+i);};
         add(STR16("Motif slot 1 (-12..12 st)"),0,24);add(STR16("Motif slot 2 (-12..12 st)"),1,24);
         add(STR16("Motif slot 3 (-12..12 st)"),2,24);add(STR16("Motif slot 4 (-12..12 st)"),3,24);
-        add(STR16("Motif speed (1..12 Hz)"),4);add(STR16("Counter gain"),5);add(STR16("Citation (silent)"),6,1);add(STR16("Local adoption"),7,1);
+        add(STR16("Motif speed (1..12 Hz)"),4);add(STR16("Counter gain"),5);add(STR16("Citation (silent)"),6,1);add(STR16("Local adoption"),7,1);add(STR16("Spectral adoption (off=melodic)"),8,1);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* s) override {guest::control::Params p{};if(!readParams(s,p))return kResultFalse;for(unsigned i=0;i<guest::control::Count;++i)setParamNormalized(firstID+i,p[i]);return kResultOk;}
@@ -130,7 +132,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,
-"MHAC Guest Organ",Vst::kDistributable,"Instrument|Synth","0.1.0",kVstVersionString,Processor::create)
+"MHAC Guest Organ",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,
-"MHAC Guest Organ Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+"MHAC Guest Organ Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY

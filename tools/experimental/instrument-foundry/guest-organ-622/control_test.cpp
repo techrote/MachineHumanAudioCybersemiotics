@@ -6,7 +6,7 @@ int main(){
     auto p=defaults;p[7]=1;p[4]=.25;auto bytes=encode(p);Params q{};
     CHECK(decode(bytes.data(),bytes.size(),q));CHECK(encode(q)==bytes);
     for(unsigned n=0;n<bytes.size();++n)CHECK(!decode(bytes.data(),n,q));
-    auto bad=bytes;bad[3]='2';CHECK(!decode(bad.data(),bad.size(),q));
+    auto bad=bytes;bad[3]='3';CHECK(!decode(bad.data(),bad.size(),q));
     bad=bytes;bad[4]=0;bad[5]=0;bad[6]=192;bad[7]=127;CHECK(!decode(bad.data(),bad.size(),q));
     CHECK(encode(q)==bytes);
     unsigned frames=0;
@@ -28,5 +28,5 @@ int main(){
         a.reset();CHECK(a.on(9,60,0,1));auto f=a.tick();double l=0,r=0,base=0,counter=0;double* ptrs[]{&l,&r};write(f,ptrs,2,&base,&counter,0);CHECK(l==f.left&&r==f.right&&base==f.base&&counter==f.counter);
         float mono=0;float* m[]{&mono};write(f,m,1,static_cast<float*>(nullptr),static_cast<float*>(nullptr),0);CHECK(mono==float((f.left+f.right)*.5));
     }
-    std::cout<<"PASS: GO01 corruption/roundtrip, 216 repeated onsets, nine rates, "<<frames<<" exact opening frames, routing and scope\n";
+    std::cout<<"PASS: GO02 corruption/roundtrip, 216 repeated onsets, nine rates, "<<frames<<" exact opening frames, routing and scope\n";
 }

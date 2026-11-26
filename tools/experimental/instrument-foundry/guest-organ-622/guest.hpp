@@ -3,12 +3,13 @@
 #include <array>
 #include <cmath>
 #include <cstdint>
+#include "spectral.hpp"
 namespace guest {
 constexpr double pi=3.14159265358979323846;
 struct Patch {
     std::array<int,4> motif{0,7,3,10};
     double stepsPerSecond=4, counterGain=.65;
-    bool cite=false, adopt=false;
+    bool cite=false, adopt=false, spectral=false;
 };
 struct Frame {double left=0,right=0,base=0,counter=0;};
 class Engine {
@@ -19,6 +20,7 @@ class Engine {
         double tuning=0, velocity=0, env=0, a=0,b=0, blend=0;
         double incA=0,incB=0;
         Patch patch{};
+        SpectralBank spectrum{};
     };
     std::array<Voice,8> voices{};
     Patch patch{};
@@ -55,7 +57,9 @@ public:
         for(auto& v:voices)if(!v.active){
             v=Voice{};v.active=true;v.id=id;v.note=note;v.tuning=std::clamp(tuning,-1200.,1200.);
             v.velocity=std::min(1.,velocity);v.patch=patch;
-            v.length=unsigned(std::lround(rate/patch.stepsPerSecond));retune(v);return true;
+            v.length=unsigned(std::lround(rate/patch.stepsPerSecond));retune(v);
+            if(v.patch.spectral&&v.patch.adopt)v.spectrum.prepare(rate,440*std::exp2((v.note-69+v.tuning/100)/12),v.patch.motif);
+            return true;
         }
         return false;
     }
@@ -68,7 +72,8 @@ public:
             const double target=v.continuation&&v.patch.adopt?v.patch.counterGain:0;
             v.blend+=std::clamp(target-v.blend,-attack,attack);
             f.base+=.04*v.velocity*v.env*oscillator(v.a,v.incA);
-            f.counter+=.025*v.velocity*v.env*v.blend*oscillator(v.b,v.incB);
+            const double counter=v.patch.spectral&&v.patch.adopt?v.spectrum.tick():oscillator(v.b,v.incB);
+            f.counter+=.025*v.velocity*v.env*v.blend*counter;
             if(++v.position==v.length){v.position=0;v.slot=(v.slot+1)%4;if(v.slot==0)v.continuation=true;retune(v);}
         }
         f.left=f.base;f.right=f.base+f.counter;return f;

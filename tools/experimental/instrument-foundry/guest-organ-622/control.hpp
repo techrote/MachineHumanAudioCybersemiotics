@@ -3,24 +3,26 @@
 #include <cstring>
 #include <limits>
 namespace guest::control {
-constexpr unsigned Count=8;
+constexpr unsigned Count=9;
 using Params=std::array<double,Count>;
-constexpr Params defaults{.5,19./24,15./24,22./24,3./11,.65,0,0};
+constexpr Params defaults{.5,19./24,15./24,22./24,3./11,.65,0,0,0};
 inline double normalized(unsigned i,double x) noexcept {
     x=std::clamp(x,0.,1.);
     return i<4?std::round(x*24)/24:i>=6?double(x>=.5):x;
 }
 using State=std::array<std::uint8_t,4+4*Count>;
-static_assert(sizeof(float)==4&&std::numeric_limits<float>::is_iec559,"GO01 requires IEEE binary32");
+static_assert(sizeof(float)==4&&std::numeric_limits<float>::is_iec559,"GO01/GO02 require IEEE binary32");
 inline State encode(const Params& p) noexcept {
-    State s{'G','O','0','1'};
+    State s{'G','O','0','2'};
     for(unsigned i=0;i<Count;++i){float f=float(p[i]);std::uint32_t u;std::memcpy(&u,&f,4);for(unsigned j=0;j<4;++j)s[4+4*i+j]=std::uint8_t(u>>(8*j));}
     return s;
 }
 inline bool decode(const std::uint8_t* s,std::size_t n,Params& p) noexcept {
-    if(!s||n!=State{}.size()||s[0]!='G'||s[1]!='O'||s[2]!='0'||s[3]!='1')return false;
-    Params q{};
-    for(unsigned i=0;i<Count;++i){std::uint32_t u=0;for(unsigned j=0;j<4;++j)u|=std::uint32_t(s[4+4*i+j])<<(8*j);float f;std::memcpy(&f,&u,4);if(!std::isfinite(f)||f<0||f>1)return false;q[i]=normalized(i,f);}
+    if(!s||n<4||s[0]!='G'||s[1]!='O'||s[2]!='0')return false;
+    const unsigned count=s[3]=='1'?8:s[3]=='2'?Count:0;
+    if(!count||n!=4+4*count)return false;
+    Params q=defaults;
+    for(unsigned i=0;i<count;++i){std::uint32_t u=0;for(unsigned j=0;j<4;++j)u|=std::uint32_t(s[4+4*i+j])<<(8*j);float f;std::memcpy(&f,&u,4);if(!std::isfinite(f)||f<0||f>1)return false;q[i]=normalized(i,f);}
     p=q;return true;
 }
 class Engine {
@@ -29,7 +31,7 @@ class Engine {
     void sync() noexcept {
         Patch patch;
         for(unsigned i=0;i<4;++i)patch.motif[i]=int(std::lround(p[i]*24))-12;
-        patch.stepsPerSecond=1+11*p[4];patch.counterGain=p[5];patch.cite=p[6]!=0;patch.adopt=p[7]!=0;
+        patch.stepsPerSecond=1+11*p[4];patch.counterGain=p[5];patch.cite=p[6]!=0;patch.adopt=p[7]!=0;patch.spectral=p[8]!=0;
         e.configure(patch);
     }
 public:
