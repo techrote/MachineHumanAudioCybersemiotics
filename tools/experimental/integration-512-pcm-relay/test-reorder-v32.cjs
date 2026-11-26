@@ -1,0 +1,17 @@
+'use strict';
+// Refs #512. Actual PCM controls; evaluator-only interpretation of open/stopped.
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const O=require('./reorder-receiver-v32.cjs'),R=require('./role-v29.cjs'),E=require('./epoch-v26.cjs'),{wav}=require('./relay.cjs'),{C:P}=require('./lease-v21.cjs');
+const cases={gap:[[2,'stopped'],[0,'open'],[0,'open','restart'],[0,'fault'],[1,'fault']],boundary:[[3,'stopped'],[0,'open'],[1,'open'],[3,'stopped']],poison:[[255,'fault'],[0,'open']],capacity:[[3,'stopped'],[1,'open'],[2,'fault'],[4,'overload'],[5,'open']],order:[[1,'stopped'],[0,'open']]};
+const expected={gap:['new','new','duplicate','conflict','new'],boundary:['new','stale','new','duplicate'],poison:['new','stale'],capacity:['new','new','new','new','capacity'],order:['new','new']};
+const out=process.argv[2]||'reorder-v32-controls';fs.mkdirSync(out,{recursive:true});const root=fs.mkdtempSync(path.join(os.tmpdir(),'mhac-v32-controls-'));let checks=0;const rows=[];const ck=(v,m)=>{checks++;assert.ok(v,m);};
+try{for(const seed of [71,113])for(const policy of ['local-isolated','local-window2'])for(const [name,steps] of Object.entries(cases)){
+ const dir=path.join(root,`${seed}-${policy}-${name}`);O.provision(dir,policy);let r=O.receiver(dir),trace=[],segments=[],applied=[],arrivalState=null;
+ for(const [g,word,action] of steps){if(action==='restart')r=O.receiver(dir);const p={...P,tree:[word]},pcm=R.encode(p,g,0,0,seed*.013),a=R.acquire(pcm),d=r.receive(a);ck(a.status==='receipt-candidate'&&a.generation===g,'strict acquisition');if(d.apply){applied.push({g,word});arrivalState=word;}
+ const ack=d.role===0?R.encode({...a.packet,kind:1},a.generation,a.epoch,0,seed*.013):new Int16Array(R.STEP),b=R.acquire(ack);ck(E.matches(b,p,g,0)===(d.role===0),'matching PCM acknowledgement');segments.push(pcm,ack);trace.push({g,word,action:action||null,decoded:a,decision:d,ack:b,state:r.snapshot()});}
+ ck(r.snapshot().count===applied.length,'count');ck(new Set(applied.map(x=>x.g)).size===applied.length,'no duplicate effect');if(policy==='local-window2')ck(JSON.stringify(trace.map(t=>t.decision.decision))===JSON.stringify(expected[name]),'window decisions '+name);
+ if(name==='order'&&policy==='local-window2')ck(arrivalState==='open'&&applied.slice().sort((a,b)=>a.g-b.g).at(-1).word==='stopped','order-dependent interpretation witness');
+ const pcm=new Int16Array(segments.length*R.STEP);segments.forEach((s,i)=>pcm.set(s,i*R.STEP));const file=`${seed}-${name}-${policy}.wav`;fs.writeFileSync(path.join(out,file),wav(pcm));const raw=fs.readFileSync(path.join(out,file));for(const [i,t] of trace.entries())for(const [j,a] of [t.decoded,t.ack].entries()){const slot=Int16Array.from({length:R.STEP},(_,n)=>raw.readInt16LE(44+2*((2*i+j)*R.STEP+n)));checks++;assert.deepEqual(R.acquire(slot,true,127),a);}
+ rows.push({seed,policy,name,trace,applied,arrivalState,occurrenceOrderState:applied.slice().sort((a,b)=>a.g-b.g).at(-1)?.word??null,file,samples:pcm.length,sha256:crypto.createHash('sha256').update(raw).digest('hex')});}
+ fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify({schema:'mhac-reorder-v32-controls',checks,rate:16000,step:R.STEP,rows},null,2)+'\n');console.log(JSON.stringify({checks,sessions:rows.length}));
+}finally{fs.rmSync(root,{recursive:true,force:true});}
