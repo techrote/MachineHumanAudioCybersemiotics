@@ -1,4 +1,4 @@
-#include "host.hpp"
+#include "resolution_host.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
 #include "public.sdk/source/vst/vstparameters.h"
@@ -7,15 +7,16 @@
 #include "pluginterfaces/vst/ivstparameterchanges.h"
 using namespace Steinberg;
 using namespace Steinberg::Vst;
-namespace rf=mhac::receipt;
+namespace rf=mhac::receipt::extended;
 namespace {
 const FUID processorID(0x302FA817,0x7F104E13,0xBFC8A3EF,0x4356888E);
 const FUID controllerID(0x1C3243AF,0x755B41C0,0x9A150E33,0x7150A434);
 bool readPatch(IBStream* s,rf::Patch& p){
-    rf::State b{};if(!s)return false;
-    int32 left=int32(b.size());auto* dst=b.data();
-    while(left){int32 n=0;if(s->read(dst,left,&n)!=kResultOk||n<=0||n>left)return false;dst+=n;left-=n;}
-    return rf::load(b.data(),b.size(),p);
+    std::array<std::uint8_t,20> b{};if(!s)return false;
+    auto read=[&](std::uint8_t* dst,int32 left){while(left){int32 n=0;if(s->read(dst,left,&n)!=kResultOk||n<=0||n>left)return false;dst+=n;left-=n;}return true;};
+    if(!read(b.data(),4))return false;
+    const int32 size=b[3]=='2'?20:16;
+    return read(b.data()+4,size-4)&&rf::load(b.data(),static_cast<std::size_t>(size),p);
 }
 struct Cursor {
     IParamValueQueue* q=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
@@ -68,12 +69,15 @@ public:
     tresult PLUGIN_API initialize(FUnknown* c) override {
         auto r=EditController::initialize(c);if(r!=kResultOk)return r;
         auto add=[&](const TChar* name,unsigned id,int32 steps=0,int32 flags=ParameterInfo::kCanAutomate){parameters.addParameter(name,nullptr,steps,rf::normalized(rf::Patch{},id),flags,rf::firstID+id);};
-        add(STR16("Collapse pair (0-27)"),rf::Action,27);add(STR16("Receipt (absent/fixed/preview/full)"),rf::Contract,3);add(STR16("Wet mix"),rf::Wet);add(STR16("Bypass"),rf::Bypass,1,ParameterInfo::kCanAutomate|ParameterInfo::kIsBypass);return kResultOk;
+        add(STR16("Collapse pair (0-27)"),rf::Action,27);add(STR16("Receipt (absent/fixed/preview/full)"),rf::Contract,3);add(STR16("Wet mix"),rf::Wet);add(STR16("Bypass"),rf::Bypass,1,ParameterInfo::kCanAutomate|ParameterInfo::kIsBypass);
+        add(STR16("Resolution (3-8 bits)"),rf::Resolution,5);add(STR16("Fixed receipt budget (0-8)"),rf::Budget,8);
+        add(STR16("Fine endpoint A (0-255)"),rf::FineA,255);add(STR16("Fine endpoint B (0-255)"),rf::FineB,255);
+        add(STR16("Use fine endpoints"),rf::FineSource,1);return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* s) override {rf::Patch p;if(!readPatch(s,p))return kResultFalse;for(unsigned i=0;i<rf::count;++i)setParamNormalized(rf::firstID+i,rf::normalized(p,i));return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Receipt Fold",Vst::kDistributable,"Fx|Distortion","0.1.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Receipt Fold Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Receipt Fold",Vst::kDistributable,"Fx|Distortion","0.2.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Receipt Fold Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY
