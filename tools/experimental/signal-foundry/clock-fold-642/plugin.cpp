@@ -1,4 +1,4 @@
-#include "clock_live.hpp"
+#include "clock_state_bridge.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
 #include "public.sdk/source/vst/vstparameters.h"
@@ -31,6 +31,7 @@ struct Cursor {
 };
 class Processor final : public AudioEffect {
     cf::Live engine;
+    cf::StateBridge state;
     
     using Cursors=std::array<Cursor,cf::Count>;
     template<class T> tresult audio(ProcessData& d,T** in,T** out,Cursors& cursors){
@@ -66,12 +67,19 @@ public:
     tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)engine.reset();return r;}
     uint32 PLUGIN_API getLatencySamples() override {return cf::Engine::latency;}
     uint32 PLUGIN_API getTailSamples() override {return cf::Engine::tail;}
-    tresult PLUGIN_API setState(IBStream* stream) override {cf::Normalized p{};if(!readParams(stream,p))return kResultFalse;return engine.restore(p)?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* stream) override {cf::Normalized p{};if(!readParams(stream,p))return kResultFalse;return state.request(p)?kResultOk:kResultFalse;}
     tresult PLUGIN_API getState(IBStream* stream) override {
-        if(!stream)return kResultFalse;auto bytes=cf::encode(engine.params());int32 n=0;
+        cf::Normalized p{};if(!stream||!state.save(p))return kResultFalse;auto bytes=cf::encode(p);int32 n=0;
         return stream->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;
     }
     tresult PLUGIN_API process(ProcessData& d) override {
+        state.begin(engine);
+        const auto result=processBlock(d);
+        state.end(engine);
+        return result;
+    }
+private:
+    tresult processBlock(ProcessData& d) {
         if(d.numSamples<0||d.numInputs<0||d.numOutputs<0)return kResultFalse;
         Cursors cursors{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){
@@ -109,7 +117,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Clock Fold", Vst::kDistributable, "Fx|Delay", "0.2.0", kVstVersionString, Processor::create)
+           "MHAC Clock Fold", Vst::kDistributable, "Fx|Delay", "0.2.1", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Clock Fold Controller", 0, "", "0.2.0", kVstVersionString, Controller::create)
+           "MHAC Clock Fold Controller", 0, "", "0.2.1", kVstVersionString, Controller::create)
 END_FACTORY
