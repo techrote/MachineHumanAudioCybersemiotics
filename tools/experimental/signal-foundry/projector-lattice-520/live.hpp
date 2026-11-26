@@ -7,7 +7,7 @@ using Params=std::array<double,Count>;
 inline constexpr Params defaults{2./3,0,1,1./3,31./1023,126./1023,255./1023,510./1023,0,32768./65535,0};
 inline unsigned steps(unsigned id) noexcept {return id<4?3:id<8?1023:id==Mix?65535:1;}
 inline double canonical(unsigned id,double x) noexcept {return std::round(std::clamp(x,0.,1.)*steps(id))/steps(id);}
-inline bool validSampleRate(double x) noexcept {return std::isfinite(x)&&x>=8000&&x<=384000;}
+inline bool validSampleRate(double x) noexcept {return std::isfinite(x)&&x>=1000&&x<=2000000;}
 using State=std::array<std::uint8_t,4+2*Count>;
 inline State encode(const Params& p) noexcept {
     State s{'P','L',1,0};

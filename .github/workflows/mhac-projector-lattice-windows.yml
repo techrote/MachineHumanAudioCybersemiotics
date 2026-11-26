@@ -60,6 +60,7 @@ jobs:
           $code = $LASTEXITCODE
           if ($code -ne 0) { exit $code }
           if (-not (Select-String -Path validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing successful validator summary' }
+          if (Select-String -Path validator.txt -Pattern '^\s*ERROR\s*:') { throw 'Explicit validator ERROR despite aggregate summary' }
           "BUNDLE=$($bundles[0].FullName)" >> $env:GITHUB_ENV
       - name: Package portable bundle and evidence
         run: |

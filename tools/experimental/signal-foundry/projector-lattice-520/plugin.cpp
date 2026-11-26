@@ -114,7 +114,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Projector Lattice", Vst::kDistributable, "Fx|Spatial", "0.1.0", kVstVersionString, Processor::create)
+           "MHAC Projector Lattice", Vst::kDistributable, "Fx|Spatial", "0.1.1", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Projector Lattice Controller", 0, "", "0.1.0", kVstVersionString, Controller::create)
+           "MHAC Projector Lattice Controller", 0, "", "0.1.1", kVstVersionString, Controller::create)
 END_FACTORY
