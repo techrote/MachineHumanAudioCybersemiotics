@@ -76,12 +76,10 @@ def run(seed,regime,policy):
         if policy!='bounded-open': assert issued-ack-1<=W
         if policy!='window': assert all(a<=4+int(i in credits) for i,a in enumerate(attempts))
         if age==T-1:
-            c['complete']+=int(floor==N-1)
-            c['confirmed']+=int(ack==N-1)
+            c['complete']+=int(floor==N-1); c['confirmed']+=int(ack==N-1)
             c['settled-incomplete']+=int(final is not None and final<N-1)
             c['unknown-issued']+=0 if final is not None else issued-ack-1
-            c['not-issued']+=N-issued
-            c['known-applied']+=ack+1
+            c['not-issued']+=N-issued; c['known-applied']+=ack+1
             c['unknown-epochs']+=int(ack<N-1 and final is None and issued>ack+1)
             assert final is None or final==floor
         log(t,'state',epoch=e,age=age,applied=floor+1,known=ack+1,issued=issued,buffer=sorted(buf),final=final)
