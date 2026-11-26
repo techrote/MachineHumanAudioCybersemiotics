@@ -1149,5 +1149,87 @@
       }
     ],
     "scope": "All five draft, mergeable, exact-head integrity success at inspection; new deltas not promoted. OBS-PROMOTION-001 still qualified for owner review, temporary workflow disposition and explicit owner authorization outstanding."
+  },
+  "grammarGalleryBatch": {
+    "id": "GRAM-GALLERY-018",
+    "disposition": "HOLD",
+    "sourcePR": 453,
+    "sourceHead": "9e45f77a11c637c03f7e1ac50b6b6802ffc97cfc",
+    "previousConsolidationHead": "099c14d6c78a426785b59e9c2e8e5e12792f58fd",
+    "previousChecks": {
+      "integrity": 45815291297,
+      "nativeObservatory": 45815291298,
+      "conclusions": "success/success",
+      "windowsJob": 139893350510
+    },
+    "native": "Linux Python 3.13.5 NumPy 2.3.5 Node 22.16.0",
+    "galleryBlob": "508f1d4a1f1b4827a605525da3edc6d2363984b1",
+    "releaseBlob": "503b79f38fdbc5eac2eb46bd4a1374432007c328",
+    "gallerySHA256": "dd3a37c7d49ef6a96b2acff64edc6da14af3342f22230268b1c5626270e21cb4",
+    "releaseSHA256": "d6561a845cae8c07f93e27ceef130c6747709d59ad963456333a80f3d4adafbe",
+    "results": {
+      "sourcePins": 7,
+      "originalArchiveManifest": 48,
+      "generatedFilesReproducedByteIdentical": 34,
+      "manifestEntries": 31,
+      "wavs": 24,
+      "peakPCM16": 2048,
+      "rmsPCM16Range": [
+        964.806739,
+        1181.708744
+      ],
+      "erasedAliasPCMHash": "e2eb849ceb0c1986f3a81cb3de62d370087566d1966fa89f2e8319fc78b3ceb2",
+      "galleryRepeat": "index and JSON byte identical",
+      "modifiedWav": "rejected exit 1 before output",
+      "CRLFFixture": "semantic comparator accepted equivalent CRLF receipt/trace text; modified observation total rejected",
+      "jsSyntax": "native Node PASS",
+      "fullRelease": "local wrapper timed out after all three upstream exports, frozen semantic comparisons and gallery generation; independent checker rerun and final publication not completed. Earlier Run 016/017 independent checks remain qualified on these bytes.",
+      "browser": "ordinary headless chromium under oai exit 124, zero DOM bytes, EGL initialization failed; no browser qualification"
+    },
+    "ownerArchive": {
+      "name": "MHAC-grammar-gallery-018.zip",
+      "files": 54,
+      "bytes": 261863,
+      "sha256": "02ac60b74ddbe2fb1d22f629f93f6b2872c70bb8651b367a6f1c30c6bdf7e815",
+      "scope": "Retained all 49 previous owner archive files unchanged plus gallery builder, release wrapper, new index, gallery receipt and separate inventory. Local owner delivery, not GitHub release."
+    },
+    "limits": "Source and generated manifests unchanged, digital PCM not SPL or matched loudness. No human evidence, Windows, physical audition, new claims, merge or license. Assembly wrapper partial native run; Windows qualification pending.",
+    "next": "Existing single issue-scoped Windows job extended (no additional matrix/job/manual dispatch) to checkout exact Grammar SHA, install NumPy 2.3.5, execute wrapper and independent audits, ordinary browser navigation/gain/selection checks, upload only after success. Pending; exclude temporary workflow from promotion unless authorized."
+  },
+  "liveReconciliation018": {
+    "base": "495a98ca12bae467a507031f04931aa4254b1866",
+    "sources": [
+      {
+        "pr": 443,
+        "head": "d9184830bc645494ef332f5134ce05eebaf57f2a",
+        "ci": 45824062061,
+        "status": "in_progress at inspection"
+      },
+      {
+        "pr": 449,
+        "head": "abb0324c2b112dacc161c14ff6ce237516ed3236",
+        "ci": 45817957032,
+        "status": "success"
+      },
+      {
+        "pr": 453,
+        "head": "2a074c64797b310423824902d092ffb54eacf5e7",
+        "ci": 45819280238,
+        "status": "success"
+      },
+      {
+        "pr": 457,
+        "head": "deff7227805ef5c2f9970e9d12d66a7ee05f062c",
+        "ci": 45822868137,
+        "status": "success"
+      },
+      {
+        "pr": 513,
+        "head": "58e64774ead3420c2e6f4993fc3dc24ec9c3206b",
+        "ci": 45821698880,
+        "status": "success"
+      }
+    ],
+    "scope": "All draft and mergeable at inspection; no new source deltas included."
   }
 }

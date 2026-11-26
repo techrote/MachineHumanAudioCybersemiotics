@@ -65,3 +65,39 @@ jobs:
           }
           if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
           node check_browser.cjs (Join-Path $env:RUNNER_TEMP 'observatory-one') $chrome
+      - name: Checkout frozen Grammar input
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 9e45f77a11c637c03f7e1ac50b6b6802ffc97cfc
+          path: _grammar607
+          persist-credentials: false
+      - name: Native Grammar release and independent verification
+        working-directory: tools/experimental/mergedown-607
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          python --version
+          python -m pip install --disable-pip-version-check numpy==2.3.5
+          $source = Join-Path $env:GITHUB_WORKSPACE '_grammar607/tools/experimental/grammar-452-scoped-clauses'
+          $target = Join-Path $env:RUNNER_TEMP 'grammar607'
+          python -B build_grammar_release.py $source $target
+      - name: Grammar ordinary offline browser smoke test
+        working-directory: tools/experimental/mergedown-607
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) {
+            $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe'
+          }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
+          node check_grammar_browser.cjs (Join-Path $env:RUNNER_TEMP 'grammar607') $chrome
+      - name: Retain Grammar owner laboratory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Grammar-607-Windows-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/grammar607/
+          if-no-files-found: error
+          retention-days: 14
