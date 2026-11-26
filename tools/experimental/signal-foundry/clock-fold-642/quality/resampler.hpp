@@ -7,9 +7,29 @@ namespace mhac::clock_fold::quality {
 class KernelBank {
     static constexpr int bins=32, phases=64, taps=48;
     using Row=std::array<double,taps>;
+    using Frame=std::array<Stereo,frameSize>;
     std::array<std::array<Row,phases+1>,bins> rows_{};
     bool ready_=false;
+    static double clean(double v) noexcept {v=bounded(v,-1,1);return std::abs(v)<1e-30?0.:v;}
+    static int bin(double width) noexcept {
+        if(!std::isfinite(width)||width<=0) return 0;
+        const double speed=.25/width;
+        return std::clamp(int(std::floor(bins/std::max(1.,speed)))-1,0,bins-1);
+    }
+    Stereo at(const Frame& frame,double src,int b,int other,double mix) const noexcept {
+        const int base=int(src); const double phase=(src-base)*phases;
+        const int p=std::min(int(phase),phases-1); const double f=phase-p;
+        Stereo out{};
+        for(int j=0;j<taps;++j){
+            const auto i=std::size_t(std::clamp(base+j-(taps/2-1),0,int(frameSize)-1));
+            double w=(1-f)*rows_[b][p][j]+f*rows_[b][p+1][j];
+            if(mix>0){const double v=(1-f)*rows_[other][p][j]+f*rows_[other][p+1][j];w+=(v-w)*mix;}
+            for(int ch=0;ch<2;++ch) out[ch]+=w*clean(frame[i][ch]);
+        }
+        return {clean(out[0]),clean(out[1])};
+    }
 public:
+    static constexpr double transitionSamples=64;
     void prepare() noexcept {
         constexpr double pi=3.14159265358979323846;
         for(int b=0;b<bins;++b) for(int p=0;p<=phases;++p){
@@ -25,26 +45,31 @@ public:
         }
         ready_=true;
     }
-    Stereo render(const std::array<Stereo,frameSize>& frame,const Plan& plan,std::size_t pos) const noexcept {
+    // Legacy abrupt mode stays the default. Smooth mode blends coefficients at
+    // the same source coordinate, only on the slower side of each boundary.
+    Stereo render(const Frame& frame,const Plan& plan,std::size_t pos,bool smooth=false) const noexcept {
         pos=std::min(pos,frameSize-1);
-        auto clean=[](double v){v=bounded(v,-1,1);return std::abs(v)<1e-30?0.:v;};
         if(plan.identity||!ready_) return {clean(frame[pos][0]),clean(frame[pos][1])};
         const double t=double(pos)/double(frameSize-1);
         std::size_t s=0; while(s<3 && t>plan.boundary[s+1]) ++s;
         const double width=plan.boundary[s+1]-plan.boundary[s];
         if(!std::isfinite(width)||width<=0) return {};
-        const double speed=.25/width;
-        const int b=std::clamp(int(std::floor(bins/std::max(1.,speed)))-1,0,bins-1);
+        const int b=bin(width);
         const double src=bounded(plan.source(t)*double(frameSize-1),0,double(frameSize-1));
-        const int base=int(src); const double phase=(src-base)*phases;
-        const int p=std::min(int(phase),phases-1); const double f=phase-p;
-        Stereo out{};
-        for(int j=0;j<taps;++j){
-            const auto i=std::size_t(std::clamp(base+j-(taps/2-1),0,int(frameSize)-1));
-            const double w=(1-f)*rows_[b][p][j]+f*rows_[b][p+1][j];
-            for(int ch=0;ch<2;++ch) out[ch]+=w*clean(frame[i][ch]);
+        int other=b; double mix=0;
+        if(smooth){
+            const double span=std::min(transitionSamples,width*double(frameSize-1)*.5);
+            auto neighbor=[&](double distance,double w){
+                const int candidate=bin(w);
+                if(candidate>=b||distance>=span||span<=0) return;
+                const double u=std::clamp(1-distance/span,0.,1.);
+                const double weight=u*u*(3-2*u);
+                if(weight>mix){other=candidate;mix=weight;}
+            };
+            if(s>0) neighbor((t-plan.boundary[s])*(frameSize-1),plan.boundary[s]-plan.boundary[s-1]);
+            if(s<3) neighbor((plan.boundary[s+1]-t)*(frameSize-1),plan.boundary[s+2]-plan.boundary[s+1]);
         }
-        return {clean(out[0]),clean(out[1])};
+        return at(frame,src,b,other,mix);
     }
 };
 }

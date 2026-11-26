@@ -48,6 +48,7 @@ class Engine {
     std::array<std::array<Stereo,frameSize>,2> frames_{};
     std::array<Plan,2> plans_{};
     std::array<double,2> edges_{};
+    std::array<bool,2> filtered_{};
     std::size_t pos_=0, capture_=0;
     double wet_=1, step_=1./240;
 public:
@@ -59,10 +60,10 @@ public:
     void reset() noexcept {
         // Clear in place: aggregate assignment may create a 256 KiB stack temporary.
         for (auto& frame : frames_) frame.fill(Stereo{});
-        plans_={}; edges_={}; pos_=capture_=0; wet_=1;
+        plans_={}; edges_={}; filtered_={}; pos_=capture_=0; wet_=1;
     }
-    Stereo tick(Stereo x, Controls c) noexcept {
-        if (!pos_) { plans_[capture_]=Plan::make(c); edges_[capture_]=bounded(c.edge,0,.25,.03); }
+    template<class Renderer> Stereo tickWith(Stereo x, Controls c, bool filtered, Renderer&& render) noexcept {
+        if (!pos_) { plans_[capture_]=Plan::make(c); edges_[capture_]=bounded(c.edge,0,.25,.03); filtered_[capture_]=filtered; }
         for (double& v:x) { v=bounded(v,-1,1); if (std::abs(v)<1e-30) v=0; }
         const auto playback=1-capture_;
         const auto& old=frames_[playback];
@@ -75,9 +76,11 @@ public:
         const double seam=edge>0 ? std::min(1.,std::min(t,1-t)/edge) : 1.;
         const double target=c.bypass?0:bounded(c.wet,0,1,1);
         wet_+=std::clamp(target-wet_,-step_,step_);
+        const bool useFilter=filtered_[playback]&&!p.identity&&seam*wet_>0;
+        const Stereo filteredAudio=useFilter?render(old,p,pos_):Stereo{};
         Stereo y{};
         for (std::size_t ch=0;ch<2;++ch) {
-            const double warped=p.identity ? dry[ch] : (1-frac)*old[a][ch]+frac*old[b][ch];
+            const double warped=p.identity ? dry[ch] : (useFilter?filteredAudio[ch]:(1-frac)*old[a][ch]+frac*old[b][ch]);
             const double w=seam*wet_;
             y[ch]=p.identity||w==0 ? dry[ch] : bounded((1-w)*dry[ch]+w*warped,-1,1);
             if (std::abs(y[ch])<1e-30) y[ch]=0;
@@ -85,6 +88,9 @@ public:
         frames_[capture_][pos_]=x;
         if (++pos_==frameSize) { pos_=0; capture_=playback; }
         return y;
+    }
+    Stereo tick(Stereo x, Controls c) noexcept {
+        return tickWith(x,c,false,[](const auto&,const Plan&,std::size_t){return Stereo{};});
     }
     template<class T> void process(const T* left,const T* right,T* outL,T* outR,std::size_t n,Controls c) noexcept {
         for (std::size_t i=0;i<n;++i) {

@@ -19,7 +19,9 @@ bool readExact(IBStream* stream,std::uint8_t* bytes,int32 size){
 }
 bool readParams(IBStream* stream,cf::Normalized& p){
     cf::State bytes{};
-    return readExact(stream,bytes.data(),int32(bytes.size()))&&cf::decode(bytes.data(),bytes.size(),p);
+    if(!readExact(stream,bytes.data(),4)||bytes[0]!='C'||bytes[1]!='F'||bytes[2]!='0')return false;
+    const int32 size=bytes[3]=='1'?52:bytes[3]=='2'?int32(bytes.size()):0;
+    return size>4&&readExact(stream,bytes.data()+4,size-4)&&cf::decode(bytes.data(),std::size_t(size),p);
 }
 struct Cursor {
     IParamValueQueue* queue=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
@@ -96,6 +98,7 @@ public:
         add(STR16("Wet mix"),cf::Wet);
         add(STR16("Seam width (0-25%)"),cf::Edge);
         add(STR16("Bypass"),cf::Bypass,1,ParameterInfo::kCanAutomate|ParameterInfo::kIsBypass);
+        add(STR16("Reconstruction (linear / filtered)"),cf::Quality,1);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* stream) override {
@@ -106,7 +109,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Clock Fold", Vst::kDistributable, "Fx|Delay", "0.1.0", kVstVersionString, Processor::create)
+           "MHAC Clock Fold", Vst::kDistributable, "Fx|Delay", "0.2.0", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Clock Fold Controller", 0, "", "0.1.0", kVstVersionString, Controller::create)
+           "MHAC Clock Fold Controller", 0, "", "0.2.0", kVstVersionString, Controller::create)
 END_FACTORY

@@ -9,7 +9,7 @@ int main(){
     auto owner=std::make_unique<Live>(); auto directOwner=std::make_unique<Engine>();
     auto& live=*owner; auto& direct=*directOwner;
     Normalized p{.92,.16,.25,.8,.12,0},q=defaults;
-    auto bytes=encode(p);require(bytes.size()==52&&decode(bytes.data(),bytes.size(),q)&&q==p);
+    auto bytes=encode(p);require(bytes.size()==60&&decode(bytes.data(),bytes.size(),q)&&q==p);
     require(!decode(bytes.data(),bytes.size()-1,q)&&q==p);
     auto bad=bytes;bad[0]='X';require(!decode(bad.data(),bad.size(),q)&&q==p);
     auto invalid=p;invalid[0]=std::numeric_limits<double>::quiet_NaN();bad=encode(invalid);
@@ -19,7 +19,7 @@ int main(){
     for(double rate:{1000.,1234.568,44100.,48000.,96000.,192000.,1234567.8,2000000.}){
         require(live.prepare(rate)&&direct.prepare(rate));require(live.restore(p));q=p;
         for(std::size_t i=0;i<5*frameSize;++i){
-            if(i%31==0){unsigned id=unsigned((i/31)%Count);double v=double((i/31)%17)/16;
+            if(i%31==0){unsigned id=unsigned((i/31)%Quality);double v=double((i/31)%17)/16;
                 q[id]=v;require(live.set(id,v));}
             const double x=.6*std::sin(double(i)*.03),y=.3*std::cos(double(i)*.011);
             auto a=live.step(x,y),b=direct.tick({x,y},controls(q));require(a==b);
