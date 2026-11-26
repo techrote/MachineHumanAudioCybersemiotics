@@ -1,0 +1,33 @@
+{
+  "assertion_failures": 0,
+  "audio": [
+    {
+      "decoded_bits": 120,
+      "file": "five-voice-extension.wav",
+      "frames": 24,
+      "max_amplitude_error": 0.19834403617142016,
+      "sha256": "01bae170b86617fd22bcca807823922393af76d7478c7f5b14466a6ef2098257"
+    },
+    {
+      "decoded_bits": 72,
+      "file": "three-voice-projection.wav",
+      "frames": 24,
+      "max_amplitude_error": 0.09526492556187804,
+      "sha256": "714717e58e0e3692034514b4b53fc097f8d0c2caeeb87db658914febb22eee89"
+    },
+    {
+      "decoded_bits": 72,
+      "file": "three-voice-iid.wav",
+      "frames": 24,
+      "max_amplitude_error": 0.09526492556187804,
+      "sha256": "5d6dad4a1078a4a8329ab6d4712002fc0ae9d9933886396caedc81fb7e9eb000"
+    }
+  ],
+  "exact_endpoint_witnesses": 246,
+  "exact_marginal_cells": 2944,
+  "labelled_cube_linear_programs": 30,
+  "max_lp_error": 1.7733037260825313e-13,
+  "numpy": "2.3.5",
+  "python": "3.13.5",
+  "scipy": "1.17.0"
+}
