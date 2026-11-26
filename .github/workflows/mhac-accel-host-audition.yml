@@ -6,6 +6,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/loom_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/winters_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp'
+      - 'tools/experimental/vst-acceleration/native-chain/afterimage_receipt_host.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -121,6 +122,23 @@ jobs:
           $bundle = (Resolve-Path winters-audition/plugin/MHACThreeWinters.vst3).Path
           & sdk-probe-build/Release/winters_sdk_probe.exe $bundle 2>&1 | Tee-Object winters-audition/sdk-probe.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact Afterimage Choir and Receipt Fold packages
+        if: ${{ !cancelled() }}
+        id: afterimage_packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15123228931/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o receipt-fold.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15128221747/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Independent Afterimage and Receipt Fold host chain
+        if: ${{ !cancelled() && steps.afterimage_packages.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/afterimage_receipt_host.py --instrument afterimage.zip --effect receipt-fold.zip --out afterimage-audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -135,5 +153,6 @@ jobs:
             winters-audition/*.wav
             winters-audition/*.vstpreset
             winters-audition/sdk-probe*.txt
+            afterimage-audition/afterimage-receipt-host.json
           if-no-files-found: ignore
           retention-days: 7
