@@ -1,0 +1,76 @@
+{
+  "method": "literal ordered products; Fraction posterior calls; explicit rational garbling; original PCM inventory",
+  "horizons": [
+    {
+      "n": 1,
+      "A": "263/400",
+      "B": "3/4",
+      "min_call_gap": "-37/400",
+      "max_call_gap": "7/100"
+    },
+    {
+      "n": 2,
+      "A": "6079/8000",
+      "B": "3/4",
+      "min_call_gap": "0",
+      "max_call_gap": "3353/100000"
+    },
+    {
+      "n": 3,
+      "A": "26504053/32000000",
+      "B": "27/32",
+      "min_call_gap": "-495947/32000000",
+      "max_call_gap": "941299/16000000"
+    },
+    {
+      "n": 4,
+      "A": "560050727/640000000",
+      "B": "27/32",
+      "min_call_gap": "0",
+      "max_call_gap": "20050727/640000000"
+    },
+    {
+      "n": 5,
+      "A": "4648306730629/5120000000000",
+      "B": "459/512",
+      "min_call_gap": "0",
+      "max_call_gap": "62144290651/1280000000000"
+    },
+    {
+      "n": 6,
+      "A": "19072708411093/20480000000000",
+      "B": "459/512",
+      "min_call_gap": "0",
+      "max_call_gap": "712708411093/20480000000000"
+    },
+    {
+      "n": 7,
+      "A": "77682625504685533/81920000000000000",
+      "B": "3807/4096",
+      "min_call_gap": "0",
+      "max_call_gap": "1583845324337969/40960000000000000"
+    }
+  ],
+  "two_read_grid_profiles": 729,
+  "garbling_scale": "2000/2079",
+  "garbling_neutral_mass_per_sign": "479/11880",
+  "side_accuracy_at_1_20": [
+    "77197/80000",
+    "779/800"
+  ],
+  "audio": {
+    "A": {
+      "episodes": 800,
+      "symbols_recovered": 1600,
+      "seconds": 32.0,
+      "sha256": "9b2a98174afcb034ec46373af36393f39cd4999d988b8c936b3e04368df24f41"
+    },
+    "B": {
+      "episodes": 800,
+      "symbols_recovered": 1600,
+      "seconds": 32.0,
+      "sha256": "72463c8ffb73c7f3f7626fbf953279e58d6e7564bd5696e7ccfa74a4b587a209"
+    }
+  },
+  "assertion_failures": 0
+}
