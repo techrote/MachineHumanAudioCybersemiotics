@@ -73,7 +73,8 @@ public:
         return stream->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;
     }
     tresult PLUGIN_API process(ProcessData& d) override {
-        state.begin(engine);
+        // Lifecycle activation clears history; patch changes during processing do not.
+        state.begin(engine,true);
         const auto result=processBlock(d);
         state.end(engine);
         return result;
@@ -117,7 +118,7 @@ public:
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Clock Fold", Vst::kDistributable, "Fx|Delay", "0.2.1", kVstVersionString, Processor::create)
+           "MHAC Clock Fold", Vst::kDistributable, "Fx|Delay", "0.2.2", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Clock Fold Controller", 0, "", "0.2.1", kVstVersionString, Controller::create)
+           "MHAC Clock Fold Controller", 0, "", "0.2.2", kVstVersionString, Controller::create)
 END_FACTORY

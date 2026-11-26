@@ -40,7 +40,7 @@ inline bool decode(const std::uint8_t* s,std::size_t n,Normalized& p) noexcept {
     if(!valid(q))return false;
     p=q;return true;
 }
-// Single audio-thread owner; restore/reset only while processing is stopped.
+// Single audio-thread owner; lifecycle calls must be serialized with processing.
 class Live {
     Engine engine_;
     std::unique_ptr<quality::KernelBank> bank_;
@@ -58,9 +58,14 @@ public:
         if(id>=Count||!std::isfinite(v)||v<0||v>1)return false;
         p_[id]=v;c_=controls(p_);return true;
     }
-    bool restore(const Normalized& p) noexcept {
+    // Apply a patch as one control transaction without dropping buffered audio.
+    bool applyPatch(const Normalized& p) noexcept {
         if(!valid(p))return false;
-        p_=p;c_=controls(p_);reset();return true;
+        p_=p;c_=controls(p_);return true;
+    }
+    bool restore(const Normalized& p) noexcept {
+        if(!applyPatch(p))return false;
+        reset();return true;
     }
     Stereo step(double l,double r) noexcept {
         return engine_.tickWith({l,r},c_,bank_&&p_[Quality]>=.5,
