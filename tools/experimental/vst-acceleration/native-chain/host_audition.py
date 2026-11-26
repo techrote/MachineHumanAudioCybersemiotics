@@ -129,6 +129,70 @@ def load(bundle, cid, index):
     return p
 
 
+def run_preset_matrix(gpath, fpath, out, report):
+    """Exercise every delivered preset in fresh real host instances, at three rates."""
+    report["preset_matrix"] = []
+    report["preset_matrix_scope"] = (
+        "Static preset import and host-exported preset restoration; Hold is off. "
+        "Freeze contract differentiation during active Hold is NOT tested.")
+    def persist():
+        (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+    persist()
+    for rate in (44100, 48000, 96000):
+        n = int(rate*DURATION)
+        source = None
+        gold_hashes = set()
+        for index, (cid, name, values) in enumerate(bank.BANK):
+            instrument = cid == bank.G
+            bundle = gpath if instrument else fpath
+            case = dict(rate=rate, block=257, index=index, preset=name,
+                        class_id=cid, input_preset_sha256=sha(bank.preset(cid,values)),
+                        status="started")
+            report["preset_matrix"].append(case)
+            persist()
+            try:
+                p = load(bundle, cid, index)
+                require(p.is_instrument if instrument else p.is_effect, "category mismatch")
+                def render(plugin):
+                    return checked(plugin(MIDI, duration=DURATION, sample_rate=rate,
+                                          num_channels=2, buffer_size=257) if instrument else
+                                   plugin(source.copy(), rate, buffer_size=257), n)
+                signal = render(p)
+                case["output"] = metrics(signal)
+                case["tail_peak"] = float(np.max(np.abs(signal[:,-480:])))
+                require(case["output"]["rms"] > 1e-5, "silent preset")
+                if instrument:
+                    gold_hashes.add(case["output"]["float32_sha256"])
+                    if index == 0:
+                        source = signal.copy()
+                    require(case["tail_peak"] < 1e-5, "instrument did not release")
+                else:
+                    case["max_dry_difference"] = float(np.max(np.abs(signal-source)))
+                    if index == 11:
+                        require(case["max_dry_difference"] < 2e-6, "bypass not transparent")
+                    else:
+                        require(case["max_dry_difference"] > 1e-4, "effect did not alter audio")
+                        require(np.max(np.abs(signal)-np.abs(source)) < 2e-6, "unexpected effect gain")
+                saved = p.preset_data
+                case["host_export_sha256"] = sha(saved)
+                fresh = open_plugin(bundle)
+                fresh.preset_data = saved
+                restored = render(fresh)
+                case["restore_max_error"] = float(np.max(np.abs(restored-signal)))
+                require(case["restore_max_error"] < 2e-5, "fresh-instance preset audio mismatch")
+                case["status"] = "pass"
+            except Exception as e:
+                case["status"] = "fail"
+                case["error"] = str(e)
+                raise
+            finally:
+                persist()
+                print("PRESET MATRIX:", json.dumps(case), flush=True)
+        require(len(gold_hashes) > 1, "all instrument presets rendered identically")
+    report["preset_matrix_complete"] = True
+    persist()
+
+
 def run(gold, freeze, out):
     require(platform.system() == "Windows" and platform.machine().lower() in ("amd64","x86_64"),
             "exact packages require native Windows x64")
@@ -167,7 +231,7 @@ def run(gold, freeze, out):
         if block == 257:
             wav(out/"dry.wav", dry)
             wav(out/"wet.wav", wet)
-    (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
+    run_preset_matrix(gpath, fpath, out, report)
 
 
 class Tests(unittest.TestCase):
