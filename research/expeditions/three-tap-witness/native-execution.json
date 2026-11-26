@@ -1,0 +1,207 @@
+{
+  "assertion_failures": 0,
+  "audio": {
+    "cubic-minus": {
+      "frames": 15400,
+      "peak": 6859,
+      "sha256": "5ee7b4057ab168fb68f602d723a7100474a2bbdcb4b0b5b8ce4db64f91149592"
+    },
+    "cubic-plus": {
+      "frames": 15400,
+      "peak": 13824,
+      "sha256": "2155e558c9d91c5f6982ac4da6273f8e2c2dc8bc8964f643c58069259a6af054"
+    },
+    "raw-minus": {
+      "frames": 15400,
+      "peak": 15000,
+      "sha256": "eb82014653fced6ca8b1934467eb2afd446405a0b179f88cd7a05a18050c5f14"
+    },
+    "raw-plus": {
+      "frames": 15400,
+      "peak": 20000,
+      "sha256": "4b2a09edd277e35b373bda6b5bcefd3edd8b3c480fa3d4025656217d8b4294f1"
+    }
+  },
+  "collision": {
+    "delay_span": 2002,
+    "pair_energy": [
+      142356612,
+      131952612
+    ],
+    "period": 170170,
+    "raw_moment": "5111904",
+    "short_delays": [
+      0,
+      7,
+      33
+    ],
+    "short_energy": [
+      409314236,
+      398910236
+    ]
+  },
+  "counts": {
+    "general_histogram_checks": 640,
+    "pair_probe_checks": 52,
+    "short_probe_class_checks": 160,
+    "two_tap_histogram_profiles": 1010
+  },
+  "short_spans": [
+    {
+      "delays": [
+        0,
+        17,
+        39
+      ],
+      "isolating_span": 4862,
+      "pair": [
+        5,
+        7
+      ]
+    },
+    {
+      "delays": [
+        0,
+        13,
+        34
+      ],
+      "isolating_span": 3094,
+      "pair": [
+        5,
+        11
+      ]
+    },
+    {
+      "delays": [
+        0,
+        11,
+        28
+      ],
+      "isolating_span": 2618,
+      "pair": [
+        5,
+        13
+      ]
+    },
+    {
+      "delays": [
+        0,
+        7,
+        33
+      ],
+      "isolating_span": 2002,
+      "pair": [
+        5,
+        17
+      ]
+    },
+    {
+      "delays": [
+        0,
+        13,
+        30
+      ],
+      "isolating_span": 2210,
+      "pair": [
+        7,
+        11
+      ]
+    },
+    {
+      "delays": [
+        0,
+        5,
+        22
+      ],
+      "isolating_span": 1870,
+      "pair": [
+        7,
+        13
+      ]
+    },
+    {
+      "delays": [
+        0,
+        11,
+        26
+      ],
+      "isolating_span": 1430,
+      "pair": [
+        7,
+        17
+      ]
+    },
+    {
+      "delays": [
+        0,
+        7,
+        17
+      ],
+      "isolating_span": 1190,
+      "pair": [
+        11,
+        13
+      ]
+    },
+    {
+      "delays": [
+        0,
+        7,
+        20
+      ],
+      "isolating_span": 910,
+      "pair": [
+        11,
+        17
+      ]
+    },
+    {
+      "delays": [
+        0,
+        10,
+        21
+      ],
+      "isolating_span": 770,
+      "pair": [
+        13,
+        17
+      ]
+    }
+  ],
+  "short_tree": [
+    87,
+    [
+      [
+        5,
+        13
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        11,
+        17
+      ]
+    ]
+  ],
+  "small_pair": {
+    "baseline": 5511312,
+    "delays": [
+      0,
+      11,
+      22
+    ],
+    "energy": [
+      6393312,
+      4629312
+    ],
+    "half_gap": 882000
+  },
+  "status": "PASS",
+  "trees_checked": 125
+}
