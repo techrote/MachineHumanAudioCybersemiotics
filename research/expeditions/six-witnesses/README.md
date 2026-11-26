@@ -1,0 +1,79 @@
+# The Chord That Needs Six Witnesses
+
+Refs #724 · 26 November 2026 · Exploratory mathematical proof, synthetic exact computation, original integer PCM. One ChatGPT agent performed the reading, derivation, implementation and self-check. No independent review or human listening evidence.
+
+## Anomaly and contract
+
+The full-rank bispectral family in #719 loses its exact equality under ordinary PCM rounding. This expedition asks for a different family whose samples are integers from the outset, and whose ambiguity survives even complete fifth-order qualification. The answer connects acoustic descriptors to cyclotomic structure determination in crystallography. The universal sixth-order ceiling and examples requiring six are established prior art, not discoveries claimed here. Our contribution is a simple scalable sign family, its exact fourth/fifth-order phase fiber, its sixth-order pair-receipt alphabet, and an explicit scalar-moment encoding and collision.
+
+Use cyclic time t in Z/NZ. The cumulative r-deck is the list of correlations of orders 1 through r, allowing repeated lags: C_k(l_1,...,l_(k-1)) = sum_t f(t) product_j f(t+l_j). Its Fourier transform consists of products of k Fourier coefficients with frequency sum zero modulo N (normalization does not change equality). The cumulative contract matters for zero-mean signals: a single odd-order deck can vanish and cannot substitute for the cumulative deck. Compare integer cyclic translations, not arbitrary continuous-time shifts.
+
+## Construction and proof
+
+Take m >= 2 distinct odd primes p_i, N = 2 product_i p_i, and positive integer weights A_i. Define
+
+    R_p(t) = p-1 if p divides t, otherwise -1
+    x_s(t) = (-1)^t sum_i s_i A_i R_(p_i)(t), s_i in {+1,-1}
+    f_s(t) = c + x_s(t).
+
+Choose c > sum_i A_i(p_i-1) for strictly positive integer signals; c=0 is the centered audio contract. R_p is the Ramanujan sum over nontrivial pth roots. By the Chinese remainder theorem the time group is Z/2 times the private prime-coordinate groups. The normalized Fourier coefficient on component i is s_i A_i at every frequency with CRT coordinates (1,0,...,a_i,...,0), a_i nonzero mod p_i. All other non-DC coefficients vanish. In ordinary cyclic indices this component consists of primitive roots of order 2p_i, i.e. k = a N/(2p_i) for odd 1<=a<2p_i, a!=p_i. DC is c.
+
+**Theorem A.** Every sign vector gives the same cumulative fifth-order correlations, and there are exactly 2^(m-1) cyclic translation classes within this sign family. Sixth order distinguishes every pair of classes.
+
+Proof: a zero-sum tuple of supported frequencies has an even total number of non-DC factors (the common mod-2 coordinate). Each private group that appears must appear at least twice (one nonzero residue cannot sum to zero). For the sign product to change, at least one group count must be odd. Then another group count must be odd as well, and each must be at least three. No tuple of length <=5 has that property, proving equality. This proof works with or without DC.
+
+A shift by t changes the i-th component ratios by (-1)^t exp(2 pi i a_i t/p_i), with the sign of the exponent immaterial to this argument. To produce a constant sign within the whole component, the private character must be constant on all nonzero a_i. Comparing a_i=1 and 2 shows t=0 mod p_i. Therefore every component receives the same global parity sign; conversely a shift by product_i p_i flips all signs. Exactly 2^(m-1) classes remain, and each has full period N.
+
+At order six, the only possible nonconstant sign masks are s_i*s_j, as six factors are needed for two odd groups. Every pair is attained: take private residues (1,1,-2) in each of components i and j, with common first coordinate 1 on each factor. Their sum vanishes, and the normalized product is s_i*s_j A_i^3 A_j^3. A spanning tree on m component vertices recovers all signs modulo simultaneous inversion. At least m-1 individual Fourier-product receipts are required even adaptively, because each receipt contributes at most one bit on this finite family. All sixth-order coordinates are constant or pair signs. QED.
+
+Examples with unit weights: N=30 (primes 3,5) has two classes; N=70 (5,7) has two; N=770 (5,7,11) has four. The number grows exponentially in m but N grows as a prime product. The sample range only grows as sum_i(p_i-1); finite word length still limits the realizable family.
+
+## Exact fourth/fifth-order fiber, including arbitrary real candidates
+
+**Theorem B.** If all p_i>=5, every real waveform with the same cumulative fourth-order deck as f_s is a cyclic translation of one member of the sign family. Hence the fourth- and fifth-order fibers are identical, with exactly 2^(m-1) translation classes. This is a statement about all real candidates, not only a sign-restricted search.
+
+Proof: the first and second decks fix DC and magnitudes, hence support. Divide candidate coefficients by the corresponding reference coefficients. In each private group write u(a) for the unit phase ratio at nonzero a, with u(-a)=conjugate(u(a)). Four factors in one group give u(a)u(b)=u(c)u(d) whenever a+b=c+d modulo p and all indices are nonzero. The mod-2 coordinates cancel in this relation. For each displacement h, comparing (a+h)+b=a+(b+h) shows that u(a+h)/u(a) is independent of a whenever both arguments are nonzero. In particular for h=1, the values u(1),...,u(p-1) form a geometric progression with ratio r. For h=2, compare 1->3 and p-1->1: the first ratio is r^2, the second is r^(-(p-2)), so r^p=1. Thus u(a)=K r^a, and conjugacy forces K=+1 or -1. The mixed four-factor case uses two components with a conjugate pair in each, so introduces no further restrictions. CRT lets every private character be realized simultaneously by a cyclic translation, while its parity flips all signs simultaneously. This proves the full fourth-order fiber and Theorem A then proves the fifth-order equality and sixth-order repair.
+
+Negative control p=3: fourth-order private relations involve only two +1 and two -1 factors (in additive residue coordinates), imposing no restriction on their relative unit phase. Fifth-order relations add none. Thus a continuous circle of relative phases survives for that component among real candidates. The sixth-order private product with all six residues +1 imposes u(1)^6=1, recovering the character-times-sign form. Then the sixth-order pair receipts still suffice. The finite root-grid census is a check of the proof, not a justification for assuming every phase is on the grid before the proof.
+
+## One scalar can sometimes replace many receipts
+
+Let T be uniform cyclic time and X_i = A_i R_(p_i)(T). CRT makes the X_i mutually independent and independent of (-1)^T. Each X_i has mean zero and third moment b_i = A_i^3(p_i-1)(p_i-2). For the centered sixth moment expansion, every sign-dependent multinomial term must have two odd exponents >=3, so only the (3,3) terms contribute:
+
+    M_6(s) = K + 20 sum_(i<j) b_i b_j s_i s_j
+           = K' + 10 (sum_i b_i s_i)^2.
+
+K and K' are sign-independent constants. The same difference holds with a common DC offset because every lower moment agrees. For m=2, the signed comparison is particularly simple: M_6(++ )-M_6(+-) = 40 b_1 b_2.
+
+If the b_i are superincreasing (each exceeds the sum of earlier ones), absolute signed sums are unique up to global sign. Proof: equal absolute sums imply equal or opposite signed sums; subtract the two vectors after choosing the global sign. The largest differing b_i cannot be canceled by the smaller weights. Thus one exact real-valued zero-lag sixth-order correlation can identify all 2^(m-1) classes once the fourth-order fiber and weights are known. This does NOT contradict the lower bound for individual Fourier-product coordinates: zero-lag correlation sums many of those products, and its precision carries many bits. Choose positive integer A_i recursively large enough to get superincreasing b_i; the dynamic range increases. A quantized scalar must retain at least m-1 bits to label all classes.
+
+Negative control: with unit weights for primes (5,7,11,13,17), b=(12,30,90,132,240); because 12+30+90=132, the two nontranslation vectors (+,+,+,-,+) and (+,+,+,-,-) give signed sums +240 and -240, respectively. Their scalar sixth moments are identical even though pair-specific sixth-order receipts distinguish them. With weights (1,1,1,2,3), the b_i are superincreasing, and all 16 classes become distinguishable by this scalar. This example is an engineering tradeoff, not a universal sixth-moment sufficiency claim.
+
+## A nonlinear acoustic inspection contract
+
+For any common real polynomial P of degree at most two, the transformed pair P(x_s) has identical complete cyclic autocorrelation, since every term in P(x(t))P(x(t+l)) involves at most four original factors (repeated lags allowed). Their means also agree. For a cubic P with nonzero leading coefficient a_3, the difference in transformed mean-square energy is a_3^2 times the original sixth-moment difference: every other term has degree <=5. Hence the simplest degree of memoryless polynomial that can expose the constructed two-component ambiguity through output energy is three.
+
+Concrete centered N=30 normalized integer periods:
+
+    ++: 6,2,-2,-1,-2,-3,1,2,-2,-1,3,2,1,2,-2,-6,-2,2,1,2,3,-1,-2,2,1,-3,-2,-1,-2,2
+    +-: -2,0,0,-3,0,5,3,0,0,-3,-5,0,3,0,0,2,0,0,3,0,-5,-3,0,0,3,5,0,-3,0,0
+
+Their moment sums of order 1..5 are (0,180,0,3180,0), and sixth sums are 97260 vs 68460 (means 3242 vs 2282). Direct local Python spot-check: P=1+2x+3x^2 yields identical autocorrelations at all 30 lags; adding x^3 yields total energy sums 140430 vs 111630. For cubic-only processing, the same difference 28800 is observed. This is a synthetic exact mathematical detector, not a recommended physical loudness measurement. Real nonlinear devices, clipping and arbitrary sample rounding may create or obscure distinctions.
+
+## Execution, source ledger, and limitations
+
+- Run node laboratory.cjs (dependency-free JS), or python witness.py (Python 3.11+ and NumPy). Native Python 3.13.5/NumPy 2.3.5 was executed twice; receipts and all WAV hashes agree. JS executed as the same function in the V8 tool environment, not native Node. Exact native source blob 9edd8fdbc47e1b9ae0fee7a97fc79ceadfe0a3c8 and receipt blob cc1fb3016a87f22207011967d5ac70f77f274f67 match the local executed files.
+- JS checks: five support profiles, 20 cyclic class representatives, 20 sixth-moment identities, 2,844 root-grid phase assignments, 837,931 direct integer time-domain cumulative correlation comparisons for N=30 positive-offset pair. The complete dynamic-programming frequency sum/mask census yields only zero masks for orders 1..5, and exactly the constant and all pair masks for order six.
+- Native checks: 1,675,862 complete literal cumulative correlation comparisons for the N=30 pair (both centered and c=7), 256 sampled fifth-order evaluations for the four N=770 sign configurations, 79,600 decoded original PCM16 frames, all expected exact integers recovered. Correlations of decoded periods are computed after exact division by their integer scale to avoid overflow; equality of the full integer PCM correlations follows by multiplying by the same scale power. No rounding is used. No clipping; max absolute sample 12000. All six WAVs are one second of complete repeated periods, mono PCM16, with sample rates 9000 and 15400 Hz respectively; no envelopes. Audio recipes are committed, binary WAVs generated locally. The exact population proof, not sample comparisons, establishes all larger-family correlations.
+- F. A. Grünbaum and C. C. Moore, *The use of higher-order invariants in the determination of generalized Patterson cyclotomic sets*, Acta Crystallographica A 51 (1995), 310–323, DOI https://doi.org/10.1107/S0108767394009827. Publisher metadata and accessible full-text extraction from the article scan were inspected, specifically section 6 (pp.316–318), section 7.1 Theorem 4 and section 7.2 (pp.318–319), section 8.2 (p.319). Two attempts to retrieve original page images timed out. Section 6 already supplies N=6 and N=30 integer fifth-order collisions; the N=30 support is the same primitive-order 6 and 10 classes used here. Theorem 4 provides the cumulative sixth-order rational ceiling, and the real-valued case is not uniformly bounded. The current sign construction and scalar compiler are scoped extensions; neither the ceiling nor the existence of fifth-order collisions is new.
+- T. Keleti and M. N. Kolountzakis, *On the determination of sets by their triple correlation in finite cyclic groups*, Online Journal of Analytic Combinatorics 1 (2006), https://eigen-space.org/mk/ps/three.pdf. Introduction equations (1)–(3), section 1.1 and opening of 1.2, printed pp.1–4; original page images 2–3 (printed pp.3–4) inspected. Their survey independently identifies the sixth-order rational result and distinguishes rational-weighted reconstruction from binary-set reconstruction. Their single-deck summary includes a nonzero-sum condition; we use cumulative orders explicitly, and prove our zero-mean family directly.
+- L. Pebody, *The Reconstructibility of Finite Abelian Groups*, Combinatorics, Probability and Computing 13 (2004), 867–892, DOI https://doi.org/10.1017/S0963548303005807. Publisher abstract/metadata inspected only; detailed theorem relied upon only through the above survey, not independently reconstructed.
+- Internal #719 full report inspected, especially sections 2–6. #630 issue body inspected; no claims dependent on its unexamined detailed derivation. Earlier #719 exact-head workflow 45887055244 completed successfully. This expedition changes no predecessor or canonical conclusions.
+
+All equality is for complete aligned cyclic sample periods. It is not perceptual equivalence, human validation, transmission robustness, continuous-time translation equivalence or binary-set reconstruction. The cyclic domain is essential for the CRT characterization. Exact integer rescaling preserves equality; generic quantization, truncation, resampling, unknown gain or arbitrary nonlinearities do not have such a guarantee. Full raw waveform or phase-registered spectral access trivially resolves many of these compressed-descriptor ambiguities. No general claim about a practical optimal detector under noise is made. Conventional harmonic analysis and algebra explain the results without a demonstrated incremental cybersemiotic mechanism.
+
+Design hypothesis: an Observatory descriptor inspector should record whether its inputs are finite integer PCM, arbitrary real samples or thresholded binary sets; whether its deck is cumulative; whether DC has been removed; and whether a nonlinear preprocessor has changed the effective order of the measurement. A playable organ could turn private component signs while freezing a fourth-order display and auditioning a separate cubic-energy voice. Only the offline witnesses and exact mathematical kernel exist.
+
+**Fiction:** A clerk gathers five statements about the sound, all perfectly accurate. The sixth witness does not speak louder. It brings two previously separate witnesses into the same sentence.
+
+Checkpoint: main base 495a98ca12bae467a507031f04931aa4254b1866. AGENTS, README, RAG, programme, runbook, integrity and validation read; 423 branch entries, 60 recent issue and 60 recent PR results, and targeted bispectral/rational/correlation duplicate searches inspected. Fresh issue #724, no comments at readback. Native git ls-remote failed DNS, so full local repository tests unavailable. Only this issue-scoped additive directory is changed. Draft/HOLD for independent mathematical critique and integrator promotion; no shared manifest, human gate, frozen record or production claim changed. CI status is separate from standalone results.
