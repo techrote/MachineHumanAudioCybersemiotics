@@ -535,5 +535,38 @@
       "Fresh git ls-remote failed exit 128 Could not resolve host github.com. Exact standalone source transfer succeeded. Large legacy phase.html (114045 bytes) includes embedded generated JSON, full dependency closure not transferred; no native legacy/selective claim. Earlier frozen source pins unchanged. No merge or owner approval."
     ],
     "recommendation": "Keep fallback prohibited for semantic authorization in ambiguous multi-profile channels; preserve consensus/abstention comparison and clean shared-codeword witness. HOLD overall #608. Next transfer frozen legacy/selective dependency set, produce native consolidated package, then qualify browser and prepare finite owner batch."
+  },
+  "packageBatch": {
+    "id": "OBS-PACKAGE-007",
+    "disposition": "HOLD",
+    "sourcePR": 443,
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "sourcePath": "tools/experimental/observatory-442-receipt-inspector/",
+    "snapshotPath": "tools/experimental/mergedown-607/affine-snapshot/",
+    "sourcePins": {
+      "core.js": "47938c769604ae56a1f8cb92e5d4ccc3e20f8d59",
+      "index.html": "5ee12f884479425acf8d3137a1974ff6df9c8cb4",
+      "phase.html": "c8f8631a9e76318a271d811e471af75e5c372acf",
+      "legacy-workbench.cjs": "71766ee6194f36f16aca6459fcf64966105844ce",
+      "selective-transfer.cjs": "ea1b41bda016082a4ff4754beb8da9b062a2736d",
+      "phase-fit.cjs": "fd0fbca5bc784fadb9227baa628fb290506b841c",
+      "matched-fp.cjs": "e2c5e29240844a643ba966e5a261909d39f07862"
+    },
+    "sourceIntegrityCI": 45690234347,
+    "previousConsolidationIntegrityCI": 45739323595,
+    "assemblerBlob": "92c858e6d70f6119767cd887ac4803ff57010d89",
+    "testBlob": "4be0b30852f2c69b037564caa67b1534372e5c30",
+    "qualification": "Native packaging fixture tests 6/6 PASS on Python 3.13.5 / Node 22.16.0; complete pinned source snapshot available in consolidation Git tree, original package execution still outstanding.",
+    "limitations": [
+      "Git DNS exit 128, full original source not native materialized here.",
+      "Real Chromium loopback fixture navigation blocked by administrator; no actual upstream browser, Windows or audition qualification.",
+      "No joined reconstruction or later deltas; coordinate permanent source placement; no new license or scientific/owner acceptance."
+    ],
+    "reproduction": [
+      "cd tools/experimental/mergedown-607",
+      "python -m unittest -v test_build_observatory",
+      "python build_observatory.py NEW_OUTPUT_DIRECTORY"
+    ],
+    "recommendation": "HOLD. Run actual frozen upstream package in native checkout and compare prior independent oracle before owner review."
   }
 }
