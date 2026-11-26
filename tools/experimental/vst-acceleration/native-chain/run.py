@@ -38,10 +38,12 @@ def main():
             if git_blob(data) != expected:
                 raise ValueError(f'upstream blob mismatch: {name}')
             (work / name).write_bytes(data)
+        source = work / 'chain.cpp'
+        source.write_bytes(pathlib.Path(__file__).with_name('chain.cpp').read_bytes())
         exe = work / 'chain.exe'
         flags = ['-O1', '-g', '-fsanitize=address,undefined', '-fno-omit-frame-pointer'] if args.sanitize else ['-O2']
         subprocess.run([args.cxx, '-std=c++17', '-Wall', '-Wextra', '-Werror', *flags,
-                        '-I', str(work), str(pathlib.Path(__file__).with_name('chain.cpp').resolve()),
+                        '-I', str(work), str(source),
                         '-o', str(exe)], check=True)
         subprocess.run([str(exe), str(args.out.resolve())], check=True)
     for path in sorted(args.out.glob('*.wav')):
