@@ -64,7 +64,7 @@ def unpack(path, dest, pin):
             else:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_bytes(z.read(item))
-    bundle = dest / (name+".vst3")
+    bundle = (dest / (name+".vst3")).resolve(strict=True)
     binary = bundle / "Contents" / "x86_64-win" / (name+".vst3")
     require(binary.is_file(), "missing Windows x64 binary")
     return bundle, dict(outer_sha256=digest, inner_sha256=sha(inner), binary_sha256=sha(binary.read_bytes()),
@@ -99,8 +99,30 @@ def wav(path, audio):
         w.writeframes(np.rint(audio.T*8192).astype("<i2").tobytes())
 
 
+def open_plugin(bundle):
+    # JUCE file scanning expects absolute native paths. Record an inner-module
+    # fallback separately: success there would not establish bundle scanning.
+    bundle = bundle.resolve(strict=True)
+    binary = bundle / "Contents" / "x86_64-win" / bundle.name
+    errors = []
+    for path in (bundle, binary):
+        try:
+            plugin = pb.load_plugin(str(path))
+            print("HOST LOAD:", path, plugin.name, flush=True)
+            return plugin
+        except (ImportError, RuntimeError) as e:
+            errors.append(str(path)+": "+str(e))
+    # Diagnostic only, in a separate process to avoid contaminating host state.
+    import subprocess
+    import sys
+    diagnostic = subprocess.run(
+        [sys.executable, "-c", "import ctypes,sys; d=ctypes.WinDLL(sys.argv[1]); print(bool(d.GetPluginFactory))", str(binary)],
+        capture_output=True, text=True, timeout=20)
+    raise RuntimeError("\n".join(errors)+f"\nWinDLL probe exit={diagnostic.returncode}: {diagnostic.stdout} {diagnostic.stderr}")
+
+
 def load(bundle, cid, index):
-    p = pb.load_plugin(str(bundle))
+    p = open_plugin(bundle)
     _, _, values = bank.BANK[index]
     require(bank.BANK[index][0] == cid, "preset class mismatch")
     p.preset_data = bank.preset(cid, values)
@@ -115,6 +137,7 @@ def run(gold, freeze, out):
     fpath, fpin = unpack(freeze, out/"freeze", PINS[1])
     report = dict(host="Pedalboard "+pb.__version__, numpy=np.__version__,
                   platform=platform.platform(), packages=[gpin,fpin], cases=[])
+    (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
     n = int(RATE*DURATION)
     for block in (64, 257, 1024):
         g = load(gpath, bank.G, 0)
@@ -129,7 +152,7 @@ def run(gold, freeze, out):
         # Host-produced state, restored to a new instance, not our offline decoder.
         for p, bundle, signal, instrument in ((g,gpath,dry,True),(f,fpath,wet,False)):
             saved = p.preset_data
-            new = pb.load_plugin(str(bundle))
+            new = open_plugin(bundle)
             new.preset_data = saved
             again = (new(MIDI, duration=DURATION, sample_rate=RATE, num_channels=2, buffer_size=block)
                      if instrument else new(dry.copy(), RATE, buffer_size=block))
@@ -139,6 +162,7 @@ def run(gold, freeze, out):
             require(error < 2e-5, "fresh-instance host state audio mismatch")
         case["block"] = block
         report["cases"].append(case)
+        (out/"host-receipt.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
         print(json.dumps(case), flush=True)
         if block == 257:
             wav(out/"dry.wav", dry)
