@@ -1,0 +1,34 @@
+# MHAC v36 — Reserved arbitration and time-local evidence
+
+Refs #512 / cumulative Draft/HOLD #513. Synthetic fictional world, single AI-assisted implementation and self-review, not independent review. Parent `521a26356233951064ecbac490298aaa1c943d38`, main `495a98ca12bae467a507031f04931aa4254b1866`. Native-tested executable Git blob `18a96aff2ae2950e6bc2345381c204b6d756e6fc`. All 21 inherited CJS files in the portable parent package matched pinned Git blobs. No external code imported; root LICENSE absent at inspection, no redistribution license granted.
+
+## Contract
+
+Reuse v33 durable semantic receiver and v34 strict PCM outcome format. Twelve slots, 55,936 samples each at 16 kHz, 3.496 s per slot, 41.952 s horizon; four offers, two claimed sources, queue cap eight, three DATA attempts. No wire changes. The centralized scheduler uses local offer/deadline/attempt history and receiver-generated queue jobs, not evaluator truth. `hybrid-reserve`: prefer first DATA attempts and first-receipt jobs in slots 0 and 1 of each three-slot cycle, prefer repairs in slot 2, work-conserving if the preferred class is empty; within fresh jobs prioritize earlier deadlines, otherwise cap age priority at four slots. Coalesced responses inherit the latest reason, so a queued first receipt can be reclassified as a push; this is a preference, not a formal delivery guarantee. `hybrid-guard`: additionally delay polling by six slots after a matching unchanged buffered report, removing any queued DATA for that obligation. This is a local no-progress heuristic, not proof of futility. No explicit delivery-confirmation protocol, persistence of sender/queue, authentication or distributed MAC.
+
+## Matched results
+
+New native Linux Node 22.16.0: `node outcome-arbitration-v36.cjs fresh-output`, 1,120 counted assertions and 384 uncached alternate-chunk exported slot rescans, 32 new sessions (eight cases x two policies x two phase seeds), 35.26 s wall / 146644 KiB peak RSS. Filesystem reopening checked. Prior 48 v35 sessions are archived comparators from exact pinned parent, not claimed as a fresh full rerun; an interrupted development sweep independently reproduced 21 baseline WAV hashes before being replaced by the focused final corpus. The two new policies match one another on decisions/metrics across the original six scenarios except deferral bookkeeping. Common six-case corpus only, 48 offered obligations per policy:
+
+| Policy | Correct final | First response on time | Occupied slots | Repeat DATA | Wrong belief-slots | Unknown belief-slots |
+|---|---:|---:|---:|---:|---:|---:|
+| poll (v35) | 38 | 38 | 126 | 20 | 46 | 140 |
+| push (v35) | 44 | 46 | 108 | 4 | 34 | 106 |
+| hybrid (v35) | 42 | 42 | 114 | 10 | 28 | 128 |
+| hybrid-debt (v35) | 40 | 38 | 116 | 12 | 20 | 138 |
+| hybrid-reserve | 44 | 44 | 112 | 8 | 28 | 130 |
+| hybrid-guard | 44 | 44 | 112 | 8 | 28 | 130 |
+
+Both new policies confirm D under persistent A loss and meet D's deadline under pressure, whereas uncapped debt fails. Both recover B's lost applied update at slot end 12 (41.952 s) but leave D unconfirmed in that case; push preserves D and misses B's update. No dominance claim: push has fewer slots and better first-response count, reserve has more timely repair. The guard has no incremental aggregate benefit on the six original scenarios.
+
+Two new quiet-gap fixtures delay A until slot 8, C until 10, D until 11; quiet-loss also drops the first applied B response. In both, unchanged buffered response at slot 6 triggers guard. Guard advances A's confirmation from slot end 11 to 10 and admits C, which is applied but unconfirmed; reserve never transmits C. Both occupy eight slots. In clean quiet-gap both confirm B at slot end 12; in quiet-loss neither confirms B's applied state. Guard has one extra wrong-belief slot in each quiet fixture because actual B becomes applied earlier while its evidence stays buffered. Across the full 32-session new corpus guard reduces repeated DATA 16 to 12, has 6 deferrals, does not reduce occupied slots (144 each) or improve final correctness (50/64 per policy). This is a trade-off, not a universal improvement.
+
+## Temporal evidence and limitations
+
+At each slot end and only after the offer, evaluator compares retained sender belief with actual fictional receiver status. Unknown includes conflict; wrong includes stale previously truthful reports, not just forged claims. Premature applied assertion counts a newly admitted applied report while actual status is not applied. False-applied duration is measured as obligation-slot counts, not exact intra-frame timing. Each of six policies has two premature applied assertions and six false-applied obligation-slots in the common corpus (20.976 s across two sessions). All twelve forged traces end with a coincidentally correct B status. Do not use horizon correctness alone; more rapid receiver progress may increase stale-belief duration even while improving execution. Public binding remains forgeable. No human perception, operational reliability or independent execution proof. Selected synthetic conditions only; no calibration, physical listening, Windows, embedded, power-loss or whole-repository native qualification. Whole-process RSS is not MCU memory.
+
+## Delivery and provenance
+
+Portable delivery includes both native and archived receipts, 80 WAVs, independent Python WAV/hash/PCM/temporal-accounting verifier (80/80, peak 4095 counts, 40/40 paired-seed reproductions across archived/new), combined comparison receipt, inspector and CMD launcher. Open inspector and load comparison-receipt.json plus matching WAV files; opt-in playback at 12% digital volume. Chromium file navigation blocked by administrator; fresh-document six-panel/two-panel waveform, metadata, default volume, muted playback and exact trace export passed. No physical playback claim.
+
+Refreshed draft heads #443 `185738e06eae9cd36a8bbbac533027e478c6c3a3` (tag-repair.py), #449 `97ec83f9f79902edfb0c84f3e9c10dfdfedcf8e2` (source-binding-boundary.py), #453 `b9c0af501b38ac516f194a362c8688c95657b32b` (response-revisions.cjs), #457 `610e9b7caedf51876ebfac75f1fdfbe7aa1a88af` (semantic-patience.cjs), first 90 source lines each inspected; no numerical claims reproduced from these upstreams. All four draft workflows and parent workflow successful at inspection. Interaction uses explicit terminal response acknowledgements and a different short-token wire contract; retain as complementary future comparator. Foundry PR search reviewed, no new DSP dependency required. FM-1-MHAC and FM-1-CYDaux READMEs inspected read-only. No shared/frozen changes, other branches or firmware writes. Next: explicit outcome-delivery confirmation with reserved capacity, nonmonotone evidence/authority recovery, and deadlines based on required evidence rather than mere emission; preserve quiet-loss and premature-assertion witnesses.
