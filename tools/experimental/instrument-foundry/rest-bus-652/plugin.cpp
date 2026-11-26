@@ -1,4 +1,4 @@
-#include "control.hpp"
+#include "state_bridge.hpp"
 #include <type_traits>
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
@@ -40,7 +40,7 @@ struct Events {
     }}
 };
 class Processor final: public AudioEffect {
-    Live engine;double sr=48000.;using Cursors=std::array<Cursor,count>;
+    Live engine;restbus::control::StateBridge state;double sr=48000.;using Cursors=std::array<Cursor,count>;
     template<class T> tresult audio(ProcessData& d,Cursors& c,Events& ev){
         std::array<T*,2> ptr{};unsigned channels=0;uint64 silence=0;
         if(d.numOutputs==1){auto& bus=d.outputs[0];auto* info=getAudioOutput(0);
@@ -66,13 +66,15 @@ public:
     tresult PLUGIN_API setProcessing(TBool active) override {if(!active)engine.reset();return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr*.032));}
-    tresult PLUGIN_API setState(IBStream* s) override {restbus::control::Params p{};return readParams(s,p)&&engine.restore(p)?kResultOk:kResultFalse;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=restbus::control::encode(engine.parameters());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* s) override {restbus::control::Params p{};return readParams(s,p)&&state.request(p)?kResultOk:kResultFalse;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;restbus::control::Params p{};if(!state.save(p))return kResultFalse;auto bytes=restbus::control::encode(p);int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>1)return kResultFalse;
+        if(d.numOutputs&&!d.outputs)return kResultFalse;
+        state.begin(engine);
+        struct Publish {restbus::control::StateBridge& s;Live& e;~Publish(){s.end(e);}} publish{state,engine};
         Cursors c{};if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){auto* q=d.inputParameterChanges->getParameterData(i);if(q){auto id=q->getParameterId();if(id>=firstID&&id<firstID+count&&!c[id-firstID].q)c[id-firstID].init(q);}}
         if(d.numSamples==0){for(unsigned k=0;k<count;++k)c[k].apply(engine,k,0,true);return kResultOk;}
-        if(d.numOutputs&&!d.outputs)return kResultFalse;
         Events ev(d.inputEvents);if(d.symbolicSampleSize==kSample32)return audio<Sample32>(d,c,ev);if(d.symbolicSampleSize==kSample64)return audio<Sample64>(d,c,ev);return kResultFalse;
     }
 };
@@ -89,6 +91,6 @@ public:
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Rest Bus",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Rest Bus Controller",0,"","0.2.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Rest Bus",Vst::kDistributable,"Instrument|Synth","0.2.1",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Rest Bus Controller",0,"","0.2.1",kVstVersionString,Controller::create)
 END_FACTORY
