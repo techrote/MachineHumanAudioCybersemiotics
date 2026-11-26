@@ -10,10 +10,10 @@
       "head": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
       "ci": 45690234347,
       "disposition": "HOLD",
-      "batch": "Frozen Observatory core, legacy and selective package qualified for owner inspection on hosted Linux including ordinary file navigation and DOM controls; overall lane HOLD (Windows, source placement, approval).",
-      "observedLaterHead": "8f8ebb033f5ba76e9406f7227b982c7aeab28c1f",
+      "batch": "Frozen seven-file Observatory package qualified for owner review on hosted Linux and Windows, including ordinary file navigation and real DOM interactions. Entire advancing source PR stays HOLD; placement coordination, approval and later deltas remain.",
+      "observedLaterHead": "d628756682460ab95d95e0c96ff95be3dae0ecd8",
       "observedLaterIntegrityCI": {
-        "run": 45787624063,
+        "run": 45796102255,
         "conclusion": "success"
       }
     },
@@ -23,9 +23,9 @@
       "head": "b18e9fa1a5d5d2405245e3999125d12c5ac37c7c",
       "ci": 45685466346,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "2515199a231bf95a9d20b74129af44008fc8233e",
+      "observedLaterHead": "7c40f0e533245d129881729722210ac6e9a65d9c",
       "observedLaterIntegrityCI": {
-        "run": 45783127384,
+        "run": 45791113924,
         "conclusion": "success"
       }
     },
@@ -35,9 +35,9 @@
       "head": "89ebdc3eff3aa7ec465ca8de9f9cf94a2766bb26",
       "ci": 45683269989,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "3e234a74cc4e5fc00307a73a270cd731249ff254",
+      "observedLaterHead": "cd3d36265f8208ee7d9b488028c2c541c79f012c",
       "observedLaterIntegrityCI": {
-        "run": 45781496082,
+        "run": 45790502260,
         "conclusion": "success"
       }
     },
@@ -47,9 +47,9 @@
       "head": "4e9f7120f137256fb8ba0736af51be7caacebc1f",
       "ci": 45687855197,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "c8d9c3aca353c8a3fea2c697bdc8b9539fb0e4e1",
+      "observedLaterHead": "3482edad4147c1c18976345387c7e0894c4d83e6",
       "observedLaterIntegrityCI": {
-        "run": 45784834242,
+        "run": 45794317207,
         "conclusion": "success"
       }
     },
@@ -59,9 +59,9 @@
       "head": "14cd3c34c86dffa57ac9b602f203efde299efea7",
       "ci": 45686454676,
       "disposition": "UNASSESSED",
-      "observedLaterHead": "a35efda4478bc1efd3b1f3177916a941d0068482",
+      "observedLaterHead": "abb0803b34aa0a1c38c4a2560611e9fb3b8ed6ad",
       "observedLaterIntegrityCI": {
-        "run": 45783435238,
+        "run": 45792498888,
         "conclusion": "success"
       }
     }
@@ -825,5 +825,108 @@
     "fix": "affine-snapshot/.gitattributes only, * -text. Existing build hash gate intact; no frozen blob changes.",
     "disposition": "HOLD",
     "next": "Requalify the repaired exact head on existing single Windows job; recover package and real Chrome receipts. Permanent source placement and owner gate remain."
+  },
+  "packageWindowsQualification": {
+    "id": "OBS-PACKAGE-014",
+    "disposition": "QUALIFIED FOR OWNER REVIEW",
+    "qualificationScope": "Frozen seven-file package only; not full PR or scientific approval",
+    "head": "825b285cd1a25399bb253039dc703f1d8371d679",
+    "base": "495a98ca12bae467a507031f04931aa4254b1866",
+    "sourceHead": "5a1e3a857389ce8f6763c66847c9522179dcbf59",
+    "nativeRun": 45788289746,
+    "job": 139800558264,
+    "integrityRun": 45788289748,
+    "conclusion": "success",
+    "runtime": {
+      "host": "Windows-2025",
+      "python": "3.12.10",
+      "node": "22.23.5",
+      "unitTests": "11/11 PASS",
+      "browser": "Chrome/158.0.8127.89",
+      "filePathStyle": "windows",
+      "browserChecks": "20/20 PASS",
+      "browserErrors": 0
+    },
+    "receipt": {
+      "rows": 2304,
+      "cells": 24467,
+      "certaintySummaryComparisons": 96,
+      "sourceBlobs": 7,
+      "packageFiles": 27,
+      "manifestEntries": 26
+    },
+    "artifact": {
+      "id": 15102520233,
+      "bytes": 697195,
+      "sha256": "2791d259ab7531a4c62855a120b0822db73e9e6cd7fed55bdb12a5afc67ae2ec",
+      "expires": "2026-12-10T09:02:58Z",
+      "packageManifestSHA256": "155aced213b8dc0d4f809c522ffbe590d854f52d735b2d08073883f48f7eb4ce",
+      "qualificationJSONSHA256": "f4259174302a06bd6ae720cffe5fd1cea9b093b5cc55eed9565a8fc0ab2d9ed4"
+    },
+    "localVerification": {
+      "runtime": "Linux Python 3.13.5 / Node 22.16.0",
+      "archiveCRC": "PASS",
+      "archiveHash": "PASS",
+      "manifest": "26/26 exact",
+      "upstreamBlobPins": "7/7 exact (local Git blob hash plus live exact-ref metadata)",
+      "nativeLegacy": "10/10 byte-identical to Windows archive",
+      "nativeSelective": "8/8 byte-identical to Windows archive",
+      "crossPlatform": "26/28 files byte-identical to Linux artifact 15094366767; package-manifest.json differs only in CRLF vs LF, parsed objects identical; qualification JSON differs in line endings and exact manifest SHA-256 only; all 9 WAVs, source, exports and landing page identical. Preserve both original receipts."
+    },
+    "limits": [
+      "Headless ordinary file navigation and DOM control changes, not physical audition or download validation in Windows smoke test.",
+      "No streaming, human perception, scientific acceptance or license grant.",
+      "Only software at exact tested head; later documentation changes require exact-head checks per policy."
+    ]
+  },
+  "ownerReviewPacket": {
+    "id": "OBS-PROMOTION-001",
+    "disposition": "HOLD",
+    "recommendedDecision": "Accept bounded frozen Observatory software for owner evaluation; do not merge broader #608 as-is until placement is agreed and exact final-head checks pass. Retain issue-scoped snapshot as immutable archival/release input, not a second maintained implementation; prefer source lane namespace as future canonical evolving implementation. Coordinate with #442 before changing placement. No merge authority inferred.",
+    "candidatePR": 608,
+    "qualifiedHead": "825b285cd1a25399bb253039dc703f1d8371d679",
+    "base": "495a98ca12bae467a507031f04931aa4254b1866",
+    "comparison": "21 commits ahead, zero behind, 33 additive files, mergeable at inspection; no main changes. Other five source candidates remain draft/mergeable, no runtime claim based on integrity CI.",
+    "includedSource": [
+      "core.js",
+      "index.html",
+      "phase.html",
+      "legacy-workbench.cjs",
+      "selective-transfer.cjs",
+      "phase-fit.cjs",
+      "matched-fp.cjs"
+    ],
+    "excludedFrozenSource": [
+      "README.md",
+      "adaptive.html",
+      "decomposition.cjs",
+      "decomposition.html",
+      "joined-workbench.cjs",
+      "joint-reconstruction.cjs",
+      "matching-audit.cjs",
+      "multiscale-envelope.cjs",
+      "observatory-workbench.cjs",
+      "open-dictionary.cjs",
+      "paired-sensitivity.cjs",
+      "presence-boundary.cjs",
+      "qualification.json",
+      "region-refinement.cjs",
+      "scale-calibrated.cjs",
+      "selective-reconstruction.cjs",
+      "shape-calibrated.cjs",
+      "waveform.html"
+    ],
+    "exclusionReason": "18 of 25 frozen files are outside the dependency closure of the four packaged workbenches; original documentation, generated qualification.json, and other apparatus remain unchanged at the pinned source ref. Later live lane heads are separate deltas.",
+    "provenance": "Seven unchanged upstream blobs (source pins in package manifest); generated phase.html includes embedded apparatus data; generated receipts, WAV, manifest and UI export files recreated by native scripts; consolidation checkers and builder are separately authored. No new redistribution license; LICENSE lookup at accepted main returned 404, not proof no other license notice exists.",
+    "commands": [
+      "cd tools/experimental/mergedown-607",
+      "python -m unittest -v test_build_observatory verify_native_package",
+      "python build_observatory.py /path/to/new-package-one",
+      "python build_observatory.py /path/to/new-package-two",
+      "python verify_native_package.py /path/to/new-package-one /path/to/new-package-two",
+      "node check_browser.cjs /path/to/new-package-one /path/to/chrome"
+    ],
+    "ownerUse": "Extract artifact 15102520233 and open observatory-one/index.html; four workbenches and nine PCM specimens. No build needed for inspection. Opt-in playback; start with low hardware volume.",
+    "next": "Placement coordination with Measurement #442; assess final-head checks; proceed to bounded Grammar/bridge validation without merging or waiting for human scientific acceptance."
   }
 }
