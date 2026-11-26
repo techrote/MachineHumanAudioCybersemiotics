@@ -94,3 +94,17 @@ jobs:
           path: MHACThreeWinters-Windows-x64.zip
           if-no-files-found: error
           retention-days: 7
+
+      - name: Independent host compatibility witness
+        run: |
+          py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 tools/experimental/instrument-foundry/three-winters-596/host_compat_test.py --bundle "$env:BUNDLE" --out host-compat.json
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACThreeWinters-host-compat
+          path: host-compat.json
+          if-no-files-found: ignore
+          retention-days: 7
