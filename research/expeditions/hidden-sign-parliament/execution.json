@@ -1,0 +1,29 @@
+{
+  "contract": "synthetic exact integer checks; no physical/human validation",
+  "counts": {
+    "families": 387,
+    "triads": 65955,
+    "pair_decompositions": 368363,
+    "quartic_mask_pairs": 197306,
+    "quartic_exact_orders": 377,
+    "small_phase_assignments": 7962624,
+    "small_phase_solutions": 48,
+    "graph_profiles": 1098,
+    "graph_code_pairs": 124722,
+    "minimum_budget_profiles": 80
+  },
+  "small_fixture": {
+    "N": 24,
+    "support": [
+      1,
+      2,
+      4,
+      8,
+      11
+    ],
+    "phase_grid": 24,
+    "solutions": 48,
+    "translation_classes": 2
+  },
+  "assertion_failures": 0
+}
