@@ -1,0 +1,46 @@
+{
+  "local_moment_identities": 3202,
+  "literal_demodulated_triples": 576,
+  "raw_third_negative_controls": 576,
+  "exact_rank_checks": 1134,
+  "exact_stationary_noise_profiles": 330,
+  "collision_and_coherence_negative_checks": 17,
+  "five_prime": {
+    "primes": [
+      5,
+      7,
+      11,
+      13,
+      17
+    ],
+    "receipts": [
+      -3966,
+      309,
+      -50,
+      324,
+      589
+    ],
+    "recovered": [
+      1,
+      8,
+      -27,
+      1,
+      -8
+    ],
+    "minimum_aperture": 7
+  },
+  "coherent_noise_per_phase": [
+    0,
+    5,
+    0,
+    10,
+    25,
+    120,
+    -25,
+    10,
+    0,
+    5
+  ],
+  "coherent_noise_ensemble": 15,
+  "failures": 0
+}
