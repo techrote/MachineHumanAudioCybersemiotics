@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "arithmetic": "exact BigInt rational",
+  "horizon": 40,
+  "assertions": 61207,
+  "homogeneousProfiles": 108,
+  "convolutionCoefficientChecks": 4428,
+  "inhomogeneousSwapCoefficientChecks": 11070,
+  "boundedCDFChecks": 779,
+  "quantileTransportPositiveCells": 703,
+  "variableRatioNegative": {
+    "original": [
+      "1/8",
+      "7/128"
+    ],
+    "swapped": [
+      "1/8",
+      "1/32"
+    ]
+  },
+  "example": {
+    "nearMassGivenPlus": "39/40",
+    "nearMassGivenMinus": "13/40",
+    "endpointAccuracy": "33/40",
+    "timingAccuracy": "3/4",
+    "nearMean": "113/65",
+    "farMean": "21/5",
+    "fairPriorAddedMean": "8/5",
+    "paddedTimingAccuracy": "1/2",
+    "parityExampleAccuracy": "21/26",
+    "nearPMF": [
+      "0/1",
+      "10/13",
+      "0/1",
+      "15/104",
+      "0/1",
+      "45/832",
+      "0/1",
+      "135/6656",
+      "0/1",
+      "405/53248",
+      "0/1",
+      "1215/425984"
+    ],
+    "farPMF": [
+      "0/1",
+      "0/1",
+      "0/1",
+      "5/8",
+      "0/1",
+      "15/64",
+      "0/1",
+      "45/512",
+      "0/1",
+      "135/4096",
+      "0/1",
+      "405/32768"
+    ]
+  }
+}
