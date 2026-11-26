@@ -29,8 +29,8 @@ static void witness(){
     unsigned errors=0;for(unsigned q=0;q<8;++q)errors+=p.decode(m,m.collapse(q),p.tag(m,q))!=q?1u:0u;
     check(errors==2);
     Matching correlated;check(correlated.pair(0,1)&&correlated.pair(2,3));
-    for(unsigned a=1;a<8;++a)for(bool upper:{false,true}){
-        Receipt r{Contract::balanced,1,0,{a,upper}};
+    for(unsigned multiplier=1;multiplier<8;++multiplier)for(bool upper:{false,true}){
+        Receipt r{Contract::balanced,1,0,{multiplier,upper}};
         check((r.decode(correlated,0,r.tag(correlated,0))!=0)==(r.decode(correlated,2,r.tag(correlated,2))!=2));
     }
 }

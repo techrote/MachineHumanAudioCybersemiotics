@@ -80,16 +80,40 @@ inline bool load(const std::uint8_t* s,std::size_t n,Config& p) noexcept {
 }
 class Live {
     using Table=std::array<double,256>;
-    Config p_{};Matching m_=geometry(p_);unsigned digit_=preview_digit(m_);
+    Config p_{};Matching m_=geometry(p_);
+    Table base_{}; unsigned base_bits_=0, tag_bits_=0, tag_multiplier_=0;
+    std::array<unsigned,256> tags_{};
     randomized::Schedule seq_{};randomized::Draw draw_{1,false};
     Table start_{},goal_{};double rate_=48000,wet_=0;
     unsigned ramp_=240,left_=0,epoch_=1200,until_=1200;
     double at(unsigned i) const noexcept {return left_?start_[i]+(goal_[i]-start_[i])*double(ramp_-left_)/ramp_:goal_[i];}
-    Table table() const noexcept {
-        Table t{};Receipt r{p_.contract,p_.budget,digit_,draw_};
-        for(unsigned q=0;q<m_.size();++q){const auto decoded=r.decode(m_,m_.collapse(q),r.tag(m_,q));
-            const double v=resolution::amplitude(decoded,p_.bits);const unsigned span=256/m_.size();
-            for(unsigned j=0;j<span;++j)t[q*span+j]=v;}
+    // GF multiplication is linear over XOR. Cache the unmasked tags per draw;
+    // geometry and budget changes reuse them. Only ambiguous pairs need a write.
+    Table table() noexcept {
+        const unsigned n=m_.size(),span=256/n;
+        if(base_bits_!=p_.bits){
+            for(unsigned q=0;q<n;++q)std::fill_n(base_.begin()+q*span,span,resolution::amplitude(q,p_.bits));
+            base_bits_=p_.bits;
+        }
+        Table t=base_;
+        if(p_.contract==Contract::known||p_.pairs==0)return t;
+        if(p_.contract==Contract::balanced&&(tag_bits_!=p_.bits||tag_multiplier_!=draw_.multiplier)){
+            tags_[0]=0;
+            for(unsigned bit=0;bit<p_.bits;++bit){const unsigned half=1u<<bit;
+                const unsigned basis=randomized::multiply(half,draw_.multiplier,p_.bits);
+                for(unsigned q=0;q<half;++q)tags_[half+q]=tags_[q]^basis;
+            }
+            tag_bits_=p_.bits;tag_multiplier_=draw_.multiplier;
+        }
+        const unsigned mask=p_.contract==Contract::preview?1u<<preview_digit(m_):(1u<<p_.budget)-1u;
+        const bool balanced=p_.contract==Contract::balanced;
+        for(unsigned q=0;q<n;++q){const unsigned other=m_.mate[q];if(q>=other)continue;
+            const unsigned diff=q^other;
+            if(((balanced?tags_[diff]:diff)&mask)!=0)continue;
+            const bool upper=balanced&&draw_.upper;
+            const unsigned loser=upper?q:other,winner=upper?other:q;
+            std::fill_n(t.begin()+loser*span,span,base_[winner*span]);
+        }
         return t;
     }
     void target() noexcept {const auto t=table();if(t==goal_)return;for(unsigned i=0;i<256;++i)start_[i]=at(i);goal_=t;left_=ramp_;}
@@ -106,7 +130,7 @@ public:
         const bool clock=p.bits!=p_.bits||p.seed!=p_.seed||p.epoch_ms!=p_.epoch_ms;
         const bool geom=p.bits!=p_.bits||p.pairs!=p_.pairs||p.geometry!=p_.geometry;
         const bool law=clock||geom||p.budget!=p_.budget||p.contract!=p_.contract;
-        p_=p;if(geom){m_=geometry(p_);digit_=preview_digit(m_);}if(clock)restart();if(law)target();return true;
+        p_=p;if(geom)m_=geometry(p_);if(clock)restart();if(law)target();return true;
     }
     template<class T> void frame(T& l,T& r) noexcept {
         if(!until_){draw_=seq_.next();until_=epoch_;if(p_.contract==Contract::balanced)target();}
