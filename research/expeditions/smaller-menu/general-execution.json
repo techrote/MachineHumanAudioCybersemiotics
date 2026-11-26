@@ -1,0 +1,74 @@
+{
+  "schema": "mhac-638-general-v1",
+  "counts": {
+    "channels": 438,
+    "lower_witnesses": 1131,
+    "upper_witnesses": 1131,
+    "loss_matrices": 114315,
+    "positive_baseline": 68229,
+    "repetition_checks": 10
+  },
+  "example": [
+    {
+      "d": 1,
+      "overlapNumerator": 2,
+      "overlapDenominator": 4,
+      "erasureDominates": false
+    },
+    {
+      "d": 2,
+      "overlapNumerator": 8,
+      "overlapDenominator": 16,
+      "erasureDominates": true
+    },
+    {
+      "d": 3,
+      "overlapNumerator": 20,
+      "overlapDenominator": 64,
+      "erasureDominates": true
+    },
+    {
+      "d": 4,
+      "overlapNumerator": 80,
+      "overlapDenominator": 256,
+      "erasureDominates": true
+    },
+    {
+      "d": 5,
+      "overlapNumerator": 212,
+      "overlapDenominator": 1024,
+      "erasureDominates": true
+    },
+    {
+      "d": 6,
+      "overlapNumerator": 848,
+      "overlapDenominator": 4096,
+      "erasureDominates": true
+    },
+    {
+      "d": 7,
+      "overlapNumerator": 2312,
+      "overlapDenominator": 16384,
+      "erasureDominates": true
+    },
+    {
+      "d": 8,
+      "overlapNumerator": 9248,
+      "overlapDenominator": 65536,
+      "erasureDominates": true
+    },
+    {
+      "d": 9,
+      "overlapNumerator": 25652,
+      "overlapDenominator": 262144,
+      "erasureDominates": true
+    },
+    {
+      "d": 10,
+      "overlapNumerator": 102608,
+      "overlapDenominator": 1048576,
+      "erasureDominates": true
+    }
+  ],
+  "assertion_failures": 0
+}
