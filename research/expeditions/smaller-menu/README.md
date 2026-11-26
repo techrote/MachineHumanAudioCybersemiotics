@@ -3,6 +3,8 @@
 Refs #638 · 26 November 2026 · base main 495a98ca12bae467a507031f04931aa4254b1866.
 Scope: original finite mathematical research and synthetic acoustic demonstration; no canonical evidence admission, human study, production claim or priority claim. One ChatGPT research agent performed derivation, source reading and implementation.
 
+**Subsequent generalization:** [Beyond truthful reports](GENERAL-CHANNELS.md) extends the exact bounds to arbitrary finite channels, credits the established Doeblin endpoint, and disproves the unrestricted repetition rule using a binary symmetric channel. It has a separate executable and receipt.
+
 ## The anomaly
 
 Five possible machine states A–E. Two instruments report truthful subsets of possible states. R identifies the state with probability 1/2 and otherwise reports the whole universe. T always reports a uniformly selected three-state subset containing the actual state. Both are perfectly calibrated under this stipulated channel. Consider a receiver with two actions, each harmful only in its corresponding state, or a receiver with three such actions. Under a uniform prior, R and T have equal optimum residual risk 1/10 on the two-action example. With three actions, R retains risk 1/10 while T reduces risk to 1/30. More strongly, R is at least as good as T for EVERY two-action decision problem, with arbitrary prior and finite losses; yet it fails for a three-action problem. These are action alternatives, not state supports (the earlier #236 expedition addresses the latter).
