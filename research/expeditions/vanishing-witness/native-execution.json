@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "LP_profiles": 24,
+  "finite_box_results": [
+    {
+      "B": 1,
+      "known": null,
+      "uniform": null
+    },
+    {
+      "B": 2,
+      "known": 0.358974358974,
+      "uniform": 0.073275862069
+    },
+    {
+      "B": 3,
+      "known": 0.358974358974,
+      "uniform": 0.135685703892
+    },
+    {
+      "B": 4,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 5,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 6,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 7,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 8,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 9,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 10,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 11,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    },
+    {
+      "B": 12,
+      "known": 0.358974358974,
+      "uniform": 0.13978343949
+    }
+  ],
+  "off_grid_hidden_hinge": "-8/273",
+  "decoded_frames": 78,
+  "audio": {
+    "erasure-plus.wav": {
+      "counts": [
+        9,
+        14,
+        12,
+        4
+      ],
+      "sha256": "4d09fe2d99bf47f1854a6c341dd794dd017ce16d40e16862995d52a5cc7a9dd8"
+    },
+    "erasure-minus.wav": {
+      "counts": [
+        18,
+        14,
+        6,
+        1
+      ],
+      "sha256": "1ffdae8be2d390fed26026d0ae9d717dadd0a97cad7ef0527c80f1405c225def"
+    }
+  }
+}
