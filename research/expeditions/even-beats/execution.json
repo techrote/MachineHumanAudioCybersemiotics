@@ -1,0 +1,130 @@
+{
+  "method": "BigInt exact conditional likelihoods; count profiles and rational prior knots",
+  "horizons": [
+    {
+      "n": 1,
+      "A": "263/400",
+      "B": "3/4",
+      "A_dominates": false,
+      "B_dominates": false
+    },
+    {
+      "n": 2,
+      "A": "6079/8000",
+      "B": "3/4",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 3,
+      "A": "26504053/32000000",
+      "B": "27/32",
+      "A_dominates": false,
+      "B_dominates": false
+    },
+    {
+      "n": 4,
+      "A": "560050727/640000000",
+      "B": "27/32",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 5,
+      "A": "4648306730629/5120000000000",
+      "B": "459/512",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 6,
+      "A": "19072708411093/20480000000000",
+      "B": "459/512",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 7,
+      "A": "77682625504685533/81920000000000000",
+      "B": "3807/4096",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 8,
+      "A": "1574128330907989763/1638400000000000000",
+      "B": "3807/4096",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 9,
+      "A": "25429753130884851057161/26214400000000000000000",
+      "B": "124659/131072",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 10,
+      "A": "512254067878760800024657/524288000000000000000000",
+      "B": "124659/131072",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 11,
+      "A": "10300434003342424807728365819/10485760000000000000000000000",
+      "B": "1012581/1048576",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 12,
+      "A": "206851244320762610325426398497/209715200000000000000000000000",
+      "B": "1012581/1048576",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 13,
+      "A": "1659966448162504176549595862362193/1677721600000000000000000000000000",
+      "B": "16369695/16777216",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 14,
+      "A": "33278561640745072381082415895232077/33554432000000000000000000000000000",
+      "B": "16369695/16777216",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 15,
+      "A": "133358617188543371527876863966047723497/134217728000000000000000000000000000000",
+      "B": "131895783/134217728",
+      "A_dominates": true,
+      "B_dominates": false
+    },
+    {
+      "n": 16,
+      "A": "534190472224621386922422518580427589971/536870912000000000000000000000000000000",
+      "B": "131895783/134217728",
+      "A_dominates": true,
+      "B_dominates": false
+    }
+  ],
+  "two_read_grid_profiles": 729,
+  "prior_knot_checks": 10536,
+  "arbitrary_family_odd_failures": 135,
+  "arbitrary_family_two_read_certificates": 15,
+  "side_receipts": {
+    "tagged_mixture_catalyzes": true,
+    "stronger_binary_dominates_mixture": true,
+    "stronger_binary_catalyzes": false,
+    "skew_prior": "1/20",
+    "A_accuracy": "77197/80000",
+    "B_accuracy": "779/800"
+  },
+  "assertion_failures": 0
+}
