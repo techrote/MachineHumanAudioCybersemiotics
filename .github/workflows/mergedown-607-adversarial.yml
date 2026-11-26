@@ -1,0 +1,64 @@
+# Temporary targeted #607 qualification; remove or retain only after owner review.
+name: Adversarial 607 native package
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/adversarial-001/**'
+      - '.github/workflows/mergedown-607-adversarial.yml'
+permissions:
+  contents: read
+concurrency:
+  group: adversarial-607-native
+  cancel-in-progress: false
+jobs:
+  native-package:
+    if: github.event.pull_request.number == 700 && github.event.pull_request.head.ref == 'mhac-607/mergedown-adversarial-001' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: windows-2025
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Preserve frozen source bytes
+        shell: pwsh
+        run: |
+          git config --global core.autocrlf false
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Native reconstruction and independent audit
+        working-directory: tools/experimental/mergedown-607/adversarial-001
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          git rev-parse HEAD
+          python --version
+          node --version
+          python -m pip install --disable-pip-version-check numpy==2.3.5
+          python -B build_adversarial.py (Join-Path $env:RUNNER_TEMP 'adversarial 607') --source-root source-inputs
+      - name: Native filesystem and ordinary browser checks
+        working-directory: tools/experimental/mergedown-607/adversarial-001
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) {
+            $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe'
+          }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
+          node check_adversarial_package.cjs (Join-Path $env:RUNNER_TEMP 'adversarial 607') $chrome | Tee-Object -FilePath (Join-Path $env:RUNNER_TEMP 'adversarial-qualification.json')
+      - name: Retain owner package and qualification receipt
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Adversarial-607-Windows-${{ github.event.pull_request.head.sha }}
+          path: |
+            ${{ runner.temp }}/adversarial 607/
+            ${{ runner.temp }}/adversarial-qualification.json
+          if-no-files-found: error
+          retention-days: 14
