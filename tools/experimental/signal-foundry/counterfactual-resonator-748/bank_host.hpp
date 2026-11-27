@@ -32,20 +32,21 @@ inline bool decode(const State& s,MemoryConfig& out) noexcept {
 }
 // Single producer, single consumer. Each owns one slot; the atomic middle
 // index exchanges exclusive ownership. No retry loop, no concurrent slot access.
-class Mailbox {
-    std::array<MemoryConfig,3> slots_{};
+template<class Payload> class MailboxOf {
+    std::array<Payload,3> slots_{};
     std::atomic<unsigned> middle_{1};
     unsigned back_=2,front_=0;
 public:
-    void publish(const MemoryConfig& c) noexcept {
+    void publish(const Payload& c) noexcept {
         slots_[back_]=c;back_=middle_.exchange(back_|4,std::memory_order_acq_rel)&3;
     }
-    bool consume(MemoryConfig& c) noexcept {
+    bool consume(Payload& c) noexcept {
         if(!(middle_.load(std::memory_order_acquire)&4))return false;
         front_=middle_.exchange(front_,std::memory_order_acq_rel)&3;
         c=slots_[front_];return true;
     }
 };
+using Mailbox=MailboxOf<MemoryConfig>;
 static_assert(std::atomic<unsigned>::is_always_lock_free,"requires lock-free mailbox index");
 // Stable candidate parameter IDs: global 2000/2001, four consecutive groups
 // of nine beginning at 2010. Pulse/discard are rising-edge, nonpersistent.
@@ -68,8 +69,11 @@ inline void change(MemoryConfig& c,unsigned id,double value) noexcept {
 }
 class Host {
     HarmonicBank dsp_{};
-    MemoryConfig current_{},lastPublished_{};
-    Mailbox requests_,completed_;
+    struct Ticket {MemoryConfig config{}; std::uint64_t generation=0;};
+    MemoryConfig current_{};
+    Ticket requested_{},lastPublished_{};
+    std::uint64_t admitted_=0;
+    MailboxOf<Ticket> requests_,completed_;
     std::array<std::array<bool,2>,4> edges_{};
     void trigger(const Event& e) noexcept {
         const unsigned band=(e.id-FirstBand)/Stride, f=(e.id-FirstBand)%Stride-Pulse;
@@ -77,32 +81,42 @@ class Host {
         if(high&&!edges_[band][f]){if(f==0)dsp_.pulse(band);else dsp_.discardPendingInput(band);}
         edges_[band][f]=high;
     }
-    void admit() noexcept {if(requests_.consume(current_))dsp_.set(current_);}
+    void admit() noexcept {Ticket t;if(requests_.consume(t)){current_=t.config;admitted_=t.generation;dsp_.set(current_);}}
+    void complete() noexcept {completed_.publish({current_,admitted_});}
 public:
     // Control thread only: request and snapshot. Snapshot means last completed
     // audio block, not a pending request. One control thread is required.
-    bool request(const MemoryConfig& c) noexcept {if(!valid(c))return false;requests_.publish(c);return true;}
+    bool request(const MemoryConfig& c) noexcept {if(!valid(c))return false;requested_={c,requested_.generation+1};requests_.publish(requested_);return true;}
     bool request(const State& s) noexcept {MemoryConfig c{};return decode(s,c)&&request(c);}
-    State snapshot() noexcept {completed_.consume(lastPublished_);return encode(lastPublished_);}
+    State snapshot() noexcept {completed_.consume(lastPublished_);return encode(lastPublished_.config);}
+    // For state saves: a pending control request wins until the audio thread acknowledges it.
+    State save() noexcept {completed_.consume(lastPublished_);return encode(lastPublished_.generation==requested_.generation?lastPublished_.config:requested_.config);}
     // Audio lifecycle only, stopped processing required for prepare/reset.
     bool prepare(double rate) noexcept {if(!dsp_.prepare(rate))return false;reset();return true;}
-    void reset() noexcept {admit();dsp_.reset();edges_={};completed_.publish(current_);}
+    void reset() noexcept {admit();dsp_.reset();edges_={};complete();}
     // Planar stereo; exact in-place supported. Event list sorted by offset;
     // validate entire list before changing state or touching output.
     template<class Sample> bool process(const Sample* l,const Sample* r,Sample* ol,Sample* oright,
                                        unsigned n,const Event* events=nullptr,unsigned count=0) noexcept {
-        if(count>MaxEvents||(count&&!events)||(n&&(!l||!r||!ol||!oright)))return false;
+        if(n&&(!l||!r||!ol||!oright))return false;
+        return processOptional(l,r,ol,oright,n,events,count);
+    }
+    // Null input channels mean silence; null output channels are discarded.
+    // A zero-frame block accepts offset-zero events for host parameter flush.
+    template<class Sample> bool processOptional(const Sample* l,const Sample* r,Sample* ol,Sample* oright,
+                                       unsigned n,const Event* events=nullptr,unsigned count=0) noexcept {
+        if(count>MaxEvents||(count&&!events))return false;
         for(unsigned i=0;i<count;++i){const auto& e=events[i];
-            if(e.offset>=n||!known(e.id)||!std::isfinite(e.value)||(i&&e.offset<events[i-1].offset))return false;}
+            if((n?e.offset>=n:e.offset!=0)||!known(e.id)||!std::isfinite(e.value)||(i&&e.offset<events[i-1].offset))return false;}
         admit();unsigned j=0;
-        for(unsigned i=0;i<n;++i){
+        for(unsigned i=0;i<(n?n:1);++i){
             const unsigned start=j;bool changed=false;
             while(j<count&&events[j].offset==i){if(!command(events[j].id)){change(current_,events[j].id,events[j].value);changed=true;}++j;}
-            if(changed)dsp_.set(current_); // one complete configuration per offset
+            if(changed)dsp_.set(current_);
             for(unsigned k=start;k<j;++k)if(command(events[k].id))trigger(events[k]);
-            const auto s=dsp_.process(l[i],r[i]);ol[i]=static_cast<Sample>(s.left);oright[i]=static_cast<Sample>(s.right);
+            if(n){const auto s=dsp_.process(l?l[i]:0,r?r[i]:0);if(ol)ol[i]=static_cast<Sample>(s.left);if(oright)oright[i]=static_cast<Sample>(s.right);}
         }
-        completed_.publish(current_);return true;
+        complete();return true;
     }
 };
 } // namespace mhac::counterfactual::bankhost

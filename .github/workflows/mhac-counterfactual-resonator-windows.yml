@@ -48,7 +48,7 @@ jobs:
         run: |
           cmake -S tools/experimental/signal-foundry/counterfactual-resonator-748 -B build-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VALIDATE_POST_BUILD=OFF "-DMHAC_VST3_SDK=$env:SDK380"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build build-vst --config Release --target MHACCounterfactualResonator validator
+          cmake --build build-vst --config Release --target MHACCounterfactualResonator MHACHarmonicMemoryBank validator
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Official validator (mandatory)
         run: |
@@ -99,5 +99,41 @@ jobs:
         with:
           name: MHACCounterfactualResonator-Windows-x64
           path: MHACCounterfactualResonator-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+      - name: Harmonic Memory Bank official validator and portable delivery
+        run: |
+          $bundles = @(Get-ChildItem build-vst -Recurse -Directory -Filter 'MHACHarmonicMemoryBank.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACHarmonicMemoryBank.vst3') })
+          if ($bundles.Count -ne 1) { throw "Expected one x64 bank bundle; found $($bundles.Count)" }
+          $validator = Get-ChildItem build-vst -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Official Release validator not found' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object -FilePath bank-validator.txt
+          $code = $LASTEXITCODE
+          if ($code -ne 0) { exit $code }
+          if (-not (Select-String -Path bank-validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing successful bank validator summary' }
+          if (Select-String -Path bank-validator.txt -Pattern 'ERROR:') { throw 'Explicit bank validator error' }
+          New-Item -ItemType Directory -Path bank-delivery,bank-delivery/Audio,bank-delivery/Presets | Out-Null
+          Copy-Item -Recurse $bundles[0].FullName bank-delivery/
+          Copy-Item delivery/SDK-*.txt,delivery/Steinberg-SDK-LICENSE.txt,delivery/BUILD-SOURCE.txt bank-delivery/
+          Copy-Item bank-validator.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-VST3.md,tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-HOST.md bank-delivery/
+          python tools/experimental/signal-foundry/counterfactual-resonator-748/bank_presets.py bank-delivery/Presets
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          & build-core/Release/counterfactual_bank_render.exe bank-delivery/Audio
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python -c "from pathlib import Path; import zipfile; r=Path('bank-delivery'); z=zipfile.ZipFile('MHACHarmonicMemoryBank-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACHarmonicMemoryBank-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACHarmonicMemoryBank-validator-log
+          path: bank-validator.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MHACHarmonicMemoryBank-Windows-x64
+          path: MHACHarmonicMemoryBank-Windows-x64.zip
           if-no-files-found: error
           retention-days: 7
