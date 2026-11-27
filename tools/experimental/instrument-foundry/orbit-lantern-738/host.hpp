@@ -43,6 +43,15 @@ public:
         }
         return false;
     }
+    // Experimental native-only note-off. No changes to OL01/OL02 or VST3 IDs.
+    bool offSpectral(int id,int channel,int pitch,double depth) noexcept {
+        if(id< -1||channel<0||channel>15||pitch<0||pitch>127||!std::isfinite(depth)||depth<0.||depth>1.)return false;
+        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
+            const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));
+            return engine_.noteOffShaped(int(i),route.gain,route.length,depth);
+        }
+        return false;
+    }
     bool on(int id,int channel,int pitch,double tuning,double velocity) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
         if(velocity==0.)return off(id,channel,pitch);

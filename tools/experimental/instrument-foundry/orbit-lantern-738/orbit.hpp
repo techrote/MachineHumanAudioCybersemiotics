@@ -72,7 +72,7 @@ struct Spectrum {
 struct Event { enum class Kind {on,off,patch}; std::size_t offset=0; Kind kind=Kind::on; int id=0,note=60; double velocity=0; Patch patch{}; };
 class Engine {
     struct Voice {bool active=false,releasing=false;int id=0;double level=0,velocity=0,releaseStep=0;
-        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.;std::array<double,61> curve{};};
+        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.,spectralDepth=0.,spectralMix=0.,spectralBias=.5;std::array<double,61> curve{};};
     std::array<Voice,8> voices_{}; Spectrum a_{},b_{};Patch patch_{};double rate_=0,attack_=0;
     static void advance(double& phase,double inc) noexcept {phase+=inc;if(phase>=tau)phase-=tau;}
 public:
@@ -99,18 +99,38 @@ public:
         return false;
     }
     double notePhase(int id) const noexcept {for(const auto& v:voices_)if(v.active&&v.id==id)return v.phaseB;return 0.;}
-    bool noteOffShaped(int id,const std::array<double,61>& curve,unsigned steps) noexcept {
+    bool noteOffShaped(int id,const std::array<double,61>& curve,unsigned steps,double spectralDepth=0.) noexcept {
+        if(!std::isfinite(spectralDepth)||spectralDepth<0.||spectralDepth>1.)return false;
         if(!steps||steps>60||curve[0]!=1.||curve[steps]!=0.)return false;
         for(unsigned i=0;i<=steps;++i)if(!std::isfinite(curve[i])||curve[i]<0.||curve[i]>1.)return false;
-        for(auto& v:voices_)if(v.active&&v.id==id){if(!v.releasing){v.releasing=true;v.releaseLevel=v.level;v.releaseDuration=v.releaseSamples;v.curveSteps=steps;v.curve=curve;}return true;}
+        for(auto& v:voices_)if(v.active&&v.id==id){if(!v.releasing){v.releasing=true;v.releaseLevel=v.level;v.releaseDuration=v.releaseSamples;v.curveSteps=steps;v.curve=curve;v.spectralDepth=spectralDepth;}return true;}
         return false;
     }
     bool noteOff(int id) noexcept {for(auto& v:voices_)if(v.active&&v.id==id){if(!v.releasing){v.releasing=true;v.releaseStep=v.level/v.releaseSamples;}return true;}return false;}
     void tick(double& l,double& r) noexcept {l=r=0;
-        for(auto& v:voices_)if(v.active){if(v.releasing){if(v.releaseSamples<=1){v=Voice{};continue;}--v.releaseSamples;if(v.curveSteps){const double t=double(v.releaseDuration-v.releaseSamples)*v.curveSteps/v.releaseDuration;const auto i=std::min(v.curveSteps-1,unsigned(t));v.level=v.releaseLevel*(v.curve[i]+(t-i)*(v.curve[i+1]-v.curve[i]));}else v.level=std::max(0.,v.level-v.releaseStep);}
+        for(auto& v:voices_)if(v.active){if(v.releasing){if(v.releaseSamples<=1){v=Voice{};continue;}--v.releaseSamples;if(v.curveSteps){const double t=double(v.releaseDuration-v.releaseSamples)*v.curveSteps/v.releaseDuration;const auto i=std::min(v.curveSteps-1,unsigned(t));const double gain=v.curve[i]+(t-i)*(v.curve[i+1]-v.curve[i]);v.level=v.releaseLevel*gain;
+                if(v.spectralDepth>0.){
+                    // Continuous knot interpolation: energy loss controls colour, local signed
+                    // energy change distributes it between octave and twelfth.
+                    const auto bias=[&](unsigned k){return k?std::clamp(.5+2.*(v.curve[k]-v.curve[k-1]),0.,1.):.5;};
+                    v.spectralMix=v.spectralDepth*(1.-gain);
+                    v.spectralBias=bias(i)+(t-i)*(bias(i+1)-bias(i));
+                }}else v.level=std::max(0.,v.level-v.releaseStep);}
             double al=0,ar=0,bl=0,br=0;
             if(v.mix<1.)a_.sample(v.phaseA,v.cutA,al,ar);
-            if(v.mix>0.)b_.sample(v.phaseB,v.cutB,bl,br);
+            if(v.mix>0.){
+                b_.sample(v.phaseB,v.cutB,bl,br);
+                if(v.spectralMix>0.&&v.cutB>=2*b_.dominant){
+                    const double theta=v.phaseB*b_.dominant;
+                    const double c=std::cos(theta),s=std::sin(theta);
+                    const double c2=c*c-s*s,s2=2.*c*s;
+                    const double w=v.cutB>=3*b_.dominant?v.spectralBias:1.;
+                    const double c3=c2*c-s2*s,s3=s2*c+c2*s;
+                    const double colourL=.5*c+.5*(w*c2+(1.-w)*c3);
+                    const double colourR=.5*s+.5*(w*s2+(1.-w)*s3);
+                    bl+=(colourL-bl)*v.spectralMix;br+=(colourR-br)*v.spectralMix;
+                }
+            }
             const double g=.065*v.velocity*v.level;l+=g*((1.-v.mix)*al+v.mix*bl);r+=g*((1.-v.mix)*ar+v.mix*br);
             if(!v.releasing)v.level=std::min(1.,v.level+attack_);
             advance(v.phaseA,v.incA);advance(v.phaseB,v.incB);
