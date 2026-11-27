@@ -9,14 +9,30 @@ using namespace mhac::orbit;
 using namespace mhac::orbit::host;
 static unsigned checks=0;
 static void check(bool x){++checks;if(!x){std::cerr<<"FAIL "<<checks<<'\n';std::exit(1);}}
+static void carrierOracle(){
+    Spectrum b;check(b.build<68>({-16,4},8,4,9));
+    for(int i=0;i<=4096;++i){
+        const double phase=tau*i/4096.;
+        for(int cut=0;cut<=b.harmonics;++cut){
+            double l=0,r=0,x=0,y=0,c[2]{};
+            b.sample(phase,cut,l,r);b.sampleCarrier(phase,cut,x,y,c);
+            check(l==x&&r==y);
+            if(cut>=b.dominant){
+                check(std::abs(c[0]-std::cos(phase*b.dominant))<1e-12);
+                check(std::abs(c[1]-std::sin(phase*b.dominant))<1e-12);
+            }else check(c[0]==0.&&c[1]==0.);
+        }
+    }
+}
 static void exercise(){
+    carrierOracle();
     for(double rate:{1000.,1234.568,44100.,48000.,96000.,192000.,2000000.}){
         Live a,b,c,d;for(auto* e:{&a,&b,&c,&d}){
             check(e->prepare(rate)&&e->setPatch({1000,10,0,2}));
             for(int k=0;k<8;++k)check(e->on(k,0,36+k,0.,.9));
             check(!e->on(8,0,48,0.,1.));
         }
-        double l,r,x,y,u,v,w,z;bool difference=false;
+        double l=0,r=0,x=0,y=0,u=0,v=0,w=0,z=0;bool difference=false;
         for(unsigned i=0;i<unsigned(rate*.007);++i){a.tick(l,r);b.tick(x,y);c.tick(u,v);d.tick(w,z);check(l==x&&r==y&&l==u&&r==v&&l==w&&r==z);}
         for(int k=0;k<8;++k){check(!a.offSpectral(k,0,36+k,std::numeric_limits<double>::quiet_NaN()));check(!a.offSpectral(k,0,36+k,1.1));
             check(a.off(k,0,36+k)&&b.offSpectral(k,0,36+k,0.)&&c.offSpectral(k,0,36+k,1.)&&d.offSpectral(k,0,36+k,1.));
@@ -31,7 +47,7 @@ static void exercise(){
     }
     // No octave allowed by the existing 0.45-times-sample-rate guard: exact fallback.
     Live a,b;for(auto* e:{&a,&b})check(e->prepare(1000.)&&e->setPatch({1000,100,0,2})&&e->on(1,0,69,0.,1.));
-    double l,r,x,y;for(int i=0;i<20;++i){a.tick(l,r);b.tick(x,y);check(l==x&&r==y);}
+    double l=0,r=0,x=0,y=0;for(int i=0;i<20;++i){a.tick(l,r);b.tick(x,y);check(l==x&&r==y);}
     check(a.off(1,0,69)&&b.offSpectral(1,0,69,1.));
     for(int i=0;i<110;++i){a.tick(l,r);b.tick(x,y);check(l==x&&r==y);}
     check(a.active()==0&&b.active()==0);

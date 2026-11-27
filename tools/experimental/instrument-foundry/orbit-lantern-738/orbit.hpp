@@ -62,12 +62,24 @@ struct Spectrum {
         const double bound=std::max({1.,boundL,boundR});
         for(int k=1;k<=harmonics;++k){lx[k]/=bound;ly[k]/=bound;rx[k]/=bound;ry[k]/=bound;}return true;
     }
-    void sample(double phase,int limit,double& l,double& r) const noexcept {
-        l=r=0;if(!std::isfinite(phase))return;limit=std::clamp(limit,0,harmonics);
+    // Optional carrier uses the same recurrence as the Fourier sum, avoiding a second
+    // pair of transcendental evaluations during spectral release.
+private:
+    template<bool Carrier>
+    void sampleImpl(double phase,int limit,double& l,double& r,double* carrier) const noexcept {
+        l=r=0;
+        if constexpr(Carrier) {carrier[0]=carrier[1]=0.;}
+        if(!std::isfinite(phase))return;
+        limit=std::clamp(limit,0,harmonics);
         const double c=std::cos(phase),s=std::sin(phase);double x=c,y=s;
-        for(int k=1;k<=limit;++k){l+=lx[k]*x+ly[k]*y;r+=rx[k]*x+ry[k]*y;
+        for(int k=1;k<=limit;++k){
+            if constexpr(Carrier) {if(k==dominant){carrier[0]=x;carrier[1]=y;}}
+            l+=lx[k]*x+ly[k]*y;r+=rx[k]*x+ry[k]*y;
             const double nx=x*c-y*s;y=y*c+x*s;x=nx;}
     }
+public:
+    void sample(double phase,int limit,double& l,double& r) const noexcept {sampleImpl<false>(phase,limit,l,r,nullptr);}
+    void sampleCarrier(double phase,int limit,double& l,double& r,double (&carrier)[2]) const noexcept {sampleImpl<true>(phase,limit,l,r,carrier);}
 };
 struct Event { enum class Kind {on,off,patch}; std::size_t offset=0; Kind kind=Kind::on; int id=0,note=60; double velocity=0; Patch patch{}; };
 class Engine {
@@ -119,17 +131,17 @@ public:
             double al=0,ar=0,bl=0,br=0;
             if(v.mix<1.)a_.sample(v.phaseA,v.cutA,al,ar);
             if(v.mix>0.){
-                b_.sample(v.phaseB,v.cutB,bl,br);
                 if(v.spectralMix>0.&&v.cutB>=2*b_.dominant){
-                    const double theta=v.phaseB*b_.dominant;
-                    const double c=std::cos(theta),s=std::sin(theta);
+                    double carrier[2]{};
+                    b_.sampleCarrier(v.phaseB,v.cutB,bl,br,carrier);
+                    const double c=carrier[0],s=carrier[1];
                     const double c2=c*c-s*s,s2=2.*c*s;
                     const double w=v.cutB>=3*b_.dominant?v.spectralBias:1.;
                     const double c3=c2*c-s2*s,s3=s2*c+c2*s;
                     const double colourL=.5*c+.5*(w*c2+(1.-w)*c3);
                     const double colourR=.5*s+.5*(w*s2+(1.-w)*s3);
                     bl+=(colourL-bl)*v.spectralMix;br+=(colourR-br)*v.spectralMix;
-                }
+                }else b_.sample(v.phaseB,v.cutB,bl,br);
             }
             const double g=.065*v.velocity*v.level;l+=g*((1.-v.mix)*al+v.mix*bl);r+=g*((1.-v.mix)*ar+v.mix*br);
             if(!v.releasing)v.level=std::min(1.,v.level+attack_);
