@@ -1,0 +1,58 @@
+{
+  "exactProfiles": 930,
+  "criterionProfiles": 271,
+  "exhaustive": 6561,
+  "randomProfiles": 328,
+  "sharp": 6,
+  "negative": {
+    "cells": 64,
+    "distance": 32,
+    "errors": 15,
+    "trueCost": 31,
+    "falseCost": 29
+  },
+  "table": [
+    {
+      "M": 2,
+      "m": 3,
+      "minimumMean": "3/8",
+      "minimumMass": 3,
+      "k": 2
+    },
+    {
+      "M": 2,
+      "m": 6,
+      "minimumMean": "5/16",
+      "minimumMass": 20,
+      "k": 3
+    },
+    {
+      "M": 3,
+      "m": 3,
+      "minimumMean": "8/27",
+      "minimumMass": 8,
+      "k": 2
+    },
+    {
+      "M": 4,
+      "m": 4,
+      "minimumMean": "27/128",
+      "minimumMass": 54,
+      "k": 3
+    },
+    {
+      "M": 5,
+      "m": 4,
+      "minimumMean": "1/5",
+      "minimumMass": 125,
+      "k": 4
+    },
+    {
+      "M": 7,
+      "m": 4,
+      "minimumMean": "1/7",
+      "minimumMass": 343,
+      "k": 4
+    }
+  ]
+}
