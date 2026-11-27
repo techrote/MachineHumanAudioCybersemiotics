@@ -1,27 +1,27 @@
 #pragma once
-#include "orbit.hpp"
+#include "escape_release.hpp"
 #include <atomic>
 namespace mhac::orbit::host {
-constexpr unsigned firstID=1810, count=3;
+constexpr unsigned firstID=1810, count=4;
 constexpr std::uint32_t pending=1u<<31;
 inline std::uint32_t pack(Patch p) noexcept {
-    return p.blend|(p.releaseMs<<10)|(unsigned(p.cents+100)<<20);
+    return p.blend|(p.releaseMs<<10)|(unsigned(p.cents+100)<<20)|(p.releaseMode<<28);
 }
 inline Patch unpack(std::uint32_t w) noexcept {
-    return {w&1023u,(w>>10)&1023u,int((w>>20)&1023u)-100};
+    return {w&1023u,(w>>10)&1023u,int((w>>20)&255u)-100,(w>>28)&3u};
 }
 inline double normalized(Patch p,unsigned i) noexcept {
-    return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:(p.cents+100)/200.;
+    return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:i==2?(p.cents+100)/200.:p.releaseMode/2.;
 }
 class Live {
     struct Key {int id=-1,channel=0,pitch=0;};
     std::array<Key,8> keys_{};
-    Engine engine_;
+    Engine engine_; escape::Route fixed_; escape::PhaseBank phases_;
     static bool matches(Key k,int id,int channel,int pitch) noexcept {
         return id>=0?k.id==id:k.id<0&&k.channel==channel&&k.pitch==pitch;
     }
 public:
-    bool prepare(double rate) noexcept {if(!engine_.prepare(rate))return false;keys_={};return true;}
+    bool prepare(double rate) noexcept {if(!validSampleRate(rate)||!fixed_.prepare()||!phases_.prepare()||!engine_.prepare(rate))return false;keys_={};return true;}
     void reset() noexcept {engine_.reset();keys_={};}
     Patch patch() const noexcept {return engine_.patch();}
     bool setPatch(Patch p) noexcept {return engine_.setPatch(p);}
@@ -30,12 +30,17 @@ public:
         value=std::clamp(value,0.,1.);auto p=patch();
         if(i==0)p.blend=unsigned(std::lround(value*1000.));
         else if(i==1)p.releaseMs=10u+unsigned(std::lround(value*990.));
-        else p.cents=int(std::lround(value*200.))-100;
+        else if(i==2)p.cents=int(std::lround(value*200.))-100;
+        else p.releaseMode=unsigned(std::lround(value*2.));
         return setPatch(p);
     }
     bool off(int id,int channel,int pitch) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
-        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch))return engine_.noteOff(int(i));
+        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
+            if(patch().releaseMode==1)return engine_.noteOffShaped(int(i),fixed_.gain,escape::steps);
+            if(patch().releaseMode==2){const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));return engine_.noteOffShaped(int(i),route.gain,route.length);}
+            return engine_.noteOff(int(i));
+        }
         return false;
     }
     bool on(int id,int channel,int pitch,double tuning,double velocity) noexcept {

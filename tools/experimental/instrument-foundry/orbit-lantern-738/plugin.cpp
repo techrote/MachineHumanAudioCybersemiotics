@@ -14,7 +14,11 @@ using namespace mhac::orbit;
 using namespace mhac::orbit::host;
 const FUID processorID(0x24C15B79,0x3B8C4F4B,0x98275F23,0x3EE969C4);
 const FUID controllerID(0xA501C96D,0xF0EC48C8,0x8BA63D11,0xB860D74F);
-bool readPatch(IBStream* s,Patch& p){Bytes b{};int32 n=0;return s&&s->read(b.data(),int32(b.size()),&n)==kResultOk&&n==int32(b.size())&&decode(b,p);}
+bool readPatch(IBStream* s,Patch& p){Bytes b{};int32 n=0;if(!s||s->read(b.data(),int32(b.size()),&n)!=kResultOk||n!=int32(b.size()))return false;
+    if(b[3]=='1')return decode(b,p);
+    if(b[3]!='2')return false;
+    StateBytes extended{};std::copy(b.begin(),b.end(),extended.begin());
+    return s->read(extended.data()+10,1,&n)==kResultOk&&n==1&&decodeState(extended,p);}
 struct Cursor {
     IParamValueQueue* q=nullptr;int32 index=0,size=0,offset=0;ParamValue value=0;bool pendingPoint=false;
     void next(){pendingPoint=false;while(index<size){if(q->getPoint(index++,offset,value)==kResultTrue){pendingPoint=true;break;}}}
@@ -61,7 +65,9 @@ public:
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr));}
     tresult PLUGIN_API setState(IBStream* s) override {Patch p{};return readPatch(s,p)&&state.request(p)?kResultOk:kResultFalse;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=encode(state.save());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;const auto p=state.save();auto bytes=encodeState(p);int32 size=11,n=0;
+        if(p.releaseMode==0){bytes[3]='1';size=10;}
+        return s->write(bytes.data(),size,&n)==kResultOk&&n==size?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>1||(d.numOutputs&&!d.outputs))return kResultFalse;
         if(d.inputEvents&&(d.inputEvents->getEventCount()<0||d.inputEvents->getEventCount()>4096))return kResultFalse;
@@ -79,11 +85,12 @@ public:
     tresult PLUGIN_API initialize(FUnknown* ctx) override {const auto r=EditController::initialize(ctx);if(r!=kResultOk)return r;
         parameters.addParameter(STR16("Orbit blend"),nullptr,1000,normalized(Patch{},0),ParameterInfo::kCanAutomate,firstID);
         parameters.addParameter(STR16("Release (10..1000 ms)"),nullptr,990,normalized(Patch{},1),ParameterInfo::kCanAutomate,firstID+1);
-        parameters.addParameter(STR16("Tuning (-100..100 cents)"),nullptr,200,normalized(Patch{},2),ParameterInfo::kCanAutomate,firstID+2);return kResultOk;}
+        parameters.addParameter(STR16("Tuning (-100..100 cents)"),nullptr,200,normalized(Patch{},2),ParameterInfo::kCanAutomate,firstID+2);
+        parameters.addParameter(STR16("Release mode (0 Linear, 1 Fixed, 2 Phase)"),nullptr,2,0.,ParameterInfo::kCanAutomate,firstID+3);return kResultOk;}
     tresult PLUGIN_API setComponentState(IBStream* s) override {Patch p{};if(!readPatch(s,p))return kResultFalse;for(unsigned i=0;i<count;++i)setParamNormalized(firstID+i,normalized(p,i));return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.1.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY

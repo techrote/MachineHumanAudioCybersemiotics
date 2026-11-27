@@ -33,7 +33,7 @@ int main(){
         check(state.request(p)&&same(state.save(),p));auto t=state.begin(e);check(same(e.patch(),p));
         for(unsigned i=0;i<count;++i)check(e.parameter(i,normalized(p,i)));
         state.end(t,e);check(same(state.save(),p));}
-    check(!state.request({1001,160,0}));check(!e.parameter(3,.5));check(!e.parameter(0,std::numeric_limits<double>::quiet_NaN()));
+    check(!state.request({1001,160,0}));check(!e.parameter(4,.5));check(!e.parameter(0,std::numeric_limits<double>::quiet_NaN()));
     auto t=state.begin(e);check(e.parameter(0,.25));check(state.request({750,10,0}));state.end(t,e);check(state.save().blend==750);
     t=state.begin(e);check(e.patch().blend==750);state.end(t,e);
     check(e.on(-1,0,60,0,1)&&e.on(-1,1,60,0,1)&&e.on(0,0,60,0,1));

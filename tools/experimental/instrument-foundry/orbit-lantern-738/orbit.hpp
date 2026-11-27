@@ -21,15 +21,27 @@ inline bool step(Point p,int a,int b,int q,bool nearest,Point& out) noexcept {
     out={quant(std::int64_t(a)*p.x-std::int64_t(b)*p.y),quant(std::int64_t(b)*p.x+std::int64_t(a)*p.y)};
     return true;
 }
-struct Patch { unsigned blend=500,releaseMs=160; int cents=0;
-    bool valid() const noexcept {return blend<=1000&&releaseMs>=10&&releaseMs<=1000&&cents>=-100&&cents<=100;} };
+struct Patch { unsigned blend=500,releaseMs=160; int cents=0; unsigned releaseMode=0;
+    bool valid() const noexcept {return blend<=1000&&releaseMs>=10&&releaseMs<=1000&&cents>=-100&&cents<=100&&releaseMode<=2;} };
 using Bytes=std::array<std::uint8_t,10>;
-inline Bytes encode(Patch p) noexcept {if(!p.valid())return {};const unsigned c=static_cast<unsigned>(p.cents+100);
+inline Bytes encode(Patch p) noexcept {if(!p.valid()||p.releaseMode!=0)return {};const unsigned c=static_cast<unsigned>(p.cents+100);
     return {{'O','L','0','1',std::uint8_t(p.blend),std::uint8_t(p.blend>>8),std::uint8_t(p.releaseMs),std::uint8_t(p.releaseMs>>8),std::uint8_t(c),std::uint8_t(c>>8)}};}
 inline bool decode(const Bytes& b,Patch& p) noexcept {
     if(b[0]!='O'||b[1]!='L'||b[2]!='0'||b[3]!='1')return false;
     const auto u=[&](std::size_t i){return unsigned(b[i])|(unsigned(b[i+1])<<8);};
     const Patch candidate{u(4),u(6),int(u(8))-100};if(!candidate.valid())return false;p=candidate;return true;
+}
+using StateBytes=std::array<std::uint8_t,11>;
+inline StateBytes encodeState(Patch p) noexcept {
+    if(!p.valid())return {};
+    const unsigned mode=p.releaseMode;p.releaseMode=0;const auto old=encode(p);
+    StateBytes b{};std::copy(old.begin(),old.end(),b.begin());b[3]='2';b[10]=std::uint8_t(mode);return b;
+}
+inline bool decodeState(const StateBytes& b,Patch& p) noexcept {
+    if(b[3]!='2'||b[10]>2)return false;
+    Bytes old{};std::copy_n(b.begin(),old.size(),old.begin());old[3]='1';Patch q{};
+    if(!decode(old,q))return false;
+    q.releaseMode=b[10];p=q;return true;
 }
 struct Spectrum {
     // For an even cycle, the Nyquist term has no distinct negative-frequency partner.
@@ -60,7 +72,7 @@ struct Spectrum {
 struct Event { enum class Kind {on,off,patch}; std::size_t offset=0; Kind kind=Kind::on; int id=0,note=60; double velocity=0; Patch patch{}; };
 class Engine {
     struct Voice {bool active=false,releasing=false;int id=0;double level=0,velocity=0,releaseStep=0;
-        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0;};
+        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.;std::array<double,61> curve{};};
     std::array<Voice,8> voices_{}; Spectrum a_{},b_{};Patch patch_{};double rate_=0,attack_=0;
     static void advance(double& phase,double inc) noexcept {phase+=inc;if(phase>=tau)phase-=tau;}
 public:
@@ -86,9 +98,16 @@ public:
             v.releaseSamples=unsigned(std::ceil(rate_*patch_.releaseMs/1000.));return true;}
         return false;
     }
+    double notePhase(int id) const noexcept {for(const auto& v:voices_)if(v.active&&v.id==id)return v.phaseB;return 0.;}
+    bool noteOffShaped(int id,const std::array<double,61>& curve,unsigned steps) noexcept {
+        if(!steps||steps>60||curve[0]!=1.||curve[steps]!=0.)return false;
+        for(unsigned i=0;i<=steps;++i)if(!std::isfinite(curve[i])||curve[i]<0.||curve[i]>1.)return false;
+        for(auto& v:voices_)if(v.active&&v.id==id){if(!v.releasing){v.releasing=true;v.releaseLevel=v.level;v.releaseDuration=v.releaseSamples;v.curveSteps=steps;v.curve=curve;}return true;}
+        return false;
+    }
     bool noteOff(int id) noexcept {for(auto& v:voices_)if(v.active&&v.id==id){if(!v.releasing){v.releasing=true;v.releaseStep=v.level/v.releaseSamples;}return true;}return false;}
     void tick(double& l,double& r) noexcept {l=r=0;
-        for(auto& v:voices_)if(v.active){if(v.releasing){if(v.releaseSamples<=1){v=Voice{};continue;}--v.releaseSamples;v.level=std::max(0.,v.level-v.releaseStep);}
+        for(auto& v:voices_)if(v.active){if(v.releasing){if(v.releaseSamples<=1){v=Voice{};continue;}--v.releaseSamples;if(v.curveSteps){const double t=double(v.releaseDuration-v.releaseSamples)*v.curveSteps/v.releaseDuration;const auto i=std::min(v.curveSteps-1,unsigned(t));v.level=v.releaseLevel*(v.curve[i]+(t-i)*(v.curve[i+1]-v.curve[i]));}else v.level=std::max(0.,v.level-v.releaseStep);}
             double al=0,ar=0,bl=0,br=0;
             if(v.mix<1.)a_.sample(v.phaseA,v.cutA,al,ar);
             if(v.mix>0.)b_.sample(v.phaseB,v.cutB,bl,br);
