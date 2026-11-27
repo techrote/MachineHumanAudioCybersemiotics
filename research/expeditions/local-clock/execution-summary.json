@@ -1,0 +1,285 @@
+{
+  "date": "2026-11-27",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "sympy": "1.14.0",
+  "seed": 20261127,
+  "source_blobs": {
+    "witness.py": "3e8b44bacdc0e8b67f8e9fc109a153c83408db6c",
+    "sparse.py": "b1826dfcb4c7720b32f5f14d346fd16ef476ba3d"
+  },
+  "native_repeated_receipts_identical": true,
+  "exact": [
+    {
+      "samples": 48,
+      "nuisance": false,
+      "max_row_variance": "4022055558",
+      "max_row_l1": "327250"
+    },
+    {
+      "samples": 50,
+      "nuisance": true,
+      "max_row_variance": "32715015014/169",
+      "max_row_l1": "80826"
+    },
+    {
+      "samples": 64,
+      "nuisance": true,
+      "max_row_variance": "137120343162059355343216839641/165865082905499973967478113760",
+      "max_row_l1": "6710810691360943206284629449/1219596197834558632113809660"
+    }
+  ],
+  "numeric": [
+    {
+      "samples": 48,
+      "nuisance": false,
+      "condition": 1329821.1373709568,
+      "max_variance": 4022055558.0184965,
+      "max_l1": 327250.0000007512,
+      "clean_error": 2.6193447411060333e-9,
+      "recovered": 500
+    },
+    {
+      "samples": 50,
+      "nuisance": true,
+      "condition": 395726.4961454508,
+      "max_variance": 193579970.49824688,
+      "max_l1": 80826.0000002515,
+      "clean_error": 6.098161975387484e-10,
+      "recovered": 500
+    },
+    {
+      "samples": 64,
+      "nuisance": true,
+      "condition": 15.823720127620968,
+      "max_variance": 0.8266980654402258,
+      "max_l1": 5.50248574345858,
+      "clean_error": 2.3803181647963356e-13,
+      "recovered": 500
+    },
+    {
+      "samples": 80,
+      "nuisance": true,
+      "condition": 10.118541916740398,
+      "max_variance": 0.3879601445372696,
+      "max_l1": 3.631279276422558,
+      "clean_error": 1.794120407794253e-13,
+      "recovered": 500
+    },
+    {
+      "samples": 96,
+      "nuisance": true,
+      "condition": 8.04129999286683,
+      "max_variance": 0.2462355799437561,
+      "max_l1": 3.00967895398752,
+      "clean_error": 1.5587531265737198e-13,
+      "recovered": 500
+    },
+    {
+      "samples": 128,
+      "nuisance": true,
+      "condition": 5.975794303667532,
+      "max_variance": 0.1506018007425485,
+      "max_l1": 2.3237382460234492,
+      "clean_error": 6.750155989720952e-14,
+      "recovered": 500
+    },
+    {
+      "samples": 256,
+      "nuisance": true,
+      "condition": 4.437816696871752,
+      "max_variance": 0.06378011206945555,
+      "max_l1": 1.8823529411764732,
+      "clean_error": 9.059419880941277e-14,
+      "recovered": 500
+    },
+    {
+      "samples": 512,
+      "nuisance": true,
+      "condition": 4.261279700997739,
+      "max_variance": 0.03152471304224184,
+      "max_l1": 1.882352941176473,
+      "clean_error": 1.3944401189291966e-13,
+      "recovered": 500
+    }
+  ],
+  "sparse": [
+    {
+      "samples": 34,
+      "nuisance": false,
+      "determinants_checked": 136,
+      "min_abs_determinant": 7990,
+      "exact_decode_checks": 68,
+      "one_short_collision": {
+        "phases": [
+          0,
+          1
+        ],
+        "gains": [
+          605,
+          792
+        ]
+      },
+      "signatures": [
+        [
+          792,
+          860
+        ],
+        [
+          605,
+          792
+        ],
+        [
+          333,
+          605
+        ],
+        [
+          27,
+          333
+        ],
+        [
+          -262,
+          27
+        ],
+        [
+          -500,
+          -262
+        ],
+        [
+          -670,
+          -500
+        ],
+        [
+          -755,
+          -670
+        ],
+        [
+          -755,
+          -755
+        ],
+        [
+          -670,
+          -755
+        ],
+        [
+          -500,
+          -670
+        ],
+        [
+          -262,
+          -500
+        ],
+        [
+          27,
+          -262
+        ],
+        [
+          333,
+          27
+        ],
+        [
+          605,
+          333
+        ],
+        [
+          792,
+          605
+        ],
+        [
+          860,
+          792
+        ]
+      ]
+    },
+    {
+      "samples": 36,
+      "nuisance": true,
+      "determinants_checked": 136,
+      "min_abs_determinant": 6069,
+      "exact_decode_checks": 68,
+      "one_short_collision": {
+        "phases": [
+          1,
+          2
+        ],
+        "gains": [
+          459,
+          255
+        ]
+      },
+      "signatures": [
+        [
+          0,
+          -255
+        ],
+        [
+          255,
+          0
+        ],
+        [
+          459,
+          255
+        ],
+        [
+          578,
+          459
+        ],
+        [
+          595,
+          578
+        ],
+        [
+          527,
+          595
+        ],
+        [
+          408,
+          527
+        ],
+        [
+          255,
+          408
+        ],
+        [
+          85,
+          255
+        ],
+        [
+          -85,
+          85
+        ],
+        [
+          -255,
+          -85
+        ],
+        [
+          -408,
+          -255
+        ],
+        [
+          -527,
+          -408
+        ],
+        [
+          -595,
+          -527
+        ],
+        [
+          -578,
+          -595
+        ],
+        [
+          -459,
+          -578
+        ],
+        [
+          -255,
+          -459
+        ]
+      ]
+    }
+  ],
+  "adversarial_error_at_64": 0.550248574345858,
+  "assertion_failures": 0,
+  "scope": "Transcribed summary of two native program outputs; not full repository CI, not independent review."
+}
