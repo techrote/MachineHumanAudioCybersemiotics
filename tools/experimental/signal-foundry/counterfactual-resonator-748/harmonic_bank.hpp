@@ -32,6 +32,7 @@ public:
             if(b.hz<40||b.hz>6000||b.gain>1000||b.peakMix>1000||b.selectivity>1000) return false;
         for(unsigned i=0;i<bands_.size();++i){
             const auto& b=c.bands[i];
+            if(b.excite)bands_[i].cancelOptimalEscape();
             if(b.hz!=config_.bands[i].hz)filters_[i].tune(rate_,b.hz);
             if(!b.excite&&config_.bands[i].excite){
                 filters_[i].reset();
@@ -61,6 +62,13 @@ public:
     bool discardPendingInput(unsigned band) noexcept {
         if(band>=bands_.size())return false;
         bands_[band].discardPendingInput();return true;
+    }
+    // Native momentary command, intentionally not serialized or exposed to VST3 yet.
+    bool beginOptimalEscape(unsigned band) noexcept {
+        return band<bands_.size()&&!config_.bands[band].excite&&bands_[band].beginOptimalEscape();
+    }
+    bool optimalEscapeActive(unsigned band) const noexcept {
+        return band<bands_.size()&&bands_[band].optimalEscapeActive();
     }
     IntegerState lattice(unsigned band,unsigned channel) const noexcept {
         return band<bands_.size()?bands_[band].lattice(channel):IntegerState{};

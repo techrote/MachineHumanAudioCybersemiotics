@@ -15,6 +15,16 @@ constexpr int quant(int numerator,bool truncate) noexcept {
 constexpr IntegerState step(IntegerState s,int drive,bool truncate) noexcept {
     return {clampState(quant(-8*s.y,truncate)+drive),clampState(quant(8*s.x,truncate))};
 }
+// For undriven stereo, shared N/T acts monotonically on the maximum absolute
+// coordinate (rotation only permutes magnitudes). N decreases every m>4;
+// neither action can cross from m>4 to m<4. Below 5, only T decreases m.
+constexpr int magnitude(IntegerState s) noexcept {
+    return std::max(s.x<0?-s.x:s.x,s.y<0?-s.y:s.y);
+}
+constexpr bool optimalStereoTruncate(IntegerState l,IntegerState r) noexcept {
+    const int m=std::max(magnitude(l),magnitude(r));
+    return m>0&&m<=4;
+}
 struct Controls {
     std::uint16_t hz=220,wet=700,gain=800;
     std::uint8_t monitor=1; // 0 reference, 1 nearest/erased, 2 half difference
@@ -79,7 +89,7 @@ class Processor {
     std::array<double,3> weights_{0,1,0};
     double rate_=48000,phase_=0,wet_=0.7,gain_=0.8,slew_=1.0/240;
     unsigned count_=0;
-    bool pending_=false;
+    bool pending_=false, optimal_=false;
     std::uint64_t ticks_=0,interventions_=0;
     static double clean(double x) noexcept { return std::isfinite(x)&&std::abs(x)>=1e-20 ? std::clamp(x,-1.0,1.0):0; }
     static void approach(double& x,double y,double delta) noexcept { x+=std::clamp(y-x,-delta,delta); }
@@ -89,11 +99,11 @@ public:
         rate_=rate; slew_=1.0/std::ceil(rate_*0.005); reset(); return true;
     }
     void reset() noexcept {
-        ch_={}; phase_=0; count_=0; pending_=false; ticks_=interventions_=0;
+        ch_={}; phase_=0; count_=0; pending_=optimal_=false; ticks_=interventions_=0;
         wet_=target_.bypass?0:target_.wet/1000.0; gain_=target_.gain/1000.0;
         weights_={}; weights_[target_.monitor]=1;
     }
-    bool set(Controls p) noexcept { if(!valid(p)) return false; target_=p; return true; }
+    bool set(Controls p) noexcept { if(!valid(p)) return false; target_=p; if(p.erase)optimal_=false; return true; }
     Controls controls() const noexcept { return target_; }
     // Convenience API for the same persistent control used by the host.
     // The value at a clock tick applies to the entire just-completed window.
@@ -103,7 +113,14 @@ public:
     }
     unsigned peakMix() const noexcept { return target_.peakMix; }
     // Last-value coalescing: one or more requests before a tick mean one T update.
-    void requestIntervention() noexcept { pending_=true; }
+    void requestIntervention() noexcept { pending_=true; optimal_=false; }
+    // Explicit admission discards drive, but never silently consumes a manual pulse.
+    bool beginOptimalEscape() noexcept {
+        if(target_.erase||pending_)return false;
+        discardPendingInput(); optimal_=true; return true;
+    }
+    void cancelOptimalEscape() noexcept { optimal_=false; }
+    bool optimalEscapeActive() const noexcept { return optimal_; }
     // Zero-fill the elapsed prefix of the current drive window, without
     // changing clock phase, lattice, interpolation, or pending intervention.
     void discardPendingInput() noexcept { for(auto& c:ch_){c.sum=0;c.peak=0;} }
@@ -127,15 +144,22 @@ public:
         ++count_; phase_+=4.0*effectiveHz()/rate_;
         if(phase_>=1.0){
             phase_-=1.0;
-            const bool trunc=target_.erase||pending_; pending_=false;
-            ++ticks_; if(trunc) ++interventions_;
-            for(auto& c:ch_){
+            std::array<int,2> drives{};
+            for(unsigned i=0;i<2;++i){
+                const auto& c=ch_[i];
                 const double legacy=12.0*c.sum/double(count_);
                 const double blend=target_.peakMix/1000.0;
                 const double excitation=target_.peakMix==0?legacy:legacy*(1.0-blend)+12.0*c.peak*blend;
-                const int drive=static_cast<int>(std::round(excitation));
-                c.tick(drive,trunc); c.sum=0; c.peak=0;
+                drives[i]=static_cast<int>(std::round(excitation));
             }
+            if(drives[0]||drives[1])optimal_=false;
+            const bool trunc=target_.erase||pending_||(optimal_&&optimalStereoTruncate(ch_[0].discrete,ch_[1].discrete));
+            pending_=false;
+            ++ticks_; if(trunc) ++interventions_;
+            for(unsigned i=0;i<2;++i){
+                auto& c=ch_[i]; c.tick(drives[i],trunc); c.sum=0; c.peak=0;
+            }
+            if(!magnitude(ch_[0].discrete)&&!magnitude(ch_[1].discrete))optimal_=false;
             count_=0;
         }
         const auto out=[&](unsigned i){return std::clamp((1-wet_)*input[i]+wet_*gain_*ch_[i].value(phase_,weights_),-1.0,1.0);};
