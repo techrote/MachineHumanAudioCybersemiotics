@@ -1,0 +1,157 @@
+{
+  "fixedTwoStreamCases": 41219,
+  "fixedThreePartialStreamCases": 10567,
+  "embeddingTuples": "322214",
+  "nontrivialFixedIntervals": 18410,
+  "unknownCompositionCases": 16600,
+  "inconsistentUnknownCases": 4680,
+  "strictQuotaCases": 40,
+  "examples": [
+    {
+      "w": "ABA",
+      "vs": [
+        "A",
+        "BA"
+      ],
+      "scopes": [
+        "AB",
+        "AB"
+      ],
+      "polynomial": [
+        "1",
+        "1",
+        "0",
+        "0"
+      ],
+      "invisible": [
+        0,
+        1
+      ]
+    },
+    {
+      "w": "ABA",
+      "vs": [
+        "AB",
+        "AB"
+      ],
+      "scopes": [
+        "AB",
+        "AB"
+      ],
+      "polynomial": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      "invisible": [
+        1
+      ]
+    },
+    {
+      "w": "AABBCC",
+      "vs": [
+        "AB",
+        "BC",
+        "AC"
+      ],
+      "scopes": [
+        "AB",
+        "BC",
+        "AC"
+      ],
+      "polynomial": [
+        "8",
+        "24",
+        "24",
+        "8",
+        "0",
+        "0",
+        "0"
+      ],
+      "invisible": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "w": "ABC",
+      "vs": [
+        "AB",
+        "BC",
+        "CA"
+      ],
+      "scopes": [
+        "AB",
+        "BC",
+        "AC"
+      ],
+      "polynomial": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "invisible": []
+    }
+  ],
+  "quotaExample": {
+    "u": "AAAB",
+    "v": "BAAA",
+    "composition": [
+      6,
+      1
+    ],
+    "alphabet": "AB",
+    "ordinaryLCS": 3,
+    "quotaLCS": 1,
+    "invisible": [
+      0
+    ]
+  },
+  "cycle": {
+    "reports": [
+      "AB",
+      "BC",
+      "CA"
+    ],
+    "composition": [
+      1,
+      1,
+      1
+    ],
+    "pairs": [
+      {
+        "views": [
+          "AB",
+          "BC"
+        ],
+        "invisible": [
+          0
+        ]
+      },
+      {
+        "views": [
+          "AB",
+          "CA"
+        ],
+        "invisible": [
+          0
+        ]
+      },
+      {
+        "views": [
+          "BC",
+          "CA"
+        ],
+        "invisible": [
+          0
+        ]
+      }
+    ],
+    "jointHistories": []
+  },
+  "assertionFailures": 0
+}
