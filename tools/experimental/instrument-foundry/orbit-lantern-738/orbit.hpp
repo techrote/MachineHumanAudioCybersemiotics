@@ -6,6 +6,11 @@
 #include <cstddef>
 namespace mhac::orbit {
 constexpr double tau=6.283185307179586476925286766559;
+// Includes the official validator's fractional and extreme test rates.
+constexpr double minSampleRate=1000., maxSampleRate=2000000.;
+inline bool validSampleRate(double rate) noexcept {
+    return std::isfinite(rate)&&rate>=minSampleRate&&rate<=maxSampleRate;
+}
 struct Point { int x=0,y=0; bool operator==(Point p) const noexcept {return x==p.x&&y==p.y;} };
 // Restricted lattice domain; reject out-of-domain input and noncontractive coefficients.
 inline bool step(Point p,int a,int b,int q,bool nearest,Point& out) noexcept {
@@ -59,7 +64,7 @@ class Engine {
     std::array<Voice,8> voices_{}; Spectrum a_{},b_{};Patch patch_{};double rate_=0,attack_=0;
     static void advance(double& phase,double inc) noexcept {phase+=inc;if(phase>=tau)phase-=tau;}
 public:
-    bool prepare(double rate) noexcept {if(!std::isfinite(rate)||rate<8000||rate>384000)return false;
+    bool prepare(double rate) noexcept {if(!validSampleRate(rate))return false;
         if(!a_.build<4>({4,4},0,8,9)||!b_.build<68>({-16,4},8,4,9))return false;
         rate_=rate;attack_=1./std::ceil(.005*rate);reset();return true;}
     void reset() noexcept {voices_={};}
