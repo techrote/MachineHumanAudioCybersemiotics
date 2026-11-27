@@ -6,7 +6,7 @@ const root=path.resolve(process.argv[2]||'.'), keys=['seed71/receipt.json','seed
 const read=k=>fs.readFileSync(path.join(root,k)), sha=b=>createHash('sha256').update(b).digest('hex');
 const groups=keys.map(k=>{const x=JSON.parse(read(k));return x.rows||x.results});
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function until(fn){for(let i=0;i<80;i++){const v=await fn();if(v)return v;await sleep(150)}throw Error('readiness timeout')}
+async function until(fn, label='condition', timeout=12000){const end=Date.now()+timeout;do{const v=await fn();if(v)return v;await sleep(150)}while(Date.now()<end);throw Error(label+' readiness timeout after '+timeout+' ms')}
 function staticCheck(){
  const html=read('index.html').toString('utf8'), payload=JSON.parse(html.match(/<script id="payload" type="application\/json">([^]*?)<\/script>/)[1]);
  assert.deepEqual(payload.map(d=>d.path),keys);
@@ -17,12 +17,13 @@ function staticCheck(){
 async function browser(exe){
  const profile=fs.mkdtempSync(path.join(os.tmpdir(),'mhac004-profile-')), downloads=fs.mkdtempSync(path.join(os.tmpdir(),'mhac004-exports-'));
  const chrome=spawn(exe,['--headless','--remote-debugging-port=0',`--user-data-dir=${profile}`,'about:blank'],{stdio:['ignore','ignore','pipe']});
- let stderr='',launchError,ws,stage='launch';const errors=[];
+ let stderr='',launchError,ws,stage='launch-port',portReadError='',endpointError='',port=null;const errors=[];const started=Date.now();
  chrome.on('error',e=>launchError=e);chrome.stderr.on('data',b=>stderr=(stderr+b).slice(-4000));
  try{
-  const port=await until(()=>{if(launchError)throw launchError;if(chrome.exitCode!==null)throw Error('Chrome exit '+chrome.exitCode);try{return fs.readFileSync(path.join(profile,'DevToolsActivePort'),'utf8').split('\n')[0].trim()}catch{return null}});
+  port=await until(()=>{if(launchError)throw launchError;if(chrome.exitCode!==null||chrome.signalCode!==null)throw Error('Chrome exit '+chrome.exitCode+' signal '+chrome.signalCode);try{const raw=fs.readFileSync(path.join(profile,'DevToolsActivePort'),'utf8').split('\n')[0].trim();if(!/^\d+$/.test(raw)||Number(raw)<1||Number(raw)>65535){portReadError='invalid or incomplete port file';return null}return Number(raw)}catch(e){portReadError=e.code||String(e);return null}},'DevTools port file',60000);
   const get=async p=>(await fetch(`http://127.0.0.1:${port}${p}`,{signal:AbortSignal.timeout(3000)})).json();
-  const page=await until(async()=>{try{return (await get('/json/list')).find(x=>x.type==='page')}catch{return null}});
+  stage='launch-target';const page=await until(async()=>{try{const target=(await get('/json/list')).find(x=>x.type==='page'&&x.webSocketDebuggerUrl);if(!target)endpointError='no page target';return target}catch(e){endpointError=String(e);return null}},'DevTools page target',30000);
+  stage='launch-websocket';
   ws=new WebSocket(page.webSocketDebuggerUrl);
   await new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(Error('CDP open timeout')),5000);ws.addEventListener('open',()=>{clearTimeout(t);resolve()},{once:true});ws.addEventListener('error',()=>{clearTimeout(t);reject(Error('CDP open error'))},{once:true})});
   let seq=0;const pending=new Map();
@@ -55,7 +56,7 @@ async function browser(exe){
    assert.deepEqual(fs.readFileSync(file),original);exportHashes[name]=sha(original);
   }
   assert.deepEqual(errors,[]);return {status:'PASS',browser:await get('/json/version'),sessions:audio,trace_events:events,independent_cases:independent,gain_controls:3,export_sha256:exportHashes,errors,playback:'NOT_RUN',windows_persistence:'NOT_RUN'};
- }catch(e){console.log(JSON.stringify({status:'FAIL',stage,error:String(e),errors,stderr}));throw e}
+ }catch(e){console.log(JSON.stringify({status:'FAIL',stage,error:String(e),errors,stderr,launch:{elapsed_ms:Date.now()-started,pid:chrome.pid??null,exit_code:chrome.exitCode,signal:chrome.signalCode,port,port_read_error:portReadError,endpoint_error:endpointError,profile_entries:fs.readdirSync(profile).sort().slice(0,40)}}));throw e}
  finally{if(ws)ws.close();chrome.kill();await sleep(500);for(const d of [profile,downloads])try{fs.rmSync(d,{recursive:true,force:true})}catch{}}
 }
 async function main(){const checked=staticCheck();if(process.argv[3]==='--static-only'){console.log(JSON.stringify(checked));return}console.log(JSON.stringify(await browser(process.argv[3]||'google-chrome'),null,2))}
