@@ -266,6 +266,8 @@ jobs:
           $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACTraceBell.vst3'
           py -3.12 "$src/trace_bell_host.py" --module $module --out trace-bell-delivery
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/trace_bell_presets.py" --module $module --out trace-bell-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
           Copy-Item -Recurse $bundles[0].FullName trace-bell-delivery/
           Copy-Item "$sdk/LICENSE.txt" trace-bell-delivery/Steinberg-SDK-LICENSE.txt
           foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
