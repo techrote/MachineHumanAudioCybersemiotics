@@ -63,7 +63,7 @@ struct Cursor {
     }
 };
 class Processor final : public AudioEffect {
-    PalimpsestShuttle<> engine;
+    DesktopShuttle engine;
     TraceStateBridge<ShuttlePatch> state;
     uint32 tail=1440000;
     void applyPending() noexcept {
@@ -87,9 +87,9 @@ public:
         return size==kSample32?kResultTrue:kResultFalse;
     }
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
-        if(setup.symbolicSampleSize!=kSample32||!std::isfinite(setup.sampleRate)||setup.sampleRate<8000.||setup.sampleRate>192000.||std::floor(setup.sampleRate)!=setup.sampleRate)return kResultFalse;
+        if(setup.symbolicSampleSize!=kSample32||!DesktopShuttle::grainForRate(setup.sampleRate))return kResultFalse;
         const auto rc=AudioEffect::setupProcessing(setup);if(rc!=kResultOk)return rc;
-        if(!engine.prepare(unsigned(setup.sampleRate)))return kResultFalse;
+        if(!engine.prepareRate(setup.sampleRate))return kResultFalse;
         applyPending();engine.reset();publishState();
         tail=uint32(std::ceil(30.*setup.sampleRate));return kResultOk;
     }

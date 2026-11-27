@@ -29,9 +29,10 @@ inline bool decode(const ShuttleState& s,ShuttlePatch& out) noexcept {
 }
 // Two overlapping reverse grains, forward reference, convex stereo feedback.
 // Owner-thread only. prepare/reset are not real-time calls. No process allocation.
-// MaxGrain=2048 supports 24 kHz; the default supports 192 kHz.
+// Legacy integer prepare retains its 8–192 kHz contract. Desktop hosts use
+// prepareRate and an expanded fixed-capacity instance, allocated off the audio thread.
 template<unsigned MaxGrain=15360> class PalimpsestShuttle {
-    static_assert(MaxGrain>=2 && MaxGrain<=15360);
+    static_assert(MaxGrain>=2 && MaxGrain<=160000);
     std::array<ShuttleFrame,2*MaxGrain> ring_{};
     unsigned grain_=0, pos_=0, phase_=0;
     ShuttlePatch patch_{};
@@ -52,8 +53,16 @@ template<unsigned MaxGrain=15360> class PalimpsestShuttle {
 public:
     bool prepare(unsigned rate) noexcept {
         if(rate<8000||rate>192000) return false;
-        const unsigned g=(rate*80u/1000u+1u)&~1u;
-        if(g>MaxGrain) return false;
+        return prepareRate(double(rate));
+    }
+    static unsigned grainForRate(double rate) noexcept {
+        if(!std::isfinite(rate)||rate<1000.||rate>2000000.) return 0;
+        const unsigned g=(static_cast<unsigned>(rate*80./1000.)+1u)&~1u;
+        return g>=2&&g<=MaxGrain?g:0;
+    }
+    bool prepareRate(double rate) noexcept {
+        const unsigned g=grainForRate(rate);
+        if(!g) return false;
         grain_=g; inv_=2.f/float(g); alpha_=1.f-std::exp(-1.f/(.01f*float(rate)));
         reset(); return true;
     }
@@ -85,4 +94,5 @@ public:
         return {clean(blend(in.l,wet.l,mix_)),clean(blend(in.r,wet.r,mix_))};
     }
 };
+using DesktopShuttle=PalimpsestShuttle<160000>;
 } // namespace mhac::accel

@@ -9,6 +9,8 @@
 #include "shuttle_control.hpp"
 #include <cstring>
 #include <iterator>
+#include <memory>
+#include <limits>
 #include <atomic>
 #include <iostream>
 #include <stdexcept>
@@ -36,7 +38,7 @@ struct ShuttleEvent {unsigned offset,id;double normalized;};
 constexpr ShuttleEvent score[]={{0,0,.25},{0,3,.7},{17,2,.1},{129,1,.8},{129,2,.65},
     {4097,4,1.},{8195,4,0.},{12001,0,.8},{12001,3,.2},{16003,1,.15}};
 std::vector<float> run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassInfo& info,
-    HostApplication* host,int rate,int block,bool stress){
+    HostApplication* host,double rate,int block,bool stress){
     auto c=factory.createInstance<IComponent>(info.ID());require(bool(c),"create");
     FUnknownPtr<IAudioProcessor> proc(c.get());require(proc.getInterface()!=nullptr,"processor");
     Life life{c.get(),proc.getInterface()};
@@ -48,7 +50,12 @@ std::vector<float> run(const VST3::Hosting::PluginFactory& factory,const VST3::H
     const ShuttlePatch initial{650,150,180,600,false};
     const auto initialBytes=encode(initial);
     restore(c.get(),initialBytes);require(save(c.get())==initialBytes,"cold pending restore");
-    ProcessSetup setup{kRealtime,kSample32,block,double(rate)};
+    for(double bad:{999.,2000000.1,std::numeric_limits<double>::infinity(),std::numeric_limits<double>::quiet_NaN()}){
+        ProcessSetup invalid{kRealtime,kSample32,block,bad};
+        require(proc->setupProcessing(invalid)!=kResultOk,"invalid rate admitted");
+        require(save(c.get())==initialBytes,"invalid setup changed state");
+    }
+    ProcessSetup setup{kRealtime,kSample32,block,rate};
     ok(proc->setupProcessing(setup),"setup");
     ok(c->setActive(true),"activate");life.active=true;
     ok(proc->setProcessing(true),"start");life.running=true;
@@ -60,8 +67,10 @@ std::vector<float> run(const VST3::Hosting::PluginFactory& factory,const VST3::H
     ParameterChanges params(5);
     ProcessData d{};d.processMode=kRealtime;d.symbolicSampleSize=kSample32;
     d.numInputs=d.numOutputs=1;d.inputs=&input;d.outputs=&output;d.inputParameterChanges=&params;
-    PalimpsestShuttle<> oracle;require(oracle.prepare(unsigned(rate))&&oracle.configure(initial),"oracle setup");oracle.reset();
-    constexpr int total=20000;
+    auto storage=std::make_unique<DesktopShuttle>();auto& oracle=*storage;
+    require(oracle.prepareRate(rate)&&oracle.configure(initial),"oracle setup");oracle.reset();
+    require(proc->getTailSamples()==uint32(std::ceil(30.*rate)), "tail rate");
+    const int total=rate>192000.?std::max(20000,int(3*oracle.grainSamples())):20000;
     if(!stress){
         result.reserve(2*total);
         double maxError=0;unsigned cursor=0;
@@ -152,6 +161,12 @@ int main(int argc,char** argv){
                 auto b=run(factory,info,host.get(),rate,1024,false);
                 require(a==b,"partition mismatch");
             }
+            for(double rate:{384000.,1234.568,12345.678,123456.780,1234567.800}){
+                auto a=run(factory,info,host.get(),rate,127,false);
+                auto b=run(factory,info,host.get(),rate,1024,false);
+                require(a==b,"extended-rate partition mismatch");
+            }
+            std::cout<<"SDK_EXTENDED_RATE_PASS automation_cases=10"<<std::endl;
             run(factory,info,host.get(),48000,128,true);
             std::cout<<"SDK_PROBE_PASS automation_cases=6 stereo_frames=120000"<<std::endl;return 0;
         }

@@ -1,4 +1,5 @@
 #include "shuttle.hpp"
+#include "shuttle_rate_test.hpp"
 #include <cassert>
 #include <cstdio>
 #include <fstream>
@@ -71,6 +72,7 @@ static void render(const char* name,ShuttlePatch p) {
     check(bool(out));
 }
 int main(int argc,char**) {
+    qualifyShuttleRates();
     for(unsigned r:{8000u,24000u,44100u,48000u,96000u,192000u}) qualify(r);
     auto small=std::make_unique<PalimpsestShuttle<2048>>();check(small->prepare(24000));check(!small->prepare(48000));
     for(unsigned i=0;i<=1000;++i) {ShuttlePatch p{uint16_t(i),uint16_t(1000-i),uint16_t(i),uint16_t(i),bool(i&1)};ShuttlePatch q{};auto s=encode(p);check(decode(s,q)&&encode(q)==s);s[12]=2;check(!decode(s,q)&&encode(q)==encode(p));}
