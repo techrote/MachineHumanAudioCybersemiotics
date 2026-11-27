@@ -14,6 +14,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/rotation_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/three_plugin_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/session_score.py'
+      - 'tools/experimental/vst-acceleration/native-chain/trace-bell/**'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -25,7 +26,7 @@ jobs:
   audition:
     if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'mhac-vst-632/native-chain'
     runs-on: windows-2022
-    timeout-minutes: 25
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
         with:
@@ -230,6 +231,57 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/session_score.py --afterimage afterimage-rotation.zip --winters winters.zip --receipt receipt-balanced.zip --out session
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Trace Bell pinned SDK build, validator and host
+        shell: pwsh
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-trace-bell'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $src = 'tools/experimental/vst-acceleration/native-chain/trace-bell'
+          New-Item -ItemType Directory -Force trace-bell-delivery | Out-Null
+          cmake -S "$src/vst3" -B trace-bell-build -A x64 "-DMHAC_VST3_SDK=$sdk" -DMHAC_VALIDATE_POST_BUILD=OFF 2>&1 | Tee-Object trace-bell-delivery/configure.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build trace-bell-build --config Release --target MHACTraceBell validator --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACTraceBell.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACTraceBell.vst3') })
+          if ($bundles.Count -ne 1) { throw 'Expected one x64 Trace Bell bundle' }
+          $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Validator missing' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object trace-bell-delivery/validator.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing validator success' }
+          if (Select-String -Path trace-bell-delivery/validator.txt -Pattern '^\s*ERROR:') { throw 'Validator explicit error' }
+          $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACTraceBell.vst3'
+          py -3.12 "$src/trace_bell_host.py" --module $module --out trace-bell-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item -Recurse $bundles[0].FullName trace-bell-delivery/
+          Copy-Item "$sdk/LICENSE.txt" trace-bell-delivery/Steinberg-SDK-LICENSE.txt
+          foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
+            Get-ChildItem (Join-Path $sdk $part) -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("trace-bell-delivery/SDK-" + $part + "-" + $_.Name) }
+          }
+          git -C $sdk submodule status --recursive | Out-File trace-bell-delivery/SDK-GITLINKS.txt
+          "sdk=$(git -C $sdk rev-parse HEAD)" | Out-File trace-bell-delivery/BUILD-SOURCE.txt
+          "source=$(git rev-parse HEAD)" | Out-File trace-bell-delivery/BUILD-SOURCE.txt -Append
+          Copy-Item "$src/VST3.md" trace-bell-delivery/
+          py -3.12 -c "from pathlib import Path; import zipfile; r=Path('trace-bell-delivery'); z=zipfile.ZipFile('MHACTraceBell-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACTraceBell-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-trace-bell-build-evidence
+          path: trace-bell-delivery/*.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: MHACTraceBell-Windows-x64
+          path: MHACTraceBell-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()
         with:
