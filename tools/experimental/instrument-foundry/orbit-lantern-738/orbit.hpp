@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstdint>
 #include <cstddef>
+#include "sustain.hpp"
 namespace mhac::orbit {
 constexpr double tau=6.283185307179586476925286766559;
 // Includes the official validator's fractional and extreme test rates.
@@ -104,7 +105,7 @@ public:
 struct Event { enum class Kind {on,off,patch}; std::size_t offset=0; Kind kind=Kind::on; int id=0,note=60; double velocity=0; Patch patch{}; };
 class Engine {
     struct Voice {bool active=false,releasing=false;int id=0;double level=0,velocity=0,releaseStep=0;
-        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.,spectralDepth=0.,spectralMix=0.,spectralBias=.5;std::array<double,61> curve{};};
+        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.,spectralDepth=0.,spectralMix=0.,spectralBias=.5;std::array<double,61> curve{};SustainPath sustain{};};
     std::array<Voice,8> voices_{}; Spectrum a_{},b_{};Patch patch_{};double rate_=0,attack_=0;
     static void advance(double& phase,double inc) noexcept {phase+=inc;if(phase>=tau)phase-=tau;}
 public:
@@ -130,6 +131,12 @@ public:
             v.releaseSamples=unsigned(std::ceil(rate_*patch_.releaseMs/1000.));return true;}
         return false;
     }
+    // Native-only opt-in, before the first rendered sample; persisted state is unchanged.
+    bool noteSustain(int id,const std::array<double,61>& knots,unsigned length,double depth,double cycleMs) noexcept {
+        for(auto& v:voices_)if(v.active&&v.id==id&&!v.releasing&&v.level==0.&&!v.sustain.configured())
+            return v.sustain.configure(knots,length,depth,rate_,cycleMs);
+        return false;
+    }
     double notePhase(int id) const noexcept {for(const auto& v:voices_)if(v.active&&v.id==id)return v.phaseB;return 0.;}
     bool noteOffShaped(int id,const std::array<double,61>& curve,unsigned steps,double spectralDepth=0.) noexcept {
         if(!std::isfinite(spectralDepth)||spectralDepth<0.||spectralDepth>1.)return false;
@@ -149,8 +156,10 @@ public:
                     v.spectralBias=bias(i)+(t-i)*(bias(i+1)-bias(i));
                 }}else v.level=std::max(0.,v.level-v.releaseStep);}
             double al=0,ar=0,bl=0,br=0;
-            if(v.mix<1.)a_.sample(v.phaseA,v.cutA,al,ar);
-            if(v.mix>0.){
+            const double intervention=v.sustain.tick();
+            const double mix=v.mix+(1.-v.mix)*intervention;
+            if(mix<1.)a_.sample(v.phaseA,v.cutA,al,ar);
+            if(mix>0.){
                 if(v.spectralMix>0.&&v.cutB>=2*b_.dominant){
                     double carrier[2]{};
                     b_.sampleCarrier(v.phaseB,v.cutB,bl,br,carrier);
@@ -163,7 +172,7 @@ public:
                     bl+=(colourL-bl)*v.spectralMix;br+=(colourR-br)*v.spectralMix;
                 }else b_.sample(v.phaseB,v.cutB,bl,br);
             }
-            const double g=.065*v.velocity*v.level;l+=g*((1.-v.mix)*al+v.mix*bl);r+=g*((1.-v.mix)*ar+v.mix*br);
+            const double g=.065*v.velocity*v.level*(1.-.65*intervention);l+=g*((1.-mix)*al+mix*bl);r+=g*((1.-mix)*ar+mix*br);
             if(!v.releasing)v.level=std::min(1.,v.level+attack_);
             advance(v.phaseA,v.incA);advance(v.phaseB,v.incB);
         }
