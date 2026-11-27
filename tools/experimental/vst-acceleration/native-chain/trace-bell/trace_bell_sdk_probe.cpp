@@ -17,7 +17,9 @@ using namespace Steinberg::Vst;
 using namespace mhac::accel;
 namespace {
 void require(bool ok,const char* stage){if(!ok)throw std::runtime_error(stage);}
-void ok(tresult rc,const char* stage){require(rc==kResultOk,stage);}
+void ok(tresult rc,const char* stage){
+    if(rc!=kResultOk)throw std::runtime_error(std::string(stage)+" result="+std::to_string(static_cast<int>(rc)));
+}
 TraceState encode(const TracePatch& p){TraceState b{};require(encodeTraceState(p,b),"encode");return b;}
 void restore(IComponent* c,TraceState b){MemoryStream s(b.data(),TSize(b.size()));ok(c->setState(&s),"setState");}
 TraceState save(IComponent* c){
@@ -128,6 +130,9 @@ std::vector<float> run(const VST3::Hosting::PluginFactory& factory,const VST3::H
         ok(proc->process(d),"final block");require(save(c.get())==b,"final restore");
         std::cout<<"SDK_STATE_PASS writes="<<writes<<" reads="<<reads<<" blocks="<<blocks<<std::endl;
     }
+    ok(proc->setProcessing(false),"stop");life.running=false;
+    ok(c->setActive(false),"deactivate");life.active=false;
+    ok(c->terminate(),"terminate");life.initialized=false;
     return result;
 }
 }

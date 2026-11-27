@@ -107,6 +107,9 @@ public:
         const auto rc=AudioEffect::setActive(active);
         if(rc==kResultOk&&active){applyPending();engine.reset();publishState();}return rc;
     }
+    // Activation owns initialization/reset. Start/stop are notifications only;
+    // preserve tails and pending state across transport pauses, with no RT work.
+    tresult PLUGIN_API setProcessing(TBool /*state*/) override {return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override {return 0;}
     uint32 PLUGIN_API getTailSamples() override {return tail;}
     // State I/O is control-side only; the engine has a single audio owner.
