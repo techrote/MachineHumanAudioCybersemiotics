@@ -13,6 +13,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/phase_balanced_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/rotation_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/three_plugin_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/session_score.py'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -224,6 +225,11 @@ jobs:
         run: |
           py -3.12 tools/experimental/vst-acceleration/native-chain/three_plugin_host.py --afterimage afterimage-rotation.zip --winters winters.zip --receipt receipt-balanced.zip --out three-plugin
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Original four-track score and aligned stem export
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/session_score.py --afterimage afterimage-rotation.zip --winters winters.zip --receipt receipt-balanced.zip --out session
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -246,5 +252,10 @@ jobs:
             rotation/rotation.json
             three-plugin/three-plugin.json
             three-plugin/*.wav
+            session/session.json
+            session/MIDI/*.mid
+            session/Presets/*.vstpreset
+            session/Stems/*.wav
+            session/Comparisons/*.wav
           if-no-files-found: ignore
           retention-days: 7
