@@ -1,0 +1,510 @@
+{
+  "periods": [
+    5,
+    7,
+    11,
+    13,
+    17
+  ],
+  "D": 49,
+  "profiles": [
+    {
+      "N": 51,
+      "orderedPairs": 2550,
+      "openPair": [
+        0,
+        1
+      ],
+      "openRadiusPerUnit": 0.00011004805135111265,
+      "openDistanceSquared": "1/20643118",
+      "closedPair": [
+        0,
+        1
+      ],
+      "closedDistanceSquared": "1/2270030",
+      "cleanIndex": 0,
+      "cleanDistanceSquared": "1135015/60042478562",
+      "minimaxRadiusPerUnit": 0.00033185946290329127,
+      "minAngleDegrees": 0.7808964765644248,
+      "anglePair": [
+        7,
+        28
+      ]
+    },
+    {
+      "N": 52,
+      "orderedPairs": 2652,
+      "openPair": [
+        0,
+        1
+      ],
+      "openRadiusPerUnit": 0.0010691584135302094,
+      "openDistanceSquared": "1135015/248231844272",
+      "closedPair": [
+        0,
+        1
+      ],
+      "closedDistanceSquared": "1135015/60042478562",
+      "cleanIndex": 0,
+      "cleanDistanceSquared": "30021239281/21084085280496",
+      "minimaxRadiusPerUnit": 0.002173909693275074,
+      "minAngleDegrees": 0.9826880190978081,
+      "anglePair": [
+        17,
+        34
+      ]
+    },
+    {
+      "N": 53,
+      "orderedPairs": 2756,
+      "openPair": [
+        3,
+        4
+      ],
+      "openRadiusPerUnit": 0.011327199631462644,
+      "openDistanceSquared": "151430599/295058778174",
+      "closedPair": [
+        3,
+        4
+      ],
+      "closedDistanceSquared": "11054433727/15120326239150",
+      "cleanIndex": 0,
+      "cleanDistanceSquared": "7028028426832/238761835638525",
+      "minimaxRadiusPerUnit": 0.013519407966759475,
+      "minAngleDegrees": 5.16494150289981,
+      "anglePair": [
+        3,
+        4
+      ]
+    },
+    {
+      "N": 55,
+      "orderedPairs": 2970,
+      "openPair": [
+        3,
+        4
+      ],
+      "openRadiusPerUnit": 0.016252261909229425,
+      "openDistanceSquared": "4477652277161/4238017523319952",
+      "closedPair": [
+        3,
+        4
+      ],
+      "closedDistanceSquared": "4477652277161/2997716851293200",
+      "cleanIndex": 2,
+      "cleanDistanceSquared": "2231636532970992/43214960177778031",
+      "minimaxRadiusPerUnit": 0.019324126948609847,
+      "minAngleDegrees": 7.089194095281087,
+      "anglePair": [
+        3,
+        4
+      ]
+    },
+    {
+      "N": 57,
+      "orderedPairs": 3192,
+      "openPair": [
+        22,
+        24
+      ],
+      "openRadiusPerUnit": 0.08914051335102946,
+      "openDistanceSquared": "636576514847321386/20028128042634124397",
+      "closedPair": [
+        7,
+        8
+      ],
+      "closedDistanceSquared": "10937130513056936882/236010312882550567937",
+      "cleanIndex": 0,
+      "cleanDistanceSquared": "16120587168839099064/236010312882550567937",
+      "minimaxRadiusPerUnit": 0.10763566821498563,
+      "minAngleDegrees": 36.47101028314653,
+      "anglePair": [
+        1,
+        54
+      ]
+    },
+    {
+      "N": 60,
+      "orderedPairs": 3540,
+      "openPair": [
+        6,
+        5
+      ],
+      "openRadiusPerUnit": 0.11449130397617928,
+      "openDistanceSquared": "1253324763935099470114/23903342044543104431659",
+      "closedPair": [
+        5,
+        6
+      ],
+      "closedDistanceSquared": "9350082085870528016363/138986821686487243944904",
+      "cleanIndex": 8,
+      "cleanDistanceSquared": "165238334578066754871/1275108455839332513256",
+      "minimaxRadiusPerUnit": 0.1296853457703125,
+      "minAngleDegrees": 38.01862764097708,
+      "anglePair": [
+        5,
+        6
+      ]
+    },
+    {
+      "N": 64,
+      "orderedPairs": 4032,
+      "openPair": [
+        12,
+        25
+      ],
+      "openRadiusPerUnit": 0.15730205663806732,
+      "openDistanceSquared": "506747600723131296121386/5119916853379001443968479",
+      "closedPair": [
+        5,
+        6
+      ],
+      "closedDistanceSquared": "12728730732227687041094803/94345760692938986368759848",
+      "cleanIndex": 6,
+      "cleanDistanceSquared": "17197170141125903350678507/94345760692938986368759848",
+      "minimaxRadiusPerUnit": 0.18365440893867327,
+      "minAngleDegrees": 45.678122170370585,
+      "anglePair": [
+        12,
+        25
+      ]
+    },
+    {
+      "N": 70,
+      "orderedPairs": 4830,
+      "openPair": [
+        12,
+        25
+      ],
+      "openRadiusPerUnit": 0.21133829044249575,
+      "openDistanceSquared": "44675397758439549043627117/250064508239584688289843311",
+      "closedPair": [
+        11,
+        58
+      ],
+      "closedDistanceSquared": "2289266965468661/8532741690448400",
+      "cleanIndex": 12,
+      "cleanDistanceSquared": "550096046610567202831006157/2305887942167786369227700800",
+      "minimaxRadiusPerUnit": 0.24421378072350983,
+      "minAngleDegrees": 59.926390984781776,
+      "anglePair": [
+        12,
+        25
+      ]
+    },
+    {
+      "N": 85,
+      "orderedPairs": 7140,
+      "openPair": [
+        16,
+        33
+      ],
+      "openRadiusPerUnit": 0.29429698953851036,
+      "openDistanceSquared": "12363103110465698151143319393643099/35685834815283502628525931314895052",
+      "closedPair": [
+        10,
+        27
+      ],
+      "closedDistanceSquared": "36329650458466093278888994106662406/68132408177086339790018923556762793",
+      "cleanIndex": 16,
+      "cleanDistanceSquared": "1273989670001539771543536037633486/3244400389385063799524710645560133",
+      "minimaxRadiusPerUnit": 0.3133182810391943,
+      "minAngleDegrees": 68.91395296362619,
+      "anglePair": [
+        0,
+        17
+      ]
+    }
+  ],
+  "rawWeights": {
+    "bits": 20,
+    "weights": [
+      "2164",
+      "8925",
+      "23315",
+      "48405",
+      "87264",
+      "141126",
+      "210161",
+      "292693",
+      "385803",
+      "486501",
+      "591760",
+      "696896",
+      "797483",
+      "888855",
+      "964945",
+      "1019689",
+      "1048576",
+      "1047057",
+      "1012145",
+      "943901",
+      "843906",
+      "715414",
+      "563282",
+      "393548",
+      "217007",
+      "97966",
+      "217007",
+      "393548",
+      "563282",
+      "715414",
+      "843906",
+      "943901",
+      "1012145",
+      "1047057",
+      "1048576",
+      "1019689",
+      "964945",
+      "888855",
+      "797483",
+      "696896",
+      "591760",
+      "486501",
+      "385803",
+      "292693",
+      "210161",
+      "141126",
+      "87264",
+      "48405",
+      "23315",
+      "8925",
+      "2164"
+    ],
+    "minRatio": "16377716575/16377708544",
+    "minRatioApprox": 1.0000004903616386,
+    "pair": [
+      16,
+      33
+    ],
+    "attempts": [
+      {
+        "bits": 0,
+        "failedOrderedInequalities": 2548
+      },
+      {
+        "bits": 1,
+        "failedOrderedInequalities": 2212
+      },
+      {
+        "bits": 2,
+        "failedOrderedInequalities": 1954
+      },
+      {
+        "bits": 3,
+        "failedOrderedInequalities": 1684
+      },
+      {
+        "bits": 4,
+        "failedOrderedInequalities": 1398
+      },
+      {
+        "bits": 5,
+        "failedOrderedInequalities": 1282
+      },
+      {
+        "bits": 6,
+        "failedOrderedInequalities": 1062
+      },
+      {
+        "bits": 7,
+        "failedOrderedInequalities": 718
+      },
+      {
+        "bits": 8,
+        "failedOrderedInequalities": 536
+      },
+      {
+        "bits": 9,
+        "failedOrderedInequalities": 220
+      },
+      {
+        "bits": 10,
+        "failedOrderedInequalities": 136
+      },
+      {
+        "bits": 11,
+        "failedOrderedInequalities": 68
+      },
+      {
+        "bits": 12,
+        "failedOrderedInequalities": 44
+      },
+      {
+        "bits": 13,
+        "failedOrderedInequalities": 26
+      },
+      {
+        "bits": 14,
+        "failedOrderedInequalities": 10
+      },
+      {
+        "bits": 15,
+        "failedOrderedInequalities": 8
+      },
+      {
+        "bits": 16,
+        "failedOrderedInequalities": 6
+      },
+      {
+        "bits": 17,
+        "failedOrderedInequalities": 4
+      },
+      {
+        "bits": 18,
+        "failedOrderedInequalities": 2
+      },
+      {
+        "bits": 19,
+        "failedOrderedInequalities": 2
+      },
+      {
+        "bits": 20,
+        "failedOrderedInequalities": 0
+      }
+    ]
+  },
+  "projectedWeights": {
+    "bits": 16,
+    "weights": [
+      "1027",
+      "3097",
+      "6241",
+      "10508",
+      "15957",
+      "21667",
+      "27713",
+      "33206",
+      "38210",
+      "42771",
+      "46911",
+      "49861",
+      "52393",
+      "53864",
+      "54413",
+      "54288",
+      "54097",
+      "54126",
+      "54806",
+      "56281",
+      "58171",
+      "60438",
+      "62262",
+      "64507",
+      "65280",
+      "65536",
+      "65280",
+      "64507",
+      "62262",
+      "60438",
+      "58171",
+      "56281",
+      "54806",
+      "54126",
+      "54097",
+      "54288",
+      "54413",
+      "53864",
+      "52393",
+      "49861",
+      "46911",
+      "42771",
+      "38210",
+      "33206",
+      "27713",
+      "21667",
+      "15957",
+      "10508",
+      "6241",
+      "3097",
+      "1027"
+    ],
+    "minRatio": "273618876211/273594544463",
+    "minRatioApprox": 1.0000889336008063,
+    "pair": [
+      7,
+      28
+    ],
+    "attempts": [
+      {
+        "bits": 0,
+        "failedOrderedInequalities": 2550
+      },
+      {
+        "bits": 1,
+        "failedOrderedInequalities": 1416
+      },
+      {
+        "bits": 2,
+        "failedOrderedInequalities": 1114
+      },
+      {
+        "bits": 3,
+        "failedOrderedInequalities": 810
+      },
+      {
+        "bits": 4,
+        "failedOrderedInequalities": 610
+      },
+      {
+        "bits": 5,
+        "failedOrderedInequalities": 360
+      },
+      {
+        "bits": 6,
+        "failedOrderedInequalities": 104
+      },
+      {
+        "bits": 7,
+        "failedOrderedInequalities": 70
+      },
+      {
+        "bits": 8,
+        "failedOrderedInequalities": 50
+      },
+      {
+        "bits": 9,
+        "failedOrderedInequalities": 38
+      },
+      {
+        "bits": 10,
+        "failedOrderedInequalities": 24
+      },
+      {
+        "bits": 11,
+        "failedOrderedInequalities": 18
+      },
+      {
+        "bits": 12,
+        "failedOrderedInequalities": 10
+      },
+      {
+        "bits": 13,
+        "failedOrderedInequalities": 6
+      },
+      {
+        "bits": 14,
+        "failedOrderedInequalities": 6
+      },
+      {
+        "bits": 15,
+        "failedOrderedInequalities": 2
+      },
+      {
+        "bits": 16,
+        "failedOrderedInequalities": 0
+      }
+    ]
+  },
+  "oldAlternativeWeightedCost": {
+    "raw": 1.1460731803164161,
+    "projected": 1.0029671315428317
+  },
+  "midpoint": {
+    "i": 0,
+    "j": 1,
+    "alpha": "3418348/1135015",
+    "beta": "1/1",
+    "squaredRadius": "1/9080120"
+  }
+}
