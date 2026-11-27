@@ -1,0 +1,259 @@
+{
+  "rankChecks": 4096,
+  "predictionChecks": 32768,
+  "designs": 125969,
+  "profiles": [
+    {
+      "n": 1,
+      "best": 0,
+      "count": 8,
+      "optimal": 8,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "n": 2,
+      "best": 0,
+      "count": 36,
+      "optimal": 36,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "n": 3,
+      "best": 0,
+      "count": 120,
+      "optimal": 120,
+      "witness": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ]
+    },
+    {
+      "n": 4,
+      "best": 1,
+      "count": 330,
+      "optimal": 56,
+      "witness": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "n": 5,
+      "best": 1,
+      "count": 792,
+      "optimal": 280,
+      "witness": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "n": 6,
+      "best": 2,
+      "count": 1716,
+      "optimal": 84,
+      "witness": [
+        0,
+        0,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "n": 7,
+      "best": 3,
+      "count": 3432,
+      "optimal": 8,
+      "witness": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "n": 8,
+      "best": 4,
+      "count": 6435,
+      "optimal": 1,
+      "witness": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "n": 9,
+      "best": 4,
+      "count": 11440,
+      "optimal": 8,
+      "witness": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "n": 10,
+      "best": 4,
+      "count": 19448,
+      "optimal": 92,
+      "witness": [
+        0,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "n": 11,
+      "best": 4,
+      "count": 31824,
+      "optimal": 512,
+      "witness": [
+        0,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "n": 12,
+      "best": 5,
+      "count": 50388,
+      "optimal": 56,
+      "witness": [
+        1,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "constructionChecks": 512,
+  "strictDecodes": 2512,
+  "boundary": {
+    "received": [
+      0,
+      1,
+      null,
+      null,
+      0,
+      1,
+      1,
+      1
+    ],
+    "candidates": [
+      1,
+      3
+    ]
+  },
+  "rehearsal": {
+    "prefix": [
+      0,
+      1,
+      6,
+      7,
+      0,
+      1,
+      6,
+      7
+    ],
+    "choices": [
+      1,
+      7
+    ],
+    "probe": 2,
+    "predictions": [
+      0,
+      1
+    ]
+  },
+  "audio": {
+    "rate": 16000,
+    "slot": 3200,
+    "tone": 2400,
+    "fade": 160,
+    "commonPrefixSamples": 112000,
+    "files": {
+      "lawA": {
+        "samples": 115200,
+        "fnv1a32": "c9e5c3b1"
+      },
+      "lawB": {
+        "samples": 115200,
+        "fnv1a32": "83611c64"
+      },
+      "counterexamples": {
+        "samples": 102400,
+        "fnv1a32": "8acf2565"
+      }
+    }
+  }
+}
