@@ -48,7 +48,10 @@ if(MHAC_BUILD_VST3)
     target_include_directories(MHACTraceBell PRIVATE "${SDK_ROOT}")
     target_link_libraries(MHACTraceBell PRIVATE sdk)
     if(WIN32)
-        add_executable(trace_bell_sdk_probe ../trace_bell_sdk_probe.cpp "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp")
+        # Match the official validator: MemoryStream is a separate source, not supplied by sdk_hosting.
+        add_executable(trace_bell_sdk_probe ../trace_bell_sdk_probe.cpp
+            "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
+            "${SDK_ROOT}/public.sdk/source/common/memorystream.cpp")
         target_compile_definitions(trace_bell_sdk_probe PRIVATE NOMINMAX)
         target_include_directories(trace_bell_sdk_probe PRIVATE "${SDK_ROOT}")
         target_link_libraries(trace_bell_sdk_probe PRIVATE sdk_hosting)
