@@ -25,6 +25,19 @@ inline bool decodeTraceState(const uint8_t* s,size_t n,TracePatch& out) noexcept
     float v[5];for(unsigned i=0;i<5;++i){uint32_t u=0;for(unsigned j=0;j<4;++j)u|=uint32_t(s[8+4*i+j])<<(8*j);std::memcpy(&v[i],&u,4);}
     TracePatch p{v[0],v[1],v[2],v[3],v[4],s[28]!=0};if(!validTracePatch(p))return false;out=p;return true;
 }
+inline bool applyTraceNormalized(TracePatch& patch,uint32_t id,double value) noexcept {
+        if(!std::isfinite(value)||value<0||value>1)return false;
+        TracePatch p=patch;const float v=float(value);
+        switch(static_cast<TraceParam>(id)){
+        case TraceParam::Pitch:p.pitch=80.f+420.f*v;break;
+        case TraceParam::Decay:p.decay=v==1.f?1.2f:.03f+(1.2f-.03f)*v;break;
+        case TraceParam::Contrast:p.contrast=v;break;
+        case TraceParam::Mix:p.mix=v;break;
+        case TraceParam::Spread:p.spread=v;break;
+        case TraceParam::Bypass:p.bypass=value>=.5;break;
+        default:return false;
+        }patch=p;return true;
+    }
 // Single audio owner; adapter dispatches events at exact sample boundaries.
 // State is parameter-only; no resonator history is serialized.
 class TraceBellPerformance {
@@ -37,6 +50,7 @@ class TraceBellPerformance {
         target_=next;remaining_=fadeSamples_;step_=(target_-dry_)/float(remaining_);
     }
 public:
+    TraceBellPerformance() noexcept {core_.setTuningSmoothing(true);}
     const TracePatch& patch()const noexcept{return patch_;}
     bool prepare(float rate) noexcept {if(!core_.prepare(rate))return false;fadeSamples_=std::max(1u,unsigned(std::ceil(rate*.01f)));reset();return true;}
     void reset() noexcept {core_.reset();dry_=target_=patch_.bypass?1.f:0.f;step_=0;remaining_=0;}
@@ -47,17 +61,7 @@ public:
         patch_=p;targetBypass(p.bypass);return true;
     }
     bool setNormalized(uint32_t id,double value) noexcept {
-        if(!std::isfinite(value)||value<0||value>1)return false;
-        TracePatch p=patch_;const float v=float(value);
-        switch(static_cast<TraceParam>(id)){
-        case TraceParam::Pitch:p.pitch=80.f+420.f*v;break;
-        case TraceParam::Decay:p.decay=v==1.f?1.2f:.03f+(1.2f-.03f)*v;break;
-        case TraceParam::Contrast:p.contrast=v;break;
-        case TraceParam::Mix:p.mix=v;break;
-        case TraceParam::Spread:p.spread=v;break;
-        case TraceParam::Bypass:p.bypass=value>=.5;break;
-        default:return false;
-        }return configure(p);
+        TracePatch p=patch_;return applyTraceNormalized(p,id,value)&&configure(p);
     }
     bool save(TraceState& out)const noexcept{return encodeTraceState(patch_,out);}
     bool restore(const uint8_t* s,size_t n)noexcept{TracePatch p;return decodeTraceState(s,n,p)&&configure(p);}
