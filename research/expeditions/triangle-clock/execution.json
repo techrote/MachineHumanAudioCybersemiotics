@@ -1,0 +1,54 @@
+{
+  "scalar_triples": 35398,
+  "scalar_bound_attainments": 90,
+  "period3_trim_checks": 3036,
+  "finite_grid": [
+    {
+      "N": 3,
+      "count": 243,
+      "best": [
+        8,
+        4,
+        1,
+        0
+      ]
+    },
+    {
+      "N": 6,
+      "count": 6561,
+      "best": [
+        16,
+        12,
+        8,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "N": 9,
+      "count": 177147,
+      "best": [
+        24,
+        20,
+        16,
+        12,
+        8,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    }
+  ],
+  "simplex_pairs": 84,
+  "strict_decoder_trials": 17052,
+  "midpoint_ambiguities": 17052,
+  "history_trim_checks": 69965,
+  "negative_controls": [
+    "modulo alias",
+    "unknown additive payload cancellation"
+  ]
+}
