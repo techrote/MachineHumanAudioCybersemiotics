@@ -338,6 +338,8 @@ jobs:
           New-Item -ItemType Directory shuttle-delivery | Out-Null
           py -3.12 "$src/shuttle_receipt.py" --self-test
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/test_shuttle_sdk_notices.py"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
           cmake --build trace-bell-build --config Release --target MHACPalimpsestShuttle shuttle_sdk_probe shuttle_control_test shuttle_regression --parallel 2 2>&1 | Tee-Object shuttle-delivery/build.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           foreach ($target in @('shuttle_control_test','shuttle_regression')) {
@@ -365,9 +367,8 @@ jobs:
           py -3.12 "$src/shuttle_host.py" --module $module --out shuttle-delivery
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           Copy-Item -Recurse $bundles[0].FullName shuttle-delivery/
-          Copy-Item trace-bell-delivery/SDK-* shuttle-delivery/
-          Copy-Item trace-bell-delivery/Steinberg-SDK-LICENSE.txt shuttle-delivery/
-          Copy-Item trace-bell-delivery/BUILD-SOURCE.txt shuttle-delivery/
+          py -3.12 "$src/shuttle_sdk_notices.py" trace-bell-delivery shuttle-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
           Copy-Item "$src/VST3.md" shuttle-delivery/
           py -3.12 -c "from pathlib import Path; import hashlib,zipfile; r=Path('shuttle-delivery'); (r/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(r).as_posix()+'\n' for p in sorted(r.rglob('*')) if p.is_file())); z=zipfile.ZipFile('MHACPalimpsestShuttle-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
