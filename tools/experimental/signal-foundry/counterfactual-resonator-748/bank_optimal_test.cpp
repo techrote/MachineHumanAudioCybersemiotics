@@ -7,11 +7,11 @@ namespace bh=mhac::counterfactual::bankhost;
 static unsigned checks=0;
 static void check(bool ok){++checks;if(!ok){std::cerr<<"optimal host failure "<<checks<<'\n';std::exit(1);}}
 
-template<class T> static void replay(double rate,unsigned band,unsigned block,bool reverse,bool manual){
+template<class T,class Engine> static void replay(Engine& host,double rate,unsigned band,unsigned block,bool reverse,bool manual,bool mono){
     MemoryConfig c{};c.wet=1000;
     for(auto& b:c.bands){b.excite=false;b.gain=0;}
     c.bands[band]={110,1000,1000,true,false,0,false};
-    HarmonicBank ref;bh::Host host;
+    HarmonicBank ref;
     check(ref.set(c)&&ref.prepare(rate)&&host.request(c)&&host.prepare(rate));
     const unsigned id=bh::FirstBand+band*bh::Stride, opt=bh::FirstOptimal+band;
     // Close at a non-block-aligned offset, reopen while command remains high,
@@ -30,15 +30,15 @@ template<class T> static void replay(double rate,unsigned band,unsigned block,bo
         if(reverse){escapes();pulses();captures();}else{captures();pulses();escapes();}
         check(batch.finish());
         for(unsigned i=0;i<n;++i){const unsigned t=start+i;const bool drive=t<gate||(t>=reopen&&t<gate2);
-            l[i]=drive?static_cast<T>(0.8*std::sin(6.283185307179586*110*t/rate)):T(0);r[i]=static_cast<T>(l[i]*0.63);}
-        check(host.process(l.data(),r.data(),ol.data(),orr.data(),n,batch.data(),batch.size()));
+            l[i]=drive?static_cast<T>(0.8*std::sin(6.283185307179586*110*t/rate)):T(0);r[i]=mono?T(0):static_cast<T>(l[i]*0.63);}
+        check(host.processOptional(l.data(),mono?nullptr:r.data(),ol.data(),mono?nullptr:orr.data(),n,batch.data(),batch.size()));
         for(unsigned i=0;i<n;++i){const unsigned t=start+i;
             if(t==gate||t==gate2||t==reopen){c.bands[band].excite=t==reopen;check(ref.set(c));}
             if(t==gate){check(magnitude(ref.lattice(band,0))||magnitude(ref.lattice(band,1)));if(manual)check(ref.pulse(band));check(ref.beginOptimalEscape(band)==!manual);}
             if(t==rearm+1)check(ref.beginOptimalEscape(band));
-            const auto s=ref.process(l[i],r[i]);check(ol[i]==static_cast<T>(s.left)&&orr[i]==static_cast<T>(s.right));
-            if(t>=gate2+2500&&t<rearm&&(ol[i]!=0||orr[i]!=0))heardSecond=true;
-            if(t>=39000)check(ol[i]==0&&orr[i]==0);
+            const auto s=ref.process(l[i],r[i]);check(ol[i]==static_cast<T>(s.left)&&(mono||orr[i]==static_cast<T>(s.right)));
+            if(t>=gate2+2500&&t<rearm&&(ol[i]!=0||(!mono&&orr[i]!=0)))heardSecond=true;
+            if(t>=39000)check(ol[i]==0&&(mono||orr[i]==0));
         }
         start+=n;
     }
@@ -66,14 +66,18 @@ static void demo(const char* path,bool optimal){
     }
     check(bool(f));
 }
-int main(int argc,char** argv){
+static void nativeTests(int argc,char** argv){
     check(bh::ParamCount==42);
     for(unsigned i=0;i<bh::ParamCount;++i){const unsigned id=bh::paramID(i);check(bh::known(id)&&bh::index(id)==i);if(i>=38)check(id==2050+i-38&&bh::command(id)&&bh::normalized(MemoryConfig{},id)==0);}
     for(unsigned id:{2002u,2046u,2049u,2054u,9999u})check(!bh::known(id));
     bh::EventBatch b;b.clear(0);check(b.queue(2050)&&b.point(0,1)&&!b.queue(2050));
     for(unsigned band=0;band<4;++band)for(bool reverse:{false,true})for(bool manual:{false,true}){
-        replay<float>(48000,band,127,reverse,manual);replay<double>(96000,band,257,reverse,manual);
+        for(unsigned block:{127u,257u})for(bool mono:{false,true}){bh::Host a,other;replay<float>(a,48000,band,block,reverse,manual,mono);replay<double>(other,96000,band,block,reverse,manual,mono);}
     }
     if(argc==3){demo(argv[1],false);demo(argv[2],true);}
     std::cout<<"optimal host PASS checks="<<checks<<'\n';
 }
+
+#ifndef MHAC_BANK_SDK_REPLAY
+int main(int argc,char** argv){nativeTests(argc,argv);}
+#endif

@@ -70,3 +70,13 @@ if(MHAC_BUILD_VST3)
     endif()
     smtg_target_add_plugin_resources(MHACHarmonicMemoryBank RESOURCES "${SDK_ROOT}/LICENSE.txt")
 endif()
+
+# Actual module qualification shares the native bank's automation oracle.
+if(MHAC_BUILD_VST3 AND WIN32)
+    add_executable(bank_sdk_replay bank_sdk_replay.cpp
+        "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
+        "${SDK_ROOT}/public.sdk/source/common/memorystream.cpp")
+    target_compile_definitions(bank_sdk_replay PRIVATE NOMINMAX)
+    target_include_directories(bank_sdk_replay PRIVATE "${SDK_ROOT}")
+    target_link_libraries(bank_sdk_replay PRIVATE sdk_hosting Threads::Threads)
+endif()

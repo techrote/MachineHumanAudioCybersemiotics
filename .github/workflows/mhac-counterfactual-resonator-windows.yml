@@ -48,7 +48,7 @@ jobs:
         run: |
           cmake -S tools/experimental/signal-foundry/counterfactual-resonator-748 -B build-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VALIDATE_POST_BUILD=OFF "-DMHAC_VST3_SDK=$env:SDK380"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build build-vst --config Release --target MHACCounterfactualResonator MHACHarmonicMemoryBank validator
+          cmake --build build-vst --config Release --target MHACCounterfactualResonator MHACHarmonicMemoryBank validator bank_sdk_replay
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Official validator (mandatory)
         run: |
@@ -112,7 +112,14 @@ jobs:
           if ($code -ne 0) { exit $code }
           if (-not (Select-String -Path bank-validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing successful bank validator summary' }
           if (Select-String -Path bank-validator.txt -Pattern 'ERROR:') { throw 'Explicit bank validator error' }
+          & build-vst/Release/bank_sdk_replay.exe $bundles[0].FullName 2>&1 | Tee-Object -FilePath bank-sdk-replay.txt
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          if (@(Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_CASE rate=').Count -ne 128) { throw 'Incomplete bank replay case transcript' }
+          if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_REPLAY_PASS cases=128 checks=[1-9][0-9]*$')) { throw 'Missing bank replay completion' }
+          if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_CONTROLLER_PASS parameters=42$')) { throw 'Missing bank controller receipt' }
           New-Item -ItemType Directory -Path bank-delivery,bank-delivery/Audio,bank-delivery/Presets | Out-Null
+          Copy-Item bank-sdk-replay.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-SDK-REPLAY.md bank-delivery/
           Copy-Item -Recurse $bundles[0].FullName bank-delivery/
           Copy-Item delivery/SDK-*.txt,delivery/Steinberg-SDK-LICENSE.txt,delivery/BUILD-SOURCE.txt bank-delivery/
           Copy-Item bank-validator.txt bank-delivery/
@@ -128,7 +135,9 @@ jobs:
         if: always()
         with:
           name: MHACHarmonicMemoryBank-validator-log
-          path: bank-validator.txt
+          path: |
+            bank-validator.txt
+            bank-sdk-replay.txt
           if-no-files-found: ignore
           retention-days: 7
       - uses: actions/upload-artifact@v4
