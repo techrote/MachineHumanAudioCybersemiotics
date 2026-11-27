@@ -1,0 +1,107 @@
+{
+  "profiles": [
+    {
+      "levels": [
+        2,
+        3,
+        5
+      ],
+      "cells": 30,
+      "distance": 6,
+      "minimum_l1_at_unit_cell": 6.0
+    },
+    {
+      "levels": [
+        3,
+        5,
+        7
+      ],
+      "cells": 105,
+      "distance": 15,
+      "minimum_l1_at_unit_cell": 15.0
+    },
+    {
+      "levels": [
+        3,
+        5,
+        11
+      ],
+      "cells": 165,
+      "distance": 15,
+      "minimum_l1_at_unit_cell": 15.0
+    },
+    {
+      "levels": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "cells": 210,
+      "distance": 30,
+      "minimum_l1_at_unit_cell": 30.0
+    },
+    {
+      "levels": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "cells": 1155,
+      "distance": 105,
+      "minimum_l1_at_unit_cell": 105.0
+    },
+    {
+      "levels": [
+        2,
+        2,
+        2
+      ],
+      "cells": 8,
+      "distance": 4,
+      "minimum_l1_at_unit_cell": 3.0
+    },
+    {
+      "levels": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "cells": 64,
+      "distance": 32,
+      "minimum_l1_at_unit_cell": 20.0
+    },
+    {
+      "levels": [
+        3,
+        3,
+        3
+      ],
+      "cells": 27,
+      "distance": 9,
+      "minimum_l1_at_unit_cell": 8.0
+    },
+    {
+      "levels": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "cells": 256,
+      "distance": 64,
+      "minimum_l1_at_unit_cell": 54.0
+    }
+  ],
+  "correction_trials": 60,
+  "maximum_parameter_error": 1e-09,
+  "binary_failure": {
+    "true_cost": 31,
+    "alternative_cost": 29,
+    "actual_LAD_minimum": 29.0
+  }
+}
