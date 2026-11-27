@@ -43,6 +43,7 @@ jobs:
           python -B audit_corpus.py
           python -B inspect_journal.py
           python -B inspect_journal.py --check
+          node check_journal_browser.cjs . --static-only | tee browser-static.json
       - name: Retain native laboratory and diagnostics
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -50,4 +51,52 @@ jobs:
           name: MHAC-Integration-004-native-${{ github.event.pull_request.head.sha }}
           path: ${{ runner.temp }}/mhac004/
           if-no-files-found: error
+          retention-days: 14
+
+  windows-inspector:
+    needs: native-journal
+    if: github.event.pull_request.number == 798 && github.event.pull_request.head.ref == 'mhac-607/mergedown-integration-004' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: windows-2025
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Download this run's exact Linux artifact
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $out = Join-Path $env:RUNNER_TEMP 'mhac journal windows'
+          New-Item -ItemType Directory -Path $out | Out-Null
+          gh run download $env:GITHUB_RUN_ID --repo $env:GITHUB_REPOSITORY --name "MHAC-Integration-004-native-$env:EXPECTED_HEAD" --dir $out
+          if ((Get-Content (Join-Path $out 'head.txt') -Raw).Trim() -ne $env:EXPECTED_HEAD) { throw 'wrong source head' }
+      - name: Windows viewer only (native persistence not qualified)
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $out = Join-Path $env:RUNNER_TEMP 'mhac journal windows'
+          Set-Location $out
+          python -B inspect_journal.py --check
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe' }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome not found' }
+          node check_journal_browser.cjs . $chrome | Tee-Object -FilePath windows-browser-receipt.json
+      - name: Retain Windows viewer and platform diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Integration-004-Windows-viewer-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/mhac journal windows/
+          if-no-files-found: warn
           retention-days: 14
