@@ -2,16 +2,16 @@
 #include "escape_release.hpp"
 #include <atomic>
 namespace mhac::orbit::host {
-constexpr unsigned firstID=1810, count=4;
-constexpr std::uint32_t pending=1u<<31;
-inline std::uint32_t pack(Patch p) noexcept {
-    return p.blend|(p.releaseMs<<10)|(unsigned(p.cents+100)<<20)|(p.releaseMode<<28);
+constexpr unsigned firstID=1810, count=5;
+constexpr std::uint64_t pending=std::uint64_t(1)<<63;
+inline std::uint64_t pack(Patch p) noexcept {
+    return p.blend|(p.releaseMs<<10)|(unsigned(p.cents+100)<<20)|(p.releaseMode<<28)|(std::uint64_t(p.spectralDepth)<<30);
 }
-inline Patch unpack(std::uint32_t w) noexcept {
-    return {w&1023u,(w>>10)&1023u,int((w>>20)&255u)-100,(w>>28)&3u};
+inline Patch unpack(std::uint64_t w) noexcept {
+    return {unsigned(w&1023u),unsigned((w>>10)&1023u),int((w>>20)&255u)-100,unsigned((w>>28)&3u),unsigned((w>>30)&1023u)};
 }
 inline double normalized(Patch p,unsigned i) noexcept {
-    return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:i==2?(p.cents+100)/200.:p.releaseMode/2.;
+    return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:i==2?(p.cents+100)/200.:i==3?p.releaseMode/2.:p.spectralDepth/1000.;
 }
 class Live {
     struct Key {int id=-1,channel=0,pitch=0;};
@@ -31,14 +31,15 @@ public:
         if(i==0)p.blend=unsigned(std::lround(value*1000.));
         else if(i==1)p.releaseMs=10u+unsigned(std::lround(value*990.));
         else if(i==2)p.cents=int(std::lround(value*200.))-100;
-        else p.releaseMode=unsigned(std::lround(value*2.));
+        else if(i==3)p.releaseMode=unsigned(std::lround(value*2.));
+        else p.spectralDepth=unsigned(std::lround(value*1000.));
         return setPatch(p);
     }
     bool off(int id,int channel,int pitch) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
         for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
-            if(patch().releaseMode==1)return engine_.noteOffShaped(int(i),fixed_.gain,escape::steps);
-            if(patch().releaseMode==2){const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));return engine_.noteOffShaped(int(i),route.gain,route.length);}
+            if(patch().releaseMode==1)return engine_.noteOffShaped(int(i),fixed_.gain,escape::steps,patch().spectralDepth/1000.);
+            if(patch().releaseMode==2){const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));return engine_.noteOffShaped(int(i),route.gain,route.length,patch().spectralDepth/1000.);}
             return engine_.noteOff(int(i));
         }
         return false;
@@ -68,18 +69,18 @@ public:
 // Single audio-thread consumer. State requests are coherent, last-writer-wins.
 // A concurrent request wins over audio publication; no retry loop in begin/end.
 class Bridge {
-    static_assert(std::atomic<std::uint32_t>::is_always_lock_free,"Lock-free state word required");
-    std::atomic<std::uint32_t> word_{pack(Patch{})};
+    static_assert(std::atomic<std::uint64_t>::is_always_lock_free,"Lock-free state word required");
+    std::atomic<std::uint64_t> word_{pack(Patch{})};
 public:
     bool request(Patch p) noexcept {if(!p.valid())return false;word_.store(pack(p)|pending);return true;}
     Patch save() const noexcept {return unpack(word_.load());}
-    std::uint32_t begin(Live& e) noexcept {
+    std::uint64_t begin(Live& e) noexcept {
         auto w=word_.load();if(!(w&pending))return w;
         const auto clean=w&~pending;
         if(!word_.compare_exchange_strong(w,clean))return pending;
         e.setPatch(unpack(clean));return clean;
     }
-    void end(std::uint32_t token,const Live& e) noexcept {
+    void end(std::uint64_t token,const Live& e) noexcept {
         if(!(token&pending))word_.compare_exchange_strong(token,pack(e.patch()));
     }
 };

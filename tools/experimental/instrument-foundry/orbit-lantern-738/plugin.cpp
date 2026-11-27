@@ -14,11 +14,11 @@ using namespace mhac::orbit;
 using namespace mhac::orbit::host;
 const FUID processorID(0x24C15B79,0x3B8C4F4B,0x98275F23,0x3EE969C4);
 const FUID controllerID(0xA501C96D,0xF0EC48C8,0x8BA63D11,0xB860D74F);
-bool readPatch(IBStream* s,Patch& p){Bytes b{};int32 n=0;if(!s||s->read(b.data(),int32(b.size()),&n)!=kResultOk||n!=int32(b.size()))return false;
-    if(b[3]=='1')return decode(b,p);
-    if(b[3]!='2')return false;
-    StateBytes extended{};std::copy(b.begin(),b.end(),extended.begin());
-    return s->read(extended.data()+10,1,&n)==kResultOk&&n==1&&decodeState(extended,p);}
+bool readPatch(IBStream* s,Patch& p){FullState b{};int32 n=0;if(!s||s->read(b.data(),10,&n)!=kResultOk||n!=10)return false;
+    const int32 size=b[3]=='1'?10:b[3]=='2'?11:b[3]=='3'?13:0;
+    if(!size)return false;
+    if(size>10&&(s->read(b.data()+10,size-10,&n)!=kResultOk||n!=size-10))return false;
+    return decodeFull(b,unsigned(size),p);}
 struct Cursor {
     IParamValueQueue* q=nullptr;int32 index=0,size=0,offset=0;ParamValue value=0;bool pendingPoint=false;
     void next(){pendingPoint=false;while(index<size){if(q->getPoint(index++,offset,value)==kResultTrue){pendingPoint=true;break;}}}
@@ -65,8 +65,7 @@ public:
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr));}
     tresult PLUGIN_API setState(IBStream* s) override {Patch p{};return readPatch(s,p)&&state.request(p)?kResultOk:kResultFalse;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;const auto p=state.save();auto bytes=encodeState(p);int32 size=11,n=0;
-        if(p.releaseMode==0){bytes[3]='1';size=10;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;const auto p=state.save();auto bytes=encodeFull(p);int32 size=int32(stateSize(p)),n=0;
         return s->write(bytes.data(),size,&n)==kResultOk&&n==size?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>1||(d.numOutputs&&!d.outputs))return kResultFalse;
@@ -74,7 +73,7 @@ public:
         Cursors c{};if(d.inputParameterChanges){const auto n=d.inputParameterChanges->getParameterCount();if(n<0||n>4096)return kResultFalse;
             for(int32 i=0;i<n;++i){auto* q=d.inputParameterChanges->getParameterData(i);if(q){auto id=q->getParameterId();if(id>=firstID&&id<firstID+count&&!c[id-firstID].q){if(q->getPointCount()<0||q->getPointCount()>4096)return kResultFalse;c[id-firstID].init(q);}}}}
         const auto token=state.begin(engine);
-        struct Publish {Bridge& s;Live& e;std::uint32_t token;~Publish(){s.end(token,e);}} publish{state,engine,token};
+        struct Publish {Bridge& s;Live& e;std::uint64_t token;~Publish(){s.end(token,e);}} publish{state,engine,token};
         if(d.numSamples==0){for(unsigned k=0;k<count;++k)c[k].apply(engine,k,0);return kResultOk;}
         Events ev(d.inputEvents);if(d.symbolicSampleSize==kSample32)return audio<Sample32>(d,c,ev);if(d.symbolicSampleSize==kSample64)return audio<Sample64>(d,c,ev);return kResultFalse;
     }
@@ -86,11 +85,12 @@ public:
         parameters.addParameter(STR16("Orbit blend"),nullptr,1000,normalized(Patch{},0),ParameterInfo::kCanAutomate,firstID);
         parameters.addParameter(STR16("Release (10..1000 ms)"),nullptr,990,normalized(Patch{},1),ParameterInfo::kCanAutomate,firstID+1);
         parameters.addParameter(STR16("Tuning (-100..100 cents)"),nullptr,200,normalized(Patch{},2),ParameterInfo::kCanAutomate,firstID+2);
-        parameters.addParameter(STR16("Release mode (0 Linear, 1 Fixed, 2 Phase)"),nullptr,2,0.,ParameterInfo::kCanAutomate,firstID+3);return kResultOk;}
+        parameters.addParameter(STR16("Release mode (0 Linear, 1 Fixed, 2 Phase)"),nullptr,2,0.,ParameterInfo::kCanAutomate,firstID+3);
+        parameters.addParameter(STR16("Spectral depth"),nullptr,1000,0.,ParameterInfo::kCanAutomate,firstID+4);return kResultOk;}
     tresult PLUGIN_API setComponentState(IBStream* s) override {Patch p{};if(!readPatch(s,p))return kResultFalse;for(unsigned i=0;i<count;++i)setParamNormalized(firstID+i,normalized(p,i));return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.2.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.2.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.3.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.3.0",kVstVersionString,Controller::create)
 END_FACTORY

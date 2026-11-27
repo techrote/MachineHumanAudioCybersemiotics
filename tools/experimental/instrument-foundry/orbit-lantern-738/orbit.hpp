@@ -21,10 +21,10 @@ inline bool step(Point p,int a,int b,int q,bool nearest,Point& out) noexcept {
     out={quant(std::int64_t(a)*p.x-std::int64_t(b)*p.y),quant(std::int64_t(b)*p.x+std::int64_t(a)*p.y)};
     return true;
 }
-struct Patch { unsigned blend=500,releaseMs=160; int cents=0; unsigned releaseMode=0;
-    bool valid() const noexcept {return blend<=1000&&releaseMs>=10&&releaseMs<=1000&&cents>=-100&&cents<=100&&releaseMode<=2;} };
+struct Patch { unsigned blend=500,releaseMs=160; int cents=0; unsigned releaseMode=0,spectralDepth=0;
+    bool valid() const noexcept {return blend<=1000&&releaseMs>=10&&releaseMs<=1000&&cents>=-100&&cents<=100&&releaseMode<=2&&spectralDepth<=1000;} };
 using Bytes=std::array<std::uint8_t,10>;
-inline Bytes encode(Patch p) noexcept {if(!p.valid()||p.releaseMode!=0)return {};const unsigned c=static_cast<unsigned>(p.cents+100);
+inline Bytes encode(Patch p) noexcept {if(!p.valid()||p.releaseMode!=0||p.spectralDepth!=0)return {};const unsigned c=static_cast<unsigned>(p.cents+100);
     return {{'O','L','0','1',std::uint8_t(p.blend),std::uint8_t(p.blend>>8),std::uint8_t(p.releaseMs),std::uint8_t(p.releaseMs>>8),std::uint8_t(c),std::uint8_t(c>>8)}};}
 inline bool decode(const Bytes& b,Patch& p) noexcept {
     if(b[0]!='O'||b[1]!='L'||b[2]!='0'||b[3]!='1')return false;
@@ -33,7 +33,7 @@ inline bool decode(const Bytes& b,Patch& p) noexcept {
 }
 using StateBytes=std::array<std::uint8_t,11>;
 inline StateBytes encodeState(Patch p) noexcept {
-    if(!p.valid())return {};
+    if(!p.valid()||p.spectralDepth!=0)return {};
     const unsigned mode=p.releaseMode;p.releaseMode=0;const auto old=encode(p);
     StateBytes b{};std::copy(old.begin(),old.end(),b.begin());b[3]='2';b[10]=std::uint8_t(mode);return b;
 }
@@ -42,6 +42,26 @@ inline bool decodeState(const StateBytes& b,Patch& p) noexcept {
     Bytes old{};std::copy_n(b.begin(),old.size(),old.begin());old[3]='1';Patch q{};
     if(!decode(old,q))return false;
     q.releaseMode=b[10];p=q;return true;
+}
+using FullState=std::array<std::uint8_t,13>;
+inline unsigned stateSize(Patch p) noexcept {return p.spectralDepth?13u:p.releaseMode?11u:10u;}
+inline FullState encodeFull(Patch p) noexcept {
+    if(!p.valid())return {};
+    const unsigned size=stateSize(p),depth=p.spectralDepth;p.spectralDepth=0;
+    const auto old=encodeState(p);FullState b{};std::copy(old.begin(),old.end(),b.begin());
+    b[3]=size==13?'3':size==11?'2':'1';
+    b[11]=std::uint8_t(depth);b[12]=std::uint8_t(depth>>8);return b;
+}
+inline bool decodeFull(const FullState& b,unsigned size,Patch& p) noexcept {
+    Patch q{};
+    if(size==10&&b[3]=='1'){Bytes old{};std::copy_n(b.begin(),10,old.begin());if(!decode(old,q))return false;}
+    else if((size==11&&b[3]=='2')||(size==13&&b[3]=='3')){
+        StateBytes old{};std::copy_n(b.begin(),11,old.begin());old[3]='2';
+        if(!decodeState(old,q))return false;
+        if(size==13)q.spectralDepth=unsigned(b[11])|(unsigned(b[12])<<8);
+    }else return false;
+    if(!q.valid())return false;
+    p=q;return true;
 }
 struct Spectrum {
     // For an even cycle, the Nyquist term has no distinct negative-frequency partner.
