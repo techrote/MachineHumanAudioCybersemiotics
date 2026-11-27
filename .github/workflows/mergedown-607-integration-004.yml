@@ -1,0 +1,53 @@
+name: Integration 607 witnessed journal native evidence
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/integration-004/**'
+      - '.github/workflows/mergedown-607-integration-004.yml'
+permissions:
+  contents: read
+concurrency:
+  group: integration-607-journal-native
+  cancel-in-progress: false
+jobs:
+  native-journal:
+    if: github.event.pull_request.number == 798 && github.event.pull_request.head.ref == 'mhac-607/mergedown-integration-004' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Stage exact Git bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir "$RUNNER_TEMP/mhac004"
+          git archive HEAD tools/experimental/mergedown-607/integration-004/ | tar -x --strip-components=4 -C "$RUNNER_TEMP/mhac004"
+          git rev-parse HEAD > "$RUNNER_TEMP/mhac004/head.txt"
+      - name: Native reconstruction, process termination and offline viewer
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/mhac004"
+          { node --version; python --version; } | tee runtime.txt
+          SEED=71 node source/test-journal-v42.cjs seed71 | tee seed71.log
+          SEED=113 node source/test-journal-v42.cjs seed113 | tee seed113.log
+          node check_journal.cjs > receipt.json
+          node check_process_cut.cjs > process-cut-receipt.json
+          python -B audit_corpus.py
+          python -B inspect_journal.py
+          python -B inspect_journal.py --check
+      - name: Retain native laboratory and diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Integration-004-native-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/mhac004/
+          if-no-files-found: error
+          retention-days: 14
