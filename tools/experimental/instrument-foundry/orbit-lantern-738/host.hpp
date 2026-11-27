@@ -20,9 +20,9 @@ class Live {
     static bool matches(Key k,int id,int channel,int pitch) noexcept {
         return id>=0?k.id==id:k.id<0&&k.channel==channel&&k.pitch==pitch;
     }
-    // Fallback keys have at most one held voice, but may have older tails.
+    // Each key has at most one held voice, but may have older tails.
     // Prefer the held voice on note-off; repeated offs with no held voice
-    // remain idempotent. Explicit IDs remain unique until their tail ends.
+    // remain idempotent. Explicit IDs may be recycled after note-off.
     std::size_t releaseKey(int id,int channel,int pitch) const noexcept {
         std::size_t tail=keys_.size();
         for(std::size_t i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
@@ -70,7 +70,7 @@ public:
     bool on(int id,int channel,int pitch,double tuning,double velocity) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
         if(velocity==0.)return off(id,channel,pitch);
-        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)&&(id>=0||!keys_[i].released))return false;
+        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)&&!keys_[i].released)return false;
         for(unsigned i=0;i<keys_.size();++i)if(!engine_.noteActive(int(i))){
             if(!engine_.noteOn(int(i),pitch,velocity,tuning))return false;
             keys_[i]={id,channel,pitch,false};return true;

@@ -8,6 +8,26 @@ using namespace mhac::orbit::host;
 static unsigned checks=0;
 static void check(bool ok){++checks;if(!ok){std::cerr<<"FAIL "<<checks<<'\n';std::exit(1);}}
 static bool same(Patch a,Patch b){return pack(a)==pack(b);}
+static void recycledIDTests(){
+    for(double rate:{8000.,44100.,48000.,96000.})for(unsigned mode:{0u,1u,2u}){
+        Live a,b;check(a.prepare(rate)&&b.prepare(rate));
+        const Patch p{1000,800,0,mode,1000};check(a.setPatch(p)&&b.setPatch(p));
+        double l=0,r=0,x=0,y=0;
+        const auto advance=[&](unsigned frames){for(unsigned j=0;j<frames;++j){a.tick(l,r);b.tick(x,y);check(l==x&&r==y);}};
+        for(int i=0;i<8;++i){
+            const int pitch=60+i,channel=i%2;
+            check(a.on(7,channel,pitch,0,.8)&&b.on(i,channel,pitch,0,.8));
+            check(!a.on(7,channel,pitch,0,.8));
+            advance(unsigned(rate/100.));
+            check(a.off(7,channel,pitch)&&b.off(i,channel,pitch));
+            check(a.off(7,channel,pitch));
+            advance(unsigned(rate/100.));
+        }
+        check(a.active()==8&&!a.on(7,0,60,0,.8));
+        advance(unsigned(rate));check(a.active()==0&&b.active()==0&&l==0&&r==0);
+        check(a.on(7,0,60,0,.8));a.reset();check(a.active()==0);
+    }
+}
 static void rateTests(){
     Live e;check(e.prepare(48000));check(e.on(1,0,69,0,1));
     for(double rate:{0.,999.,2000001.,std::numeric_limits<double>::infinity(),std::numeric_limits<double>::quiet_NaN()}){
@@ -50,12 +70,13 @@ static void retriggerTests(){
         check(a.active()==1);check(a.off(-1,3,69));
         for(unsigned i=0;i<unsigned(rate);++i)a.tick(l,r);
         check(a.active()==0&&l==0&&r==0);
-        check(a.on(9,2,69,0,.8)&&a.off(9,2,69)&&!a.on(9,2,69,0,.8));
+        check(a.on(9,2,69,0,.8)&&a.off(9,2,69)&&a.on(9,2,69,0,.8));
         a.reset();check(a.on(-1,2,69,0,.8));a.reset();check(a.active()==0);
     }
 }
 int main(){
     retriggerTests();
+    recycledIDTests();
     rateTests();
     Live e;Bridge state;check(e.prepare(48000));
     for(unsigned b=0;b<=1000;++b){Patch p{b,10+b%991,int(b%201)-100};
