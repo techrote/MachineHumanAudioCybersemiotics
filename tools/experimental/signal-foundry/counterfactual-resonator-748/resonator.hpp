@@ -1,0 +1,109 @@
+#pragma once
+#include <algorithm>
+#include <array>
+#include <cmath>
+#include <cstdint>
+
+namespace mhac::counterfactual {
+struct IntegerState { int x=0,y=0; };
+constexpr int limit=16;
+constexpr int clampState(int x) noexcept { return x < -limit ? -limit : x > limit ? limit : x; }
+// Exact signed nearest (ties away) or truncation for the restricted q=9 model.
+constexpr int quant(int numerator,bool truncate) noexcept {
+    return truncate ? numerator/9 : (numerator<0 ? -((-numerator+4)/9) : (numerator+4)/9);
+}
+constexpr IntegerState step(IntegerState s,int drive,bool truncate) noexcept {
+    return {clampState(quant(-8*s.y,truncate)+drive),clampState(quant(8*s.x,truncate))};
+}
+struct Controls {
+    std::uint16_t hz=220,wet=700,gain=800;
+    std::uint8_t monitor=1; // 0 reference, 1 nearest/erased, 2 half difference
+    bool erase=false,bypass=false;
+};
+constexpr bool valid(Controls p) noexcept {
+    return p.hz>=40 && p.hz<=6000 && p.wet<=1000 && p.gain<=1000 && p.monitor<=2;
+}
+using Patch=std::array<std::uint8_t,12>;
+inline Patch encode(Controls p) noexcept {
+    return {'C','R','0','1',std::uint8_t(p.hz),std::uint8_t(p.hz>>8),std::uint8_t(p.wet),std::uint8_t(p.wet>>8),std::uint8_t(p.gain),std::uint8_t(p.gain>>8),p.monitor,std::uint8_t((p.erase?1:0)|(p.bypass?2:0))};
+}
+inline bool decode(const Patch& b,Controls& out) noexcept {
+    if(b[0]!='C'||b[1]!='R'||b[2]!='0'||b[3]!='1'||(b[11]&0xfc)) return false;
+    const Controls p{std::uint16_t(b[4]|(b[5]<<8)),std::uint16_t(b[6]|(b[7]<<8)),std::uint16_t(b[8]|(b[9]<<8)),b[10],bool(b[11]&1),bool(b[11]&2)};
+    if(!valid(p)) return false;
+    out=p; return true;
+}
+struct Stereo { double left=0,right=0; };
+struct Channel {
+    IntegerState discrete{};
+    double rx=0,ry=0,prevDiscrete=0,prevReference=0,sum=0;
+    void tick(int drive,bool truncate) noexcept {
+        prevDiscrete=double(discrete.x)/limit;
+        prevReference=rx/limit;
+        discrete=step(discrete,drive,truncate);
+        const double x=std::clamp(-8.0*ry/9.0+drive,-double(limit),double(limit));
+        const double y=std::clamp(8.0*rx/9.0,-double(limit),double(limit));
+        rx=std::abs(x)<1e-15?0:x; ry=std::abs(y)<1e-15?0:y;
+    }
+    double value(double phase,const std::array<double,3>& w) const noexcept {
+        const double q=prevDiscrete+(double(discrete.x)/limit-prevDiscrete)*phase;
+        const double r=prevReference+(rx/limit-prevReference)*phase;
+        return w[0]*r+w[1]*q+w[2]*(q-r)*0.5;
+    }
+};
+class Processor {
+    Controls target_{};
+    std::array<Channel,2> ch_{};
+    std::array<double,3> weights_{0,1,0};
+    double rate_=48000,phase_=0,wet_=0.7,gain_=0.8,slew_=1.0/240;
+    unsigned count_=0;
+    bool pending_=false;
+    std::uint64_t ticks_=0,interventions_=0;
+    static double clean(double x) noexcept { return std::isfinite(x)&&std::abs(x)>=1e-20 ? std::clamp(x,-1.0,1.0):0; }
+    static void approach(double& x,double y,double delta) noexcept { x+=std::clamp(y-x,-delta,delta); }
+public:
+    bool prepare(double rate) noexcept {
+        if(!std::isfinite(rate)||rate<8000||rate>384000) return false;
+        rate_=rate; slew_=1.0/std::ceil(rate_*0.005); reset(); return true;
+    }
+    void reset() noexcept {
+        ch_={}; phase_=0; count_=0; pending_=false; ticks_=interventions_=0;
+        wet_=target_.bypass?0:target_.wet/1000.0; gain_=target_.gain/1000.0;
+        weights_={}; weights_[target_.monitor]=1;
+    }
+    bool set(Controls p) noexcept { if(!valid(p)) return false; target_=p; return true; }
+    Controls controls() const noexcept { return target_; }
+    // Last-value coalescing: one or more requests before a tick mean one T update.
+    void requestIntervention() noexcept { pending_=true; }
+    double effectiveHz() const noexcept { return std::min(double(target_.hz),rate_/16.0); }
+    std::uint64_t ticks() const noexcept { return ticks_; }
+    std::uint64_t interventions() const noexcept { return interventions_; }
+    IntegerState lattice(unsigned channel) const noexcept { return ch_[channel%2].discrete; }
+    Stereo process(double left,double right) noexcept {
+        const std::array<double,2> input{clean(left),clean(right)};
+        approach(wet_,target_.bypass?0:target_.wet/1000.0,slew_);
+        approach(gain_,target_.gain/1000.0,slew_);
+        // A convex weight transition: every frame is a normalized interpolation.
+        const double alpha=std::min(1.0,slew_);
+        for(unsigned i=0;i<3;++i) weights_[i]+=(double(i==target_.monitor)-weights_[i])*alpha;
+        if(1.0-weights_[target_.monitor]<1e-12){weights_={};weights_[target_.monitor]=1;}
+        for(unsigned i=0;i<2;++i) ch_[i].sum+=input[i];
+        ++count_; phase_+=4.0*effectiveHz()/rate_;
+        if(phase_>=1.0){
+            phase_-=1.0;
+            const bool trunc=target_.erase||pending_; pending_=false;
+            ++ticks_; if(trunc) ++interventions_;
+            for(auto& c:ch_){
+                const int drive=static_cast<int>(std::round(12.0*c.sum/double(count_)));
+                c.tick(drive,trunc); c.sum=0;
+            }
+            count_=0;
+        }
+        const auto out=[&](unsigned i){return std::clamp((1-wet_)*input[i]+wet_*gain_*ch_[i].value(phase_,weights_),-1.0,1.0);};
+        return {out(0),out(1)};
+    }
+    template<class Sample> void processBlock(const Sample* left,const Sample* right,Sample* outL,Sample* outR,unsigned frames) noexcept {
+        for(unsigned i=0;i<frames;++i){const auto s=process(left[i],right[i]);outL[i]=static_cast<Sample>(s.left);outR[i]=static_cast<Sample>(s.right);}
+    }
+};
+} // namespace mhac::counterfactual
