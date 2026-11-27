@@ -14,7 +14,7 @@ static void check(bool ok){++checks;if(!ok){std::cerr<<"FAIL "<<checks<<'\n';std
 // Independent forward search: minimize (truncations,steps) by tuple order.
 static void oracle(){
     using Cost=std::pair<int,int>;using Item=std::pair<Cost,int>;
-    constexpr int side=33,N=side*side;
+    static constexpr int side=33; constexpr int N=side*side;
     const auto index=[](Point p){check(std::abs(p.x)<=16&&std::abs(p.y)<=16);return (p.x+16)*side+p.y+16;};
     std::array<Cost,N> d;d.fill({10000,10000});
     std::priority_queue<Item,std::vector<Item>,std::greater<Item>> q;

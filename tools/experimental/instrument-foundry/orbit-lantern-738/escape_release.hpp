@@ -1,5 +1,6 @@
 #pragma once
 #include "orbit.hpp"
+#include "phase_routes.hpp"
 namespace mhac::orbit::escape {
 // Fixed witness from PR #265; zero-based indices of truncation updates.
 constexpr std::array<unsigned,9> interventions{12,30,36,42,44,55,57,58,59};
@@ -30,15 +31,15 @@ struct Route {
 // Independent native instrument. Uses Orbit's spectrum and OL01 patch, but release
 // mode is an explicit note-off event, not a new persisted or VST3 parameter.
 class Instrument {
-    struct Voice { bool active=false,releasing=false,intervened=false; int id=0;
+    struct Voice { bool active=false,releasing=false,intervened=false,phaseConditioned=false; int id=0;
         double level=0.,releaseLevel=0.,velocity=0.,mix=0.,a=0.,b=0.,da=0.,db=0.;
-        int cutA=0,cutB=0; unsigned duration=0,elapsed=0; };
-    std::array<Voice,8> voices_{}; Spectrum a_{},b_{}; Route route_{};
+        int cutA=0,cutB=0; unsigned duration=0,elapsed=0,phaseIndex=0; };
+    std::array<Voice,8> voices_{}; Spectrum a_{},b_{}; Route route_{}; PhaseBank phases_{};
     double rate_=0.,attack_=0.; Patch patch_{};
 public:
     bool prepare(double rate) noexcept {
         if(!validSampleRate(rate))return false;
-        if(!a_.build<4>({4,4},0,8,9)||!b_.build<68>({-16,4},8,4,9)||!route_.prepare())return false;
+        if(!a_.build<4>({4,4},0,8,9)||!b_.build<68>({-16,4},8,4,9)||!route_.prepare()||!phases_.prepare())return false;
         rate_=rate;attack_=1./std::ceil(.005*rate);reset();return true;
     }
     void reset() noexcept {voices_={};}
@@ -66,12 +67,20 @@ public:
         }
         return false;
     }
+    bool offPhase(int id) noexcept {
+        for(auto& v:voices_)if(v.active&&v.id==id){
+            if(!v.releasing){v.phaseIndex=PhaseBank::phaseIndex(v.b);v.phaseConditioned=true;}
+            return off(id,true);
+        }
+        return false;
+    }
     void tick(double& l,double& r) noexcept {
         l=r=0.;
         for(auto& v:voices_)if(v.active){
             if(v.releasing){
                 if(++v.elapsed>=v.duration){v={};continue;}
-                v.level=v.releaseLevel*(v.intervened?route_.sample(v.elapsed,v.duration):1.-double(v.elapsed)/v.duration);
+                v.level=v.releaseLevel*(v.phaseConditioned?phases_.route(v.phaseIndex).sample(v.elapsed,v.duration):
+                    v.intervened?route_.sample(v.elapsed,v.duration):1.-double(v.elapsed)/v.duration);
             }
             double al=0.,ar=0.,bl=0.,br=0.;
             if(v.mix<1.)a_.sample(v.a,v.cutA,al,ar);
