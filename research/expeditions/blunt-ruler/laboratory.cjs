@@ -54,7 +54,7 @@ function laboratory(){
     return Array.from({length:K},(_,s)=>s).filter(s=>score(keep.map(t=>x[t+s]),rank,q,values.length,B,1)>=keep.length-e);
   }
   let state=796;
-  const rnd=n=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return state%n};
+  const rnd=n=>{state=(Math.imul(state,1664525)+1013904223)>>>0;return Math.floor(state/4294967296*n)};
   const sample=(n,q)=>Array.from({length:n},()=>rnd(q));
   let oracleChecks=0,decodeChecks=0,reductionChecks=0;
   for(let k=0;k<400;k++){
@@ -73,6 +73,10 @@ function laboratory(){
   }
   const old=[1,3,0,0,1,0,3,2,3,3];
   const cases=[profile(old,8,3,4,1),profile(old,8,3,4,2),profile(old.map(v=>2*v),8,3,7,2),profile(old.map(v=>3*v),8,3,10,3)];
+  const ternary=[0,0,1,0,2,2,1,2,0,0];
+  const binary=[0,0,0,0,1,0,0,1,0,0];
+  cases.push(profile(binary.map(v=>2*v),8,3,4,2));
+  for(let B=1;B<=8;B++){const p=profile(ternary.map(v=>B*v),8,3,2*B+1,B);check(p.L===2,"minimal grid ternary witness");cases.push(p);}
   for(let k=0;k<600;k++){
     const x=old.map(v=>2*v),N=8,K=3,q=7,B=2,s=rnd(K),p=partitions(q,B),f=p[rnd(p.length)],sign=rnd(2)?1:-1;
     const levels=Array.from({length:Math.max(...f)+1},(_,i)=>sign*(i*i+2*i+7));
@@ -145,7 +149,7 @@ function laboratory(){
     if(fcount)y[diff[e]]=null;
     const list=decode(x,N,K,q,B,y,e);
     check(list.includes(s)&&list.includes(u),"fault ambiguity");
-    return {...witness,L:best,calibratedA:A,calibratedB:D,received:y,e,f:fcount,candidates:list};
+    return {...witness,L:best,calibratedA:A,calibratedB:D,received:y,errors:e,erasures:fcount,candidates:list};
   }
   const negative=ambiguity(old,8,3,4,2);
   return {scope:"synthetic exact integer combinatorics; no physical or human evidence",seed:796,oracleChecks,decodeChecks,reductionChecks,cases,searches,enumerated_pilots:searches.reduce((s,x)=>s+x.count,0),negative,assertion_failures:0};
