@@ -1,0 +1,97 @@
+# Temporary issue-scoped qualification; retention subject to owner review.
+name: Integration 607 scheduled PCM native package
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/integration-002/**'
+      - '.github/workflows/mergedown-607-integration-002.yml'
+permissions:
+  contents: read
+concurrency:
+  group: integration-607-schedule-native
+  cancel-in-progress: false
+jobs:
+  native-package:
+    if: github.event.pull_request.number == 757 && github.event.pull_request.head.ref == 'mhac-607/mergedown-integration-002' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: windows-2025
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Checkout candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          path: candidate
+      - name: Checkout exact qualified dependency
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 1970d452d6764dd9de247ae8fccda78c78965937
+          persist-credentials: false
+          path: dependency
+      - name: Select reference Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+          architecture: x64
+      - name: Stage exact Git object bytes and reconstruct
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $out = Join-Path $env:RUNNER_TEMP 'schedule 607'
+          New-Item -ItemType Directory -Path $out | Out-Null
+          @'
+          import os, subprocess, hashlib, json
+          from pathlib import Path
+          out = Path(os.environ["RUNNER_TEMP"]) / "schedule 607" / "laboratory"
+          out.mkdir()
+          base = "tools/experimental/mergedown-607/"
+          specs = [
+              ("candidate", "integration-002", ["README.md","scheduled-v2.cjs","audit_schedule.py","qualify_schedule.py","inspect_schedule.cjs","check_schedule_browser.cjs"]),
+              ("dependency", "integration-001", ["relay.cjs","bound-v2.cjs"])
+          ]
+          receipt = {}
+          for repo, batch, names in specs:
+              head = subprocess.check_output(["git","-C",repo,"rev-parse","HEAD"]).decode().strip()
+              for name in names:
+                  data = subprocess.check_output(["git","-C",repo,"show",head+":"+base+batch+"/"+name])
+                  (out/name).write_bytes(data)
+                  receipt[name] = {"commit":head,"git_blob":hashlib.sha1(f"blob {len(data)}\0".encode()+data).hexdigest()}
+          (out.parent/"source-receipt.json").write_text(json.dumps(receipt,indent=2),encoding="utf-8")
+          '@ | python -
+          Set-Location (Join-Path $out 'laboratory')
+          python --version
+          node --version
+          python -B qualify_schedule.py scheduled-v2-output --regenerate --regression | Tee-Object -FilePath (Join-Path $out 'qualification.json')
+          node inspect_schedule.cjs . | Tee-Object -FilePath (Join-Path $out 'inspector.json')
+          node inspect_schedule.cjs . --check
+      - name: Native offline Chrome timeline and trace export
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe' }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
+          $out = Join-Path $env:RUNNER_TEMP 'schedule 607'
+          Set-Location (Join-Path $out 'laboratory')
+          node check_schedule_browser.cjs . $chrome | Tee-Object -FilePath (Join-Path $out 'browser-receipt.json')
+      - name: Retain qualified owner package and evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Integration-002-Windows-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/schedule 607/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Retain failed diagnostics only
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Integration-002-DIAGNOSTIC-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/schedule 607/
+          if-no-files-found: warn
+          retention-days: 14
