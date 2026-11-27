@@ -63,7 +63,7 @@ public:
         if(band>=bands_.size())return false;
         bands_[band].discardPendingInput();return true;
     }
-    // Native momentary command, intentionally not serialized or exposed to VST3 yet.
+    // Momentary command; intentionally not serialized in HM01.
     bool beginOptimalEscape(unsigned band) noexcept {
         return band<bands_.size()&&!config_.bands[band].excite&&bands_[band].beginOptimalEscape();
     }

@@ -90,12 +90,14 @@ public:
             {STR16("B3 Frequency (Hz)"),STR16("B3 Gain"),STR16("B3 Peak mix"),STR16("B3 Selectivity"),STR16("B3 Capture"),STR16("B3 Erase"),STR16("B3 Discard on close"),STR16("B3 Intervention pulse"),STR16("B3 Discard pending")},
             {STR16("B4 Frequency (Hz)"),STR16("B4 Gain"),STR16("B4 Peak mix"),STR16("B4 Selectivity"),STR16("B4 Capture"),STR16("B4 Erase"),STR16("B4 Discard on close"),STR16("B4 Intervention pulse"),STR16("B4 Discard pending")}};
         for(unsigned b=0;b<4;++b)for(unsigned f=0;f<9;++f)add(names[b][f],bh::FirstBand+b*bh::Stride+f,f==bh::Frequency?5960:f<bh::Excite?1000:1);
+        const TChar* optimalNames[4]={STR16("B1 Optimal erase"),STR16("B2 Optimal erase"),STR16("B3 Optimal erase"),STR16("B4 Optimal erase")};
+        for(unsigned b=0;b<4;++b)add(optimalNames[b],bh::FirstOptimal+b,1);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* s) override {bh::State p{};cr::MemoryConfig c{};if(!readState(s,p)||!bh::decode(p,c))return kResultFalse;for(unsigned i=0;i<bh::ParamCount;++i){const auto id=bh::paramID(i);setParamNormalized(id,bh::normalized(c,id));}return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Harmonic Memory Bank",Vst::kDistributable,"Fx|Filter","0.1.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Harmonic Memory Bank Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Harmonic Memory Bank",Vst::kDistributable,"Fx|Filter","0.2.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Harmonic Memory Bank Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY

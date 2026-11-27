@@ -20,3 +20,7 @@ One control thread publishes whole patches and consumes completed snapshots; one
     ./bank_host_render HostAudio
 
 GCC Release CTest 10/10; Clang ASan/UBSan standalone host probe PASS. The render replays all four FX-011I treatments via HM01 requests and sample-offset automation in 127-frame blocks, producing four PCM16 WAVs byte-identical to their predecessors, including exact final silence. No new acoustic claim or listening assessment. Concurrent handoff witness is a stress test, not a formal memory-model proof or race-detector result. Native tests only; exact SDK pin retained, no SDK source consumed. Next: separate VST3 class identities, parameter/controller and stream adapters, official validator, exact Windows bundle and actual DAW qualification. Preserve negative prior timing and separation results. Draft/HOLD; no shared files or merge.
+
+## FX-011N extension
+
+The 0.2.0 adapter adds four command-only IDs 2050–2053, one per band, with no state-format change. Legacy IDs 2000/2001 and 2010–2045 remain stable. At each offset, persistent changes are coalesced before all commands; legacy commands execute in their previous order, then optimal erasure commands execute in their input order. The new commands are rising-edge latched, default low, and never serialized. See BANK-VST3.md for the admission, cancellation and rearm contract. Native change() now safely ignores unknown IDs, commands and nonfinite values. Historical statements above describe FX-011J, not the new adapter.

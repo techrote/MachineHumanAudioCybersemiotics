@@ -52,11 +52,14 @@ static_assert(std::atomic<unsigned>::is_always_lock_free,"requires lock-free mai
 // of nine beginning at 2010. Pulse/discard are rising-edge, nonpersistent.
 constexpr unsigned Wet=2000,Bypass=2001,FirstBand=2010,Stride=9;
 enum Field : unsigned { Frequency,Gain,Peak,Selectivity,Excite,Erase,DiscardOnClose,Pulse,Discard };
+constexpr unsigned FirstOptimal=2050; // four new momentary controls, legacy IDs unchanged
 constexpr unsigned MaxEvents=4096;
+inline bool optimalCommand(unsigned id) noexcept {return id>=FirstOptimal&&id<FirstOptimal+4;}
 struct Event {unsigned offset,id;double value;};
-inline bool known(unsigned id) noexcept {return id==Wet||id==Bypass||(id>=FirstBand&&id<FirstBand+4*Stride);}
-inline bool command(unsigned id) noexcept {return id>=FirstBand&&(id-FirstBand)%Stride>=Pulse;}
+inline bool known(unsigned id) noexcept {return id==Wet||id==Bypass||(id>=FirstBand&&id<FirstBand+4*Stride)||optimalCommand(id);}
+inline bool command(unsigned id) noexcept {return optimalCommand(id)||(id>=FirstBand&&id<FirstBand+4*Stride&&(id-FirstBand)%Stride>=Pulse);}
 inline void change(MemoryConfig& c,unsigned id,double value) noexcept {
+    if(!known(id)||command(id)||!std::isfinite(value))return;
     const double v=std::clamp(value,0.0,1.0);
     const auto q=static_cast<std::uint16_t>(std::lround(v*1000));
     if(id==Wet){c.wet=q;return;}if(id==Bypass){c.bypass=v>=0.5;return;}
@@ -74,11 +77,13 @@ class Host {
     Ticket requested_{},lastPublished_{};
     std::uint64_t admitted_=0;
     MailboxOf<Ticket> requests_,completed_;
-    std::array<std::array<bool,2>,4> edges_{};
+    std::array<std::array<bool,3>,4> edges_{};
     void trigger(const Event& e) noexcept {
-        const unsigned band=(e.id-FirstBand)/Stride, f=(e.id-FirstBand)%Stride-Pulse;
+        const bool optimal=optimalCommand(e.id);
+        const unsigned band=optimal?e.id-FirstOptimal:(e.id-FirstBand)/Stride;
+        const unsigned f=optimal?2:(e.id-FirstBand)%Stride-Pulse;
         const bool high=e.value>=0.5;
-        if(high&&!edges_[band][f]){if(f==0)dsp_.pulse(band);else dsp_.discardPendingInput(band);}
+        if(high&&!edges_[band][f]){if(f==0)dsp_.pulse(band);else if(f==1)dsp_.discardPendingInput(band);else dsp_.beginOptimalEscape(band);}
         edges_[band][f]=high;
     }
     void admit() noexcept {Ticket t;if(requests_.consume(t)){current_=t.config;admitted_=t.generation;dsp_.set(current_);}}
@@ -113,7 +118,9 @@ public:
             const unsigned start=j;bool changed=false;
             while(j<count&&events[j].offset==i){if(!command(events[j].id)){change(current_,events[j].id,events[j].value);changed=true;}++j;}
             if(changed)dsp_.set(current_);
-            for(unsigned k=start;k<j;++k)if(command(events[k].id))trigger(events[k]);
+            for(unsigned k=start;k<j;++k)if(command(events[k].id)&&!optimalCommand(events[k].id))trigger(events[k]);
+            // Existing manual commands take priority regardless of host queue order.
+            for(unsigned k=start;k<j;++k)if(optimalCommand(events[k].id))trigger(events[k]);
             if(n){const auto s=dsp_.process(l?l[i]:0,r?r[i]:0);if(ol)ol[i]=static_cast<Sample>(s.left);if(oright)oright[i]=static_cast<Sample>(s.right);}
         }
         complete();return true;
