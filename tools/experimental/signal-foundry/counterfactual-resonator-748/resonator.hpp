@@ -37,7 +37,7 @@ inline bool validSampleRate(double rate) noexcept { return std::isfinite(rate)&&
 struct Stereo { double left=0,right=0; };
 struct Channel {
     IntegerState discrete{};
-    double rx=0,ry=0,prevDiscrete=0,prevReference=0,sum=0;
+    double rx=0,ry=0,prevDiscrete=0,prevReference=0,sum=0,peak=0;
     void tick(int drive,bool truncate) noexcept {
         prevDiscrete=double(discrete.x)/limit;
         prevReference=rx/limit;
@@ -57,7 +57,7 @@ class Processor {
     std::array<Channel,2> ch_{};
     std::array<double,3> weights_{0,1,0};
     double rate_=48000,phase_=0,wet_=0.7,gain_=0.8,slew_=1.0/240;
-    unsigned count_=0;
+    unsigned count_=0,peakMix_=0;
     bool pending_=false;
     std::uint64_t ticks_=0,interventions_=0;
     static double clean(double x) noexcept { return std::isfinite(x)&&std::abs(x)>=1e-20 ? std::clamp(x,-1.0,1.0):0; }
@@ -74,6 +74,13 @@ public:
     }
     bool set(Controls p) noexcept { if(!valid(p)) return false; target_=p; return true; }
     Controls controls() const noexcept { return target_; }
+    // Native-only control; CR01 and the existing VST3 parameter set are unchanged.
+    // The value at a clock tick applies to the entire just-completed window.
+    bool setPeakMix(unsigned permille) noexcept {
+        if(permille>1000) return false;
+        peakMix_=permille; return true;
+    }
+    unsigned peakMix() const noexcept { return peakMix_; }
     // Last-value coalescing: one or more requests before a tick mean one T update.
     void requestIntervention() noexcept { pending_=true; }
     double effectiveHz() const noexcept { return std::min(double(target_.hz),rate_/16.0); }
@@ -88,15 +95,22 @@ public:
         const double alpha=std::min(1.0,slew_);
         for(unsigned i=0;i<3;++i) weights_[i]+=(double(i==target_.monitor)-weights_[i])*alpha;
         if(1.0-weights_[target_.monitor]<1e-12){weights_={};weights_[target_.monitor]=1;}
-        for(unsigned i=0;i<2;++i) ch_[i].sum+=input[i];
+        for(unsigned i=0;i<2;++i){
+            auto& c=ch_[i]; c.sum+=input[i];
+            // Earliest sample wins equal-magnitude ties; preserve its sign.
+            if(std::abs(input[i])>std::abs(c.peak)) c.peak=input[i];
+        }
         ++count_; phase_+=4.0*effectiveHz()/rate_;
         if(phase_>=1.0){
             phase_-=1.0;
             const bool trunc=target_.erase||pending_; pending_=false;
             ++ticks_; if(trunc) ++interventions_;
             for(auto& c:ch_){
-                const int drive=static_cast<int>(std::round(12.0*c.sum/double(count_)));
-                c.tick(drive,trunc); c.sum=0;
+                const double legacy=12.0*c.sum/double(count_);
+                const double blend=peakMix_/1000.0;
+                const double excitation=peakMix_==0?legacy:legacy*(1.0-blend)+12.0*c.peak*blend;
+                const int drive=static_cast<int>(std::round(excitation));
+                c.tick(drive,trunc); c.sum=0; c.peak=0;
             }
             count_=0;
         }
