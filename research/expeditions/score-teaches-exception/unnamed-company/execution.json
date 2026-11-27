@@ -1,0 +1,110 @@
+{
+  "contract": "Four labels; order runs from more expected to less expected; one exact hidden nonempty scope quota per target or no marker; all propositions stipulated true; no human data",
+  "optionsPerTarget": [
+    13,
+    13,
+    13,
+    13
+  ],
+  "tally": {
+    "systems": 28561,
+    "feasible": 4913,
+    "infeasible": 23648,
+    "permutationChecks": 685464,
+    "prefixChecks": 78608,
+    "unionChecks": 231664,
+    "rankChecks": 19652,
+    "precedenceChecks": 58956,
+    "pairwiseInsufficient": 752,
+    "orderCountHistogram": {
+      "0": 23648,
+      "1": 1536,
+      "2": 1248,
+      "3": 864,
+      "4": 528,
+      "5": 96,
+      "6": 368,
+      "7": 24,
+      "8": 96,
+      "9": 48,
+      "10": 48,
+      "12": 40,
+      "16": 12,
+      "18": 4,
+      "24": 1
+    }
+  },
+  "example": {
+    "validOrders": [
+      "ABCD",
+      "ABDC",
+      "ACBD",
+      "ACDB",
+      "BACD",
+      "BADC",
+      "BCAD",
+      "BCDA",
+      "CABD",
+      "CADB",
+      "CBAD",
+      "CBDA"
+    ],
+    "scopeWorlds": 24,
+    "scopeWorldsByRank": {
+      "3": 6,
+      "4": 18
+    },
+    "uniformOrdersRank4": [
+      6,
+      12
+    ],
+    "uniformOrderScopePairsRank4": [
+      18,
+      24
+    ]
+  },
+  "deadlock": {
+    "closure": "D",
+    "compatibleOrders": 0,
+    "countsAfterSuspendingOneOfABC": [
+      8,
+      8,
+      8
+    ]
+  },
+  "score": {
+    "target": [
+      [
+        "D",
+        0
+      ],
+      [
+        "MARK",
+        1
+      ]
+    ],
+    "edition1": {
+      "scope": [
+        "A",
+        "B"
+      ],
+      "order": "ABDC"
+    },
+    "edition2": {
+      "scope": [
+        "B",
+        "C"
+      ],
+      "order": "BCDA"
+    },
+    "edition3": {
+      "scope": [
+        "A",
+        "B",
+        "C"
+      ],
+      "order": "ABCD"
+    },
+    "instruction": "Same target notes; preceding menu cards and order hypotheses are independent of the target; no claim of universal audibility"
+  }
+}
