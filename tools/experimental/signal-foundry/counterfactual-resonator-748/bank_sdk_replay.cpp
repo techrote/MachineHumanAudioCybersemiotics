@@ -14,12 +14,16 @@
 using namespace Steinberg;
 using namespace Steinberg::Vst;
 namespace {
-void ok(tresult result){check(result==kResultOk);}
+void ok(tresult result,const char* stage="SDK call"){
+    if(result!=kResultOk)std::cerr<<stage<<" returned "<<result<<'\n';
+    check(result==kResultOk);
+}
 struct ModuleEngine {
     IComponent* component;
     IAudioProcessor* processor;
     int channels,block,format;
-    bool initialized=false,active=false,running=false;
+    bool initialized=false,active=false,running=false,paused=false;
+    unsigned rendered=0;
     ParameterChanges params{int32(bh::ParamCount)};
     ModuleEngine(IComponent* c,IAudioProcessor* p,HostApplication* host,int nc,int bs,int fmt)
         :component(c),processor(p),channels(nc),block(bs),format(fmt){
@@ -44,12 +48,28 @@ struct ModuleEngine {
         check(s.getSize()==TSize(b.size()));std::memcpy(b.data(),s.getData(),b.size());return b;
     }
     bool prepare(double rate){
-        ProcessSetup setup{kRealtime,format,block,rate};ok(processor->setupProcessing(setup));
-        ok(component->setActive(true));active=true;ok(processor->setProcessing(true));running=true;
+        ProcessSetup setup{kRealtime,format,block,rate};ok(processor->setupProcessing(setup),"setupProcessing");
+        ok(component->setActive(true),"setActive(true)");active=true;
+        ok(processor->setProcessing(true),"setProcessing(true)");running=true;
+        // A legal start/stop pair with no intervening audio must also succeed.
+        pauseResume();
         check(processor->getLatencySamples()==0&&processor->getTailSamples()==kInfiniteTail);return true;
+    }
+    void pauseResume(){
+        ok(processor->setProcessing(false),"pause setProcessing(false)");running=false;
+        ok(processor->setProcessing(true),"resume setProcessing(true)");running=true;
+    }
+    void finish(){
+        check(paused);ok(processor->setProcessing(false),"stop");running=false;
+        ok(component->setActive(false),"deactivate");active=false;
+        ok(component->terminate(),"terminate");initialized=false;
     }
     template<class T> bool processOptional(const T* l,const T* r,T* ol,T* oright,unsigned n,const bh::Event* ev,unsigned count){
         check(n<=unsigned(block));params.clearQueue();
+        // Pause during excitation, without deactivation, and require the same
+        // subsequent samples as uninterrupted native DSP (memory retained).
+        if(!paused&&rendered>=6000){pauseResume();paused=true;}
+        rendered+=n;
         for(unsigned i=0;i<count;++i){int32 qi=0,pi=0;auto* q=params.addParameterData(ev[i].id,qi);
             check(q!=nullptr);ok(q->addPoint(int32(ev[i].offset),ev[i].value,pi));}
         // Input buffers are read-only by contract; VST3 declares mutable pointers.
@@ -63,7 +83,7 @@ struct ModuleEngine {
         }
         ProcessData d{};d.processMode=kRealtime;d.symbolicSampleSize=format;d.numSamples=int32(n);
         d.numInputs=1;d.inputs=&ib;d.numOutputs=1;d.outputs=&ob;d.inputParameterChanges=&params;
-        ok(processor->process(d));uint64 mask=(uint64(1)<<channels)-1;
+        ok(processor->process(d),"audio process");uint64 mask=(uint64(1)<<channels)-1;
         for(int k=0;k<channels;++k)for(unsigned i=0;i<n;++i){
             const T x=out[k][i];check(std::isfinite(x)&&std::abs(x)<=T(1));
             if(x!=T(0))mask&=~(uint64(1)<<k);
@@ -86,7 +106,8 @@ template<class T> void run(const VST3::Hosting::PluginFactory& factory,const VST
     auto c=factory.createInstance<IComponent>(info.ID());check(bool(c));
     FUnknownPtr<IAudioProcessor> proc(c.get());check(proc.getInterface()!=nullptr);
     ModuleEngine engine(c.get(),proc.getInterface(),host,mono?1:2,int(block),std::is_same_v<T,float>?kSample32:kSample64);
-    replay<T>(engine,rate,band,block,reverse,manual,mono);engine.stateChecks();
+    std::cout<<"SDK_BANK_BEGIN rate="<<rate<<" band="<<band<<" block="<<block<<" reverse="<<reverse<<" manual="<<manual<<" mono="<<mono<<" format="<<engine.format<<std::endl;
+    replay<T>(engine,rate,band,block,reverse,manual,mono);engine.stateChecks();engine.finish();
     std::cout<<"SDK_BANK_CASE rate="<<rate<<" band="<<band<<" block="<<block<<" reverse="<<reverse<<" manual="<<manual<<" mono="<<mono<<" format="<<engine.format<<'\n';
 }
 void controller(const VST3::Hosting::PluginFactory& factory,HostApplication* host){

@@ -65,6 +65,10 @@ public:
     tresult PLUGIN_API canProcessSampleSize(int32 s) override {return s==kSample32||s==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& s) override {if(!host.prepare(s.sampleRate))return kResultFalse;return AudioEffect::setupProcessing(s);}
     tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)host.reset();return r;}
+    // The SDK AudioEffect default returns kNotImplemented. Explicitly acknowledge
+    // start/stop without resetting a persistent memory; setActive owns reset.
+    // No allocation, locking or state access is necessary on this callback.
+    tresult PLUGIN_API setProcessing(TBool) override {return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override {return 0;}
     uint32 PLUGIN_API getTailSamples() override {return kInfiniteTail;}
     tresult PLUGIN_API setState(IBStream* s) override {bh::State p{};if(!readState(s,p))return kResultFalse;std::lock_guard<std::mutex> lock(stateMutex);return host.request(p)?kResultOk:kResultFalse;}
