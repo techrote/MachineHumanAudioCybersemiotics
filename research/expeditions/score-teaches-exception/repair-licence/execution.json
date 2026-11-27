@@ -1,0 +1,146 @@
+{
+  "pairs": 10296,
+  "truthTableDistanceHistogram": [
+    16,
+    128,
+    112,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "nearestTie": 112,
+  "designs": 24310,
+  "profiles": [
+    {
+      "n": 0,
+      "checked": 1,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 1,
+      "checked": 8,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 2,
+      "checked": 36,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 3,
+      "checked": 120,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 4,
+      "checked": 330,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 5,
+      "checked": 792,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 6,
+      "checked": 1716,
+      "best": 0,
+      "joint": 0
+    },
+    {
+      "n": 7,
+      "checked": 3432,
+      "best": 1,
+      "joint": 0
+    },
+    {
+      "n": 8,
+      "checked": 6435,
+      "best": 2,
+      "joint": 1
+    },
+    {
+      "n": 9,
+      "checked": 11440,
+      "best": 2,
+      "joint": 1
+    }
+  ],
+  "decodes": 34560,
+  "baseOnly": 7680,
+  "twoExceptionAmbiguity": {
+    "word": 3,
+    "baseCandidates": [
+      {
+        "h": 0,
+        "d": 2
+      },
+      {
+        "h": 10,
+        "d": 2
+      },
+      {
+        "h": 12,
+        "d": 2
+      },
+      {
+        "h": 14,
+        "d": 2
+      }
+    ]
+  },
+  "score": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      6,
+      0
+    ],
+    [
+      7,
+      1
+    ]
+  ],
+  "accountA": {
+    "base": 1,
+    "exception": 2,
+    "authority": "declared exception"
+  },
+  "accountB": {
+    "base": 1,
+    "exception": null,
+    "authority": "persistent upstream fault at context 2"
+  },
+  "assertionFailures": 0
+}
