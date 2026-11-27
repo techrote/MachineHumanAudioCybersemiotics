@@ -1,0 +1,76 @@
+name: Integration 607 authenticated session native evidence
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/integration-003/**'
+      - '.github/workflows/mergedown-607-integration-003.yml'
+permissions:
+  contents: read
+concurrency:
+  group: integration-607-session-native
+  cancel-in-progress: false
+jobs:
+  native-evidence:
+    if: github.event.pull_request.head.ref == 'mhac-607/mergedown-integration-003' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Stage exact candidate Git object bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os, subprocess
+          from pathlib import Path
+          out = Path(os.environ['RUNNER_TEMP']) / 'mhac session 607'
+          out.mkdir()
+          (out/'source').mkdir()
+          base = 'tools/experimental/mergedown-607/integration-003/'
+          def blob(p):
+              return subprocess.check_output(['git','show','HEAD:'+base+p])
+          for name in ('sources.json','README.md','audit_session.py'):
+              (out/name).write_bytes(blob(name))
+          manifest=json.loads((out/'sources.json').read_bytes())
+          for name,expected in manifest['blobs'].items():
+              data=blob('source/'+name)
+              actual=hashlib.sha1(f'blob {len(data)}\0'.encode()+data).hexdigest()
+              if actual != expected:
+                  raise ValueError('source mismatch '+name)
+              (out/'source'/name).write_bytes(data)
+          print('verified',len(manifest['blobs']),'exact source blobs')
+          PY
+      - name: Native reconstruction and separate accounting
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rev-parse HEAD > "$RUNNER_TEMP/mhac session 607/head.txt"
+          cd "$RUNNER_TEMP/mhac session 607"
+          { python --version; node --version; } | tee runtime.txt
+          python -B audit_session.py --self-test source/relay.cjs | tee self-test.json
+          SEED=71 node source/session-v40.cjs seed71 | tee seed71.log
+          SEED=113 node source/session-v40.cjs seed113 | tee seed113.log
+          node source/test-session-v40.cjs controls.json | tee controls.log
+          python -B audit_session.py --seed71 seed71 --seed113 seed113 --controls controls.json | tee audit.json
+      - name: Retain native evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Integration-003-native-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/mhac session 607/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Retain failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Integration-003-DIAGNOSTIC-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/mhac session 607/
+          if-no-files-found: warn
+          retention-days: 14
