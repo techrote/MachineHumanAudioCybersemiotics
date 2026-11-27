@@ -15,6 +15,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/three_plugin_host.py'
       - 'tools/experimental/vst-acceleration/native-chain/session_score.py'
       - 'tools/experimental/vst-acceleration/native-chain/trace-bell/**'
+      - 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle/**'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -327,4 +328,56 @@ jobs:
             session/Stems/*.wav
             session/Comparisons/*.wav
           if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Palimpsest Shuttle shared SDK build and qualification
+        shell: pwsh
+        run: |
+          $src = 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle'
+          New-Item -ItemType Directory -Force shuttle-delivery | Out-Null
+          cmake --build trace-bell-build --config Release --target MHACPalimpsestShuttle shuttle_sdk_probe shuttle_control_test shuttle_regression --parallel 2 2>&1 | Tee-Object shuttle-delivery/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          foreach ($target in @('shuttle_control_test','shuttle_regression')) {
+            $exe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter "$target.exe" | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+            if ($exe.Count -ne 1) { throw "Missing test $target" }
+            & $exe[0].FullName 2>&1 | Tee-Object "shuttle-delivery/$target.txt"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+          $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACPalimpsestShuttle.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACPalimpsestShuttle.vst3') })
+          if ($bundles.Count -ne 1) { throw 'Expected one x64 Shuttle bundle' }
+          $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Validator missing' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object shuttle-delivery/validator.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path shuttle-delivery/validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing validator success' }
+          if (Select-String -Path shuttle-delivery/validator.txt -Pattern '^\s*ERROR:') { throw 'Validator explicit error' }
+          $probe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter shuttle_sdk_probe.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($probe.Count -ne 1) { throw 'Expected one Shuttle SDK probe' }
+          & $probe[0].FullName $bundles[0].FullName 2>&1 | Tee-Object shuttle-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path shuttle-delivery/sdk-probe.txt -Pattern 'SDK_PROBE_PASS automation_cases=6 stereo_frames=120000')) { throw 'Missing SDK probe receipt' }
+          $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACPalimpsestShuttle.vst3'
+          py -3.12 "$src/shuttle_host.py" --module $module --out shuttle-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item -Recurse $bundles[0].FullName shuttle-delivery/
+          Copy-Item trace-bell-delivery/SDK-* shuttle-delivery/
+          Copy-Item trace-bell-delivery/Steinberg-SDK-LICENSE.txt shuttle-delivery/
+          Copy-Item trace-bell-delivery/BUILD-SOURCE.txt shuttle-delivery/
+          Copy-Item "$src/VST3.md" shuttle-delivery/
+          py -3.12 -c "from pathlib import Path; import hashlib,zipfile; r=Path('shuttle-delivery'); (r/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(r).as_posix()+'\n' for p in sorted(r.rglob('*')) if p.is_file())); z=zipfile.ZipFile('MHACPalimpsestShuttle-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACPalimpsestShuttle-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-shuttle-build-evidence
+          path: shuttle-delivery/*.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: MHACPalimpsestShuttle-Windows-x64
+          path: MHACPalimpsestShuttle-Windows-x64.zip
+          if-no-files-found: error
           retention-days: 7

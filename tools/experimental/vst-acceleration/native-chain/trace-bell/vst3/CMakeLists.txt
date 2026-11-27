@@ -47,7 +47,20 @@ if(MHAC_BUILD_VST3)
     smtg_add_vst3plugin(MHACTraceBell ../trace_bell_vst3.cpp)
     target_include_directories(MHACTraceBell PRIVATE "${SDK_ROOT}")
     target_link_libraries(MHACTraceBell PRIVATE sdk)
+    smtg_add_vst3plugin(MHACPalimpsestShuttle ../../palimpsest-shuttle/shuttle_vst3.cpp)
+    target_include_directories(MHACPalimpsestShuttle PRIVATE "${SDK_ROOT}")
+    target_link_libraries(MHACPalimpsestShuttle PRIVATE sdk)
+    smtg_target_add_plugin_resources(MHACPalimpsestShuttle RESOURCES "${SDK_ROOT}/LICENSE.txt")
+    if(APPLE)
+        smtg_target_set_bundle(MHACPalimpsestShuttle BUNDLE_IDENTIFIER "org.mhac.palimpsest-shuttle" COMPANY_NAME "MHAC")
+    endif()
     if(WIN32)
+        add_executable(shuttle_sdk_probe ../../palimpsest-shuttle/shuttle_sdk_probe.cpp
+            "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
+            "${SDK_ROOT}/public.sdk/source/common/memorystream.cpp")
+        target_compile_definitions(shuttle_sdk_probe PRIVATE NOMINMAX)
+        target_include_directories(shuttle_sdk_probe PRIVATE "${SDK_ROOT}")
+        target_link_libraries(shuttle_sdk_probe PRIVATE sdk_hosting)
         # Match the official validator: MemoryStream is a separate source, not supplied by sdk_hosting.
         add_executable(trace_bell_sdk_probe ../trace_bell_sdk_probe.cpp
             "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
@@ -79,3 +92,6 @@ if(MSVC)
 else()
     target_compile_options(trace_bell_mailbox_test PRIVATE -UNDEBUG)
 endif()
+
+add_executable(shuttle_control_test ../../palimpsest-shuttle/shuttle_control_test.cpp)
+add_executable(shuttle_regression ../../palimpsest-shuttle/shuttle_test.cpp)
