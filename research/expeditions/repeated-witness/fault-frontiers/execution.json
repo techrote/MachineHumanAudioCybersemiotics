@@ -1,0 +1,275 @@
+{
+  "singleMasks": 588,
+  "canonicalEdgeSets": 838,
+  "reportCases": 47030,
+  "weightedHistories": "449870",
+  "budgetChecks": 1007,
+  "strictParsimonyCases": 5802,
+  "topologyChanges": 5144,
+  "firstStrict": {
+    "name": "binaryPair",
+    "w": "AA",
+    "vs": [
+      "A",
+      "A"
+    ],
+    "minCost": 1,
+    "minInvisible": 0,
+    "minInvisibleAtMinCost": 1,
+    "polynomial": [
+      {
+        "cost": 1,
+        "invisible": 1,
+        "rootCuts": 1,
+        "count": "2"
+      },
+      {
+        "cost": 2,
+        "invisible": 0,
+        "rootCuts": 0,
+        "count": "2"
+      },
+      {
+        "cost": 2,
+        "invisible": 1,
+        "rootCuts": 0,
+        "count": "2"
+      }
+    ]
+  },
+  "firstTopology": {
+    "w": "A",
+    "vs": [
+      "",
+      "A",
+      "",
+      "A"
+    ],
+    "balanced": 2,
+    "crossed": 1
+  },
+  "examples": {
+    "repeatedPair": {
+      "tree": [
+        0,
+        1
+      ],
+      "w": "AA",
+      "reports": [
+        "A",
+        "A"
+      ],
+      "polynomial": [
+        {
+          "cost": 1,
+          "invisible": 1,
+          "rootCuts": 1,
+          "count": "2"
+        },
+        {
+          "cost": 2,
+          "invisible": 0,
+          "rootCuts": 0,
+          "count": "2"
+        },
+        {
+          "cost": 2,
+          "invisible": 1,
+          "rootCuts": 0,
+          "count": "2"
+        }
+      ],
+      "costSupport": [
+        1,
+        2
+      ]
+    },
+    "sharedSiblings": {
+      "tree": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "w": "AA",
+      "reports": [
+        "A",
+        "A",
+        "AA",
+        "AA"
+      ],
+      "polynomial": [
+        {
+          "cost": 1,
+          "invisible": 0,
+          "rootCuts": 0,
+          "count": "2"
+        },
+        {
+          "cost": 2,
+          "invisible": 0,
+          "rootCuts": 0,
+          "count": "4"
+        }
+      ],
+      "costSupport": [
+        1,
+        2
+      ]
+    },
+    "separatedLeaves": {
+      "tree": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "w": "AA",
+      "reports": [
+        "A",
+        "A",
+        "AA",
+        "AA"
+      ],
+      "polynomial": [
+        {
+          "cost": 2,
+          "invisible": 0,
+          "rootCuts": 0,
+          "count": "4"
+        }
+      ],
+      "costSupport": [
+        2
+      ]
+    },
+    "polytomy": {
+      "tree": [
+        0,
+        1,
+        2
+      ],
+      "w": "A",
+      "reports": [
+        "",
+        "",
+        ""
+      ],
+      "polynomial": [
+        {
+          "cost": 1,
+          "invisible": 1,
+          "rootCuts": 1,
+          "count": "1"
+        },
+        {
+          "cost": 3,
+          "invisible": 1,
+          "rootCuts": 0,
+          "count": "1"
+        }
+      ],
+      "costSupport": [
+        1,
+        3
+      ]
+    },
+    "binaryRefinement": {
+      "tree": [
+        0,
+        [
+          1,
+          2
+        ]
+      ],
+      "w": "A",
+      "reports": [
+        "",
+        "",
+        ""
+      ],
+      "polynomial": [
+        {
+          "cost": 1,
+          "invisible": 1,
+          "rootCuts": 1,
+          "count": "1"
+        },
+        {
+          "cost": 2,
+          "invisible": 1,
+          "rootCuts": 0,
+          "count": "1"
+        },
+        {
+          "cost": 3,
+          "invisible": 1,
+          "rootCuts": 0,
+          "count": "1"
+        }
+      ],
+      "costSupport": [
+        1,
+        2,
+        3
+      ]
+    },
+    "mixedClade": {
+      "tree": [
+        [
+          0,
+          1,
+          2
+        ],
+        3
+      ],
+      "w": "A",
+      "reports": [
+        "",
+        "",
+        "",
+        "A"
+      ],
+      "polynomial": [
+        {
+          "cost": 1,
+          "invisible": 0,
+          "rootCuts": 0,
+          "count": "1"
+        },
+        {
+          "cost": 3,
+          "invisible": 0,
+          "rootCuts": 0,
+          "count": "1"
+        }
+      ],
+      "costSupport": [
+        1,
+        3
+      ]
+    },
+    "impossible": {
+      "tree": [
+        0,
+        1
+      ],
+      "w": "AB",
+      "reports": [
+        "BA",
+        "A"
+      ],
+      "polynomial": [],
+      "costSupport": []
+    }
+  },
+  "assertionFailures": 0
+}
