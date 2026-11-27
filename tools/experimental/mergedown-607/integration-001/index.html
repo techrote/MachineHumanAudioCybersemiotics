@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MHAC Integration | Binding witnesses</title>
+<style>body{font:16px system-ui,sans-serif;background:#f5f5f0;color:#202823;max-width:960px;margin:2rem auto;padding:0 1rem}h1,h2{line-height:1.2}section{background:white;padding:1rem;margin:1rem 0;border:1px solid #c9d0c9;border-radius:.6rem}table{border-collapse:collapse;width:100%}th,td{padding:.6rem;text-align:left;border-bottom:1px solid #ddd}audio{width:min(250px,100%)}small{color:#555}label{display:block}a{color:#215c6a}</style>
+<h1>PCM packet binding — regression witnesses</h1><p>Frozen Integration #513 v2, consolidated under #607. Public finite checksum, not authentication or action authority. Synthetic evidence only.</p>
+<section><label for="gain">Digital playback gain <output id="gainOut">12%</output></label><input id="gain" type="range" min="0" max="0.25" step="0.01" value="0.12"><p><small>Playback is opt-in. Set hardware volume low. Digital gain is not a calibrated acoustic level.</small></p><button id="stop">Stop all playback</button></section>
+<section><h2>Single-packet witnesses</h2><table><thead><tr><th>Specimen</th><th>Legacy / bound decoder</th><th>Audio</th></tr></thead><tbody id="witness"></tbody></table></section>
+<section><h2>Five-slot scheduling witnesses</h2><p>Both policies received three unique packets and confirmed two. Fresh confirmations: DATA-first 0, ACK-first 1. Fresh at the configured version at receipt; not proof of execution.</p><div id="sessions"></div></section>
+<p>To regenerate: <code>node bound-v2.cjs bound-v2-output</code>. Verify: <code>python check_binding.py bound-v2-output</code>. <a href="bound-v2-output/receipt.json">Frozen receipt</a>.</p>
+<script>
+'use strict';
+const rows=[['clean','accept / accept'],['splice','accept hybrid / reject'],['v1-only','accept / reject'],['two-tag-erasures','accept / accept'],['tag-substitution','accept / reject'],['recomputed-hybrid','accept hybrid / accept hybrid'],['forged-ack','accept / accept'],['tag-collision','accept / accept'],['overlap','reject / reject']];
+const gain=document.querySelector('#gain'),out=document.querySelector('#gainOut');
+function player(name){const a=document.createElement('audio');a.controls=true;a.preload='none';a.autoplay=false;a.volume=Number(gain.value);a.src='bound-v2-output/'+name+'.wav';a.setAttribute('aria-label',name);a.addEventListener('play',()=>document.querySelectorAll('audio').forEach(other=>{if(other!==a)other.pause()}));return a}
+for(const [name,result] of rows){const tr=document.querySelector('#witness').insertRow();tr.insertCell().textContent=name;tr.insertCell().textContent=result;tr.insertCell().append(player(name))}
+for(const name of ['data-first','ack-first']){const p=document.createElement('p');p.textContent=name+' ';p.append(player(name));document.querySelector('#sessions').append(p)}
+gain.oninput=()=>{out.textContent=Math.round(100*Number(gain.value))+'%';document.querySelectorAll('audio').forEach(a=>a.volume=Number(gain.value))};
+document.querySelector('#stop').onclick=()=>document.querySelectorAll('audio').forEach(a=>{a.pause();a.currentTime=0});
+</script></html>
