@@ -1,0 +1,11 @@
+# INST-011Q — Aligned spectral residual reference
+
+Refs #738, #264 and draft #265 at 56c107f8f4147316a588484c47be28bc8f840fbb. Engineering measurement of the creative Orbit Lantern synthesis extension, not human evidence or a formal alias bound.
+
+Build with the existing native CMake instructions, then run `orbit_aligned_probe > aligned.csv`. No SDK is needed for this offline diagnostic. All plugin identities, state, audio callback and presets are unchanged.
+
+The probe renders full-depth minus zero-depth stereo residuals at 48, 192 and 384 kHz. Note-on starts at zero and note-off occurs at exactly 4817/48000 seconds. A symmetric Blackman-windowed sinc with radius 64 base samples, cutoff 21.6 kHz and unit DC gain decimates the high-rate residuals onto the 48 kHz sample centres, using zero extension. Oracles check 3 kHz passband, 30 kHz rejection, impulse symmetry and DC gain. This is offline and noncausal, not a real-time resampler.
+
+The 30 rows cover five MIDI notes, three release times and both shaped modes. RMS is averaged across stereo and the entire recording, including pre-release silence. `raw4_vs_filtered4_rms` compares unfiltered sample selection with the filtered 4x reference (not exclusively aliased energy); `low_vs_filtered4_rms` compares the native 48 kHz residual with that reference; `filtered4_vs_filtered8_rms` checks reference convergence. `matched` requires the long-orbit harmonic cutoffs to agree. Different cutoffs, rate-dependent envelope step timing, phase-route selection, passband/transition attenuation and finite FIR error can confound the residual. The low/reference difference must not be reported as an alias-only metric. Unmatched cases are retained separately, especially MIDI 125, where low-rate spectral colour falls back entirely. No subjective listening or actual DAW claim.
+
+Native qualification on Linux: GCC Release CTest 9/9; Clang ASan/UBSan aligned probe passed; CSV output byte-identical across these invocations. Previous binary source 95bf693c5f0f9ddc0657f022f70707e18ac12e3e passed Windows workflow 46014130101, integrity 46014130111; artifact 15205426722 outer SHA256 8d9e05d965b494922b20f58bcd62b6ede6f9e0e3859ba6c749e2feecd6b301f3. New Windows diagnostic qualification outstanding. Exact SDK checkout still DNS-blocked locally; no substitute.
