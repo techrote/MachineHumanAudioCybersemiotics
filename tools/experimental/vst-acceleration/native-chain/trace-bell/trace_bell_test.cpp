@@ -44,7 +44,7 @@ int main() {
         assert(early>0 && late<early*1.e-6f);
         t.reset(); assert(equal(t.process({0,0}),{0,0}));
         TraceBell ref=t; p.mix=std::numeric_limits<float>::quiet_NaN(); assert(!t.configure(p));
-        assert(!t.prepare(0)); assert(!t.prepare(192001));
+        assert(!t.prepare(0)); assert(!t.prepare(1250001));
         for(int i=0;i<100;++i) assert(equal(t.process({.3f,-.3f}),ref.process({.3f,-.3f})));
         assert(bounded(t.process({std::numeric_limits<float>::infinity(),std::numeric_limits<float>::quiet_NaN()})));
         printf("rate %.0f: impulse peak %.9g late %.9g PASS\n",rate,early,late);

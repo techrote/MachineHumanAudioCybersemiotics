@@ -91,8 +91,7 @@ public:
         return size==kSample32?kResultTrue:kResultFalse;
     }
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
-        if(setup.symbolicSampleSize!=kSample32||!std::isfinite(setup.sampleRate)||
-           setup.sampleRate<8000||setup.sampleRate>192000)return kResultFalse;
+        if(setup.symbolicSampleSize!=kSample32||!traceRateSupported(setup.sampleRate))return kResultFalse;
         const auto rc=AudioEffect::setupProcessing(setup);if(rc!=kResultOk)return rc;
         if(!engine.prepare(float(setup.sampleRate)))return kResultFalse;
         tail=uint32(std::ceil(60.*setup.sampleRate));return kResultOk;

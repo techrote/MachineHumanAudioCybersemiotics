@@ -52,3 +52,11 @@ if(MHAC_BUILD_VST3)
     endif()
     smtg_target_add_plugin_resources(MHACTraceBell RESOURCES "${SDK_ROOT}/LICENSE.txt")
 endif()
+
+# Native extreme-rate witness: assertions must remain enabled in Release.
+add_executable(trace_bell_rate_test ../trace_bell_rate_test.cpp)
+if(MSVC)
+    target_compile_options(trace_bell_rate_test PRIVATE /UNDEBUG)
+else()
+    target_compile_options(trace_bell_rate_test PRIVATE -UNDEBUG)
+endif()

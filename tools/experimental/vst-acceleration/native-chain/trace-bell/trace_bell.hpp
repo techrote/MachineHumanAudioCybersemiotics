@@ -5,6 +5,15 @@
 #include "trace_bell_pole.hpp"
 
 namespace mhac::accel {
+// Shared native/adapter rate contract; extreme rates are diagnostic, not DAW recommendations.
+inline bool traceRateSupported(double rate) noexcept {
+    return std::isfinite(rate) && rate>=1000. && rate<=1250000.;
+}
+inline float traceEffectivePitch(float rate,float pitch,float spread) noexcept {
+    // Preserve modal ratios and stereo detune; compress the bank below Nyquist
+    // only when the requested upper partial would exceed 45% of sample rate.
+    return std::min(pitch,(.45f*rate)/(3.25f*(1.f+.012f*spread)));
+}
 struct TraceFrame { float l, r; };
 struct TracePatch {
     float pitch = 220.f, decay = .35f, contrast = .8f, mix = .3f, spread = .5f;
@@ -49,7 +58,7 @@ class TraceBell {
         constexpr float ratios[]={1.f,1.5f,2.125f,3.25f};
         const float radius=std::exp(-1.f/(patch_.decay*rate_));
         for(unsigned c=0;c<2;++c) for(unsigned i=0;i<4;++i) {
-            const float angle=6.283185307179586f*patch_.pitch*ratios[i]*(1.f+(c?1.f:-1.f)*.012f*patch_.spread)/rate_;
+            const float angle=6.283185307179586f*traceEffectivePitch(rate_,patch_.pitch,patch_.spread)*ratios[i]*(1.f+(c?1.f:-1.f)*.012f*patch_.spread)/rate_;
             lanes_[c].modes[i].pole.set(radius*std::cos(angle),radius*std::sin(angle),samples);
         }
     }
@@ -60,7 +69,7 @@ public:
     }
     TraceBell() noexcept { prepare(48000.f); }
     bool prepare(float rate) noexcept {
-        if(!in(rate,8000.f,192000.f)) return false;
+        if(!traceRateSupported(rate)) return false;
         rate_=rate;
         fast_=1.f-std::exp(-1.f/(.004f*rate));
         slow_=1.f-std::exp(-1.f/(.15f*rate));
