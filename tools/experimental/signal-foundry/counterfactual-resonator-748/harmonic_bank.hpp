@@ -1,0 +1,70 @@
+#pragma once
+#include "resonator.hpp"
+
+namespace mhac::counterfactual {
+// Four independently clocked memories. Fixed normalization prevents gain jumps
+// when individual resonators are muted; muting never destroys their history.
+struct MemoryBand {
+    std::uint16_t hz=220, gain=750, peakMix=250;
+    bool excite=true, erase=false;
+};
+struct MemoryConfig {
+    std::array<MemoryBand,4> bands{{{110,750,250},{165,750,250},{220,750,250},{330,750,250}}};
+    std::uint16_t wet=700;
+    bool bypass=false;
+};
+class HarmonicBank {
+    std::array<Processor,4> bands_{};
+    MemoryConfig config_{};
+    double wet_=0.7, slew_=1.0/240;
+    static double clean(double x) noexcept {
+        return std::isfinite(x)&&std::abs(x)>=1e-20?std::clamp(x,-1.0,1.0):0;
+    }
+public:
+    HarmonicBank() noexcept { set(config_); reset(); }
+    bool set(const MemoryConfig& c) noexcept {
+        if(c.wet>1000) return false;
+        for(const auto& b:c.bands)
+            if(b.hz<40||b.hz>6000||b.gain>1000||b.peakMix>1000) return false;
+        config_=c;
+        for(unsigned i=0;i<bands_.size();++i){
+            const auto& b=c.bands[i];
+            bands_[i].set({b.hz,1000,b.gain,1,b.erase,false,b.peakMix});
+        }
+        return true;
+    }
+    MemoryConfig config() const noexcept { return config_; }
+    bool prepare(double rate) noexcept {
+        if(!validSampleRate(rate)) return false;
+        for(auto& b:bands_) b.prepare(rate);
+        slew_=1.0/std::ceil(rate*0.005); reset(); return true;
+    }
+    void reset() noexcept {
+        for(auto& b:bands_) b.reset();
+        wet_=config_.bypass?0:config_.wet/1000.0;
+    }
+    bool pulse(unsigned band) noexcept {
+        if(band>=bands_.size()) return false;
+        bands_[band].requestIntervention(); return true;
+    }
+    IntegerState lattice(unsigned band,unsigned channel) const noexcept {
+        return band<bands_.size()?bands_[band].lattice(channel):IntegerState{};
+    }
+    Stereo process(double left,double right) noexcept {
+        left=clean(left); right=clean(right);
+        const double target=config_.bypass?0:config_.wet/1000.0;
+        wet_+=std::clamp(target-wet_,-slew_,slew_);
+        Stereo result{};
+        for(unsigned i=0;i<bands_.size();++i){
+            const bool feed=config_.bands[i].excite;
+            const auto s=bands_[i].process(feed?left:0,feed?right:0);
+            result.left+=s.left*0.25; result.right+=s.right*0.25;
+        }
+        return {std::clamp((1-wet_)*left+wet_*result.left,-1.0,1.0),
+                std::clamp((1-wet_)*right+wet_*result.right,-1.0,1.0)};
+    }
+    template<class Sample> void processBlock(const Sample* l,const Sample* r,Sample* ol,Sample* oright,unsigned n) noexcept {
+        for(unsigned i=0;i<n;++i){const auto s=process(l[i],r[i]);ol[i]=static_cast<Sample>(s.left);oright[i]=static_cast<Sample>(s.right);}
+    }
+};
+} // namespace mhac::counterfactual
