@@ -67,10 +67,11 @@ public:
     Patch patch() const noexcept {return patch_;}
     int dominantB() const noexcept {return b_.dominant;}
     unsigned active() const noexcept {unsigned n=0;for(auto& v:voices_)if(v.active)++n;return n;}
-    bool noteOn(int id,int note,double velocity) noexcept {
-        if(rate_==0||id<0||note<0||note>127||!std::isfinite(velocity)||velocity<=0||velocity>1)return false;
+    bool noteActive(int id) const noexcept {for(const auto& v:voices_)if(v.active&&v.id==id)return true;return false;}
+    bool noteOn(int id,int note,double velocity,double tuning=0.) noexcept {
+        if(rate_==0||id<0||note<0||note>127||!std::isfinite(velocity)||velocity<=0||velocity>1||!std::isfinite(tuning)||std::abs(tuning)>1200.)return false;
         for(auto& v:voices_)if(v.active&&v.id==id)return false;
-        const double f=440.*std::exp2((double(note)-69.+double(patch_.cents)/100.)/12.);
+        const double f=440.*std::exp2((double(note)-69.+(double(patch_.cents)+tuning)/100.)/12.);
         if(f>.45*rate_)return false;
         for(auto& v:voices_)if(!v.active){v=Voice{};v.active=true;v.id=id;v.velocity=velocity;v.mix=patch_.blend/1000.;
             const double fa=f/a_.dominant,fb=f/b_.dominant;
