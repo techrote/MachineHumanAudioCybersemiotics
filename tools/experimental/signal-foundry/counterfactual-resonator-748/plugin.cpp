@@ -12,11 +12,13 @@ namespace h=cr::host;
 namespace {
 const FUID processorID(0xFBC2EF81,0xCA534C7A,0x8B3BC61D,0x9929C901);
 const FUID controllerID(0xA1C27808,0x16014C3A,0x8AC0E00B,0x6D775BD5);
-bool readPatch(IBStream* s,cr::Patch& p){
+bool readState(IBStream* s,cr::State& p){
     if(!s)return false;
-    int32 pos=0;const auto size=static_cast<int32>(p.size());
-    while(pos<size){int32 n=0;if(s->read(p.data()+pos,size-pos,&n)!=kResultOk||n<=0||n>size-pos)return false;pos+=n;}
-    cr::Controls c;return cr::decode(p,c);
+    auto readTo=[&](int32& pos,int32 size){while(pos<size){int32 n=0;if(s->read(p.bytes.data()+pos,size-pos,&n)!=kResultOk||n<=0||n>size-pos)return false;pos+=n;}return true;};
+    int32 pos=0;if(!readTo(pos,4))return false;
+    if(p.bytes[3]=='1')p.size=12;else if(p.bytes[3]=='2')p.size=14;else return false;
+    if(!readTo(pos,static_cast<int32>(p.size)))return false;
+    cr::Controls c;return cr::decodeState(p,c);
 }
 struct Cursor {
     IParamValueQueue* q=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
@@ -59,8 +61,8 @@ public:
     tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)host.reset();return r;}
     uint32 PLUGIN_API getLatencySamples() override {return 0;}
     uint32 PLUGIN_API getTailSamples() override {return kInfiniteTail;}
-    tresult PLUGIN_API setState(IBStream* s) override {cr::Patch p;return readPatch(s,p)&&host.request(p)?kResultOk:kResultFalse;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto b=host.save();int32 n=0;return s->write(b.data(),int32(b.size()),&n)==kResultOk&&n==int32(b.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* s) override {cr::State p;return readState(s,p)&&host.request(p)?kResultOk:kResultFalse;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto b=host.save();int32 n=0;return s->write(b.bytes.data(),int32(b.size),&n)==kResultOk&&n==int32(b.size)?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {host.begin();auto r=block(d);host.end();return r;}
 };
 class Controller final : public EditController {
@@ -71,12 +73,12 @@ public:
         auto add=[&](const TChar* name,unsigned id,int32 steps=0,int32 flags=ParameterInfo::kCanAutomate){parameters.addParameter(name,nullptr,steps,h::normalized(cr::Controls{},id),flags,h::firstID+id);};
         add(STR16("Frequency (40-6000 Hz)"),h::Frequency,5960);add(STR16("Wet mix"),h::Wet,1000);add(STR16("Wet gain"),h::Gain,1000);
         add(STR16("Monitor (reference/persistent/residual)"),h::Monitor,2);add(STR16("Erase"),h::Erase,1);
-        add(STR16("Bypass"),h::Bypass,1,ParameterInfo::kCanAutomate|ParameterInfo::kIsBypass);add(STR16("Intervention pulse"),h::Pulse,1);return kResultOk;
+        add(STR16("Bypass"),h::Bypass,1,ParameterInfo::kCanAutomate|ParameterInfo::kIsBypass);add(STR16("Intervention pulse"),h::Pulse,1);add(STR16("Peak excitation mix"),h::PeakMix,1000);return kResultOk;
     }
-    tresult PLUGIN_API setComponentState(IBStream* s) override {cr::Patch p;cr::Controls c;if(!readPatch(s,p)||!cr::decode(p,c))return kResultFalse;for(unsigned i=0;i<h::Count;++i)setParamNormalized(h::firstID+i,h::normalized(c,i));return kResultOk;}
+    tresult PLUGIN_API setComponentState(IBStream* s) override {cr::State p;cr::Controls c;if(!readState(s,p)||!cr::decodeState(p,c))return kResultFalse;for(unsigned i=0;i<h::Count;++i)setParamNormalized(h::firstID+i,h::normalized(c,i));return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Counterfactual Resonator",Vst::kDistributable,"Fx|Filter","0.1.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Counterfactual Resonator Controller",0,"","0.1.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Counterfactual Resonator",Vst::kDistributable,"Fx|Filter","0.2.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Counterfactual Resonator Controller",0,"","0.2.0",kVstVersionString,Controller::create)
 END_FACTORY

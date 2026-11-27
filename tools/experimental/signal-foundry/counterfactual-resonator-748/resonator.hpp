@@ -19,9 +19,10 @@ struct Controls {
     std::uint16_t hz=220,wet=700,gain=800;
     std::uint8_t monitor=1; // 0 reference, 1 nearest/erased, 2 half difference
     bool erase=false,bypass=false;
+    std::uint16_t peakMix=0; // per mille; zero preserves CR01 behaviour
 };
 constexpr bool valid(Controls p) noexcept {
-    return p.hz>=40 && p.hz<=6000 && p.wet<=1000 && p.gain<=1000 && p.monitor<=2;
+    return p.hz>=40 && p.hz<=6000 && p.wet<=1000 && p.gain<=1000 && p.monitor<=2 && p.peakMix<=1000;
 }
 using Patch=std::array<std::uint8_t,12>;
 inline Patch encode(Controls p) noexcept {
@@ -32,6 +33,26 @@ inline bool decode(const Patch& b,Controls& out) noexcept {
     const Controls p{std::uint16_t(b[4]|(b[5]<<8)),std::uint16_t(b[6]|(b[7]<<8)),std::uint16_t(b[8]|(b[9]<<8)),b[10],bool(b[11]&1),bool(b[11]&2)};
     if(!valid(p)) return false;
     out=p; return true;
+}
+// Legacy encode/decode intentionally describe CR01 only. Use encodeState for full configurations.
+struct State {
+    std::array<std::uint8_t,14> bytes{};
+    unsigned size=12;
+    bool operator==(const State& other) const noexcept {return size==other.size&&bytes==other.bytes;}
+    bool operator!=(const State& other) const noexcept {return !(*this==other);}
+};
+inline State encodeState(Controls p) noexcept {
+    State s;const auto legacy=encode(p);std::copy(legacy.begin(),legacy.end(),s.bytes.begin());
+    if(p.peakMix){s.size=14;s.bytes[3]='2';s.bytes[12]=std::uint8_t(p.peakMix);s.bytes[13]=std::uint8_t(p.peakMix>>8);}
+    return s;
+}
+inline bool decodeState(const State& s,Controls& out) noexcept {
+    if((s.size!=12&&s.size!=14)||s.bytes[3]!=(s.size==12?'1':'2'))return false;
+    Patch legacy{};std::copy_n(s.bytes.begin(),legacy.size(),legacy.begin());legacy[3]='1';
+    Controls c;if(!decode(legacy,c))return false;
+    if(s.size==14)c.peakMix=std::uint16_t(s.bytes[12]|(s.bytes[13]<<8));
+    if(!valid(c))return false;
+    out=c;return true;
 }
 inline bool validSampleRate(double rate) noexcept { return std::isfinite(rate)&&rate>=1000&&rate<=2000000; }
 struct Stereo { double left=0,right=0; };
@@ -57,7 +78,7 @@ class Processor {
     std::array<Channel,2> ch_{};
     std::array<double,3> weights_{0,1,0};
     double rate_=48000,phase_=0,wet_=0.7,gain_=0.8,slew_=1.0/240;
-    unsigned count_=0,peakMix_=0;
+    unsigned count_=0;
     bool pending_=false;
     std::uint64_t ticks_=0,interventions_=0;
     static double clean(double x) noexcept { return std::isfinite(x)&&std::abs(x)>=1e-20 ? std::clamp(x,-1.0,1.0):0; }
@@ -74,13 +95,13 @@ public:
     }
     bool set(Controls p) noexcept { if(!valid(p)) return false; target_=p; return true; }
     Controls controls() const noexcept { return target_; }
-    // Native-only control; CR01 and the existing VST3 parameter set are unchanged.
+    // Convenience API for the same persistent control used by the host.
     // The value at a clock tick applies to the entire just-completed window.
     bool setPeakMix(unsigned permille) noexcept {
         if(permille>1000) return false;
-        peakMix_=permille; return true;
+        target_.peakMix=static_cast<std::uint16_t>(permille); return true;
     }
-    unsigned peakMix() const noexcept { return peakMix_; }
+    unsigned peakMix() const noexcept { return target_.peakMix; }
     // Last-value coalescing: one or more requests before a tick mean one T update.
     void requestIntervention() noexcept { pending_=true; }
     double effectiveHz() const noexcept { return std::min(double(target_.hz),rate_/16.0); }
@@ -107,8 +128,8 @@ public:
             ++ticks_; if(trunc) ++interventions_;
             for(auto& c:ch_){
                 const double legacy=12.0*c.sum/double(count_);
-                const double blend=peakMix_/1000.0;
-                const double excitation=peakMix_==0?legacy:legacy*(1.0-blend)+12.0*c.peak*blend;
+                const double blend=target_.peakMix/1000.0;
+                const double excitation=target_.peakMix==0?legacy:legacy*(1.0-blend)+12.0*c.peak*blend;
                 const int drive=static_cast<int>(std::round(excitation));
                 c.tick(drive,trunc); c.sum=0; c.peak=0;
             }
