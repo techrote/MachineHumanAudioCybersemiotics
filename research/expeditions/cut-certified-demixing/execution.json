@@ -1,0 +1,106 @@
+{
+  "profiles": 3258,
+  "flowChecks": 1638,
+  "sharp": 48,
+  "decodes": 960,
+  "noisy": 960,
+  "coarea": 960,
+  "weighted": 800,
+  "deadlines": {
+    "3,5": [
+      {
+        "errors": 0,
+        "n": 7
+      },
+      {
+        "errors": 1,
+        "n": 15
+      },
+      {
+        "errors": 2,
+        "n": 25
+      },
+      {
+        "errors": 3,
+        "n": 35
+      },
+      {
+        "errors": 4,
+        "n": 45
+      }
+    ],
+    "5,7": [
+      {
+        "errors": 0,
+        "n": 11
+      },
+      {
+        "errors": 1,
+        "n": 21
+      },
+      {
+        "errors": 2,
+        "n": 35
+      },
+      {
+        "errors": 3,
+        "n": 49
+      },
+      {
+        "errors": 4,
+        "n": 63
+      }
+    ],
+    "7,11": [
+      {
+        "errors": 0,
+        "n": 17
+      },
+      {
+        "errors": 1,
+        "n": 33
+      },
+      {
+        "errors": 2,
+        "n": 55
+      },
+      {
+        "errors": 3,
+        "n": 77
+      },
+      {
+        "errors": 4,
+        "n": 99
+      }
+    ],
+    "11,17": [
+      {
+        "errors": 0,
+        "n": 27
+      },
+      {
+        "errors": 1,
+        "n": 51
+      },
+      {
+        "errors": 2,
+        "n": 85
+      },
+      {
+        "errors": 3,
+        "n": 119
+      },
+      {
+        "errors": 4,
+        "n": 153
+      }
+    ]
+  },
+  "weightedFailure": {
+    "trueWeightedCost": 3,
+    "wrongWeightedCost": 2,
+    "trueUnweightedCost": 1,
+    "wrongUnweightedCost": 2
+  },
+  "failures": 0
+}
