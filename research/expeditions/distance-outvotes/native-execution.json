@@ -1,0 +1,44 @@
+{
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "sympy": "1.14.0",
+  "profiles": [
+    {
+      "k": 1,
+      "observations": 22,
+      "syndrome_supports": 22,
+      "unique_support": [
+        17
+      ],
+      "lad_optimum": 2.0,
+      "truth_cost": 2,
+      "witness_cost": 2
+    },
+    {
+      "k": 2,
+      "observations": 43,
+      "syndrome_supports": 903,
+      "unique_support": [
+        17,
+        38
+      ],
+      "lad_optimum": 3.0,
+      "truth_cost": 4,
+      "witness_cost": 3
+    },
+    {
+      "k": 3,
+      "observations": 64,
+      "syndrome_supports": 41664,
+      "unique_support": [
+        17,
+        38,
+        59
+      ],
+      "lad_optimum": 4.0,
+      "truth_cost": 6,
+      "witness_cost": 4
+    }
+  ],
+  "assertion_failures": 0
+}
