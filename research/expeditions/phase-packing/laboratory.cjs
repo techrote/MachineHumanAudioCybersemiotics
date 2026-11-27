@@ -68,6 +68,20 @@ function laboratory(){
   // Actual candidate lists under adversarial sparse errors, unknown monotone polarity.
   function decode(x,N,K,obs,e){const vals=[...new Set(obs.filter(v=>v!==null))].sort((a,b)=>a-b),r=vals.length;let result=[];for(let s=0;s<K;s++){let w=range(3).map(()=>range(r).map(()=>0));for(let t=0;t<N;t++)if(obs[t]!==null)w[x[(s+t)%x.length]][vals.indexOf(obs[t])]++;if(chain(w)>=obs.filter(v=>v!==null).length-e)result.push(s)}return result}
   let decodes=0;for(const [x,K,N,e,f] of [[[1,0,0,2,1,2,2,0],4,8,2,1],[x5,5,240,80,15]])for(let rep=0;rep<60;rep++){let s=rnd(K),sign=rnd(2)?1:-1,levels=[rnd(20),30+rnd(20),60+rnd(20)].map(v=>sign*v+100),obs=range(N).map(t=>levels[x[(s+t)%x.length]]),indices=range(N);for(let i=indices.length-1;i>0;i--){let j=rnd(i+1);[indices[i],indices[j]]=[indices[j],indices[i]]}for(let i=0;i<f;i++)obs[indices[i]]=null;for(let i=f;i<f+e;i++)obs[indices[i]]=1000+rnd(50);let got=decode(x,N,K,obs,e);assert(got.length===1&&got[0]===s,"candidate list");decodes++}
-  return {schema:"mhac-801-execution-v1",fractions,pairwise,four:{cycle:[1,0,0,2,1,2,2,0],...small},five:{cycle:x5,...five,distinctWindows:Object.keys(tripleCounts).length},asymptotic,oracleChecks,decodes,assertionFailures:0}
+  // Six-phase finite nonattainment: equality forces exactly two middle symbols per window.
+  let sixObstructions=0;
+  for(let i=0;i<6;i++)for(let j=i+1;j<6;j++){
+    const z=range(6).map(k=>k===i||k===j?1:0);
+    const d=range(5).map(k=>k+1).find(d=>z.every((v,t)=>!(v&&z[(t+d)%6])));
+    assert(d!==undefined,"disjoint rotation");
+    for(let N=1;N<=60;N++){
+      let counts=range(6).map(s=>sum(range(N).map(t=>z[(s+t)%6])));
+      assert(sum(counts)===2*N,"occupancy total");
+      const exclusive=range(6).map(s=>counts[s]+counts[(s+d)%6]);
+      assert(3*Math.max(...exclusive)>=2*N,"six-phase finite obstruction");
+      sixObstructions++;
+    }
+  }
+  return {sixObstructions,schema:"mhac-801-execution-v1",fractions,pairwise,four:{cycle:[1,0,0,2,1,2,2,0],...small},five:{cycle:x5,...five,distinctWindows:Object.keys(tripleCounts).length},asymptotic,oracleChecks,decodes,assertionFailures:0}
 }
 console.log(JSON.stringify(laboratory(),null,2));
