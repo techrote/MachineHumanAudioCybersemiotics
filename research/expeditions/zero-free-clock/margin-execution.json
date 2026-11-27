@@ -1,0 +1,80 @@
+{
+  "N": 12,
+  "K": 3,
+  "A": 1000,
+  "evals": 20001,
+  "checks": 660,
+  "sequence": [
+    485,
+    97,
+    -805,
+    183,
+    212,
+    -805,
+    861,
+    -934,
+    -809,
+    -260,
+    641,
+    887,
+    639,
+    -432
+  ],
+  "quantizedQuadraticRadius": 0.00011686424208915795,
+  "randomSearchRadius": 0.016865291262142253,
+  "finalDistanceSquared": "529/80000",
+  "finalRadius": 0.040658639918226484,
+  "where": [
+    [
+      0,
+      3,
+      5,
+      1,
+      2
+    ],
+    [
+      0,
+      3,
+      6,
+      1,
+      2
+    ],
+    [
+      0,
+      3,
+      7,
+      1,
+      2
+    ],
+    [
+      0,
+      3,
+      11,
+      1,
+      2
+    ],
+    [
+      1,
+      4,
+      6,
+      0,
+      1
+    ],
+    [
+      1,
+      4,
+      7,
+      0,
+      1
+    ],
+    [
+      1,
+      4,
+      8,
+      0,
+      1
+    ]
+  ],
+  "improvementVsExactQuadratic": 92.60349226718247,
+  "claim": "finite seeded heuristic; exact final certificate, no global optimality claim"
+}
