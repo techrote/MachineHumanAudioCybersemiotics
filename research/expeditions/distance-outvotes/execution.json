@@ -1,0 +1,256 @@
+{
+  "prime": 1009,
+  "base": {
+    "periods": [
+      3,
+      5,
+      7
+    ],
+    "dimension": 13,
+    "times": [
+      1,
+      2,
+      9,
+      11,
+      22,
+      25,
+      26,
+      27,
+      33,
+      47,
+      52,
+      56,
+      63,
+      64,
+      70,
+      72,
+      76,
+      80,
+      83,
+      94,
+      95,
+      98
+    ],
+    "witness": [
+      1,
+      -1,
+      0,
+      -1,
+      -1,
+      -1,
+      -1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    "nonzero": [
+      [
+        76,
+        -1
+      ],
+      [
+        80,
+        2
+      ],
+      [
+        95,
+        1
+      ]
+    ],
+    "rank_deletion_checks": 231,
+    "distance": 3
+  },
+  "family": [
+    {
+      "k": 1,
+      "observations": 22,
+      "distance": 3,
+      "errors": 1,
+      "trueLAD": 2,
+      "alternativeLAD": 2
+    },
+    {
+      "k": 2,
+      "observations": 43,
+      "distance": 5,
+      "errors": 2,
+      "trueLAD": 4,
+      "alternativeLAD": 3
+    },
+    {
+      "k": 3,
+      "observations": 64,
+      "distance": 7,
+      "errors": 3,
+      "trueLAD": 6,
+      "alternativeLAD": 4
+    },
+    {
+      "k": 4,
+      "observations": 85,
+      "distance": 9,
+      "errors": 4,
+      "trueLAD": 8,
+      "alternativeLAD": 5
+    },
+    {
+      "k": 5,
+      "observations": 106,
+      "distance": 11,
+      "errors": 5,
+      "trueLAD": 10,
+      "alternativeLAD": 6
+    },
+    {
+      "k": 6,
+      "observations": 127,
+      "distance": 13,
+      "errors": 6,
+      "trueLAD": 12,
+      "alternativeLAD": 7
+    },
+    {
+      "k": 7,
+      "observations": 148,
+      "distance": 15,
+      "errors": 7,
+      "trueLAD": 14,
+      "alternativeLAD": 8
+    },
+    {
+      "k": 8,
+      "observations": 169,
+      "distance": 17,
+      "errors": 8,
+      "trueLAD": 16,
+      "alternativeLAD": 9
+    },
+    {
+      "k": 9,
+      "observations": 190,
+      "distance": 19,
+      "errors": 9,
+      "trueLAD": 18,
+      "alternativeLAD": 10
+    },
+    {
+      "k": 10,
+      "observations": 211,
+      "distance": 21,
+      "errors": 10,
+      "trueLAD": 20,
+      "alternativeLAD": 11
+    },
+    {
+      "k": 11,
+      "observations": 232,
+      "distance": 23,
+      "errors": 11,
+      "trueLAD": 22,
+      "alternativeLAD": 12
+    },
+    {
+      "k": 12,
+      "observations": 253,
+      "distance": 25,
+      "errors": 12,
+      "trueLAD": 24,
+      "alternativeLAD": 13
+    },
+    {
+      "k": 13,
+      "observations": 274,
+      "distance": 27,
+      "errors": 13,
+      "trueLAD": 26,
+      "alternativeLAD": 14
+    },
+    {
+      "k": 14,
+      "observations": 295,
+      "distance": 29,
+      "errors": 14,
+      "trueLAD": 28,
+      "alternativeLAD": 15
+    },
+    {
+      "k": 15,
+      "observations": 316,
+      "distance": 31,
+      "errors": 15,
+      "trueLAD": 30,
+      "alternativeLAD": 16
+    },
+    {
+      "k": 16,
+      "observations": 337,
+      "distance": 33,
+      "errors": 16,
+      "trueLAD": 32,
+      "alternativeLAD": 17
+    },
+    {
+      "k": 17,
+      "observations": 358,
+      "distance": 35,
+      "errors": 17,
+      "trueLAD": 34,
+      "alternativeLAD": 18
+    },
+    {
+      "k": 18,
+      "observations": 379,
+      "distance": 37,
+      "errors": 18,
+      "trueLAD": 36,
+      "alternativeLAD": 19
+    },
+    {
+      "k": 19,
+      "observations": 400,
+      "distance": 39,
+      "errors": 19,
+      "trueLAD": 38,
+      "alternativeLAD": 20
+    },
+    {
+      "k": 20,
+      "observations": 421,
+      "distance": 41,
+      "errors": 20,
+      "trueLAD": 40,
+      "alternativeLAD": 21
+    }
+  ],
+  "full_grid": {
+    "exact_decodes": 408,
+    "bounded_noise_decodes": 408,
+    "sharp_distance_witnesses": 4
+  },
+  "connected_rank_failure": {
+    "times": [
+      2,
+      3,
+      4,
+      8,
+      9,
+      10,
+      14,
+      15,
+      16,
+      20,
+      21,
+      22,
+      26,
+      27,
+      28
+    ],
+    "rank_mod_1009": 7,
+    "full_dimension": 8,
+    "vertices": 10
+  },
+  "assertion_failures": 0
+}
