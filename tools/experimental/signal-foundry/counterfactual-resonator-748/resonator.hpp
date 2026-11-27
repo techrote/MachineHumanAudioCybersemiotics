@@ -104,6 +104,9 @@ public:
     unsigned peakMix() const noexcept { return target_.peakMix; }
     // Last-value coalescing: one or more requests before a tick mean one T update.
     void requestIntervention() noexcept { pending_=true; }
+    // Zero-fill the elapsed prefix of the current drive window, without
+    // changing clock phase, lattice, interpolation, or pending intervention.
+    void discardPendingInput() noexcept { for(auto& c:ch_){c.sum=0;c.peak=0;} }
     double effectiveHz() const noexcept { return std::min(double(target_.hz),rate_/16.0); }
     std::uint64_t ticks() const noexcept { return ticks_; }
     std::uint64_t interventions() const noexcept { return interventions_; }

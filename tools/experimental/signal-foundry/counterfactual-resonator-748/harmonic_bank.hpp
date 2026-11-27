@@ -8,6 +8,7 @@ struct MemoryBand {
     std::uint16_t hz=220, gain=750, peakMix=250;
     bool excite=true, erase=false;
     std::uint16_t selectivity=0; // per mille; 0 preserves broadband excitation
+    bool discardOnClose=false; // opt-in zero-fill of pending resonator drive
 };
 struct MemoryConfig {
     std::array<MemoryBand,4> bands{{{110,750,250},{165,750,250},{220,750,250},{330,750,250}}};
@@ -32,7 +33,10 @@ public:
         for(unsigned i=0;i<bands_.size();++i){
             const auto& b=c.bands[i];
             if(b.hz!=config_.bands[i].hz)filters_[i].tune(rate_,b.hz);
-            if(!b.excite&&config_.bands[i].excite)filters_[i].reset();
+            if(!b.excite&&config_.bands[i].excite){
+                filters_[i].reset();
+                if(b.discardOnClose)bands_[i].discardPendingInput();
+            }
             bands_[i].set({b.hz,1000,b.gain,1,b.erase,false,b.peakMix});
         }
         config_=c;
@@ -53,6 +57,10 @@ public:
     bool pulse(unsigned band) noexcept {
         if(band>=bands_.size()) return false;
         bands_[band].requestIntervention(); return true;
+    }
+    bool discardPendingInput(unsigned band) noexcept {
+        if(band>=bands_.size())return false;
+        bands_[band].discardPendingInput();return true;
     }
     IntegerState lattice(unsigned band,unsigned channel) const noexcept {
         return band<bands_.size()?bands_[band].lattice(channel):IntegerState{};
