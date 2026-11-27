@@ -26,7 +26,36 @@ static void rateTests(){
         }
     }
 }
+static void retriggerTests(){
+    // Fallback note IDs must behave like distinct explicit IDs for a legal
+    // sequence of nonoverlapping key holds with overlapping release tails.
+    for(double rate:{8000.,44100.,48000.,96000.})for(unsigned mode:{0u,1u,2u}){
+        Live a,b;check(a.prepare(rate)&&b.prepare(rate));
+        const Patch p{1000,800,0,mode,1000};check(a.setPatch(p)&&b.setPatch(p));
+        double l=0,r=0,x=0,y=0;unsigned n=unsigned(rate/100.);
+        const auto advance=[&](unsigned frames){for(unsigned j=0;j<frames;++j){a.tick(l,r);b.tick(x,y);check(l==x&&r==y&&std::isfinite(l)&&std::isfinite(r));}};
+        for(int i=0;i<8;++i){
+            check(a.on(-1,2,69,0,.8)&&b.on(i,2,69,0,.8));
+            check(!a.on(-1,2,69,0,.8));advance(n);
+            if(i%2==0)check(a.on(-1,2,69,0,0)&&b.off(i,2,69));
+            else check(a.offSpectral(-1,2,69,.5)&&b.offSpectral(i,2,69,.5));
+            check(a.active()==unsigned(i+1)&&a.active()==b.active());advance(n);
+        }
+        check(!a.on(-1,2,69,0,.8)&&!b.on(8,2,69,0,.8));
+        advance(unsigned(rate));check(a.active()==0&&b.active()==0&&l==0&&r==0);
+        check(a.on(-1,2,69,0,.8)&&a.on(-1,3,69,0,.8));
+        check(a.off(-1,2,69)&&a.off(-1,2,69));
+        check(a.on(-1,2,69,0,.8)&&a.off(-1,2,69));
+        for(unsigned i=0;i<unsigned(rate);++i)a.tick(l,r);
+        check(a.active()==1);check(a.off(-1,3,69));
+        for(unsigned i=0;i<unsigned(rate);++i)a.tick(l,r);
+        check(a.active()==0&&l==0&&r==0);
+        check(a.on(9,2,69,0,.8)&&a.off(9,2,69)&&!a.on(9,2,69,0,.8));
+        a.reset();check(a.on(-1,2,69,0,.8));a.reset();check(a.active()==0);
+    }
+}
 int main(){
+    retriggerTests();
     rateTests();
     Live e;Bridge state;check(e.prepare(48000));
     for(unsigned b=0;b<=1000;++b){Patch p{b,10+b%991,int(b%201)-100};

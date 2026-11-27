@@ -14,11 +14,22 @@ inline double normalized(Patch p,unsigned i) noexcept {
     return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:i==2?(p.cents+100)/200.:i==3?p.releaseMode/2.:p.spectralDepth/1000.;
 }
 class Live {
-    struct Key {int id=-1,channel=0,pitch=0;};
+    struct Key {int id=-1,channel=0,pitch=0;bool released=false;};
     std::array<Key,8> keys_{};
     Engine engine_; escape::Route fixed_; escape::PhaseBank phases_;
     static bool matches(Key k,int id,int channel,int pitch) noexcept {
         return id>=0?k.id==id:k.id<0&&k.channel==channel&&k.pitch==pitch;
+    }
+    // Fallback keys have at most one held voice, but may have older tails.
+    // Prefer the held voice on note-off; repeated offs with no held voice
+    // remain idempotent. Explicit IDs remain unique until their tail ends.
+    std::size_t releaseKey(int id,int channel,int pitch) const noexcept {
+        std::size_t tail=keys_.size();
+        for(std::size_t i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
+            if(!keys_[i].released)return i;
+            if(tail==keys_.size())tail=i;
+        }
+        return tail;
     }
 public:
     bool prepare(double rate) noexcept {if(!validSampleRate(rate)||!fixed_.prepare()||!phases_.prepare()||!engine_.prepare(rate))return false;keys_={};return true;}
@@ -37,29 +48,32 @@ public:
     }
     bool off(int id,int channel,int pitch) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
-        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
-            if(patch().releaseMode==1)return engine_.noteOffShaped(int(i),fixed_.gain,escape::steps,patch().spectralDepth/1000.);
-            if(patch().releaseMode==2){const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));return engine_.noteOffShaped(int(i),route.gain,route.length,patch().spectralDepth/1000.);}
-            return engine_.noteOff(int(i));
-        }
-        return false;
+        const auto i=releaseKey(id,channel,pitch);
+        if(i==keys_.size())return false;
+        bool ok=false;
+        if(patch().releaseMode==1)ok=engine_.noteOffShaped(int(i),fixed_.gain,escape::steps,patch().spectralDepth/1000.);
+        else if(patch().releaseMode==2){const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));ok=engine_.noteOffShaped(int(i),route.gain,route.length,patch().spectralDepth/1000.);}
+        else ok=engine_.noteOff(int(i));
+        if(ok)keys_[i].released=true;
+        return ok;
     }
-    // Experimental native-only note-off. No changes to OL01/OL02 or VST3 IDs.
+    // Experimental native-only note-off. No changes to state or VST3 IDs.
     bool offSpectral(int id,int channel,int pitch,double depth) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127||!std::isfinite(depth)||depth<0.||depth>1.)return false;
-        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)){
-            const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));
-            return engine_.noteOffShaped(int(i),route.gain,route.length,depth);
-        }
-        return false;
+        const auto i=releaseKey(id,channel,pitch);
+        if(i==keys_.size())return false;
+        const auto& route=phases_.route(escape::PhaseBank::phaseIndex(engine_.notePhase(int(i))));
+        const bool ok=engine_.noteOffShaped(int(i),route.gain,route.length,depth);
+        if(ok)keys_[i].released=true;
+        return ok;
     }
     bool on(int id,int channel,int pitch,double tuning,double velocity) noexcept {
         if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
         if(velocity==0.)return off(id,channel,pitch);
-        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch))return false;
+        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)&&(id>=0||!keys_[i].released))return false;
         for(unsigned i=0;i<keys_.size();++i)if(!engine_.noteActive(int(i))){
             if(!engine_.noteOn(int(i),pitch,velocity,tuning))return false;
-            keys_[i]={id,channel,pitch};return true;
+            keys_[i]={id,channel,pitch,false};return true;
         }
         return false;
     }
