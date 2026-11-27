@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "wordCount": 90,
+  "monitors": [
+    "AB",
+    "AB",
+    "AC",
+    "AC",
+    "BC",
+    "BC"
+  ],
+  "minima": [
+    {
+      "graph": [
+        "AB"
+      ],
+      "hamming": 2,
+      "edit": 4
+    },
+    {
+      "graph": [
+        "AC"
+      ],
+      "hamming": 2,
+      "edit": 4
+    },
+    {
+      "graph": [
+        "AB",
+        "AC"
+      ],
+      "hamming": 2,
+      "edit": 4
+    },
+    {
+      "graph": [
+        "BC"
+      ],
+      "hamming": 2,
+      "edit": 4
+    },
+    {
+      "graph": [
+        "AB",
+        "BC"
+      ],
+      "hamming": 2,
+      "edit": 4
+    },
+    {
+      "graph": [
+        "AC",
+        "BC"
+      ],
+      "hamming": 2,
+      "edit": 4
+    },
+    {
+      "graph": [
+        "AB",
+        "AC",
+        "BC"
+      ],
+      "hamming": 2,
+      "edit": 4
+    }
+  ],
+  "pairChecks": 4005,
+  "traceChecks": 51660,
+  "localChecks": 630,
+  "maskChecks": 40320,
+  "fullLocalChecks": 90,
+  "indirect": {
+    "word": "AABBCC",
+    "monitors": [
+      "AB",
+      "AB",
+      "BC",
+      "BC"
+    ],
+    "target": [
+      "AC"
+    ],
+    "local_distance": 2,
+    "universal_distance": 0
+  },
+  "strict": 180,
+  "trimChecks": 1080,
+  "boundary": {
+    "a": "AABBCC",
+    "b": "ABABCC",
+    "reports": [
+      null,
+      "AABB",
+      "ABAB",
+      "ABB",
+      "ABB",
+      "AACC",
+      "AACC",
+      "AACC",
+      "AACC",
+      "AACC",
+      "BBCC",
+      "BBCC",
+      "BBCC",
+      "BBCC",
+      "BBCC"
+    ],
+    "traceCandidates": [
+      "AABB|AACC|BBCC",
+      "ABAB|AACC|BBCC"
+    ],
+    "e": 1,
+    "f": 1,
+    "E": 2
+  },
+  "sharedDeletion": {
+    "deletionChecks": 540,
+    "census": {
+      "5": 540
+    },
+    "twoDeletionChecks": 270,
+    "twoCensus": {
+      "15": 270
+    }
+  },
+  "scope": "synthetic fixed multiplicity type-word reconstruction; no empirical validation"
+}
