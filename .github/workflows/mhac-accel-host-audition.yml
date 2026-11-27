@@ -243,7 +243,7 @@ jobs:
           New-Item -ItemType Directory -Force trace-bell-delivery | Out-Null
           cmake -S "$src/vst3" -B trace-bell-build -A x64 "-DMHAC_VST3_SDK=$sdk" -DMHAC_VALIDATE_POST_BUILD=OFF 2>&1 | Tee-Object trace-bell-delivery/configure.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build trace-bell-build --config Release --target MHACTraceBell validator trace_bell_rate_test trace_bell_mailbox_test --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
+          cmake --build trace-bell-build --config Release --target MHACTraceBell validator trace_bell_rate_test trace_bell_mailbox_test trace_bell_sdk_probe --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           $rateTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_rate_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
           if ($rateTest.Count -ne 1) { throw 'Expected one native rate test' }
@@ -268,6 +268,11 @@ jobs:
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           py -3.12 "$src/trace_bell_presets.py" --module $module --out trace-bell-delivery
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $sdkProbe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_sdk_probe.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($sdkProbe.Count -ne 1) { throw 'Expected one Trace Bell SDK probe' }
+          & $sdkProbe[0].FullName $bundles[0].FullName 2>&1 | Tee-Object trace-bell-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/sdk-probe.txt -Pattern 'SDK_PROBE_PASS automation_cases=6 stereo_frames=120000')) { throw 'Missing SDK probe receipt' }
           Copy-Item -Recurse $bundles[0].FullName trace-bell-delivery/
           Copy-Item "$sdk/LICENSE.txt" trace-bell-delivery/Steinberg-SDK-LICENSE.txt
           foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
