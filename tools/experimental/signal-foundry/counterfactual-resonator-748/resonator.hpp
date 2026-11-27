@@ -33,6 +33,7 @@ inline bool decode(const Patch& b,Controls& out) noexcept {
     if(!valid(p)) return false;
     out=p; return true;
 }
+inline bool validSampleRate(double rate) noexcept { return std::isfinite(rate)&&rate>=1000&&rate<=2000000; }
 struct Stereo { double left=0,right=0; };
 struct Channel {
     IntegerState discrete{};
@@ -63,7 +64,7 @@ class Processor {
     static void approach(double& x,double y,double delta) noexcept { x+=std::clamp(y-x,-delta,delta); }
 public:
     bool prepare(double rate) noexcept {
-        if(!std::isfinite(rate)||rate<8000||rate>384000) return false;
+        if(!validSampleRate(rate)) return false;
         rate_=rate; slew_=1.0/std::ceil(rate_*0.005); reset(); return true;
     }
     void reset() noexcept {

@@ -27,3 +27,8 @@ else()
   target_compile_options(counterfactual_host_test PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Werror)
 endif()
 add_test(NAME counterfactual_host COMMAND counterfactual_host_test)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+include(VST3.cmake)
