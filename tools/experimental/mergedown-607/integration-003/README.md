@@ -15,3 +15,13 @@ node source/test-session-v40.cjs controls.json
 python -B audit_session.py --seed71 seed71 --seed113 seed113 --controls controls.json
 ```
 Use fresh output directories. Verify sources.json against exact Git blob bytes before running. Source bytes are staged directly from candidate Git objects by CI to avoid CRLF conversion. No ordinary browser/audition/Windows qualification at intake. No separate proof of authenticity, safe physical effects, power-loss durability, or semantic truth. The fixture uses public deterministic keys and nonces; valid same-session replay and an authorized false execution claim are intentionally retained. Restoring an old valid semantic snapshot is a trust-boundary failure even if its digest is internally correct. This is not evidence that MACs are broken. Promotion remains HOLD; no merge or approval.
+
+## Offline evidence inspector and expanded replay (27 November 2026)
+
+Native Linux v40 reconstruction passed at ad3ff91a and 9c41aa10. The separate fixture-scoped audit_state.py independently reconstructs 392 semantic snapshots and 102 DATA admissions from reported decoder outputs; it is not an independent PCM decoder or full sender-belief replay. The generated inspector pins both reproduced seed receipts and original role controls separately from the upstream evidence, then verifies all 24 WAV hashes. Open index.html from the extracted directory; select a session and slot, compare receiver state with sender beliefs and final outcomes, and optionally download the exact original full seed receipt or controls. Playback is opt-in with digital gain 12% by default and UI maximum 25%; no SPL or safe exposure claim. Build and verify:
+
+    python -B audit_state.py seed71/receipt.json seed113/receipt.json
+    python -B inspect_session.py .
+    python -B inspect_session.py . --check
+
+The initial Linux browser launch was refused (root without sandbox); no DOM, browser download, audio playback or Windows qualification is claimed. The Linux packaging workflow now stages and executes both checkers. Keep the frozen persistence implementation unchanged; native Windows durability remains unqualified. HOLD until exact-head results, browser interaction and platform boundary are reviewed; no owner approval or scientific acceptance.

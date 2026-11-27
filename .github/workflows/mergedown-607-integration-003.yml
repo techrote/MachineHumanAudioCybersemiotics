@@ -36,7 +36,7 @@ jobs:
           base = 'tools/experimental/mergedown-607/integration-003/'
           def blob(p):
               return subprocess.check_output(['git','show','HEAD:'+base+p])
-          for name in ('sources.json','README.md','audit_session.py'):
+          for name in ('sources.json','README.md','audit_session.py','audit_state.py','inspect_session.py'):
               (out/name).write_bytes(blob(name))
           manifest=json.loads((out/'sources.json').read_bytes())
           for name,expected in manifest['blobs'].items():
@@ -59,6 +59,9 @@ jobs:
           SEED=113 node source/session-v40.cjs seed113 | tee seed113.log
           node source/test-session-v40.cjs controls.json | tee controls.log
           python -B audit_session.py --seed71 seed71 --seed113 seed113 --controls controls.json | tee audit.json
+          python -B audit_state.py seed71/receipt.json seed113/receipt.json | tee state-audit.json
+          python -B inspect_session.py . | tee inspector.log
+          python -B inspect_session.py . --check
       - name: Retain native evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
