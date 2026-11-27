@@ -62,3 +62,13 @@ if(MHAC_BUILD_VST3)
     endif()
     smtg_target_add_plugin_resources(MHACOrbitLantern RESOURCES "${SDK_ROOT}/LICENSE.txt")
 endif()
+
+# Same score as the native probe, now sent through the actual loaded module.
+if(MHAC_BUILD_VST3 AND WIN32)
+    add_executable(orbit_sdk_replay replay_probe.cpp
+        "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
+        "${SDK_ROOT}/public.sdk/source/common/memorystream.cpp")
+    target_compile_definitions(orbit_sdk_replay PRIVATE NOMINMAX MHAC_ORBIT_SDK_REPLAY)
+    target_include_directories(orbit_sdk_replay PRIVATE "${SDK_ROOT}")
+    target_link_libraries(orbit_sdk_replay PRIVATE sdk_hosting)
+endif()
