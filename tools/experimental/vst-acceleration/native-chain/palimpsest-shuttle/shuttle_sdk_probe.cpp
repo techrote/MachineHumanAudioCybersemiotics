@@ -13,6 +13,7 @@
 #include <limits>
 #include <atomic>
 #include <iostream>
+#include <iomanip>
 #include <stdexcept>
 #include <thread>
 #include <vector>
@@ -109,7 +110,9 @@ std::vector<float> run(const VST3::Hosting::PluginFactory& factory,const VST3::H
         ok(proc->process(d),"flush");
         auto expected=initial;require(applyShuttleNormalized(expected,3,.9),"flush oracle");
         require(save(c.get())==encode(expected),"restore ordering");
-        std::cout<<"SDK_AUTOMATION rate="<<rate<<" block="<<block<<" frames="<<total<<" max_error="<<maxError<<std::endl;
+        std::cout<<"SDK_AUTOMATION rate="<<std::fixed<<std::setprecision(3)<<rate
+                 <<std::defaultfloat<<std::setprecision(17)<<" block="<<block<<" frames="<<total
+                 <<" max_error="<<maxError<<std::endl;
     }else{
         // Actual SDK calls from distinct threads. No concurrent lifecycle calls;
         // no automation during stress, so every snapshot must be a whole bank entry.
