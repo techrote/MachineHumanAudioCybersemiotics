@@ -243,13 +243,18 @@ jobs:
           New-Item -ItemType Directory -Force trace-bell-delivery | Out-Null
           cmake -S "$src/vst3" -B trace-bell-build -A x64 "-DMHAC_VST3_SDK=$sdk" -DMHAC_VALIDATE_POST_BUILD=OFF 2>&1 | Tee-Object trace-bell-delivery/configure.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build trace-bell-build --config Release --target MHACTraceBell validator trace_bell_rate_test --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
+          cmake --build trace-bell-build --config Release --target MHACTraceBell validator trace_bell_rate_test trace_bell_mailbox_test --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           $rateTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_rate_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
           if ($rateTest.Count -ne 1) { throw 'Expected one native rate test' }
           & $rateTest[0].FullName 2>&1 | Tee-Object trace-bell-delivery/rate-test.txt
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
           if (-not (Select-String -Path trace-bell-delivery/rate-test.txt -Pattern '480296 bounded deterministic frames; 768 stable modal poles; invalid prepare transactional PASS')) { throw 'Missing rate-test receipt' }
+          $mailboxTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_mailbox_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($mailboxTest.Count -ne 1) { throw 'Expected one mailbox test' }
+          & $mailboxTest[0].FullName 2>&1 | Tee-Object trace-bell-delivery/mailbox-test.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/mailbox-test.txt -Pattern 'PASS 500000 restores;')) { throw 'Missing mailbox receipt' }
           $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACTraceBell.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACTraceBell.vst3') })
           if ($bundles.Count -ne 1) { throw 'Expected one x64 Trace Bell bundle' }
           $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1

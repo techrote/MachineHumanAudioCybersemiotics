@@ -60,3 +60,13 @@ if(MSVC)
 else()
     target_compile_options(trace_bell_rate_test PRIVATE -UNDEBUG)
 endif()
+
+# Bounded state transfer stress; assertions enabled in Release.
+find_package(Threads REQUIRED)
+add_executable(trace_bell_mailbox_test ../trace_bell_mailbox_test.cpp)
+target_link_libraries(trace_bell_mailbox_test PRIVATE Threads::Threads)
+if(MSVC)
+    target_compile_options(trace_bell_mailbox_test PRIVATE /UNDEBUG)
+else()
+    target_compile_options(trace_bell_mailbox_test PRIVATE -UNDEBUG)
+endif()

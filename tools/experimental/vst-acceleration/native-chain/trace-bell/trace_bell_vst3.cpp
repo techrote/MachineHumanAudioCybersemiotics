@@ -1,4 +1,5 @@
 #include "trace_bell_state.hpp"
+#include "trace_bell_mailbox.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
 #include "public.sdk/source/main/pluginfactory.h"
@@ -73,7 +74,12 @@ struct Cursor {
 };
 class Processor final : public AudioEffect {
     TraceBellPerformance engine;
+    TraceStateBridge<TracePatch> state;
     uint32 tail=2880000;
+    void applyPending() noexcept {
+        TracePatch p{};if(state.take(p))engine.configure(p);
+    }
+    void publishState() noexcept {state.publish(engine.patch());}
 public:
     Processor(){setControllerClass(controllerID);}
     static FUnknown* create(void*){return static_cast<IAudioProcessor*>(new Processor);}
@@ -94,21 +100,22 @@ public:
         if(setup.symbolicSampleSize!=kSample32||!traceRateSupported(setup.sampleRate))return kResultFalse;
         const auto rc=AudioEffect::setupProcessing(setup);if(rc!=kResultOk)return rc;
         if(!engine.prepare(float(setup.sampleRate)))return kResultFalse;
+        applyPending();engine.reset();publishState();
         tail=uint32(std::ceil(60.*setup.sampleRate));return kResultOk;
     }
     tresult PLUGIN_API setActive(TBool active) override {
         const auto rc=AudioEffect::setActive(active);
-        if(rc==kResultOk&&active)engine.reset();return rc;
+        if(rc==kResultOk&&active){applyPending();engine.reset();publishState();}return rc;
     }
     uint32 PLUGIN_API getLatencySamples() override {return 0;}
     uint32 PLUGIN_API getTailSamples() override {return tail;}
-    // First adapter candidate: lifecycle/state calls require serialized access
-    // with processing. Concurrent host state save/load is not qualified.
+    // State I/O is control-side only; the engine has a single audio owner.
     tresult PLUGIN_API setState(IBStream* stream) override {
-        TracePatch p{};return readState(stream,p)&&engine.configure(p)?kResultOk:kResultFalse;
+        TracePatch p{};if(!readState(stream,p))return kResultFalse;
+        state.request(p);return kResultOk;
     }
     tresult PLUGIN_API getState(IBStream* stream) override {
-        return writeState(stream,engine.patch())?kResultOk:kResultFalse;
+        return writeState(stream,state.snapshot())?kResultOk:kResultFalse;
     }
     tresult PLUGIN_API process(ProcessData& d) override {
         if(d.numSamples<0||d.numInputs<0||d.numInputs>1||d.numOutputs<0||d.numOutputs>1)return kResultFalse;
@@ -133,7 +140,7 @@ public:
             }
             if(changed)engine.configure(patch);
         };
-        if(!d.numSamples){apply(0);return kResultOk;}
+        if(!d.numSamples){applyPending();apply(0);publishState();return kResultOk;}
         if(d.symbolicSampleSize!=kSample32)return kResultFalse;
         Sample32** in=nullptr;Sample32** out=nullptr;uint64 silentIn=3,silentOut=3;
         if(d.numInputs){
@@ -146,6 +153,7 @@ public:
             out=d.outputs[0].channelBuffers32;
             if(!out||!out[0]||!out[1])return kResultFalse;
         }
+        applyPending();
         for(int32 i=0;i<d.numSamples;++i){
             apply(i);
             const float l=(!in||(silentIn&1))?0.f:in[0][i];
@@ -154,6 +162,7 @@ public:
             if(out){out[0][i]=y.l;out[1][i]=y.r;if(y.l!=0) silentOut&=~uint64(1);if(y.r!=0)silentOut&=~uint64(2);}
         }
         if(out)d.outputs[0].silenceFlags=silentOut;
+        publishState();
         return kResultOk;
     }
 };
