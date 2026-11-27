@@ -1,0 +1,176 @@
+{
+  "status": "PASS",
+  "cross": [
+    {
+      "id": "3:0",
+      "amplitude": 72,
+      "pitch": 0
+    },
+    {
+      "id": "3:1",
+      "amplitude": -36,
+      "pitch": 0
+    },
+    {
+      "id": "3:2",
+      "amplitude": -36,
+      "pitch": 0
+    },
+    {
+      "id": "4:0",
+      "amplitude": 0,
+      "pitch": 72
+    },
+    {
+      "id": "4:1",
+      "amplitude": 0,
+      "pitch": -24
+    },
+    {
+      "id": "4:2",
+      "amplitude": 0,
+      "pitch": -24
+    },
+    {
+      "id": "4:3",
+      "amplitude": 0,
+      "pitch": -24
+    }
+  ],
+  "weightChecks": 1680,
+  "margins": [
+    {
+      "a": 1,
+      "b": 1,
+      "winner": "3:0",
+      "minimum_edits": 0,
+      "rival": "4:0",
+      "flips": [],
+      "after": [
+        "3:0",
+        "4:0"
+      ],
+      "brute_through_four": 0
+    },
+    {
+      "a": 2,
+      "b": 1,
+      "winner": "3:0",
+      "minimum_edits": 2,
+      "rival": "4:0",
+      "flips": [
+        4,
+        8
+      ],
+      "after": [
+        "4:0"
+      ],
+      "brute_through_four": 2
+    },
+    {
+      "a": 1,
+      "b": 2,
+      "winner": "4:0",
+      "minimum_edits": 2,
+      "rival": "3:0",
+      "flips": [
+        16,
+        20
+      ],
+      "after": [
+        "3:0"
+      ],
+      "brute_through_four": 2
+    },
+    {
+      "a": 3,
+      "b": 1,
+      "winner": "3:0",
+      "minimum_edits": 2,
+      "rival": "4:0",
+      "flips": [
+        4,
+        8
+      ],
+      "after": [
+        "4:0"
+      ],
+      "brute_through_four": 2
+    },
+    {
+      "a": 1,
+      "b": 3,
+      "winner": "4:0",
+      "minimum_edits": 2,
+      "rival": "3:0",
+      "flips": [
+        16,
+        20
+      ],
+      "after": [
+        "3:0"
+      ],
+      "brute_through_four": 2
+    },
+    {
+      "a": 9,
+      "b": 1,
+      "winner": "3:0",
+      "minimum_edits": 2,
+      "rival": "4:0",
+      "flips": [
+        4,
+        8
+      ],
+      "after": [
+        "4:0"
+      ],
+      "brute_through_four": 2
+    },
+    {
+      "a": 1,
+      "b": 9,
+      "winner": "4:0",
+      "minimum_edits": 2,
+      "rival": "3:0",
+      "flips": [
+        16,
+        20
+      ],
+      "after": [
+        "3:0"
+      ],
+      "brute_through_four": 2
+    }
+  ],
+  "bruteMasks": 884,
+  "census": {
+    "1": 3301,
+    "2": 741,
+    "3": 52,
+    "7": 2
+  },
+  "censusTotal": 4096,
+  "rate": 16000,
+  "tick": 2880,
+  "audio": {
+    "target": {
+      "frames": 138240,
+      "pcm_fnv1a32": "024359b5",
+      "peak": 10000
+    },
+    "context3": {
+      "frames": 172800,
+      "pcm_fnv1a32": "9a636775",
+      "peak": 10000
+    },
+    "context4": {
+      "frames": 172800,
+      "pcm_fnv1a32": "bb589d20",
+      "peak": 10000
+    }
+  },
+  "target_identical": true,
+  "context_different": true,
+  "scope": "synthetic symbolic cue model; no human metric judgments"
+}
