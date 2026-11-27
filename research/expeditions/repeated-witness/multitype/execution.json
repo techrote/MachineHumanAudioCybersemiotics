@@ -1,0 +1,120 @@
+{
+  "singleStreamCases": 10974,
+  "embeddingMassChecks": 10974,
+  "oneTypeReductionChecks": 4908,
+  "twoStreamChecks": 20868,
+  "posteriorWeights": {
+    "AABB": {
+      "1": 4,
+      "3": 4,
+      "5": 1,
+      "9": 1
+    },
+    "ABAB": {
+      "1": 1,
+      "2": 4,
+      "4": 4,
+      "5": 1
+    },
+    "ABBA": {
+      "1": 2,
+      "2": 4,
+      "4": 2,
+      "6": 2
+    },
+    "BAAB": {
+      "1": 2,
+      "2": 4,
+      "4": 2,
+      "6": 2
+    },
+    "BABA": {
+      "1": 1,
+      "2": 4,
+      "4": 4,
+      "5": 1
+    },
+    "BBAA": {
+      "1": 4,
+      "3": 4,
+      "5": 1,
+      "9": 1
+    }
+  },
+  "intersections": {
+    "AABB/AABB": 10,
+    "AABB/ABAB": 6,
+    "AABB/ABBA": 5,
+    "AABB/BAAB": 5,
+    "AABB/BABA": 4,
+    "AABB/BBAA": 0,
+    "ABAB/AABB": 6,
+    "ABAB/ABAB": 10,
+    "ABAB/ABBA": 6,
+    "ABAB/BAAB": 6,
+    "ABAB/BABA": 6,
+    "ABAB/BBAA": 4,
+    "ABBA/AABB": 5,
+    "ABBA/ABAB": 6,
+    "ABBA/ABBA": 10,
+    "ABBA/BAAB": 4,
+    "ABBA/BABA": 6,
+    "ABBA/BBAA": 5,
+    "BAAB/AABB": 5,
+    "BAAB/ABAB": 6,
+    "BAAB/ABBA": 4,
+    "BAAB/BAAB": 10,
+    "BAAB/BABA": 6,
+    "BAAB/BBAA": 5,
+    "BABA/AABB": 4,
+    "BABA/ABAB": 6,
+    "BABA/ABBA": 6,
+    "BABA/BAAB": 6,
+    "BABA/BABA": 10,
+    "BABA/BBAA": 6,
+    "BBAA/AABB": 0,
+    "BBAA/ABAB": 4,
+    "BBAA/ABBA": 5,
+    "BBAA/BAAB": 5,
+    "BBAA/BABA": 6,
+    "BBAA/BBAA": 10
+  },
+  "largerCases": [
+    {
+      "survivor": "ABCABC",
+      "lost": [
+        1,
+        1,
+        1
+      ],
+      "compatible": "172"
+    },
+    {
+      "survivor": "ABCABC",
+      "lost": [
+        2,
+        2,
+        2
+      ],
+      "compatible": "10203"
+    },
+    {
+      "survivor": "ABCABC",
+      "lost": [
+        3,
+        3,
+        3
+      ],
+      "compatible": "392486"
+    },
+    {
+      "survivor": "ABCABC",
+      "lost": [
+        5,
+        5,
+        5
+      ],
+      "compatible": "334787664"
+    }
+  ]
+}
