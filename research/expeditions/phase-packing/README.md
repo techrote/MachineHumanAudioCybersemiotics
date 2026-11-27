@@ -101,6 +101,18 @@ Its largest chain mass is max(24+16+24,32+32)=64. Consequently N=240,K=5,L=64,d=
 
 The 8-tick cycle and 240-tick cycle therefore supply exact finite pilots, while the block construction establishes the general limit. Repetition guarantees robustness in this indexed fault contract, not freedom from periodic ambiguity beyond the stipulated K consecutive offsets.
 
+## Negative theorem: six phases cannot attain their asymptotic bound exactly
+
+There is a further distinction between the five-phase and six-phase cases, even though their asymptotic optimum is identical (4/15 ambiguity). For K=6 the integer minimizer of A_j is uniquely j=2. Suppose a finite overlapping pilot attained L/N=4/15 exactly. Equality in the lower bound then forces J(t)=2 at every tick. Write z_t=1 if x_t is middle, 0 otherwise. Each successive length-six window must have exactly two ones; subtract adjacent window counts to get z_(t+6)=z_t wherever both indices are present. The middle-indicator sequence is therefore a restriction of a six-periodic binary cycle with two ones.
+
+For every such cycle there exists a nonzero shift d modulo six with disjoint one positions: only the two signed differences of the original one positions can cause intersection, among five possible shifts. Let m_s be the number of middle observations in phase s, so sum_s m_s=2N. Consider the six ordered phase pairs (s,s+d mod 6). No pair is simultaneously middle at any tick. The average across those pairs of their number of exactly-one-middle positions is (2 sum_s m_s)/6=2N/3. At least one pair has at least 2N/3 such positions. Its four side cells can be partitioned into two increasing chains {(0,1),(1,2)} and {(1,0),(2,1)}. Thus its L is at least N/3, strictly greater than 4N/15, contradiction.
+
+Consequently for EVERY finite N in the overlapping six-phase model,
+
+    L*(N,6,3) >= floor(4N/15)+1.
+
+When 15 divides N this improves the earlier rounded lower bound by one; otherwise it agrees with it. This does not contradict asymptotic achievability by concatenating many long blocks with different center patterns: a bounded number of transition windows violates J=2, incurring finite excess. It also does not prohibit exact attainment by arbitrary independent, nonoverlapping codewords. The laboratory checks all 15 two-center patterns across 60 window lengths (900 exact occupancy/rotation checks); the proof does not depend on those finite bounds.
+
 ## Executable qualification and negative sediment
 
 Run node laboratory.cjs from this directory. It uses integer-valued JavaScript arithmetic within the safe integer range for the actual fixtures. It executes:
@@ -110,11 +122,12 @@ Run node laboratory.cjs from this directory. It uses integer-valued JavaScript a
 - Nine genuine overlapping block profiles K=6,7,8 and R=1,4,16. For example K=6,N=23040 gives L=6224 vs exact lower 6144; K=8,N=229376 gives L=66208 vs lower 65536. They satisfy the boundary allowance, but are not asserted globally finite-optimal.
 - 300 seeded weighted-chain comparisons against independent exhaustive subset-mask enumeration.
 - 120 seeded synthetic candidate-list decodes: 60 for N=8,K=4 with e=2,f=1; 60 for N=240,K=5 with e=80,f=15. The exact candidate set is the unique injected phase in every trial. The latter uses effective budget 175 just below distance 176. The fixed monotonic output maps vary in polarity and gaps. The injected substitutions are particular large outliers, not an exhaustive test of fault values; universality comes from the distance proof.
+- 900 exact six-phase finite obstruction checks (15 patterns, 60 window lengths).
 - Zero assertion failures. Committed JavaScript and JSON were retrieved, executed again in V8, and the resulting receipt matched byte-for-byte.
 
 The reference decoder uses a weighted chain DP on the transmitted level versus the observed value rank. This is the strict specialization of #796, not a new production decoder. It tests both relative orientations, ignores flagged erasures, and retains all phases with at least N-f-e compatible positions. It is a synthetic oracle, not a real-time VST. No physical channel test, calibration measurement, output noise floor or human validation was performed.
 
-Negative results: pair-optimal geometry is not necessarily jointly attainable; at five candidates the optimal fraction changes strictly. A larger candidate vocabulary is not free. The guard-level reduction preserves the exact ordinal contract, not Euclidean noise margins; the channel may still compress all outputs arbitrarily closely. Equality-based detection in analog noise and unknown indexing remain distinct problems. Large K inventory growth makes the generic construction unattractive for embedded deployment. A smaller exact periodic design for K>=6 and finite-length optima outside the certified multiples remain open. The two-phase perimeter theorem does not settle arbitrary-q multi-phase packing.
+Negative results: pair-optimal geometry is not necessarily jointly attainable; at five candidates the optimal fraction changes strictly. A larger candidate vocabulary is not free. The guard-level reduction preserves the exact ordinal contract, not Euclidean noise margins; the channel may still compress all outputs arbitrarily closely. Equality-based detection in analog noise and unknown indexing remain distinct problems. Large K inventory growth makes the generic construction unattractive for embedded deployment. Exact attainment is impossible for K=6; smaller near-optimal designs for K>=6 and finite-length optima outside the certified multiples remain open. The two-phase perimeter theorem does not settle arbitrary-q multi-phase packing.
 
 ## Source ledger and interpretation
 
