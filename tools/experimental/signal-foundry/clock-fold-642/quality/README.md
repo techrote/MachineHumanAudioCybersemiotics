@@ -1,0 +1,13 @@
+# Clock Fold — acceleration-dependent resampling laboratory
+
+Refs #642 / #643; source research #404/#405 at a71772412cea275e297307b099f9f999619ccdf4. Creative DSP extension, not a new formal or human finding.
+
+The qualified 0.1.0 plug-in remains untouched. This independent packet renderer uses a 48-tap Hann-windowed sinc, 32 conservative cutoff bins and 64 fractional phases (interpolated between adjacent rows). Cutoff is selected from the local playback speed; coefficients are normalized for DC. Preparation uses about 780 KiB of fixed table storage: allocate the bank outside the callback and prepare before publishing read-only access. Rendering is bounded, allocates nothing, has no locks/I/O, uses clamped packet endpoints and sanitizes input/output. Identity bypasses filtering exactly. The kernel is finite, not an ideal bandlimit; fast segment transitions may introduce discontinuities because cutoff switches at segment boundaries. This is not yet an integrated streaming effect or an alias-free claim.
+
+Build from the Clock Fold directory: `cmake -S quality -B build-quality -DCMAKE_BUILD_TYPE=Release`, `cmake --build build-quality --config Release`, `ctest --test-dir build-quality -C Release --output-on-failure`. Run `clock_quality_demo` from a writable directory for two 48 kHz stereo PCM16 offline packet renders (linear and filtered, equal source, timing and seam blend). This demonstration omits the production engine's packet delay; no DAW compatibility or listening claim.
+
+Linux x64 GCC Release warnings-as-errors: predecessor CTest 3/3 and new CTest 1/1 PASS. New ASan/UBSan test PASS. Fastest segment of drift +0.5, curvature -0.5 has speed 4.33811; interior 0.025 cycles/sample tone +0.0220 dB and 0.35 cycles/sample tone -87.6976 dB filtered versus linear (RMS energy ratio). DC, identity, channel isolation and nonfinite/denormal tests pass. Optimized 1,048,576 sample renders 0.155101 s, an offline mean only. Full transition quality, callback tail latency, Windows/macOS, state and adapter integration remain open. Exact SDK 3.8.0 lock is inherited from parent; no SDK required by this laboratory. No new VST3 binary from this experiment.
+
+## FX-008E update
+
+The original laboratory statements above are historical. The new optional smooth render blends coefficients on the slower side of segment boundaries. The parent 0.2.0 native Live bridge uses this renderer when Quality is enabled, and root CMake runs both quality suites plus streaming state/latch tests. The standalone quality renderer defaults to the original abrupt mode for comparison. See parent LIVE.md for exact new evidence and controls. The 0.2.0 VST3 adapter is a candidate until actual Windows qualification; 0.1.0 is still the qualified binary.

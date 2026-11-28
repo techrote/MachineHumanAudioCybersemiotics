@@ -1,0 +1,159 @@
+name: MHAC mainline Trace Bell and Shuttle Windows qualification
+on:
+  pull_request:
+    paths:
+      - 'tools/experimental/vst-mainline/release-request.json'
+      - 'tools/experimental/vst-acceleration/native-chain/trace-bell/**'
+      - 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle/**'
+      - '.github/workflows/mhac-mainline-accel-windows.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/experimental/vst-mainline/release-request.json'
+permissions:
+  contents: read
+concurrency:
+  group: mhac-mainline-accel-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  qualify:
+    runs-on: windows-2022
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Install bounded host dependencies
+        shell: pwsh
+        run: |
+          py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Trace Bell pinned SDK build, validator and host
+        shell: pwsh
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-trace-bell'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $src = 'tools/experimental/vst-acceleration/native-chain/trace-bell'
+          New-Item -ItemType Directory -Force trace-bell-delivery | Out-Null
+          cmake -S "$src/vst3" -B trace-bell-build -A x64 "-DMHAC_VST3_SDK=$sdk" -DMHAC_VALIDATE_POST_BUILD=OFF 2>&1 | Tee-Object trace-bell-delivery/configure.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build trace-bell-build --config Release --target MHACTraceBell validator trace_bell_rate_test trace_bell_mailbox_test trace_bell_sdk_probe --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $rateTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_rate_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($rateTest.Count -ne 1) { throw 'Expected one native rate test' }
+          & $rateTest[0].FullName 2>&1 | Tee-Object trace-bell-delivery/rate-test.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/rate-test.txt -Pattern '480296 bounded deterministic frames; 768 stable modal poles; invalid prepare transactional PASS')) { throw 'Missing rate-test receipt' }
+          $mailboxTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_mailbox_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($mailboxTest.Count -ne 1) { throw 'Expected one mailbox test' }
+          & $mailboxTest[0].FullName 2>&1 | Tee-Object trace-bell-delivery/mailbox-test.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/mailbox-test.txt -Pattern 'PASS 500000 restores;')) { throw 'Missing mailbox receipt' }
+          $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACTraceBell.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACTraceBell.vst3') })
+          if ($bundles.Count -ne 1) { throw 'Expected one x64 Trace Bell bundle' }
+          $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Validator missing' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object trace-bell-delivery/validator.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing validator success' }
+          if (Select-String -Path trace-bell-delivery/validator.txt -Pattern '^\s*ERROR:') { throw 'Validator explicit error' }
+          $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACTraceBell.vst3'
+          py -3.12 "$src/trace_bell_host.py" --module $module --out trace-bell-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/trace_bell_presets.py" --module $module --out trace-bell-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $sdkProbe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_sdk_probe.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($sdkProbe.Count -ne 1) { throw 'Expected one Trace Bell SDK probe' }
+          & $sdkProbe[0].FullName $bundles[0].FullName 2>&1 | Tee-Object trace-bell-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/sdk-probe.txt -Pattern 'SDK_PROBE_PASS automation_cases=6 stereo_frames=120000')) { throw 'Missing SDK probe receipt' }
+          Copy-Item -Recurse $bundles[0].FullName trace-bell-delivery/
+          Copy-Item "$sdk/LICENSE.txt" trace-bell-delivery/Steinberg-SDK-LICENSE.txt
+          foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
+            Get-ChildItem (Join-Path $sdk $part) -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("trace-bell-delivery/SDK-" + $part + "-" + $_.Name) }
+          }
+          git -C $sdk submodule status --recursive | Out-File trace-bell-delivery/SDK-GITLINKS.txt
+          "sdk=$(git -C $sdk rev-parse HEAD)" | Out-File trace-bell-delivery/BUILD-SOURCE.txt
+          "source=$(git rev-parse HEAD)" | Out-File trace-bell-delivery/BUILD-SOURCE.txt -Append
+          Copy-Item "$src/VST3.md" trace-bell-delivery/
+          py -3.12 -c "from pathlib import Path; import zipfile; r=Path('trace-bell-delivery'); z=zipfile.ZipFile('MHACTraceBell-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACTraceBell-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-trace-bell-build-evidence
+          path: trace-bell-delivery/*.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: MHACTraceBell-Windows-x64
+          path: MHACTraceBell-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+      - name: Palimpsest Shuttle shared SDK build and qualification
+        shell: pwsh
+        run: |
+          $src = 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle'
+          if (Test-Path shuttle-delivery) { throw 'Stale Shuttle delivery directory' }
+          New-Item -ItemType Directory shuttle-delivery | Out-Null
+          py -3.12 "$src/shuttle_receipt.py" --self-test
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/test_shuttle_sdk_notices.py"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build trace-bell-build --config Release --target MHACPalimpsestShuttle shuttle_sdk_probe shuttle_control_test shuttle_regression --parallel 2 2>&1 | Tee-Object shuttle-delivery/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          foreach ($target in @('shuttle_control_test','shuttle_regression')) {
+            $exe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter "$target.exe" | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+            if ($exe.Count -ne 1) { throw "Missing test $target" }
+            & $exe[0].FullName 2>&1 | Tee-Object "shuttle-delivery/$target.txt"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+          $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACPalimpsestShuttle.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACPalimpsestShuttle.vst3') })
+          if ($bundles.Count -ne 1) { throw 'Expected one x64 Shuttle bundle' }
+          $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Validator missing' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object shuttle-delivery/validator.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path shuttle-delivery/validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing validator success' }
+          if (Select-String -Path shuttle-delivery/validator.txt -Pattern '^\s*ERROR:') { throw 'Validator explicit error' }
+          $probe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter shuttle_sdk_probe.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($probe.Count -ne 1) { throw 'Expected one Shuttle SDK probe' }
+          & $probe[0].FullName $bundles[0].FullName 2>&1 | Tee-Object shuttle-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/shuttle_receipt.py" shuttle-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $probeDigest = (Get-FileHash shuttle-delivery/sdk-probe.txt -Algorithm SHA256).Hash
+          $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACPalimpsestShuttle.vst3'
+          py -3.12 "$src/shuttle_host.py" --module $module --out shuttle-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item -Recurse $bundles[0].FullName shuttle-delivery/
+          py -3.12 "$src/shuttle_sdk_notices.py" trace-bell-delivery shuttle-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item "$src/VST3.md" shuttle-delivery/
+          py -3.12 -c "from pathlib import Path; import hashlib,zipfile; r=Path('shuttle-delivery'); (r/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(r).as_posix()+'\n' for p in sorted(r.rglob('*')) if p.is_file())); z=zipfile.ZipFile('MHACPalimpsestShuttle-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if ((Get-FileHash shuttle-delivery/sdk-probe.txt -Algorithm SHA256).Hash -ne $probeDigest) { throw 'Shuttle SDK transcript changed during packaging' }
+          py -3.12 "$src/shuttle_receipt.py" shuttle-delivery/sdk-probe.txt --zip MHACPalimpsestShuttle-Windows-x64.zip
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACPalimpsestShuttle-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-shuttle-build-evidence
+          path: shuttle-delivery/*.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: MHACPalimpsestShuttle-Windows-x64
+          path: MHACPalimpsestShuttle-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,88 @@
+{
+  "schema": "mhac-vst-owner-increment-1",
+  "date": "2026-11-27",
+  "scope": "Independent static package inspection; original hosted host tests read, not rerun. HOLD for cross-plugin native tests and owner review.",
+  "base_main": "495a98ca12bae467a507031f04931aa4254b1866",
+  "previous_catalogue_head": "37e21b4d53fc5ba024876ab40a2e794687adc0fc",
+  "previous_distribution_sha256": "d58faf344111f0eb3882aa47f58e2e28baac84517f74e65b2f5e8df68c86ae29",
+  "distribution": {
+    "filename": "MHAC-VST-five-plugin-owner-review.zip",
+    "sha256": "b0cc07827ad5efea7796254314038d0cabf855e249bb424c4240d5e0f03a45fe",
+    "entries": 234,
+    "manifest_entries": 233,
+    "repeated_assembly_byte_identical": true,
+    "plugins": 5,
+    "unique_class_ids": 10,
+    "standard_presets": 31,
+    "custom_states": 8,
+    "plugin_wavs": 41,
+    "historical_host_wavs": 25,
+    "historical_host_receipts": 11
+  },
+  "sdk": "9fad9770f2ae8542ab1a548a68c1ad1ac690abe0",
+  "source": "ca1ed99b0c8632a2ed977289fa9d49929273be70",
+  "run": 46030439105,
+  "job": 140612568815,
+  "plugins": [
+    {
+      "name": "MHACTraceBell",
+      "artifact": 15213334539,
+      "outer": "438bd442336a041e873f7044cdd768549764c5613a807281aa7ab81a013a5dff",
+      "inner": "8e0349eaa3cfe6f524893db355503017da116369b147ed651f00c175257e3e94",
+      "binary": "18e5a469f01dcb229b958fc397d4f01a1c9cb39ac555a3dbd97d3e405a6ff0e8",
+      "class_ids": [
+        "A6740DA9EA17442B9B283CF2584E908C",
+        "6CC1A2E89D724BD3A4AE670CC88F11B5"
+      ],
+      "parameter_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "standard_presets": 8,
+      "host_partition_receipts": 27,
+      "unchanged_previous_files": 36,
+      "total_files": 42,
+      "all_previous_preset_and_wav_hashes_equal": true
+    },
+    {
+      "name": "MHACPalimpsestShuttle",
+      "artifact": 15213579147,
+      "outer": "078c4060ea83e14fd8a067df269cc9034bd301de0bd5989a83956ccce0561b3a",
+      "inner": "5136d8d581ec057d725742b40e78b48aa4ed063152f7301fa6219046cf78b4b2",
+      "binary": "370d81b487b88d7c44369e5f02b1fa15ab666a70804e94f81ba6d7799e8ecd0b",
+      "class_ids": [
+        "58F3C28ABA5142D1AF75DF83173B962E",
+        "7D191A63804C4BF0A02BFE689B7D1C24"
+      ],
+      "parameter_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "standard_presets": 5,
+      "host_partition_receipts": 15,
+      "manifest_verified": 31,
+      "validator": "47/0, no explicit ERROR",
+      "extended_rate_scope": "10 cases in actual job log; packaged sdk-probe.txt has only six ordinary cases; preserve both and do not conflate",
+      "previous_failure_artifact": 15206679605
+    }
+  ],
+  "historical_host": {
+    "artifact": 15213519440,
+    "sha256": "693419854d3d7141234f95a64e2d98f1feb050ec276ccdd187f47b64bfe84e7e",
+    "scope": "Pinned historical binaries, not the five current packages as a chain"
+  },
+  "limitations": [
+    "No new host execution or human listening",
+    "No source-level identity migration guarantee",
+    "Original four-plugin assembler and extension script included in owner attachment, not committed by this receipt",
+    "No main merge, publication or owner acceptance"
+  ],
+  "reproduction": "python extend.py INPUT_DIR OUTPUT.zip (exact four archive inputs, scripts in owner attachment); repeated assembly and full manifest recheck passed on Python 3.13.5 Linux."
+}

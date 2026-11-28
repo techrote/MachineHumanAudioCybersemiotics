@@ -1,0 +1,731 @@
+{
+  "schema": 1,
+  "base": "495a98ca12bae467a507031f04931aa4254b1866",
+  "mission": "VST-MAINLINE-CONSOLIDATION-001",
+  "scope": "frozen integration candidate; no scientific acceptance or merge claim",
+  "sdk": {
+    "root": "9fad9770f2ae8542ab1a548a68c1ad1ac690abe0",
+    "gitlinks": {
+      "base": "3d2e82f8e6bff59c1d8b7a27491a29c2286b5206",
+      "cmake": "de6e54eeaaab35b7145f5c32c279b5e892146e04",
+      "doc": "6d4737c9e70750056e731d88d49aa06eefc8a1a4",
+      "pluginterfaces": "31d6eeba6daaa3e2a8bfbe3e7a90ca0b7fbfbc1c",
+      "public.sdk": "a3911a4615dabbfdfd9d181ee26b05c70c289a95",
+      "tutorials": "33b73dfbb87f3fde3bce8c0a10cae934dc66ad34",
+      "vstgui4": "76823bdbe286e4bdb9f79ab8986af5ce7202336c"
+    }
+  },
+  "snapshots": [
+    {
+      "pr": 439,
+      "source": "fe3a3f4268e59d68698d34b8fd45f43ea2c9e0f2",
+      "path": "tools/experimental/signal-foundry/freeze-socket",
+      "tree": "9d36891ce115a0227ffccf7b66655abd9d3d5103",
+      "original_workflow": ".github/workflows/mhac-freeze-socket-windows.yml",
+      "original_workflow_sha": "b3a94b03dfcd548d3cef8d6c99274ef5eb2ea837",
+      "release_workflow": "mhac-freeze-socket-windows.yml",
+      "windows_run": 45534581573,
+      "integrity_run": 45534581388
+    },
+    {
+      "pr": 447,
+      "source": "eb78ea3b7a08a646910e66235724f259aeeb8190",
+      "path": "tools/experimental/instrument-foundry/golden-receipt",
+      "tree": "01f16f008548fc6e416d57ee5fa888321469d935",
+      "original_workflow": ".github/workflows/mhac-golden-receipt-windows.yml",
+      "original_workflow_sha": "b5815ee928d4a6c5ef593b9c81f23a4f41bd12d4",
+      "release_workflow": "mhac-golden-receipt-windows.yml",
+      "windows_run": 45537942765,
+      "integrity_run": 45537942596
+    },
+    {
+      "pr": 589,
+      "source": "03fc88a6f9c5bb3928a5fbaa5ede9c6490c23643",
+      "path": "tools/experimental/instrument-foundry/offcut-loom-574",
+      "tree": "660e8b67657fe3f0c1ef11c2dcbc1463677f6783",
+      "original_workflow": ".github/workflows/mhac-offcut-loom-windows.yml",
+      "original_workflow_sha": "77a77ab75e5115b7478e5085aa3235730c918c1a",
+      "release_workflow": "mhac-offcut-loom-windows.yml",
+      "windows_run": 45661589609,
+      "integrity_run": 45661589617
+    },
+    {
+      "pr": 599,
+      "source": "2951e946577e2090926a9ee081f636809dd96d33",
+      "path": "tools/experimental/signal-foundry/erasure-loom-598",
+      "tree": "a6b7f7cddedbc78b48a134247f8c40fa2edf7dac",
+      "original_workflow": ".github/workflows/mhac-erasure-loom-windows.yml",
+      "original_workflow_sha": "d067dc90403d61d48456a88f7d5a1be7533dc30e",
+      "release_workflow": "mhac-erasure-loom-windows.yml",
+      "windows_run": 45737720020,
+      "integrity_run": 45737720390
+    },
+    {
+      "pr": 623,
+      "source": "d353a21780379b127bec4f3bbcaf2f78392ff813",
+      "path": "tools/experimental/instrument-foundry/guest-organ-622",
+      "tree": "708115a7d50ff66b12ddaf102f72741311ef62a3",
+      "original_workflow": ".github/workflows/mhac-guest-organ-windows.yml",
+      "original_workflow_sha": "4d799c419a5d42887108285997733bad8030800f",
+      "release_workflow": "mhac-guest-organ-windows.yml",
+      "windows_run": 45747487281,
+      "integrity_run": 45747487340
+    },
+    {
+      "pr": 627,
+      "source": "79dff72cee54314b670ccaad5f872e33a4c1b6d9",
+      "path": "tools/experimental/vst-acceleration/catalogue-preflight",
+      "tree": "6665eb152ff88437e51872d3d96f5087f16492ef",
+      "original_workflow": null,
+      "original_workflow_sha": null,
+      "release_workflow": null,
+      "windows_run": null,
+      "integrity_run": 46096429673
+    },
+    {
+      "pr": 633,
+      "source": "0367cc3e6080cc14502c99ad4e74feaf4a768eb6",
+      "path": "tools/experimental/vst-acceleration/native-chain",
+      "tree": "c3d1ee5b24b82e86017cb587776e454421fe23b9",
+      "original_workflow": ".github/workflows/mhac-accel-host-audition.yml",
+      "original_workflow_sha": "7ef68144b99642b91ef4cae8de2be1e83f8bad58",
+      "release_workflow": "mhac-mainline-accel-windows.yml",
+      "windows_run": 46091482540,
+      "integrity_run": 46091482527
+    },
+    {
+      "pr": 643,
+      "source": "5ead56490a798a18e8696c66c8939881089f07a4",
+      "path": "tools/experimental/signal-foundry/clock-fold-642",
+      "tree": "a21f80e9da05cf6f6131fc96baf4f8032db3de11",
+      "original_workflow": ".github/workflows/mhac-clock-fold-windows.yml",
+      "original_workflow_sha": "5287da41082f19ef998fec7921a7d540848cb0f9",
+      "release_workflow": "mhac-clock-fold-windows.yml",
+      "windows_run": 45784879133,
+      "integrity_run": 45784879204
+    },
+    {
+      "pr": 653,
+      "source": "0e5660c865d8a6a611c1b5f0848e10c6de26ccec",
+      "path": "tools/experimental/instrument-foundry/rest-bus-652",
+      "tree": "9224aa975c6ccf218fea706322d5800ce0b97592",
+      "original_workflow": ".github/workflows/mhac-rest-bus-windows.yml",
+      "original_workflow_sha": "f37573be93a038a0f205aebdcd871b8da069e145",
+      "release_workflow": "mhac-rest-bus-windows.yml",
+      "windows_run": 45789149985,
+      "integrity_run": 45789149982
+    },
+    {
+      "pr": 675,
+      "source": "927cec71367cc8d730f4e12ebef1b3d6685e26b6",
+      "path": "tools/experimental/signal-foundry/receipt-fold-674",
+      "tree": "2f296da75caa57c0094de8757dca89529f406ab4",
+      "original_workflow": ".github/workflows/mhac-receipt-fold-windows.yml",
+      "original_workflow_sha": "420a5c8d6cc79a230b3d6c42e7b5000a2eea48f0",
+      "release_workflow": "mhac-receipt-fold-windows.yml",
+      "windows_run": 45917928576,
+      "integrity_run": 45917928570
+    },
+    {
+      "pr": 681,
+      "source": "190f262bed43aed7f019777ab1a1f52365f8965a",
+      "path": "tools/experimental/instrument-foundry/afterimage-choir-680",
+      "tree": "80967800d478ed5fd2921479fb4d84d7e20df05c",
+      "original_workflow": ".github/workflows/mhac-afterimage-choir-windows.yml",
+      "original_workflow_sha": "314e08797e1f029816d4c05e24c16e6a2daa7fad",
+      "release_workflow": "mhac-afterimage-choir-windows.yml",
+      "windows_run": 45903384095,
+      "integrity_run": 45903384112
+    },
+    {
+      "pr": 726,
+      "source": "4d7dbfe0ff330b50e52d70920407eb519748c503",
+      "path": "tools/experimental/instrument-foundry/three-winters-596",
+      "tree": "a9de013485e211d43e1f397039e25c8cfb82af97",
+      "original_workflow": ".github/workflows/mhac-three-winters-windows.yml",
+      "original_workflow_sha": "c524820bb0c692ed29e81164fc86a2245c4dea45",
+      "release_workflow": "mhac-three-winters-windows.yml",
+      "windows_run": 45901353866,
+      "integrity_run": 45901353718
+    },
+    {
+      "pr": 739,
+      "source": "b270d7f84760fc61bf06eefc0a364678c5875cbd",
+      "path": "tools/experimental/instrument-foundry/orbit-lantern-738",
+      "tree": "d657f60dd7fb37d53141b26a209f77c9eddb4579",
+      "original_workflow": ".github/workflows/mhac-orbit-lantern-windows.yml",
+      "original_workflow_sha": "57172b76372600a4679663e8e02e9eb75836e851",
+      "release_workflow": "mhac-orbit-lantern-windows.yml",
+      "windows_run": 46097221844,
+      "integrity_run": 46097221836
+    },
+    {
+      "pr": 749,
+      "source": "ae5010fb7f50088095114581b9469c55bb8d315f",
+      "path": "tools/experimental/signal-foundry/counterfactual-resonator-748",
+      "tree": "a8b0fb7ef76510022b880a078810c1b0238c7823",
+      "original_workflow": ".github/workflows/mhac-counterfactual-resonator-windows.yml",
+      "original_workflow_sha": "fe78ee72fc8d1bed49ff99ab0868ea6dd9f1be99",
+      "release_workflow": "mhac-counterfactual-resonator-windows.yml",
+      "windows_run": 46086268207,
+      "integrity_run": 46086268113
+    }
+  ],
+  "stacks": [
+    {
+      "pr": 597,
+      "source": "91dc53aca2076665693cbef9f0c61fd913b28745",
+      "windows_run": 45709981415,
+      "integrity_run": 45709981399,
+      "disposition": "included through corrected #726"
+    },
+    {
+      "pr": 589,
+      "parent": "fc1c0d99d12db3cc21bd71f75f06920de8f70ea0",
+      "disposition": "full 14-path main-relative ancestor closure"
+    },
+    {
+      "pr": 749,
+      "excluded_moving_head": "a482a987ec08a959b3c9168b32a1ef68dee2785c",
+      "disposition": "pinned qualified predecessor only"
+    }
+  ],
+  "plugins": [
+    {
+      "pr": 439,
+      "name": "Freeze Socket",
+      "bundle": "MHACFreezeSocket.vst3",
+      "kind": "Effects",
+      "version": "0.1.0",
+      "bundle_version": "0.1.0",
+      "classes": {
+        "Audio Module Class": "3F74DE8192E743E6A36CB226C39DD8CE",
+        "Component Controller Class": "9B44DD9C197C4F578D2E177AF418C90B"
+      },
+      "parameter_ids": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACFreezeSocket-Windows-x64",
+      "historical": {
+        "run_id": 45534581573,
+        "artifact_id": 14986731404,
+        "sha256": "e3791e9129d6344d18b63fe64018437a4f1a60ca6d978e713cc3c9f9e1c34d9a",
+        "source": "fe3a3f4268e59d68698d34b8fd45f43ea2c9e0f2"
+      }
+    },
+    {
+      "pr": 447,
+      "name": "Golden Receipt",
+      "bundle": "MHACGoldenReceipt.vst3",
+      "kind": "Instruments",
+      "version": "0.1.0",
+      "bundle_version": "0.1.0",
+      "classes": {
+        "Audio Module Class": "AF04645CE81D4ABEAB751C90FFAD9163",
+        "Component Controller Class": "5EB67EEA974E44209D678B3003E153F2"
+      },
+      "parameter_ids": [
+        200,
+        201,
+        202,
+        203,
+        204
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACGoldenReceipt-Windows-x64",
+      "historical": {
+        "run_id": 45537942765,
+        "artifact_id": 14987637390,
+        "sha256": "299400212aff8213b99131474d8092be5a396658197727621245ca4a7a94e9c3",
+        "source": "eb78ea3b7a08a646910e66235724f259aeeb8190"
+      }
+    },
+    {
+      "pr": 589,
+      "name": "Offcut Loom",
+      "bundle": "MHACOffcutLoom.vst3",
+      "kind": "Instruments",
+      "version": "0.2.0",
+      "bundle_version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "7F9C7A06438E429D8110F294A64B4D5A",
+        "Component Controller Class": "B53EF43BB92C45AFA797271E39D339C4"
+      },
+      "parameter_ids": [
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACOffcutLoom-Windows-x64",
+      "historical": {
+        "run_id": 45661589609,
+        "artifact_id": 15045102272,
+        "sha256": "ccd79f3cf921b48d90deb66b9ce2a06a4b9802af9441d418e9c1058e30387dd9",
+        "source": "03fc88a6f9c5bb3928a5fbaa5ede9c6490c23643"
+      }
+    },
+    {
+      "pr": 599,
+      "name": "Erasure Loom",
+      "bundle": "MHACErasureLoom.vst3",
+      "kind": "Effects",
+      "version": "0.2.0",
+      "bundle_version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "DC4F4B718CA24A61A3B728C4C77342EE",
+        "Component Controller Class": "180FD22637C64D5B9BEA13786F8D22A1"
+      },
+      "parameter_ids": [
+        1100,
+        1101,
+        1102,
+        1103,
+        1104,
+        1105,
+        1106,
+        1107,
+        1108
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACErasureLoom-Windows-x64",
+      "historical": {
+        "run_id": 45737720020,
+        "artifact_id": 15079064731,
+        "sha256": "bd7a41aeca9789e1ab34a957074ec1586be155f07cce2b95d1001bdd624a860b",
+        "source": "2951e946577e2090926a9ee081f636809dd96d33"
+      }
+    },
+    {
+      "pr": 599,
+      "name": "Erasure Loom XL",
+      "bundle": "MHACErasureLoomXL.vst3",
+      "kind": "Effects",
+      "version": "0.1.0",
+      "bundle_version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "B74B3910A48B4F3985C3264918E4C6F1",
+        "Component Controller Class": "E852D6D2C8D641D59AD9977847B32C16"
+      },
+      "parameter_ids": [
+        1300,
+        1301,
+        1302,
+        1303,
+        1304,
+        1305,
+        1306,
+        1307,
+        1308,
+        1309
+      ],
+      "validator": "validator-xl.txt",
+      "artifact": "MHACErasureLoomXL-Windows-x64",
+      "historical": {
+        "run_id": 45737720020,
+        "artifact_id": 15079254571,
+        "sha256": "e3f2493d09dc1cb5ab498d22a44e79e2b5a55286ec2834eea647ddacd066b1b4",
+        "source": "2951e946577e2090926a9ee081f636809dd96d33"
+      }
+    },
+    {
+      "pr": 623,
+      "name": "Guest Organ",
+      "bundle": "MHACGuestOrgan.vst3",
+      "kind": "Instruments",
+      "version": "0.3.1",
+      "bundle_version": "0.3.1",
+      "classes": {
+        "Audio Module Class": "5CB726D194DA4CEFAE0F5035B66D1478",
+        "Component Controller Class": "6B53AF1258934F5EACCCEA119A27AB09"
+      },
+      "parameter_ids": [
+        1200,
+        1201,
+        1202,
+        1203,
+        1204,
+        1205,
+        1206,
+        1207,
+        1208,
+        1209,
+        1210
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACGuestOrgan-Windows-x64",
+      "historical": {
+        "run_id": 45747487281,
+        "artifact_id": 15083723526,
+        "sha256": "8f8f7c85e3552608e74f0024bc9c835bd8cd933054c7531e7163de77c06dbd00",
+        "source": "d353a21780379b127bec4f3bbcaf2f78392ff813"
+      }
+    },
+    {
+      "pr": 633,
+      "name": "Trace Bell",
+      "bundle": "MHACTraceBell.vst3",
+      "kind": "Effects",
+      "version": "0.1.0",
+      "bundle_version": "0.1.0",
+      "classes": {
+        "Audio Module Class": "A6740DA9EA17442B9B283CF2584E908C",
+        "Component Controller Class": "6CC1A2E89D724BD3A4AE670CC88F11B5"
+      },
+      "parameter_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACTraceBell-Windows-x64",
+      "historical": {
+        "run_id": 46091482540,
+        "artifact_id": 15241298492,
+        "sha256": "cd50c545e08895f7bdf5ee2fb2078b17053c7a76d86deb110cceba1689ae1bd9",
+        "source": "0367cc3e6080cc14502c99ad4e74feaf4a768eb6"
+      }
+    },
+    {
+      "pr": 633,
+      "name": "Palimpsest Shuttle",
+      "bundle": "MHACPalimpsestShuttle.vst3",
+      "kind": "Effects",
+      "version": "0.1.0",
+      "bundle_version": "0.1.0",
+      "classes": {
+        "Audio Module Class": "58F3C28ABA5142D1AF75DF83173B962E",
+        "Component Controller Class": "7D191A63804C4BF0A02BFE689B7D1C24"
+      },
+      "parameter_ids": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACPalimpsestShuttle-Windows-x64",
+      "historical": {
+        "run_id": 46091482540,
+        "artifact_id": 15242036142,
+        "sha256": "057f71c37b9daf74c444ffcdb68ac5ea0eca4f2945253725ca7bd2e7173fd092",
+        "source": "0367cc3e6080cc14502c99ad4e74feaf4a768eb6"
+      }
+    },
+    {
+      "pr": 643,
+      "name": "Clock Fold",
+      "bundle": "MHACClockFold.vst3",
+      "kind": "Effects",
+      "version": "0.2.2",
+      "bundle_version": "0.2.2",
+      "classes": {
+        "Audio Module Class": "9C421577DB97473093EA688EA71D090A",
+        "Component Controller Class": "13D9F7E3DAD34F94B72F25D5D2BD4564"
+      },
+      "parameter_ids": [
+        1400,
+        1401,
+        1402,
+        1403,
+        1404,
+        1405,
+        1406
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACClockFold-Windows-x64",
+      "historical": {
+        "run_id": 45784879133,
+        "artifact_id": 15100735474,
+        "sha256": "e6280a3dc2544c8693ced53ed48f08af3b243b51552ea43f576480484076dcb6",
+        "source": "5ead56490a798a18e8696c66c8939881089f07a4"
+      }
+    },
+    {
+      "pr": 653,
+      "name": "Rest Bus",
+      "bundle": "MHACRestBus.vst3",
+      "kind": "Instruments",
+      "version": "0.2.2",
+      "bundle_version": "0.2.2",
+      "classes": {
+        "Audio Module Class": "D2C8E44B05FE4A31AF8F5B299C0BE3A2",
+        "Component Controller Class": "F03E8AB223E54B699C7A2F104E1D86B5"
+      },
+      "parameter_ids": [
+        1500,
+        1501,
+        1502,
+        1503
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACRestBus-Windows-x64",
+      "historical": {
+        "run_id": 45789149985,
+        "artifact_id": 15102196717,
+        "sha256": "551af7c0d5f47dbce42dc7297030a03201403c0b5a39c344fea62641855a682c",
+        "source": "0e5660c865d8a6a611c1b5f0848e10c6de26ccec"
+      }
+    },
+    {
+      "pr": 675,
+      "name": "Receipt Fold",
+      "bundle": "MHACReceiptFold.vst3",
+      "kind": "Effects",
+      "version": "0.4.0",
+      "bundle_version": "0.4.0",
+      "classes": {
+        "Audio Module Class": "302FA8177F104E13BFC8A3EF4356888E",
+        "Component Controller Class": "1C3243AF755B41C09A150E337150A434"
+      },
+      "parameter_ids": [
+        1700,
+        1701,
+        1702,
+        1703,
+        1704,
+        1705,
+        1706,
+        1707,
+        1708,
+        1709,
+        1710,
+        1711,
+        1712,
+        1713,
+        1714,
+        1715,
+        1716,
+        1717,
+        1718,
+        1719
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACReceiptFold-Windows-x64",
+      "historical": {
+        "run_id": 45917928576,
+        "artifact_id": 15163500417,
+        "sha256": "96bcbfb8d9b2c7108b0a7db31bce7621e097991fc487aa30031764288deb41d8",
+        "source": "927cec71367cc8d730f4e12ebef1b3d6685e26b6"
+      }
+    },
+    {
+      "pr": 681,
+      "name": "Afterimage Choir",
+      "bundle": "MHACAfterimage.vst3",
+      "kind": "Instruments",
+      "version": "0.3.2",
+      "bundle_version": "0.3.2",
+      "classes": {
+        "Audio Module Class": "BD0B8CB3B82E43EB9613F0C9A37FBA83",
+        "Component Controller Class": "B9A28D3E533D43A5B72037543F6420E1"
+      },
+      "parameter_ids": [
+        1600,
+        1601,
+        1602,
+        1603,
+        1604,
+        1605,
+        1606
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACAfterimage-Windows-x64",
+      "historical": {
+        "run_id": 45903384095,
+        "artifact_id": 15156960696,
+        "sha256": "8743e982260adf1fa4a5a12b9738d1bef50edc241675b3a1906e1c7cda6c53bd",
+        "source": "190f262bed43aed7f019777ab1a1f52365f8965a"
+      }
+    },
+    {
+      "pr": 726,
+      "name": "Three Winters",
+      "bundle": "MHACThreeWinters.vst3",
+      "kind": "Instruments",
+      "version": "0.2.1",
+      "bundle_version": "0.2.1",
+      "classes": {
+        "Audio Module Class": "D1195E6E292C442CB550AE834977E4CD",
+        "Component Controller Class": "992821A7B1114FB38B69B059EC25C81C"
+      },
+      "parameter_ids": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1014,
+        1015,
+        1016,
+        1017,
+        1018
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACThreeWinters-Windows-x64",
+      "historical": {
+        "run_id": 45901353866,
+        "artifact_id": 15156181930,
+        "sha256": "f47449a0a9bbf626cbdebb0acd68713acc01e4130815697ee4ab92f14581c8b9",
+        "source": "4d7dbfe0ff330b50e52d70920407eb519748c503"
+      }
+    },
+    {
+      "pr": 739,
+      "name": "Orbit Lantern",
+      "bundle": "MHACOrbitLantern.vst3",
+      "kind": "Instruments",
+      "version": "0.4.0",
+      "bundle_version": "0.4.0",
+      "classes": {
+        "Audio Module Class": "24C15B793B8C4F4B98275F233EE969C4",
+        "Component Controller Class": "A501C96DF0EC48C88BA63D11B860D74F"
+      },
+      "parameter_ids": [
+        1810,
+        1811,
+        1812,
+        1813,
+        1814,
+        1815,
+        1816
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACOrbitLantern-Windows-x64",
+      "historical": {
+        "run_id": 46097221844,
+        "artifact_id": 15243852033,
+        "sha256": "feae9af9ef4295ea63d6547bf342b5dfa52070a22f04d9fb9a1bd39154b590e1",
+        "source": "b270d7f84760fc61bf06eefc0a364678c5875cbd"
+      }
+    },
+    {
+      "pr": 749,
+      "name": "Counterfactual Resonator",
+      "bundle": "MHACCounterfactualResonator.vst3",
+      "kind": "Effects",
+      "version": "0.2.0",
+      "bundle_version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "FBC2EF81CA534C7A8B3BC61D9929C901",
+        "Component Controller Class": "A1C2780816014C3A8AC0E00B6D775BD5"
+      },
+      "parameter_ids": [
+        1900,
+        1901,
+        1902,
+        1903,
+        1904,
+        1905,
+        1906,
+        1907
+      ],
+      "validator": "validator.txt",
+      "artifact": "MHACCounterfactualResonator-Windows-x64",
+      "historical": {
+        "run_id": 46086268207,
+        "artifact_id": 15238799277,
+        "sha256": "a4f2b1e39706f59f52115fec1d3c68bb0abd9dd3a5a670d701a945c1e5ccb4ff",
+        "source": "ae5010fb7f50088095114581b9469c55bb8d315f"
+      }
+    },
+    {
+      "pr": 749,
+      "name": "Harmonic Memory Bank",
+      "bundle": "MHACHarmonicMemoryBank.vst3",
+      "kind": "Effects",
+      "version": "0.2.0",
+      "bundle_version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "AE00577BADF94D9C8F2FB9D04991475C",
+        "Component Controller Class": "B82C6F98A6D847E9B6084DF9834F4B45"
+      },
+      "parameter_ids": [
+        2000,
+        2001,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027,
+        2028,
+        2029,
+        2030,
+        2031,
+        2032,
+        2033,
+        2034,
+        2035,
+        2036,
+        2037,
+        2038,
+        2039,
+        2040,
+        2041,
+        2042,
+        2043,
+        2044,
+        2045,
+        2050,
+        2051,
+        2052,
+        2053
+      ],
+      "validator": "bank-validator.txt",
+      "artifact": "MHACHarmonicMemoryBank-Windows-x64",
+      "historical": {
+        "run_id": 46086268207,
+        "artifact_id": 15238639491,
+        "sha256": "a718d3d7a137f526fc425217b73373513586dbf41713748bf17da14f061063d5",
+        "source": "ae5010fb7f50088095114581b9469c55bb8d315f"
+      }
+    }
+  ],
+  "known_limits": [
+    "XL bundle metadata 0.2.0, factory classes 0.1.0, intentionally retained pending target-specific metadata repair; stereo-only negotiated effect.",
+    "Afterimage Choir retains MHACAfterimage.vst3 name and its original CIDs; not a second installable Afterimage plugin.",
+    "Shuttle stagger and Memory Bank cross-band budget at these pins are native-only, not host-exposed.",
+    "No independent review or DAW listening is inferred from historical qualification."
+  ]
+}
