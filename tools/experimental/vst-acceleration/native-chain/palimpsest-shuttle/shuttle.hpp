@@ -36,6 +36,8 @@ template<unsigned MaxGrain=15360> class PalimpsestShuttle {
     std::array<ShuttleFrame,2*MaxGrain> ring_{};
     unsigned grain_=0, pos_=0, phase_=0;
     ShuttlePatch patch_{};
+    unsigned staggerTarget_=0;
+    float stagger_=0;
     float alpha_=1, inv_=0, mix_=0, reverse_=0, feedback_=0, cross_=0;
     static float clean(float x) noexcept {
         return std::isfinite(x)&&std::abs(x)>=1.e-20f?std::clamp(x,-1.f,1.f):0.f;
@@ -72,10 +74,17 @@ public:
         patch_=p; return true;
     }
     ShuttlePatch patch() const noexcept { return patch_; }
+    // Experimental native control, deliberately outside legacy PS01 state.
+    bool configureStagger(unsigned amount) noexcept {
+        if(amount>1000) return false;
+        staggerTarget_=amount; return true;
+    }
+    unsigned stagger() const noexcept { return staggerTarget_; }
     void reset() noexcept {
         std::fill_n(ring_.begin(),2*grain_,ShuttleFrame{}); pos_=phase_=0;
         mix_=patch_.mix*.001f; reverse_=patch_.reverse*.001f;
         feedback_=patch_.feedback*.00065f; cross_=patch_.cross*.001f;
+        stagger_=staggerTarget_*.001f;
     }
     ShuttleFrame process(ShuttleFrame in) noexcept {
         in={clean(in.l),clean(in.r)};
@@ -84,7 +93,16 @@ public:
         smooth(feedback_,patch_.feedback*.00065f); smooth(cross_,patch_.cross*.001f);
         const unsigned h=grain_/2, p=phase_, q=p<h?p+h:p-h;
         const float w=float(std::min(p,grain_-p))*inv_;
-        const auto rev=blend(read(2*q+1),read(2*p+1),w);
+        auto rev=blend(read(2*q+1),read(2*p+1),w);
+        if(staggerTarget_||stagger_!=0.f) {
+            smooth(stagger_,staggerTarget_*.001f);
+            if(stagger_!=0.f) {
+                const unsigned s=(p+grain_/4)%grain_, t=s<h?s+h:s-h;
+                const float sw=float(std::min(s,grain_-s))*inv_;
+                const float shifted=blend(read(2*t+1).r,read(2*s+1).r,sw);
+                rev.r=blend(rev.r,shifted,stagger_);
+            }
+        }
         const auto wet=blend(read(grain_),rev,reverse_);
         const auto loop=blend(wet,ShuttleFrame{wet.r,wet.l},cross_);
         ring_[pos_]={clean(blend(in.l,loop.l,feedback_)),clean(blend(in.r,loop.r,feedback_))};

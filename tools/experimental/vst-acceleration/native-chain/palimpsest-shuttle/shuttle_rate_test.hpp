@@ -1,5 +1,6 @@
 #pragma once
 #include "shuttle.hpp"
+#include "shuttle_stagger_test.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <limits>
@@ -44,6 +45,7 @@ inline unsigned long long qualifyShuttleRates() {
         for(unsigned n=0;n<4*e->grainSamples();++n){if(n==100){check(old->configure({900,100,1000,800,false}));check(e->configure(old->patch()));}ShuttleFrame x{float(n%31)/64.f,-float(n%19)/64.f};check(equal(old->process(x),e->process(x)));}
     }
     check(!old->prepare(7999));check(!old->prepare(192001));check(!old->prepareRate(384000.));
+    qualifyShuttleStagger();
     std::cout<<"RATE PASS "<<checks<<" checks; desktop bytes "<<sizeof(DesktopShuttle)<<'\n';return checks;
 }
 }
