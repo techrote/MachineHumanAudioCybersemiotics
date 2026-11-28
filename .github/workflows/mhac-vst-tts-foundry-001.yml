@@ -1,0 +1,89 @@
+name: MHAC VST TTS Foundry 001
+on:
+  pull_request:
+    paths:
+      - 'tools/experimental/tts-foundry/vst-tts-foundry-001/**'
+      - '.github/workflows/mhac-vst-tts-foundry-001.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mhac-vst-tts-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-2022]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure native
+        shell: bash
+        run: cmake -S tools/experimental/tts-foundry/vst-tts-foundry-001 -B tts-build -DCMAKE_BUILD_TYPE=Release
+      - name: Build native
+        run: cmake --build tts-build --config Release --parallel 2
+      - name: Native tests and original specimens
+        run: ctest --test-dir tts-build -C Release --output-on-failure
+      - name: Upload native specimens
+        uses: actions/upload-artifact@v4
+        with:
+          name: mhac-vst-tts-native-${{ matrix.os }}
+          path: tts-build/specimens/*.wav
+          if-no-files-found: error
+  sanitizer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure ASan + UBSan
+        run: cmake -S tools/experimental/tts-foundry/vst-tts-foundry-001 -B tts-san -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_FLAGS='-fsanitize=address,undefined -fno-omit-frame-pointer'
+      - name: Build sanitizer targets
+        run: cmake --build tts-san --parallel 2
+      - name: Run sanitizer tests
+        env:
+          ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+          UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+        run: ctest --test-dir tts-san --output-on-failure -R 'tts_native|tts_state|tts_thread'
+  vst3:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-2022]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clone exact VST3 SDK
+        shell: bash
+        run: |
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git "$RUNNER_TEMP/vst3sdk"
+          git -C "$RUNNER_TEMP/vst3sdk" submodule update --init --recursive --depth 1
+      - name: Verify SDK provenance
+        run: python tools/experimental/tts-foundry/vst-tts-foundry-001/verify_sdk.py "${{ runner.temp }}/vst3sdk"
+      - name: Configure VST3 Linux
+        if: runner.os == 'Linux'
+        run: cmake -S tools/experimental/tts-foundry/vst-tts-foundry-001 -B tts-vst -DCMAKE_BUILD_TYPE=Release -DMHAC_BUILD_VST3=ON -DMHAC_VST3_SDK="${{ runner.temp }}/vst3sdk"
+      - name: Configure VST3 Windows
+        if: runner.os == 'Windows'
+        run: cmake -S tools/experimental/tts-foundry/vst-tts-foundry-001 -B tts-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VST3_SDK="${{ runner.temp }}/vst3sdk"
+      - name: Build VSTs, validator, host probe and specimens
+        run: cmake --build tts-vst --config Release --target MHACLogos MHACArticulum validator mhac_tts_sdk_probe mhac_tts_render --parallel 2
+      - name: Render specimens
+        run: ctest --test-dir tts-vst -C Release --output-on-failure -R tts_specimens
+      - name: Record exact source
+        shell: bash
+        run: git rev-parse HEAD > tts-vst/source-head.txt
+      - name: Validate, actual-host render, package, extract and repeat
+        run: python tools/experimental/tts-foundry/vst-tts-foundry-001/validate_bundles.py tts-vst
+      - name: Upload qualified candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: MHAC-VST-TTS-FOUNDRY-001-${{ runner.os }}
+          path: |
+            tts-vst/MHAC-VST-TTS-FOUNDRY-001.zip
+            tts-vst/validation/*.txt
+            tts-vst/source-head.txt
+          if-no-files-found: error
