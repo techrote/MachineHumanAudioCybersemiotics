@@ -19,7 +19,26 @@ using namespace Steinberg::Vst;
 namespace {
 using Bytes=std::vector<std::uint8_t>;
 void require(bool b,const char* where){if(!b)throw std::runtime_error(where);}
-void ok(tresult r,const char* where){require(r==kResultOk,where);}
+void ok(tresult r,const char* where){
+    if(r!=kResultOk)throw std::runtime_error(std::string(where)+" result="+std::to_string(r));
+}
+// Exact pinned SDK AudioEffect::setProcessing is an optional no-op returning
+// kNotImplemented. Only these three inspected factories inherit it unchanged.
+constexpr bool processingAccepted(tresult r,bool sdkDefault) noexcept {
+    return r==kResultOk||(sdkDefault&&r==kNotImplemented);
+}
+static_assert(processingAccepted(kResultOk,false));
+static_assert(processingAccepted(kNotImplemented,true));
+static_assert(!processingAccepted(kNotImplemented,false));
+static_assert(!processingAccepted(kResultFalse,true));
+static_assert(!processingAccepted(kInvalidArgument,true));
+void processing(IAudioProcessor* p,bool start,bool sdkDefault){
+    const auto r=p->setProcessing(start);
+    std::cout<<"SDK_PROCESSING_LIFECYCLE stage="<<(start?"start":"stop")
+             <<" result="<<r<<" sdk_default="<<sdkDefault<<std::endl;
+    if(!processingAccepted(r,sdkDefault))
+        throw std::runtime_error(std::string(start?"start":"stop")+" result="+std::to_string(r));
+}
 Bytes save(IComponent* c){
     MemoryStream s;ok(c->getState(&s),"getState");
     require(s.getSize()>0&&s.getSize()<=65536,"state size");
@@ -47,15 +66,28 @@ void run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassI
     constexpr int block=128;
     ProcessSetup setup{kRealtime,kSample32,block,48000.};
     ok(proc->setupProcessing(setup),"setup");ok(c->setActive(true),"activate");life.active=true;
-    ok(proc->setProcessing(true),"start");life.running=true;
+    const auto& name=info.name();
+    const bool sdkDefault=(name=="MHAC Freeze Socket"&&id==100)||
+                          (name=="MHAC Erasure Loom"&&id==1100)||
+                          (name=="MHAC Erasure Loom XL"&&id==1300);
+    std::cout<<"SDK_CONCURRENT_STATE_BEGIN name="<<name<<" parameter="<<id<<std::endl;
+    processing(proc.getInterface(),true,sdkDefault);life.running=true;
     const auto a=save(c.get());
     // Obtain a second valid state through the real adapter, not a guessed wire format.
-    ParameterChanges changes(1);int32 qi=0,pi=0;
-    auto* queue=changes.addParameterData(id,qi);require(queue!=nullptr,"parameter queue");
-    ok(queue->addPoint(0,.371,pi),"parameter point");
-    ProcessData flush{};flush.processMode=kRealtime;flush.symbolicSampleSize=kSample32;flush.inputParameterChanges=&changes;
-    ok(proc->process(flush),"zero-frame automation");
-    const auto b=save(c.get());require(a!=b,"second state identical");
+    auto automate=[&](double value){
+        ParameterChanges changes(1);int32 qi=0,pi=0;
+        auto* queue=changes.addParameterData(id,qi);require(queue!=nullptr,"parameter queue");
+        ok(queue->addPoint(0,value,pi),"parameter point");
+        ProcessData flush{};flush.processMode=kRealtime;flush.symbolicSampleSize=kSample32;flush.inputParameterChanges=&changes;
+        ok(proc->process(flush),"zero-frame automation");
+        return save(c.get());
+    };
+    auto b=automate(.371);
+    // Discrete first parameters can quantize .371 to their initial value.
+    // Require an actually distinct serialized patch, never a same-state stress.
+    if(a==b)b=automate(1.);
+    if(a==b)b=automate(0.);
+    require(a!=b,"second state identical");
     restore(c.get(),a);require(save(c.get())==a,"pending restore");
     std::vector<float> left(block,.03f),right(block,-.02f),outL(block),outR(block);
     float* in[]{left.data(),right.data()},*out[]{outL.data(),outR.data()};
@@ -72,23 +104,32 @@ void run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassI
             ++blocks;
         }while((!done.load(std::memory_order_acquire)||blocks.load()<256)&&blocks.load()<1000000&&!failed.load());
     });
-    unsigned writes=0,reads=0;
+    unsigned writes=0,reads=0,overlapWindows=0;
     try{
         while(blocks.load()==0&&!failed.load())std::this_thread::yield();
         for(unsigned i=0;i<20000;++i){
             const auto& requested=i&1?a:b;restore(c.get(),requested);++writes;
             require(save(c.get())==requested,"torn or stale patch");++reads;
             require(!failed.load(),"audio failure");
+            if((i+1)%1000==0){
+                // Prove progress during every batch, rather than allowing the
+                // audio worker to finish before all control requests execute.
+                const auto before=blocks.load();
+                require(before<1000000,"audio exhausted before control completion");
+                while(blocks.load()==before&&!failed.load())std::this_thread::yield();
+                require(!failed.load()&&blocks.load()>before,"no concurrent audio progress");
+                ++overlapWindows;
+            }
         }
         restore(c.get(),b);
     }catch(...){done.store(true,std::memory_order_release);audio.join();throw;}
     done.store(true,std::memory_order_release);audio.join();
-    require(!failed&&writes==20000&&reads==20000&&blocks.load()>=256,"concurrent stress");
+    require(!failed&&writes==20000&&reads==20000&&overlapWindows==20&&blocks.load()>=256,"concurrent stress");
     ok(proc->process(d),"final block");require(save(c.get())==b,"final restore");
-    ok(proc->setProcessing(false),"stop");life.running=false;
+    processing(proc.getInterface(),false,sdkDefault);life.running=false;
     ok(c->setActive(false),"deactivate");life.active=false;
     ok(c->terminate(),"terminate");life.initialized=false;
-    std::cout<<"SDK_CONCURRENT_STATE_PASS name="<<info.name()<<" writes="<<writes<<" reads="<<reads<<" blocks="<<blocks.load()<<std::endl;
+    std::cout<<"SDK_CONCURRENT_STATE_PASS name="<<info.name()<<" writes="<<writes<<" reads="<<reads<<" blocks="<<blocks.load()<<" overlap_windows="<<overlapWindows<<std::endl;
 }
 }
 int main(int argc,char** argv){

@@ -77,11 +77,14 @@ jobs:
           $catalogue = Get-Content tools/experimental/vst-mainline/catalogue.json -Raw | ConvertFrom-Json
           $targets = @($catalogue.plugins | Where-Object { $_.pr -in @(439,447,589,599,623,726) })
           if ($targets.Count -ne 7) { throw 'Expected seven corrected adapters' }
+          $failedProbes = @()
           foreach ($p in $targets) {
             $bundle = (Resolve-Path ("delivery/VST3/" + $p.kind + "/" + $p.bundle)).Path
+            Write-Host "SDK probe target: $($p.bundle)"
             & $probe[0].FullName $bundle $p.parameter_ids[0] 2>&1 | Tee-Object -Append delivery/Qualification/sdk-concurrent-state.txt
-            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+            if ($LASTEXITCODE) { $failedProbes += $p.bundle }
           }
+          if ($failedProbes.Count -ne 0) { throw ("Failed SDK probes: " + ($failedProbes -join ", ")) }
       - name: Actual Windows module and cross-plugin tests
         run: py -3.12 tools/experimental/vst-mainline/host_probe.py delivery
       - name: Deterministic verified archive
