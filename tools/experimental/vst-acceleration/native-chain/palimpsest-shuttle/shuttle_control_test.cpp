@@ -1,4 +1,5 @@
 #include "shuttle_control.hpp"
+#include "shuttle_host_state_test.hpp"
 #include <iostream>
 #include <limits>
 using namespace mhac::accel;
@@ -15,4 +16,5 @@ int main(){
     if(applyShuttleNormalized(p,5,.5)||encode(p)!=before)return 4;
     if(!applyShuttleNormalized(p,4,.5)||!p.bypass||!applyShuttleNormalized(p,4,.499)||p.bypass)return 5;
     std::cout<<"PASS "<<checks+3<<" mapping/state checks\n";
+    qualifyShuttleHostState();
 }

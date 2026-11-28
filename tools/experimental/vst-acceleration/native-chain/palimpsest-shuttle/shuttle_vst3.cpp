@@ -1,4 +1,4 @@
-#include "shuttle_control.hpp"
+#include "shuttle_host_state.hpp"
 #include "../trace-bell/trace_bell_mailbox.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
@@ -12,27 +12,32 @@ using namespace mhac::accel;
 namespace {
 const FUID processorID(0x58F3C28A,0xBA5142D1,0xAF75DF83,0x173B962E);
 const FUID controllerID(0x7D191A63,0x804C4BF0,0xA02BFE68,0x9B7D1C24);
-constexpr unsigned count=5;
-bool readState(IBStream* stream,ShuttlePatch& patch) {
+constexpr unsigned count=6;
+bool readState(IBStream* stream,ShuttleHostPatch& patch) {
     if(!stream)return false;
-    ShuttleState bytes{};
+    ShuttleHostState bytes{};
     int32 offset=0;
-    while(offset<int32(bytes.size())){
-        int32 n=0;
-        const auto rc=stream->read(bytes.data()+offset,int32(bytes.size())-offset,&n);
-        if(rc!=kResultOk||n<=0||n>int32(bytes.size())-offset)return false;
-        offset+=n;
-    }
-    return decode(bytes,patch);
+    const auto readTo=[&](int32 end){
+        while(offset<end){
+            int32 n=0;
+            if(stream->read(bytes.data()+offset,end-offset,&n)!=kResultOk||n<=0||n>end-offset)return false;
+            offset+=n;
+        }
+        return true;
+    };
+    if(!readTo(13))return false;
+    if(bytes[3]=='2'&&!readTo(15))return false;
+    return decodeHost(bytes,unsigned(offset),patch);
 }
-bool writeState(IBStream* stream,const ShuttlePatch& patch) {
-    auto bytes=encode(patch);
+bool writeState(IBStream* stream,const ShuttleHostPatch& patch) {
+    auto bytes=encodeHost(patch);
     if(!stream||!valid(patch))return false;
+    const int32 end=int32(hostStateSize(bytes));
     int32 offset=0;
-    while(offset<int32(bytes.size())){
+    while(offset<end){
         int32 n=0;
-        if(stream->write(bytes.data()+offset,int32(bytes.size())-offset,&n)!=kResultOk||
-           n<=0||n>int32(bytes.size())-offset)return false;
+        if(stream->write(bytes.data()+offset,end-offset,&n)!=kResultOk||
+           n<=0||n>end-offset)return false;
         offset+=n;
     }
     return true;
@@ -64,12 +69,12 @@ struct Cursor {
 };
 class Processor final : public AudioEffect {
     DesktopShuttle engine;
-    TraceStateBridge<ShuttlePatch> state;
+    TraceStateBridge<ShuttleHostPatch> state;
     uint32 tail=1440000;
     void applyPending() noexcept {
-        ShuttlePatch p{};if(state.take(p))engine.configure(p);
+        ShuttleHostPatch p{};if(state.take(p))configureHost(engine,p);
     }
-    void publishState() noexcept {state.publish(engine.patch());}
+    void publishState() noexcept {state.publish(snapshotHost(engine));}
 public:
     Processor(){setControllerClass(controllerID);}
     static FUnknown* create(void*){return static_cast<IAudioProcessor*>(new Processor);}
@@ -104,7 +109,7 @@ public:
     uint32 PLUGIN_API getTailSamples() override {return tail;}
     // State I/O is control-side only; the engine has a single audio owner.
     tresult PLUGIN_API setState(IBStream* stream) override {
-        ShuttlePatch p{};if(!readState(stream,p))return kResultFalse;
+        ShuttleHostPatch p{};if(!readState(stream,p))return kResultFalse;
         state.request(p);return kResultOk;
     }
     tresult PLUGIN_API getState(IBStream* stream) override {
@@ -124,14 +129,14 @@ public:
             }
         }
         const auto apply=[&](int32 sample){
-            ShuttlePatch patch=engine.patch();bool changed=false;
+            ShuttleHostPatch patch=snapshotHost(engine);bool changed=false;
             for(unsigned id=0;id<count;++id){
                 auto& c=cursors[id];
                 while(c.pending&&c.offset==sample){
-                    applyShuttleNormalized(patch,id,c.value);changed=true;c.advance();
+                    applyHostNormalized(patch,id,c.value);changed=true;c.advance();
                 }
             }
-            if(changed)engine.configure(patch);
+            if(changed)configureHost(engine,patch);
         };
         if(!d.numSamples){applyPending();apply(0);publishState();return kResultOk;}
         if(d.symbolicSampleSize!=kSample32)return kResultFalse;
@@ -164,27 +169,28 @@ public:
     static FUnknown* create(void*){return static_cast<IEditController*>(new Controller);}
     tresult PLUGIN_API initialize(FUnknown* ctx) override {
         const auto rc=EditController::initialize(ctx);if(rc!=kResultOk)return rc;
-        ShuttlePatch p{};
+        ShuttleHostPatch p{};
         const auto add=[&](const TChar* name,unsigned id,int32 steps=0,int32 flags=ParameterInfo::kCanAutomate){
-            parameters.addParameter(name,nullptr,steps,shuttleNormalized(p,id),flags,id);
+            parameters.addParameter(name,nullptr,steps,hostNormalized(p,id),flags,id);
         };
         add(STR16("Wet mix"),0,1000);
         add(STR16("Reverse"),1,1000);
         add(STR16("Feedback (max 65%)"),2,1000);
         add(STR16("Stereo cross"),3,1000);
         add(STR16("Bypass"),4,1,ParameterInfo::kCanAutomate|ParameterInfo::kIsBypass);
+        add(STR16("Stereo stagger"),5,1000);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* stream) override {
-        ShuttlePatch p{};if(!readState(stream,p))return kResultFalse;
-        for(unsigned id=0;id<count;++id)setParamNormalized(id,shuttleNormalized(p,id));
+        ShuttleHostPatch p{};if(!readState(stream,p))return kResultFalse;
+        for(unsigned id=0;id<count;++id)setParamNormalized(id,hostNormalized(p,id));
         return kResultOk;
     }
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
 DEF_CLASS2(INLINE_UID_FROM_FUID(processorID), PClassInfo::kManyInstances, kVstAudioEffectClass,
-           "MHAC Palimpsest Shuttle", Vst::kDistributable, "Fx", "0.1.0", kVstVersionString, Processor::create)
+           "MHAC Palimpsest Shuttle", Vst::kDistributable, "Fx", "0.2.0", kVstVersionString, Processor::create)
 DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID), PClassInfo::kManyInstances, kVstComponentControllerClass,
-           "MHAC Palimpsest Shuttle Controller", 0, "", "0.1.0", kVstVersionString, Controller::create)
+           "MHAC Palimpsest Shuttle Controller", 0, "", "0.2.0", kVstVersionString, Controller::create)
 END_FACTORY

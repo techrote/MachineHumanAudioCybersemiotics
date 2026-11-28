@@ -12,18 +12,19 @@ EXPECTED = [(Decimal(r), b, n) for r, n in zip(RATES,
             for b in (127, 1024)]
 EXT = 'SDK_EXTENDED_RATE_PASS automation_cases=10'
 END = 'SDK_PROBE_PASS automation_cases=6 stereo_frames=120000'
+STAGGER_END = 'SDK_STAGGER_PASS cases=16 controller=6'
 CASE = re.compile(r'SDK_AUTOMATION rate=(\S+) block=(\d+) frames=(\d+) max_error=(\S+)')
 STATE = re.compile(r'SDK_STATE_PASS writes=20000 reads=([1-9]\d*) blocks=([1-9]\d*)')
 
 
 def validate(data):
     lines = [s.strip() for s in data.decode('utf-8-sig').splitlines() if s.strip()]
-    if len(lines) != 19 or lines[16] != EXT or lines[18] != END:
-        raise ValueError('expected 16 ordered cases, extended marker, state stress and final marker')
+    if len(lines) != 36 or lines[16] != EXT or lines[18] != END or lines[35] != STAGGER_END:
+        raise ValueError('expected 16 legacy and 16 stagger cases, extended marker, state stress and final markers')
     state = STATE.fullmatch(lines[17])
     if not state or int(state[2]) < 256:
         raise ValueError('missing or incomplete state stress')
-    for line, expected in zip(lines[:16], EXPECTED):
+    for line, expected in zip(lines[:16] + [s.replace('SDK_STAGGER ', 'SDK_AUTOMATION ', 1) if s.startswith('SDK_STAGGER ') else '' for s in lines[19:35]], EXPECTED * 2):
         m = CASE.fullmatch(line)
         if not m:
             raise ValueError('malformed automation case: ' + line)
@@ -49,6 +50,7 @@ def self_test():
     lines = [f'SDK_AUTOMATION rate={r} block={b} frames={n} max_error=0'
              for r, b, n in EXPECTED]
     lines += [EXT, 'SDK_STATE_PASS writes=20000 reads=1 blocks=256', END]
+    lines += [f'SDK_STAGGER rate={r} block={b} frames={n} max_error=0' for r,b,n in EXPECTED] + [STAGGER_END]
     encode = lambda rows: ('\n'.join(rows) + '\n').encode()
     data = encode(lines)
     validate(data)
@@ -59,7 +61,9 @@ def self_test():
            lines[:8] + [lines[8].replace('1234.568', '1234.57')] + lines[9:],
            lines[:17] + [lines[17].replace('blocks=256', 'blocks=255')] + lines[18:],
            lines[:17] + [lines[17].replace('writes=20000', 'writes=19999')] + lines[18:],
-           lines + ['SDK_PROBE_FAIL unexpected']]
+           lines + ['SDK_PROBE_FAIL unexpected'], lines[:19],
+           lines[:19]+[lines[19].replace('SDK_STAGGER', 'SDK_AUTOMATION')]+lines[20:],
+           lines[:19]+[lines[20]]+lines[20:]]
     for err in ('nan', 'inf', '-1', '0.00002', '1', 'bad'):
         bad.append([lines[0].replace('max_error=0', 'max_error='+err)] + lines[1:])
     for case in bad:
@@ -100,4 +104,4 @@ if __name__ == '__main__':
         validate(data)
         if a.zip:
             verify_zip(data, a.zip)
-        print('SHUTTLE_RECEIPT_PASS cases=16 extended=10 state=1')
+        print('SHUTTLE_RECEIPT_PASS cases=16 extended=10 state=1 stagger=16')
