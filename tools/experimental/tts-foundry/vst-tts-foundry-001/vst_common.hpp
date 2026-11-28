@@ -14,10 +14,10 @@ namespace mhac::tts::vst {
 using namespace Steinberg;
 using namespace Steinberg::Vst;
 
-template<std::size_t N>
-inline bool read_state(IBStream* s,StateBytes<N>& b){int32 n=0;return s&&s->read(b.data(),int32(b.size()),&n)==kResultOk&&n==int32(b.size());}
-template<std::size_t N>
-inline tresult write_state(IBStream* s,const StateBytes<N>& b){if(!s)return kResultFalse;int32 n=0;return s->write(b.data(),int32(b.size()),&n)==kResultOk&&n==int32(b.size())?kResultOk:kResultFalse;}
+template<std::size_t Bytes>
+inline bool read_state(IBStream* s,std::array<std::uint8_t,Bytes>& b){int32 n=0;return s&&s->read(b.data(),int32(b.size()),&n)==kResultOk&&n==int32(b.size());}
+template<std::size_t Bytes>
+inline tresult write_state(IBStream* s,const std::array<std::uint8_t,Bytes>& b){if(!s)return kResultFalse;int32 n=0;return s->write(b.data(),int32(b.size()),&n)==kResultOk&&n==int32(b.size())?kResultOk:kResultFalse;}
 
 struct ParamCursor {
     IParamValueQueue* q=nullptr;int32 index=0,count=0,offset=0;ParamValue value=0;bool pending=false;
