@@ -1,5 +1,5 @@
 #pragma once
-#include "bank_budget.hpp"
+#include "bank_transient.hpp"
 #include <atomic>
 
 namespace mhac::counterfactual::bankhost {
@@ -80,6 +80,7 @@ inline void change(MemoryConfig& c,unsigned id,double value) noexcept {
 }
 class Host {
     HarmonicBank dsp_{};
+    TransientGate keyGate_{};
     struct Ticket {MemoryConfig config{}; std::uint64_t generation=0;};
     MemoryConfig current_{};
     Ticket requested_{},lastPublished_{};
@@ -111,8 +112,9 @@ public:
     // For state saves: a pending control request wins until the audio thread acknowledges it.
     State save() noexcept {completed_.consume(lastPublished_);return encode(lastPublished_.generation==requested_.generation?lastPublished_.config:requested_.config);}
     // Audio lifecycle only, stopped processing required for prepare/reset.
-    bool prepare(double rate) noexcept {if(!dsp_.prepare(rate))return false;reset();return true;}
-    void reset() noexcept {admit();dsp_.reset();edges_={};budgetHigh_=false;complete();}
+    bool prepare(double rate) noexcept {if(!dsp_.prepare(rate)||!keyGate_.prepare(rate))return false;reset();return true;}
+    void resetKey() noexcept {keyGate_.reset();}
+    void reset() noexcept {admit();dsp_.reset();resetKey();edges_={};budgetHigh_=false;complete();}
     // Planar stereo; exact in-place supported. Event list sorted by offset;
     // validate entire list before changing state or touching output.
     template<class Sample> bool process(const Sample* l,const Sample* r,Sample* ol,Sample* oright,
@@ -123,11 +125,12 @@ public:
     // Null input channels mean silence; null output channels are discarded.
     // A zero-frame block accepts offset-zero events for host parameter flush.
     template<class Sample> bool processOptional(const Sample* l,const Sample* r,Sample* ol,Sample* oright,
-                                       unsigned n,const Event* events=nullptr,unsigned count=0) noexcept {
+                                       unsigned n,const Event* events=nullptr,unsigned count=0,
+                                       bool keyEnabled=false,const Sample* keyL=nullptr,const Sample* keyR=nullptr) noexcept {
         if(count>MaxEvents||(count&&!events))return false;
         for(unsigned i=0;i<count;++i){const auto& e=events[i];
             if((n?e.offset>=n:e.offset!=0)||!known(e.id)||!std::isfinite(e.value)||(i&&e.offset<events[i-1].offset))return false;}
-        admit();unsigned j=0;
+        admit();if(n&&!keyEnabled)resetKey();unsigned j=0;
         for(unsigned i=0;i<(n?n:1);++i){
             const unsigned start=j;bool changed=false;
             while(j<count&&events[j].offset==i){if(!command(events[j].id)){change(current_,events[j].id,events[j].value);changed=true;}++j;}
@@ -136,7 +139,15 @@ public:
             // Existing manual commands take priority regardless of host queue order.
             for(unsigned k=start;k<j;++k)if(optimalCommand(events[k].id))trigger(events[k]);
             // Explicit per-band commands have priority over bank-wide admission.
-            for(unsigned k=start;k<j;++k)if(events[k].id==AdmitBudget)trigger(events[k]);
+            bool manualAdmission=false;
+            for(unsigned k=start;k<j;++k)if(events[k].id==AdmitBudget){
+                manualAdmission|=events[k].value>=0.5&&!budgetHigh_;
+                trigger(events[k]);
+            }
+            // A simultaneous manual rising edge owns the sample's admission.
+            // Observe the key anyway so a held crossing cannot be deferred.
+            if(n&&keyEnabled&&keyGate_.observe(keyL?keyL[i]:0,keyR?keyR[i]:0)&&!manualAdmission)
+                beginBudgetedEscape(dsp_,current_.budget,current_.energyFirst?BudgetObjective::energy:BudgetObjective::count);
             if(n){const auto s=dsp_.process(l?l[i]:0,r?r[i]:0);if(ol)ol[i]=static_cast<Sample>(s.left);if(oright)oright[i]=static_cast<Sample>(s.right);}
         }
         complete();return true;

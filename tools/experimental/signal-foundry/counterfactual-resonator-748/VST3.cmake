@@ -64,9 +64,9 @@ if(MHAC_BUILD_VST3)
     # The locked SDK's moduleinfotool uses PROJECT_VERSION, not class metadata.
     # Keep the Counterfactual Resonator project and all other targets at 0.2.0.
     function(mhac_add_harmonic_memory_bank)
-        set(PROJECT_VERSION 0.3.0)
+        set(PROJECT_VERSION 0.4.0)
         set(PROJECT_VERSION_MAJOR 0)
-        set(PROJECT_VERSION_MINOR 3)
+        set(PROJECT_VERSION_MINOR 4)
         set(PROJECT_VERSION_PATCH 0)
         set(PROJECT_VERSION_TWEAK "")
         smtg_add_vst3plugin(MHACHarmonicMemoryBank bank_plugin.cpp)

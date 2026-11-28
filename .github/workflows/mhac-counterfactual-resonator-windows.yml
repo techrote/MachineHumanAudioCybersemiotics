@@ -123,7 +123,89 @@ jobs:
           if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_CONTROLLER_PASS parameters=45$')) { throw 'Missing bank controller receipt' }
           if (@(Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_BUDGET_CASE rate=').Count -ne 16) { throw 'Incomplete budget replay transcript' }
           if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_BUDGET_PASS cases=16$')) { throw 'Missing budget replay completion' }
-          New-Item -ItemType Directory -Path bank-delivery,bank-delivery/Audio,bank-delivery/Presets | Out-Null
+          if (@(Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_KEY_CASE rate=').Count -ne 32) { throw 'Incomplete sidechain replay transcript' }
+          if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_KEY_PASS cases=32
+          Copy-Item bank-sdk-replay.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-BUDGET.md bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-SDK-REPLAY.md bank-delivery/
+          Copy-Item -Recurse $bundles[0].FullName bank-delivery/
+          Copy-Item delivery/SDK-*.txt,delivery/Steinberg-SDK-LICENSE.txt,delivery/BUILD-SOURCE.txt bank-delivery/
+          Copy-Item bank-validator.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-VST3.md,tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-HOST.md bank-delivery/
+          python tools/experimental/signal-foundry/counterfactual-resonator-748/bank_presets.py bank-delivery/Presets
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          & build-core/Release/counterfactual_bank_render.exe bank-delivery/Audio
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          New-Item -ItemType Directory -Path bank-delivery/BudgetPerformance,bank-delivery/BudgetPerformance/Presets,bank-delivery/BudgetPerformance/Audio | Out-Null
+          & build-core/Release/counterfactual_bank_performance.exe bank-delivery/BudgetPerformance | Tee-Object -FilePath bank-delivery/BudgetPerformance/render-receipt.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path bank-delivery/BudgetPerformance/render-receipt.txt -Pattern '^BANK_PERFORMANCE_PASS presets=5 structural_checks=117$')) { throw 'Missing budget performance receipt' }
+          if (@(Get-ChildItem bank-delivery/BudgetPerformance/Presets -File -Filter '*.vstpreset').Count -ne 5 -or @(Get-ChildItem bank-delivery/BudgetPerformance/Audio -File -Filter '*.wav').Count -ne 5) { throw 'Incomplete budget performance bank' }
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-PERFORMANCE.md bank-delivery/BudgetPerformance/
+          python -c "from pathlib import Path; import zipfile; r=Path('bank-delivery'); z=zipfile.ZipFile('MHACHarmonicMemoryBank-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python tools/experimental/signal-foundry/counterfactual-resonator-748/verify_moduleinfo.py MHACHarmonicMemoryBank MHACHarmonicMemoryBank-Windows-x64.zip
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACHarmonicMemoryBank-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACHarmonicMemoryBank-validator-log
+          path: |
+            bank-validator.txt
+            bank-sdk-replay.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MHACHarmonicMemoryBank-Windows-x64
+          path: MHACHarmonicMemoryBank-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+)) { throw 'Missing sidechain replay completion' }
+          New-Item -ItemType Directory -Path bank-delivery,bank-delivery/Audio,bank-delivery/Presets,bank-delivery/KeyPerformance | Out-Null
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-KEY.md bank-delivery/KeyPerformance/
+          & build-core/Release/counterfactual_bank_transient.exe bank-delivery/KeyPerformance | Tee-Object -FilePath bank-delivery/KeyPerformance/render-receipt.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path bank-delivery/KeyPerformance/render-receipt.txt -Pattern '^BANK_KEY_ROUTING_PASS cases=144
+          Copy-Item bank-sdk-replay.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-BUDGET.md bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-SDK-REPLAY.md bank-delivery/
+          Copy-Item -Recurse $bundles[0].FullName bank-delivery/
+          Copy-Item delivery/SDK-*.txt,delivery/Steinberg-SDK-LICENSE.txt,delivery/BUILD-SOURCE.txt bank-delivery/
+          Copy-Item bank-validator.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-VST3.md,tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-HOST.md bank-delivery/
+          python tools/experimental/signal-foundry/counterfactual-resonator-748/bank_presets.py bank-delivery/Presets
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          & build-core/Release/counterfactual_bank_render.exe bank-delivery/Audio
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          New-Item -ItemType Directory -Path bank-delivery/BudgetPerformance,bank-delivery/BudgetPerformance/Presets,bank-delivery/BudgetPerformance/Audio | Out-Null
+          & build-core/Release/counterfactual_bank_performance.exe bank-delivery/BudgetPerformance | Tee-Object -FilePath bank-delivery/BudgetPerformance/render-receipt.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path bank-delivery/BudgetPerformance/render-receipt.txt -Pattern '^BANK_PERFORMANCE_PASS presets=5 structural_checks=117$')) { throw 'Missing budget performance receipt' }
+          if (@(Get-ChildItem bank-delivery/BudgetPerformance/Presets -File -Filter '*.vstpreset').Count -ne 5 -or @(Get-ChildItem bank-delivery/BudgetPerformance/Audio -File -Filter '*.wav').Count -ne 5) { throw 'Incomplete budget performance bank' }
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-PERFORMANCE.md bank-delivery/BudgetPerformance/
+          python -c "from pathlib import Path; import zipfile; r=Path('bank-delivery'); z=zipfile.ZipFile('MHACHarmonicMemoryBank-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          python tools/experimental/signal-foundry/counterfactual-resonator-748/verify_moduleinfo.py MHACHarmonicMemoryBank MHACHarmonicMemoryBank-Windows-x64.zip
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACHarmonicMemoryBank-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACHarmonicMemoryBank-validator-log
+          path: |
+            bank-validator.txt
+            bank-sdk-replay.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MHACHarmonicMemoryBank-Windows-x64
+          path: MHACHarmonicMemoryBank-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+)) { throw 'Missing native keyed routing receipt' }
           Copy-Item bank-sdk-replay.txt bank-delivery/
           Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-BUDGET.md bank-delivery/
           Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-SDK-REPLAY.md bank-delivery/

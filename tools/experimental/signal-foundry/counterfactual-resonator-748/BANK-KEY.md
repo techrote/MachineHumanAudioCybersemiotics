@@ -1,0 +1,13 @@
+# FX-011Y — Harmonic Memory Bank 0.4.0 candidate: erase-key routing
+
+Refs #748 and draft #265 at 56c107f8f4147316a588484c47be28bc8f840fbb. Creative extension, not a formal scientific or human-effect claim. Parent 9849fe28343e7d93c5b7da3936901432b6586194 (qualified 0.3.0 artifact 15262787553, unchanged).
+
+The native Host now accepts an independent optional key and routes its transient gate to budgeted erasure after parameter and manual per-band events. A simultaneous explicit bank admission rising edge wins; the key crossing is consumed, not deferred or counted twice. The detector is fixed-storage and runs on the audio owner. The VST3 candidate advertises an initially inactive auxiliary audio input called Erase key (mono or stereo independently of main mono/stereo). Host activation/routing is the opt-in; budget zero remains safe default. No new parameter or saved state bytes: HM01/HM02 and all 45 IDs remain intact. The host, not component state, saves bus routing. A connected key may erase memory in any nonzero-budget preset, so disconnect/deactivate the aux bus to return to the legacy manual mode. Bypass continues internal state evolution as before. A missing/deactivated key resets the detector; silence flags are respected. Pause preserves memory, activation resets. The bus is never mixed into audio. No DAW sidechain compatibility claim until actual tests.
+
+## Audition
+
+Use Program.wav as main input and Key.wav as sidechain, set the FX-011W performance controls in BANK-TRANSIENT.md, close all captures at 250 ms, select budget 0/2/4/16. Do not also play the manual CSV triggers unless intentionally testing priority. Key attacks at .5, 1, 1.5 s admitted; .53 s suppressed. KeyPerformance examples are native attenuated reference WAVs, not actual DAW renders. Use low monitoring volume and reset between takes. Persistent memory can last indefinitely. The detector settings are the prior fixed defaults; no new threshold controls yet.
+
+## Verification and gates
+
+Local recovered exact-header native subset Linux GCC Release CTest 4/4; native routing 144 cases across 44.1/48/96 kHz, 1/257 blocks, float/double, budget 0/4/16, active/inactive and simultaneous manual commands; sample-exact scheduled oracle and state agreement. Clang ASan/UBSan transient executable PASS. Ten generated files identical to previous fixture and between compilers. Existing full hosted native suite, exact SDK 3.8.0 build/validator, 128+16 historical cases and 32 new actual-module sidechain cases required before delivery. Sidechain SDK source not compiled locally because git DNS unavailable. Same-agent verification only. Draft/HOLD, no main merge or independent acceptance.

@@ -21,16 +21,19 @@ void ok(tresult result,const char* stage="SDK call"){
 struct ModuleEngine {
     IComponent* component;
     IAudioProcessor* processor;
-    int channels,block,format;
+    int channels,block,format,keyChannels;
     bool initialized=false,active=false,running=false,paused=false;
     unsigned rendered=0;
     ParameterChanges params{int32(bh::ParamCount)};
-    ModuleEngine(IComponent* c,IAudioProcessor* p,HostApplication* host,int nc,int bs,int fmt)
-        :component(c),processor(p),channels(nc),block(bs),format(fmt){
+    ModuleEngine(IComponent* c,IAudioProcessor* p,HostApplication* host,int nc,int bs,int fmt,int nk=0,bool keyed=false)
+        :component(c),processor(p),channels(nc),block(bs),format(fmt),keyChannels(nk){
         ok(component->initialize(host));initialized=true;
-        check(component->getBusCount(kAudio,kInput)==1&&component->getBusCount(kAudio,kOutput)==1);
+        check(component->getBusCount(kAudio,kInput)==2&&component->getBusCount(kAudio,kOutput)==1);
+        BusInfo keyInfo{};ok(component->getBusInfo(kAudio,kInput,1,keyInfo));check(keyInfo.busType==kAux&&!(keyInfo.flags&BusInfo::kDefaultActive));
         SpeakerArrangement arrangement=channels==1?SpeakerArr::kMono:SpeakerArr::kStereo;
-        ok(processor->setBusArrangements(&arrangement,1,&arrangement,1));
+        SpeakerArrangement inputs[]={arrangement,nk==1?SpeakerArr::kMono:SpeakerArr::kStereo};
+        ok(processor->setBusArrangements(inputs,nk?2:1,&arrangement,1));
+        ok(component->activateBus(kAudio,kInput,1,keyed));
         ok(component->activateBus(kAudio,kInput,0,true));ok(component->activateBus(kAudio,kOutput,0,true));
         check(processor->canProcessSampleSize(format)==kResultTrue);
     }
@@ -64,7 +67,7 @@ struct ModuleEngine {
         ok(component->setActive(false),"deactivate");active=false;
         ok(component->terminate(),"terminate");initialized=false;
     }
-    template<class T> bool processOptional(const T* l,const T* r,T* ol,T* oright,unsigned n,const bh::Event* ev,unsigned count){
+    template<class T> bool processOptional(const T* l,const T* r,T* ol,T* oright,unsigned n,const bh::Event* ev,unsigned count,const T* kl=nullptr,const T* kr=nullptr){
         check(n<=unsigned(block));params.clearQueue();
         // Pause during excitation, without deactivation, and require the same
         // subsequent samples as uninterrupted native DSP (memory retained).
@@ -74,15 +77,17 @@ struct ModuleEngine {
             check(q!=nullptr);ok(q->addPoint(int32(ev[i].offset),ev[i].value,pi));}
         // Input buffers are read-only by contract; VST3 declares mutable pointers.
         T* in[]={const_cast<T*>(l),const_cast<T*>(r)},*out[]={ol,oright};
-        AudioBusBuffers ib{},ob{};ib.numChannels=channels;ob.numChannels=channels;
-        if constexpr(std::is_same_v<T,float>){ib.channelBuffers32=in;ob.channelBuffers32=out;}
-        else {ib.channelBuffers64=in;ob.channelBuffers64=out;}
+        T* key[]={const_cast<T*>(kl),const_cast<T*>(kr)};
+        AudioBusBuffers ib[2]{},ob{};ib[0].numChannels=channels;ob.numChannels=channels;ib[1].numChannels=keyChannels;
+        if constexpr(std::is_same_v<T,float>){ib[0].channelBuffers32=in;ib[1].channelBuffers32=key;ob.channelBuffers32=out;}
+        else {ib[0].channelBuffers64=in;ib[1].channelBuffers64=key;ob.channelBuffers64=out;}
+        for(int k=0;k<keyChannels;++k)if(!key[k]||std::all_of(key[k],key[k]+n,[](T x){return x==T(0);}))ib[1].silenceFlags|=uint64(1)<<k;
         for(int k=0;k<channels;++k){
-            if(std::all_of(in[k],in[k]+n,[](T x){return x==T(0);}))ib.silenceFlags|=uint64(1)<<k;
+            if(std::all_of(in[k],in[k]+n,[](T x){return x==T(0);}))ib[0].silenceFlags|=uint64(1)<<k;
             std::fill(out[k],out[k]+n,T(9));
         }
         ProcessData d{};d.processMode=kRealtime;d.symbolicSampleSize=format;d.numSamples=int32(n);
-        d.numInputs=1;d.inputs=&ib;d.numOutputs=1;d.outputs=&ob;d.inputParameterChanges=&params;
+        d.numInputs=keyChannels?2:1;d.inputs=ib;d.numOutputs=1;d.outputs=&ob;d.inputParameterChanges=&params;
         ok(processor->process(d),"audio process");uint64 mask=(uint64(1)<<channels)-1;
         for(int k=0;k<channels;++k)for(unsigned i=0;i<n;++i){
             const T x=out[k][i];check(std::isfinite(x)&&std::abs(x)<=T(1));
@@ -119,6 +124,36 @@ template<class T> void runBudget(const VST3::Hosting::PluginFactory& factory,con
     budgetReplay<T>(engine,rate,block,energy,mono);engine.finish();
     std::cout<<"SDK_BANK_BUDGET_CASE rate="<<rate<<" block="<<block<<" energy="<<energy<<" mono="<<mono<<" format="<<engine.format<<'\n';
 }
+// Compare actual sidechain buffers with the native keyed Host. The old
+// one-bus cases remain unchanged apart from the newly advertised aux bus.
+template<class T> void runKey(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassInfo& info,HostApplication* host,unsigned rate,int channels,int nk,bool keyed,unsigned budget){
+    auto comp=factory.createInstance<IComponent>(info.ID());check(bool(comp));
+    FUnknownPtr<IAudioProcessor> proc(comp.get());check(proc.getInterface()!=nullptr);
+    ModuleEngine engine(comp.get(),proc.getInterface(),host,channels,257,std::is_same_v<T,float>?kSample32:kSample64,nk,keyed);
+    bh::Host native;MemoryConfig cfg{};cfg.wet=1000;cfg.budget=budget;cfg.energyFirst=true;
+    for(unsigned k=0;k<4;++k){auto& b=cfg.bands[k];b.peakMix=1000;b.gain=800;b.selectivity=static_cast<std::uint16_t>((177+k*271)%1001);}
+    check(engine.request(cfg)&&native.request(cfg)&&engine.prepare(rate)&&native.prepare(rate));
+    std::array<T,257> l{},r{},kl{},kr{},a{},b{},x{},y{};
+    std::array<bh::Event,32> ev{};
+    for(unsigned start=0;start<rate*3;){
+        const unsigned n=std::min(257u,rate*3-start);unsigned numEvents=0;
+        for(unsigned i=0;i<n;++i){const unsigned t=start+i;
+            const auto pcm=[](double value){return std::round(value*32768)/32768;};
+            l[i]=t<rate/4?T(pcm(.85*std::sin(6.283185307179586*117*t/rate))):T(0);
+            r[i]=channels==2&&t<rate/4?T(pcm(-.55*std::sin(6.283185307179586*168*t/rate))):T(0);
+            bool hit=false;for(unsigned onset:{rate/2,rate/2+rate*3/100,rate,rate*3/2})if(t>=onset&&t<onset+rate/100)hit=true;
+            kl[i]=hit&&nk==1?T(-26214.0/32768):T(0);kr[i]=hit&&nk==2?T(-26214.0/32768):T(0);
+            if(t==rate/4)for(unsigned k=0;k<4;++k)ev[numEvents++]={i,bh::FirstBand+k*bh::Stride+bh::Excite,0};
+            if(t==rate/2||t==rate/2+1)ev[numEvents++]={i,bh::AdmitBudget,t==rate/2?1.:0.};
+        }
+        check(engine.processOptional(l.data(),r.data(),a.data(),b.data(),n,ev.data(),numEvents,kl.data(),kr.data()));
+        check(native.processOptional(l.data(),channels==2?r.data():nullptr,x.data(),channels==2?y.data():nullptr,n,ev.data(),numEvents,keyed,kl.data(),nk==2?kr.data():nullptr));
+        for(unsigned i=0;i<n;++i){check(a[i]==x[i]);if(channels==2)check(b[i]==y[i]);}
+        start+=n;
+    }
+    check(engine.save()==native.save());engine.finish();
+    std::cout<<"SDK_BANK_KEY_CASE rate="<<rate<<" channels="<<channels<<" key="<<nk<<" active="<<keyed<<" budget="<<budget<<" format="<<engine.format<<'\n';
+}
 void controller(const VST3::Hosting::PluginFactory& factory,HostApplication* host){
     unsigned found=0;
     for(const auto& info:factory.classInfos())if(info.category()==kVstComponentControllerClass){
@@ -141,9 +176,9 @@ int main(int argc,char** argv){
     auto host=owned(new HostApplication);std::string error;auto module=VST3::Hosting::Module::create(argv[1],error);
     if(!module){std::cerr<<error<<'\n';return 1;}
     const auto& factory=module->getFactory();factory.setHostContext(host.get());controller(factory,host.get());
-    unsigned cases=0,budgetCases=0;
+    unsigned cases=0,budgetCases=0,keyCases=0;
     for(const auto& info:factory.classInfos())if(info.category()==kVstAudioEffectClass){
-        check(info.name()=="MHAC Harmonic Memory Bank"&&info.version()=="0.3.0");
+        check(info.name()=="MHAC Harmonic Memory Bank"&&info.version()=="0.4.0");
         for(unsigned band=0;band<4;++band)for(bool reverse:{false,true})for(bool manual:{false,true})
             for(unsigned block:{127u,257u})for(bool mono:{false,true}){
                 run<float>(factory,info,host.get(),48000,band,block,reverse,manual,mono);
@@ -153,7 +188,12 @@ int main(int argc,char** argv){
             runBudget<float>(factory,info,host.get(),48000,block,energy,mono);
             runBudget<double>(factory,info,host.get(),96000,block,energy,mono);budgetCases+=2;
         }
+        for(int channels:{1,2})for(int nk:{1,2})for(bool keyed:{false,true})for(unsigned budget:{4u,16u}){
+            runKey<float>(factory,info,host.get(),48000,channels,nk,keyed,budget);
+            runKey<double>(factory,info,host.get(),96000,channels,nk,keyed,budget);keyCases+=2;
+        }
     }
+    check(keyCases==32);std::cout<<"SDK_BANK_KEY_PASS cases="<<keyCases<<'\n';
     check(budgetCases==16);std::cout<<"SDK_BANK_BUDGET_PASS cases="<<budgetCases<<'\n';
     check(cases==128);std::cout<<"SDK_BANK_REPLAY_PASS cases="<<cases<<" checks="<<checks<<'\n';
 }

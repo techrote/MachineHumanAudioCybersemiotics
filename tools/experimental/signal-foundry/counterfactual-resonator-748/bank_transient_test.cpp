@@ -33,6 +33,33 @@ void gateTests(unsigned rate){
     require(g.observe(.8,0));g.reset();require(g.observe(.8,0));
     g.reset();for(unsigned t=0;t<rate*3;++t)require(g.observe(0,key(t,rate)?-26214.0/32768:0)==expected(t,rate));
 }
+// Compare automatic key routing against explicit sample-offset commands, using
+// both one-sample and irregular blocks. The inactive key must be ignored.
+template<class T> void hostKey(unsigned rate,unsigned block,unsigned budget,bool enabled,bool simultaneous){
+    bh::Host keyed,manual;MemoryConfig c{};c.wet=1000;c.budget=budget;c.energyFirst=true;
+    for(unsigned k=0;k<4;++k){auto& b=c.bands[k];b.peakMix=1000;b.gain=800;b.selectivity=static_cast<std::uint16_t>((177+k*271)%1001);}
+    require(keyed.request(c)&&manual.request(c)&&keyed.prepare(rate)&&manual.prepare(rate));
+    std::array<T,257> l{},r{},keyL{},keyR{},a{},b{},x{},y{};
+    std::array<bh::Event,32> ke{},me{};bool different=false;
+    for(unsigned start=0;start<rate*3;){
+        const unsigned n=std::min(block,rate*3-start);unsigned kc=0,mc=0;
+        for(unsigned i=0;i<n;++i){const unsigned t=start+i;const auto in=program(t,rate);
+            l[i]=T(in.left);r[i]=T(in.right);keyL[i]=0;keyR[i]=key(t,rate)?T(-26214.0/32768):T(0);
+            if(t==rate/4)for(unsigned k=0;k<4;++k){const bh::Event e{i,bh::FirstBand+k*bh::Stride+bh::Excite,0};ke[kc++]=e;me[mc++]=e;}
+            const bool manualHere=simultaneous&&(t==rate/2||t==rate/2+1);
+            if(manualHere)ke[kc++]={i,bh::AdmitBudget,t==rate/2?1.:0.};
+            if((enabled&&(expected(t,rate)||(t&&expected(t-1,rate))))||manualHere)
+                me[mc++]={i,bh::AdmitBudget,(expected(t,rate)?1.:0.)};
+        }
+        require(keyed.processOptional(l.data(),r.data(),a.data(),b.data(),n,ke.data(),kc,enabled,keyL.data(),keyR.data()));
+        require(manual.processOptional(l.data(),r.data(),x.data(),y.data(),n,me.data(),mc));
+        for(unsigned i=0;i<n;++i){require(a[i]==x[i]&&b[i]==y[i]&&std::isfinite(a[i])&&std::isfinite(b[i]));if(start+i>=rate*2&&(a[i]!=0||b[i]!=0))different=true;}
+        start+=n;
+    }
+    require(keyed.save()==manual.save());
+    if(budget==0||(!enabled&&!simultaneous))require(different);
+    if(enabled&&budget==16)require(!different);
+}
 void run(unsigned rate,unsigned budget,const std::string& dir){
     HarmonicBank native;TransientGate detector;bh::Host host;
     MemoryConfig c{};c.wet=1000;c.budget=budget;c.energyFirst=true;
@@ -72,5 +99,10 @@ int main(int argc,char** argv){
         for(unsigned t=0;t<rate*3;++t){const auto s=program(t,rate);word(source,unsigned(int(std::round(s.left*32768))),2);word(source,unsigned(int(std::round(s.right*32768))),2);word(side,0,2);word(side,key(t,rate)?unsigned(-26214):0,2);}
         source.close();side.close();require(bool(source)&&bool(side));
     }
+    unsigned keyCases=0;
+    for(unsigned rate:{44100u,48000u,96000u})for(unsigned block:{1u,257u})for(unsigned budget:{0u,4u,16u})for(bool enabled:{false,true})for(bool simultaneous:{false,true}){
+        hostKey<float>(rate,block,budget,enabled,simultaneous);hostKey<double>(rate,block,budget,enabled,simultaneous);keyCases+=2;
+    }
+    std::cout<<"BANK_KEY_ROUTING_PASS cases="<<keyCases<<"\n";
     std::cout<<"BANK_TRANSIENT_PASS rates=3 configurations=12 paired_frames=2257200\n";
 }

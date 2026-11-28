@@ -32,6 +32,9 @@ bool writeState(IBStream* s,bh::State bytes){
 class Processor final : public AudioEffect {
     bh::Host host;
     bh::EventBatch batch;
+    // Host UI owns the route; audio thread consumes its generation, never locks.
+    std::atomic<unsigned> keyRoute{0};
+    unsigned keySeen=0;
     std::mutex stateMutex; // only non-audio state callers
     bool collect(ProcessData& d){
         batch.clear(static_cast<unsigned>(d.numSamples));
@@ -44,7 +47,7 @@ class Processor final : public AudioEffect {
         }
         return batch.finish();
     }
-    template<class T> tresult audio(ProcessData& d,T** in,T** out){
+    template<class T> tresult audio(ProcessData& d,T** in,T** out,T** key){
         const auto ni=d.numInputs?d.inputs[0].numChannels:0;
         const auto no=d.numOutputs?d.outputs[0].numChannels:0;
         if((d.numInputs&&ni!=1&&ni!=2)||(d.numOutputs&&no!=1&&no!=2)||(ni&&no&&ni!=no))return kResultFalse;
@@ -53,7 +56,15 @@ class Processor final : public AudioEffect {
         const T* l=in&&ni&&!(mask&1)?in[0]:nullptr;
         const T* r=in&&ni==2&&!(mask&2)?in[1]:nullptr;
         T* ol=out&&no?out[0]:nullptr;T* oright=out&&no==2?out[1]:nullptr;
-        if(!host.processOptional(l,r,ol,oright,static_cast<unsigned>(d.numSamples),batch.data(),batch.size()))return kResultFalse;
+        const unsigned route=keyRoute.load(std::memory_order_acquire);
+        const bool routed=(route&1u)!=0&&d.numInputs==2;
+        const auto nk=routed?d.inputs[1].numChannels:0;
+        if(nk<0||nk>2)return kResultFalse;
+        const uint64 km=routed?d.inputs[1].silenceFlags:~uint64(0);
+        const T* kl=key&&nk&&!(km&1)?key[0]:nullptr;
+        const T* kr=key&&nk==2&&!(km&2)?key[1]:nullptr;
+        if(route!=keySeen){host.resetKey();keySeen=route;}
+        if(!host.processOptional(l,r,ol,oright,static_cast<unsigned>(d.numSamples),batch.data(),batch.size(),routed&&nk>0,kl,kr))return kResultFalse;
         if(d.numOutputs){uint64 silent=(uint64(1)<<no)-1;
             for(int32 i=0;i<d.numSamples;++i){if(ol[i]!=T(0))silent&=~uint64(1);if(no==2&&oright[i]!=T(0))silent&=~uint64(2);}
             d.outputs[0].silenceFlags=silent;
@@ -63,8 +74,17 @@ class Processor final : public AudioEffect {
 public:
     Processor(){setControllerClass(controllerID);}
     static FUnknown* create(void*){return static_cast<IAudioProcessor*>(new Processor);}
-    tresult PLUGIN_API initialize(FUnknown* c) override {auto r=AudioEffect::initialize(c);if(r!=kResultOk)return r;addAudioInput(STR16("Input"),SpeakerArr::kStereo);addAudioOutput(STR16("Output"),SpeakerArr::kStereo);return kResultOk;}
-    tresult PLUGIN_API setBusArrangements(SpeakerArrangement* in,int32 ni,SpeakerArrangement* out,int32 no) override {if(ni!=1||no!=1||!in||!out||in[0]!=out[0]||(in[0]!=SpeakerArr::kStereo&&in[0]!=SpeakerArr::kMono))return kResultFalse;return AudioEffect::setBusArrangements(in,ni,out,no);}
+    tresult PLUGIN_API initialize(FUnknown* c) override {auto r=AudioEffect::initialize(c);if(r!=kResultOk)return r;addAudioInput(STR16("Input"),SpeakerArr::kStereo);addAudioInput(STR16("Erase key"),SpeakerArr::kStereo,kAux,0);addAudioOutput(STR16("Output"),SpeakerArr::kStereo);return kResultOk;}
+    tresult PLUGIN_API setBusArrangements(SpeakerArrangement* in,int32 ni,SpeakerArrangement* out,int32 no) override {if((ni!=1&&ni!=2)||no!=1||!in||!out||in[0]!=out[0]||(in[0]!=SpeakerArr::kStereo&&in[0]!=SpeakerArr::kMono)||(ni==2&&in[1]!=SpeakerArr::kStereo&&in[1]!=SpeakerArr::kMono))return kResultFalse;return AudioEffect::setBusArrangements(in,ni,out,no);}
+    tresult PLUGIN_API activateBus(MediaType type,BusDirection dir,int32 index,TBool state) override {
+        const auto result=AudioEffect::activateBus(type,dir,index,state);
+        if(result==kResultOk&&type==kAudio&&dir==kInput&&index==1){
+            const unsigned previous=keyRoute.load(std::memory_order_relaxed);
+            const unsigned enabled=state?1u:0u;
+            if((previous&1u)!=enabled)keyRoute.store(((previous+2u)&~1u)|enabled,std::memory_order_release);
+        }
+        return result;
+    }
     tresult PLUGIN_API canProcessSampleSize(int32 s) override {return s==kSample32||s==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& s) override {if(!host.prepare(s.sampleRate))return kResultFalse;return AudioEffect::setupProcessing(s);}
     tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)host.reset();return r;}
@@ -77,10 +97,10 @@ public:
     tresult PLUGIN_API setState(IBStream* s) override {bh::State p{};if(!readState(s,p))return kResultFalse;std::lock_guard<std::mutex> lock(stateMutex);return host.request(p)?kResultOk:kResultFalse;}
     tresult PLUGIN_API getState(IBStream* s) override {bh::State p{};{std::lock_guard<std::mutex> lock(stateMutex);p=host.save();}return writeState(s,p)?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
-        if(d.numSamples<0||d.numInputs<0||d.numOutputs<0||d.numInputs>1||d.numOutputs>1||(d.numInputs&&!d.inputs)||(d.numOutputs&&!d.outputs)||!collect(d))return kResultFalse;
+        if(d.numSamples<0||d.numInputs<0||d.numOutputs<0||d.numInputs>2||d.numOutputs>1||(d.numInputs&&!d.inputs)||(d.numOutputs&&!d.outputs)||!collect(d))return kResultFalse;
         if(d.numSamples==0)return host.processOptional<double>(nullptr,nullptr,nullptr,nullptr,0,batch.data(),batch.size())?kResultOk:kResultFalse;
-        if(d.symbolicSampleSize==kSample32)return audio(d,d.numInputs?d.inputs[0].channelBuffers32:nullptr,d.numOutputs?d.outputs[0].channelBuffers32:nullptr);
-        if(d.symbolicSampleSize==kSample64)return audio(d,d.numInputs?d.inputs[0].channelBuffers64:nullptr,d.numOutputs?d.outputs[0].channelBuffers64:nullptr);
+        if(d.symbolicSampleSize==kSample32)return audio(d,d.numInputs?d.inputs[0].channelBuffers32:nullptr,d.numOutputs?d.outputs[0].channelBuffers32:nullptr,d.numInputs==2?d.inputs[1].channelBuffers32:nullptr);
+        if(d.symbolicSampleSize==kSample64)return audio(d,d.numInputs?d.inputs[0].channelBuffers64:nullptr,d.numOutputs?d.outputs[0].channelBuffers64:nullptr,d.numInputs==2?d.inputs[1].channelBuffers64:nullptr);
         return kResultFalse;
     }
 };
@@ -108,6 +128,6 @@ public:
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Harmonic Memory Bank",Vst::kDistributable,"Fx|Filter","0.3.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Harmonic Memory Bank Controller",0,"","0.3.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Harmonic Memory Bank",Vst::kDistributable,"Fx|Filter","0.4.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Harmonic Memory Bank Controller",0,"","0.4.0",kVstVersionString,Controller::create)
 END_FACTORY
