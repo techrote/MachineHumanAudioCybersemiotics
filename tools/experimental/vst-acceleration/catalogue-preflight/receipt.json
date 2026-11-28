@@ -1,0 +1,58 @@
+{
+  "result": "PASS",
+  "packages": [
+    {
+      "bundle": "MHACFreezeSocket.vst3",
+      "source": "fe3a3f4268e59d68698d34b8fd45f43ea2c9e0f2",
+      "version": "0.1.0",
+      "classes": {
+        "Audio Module Class": "3F74DE8192E743E6A36CB226C39DD8CE",
+        "Component Controller Class": "9B44DD9C197C4F578D2E177AF418C90B"
+      },
+      "validator_passed": 47,
+      "archive_sha256": "e3791e9129d6344d18b63fe64018437a4f1a60ca6d978e713cc3c9f9e1c34d9a",
+      "delivery_sha256": "2d4211a6a20976b6e372a983445adc88a7e57c61393e1c6f8ead8e45cf8596f3",
+      "binary_sha256": "394d198e2ab1915e12ebc224d7fa5cd9f764d85f235d090aad78af0278515312"
+    },
+    {
+      "bundle": "MHACGoldenReceipt.vst3",
+      "source": "eb78ea3b7a08a646910e66235724f259aeeb8190",
+      "version": "0.1.0",
+      "classes": {
+        "Audio Module Class": "AF04645CE81D4ABEAB751C90FFAD9163",
+        "Component Controller Class": "5EB67EEA974E44209D678B3003E153F2"
+      },
+      "validator_passed": 47,
+      "archive_sha256": "299400212aff8213b99131474d8092be5a396658197727621245ca4a7a94e9c3",
+      "delivery_sha256": "ce074aff2bbfd9d8b10e90e4e2d246fbef43f0d36a7da14592ab03153e39cccf",
+      "binary_sha256": "b30e6715fb9772dbc2aa896ada542a3f67c5880a4565b3496f93e0a6197d281c"
+    },
+    {
+      "bundle": "MHACThreeWinters.vst3",
+      "source": "91dc53aca2076665693cbef9f0c61fd913b28745",
+      "version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "D1195E6E292C442CB550AE834977E4CD",
+        "Component Controller Class": "992821A7B1114FB38B69B059EC25C81C"
+      },
+      "validator_passed": 47,
+      "archive_sha256": "a694d73fa2080685984e43d3fcaa3245744d9ae7fd0e210b3bbef3f0abe1a97d",
+      "delivery_sha256": "5380e6ef4b65356858cf4ca96b9a2967a2a7fd1811611e68fb78dc77d0b90974",
+      "binary_sha256": "1fad5e780bdb61fc4b14e5e7fbb72851cc572a51c18da7550590aa765ef5a3b8"
+    },
+    {
+      "bundle": "MHACErasureLoom.vst3",
+      "source": "c33cdb2e15114e8d14c16335288860949c0ec97d",
+      "version": "0.2.0",
+      "classes": {
+        "Audio Module Class": "DC4F4B718CA24A61A3B728C4C77342EE",
+        "Component Controller Class": "180FD22637C64D5B9BEA13786F8D22A1"
+      },
+      "validator_passed": 47,
+      "archive_sha256": "f906c14cd563336c5cdba2b36e8b6a1a569a801f679192cf92f7222e8f9fedbd",
+      "delivery_sha256": "342710cc2b1f972c3302f1cb44e7e4fca890164625197c0c6aa25a769ab0f002",
+      "binary_sha256": "62469ee41c53c071178f57cce7ddcd9a7242bf34a292114d85b8d622c7805d24"
+    }
+  ],
+  "scope": "static package preflight only"
+}

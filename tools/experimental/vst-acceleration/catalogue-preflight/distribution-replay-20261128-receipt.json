@@ -1,0 +1,90 @@
+{
+  "date": "2026-11-28",
+  "scope": "Native Linux Python archive reconstruction only; no new VST host execution, scientific acceptance or merge",
+  "parent": "6151518409d5e117e9a86c9258b366ccb7a82625",
+  "base": "495a98ca12bae467a507031f04931aa4254b1866",
+  "python": "3.13.5",
+  "zlib": "1.3.1",
+  "source_blobs": {
+    "assemble.py": "6a87aeb22fcd7a7a6679c40f56fbb46fa66f588d",
+    "extend.py": "ab3ccf1329d9c3288edb44783242d934cd49bb26",
+    "refresh_signal.py": "d8e644a61679b87dca8b9f1b041201a934c41852",
+    "refresh_shuttle.py": "4f1cbf81462a7cef968fa8518d017a39ef61963d",
+    "replay_distribution.py": "d5a2ca3796f552226ed74461f8aa04af8560efa4",
+    "refresh.py": "373647a9f36e8de3df0f280fae95c41331544b40"
+  },
+  "input_artifacts": [
+    15210786073,
+    15207530972,
+    15207451185,
+    15195705883,
+    15213334539,
+    15213579147,
+    15213519440,
+    15194909235,
+    15148180211,
+    15156181930,
+    15145497011,
+    15222539017,
+    15228973006,
+    15228688642,
+    15233734011,
+    15233868488
+  ],
+  "all_input_sha256_verified": true,
+  "stages": [
+    {
+      "archive": "MHAC-VST-catalogue-increment-20261127.zip",
+      "sha256": "d58faf344111f0eb3882aa47f58e2e28baac84517f74e65b2f5e8df68c86ae29",
+      "byte_identical_to_owner_archive": true
+    },
+    {
+      "archive": "MHAC-VST-five-plugin-owner-review.zip",
+      "sha256": "b0cc07827ad5efea7796254314038d0cabf855e249bb424c4240d5e0f03a45fe",
+      "byte_identical_to_owner_archive": true
+    },
+    {
+      "archive": "MHAC-VST-eight-plugin-owner-review.zip",
+      "sha256": "5592de05b6e2e46c00a9b2a247e2e8c5c64b4e5a23286fb1be72ee241a0c9bc1",
+      "byte_identical_to_owner_archive": true
+    },
+    {
+      "archive": "MHAC-VST-eight-plugin-signal-refresh.zip",
+      "sha256": "7800d5084eca08d5939ec7348faa5d9c57f0c828df92787d7cccabffe3842106",
+      "byte_identical_to_owner_archive": true
+    },
+    {
+      "archive": "MHAC-VST-eight-plugin-shuttle-refresh.zip",
+      "sha256": "bc7aba293dfdd2c7840b50a8cc2bef085cfd94be7fa97c770a4a564ecb05db8c",
+      "byte_identical_to_owner_archive": true
+    }
+  ],
+  "commands": [
+    "python assemble.py . MHAC-VST-catalogue-increment-20261127.zip",
+    "python extend.py . MHAC-VST-five-plugin-owner-review.zip",
+    "python refresh.py . MHAC-VST-eight-plugin-owner-review.zip",
+    "python refresh_signal.py . MHAC-VST-eight-plugin-signal-refresh.zip",
+    "python refresh_shuttle.py . MHAC-VST-eight-plugin-shuttle-refresh.zip",
+    "python replay_distribution.py INPUT_DIRECTORY NEW_OUTPUT_DIRECTORY"
+  ],
+  "wrapper_negative_controls": [
+    {
+      "name": "missing input",
+      "result": "refused"
+    },
+    {
+      "name": "modified input",
+      "result": "refused"
+    },
+    {
+      "name": "existing output",
+      "result": "refused"
+    },
+    {
+      "name": "modified source",
+      "result": "refused"
+    }
+  ],
+  "retained_development_failure": "Initial wrapper incorrectly assumed all original scripts output JSON; refresh.py prints a text summary. Fixed by retaining exact stdout, then all five stages passed.",
+  "next": "Independent native exact-distributed-binary host tests and earlier catalogue inclusion; no current binary update."
+}
