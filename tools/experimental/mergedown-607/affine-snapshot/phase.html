@@ -1,0 +1,4861 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MHAC Sampling phase observatory</title>
+<style>body{font:16px system-ui;max-width:980px;margin:2rem auto;padding:0 1rem;background:#171b21;color:#edf1f5}a{color:#8edaff}button,select,input{font:inherit;margin:.25rem;padding:.3rem}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}td,th{text-align:left;border-bottom:1px solid #59636e;padding:.4rem}svg{width:100%;background:#242d38}audio{width:100%}label{display:inline-block}#status{overflow-wrap:anywhere}.scroll{overflow-x:auto}code{overflow-wrap:anywhere}summary{cursor:pointer}</style>
+<h1>Sampling phase observatory</h1>
+<p>Refs #442 / #428. Companion to <a href="index.html">receipt inspector v1</a>. Synthetic measurement only. Use low hardware volume; playback is opt-in; no SPL or listening-safety claim.</p>
+<p>Sample phase is a common sub-sample offset before quantisation, not independent onset jitter or clock drift. Uniform deletion index and independent uniform continuous phase on [0,1). Known-phase receiver observes the phase as extra information; hidden-phase receiver marginalises it. Both observe exact ordered indices, not noisy waveform detections.</p>
+<label>Outer gap <input id="p" type="number" min="1" max="10000" value="144"></label><label>Middle gap <input id="q" type="number" min="1" max="10000" value="89"></label><label>Rate <select id="rate"><option>8000</option><option>16000</option><option>48000</option></select> Hz</label><label>Span <select id="ms"><option>200</option><option selected>800</option><option>1600</option></select> ms</label><label>Clock <select id="frame"><option value="receipt">Receipt-relative</option><option value="fixed">Fixed external frame</option></select></label><button id="run">Recompute</button>
+<h2>Bayes accuracy / conditional entropy</h2><p id="metrics" role="status"></p><label>Inspect phase <input id="phase" type="range" min="0" max="9999" value="5000"><output id="phaseText"></output></label>
+<svg id="plot" viewBox="0 0 920 96" role="img" aria-label="Exact phase cells coloured by known-phase optimal deletion accuracy"></svg>
+<p>Green: 100%; amber: 75%; red: 50% or lower. White line: inspected phase. Exact rational breakpoints are in the JSON export.</p><p id="atPhase"></p>
+<table><thead><tr><th>Deleted onset</th><th>Sample indices</th><th>Audition / export</th></tr></thead><tbody id="rows"></tbody></table><audio id="player" controls preload="none"></audio>
+<h2>Hidden-phase posterior</h2><div class="scroll"><table><thead><tr><th>Observed indices</th><th>Probability</th><th>D1</th><th>D2</th><th>D3</th><th>D4</th></tr></thead><tbody id="posteriors"></tbody></table></div>
+<button id="export">Export condition + hashes</button><button id="factorial">Export 288-condition factorial</button><button id="test">Run regression tests</button><p id="status" role="status"></p>
+<details><summary>Method, provenance and qualification</summary><p>Quantiser: pad + floor(n/d + phase). Every breakpoint is (d - n mod d)/d for noninteger n/d. Exact rational comparison partitions [0,1) into half-open intervals; observations constant on each. Known accuracy is interval-weighted distinct receipts / 4; hidden accuracy is sum of largest joint deletion mass per receipt. Entropies are conditional Shannon entropies in bits. Integration weights and entropies are floating-point; boundaries and quantisation decisions are exact within declared integer limits. No Monte Carlo uncertainty or human data; no population generalisation. Fixed frame uses additional external timing information. Same original PCM renderer and matched digital peak bounds; actual signal energy can differ if pulses overlap. No actual listening, onset detection, clock drift or native browser qualification in this run.</p><p>Prior apparatus <code>df20b32da12b5c2276fee0ed9b4a90ac2f6ff8e0</code>; originating draft #429 <code>07fb2f67a5a2cf26312699410f00152033cae843</code>. AI-assisted single-agent implementation. V8 execution: 7455 new assertions + 1036 prior core assertions; repeated factorial receipts identical. Embedded qualification is the actual run receipt. Core dependency remains the sibling file. Browser UI script syntax compiled, not interacted with. Existing baseline is unchanged. No canonical records or participant gates touched.</p><p>To reproduce, download phase.html and core.js into one folder and open phase.html, run regression tests, export factorial. The in-page manifest includes full summary rows and detailed representative cell traces and stimulus hashes.</p><button id="embedded">Export embedded qualification receipt</button></details>
+<script src="core.js"></script><script id="phase-core">
+const PHASE=(function phaseLab(core){
+  "use strict";
+  const gcd=(a,b)=>b?gcd(b,a%b):a;
+  const frac=(a,b)=>{const d=gcd(a,b);return [a/d,b/d]};
+  const cmp=(a,b)=>a[0]*b[1]-b[0]*a[1];
+  const num=a=>a[0]/a[1];
+  const key=a=>a.join(",");
+  const H=p=>p>0?-p*Math.log2(p):0;
+  const priorRef="df20b32da12b5c2276fee0ed9b4a90ac2f6ff8e0";
+  const sourceRef="07fb2f67a5a2cf26312699410f00152033cae843";
+  const pairs=[[1,1],[2,1],[3,2],[5,3],[8,5],[13,8],[21,13],[34,21],[55,34],[89,55],[144,89],[233,144],[377,233],[610,377],[987,610],[1597,987]];
+  function geometry(p,q,rate,ms,frame){
+    const c=core.condition(p,q,rate,ms,frame);
+    const nominal=[0,p,p+q,2*p+q], duration=rate*ms/1000,pad=rate/10;
+    const rows=nominal.map((_,i)=>{
+      const r=nominal.filter((_,j)=>j!==i),lo=frame==="fixed"?0:r[0],den=frame==="fixed"?nominal[3]:r[2]-r[0];
+      return r.map(t=>{const n=(t-lo)*duration, whole=Math.floor(n/den),rem=n%den;
+        return {base:pad+whole,threshold:rem?frac(den-rem,den):[1,1]};});
+    });
+    return {c,rows};
+  }
+  function at(g,phase){
+    if(!Array.isArray(phase)||phase.length!==2||!phase.every(Number.isSafeInteger)||phase[1]<1||phase[1]>1000000||phase[0]<0||phase[0]>=phase[1])throw Error("Phase must be a rational in [0,1), denominator <= 1,000,000");
+    return g.rows.map((r,i)=>({deleted:i+1,samples:r.map(t=>t.base+Number(cmp(phase,t.threshold)>=0))}));
+  }
+  function distribution(g){
+    const boundaries=[...new Map([[0,1],[1,1],...g.rows.flat().map(t=>t.threshold)].map(t=>[key(t),t])).values()].sort(cmp);
+    const pool=new Map(),segments=[];
+    let knownAccuracy=0,knownEntropy=0;
+    for(let j=0;j<boundaries.length-1;j++){
+      const lo=boundaries[j],hi=boundaries[j+1],weight=num(hi)-num(lo),rows=at(g,lo),groups=new Map();
+      for(const r of rows){const k=key(r.samples);if(!groups.has(k))groups.set(k,[]);groups.get(k).push(r.deleted);
+        if(!pool.has(k))pool.set(k,[0,0,0,0]);pool.get(k)[r.deleted-1]+=weight/4;}
+      const sizes=[...groups.values()].map(x=>x.length);
+      const accuracy=sizes.length/4,entropy=sizes.reduce((s,n)=>s+n/4*Math.log2(n),0);
+      knownAccuracy+=weight*accuracy;knownEntropy+=weight*entropy;
+      segments.push({lo,hi,weight,accuracy,entropy,rows});
+    }
+    let hiddenAccuracy=0,hiddenEntropy=0;
+    const receipts=[...pool].map(([k,mass])=>{
+      const total=mass.reduce((a,b)=>a+b,0),posterior=mass.map(m=>m/total);
+      hiddenAccuracy+=Math.max(...mass);hiddenEntropy+=total*posterior.reduce((a,p)=>a+H(p),0);
+      return {samples:k.split(",").map(Number),mass,probability:total,posterior};
+    }).sort((a,b)=>a.samples.join(",").localeCompare(b.samples.join(","),"en"));
+    return {knownAccuracy,hiddenAccuracy,knownEntropy,hiddenEntropy,segments,receipts};
+  }
+  function inspect(p,q,rate,ms,frame){const g=geometry(p,q,rate,ms,frame);return {p,q,rate,ms,frame,...distribution(g),halfPhase:at(g,[1,2])};}
+  function stimulus(p,q,rate,ms,frame,phase,deleted){
+    if(!Number.isInteger(deleted)||deleted<1||deleted>4)throw Error("Deletion must be 1..4");
+    const g=geometry(p,q,rate,ms,frame),r=at(g,phase)[deleted-1],b=core.wav(g.c,r);
+    return {row:r,bytes:b,hash:core.sha256(b)};
+  }
+  function run(){
+    const rows=[];
+    for(const [p,q] of pairs)for(const rate of core.rates)for(const ms of core.spans)for(const frame of ["receipt","fixed"]){
+      const a=inspect(p,q,rate,ms,frame);
+      rows.push({p,q,rate,ms,frame,segments:a.segments.length,halfAccuracy:new Set(a.halfPhase.map(r=>key(r.samples))).size/4,knownAccuracy:a.knownAccuracy,hiddenAccuracy:a.hiddenAccuracy,knownEntropy:a.knownEntropy,hiddenEntropy:a.hiddenEntropy});
+    }
+    const summary={};
+    for(const frame of ["receipt","fixed"]){const a=rows.filter(r=>r.frame===frame),mean=k=>a.reduce((s,r)=>s+r[k],0)/a.length;
+      summary[frame]={conditions:a.length,meanHalfAccuracy:mean("halfAccuracy"),meanKnownAccuracy:mean("knownAccuracy"),meanHiddenAccuracy:mean("hiddenAccuracy"),meanKnownEntropy:mean("knownEntropy"),meanHiddenEntropy:mean("hiddenEntropy"),strictPhaseInformationGain:a.filter(r=>r.knownAccuracy-r.hiddenAccuracy>1e-10).length,strictHalfOptimism:a.filter(r=>r.halfAccuracy-r.hiddenAccuracy>1e-10).length,strictHalfPessimism:a.filter(r=>r.hiddenAccuracy-r.halfAccuracy>1e-10).length,worstPhaseInformationGain:Math.max(...a.map(r=>r.knownAccuracy-r.hiddenAccuracy))};
+    }
+    const largest=rows.reduce((a,b)=>b.knownAccuracy-b.hiddenAccuracy>a.knownAccuracy-a.hiddenAccuracy?b:a);
+    const witness=inspect(144,89,8000,800,"receipt"),extreme=inspect(largest.p,largest.q,largest.rate,largest.ms,largest.frame);
+    const specimens=[];
+    for(const phase of [[0,1],[1,2],[999,1000]])for(let deleted=1;deleted<=4;deleted++){const s=stimulus(144,89,8000,800,"receipt",phase,deleted);specimens.push({phase,deleted,samples:s.row.samples,sha256:s.hash});}
+    return {schema:"mhac-phase-inspector-v1",claimClass:"synthetic finite geometry and uniform phase integration",priorRef,sourceRef,seed:null,phasePrior:"uniform continuous [0,1), independent of uniform deletion index 1..4",quantizer:"pad + floor(exact nominal sample position + phase)",summary,rows,witness,extreme,specimens};
+  }
+  function tests(){
+    let assertions=0;const ok=(x,m)=>{if(!x)throw Error(m);assertions++},near=(a,b)=>Math.abs(a-b)<1e-10;
+    const base=core.tests(),r=run();
+    ok(r.rows.length===288,"factorial size");
+    for(const v of r.rows){
+      const g=geometry(v.p,v.q,v.rate,v.ms,v.frame),a=distribution(g);
+      ok(near(a.segments.reduce((s,x)=>s+x.weight,0),1),"segment normalization");
+      ok(near(a.receipts.reduce((s,x)=>s+x.probability,0),1),"receipt normalization");
+      for(let d=0;d<4;d++)ok(near(a.receipts.reduce((s,x)=>s+x.mass[d],0),.25),"prior marginal");
+      for(const rec of a.receipts)ok(near(rec.posterior.reduce((s,x)=>s+x,0),1),"posterior normalization");
+      ok(a.hiddenAccuracy<=a.knownAccuracy+1e-10,"information cannot harm optimal accuracy");
+      ok(a.hiddenEntropy+1e-10>=a.knownEntropy,"conditional entropy monotonic");
+      ok(a.hiddenAccuracy>=.25-1e-10&&a.knownAccuracy<=1+1e-10,"accuracy bounds");
+      ok(a.hiddenEntropy>=-1e-10&&a.hiddenEntropy<=2+1e-10,"entropy bounds");
+      ok(JSON.stringify(at(g,[1,2]).map(x=>x.samples))===JSON.stringify(g.c.rows.map(x=>x.samples)),"half-up equivalence");
+      for(const s of a.segments){
+        ok(s.weight>0,"positive cell width");
+        const mid=(num(s.lo)+num(s.hi))/2;
+        const nom=[0,v.p,v.p+v.q,2*v.p+v.q],duration=v.rate*v.ms/1000;
+        const independent=nom.map((_,i)=>{const t=nom.filter((_,j)=>j!==i),lo=v.frame==="fixed"?0:t[0],span=v.frame==="fixed"?nom[3]:t[2]-t[0];return t.map(x=>v.rate/10+Math.floor((x-lo)*duration/span+mid));});
+        ok(JSON.stringify(independent)===JSON.stringify(s.rows.map(x=>x.samples)),"independent midpoint formula");
+      }
+      if(v.frame==="fixed")ok(near(a.hiddenAccuracy,1),"fixed reference exact over declared grid");
+    }
+    ok(r.witness.halfPhase[1].samples.join(",")==="800,4755,7200","pinned witness");
+    const s=r.specimens.filter(x=>key(x.phase)==="1,2");
+    ok(s[1].sha256===s[3].sha256,"half-phase WAV collision");
+    for(const sp of r.specimens){const b=stimulus(144,89,8000,800,"receipt",sp.phase,sp.deleted).bytes,v=new DataView(b.buffer);let peak=0;for(let i=44;i<b.length;i+=2)peak=Math.max(peak,Math.abs(v.getInt16(i,true)));ok(peak<=9000,"PCM bound");ok(v.getUint32(24,true)===8000,"PCM sample rate");}
+    let refused=false;try{at(geometry(1,1,8000,800,"receipt"),[1,1])}catch{refused=true}ok(refused,"reject phase 1");
+    return {status:"PASS",phaseAssertions:assertions,priorCoreAssertions:base.assertions};
+  }
+  return {inspect,stimulus,run,tests,at,geometry};
+})(MHAC);
+</script><script id="phase-qualification" type="application/json">{
+  "qualification": {
+    "status": "PASS",
+    "phaseAssertions": 7455,
+    "priorCoreAssertions": 1036
+  },
+  "deterministicReexecution": true,
+  "schema": "mhac-phase-inspector-v1",
+  "claimClass": "synthetic finite geometry and uniform phase integration",
+  "priorRef": "df20b32da12b5c2276fee0ed9b4a90ac2f6ff8e0",
+  "sourceRef": "07fb2f67a5a2cf26312699410f00152033cae843",
+  "seed": null,
+  "phasePrior": "uniform continuous [0,1), independent of uniform deletion index 1..4",
+  "quantizer": "pad + floor(exact nominal sample position + phase)",
+  "summary": {
+    "receipt": {
+      "conditions": 144,
+      "meanHalfAccuracy": 0.7864583333333334,
+      "meanKnownAccuracy": 0.7796532262824754,
+      "meanHiddenAccuracy": 0.7727279888185854,
+      "meanKnownEntropy": 0.4406935474350489,
+      "meanHiddenEntropy": 0.48364915287882265,
+      "strictPhaseInformationGain": 16,
+      "strictHalfOptimism": 15,
+      "strictHalfPessimism": 57,
+      "worstPhaseInformationGain": 0.16666666666666663
+    },
+    "fixed": {
+      "conditions": 144,
+      "meanHalfAccuracy": 1,
+      "meanKnownAccuracy": 1,
+      "meanHiddenAccuracy": 1,
+      "meanKnownEntropy": 0,
+      "meanHiddenEntropy": 0,
+      "strictPhaseInformationGain": 0,
+      "strictHalfOptimism": 0,
+      "strictHalfPessimism": 0,
+      "worstPhaseInformationGain": 2.220446049250313e-16
+    }
+  },
+  "rows": [
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.7500000000000001,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.7500000000000001,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.75,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.75,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.75,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.7500000000000001,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.75,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.75,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 0.75,
+      "knownAccuracy": 0.75,
+      "hiddenAccuracy": 0.75,
+      "knownEntropy": 0.5,
+      "hiddenEntropy": 0.5
+    },
+    {
+      "p": 1,
+      "q": 1,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 2,
+      "q": 1,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 3,
+      "q": 2,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 1,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1.0000000000000002,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 5,
+      "q": 3,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.9999999999999999,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 8,
+      "q": 5,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.9999999999999999,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 13,
+      "q": 8,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.927807486631016,
+      "hiddenAccuracy": 0.8823529411764706,
+      "knownEntropy": 0.14438502673796794,
+      "hiddenEntropy": 0.4194184083593452
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 21,
+      "q": 13,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.6634320735444331,
+      "hiddenAccuracy": 0.6179775280898876,
+      "knownEntropy": 0.6731358529111338,
+      "hiddenEntropy": 0.8320270474985565
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9719101123595506,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0.14062670267039418
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.8268641470888662,
+      "hiddenAccuracy": 0.7359550561797752,
+      "knownEntropy": 0.34627170582226763,
+      "hiddenEntropy": 0.6504129151115495
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 34,
+      "q": 21,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5624219725343321,
+      "hiddenAccuracy": 0.562421972534332,
+      "knownEntropy": 0.8751560549313357,
+      "hiddenEntropy": 0.9800300179276663
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.7496878901373283,
+      "hiddenAccuracy": 0.7496878901373283,
+      "knownEntropy": 0.5006242197253432,
+      "hiddenEntropy": 0.7632371538732037
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.9993757802746566,
+      "hiddenAccuracy": 0.9438202247191011,
+      "knownEntropy": 0.0012484394506866447,
+      "hiddenEntropy": 0.25360341853876417
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.6248439450686643,
+      "hiddenAccuracy": 0.6248439450686643,
+      "knownEntropy": 0.7503121098626716,
+      "hiddenEntropy": 0.949542740372843
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.9993757802746566,
+      "hiddenAccuracy": 0.9438202247191011,
+      "knownEntropy": 0.0012484394506866447,
+      "hiddenEntropy": 0.25360341853876417
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.8745318352059925,
+      "hiddenAccuracy": 0.7078651685393259,
+      "knownEntropy": 0.25093632958801493,
+      "hiddenEntropy": 0.623509245003378
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 55,
+      "q": 34,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5238435860753458,
+      "hiddenAccuracy": 0.5238435860753456,
+      "knownEntropy": 0.9523128278493085,
+      "hiddenEntropy": 0.9964710698479026
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.5953743443013829,
+      "hiddenAccuracy": 0.5953743443013829,
+      "knownEntropy": 0.8092513113972342,
+      "hiddenEntropy": 0.9734182913113856
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.6907486886027658,
+      "hiddenAccuracy": 0.6351931330472104,
+      "knownEntropy": 0.6185026227944683,
+      "hiddenEntropy": 0.8035889139758702
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5476871721506915,
+      "hiddenAccuracy": 0.5476871721506915,
+      "knownEntropy": 0.9046256556986171,
+      "hiddenEntropy": 0.991641979687349
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.6907486886027658,
+      "hiddenAccuracy": 0.6351931330472104,
+      "knownEntropy": 0.6185026227944683,
+      "hiddenEntropy": 0.8035889139758702
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.8814973772055317,
+      "hiddenAccuracy": 0.7703862660944207,
+      "knownEntropy": 0.23700524558893657,
+      "hiddenEntropy": 0.5885797440077668
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.6430615164520743,
+      "hiddenAccuracy": 0.6430615164520744,
+      "knownEntropy": 0.7138769670958511,
+      "hiddenEntropy": 0.8943212769723717
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9055793991416309,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0.3257383648113422
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 89,
+      "q": 55,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5091073644425724,
+      "hiddenAccuracy": 0.5091073644425723,
+      "knownEntropy": 0.9817852711148551,
+      "hiddenEntropy": 0.9995296869273431
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5364294577702895,
+      "hiddenAccuracy": 0.5364294577702895,
+      "knownEntropy": 0.927141084459421,
+      "hiddenEntropy": 0.9960110358484944
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.572858915540579,
+      "hiddenAccuracy": 0.572858915540579,
+      "knownEntropy": 0.854282168918842,
+      "hiddenEntropy": 0.9753704816797397
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5182147288851447,
+      "hiddenAccuracy": 0.5182147288851447,
+      "knownEntropy": 0.9635705422297105,
+      "hiddenEntropy": 0.9988584742143571
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.572858915540579,
+      "hiddenAccuracy": 0.572858915540579,
+      "knownEntropy": 0.854282168918842,
+      "hiddenEntropy": 0.9753704816797397
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.645717831081158,
+      "hiddenAccuracy": 0.645717831081158,
+      "knownEntropy": 0.708564337837684,
+      "hiddenEntropy": 0.9347275249885078
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5546441866554341,
+      "hiddenAccuracy": 0.5546441866554344,
+      "knownEntropy": 0.8907116266891315,
+      "hiddenEntropy": 0.9752998694177812
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1.0000000000000002,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.718576746621737,
+      "hiddenAccuracy": 0.718576746621737,
+      "knownEntropy": 0.562846506756526,
+      "hiddenEntropy": 0.8512447076193776
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.937153493243474,
+      "hiddenAccuracy": 0.8111587982832618,
+      "knownEntropy": 0.12569301351305198,
+      "hiddenEntropy": 0.5180766468874068
+    },
+    {
+      "p": 144,
+      "q": 89,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5034787146149498,
+      "hiddenAccuracy": 0.5034787146149498,
+      "knownEntropy": 0.9930425707701003,
+      "hiddenEntropy": 0.9999292011783424
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.9999999999999999,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.513914858459799,
+      "hiddenAccuracy": 0.5139148584597991,
+      "knownEntropy": 0.9721702830804019,
+      "hiddenEntropy": 0.9994279366712991
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5278297169195982,
+      "hiddenAccuracy": 0.5278297169195982,
+      "knownEntropy": 0.9443405661608036,
+      "hiddenEntropy": 0.9956565532852439
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5069574292298996,
+      "hiddenAccuracy": 0.5069574292298995,
+      "knownEntropy": 0.9860851415402008,
+      "hiddenEntropy": 0.9998297489058543
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5278297169195982,
+      "hiddenAccuracy": 0.5278297169195982,
+      "knownEntropy": 0.9443405661608036,
+      "hiddenEntropy": 0.9956565532852439
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5556594338391965,
+      "hiddenAccuracy": 0.5556594338391965,
+      "knownEntropy": 0.8886811323216072,
+      "hiddenEntropy": 0.989412910731591
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5208722876896987,
+      "hiddenAccuracy": 0.5208722876896987,
+      "knownEntropy": 0.9582554246206028,
+      "hiddenEntropy": 0.9973100878326041
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.5834891507587946,
+      "hiddenAccuracy": 0.5834891507587947,
+      "knownEntropy": 0.8330216984824108,
+      "hiddenEntropy": 0.9796423911583518
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.6669783015175893,
+      "hiddenAccuracy": 0.6259946949602122,
+      "knownEntropy": 0.6660433969648216,
+      "hiddenEntropy": 0.8267527354608554
+    },
+    {
+      "p": 233,
+      "q": 144,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5013287491487701,
+      "hiddenAccuracy": 0.50132874914877,
+      "knownEntropy": 0.9973425017024597,
+      "hiddenEntropy": 0.9999897976074353
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5053149965950803,
+      "hiddenAccuracy": 0.5053149965950803,
+      "knownEntropy": 0.9893700068098394,
+      "hiddenEntropy": 0.9999160713791975
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5106299931901606,
+      "hiddenAccuracy": 0.5106299931901607,
+      "knownEntropy": 0.9787400136196788,
+      "hiddenEntropy": 0.9994211898995882
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5026574982975401,
+      "hiddenAccuracy": 0.5026574982975401,
+      "knownEntropy": 0.9946850034049197,
+      "hiddenEntropy": 0.9999753788379862
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5106299931901606,
+      "hiddenAccuracy": 0.5106299931901607,
+      "knownEntropy": 0.9787400136196788,
+      "hiddenEntropy": 0.9994211898995882
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5212599863803212,
+      "hiddenAccuracy": 0.5212599863803212,
+      "knownEntropy": 0.9574800272393575,
+      "hiddenEntropy": 0.9985450902172045
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5079724948926205,
+      "hiddenAccuracy": 0.5079724948926204,
+      "knownEntropy": 0.984055010214759,
+      "hiddenEntropy": 0.9995738833848266
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.5318899795704819,
+      "hiddenAccuracy": 0.5318899795704819,
+      "knownEntropy": 0.9362200408590363,
+      "hiddenEntropy": 0.9970626749628854
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5637799591409637,
+      "hiddenAccuracy": 0.540983606557377,
+      "knownEntropy": 0.8724400817180726,
+      "hiddenEntropy": 0.9359651652997791
+    },
+    {
+      "p": 377,
+      "q": 233,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5005075372453036,
+      "hiddenAccuracy": 0.5005075372453036,
+      "knownEntropy": 0.9989849255093929,
+      "hiddenEntropy": 0.999998504535543
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5020301489812142,
+      "hiddenAccuracy": 0.5020301489812141,
+      "knownEntropy": 0.9959397020375717,
+      "hiddenEntropy": 0.9999877827013082
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5040602979624282,
+      "hiddenAccuracy": 0.5040602979624282,
+      "knownEntropy": 0.9918794040751434,
+      "hiddenEntropy": 0.9999128815317492
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.501015074490607,
+      "hiddenAccuracy": 0.501015074490607,
+      "knownEntropy": 0.9979698510187859,
+      "hiddenEntropy": 0.9999963959257372
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5040602979624282,
+      "hiddenAccuracy": 0.5040602979624282,
+      "knownEntropy": 0.9918794040751434,
+      "hiddenEntropy": 0.9999128815317492
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5081205959248566,
+      "hiddenAccuracy": 0.5081205959248566,
+      "knownEntropy": 0.9837588081502868,
+      "hiddenEntropy": 0.9997835785368756
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5030452234718212,
+      "hiddenAccuracy": 0.5030452234718212,
+      "knownEntropy": 0.9939095530563575,
+      "hiddenEntropy": 0.999939924675718
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.5121808938872848,
+      "hiddenAccuracy": 0.5121808938872848,
+      "knownEntropy": 0.9756382122254303,
+      "hiddenEntropy": 0.99957164709027
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5243617877745697,
+      "hiddenAccuracy": 0.5227963525835866,
+      "knownEntropy": 0.9512764244508605,
+      "hiddenEntropy": 0.9753049181882171
+    },
+    {
+      "p": 610,
+      "q": 377,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5001938619431558,
+      "hiddenAccuracy": 0.5001938619431558,
+      "knownEntropy": 0.9996122761136884,
+      "hiddenEntropy": 0.9999997822048504
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5007754477726233,
+      "hiddenAccuracy": 0.5007754477726232,
+      "knownEntropy": 0.9984491044547534,
+      "hiddenEntropy": 0.999998216013497
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5015508955452463,
+      "hiddenAccuracy": 0.5015508955452463,
+      "knownEntropy": 0.9968982089095072,
+      "hiddenEntropy": 0.999987445443985
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5003877238863116,
+      "hiddenAccuracy": 0.5003877238863116,
+      "knownEntropy": 0.9992245522273768,
+      "hiddenEntropy": 0.999999474840997
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999998,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5015508955452463,
+      "hiddenAccuracy": 0.5015508955452463,
+      "knownEntropy": 0.9968982089095072,
+      "hiddenEntropy": 0.999987445443985
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5031017910904928,
+      "hiddenAccuracy": 0.5031017910904928,
+      "knownEntropy": 0.9937964178190144,
+      "hiddenEntropy": 0.9999686716112312
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5011631716589348,
+      "hiddenAccuracy": 0.5011631716589348,
+      "knownEntropy": 0.9976736566821305,
+      "hiddenEntropy": 0.9999911237511421
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 1,
+      "knownAccuracy": 0.5046526866357393,
+      "hiddenAccuracy": 0.5046526866357393,
+      "knownEntropy": 0.9906946267285216,
+      "hiddenEntropy": 0.9999375352555414
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5093053732714785,
+      "hiddenAccuracy": 0.5077399380804954,
+      "knownEntropy": 0.9813892534570432,
+      "hiddenEntropy": 0.9906668672346289
+    },
+    {
+      "p": 987,
+      "q": 610,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.50007404867812,
+      "hiddenAccuracy": 0.50007404867812,
+      "knownEntropy": 0.99985190264376,
+      "hiddenEntropy": 0.9999999682024272
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 8000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5002961947124801,
+      "hiddenAccuracy": 0.5002961947124801,
+      "knownEntropy": 0.9994076105750398,
+      "hiddenEntropy": 0.9999997398046486
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 8000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5005923894249602,
+      "hiddenAccuracy": 0.5005923894249602,
+      "knownEntropy": 0.9988152211500797,
+      "hiddenEntropy": 0.999998159786796
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 8000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5001480973562401,
+      "hiddenAccuracy": 0.50014809735624,
+      "knownEntropy": 0.9997038052875198,
+      "hiddenEntropy": 0.9999999233432053
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 16000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5005923894249602,
+      "hiddenAccuracy": 0.5005923894249602,
+      "knownEntropy": 0.9988152211500797,
+      "hiddenEntropy": 0.999998159786796
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 16000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5011847788499203,
+      "hiddenAccuracy": 0.5011847788499204,
+      "knownEntropy": 0.9976304423001594,
+      "hiddenEntropy": 0.9999954158294866
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 16000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 0.9999999999999999,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5004442920687201,
+      "hiddenAccuracy": 0.5004442920687201,
+      "knownEntropy": 0.9991114158625598,
+      "hiddenEntropy": 0.9999987112866134
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 48000,
+      "ms": 200,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.5017771682748805,
+      "hiddenAccuracy": 0.5017771682748805,
+      "knownEntropy": 0.996445663450239,
+      "hiddenEntropy": 0.9999908856789497
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 48000,
+      "ms": 800,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "receipt",
+      "segments": 5,
+      "halfAccuracy": 0.5,
+      "knownAccuracy": 0.503554336549761,
+      "hiddenAccuracy": 0.503554336549761,
+      "knownEntropy": 0.9928913269004779,
+      "hiddenEntropy": 0.9992148825695805
+    },
+    {
+      "p": 1597,
+      "q": 987,
+      "rate": 48000,
+      "ms": 1600,
+      "frame": "fixed",
+      "segments": 3,
+      "halfAccuracy": 1,
+      "knownAccuracy": 1,
+      "hiddenAccuracy": 1,
+      "knownEntropy": 0,
+      "hiddenEntropy": 0
+    }
+  ],
+  "witness": {
+    "p": 144,
+    "q": 89,
+    "rate": 8000,
+    "ms": 800,
+    "frame": "receipt",
+    "knownAccuracy": 0.5364294577702895,
+    "hiddenAccuracy": 0.5364294577702895,
+    "knownEntropy": 0.927141084459421,
+    "hiddenEntropy": 0.9960110358484944,
+    "segments": [
+      {
+        "lo": [
+          0,
+          1
+        ],
+        "hi": [
+          85,
+          233
+        ],
+        "weight": 0.3648068669527897,
+        "accuracy": 0.5,
+        "entropy": 1,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              800,
+              3244,
+              7200
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              800,
+              3244,
+              7200
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          85,
+          233
+        ],
+        "hi": [
+          165,
+          377
+        ],
+        "weight": 0.072858915540579,
+        "accuracy": 0.75,
+        "entropy": 0.5,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              800,
+              3244,
+              7200
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          165,
+          377
+        ],
+        "hi": [
+          212,
+          377
+        ],
+        "weight": 0.12466843501326258,
+        "accuracy": 0.5,
+        "entropy": 1,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          212,
+          377
+        ],
+        "hi": [
+          148,
+          233
+        ],
+        "weight": 0.072858915540579,
+        "accuracy": 0.75,
+        "entropy": 0.5,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              800,
+              4756,
+              7200
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              800,
+              4755,
+              7200
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          148,
+          233
+        ],
+        "hi": [
+          1,
+          1
+        ],
+        "weight": 0.36480686695278974,
+        "accuracy": 0.5,
+        "entropy": 1,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              800,
+              4756,
+              7200
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              800,
+              3245,
+              7200
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              800,
+              4756,
+              7200
+            ]
+          }
+        ]
+      }
+    ],
+    "receipts": [
+      {
+        "samples": [
+          800,
+          3244,
+          7200
+        ],
+        "mass": [
+          0.09120171673819742,
+          0,
+          0.10941644562334217,
+          0
+        ],
+        "probability": 0.2006181623615396,
+        "posterior": [
+          0.4546034898567173,
+          0,
+          0.5453965101432827,
+          0
+        ]
+      },
+      {
+        "samples": [
+          800,
+          3245,
+          7200
+        ],
+        "mass": [
+          0.15879828326180256,
+          0,
+          0.14058355437665782,
+          0
+        ],
+        "probability": 0.2993818376384604,
+        "posterior": [
+          0.5304205643014678,
+          0,
+          0.4695794356985322,
+          0
+        ]
+      },
+      {
+        "samples": [
+          800,
+          4755,
+          7200
+        ],
+        "mass": [
+          0,
+          0.14058355437665782,
+          0,
+          0.15879828326180256
+        ],
+        "probability": 0.2993818376384604,
+        "posterior": [
+          0,
+          0.4695794356985322,
+          0,
+          0.5304205643014678
+        ]
+      },
+      {
+        "samples": [
+          800,
+          4756,
+          7200
+        ],
+        "mass": [
+          0,
+          0.10941644562334218,
+          0,
+          0.09120171673819744
+        ],
+        "probability": 0.20061816236153962,
+        "posterior": [
+          0,
+          0.5453965101432827,
+          0,
+          0.4546034898567173
+        ]
+      }
+    ],
+    "halfPhase": [
+      {
+        "deleted": 1,
+        "samples": [
+          800,
+          3245,
+          7200
+        ]
+      },
+      {
+        "deleted": 2,
+        "samples": [
+          800,
+          4755,
+          7200
+        ]
+      },
+      {
+        "deleted": 3,
+        "samples": [
+          800,
+          3245,
+          7200
+        ]
+      },
+      {
+        "deleted": 4,
+        "samples": [
+          800,
+          4755,
+          7200
+        ]
+      }
+    ]
+  },
+  "extreme": {
+    "p": 55,
+    "q": 34,
+    "rate": 48000,
+    "ms": 200,
+    "frame": "receipt",
+    "knownAccuracy": 0.8745318352059925,
+    "hiddenAccuracy": 0.7078651685393259,
+    "knownEntropy": 0.25093632958801493,
+    "hiddenEntropy": 0.623509245003378,
+    "segments": [
+      {
+        "lo": [
+          0,
+          1
+        ],
+        "hi": [
+          1,
+          3
+        ],
+        "weight": 0.3333333333333333,
+        "accuracy": 1,
+        "entropy": 0,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              4800,
+              8466,
+              14400
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              4800,
+              10732,
+              14400
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          1,
+          3
+        ],
+        "hi": [
+          37,
+          89
+        ],
+        "weight": 0.08239700374531839,
+        "accuracy": 0.75,
+        "entropy": 0.5,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              4800,
+              10732,
+              14400
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          37,
+          89
+        ],
+        "hi": [
+          52,
+          89
+        ],
+        "weight": 0.1685393258426966,
+        "accuracy": 0.5,
+        "entropy": 1,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          52,
+          89
+        ],
+        "hi": [
+          2,
+          3
+        ],
+        "weight": 0.08239700374531833,
+        "accuracy": 0.75,
+        "entropy": 0.5,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              4800,
+              8468,
+              14400
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          }
+        ]
+      },
+      {
+        "lo": [
+          2,
+          3
+        ],
+        "hi": [
+          1,
+          1
+        ],
+        "weight": 0.33333333333333337,
+        "accuracy": 1,
+        "entropy": 0,
+        "rows": [
+          {
+            "deleted": 1,
+            "samples": [
+              4800,
+              8468,
+              14400
+            ]
+          },
+          {
+            "deleted": 2,
+            "samples": [
+              4800,
+              10734,
+              14400
+            ]
+          },
+          {
+            "deleted": 3,
+            "samples": [
+              4800,
+              8467,
+              14400
+            ]
+          },
+          {
+            "deleted": 4,
+            "samples": [
+              4800,
+              10733,
+              14400
+            ]
+          }
+        ]
+      }
+    ],
+    "receipts": [
+      {
+        "samples": [
+          4800,
+          10732,
+          14400
+        ],
+        "mass": [
+          0,
+          0,
+          0,
+          0.10393258426966293
+        ],
+        "probability": 0.10393258426966293,
+        "posterior": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "samples": [
+          4800,
+          10733,
+          14400
+        ],
+        "mass": [
+          0,
+          0.16666666666666666,
+          0,
+          0.14606741573033707
+        ],
+        "probability": 0.31273408239700373,
+        "posterior": [
+          0,
+          0.5329341317365269,
+          0,
+          0.46706586826347307
+        ]
+      },
+      {
+        "samples": [
+          4800,
+          10734,
+          14400
+        ],
+        "mass": [
+          0,
+          0.08333333333333334,
+          0,
+          0
+        ],
+        "probability": 0.08333333333333334,
+        "posterior": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "samples": [
+          4800,
+          8466,
+          14400
+        ],
+        "mass": [
+          0,
+          0,
+          0.08333333333333333,
+          0
+        ],
+        "probability": 0.08333333333333333,
+        "posterior": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "samples": [
+          4800,
+          8467,
+          14400
+        ],
+        "mass": [
+          0.14606741573033707,
+          0,
+          0.16666666666666669,
+          0
+        ],
+        "probability": 0.31273408239700373,
+        "posterior": [
+          0.46706586826347307,
+          0,
+          0.532934131736527,
+          0
+        ]
+      },
+      {
+        "samples": [
+          4800,
+          8468,
+          14400
+        ],
+        "mass": [
+          0.10393258426966293,
+          0,
+          0,
+          0
+        ],
+        "probability": 0.10393258426966293,
+        "posterior": [
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "halfPhase": [
+      {
+        "deleted": 1,
+        "samples": [
+          4800,
+          8467,
+          14400
+        ]
+      },
+      {
+        "deleted": 2,
+        "samples": [
+          4800,
+          10733,
+          14400
+        ]
+      },
+      {
+        "deleted": 3,
+        "samples": [
+          4800,
+          8467,
+          14400
+        ]
+      },
+      {
+        "deleted": 4,
+        "samples": [
+          4800,
+          10733,
+          14400
+        ]
+      }
+    ]
+  },
+  "specimens": [
+    {
+      "phase": [
+        0,
+        1
+      ],
+      "deleted": 1,
+      "samples": [
+        800,
+        3244,
+        7200
+      ],
+      "sha256": "28741e162318d59cba096f5a2f74cd2faddab0adbcff3845cf50648d89cc4de4"
+    },
+    {
+      "phase": [
+        0,
+        1
+      ],
+      "deleted": 2,
+      "samples": [
+        800,
+        4755,
+        7200
+      ],
+      "sha256": "dd6f445ee7276f08d44417192645f82d3072e6704e3911e8c4dde47b7ad7d7e1"
+    },
+    {
+      "phase": [
+        0,
+        1
+      ],
+      "deleted": 3,
+      "samples": [
+        800,
+        3244,
+        7200
+      ],
+      "sha256": "28741e162318d59cba096f5a2f74cd2faddab0adbcff3845cf50648d89cc4de4"
+    },
+    {
+      "phase": [
+        0,
+        1
+      ],
+      "deleted": 4,
+      "samples": [
+        800,
+        4755,
+        7200
+      ],
+      "sha256": "dd6f445ee7276f08d44417192645f82d3072e6704e3911e8c4dde47b7ad7d7e1"
+    },
+    {
+      "phase": [
+        1,
+        2
+      ],
+      "deleted": 1,
+      "samples": [
+        800,
+        3245,
+        7200
+      ],
+      "sha256": "6c826ba38b3efd2ab7e4cc33ec544214d82deeab52c4c0beff0d17c613446190"
+    },
+    {
+      "phase": [
+        1,
+        2
+      ],
+      "deleted": 2,
+      "samples": [
+        800,
+        4755,
+        7200
+      ],
+      "sha256": "dd6f445ee7276f08d44417192645f82d3072e6704e3911e8c4dde47b7ad7d7e1"
+    },
+    {
+      "phase": [
+        1,
+        2
+      ],
+      "deleted": 3,
+      "samples": [
+        800,
+        3245,
+        7200
+      ],
+      "sha256": "6c826ba38b3efd2ab7e4cc33ec544214d82deeab52c4c0beff0d17c613446190"
+    },
+    {
+      "phase": [
+        1,
+        2
+      ],
+      "deleted": 4,
+      "samples": [
+        800,
+        4755,
+        7200
+      ],
+      "sha256": "dd6f445ee7276f08d44417192645f82d3072e6704e3911e8c4dde47b7ad7d7e1"
+    },
+    {
+      "phase": [
+        999,
+        1000
+      ],
+      "deleted": 1,
+      "samples": [
+        800,
+        3245,
+        7200
+      ],
+      "sha256": "6c826ba38b3efd2ab7e4cc33ec544214d82deeab52c4c0beff0d17c613446190"
+    },
+    {
+      "phase": [
+        999,
+        1000
+      ],
+      "deleted": 2,
+      "samples": [
+        800,
+        4756,
+        7200
+      ],
+      "sha256": "ec41349afa8a7d73d432f2dd5a18e893f7e8de00eae8e1c20f96a9ab0158108b"
+    },
+    {
+      "phase": [
+        999,
+        1000
+      ],
+      "deleted": 3,
+      "samples": [
+        800,
+        3245,
+        7200
+      ],
+      "sha256": "6c826ba38b3efd2ab7e4cc33ec544214d82deeab52c4c0beff0d17c613446190"
+    },
+    {
+      "phase": [
+        999,
+        1000
+      ],
+      "deleted": 4,
+      "samples": [
+        800,
+        4756,
+        7200
+      ],
+      "sha256": "ec41349afa8a7d73d432f2dd5a18e893f7e8de00eae8e1c20f96a9ab0158108b"
+    }
+  ]
+}</script>
+<script id="phase-ui">(function(){
+  const $=id=>document.getElementById(id), f=x=>(x*100).toFixed(3)+"%", n=x=>x.toFixed(5);
+  let current=null,objectURL=null;
+  function params(){return [+$("p").value,+$("q").value,+$("rate").value,+$("ms").value,$("frame").value]}
+  function phase(){return [+$("phase").value,10000]}
+  function stopAudio(){const player=$("player");player.pause();player.removeAttribute("src");player.load();if(objectURL)URL.revokeObjectURL(objectURL);objectURL=null;}
+  function save(data,name){const u=URL.createObjectURL(new Blob([data],{type:"application/json"})),a=document.createElement("a");a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+  function el(tag,parent,value){const e=document.createElement(tag);if(value!==undefined)e.textContent=value;parent.append(e);return e}
+  function line(svg,tag,attrs){const e=document.createElementNS("http://www.w3.org/2000/svg",tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));svg.append(e);return e}
+  function render(){
+    try{
+      stopAudio();current=PHASE.inspect(...params());const a=current;
+      $("phaseText").textContent=(phase()[0]/10000).toFixed(4)+" sample";
+      $("metrics").textContent="Known phase: "+f(a.knownAccuracy)+" / "+n(a.knownEntropy)+" bits; hidden phase: "+f(a.hiddenAccuracy)+" / "+n(a.hiddenEntropy)+" bits.";
+      const svg=$("plot");svg.replaceChildren();
+      for(const s of a.segments){const x=40+s.lo[0]/s.lo[1]*840,w=s.weight*840;line(svg,"rect",{x,y:10,width:w,height:55,fill:s.accuracy===1?"#19866b":s.accuracy===.75?"#b48528":"#ac5454"});const t=line(svg,"title",{});t.textContent=s.lo.join("/")+" to "+s.hi.join("/")+" : "+f(s.accuracy);}
+      line(svg,"line",{x1:40+phase()[0]/10000*840,x2:40+phase()[0]/10000*840,y1:4,y2:72,stroke:"#fff","stroke-width":2});
+      for(let i=0;i<=4;i++){const t=line(svg,"text",{x:40+i*210,y:88,fill:"#edf1f5","font-size":12,"text-anchor":"middle"});t.textContent=(i/4).toFixed(2)}
+      const chosen=PHASE.at(PHASE.geometry(...params()),phase());$("atPhase").textContent="At selected phase: "+new Set(chosen.map(x=>x.samples.join(","))).size+"/4 unique deletion receipts.";
+      const rows=$("rows");rows.replaceChildren();for(const r of chosen){const tr=el("tr",rows);el("td",tr,"D"+r.deleted);el("td",tr,r.samples.join(", "));const td=el("td",tr);const button=el("button",td,"Play");button.onclick=()=>{stopAudio();const s=PHASE.stimulus(...params(),phase(),r.deleted);objectURL=URL.createObjectURL(new Blob([s.bytes],{type:"audio/wav"}));$("player").src=objectURL;$("player").volume=.2;$("player").play().catch(e=>$("status").textContent=e.message);$("status").textContent="D"+r.deleted+" SHA-256 "+s.hash;};const dl=el("button",td,"Save WAV");dl.onclick=()=>{const s=PHASE.stimulus(...params(),phase(),r.deleted),u=URL.createObjectURL(new Blob([s.bytes],{type:"audio/wav"})),a=document.createElement("a");a.href=u;a.download="deletion-"+r.deleted+"-phase-"+phase()[0]+".wav";a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}}
+      const table=$("posteriors");table.replaceChildren();for(const r of a.receipts){const tr=el("tr",table);el("td",tr,r.samples.join(", "));el("td",tr,f(r.probability));for(const p of r.posterior)el("td",tr,f(p));}
+      $("status").textContent="Recomputed. Segment widths below one pixel remain represented in exported exact boundaries.";
+    }catch(e){current=null;$("status").textContent=e.message;}
+  }
+  for(const id of ["p","q","rate","ms","frame"])$(id).addEventListener("change",render);
+  $("phase").addEventListener("input",render);$("run").onclick=render;
+  $("export").onclick=()=>{if(!current)return;const stimuli=[1,2,3,4].map(d=>{const s=PHASE.stimulus(...params(),phase(),d);return {deleted:d,samples:s.row.samples,sha256:s.hash}});save(JSON.stringify({schema:"mhac-phase-condition-v1",sourceRef:"07fb2f67a5a2cf26312699410f00152033cae843",priorRef:"df20b32da12b5c2276fee0ed9b4a90ac2f6ff8e0",phase:phase(),condition:current,stimuli},null,2),"phase-condition.json")};
+  $("factorial").onclick=()=>save(JSON.stringify(PHASE.run(),null,2),"phase-factorial.json");
+  $("test").onclick=()=>{try{$("status").textContent=JSON.stringify(PHASE.tests())}catch(e){$("status").textContent="FAIL: "+e.message}};
+  render();
+})();document.getElementById("embedded").onclick=()=>{const a=document.createElement("a"),u=URL.createObjectURL(new Blob([document.getElementById("phase-qualification").textContent],{type:"application/json"}));a.href=u;a.download="phase-qualification.json";a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)};</script></html>
