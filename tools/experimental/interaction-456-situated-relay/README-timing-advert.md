@@ -1,0 +1,15 @@
+# Budgeted timing announcements — Interaction #456 / Run 009
+
+Draft/HOLD; synthetic-only. Parent 600b403531fea1111f1b7fd37a6a9fdbec2c0577, endpoint-timing.js blob 483164688cd6b1ea12d0c53a402045781508c00e; accepted main 495a98ca12bae467a507031f04931aa4254b1866. One GPT-6.2 agent, no independent review. Existing source untouched. Current Integration #513 and Grammars #453 metadata read-only; no shared code. No canonical records or human gates changed.
+
+## Run
+
+Run `node timing-advert.js timing-advert-output` with Node 18+. Open timing-advert.html adjacent to JS; change world, timing, loss, refresh interval, validity and delay step; Play explicitly at volume .25, export WAV and trace. One tick is 250 ms; PCM peak <=2130/32768, not SPL. CLI writes witnesses, SHA-256 stimulus manifest and full receipt. No physical listening or DOM execution performed in this run.
+
+## Contract
+
+Timing advertisements announce actual current processing delay, batching, monotonic sequence and change epoch. They occupy one half-duplex tick; existing ACKs keep precedence, then advertisements compete with DATA according to policy (ACK-first or soft return windows). Periodic refresh and immediate delay-change announcement share one replaceable pending slot. Loss is deterministic and separate from DATA/ACK loss; accepted advertisements cannot be older than cache and must arrive before their creation-relative expiry. The simulator has a shared tick clock. Cached information is used only at DATA completion; no retroactive timeout editing. Sticky comparison ignores cache expiry; capped comparison protects remaining retry opportunity. Missing/expired information falls back to static expectation; no inference from silence. Actual epoch is used only in retrospective stale-use logging. Advertisements are symbolic delivered events, not waveform decoded; illustrative tones do not encode all fields. No source authentication, explicit request/response timing negotiation, hard reservation or human claims.
+
+## Qualification
+
+630598 assertions, 3849 verified simulations per execution; two identical V8 results, 40 exact baseline trace/segment comparisons to parent. Four timing regimes, two announcement-loss regimes, two channel policies, four workloads, two DATA and ACK loss levels each, three fresh seeds, five compared modes. Paired finite descriptive corpus, no independent statistical inference, no tuning. Full receipt includes negative witnesses and all aggregate outcomes; see timing-advert-qualification.json. In named single-message witness, static retries once and advertised timing avoids retry, at cost of one control tick. Complete announcement loss returns to static expectation with consumed airtime. Expiry stops use of expired cache; sticky negative witness retains expired expectations. Control receipt models trusted source; not proof of authority. Browser script syntax compiled, native Node CLI/filesystem/DOM and listening not run. Prior exact-head repository integrity CI 45588647361 passed; new exact head requires separate observation.

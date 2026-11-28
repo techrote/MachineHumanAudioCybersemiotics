@@ -1,0 +1,89 @@
+{
+  "schema": "mhac-return-window-native-qualification-v1",
+  "date": "2026-11-25",
+  "sourceCommit": "73c9d75944077830c4e87113fde7a522a522c216",
+  "sourceBlob": "807b0c724429984083b9e7e20feacebff51841ff",
+  "htmlBlob": "eb58516741f5846e96c2eddf23291bcacadfc589",
+  "qualificationBlob": "b6c3537c216a3ec3221b5639d7771e7989137bd7",
+  "environment": {
+    "os": "Linux x86_64",
+    "node": "v22.16.0",
+    "chromium": "144.0.7559.96"
+  },
+  "commands": [
+    "git ls-remote https://github.com/techrote/MachineHumanAudioCybersemiotics.git HEAD",
+    "git hash-object return-window.js",
+    "node --check return-window.js",
+    "node return-window.js out",
+    "git hash-object out/return-window-qualification.json",
+    "python browser-test.py (committed unchanged as return-window-browser-test.py)"
+  ],
+  "checkoutError": "fatal: unable to access 'https://github.com/techrote/MachineHumanAudioCybersemiotics.git/': Could not resolve host: github.com",
+  "transfer": "Manually copied exact connector-fetched source and HTML into native temporary directory; git blob hashes match pinned repository blobs.",
+  "native": {
+    "assertions": 374497,
+    "runs": 2913,
+    "scenarios": 576,
+    "qualificationByteIdentical": true,
+    "wavFiles": 8,
+    "traceFiles": 8,
+    "independentPythonWavChecks": 8,
+    "stimuli": [
+      {
+        "name": "pending",
+        "sha256": "dac05f819c97e72d96062c7e6842f6595ac7a83ded65fa967e861a229a032f04"
+      },
+      {
+        "name": "late",
+        "sha256": "77c35ca929f870bbb355ab10a0d47edc72aa29785eec8f3deea9d3f8a0d0c46d"
+      },
+      {
+        "name": "lost",
+        "sha256": "35d237a15593089a599f884cddeab9c986fec30e19e2f1f3bc57e2b5807ae174"
+      },
+      {
+        "name": "blocked",
+        "sha256": "63256c04cf2af8f9eaac33a045ca9873769c2574c9444ce80a58abf8e09e486a"
+      },
+      {
+        "name": "ackFirst",
+        "sha256": "e4049219f011dc05c9f2779fa1f168fb2772ac2bb28e50510522aa04c61431a3"
+      },
+      {
+        "name": "alternate",
+        "sha256": "e8018d6a804b8b53959277fa3bace373138471e8ba1ef20f43b3edd105768ef7"
+      },
+      {
+        "name": "reserve",
+        "sha256": "b53a9ba856c37848b7e1c7e5817cb0d6e2205661fc064d3ddb4991dbc1f5f82f"
+      },
+      {
+        "name": "freshFirst",
+        "sha256": "e4049219f011dc05c9f2779fa1f168fb2772ac2bb28e50510522aa04c61431a3"
+      }
+    ],
+    "maxDigitalPeak": 2130,
+    "peakDenominator": 32768,
+    "verification": "Python wave/struct/hashlib inspected mono PCM16 8000 Hz frame counts, peak <=2130, manifest SHA-256 and trace equality for all eight."
+  },
+  "browser": {
+    "version": "144.0.7559.96",
+    "fileLaunchError": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///tmp/mhac-interaction-456-run6/return-window.html",
+    "launch": "set_content + exact scripts",
+    "mediaDuration": 10,
+    "playhead": 0.143899,
+    "browserWavSha256": "e4049219f011dc05c9f2779fa1f168fb2772ac2bb28e50510522aa04c61431a3",
+    "controls": "pass",
+    "timeline": "pass",
+    "jsonExport": "pass",
+    "wavExport": "byte-identical native CLI witness",
+    "regressionStatus": "374497 assertions passed; 2913 verified runs",
+    "pageErrors": [],
+    "mutedHeadless": true
+  },
+  "ci": {
+    "sourceCommit": 45569851867,
+    "conclusion": "success"
+  },
+  "limits": "No full checkout, ordinary file URL launch, Windows, physical listening, device control, human study, independent review, or waveform-derived reception. File hash match and synthetic computational checks only."
+}

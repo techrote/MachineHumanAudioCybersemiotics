@@ -1,0 +1,8760 @@
+{
+  "schema": "mhac-timing-advert-evaluation-v1",
+  "parent": "600b403531fea1111f1b7fd37a6a9fdbec2c0577",
+  "assertions": 630598,
+  "runs": 3849,
+  "groups": {
+    "slow": {
+      "0-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 998,
+          "confirmed": 436,
+          "retries": 144,
+          "dataTicks": 3032,
+          "ackTicks": 582,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 45
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1012,
+          "confirmed": 432,
+          "retries": 98,
+          "dataTicks": 2973,
+          "ackTicks": 574,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 30
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 994,
+          "confirmed": 431,
+          "retries": 1,
+          "dataTicks": 2570,
+          "ackTicks": 592,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 31
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 994,
+          "confirmed": 431,
+          "retries": 1,
+          "dataTicks": 2570,
+          "ackTicks": 592,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 31
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 958,
+          "confirmed": 426,
+          "retries": 85,
+          "dataTicks": 2690,
+          "ackTicks": 590,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 13
+        }
+      },
+      "0-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 1066,
+          "confirmed": 388,
+          "retries": 162,
+          "dataTicks": 3116,
+          "ackTicks": 522,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 45
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1075,
+          "confirmed": 396,
+          "retries": 95,
+          "dataTicks": 2987,
+          "ackTicks": 533,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 33
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 1116,
+          "confirmed": 358,
+          "retries": 1,
+          "dataTicks": 2696,
+          "ackTicks": 502,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 31
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 1116,
+          "confirmed": 358,
+          "retries": 1,
+          "dataTicks": 2696,
+          "ackTicks": 502,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 6,
+          "freshTicks": 31
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 1084,
+          "confirmed": 367,
+          "retries": 93,
+          "dataTicks": 2824,
+          "ackTicks": 518,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 21
+        }
+      },
+      "60-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 998,
+          "confirmed": 436,
+          "retries": 144,
+          "dataTicks": 3032,
+          "ackTicks": 582,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 45
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1012,
+          "confirmed": 432,
+          "retries": 98,
+          "dataTicks": 2973,
+          "ackTicks": 574,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 30
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 982,
+          "confirmed": 425,
+          "retries": 68,
+          "dataTicks": 2706,
+          "ackTicks": 584,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 30
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 984,
+          "confirmed": 431,
+          "retries": 56,
+          "dataTicks": 2670,
+          "ackTicks": 594,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 214,
+          "freshTicks": 30
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 962,
+          "confirmed": 429,
+          "retries": 130,
+          "dataTicks": 2788,
+          "ackTicks": 594,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 14
+        }
+      },
+      "60-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 1066,
+          "confirmed": 388,
+          "retries": 162,
+          "dataTicks": 3116,
+          "ackTicks": 522,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 45
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1075,
+          "confirmed": 396,
+          "retries": 95,
+          "dataTicks": 2987,
+          "ackTicks": 533,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 33
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 1104,
+          "confirmed": 352,
+          "retries": 72,
+          "dataTicks": 2834,
+          "ackTicks": 494,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 30
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 1108,
+          "confirmed": 355,
+          "retries": 60,
+          "dataTicks": 2806,
+          "ackTicks": 498,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 228,
+          "freshTicks": 30
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 1088,
+          "confirmed": 373,
+          "retries": 146,
+          "dataTicks": 2912,
+          "ackTicks": 522,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 20
+        }
+      }
+    },
+    "fast": {
+      "0-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 894,
+          "confirmed": 611,
+          "retries": 0,
+          "dataTicks": 2480,
+          "ackTicks": 842,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1361
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 902,
+          "confirmed": 620,
+          "retries": 32,
+          "dataTicks": 2536,
+          "ackTicks": 861,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1364
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 882,
+          "confirmed": 618,
+          "retries": 43,
+          "dataTicks": 2430,
+          "ackTicks": 860,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1238
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 882,
+          "confirmed": 618,
+          "retries": 43,
+          "dataTicks": 2430,
+          "ackTicks": 860,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1238
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 878,
+          "confirmed": 615,
+          "retries": 70,
+          "dataTicks": 2474,
+          "ackTicks": 857,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1206
+        }
+      },
+      "0-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 992,
+          "confirmed": 663,
+          "retries": 0,
+          "dataTicks": 2528,
+          "ackTicks": 934,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1232
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1000,
+          "confirmed": 672,
+          "retries": 29,
+          "dataTicks": 2580,
+          "ackTicks": 953,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1231
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 953,
+          "confirmed": 651,
+          "retries": 45,
+          "dataTicks": 2462,
+          "ackTicks": 924,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1012
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 953,
+          "confirmed": 651,
+          "retries": 45,
+          "dataTicks": 2462,
+          "ackTicks": 924,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 65,
+          "freshTicks": 1012
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 957,
+          "confirmed": 649,
+          "retries": 86,
+          "dataTicks": 2533,
+          "ackTicks": 920,
+          "advertTicks": 240,
+          "advertAccepted": 240,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 957
+        }
+      },
+      "60-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 894,
+          "confirmed": 611,
+          "retries": 0,
+          "dataTicks": 2480,
+          "ackTicks": 842,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1361
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 902,
+          "confirmed": 620,
+          "retries": 32,
+          "dataTicks": 2536,
+          "ackTicks": 861,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1364
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 876,
+          "confirmed": 610,
+          "retries": 20,
+          "dataTicks": 2389,
+          "ackTicks": 844,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1236
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 876,
+          "confirmed": 610,
+          "retries": 23,
+          "dataTicks": 2395,
+          "ackTicks": 845,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 203,
+          "freshTicks": 1232
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 871,
+          "confirmed": 607,
+          "retries": 58,
+          "dataTicks": 2449,
+          "ackTicks": 844,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1140
+        }
+      },
+      "60-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 992,
+          "confirmed": 663,
+          "retries": 0,
+          "dataTicks": 2528,
+          "ackTicks": 934,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1232
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1000,
+          "confirmed": 672,
+          "retries": 29,
+          "dataTicks": 2580,
+          "ackTicks": 953,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1231
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 947,
+          "confirmed": 639,
+          "retries": 21,
+          "dataTicks": 2428,
+          "ackTicks": 903,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 1007
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 947,
+          "confirmed": 639,
+          "retries": 24,
+          "dataTicks": 2434,
+          "ackTicks": 904,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 224,
+          "freshTicks": 997
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 947,
+          "confirmed": 640,
+          "retries": 68,
+          "dataTicks": 2501,
+          "ackTicks": 903,
+          "advertTicks": 240,
+          "advertAccepted": 80,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 972
+        }
+      }
+    },
+    "slowdown": {
+      "0-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 1033,
+          "confirmed": 477,
+          "retries": 86,
+          "dataTicks": 2824,
+          "ackTicks": 659,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 586
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1041,
+          "confirmed": 477,
+          "retries": 79,
+          "dataTicks": 2821,
+          "ackTicks": 658,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 592
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 977,
+          "confirmed": 501,
+          "retries": 39,
+          "dataTicks": 2562,
+          "ackTicks": 678,
+          "advertTicks": 288,
+          "advertAccepted": 288,
+          "staleUses": 48,
+          "expiredUses": 0,
+          "freshTicks": 406
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 977,
+          "confirmed": 501,
+          "retries": 39,
+          "dataTicks": 2562,
+          "ackTicks": 678,
+          "advertTicks": 288,
+          "advertAccepted": 288,
+          "staleUses": 48,
+          "expiredUses": 0,
+          "freshTicks": 406
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 937,
+          "confirmed": 509,
+          "retries": 95,
+          "dataTicks": 2624,
+          "ackTicks": 686,
+          "advertTicks": 288,
+          "advertAccepted": 288,
+          "staleUses": 39,
+          "expiredUses": 0,
+          "freshTicks": 381
+        }
+      },
+      "0-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 1090,
+          "confirmed": 483,
+          "retries": 93,
+          "dataTicks": 2913,
+          "ackTicks": 671,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 523
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1092,
+          "confirmed": 490,
+          "retries": 74,
+          "dataTicks": 2877,
+          "ackTicks": 681,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 533
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 1014,
+          "confirmed": 501,
+          "retries": 56,
+          "dataTicks": 2618,
+          "ackTicks": 702,
+          "advertTicks": 286,
+          "advertAccepted": 286,
+          "staleUses": 56,
+          "expiredUses": 0,
+          "freshTicks": 337
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 1014,
+          "confirmed": 501,
+          "retries": 56,
+          "dataTicks": 2618,
+          "ackTicks": 702,
+          "advertTicks": 286,
+          "advertAccepted": 286,
+          "staleUses": 56,
+          "expiredUses": 3,
+          "freshTicks": 337
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 989,
+          "confirmed": 507,
+          "retries": 125,
+          "dataTicks": 2697,
+          "ackTicks": 705,
+          "advertTicks": 286,
+          "advertAccepted": 286,
+          "staleUses": 52,
+          "expiredUses": 0,
+          "freshTicks": 268
+        }
+      },
+      "60-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 1033,
+          "confirmed": 477,
+          "retries": 86,
+          "dataTicks": 2824,
+          "ackTicks": 659,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 586
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1041,
+          "confirmed": 477,
+          "retries": 79,
+          "dataTicks": 2821,
+          "ackTicks": 658,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 592
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 977,
+          "confirmed": 504,
+          "retries": 52,
+          "dataTicks": 2586,
+          "ackTicks": 682,
+          "advertTicks": 288,
+          "advertAccepted": 112,
+          "staleUses": 16,
+          "expiredUses": 0,
+          "freshTicks": 405
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 977,
+          "confirmed": 504,
+          "retries": 48,
+          "dataTicks": 2580,
+          "ackTicks": 682,
+          "advertTicks": 288,
+          "advertAccepted": 112,
+          "staleUses": 32,
+          "expiredUses": 178,
+          "freshTicks": 405
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 938,
+          "confirmed": 510,
+          "retries": 104,
+          "dataTicks": 2642,
+          "ackTicks": 687,
+          "advertTicks": 288,
+          "advertAccepted": 112,
+          "staleUses": 13,
+          "expiredUses": 0,
+          "freshTicks": 380
+        }
+      },
+      "60-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 1090,
+          "confirmed": 483,
+          "retries": 93,
+          "dataTicks": 2913,
+          "ackTicks": 671,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 523
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1092,
+          "confirmed": 490,
+          "retries": 74,
+          "dataTicks": 2877,
+          "ackTicks": 681,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 533
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 1016,
+          "confirmed": 497,
+          "retries": 71,
+          "dataTicks": 2648,
+          "ackTicks": 694,
+          "advertTicks": 286,
+          "advertAccepted": 112,
+          "staleUses": 18,
+          "expiredUses": 0,
+          "freshTicks": 336
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 1014,
+          "confirmed": 500,
+          "retries": 65,
+          "dataTicks": 2636,
+          "ackTicks": 700,
+          "advertTicks": 286,
+          "advertAccepted": 112,
+          "staleUses": 36,
+          "expiredUses": 210,
+          "freshTicks": 336
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 989,
+          "confirmed": 508,
+          "retries": 131,
+          "dataTicks": 2709,
+          "ackTicks": 706,
+          "advertTicks": 286,
+          "advertAccepted": 110,
+          "staleUses": 16,
+          "expiredUses": 0,
+          "freshTicks": 269
+        }
+      }
+    },
+    "speedup": {
+      "0-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 950,
+          "confirmed": 561,
+          "retries": 3,
+          "dataTicks": 2588,
+          "ackTicks": 766,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 424
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 950,
+          "confirmed": 563,
+          "retries": 9,
+          "dataTicks": 2600,
+          "ackTicks": 770,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 425
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 912,
+          "confirmed": 521,
+          "retries": 11,
+          "dataTicks": 2478,
+          "ackTicks": 714,
+          "advertTicks": 288,
+          "advertAccepted": 288,
+          "staleUses": 48,
+          "expiredUses": 0,
+          "freshTicks": 358
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 912,
+          "confirmed": 521,
+          "retries": 11,
+          "dataTicks": 2478,
+          "ackTicks": 714,
+          "advertTicks": 288,
+          "advertAccepted": 288,
+          "staleUses": 48,
+          "expiredUses": 0,
+          "freshTicks": 358
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 888,
+          "confirmed": 523,
+          "retries": 83,
+          "dataTicks": 2572,
+          "ackTicks": 724,
+          "advertTicks": 288,
+          "advertAccepted": 288,
+          "staleUses": 46,
+          "expiredUses": 0,
+          "freshTicks": 332
+        }
+      },
+      "0-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 1008,
+          "confirmed": 540,
+          "retries": 0,
+          "dataTicks": 2656,
+          "ackTicks": 738,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 374
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1008,
+          "confirmed": 542,
+          "retries": 9,
+          "dataTicks": 2674,
+          "ackTicks": 742,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 368
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 1035,
+          "confirmed": 505,
+          "retries": 12,
+          "dataTicks": 2527,
+          "ackTicks": 712,
+          "advertTicks": 280,
+          "advertAccepted": 280,
+          "staleUses": 82,
+          "expiredUses": 0,
+          "freshTicks": 332
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 1035,
+          "confirmed": 505,
+          "retries": 12,
+          "dataTicks": 2527,
+          "ackTicks": 712,
+          "advertTicks": 280,
+          "advertAccepted": 280,
+          "staleUses": 86,
+          "expiredUses": 6,
+          "freshTicks": 332
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 1007,
+          "confirmed": 525,
+          "retries": 89,
+          "dataTicks": 2625,
+          "ackTicks": 746,
+          "advertTicks": 276,
+          "advertAccepted": 276,
+          "staleUses": 98,
+          "expiredUses": 0,
+          "freshTicks": 296
+        }
+      },
+      "60-ack-first": {
+        "static": {
+          "offered": 2160,
+          "received": 950,
+          "confirmed": 561,
+          "retries": 3,
+          "dataTicks": 2588,
+          "ackTicks": 766,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 424
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 950,
+          "confirmed": 563,
+          "retries": 9,
+          "dataTicks": 2600,
+          "ackTicks": 770,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 425
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 912,
+          "confirmed": 520,
+          "retries": 7,
+          "dataTicks": 2470,
+          "ackTicks": 713,
+          "advertTicks": 288,
+          "advertAccepted": 112,
+          "staleUses": 16,
+          "expiredUses": 0,
+          "freshTicks": 358
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 912,
+          "confirmed": 520,
+          "retries": 7,
+          "dataTicks": 2470,
+          "ackTicks": 713,
+          "advertTicks": 288,
+          "advertAccepted": 112,
+          "staleUses": 32,
+          "expiredUses": 174,
+          "freshTicks": 358
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 887,
+          "confirmed": 522,
+          "retries": 83,
+          "dataTicks": 2570,
+          "ackTicks": 723,
+          "advertTicks": 288,
+          "advertAccepted": 112,
+          "staleUses": 16,
+          "expiredUses": 0,
+          "freshTicks": 330
+        }
+      },
+      "60-reserve": {
+        "static": {
+          "offered": 2160,
+          "received": 1008,
+          "confirmed": 540,
+          "retries": 0,
+          "dataTicks": 2656,
+          "ackTicks": 738,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 374
+        },
+        "learned": {
+          "offered": 2160,
+          "received": 1008,
+          "confirmed": 542,
+          "retries": 9,
+          "dataTicks": 2674,
+          "ackTicks": 742,
+          "advertTicks": 0,
+          "advertAccepted": 0,
+          "staleUses": 0,
+          "expiredUses": 0,
+          "freshTicks": 368
+        },
+        "advert": {
+          "offered": 2160,
+          "received": 1033,
+          "confirmed": 504,
+          "retries": 6,
+          "dataTicks": 2517,
+          "ackTicks": 711,
+          "advertTicks": 280,
+          "advertAccepted": 106,
+          "staleUses": 46,
+          "expiredUses": 0,
+          "freshTicks": 333
+        },
+        "advert-sticky": {
+          "offered": 2160,
+          "received": 1035,
+          "confirmed": 504,
+          "retries": 8,
+          "dataTicks": 2519,
+          "ackTicks": 711,
+          "advertTicks": 280,
+          "advertAccepted": 106,
+          "staleUses": 98,
+          "expiredUses": 218,
+          "freshTicks": 333
+        },
+        "advert-cap": {
+          "offered": 2160,
+          "received": 1007,
+          "confirmed": 524,
+          "retries": 89,
+          "dataTicks": 2626,
+          "ackTicks": 744,
+          "advertTicks": 276,
+          "advertAccepted": 104,
+          "staleUses": 46,
+          "expiredUses": 0,
+          "freshTicks": 295
+        }
+      }
+    }
+  },
+  "peak": 2130,
+  "witnesses": {
+    "static": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 40,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          40,
+          40,
+          40
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "advertPeriod": 400,
+        "advertTTL": 24,
+        "lifetime": "static"
+      },
+      "policy": "ack-first",
+      "until": 40,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 40,
+          "priority": 0,
+          "attempts": 2,
+          "received": 2,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 2
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 2,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 6,
+          "estimate": null
+        },
+        {
+          "t": 6,
+          "type": "timeout",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "retry-queued",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 8,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 8,
+          "type": "data-duplicate",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 8,
+          "type": "ack-coalesced",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 2,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 6,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 7,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 20,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 21,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 22,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 23,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 24,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 25,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 26,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 29,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 30,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 35,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 36,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 37,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 38,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 39,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "freshAtAck": 1,
+        "unconfirmed": 0,
+        "retries": 1,
+        "duplicates": 1,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 4,
+        "ackTicks": 1,
+        "advertTicks": 0,
+        "advertAccepted": 0,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": null,
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "learned": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 40,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          40,
+          40,
+          40
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "advertPeriod": 400,
+        "advertTTL": 24,
+        "lifetime": "learned"
+      },
+      "policy": "ack-first",
+      "until": 40,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 40,
+          "priority": 0,
+          "attempts": 2,
+          "received": 2,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 2
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 2,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 2,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 2,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 2,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 7,
+          "estimate": 4
+        },
+        {
+          "t": 7,
+          "type": "timeout",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 7,
+          "type": "retry-queued",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 7,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 9,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 9,
+          "type": "data-duplicate",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 9,
+          "type": "ack-coalesced",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 2,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 6,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 7,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 8,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 20,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 21,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 22,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 23,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 24,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 25,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 26,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 29,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 30,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 35,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 36,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 37,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 38,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 39,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "freshAtAck": 1,
+        "unconfirmed": 0,
+        "retries": 1,
+        "duplicates": 1,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 4,
+        "ackTicks": 1,
+        "advertTicks": 0,
+        "advertAccepted": 0,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": null,
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "advert": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 40,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          40,
+          40,
+          40
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "advertPeriod": 400,
+        "advertTTL": 24,
+        "lifetime": "advert"
+      },
+      "policy": "ack-first",
+      "until": 40,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 40,
+          "priority": 0,
+          "attempts": 1,
+          "received": 3,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 3
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "advert-queued",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "advert-start",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-complete",
+          "id": "timing:1",
+          "agent": "relay",
+          "lost": false,
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-accepted",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 1,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 3,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 3,
+          "type": "timing-used",
+          "id": "pump:1",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 3,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 18,
+          "estimate": null
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "advert",
+          "id": "timing:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 0,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 6,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 7,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 20,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 21,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 22,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 23,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 24,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 25,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 26,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 29,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 30,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 35,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 36,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 37,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 38,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 39,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "freshAtAck": 1,
+        "unconfirmed": 0,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 2,
+        "ackTicks": 1,
+        "advertTicks": 1,
+        "advertAccepted": 1,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": {
+          "id": "timing:1",
+          "agent": "relay",
+          "i": -1,
+          "epoch": 0,
+          "seq": 1,
+          "created": 0,
+          "expires": 24,
+          "delay": 12,
+          "batch": 4
+        },
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "advert-sticky": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 40,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          40,
+          40,
+          40
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "advertPeriod": 400,
+        "advertTTL": 24,
+        "lifetime": "advert-sticky"
+      },
+      "policy": "ack-first",
+      "until": 40,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 40,
+          "priority": 0,
+          "attempts": 1,
+          "received": 3,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 3
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "advert-queued",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "advert-start",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-complete",
+          "id": "timing:1",
+          "agent": "relay",
+          "lost": false,
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-accepted",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 1,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 3,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 3,
+          "type": "timing-used",
+          "id": "pump:1",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 3,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 18,
+          "estimate": null
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "advert",
+          "id": "timing:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 0,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 6,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 7,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 20,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 21,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 22,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 23,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 24,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 25,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 26,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 29,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 30,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 35,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 36,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 37,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 38,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 39,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "freshAtAck": 1,
+        "unconfirmed": 0,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 2,
+        "ackTicks": 1,
+        "advertTicks": 1,
+        "advertAccepted": 1,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": {
+          "id": "timing:1",
+          "agent": "relay",
+          "i": -1,
+          "epoch": 0,
+          "seq": 1,
+          "created": 0,
+          "expires": 24,
+          "delay": 12,
+          "batch": 4
+        },
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "advert-cap": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 40,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          40,
+          40,
+          40
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "advertPeriod": 400,
+        "advertTTL": 24,
+        "lifetime": "advert-cap"
+      },
+      "policy": "ack-first",
+      "until": 40,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 40,
+          "priority": 0,
+          "attempts": 1,
+          "received": 3,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 3
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "advert-queued",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "advert-start",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-complete",
+          "id": "timing:1",
+          "agent": "relay",
+          "lost": false,
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-accepted",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 1,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 3,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 3,
+          "type": "timing-used",
+          "id": "pump:1",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 3,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 18,
+          "estimate": null
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "advert",
+          "id": "timing:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 0,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 6,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 7,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 20,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 21,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 22,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 23,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 24,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 25,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 26,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 29,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 30,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 35,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 36,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 37,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 38,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 39,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "freshAtAck": 1,
+        "unconfirmed": 0,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 2,
+        "ackTicks": 1,
+        "advertTicks": 1,
+        "advertAccepted": 1,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": {
+          "id": "timing:1",
+          "agent": "relay",
+          "i": -1,
+          "epoch": 0,
+          "seq": 1,
+          "created": 0,
+          "expires": 24,
+          "delay": 12,
+          "batch": 4
+        },
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "lost": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 40,
+        "periods": [
+          400,
+          400,
+          400
+        ],
+        "phases": [
+          0,
+          400,
+          400
+        ],
+        "deadlines": [
+          40,
+          40,
+          40
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 3,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "advertPeriod": 400,
+        "advertTTL": 24,
+        "lifetime": "advert",
+        "advertLoss": 100
+      },
+      "policy": "ack-first",
+      "until": 40,
+      "manual": [],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 40,
+          "priority": 0,
+          "attempts": 2,
+          "received": 3,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 3
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "advert-queued",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 24
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "advert-start",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-complete",
+          "id": "timing:1",
+          "agent": "relay",
+          "lost": true,
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 3,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 3,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 3,
+          "type": "timing-used",
+          "id": "pump:1",
+          "agent": "pump",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 3,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 6,
+          "estimate": null
+        },
+        {
+          "t": 6,
+          "type": "timeout",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "retry-queued",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 6,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2
+        },
+        {
+          "t": 8,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 8,
+          "type": "data-duplicate",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 8,
+          "type": "ack-coalesced",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": true
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "advert",
+          "id": "timing:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 0,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 3,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 4,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 5,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 6,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 0
+        },
+        {
+          "t": 7,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 2,
+          "part": 1
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 13,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 18,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 19,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 20,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 21,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 22,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 23,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 24,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 25,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 26,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 29,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 30,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 35,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 36,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 37,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 38,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 39,
+          "kind": "idle",
+          "id": null
+        }
+      ],
+      "metrics": {
+        "offered": 1,
+        "received": 1,
+        "confirmed": 1,
+        "currentConfirmed": 1,
+        "freshAtAck": 1,
+        "unconfirmed": 0,
+        "retries": 1,
+        "duplicates": 1,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 4,
+        "ackTicks": 1,
+        "advertTicks": 1,
+        "advertAccepted": 0,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          1,
+          0,
+          0
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": null,
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [],
+        "free": [],
+        "active": null
+      }
+    },
+    "step-advert": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 80,
+        "periods": [
+          17,
+          11,
+          19
+        ],
+        "phases": [
+          0,
+          1,
+          0
+        ],
+        "deadlines": [
+          20,
+          6,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 4,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "change": {
+          "tick": 16,
+          "delay": 0
+        },
+        "advertPeriod": 400,
+        "advertTTL": 12,
+        "lifetime": "advert"
+      },
+      "policy": "ack-first",
+      "until": 80,
+      "manual": [
+        {
+          "t": 16,
+          "op": "drop-advert"
+        },
+        {
+          "t": 17,
+          "op": "drop-advert"
+        },
+        {
+          "t": 18,
+          "op": "drop-advert"
+        },
+        {
+          "t": 19,
+          "op": "drop-advert"
+        },
+        {
+          "t": 20,
+          "op": "drop-advert"
+        }
+      ],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 0,
+          "attempts": 1,
+          "received": 7,
+          "confirmed": 22,
+          "timeout": null,
+          "firstFinish": 7
+        },
+        {
+          "id": "relay:1",
+          "i": 2,
+          "agent": "relay",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 1,
+          "attempts": 1,
+          "received": 5,
+          "confirmed": 21,
+          "timeout": null,
+          "firstFinish": 5
+        },
+        {
+          "id": "fan:1",
+          "i": 1,
+          "agent": "fan",
+          "version": 1,
+          "arrived": 1,
+          "deadline": 7,
+          "priority": 2,
+          "attempts": 1,
+          "received": 3,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 3
+        },
+        {
+          "id": "fan:2",
+          "i": 1,
+          "agent": "fan",
+          "version": 2,
+          "arrived": 12,
+          "deadline": 18,
+          "priority": 2,
+          "attempts": 1,
+          "received": 14,
+          "confirmed": 29,
+          "timeout": null,
+          "firstFinish": 14
+        },
+        {
+          "id": "pump:2",
+          "i": 0,
+          "agent": "pump",
+          "version": 2,
+          "arrived": 17,
+          "deadline": 37,
+          "priority": 0,
+          "attempts": 1,
+          "received": 20,
+          "confirmed": 23,
+          "timeout": null,
+          "firstFinish": 20
+        },
+        {
+          "id": "relay:2",
+          "i": 2,
+          "agent": "relay",
+          "version": 2,
+          "arrived": 19,
+          "deadline": 39,
+          "priority": 1,
+          "attempts": 1,
+          "received": 25,
+          "confirmed": 30,
+          "timeout": null,
+          "firstFinish": 25
+        },
+        {
+          "id": "fan:3",
+          "i": 1,
+          "agent": "fan",
+          "version": 3,
+          "arrived": 23,
+          "deadline": 29,
+          "priority": 2,
+          "attempts": 1,
+          "received": 27,
+          "confirmed": 31,
+          "timeout": null,
+          "firstFinish": 27
+        },
+        {
+          "id": "pump:3",
+          "i": 0,
+          "agent": "pump",
+          "version": 3,
+          "arrived": 34,
+          "deadline": 54,
+          "priority": 0,
+          "attempts": 1,
+          "received": 39,
+          "confirmed": 42,
+          "timeout": null,
+          "firstFinish": 39
+        },
+        {
+          "id": "fan:4",
+          "i": 1,
+          "agent": "fan",
+          "version": 4,
+          "arrived": 34,
+          "deadline": 40,
+          "priority": 2,
+          "attempts": 1,
+          "received": 36,
+          "confirmed": 37,
+          "timeout": null,
+          "firstFinish": 36
+        },
+        {
+          "id": "relay:3",
+          "i": 2,
+          "agent": "relay",
+          "version": 3,
+          "arrived": 38,
+          "deadline": 58,
+          "priority": 1,
+          "attempts": 1,
+          "received": 41,
+          "confirmed": 45,
+          "timeout": null,
+          "firstFinish": 41
+        },
+        {
+          "id": "fan:5",
+          "i": 1,
+          "agent": "fan",
+          "version": 5,
+          "arrived": 45,
+          "deadline": 51,
+          "priority": 2,
+          "attempts": 1,
+          "received": 47,
+          "confirmed": 49,
+          "timeout": null,
+          "firstFinish": 47
+        },
+        {
+          "id": "pump:4",
+          "i": 0,
+          "agent": "pump",
+          "version": 4,
+          "arrived": 51,
+          "deadline": 71,
+          "priority": 0,
+          "attempts": 1,
+          "received": 53,
+          "confirmed": 57,
+          "timeout": null,
+          "firstFinish": 53
+        },
+        {
+          "id": "fan:6",
+          "i": 1,
+          "agent": "fan",
+          "version": 6,
+          "arrived": 56,
+          "deadline": 62,
+          "priority": 2,
+          "attempts": 1,
+          "received": 59,
+          "confirmed": 62,
+          "timeout": null,
+          "firstFinish": 59
+        },
+        {
+          "id": "relay:4",
+          "i": 2,
+          "agent": "relay",
+          "version": 4,
+          "arrived": 57,
+          "deadline": 77,
+          "priority": 1,
+          "attempts": 1,
+          "received": 61,
+          "confirmed": 65,
+          "timeout": null,
+          "firstFinish": 61
+        },
+        {
+          "id": "fan:7",
+          "i": 1,
+          "agent": "fan",
+          "version": 7,
+          "arrived": 67,
+          "deadline": 73,
+          "priority": 2,
+          "attempts": 1,
+          "received": 69,
+          "confirmed": 73,
+          "timeout": null,
+          "firstFinish": 69
+        },
+        {
+          "id": "pump:5",
+          "i": 0,
+          "agent": "pump",
+          "version": 5,
+          "arrived": 68,
+          "deadline": 88,
+          "priority": 0,
+          "attempts": 1,
+          "received": 71,
+          "confirmed": 74,
+          "timeout": null,
+          "firstFinish": 71
+        },
+        {
+          "id": "relay:5",
+          "i": 2,
+          "agent": "relay",
+          "version": 5,
+          "arrived": 76,
+          "deadline": 96,
+          "priority": 1,
+          "attempts": 1,
+          "received": 78,
+          "confirmed": null,
+          "timeout": 82,
+          "firstFinish": 78
+        },
+        {
+          "id": "fan:8",
+          "i": 1,
+          "agent": "fan",
+          "version": 8,
+          "arrived": 78,
+          "deadline": 84,
+          "priority": 2,
+          "attempts": 1,
+          "received": 80,
+          "confirmed": null,
+          "timeout": 84,
+          "firstFinish": 80
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "advert-queued",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 12
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 0,
+          "type": "advert-start",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-complete",
+          "id": "timing:1",
+          "agent": "relay",
+          "lost": false,
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-accepted",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 12
+        },
+        {
+          "t": 1,
+          "type": "offer",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 1,
+          "type": "data-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "data-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 3,
+          "type": "received",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 3,
+          "type": "ack-queued",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 3,
+          "type": "timing-used",
+          "id": "fan:1",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 3,
+          "type": "timeout-set",
+          "id": "fan:1",
+          "agent": "fan",
+          "due": 18,
+          "estimate": null
+        },
+        {
+          "t": 3,
+          "type": "data-start",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 5,
+          "type": "data-complete",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 5,
+          "type": "received",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 5,
+          "type": "ack-queued",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 20,
+          "expires": 28
+        },
+        {
+          "t": 5,
+          "type": "timing-used",
+          "id": "relay:1",
+          "agent": "relay",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 5,
+          "type": "timeout-set",
+          "id": "relay:1",
+          "agent": "relay",
+          "due": 22,
+          "estimate": null
+        },
+        {
+          "t": 5,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 7,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 7,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 7,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 20,
+          "expires": 28
+        },
+        {
+          "t": 7,
+          "type": "timing-used",
+          "id": "pump:1",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 7,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 22,
+          "estimate": null
+        },
+        {
+          "t": 12,
+          "type": "superseded",
+          "id": "fan:1",
+          "agent": "fan",
+          "by": "fan:2"
+        },
+        {
+          "t": 12,
+          "type": "offer",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 12,
+          "type": "data-start",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 14,
+          "type": "data-complete",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 14,
+          "type": "received",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 14,
+          "type": "ack-queued",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 28,
+          "expires": 36
+        },
+        {
+          "t": 14,
+          "type": "timing-used",
+          "id": "fan:2",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 14,
+          "type": "timeout-set",
+          "id": "fan:2",
+          "agent": "fan",
+          "due": 18,
+          "estimate": null
+        },
+        {
+          "t": 16,
+          "type": "advert-queued",
+          "id": "timing:2",
+          "agent": "relay",
+          "epoch": 1,
+          "seq": 2,
+          "delay": 0,
+          "batch": 4,
+          "expires": 28
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "fan:1",
+          "agent": "fan",
+          "current": false
+        },
+        {
+          "t": 17,
+          "type": "superseded",
+          "id": "pump:1",
+          "agent": "pump",
+          "by": "pump:2"
+        },
+        {
+          "t": 17,
+          "type": "offer",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 17,
+          "type": "advert-start",
+          "id": "timing:2",
+          "agent": "relay",
+          "epoch": 1,
+          "seq": 2
+        },
+        {
+          "t": 18,
+          "type": "advert-complete",
+          "id": "timing:2",
+          "agent": "relay",
+          "lost": true,
+          "epoch": 1,
+          "seq": 2
+        },
+        {
+          "t": 18,
+          "type": "timeout",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 18,
+          "type": "retry-unavailable",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 18,
+          "type": "data-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 19,
+          "type": "superseded",
+          "id": "relay:1",
+          "agent": "relay",
+          "by": "relay:2"
+        },
+        {
+          "t": 19,
+          "type": "offer",
+          "id": "relay:2",
+          "agent": "relay"
+        },
+        {
+          "t": 20,
+          "type": "data-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 20,
+          "type": "received",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 20,
+          "type": "ack-queued",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 20,
+          "expires": 28
+        },
+        {
+          "t": 20,
+          "type": "timing-used",
+          "id": "pump:2",
+          "agent": "pump",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 20,
+          "type": "timeout-set",
+          "id": "pump:2",
+          "agent": "pump",
+          "due": 24,
+          "estimate": null
+        },
+        {
+          "t": 20,
+          "type": "ack-start",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 21,
+          "type": "ack-complete",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 21,
+          "type": "confirmed",
+          "id": "relay:1",
+          "agent": "relay",
+          "current": false
+        },
+        {
+          "t": 21,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 22,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 22,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": false
+        },
+        {
+          "t": 22,
+          "type": "ack-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 23,
+          "type": "ack-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 23,
+          "type": "confirmed",
+          "id": "pump:2",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 23,
+          "type": "superseded",
+          "id": "fan:2",
+          "agent": "fan",
+          "by": "fan:3"
+        },
+        {
+          "t": 23,
+          "type": "offer",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 23,
+          "type": "data-start",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 25,
+          "type": "data-complete",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 25,
+          "type": "received",
+          "id": "relay:2",
+          "agent": "relay"
+        },
+        {
+          "t": 25,
+          "type": "ack-queued",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 28,
+          "expires": 36
+        },
+        {
+          "t": 25,
+          "type": "timing-used",
+          "id": "relay:2",
+          "agent": "relay",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 25,
+          "type": "timeout-set",
+          "id": "relay:2",
+          "agent": "relay",
+          "due": 30,
+          "estimate": null
+        },
+        {
+          "t": 25,
+          "type": "data-start",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 27,
+          "type": "data-complete",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 27,
+          "type": "received",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 27,
+          "type": "ack-queued",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 28,
+          "expires": 36
+        },
+        {
+          "t": 27,
+          "type": "timing-used",
+          "id": "fan:3",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 27,
+          "type": "timeout-set",
+          "id": "fan:3",
+          "agent": "fan",
+          "due": 31,
+          "estimate": null
+        },
+        {
+          "t": 28,
+          "type": "ack-start",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 29,
+          "type": "ack-complete",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 29,
+          "type": "confirmed",
+          "id": "fan:2",
+          "agent": "fan",
+          "current": false
+        },
+        {
+          "t": 29,
+          "type": "ack-start",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 30,
+          "type": "ack-complete",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 30,
+          "type": "confirmed",
+          "id": "relay:2",
+          "agent": "relay",
+          "current": true
+        },
+        {
+          "t": 30,
+          "type": "ack-start",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 31,
+          "type": "ack-complete",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 31,
+          "type": "confirmed",
+          "id": "fan:3",
+          "agent": "fan",
+          "current": false
+        },
+        {
+          "t": 34,
+          "type": "superseded",
+          "id": "pump:2",
+          "agent": "pump",
+          "by": "pump:3"
+        },
+        {
+          "t": 34,
+          "type": "offer",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 34,
+          "type": "superseded",
+          "id": "fan:3",
+          "agent": "fan",
+          "by": "fan:4"
+        },
+        {
+          "t": 34,
+          "type": "offer",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 34,
+          "type": "data-start",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 36,
+          "type": "data-complete",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 36,
+          "type": "received",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 36,
+          "type": "ack-queued",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 36,
+          "expires": 44
+        },
+        {
+          "t": 36,
+          "type": "timing-used",
+          "id": "fan:4",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 36,
+          "type": "timeout-set",
+          "id": "fan:4",
+          "agent": "fan",
+          "due": 40,
+          "estimate": null
+        },
+        {
+          "t": 36,
+          "type": "ack-start",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 37,
+          "type": "ack-complete",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 37,
+          "type": "confirmed",
+          "id": "fan:4",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 37,
+          "type": "data-start",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 38,
+          "type": "superseded",
+          "id": "relay:2",
+          "agent": "relay",
+          "by": "relay:3"
+        },
+        {
+          "t": 38,
+          "type": "offer",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 39,
+          "type": "data-complete",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 39,
+          "type": "received",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 39,
+          "type": "ack-queued",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 40,
+          "expires": 48
+        },
+        {
+          "t": 39,
+          "type": "timing-used",
+          "id": "pump:3",
+          "agent": "pump",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 39,
+          "type": "timeout-set",
+          "id": "pump:3",
+          "agent": "pump",
+          "due": 43,
+          "estimate": null
+        },
+        {
+          "t": 39,
+          "type": "data-start",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 41,
+          "type": "data-complete",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 41,
+          "type": "received",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 41,
+          "type": "ack-queued",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 44,
+          "expires": 52
+        },
+        {
+          "t": 41,
+          "type": "timing-used",
+          "id": "relay:3",
+          "agent": "relay",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 41,
+          "type": "timeout-set",
+          "id": "relay:3",
+          "agent": "relay",
+          "due": 46,
+          "estimate": null
+        },
+        {
+          "t": 41,
+          "type": "ack-start",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 42,
+          "type": "ack-complete",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 42,
+          "type": "confirmed",
+          "id": "pump:3",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 44,
+          "type": "ack-start",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 45,
+          "type": "ack-complete",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 45,
+          "type": "confirmed",
+          "id": "relay:3",
+          "agent": "relay",
+          "current": true
+        },
+        {
+          "t": 45,
+          "type": "superseded",
+          "id": "fan:4",
+          "agent": "fan",
+          "by": "fan:5"
+        },
+        {
+          "t": 45,
+          "type": "offer",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 45,
+          "type": "data-start",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 47,
+          "type": "data-complete",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 47,
+          "type": "received",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 47,
+          "type": "ack-queued",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 48,
+          "expires": 56
+        },
+        {
+          "t": 47,
+          "type": "timing-used",
+          "id": "fan:5",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 47,
+          "type": "timeout-set",
+          "id": "fan:5",
+          "agent": "fan",
+          "due": 51,
+          "estimate": null
+        },
+        {
+          "t": 48,
+          "type": "ack-start",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 49,
+          "type": "ack-complete",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 49,
+          "type": "confirmed",
+          "id": "fan:5",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 51,
+          "type": "superseded",
+          "id": "pump:3",
+          "agent": "pump",
+          "by": "pump:4"
+        },
+        {
+          "t": 51,
+          "type": "offer",
+          "id": "pump:4",
+          "agent": "pump"
+        },
+        {
+          "t": 51,
+          "type": "data-start",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 53,
+          "type": "data-complete",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 53,
+          "type": "received",
+          "id": "pump:4",
+          "agent": "pump"
+        },
+        {
+          "t": 53,
+          "type": "ack-queued",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 56,
+          "expires": 64
+        },
+        {
+          "t": 53,
+          "type": "timing-used",
+          "id": "pump:4",
+          "agent": "pump",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 53,
+          "type": "timeout-set",
+          "id": "pump:4",
+          "agent": "pump",
+          "due": 58,
+          "estimate": null
+        },
+        {
+          "t": 56,
+          "type": "superseded",
+          "id": "fan:5",
+          "agent": "fan",
+          "by": "fan:6"
+        },
+        {
+          "t": 56,
+          "type": "offer",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 56,
+          "type": "ack-start",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 57,
+          "type": "ack-complete",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 57,
+          "type": "confirmed",
+          "id": "pump:4",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 57,
+          "type": "superseded",
+          "id": "relay:3",
+          "agent": "relay",
+          "by": "relay:4"
+        },
+        {
+          "t": 57,
+          "type": "offer",
+          "id": "relay:4",
+          "agent": "relay"
+        },
+        {
+          "t": 57,
+          "type": "data-start",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 59,
+          "type": "data-complete",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 59,
+          "type": "received",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 59,
+          "type": "ack-queued",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 60,
+          "expires": 68
+        },
+        {
+          "t": 59,
+          "type": "timing-used",
+          "id": "fan:6",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 59,
+          "type": "timeout-set",
+          "id": "fan:6",
+          "agent": "fan",
+          "due": 63,
+          "estimate": null
+        },
+        {
+          "t": 59,
+          "type": "data-start",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 61,
+          "type": "data-complete",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 61,
+          "type": "received",
+          "id": "relay:4",
+          "agent": "relay"
+        },
+        {
+          "t": 61,
+          "type": "ack-queued",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 64,
+          "expires": 72
+        },
+        {
+          "t": 61,
+          "type": "timing-used",
+          "id": "relay:4",
+          "agent": "relay",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 61,
+          "type": "timeout-set",
+          "id": "relay:4",
+          "agent": "relay",
+          "due": 66,
+          "estimate": null
+        },
+        {
+          "t": 61,
+          "type": "ack-start",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 62,
+          "type": "ack-complete",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 62,
+          "type": "confirmed",
+          "id": "fan:6",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 64,
+          "type": "ack-start",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 65,
+          "type": "ack-complete",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 65,
+          "type": "confirmed",
+          "id": "relay:4",
+          "agent": "relay",
+          "current": true
+        },
+        {
+          "t": 67,
+          "type": "superseded",
+          "id": "fan:6",
+          "agent": "fan",
+          "by": "fan:7"
+        },
+        {
+          "t": 67,
+          "type": "offer",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 67,
+          "type": "data-start",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 68,
+          "type": "superseded",
+          "id": "pump:4",
+          "agent": "pump",
+          "by": "pump:5"
+        },
+        {
+          "t": 68,
+          "type": "offer",
+          "id": "pump:5",
+          "agent": "pump"
+        },
+        {
+          "t": 69,
+          "type": "data-complete",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 69,
+          "type": "received",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 69,
+          "type": "ack-queued",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 72,
+          "expires": 80
+        },
+        {
+          "t": 69,
+          "type": "timing-used",
+          "id": "fan:7",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 69,
+          "type": "timeout-set",
+          "id": "fan:7",
+          "agent": "fan",
+          "due": 74,
+          "estimate": null
+        },
+        {
+          "t": 69,
+          "type": "data-start",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 71,
+          "type": "data-complete",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 71,
+          "type": "received",
+          "id": "pump:5",
+          "agent": "pump"
+        },
+        {
+          "t": 71,
+          "type": "ack-queued",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 72,
+          "expires": 80
+        },
+        {
+          "t": 71,
+          "type": "timing-used",
+          "id": "pump:5",
+          "agent": "pump",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 71,
+          "type": "timeout-set",
+          "id": "pump:5",
+          "agent": "pump",
+          "due": 75,
+          "estimate": null
+        },
+        {
+          "t": 72,
+          "type": "ack-start",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 73,
+          "type": "ack-complete",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 73,
+          "type": "confirmed",
+          "id": "fan:7",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 73,
+          "type": "ack-start",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 74,
+          "type": "ack-complete",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 74,
+          "type": "confirmed",
+          "id": "pump:5",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 76,
+          "type": "superseded",
+          "id": "relay:4",
+          "agent": "relay",
+          "by": "relay:5"
+        },
+        {
+          "t": 76,
+          "type": "offer",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 76,
+          "type": "data-start",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 78,
+          "type": "data-complete",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 78,
+          "type": "received",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 78,
+          "type": "ack-queued",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 80,
+          "expires": 88
+        },
+        {
+          "t": 78,
+          "type": "timing-used",
+          "id": "relay:5",
+          "agent": "relay",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 78,
+          "type": "timeout-set",
+          "id": "relay:5",
+          "agent": "relay",
+          "due": 82,
+          "estimate": null
+        },
+        {
+          "t": 78,
+          "type": "superseded",
+          "id": "fan:7",
+          "agent": "fan",
+          "by": "fan:8"
+        },
+        {
+          "t": 78,
+          "type": "offer",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 78,
+          "type": "data-start",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 80,
+          "type": "data-complete",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 80,
+          "type": "received",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 80,
+          "type": "ack-queued",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 80,
+          "expires": 88
+        },
+        {
+          "t": 80,
+          "type": "timing-used",
+          "id": "fan:8",
+          "agent": "fan",
+          "from": "fallback",
+          "epoch": null,
+          "stale": false,
+          "expired": false,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 80,
+          "type": "timeout-set",
+          "id": "fan:8",
+          "agent": "fan",
+          "due": 84,
+          "estimate": null
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "advert",
+          "id": "timing:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 0,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 3,
+          "kind": "data",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 4,
+          "kind": "data",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 5,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 6,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 7,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "data",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 13,
+          "kind": "data",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "advert",
+          "id": "timing:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 1,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 18,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 19,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 20,
+          "kind": "ack",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 21,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 22,
+          "kind": "ack",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 23,
+          "kind": "data",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 24,
+          "kind": "data",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 25,
+          "kind": "data",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 26,
+          "kind": "data",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "ack",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 29,
+          "kind": "ack",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 30,
+          "kind": "ack",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "data",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 35,
+          "kind": "data",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 36,
+          "kind": "ack",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 37,
+          "kind": "data",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 38,
+          "kind": "data",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 39,
+          "kind": "data",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 40,
+          "kind": "data",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 41,
+          "kind": "ack",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 42,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 43,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 44,
+          "kind": "ack",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 45,
+          "kind": "data",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 46,
+          "kind": "data",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 47,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 48,
+          "kind": "ack",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 49,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 50,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 51,
+          "kind": "data",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 52,
+          "kind": "data",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 53,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 54,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 55,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 56,
+          "kind": "ack",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 57,
+          "kind": "data",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 58,
+          "kind": "data",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 59,
+          "kind": "data",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 60,
+          "kind": "data",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 61,
+          "kind": "ack",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 62,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 63,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 64,
+          "kind": "ack",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 65,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 66,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 67,
+          "kind": "data",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 68,
+          "kind": "data",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 69,
+          "kind": "data",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 70,
+          "kind": "data",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 71,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 72,
+          "kind": "ack",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 73,
+          "kind": "ack",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 74,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 75,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 76,
+          "kind": "data",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 77,
+          "kind": "data",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 78,
+          "kind": "data",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 79,
+          "kind": "data",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        }
+      ],
+      "metrics": {
+        "offered": 18,
+        "received": 18,
+        "confirmed": 16,
+        "currentConfirmed": 1,
+        "freshAtAck": 11,
+        "unconfirmed": 2,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 36,
+        "ackTicks": 16,
+        "advertTicks": 2,
+        "advertAccepted": 1,
+        "staleUses": 0,
+        "expiredUses": 0,
+        "freeAcks": 0,
+        "byAgent": [
+          5,
+          8,
+          5
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": {
+          "id": "timing:1",
+          "agent": "relay",
+          "i": -1,
+          "epoch": 0,
+          "seq": 1,
+          "created": 0,
+          "expires": 12,
+          "delay": 12,
+          "batch": 4
+        },
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [
+          {
+            "id": "relay:5",
+            "ready": 80,
+            "expires": 88,
+            "attempt": 1
+          },
+          {
+            "id": "fan:8",
+            "ready": 80,
+            "expires": 88,
+            "attempt": 1
+          }
+        ],
+        "free": [],
+        "active": null
+      }
+    },
+    "step-advert-sticky": {
+      "schema": "mhac-timing-advert-v1",
+      "config": {
+        "name": "light",
+        "horizon": 80,
+        "periods": [
+          17,
+          11,
+          19
+        ],
+        "phases": [
+          0,
+          1,
+          0
+        ],
+        "deadlines": [
+          20,
+          6,
+          20
+        ],
+        "priorities": [
+          0,
+          2,
+          1
+        ],
+        "dataLoss": 0,
+        "ackLoss": 0,
+        "timeout": 4,
+        "delay": 12,
+        "batch": 4,
+        "seed": 1105,
+        "guess": 0,
+        "change": {
+          "tick": 16,
+          "delay": 0
+        },
+        "advertPeriod": 400,
+        "advertTTL": 12,
+        "lifetime": "advert-sticky"
+      },
+      "policy": "ack-first",
+      "until": 80,
+      "manual": [
+        {
+          "t": 16,
+          "op": "drop-advert"
+        },
+        {
+          "t": 17,
+          "op": "drop-advert"
+        },
+        {
+          "t": 18,
+          "op": "drop-advert"
+        },
+        {
+          "t": 19,
+          "op": "drop-advert"
+        },
+        {
+          "t": 20,
+          "op": "drop-advert"
+        }
+      ],
+      "records": [
+        {
+          "id": "pump:1",
+          "i": 0,
+          "agent": "pump",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 0,
+          "attempts": 1,
+          "received": 7,
+          "confirmed": 22,
+          "timeout": null,
+          "firstFinish": 7
+        },
+        {
+          "id": "relay:1",
+          "i": 2,
+          "agent": "relay",
+          "version": 1,
+          "arrived": 0,
+          "deadline": 20,
+          "priority": 1,
+          "attempts": 1,
+          "received": 5,
+          "confirmed": 21,
+          "timeout": null,
+          "firstFinish": 5
+        },
+        {
+          "id": "fan:1",
+          "i": 1,
+          "agent": "fan",
+          "version": 1,
+          "arrived": 1,
+          "deadline": 7,
+          "priority": 2,
+          "attempts": 1,
+          "received": 3,
+          "confirmed": 17,
+          "timeout": null,
+          "firstFinish": 3
+        },
+        {
+          "id": "fan:2",
+          "i": 1,
+          "agent": "fan",
+          "version": 2,
+          "arrived": 12,
+          "deadline": 18,
+          "priority": 2,
+          "attempts": 1,
+          "received": 14,
+          "confirmed": 29,
+          "timeout": null,
+          "firstFinish": 14
+        },
+        {
+          "id": "pump:2",
+          "i": 0,
+          "agent": "pump",
+          "version": 2,
+          "arrived": 17,
+          "deadline": 37,
+          "priority": 0,
+          "attempts": 1,
+          "received": 20,
+          "confirmed": 23,
+          "timeout": null,
+          "firstFinish": 20
+        },
+        {
+          "id": "relay:2",
+          "i": 2,
+          "agent": "relay",
+          "version": 2,
+          "arrived": 19,
+          "deadline": 39,
+          "priority": 1,
+          "attempts": 1,
+          "received": 25,
+          "confirmed": 30,
+          "timeout": null,
+          "firstFinish": 25
+        },
+        {
+          "id": "fan:3",
+          "i": 1,
+          "agent": "fan",
+          "version": 3,
+          "arrived": 23,
+          "deadline": 29,
+          "priority": 2,
+          "attempts": 1,
+          "received": 27,
+          "confirmed": 31,
+          "timeout": null,
+          "firstFinish": 27
+        },
+        {
+          "id": "pump:3",
+          "i": 0,
+          "agent": "pump",
+          "version": 3,
+          "arrived": 34,
+          "deadline": 54,
+          "priority": 0,
+          "attempts": 1,
+          "received": 39,
+          "confirmed": 42,
+          "timeout": null,
+          "firstFinish": 39
+        },
+        {
+          "id": "fan:4",
+          "i": 1,
+          "agent": "fan",
+          "version": 4,
+          "arrived": 34,
+          "deadline": 40,
+          "priority": 2,
+          "attempts": 1,
+          "received": 36,
+          "confirmed": 37,
+          "timeout": null,
+          "firstFinish": 36
+        },
+        {
+          "id": "relay:3",
+          "i": 2,
+          "agent": "relay",
+          "version": 3,
+          "arrived": 38,
+          "deadline": 58,
+          "priority": 1,
+          "attempts": 1,
+          "received": 41,
+          "confirmed": 45,
+          "timeout": null,
+          "firstFinish": 41
+        },
+        {
+          "id": "fan:5",
+          "i": 1,
+          "agent": "fan",
+          "version": 5,
+          "arrived": 45,
+          "deadline": 51,
+          "priority": 2,
+          "attempts": 1,
+          "received": 47,
+          "confirmed": 49,
+          "timeout": null,
+          "firstFinish": 47
+        },
+        {
+          "id": "pump:4",
+          "i": 0,
+          "agent": "pump",
+          "version": 4,
+          "arrived": 51,
+          "deadline": 71,
+          "priority": 0,
+          "attempts": 1,
+          "received": 53,
+          "confirmed": 57,
+          "timeout": null,
+          "firstFinish": 53
+        },
+        {
+          "id": "fan:6",
+          "i": 1,
+          "agent": "fan",
+          "version": 6,
+          "arrived": 56,
+          "deadline": 62,
+          "priority": 2,
+          "attempts": 1,
+          "received": 59,
+          "confirmed": 62,
+          "timeout": null,
+          "firstFinish": 59
+        },
+        {
+          "id": "relay:4",
+          "i": 2,
+          "agent": "relay",
+          "version": 4,
+          "arrived": 57,
+          "deadline": 77,
+          "priority": 1,
+          "attempts": 1,
+          "received": 61,
+          "confirmed": 65,
+          "timeout": null,
+          "firstFinish": 61
+        },
+        {
+          "id": "fan:7",
+          "i": 1,
+          "agent": "fan",
+          "version": 7,
+          "arrived": 67,
+          "deadline": 73,
+          "priority": 2,
+          "attempts": 1,
+          "received": 69,
+          "confirmed": 73,
+          "timeout": null,
+          "firstFinish": 69
+        },
+        {
+          "id": "pump:5",
+          "i": 0,
+          "agent": "pump",
+          "version": 5,
+          "arrived": 68,
+          "deadline": 88,
+          "priority": 0,
+          "attempts": 1,
+          "received": 71,
+          "confirmed": 74,
+          "timeout": null,
+          "firstFinish": 71
+        },
+        {
+          "id": "relay:5",
+          "i": 2,
+          "agent": "relay",
+          "version": 5,
+          "arrived": 76,
+          "deadline": 96,
+          "priority": 1,
+          "attempts": 1,
+          "received": 78,
+          "confirmed": null,
+          "timeout": 94,
+          "firstFinish": 78
+        },
+        {
+          "id": "fan:8",
+          "i": 1,
+          "agent": "fan",
+          "version": 8,
+          "arrived": 78,
+          "deadline": 84,
+          "priority": 2,
+          "attempts": 1,
+          "received": 80,
+          "confirmed": null,
+          "timeout": 94,
+          "firstFinish": 80
+        }
+      ],
+      "trace": [
+        {
+          "t": 0,
+          "type": "advert-queued",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 12
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 0,
+          "type": "offer",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 0,
+          "type": "advert-start",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-complete",
+          "id": "timing:1",
+          "agent": "relay",
+          "lost": false,
+          "epoch": 0,
+          "seq": 1
+        },
+        {
+          "t": 1,
+          "type": "advert-accepted",
+          "id": "timing:1",
+          "agent": "relay",
+          "epoch": 0,
+          "seq": 1,
+          "delay": 12,
+          "batch": 4,
+          "expires": 12
+        },
+        {
+          "t": 1,
+          "type": "offer",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 1,
+          "type": "data-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 3,
+          "type": "data-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 3,
+          "type": "received",
+          "id": "fan:1",
+          "agent": "fan"
+        },
+        {
+          "t": 3,
+          "type": "ack-queued",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 16,
+          "expires": 24
+        },
+        {
+          "t": 3,
+          "type": "timing-used",
+          "id": "fan:1",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 3,
+          "type": "timeout-set",
+          "id": "fan:1",
+          "agent": "fan",
+          "due": 18,
+          "estimate": null
+        },
+        {
+          "t": 3,
+          "type": "data-start",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 5,
+          "type": "data-complete",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 5,
+          "type": "received",
+          "id": "relay:1",
+          "agent": "relay"
+        },
+        {
+          "t": 5,
+          "type": "ack-queued",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 20,
+          "expires": 28
+        },
+        {
+          "t": 5,
+          "type": "timing-used",
+          "id": "relay:1",
+          "agent": "relay",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 5,
+          "type": "timeout-set",
+          "id": "relay:1",
+          "agent": "relay",
+          "due": 22,
+          "estimate": null
+        },
+        {
+          "t": 5,
+          "type": "data-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 7,
+          "type": "data-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 7,
+          "type": "received",
+          "id": "pump:1",
+          "agent": "pump"
+        },
+        {
+          "t": 7,
+          "type": "ack-queued",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 20,
+          "expires": 28
+        },
+        {
+          "t": 7,
+          "type": "timing-used",
+          "id": "pump:1",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": false,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 7,
+          "type": "timeout-set",
+          "id": "pump:1",
+          "agent": "pump",
+          "due": 22,
+          "estimate": null
+        },
+        {
+          "t": 12,
+          "type": "superseded",
+          "id": "fan:1",
+          "agent": "fan",
+          "by": "fan:2"
+        },
+        {
+          "t": 12,
+          "type": "offer",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 12,
+          "type": "data-start",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 14,
+          "type": "data-complete",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 14,
+          "type": "received",
+          "id": "fan:2",
+          "agent": "fan"
+        },
+        {
+          "t": 14,
+          "type": "ack-queued",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 28,
+          "expires": 36
+        },
+        {
+          "t": 14,
+          "type": "timing-used",
+          "id": "fan:2",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": false,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 14,
+          "type": "timeout-set",
+          "id": "fan:2",
+          "agent": "fan",
+          "due": 30,
+          "estimate": null
+        },
+        {
+          "t": 16,
+          "type": "advert-queued",
+          "id": "timing:2",
+          "agent": "relay",
+          "epoch": 1,
+          "seq": 2,
+          "delay": 0,
+          "batch": 4,
+          "expires": 28
+        },
+        {
+          "t": 16,
+          "type": "ack-start",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 17,
+          "type": "ack-complete",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 17,
+          "type": "confirmed",
+          "id": "fan:1",
+          "agent": "fan",
+          "current": false
+        },
+        {
+          "t": 17,
+          "type": "superseded",
+          "id": "pump:1",
+          "agent": "pump",
+          "by": "pump:2"
+        },
+        {
+          "t": 17,
+          "type": "offer",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 17,
+          "type": "advert-start",
+          "id": "timing:2",
+          "agent": "relay",
+          "epoch": 1,
+          "seq": 2
+        },
+        {
+          "t": 18,
+          "type": "advert-complete",
+          "id": "timing:2",
+          "agent": "relay",
+          "lost": true,
+          "epoch": 1,
+          "seq": 2
+        },
+        {
+          "t": 18,
+          "type": "data-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 19,
+          "type": "superseded",
+          "id": "relay:1",
+          "agent": "relay",
+          "by": "relay:2"
+        },
+        {
+          "t": 19,
+          "type": "offer",
+          "id": "relay:2",
+          "agent": "relay"
+        },
+        {
+          "t": 20,
+          "type": "data-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 20,
+          "type": "received",
+          "id": "pump:2",
+          "agent": "pump"
+        },
+        {
+          "t": 20,
+          "type": "ack-queued",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 20,
+          "expires": 28
+        },
+        {
+          "t": 20,
+          "type": "timing-used",
+          "id": "pump:2",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 20,
+          "type": "timeout-set",
+          "id": "pump:2",
+          "agent": "pump",
+          "due": 34,
+          "estimate": null
+        },
+        {
+          "t": 20,
+          "type": "ack-start",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 21,
+          "type": "ack-complete",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 21,
+          "type": "confirmed",
+          "id": "relay:1",
+          "agent": "relay",
+          "current": false
+        },
+        {
+          "t": 21,
+          "type": "ack-start",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 22,
+          "type": "ack-complete",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 22,
+          "type": "confirmed",
+          "id": "pump:1",
+          "agent": "pump",
+          "current": false
+        },
+        {
+          "t": 22,
+          "type": "ack-start",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 23,
+          "type": "ack-complete",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 23,
+          "type": "confirmed",
+          "id": "pump:2",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 23,
+          "type": "superseded",
+          "id": "fan:2",
+          "agent": "fan",
+          "by": "fan:3"
+        },
+        {
+          "t": 23,
+          "type": "offer",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 23,
+          "type": "data-start",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 25,
+          "type": "data-complete",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 25,
+          "type": "received",
+          "id": "relay:2",
+          "agent": "relay"
+        },
+        {
+          "t": 25,
+          "type": "ack-queued",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 28,
+          "expires": 36
+        },
+        {
+          "t": 25,
+          "type": "timing-used",
+          "id": "relay:2",
+          "agent": "relay",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 25,
+          "type": "timeout-set",
+          "id": "relay:2",
+          "agent": "relay",
+          "due": 42,
+          "estimate": null
+        },
+        {
+          "t": 25,
+          "type": "data-start",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 27,
+          "type": "data-complete",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 27,
+          "type": "received",
+          "id": "fan:3",
+          "agent": "fan"
+        },
+        {
+          "t": 27,
+          "type": "ack-queued",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 28,
+          "expires": 36
+        },
+        {
+          "t": 27,
+          "type": "timing-used",
+          "id": "fan:3",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 27,
+          "type": "timeout-set",
+          "id": "fan:3",
+          "agent": "fan",
+          "due": 42,
+          "estimate": null
+        },
+        {
+          "t": 28,
+          "type": "ack-start",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 29,
+          "type": "ack-complete",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 29,
+          "type": "confirmed",
+          "id": "fan:2",
+          "agent": "fan",
+          "current": false
+        },
+        {
+          "t": 29,
+          "type": "ack-start",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 30,
+          "type": "ack-complete",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 30,
+          "type": "confirmed",
+          "id": "relay:2",
+          "agent": "relay",
+          "current": true
+        },
+        {
+          "t": 30,
+          "type": "ack-start",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 31,
+          "type": "ack-complete",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 31,
+          "type": "confirmed",
+          "id": "fan:3",
+          "agent": "fan",
+          "current": false
+        },
+        {
+          "t": 34,
+          "type": "superseded",
+          "id": "pump:2",
+          "agent": "pump",
+          "by": "pump:3"
+        },
+        {
+          "t": 34,
+          "type": "offer",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 34,
+          "type": "superseded",
+          "id": "fan:3",
+          "agent": "fan",
+          "by": "fan:4"
+        },
+        {
+          "t": 34,
+          "type": "offer",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 34,
+          "type": "data-start",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 36,
+          "type": "data-complete",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 36,
+          "type": "received",
+          "id": "fan:4",
+          "agent": "fan"
+        },
+        {
+          "t": 36,
+          "type": "ack-queued",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 36,
+          "expires": 44
+        },
+        {
+          "t": 36,
+          "type": "timing-used",
+          "id": "fan:4",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 36,
+          "type": "timeout-set",
+          "id": "fan:4",
+          "agent": "fan",
+          "due": 50,
+          "estimate": null
+        },
+        {
+          "t": 36,
+          "type": "ack-start",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 37,
+          "type": "ack-complete",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 37,
+          "type": "confirmed",
+          "id": "fan:4",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 37,
+          "type": "data-start",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 38,
+          "type": "superseded",
+          "id": "relay:2",
+          "agent": "relay",
+          "by": "relay:3"
+        },
+        {
+          "t": 38,
+          "type": "offer",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 39,
+          "type": "data-complete",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 39,
+          "type": "received",
+          "id": "pump:3",
+          "agent": "pump"
+        },
+        {
+          "t": 39,
+          "type": "ack-queued",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 40,
+          "expires": 48
+        },
+        {
+          "t": 39,
+          "type": "timing-used",
+          "id": "pump:3",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 39,
+          "type": "timeout-set",
+          "id": "pump:3",
+          "agent": "pump",
+          "due": 54,
+          "estimate": null
+        },
+        {
+          "t": 39,
+          "type": "data-start",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 41,
+          "type": "data-complete",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 41,
+          "type": "received",
+          "id": "relay:3",
+          "agent": "relay"
+        },
+        {
+          "t": 41,
+          "type": "ack-queued",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 44,
+          "expires": 52
+        },
+        {
+          "t": 41,
+          "type": "timing-used",
+          "id": "relay:3",
+          "agent": "relay",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 41,
+          "type": "timeout-set",
+          "id": "relay:3",
+          "agent": "relay",
+          "due": 58,
+          "estimate": null
+        },
+        {
+          "t": 41,
+          "type": "ack-start",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 42,
+          "type": "ack-complete",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 42,
+          "type": "confirmed",
+          "id": "pump:3",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 44,
+          "type": "ack-start",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 45,
+          "type": "ack-complete",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 45,
+          "type": "confirmed",
+          "id": "relay:3",
+          "agent": "relay",
+          "current": true
+        },
+        {
+          "t": 45,
+          "type": "superseded",
+          "id": "fan:4",
+          "agent": "fan",
+          "by": "fan:5"
+        },
+        {
+          "t": 45,
+          "type": "offer",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 45,
+          "type": "data-start",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 47,
+          "type": "data-complete",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 47,
+          "type": "received",
+          "id": "fan:5",
+          "agent": "fan"
+        },
+        {
+          "t": 47,
+          "type": "ack-queued",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 48,
+          "expires": 56
+        },
+        {
+          "t": 47,
+          "type": "timing-used",
+          "id": "fan:5",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 47,
+          "type": "timeout-set",
+          "id": "fan:5",
+          "agent": "fan",
+          "due": 62,
+          "estimate": null
+        },
+        {
+          "t": 48,
+          "type": "ack-start",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 49,
+          "type": "ack-complete",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 49,
+          "type": "confirmed",
+          "id": "fan:5",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 51,
+          "type": "superseded",
+          "id": "pump:3",
+          "agent": "pump",
+          "by": "pump:4"
+        },
+        {
+          "t": 51,
+          "type": "offer",
+          "id": "pump:4",
+          "agent": "pump"
+        },
+        {
+          "t": 51,
+          "type": "data-start",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 53,
+          "type": "data-complete",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 53,
+          "type": "received",
+          "id": "pump:4",
+          "agent": "pump"
+        },
+        {
+          "t": 53,
+          "type": "ack-queued",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 56,
+          "expires": 64
+        },
+        {
+          "t": 53,
+          "type": "timing-used",
+          "id": "pump:4",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 53,
+          "type": "timeout-set",
+          "id": "pump:4",
+          "agent": "pump",
+          "due": 70,
+          "estimate": null
+        },
+        {
+          "t": 56,
+          "type": "superseded",
+          "id": "fan:5",
+          "agent": "fan",
+          "by": "fan:6"
+        },
+        {
+          "t": 56,
+          "type": "offer",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 56,
+          "type": "ack-start",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 57,
+          "type": "ack-complete",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 57,
+          "type": "confirmed",
+          "id": "pump:4",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 57,
+          "type": "superseded",
+          "id": "relay:3",
+          "agent": "relay",
+          "by": "relay:4"
+        },
+        {
+          "t": 57,
+          "type": "offer",
+          "id": "relay:4",
+          "agent": "relay"
+        },
+        {
+          "t": 57,
+          "type": "data-start",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 59,
+          "type": "data-complete",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 59,
+          "type": "received",
+          "id": "fan:6",
+          "agent": "fan"
+        },
+        {
+          "t": 59,
+          "type": "ack-queued",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 60,
+          "expires": 68
+        },
+        {
+          "t": 59,
+          "type": "timing-used",
+          "id": "fan:6",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 59,
+          "type": "timeout-set",
+          "id": "fan:6",
+          "agent": "fan",
+          "due": 74,
+          "estimate": null
+        },
+        {
+          "t": 59,
+          "type": "data-start",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 61,
+          "type": "data-complete",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 61,
+          "type": "received",
+          "id": "relay:4",
+          "agent": "relay"
+        },
+        {
+          "t": 61,
+          "type": "ack-queued",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 64,
+          "expires": 72
+        },
+        {
+          "t": 61,
+          "type": "timing-used",
+          "id": "relay:4",
+          "agent": "relay",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 61,
+          "type": "timeout-set",
+          "id": "relay:4",
+          "agent": "relay",
+          "due": 78,
+          "estimate": null
+        },
+        {
+          "t": 61,
+          "type": "ack-start",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 62,
+          "type": "ack-complete",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 62,
+          "type": "confirmed",
+          "id": "fan:6",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 64,
+          "type": "ack-start",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 65,
+          "type": "ack-complete",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 65,
+          "type": "confirmed",
+          "id": "relay:4",
+          "agent": "relay",
+          "current": true
+        },
+        {
+          "t": 67,
+          "type": "superseded",
+          "id": "fan:6",
+          "agent": "fan",
+          "by": "fan:7"
+        },
+        {
+          "t": 67,
+          "type": "offer",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 67,
+          "type": "data-start",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 68,
+          "type": "superseded",
+          "id": "pump:4",
+          "agent": "pump",
+          "by": "pump:5"
+        },
+        {
+          "t": 68,
+          "type": "offer",
+          "id": "pump:5",
+          "agent": "pump"
+        },
+        {
+          "t": 69,
+          "type": "data-complete",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 69,
+          "type": "received",
+          "id": "fan:7",
+          "agent": "fan"
+        },
+        {
+          "t": 69,
+          "type": "ack-queued",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 72,
+          "expires": 80
+        },
+        {
+          "t": 69,
+          "type": "timing-used",
+          "id": "fan:7",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 69,
+          "type": "timeout-set",
+          "id": "fan:7",
+          "agent": "fan",
+          "due": 86,
+          "estimate": null
+        },
+        {
+          "t": 69,
+          "type": "data-start",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 71,
+          "type": "data-complete",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 71,
+          "type": "received",
+          "id": "pump:5",
+          "agent": "pump"
+        },
+        {
+          "t": 71,
+          "type": "ack-queued",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "ready": 72,
+          "expires": 80
+        },
+        {
+          "t": 71,
+          "type": "timing-used",
+          "id": "pump:5",
+          "agent": "pump",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 71,
+          "type": "timeout-set",
+          "id": "pump:5",
+          "agent": "pump",
+          "due": 86,
+          "estimate": null
+        },
+        {
+          "t": 72,
+          "type": "ack-start",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 73,
+          "type": "ack-complete",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 73,
+          "type": "confirmed",
+          "id": "fan:7",
+          "agent": "fan",
+          "current": true
+        },
+        {
+          "t": 73,
+          "type": "ack-start",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1
+        },
+        {
+          "t": 74,
+          "type": "ack-complete",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "lost": false,
+          "free": false
+        },
+        {
+          "t": 74,
+          "type": "confirmed",
+          "id": "pump:5",
+          "agent": "pump",
+          "current": true
+        },
+        {
+          "t": 76,
+          "type": "superseded",
+          "id": "relay:4",
+          "agent": "relay",
+          "by": "relay:5"
+        },
+        {
+          "t": 76,
+          "type": "offer",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 76,
+          "type": "data-start",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1
+        },
+        {
+          "t": 78,
+          "type": "data-complete",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 78,
+          "type": "received",
+          "id": "relay:5",
+          "agent": "relay"
+        },
+        {
+          "t": 78,
+          "type": "ack-queued",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "ready": 80,
+          "expires": 88
+        },
+        {
+          "t": 78,
+          "type": "timing-used",
+          "id": "relay:5",
+          "agent": "relay",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 78,
+          "type": "timeout-set",
+          "id": "relay:5",
+          "agent": "relay",
+          "due": 94,
+          "estimate": null
+        },
+        {
+          "t": 78,
+          "type": "superseded",
+          "id": "fan:7",
+          "agent": "fan",
+          "by": "fan:8"
+        },
+        {
+          "t": 78,
+          "type": "offer",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 78,
+          "type": "data-start",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1
+        },
+        {
+          "t": 80,
+          "type": "data-complete",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "lost": false,
+          "ok": true
+        },
+        {
+          "t": 80,
+          "type": "received",
+          "id": "fan:8",
+          "agent": "fan"
+        },
+        {
+          "t": 80,
+          "type": "ack-queued",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "ready": 80,
+          "expires": 88
+        },
+        {
+          "t": 80,
+          "type": "timing-used",
+          "id": "fan:8",
+          "agent": "fan",
+          "from": "timing:1",
+          "epoch": 0,
+          "stale": true,
+          "expired": true,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 80,
+          "type": "timeout-set",
+          "id": "fan:8",
+          "agent": "fan",
+          "due": 94,
+          "estimate": null
+        }
+      ],
+      "segments": [
+        {
+          "t": 0,
+          "kind": "advert",
+          "id": "timing:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 0,
+          "delay": 12,
+          "batch": 4
+        },
+        {
+          "t": 1,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 2,
+          "kind": "data",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 3,
+          "kind": "data",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 4,
+          "kind": "data",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 5,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 6,
+          "kind": "data",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 7,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 8,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 9,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 10,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 11,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 12,
+          "kind": "data",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 13,
+          "kind": "data",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 14,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 15,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 16,
+          "kind": "ack",
+          "id": "fan:1",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 17,
+          "kind": "advert",
+          "id": "timing:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0,
+          "epoch": 1,
+          "delay": 0,
+          "batch": 4
+        },
+        {
+          "t": 18,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 19,
+          "kind": "data",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 20,
+          "kind": "ack",
+          "id": "relay:1",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 21,
+          "kind": "ack",
+          "id": "pump:1",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 22,
+          "kind": "ack",
+          "id": "pump:2",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 23,
+          "kind": "data",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 24,
+          "kind": "data",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 25,
+          "kind": "data",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 26,
+          "kind": "data",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 27,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 28,
+          "kind": "ack",
+          "id": "fan:2",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 29,
+          "kind": "ack",
+          "id": "relay:2",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 30,
+          "kind": "ack",
+          "id": "fan:3",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 31,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 32,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 33,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 34,
+          "kind": "data",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 35,
+          "kind": "data",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 36,
+          "kind": "ack",
+          "id": "fan:4",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 37,
+          "kind": "data",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 38,
+          "kind": "data",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 39,
+          "kind": "data",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 40,
+          "kind": "data",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 41,
+          "kind": "ack",
+          "id": "pump:3",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 42,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 43,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 44,
+          "kind": "ack",
+          "id": "relay:3",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 45,
+          "kind": "data",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 46,
+          "kind": "data",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 47,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 48,
+          "kind": "ack",
+          "id": "fan:5",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 49,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 50,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 51,
+          "kind": "data",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 52,
+          "kind": "data",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 53,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 54,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 55,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 56,
+          "kind": "ack",
+          "id": "pump:4",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 57,
+          "kind": "data",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 58,
+          "kind": "data",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 59,
+          "kind": "data",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 60,
+          "kind": "data",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 61,
+          "kind": "ack",
+          "id": "fan:6",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 62,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 63,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 64,
+          "kind": "ack",
+          "id": "relay:4",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 65,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 66,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 67,
+          "kind": "data",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 68,
+          "kind": "data",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 69,
+          "kind": "data",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 70,
+          "kind": "data",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 71,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 72,
+          "kind": "ack",
+          "id": "fan:7",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 73,
+          "kind": "ack",
+          "id": "pump:5",
+          "agent": "pump",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 74,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 75,
+          "kind": "idle",
+          "id": null
+        },
+        {
+          "t": 76,
+          "kind": "data",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 77,
+          "kind": "data",
+          "id": "relay:5",
+          "agent": "relay",
+          "attempt": 1,
+          "part": 1
+        },
+        {
+          "t": 78,
+          "kind": "data",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 0
+        },
+        {
+          "t": 79,
+          "kind": "data",
+          "id": "fan:8",
+          "agent": "fan",
+          "attempt": 1,
+          "part": 1
+        }
+      ],
+      "metrics": {
+        "offered": 18,
+        "received": 18,
+        "confirmed": 16,
+        "currentConfirmed": 1,
+        "freshAtAck": 11,
+        "unconfirmed": 2,
+        "retries": 0,
+        "duplicates": 0,
+        "ackLost": 0,
+        "ackDiscarded": 0,
+        "dataTicks": 36,
+        "ackTicks": 16,
+        "advertTicks": 2,
+        "advertAccepted": 1,
+        "staleUses": 14,
+        "expiredUses": 15,
+        "freeAcks": 0,
+        "byAgent": [
+          5,
+          8,
+          5
+        ]
+      },
+      "pending": {
+        "advert": null,
+        "cache": {
+          "id": "timing:1",
+          "agent": "relay",
+          "i": -1,
+          "epoch": 0,
+          "seq": 1,
+          "created": 0,
+          "expires": 12,
+          "delay": 12,
+          "batch": 4
+        },
+        "data": [
+          null,
+          null,
+          null
+        ],
+        "ack": [
+          {
+            "id": "relay:5",
+            "ready": 80,
+            "expires": 88,
+            "attempt": 1
+          },
+          {
+            "id": "fan:8",
+            "ready": 80,
+            "expires": 88,
+            "attempt": 1
+          }
+        ],
+        "free": [],
+        "active": null
+      }
+    }
+  },
+  "limits": "Synthetic receipt oracle; advertisements consume a full tick; shared clock for expiration; no waveform decoding, source authentication, negotiated reservations or human evidence."
+}
