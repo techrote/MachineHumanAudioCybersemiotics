@@ -2,16 +2,16 @@
 #include "escape_release.hpp"
 #include <atomic>
 namespace mhac::orbit::host {
-constexpr unsigned firstID=1810, count=5;
+constexpr unsigned firstID=1810, count=7;
 constexpr std::uint64_t pending=std::uint64_t(1)<<63;
 inline std::uint64_t pack(Patch p) noexcept {
-    return p.blend|(p.releaseMs<<10)|(unsigned(p.cents+100)<<20)|(p.releaseMode<<28)|(std::uint64_t(p.spectralDepth)<<30);
+    return p.blend|(p.releaseMs<<10)|(unsigned(p.cents+100)<<20)|(p.releaseMode<<28)|(std::uint64_t(p.spectralDepth)<<30)|(std::uint64_t(p.sustainDepth)<<40)|(std::uint64_t(p.sustainMs-200)<<50);
 }
 inline Patch unpack(std::uint64_t w) noexcept {
-    return {unsigned(w&1023u),unsigned((w>>10)&1023u),int((w>>20)&255u)-100,unsigned((w>>28)&3u),unsigned((w>>30)&1023u)};
+    return {unsigned(w&1023u),unsigned((w>>10)&1023u),int((w>>20)&255u)-100,unsigned((w>>28)&3u),unsigned((w>>30)&1023u),unsigned((w>>40)&1023u),200u+unsigned((w>>50)&8191u)};
 }
 inline double normalized(Patch p,unsigned i) noexcept {
-    return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:i==2?(p.cents+100)/200.:i==3?p.releaseMode/2.:p.spectralDepth/1000.;
+    return i==0?p.blend/1000.:i==1?(p.releaseMs-10)/990.:i==2?(p.cents+100)/200.:i==3?p.releaseMode/2.:i==4?p.spectralDepth/1000.:i==5?p.sustainDepth/1000.:(p.sustainMs-200)/7800.;
 }
 class Live {
     struct Key {int id=-1,channel=0,pitch=0;bool released=false;};
@@ -43,7 +43,9 @@ public:
         else if(i==1)p.releaseMs=10u+unsigned(std::lround(value*990.));
         else if(i==2)p.cents=int(std::lround(value*200.))-100;
         else if(i==3)p.releaseMode=unsigned(std::lround(value*2.));
-        else p.spectralDepth=unsigned(std::lround(value*1000.));
+        else if(i==4)p.spectralDepth=unsigned(std::lround(value*1000.));
+        else if(i==5)p.sustainDepth=unsigned(std::lround(value*1000.));
+        else p.sustainMs=200u+unsigned(std::lround(value*7800.));
         return setPatch(p);
     }
     bool off(int id,int channel,int pitch) noexcept {
@@ -72,7 +74,8 @@ public:
         if(velocity==0.)return off(id,channel,pitch);
         for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&matches(keys_[i],id,channel,pitch)&&!keys_[i].released)return false;
         for(unsigned i=0;i<keys_.size();++i)if(!engine_.noteActive(int(i))){
-            if(!engine_.noteOn(int(i),pitch,velocity,tuning))return false;
+            const auto p=patch();const auto& route=phases_.route(unsigned(pitch)%68u);
+            if(!engine_.noteOn(int(i),pitch,velocity,tuning,p.sustainDepth?&route.gain:nullptr,route.length,p.sustainDepth/1000.,p.sustainMs))return false;
             keys_[i]={id,channel,pitch,false};return true;
         }
         return false;

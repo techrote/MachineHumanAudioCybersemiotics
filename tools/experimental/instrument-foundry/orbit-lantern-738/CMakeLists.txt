@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(MHACOrbitLantern VERSION 0.3.1 LANGUAGES CXX)
+project(MHACOrbitLantern VERSION 0.4.0 LANGUAGES CXX)
 add_executable(orbit_lab lab.cpp)
 target_compile_features(orbit_lab PRIVATE cxx_std_17)
 if(MSVC)

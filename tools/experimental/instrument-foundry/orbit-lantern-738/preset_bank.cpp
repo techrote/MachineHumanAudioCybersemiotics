@@ -1,6 +1,7 @@
 // Refs #738. Offline component-only VST3 preset generator and native audition.
 #include "host.hpp"
 #include <vector>
+#include <iterator>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -21,7 +22,7 @@ Container wrap(Patch p){
 }
 // Strict parser for this canonical subset, not arbitrary third-party presets.
 bool unwrap(const Container& b,Patch& p){Patch candidate{};
-    if(b.size()!=86&&b.size()!=87&&b.size()!=89)return false;
+    if(b.size()!=86&&b.size()!=87&&b.size()!=89&&b.size()!=93)return false;
     FullState bytes{};const auto n=unsigned(b.size()-76);std::copy_n(b.begin()+48,n,bytes.begin());
     if(!decodeFull(bytes,n,candidate))return false;
     if(wrap(candidate)!=b)return false;
@@ -32,7 +33,8 @@ constexpr Entry bank[]{
     {"04 Needle Orbit",{1000,10,0}},{"05 Slow Ember",{850,850,-25}},{"06 Offset Halo",{200,400,25}},
     {"07 Hollow Fifth",{650,120,-100}},{"08 Bright Return",{350,600,100}},
     {"09 Linear Lantern",{1000,800,0,0}},{"10 Fixed Escape",{1000,800,0,1}},{"11 Phase Escape",{1000,800,0,2}},
-    {"12 Fixed Spectrum",{1000,800,0,1,1000}},{"13 Phase Spectrum",{1000,800,0,2,1000}},{"14 Half Spectrum",{1000,800,0,2,500}}
+    {"12 Fixed Spectrum",{1000,800,0,1,1000}},{"13 Phase Spectrum",{1000,800,0,2,1000}},{"14 Half Spectrum",{1000,800,0,2,500}},
+    {"15 Breathing Orbit",{250,500,0,2,500,850,900}},{"16 Slow Tidal Halo",{100,600,0,1,400,1000,2100}},{"17 Flutter Lantern",{400,300,0,2,500,750,200}}
 };
 void writeInt(std::ofstream& f,std::uint32_t n,unsigned bytes){for(unsigned j=0;j<bytes;++j){f.put(char(n&255u));n>>=8;}}
 void wavHeader(std::ofstream& f,unsigned frames){f.write("RIFF",4);writeInt(f,36+4*frames,4);f.write("WAVEfmt ",8);writeInt(f,16,4);writeInt(f,1,2);writeInt(f,2,2);writeInt(f,48000,4);writeInt(f,192000,4);writeInt(f,4,2);writeInt(f,16,2);f.write("data",4);writeInt(f,4*frames,4);}
@@ -66,6 +68,6 @@ int main(int argc,char** argv){try{
         if(argc==3){const auto path=presets/(std::string(entry.name)+".vstpreset");std::ofstream f(path,std::ios::binary);f.write(reinterpret_cast<const char*>(bytes.data()),static_cast<std::streamsize>(bytes.size()));f.close();require(bool(f));Container read(bytes.size());std::ifstream in(path,std::ios::binary);in.read(reinterpret_cast<char*>(read.data()),static_cast<std::streamsize>(read.size()));require(bool(in)&&in.peek()==std::char_traits<char>::eof()&&unwrap(read,x)&&read==bytes);}
         render(entry,x,argc==3?&audio:nullptr);
     }
-    std::cout<<"PASS "<<cases<<" roundtrips, "<<mutations<<" rejected mutations, 2016000 exact stereo frames\n";
+    std::cout<<"PASS "<<cases<<" roundtrips, "<<mutations<<" rejected mutations, "<<std::size(bank)*144000u<<" exact stereo frames\n";
     return 0;
 }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}}

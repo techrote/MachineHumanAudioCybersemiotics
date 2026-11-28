@@ -69,9 +69,10 @@ jobs:
           & $probe.FullName $env:BUNDLE 2>&1 | Tee-Object -FilePath sdk-replay.txt
           $code = $LASTEXITCODE
           if ($code -ne 0) { exit $code }
-          if (-not (Select-String -Path sdk-replay.txt -Pattern '^SDK_REPLAY_PASS cases=72$')) { throw 'Missing 72-case replay completion' }
-          if (-not (Select-String -Path sdk-replay.txt -Pattern '^SDK_CONTROLLER_PASS encodings=3 parameters=5$')) { throw 'Missing controller receipt' }
-          if (@(Select-String -Path sdk-replay.txt -Pattern '^SDK_REPLAY rate=').Count -ne 72) { throw 'Incomplete per-case replay transcript' }
+          if (-not (Select-String -Path sdk-replay.txt -Pattern '^SDK_REPLAY_PASS cases=144$')) { throw 'Missing 144-case replay completion' }
+          if (-not (Select-String -Path sdk-replay.txt -Pattern '^SDK_CONTROLLER_PASS encodings=4 parameters=7$')) { throw 'Missing controller receipt' }
+          $rows = @(Select-String -Path sdk-replay.txt -Pattern '^SDK_REPLAY rate=')
+          if ($rows.Count -ne 144 -or @($rows | Where-Object { $_.Line -match ' sustain=0 ' }).Count -ne 72 -or @($rows | Where-Object { $_.Line -match ' sustain=1 ' }).Count -ne 72 -or @($rows.Line | Sort-Object -Unique).Count -ne 144) { throw 'Incomplete or duplicate per-case replay transcript' }
       - name: Package portable bundle and evidence
         run: |
           New-Item -ItemType Directory -Path delivery | Out-Null
@@ -84,6 +85,7 @@ jobs:
           Copy-Item validator.txt delivery/
           Copy-Item sdk-replay.txt delivery/
           Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/SDK-REPLAY.md delivery/
+          Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/SUSTAIN-HOST.md delivery/
           Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/README.md delivery/
           Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/HOST.md delivery/
           Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/PRESETS.md delivery/

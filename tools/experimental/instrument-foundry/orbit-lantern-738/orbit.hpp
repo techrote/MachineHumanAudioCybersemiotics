@@ -22,10 +22,10 @@ inline bool step(Point p,int a,int b,int q,bool nearest,Point& out) noexcept {
     out={quant(std::int64_t(a)*p.x-std::int64_t(b)*p.y),quant(std::int64_t(b)*p.x+std::int64_t(a)*p.y)};
     return true;
 }
-struct Patch { unsigned blend=500,releaseMs=160; int cents=0; unsigned releaseMode=0,spectralDepth=0;
-    bool valid() const noexcept {return blend<=1000&&releaseMs>=10&&releaseMs<=1000&&cents>=-100&&cents<=100&&releaseMode<=2&&spectralDepth<=1000;} };
+struct Patch { unsigned blend=500,releaseMs=160; int cents=0; unsigned releaseMode=0,spectralDepth=0,sustainDepth=0,sustainMs=1000;
+    bool valid() const noexcept {return blend<=1000&&releaseMs>=10&&releaseMs<=1000&&cents>=-100&&cents<=100&&releaseMode<=2&&spectralDepth<=1000&&sustainDepth<=1000&&sustainMs>=200&&sustainMs<=8000;} };
 using Bytes=std::array<std::uint8_t,10>;
-inline Bytes encode(Patch p) noexcept {if(!p.valid()||p.releaseMode!=0||p.spectralDepth!=0)return {};const unsigned c=static_cast<unsigned>(p.cents+100);
+inline Bytes encode(Patch p) noexcept {if(!p.valid()||p.releaseMode!=0||p.spectralDepth!=0||p.sustainDepth!=0||p.sustainMs!=1000)return {};const unsigned c=static_cast<unsigned>(p.cents+100);
     return {{'O','L','0','1',std::uint8_t(p.blend),std::uint8_t(p.blend>>8),std::uint8_t(p.releaseMs),std::uint8_t(p.releaseMs>>8),std::uint8_t(c),std::uint8_t(c>>8)}};}
 inline bool decode(const Bytes& b,Patch& p) noexcept {
     if(b[0]!='O'||b[1]!='L'||b[2]!='0'||b[3]!='1')return false;
@@ -34,7 +34,7 @@ inline bool decode(const Bytes& b,Patch& p) noexcept {
 }
 using StateBytes=std::array<std::uint8_t,11>;
 inline StateBytes encodeState(Patch p) noexcept {
-    if(!p.valid()||p.spectralDepth!=0)return {};
+    if(!p.valid()||p.spectralDepth!=0||p.sustainDepth!=0||p.sustainMs!=1000)return {};
     const unsigned mode=p.releaseMode;p.releaseMode=0;const auto old=encode(p);
     StateBytes b{};std::copy(old.begin(),old.end(),b.begin());b[3]='2';b[10]=std::uint8_t(mode);return b;
 }
@@ -44,22 +44,23 @@ inline bool decodeState(const StateBytes& b,Patch& p) noexcept {
     if(!decode(old,q))return false;
     q.releaseMode=b[10];p=q;return true;
 }
-using FullState=std::array<std::uint8_t,13>;
-inline unsigned stateSize(Patch p) noexcept {return p.spectralDepth?13u:p.releaseMode?11u:10u;}
+using FullState=std::array<std::uint8_t,17>;
+inline unsigned stateSize(Patch p) noexcept {return (p.sustainDepth||p.sustainMs!=1000)?17u:p.spectralDepth?13u:p.releaseMode?11u:10u;}
 inline FullState encodeFull(Patch p) noexcept {
     if(!p.valid())return {};
-    const unsigned size=stateSize(p),depth=p.spectralDepth;p.spectralDepth=0;
+    const unsigned size=stateSize(p),depth=p.spectralDepth,sustain=p.sustainDepth,ms=p.sustainMs;p.spectralDepth=0;p.sustainDepth=0;p.sustainMs=1000;
     const auto old=encodeState(p);FullState b{};std::copy(old.begin(),old.end(),b.begin());
-    b[3]=size==13?'3':size==11?'2':'1';
-    b[11]=std::uint8_t(depth);b[12]=std::uint8_t(depth>>8);return b;
+    b[3]=size==17?'4':size==13?'3':size==11?'2':'1';
+    b[11]=std::uint8_t(depth);b[12]=std::uint8_t(depth>>8);b[13]=std::uint8_t(sustain);b[14]=std::uint8_t(sustain>>8);b[15]=std::uint8_t(ms);b[16]=std::uint8_t(ms>>8);return b;
 }
 inline bool decodeFull(const FullState& b,unsigned size,Patch& p) noexcept {
     Patch q{};
     if(size==10&&b[3]=='1'){Bytes old{};std::copy_n(b.begin(),10,old.begin());if(!decode(old,q))return false;}
-    else if((size==11&&b[3]=='2')||(size==13&&b[3]=='3')){
+    else if((size==11&&b[3]=='2')||(size==13&&b[3]=='3')||(size==17&&b[3]=='4')){
         StateBytes old{};std::copy_n(b.begin(),11,old.begin());old[3]='2';
         if(!decodeState(old,q))return false;
-        if(size==13)q.spectralDepth=unsigned(b[11])|(unsigned(b[12])<<8);
+        if(size>=13)q.spectralDepth=unsigned(b[11])|(unsigned(b[12])<<8);
+        if(size==17){q.sustainDepth=unsigned(b[13])|(unsigned(b[14])<<8);q.sustainMs=unsigned(b[15])|(unsigned(b[16])<<8);}
     }else return false;
     if(!q.valid())return false;
     p=q;return true;
@@ -118,12 +119,13 @@ public:
     int dominantB() const noexcept {return b_.dominant;}
     unsigned active() const noexcept {unsigned n=0;for(auto& v:voices_)if(v.active)++n;return n;}
     bool noteActive(int id) const noexcept {for(const auto& v:voices_)if(v.active&&v.id==id)return true;return false;}
-    bool noteOn(int id,int note,double velocity,double tuning=0.) noexcept {
+    bool noteOn(int id,int note,double velocity,double tuning=0.,const std::array<double,61>* knots=nullptr,unsigned length=0,double depth=0.,double cycleMs=1000.) noexcept {
         if(rate_==0||id<0||note<0||note>127||!std::isfinite(velocity)||velocity<=0||velocity>1||!std::isfinite(tuning)||std::abs(tuning)>1200.)return false;
         for(auto& v:voices_)if(v.active&&v.id==id)return false;
         const double f=440.*std::exp2((double(note)-69.+(double(patch_.cents)+tuning)/100.)/12.);
         if(f>.45*rate_)return false;
-        for(auto& v:voices_)if(!v.active){v=Voice{};v.active=true;v.id=id;v.velocity=velocity;v.mix=patch_.blend/1000.;
+        SustainPath path;if(knots&&!path.configure(*knots,length,depth,rate_,cycleMs))return false;
+        for(auto& v:voices_)if(!v.active){v=Voice{};if(knots)v.sustain=path;v.active=true;v.id=id;v.velocity=velocity;v.mix=patch_.blend/1000.;
             const double fa=f/a_.dominant,fb=f/b_.dominant;
             v.incA=tau*fa/rate_;v.incB=tau*fb/rate_;
             v.cutA=std::min(a_.harmonics,int(std::floor(.45*rate_/fa)));
@@ -131,7 +133,7 @@ public:
             v.releaseSamples=unsigned(std::ceil(rate_*patch_.releaseMs/1000.));return true;}
         return false;
     }
-    // Native-only opt-in, before the first rendered sample; persisted state is unchanged.
+    // Explicit native opt-in, before the first rendered sample.
     bool noteSustain(int id,const std::array<double,61>& knots,unsigned length,double depth,double cycleMs) noexcept {
         for(auto& v:voices_)if(v.active&&v.id==id&&!v.releasing&&v.level==0.&&!v.sustain.configured())
             return v.sustain.configure(knots,length,depth,rate_,cycleMs);

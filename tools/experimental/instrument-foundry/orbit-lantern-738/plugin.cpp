@@ -15,7 +15,7 @@ using namespace mhac::orbit::host;
 const FUID processorID(0x24C15B79,0x3B8C4F4B,0x98275F23,0x3EE969C4);
 const FUID controllerID(0xA501C96D,0xF0EC48C8,0x8BA63D11,0xB860D74F);
 bool readPatch(IBStream* s,Patch& p){FullState b{};int32 n=0;if(!s||s->read(b.data(),10,&n)!=kResultOk||n!=10)return false;
-    const int32 size=b[3]=='1'?10:b[3]=='2'?11:b[3]=='3'?13:0;
+    const int32 size=b[3]=='1'?10:b[3]=='2'?11:b[3]=='3'?13:b[3]=='4'?17:0;
     if(!size)return false;
     if(size>10&&(s->read(b.data()+10,size-10,&n)!=kResultOk||n!=size-10))return false;
     return decodeFull(b,unsigned(size),p);}
@@ -86,11 +86,13 @@ public:
         parameters.addParameter(STR16("Release (10..1000 ms)"),nullptr,990,normalized(Patch{},1),ParameterInfo::kCanAutomate,firstID+1);
         parameters.addParameter(STR16("Tuning (-100..100 cents)"),nullptr,200,normalized(Patch{},2),ParameterInfo::kCanAutomate,firstID+2);
         parameters.addParameter(STR16("Release mode (0 Linear, 1 Fixed, 2 Phase)"),nullptr,2,0.,ParameterInfo::kCanAutomate,firstID+3);
-        parameters.addParameter(STR16("Spectral depth"),nullptr,1000,0.,ParameterInfo::kCanAutomate,firstID+4);return kResultOk;}
+        parameters.addParameter(STR16("Spectral depth"),nullptr,1000,0.,ParameterInfo::kCanAutomate,firstID+4);
+        parameters.addParameter(STR16("Sustain depth"),nullptr,1000,0.,ParameterInfo::kCanAutomate,firstID+5);
+        parameters.addParameter(STR16("Sustain cycle (200..8000 ms)"),nullptr,7800,normalized(Patch{},6),ParameterInfo::kCanAutomate,firstID+6);return kResultOk;}
     tresult PLUGIN_API setComponentState(IBStream* s) override {Patch p{};if(!readPatch(s,p))return kResultFalse;for(unsigned i=0;i<count;++i)setParamNormalized(firstID+i,normalized(p,i));return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.3.1",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.3.1",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.4.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.4.0",kVstVersionString,Controller::create)
 END_FACTORY
