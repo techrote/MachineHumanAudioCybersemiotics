@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-27",
+  "scope": "offline owner distribution only",
+  "previous_head": "380fe046658e4ce848a76c8dffb62d2736b6b8d6",
+  "previous_distribution_sha256": "b0cc07827ad5efea7796254314038d0cabf855e249bb424c4240d5e0f03a45fe",
+  "distribution_sha256": "5592de05b6e2e46c00a9b2a247e2e8c5c64b4e5a23286fb1be72ee241a0c9bc1",
+  "files": 304,
+  "manifest_verified": 303,
+  "plugins": 8,
+  "class_ids": 16,
+  "standard_presets": 31,
+  "original_plugin_wavs": 41,
+  "all_wavs": 73,
+  "artifact_ids": [
+    15222539017,
+    15148180211,
+    15156181930,
+    15145497011,
+    15194909235
+  ],
+  "local_python": "3.13.5",
+  "repeat_byte_identical": true,
+  "refresh_blob": "373647a9f36e8de3df0f280fae95c41331544b40",
+  "dependencies": {
+    "assemble_sha256": "6ed1e382e91d2b4af575c1de6b632fd46de2c565f3c7d2f4da472d6563a17872",
+    "extend_sha256": "3d12f0b1973f6ecfa657a59880801f6ab3473fb4f82229455cc0a77f110885be",
+    "location": "exact previous owner distribution"
+  },
+  "orbit": {
+    "source": "976a7fbabe79c92f2785564a5d9c27806d7de594",
+    "binary_sha256": "81dab48f4397e371a82c804110b3b4c22d8f3de96fe61949215e76615a39c191",
+    "replay_cases": 72,
+    "original_presets_unchanged": 14,
+    "original_wavs_unchanged": 14
+  },
+  "limitations": [
+    "No new host execution or listening",
+    "No native build or independent human approval",
+    "Older Foundry catalogues retained separately",
+    "Signal #749 f874218e Windows workflow failed; prior qualified versions retained"
+  ]
+}

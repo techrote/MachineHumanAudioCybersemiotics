@@ -1,0 +1,100 @@
+name: Freeze Socket Windows qualification
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/experimental/vst-mainline/release-request.json'
+  pull_request:
+    paths:
+      - 'tools/experimental/vst-mainline/release-request.json'
+      - 'tools/experimental/signal-foundry/freeze-socket/**'
+      - '.github/workflows/mhac-freeze-socket-windows.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: freeze-socket-windows-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  qualify:
+    runs-on: windows-2022
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Native core and regression
+        run: |
+          cmake -S tools/experimental/signal-foundry/freeze-socket -B build-core -A x64
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build build-core --config Release
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          ctest --test-dir build-core -C Release --output-on-failure
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          & build-core/Release/freeze_test.exe
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Exact SDK checkout
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-fx'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $root = git -C $sdk rev-parse HEAD
+          if ($LASTEXITCODE -or $root -ne '9fad9770f2ae8542ab1a548a68c1ad1ac690abe0') { throw 'Wrong SDK root' }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          git -C $sdk submodule status --recursive
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          "SDK380=$sdk" >> $env:GITHUB_ENV
+      - name: Build exact SDK plugin and validator
+        run: |
+          cmake -S tools/experimental/signal-foundry/freeze-socket -B build-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VALIDATE_POST_BUILD=OFF "-DMHAC_VST3_SDK=$env:SDK380"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build build-vst --config Release --target MHACFreezeSocket validator
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Official validator (mandatory)
+        run: |
+          $bundles = @(Get-ChildItem build-vst -Recurse -Directory -Filter 'MHACFreezeSocket.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACFreezeSocket.vst3') })
+          if ($bundles.Count -ne 1) { throw "Expected one x64 plugin bundle; found $($bundles.Count)" }
+          $validator = Get-ChildItem build-vst -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Official Release validator not found' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object -FilePath validator.txt
+          $code = $LASTEXITCODE
+          if ($code -ne 0) { exit $code }
+          if (-not (Select-String -Path validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing successful validator summary' }
+          if (Select-String -Path validator.txt -Pattern 'ERROR:') { throw 'Explicit validator error despite aggregate result' }
+          "BUNDLE=$($bundles[0].FullName)" >> $env:GITHUB_ENV
+      - name: Package portable bundle and evidence
+        run: |
+          New-Item -ItemType Directory -Path delivery | Out-Null
+          Copy-Item -Recurse $env:BUNDLE delivery/
+          Copy-Item "$env:SDK380/LICENSE.txt" delivery/Steinberg-SDK-LICENSE.txt
+          git -C $env:SDK380 submodule status --recursive | Out-File delivery/SDK-GITLINKS.txt -Encoding utf8
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          "sdk=$(git -C $env:SDK380 rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Encoding utf8
+          "source=$(git rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Append -Encoding utf8
+          Copy-Item validator.txt delivery/
+          Copy-Item tools/experimental/signal-foundry/freeze-socket/README.md delivery/
+          foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
+            $root = Join-Path $env:SDK380 $part
+            Get-ChildItem $root -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("delivery/SDK-" + $part + "-" + $_.Name) }
+          }
+          python -c "from pathlib import Path; import zipfile; r=Path('delivery'); z=zipfile.ZipFile('MHACFreezeSocket-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACFreezeSocket-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHACFreezeSocket-validator-log
+          path: validator.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MHACFreezeSocket-Windows-x64
+          path: MHACFreezeSocket-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7

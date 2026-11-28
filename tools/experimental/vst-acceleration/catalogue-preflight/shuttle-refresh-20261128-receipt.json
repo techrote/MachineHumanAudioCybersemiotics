@@ -1,0 +1,74 @@
+{
+  "run": 53,
+  "date": "2026-11-28",
+  "base_main": "495a98ca12bae467a507031f04931aa4254b1866",
+  "source_pr": 633,
+  "source": "9f28b3f4f94bbc702dcf851a3a0f75485b189001",
+  "windows_run": 46074275485,
+  "job": 140758217795,
+  "integrity_run": 46074275482,
+  "previous_negative_run": 46067860106,
+  "previous_negative_artifacts": [
+    15232021185,
+    15232116079
+  ],
+  "sdk": "9fad9770f2ae8542ab1a548a68c1ad1ac690abe0",
+  "qualification": "archived Windows evidence independently inspected; no fresh native Windows/host execution or scientific acceptance",
+  "python": "3.13.5 Linux",
+  "checker_blob": "b1478e377fb823b455d90bba73714bca2d55736e",
+  "checker_command": "python check_shuttle_pair.py INPUT_DIR",
+  "checker_negative_controls_refused": 5,
+  "assembly_negative_controls_refused": 9,
+  "updates": [
+    {
+      "name": "MHACPalimpsestShuttle",
+      "artifact": 15233734011,
+      "outer_sha256": "2bdd984ca696964779bf3228e09b6e80502a51c14c7d321777ae11874f5fa017",
+      "inner_sha256": "bed4ea59c096f938822fd02a8f87707dc79f707c6b9467b0d2871201955fe8e0",
+      "binary_sha256": "545d4e8488c613651a443d6f0e8e85d5107948cc23d9fb1374fd75f12eb692e2",
+      "probe_sha256": "1fa974c63d10bccca56c4afca8a453091d833aa2203596227106f52bb07182a9",
+      "automation_cases": 16,
+      "extended_cases": 10,
+      "host_partition_cases": 15,
+      "internal_manifest": 31,
+      "files": 32,
+      "unchanged": 27,
+      "stable_parameters": 5,
+      "stable_presets": 5,
+      "stable_wavs": 5
+    },
+    {
+      "name": "MHACTraceBell",
+      "artifact": 15233868488,
+      "outer_sha256": "8cbd5e26692aae3b19784ab58794f920c16c1d68b89bdbaeca6fce10567ede50",
+      "inner_sha256": "bc7838a4ebc7daa16cca8e0cd84f16e2b7bd866727824c7813ba72b51f787b5c",
+      "binary_sha256": "d59d7100294d858712445e4cc3e1322cdd30fa90d744cc08480c58f50f6dfa04",
+      "probe_sha256": "d8b5279a6e323d57b0273828c8da26b35a116eb61b5295e7d06b78a55f2ad5d7",
+      "automation_cases": 6,
+      "host_partition_cases": 27,
+      "files": 42,
+      "unchanged": 36,
+      "stable_parameters": 6,
+      "stable_presets": 8,
+      "stable_wavs": 10
+    }
+  ],
+  "distribution": {
+    "name": "MHAC-VST-eight-plugin-shuttle-refresh.zip",
+    "sha256": "bc7aba293dfdd2c7840b50a8cc2bef085cfd94be7fa97c770a4a564ecb05db8c",
+    "previous_sha256": "7800d5084eca08d5939ec7348faa5d9c57f0c828df92787d7cccabffe3842106",
+    "files": 314,
+    "manifest_entries": 313,
+    "plugins": 8,
+    "unique_class_ids": 16,
+    "deterministic": true,
+    "script_sha256": "7f2a1cba947f371fde0af7f92903e36579896dba5fcffadf78d32458aece82a2",
+    "script_in_owner_zip": true
+  },
+  "unresolved": [
+    "fresh cross-plugin host load/render/state/automation against exact current distributed binaries",
+    "independent human review",
+    "commit assembly dependencies and complete both Foundry catalogues",
+    "owner acceptance"
+  ]
+}
