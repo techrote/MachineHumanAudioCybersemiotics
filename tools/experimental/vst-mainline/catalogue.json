@@ -2,7 +2,7 @@
   "schema": 1,
   "base": "495a98ca12bae467a507031f04931aa4254b1866",
   "mission": "VST-MAINLINE-CONSOLIDATION-001",
-  "scope": "frozen implementation inventory with six source subtree adapter state-exchange corrections; not accepted until fresh combined tests and independent review",
+  "scope": "frozen implementation inventory with six source subtree adapter state-exchange corrections and two inactive-aux integration compatibility repairs; not accepted until fresh combined tests and independent review",
   "sdk": {
     "root": "9fad9770f2ae8542ab1a548a68c1ad1ac690abe0",
     "gitlinks": {
@@ -52,8 +52,8 @@
       "release_workflow": "mhac-offcut-loom-windows.yml",
       "windows_run": 45661589609,
       "integrity_run": 45661589617,
-      "integration_tree": "6b4070d1d2025f9dd0cc04e9979a0a21c572925a",
-      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
+      "integration_tree": "2f351fc71dd3878e48d526ce659fa0478935aa77",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved. Narrow inactive negotiated mono auxiliary zero-channel/null host profile accepted, as in Three Winters #726; original bus maximum, active/main and pointer checks retained."
     },
     {
       "pr": 599,
@@ -78,8 +78,8 @@
       "release_workflow": "mhac-guest-organ-windows.yml",
       "windows_run": 45747487281,
       "integrity_run": 45747487340,
-      "integration_tree": "d54a256aefe86cf1f26bca9082f149c34043ce99",
-      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
+      "integration_tree": "d7fff143679f30b17a7c33e9fed7142779426cb4",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved. Narrow inactive negotiated mono auxiliary zero-channel/null host profile accepted, as in Three Winters #726; original bus maximum, active/main and pointer checks retained."
     },
     {
       "pr": 627,
@@ -760,6 +760,22 @@
       "header_blob": "e478539c337e5c4fd704f588fd8ecd865cf2b67a",
       "test_blob": "8b76512c31d4a66518db70db7b7bfa6129a269c2"
     },
-    "status": "Windows SDK concurrent-state probe and exact-head builds pending; independent review pending"
+    "status": "Predecessor bd86e42b seven SDK state probes passed; Offcut/Guest Pedalboard silence and chains failed. Two narrow bus compatibility repairs pending exact-head host qualification; independent review pending.",
+    "inactive_aux": {
+      "previous_head": "bd86e42bd6d80ef875f0467f4a6fb1ccd12863ea",
+      "run": 46151971793,
+      "artifact": 15266547055,
+      "artifact_sha256": "35b729674cfd193b713944640924da7a81f665a74a7c6ac4b275d3dc7f3284fe",
+      "module_pass": 84,
+      "module_fail": 12,
+      "chain_pass": 3,
+      "chain_fail": 2,
+      "predicate_blob": "1a34cfaaeb415568e4b4edeb7f30d9f4a51485dc",
+      "test_blob": "ea5c8a467d153ee026ab95d188e8fde4ce521d98",
+      "local_cases": 1200,
+      "local_optimized": "PASS",
+      "local_asan_ubsan": "PASS",
+      "scope": "source-derived host profile; actual corrected Windows modules pending"
+    }
   }
 }

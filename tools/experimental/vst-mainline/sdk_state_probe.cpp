@@ -126,6 +126,28 @@ void run(const VST3::Hosting::PluginFactory& factory,const VST3::Hosting::ClassI
     done.store(true,std::memory_order_release);audio.join();
     require(!failed&&writes==20000&&reads==20000&&overlapWindows==20&&blocks.load()>=256,"concurrent stress");
     ok(proc->process(d),"final block");require(save(c.get())==b,"final restore");
+    // Reproduce the source-derived JUCE inactive-aux buffer profile in actual modules.
+    // Keep the original concurrent main-only test and add this separate ABI witness.
+    if((name=="MHAC Offcut Loom"&&id==800)||(name=="MHAC Guest Organ"&&id==1200)||
+       (name=="MHAC Three Winters"&&id==1000)){
+        require(no==(id==1200?3:4),"unexpected auxiliary bus count");
+        std::vector<AudioBusBuffers> aux(no);
+        aux[0]=output;
+        d.numOutputs=no;d.outputs=aux.data();
+        for(int i=1;i<no;++i){aux[i].numChannels=0;aux[i].channelBuffers32=nullptr;}
+        ok(proc->process(d),"inactive mono zero/null profile");
+        aux[1].channelBuffers32=out;
+        require(proc->process(d)==kResultFalse,"accepted zero/non-null inactive auxiliary");
+        aux[1].channelBuffers32=nullptr;
+        aux[0].numChannels=0;
+        require(proc->process(d)==kResultFalse,"accepted zero-channel main output");
+        aux[0].numChannels=2;
+        for(int i=1;i<no;++i)aux[i].numChannels=1;
+        ok(proc->process(d),"ordinary inactive mono/null profile");
+        require(save(c.get())==b,"state after auxiliary profiles");
+        d.numOutputs=1;d.outputs=&output;
+        std::cout<<"SDK_INACTIVE_AUX_PASS name="<<name<<" positive=2 negative=2"<<std::endl;
+    }
     processing(proc.getInterface(),false,sdkDefault);life.running=false;
     ok(c->setActive(false),"deactivate");life.active=false;
     ok(c->terminate(),"terminate");life.initialized=false;

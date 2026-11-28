@@ -1,4 +1,5 @@
 #include "../../vst-mainline/state_bridge.hpp"
+#include "../../vst-mainline/inactive_aux.hpp"
 #include "control.hpp"
 #include <type_traits>
 #include "public.sdk/source/vst/vstaudioeffect.h"
@@ -56,11 +57,11 @@ class Processor final: public AudioEffect {
             auto& out=d.outputs[bus];auto* info=getAudioOutput(bus);
             if(!info||out.numChannels<0||out.numChannels>(bus==0?2:1))return kResultFalse;
             const auto expected=SpeakerArr::getChannelCount(info->getArrangement());
-            if(out.numChannels!=expected)return kResultFalse;
-            channels[bus]=unsigned(out.numChannels);silence[bus]=(uint64(1)<<channels[bus])-1;
             T** ptr=nullptr;
             if constexpr(std::is_same_v<T,Sample32>)ptr=out.channelBuffers32;
             else ptr=out.channelBuffers64;
+            if(!mhac::mainline::acceptsOutputShape<2>(bus,info->isActive(),expected,out.numChannels,ptr==nullptr))return kResultFalse;
+            channels[bus]=unsigned(out.numChannels);silence[bus]=(uint64(1)<<channels[bus])-1;
             for(unsigned ch=0;ch<channels[bus];++ch){
                 if(info->isActive()&&(!ptr||!ptr[ch]))return kResultFalse;
                 // Inactive buses may have null sample pointers. If the host supplies valid
