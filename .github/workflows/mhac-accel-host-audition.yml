@@ -16,6 +16,7 @@ on:
       - 'tools/experimental/vst-acceleration/native-chain/session_score.py'
       - 'tools/experimental/vst-acceleration/native-chain/trace-bell/**'
       - 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle/**'
+      - 'tools/experimental/vst-acceleration/native-chain/pressure-key/**'
       - '.github/workflows/mhac-accel-host-audition.yml'
 permissions:
   contents: read
@@ -415,5 +416,38 @@ jobs:
           path: |
             constellation-host/receipt.json
             constellation-host/*.wav
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Recover exact pressure and key performance packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          foreach ($id in @(15268476929,15268772488,15248002499)) {
+            curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o "pressure-$id.zip" "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/actions/artifacts/$id/zip"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+          py -3.12 tools/experimental/vst-acceleration/native-chain/pressure-key/preflight.py --orbit pressure-15268476929.zip --bank pressure-15268772488.zip --shuttle pressure-15248002499.zip --out pressure-key-host
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Direct SDK pressure and auxiliary bus performance
+        shell: pwsh
+        run: |
+          cmake --build trace-bell-build --config Release --target pressure_key_sdk --parallel 2 2>&1 | Tee-Object pressure-key-host/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $probe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter pressure_key_sdk.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($probe.Count -ne 1) { throw 'Expected exactly one pressure-key SDK probe' }
+          & $probe[0].FullName pressure-key-host/modules/MHACOrbitLantern.vst3 pressure-key-host/modules/MHACHarmonicMemoryBank.vst3 pressure-key-host/modules/MHACPalimpsestShuttle.vst3 pressure-key-host 2>&1 | Tee-Object pressure-key-host/replay.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path pressure-key-host/replay.txt -SimpleMatch 'PRESSURE_KEY_SDK_PASS cases=12 renders=30 manual=6')) { throw 'Missing direct SDK completion' }
+          if (@(Select-String -Path pressure-key-host/replay.txt -Pattern '^PRESSURE_KEY_SDK_CASE ').Count -ne 12) { throw 'Missing case rows' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-pressure-key-sdk-evidence
+          path: |
+            pressure-key-host/packages.json
+            pressure-key-host/*.txt
+            pressure-key-host/*.wav
           if-no-files-found: ignore
           retention-days: 7

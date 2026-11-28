@@ -70,6 +70,12 @@ if(MHAC_BUILD_VST3)
         target_compile_definitions(shuttle_sdk_probe PRIVATE NOMINMAX)
         target_include_directories(shuttle_sdk_probe PRIVATE "${SDK_ROOT}")
         target_link_libraries(shuttle_sdk_probe PRIVATE sdk_hosting)
+        add_executable(pressure_key_sdk ../../pressure-key/pressure_key_sdk.cpp
+            "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
+            "${SDK_ROOT}/public.sdk/source/common/memorystream.cpp")
+        target_compile_definitions(pressure_key_sdk PRIVATE NOMINMAX)
+        target_include_directories(pressure_key_sdk PRIVATE "${SDK_ROOT}")
+        target_link_libraries(pressure_key_sdk PRIVATE sdk_hosting)
         # Match the official validator: MemoryStream is a separate source, not supplied by sdk_hosting.
         add_executable(trace_bell_sdk_probe ../trace_bell_sdk_probe.cpp
             "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
