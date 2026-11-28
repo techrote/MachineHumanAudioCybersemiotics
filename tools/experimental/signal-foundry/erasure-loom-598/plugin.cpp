@@ -1,3 +1,4 @@
+#include "../../vst-mainline/state_bridge.hpp"
 #include "live2.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
@@ -31,6 +32,9 @@ struct Cursor {
 class Processor final : public AudioEffect {
     loom2::Live engine;
     
+    mhac::mainline::StateBridge<loom2::Normalized> state{engine.params()};
+    void applyPending() noexcept { loom2::Normalized p{};if(state.take(p)) { (void)(engine.restore(p)); } }
+    void publishState() noexcept { state.publish(engine.params()); }
     using Cursors=std::array<Cursor,loom2::Count>;
     template<class T> tresult audio(ProcessData& d,T** in,T** out,Cursors& cursors){
         if(!out||d.outputs[0].numChannels!=2||(d.numInputs&&d.inputs[0].numChannels!=2)||!out[0]||!out[1])return kResultFalse;
@@ -58,18 +62,21 @@ public:
     }
     tresult PLUGIN_API canProcessSampleSize(int32 size) override {return size==kSample32||size==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
-        if(!engine.prepare(setup.sampleRate))return kResultFalse;
-        return AudioEffect::setupProcessing(setup);
+        applyPending();if(!engine.prepare(setup.sampleRate))return kResultFalse;
+        publishState();return AudioEffect::setupProcessing(setup);
     }
-    tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)engine.reset();return r;}
+    tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active){applyPending();engine.reset();publishState();}return r;}
     uint32 PLUGIN_API getLatencySamples() override {return loom2::ProbeEngine::latency;}
     uint32 PLUGIN_API getTailSamples() override {return loom2::ProbeEngine::tail;}
-    tresult PLUGIN_API setState(IBStream* stream) override {loom2::Normalized p{};if(!readParams(stream,p))return kResultFalse;return engine.restore(p)?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* stream) override {loom2::Normalized p{};if(!readParams(stream,p))return kResultFalse;state.request(p);return kResultOk;}
     tresult PLUGIN_API getState(IBStream* stream) override {
-        if(!stream)return kResultFalse;auto bytes=loom2::encode(engine.params());int32 n=0;
+        if(!stream)return kResultFalse;auto bytes=loom2::encode(state.snapshot());int32 n=0;
         return stream->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;
     }
     tresult PLUGIN_API process(ProcessData& d) override {
+        if(d.numSamples<0)return kResultFalse;
+        applyPending();
+        struct Publish { Processor& owner; ~Publish(){owner.publishState();} } publish{*this};
         if(d.numSamples<0||d.numInputs<0||d.numOutputs<0)return kResultFalse;
         Cursors cursors{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){

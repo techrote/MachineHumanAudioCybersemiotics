@@ -1,3 +1,4 @@
+#include "../../vst-mainline/state_bridge.hpp"
 #include "live-588/live.hpp"
 #include <type_traits>
 #include "public.sdk/source/vst/vstaudioeffect.h"
@@ -43,6 +44,9 @@ struct Events {
 };
 class Processor final: public AudioEffect {
     offcut::live::Engine engine;offcut::live::Params params=offcut::live::defaults;double sr=48000.;
+    mhac::mainline::StateBridge<offcut::live::Params> state{params};
+    void applyPending() noexcept { offcut::live::Params p{};if(state.take(p)) { (void)(params=p); } }
+    void publishState() noexcept { state.publish(params); }
     using Cursors=std::array<Cursor,offcut::live::Count>;
     offcut::live::Frame step(Cursors& c,Events& ev,int32 i){for(unsigned k=0;k<offcut::live::Count;++k)c[k].apply(params,k,i);ev.apply(engine,params,i);return engine.tick();}
     template<class T> tresult audio(ProcessData& d,Cursors& c,Events& ev){
@@ -94,15 +98,18 @@ public:
     tresult PLUGIN_API canProcessSampleSize(int32 size) override{return size==kSample32||size==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
         if(!offcut::supported(setup.sampleRate))return kResultFalse;
-        const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;engine.prepare(sr);}return r;
+        const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;applyPending();engine.prepare(sr);publishState();}return r;
     }
-    tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk)engine.reset();return r;}
+    tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk){applyPending();engine.reset();publishState();}return r;}
     tresult PLUGIN_API setProcessing(TBool active) override {if(!active)engine.reset();return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr*.041));}
-    tresult PLUGIN_API setState(IBStream* s) override {offcut::live::Params p{};if(!readParams(s,p))return kResultFalse;params=p;return kResultOk;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=offcut::live::encode(params);int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* s) override {offcut::live::Params p{};if(!readParams(s,p))return kResultFalse;state.request(p);return kResultOk;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=offcut::live::encode(state.snapshot());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
+        if(d.numSamples<0)return kResultFalse;
+        applyPending();
+        struct Publish { Processor& owner; ~Publish(){owner.publishState();} } publish{*this};
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>4)return kResultFalse;
         Cursors c{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){

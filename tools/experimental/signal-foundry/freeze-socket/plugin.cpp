@@ -1,3 +1,4 @@
+#include "../../vst-mainline/state_bridge.hpp"
 #include "freeze.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
@@ -31,6 +32,9 @@ struct Cursor {
 class Processor final : public AudioEffect {
     fx::Engine engine;
     double sampleRate=48000.;
+    mhac::mainline::StateBridge<fx::Params> state{engine.params()};
+    void applyPending() noexcept { fx::Params p{};if(state.take(p)) { (void)(engine.restore(p)); } }
+    void publishState() noexcept { state.publish(engine.params()); }
     using Cursors=std::array<Cursor,fx::Count>;
     template<class T> tresult audio(ProcessData& d,T** in,T** out,Cursors& cursors){
         const int32 channels=d.outputs[0].numChannels;
@@ -66,17 +70,20 @@ public:
     tresult PLUGIN_API canProcessSampleSize(int32 size) override {return size==kSample32||size==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
         if(!fx::validSampleRate(setup.sampleRate))return kResultFalse;
-        auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sampleRate=setup.sampleRate;engine.reset(sampleRate);}return r;
+        auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sampleRate=setup.sampleRate;applyPending();engine.reset(sampleRate);publishState();}return r;
     }
-    tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active)engine.reset(sampleRate);return r;}
+    tresult PLUGIN_API setActive(TBool active) override {auto r=AudioEffect::setActive(active);if(r==kResultOk&&active){applyPending();engine.reset(sampleRate);publishState();}return r;}
     uint32 PLUGIN_API getLatencySamples() override {return 0;}
     uint32 PLUGIN_API getTailSamples() override {return kNoTail;}
-    tresult PLUGIN_API setState(IBStream* stream) override {fx::Params p{};if(!readParams(stream,p))return kResultFalse;engine.restore(p);return kResultOk;}
+    tresult PLUGIN_API setState(IBStream* stream) override {fx::Params p{};if(!readParams(stream,p))return kResultFalse;state.request(p);return kResultOk;}
     tresult PLUGIN_API getState(IBStream* stream) override {
-        if(!stream)return kResultFalse;auto bytes=fx::encode(engine.params());int32 n=0;
+        if(!stream)return kResultFalse;auto bytes=fx::encode(state.snapshot());int32 n=0;
         return stream->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;
     }
     tresult PLUGIN_API process(ProcessData& d) override {
+        if(d.numSamples<0)return kResultFalse;
+        applyPending();
+        struct Publish { Processor& owner; ~Publish(){owner.publishState();} } publish{*this};
         Cursors cursors{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){
             auto* q=d.inputParameterChanges->getParameterData(i);if(!q)continue;

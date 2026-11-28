@@ -1,0 +1,9 @@
+# State exchange correction — 28 November 2026
+
+The pinned SDK IComponent contract explicitly allows UI-thread setState/getState while Processing. Seven legacy adapters directly mutated or read audio-owned parameters/engines. The exact original Freeze Socket core and regression source passed 7,384,753 assertions in GCC 14.2 optimized and ASan/UBSan builds. A deliberately concurrent direct restore/nextGain test under TSan reported five races and exited 66. The retained negative witness must fail specifically with a race, not a sanitizer initialization failure.
+
+The shared StateBridge is adapted from MHAC's existing TraceStateBridge. It seeds both directions with the real initial patch, serializes only non-audio state callers, consumes the latest complete restore before block processing and publishes coherent final parameters at block exit. No audio-side mutex, wait, heap allocation, or unbounded queue. State saved before the next block is the newest requested patch. Host setup/activation is serialized with processing. The six corrected subtrees are recorded separately from original source tree identities; seven adapters changed, DSP engines and state wire formats remain unchanged. No new class or parameter IDs.
+
+Local exact bridge blob e478539c337e5c4fd704f588fd8ecd865cf2b67a and test blob 8b76512c31d4a66518db70db7b7bfa6129a269c2: optimized and TSan tests passed 100,000 concurrent restore requests and 100,000 audio blocks with concurrent saves. This does not prove actual Windows adapter operation. New workflow requires native TSan positive/negative controls, actual SDK-host concurrent state/processing on all seven repaired modules, and fresh Windows validator/package and Pedalboard cross-module tests. Do not promote until independent review and exact-head CI.
+
+The first pre-remediation integration checkout remains in Git history and is not a release. No unrelated research or original active branches were modified.

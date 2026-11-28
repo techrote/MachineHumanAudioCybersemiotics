@@ -111,7 +111,7 @@ def api(path,raw=False):
 def collect(source,event,out):
     require(re.fullmatch("[0-9a-f]{40}",source) and subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()==source,"exact checkout")
     for s in CAT["snapshots"]:
-        require(subprocess.check_output(["git","rev-parse",source+":"+s["path"]],text=True).strip()==s["tree"],"frozen tree changed: "+s["path"])
+        require(subprocess.check_output(["git","rev-parse",source+":"+s["path"]],text=True).strip()==s.get("integration_tree",s["tree"]),"frozen tree changed: "+s["path"])
     workflows={s["pr"]:s["release_workflow"] for s in CAT["snapshots"] if s["release_workflow"]}
     pending=set(workflows.values()); runs={}; deadline=time.monotonic()+2400
     while pending:
@@ -146,6 +146,13 @@ def collect(source,event,out):
 def finish(out,archive):
     require((out/"Qualification"/"combined-host.json").is_file(),"missing fresh combined host qualification")
     require(json.loads((out/"Qualification"/"combined-host.json").read_text())["status"]=="pass","host qualification failed")
+    require((out/"Qualification"/"sdk-concurrent-state.txt").is_file(),"missing actual SDK concurrent-state evidence")
+    sdklog=(out/"Qualification"/"sdk-concurrent-state.txt").read_text(encoding="utf-8-sig")
+    require(sdklog.count("SDK_CONCURRENT_STATE_PASS ")==7,"expected seven corrected module state probes")
+    manifest=json.loads((out/"Catalogue"/"catalogue.json").read_text(encoding="utf-8"))
+    catalogue=["# MHAC VST3 catalogue","","Source: "+manifest["source"],"","| Plugin | Type | Class version | Windows binary SHA-256 |","|---|---|---|---|"]
+    catalogue.extend("| "+p["name"]+" | "+p["kind"]+" | "+p["version"]+" | "+p["binary_sha256"]+" |" for p in manifest["plugins"])
+    (out/"Catalogue"/"README.md").write_text("\n".join(catalogue)+"\n",encoding="utf-8")
     files=sorted(p for p in out.rglob("*") if p.is_file())
     (out/"SHA256SUMS").write_text("".join(sha(p.read_bytes())+"  "+p.relative_to(out).as_posix()+"\n" for p in files),encoding="utf-8")
     with zipfile.ZipFile(archive,"w",compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:

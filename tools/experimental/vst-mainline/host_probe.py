@@ -1,7 +1,7 @@
 """Independent host implementation smoke and real-module cross-plugin render.
 The official SDK validator/probes are separate per-plugin Windows jobs.
 """
-import argparse, hashlib, json, math, time, wave
+import argparse, hashlib, json, math, time, wave, struct
 from pathlib import Path
 import numpy as np
 import pedalboard as pb
@@ -79,6 +79,16 @@ def main(root):
             report["chains"].append({"name":label,"instruments":instruments,"effects":effects,"frames":len(y[0]),"rate":rate,"input_peak":float(np.max(np.abs(dry))),"output_peak":float(np.max(np.abs(y))),"routing":"serial effects, summed instrument stems, explicit peak cap 0.22 FS; frame aligned, no claim of latency compensation"})
         midi=root/"Sessions"/"MIDI"; midi.mkdir(parents=True,exist_ok=True)
         (midi/"events.json").write_text(json.dumps([{"seconds":t,"bytes":list(b)} for b,t in MIDI],indent=2))
+        # Standard MIDI file: 480 PPQ, 120 BPM; integer tick fixture.
+        def vlq(v):
+            b=[v&127];v>>=7
+            while v:b.append((v&127)|128);v>>=7
+            return bytes(reversed(b))
+        track=bytearray(b"\x00\xff\x51\x03\x07\xa1\x20"); last=0
+        for msg,seconds in MIDI:
+            tick=round(seconds*960);track.extend(vlq(tick-last));track.extend(msg);last=tick
+        track.extend(b"\x00\xff\x2f\x00")
+        (midi/"fixture.mid").write_bytes(b"MThd"+struct.pack(">IHHH",6,0,1,480)+b"MTrk"+struct.pack(">I",len(track))+track)
         report["status"]="pass"
     except Exception as exc:
         report["status"]="fail"; report["error"]=str(exc); raise

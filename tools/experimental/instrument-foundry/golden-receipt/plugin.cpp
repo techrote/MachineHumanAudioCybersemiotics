@@ -1,3 +1,4 @@
+#include "../../vst-mainline/state_bridge.hpp"
 #include "engine.hpp"
 #include "public.sdk/source/vst/vstaudioeffect.h"
 #include "public.sdk/source/vst/vsteditcontroller.h"
@@ -36,6 +37,9 @@ struct Events {
 };
 class Processor final: public AudioEffect {
     g::Engine engine;double sr=48000.;
+    mhac::mainline::StateBridge<g::Params> state{engine.params()};
+    void applyPending() noexcept { g::Params p{};if(state.take(p)) { (void)(engine.restore(p)); } }
+    void publishState() noexcept { state.publish(engine.params()); }
     using Cursors=std::array<Cursor,g::Count>;
     template<class T> tresult audio(ProcessData& d,T** out,Cursors& c,Events& ev){
         const int32 channels=d.outputs[0].numChannels;
@@ -65,15 +69,18 @@ public:
     tresult PLUGIN_API canProcessSampleSize(int32 size) override{return size==kSample32||size==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
         if(!g::validRate(setup.sampleRate))return kResultFalse;
-        const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;engine.reset(sr);}return r;
+        const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;applyPending();engine.reset(sr);publishState();}return r;
     }
-    tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk)engine.reset(sr);return r;}
+    tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk){applyPending();engine.reset(sr);publishState();}return r;}
     tresult PLUGIN_API setProcessing(TBool active) override {if(!active)engine.reset(sr);return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr*1.59));}
-    tresult PLUGIN_API setState(IBStream* s) override {g::Params p{};if(!readParams(s,p))return kResultFalse;engine.restore(p);return kResultOk;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=g::encode(engine.params());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* s) override {g::Params p{};if(!readParams(s,p))return kResultFalse;state.request(p);return kResultOk;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=g::encode(state.snapshot());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
+        if(d.numSamples<0)return kResultFalse;
+        applyPending();
+        struct Publish { Processor& owner; ~Publish(){owner.publishState();} } publish{*this};
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>1)return kResultFalse;
         Cursors c{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){

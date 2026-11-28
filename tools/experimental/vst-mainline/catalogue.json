@@ -2,7 +2,7 @@
   "schema": 1,
   "base": "495a98ca12bae467a507031f04931aa4254b1866",
   "mission": "VST-MAINLINE-CONSOLIDATION-001",
-  "scope": "frozen integration candidate; no scientific acceptance or merge claim",
+  "scope": "frozen implementation inventory with six source subtree adapter state-exchange corrections; not accepted until fresh combined tests and independent review",
   "sdk": {
     "root": "9fad9770f2ae8542ab1a548a68c1ad1ac690abe0",
     "gitlinks": {
@@ -25,7 +25,9 @@
       "original_workflow_sha": "b3a94b03dfcd548d3cef8d6c99274ef5eb2ea837",
       "release_workflow": "mhac-freeze-socket-windows.yml",
       "windows_run": 45534581573,
-      "integrity_run": 45534581388
+      "integrity_run": 45534581388,
+      "integration_tree": "e9b54803e43b67da37f3bfb73cc432b3e084d137",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
     },
     {
       "pr": 447,
@@ -36,7 +38,9 @@
       "original_workflow_sha": "b5815ee928d4a6c5ef593b9c81f23a4f41bd12d4",
       "release_workflow": "mhac-golden-receipt-windows.yml",
       "windows_run": 45537942765,
-      "integrity_run": 45537942596
+      "integrity_run": 45537942596,
+      "integration_tree": "6cb4bb3c24988db7e8874f3eac6f58d1ded5f9ce",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
     },
     {
       "pr": 589,
@@ -47,7 +51,9 @@
       "original_workflow_sha": "77a77ab75e5115b7478e5085aa3235730c918c1a",
       "release_workflow": "mhac-offcut-loom-windows.yml",
       "windows_run": 45661589609,
-      "integrity_run": 45661589617
+      "integrity_run": 45661589617,
+      "integration_tree": "6b4070d1d2025f9dd0cc04e9979a0a21c572925a",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
     },
     {
       "pr": 599,
@@ -58,7 +64,9 @@
       "original_workflow_sha": "d067dc90403d61d48456a88f7d5a1be7533dc30e",
       "release_workflow": "mhac-erasure-loom-windows.yml",
       "windows_run": 45737720020,
-      "integrity_run": 45737720390
+      "integrity_run": 45737720390,
+      "integration_tree": "28ee30241d7a4ee5872d165b5932c5021cabfbcb",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
     },
     {
       "pr": 623,
@@ -69,7 +77,9 @@
       "original_workflow_sha": "4d799c419a5d42887108285997733bad8030800f",
       "release_workflow": "mhac-guest-organ-windows.yml",
       "windows_run": 45747487281,
-      "integrity_run": 45747487340
+      "integrity_run": 45747487340,
+      "integration_tree": "d54a256aefe86cf1f26bca9082f149c34043ce99",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
     },
     {
       "pr": 627,
@@ -146,7 +156,9 @@
       "original_workflow_sha": "c524820bb0c692ed29e81164fc86a2245c4dea45",
       "release_workflow": "mhac-three-winters-windows.yml",
       "windows_run": 45901353866,
-      "integrity_run": 45901353718
+      "integrity_run": 45901353718,
+      "integration_tree": "d8793340321539e634e82b1536e909ecfc1d6521",
+      "integration_correction": "Audio-owned fixed-size state exchange, block-boundary restore, coherent saved patch. Original DSP, CIDs, state wire format preserved."
     },
     {
       "pr": 739,
@@ -727,5 +739,27 @@
     "Afterimage Choir retains MHACAfterimage.vst3 name and its original CIDs; not a second installable Afterimage plugin.",
     "Shuttle stagger and Memory Bank cross-band budget at these pins are native-only, not host-exposed.",
     "No independent review or DAW listening is inferred from historical qualification."
-  ]
+  ],
+  "integration_review": {
+    "previous_head": "c911cefd197f0066aae3d3c07ab24ef53fad3215",
+    "blocking_finding": "SDK IComponent state methods permitted on UI thread during Processing; seven adapters directly accessed audio-owned state. Exact Freeze core race reproduced by TSan.",
+    "corrected_prs": [
+      439,
+      447,
+      589,
+      599,
+      623,
+      726
+    ],
+    "source_correction": "StateBridge derived from existing TraceStateBridge, initialized from actual default patch; UI-only mutex; two nonblocking single-producer/single-consumer triple buffers.",
+    "local_evidence": {
+      "freeze_native_assertions": 7384753,
+      "asan_ubsan": "PASS",
+      "negative_direct_restore_tsan": "FAIL: 5 data-race reports",
+      "bridge_tsan": "PASS: 100000 restore requests, 100000 audio blocks, concurrent state snapshots; no TSan reports",
+      "header_blob": "e478539c337e5c4fd704f588fd8ecd865cf2b67a",
+      "test_blob": "8b76512c31d4a66518db70db7b7bfa6129a269c2"
+    },
+    "status": "Windows SDK concurrent-state probe and exact-head builds pending; independent review pending"
+  }
 }

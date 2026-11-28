@@ -1,3 +1,4 @@
+#include "../../vst-mainline/state_bridge.hpp"
 #include "integrated.hpp"
 #include "bus_shape.hpp"
 #include <type_traits>
@@ -43,6 +44,9 @@ struct Events {
 };
 class Processor final: public AudioEffect {
     winters::integrated::Engine engine;double sr=48000.;
+    mhac::mainline::StateBridge<winters::integrated::Params> state{engine.parameters()};
+    void applyPending() noexcept { winters::integrated::Params p{};if(state.take(p)) { (void)(engine.restore(p)); } }
+    void publishState() noexcept { state.publish(engine.parameters()); }
     using Cursors=std::array<Cursor,winters::integrated::Count>;
     winters::live::Frame step(Cursors& c,Events& ev,int32 i){for(unsigned k=0;k<winters::integrated::Count;++k)c[k].apply(engine,k,i);ev.apply(engine,i);return engine.tick();}
     template<class T> tresult audio(ProcessData& d,Cursors& c,Events& ev){
@@ -96,15 +100,18 @@ public:
     tresult PLUGIN_API canProcessSampleSize(int32 size) override{return size==kSample32||size==kSample64?kResultTrue:kResultFalse;}
     tresult PLUGIN_API setupProcessing(ProcessSetup& setup) override {
         if(!std::isfinite(setup.sampleRate)||setup.sampleRate<1000||setup.sampleRate>2000000)return kResultFalse;
-        const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;engine.prepare(sr);}return r;
+        const auto r=AudioEffect::setupProcessing(setup);if(r==kResultOk){sr=setup.sampleRate;applyPending();engine.prepare(sr);publishState();}return r;
     }
-    tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk)engine.reset();return r;}
+    tresult PLUGIN_API setActive(TBool active) override {const auto r=AudioEffect::setActive(active);if(r==kResultOk){applyPending();engine.reset();publishState();}return r;}
     tresult PLUGIN_API setProcessing(TBool active) override {if(!active)engine.reset();return kResultOk;}
     uint32 PLUGIN_API getLatencySamples() override{return 0;}
     uint32 PLUGIN_API getTailSamples() override{return uint32(std::ceil(sr*.041));}
-    tresult PLUGIN_API setState(IBStream* s) override {winters::integrated::Params p{};if(!readParams(s,p))return kResultFalse;engine.restore(p);return kResultOk;}
-    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=winters::integrated::encode(engine.parameters());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
+    tresult PLUGIN_API setState(IBStream* s) override {winters::integrated::Params p{};if(!readParams(s,p))return kResultFalse;state.request(p);return kResultOk;}
+    tresult PLUGIN_API getState(IBStream* s) override {if(!s)return kResultFalse;auto bytes=winters::integrated::encode(state.snapshot());int32 n=0;return s->write(bytes.data(),int32(bytes.size()),&n)==kResultOk&&n==int32(bytes.size())?kResultOk:kResultFalse;}
     tresult PLUGIN_API process(ProcessData& d) override {
+        if(d.numSamples<0)return kResultFalse;
+        applyPending();
+        struct Publish { Processor& owner; ~Publish(){owner.publishState();} } publish{*this};
         if(d.numSamples<0||d.numInputs!=0||d.numOutputs<0||d.numOutputs>4)return kResultFalse;
         Cursors c{};
         if(d.inputParameterChanges)for(int32 i=0;i<d.inputParameterChanges->getParameterCount();++i){

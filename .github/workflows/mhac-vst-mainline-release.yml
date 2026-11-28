@@ -9,7 +9,41 @@ permissions:
   contents: read
   actions: read
 jobs:
+  state-bridge-native:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Native state bridge and retained race witness
+        shell: bash
+        run: |
+          set -euo pipefail
+          d=tools/experimental/vst-mainline
+          i=tools/experimental/signal-foundry/freeze-socket
+          cmake -S "$d" -B build-native -DCMAKE_BUILD_TYPE=Release
+          cmake --build build-native --parallel 2
+          ctest --test-dir build-native --output-on-failure
+          mkdir -p native-evidence
+          g++ -std=c++17 -g -O1 -pthread -fsanitize=thread -fno-omit-frame-pointer -I"$i" "$d/state_bridge_test.cpp" -o bridge-tsan
+          TSAN_OPTIONS=halt_on_error=1:exitcode=66 ./bridge-tsan 2>&1 | tee native-evidence/bridge-tsan.txt
+          g++ -std=c++17 -g -O1 -pthread -fsanitize=thread -fno-omit-frame-pointer -I"$i" "$d/negative_freeze_race.cpp" -o negative-tsan
+          set +e
+          TSAN_OPTIONS=halt_on_error=1:exitcode=66 ./negative-tsan >native-evidence/negative-tsan.txt 2>&1
+          rc=$?
+          set -e
+          test "$rc" -eq 66
+          grep -q 'WARNING: ThreadSanitizer: data race' native-evidence/negative-tsan.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: MHAC-native-state-bridge-evidence
+          path: native-evidence/
+          if-no-files-found: warn
   combined:
+    needs: state-bridge-native
     runs-on: windows-2022
     timeout-minutes: 60
     steps:
@@ -26,6 +60,28 @@ jobs:
       - name: Install independently implemented host
         run: |
           py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+      - name: Build pinned SDK concurrent-state host probe
+        shell: pwsh
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-mainline'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake -S tools/experimental/vst-mainline -B build-sdk -A x64 "-DMHAC_VST3_SDK=$sdk"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build build-sdk --config Release --target mhac_state_probe --parallel 2
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $probe = @(Get-ChildItem build-sdk -Recurse -File -Filter mhac_state_probe.exe)
+          if ($probe.Count -ne 1) { throw 'Expected exactly one SDK state probe' }
+          $catalogue = Get-Content tools/experimental/vst-mainline/catalogue.json -Raw | ConvertFrom-Json
+          $targets = @($catalogue.plugins | Where-Object { $_.pr -in @(439,447,589,599,623,726) })
+          if ($targets.Count -ne 7) { throw 'Expected seven corrected adapters' }
+          foreach ($p in $targets) {
+            $bundle = (Resolve-Path ("delivery/VST3/" + $p.kind + "/" + $p.bundle)).Path
+            & $probe[0].FullName $bundle $p.parameter_ids[0] 2>&1 | Tee-Object -Append delivery/Qualification/sdk-concurrent-state.txt
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
       - name: Actual Windows module and cross-plugin tests
         run: py -3.12 tools/experimental/vst-mainline/host_probe.py delivery
       - name: Deterministic verified archive

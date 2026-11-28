@@ -1,7 +1,6 @@
 {
-  "schema": 1,
-  "request": "VST-MAINLINE-CONSOLIDATION-001",
-  "revision": 1,
-  "scope": "all 16 exact pinned VST3 modules",
-  "intent": "fresh exact-head Windows qualification, not permission to merge without review"
+  "mission": "VST-MAINLINE-CONSOLIDATION-001",
+  "revision": 2,
+  "scope": "all 16 selected plugins; seven adapter state-exchange corrections; full requalification",
+  "sdk": "9fad9770f2ae8542ab1a548a68c1ad1ac690abe0"
 }
