@@ -390,3 +390,30 @@ jobs:
           path: MHACPalimpsestShuttle-Windows-x64.zip
           if-no-files-found: error
           retention-days: 7
+
+      - name: Recover pinned Constellation chain artifacts
+        if: ${{ !cancelled() }}
+        id: constellation_packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          foreach ($id in @(15249403545,15251347207,15248002499)) {
+            curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o "constellation-$id.zip" "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$id/zip"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+      - name: Exact Orbit Bank Shuttle host performance
+        if: ${{ !cancelled() && steps.constellation_packages.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/constellation-chain/constellation_host.py --orbit constellation-15249403545.zip --bank constellation-15251347207.zip --shuttle constellation-15248002499.zip --out constellation-host
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-constellation-host-evidence
+          path: |
+            constellation-host/receipt.json
+            constellation-host/*.wav
+          if-no-files-found: ignore
+          retention-days: 7
