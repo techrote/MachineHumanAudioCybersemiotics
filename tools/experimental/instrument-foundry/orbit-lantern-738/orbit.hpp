@@ -106,7 +106,7 @@ public:
 struct Event { enum class Kind {on,off,patch}; std::size_t offset=0; Kind kind=Kind::on; int id=0,note=60; double velocity=0; Patch patch{}; };
 class Engine {
     struct Voice {bool active=false,releasing=false;int id=0;double level=0,velocity=0,releaseStep=0;
-        double mix=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.,spectralDepth=0.,spectralMix=0.,spectralBias=.5;std::array<double,61> curve{};SustainPath sustain{};};
+        double mix=0,pressure=0,pressureTarget=0,phaseA=0,phaseB=0,incA=0,incB=0;int cutA=0,cutB=0;unsigned releaseSamples=0,releaseDuration=0,curveSteps=0;double releaseLevel=0.,spectralDepth=0.,spectralMix=0.,spectralBias=.5;std::array<double,61> curve{};SustainPath sustain{};};
     std::array<Voice,8> voices_{}; Spectrum a_{},b_{};Patch patch_{};double rate_=0,attack_=0;
     static void advance(double& phase,double inc) noexcept {phase+=inc;if(phase>=tau)phase-=tau;}
 public:
@@ -139,6 +139,12 @@ public:
             return v.sustain.configure(knots,length,depth,rate_,cycleMs);
         return false;
     }
+    // Polyphonic pressure is transient; zero restores the note-latched blend.
+    bool notePressure(int id,double value) noexcept {
+        if(!std::isfinite(value)||value<0.||value>1.)return false;
+        for(auto& v:voices_)if(v.active&&!v.releasing&&v.id==id){v.pressureTarget=value;return true;}
+        return false;
+    }
     double notePhase(int id) const noexcept {for(const auto& v:voices_)if(v.active&&v.id==id)return v.phaseB;return 0.;}
     bool noteOffShaped(int id,const std::array<double,61>& curve,unsigned steps,double spectralDepth=0.) noexcept {
         if(!std::isfinite(spectralDepth)||spectralDepth<0.||spectralDepth>1.)return false;
@@ -159,7 +165,11 @@ public:
                 }}else v.level=std::max(0.,v.level-v.releaseStep);}
             double al=0,ar=0,bl=0,br=0;
             const double intervention=v.sustain.tick();
-            const double mix=v.mix+(1.-v.mix)*intervention;
+            const double delta=v.pressureTarget-v.pressure;
+            if(std::abs(delta)<=attack_)v.pressure=v.pressureTarget;
+            else v.pressure+=std::copysign(attack_,delta);
+            const double base=v.mix+(1.-v.mix)*v.pressure;
+            const double mix=base+(1.-base)*intervention;
             if(mix<1.)a_.sample(v.phaseA,v.cutA,al,ar);
             if(mix>0.){
                 if(v.spectralMix>0.&&v.cutB>=2*b_.dominant){

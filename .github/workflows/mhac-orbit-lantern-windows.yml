@@ -92,6 +92,9 @@ jobs:
           Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/SDK-LOCK.txt delivery/
           & build-core/Release/orbit_preset_bank.exe delivery/Presets delivery/Audio
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item tools/experimental/instrument-foundry/orbit-lantern-738/PRESSURE.md delivery/
+          & build-core/Release/orbit_replay_probe.exe delivery/Audio/Pressure-Baseline.wav delivery/Audio/Pressure-Expressive.wav
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
           foreach ($part in @('base','pluginterfaces','public.sdk','cmake')) {
             $root = Join-Path $env:SDK380 $part
             Get-ChildItem $root -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("delivery/SDK-" + $part + "-" + $_.Name) }

@@ -5,6 +5,8 @@
 #include <stdexcept>
 #include <vector>
 #include <type_traits>
+#include <limits>
+#include <fstream>
 using namespace mhac::orbit;
 using namespace mhac::orbit::host;
 namespace replay {
@@ -12,7 +14,7 @@ void require(bool yes,const char* stage){if(!yes)throw std::runtime_error(stage)
 constexpr Patch initial{750,800,0,2,1000};
 struct Control {int offset; unsigned index; double value;};
 constexpr Control controls[]={{17,0,1.},{1041,4,.5},{3089,2,.625},{3089,5,.85},{3089,6,0.},{4113,4,1.},{6161,0,.25},{6161,6,.2},{9233,3,.5},{9233,5,0.},{12305,3,1.},{12305,5,1.},{15377,1,.2},{18449,0,.75}};
-struct Note {int offset,id,channel,pitch; bool on; float velocity=.75f,tuning=25.f;};
+struct Note {int offset,id,channel,pitch; bool on; float velocity=.75f,tuning=25.f;bool pressure=false;};
 std::vector<Note> score(int identity){
     std::vector<Note> out;
     for(int i=0;i<8;++i){const int id=identity==0?i:identity==1?7:-1;const int start=17+i*3072;
@@ -27,14 +29,22 @@ struct Ref {
         if(identity<3){notes=score(identity);points.assign(std::begin(controls),std::end(controls));}
         else {
             auto at=[&](unsigned ms){return int(std::uint64_t(ms)*std::uint64_t(rate)/1000);};
-            for(auto c:expressive::controls(identity==3))points.push_back({at(c.at),c.index,c.value});
+            for(auto c:expressive::controls(identity==3||identity==5))points.push_back({at(c.at),c.index,c.value});
             int id=0;for(auto n:expressive::score){notes.push_back({at(n.on),id,0,n.pitch,true,float(n.velocity),0.f});notes.push_back({at(n.off),id++,0,n.pitch,false,0.f,0.f});}
+            if(identity==5){
+                notes.push_back({at(250),0,0,48,false,1.f,0.f,true});
+                notes.push_back({at(700),1,0,55,false,.75f,0.f,true});
+                notes.push_back({at(1250),0,0,48,false,0.f,0.f,true});
+                notes.push_back({at(1500),2,0,64,false,1.f,0.f,true});
+                notes.push_back({at(2750),3,0,69,false,.5f,0.f,true});
+            }
             std::stable_sort(notes.begin(),notes.end(),[](auto a,auto b){return a.offset<b.offset;});
         }
     }
     void sample(int i,double& l,double& r){
         while(ci<points.size()&&points[ci].offset==i){const auto c=points[ci++];if(sustain||c.index<5)require(live.parameter(c.index,c.value),"native control");}
         while(ni<notes.size()&&notes[ni].offset==i){const auto n=notes[ni++];
+            if(n.pressure){require(live.pressure(n.id,n.channel,n.pitch,n.velocity),"native pressure");continue;}
             require(n.on?live.on(n.id,n.channel,n.pitch,n.tuning,n.velocity):live.off(n.id,n.channel,n.pitch),"native note admission");if(n.on)++admits;}
         live.tick(l,r);require(std::isfinite(l)&&std::isfinite(r)&&std::abs(l)<=.52&&std::abs(r)<=.52,"native bound");
     }
@@ -46,7 +56,36 @@ template<class T> std::vector<T> native(double rate,int channels,int identity,bo
         output.push_back(T(channels==1?(l+r)*.5:l));if(channels==2)output.push_back(T(r));}
     require(ref.admits==(identity<3?8:4)&&ref.live.active()==0&&peak>.001,"native render witness");return output;
 }
+void pressureIsolation(double rate){
+    Live mix,a,b,baseline;
+    for(auto* v:{&mix,&a,&b,&baseline})require(v->prepare(rate)&&v->setPatch(Patch{250,100,0}),"pressure prepare");
+    require(mix.on(7,0,60,0.,.8)&&a.on(7,0,60,0.,.8)&&baseline.on(7,0,60,0.,.8),"pressure first voice");
+    require(mix.on(-1,1,67,0.,.7)&&b.on(-1,1,67,0.,.7),"pressure second voice");
+    require(!mix.pressure(99,0,60,1.)&&!mix.pressure(-1,0,67,1.)&&!mix.pressure(7,0,60,-.1)&&!mix.pressure(7,0,60,std::numeric_limits<double>::quiet_NaN()),"pressure invalid admission");
+    const int ramp=int(std::ceil(.005*rate));bool changed=false;
+    for(int i=0;i<12*ramp;++i){
+        if(i==2*ramp)require(mix.pressure(7,0,60,1.)&&a.pressure(7,0,60,1.),"explicit pressure");
+        if(i==5*ramp)require(mix.pressure(7,0,60,0.)&&a.pressure(7,0,60,0.),"pressure release");
+        if(i==8*ramp)require(mix.pressure(-1,1,67,.5)&&b.pressure(-1,1,67,.5),"fallback pressure");
+        double ml=0,mr=0,al=0,ar=0,bl=0,br=0,rl=0,rr=0;
+        mix.tick(ml,mr);a.tick(al,ar);b.tick(bl,br);baseline.tick(rl,rr);
+        require(ml==al+bl&&mr==ar+br,"pressure isolation");
+        if(i<2*ramp||i>=7*ramp)require(al==rl&&ar==rr,"zero-pressure invariance");
+        if(i>=3*ramp&&i<5*ramp&& (al!=rl||ar!=rr))changed=true;
+    }
+    require(changed&&mix.off(7,0,60)&&!mix.pressure(7,0,60,.5),"pressure contrast/released refusal");
+    require(mix.on(7,0,60,0.,.8)&&mix.pressure(7,0,60,.5),"pressure recycled identity");
+    mix.reset();require(!mix.pressure(7,0,60,.5),"pressure reset");
+}
+void writePressureWav(const char* path,int identity){
+    const auto y=native<double>(48000.,2,identity,true);std::ofstream f(path,std::ios::binary);require(bool(f),"pressure WAV open");
+    auto le=[&](unsigned n,unsigned count){while(count--){f.put(char(n&255u));n>>=8;}};
+    const auto bytes=unsigned(y.size()*2);f.write("RIFF",4);le(36+bytes,4);f.write("WAVEfmt ",8);le(16,4);le(1,2);le(2,2);le(48000,4);le(192000,4);le(4,2);le(16,2);f.write("data",4);le(bytes,4);
+    for(double s:y)le(unsigned(int(std::lround(s*32767))),2);
+    f.close();require(bool(f),"pressure WAV write");
+}
 void nativeTests(){
+    for(double rate:{44100.,48000.,96000.})pressureIsolation(rate);
     unsigned cases=0;
     for(bool sustain:{false,true})for(double rate:{44100.,48000.,96000.})for(int channels:{1,2}){
         const auto a=native<double>(rate,channels,0,sustain);const auto b=native<float>(rate,channels,0,sustain);
@@ -61,6 +100,14 @@ void nativeTests(){
             for(std::size_t i=0;i<a.size();++i)require(float(a[i])==b[i],"expressive format conversion");
             expressiveCases+=2;}
         require(native<double>(rate,channels,3,true)!=native<double>(rate,channels,4,true),"expressive contrast");}
+    unsigned pressureCases=0;
+    for(double rate:{44100.,48000.,96000.})for(int channels:{1,2}){
+        const auto a=native<double>(rate,channels,5,true);const auto b=native<float>(rate,channels,5,true);
+        require(a!=native<double>(rate,channels,3,true),"pressure contrast");
+        for(std::size_t i=0;i<a.size();++i)require(float(a[i])==b[i],"pressure format conversion");
+        pressureCases+=2;
+    }
+    std::cout<<"NATIVE_PRESSURE_PASS cases="<<pressureCases<<'\n';
     require(expressiveCases==24,"expressive native count");std::cout<<"NATIVE_EXPRESSIVE_REPLAY_PASS cases="<<expressiveCases<<'\n';
 }
 }
@@ -105,7 +152,8 @@ template<class T> void sdkRun(const VST3::Hosting::PluginFactory& factory,const 
     for(int pos=0;pos<frames(rate,identity);pos+=block){const int n=std::min(block,frames(rate,identity)-pos);d.numSamples=n;params.clearQueue();events.clear();
         for(const auto& a:ref.points)if((sustain||a.index<5)&&a.offset>=pos&&a.offset<pos+n){int32 qi=0,pi=0;auto* q=params.addParameterData(firstID+a.index,qi);require(q!=nullptr,"queue");ok(q->addPoint(a.offset-pos,a.value,pi),"point");}
         for(const auto& a:ref.notes)if(a.offset>=pos&&a.offset<pos+n){Steinberg::Vst::Event e{};e.busIndex=0;e.sampleOffset=a.offset-pos;
-            if(a.on){e.type=Steinberg::Vst::Event::kNoteOnEvent;e.noteOn.channel=int16(a.channel);e.noteOn.pitch=int16(a.pitch);e.noteOn.noteId=a.id;e.noteOn.velocity=a.velocity;e.noteOn.tuning=a.tuning;}
+            if(a.pressure){e.type=Steinberg::Vst::Event::kPolyPressureEvent;e.polyPressure.channel=int16(a.channel);e.polyPressure.pitch=int16(a.pitch);e.polyPressure.noteId=a.id;e.polyPressure.pressure=a.velocity;}
+            else if(a.on){e.type=Steinberg::Vst::Event::kNoteOnEvent;e.noteOn.channel=int16(a.channel);e.noteOn.pitch=int16(a.pitch);e.noteOn.noteId=a.id;e.noteOn.velocity=a.velocity;e.noteOn.tuning=a.tuning;}
             else{e.type=Steinberg::Vst::Event::kNoteOffEvent;e.noteOff.channel=int16(a.channel);e.noteOff.pitch=int16(a.pitch);e.noteOff.noteId=a.id;}
             ok(events.addEvent(e),"event");}
         std::fill(left.begin(),left.end(),T(9));std::fill(right.begin(),right.end(),T(9));bus.silenceFlags=0;
@@ -143,13 +191,17 @@ void controllerTest(const VST3::Hosting::PluginFactory& factory,HostApplication*
 void sdkTests(const char* path){
     auto host=owned(new HostApplication);std::string error;auto module=VST3::Hosting::Module::create(path,error);if(!module)throw std::runtime_error(error);
     const auto& factory=module->getFactory();factory.setHostContext(host.get());controllerTest(factory,host.get());unsigned cases=0;
-    for(const auto& info:factory.classInfos())if(info.category()==kVstAudioEffectClass){require(info.name()=="MHAC Orbit Lantern"&&info.version()=="0.4.0","module identity");
+    for(const auto& info:factory.classInfos())if(info.category()==kVstAudioEffectClass){require(info.name()=="MHAC Orbit Lantern"&&info.version()=="0.5.0","module identity");
         for(bool sustain:{false,true})for(double rate:{44100.,48000.,96000.})for(int channels:{1,2})for(int identity:{0,1,2})for(int block:{127,1024}){sdkRun<float>(factory,info,host.get(),rate,channels,identity,block,sustain);sdkRun<double>(factory,info,host.get(),rate,channels,identity,block,sustain);cases+=2;}}
     require(cases==144,"module count");std::cout<<"SDK_REPLAY_PASS cases="<<cases<<'\n';
     unsigned expressiveCases=0;
     for(const auto& info:factory.classInfos())if(info.category()==kVstAudioEffectClass)
         for(double rate:{44100.,48000.,96000.})for(int channels:{1,2})for(int identity:{3,4})for(int block:{127,1024}){sdkRun<float>(factory,info,host.get(),rate,channels,identity,block,true);sdkRun<double>(factory,info,host.get(),rate,channels,identity,block,true);expressiveCases+=2;}
     require(expressiveCases==48,"expressive module count");std::cout<<"SDK_EXPRESSIVE_REPLAY_PASS cases="<<expressiveCases<<'\n';
+    unsigned pressureCases=0;
+    for(const auto& info:factory.classInfos())if(info.category()==kVstAudioEffectClass)
+        for(double rate:{44100.,48000.,96000.})for(int channels:{1,2})for(int block:{127,1024}){sdkRun<float>(factory,info,host.get(),rate,channels,5,block,true);sdkRun<double>(factory,info,host.get(),rate,channels,5,block,true);pressureCases+=2;}
+    require(pressureCases==24,"pressure module count");std::cout<<"SDK_PRESSURE_REPLAY_PASS cases="<<pressureCases<<'\n';
 }
 }
 #endif
@@ -158,7 +210,8 @@ int main(int argc,char** argv){try{
 #ifdef MHAC_ORBIT_SDK_REPLAY
     replay::require(argc==2,"usage: orbit_sdk_replay <bundle>");replay::sdkTests(argv[1]);
 #else
-    (void)argc;(void)argv;
+    if(argc==3){replay::writePressureWav(argv[1],3);replay::writePressureWav(argv[2],5);}
+    else replay::require(argc==1,"usage: orbit_replay_probe [baseline.wav pressure.wav]");
 #endif
     return 0;
 }catch(const std::exception& e){std::cerr<<"REPLAY_FAIL "<<e.what()<<'\n';return 1;}}

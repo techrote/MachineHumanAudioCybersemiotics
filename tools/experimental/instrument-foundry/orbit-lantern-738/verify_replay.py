@@ -7,10 +7,11 @@ from pathlib import Path
 
 ROW = re.compile(r'SDK_REPLAY rate=(\d+) sustain=(\d+) channels=(\d+) identity=(\d+) format=(\d+) block=(\d+) frames=(\d+) max_error=(\S+)')
 SUMMARIES = ('SDK_CONTROLLER_PASS encodings=4 parameters=7',
-             'SDK_REPLAY_PASS cases=144', 'SDK_EXPRESSIVE_REPLAY_PASS cases=48')
+             'SDK_REPLAY_PASS cases=144', 'SDK_EXPRESSIVE_REPLAY_PASS cases=48',
+             'SDK_PRESSURE_REPLAY_PASS cases=24')
 RATES = (44100, 48000, 96000)
 EXPECTED = set(itertools.product(RATES, (0, 1), (1, 2), (0, 1, 2), (0, 1), (127, 1024)))
-EXPECTED |= set(itertools.product(RATES, (1,), (1, 2), (3, 4), (0, 1), (127, 1024)))
+EXPECTED |= set(itertools.product(RATES, (1,), (1, 2), (3, 4, 5), (0, 1), (127, 1024)))
 
 
 def verify(text):
@@ -46,7 +47,7 @@ def self_test():
         rows.append(f'SDK_REPLAY rate={rate} sustain={sustain} channels={channels} identity={identity} format={fmt} block={block} frames={frames} max_error=0')
     def joined(items):
         return '\n'.join([*SUMMARIES, *items])
-    assert verify(joined(rows)) == 192
+    assert verify(joined(rows)) == 216
     bad = [joined(rows[1:]), joined(rows + rows[:1]),
            joined(rows + [rows[0].replace('max_error=0', 'max_error=1e-12')]),
            joined([rows[0].replace('channels=1', 'channels=9'), *rows[1:]]),

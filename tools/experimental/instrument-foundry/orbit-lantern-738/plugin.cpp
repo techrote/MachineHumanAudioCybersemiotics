@@ -33,6 +33,7 @@ struct Events {
         if(event.sampleOffset>=0&&event.busIndex==0){
             if(event.type==Steinberg::Vst::Event::kNoteOnEvent){const auto& n=event.noteOn;e.on(n.noteId,n.channel,n.pitch,n.tuning,n.velocity);}
             else if(event.type==Steinberg::Vst::Event::kNoteOffEvent){const auto& n=event.noteOff;e.off(n.noteId,n.channel,n.pitch);}
+            else if(event.type==Steinberg::Vst::Event::kPolyPressureEvent){const auto& n=event.polyPressure;e.pressure(n.noteId,n.channel,n.pitch,n.pressure);}
         }next();
     }}
 };
@@ -93,6 +94,6 @@ public:
 };
 }
 BEGIN_FACTORY_DEF("MHAC","https://github.com/techrote/MachineHumanAudioCybersemiotics","")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.4.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.4.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Orbit Lantern",Vst::kDistributable,"Instrument|Synth","0.5.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Orbit Lantern Controller",0,"","0.5.0",kVstVersionString,Controller::create)
 END_FACTORY

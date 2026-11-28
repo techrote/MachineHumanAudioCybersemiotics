@@ -80,6 +80,12 @@ public:
         }
         return false;
     }
+    bool pressure(int id,int channel,int pitch,double value) noexcept {
+        if(id< -1||channel<0||channel>15||pitch<0||pitch>127)return false;
+        for(unsigned i=0;i<keys_.size();++i)if(engine_.noteActive(int(i))&&!keys_[i].released&&matches(keys_[i],id,channel,pitch))
+            return engine_.notePressure(int(i),value);
+        return false;
+    }
     unsigned active() const noexcept {return engine_.active();}
     void tick(double& l,double& r) noexcept {engine_.tick(l,r);}
 };
