@@ -1,0 +1,105 @@
+{
+  "schema": "mhac-scoped-clauses-v1",
+  "metrics": {
+    "messages": 1024,
+    "trained": 256,
+    "heldOut": 768,
+    "flatHeldOutDecodable": 0,
+    "compositionalHeldOutDecodable": 768,
+    "oneErasure": 7168,
+    "twoErasures": 21504,
+    "baselineOneErasure": 2048,
+    "baselineTwoErasures": 1024,
+    "singleSubstitutionRejected": 43008,
+    "pcmFrames": 170,
+    "pcmRecovered": 136,
+    "pcmRejectedSubstitution": 34
+  },
+  "assertions": 104760,
+  "frameMs": 700,
+  "rate": 8000,
+  "slotSamples": 800,
+  "activeSamples": 640,
+  "peakLimit": 4096,
+  "frequencies": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000
+  ],
+  "trainingRule": "sum(fields) mod 4 == 0",
+  "tripleWitness": {
+    "a": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "b": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      6,
+      6
+    ],
+    "erased": [
+      0,
+      5,
+      6
+    ],
+    "receipt": [
+      null,
+      0,
+      0,
+      0,
+      0,
+      null,
+      null
+    ]
+  },
+  "mixedCorruptionWitness": {
+    "transmitted": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "received": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      6,
+      null
+    ],
+    "decoded": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "toneEnergies": [
+    4911929974,
+    4911094121,
+    4913032696,
+    4912663009,
+    4913884623,
+    4912919232,
+    4912285137
+  ],
+  "wavBytes": 11244
+}

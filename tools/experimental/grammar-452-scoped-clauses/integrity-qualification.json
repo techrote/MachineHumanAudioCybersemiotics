@@ -1,0 +1,405 @@
+{
+  "schema": "mhac-matched-integrity-v1",
+  "source": "4bed9abcb2343129c265cbfeb7d5cd0341eeaf6b",
+  "assertions": 502472,
+  "trees": 2304,
+  "slots": 8,
+  "slotMs": 80,
+  "rate": 16000,
+  "frequencies": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    1000,
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+    2000
+  ],
+  "metrics": {
+    "closed": {
+      "clean": 2304,
+      "deletion": {
+        "correct": 0,
+        "wrong": 0,
+        "refused": 18432
+      },
+      "singleSub": {
+        "correct": 0,
+        "wrong": 40976,
+        "refused": 253936
+      },
+      "singleErase": {
+        "correct": 0,
+        "wrong": 0,
+        "refused": 18432
+      },
+      "doubleErase": {
+        "correct": 0,
+        "wrong": 0,
+        "refused": 64512
+      }
+    },
+    "protected": {
+      "clean": 2304,
+      "deletion": {
+        "correct": 0,
+        "wrong": 0,
+        "refused": 18432
+      },
+      "singleSub": {
+        "correct": 0,
+        "wrong": 0,
+        "refused": 294912
+      },
+      "singleErase": {
+        "correct": 18432,
+        "wrong": 0,
+        "refused": 0
+      },
+      "doubleErase": {
+        "correct": 64512,
+        "wrong": 0,
+        "refused": 0
+      }
+    }
+  },
+  "distance": {
+    "closed": {
+      "hist": [
+        0,
+        20488,
+        137832,
+        462032,
+        857488,
+        911792,
+        263424,
+        0,
+        0
+      ],
+      "closest": {
+        "d": 1,
+        "i": 0,
+        "j": 1
+      }
+    },
+    "protected": {
+      "hist": [
+        0,
+        0,
+        0,
+        45166,
+        252712,
+        830500,
+        1161640,
+        363038,
+        0
+      ],
+      "closest": {
+        "d": 3,
+        "i": 0,
+        "j": 1
+      }
+    }
+  },
+  "witnesses": {
+    "closed-singleSub": {
+      "sent": [
+        "fault"
+      ],
+      "input": [
+        0,
+        0,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "received": [
+        0,
+        1,
+        13,
+        13,
+        13,
+        13,
+        13,
+        13
+      ],
+      "decoded": [
+        "open"
+      ]
+    },
+    "mixed": {
+      "sent": [
+        "fault"
+      ],
+      "target": [
+        "open"
+      ],
+      "input": [
+        0,
+        0,
+        13,
+        13,
+        13,
+        13,
+        5,
+        11
+      ],
+      "targetFrame": [
+        0,
+        1,
+        13,
+        13,
+        13,
+        13,
+        16,
+        16
+      ],
+      "received": [
+        0,
+        null,
+        13,
+        13,
+        13,
+        13,
+        16,
+        16
+      ],
+      "decoded": [
+        "open"
+      ]
+    }
+  },
+  "pcm": {
+    "cases": 96,
+    "energy": {
+      "closed": {
+        "min": 57190941211,
+        "max": 57207064518
+      },
+      "protected": {
+        "min": 57189149432,
+        "max": 57210974587
+      }
+    },
+    "peak": 4096
+  },
+  "phases": [
+    0,
+    0.3,
+    1.7,
+    4.1
+  ],
+  "examples": [
+    {
+      "name": "negation-outside-quotation",
+      "tree": [
+        "not",
+        [
+          "quote",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        4,
+        4,
+        5,
+        0,
+        13,
+        13,
+        13,
+        13
+      ],
+      "protected": [
+        2,
+        4,
+        5,
+        0,
+        13,
+        13,
+        8,
+        6
+      ]
+    },
+    {
+      "name": "negation-inside-quotation",
+      "tree": [
+        "quote",
+        [
+          "not",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        4,
+        5,
+        4,
+        0,
+        13,
+        13,
+        13,
+        13
+      ],
+      "protected": [
+        2,
+        5,
+        4,
+        0,
+        13,
+        13,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "question-of-pump-report",
+      "tree": [
+        "question",
+        [
+          "pump-reports",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        4,
+        6,
+        8,
+        0,
+        13,
+        13,
+        13,
+        13
+      ],
+      "protected": [
+        2,
+        6,
+        8,
+        0,
+        13,
+        13,
+        15,
+        11
+      ]
+    },
+    {
+      "name": "relay-reports-question",
+      "tree": [
+        "relay-reports",
+        [
+          "question",
+          [
+            "fault"
+          ]
+        ]
+      ],
+      "closed": [
+        4,
+        9,
+        6,
+        0,
+        13,
+        13,
+        13,
+        13
+      ],
+      "protected": [
+        2,
+        9,
+        6,
+        0,
+        13,
+        13,
+        7,
+        1
+      ]
+    },
+    {
+      "name": "conditional-verification",
+      "tree": [
+        "if",
+        [
+          "fault"
+        ],
+        [
+          "verify",
+          [
+            "overload"
+          ]
+        ]
+      ],
+      "closed": [
+        5,
+        12,
+        0,
+        7,
+        3,
+        13,
+        13,
+        13
+      ],
+      "protected": [
+        3,
+        12,
+        0,
+        7,
+        3,
+        13,
+        14,
+        16
+      ]
+    },
+    {
+      "name": "uncertain-conjunction",
+      "tree": [
+        "uncertain",
+        [
+          "and",
+          [
+            "open"
+          ],
+          [
+            "stopped"
+          ]
+        ]
+      ],
+      "closed": [
+        5,
+        10,
+        11,
+        1,
+        2,
+        13,
+        13,
+        13
+      ],
+      "protected": [
+        3,
+        10,
+        11,
+        1,
+        2,
+        13,
+        15,
+        13
+      ]
+    }
+  ]
+}
