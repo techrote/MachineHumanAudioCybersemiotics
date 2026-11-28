@@ -1,5 +1,5 @@
 """Bounded exact-checkout Windows collection; never relabel historical binaries."""
-import argparse, hashlib, io, json, os, re, shutil, struct, subprocess, sys, time, urllib.request, urllib.error, wave, zipfile
+import argparse, hashlib, io, json, os, re, shutil, struct, subprocess, sys, time, urllib.request, urllib.error, urllib.parse, wave, zipfile
 from pathlib import Path, PurePosixPath
 HERE = Path(__file__).resolve().parent
 CAT = json.loads((HERE / "catalogue.json").read_text(encoding="utf-8"))
@@ -116,8 +116,8 @@ def collect(source,event,out):
     pending=set(workflows.values()); runs={}; deadline=time.monotonic()+2400
     while pending:
         for workflow in sorted(pending):
-            data=api("/actions/workflows/"+workflow+"/runs?head_sha="+source+"&event="+event+"&per_page=30")
-            exact=[x for x in data["workflow_runs"] if x["head_sha"]==source and x["event"]==event]
+            data=api("/actions/runs?head_sha="+source+"&event="+event+"&per_page=100")
+            exact=[x for x in data["workflow_runs"] if x["head_sha"]==source and x["event"]==event and x["path"]==".github/workflows/"+workflow]
             if not exact: continue
             run=max(exact,key=lambda x:x["id"])
             if run["status"]!="completed": continue

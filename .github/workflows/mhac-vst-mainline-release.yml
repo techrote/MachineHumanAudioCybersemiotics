@@ -15,19 +15,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          persist-credentials: false
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Collect only successful exact-checkout packages
         env:
           GH_TOKEN: ${{ github.token }}
           SOURCE_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
           EVENT_NAME: ${{ github.event_name }}
-        run: py -3 tools/experimental/vst-mainline/release.py collect delivery --source $env:SOURCE_SHA --event $env:EVENT_NAME
+        run: py -3.12 tools/experimental/vst-mainline/release.py collect delivery --source $env:SOURCE_SHA --event $env:EVENT_NAME
       - name: Install independently implemented host
-        run: py -3 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+        run: |
+          py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
       - name: Actual Windows module and cross-plugin tests
-        run: py -3 tools/experimental/vst-mainline/host_probe.py delivery
+        run: py -3.12 tools/experimental/vst-mainline/host_probe.py delivery
       - name: Deterministic verified archive
-        run: py -3 tools/experimental/vst-mainline/release.py finish delivery --archive MHAC-VST3-Windows-x64.zip
+        run: py -3.12 tools/experimental/vst-mainline/release.py finish delivery --archive MHAC-VST3-Windows-x64.zip
       - uses: actions/upload-artifact@v4
         if: always()
         with:
