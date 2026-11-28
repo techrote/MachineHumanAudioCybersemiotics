@@ -1,0 +1,83 @@
+{
+  "schema": "mhac-deadline-v6",
+  "sampleRate": 16000,
+  "horizonSamples": 320000,
+  "checks": 3111,
+  "totals": {
+    "zero": {
+      "offered": 60,
+      "uniqueReceipts": 51,
+      "genuineConfirmations": 43,
+      "invalid": 3,
+      "retries": 47,
+      "acks": 85,
+      "opportunities": 330,
+      "missedNextBoundary": 177,
+      "totalWaitSamples": 0,
+      "expiredAck": 14,
+      "genuineCurrentConfirmed": 43
+    },
+    "fixed-scaled": {
+      "offered": 60,
+      "uniqueReceipts": 51,
+      "genuineConfirmations": 43,
+      "invalid": 3,
+      "retries": 21,
+      "acks": 55,
+      "opportunities": 297,
+      "missedNextBoundary": 0,
+      "totalWaitSamples": 190080,
+      "expiredAck": 14,
+      "genuineCurrentConfirmed": 43
+    },
+    "fixed-absolute": {
+      "offered": 60,
+      "uniqueReceipts": 51,
+      "genuineConfirmations": 43,
+      "invalid": 3,
+      "retries": 21,
+      "acks": 55,
+      "opportunities": 297,
+      "missedNextBoundary": 0,
+      "totalWaitSamples": 190080,
+      "expiredAck": 14,
+      "genuineCurrentConfirmed": 43
+    },
+    "adaptive": {
+      "offered": 60,
+      "uniqueReceipts": 51,
+      "genuineConfirmations": 43,
+      "invalid": 3,
+      "retries": 21,
+      "acks": 55,
+      "opportunities": 297,
+      "missedNextBoundary": 0,
+      "totalWaitSamples": 55920,
+      "expiredAck": 14,
+      "genuineCurrentConfirmed": 43
+    }
+  },
+  "rows": 132,
+  "fixedPairHashMatches": 33,
+  "priorWaveformMatches": 66,
+  "fullRescans": 132,
+  "terminalAccepted": 0,
+  "environment": "Linux x86-64 Node 22.16.0",
+  "browser": {
+    "file_navigation": false,
+    "file_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/mhac-v6/MHAC-PCM-Relay-v5/deadline-inspector.html",
+    "manifest": true,
+    "trace": true,
+    "wav": true,
+    "muted_playhead": true,
+    "export": true,
+    "page_errors": [],
+    "browser": "144.0.7559.96"
+  },
+  "sourceGitBlobs": {
+    "deadline-v6.cjs": "a5cda47d4ccdbe705c27cd1580f9b946236e8864",
+    "run-deadline-v6.cjs": "baaaf617946ea82e12a27f91144907f60d0071a6",
+    "deadline-inspector.html": "60ad098dce4db59b520cd23e80e74b8c63304067",
+    "README-deadline-v6.md": "72b4cb71d7f7399b690215391c6121699e14c156"
+  }
+}

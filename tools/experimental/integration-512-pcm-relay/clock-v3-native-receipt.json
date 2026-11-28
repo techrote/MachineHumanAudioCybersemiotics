@@ -1,0 +1,84 @@
+{
+  "schema": "mhac-clock-v3-native-receipt",
+  "date": "2026-11-25",
+  "base": "4d2d0b2c067924305675e92eabd2b9cc28676842",
+  "sourceBlobs": {
+    "clock-v3.cjs": "1f629ae5dc1a995326ff47cba1a6338f16c080df",
+    "clock-v3.hpp": "0a9ced04a6d3e6f19a9ce1c4d0631aafebccca89",
+    "clock-v3-host.cpp": "81ebadec665955fbf9d62bc11242618001fc5f40",
+    "verify-clock-v3.py": "ab47d93bad5e7c23f634d745de7969ec7af8735b",
+    "schedule-clock-v3.cjs": "437b06027948bcb4bf09b1b80da4e7092c3ff631",
+    "verify-schedule-clock-v3.cjs": "5d070619f9a2ab11854b5868a18d7489580aaec4",
+    "scheduled-v2.cjs": "60983bd9369729fb7dcc8f548c5371a74d02c7aa",
+    "schedule-inspector.html": "c2f70bcfea779a2d68f492a0185647910e37c660",
+    "README-clock-v3.md": "bd974f870af77649195b6d5865b49a4eaa440be1",
+    "test-clock-browser.py": "79e28ba9cdb252147d910bc058e615df3a5c7a99"
+  },
+  "environment": {
+    "node": "22.16.0",
+    "compiler": "g++ 14.2.0",
+    "os": "Linux x86_64",
+    "chromium": "144.0.7559.96"
+  },
+  "singleWindow": {
+    "assertions": 233,
+    "fixtures": 176,
+    "fixedExpected": 107,
+    "clockExpected": 176,
+    "auditFixed": 86,
+    "auditClock": 120
+  },
+  "nativeDSP": {
+    "wavs": 176,
+    "hypotheses": 805,
+    "maxQualityDifference": 1.2545520178264269e-14,
+    "resultBytes": 640,
+    "pcmLimitBytes": 76800
+  },
+  "schedule": {
+    "assertions": 273,
+    "sessions": 45,
+    "knownSlotsReplayed": 450,
+    "unsegmentedReplay": null,
+    "baselineRetries": [
+      14,
+      9,
+      14
+    ],
+    "clockRetries": [
+      13,
+      8,
+      13
+    ],
+    "genuineConfirmations": [
+      23,
+      25,
+      23
+    ],
+    "invalid": [
+      1,
+      1,
+      1
+    ]
+  },
+  "outputSHA256": {
+    "clock-v3-output/receipt.json": "bd65fc31c1b5e788005121482099149f076ad5ef4c8ef166f680161d40324232",
+    "scheduled-clock-v3-output/manifest.json": "c3cbbb6808818a20732202ce754c9b58952d6d993dca689ce4574d5df5ba10c1"
+  },
+  "browser": {
+    "fileAndLocalhost": "blocked by administrator",
+    "fallback": "set_content",
+    "timelineSlots": 10,
+    "comparisonRows": 3,
+    "durationSeconds": 20,
+    "mutedPlayheadAdvanced": true,
+    "exportReread": true,
+    "pageErrors": []
+  },
+  "limitations": [
+    "synthetic only",
+    "no Windows, physical playback, device or independent review",
+    "no full checkout (DNS)",
+    "single-window grid not streaming or security certification"
+  ]
+}

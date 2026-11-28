@@ -1,0 +1,18 @@
+'use strict';
+// Refs #512: controlled deadlines and adaptive turnaround, native PCM exports and replay.
+const {simulate,cases,policies,config}=require('./deadline-v6.cjs'),{decode}=require('./stream-v4.cjs'),{wav}=require('./relay.cjs');
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const dir=process.argv[2]||'deadline-v6-output',modes=[['zero',0,'absolute'],['fixed-scaled',640,'scaled'],['fixed-absolute',640,'absolute'],['adaptive','adaptive','absolute']];
+fs.mkdirSync(dir,{recursive:true});const rows=[];let checks=0;const check=(b,m)=>{checks++;assert.ok(b,m);},hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const baseline=JSON.parse(fs.readFileSync('evidence-v5-output/manifest.json'));
+for(const name of (process.env.CASE?[process.env.CASE]:cases))for(const policy of policies)for(const [mode,guard,timer] of modes){
+  const {pcm,...s}=simulate(name,policy,guard,511,timer),m=s.metrics,stem=`${name}-${policy}-${mode}`,bytes=wav(pcm),file=path.join(dir,stem+'.wav');
+  check(s.timerStep===(timer==='absolute'?32000:32640),'timer');check(m.offered===config(name).offers.length,'offers');check(m.dataAttempts<=2*m.offered,'retry cap');check(m.genuineConfirmations+m.invalid===m.confirmations,'receipt partition');check(s.trace.every((x,i,a)=>!i||a[i-1].at<=x.at),'chronology');check(s.trace.filter(x=>x.origin==='return').every(tx=>s.trace.some(e=>e.type==='return-enqueued'&&e.at===tx.evidenceAt&&e.ready<=tx.at&&tx.at<e.expires&&JSON.stringify({...e.packet,kind:1})===JSON.stringify(tx.packet))),'ACK causality');
+  check(s.trace.filter(x=>x.type==='turnaround').every(x=>x.wait>=0&&x.wait<=640),'bounded wait');check(m.invalid===(name==='forged'?1:0),'negative control');check(pcm.every(x=>Math.abs(x)<=8192),'peak');
+  if(mode==='zero'||mode==='fixed-scaled'){const old=baseline.rows.find(x=>x.name===name&&x.policy===policy&&x.guard===guard);check(hash(bytes)===old.sha256,'exact v5 PCM baseline');for(const k of Object.keys(old.metrics))if(k!=='lateEvidence')check(m[k]===old.metrics[k],'v5 baseline '+k);}
+  fs.writeFileSync(file,bytes);fs.writeFileSync(path.join(dir,stem+'.json'),JSON.stringify(s)+'\n');const b=fs.readFileSync(file);check(hash(b)===hash(bytes),'disk hash');check(b.length===640044&&b.readUInt32LE(24)===16000&&b.readUInt16LE(34)===16,'WAV format');const p=Int16Array.from({length:320000},(_,i)=>b.readInt16LE(44+2*i));check(JSON.stringify(decode(p,997).events)===JSON.stringify(s.evidence),'independent full rescan');
+  rows.push({name,policy,mode,guard,timer,timerStep:s.timerStep,metrics:m,sha256:hash(b),file:stem+'.wav',trace:stem+'.json'});
+}
+for(const name of (process.env.CASE?['clean','revision','forged'].filter(n=>n===process.env.CASE):['clean','revision','forged'])){const a=simulate(name,'ack-first','adaptive',127),b=simulate(name,'ack-first','adaptive',997);check(JSON.stringify(a.trace)===JSON.stringify(b.trace),'chunk trace');check(JSON.stringify(a.evidence)===JSON.stringify(b.evidence),'chunk evidence');check(a.pcm.every((x,i)=>x===b.pcm[i]),'chunk PCM');}
+const fields=['offered','uniqueReceipts','genuineConfirmations','invalid','retries','acks','opportunities','missedNextBoundary','totalWaitSamples','expiredAck','genuineCurrentConfirmed'];const totals=Object.fromEntries(modes.map(([mode])=>[mode,Object.fromEntries(fields.map(k=>[k,rows.filter(r=>r.mode===mode).reduce((a,r)=>a+r.metrics[k],0)]))]));
+const result={schema:'mhac-deadline-v6',sampleRate:16000,horizonSamples:320000,checks,totals,rows};fs.writeFileSync(path.join(dir,process.env.CASE?'manifest-'+process.env.CASE+'.json':'manifest.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({checks,totals,rows:rows.length},null,2));

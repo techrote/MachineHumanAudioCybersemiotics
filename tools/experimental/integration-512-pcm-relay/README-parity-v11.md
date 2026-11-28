@@ -1,0 +1,35 @@
+# Progressive parity feasibility and conservative eviction v11
+
+Refs #512; cumulative Draft/HOLD #513. 2026-11-25. Single AI-assisted implementation and internal tests; no independent substantive review. Predecessor 0fd93d1fab2b4fd177940511c09b0683fd8d9772, accepted base 495a98ca12bae467a507031f04931aa4254b1866. Read AGENTS, RAG, programme, runbook, integrity, validation, experiments, human gates, issue and recent checkpoint comments. Current draft heads and structural Research integrity success: #443 fbe4224cd81aac931d20ba79aac000aa39cc703a, #449 205124de2847ac884fa1ea34f9da0b78092c2876, #453 e9f96d82bc0fdac196313411390c59d1645dec2b, #457 077e36808c7911575b88251172c9a3ce37fa3831. Read pinned parity-admission-audit.cjs and relevant grammar, measurement and return-window README material; foundry titles inventoried. FM-1-MHAC and FM-1-CYDaux README compatibility intake read-only. Root LICENSE unavailable; no outside code imported or license granted. Five predecessor dependency blob IDs matched local bytes. Full native Git checkout blocked by DNS.
+
+## Mechanism and boundaries
+
+Keep v10 as a comparator. For 7/8 observed metadata symbols, ask whether any completion exists over GF(17) satisfying both parity equations and recovered metadata domains. An unobserved future symbol is not an erasure. At most two observed erasures; at seven observations, at most three unknowns. For two unknowns the two distinct parity columns have nonzero determinant mod 17; for three, enumerate one variable (17 values) and solve the remaining two. Earlier prefix checks remain v10 domain and erasure necessities. This is an exact conditional feasibility argument for 7/8 observations, not exact feasibility of shorter prefixes, nor a claim about arbitrary alternative windows, future DSP, acoustic truth or source authority. Every surviving region still receives original complete packet validation. No early acceptance or EOF promotion.
+
+Compare fail-closed parity admission with two explicitly lossy policies: evict the oldest unfinished region or reject the incoming region on pending-cap pressure. Already completed regions are not evicted. Record each loss at the actual sample time. Maintain a conservative interval hull from earliest discarded onset to maximum possible discarded extent (maximum clock scale 1.015); withhold otherwise valid packets overlapping this interval as association-incomplete. This can unnecessarily withhold genuine evidence, including gaps in the hull. It does not establish complete association outside the stipulated detector's hypothesis model. No permanent cap overflow from these particular closed-candidate evictions; other overflow types remain possible. No resets, wire change, new authentication or contextual policy change. PCM ring 153600 bytes; at most 8 x 13 x 8 = 832 observed words, plus bounded JS objects and two interval endpoints; caller trace storage and runtime overhead separate. Not a native embedded benchmark.
+
+## Executed synthetic qualification
+
+Node 22.16.0 Linux x86_64: node test-parity-v11.cjs parity-v11-output. 1721 assertions, including 1000 independent brute enumeration comparisons, 160 matched-input stress trials (40 WAVs x four policies), 16 scheduler sessions (16 exact exported PCM rescans with alternate partition), 56/56 independent Python WAV format, SHA256 and peak <=4096 checks. 21.66 s elapsed, 134872 KiB peak RSS for one native process. Fresh seeds 49157/90281 and independently reconstructed upstream 42737/91583.
+
+| Condition | v10 | parity only | evict oldest | reject incoming |
+|---|---:|---:|---:|---:|
+| Plain onset controls | 6/6 | 6/6 | 6/6 | 6/6 |
+| Filled carrier, separated tail | 2/6 | 6/6 | 6/6 | 6/6 |
+| Filled carrier, 20 ms tail | 2/6 | 6/6 | 6/6 | 6/6 |
+| Upstream 80/120 ms spacing | 0/4 | 4/4 | 4/4 | 4/4 |
+| Upstream 160 ms spacing | 0/2 | 0/2 | 0/2 | 0/2 |
+| New plausible/erased prefix train, 4 s separation | 0/2 | 0/2 | 2/2 | 2/2 |
+| Same train, 20 ms separation | 0/2 | 0/2 | 0/2 | 0/2 |
+
+All modes preserve clean, weak, drift, isolated onset, two-erasure recovery and expected three-erasure refusal (2/2 per condition). Counts denote exact expected packet sequences, not population reliability. The three published upstream first-seed stimulus hashes match exactly; reproduced both seed outcomes and sample 21498 overflow for the 160 ms witness. Our seven-symbol feasibility variant has different early-refusal counts from the upstream eight-symbol comparator; counters also include later erasure/domain rejection, so do not attribute all gains to parity alone.
+
+New preserved witness, seed 49157: plausible/erased prefix train, both fail-closed policies overflow at sample 11258. Both eviction policies discard 17 regions. Separated valid packet is recovered at sample 128362. With adjacent valid packet, otherwise valid full hypotheses exist but conservative loss association withholds it at sample 64682; oldest hull extends through 61318 and validated packet starts 32304. This is deliberate abstention rather than semantic invalidity. Upstream 160 ms case also remains a refusal with eviction (no cap overflow, but incomplete association). No universal dominance.
+
+The scheduler retains ACK-first, adaptive turnaround, absolute deadlines and actual PCM callbacks. Revision fixture replaces slot-one transmission with plausible/erased prefix interference. v10 and parity-only: 0 genuine confirmations, one overflow, two retries; both eviction modes: two genuine current confirmations, zero overflow, two retries, twelve evictions and one association abstention. Clean and ordinary ACK loss: two genuine confirmations each. Forged ACK: one false confirmation, zero genuine confirmations each. Neither recovery nor a valid joint tag proves authenticity, authority, action or resolution.
+
+## Owner operation
+
+Open parity-v11-inspector.html locally and select parity-v11-output/receipt.json and matching WAV files. Inspect 176 trial records, waveform, evicted regions, explicit incomplete association, actual sample times, recovered packets and export complete trace. Begin at low hardware volume. Native Chromium 144.0.7559.96 headless: file URI and localhost navigation blocked; fresh-page set_content, actual WAV/receipt file selection, muted media playhead, association-incomplete display, exact JSON export and no page errors passed. No Windows, physical audio, participant, full checkout or embedded qualification. Native-tested executable blobs 4d1ad5ead8f94ce219bc879fe05269bb1ce1f7df and 69b1003eee77bdedc79ca942d55839386ca72174. Inspector blob 49e9126a197ff20875a5387b1d6fc7759f36715a. No other branches, downstream repos, frozen records or canonical manifests changed. No merge or self-approval.
+
+Next: distinguish bounded interval evidence-loss tracking from permanent conservative hulls; compare a small disjoint loss-interval ledger, reserved fresh-candidate capacity and eviction policies under identical held-out workloads. Preserve explicit abstention and counterexamples, rather than quietly promoting evicted evidence to successful association.

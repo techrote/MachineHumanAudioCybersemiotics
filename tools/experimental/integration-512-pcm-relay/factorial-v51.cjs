@@ -1,0 +1,36 @@
+'use strict';
+// Refs #512. Synthetic known-slot factorial scheduler with time-indexed independent acoustic interferer; no physical channel claim.
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const F=require('./fresh-v45.cjs'),A=require('./session-v40.cjs'),J=require('./journal-v42.cjs'),M=require('./status-v49.cjs'),T=require('./transition-control-v48.cjs'),U=require('./status-control-v49.cjs'),{wav}=require('./relay.cjs');
+const seed=Number(process.env.SEED||71),phase=seed*.013,out=process.argv[2]||'v51-output',root=fs.mkdtempSync(path.join(os.tmpdir(),'mhac51-'));fs.mkdirSync(out,{recursive:true});
+const H=12,D=8,zero=()=>new Int16Array(F.L),hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const p={kind:0,source:1,version:1,actor:9,event:7,seq:1,tree:['verify',['open']]},q={kind:0,source:2,version:1,actor:9,event:8,seq:1,tree:['pump-reports',['fault']]};
+const data=(p,s)=>F.wrap(A.encode(A.ctx(s),64,'data',p,0,null,0,A.nonce(p,0),phase));
+let checks=0;const ck=(a,b)=>{assert.deepEqual(a,b);checks++;};
+function pair(name,s,high){const d=path.join(root,name),w=d+'.w',e=d+'q',v=e+'.w';J.provision(d,w);let r=J.open(d,w);if(s!==1)ck(r.transition(0,s),'transitioned');M.provision(e,v,'shared',s,high);return {r,d:M.open(e,v),dir:d,w,qd:e,qw:v,reopen(){this.r=J.open(d,w);this.d=M.open(e,v);}};}
+const masks={clean:[],first:[0],return:[1,6],background:[3],burst:[1,2,3,4],late:[1,6,8,10]};
+const policies=['repeat-fixed','status-fixed','repeat-deadline','status-deadline'];
+// Interferer is a valid DATA waveform under a distinct provisioned context. Same samples and timing for all policies.
+const jammer=data({...q,source:3,event:10},30);
+const overlaps={weak:{slots:[3,4,6],gain:0.25},strong:{slots:[3,4,6],gain:1}};
+function mixed(x,i,name){const o=overlaps[name];if(!o||!o.slots.includes(i))return x;const y=new Int16Array(F.L);for(let j=0;j<F.L;j++)y[j]=Math.round(x[j]+(j>=640?o.gain*jammer[j-640]:0));return y;}
+masks.weak=[];masks.strong=[];
+function run(name,policy,loss){const a=pair(name+policy,1,M.MAX-1),b=pair(name+policy+'b',10,0),id=a.d.register(p,0),bid=b.d.register(q,0);ck(a.r.receive('data',data(p,1).subarray(0,F.BASE)).decision,'new');a.d.allocate(id);a.d.begin();
+ const slots=[],trace=[];let urgent=false,finishAt=null,urgentAt=null,round=0,last='unknown';
+ function slot(role,x,fn){const i=slots.length;if(i>=H)throw Error('budget');const lost=loss.includes(i),input=mixed(lost||!x?zero():x,i,name);const result=fn(input);slots.push(input);trace.push({role,lost,interference:overlaps[name]?.slots.includes(i)??false,transmitted:!!x,result,requester:a.d.snapshot(),reporter:a.r.snapshot(),background:b.d.snapshot(),sha256:hash(wav(input))});return result;}
+ function recovery(useStatus){round++;let response;if(useStatus)a.d.allocateStatus();const query=useStatus?a.d.status(phase):a.d.prepare(phase);slot(useStatus?'status':'prepare',query,x=>{const before=a.r.snapshot(),z=useStatus?U.answer(a.r,x,phase):T.answer(a.r,x,phase);if(useStatus)ck(a.r.snapshot(),before);response=z.pcm;return z.decision;});a.reopen();last=slot(useStatus?'status-reply':'ack',response,x=>useStatus?a.d.finishStatus(x):a.d.finish(x));a.reopen();if(a.d.snapshot().next===null)finishAt=slots.length;}
+ function background(){let response;slot('data',data(q,10),x=>b.r.receive('data',x.subarray(0,F.BASE)).decision);b.d.allocate(bid);slot('query',b.d.query(bid,phase),x=>{const z=F.answer(b.r,x,phase,true);response=z.pcm;return z.decision;});const result=slot('reply',response,x=>b.d.receive(x));urgent=result.decision==='consumed'&&result.evidence.kind==='report'&&result.evidence.status==='applied';if(urgent)urgentAt=slots.length;b.reopen();}
+ recovery(false);background();
+ if(policy.endsWith('-deadline')&&!urgent&&slots.length+3<=D)background();
+ while(slots.length+2<=H&&a.d.snapshot().next!==null){const useStatus=policy.startsWith('status-')&&last!=='not-committed';recovery(useStatus);}
+ while(slots.length<H)slot('idle',null,()=>null);
+ ck(a.r.snapshot().epochs[0].records.length,1);ck(b.r.snapshot().epochs[0].records.length<=1,true);ck(finishAt!==null,a.d.snapshot().session===2);ck(urgentAt===null||urgentAt<=D,true);
+ const pcm=new Int16Array(H*F.L);slots.forEach((x,i)=>pcm.set(x,i*F.L));const raw=wav(pcm),file=`${seed}-${name}-${policy}.wav`;fs.writeFileSync(path.join(out,file),raw);const read=fs.readFileSync(path.join(out,file));for(let i=0;i<H;i++){const x=Int16Array.from({length:F.L},(_,j)=>read.readInt16LE(44+2*(i*F.L+j)));ck(hash(wav(x)),trace[i].sha256);}
+ return {scenario:name,policy,loss,file,sha256:hash(read),finishAt,urgentAt,completed:finishAt!==null,urgent,used:trace.filter(t=>t.role!=='idle').length,trace,requester:a.d.snapshot(),reporter:a.r.snapshot()};}
+function controls(){const a=pair('controls',1,0);a.d.begin();a.d.allocateStatus();const oldR=fs.readFileSync(path.join(a.dir,'state.json')),oldW=fs.readFileSync(a.w);const beforeQ=fs.readFileSync(path.join(a.qd,'current')),beforeW=fs.readFileSync(a.qw);ck(T.answer(a.r,a.d.prepare(phase),phase).decision,'transitioned');const yes=U.answer(a.r,a.d.status(phase),phase);ck(yes.decision,'committed');ck(a.d.finishStatus(yes.pcm),'committed');
+ // Restore both endpoint histories and witnesses, recreating a pending challenge.
+ fs.writeFileSync(path.join(a.dir,'state.json'),oldR);fs.writeFileSync(a.w,oldW);fs.writeFileSync(path.join(a.qd,'current'),beforeQ);fs.writeFileSync(a.qw,beforeW);a.reopen();ck(a.r.snapshot().high,1);ck(a.d.finishStatus(yes.pcm),'committed');ck(a.d.snapshot().session,2);
+ const b=pair('lie',1,0);b.d.begin();b.d.allocateStatus();const lie=U.encode(1,2,1,'committed',phase);ck(b.d.finishStatus(lie),'committed');ck(b.r.snapshot().high,1);ck(b.d.snapshot().session,2);
+ const c=pair('delayed',1,0);c.d.begin();c.d.allocateStatus();const cr=fs.readFileSync(path.join(c.dir,'state.json')),cw=fs.readFileSync(c.w);ck(T.answer(c.r,c.d.prepare(phase),phase).decision,'transitioned');const delayed=U.answer(c.r,c.d.status(phase),phase);ck(delayed.decision,'committed');fs.writeFileSync(path.join(c.dir,'state.json'),cr);fs.writeFileSync(c.w,cw);c.reopen();ck(c.d.finishStatus(delayed.pcm),'committed');ck(c.r.snapshot().high,1);
+ return {restoredChallengeReplay:{requester:a.d.snapshot().session,reporter:a.r.snapshot().high},authorizedFalseStatus:{requester:b.d.snapshot().session,reporter:b.r.snapshot().high},delayedTruth:{requester:c.d.snapshot().session,reporter:c.r.snapshot().high}};}
+try{const rows=[];for(const [name,loss] of Object.entries(masks))for(const policy of policies)rows.push(run(name,policy,loss));const negative=controls();fs.writeFileSync(path.join(out,'receipt.json'),JSON.stringify({schema:'mhac-factorial-v51',parent:'ae267986a8fcc0b54dead4cbdc987e210b284049',interference:{offsetSamples:640,context:30,sha256:hash(wav(jammer)),patterns:overlaps},seed,rate:16000,step:F.L,H,D,checks,negative,rows},null,2)+'\n');console.log({seed,checks,sessions:rows.length,negative});}finally{fs.rmSync(root,{recursive:true,force:true});}
