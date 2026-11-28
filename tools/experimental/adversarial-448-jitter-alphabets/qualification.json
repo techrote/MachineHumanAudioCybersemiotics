@@ -1,0 +1,1197 @@
+{
+  "source_ref": "07fb2f67a5a2cf26312699410f00152033cae843",
+  "base": "495a98ca12bae467a507031f04931aa4254b1866",
+  "model": {
+    "rate": 8000,
+    "s0": 0.6,
+    "scale_trial_range": [
+      0.6,
+      1
+    ],
+    "levels_ms": [
+      0,
+      0.5,
+      2,
+      5,
+      10
+    ],
+    "seeds": [
+      101,
+      307,
+      901
+    ],
+    "repeats": 24,
+    "search_seed": 448,
+    "search_starts": 57,
+    "source_search_starts": 26,
+    "max_replacement_sweeps": 3,
+    "candidate_count": 712
+  },
+  "checks": 144153,
+  "results": {
+    "source26": {
+      "words": [
+        [
+          0,
+          1,
+          4,
+          13
+        ],
+        [
+          0,
+          1,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          10,
+          17
+        ],
+        [
+          0,
+          1,
+          11,
+          12
+        ],
+        [
+          0,
+          1,
+          14,
+          18
+        ],
+        [
+          0,
+          1,
+          15,
+          16
+        ],
+        [
+          0,
+          2,
+          7,
+          18
+        ],
+        [
+          0,
+          2,
+          11,
+          13
+        ],
+        [
+          0,
+          2,
+          15,
+          17
+        ],
+        [
+          0,
+          3,
+          5,
+          9
+        ],
+        [
+          0,
+          3,
+          7,
+          10
+        ],
+        [
+          0,
+          3,
+          8,
+          17
+        ],
+        [
+          0,
+          3,
+          11,
+          14
+        ],
+        [
+          0,
+          3,
+          13,
+          16
+        ],
+        [
+          0,
+          4,
+          6,
+          9
+        ],
+        [
+          0,
+          4,
+          11,
+          15
+        ],
+        [
+          0,
+          4,
+          17,
+          18
+        ],
+        [
+          0,
+          5,
+          12,
+          17
+        ],
+        [
+          0,
+          5,
+          13,
+          18
+        ],
+        [
+          0,
+          6,
+          7,
+          13
+        ],
+        [
+          0,
+          6,
+          11,
+          17
+        ],
+        [
+          0,
+          7,
+          8,
+          15
+        ],
+        [
+          0,
+          7,
+          16,
+          17
+        ],
+        [
+          0,
+          9,
+          12,
+          13
+        ],
+        [
+          0,
+          9,
+          14,
+          17
+        ],
+        [
+          0,
+          11,
+          16,
+          18
+        ]
+      ],
+      "margin_ms": 0.4901960784313708,
+      "witness": {
+        "words": [
+          [
+            0,
+            4,
+            17,
+            18
+          ],
+          [
+            0,
+            7,
+            16,
+            17
+          ]
+        ],
+        "deleted_zero_based": [
+          1,
+          1
+        ],
+        "margin_ms": 0.4901960784313708,
+        "scales_s": [
+          0.6,
+          0.6
+        ],
+        "observed_s": [
+          0.10049019607843138,
+          0.6661764705882353,
+          0.7004901960784313
+        ],
+        "errors_ms": [
+          [
+            0.4901960784313708,
+            -0.49019607843139856,
+            0.49019607843134305
+          ],
+          [
+            -0.4901960784313708,
+            0.49019607843134305,
+            -0.49019607843139856
+          ]
+        ],
+        "samples": [
+          804,
+          5329,
+          5604
+        ],
+        "quantized_radius_ms": 0.5526960784313708
+      },
+      "wav_bytes": 11732,
+      "trials": [
+        {
+          "eps_ms": 0,
+          "mode": "uniform",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 7488,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 7488,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0,
+          "mode": "endpoint",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 7488,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 7488,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "uniform",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 7488,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 7488,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "endpoint",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 7482,
+            "wrong": 6,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 7482,
+            "wrong": 0,
+            "abstain": 6
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "uniform",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 6464,
+            "wrong": 1024,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 4529,
+            "wrong": 0,
+            "abstain": 2959
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "endpoint",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 4929,
+            "wrong": 2558,
+            "abstain": 1
+          },
+          "bounded": {
+            "correct": 4022,
+            "wrong": 0,
+            "abstain": 3466
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "uniform",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 3998,
+            "wrong": 3490,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 826,
+            "wrong": 0,
+            "abstain": 6662
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "endpoint",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 3266,
+            "wrong": 4222,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 804,
+            "wrong": 0,
+            "abstain": 6684
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "uniform",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 2473,
+            "wrong": 5015,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 117,
+            "wrong": 0,
+            "abstain": 7371
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "endpoint",
+          "total": 7488,
+          "invalid": 0,
+          "near": {
+            "correct": 2826,
+            "wrong": 4661,
+            "abstain": 1
+          },
+          "bounded": {
+            "correct": 231,
+            "wrong": 0,
+            "abstain": 7257
+          }
+        }
+      ]
+    },
+    "source8": {
+      "words": [
+        [
+          0,
+          1,
+          4,
+          13
+        ],
+        [
+          0,
+          1,
+          5,
+          6
+        ],
+        [
+          0,
+          1,
+          10,
+          17
+        ],
+        [
+          0,
+          1,
+          11,
+          12
+        ],
+        [
+          0,
+          1,
+          14,
+          18
+        ],
+        [
+          0,
+          1,
+          15,
+          16
+        ],
+        [
+          0,
+          2,
+          7,
+          18
+        ],
+        [
+          0,
+          2,
+          11,
+          13
+        ]
+      ],
+      "margin_ms": 0.49019607843137286,
+      "witness": {
+        "words": [
+          [
+            0,
+            1,
+            10,
+            17
+          ],
+          [
+            0,
+            1,
+            14,
+            18
+          ]
+        ],
+        "deleted_zero_based": [
+          2,
+          2
+        ],
+        "margin_ms": 0.49019607843137286,
+        "scales_s": [
+          0.6,
+          0.6
+        ],
+        "observed_s": [
+          0.10049019607843138,
+          0.13480392156862747,
+          0.7004901960784313
+        ],
+        "errors_ms": [
+          [
+            0.4901960784313708,
+            -0.49019607843135693,
+            0.49019607843134305
+          ],
+          [
+            -0.4901960784313708,
+            0.4901960784313847,
+            -0.49019607843139856
+          ]
+        ],
+        "samples": [
+          804,
+          1078,
+          5604
+        ],
+        "quantized_radius_ms": 0.5526960784313728
+      },
+      "wav_bytes": 11732,
+      "trials": [
+        {
+          "eps_ms": 0,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2303,
+            "wrong": 1,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2299,
+            "wrong": 0,
+            "abstain": 5
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2147,
+            "wrong": 157,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1847,
+            "wrong": 0,
+            "abstain": 457
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1998,
+            "wrong": 306,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1805,
+            "wrong": 0,
+            "abstain": 499
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1811,
+            "wrong": 493,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1143,
+            "wrong": 0,
+            "abstain": 1161
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1613,
+            "wrong": 691,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1138,
+            "wrong": 0,
+            "abstain": 1166
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1475,
+            "wrong": 829,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 563,
+            "wrong": 0,
+            "abstain": 1741
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1568,
+            "wrong": 736,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 576,
+            "wrong": 0,
+            "abstain": 1728
+          }
+        }
+      ]
+    },
+    "source8_searched": {
+      "words": [
+        [
+          0,
+          3,
+          8,
+          17
+        ],
+        [
+          0,
+          9,
+          12,
+          13
+        ],
+        [
+          0,
+          1,
+          10,
+          17
+        ],
+        [
+          0,
+          9,
+          14,
+          17
+        ],
+        [
+          0,
+          1,
+          4,
+          13
+        ],
+        [
+          0,
+          7,
+          16,
+          17
+        ],
+        [
+          0,
+          3,
+          11,
+          14
+        ],
+        [
+          0,
+          2,
+          15,
+          17
+        ]
+      ],
+      "margin_ms": 2.647058823529411,
+      "witness": {
+        "words": [
+          [
+            0,
+            1,
+            10,
+            17
+          ],
+          [
+            0,
+            2,
+            15,
+            17
+          ]
+        ],
+        "deleted_zero_based": [
+          3,
+          2
+        ],
+        "margin_ms": 2.647058823529411,
+        "scales_s": [
+          1.02,
+          0.6
+        ],
+        "observed_s": [
+          0.10264705882352942,
+          0.16794117647058826,
+          0.7026470588235295
+        ],
+        "errors_ms": [
+          [
+            -2.647058823529405,
+            2.647058823529433,
+            -2.647058823529294
+          ],
+          [
+            2.6470588235294192,
+            -2.6470588235293913,
+            2.6470588235294885
+          ]
+        ],
+        "samples": [
+          821,
+          1344,
+          5621
+        ],
+        "quantized_radius_ms": 2.709558823529411
+      },
+      "wav_bytes": 11766,
+      "trials": [
+        {
+          "eps_ms": 0,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2300,
+            "wrong": 4,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2255,
+            "wrong": 49,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2195,
+            "wrong": 109,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2189,
+            "wrong": 0,
+            "abstain": 115
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1984,
+            "wrong": 320,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2099,
+            "wrong": 0,
+            "abstain": 205
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1930,
+            "wrong": 374,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1408,
+            "wrong": 0,
+            "abstain": 896
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1600,
+            "wrong": 704,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1209,
+            "wrong": 0,
+            "abstain": 1095
+          }
+        }
+      ]
+    },
+    "robust8": {
+      "words": [
+        [
+          0,
+          2,
+          15,
+          17
+        ],
+        [
+          0,
+          3,
+          5,
+          8
+        ],
+        [
+          0,
+          2,
+          7,
+          9
+        ],
+        [
+          0,
+          1,
+          17,
+          18
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          5,
+          6,
+          11
+        ],
+        [
+          0,
+          3,
+          4,
+          7
+        ],
+        [
+          0,
+          1,
+          11,
+          12
+        ]
+      ],
+      "margin_ms": 3.676470588235293,
+      "witness": {
+        "words": [
+          [
+            0,
+            1,
+            17,
+            18
+          ],
+          [
+            0,
+            1,
+            11,
+            12
+          ]
+        ],
+        "deleted_zero_based": [
+          3,
+          2
+        ],
+        "margin_ms": 3.676470588235293,
+        "scales_s": [
+          0.6352941176470588,
+          0.6
+        ],
+        "observed_s": [
+          0.1036764705882353,
+          0.1463235294117647,
+          0.7036764705882352
+        ],
+        "errors_ms": [
+          [
+            -3.676470588235295,
+            3.6764705882353086,
+            -3.6764705882353366
+          ],
+          [
+            3.676470588235295,
+            -3.676470588235281,
+            3.6764705882352255
+          ]
+        ],
+        "samples": [
+          829,
+          1171,
+          5629
+        ],
+        "quantized_radius_ms": 3.738970588235293
+      },
+      "wav_bytes": 11782,
+      "trials": [
+        {
+          "eps_ms": 0,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 0.5,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 2,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2304,
+            "wrong": 0,
+            "abstain": 0
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2287,
+            "wrong": 17,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 2284,
+            "wrong": 0,
+            "abstain": 20
+          }
+        },
+        {
+          "eps_ms": 5,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2072,
+            "wrong": 231,
+            "abstain": 1
+          },
+          "bounded": {
+            "correct": 2152,
+            "wrong": 0,
+            "abstain": 152
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "uniform",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 2009,
+            "wrong": 295,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1413,
+            "wrong": 0,
+            "abstain": 891
+          }
+        },
+        {
+          "eps_ms": 10,
+          "mode": "endpoint",
+          "total": 2304,
+          "invalid": 0,
+          "near": {
+            "correct": 1509,
+            "wrong": 795,
+            "abstain": 0
+          },
+          "bounded": {
+            "correct": 1194,
+            "wrong": 0,
+            "abstain": 1110
+          }
+        }
+      ]
+    }
+  }
+}

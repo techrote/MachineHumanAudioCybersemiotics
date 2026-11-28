@@ -1,0 +1,4253 @@
+{
+  "schema": "mhac-448-quadratic-v1",
+  "source_head": "e9c7dc8a1d7e9c1dae54b767bc6efd96f5147d0a",
+  "rate": 8000,
+  "half_sample_ticks_per_second": 16000,
+  "checks": 194149,
+  "vertexChecks": 371,
+  "fits": 291032,
+  "runs": {
+    "replay": {
+      "seeds": [
+        1201,
+        1709,
+        2089
+      ],
+      "repeats": 16,
+      "results": {
+        "source8": {
+          "conditions": [
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1269,
+                "wrong": 0,
+                "abstain": 267,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1269,
+                "wrong": 0,
+                "abstain": 267,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1269,
+                "wrong": 0,
+                "abstain": 267,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 613,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 877,
+                "wrong": 0,
+                "abstain": 659,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1487,
+                "wrong": 0,
+                "abstain": 49,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1487,
+                "wrong": 0,
+                "abstain": 49,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 1,
+                  "k": 0,
+                  "scale": 0.8188200365751982,
+                  "off": 0.17895188021939248,
+                  "bend": -0.004797101845033467,
+                  "receipt_half_sample_ticks": [
+                    2864,
+                    6828,
+                    15964
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 846,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 536,
+                "wrong": 0,
+                "abstain": 1000,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1160,
+                "wrong": 0,
+                "abstain": 376,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1160,
+                "wrong": 0,
+                "abstain": 376,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 2,
+                  "k": 4,
+                  "scale": 0.8631100095808506,
+                  "off": 0.12078118862118573,
+                  "bend": -0.0018403523555025458,
+                  "receipt_half_sample_ticks": [
+                    1932,
+                    2978,
+                    15738
+                  ],
+                  "wide": [
+                    0,
+                    3,
+                    5
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1062,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 277,
+                "wrong": 0,
+                "abstain": 1259,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1101,
+                "wrong": 0,
+                "abstain": 435,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1101,
+                "wrong": 0,
+                "abstain": 435,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": -0.013343471777625382,
+                  "receipt_half_sample_ticks": [
+                    3162,
+                    5384,
+                    12596
+                  ],
+                  "wide": [
+                    0,
+                    1
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1018,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 254,
+                "wrong": 0,
+                "abstain": 1282,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 819,
+                "wrong": 0,
+                "abstain": 717,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 819,
+                "wrong": 0,
+                "abstain": 717,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": -0.013343471777625382,
+                  "receipt_half_sample_ticks": [
+                    3150,
+                    5372,
+                    12604
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 11,
+              "envelope": {
+                "correct": 1507,
+                "wrong": 0,
+                "abstain": 29,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1507,
+                "wrong": 0,
+                "abstain": 29,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1518,
+                "wrong": 0,
+                "abstain": 18,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 2,
+                  "d": 2,
+                  "k": 2,
+                  "scale": 0.8135417887941003,
+                  "off": 0.1351049222284928,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    2162,
+                    2928,
+                    13656,
+                    15178
+                  ],
+                  "wide": [
+                    2,
+                    5
+                  ],
+                  "quad": [
+                    2,
+                    5
+                  ],
+                  "bound": [
+                    2
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 290,
+              "envelope": {
+                "correct": 794,
+                "wrong": 0,
+                "abstain": 742,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 794,
+                "wrong": 0,
+                "abstain": 742,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 967,
+                "wrong": 0,
+                "abstain": 569,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 5,
+                  "scale": 0.9387611766345799,
+                  "off": 0.13549121581017973,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    3292,
+                    6792,
+                    10112,
+                    17218
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1036,
+              "extraNarrow": 188,
+              "envelope": {
+                "correct": 358,
+                "wrong": 0,
+                "abstain": 1178,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1095,
+                "wrong": 0,
+                "abstain": 441,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1251,
+                "wrong": 0,
+                "abstain": 285,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.9758970850147307,
+                  "off": 0.14746533343568446,
+                  "bend": 0.0007743829931132495,
+                  "receipt_half_sample_ticks": [
+                    2642,
+                    3564,
+                    7174,
+                    17974
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    4,
+                    5
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 11,
+                  "scale": 0.7596664956770838,
+                  "off": 0.14203602173365654,
+                  "bend": -0.0017316988087259233,
+                  "receipt_half_sample_ticks": [
+                    3200,
+                    5988,
+                    12002,
+                    14428
+                  ],
+                  "wide": [
+                    0,
+                    4,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1094,
+              "extraNarrow": 370,
+              "envelope": {
+                "correct": 191,
+                "wrong": 0,
+                "abstain": 1345,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 601,
+                "wrong": 0,
+                "abstain": 935,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 781,
+                "wrong": 0,
+                "abstain": 755,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.7996555446647108,
+                  "off": 0.13497755420394242,
+                  "bend": -0.0012981885462068023,
+                  "receipt_half_sample_ticks": [
+                    3106,
+                    6104,
+                    13284,
+                    14972
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    1,
+                    7
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 6,
+                  "scale": 0.8625911941751838,
+                  "off": 0.12547790922690183,
+                  "bend": -0.0009537293948233128,
+                  "receipt_half_sample_ticks": [
+                    2450,
+                    3038,
+                    6266,
+                    15810
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    4
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 1,
+              "strictNarrow": 1379,
+              "extraNarrow": 376,
+              "envelope": {
+                "correct": 51,
+                "wrong": 0,
+                "abstain": 1484,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 546,
+                "wrong": 0,
+                "abstain": 989,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 719,
+                "wrong": 0,
+                "abstain": 816,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.7996555446647108,
+                  "off": 0.13497755420394242,
+                  "bend": -0.003894565638620406,
+                  "receipt_half_sample_ticks": [
+                    3126,
+                    6044,
+                    13284,
+                    14954
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    4,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    7
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 6,
+                  "scale": 0.8625911941751838,
+                  "off": 0.12547790922690183,
+                  "bend": -0.002861188184469938,
+                  "receipt_half_sample_ticks": [
+                    2450,
+                    3056,
+                    6216,
+                    15810
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    4,
+                    5,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1351,
+              "extraNarrow": 461,
+              "envelope": {
+                "correct": 39,
+                "wrong": 0,
+                "abstain": 1497,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 329,
+                "wrong": 0,
+                "abstain": 1207,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 474,
+                "wrong": 0,
+                "abstain": 1062,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 5,
+                  "scale": 0.9387611766345799,
+                  "off": 0.13549121581017973,
+                  "bend": -0.0031190289999358353,
+                  "receipt_half_sample_ticks": [
+                    3278,
+                    6748,
+                    10112,
+                    17218
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 6,
+                  "scale": 0.8625911941751838,
+                  "off": 0.12547790922690183,
+                  "bend": -0.002861188184469938,
+                  "receipt_half_sample_ticks": [
+                    2450,
+                    3030,
+                    6240,
+                    15810
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "source8_searched": {
+          "conditions": [
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 147,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1389,
+                "wrong": 0,
+                "abstain": 147,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 1,
+                  "d": 1,
+                  "k": 3,
+                  "scale": 0.6058414145372808,
+                  "off": 0.11873996411450208,
+                  "bend": 0.001237448884639889,
+                  "receipt_half_sample_ticks": [
+                    1880,
+                    10852,
+                    11586
+                  ],
+                  "wide": [
+                    1,
+                    5
+                  ],
+                  "quad": [
+                    1
+                  ],
+                  "bound": [
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 812,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 697,
+                "wrong": 0,
+                "abstain": 839,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1509,
+                "wrong": 0,
+                "abstain": 27,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1509,
+                "wrong": 0,
+                "abstain": 27,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.8806073751300574,
+                  "off": 0.12137888695579023,
+                  "bend": -0.010374934799037873,
+                  "receipt_half_sample_ticks": [
+                    4332,
+                    8408,
+                    16032
+                  ],
+                  "wide": [
+                    0,
+                    4
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 892,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 540,
+                "wrong": 0,
+                "abstain": 996,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1427,
+                "wrong": 0,
+                "abstain": 109,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1427,
+                "wrong": 0,
+                "abstain": 109,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.8806073751300574,
+                  "off": 0.12137888695579023,
+                  "bend": -0.010374934799037873,
+                  "receipt_half_sample_ticks": [
+                    4308,
+                    8426,
+                    16040
+                  ],
+                  "wide": [
+                    0,
+                    4
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 8,
+              "envelope": {
+                "correct": 1516,
+                "wrong": 0,
+                "abstain": 20,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1516,
+                "wrong": 0,
+                "abstain": 20,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1524,
+                "wrong": 0,
+                "abstain": 12,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 3,
+                  "d": 1,
+                  "k": 5,
+                  "scale": 0.9411983435042203,
+                  "off": 0.11678713783621789,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    1868,
+                    9164,
+                    14270,
+                    16928
+                  ],
+                  "wide": [
+                    2,
+                    3
+                  ],
+                  "quad": [
+                    2,
+                    3
+                  ],
+                  "bound": [
+                    3
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 1,
+              "strictNarrow": 0,
+              "extraNarrow": 241,
+              "envelope": {
+                "correct": 977,
+                "wrong": 0,
+                "abstain": 558,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 977,
+                "wrong": 0,
+                "abstain": 558,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1168,
+                "wrong": 0,
+                "abstain": 367,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.6908364990726114,
+                  "off": 0.1295115068787709,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    4028,
+                    7304,
+                    7824,
+                    13136
+                  ],
+                  "wide": [
+                    0,
+                    2
+                  ],
+                  "quad": [
+                    0,
+                    2
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 805,
+              "extraNarrow": 178,
+              "envelope": {
+                "correct": 497,
+                "wrong": 0,
+                "abstain": 1039,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1115,
+                "wrong": 0,
+                "abstain": 421,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1258,
+                "wrong": 0,
+                "abstain": 278,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.6908364990726114,
+                  "off": 0.1295115068787709,
+                  "bend": 0.0014594183396548033,
+                  "receipt_half_sample_ticks": [
+                    4036,
+                    7298,
+                    7824,
+                    13126
+                  ],
+                  "wide": [
+                    0,
+                    2
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 1,
+                  "k": 10,
+                  "scale": 0.9982891069725156,
+                  "off": 0.1675526539096609,
+                  "bend": -0.004514422444626689,
+                  "receipt_half_sample_ticks": [
+                    2680,
+                    10126,
+                    15578,
+                    18654
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    3
+                  ],
+                  "quad": [
+                    0,
+                    3
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 825,
+              "extraNarrow": 391,
+              "envelope": {
+                "correct": 309,
+                "wrong": 0,
+                "abstain": 1227,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 718,
+                "wrong": 0,
+                "abstain": 818,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 961,
+                "wrong": 0,
+                "abstain": 575,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.6908364990726114,
+                  "off": 0.1295115068787709,
+                  "bend": 0.0014594183396548033,
+                  "receipt_half_sample_ticks": [
+                    4040,
+                    7328,
+                    7824,
+                    13136
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    5
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 1,
+                  "k": 10,
+                  "scale": 0.9982891069725156,
+                  "off": 0.1675526539096609,
+                  "bend": -0.004514422444626689,
+                  "receipt_half_sample_ticks": [
+                    2702,
+                    10144,
+                    15578,
+                    18664
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    3
+                  ],
+                  "quad": [
+                    0,
+                    2,
+                    3
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1416,
+              "extraNarrow": 410,
+              "envelope": {
+                "correct": 56,
+                "wrong": 0,
+                "abstain": 1480,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 646,
+                "wrong": 0,
+                "abstain": 890,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 859,
+                "wrong": 0,
+                "abstain": 677,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.7996555446647108,
+                  "off": 0.13497755420394242,
+                  "bend": -0.003894565638620406,
+                  "receipt_half_sample_ticks": [
+                    4382,
+                    8118,
+                    13284,
+                    14954
+                  ],
+                  "wide": [
+                    0,
+                    3,
+                    5,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": -0.013343471777625382,
+                  "receipt_half_sample_ticks": [
+                    4108,
+                    4852,
+                    7006,
+                    12596
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    4,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 1,
+              "strictNarrow": 1414,
+              "extraNarrow": 542,
+              "envelope": {
+                "correct": 36,
+                "wrong": 0,
+                "abstain": 1499,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 431,
+                "wrong": 0,
+                "abstain": 1104,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 600,
+                "wrong": 0,
+                "abstain": 935,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.9758970850147307,
+                  "off": 0.14746533343568446,
+                  "bend": 0.0023231489793397483,
+                  "receipt_half_sample_ticks": [
+                    2642,
+                    5150,
+                    9726,
+                    17994
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 1,
+                  "k": 10,
+                  "scale": 0.9982891069725156,
+                  "off": 0.1675526539096609,
+                  "bend": -0.013543267333880067,
+                  "receipt_half_sample_ticks": [
+                    2702,
+                    10000,
+                    15578,
+                    18664
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    3,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    2,
+                    3
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "robust8": {
+          "conditions": [
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 29,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 1507,
+                "wrong": 0,
+                "abstain": 29,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1536,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 1,
+                  "k": 8,
+                  "scale": 0.6048727665096522,
+                  "off": 0.1340254169655964,
+                  "bend": 0.0030781456595286726,
+                  "receipt_half_sample_ticks": [
+                    2162,
+                    10700,
+                    11800
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 924,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 553,
+                "wrong": 0,
+                "abstain": 983,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1473,
+                "wrong": 0,
+                "abstain": 63,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1473,
+                "wrong": 0,
+                "abstain": 63,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.6908364990726114,
+                  "off": 0.1295115068787709,
+                  "bend": 0.00437825501896441,
+                  "receipt_half_sample_ticks": [
+                    3402,
+                    11854,
+                    13126
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1050,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 406,
+                "wrong": 0,
+                "abstain": 1130,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1436,
+                "wrong": 0,
+                "abstain": 100,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1436,
+                "wrong": 0,
+                "abstain": 100,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.6908364990726114,
+                  "off": 0.1295115068787709,
+                  "bend": 0.00437825501896441,
+                  "receipt_half_sample_ticks": [
+                    3406,
+                    11886,
+                    13136
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 7,
+              "envelope": {
+                "correct": 1517,
+                "wrong": 0,
+                "abstain": 19,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1517,
+                "wrong": 0,
+                "abstain": 19,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1524,
+                "wrong": 0,
+                "abstain": 12,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 5,
+                  "scale": 0.9387611766345799,
+                  "off": 0.13549121581017973,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    3934,
+                    10112,
+                    15420,
+                    17188
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 211,
+              "envelope": {
+                "correct": 1011,
+                "wrong": 0,
+                "abstain": 525,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1011,
+                "wrong": 0,
+                "abstain": 525,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1186,
+                "wrong": 0,
+                "abstain": 350,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    3624,
+                    4852,
+                    11388,
+                    12604
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 1,
+              "strictNarrow": 739,
+              "extraNarrow": 133,
+              "envelope": {
+                "correct": 559,
+                "wrong": 0,
+                "abstain": 976,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 1158,
+                "wrong": 0,
+                "abstain": 377,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 1277,
+                "wrong": 0,
+                "abstain": 258,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.8806073751300574,
+                  "off": 0.12137888695579023,
+                  "bend": -0.0034583115996792914,
+                  "receipt_half_sample_ticks": [
+                    2212,
+                    3576,
+                    14352,
+                    16032
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 5,
+                  "scale": 0.9387611766345799,
+                  "off": 0.13549121581017973,
+                  "bend": -0.0010396763333119451,
+                  "receipt_half_sample_ticks": [
+                    3928,
+                    10112,
+                    15414,
+                    17188
+                  ],
+                  "wide": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    5,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 1,
+              "strictNarrow": 704,
+              "extraNarrow": 313,
+              "envelope": {
+                "correct": 397,
+                "wrong": 0,
+                "abstain": 1138,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 775,
+                "wrong": 0,
+                "abstain": 760,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 985,
+                "wrong": 0,
+                "abstain": 550,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": -0.0044478239258751275,
+                  "receipt_half_sample_ticks": [
+                    3594,
+                    4852,
+                    11358,
+                    12604
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 9,
+                  "scale": 0.6081722007133067,
+                  "off": 0.13170487647876145,
+                  "bend": 0.003312760766129941,
+                  "receipt_half_sample_ticks": [
+                    3246,
+                    9556,
+                    10698,
+                    11816
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    5,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1411,
+              "extraNarrow": 323,
+              "envelope": {
+                "correct": 63,
+                "wrong": 0,
+                "abstain": 1473,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 685,
+                "wrong": 0,
+                "abstain": 851,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 864,
+                "wrong": 0,
+                "abstain": 672,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.9758970850147307,
+                  "off": 0.14746533343568446,
+                  "bend": 0.0023231489793397483,
+                  "receipt_half_sample_ticks": [
+                    2642,
+                    4212,
+                    16152,
+                    17974
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": -0.013343471777625382,
+                  "receipt_half_sample_ticks": [
+                    3546,
+                    4852,
+                    11312,
+                    12596
+                  ],
+                  "wide": [
+                    0,
+                    5,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 1536,
+              "invalid": 0,
+              "strictNarrow": 1402,
+              "extraNarrow": 447,
+              "envelope": {
+                "correct": 40,
+                "wrong": 0,
+                "abstain": 1496,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 477,
+                "wrong": 0,
+                "abstain": 1059,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 655,
+                "wrong": 0,
+                "abstain": 881,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.9758970850147307,
+                  "off": 0.14746533343568446,
+                  "bend": 0.0023231489793397483,
+                  "receipt_half_sample_ticks": [
+                    2642,
+                    4226,
+                    16132,
+                    17994
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 1201,
+                  "id": 0,
+                  "d": 0,
+                  "k": 4,
+                  "scale": 0.6346343345940113,
+                  "off": 0.15255432145204395,
+                  "bend": -0.013343471777625382,
+                  "receipt_half_sample_ticks": [
+                    3536,
+                    4852,
+                    11300,
+                    12604
+                  ],
+                  "wide": [
+                    0,
+                    5,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "heldout": {
+      "seeds": [
+        3011,
+        4027,
+        5009
+      ],
+      "repeats": 8,
+      "results": {
+        "source8": {
+          "conditions": [
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 623,
+                "wrong": 0,
+                "abstain": 145,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 623,
+                "wrong": 0,
+                "abstain": 145,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 623,
+                "wrong": 0,
+                "abstain": 145,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 295,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 451,
+                "wrong": 0,
+                "abstain": 317,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 746,
+                "wrong": 0,
+                "abstain": 22,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 746,
+                "wrong": 0,
+                "abstain": 22,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 1,
+                  "k": 1,
+                  "scale": 0.6752069476060569,
+                  "off": 0.18472279026173055,
+                  "bend": -0.002393279566895217,
+                  "receipt_half_sample_ticks": [
+                    2956,
+                    6248,
+                    13758
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 436,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 265,
+                "wrong": 0,
+                "abstain": 503,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 585,
+                "wrong": 0,
+                "abstain": 183,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 585,
+                "wrong": 0,
+                "abstain": 183,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 1,
+                  "k": 4,
+                  "scale": 0.8408289173617959,
+                  "off": 0.16202470811549574,
+                  "bend": -0.004911725716665387,
+                  "receipt_half_sample_ticks": [
+                    2606,
+                    6692,
+                    16068
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 547,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 133,
+                "wrong": 0,
+                "abstain": 635,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 563,
+                "wrong": 0,
+                "abstain": 205,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 563,
+                "wrong": 0,
+                "abstain": 205,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.6877336741425097,
+                  "off": 0.14709481252357365,
+                  "bend": -0.010073220392223447,
+                  "receipt_half_sample_ticks": [
+                    3154,
+                    5602,
+                    13358
+                  ],
+                  "wide": [
+                    0,
+                    1
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 514,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 123,
+                "wrong": 0,
+                "abstain": 645,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 423,
+                "wrong": 0,
+                "abstain": 345,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 423,
+                "wrong": 0,
+                "abstain": 345,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    3130,
+                    5934,
+                    14430
+                  ],
+                  "wide": [
+                    0,
+                    1
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 7,
+              "envelope": {
+                "correct": 754,
+                "wrong": 0,
+                "abstain": 14,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 754,
+                "wrong": 0,
+                "abstain": 14,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 761,
+                "wrong": 0,
+                "abstain": 7,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 1,
+                  "d": 0,
+                  "k": 7,
+                  "scale": 0.9897216198034584,
+                  "off": 0.168407635204494,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    5334,
+                    11542,
+                    15890,
+                    18530
+                  ],
+                  "wide": [
+                    1,
+                    2
+                  ],
+                  "quad": [
+                    1,
+                    2
+                  ],
+                  "bound": [
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 1,
+              "strictNarrow": 0,
+              "extraNarrow": 145,
+              "envelope": {
+                "correct": 387,
+                "wrong": 0,
+                "abstain": 380,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 387,
+                "wrong": 0,
+                "abstain": 380,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 473,
+                "wrong": 0,
+                "abstain": 294,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 6,
+                  "scale": 0.8018417045474052,
+                  "off": 0.16442223971243947,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    3616,
+                    4818,
+                    6574,
+                    15456
+                  ],
+                  "wide": [
+                    0,
+                    1
+                  ],
+                  "quad": [
+                    0,
+                    1
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 511,
+              "extraNarrow": 92,
+              "envelope": {
+                "correct": 185,
+                "wrong": 0,
+                "abstain": 583,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 538,
+                "wrong": 0,
+                "abstain": 230,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 618,
+                "wrong": 0,
+                "abstain": 150,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.00023858224973082544,
+                  "receipt_half_sample_ticks": [
+                    3156,
+                    4610,
+                    5964,
+                    14400
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 6,
+                  "scale": 0.8018417045474052,
+                  "off": 0.16442223971243947,
+                  "bend": 0.00021641456056386232,
+                  "receipt_half_sample_ticks": [
+                    3618,
+                    4818,
+                    6582,
+                    15460
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    3,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    1
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 568,
+              "extraNarrow": 188,
+              "envelope": {
+                "correct": 81,
+                "wrong": 0,
+                "abstain": 687,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 309,
+                "wrong": 0,
+                "abstain": 459,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 402,
+                "wrong": 0,
+                "abstain": 366,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.00023858224973082544,
+                  "receipt_half_sample_ticks": [
+                    3132,
+                    4610,
+                    5940,
+                    14430
+                  ],
+                  "wide": [
+                    0,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 6,
+                  "scale": 0.8018417045474052,
+                  "off": 0.16442223971243947,
+                  "bend": 0.00021641456056386232,
+                  "receipt_half_sample_ticks": [
+                    3618,
+                    4818,
+                    6576,
+                    15456
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    3,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    1
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 1,
+              "strictNarrow": 687,
+              "extraNarrow": 174,
+              "envelope": {
+                "correct": 16,
+                "wrong": 0,
+                "abstain": 751,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 285,
+                "wrong": 0,
+                "abstain": 482,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 371,
+                "wrong": 0,
+                "abstain": 396,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    3154,
+                    4610,
+                    5958,
+                    14400
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.7993524137884378,
+                  "off": 0.19274709715973587,
+                  "bend": 0.010651981984265148,
+                  "receipt_half_sample_ticks": [
+                    4116,
+                    7164,
+                    8044,
+                    15874
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    3,
+                    4,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    2
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 675,
+              "extraNarrow": 223,
+              "envelope": {
+                "correct": 12,
+                "wrong": 0,
+                "abstain": 756,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 169,
+                "wrong": 0,
+                "abstain": 599,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 241,
+                "wrong": 0,
+                "abstain": 527,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    3130,
+                    4610,
+                    5934,
+                    14430
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    7
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.6877336741425097,
+                  "off": 0.14709481252357365,
+                  "bend": -0.010073220392223447,
+                  "receipt_half_sample_ticks": [
+                    3154,
+                    5386,
+                    5606,
+                    13360
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    4,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "source8_searched": {
+          "conditions": [
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 1,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 767,
+                "wrong": 0,
+                "abstain": 1,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 4027,
+                  "id": 1,
+                  "d": 1,
+                  "k": 7,
+                  "scale": 0.6165318292565644,
+                  "off": 0.13438011799007654,
+                  "bend": 0.003950422944035381,
+                  "receipt_half_sample_ticks": [
+                    2150,
+                    11274,
+                    12014
+                  ],
+                  "wide": [
+                    1,
+                    5
+                  ],
+                  "quad": [
+                    1
+                  ],
+                  "bound": [
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 81,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 687,
+                "wrong": 0,
+                "abstain": 81,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 1,
+                  "d": 1,
+                  "k": 0,
+                  "scale": 0.7054053185507655,
+                  "off": 0.1705719755263999,
+                  "bend": -0.0008830121904611587,
+                  "receipt_half_sample_ticks": [
+                    2706,
+                    13170,
+                    14010
+                  ],
+                  "wide": [
+                    1,
+                    5
+                  ],
+                  "quad": [
+                    1
+                  ],
+                  "bound": [
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 395,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 349,
+                "wrong": 0,
+                "abstain": 419,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 744,
+                "wrong": 0,
+                "abstain": 24,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 744,
+                "wrong": 0,
+                "abstain": 24,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.7993524137884378,
+                  "off": 0.19274709715973587,
+                  "bend": 0.010651981984265148,
+                  "receipt_half_sample_ticks": [
+                    5440,
+                    9272,
+                    15874
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 438,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 272,
+                "wrong": 0,
+                "abstain": 496,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 703,
+                "wrong": 0,
+                "abstain": 65,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 703,
+                "wrong": 0,
+                "abstain": 65,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    4338,
+                    7916,
+                    14430
+                  ],
+                  "wide": [
+                    0,
+                    4
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 3,
+              "envelope": {
+                "correct": 757,
+                "wrong": 0,
+                "abstain": 11,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 757,
+                "wrong": 0,
+                "abstain": 11,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 760,
+                "wrong": 0,
+                "abstain": 8,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 6,
+                  "d": 1,
+                  "k": 0,
+                  "scale": 0.9453270522877574,
+                  "off": 0.10153411712963134,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    1624,
+                    3782,
+                    13508,
+                    16750
+                  ],
+                  "wide": [
+                    1,
+                    6
+                  ],
+                  "quad": [
+                    1,
+                    6
+                  ],
+                  "bound": [
+                    6
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 133,
+              "envelope": {
+                "correct": 491,
+                "wrong": 0,
+                "abstain": 277,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 491,
+                "wrong": 0,
+                "abstain": 277,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 599,
+                "wrong": 0,
+                "abstain": 169,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.6877336741425097,
+                  "off": 0.14709481252357365,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    4296,
+                    5386,
+                    7536,
+                    13360
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 386,
+              "extraNarrow": 78,
+              "envelope": {
+                "correct": 276,
+                "wrong": 0,
+                "abstain": 492,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 579,
+                "wrong": 0,
+                "abstain": 189,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 642,
+                "wrong": 0,
+                "abstain": 126,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.6706414173357188,
+                  "off": 0.12490448164753616,
+                  "bend": 0.0005921162408776582,
+                  "receipt_half_sample_ticks": [
+                    3898,
+                    7058,
+                    10668,
+                    12728
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    3
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 2,
+                  "k": 6,
+                  "scale": 0.9642121523618699,
+                  "off": 0.18183433262165638,
+                  "bend": -0.003388614016585052,
+                  "receipt_half_sample_ticks": [
+                    2910,
+                    5600,
+                    12764,
+                    18336
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    2,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 382,
+              "extraNarrow": 196,
+              "envelope": {
+                "correct": 166,
+                "wrong": 0,
+                "abstain": 602,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 373,
+                "wrong": 0,
+                "abstain": 395,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 495,
+                "wrong": 0,
+                "abstain": 273,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 5,
+                  "scale": 0.6090708202682436,
+                  "off": 0.17538354680873455,
+                  "bend": -0.002814139386173338,
+                  "receipt_half_sample_ticks": [
+                    4480,
+                    7362,
+                    10176,
+                    12570
+                  ],
+                  "wide": [
+                    0,
+                    6
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 1,
+                  "k": 5,
+                  "scale": 0.8045660614036023,
+                  "off": 0.15444625508971513,
+                  "bend": 0.0026360005349852144,
+                  "receipt_half_sample_ticks": [
+                    2478,
+                    7940,
+                    8594,
+                    15374
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    5
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 698,
+              "extraNarrow": 203,
+              "envelope": {
+                "correct": 42,
+                "wrong": 0,
+                "abstain": 726,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 338,
+                "wrong": 0,
+                "abstain": 430,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 453,
+                "wrong": 0,
+                "abstain": 315,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    4362,
+                    4610,
+                    7940,
+                    14400
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    4
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 2,
+                  "k": 1,
+                  "scale": 0.6922850902192295,
+                  "off": 0.1335560880135745,
+                  "bend": 0.006302277704235166,
+                  "receipt_half_sample_ticks": [
+                    2136,
+                    4150,
+                    11016,
+                    13214
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    3,
+                    4,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    1
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 707,
+              "extraNarrow": 255,
+              "envelope": {
+                "correct": 28,
+                "wrong": 0,
+                "abstain": 740,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 220,
+                "wrong": 0,
+                "abstain": 548,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 315,
+                "wrong": 0,
+                "abstain": 453,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    4338,
+                    4610,
+                    7916,
+                    14430
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    4
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 2,
+                  "k": 6,
+                  "scale": 0.9642121523618699,
+                  "off": 0.18183433262165638,
+                  "bend": -0.010165842049755156,
+                  "receipt_half_sample_ticks": [
+                    2906,
+                    5538,
+                    12764,
+                    18326
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    3,
+                    4,
+                    6
+                  ],
+                  "quad": [
+                    0,
+                    2,
+                    4,
+                    6
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "robust8": {
+          "conditions": [
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {}
+            },
+            {
+              "insert": false,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 13,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 755,
+                "wrong": 0,
+                "abstain": 13,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 768,
+                "wrong": 0,
+                "abstain": 0,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 1,
+                  "d": 3,
+                  "k": 5,
+                  "scale": 0.973910231795162,
+                  "off": 0.15575150777585806,
+                  "bend": -0.004791259260382504,
+                  "receipt_half_sample_ticks": [
+                    2502,
+                    8238,
+                    12188
+                  ],
+                  "wide": [
+                    1,
+                    6
+                  ],
+                  "quad": [
+                    1
+                  ],
+                  "bound": [
+                    1
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 481,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 261,
+                "wrong": 0,
+                "abstain": 507,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 739,
+                "wrong": 0,
+                "abstain": 29,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 739,
+                "wrong": 0,
+                "abstain": 29,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    3648,
+                    12962,
+                    14400
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": false,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 544,
+              "extraNarrow": 0,
+              "envelope": {
+                "correct": 184,
+                "wrong": 0,
+                "abstain": 584,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 716,
+                "wrong": 0,
+                "abstain": 52,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 716,
+                "wrong": 0,
+                "abstain": 52,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 0,
+                  "scale": 0.7611953323706985,
+                  "off": 0.13876038149464875,
+                  "bend": -0.0007157467491924762,
+                  "receipt_half_sample_ticks": [
+                    3624,
+                    12936,
+                    14430
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 5,
+              "envelope": {
+                "correct": 758,
+                "wrong": 0,
+                "abstain": 10,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 758,
+                "wrong": 0,
+                "abstain": 10,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 763,
+                "wrong": 0,
+                "abstain": 5,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 7,
+                  "d": 1,
+                  "k": 0,
+                  "scale": 0.9319554267451167,
+                  "off": 0.1502825261326507,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    2404,
+                    7992,
+                    16074,
+                    17316
+                  ],
+                  "wide": [
+                    0,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    7
+                  ],
+                  "bound": [
+                    7
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 0,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 0,
+              "extraNarrow": 126,
+              "envelope": {
+                "correct": 495,
+                "wrong": 0,
+                "abstain": 273,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 495,
+                "wrong": 0,
+                "abstain": 273,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 600,
+                "wrong": 0,
+                "abstain": 168,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.6877336741425097,
+                  "off": 0.14709481252357365,
+                  "bend": 0,
+                  "receipt_half_sample_ticks": [
+                    3648,
+                    5386,
+                    12066,
+                    13360
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 358,
+              "extraNarrow": 80,
+              "envelope": {
+                "correct": 281,
+                "wrong": 0,
+                "abstain": 487,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 570,
+                "wrong": 0,
+                "abstain": 198,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 641,
+                "wrong": 0,
+                "abstain": 127,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.6706414173357188,
+                  "off": 0.12490448164753616,
+                  "bend": 0.0005921162408776582,
+                  "receipt_half_sample_ticks": [
+                    3264,
+                    10668,
+                    11470,
+                    12728
+                  ],
+                  "wide": [
+                    0,
+                    2
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.6877336741425097,
+                  "off": 0.14709481252357365,
+                  "bend": -0.0033577401307411494,
+                  "receipt_half_sample_ticks": [
+                    3626,
+                    5386,
+                    12040,
+                    13358
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 5,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 341,
+              "extraNarrow": 170,
+              "envelope": {
+                "correct": 192,
+                "wrong": 0,
+                "abstain": 576,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 374,
+                "wrong": 0,
+                "abstain": 394,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 503,
+                "wrong": 0,
+                "abstain": 265,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.6706414173357188,
+                  "off": 0.12490448164753616,
+                  "bend": 0.0005921162408776582,
+                  "receipt_half_sample_ticks": [
+                    3294,
+                    10668,
+                    11484,
+                    12758
+                  ],
+                  "wide": [
+                    0,
+                    2
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 3,
+                  "scale": 0.6877336741425097,
+                  "off": 0.14709481252357365,
+                  "bend": -0.0033577401307411494,
+                  "receipt_half_sample_ticks": [
+                    3626,
+                    5386,
+                    12044,
+                    13360
+                  ],
+                  "wide": [
+                    0,
+                    5
+                  ],
+                  "quad": [
+                    0,
+                    5
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 0,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 704,
+              "extraNarrow": 167,
+              "envelope": {
+                "correct": 27,
+                "wrong": 0,
+                "abstain": 741,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 338,
+                "wrong": 0,
+                "abstain": 430,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 443,
+                "wrong": 0,
+                "abstain": 325,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.6706414173357188,
+                  "off": 0.12490448164753616,
+                  "bend": 0.0017763487226329744,
+                  "receipt_half_sample_ticks": [
+                    3272,
+                    10668,
+                    11478,
+                    12728
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.7993524137884378,
+                  "off": 0.19274709715973587,
+                  "bend": 0.010651981984265148,
+                  "receipt_half_sample_ticks": [
+                    4660,
+                    8044,
+                    14440,
+                    15874
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    2,
+                    4,
+                    5,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    4
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "insert": true,
+              "warp_ms": 15,
+              "jitter_ms": 2,
+              "total": 768,
+              "invalid": 0,
+              "strictNarrow": 696,
+              "extraNarrow": 225,
+              "envelope": {
+                "correct": 10,
+                "wrong": 0,
+                "abstain": 758,
+                "truth_omitted": 0
+              },
+              "quadratic": {
+                "correct": 239,
+                "wrong": 0,
+                "abstain": 529,
+                "truth_omitted": 0
+              },
+              "quadratic_insertion_bound": {
+                "correct": 338,
+                "wrong": 0,
+                "abstain": 430,
+                "truth_omitted": 0
+              },
+              "examples": {
+                "quadratic_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 1,
+                  "scale": 0.6706414173357188,
+                  "off": 0.12490448164753616,
+                  "bend": 0.0017763487226329744,
+                  "receipt_half_sample_ticks": [
+                    3302,
+                    10668,
+                    11492,
+                    12758
+                  ],
+                  "wide": [
+                    0,
+                    2,
+                    5,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0
+                  ],
+                  "bound": [
+                    0
+                  ]
+                },
+                "insertion_bound_rescue": {
+                  "seed": 3011,
+                  "id": 0,
+                  "d": 0,
+                  "k": 2,
+                  "scale": 0.7993524137884378,
+                  "off": 0.19274709715973587,
+                  "bend": 0.010651981984265148,
+                  "receipt_half_sample_ticks": [
+                    4632,
+                    8044,
+                    14434,
+                    15890
+                  ],
+                  "wide": [
+                    0,
+                    1,
+                    2,
+                    4,
+                    5,
+                    6,
+                    7
+                  ],
+                  "quad": [
+                    0,
+                    1,
+                    4
+                  ],
+                  "bound": [
+                    0
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
