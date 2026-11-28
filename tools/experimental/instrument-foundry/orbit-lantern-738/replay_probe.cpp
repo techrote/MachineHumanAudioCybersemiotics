@@ -79,7 +79,7 @@ void pressureIsolation(double rate){
 }
 void writePressureWav(const char* path,int identity){
     const auto y=native<double>(48000.,2,identity,true);std::ofstream f(path,std::ios::binary);require(bool(f),"pressure WAV open");
-    auto le=[&](unsigned n,unsigned count){while(count--){f.put(char(n&255u));n>>=8;}};
+    auto le=[&](unsigned n,unsigned width){while(width--){f.put(char(n&255u));n>>=8;}};
     const auto bytes=unsigned(y.size()*2);f.write("RIFF",4);le(36+bytes,4);f.write("WAVEfmt ",8);le(16,4);le(1,2);le(2,2);le(48000,4);le(192000,4);le(4,2);le(16,2);f.write("data",4);le(bytes,4);
     for(double s:y)le(unsigned(int(std::lround(s*32767))),2);
     f.close();require(bool(f),"pressure WAV write");
