@@ -1,0 +1,108 @@
+{
+  "provenance": {
+    "run": 45752199179,
+    "job": 139682384228,
+    "head": "37c60b93762bf273059b762d518c35a34897cffe",
+    "base": "495a98ca12bae467a507031f04931aa4254b1866",
+    "source": "Decoded GitHub Actions job log; final JSON object from verify_native_package.py",
+    "runtime": {
+      "python": "3.12.3",
+      "node": "v22.23.5"
+    },
+    "testCount": 11
+  },
+  "result": {
+    "audio": {
+      "legacy": {
+        "witness-0.wav": {
+          "frames": 3200,
+          "peakFractionFS": 0.0091552734375,
+          "peakPCM16": 300,
+          "rateHz": 8000
+        },
+        "witness-216.wav": {
+          "frames": 3200,
+          "peakFractionFS": 0.033935546875,
+          "peakPCM16": 1112,
+          "rateHz": 8000
+        },
+        "witness-24.wav": {
+          "frames": 3200,
+          "peakFractionFS": 0.038116455078125,
+          "peakPCM16": 1249,
+          "rateHz": 8000
+        },
+        "witness-40.wav": {
+          "frames": 3200,
+          "peakFractionFS": 0.038482666015625,
+          "peakPCM16": 1261,
+          "rateHz": 8000
+        }
+      },
+      "selective": {
+        "witness-0.wav": {
+          "frames": 86400,
+          "peakFractionFS": 0.091339111328125,
+          "peakPCM16": 2993,
+          "rateHz": 48000
+        },
+        "witness-1.wav": {
+          "frames": 86400,
+          "peakFractionFS": 0.091339111328125,
+          "peakPCM16": 2993,
+          "rateHz": 48000
+        },
+        "witness-2.wav": {
+          "frames": 86400,
+          "peakFractionFS": 0.091339111328125,
+          "peakPCM16": 2993,
+          "rateHz": 48000
+        },
+        "witness-3.wav": {
+          "frames": 8000,
+          "peakFractionFS": 0.09039306640625,
+          "peakPCM16": 2962,
+          "rateHz": 8000
+        },
+        "witness-4.wav": {
+          "frames": 19200,
+          "peakFractionFS": 0.091339111328125,
+          "peakPCM16": 2993,
+          "rateHz": 48000
+        }
+      }
+    },
+    "cells": 24467,
+    "certaintySummaryComparisons": 96,
+    "fingerprints": {
+      "fixed|biased-deletion": "afbbe636023899fe8561ab9fa8afd2a008b0c325e56df10c218f9ea0ae5d04b6",
+      "fixed|combined": "080c797ede9da6dfa42d7b6120a19a7c30d32731c2bcf2387458b8ffdc2c7118",
+      "fixed|late-phase": "34ff17b0e7c5e4ab821b4bf6a8a76ffbe84d94065a33989f99a1a06536c77189",
+      "fixed|middle-early-1": "d544376e999ee8b73bdf0ffd59806ab161c85cdc6073d3b20c550017f3de81e7",
+      "fixed|middle-late-1": "e2ba4a4ac861404630489958d6cdf7d8e2a73d85e642d3d83e78b367cd448bea",
+      "fixed|middle-symmetric-1": "66c2ba702a35889dd8040bac7c6af613176bc975247b65e2c41f0ad6f7bf27ca",
+      "fixed|middle-symmetric-2": "da86b74c23130b3c0312b3fd4f5f830bba5d3bf83cd5cecbac15fcab9c8c1f0a",
+      "fixed|nominal": "f3ec089aa2e968e53b838237e8d1065ca66c0ce9afc220cdfd99ac83304ec5ac",
+      "receipt|biased-deletion": "7a4d2abd6e94b948c6dc7382fcc036e029ead439294cebbcdd1f242a8e97798a",
+      "receipt|combined": "7903fa6d3b3c6e6f772a0577708ff85e924b1882706b3f86e5152f7aa4ba78b4",
+      "receipt|late-phase": "9e1458937642c17312071de1a3eb202b806156435ab603d9cf46502d4f4eae90",
+      "receipt|middle-early-1": "879f18d9cf04631abf6e9fce767cdc06a0d97265918c0dd4464e58aacc2334b7",
+      "receipt|middle-late-1": "2e07a7604e61bc0d254f97fa20c2db3144a66421134ae5ceb4ac820975993a1a",
+      "receipt|middle-symmetric-1": "787934d0ff9478a7087bc902bf72c54bad10ce99df4f68e2867800c174550964",
+      "receipt|middle-symmetric-2": "ef605a22a1b68b106af2e808b5ae668f473440068be0292f0d3c24d533ee6e40",
+      "receipt|nominal": "46739e3628ee98abc22d9637f32e65d45d5c776f7a98923df742f10529897bc4"
+    },
+    "oracleWavHashes": [
+      "a604838ae761beab03b2f5046621a7b2ce5e8b27c839e2be42c7c63826a7afda",
+      "71af806f0a1fe2b81d4af0b458dc5533b8a575178367ded3a53fa44b998b5b55",
+      "71af806f0a1fe2b81d4af0b458dc5533b8a575178367ded3a53fa44b998b5b55",
+      "6c826ba38b3efd2ab7e4cc33ec544214d82deeab52c4c0beff0d17c613446190",
+      "a598591f26a86a368e34de1e9e468e5b89bd0a19f23006ddc44e70183f28bab2"
+    ],
+    "packageFiles": 27,
+    "packageManifestSHA256": "ffcd6fea32658a5f0a5e7c26007bb367b376637441cc47afdc4cb999a02f09c7",
+    "rows": 2304,
+    "sourceBlobs": 7,
+    "status": "PASS"
+  }
+}

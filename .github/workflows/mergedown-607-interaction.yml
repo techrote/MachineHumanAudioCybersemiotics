@@ -1,0 +1,71 @@
+# Temporary issue-scoped qualification; retention subject to owner review.
+name: Interaction 607 native package
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/interaction-001/**'
+      - '.github/workflows/mergedown-607-interaction.yml'
+permissions:
+  contents: read
+concurrency:
+  group: interaction-607-native
+  cancel-in-progress: false
+jobs:
+  native-package:
+    if: github.event.pull_request.number == 723 && github.event.pull_request.head.ref == 'mhac-607/mergedown-interaction-001' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: windows-2025
+    timeout-minutes: 15
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Preserve frozen source bytes
+        shell: pwsh
+        run: git config --global core.autocrlf false
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Select exact reference Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+          architecture: x64
+      - name: Native reconstruction and independent audit
+        working-directory: tools/experimental/mergedown-607/interaction-001
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          git rev-parse HEAD
+          python --version
+          node --version
+          python -B build_interaction.py . (Join-Path $env:RUNNER_TEMP 'interaction 607')
+      - name: Native filesystem and actual offline Chrome replay
+        working-directory: tools/experimental/mergedown-607/interaction-001
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe' }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
+          $out = Join-Path $env:RUNNER_TEMP 'interaction 607'
+          node check_interaction_browser.cjs (Join-Path $out 'laboratory') $chrome | Tee-Object -FilePath (Join-Path $out 'browser-receipt.json')
+      - name: Retain qualified owner package and evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Interaction-607-Windows-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/interaction 607/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Retain failed diagnostics only
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Interaction-607-DIAGNOSTIC-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/interaction 607/
+          if-no-files-found: warn
+          retention-days: 14

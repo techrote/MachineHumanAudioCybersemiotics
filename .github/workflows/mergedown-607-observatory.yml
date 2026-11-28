@@ -1,0 +1,103 @@
+# Temporary issue #607 qualification; not a general research workflow.
+# Linux exact-head receipt retained in OBS-PACKAGE-012; this bounded run targets Windows.
+name: Observatory 607 native package
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/experimental/mergedown-607/**'
+      - '.github/workflows/mergedown-607-observatory.yml'
+permissions:
+  contents: read
+concurrency:
+  group: observatory-607-native
+  cancel-in-progress: false
+jobs:
+  native-package:
+    if: github.event.pull_request.number == 608 && github.event.pull_request.head.ref == 'mhac-607/mergedown-observatory' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: windows-2025
+    timeout-minutes: 15
+    steps:
+      - name: Preserve frozen source bytes on checkout
+        shell: pwsh
+        run: |
+          git config --global core.autocrlf false
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Native package and independent verification
+        working-directory: tools/experimental/mergedown-607
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          git rev-parse HEAD
+          python --version
+          node --version
+          python -m unittest -v test_build_observatory verify_native_package
+          $one = Join-Path $env:RUNNER_TEMP 'observatory-one'
+          $two = Join-Path $env:RUNNER_TEMP 'observatory-two'
+          python build_observatory.py $one
+          python build_observatory.py $two
+          $receipt = python verify_native_package.py $one $two
+          $receipt | Tee-Object -FilePath (Join-Path $env:RUNNER_TEMP 'observatory-qualification.json')
+      - name: Retain qualified owner laboratory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Observatory-607-Windows-${{ github.event.pull_request.head.sha }}
+          path: |
+            ${{ runner.temp }}/observatory-one/
+            ${{ runner.temp }}/observatory-qualification.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Ordinary offline browser smoke test
+        working-directory: tools/experimental/mergedown-607
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) {
+            $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe'
+          }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
+          node check_browser.cjs (Join-Path $env:RUNNER_TEMP 'observatory-one') $chrome
+      - name: Checkout frozen Grammar input
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: 9e45f77a11c637c03f7e1ac50b6b6802ffc97cfc
+          path: _grammar607
+          persist-credentials: false
+      - name: Native Grammar release and independent verification
+        working-directory: tools/experimental/mergedown-607
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          python --version
+          python -m pip install --disable-pip-version-check numpy==2.3.5
+          $source = Join-Path $env:GITHUB_WORKSPACE '_grammar607/tools/experimental/grammar-452-scoped-clauses'
+          $target = Join-Path $env:RUNNER_TEMP 'grammar607'
+          python -B build_grammar_release.py $source $target
+      - name: Grammar ordinary offline browser smoke test
+        working-directory: tools/experimental/mergedown-607
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $PSNativeCommandUseErrorActionPreference = $true
+          $chrome = Join-Path $env:ProgramFiles 'Google\Chrome\Application\chrome.exe'
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) {
+            $chrome = Join-Path ${env:ProgramFiles(x86)} 'Google\Chrome\Application\chrome.exe'
+          }
+          if (!(Test-Path -LiteralPath $chrome -PathType Leaf)) { throw 'Installed Chrome executable not found' }
+          node check_grammar_browser.cjs (Join-Path $env:RUNNER_TEMP 'grammar607') $chrome
+      - name: Retain Grammar owner laboratory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: MHAC-Grammar-607-Windows-${{ github.event.pull_request.head.sha }}
+          path: ${{ runner.temp }}/grammar607/
+          if-no-files-found: error
+          retention-days: 14

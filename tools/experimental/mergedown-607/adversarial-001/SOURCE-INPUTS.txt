@@ -1,0 +1,36 @@
+MHAC ADV-REGRESSION-001 — Refs #607, #448, #452
+2026-11-26. AI-assisted consolidation. Draft/HOLD; not scientific acceptance.
+
+This draft stores immutable original lane source copies in source-inputs/binding
+and source-inputs/overlap. These are not new maintained forks or canonical
+research records. 21 source instances / 12 unique Git blobs, referenced by their
+original object IDs; no edits, new licensing decision, or upstream branch changes.
+Original Grammar dependencies:
+  binding: #453 2a074c64797b310423824902d092ffb54eacf5e7
+  overlap: #453 7053f813bf770c1ec195e0c4485d24f483505045
+Original Adversarial generators:
+  binding: #449 3aa52100c32f10b89638db67193608e8fe9b04b6
+  overlap: #449 5efb84b938c2bf69f11ef3c5864221f041077c3b
+Full original path and individual blob inventory: build_adversarial.py and
+check_adversarial.py. Only the 21 required files are included. Other experiments,
+generated artifacts, and the original boundary README are excluded; the original
+outputs are reconstructed and checked against the Run 020 frozen manifests.
+Git object identity preserves original authorship attribution; no rights grant.
+
+Build from this directory (Python 3.13.5, NumPy 2.3.5 reference):
+  python build_adversarial.py NEW_OUTPUT --source-root source-inputs
+Use an LF-preserving checkout (core.autocrlf=false) or Git archive extraction
+on Windows; source checks require the original bytes. Once inputs are present
+no network, branch fetch, historical commit access or other lane checkout
+is needed. Optional --repo PATH uses four original Git commits instead of copies.
+Open NEW_OUTPUT/index.html, low hardware volume, opt-in 20% digital gain.
+No SPL calibration, RMS matching, real participant or physical listening evidence.
+
+Native Linux source-copy build succeeded: 42/42 regenerated output files exact,
+21 original source instances verified, audit JSON exact, 69 package files.
+Raw manifest verification precedes comparison against the LF-normalized
+frozen reference; WAV bytes never normalized. Synthetic CRLF positive control,
+rehashed altered evidence, modified source, missing Git object and existing
+output controls executed. Actual historical Git route unavailable locally
+(DNS failure); Windows and ordinary browser execution unqualified
+(Chromium timeout 124, no DOM, D-Bus errors). No change to #608 or main.
