@@ -83,4 +83,12 @@ if(MHAC_BUILD_VST3)
         smtg_target_set_bundle(MHACGuestOrgan BUNDLE_IDENTIFIER "org.mhac.guest-organ" COMPANY_NAME "MHAC")
     endif()
     smtg_target_add_plugin_resources(MHACGuestOrgan RESOURCES "${SDK_ROOT}/LICENSE.txt")
+    if(WIN32)
+        add_executable(guest_borrowed_sdk borrowed_sdk.cpp
+            "${SDK_ROOT}/public.sdk/source/vst/hosting/module_win32.cpp"
+            "${SDK_ROOT}/public.sdk/source/common/memorystream.cpp")
+        target_compile_definitions(guest_borrowed_sdk PRIVATE NOMINMAX)
+        target_include_directories(guest_borrowed_sdk PRIVATE "${SDK_ROOT}")
+        target_link_libraries(guest_borrowed_sdk PRIVATE sdk_hosting)
+    endif()
 endif()

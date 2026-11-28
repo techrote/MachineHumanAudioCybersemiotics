@@ -48,7 +48,7 @@ jobs:
         run: |
           cmake -S tools/experimental/instrument-foundry/guest-organ-622 -B build-vst -A x64 -DMHAC_BUILD_VST3=ON -DMHAC_VALIDATE_POST_BUILD=OFF "-DMHAC_VST3_SDK=$env:SDK380"
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
-          cmake --build build-vst --config Release --target MHACGuestOrgan validator
+          cmake --build build-vst --config Release --target MHACGuestOrgan validator guest_borrowed_sdk
           if ($LASTEXITCODE) { exit $LASTEXITCODE }
       - name: Official validator (mandatory)
         run: |
@@ -62,6 +62,14 @@ jobs:
           if (-not (Select-String -Path validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing successful validator summary' }
           if (Select-String -Path validator.txt -Pattern 'ERROR:') { throw 'Explicit validator error despite aggregate result' }
           "BUNDLE=$($bundles[0].FullName)" >> $env:GITHUB_ENV
+      - name: Borrowed Rooms direct SDK score and stem replay (mandatory)
+        run: |
+          $probe = @(Get-ChildItem build-vst -Recurse -File -Filter guest_borrowed_sdk.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($probe.Count -ne 1) { throw 'Expected one Release SDK replay executable' }
+          & $probe[0].FullName $env:BUNDLE 2>&1 | Tee-Object -FilePath borrowed-sdk.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path borrowed-sdk.txt -SimpleMatch 'BORROWED_SDK_PASS cases=24 renders=48')) { throw 'Missing score completion receipt' }
+          if (@(Select-String -Path borrowed-sdk.txt -Pattern '^BORROWED_SDK_CASE ').Count -ne 24) { throw 'Missing score case rows' }
       - name: Package portable bundle and evidence
         run: |
           New-Item -ItemType Directory -Path delivery | Out-Null
@@ -72,6 +80,7 @@ jobs:
           "sdk=$(git -C $env:SDK380 rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Encoding utf8
           "source=$(git rev-parse HEAD)" | Out-File delivery/BUILD-SOURCE.txt -Append -Encoding utf8
           Copy-Item validator.txt delivery/
+          Copy-Item borrowed-sdk.txt delivery/
           Copy-Item tools/experimental/instrument-foundry/guest-organ-622/README.md delivery/
           Copy-Item tools/experimental/instrument-foundry/guest-organ-622/LIVE.md delivery/GUEST-ORGAN-LIVE.md
           foreach ($part in @('base','pluginterfaces','public.sdk','cmake')) {
@@ -85,7 +94,9 @@ jobs:
         if: always()
         with:
           name: MHACGuestOrgan-validator-log
-          path: validator.txt
+          path: |
+            validator.txt
+            borrowed-sdk.txt
           if-no-files-found: ignore
           retention-days: 7
       - uses: actions/upload-artifact@v4
