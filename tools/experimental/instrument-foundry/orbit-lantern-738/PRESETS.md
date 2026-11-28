@@ -13,3 +13,19 @@ New path-scoped Windows workflow derived from the qualified Afterimage workflow 
 ## INST-011M — spectral release (0.3.0 candidate)
 
 Parameter 1814 is a stepped 0..1000 spectral-depth control (default zero). It is sampled at note-off for fixed and phase-conditioned releases; linear mode ignores it. Existing releases do not change when this control is automated. OL03 adds a little-endian uint16 depth to OL02 (13 bytes, 89-byte preset); OL01/OL02 still serialize identically when depth is zero. Older plugins cannot read OL03. Three new original patches 12 Fixed Spectrum, 13 Phase Spectrum and 14 Half Spectrum share the existing matched score. The native utility writes all fourteen presets and recordings. Use the existing exact SDK 3.8.0 workflow; do not install a source candidate as a binary. Actual DAW load/preset import, modulation sideband and deadline qualification remain outstanding. Ref #738; creative synthesis interpretation of draft #265, not human evidence.
+
+## INST-011V — Constellation performance bank (0.4.0)
+
+Five additional component-only presets use the same existing qualified 0.4.0 interface; no DSP, SDK, class ID, parameter ID, state or version changes. Refs #738; creative synthesis interpretation of #265 at 56c107f8f4147316a588484c47be28bc8f840fbb, not human evidence.
+
+| Preset | Blend (permille) | Release (ms) | Cents | Release mode | Spectral depth | Sustain depth | Cycle (ms) |
+|---|---:|---:|---:|---|---:|---:|---:|
+| 18 Glass Constellation | 180 | 650 | -12 | Phase | 700 | 900 | 1400 |
+| 19 Tidal Pedal | 700 | 900 | 0 | Fixed | 250 | 1000 | 6000 |
+| 20 Flicker Choir | 550 | 180 | 12 | Phase | 800 | 800 | 320 |
+| 21 Still Constellation | 180 | 650 | -12 | Phase | 700 | 0 | 1000 |
+| 22 Long Arc | 1000 | 1000 | 0 | Phase | 1000 | 1000 | 8000 |
+
+Run the existing orbit_preset_bank generator with preset and audio directories. It now emits 22 presets, 22 WAVs and an original Constellation Score.mid (format 0, 120 BPM, 480 PPQ, 14 paired notes, four simultaneous held notes maximum). Import the MIDI into a DAW instrument track, load a matching preset, and set tempo to 120 BPM. Presets 18 and 21 form a matched sustain-on/off comparison. The other three explore different cycle/release combinations. New WAVs are eight seconds, 48 kHz stereo PCM16; native renders are not DAW captures. The previous 17 recordings retain their three-second score. No listening assessment.
+
+Linux Release CTest 11/11 PASS; GCC Release and Clang ASan/UBSan preset generators both passed 66,032 roundtrips, 3,741 rejected mutations and 4,368,000 exact paired stereo frames. All 34 previous WAV/preset files are byte-identical; all 45 current generated files are byte-identical across the tested compilers. A separate local parser verified MIDI header, track length, tempo, note lifetimes and end tick; all five new WAVs have exact final 50 ms silence. Windows packaging and actual DAW preset import remain unverified for this new bank. Existing qualified 0.4.0 binary remains the intended audition target.
