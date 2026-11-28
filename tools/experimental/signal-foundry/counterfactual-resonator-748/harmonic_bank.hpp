@@ -14,6 +14,8 @@ struct MemoryConfig {
     std::array<MemoryBand,4> bands{{{110,750,250},{165,750,250},{220,750,250},{330,750,250}}};
     std::uint16_t wet=700;
     bool bypass=false;
+    unsigned budget=0;
+    bool energyFirst=false;
 };
 class HarmonicBank {
     std::array<Processor,4> bands_{};

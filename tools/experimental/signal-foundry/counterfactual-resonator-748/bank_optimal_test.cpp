@@ -66,10 +66,13 @@ static void demo(const char* path,bool optimal){
     }
     check(bool(f));
 }
+#include "bank_budget_replay.hpp"
 static void nativeTests(int argc,char** argv){
-    check(bh::ParamCount==42);
-    for(unsigned i=0;i<bh::ParamCount;++i){const unsigned id=bh::paramID(i);check(bh::known(id)&&bh::index(id)==i);if(i>=38)check(id==2050+i-38&&bh::command(id)&&bh::normalized(MemoryConfig{},id)==0);}
-    for(unsigned id:{2002u,2046u,2049u,2054u,9999u})check(!bh::known(id));
+    budgetStateTests();
+    for(bool energy:{false,true})for(unsigned block:{127u,257u})for(bool mono:{false,true}){bh::Host a,b;budgetReplay<float>(a,48000,block,energy,mono);budgetReplay<double>(b,96000,block,energy,mono);}
+    check(bh::ParamCount==45);
+    for(unsigned i=0;i<bh::ParamCount;++i){const unsigned id=bh::paramID(i);check(bh::known(id)&&bh::index(id)==i);if(i>=38)check(id==2050+i-38&&bh::command(id)==(i<42||i==44)&&bh::normalized(MemoryConfig{},id)==0);}
+    for(unsigned id:{2002u,2046u,2049u,2057u,9999u})check(!bh::known(id));
     bh::EventBatch b;b.clear(0);check(b.queue(2050)&&b.point(0,1)&&!b.queue(2050));
     for(unsigned band=0;band<4;++band)for(bool reverse:{false,true})for(bool manual:{false,true}){
         for(unsigned block:{127u,257u})for(bool mono:{false,true}){bh::Host a,other;replay<float>(a,48000,band,block,reverse,manual,mono);replay<double>(other,96000,band,block,reverse,manual,mono);}

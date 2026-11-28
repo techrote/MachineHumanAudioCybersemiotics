@@ -116,9 +116,12 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           if (@(Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_CASE rate=').Count -ne 128) { throw 'Incomplete bank replay case transcript' }
           if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_REPLAY_PASS cases=128 checks=[1-9][0-9]*$')) { throw 'Missing bank replay completion' }
-          if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_CONTROLLER_PASS parameters=42$')) { throw 'Missing bank controller receipt' }
+          if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_CONTROLLER_PASS parameters=45$')) { throw 'Missing bank controller receipt' }
+          if (@(Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_BUDGET_CASE rate=').Count -ne 16) { throw 'Incomplete budget replay transcript' }
+          if (-not (Select-String -Path bank-sdk-replay.txt -Pattern '^SDK_BANK_BUDGET_PASS cases=16$')) { throw 'Missing budget replay completion' }
           New-Item -ItemType Directory -Path bank-delivery,bank-delivery/Audio,bank-delivery/Presets | Out-Null
           Copy-Item bank-sdk-replay.txt bank-delivery/
+          Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-BUDGET.md bank-delivery/
           Copy-Item tools/experimental/signal-foundry/counterfactual-resonator-748/BANK-SDK-REPLAY.md bank-delivery/
           Copy-Item -Recurse $bundles[0].FullName bank-delivery/
           Copy-Item delivery/SDK-*.txt,delivery/Steinberg-SDK-LICENSE.txt,delivery/BUILD-SOURCE.txt bank-delivery/

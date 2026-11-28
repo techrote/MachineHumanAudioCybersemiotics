@@ -1,35 +1,40 @@
 #pragma once
-#include "harmonic_bank.hpp"
+#include "bank_budget.hpp"
 #include <atomic>
 
 namespace mhac::counterfactual::bankhost {
 // State is configuration only, not the live resonator lattice.
-using State = std::array<std::uint8_t,43>;
+constexpr unsigned LegacyStateSize=43;
+using State = std::array<std::uint8_t,45>;
 inline bool valid(const MemoryConfig& c) noexcept {
-    if(c.wet>1000) return false;
+    if(c.wet>1000||c.budget>16) return false;
     for(const auto& b:c.bands)
         if(b.hz<40||b.hz>6000||b.gain>1000||b.peakMix>1000||b.selectivity>1000) return false;
     return true;
 }
 inline State encode(const MemoryConfig& c) noexcept {
-    State s{{'H','M','0','1'}};
+    State s{{'H','M','0','2'}};
     unsigned i=4;
     const auto put=[&](unsigned v){s[i++]=static_cast<std::uint8_t>(v);s[i++]=static_cast<std::uint8_t>(v>>8);};
     put(c.wet);s[i++]=static_cast<std::uint8_t>(c.bypass);
     for(const auto& b:c.bands){put(b.hz);put(b.gain);put(b.peakMix);put(b.selectivity);
         s[i++]=static_cast<std::uint8_t>(unsigned(b.excite)|(unsigned(b.erase)<<1)|(unsigned(b.discardOnClose)<<2));}
+    s[i++]=static_cast<std::uint8_t>(c.budget);s[i]=static_cast<std::uint8_t>(c.energyFirst);
     return s;
 }
-inline bool decode(const State& s,MemoryConfig& out) noexcept {
-    if(s[0]!='H'||s[1]!='M'||s[2]!='0'||s[3]!='1'||s[6]>1) return false;
+inline bool decode(const std::uint8_t* s,unsigned size,MemoryConfig& out) noexcept {
+    if(!s||(size!=LegacyStateSize&&size!=State{}.size()))return false;
+    if(s[0]!='H'||s[1]!='M'||s[2]!='0'||s[3]!=(size==LegacyStateSize?'1':'2')||s[6]>1)return false;
     MemoryConfig c{};unsigned i=4;
     const auto get=[&](){const unsigned lo=s[i++];return static_cast<std::uint16_t>(lo|(unsigned(s[i++])<<8));};
     c.wet=get();c.bypass=s[i++]!=0;
     for(auto& b:c.bands){b.hz=get();b.gain=get();b.peakMix=get();b.selectivity=get();
         const unsigned f=s[i++];if(f>7)return false;b.excite=(f&1)!=0;b.erase=(f&2)!=0;b.discardOnClose=(f&4)!=0;}
+    if(size!=LegacyStateSize){if(s[i]>16||s[i+1]>1)return false;c.budget=s[i];c.energyFirst=s[i+1]!=0;}
     if(!valid(c))return false;
     out=c;return true;
 }
+inline bool decode(const State& s,MemoryConfig& out) noexcept {return decode(s.data(),static_cast<unsigned>(s.size()),out);}
 // Single producer, single consumer. Each owns one slot; the atomic middle
 // index exchanges exclusive ownership. No retry loop, no concurrent slot access.
 template<class Payload> class MailboxOf {
@@ -53,16 +58,19 @@ static_assert(std::atomic<unsigned>::is_always_lock_free,"requires lock-free mai
 constexpr unsigned Wet=2000,Bypass=2001,FirstBand=2010,Stride=9;
 enum Field : unsigned { Frequency,Gain,Peak,Selectivity,Excite,Erase,DiscardOnClose,Pulse,Discard };
 constexpr unsigned FirstOptimal=2050; // four new momentary controls, legacy IDs unchanged
+constexpr unsigned Budget=2054, Objective=2055, AdmitBudget=2056;
 constexpr unsigned MaxEvents=4096;
 inline bool optimalCommand(unsigned id) noexcept {return id>=FirstOptimal&&id<FirstOptimal+4;}
 struct Event {unsigned offset,id;double value;};
-inline bool known(unsigned id) noexcept {return id==Wet||id==Bypass||(id>=FirstBand&&id<FirstBand+4*Stride)||optimalCommand(id);}
-inline bool command(unsigned id) noexcept {return optimalCommand(id)||(id>=FirstBand&&id<FirstBand+4*Stride&&(id-FirstBand)%Stride>=Pulse);}
+inline bool known(unsigned id) noexcept {return id==Wet||id==Bypass||(id>=FirstBand&&id<FirstBand+4*Stride)||optimalCommand(id)||(id>=Budget&&id<=AdmitBudget);}
+inline bool command(unsigned id) noexcept {return id==AdmitBudget||optimalCommand(id)||(id>=FirstBand&&id<FirstBand+4*Stride&&(id-FirstBand)%Stride>=Pulse);}
 inline void change(MemoryConfig& c,unsigned id,double value) noexcept {
     if(!known(id)||command(id)||!std::isfinite(value))return;
     const double v=std::clamp(value,0.0,1.0);
     const auto q=static_cast<std::uint16_t>(std::lround(v*1000));
     if(id==Wet){c.wet=q;return;}if(id==Bypass){c.bypass=v>=0.5;return;}
+    if(id==Budget){c.budget=static_cast<unsigned>(std::lround(v*16));return;}
+    if(id==Objective){c.energyFirst=v>=0.5;return;}
     auto& b=c.bands[(id-FirstBand)/Stride];
     switch((id-FirstBand)%Stride){
     case Frequency:b.hz=static_cast<std::uint16_t>(40+std::lround(v*5960));break;
@@ -78,7 +86,13 @@ class Host {
     std::uint64_t admitted_=0;
     MailboxOf<Ticket> requests_,completed_;
     std::array<std::array<bool,3>,4> edges_{};
+    bool budgetHigh_=false;
     void trigger(const Event& e) noexcept {
+        if(e.id==AdmitBudget){
+            const bool high=e.value>=0.5;
+            if(high&&!budgetHigh_)beginBudgetedEscape(dsp_,current_.budget,current_.energyFirst?BudgetObjective::energy:BudgetObjective::count);
+            budgetHigh_=high;return;
+        }
         const bool optimal=optimalCommand(e.id);
         const unsigned band=optimal?e.id-FirstOptimal:(e.id-FirstBand)/Stride;
         const unsigned f=optimal?2:(e.id-FirstBand)%Stride-Pulse;
@@ -98,7 +112,7 @@ public:
     State save() noexcept {completed_.consume(lastPublished_);return encode(lastPublished_.generation==requested_.generation?lastPublished_.config:requested_.config);}
     // Audio lifecycle only, stopped processing required for prepare/reset.
     bool prepare(double rate) noexcept {if(!dsp_.prepare(rate))return false;reset();return true;}
-    void reset() noexcept {admit();dsp_.reset();edges_={};complete();}
+    void reset() noexcept {admit();dsp_.reset();edges_={};budgetHigh_=false;complete();}
     // Planar stereo; exact in-place supported. Event list sorted by offset;
     // validate entire list before changing state or touching output.
     template<class Sample> bool process(const Sample* l,const Sample* r,Sample* ol,Sample* oright,
@@ -118,9 +132,11 @@ public:
             const unsigned start=j;bool changed=false;
             while(j<count&&events[j].offset==i){if(!command(events[j].id)){change(current_,events[j].id,events[j].value);changed=true;}++j;}
             if(changed)dsp_.set(current_);
-            for(unsigned k=start;k<j;++k)if(command(events[k].id)&&!optimalCommand(events[k].id))trigger(events[k]);
+            for(unsigned k=start;k<j;++k)if(command(events[k].id)&&!optimalCommand(events[k].id)&&events[k].id!=AdmitBudget)trigger(events[k]);
             // Existing manual commands take priority regardless of host queue order.
             for(unsigned k=start;k<j;++k)if(optimalCommand(events[k].id))trigger(events[k]);
+            // Explicit per-band commands have priority over bank-wide admission.
+            for(unsigned k=start;k<j;++k)if(events[k].id==AdmitBudget)trigger(events[k]);
             if(n){const auto s=dsp_.process(l?l[i]:0,r?r[i]:0);if(ol)ol[i]=static_cast<Sample>(s.left);if(oright)oright[i]=static_cast<Sample>(s.right);}
         }
         complete();return true;

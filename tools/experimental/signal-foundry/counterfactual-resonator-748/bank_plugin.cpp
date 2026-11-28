@@ -15,11 +15,14 @@ const FUID processorID(0xAE00577B,0xADF94D9C,0x8F2FB9D0,0x4991475C);
 const FUID controllerID(0xB82C6F98,0xA6D847E9,0xB6084DF9,0x834F4B45);
 bool readState(IBStream* s,bh::State& bytes){
     if(!s)return false;
-    int32 pos=0;const auto size=static_cast<int32>(bytes.size());
-    while(pos<size){int32 n=0;if(s->read(bytes.data()+pos,size-pos,&n)!=kResultOk||n<=0||n>size-pos)return false;pos+=n;}
+    int32 pos=0,size=static_cast<int32>(bh::LegacyStateSize);
+    const auto readTo=[&](){while(pos<size){int32 n=0;if(s->read(bytes.data()+pos,size-pos,&n)!=kResultOk||n<=0||n>size-pos)return false;pos+=n;}return true;};
+    if(!readTo())return false;
+    if(bytes[3]=='2'){size=static_cast<int32>(bytes.size());if(!readTo())return false;}
     // State is a bounded component stream; reject appended data.
     uint8 extra=0;int32 n=0;s->read(&extra,1,&n);
-    cr::MemoryConfig c{};return n==0&&bh::decode(bytes,c);
+    cr::MemoryConfig c{};if(n!=0||!bh::decode(bytes.data(),static_cast<unsigned>(size),c))return false;
+    bytes=bh::encode(c);return true;
 }
 bool writeState(IBStream* s,bh::State bytes){
     if(!s)return false;
@@ -96,12 +99,15 @@ public:
         for(unsigned b=0;b<4;++b)for(unsigned f=0;f<9;++f)add(names[b][f],bh::FirstBand+b*bh::Stride+f,f==bh::Frequency?5960:f<bh::Excite?1000:1);
         const TChar* optimalNames[4]={STR16("B1 Optimal erase"),STR16("B2 Optimal erase"),STR16("B3 Optimal erase"),STR16("B4 Optimal erase")};
         for(unsigned b=0;b<4;++b)add(optimalNames[b],bh::FirstOptimal+b,1);
+        add(STR16("Intervention budget (0-16)"),bh::Budget,16);
+        add(STR16("Budget objective (count/energy)"),bh::Objective,1);
+        add(STR16("Admit budgeted erase"),bh::AdmitBudget,1);
         return kResultOk;
     }
     tresult PLUGIN_API setComponentState(IBStream* s) override {bh::State p{};cr::MemoryConfig c{};if(!readState(s,p)||!bh::decode(p,c))return kResultFalse;for(unsigned i=0;i<bh::ParamCount;++i){const auto id=bh::paramID(i);setParamNormalized(id,bh::normalized(c,id));}return kResultOk;}
 };
 }
 BEGIN_FACTORY_DEF("MHAC", "https://github.com/techrote/MachineHumanAudioCybersemiotics", "")
-DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Harmonic Memory Bank",Vst::kDistributable,"Fx|Filter","0.2.0",kVstVersionString,Processor::create)
-DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Harmonic Memory Bank Controller",0,"","0.2.0",kVstVersionString,Controller::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(processorID),PClassInfo::kManyInstances,kVstAudioEffectClass,"MHAC Harmonic Memory Bank",Vst::kDistributable,"Fx|Filter","0.3.0",kVstVersionString,Processor::create)
+DEF_CLASS2(INLINE_UID_FROM_FUID(controllerID),PClassInfo::kManyInstances,kVstComponentControllerClass,"MHAC Harmonic Memory Bank Controller",0,"","0.3.0",kVstVersionString,Controller::create)
 END_FACTORY

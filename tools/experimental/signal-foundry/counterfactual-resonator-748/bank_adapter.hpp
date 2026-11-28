@@ -1,13 +1,15 @@
 #pragma once
 #include "bank_host.hpp"
 namespace mhac::counterfactual::bankhost {
-constexpr unsigned LegacyParamCount=38, ParamCount=42;
-inline unsigned index(unsigned id) noexcept {return optimalCommand(id)?LegacyParamCount+id-FirstOptimal:id<FirstBand?id-Wet:2+id-FirstBand;}
+constexpr unsigned LegacyParamCount=38, ParamCount=45;
+inline unsigned index(unsigned id) noexcept {return id>=FirstOptimal?LegacyParamCount+id-FirstOptimal:id<FirstBand?id-Wet:2+id-FirstBand;}
 inline unsigned paramID(unsigned i) noexcept {return i>=LegacyParamCount?FirstOptimal+i-LegacyParamCount:i<2?Wet+i:FirstBand+i-2;}
 inline double normalized(const MemoryConfig& c,unsigned id) noexcept {
     if(id==Wet)return c.wet/1000.;
     if(id==Bypass)return c.bypass?1.:0.;
     if(!known(id)||command(id))return 0;
+    if(id==Budget)return c.budget/16.;
+    if(id==Objective)return c.energyFirst?1.:0.;
     const auto& b=c.bands[(id-FirstBand)/Stride];
     switch((id-FirstBand)%Stride){
     case Frequency:return (b.hz-40)/5960.;case Gain:return b.gain/1000.;
