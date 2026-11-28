@@ -115,8 +115,8 @@ def collect(source,event,out):
     workflows={s["pr"]:s["release_workflow"] for s in CAT["snapshots"] if s["release_workflow"]}
     pending=set(workflows.values()); runs={}; deadline=time.monotonic()+2400
     while pending:
+        data=api("/actions/runs?head_sha="+source+"&event="+event+"&per_page=100")
         for workflow in sorted(pending):
-            data=api("/actions/runs?head_sha="+source+"&event="+event+"&per_page=100")
             exact=[x for x in data["workflow_runs"] if x["head_sha"]==source and x["event"]==event and x["path"]==".github/workflows/"+workflow]
             if not exact: continue
             run=max(exact,key=lambda x:x["id"])

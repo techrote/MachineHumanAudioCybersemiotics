@@ -27,17 +27,17 @@ def load(root,row):
     return p,method
 def prepare(p,instrument,rate,block):
     if instrument: p([],sample_rate=rate,duration=0.05,num_channels=2,buffer_size=block,reset=True)
-    else: p(np.zeros((2,block),dtype=np.float32),sample_rate=rate,buffer_size=block,reset=True)
+    else: p(np.zeros((2,64),dtype=np.float32),sample_rate=rate,buffer_size=block,reset=True)
 def render(p,inst,rate,block,signal):
     t=time.perf_counter()
     if inst: y=p(MIDI,sample_rate=rate,duration=3.0,num_channels=2,buffer_size=block,reset=False)
-    else: y=p(signal,sample_rate=rate,buffer_size=block,reset=False)
+    else: y=p(signal.copy(),sample_rate=rate,buffer_size=block,reset=False)
     return bounded(np.asarray(y),rate),time.perf_counter()-t
 def gain(x):
     return x*min(1.0,0.22/max(1e-9,float(np.max(np.abs(x)))))
 def main(root):
     catalog=json.loads((root/"Catalogue/catalogue.json").read_text(encoding="utf-8")); rows={x["bundle"][:-5]:x for x in catalog["plugins"]}
-    q=root/"Qualification"; report={"status":"running","source":catalog["source"],"host":"Pedalboard "+pb.__version__,"scope":"fresh default-state stereo rendering, restore and block comparison; not full DAW/automation/auxiliary-bus qualification","modules":[],"chains":[]}
+    q=root/"Qualification"; report={"status":"running","source":catalog["source"],"host":"Pedalboard "+pb.__version__,"scope":"fresh default and matched restored-history stereo rendering, restore and block comparison; not full DAW/automation/auxiliary-bus qualification","modules":[],"chains":[],"failures":[]}
     def flush(): (q/"combined-host.json").write_text(json.dumps(report,indent=2)+"\n",encoding="utf-8")
     flush()
     try:
@@ -47,17 +47,28 @@ def main(root):
             for name,row in rows.items():
                 inst=row["kind"]=="Instruments"; outputs=[]
                 for block in (127,1024):
-                    p,method=load(root,row); prepare(p,inst,rate,block); state=p.preset_data
-                    y,elapsed=render(p,inst,rate,block,sig)
-                    require(float(np.max(np.abs(y)))>1e-7,"silent default: "+name)
-                    new,_=load(root,row); prepare(new,inst,rate,block); new.preset_data=state
-                    y2,_=render(new,inst,rate,block,sig)
-                    err=float(np.max(np.abs(y-y2))); require(err<=2e-5,"fresh restore mismatch "+name+" "+str(err))
-                    report["modules"].append({"bundle":name,"binary_sha256":row["binary_sha256"],"rate":rate,"block":block,"load":method,"restore_max_error":err,"peak":float(np.max(np.abs(y))),"offline_seconds":elapsed})
-                    outputs.append(y); flush()
-                err=float(np.max(np.abs(outputs[0]-outputs[1])))
-                report["modules"][-1]["partition_max_error"]=err; flush()
-                require(err<=2e-4,"partition mismatch "+name+" "+str(err))
+                    case={"bundle":name,"binary_sha256":row["binary_sha256"],"rate":rate,"block":block}
+                    try:
+                        cold,method=load(root,row); prepare(cold,inst,rate,block); state=cold.preset_data
+                        fresh,_=render(cold,inst,rate,block,sig)
+                        p,_=load(root,row); prepare(p,inst,rate,block); p.preset_data=state
+                        y,elapsed=render(p,inst,rate,block,sig)
+                        new,_=load(root,row); prepare(new,inst,rate,block); new.preset_data=state
+                        y2,_=render(new,inst,rate,block,sig)
+                        err=float(np.max(np.abs(y-y2))); default_err=float(np.max(np.abs(fresh-y)))
+                        case.update({"load":method,"matched_restore_max_error":err,"default_vs_restored_max_error":default_err,"peak":float(np.max(np.abs(y))),"offline_seconds":elapsed})
+                        require(float(np.max(np.abs(fresh)))>1e-7 and case["peak"]>1e-7,"silent default/restored state")
+                        require(err<=2e-5,"matched fresh restore mismatch "+str(err))
+                        outputs.append(y); case["status"]="pass"
+                    except Exception as exc:
+                        case["status"]="fail"; case["error"]=str(exc); report["failures"].append(dict(case))
+                    report["modules"].append(case); flush()
+                if len(outputs)==2:
+                    err=float(np.max(np.abs(outputs[0]-outputs[1])))
+                    report["modules"][-1]["partition_max_error"]=err
+                    if err>2e-4:
+                        report["failures"].append({"bundle":name,"rate":rate,"error":"partition mismatch","max_error":err})
+                    flush()
         rate=48000; block=127
         chains=[
             ("golden-freeze-receipt",["MHACGoldenReceipt"],["MHACFreezeSocket","MHACReceiptFold"]),
@@ -66,17 +77,20 @@ def main(root):
             ("offcut-erasure-xl",["MHACOffcutLoom"],["MHACErasureLoom","MHACErasureLoomXL"]),
             ("guest-clock-shuttle",["MHACGuestOrgan"],["MHACClockFold","MHACPalimpsestShuttle"])]
         for label,instruments,effects in chains:
-            folder=root/"Sessions"/"Stems"/label; stems=[]
-            for name in instruments:
-                p,_=load(root,rows[name]); prepare(p,True,rate,block); y,_=render(p,True,rate,block,None)
-                stems.append(gain(y)); wav(folder/(name+".wav"),stems[-1],rate)
-            dry=gain(sum(stems)); wav(folder/"dry.wav",dry,rate)
-            y=dry
-            for name in effects:
-                p,_=load(root,rows[name]); prepare(p,False,rate,block); y,_=render(p,False,rate,block,y); y=gain(y)
-                wav(folder/(name+".wav"),y,rate)
-            require(float(np.max(np.abs(y)))>1e-7,"silent chain "+label)
-            report["chains"].append({"name":label,"instruments":instruments,"effects":effects,"frames":len(y[0]),"rate":rate,"input_peak":float(np.max(np.abs(dry))),"output_peak":float(np.max(np.abs(y))),"routing":"serial effects, summed instrument stems, explicit peak cap 0.22 FS; frame aligned, no claim of latency compensation"})
+            try:
+                folder=root/"Sessions"/"Stems"/label; stems=[]
+                for name in instruments:
+                    p,_=load(root,rows[name]); prepare(p,True,rate,block); y,_=render(p,True,rate,block,None)
+                    stems.append(gain(y)); wav(folder/(name+".wav"),stems[-1],rate)
+                dry=gain(sum(stems)); wav(folder/"dry.wav",dry,rate)
+                y=dry
+                for name in effects:
+                    p,_=load(root,rows[name]); prepare(p,False,rate,block); y,_=render(p,False,rate,block,y); y=gain(y)
+                    wav(folder/(name+".wav"),y,rate)
+                require(float(np.max(np.abs(y)))>1e-7,"silent chain "+label)
+                report["chains"].append({"name":label,"instruments":instruments,"effects":effects,"frames":len(y[0]),"rate":rate,"input_peak":float(np.max(np.abs(dry))),"output_peak":float(np.max(np.abs(y))),"routing":"serial effects, summed instrument stems, explicit peak cap 0.22 FS; frame aligned, no claim of latency compensation"})
+            except Exception as exc:
+                report["failures"].append({"chain":label,"error":str(exc)}); flush()
         midi=root/"Sessions"/"MIDI"; midi.mkdir(parents=True,exist_ok=True)
         (midi/"events.json").write_text(json.dumps([{"seconds":t,"bytes":list(b)} for b,t in MIDI],indent=2))
         # Standard MIDI file: 480 PPQ, 120 BPM; integer tick fixture.
@@ -89,6 +103,7 @@ def main(root):
             tick=round(seconds*960);track.extend(vlq(tick-last));track.extend(msg);last=tick
         track.extend(b"\x00\xff\x2f\x00")
         (midi/"fixture.mid").write_bytes(b"MThd"+struct.pack(">IHHH",6,0,1,480)+b"MTrk"+struct.pack(">I",len(track))+track)
+        require(not report["failures"],"one or more module/chain cases failed: "+str(len(report["failures"])))
         report["status"]="pass"
     except Exception as exc:
         report["status"]="fail"; report["error"]=str(exc); raise
