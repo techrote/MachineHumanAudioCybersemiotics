@@ -119,6 +119,7 @@ public:
         if(target_.erase||pending_)return false;
         discardPendingInput(); optimal_=true; return true;
     }
+    bool canBeginNewOptimalEscape() const noexcept { return !target_.erase&&!pending_&&!optimal_; }
     void cancelOptimalEscape() noexcept { optimal_=false; }
     bool optimalEscapeActive() const noexcept { return optimal_; }
     // Zero-fill the elapsed prefix of the current drive window, without

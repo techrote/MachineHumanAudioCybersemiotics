@@ -67,6 +67,12 @@ public:
     bool beginOptimalEscape(unsigned band) noexcept {
         return band<bands_.size()&&!config_.bands[band].excite&&bands_[band].beginOptimalEscape();
     }
+    bool canBeginNewOptimalEscape(unsigned band) const noexcept {
+        return band<bands_.size()&&!config_.bands[band].excite&&bands_[band].canBeginNewOptimalEscape();
+    }
+    std::uint64_t interventions(unsigned band) const noexcept {
+        return band<bands_.size()?bands_[band].interventions():0;
+    }
     bool optimalEscapeActive(unsigned band) const noexcept {
         return band<bands_.size()&&bands_[band].optimalEscapeActive();
     }
