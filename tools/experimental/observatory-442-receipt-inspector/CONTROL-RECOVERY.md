@@ -1,0 +1,17 @@
+# Control recovery — Measurement Run 075
+
+Refs #442/#443. Draft/HOLD; AI-assisted synthetic experiment, not independent acceptance. Parent d4b007e2a6ab86521256fe6e822a4ca04be3984f; main at intake 495a98ca12bae467a507031f04931aa4254b1866; Adversarial 109669d49f7d21fc6818dd247847434fecf930dc preserved. Exact predecessor CI 46084626908 and 46090573093 completed successfully at intake. Previous consolidated run completed, retired worker inactive.
+
+Run OPENBLAS_NUM_THREADS=1 python control-recovery.py NEW_OUT from the issue directory, Python 3.13.5 / NumPy 2.3.5. Pin escalation-lab.py by SHA256 and its transitive imports; ten local dependency/source blobs matched the exact parent. Seed 4427501; 108 meanings per seven conditions, 756 initial body/header pairs, 3024 decisions. 16kHz, 20ms slots, aligned timing, 27Hz shift, 1600 nominal peak, 1000 body noise RMS. Initial header 120ms, initial body 240ms. Retry policy has at most three request cycles and two transmitted body replies; invalid request costs 270ms modeled timeout after request/turnaround (130ms); valid request causes reply/turnaround (130ms) and requested fields (20ms each). Invalid reply consumes body budget; cannot merge its fields. Abort policy uses up to two cycles but stops on invalid control. Rank1 uses the same first header waveform; Rank3 sends three independently noisy copies, unique eligible rank across copies, no feedback, 360ms fixed schedule equal to initial body+header duration. Energy and total latency not equal between policies. No sender implementation; ideal equality guard, known frame ID and aligned slots. Feedback-only noise conditions deliberately leave the initial rank header at ordinary noise. Absent emits no target. No ACK loss/duplication, auth, real timeout hardware or physical/human claims.
+
+Correct /108 and total scheduled ms (abort, retry, rank1, rank3):
+- white: 108/71720,108/71720,108/12960,108/38880.
+- feedback2500: 44/74740,85/108560,108/12960,108/38880.
+- feedback3500: 3/80700,5/161340,108/12960,108/38880.
+- burst: 3/80700,108/113720,108/12960,108/38880.
+- weak_initial: 21/45320,21/45320,21/12960,37/38880.
+- transient: 108/114940,108/114940,108/12960,108/38880.
+- absent: 0/38880,0/38880,0/12960,0/38880.
+Zero incorrect releases in this limited factorial. Severe persistent feedback noise defeats retry, causing 282 timeouts vs 100 and little recovery. Burst recovery improves dramatically but costs more. Direct rank already represents the entire fixed-depth message; compare richer compositional domains before claiming grammatical redundancy benefits. Rank3 cannot guarantee recovery from weak initial channel.
+
+Native replay verifier 3024 decisions, 756 matched initial capture/header hash groups, 28 aggregates, two executions byte-identical. Three inherited local symbolic tests passed (the bundled test file is not present at the parent issue-directory path, so this is local package validation only). Manifest verified, eight WAVs quarter-scale max 3523 PCM counts; no SPL qualification. Source SHA256 37ea751b6b4edfbf46572432e319cda563f6a4339147c4b1ec6bff31b2830f65. Browser runtime and whole repository native checks not executed. Direct Git DNS unavailable; connector exact publication guarded. Next Measurement: actual endpoint-specific feedback protocol with lost ACK/duplicate handling and matched recursive grammar comparator. Next Adversarial: fair wake arbitration and actual grammar receiver integration. No merge/shared/gate edits.
