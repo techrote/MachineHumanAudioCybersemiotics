@@ -1,0 +1,453 @@
+name: MHAC acceleration Windows host audition
+on:
+  pull_request:
+    paths:
+      - 'tools/experimental/vst-acceleration/native-chain/host_audition.py'
+      - 'tools/experimental/vst-acceleration/native-chain/loom_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/winters_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp'
+      - 'tools/experimental/vst-acceleration/native-chain/afterimage_receipt_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/receipt_fold_upgrade_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/upgraded_chain_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/phase_balanced_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/rotation_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/three_plugin_host.py'
+      - 'tools/experimental/vst-acceleration/native-chain/session_score.py'
+      - 'tools/experimental/vst-acceleration/native-chain/trace-bell/**'
+      - 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle/**'
+      - 'tools/experimental/vst-acceleration/native-chain/pressure-key/**'
+      - '.github/workflows/mhac-accel-host-audition.yml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: mhac-accel-host-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  audition:
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'mhac-vst-632/native-chain'
+    runs-on: windows-2022
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Install bounded host dependencies
+        shell: pwsh
+        run: |
+          py -3.12 -m pip install --only-binary=:all: pedalboard==0.9.23 numpy==2.3.5
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact original Windows artifacts
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o golden.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/14987637390/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o freeze.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/14986731404/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Real host load, render and fresh instance restore
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/host_audition.py --gold golden.zip --freeze freeze.zip --out audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact standard and XL effect packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o loom.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15079064731/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o loomxl.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15079254571/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Independent standard and XL latency and preset matrix
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/loom_host.py --standard loom.zip --xl loomxl.zip --out loom-audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact corrected Three Winters 0.2.1 package (PR 726)
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o winters.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15156181930/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Corrected Three Winters continuous MIDI and independent timbre witness
+        id: winters
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/winters_host.py --archive winters.zip --out winters-audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Direct SDK bus and MIDI diagnostic on new failure
+        if: failure() && steps.winters.outcome == 'failure'
+        shell: pwsh
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-accel'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if ((git -C $sdk rev-parse HEAD) -ne '9fad9770f2ae8542ab1a548a68c1ad1ac690abe0') { throw 'SDK root mismatch' }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $pins = @{
+            base='3d2e82f8e6bff59c1d8b7a27491a29c2286b5206'
+            cmake='de6e54eeaaab35b7145f5c32c279b5e892146e04'
+            doc='6d4737c9e70750056e731d88d49aa06eefc8a1a4'
+            pluginterfaces='31d6eeba6daaa3e2a8bfbe3e7a90ca0b7fbfbc1c'
+            'public.sdk'='a3911a4615dabbfdfd9d181ee26b05c70c289a95'
+            tutorials='33b73dfbb87f3fde3bce8c0a10cae934dc66ad34'
+            vstgui4='76823bdbe286e4bdb9f79ab8986af5ce7202336c'
+          }
+          foreach ($k in $pins.Keys) {
+            $actual = git -C (Join-Path $sdk $k) rev-parse HEAD
+            if ($LASTEXITCODE -or $actual -ne $pins[$k]) { throw "SDK gitlink mismatch: $k" }
+          }
+          git -C $sdk submodule status --recursive | Out-File winters-audition/sdk-probe-gitlinks.txt
+          New-Item -ItemType Directory -Force sdk-probe-src | Out-Null
+          @'
+          cmake_minimum_required(VERSION 3.25)
+          project(MHACWintersSDKProbe LANGUAGES C CXX)
+          if(NOT WIN32)
+            message(FATAL_ERROR "This target currently qualifies Windows x64 only")
+          endif()
+          set(SMTG_ENABLE_VSTGUI_SUPPORT OFF CACHE BOOL "" FORCE)
+          set(SMTG_ENABLE_VST3_PLUGIN_EXAMPLES OFF CACHE BOOL "" FORCE)
+          set(SMTG_ENABLE_VST3_HOSTING_EXAMPLES OFF CACHE BOOL "" FORCE)
+          set(SMTG_RUN_VST_VALIDATOR OFF CACHE BOOL "" FORCE)
+          # CMake reparses source path arguments; native Windows backslashes can be escapes.
+          string(REPLACE "\\" "/" SDK380 "${SDK380}")
+          string(REPLACE "\\" "/" PROBE_SOURCE "${PROBE_SOURCE}")
+          add_subdirectory("${SDK380}" sdk EXCLUDE_FROM_ALL)
+          add_executable(winters_sdk_probe "${PROBE_SOURCE}" "${SDK380}/public.sdk/source/vst/hosting/module_win32.cpp")
+          target_compile_features(winters_sdk_probe PRIVATE cxx_std_17)
+          target_compile_definitions(winters_sdk_probe PRIVATE NOMINMAX)
+          target_link_libraries(winters_sdk_probe PRIVATE sdk_hosting)
+          '@ | Set-Content sdk-probe-src/CMakeLists.txt -Encoding utf8
+          $src = (Resolve-Path tools/experimental/vst-acceleration/native-chain/winters_sdk_probe.cpp).Path
+          cmake -S sdk-probe-src -B sdk-probe-build -A x64 "-DSDK380=$sdk" "-DPROBE_SOURCE=$src" 2>&1 | Tee-Object winters-audition/sdk-probe-configure.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build sdk-probe-build --config Release --target winters_sdk_probe --parallel 2 2>&1 | Tee-Object winters-audition/sdk-probe-build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $bundle = (Resolve-Path winters-audition/plugin/MHACThreeWinters.vst3).Path
+          & sdk-probe-build/Release/winters_sdk_probe.exe $bundle 2>&1 | Tee-Object winters-audition/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact Afterimage Choir and Receipt Fold packages
+        if: ${{ !cancelled() }}
+        id: afterimage_packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15123228931/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o receipt-fold.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15128221747/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Independent Afterimage and Receipt Fold host chain
+        if: ${{ !cancelled() && steps.afterimage_packages.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/afterimage_receipt_host.py --instrument afterimage.zip --effect receipt-fold.zip --out afterimage-audition
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact Receipt Fold 0.2.0 upgrade package
+        if: ${{ !cancelled() && steps.afterimage_packages.outcome == 'success' }}
+        id: receipt_upgrade_package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o receipt-fold-upgrade.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15132659258/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Receipt Fold legacy migration and extended transfer
+        if: ${{ !cancelled() && steps.receipt_upgrade_package.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/receipt_fold_upgrade_host.py --old receipt-fold.zip --new receipt-fold-upgrade.zip --out receipt-upgrade
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact Afterimage Choir 0.2.0 upgrade package
+        if: ${{ !cancelled() && steps.afterimage_packages.outcome == 'success' }}
+        id: afterimage_depth_package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage-depth.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15135667500/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Afterimage Choir legacy and memory depth spectral matrix
+        if: ${{ !cancelled() && steps.afterimage_depth_package.outcome == 'success' }}
+        shell: pwsh
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/afterimage_depth_host.py --old afterimage.zip --new afterimage-depth.zip --out afterimage-depth
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Exact upgraded Afterimage and Receipt Fold musical chain
+        if: ${{ !cancelled() && steps.afterimage_depth_package.outcome == 'success' && steps.receipt_upgrade_package.outcome == 'success' }}
+        shell: pwsh
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/upgraded_chain_host.py --instrument afterimage-depth.zip --effect receipt-fold-upgrade.zip --out upgraded-chain
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover exact 0.3.0 Phase Memory and Balanced Receipt packages
+        if: ${{ !cancelled() && steps.afterimage_depth_package.outcome == 'success' && steps.receipt_upgrade_package.outcome == 'success' }}
+        id: phase_balanced_packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage-phase.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15143966343/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o receipt-balanced.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15145497011/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Exact 0.3.0 phase and balanced host migration and contrasts
+        if: ${{ !cancelled() && steps.phase_balanced_packages.outcome == 'success' }}
+        shell: pwsh
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/phase_balanced_host.py --a2 afterimage-depth.zip --f2 receipt-fold-upgrade.zip --a3 afterimage-phase.zip --f3 receipt-balanced.zip --out phase-balanced
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Recover optimized Afterimage 0.3.1
+        if: ${{ !cancelled() && steps.phase_balanced_packages.outcome == 'success' }}
+        id: rotation_package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o afterimage-rotation.zip "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/15148180211/zip"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Afterimage 0.3.1 dense MIDI rotation regression
+        if: ${{ !cancelled() && steps.rotation_package.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/rotation_host.py --old afterimage-phase.zip --new afterimage-rotation.zip --out rotation
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Three-plugin group routing and balanced receipt audition
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/three_plugin_host.py --afterimage afterimage-rotation.zip --winters winters.zip --receipt receipt-balanced.zip --out three-plugin
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Original four-track score and aligned stem export
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/session_score.py --afterimage afterimage-rotation.zip --winters winters.zip --receipt receipt-balanced.zip --out session
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Trace Bell pinned SDK build, validator and host
+        shell: pwsh
+        run: |
+          $sdk = Join-Path $env:RUNNER_TEMP 'sdk380-trace-bell'
+          git clone --branch v3.8.0_build_66 --depth 1 https://github.com/steinbergmedia/vst3sdk.git $sdk
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          git -C $sdk submodule update --init --recursive --depth 1
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $src = 'tools/experimental/vst-acceleration/native-chain/trace-bell'
+          New-Item -ItemType Directory -Force trace-bell-delivery | Out-Null
+          cmake -S "$src/vst3" -B trace-bell-build -A x64 "-DMHAC_VST3_SDK=$sdk" -DMHAC_VALIDATE_POST_BUILD=OFF 2>&1 | Tee-Object trace-bell-delivery/configure.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build trace-bell-build --config Release --target MHACTraceBell validator trace_bell_rate_test trace_bell_mailbox_test trace_bell_sdk_probe --parallel 2 2>&1 | Tee-Object trace-bell-delivery/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $rateTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_rate_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($rateTest.Count -ne 1) { throw 'Expected one native rate test' }
+          & $rateTest[0].FullName 2>&1 | Tee-Object trace-bell-delivery/rate-test.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/rate-test.txt -Pattern '480296 bounded deterministic frames; 768 stable modal poles; invalid prepare transactional PASS')) { throw 'Missing rate-test receipt' }
+          $mailboxTest = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_mailbox_test.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($mailboxTest.Count -ne 1) { throw 'Expected one mailbox test' }
+          & $mailboxTest[0].FullName 2>&1 | Tee-Object trace-bell-delivery/mailbox-test.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/mailbox-test.txt -Pattern 'PASS 500000 restores;')) { throw 'Missing mailbox receipt' }
+          $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACTraceBell.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACTraceBell.vst3') })
+          if ($bundles.Count -ne 1) { throw 'Expected one x64 Trace Bell bundle' }
+          $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Validator missing' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object trace-bell-delivery/validator.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing validator success' }
+          if (Select-String -Path trace-bell-delivery/validator.txt -Pattern '^\s*ERROR:') { throw 'Validator explicit error' }
+          $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACTraceBell.vst3'
+          py -3.12 "$src/trace_bell_host.py" --module $module --out trace-bell-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/trace_bell_presets.py" --module $module --out trace-bell-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $sdkProbe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter trace_bell_sdk_probe.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($sdkProbe.Count -ne 1) { throw 'Expected one Trace Bell SDK probe' }
+          & $sdkProbe[0].FullName $bundles[0].FullName 2>&1 | Tee-Object trace-bell-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path trace-bell-delivery/sdk-probe.txt -Pattern 'SDK_PROBE_PASS automation_cases=6 stereo_frames=120000')) { throw 'Missing SDK probe receipt' }
+          Copy-Item -Recurse $bundles[0].FullName trace-bell-delivery/
+          Copy-Item "$sdk/LICENSE.txt" trace-bell-delivery/Steinberg-SDK-LICENSE.txt
+          foreach ($part in @('base','pluginterfaces','public.sdk','cmake','doc','tutorials','vstgui4')) {
+            Get-ChildItem (Join-Path $sdk $part) -File | Where-Object { $_.Name -match '^(LICENSE|NOTICE|COPYING)([.-]|$)' } | ForEach-Object { Copy-Item $_.FullName ("trace-bell-delivery/SDK-" + $part + "-" + $_.Name) }
+          }
+          git -C $sdk submodule status --recursive | Out-File trace-bell-delivery/SDK-GITLINKS.txt
+          "sdk=$(git -C $sdk rev-parse HEAD)" | Out-File trace-bell-delivery/BUILD-SOURCE.txt
+          "source=$(git rev-parse HEAD)" | Out-File trace-bell-delivery/BUILD-SOURCE.txt -Append
+          Copy-Item "$src/VST3.md" trace-bell-delivery/
+          py -3.12 -c "from pathlib import Path; import zipfile; r=Path('trace-bell-delivery'); z=zipfile.ZipFile('MHACTraceBell-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACTraceBell-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-trace-bell-build-evidence
+          path: trace-bell-delivery/*.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: MHACTraceBell-Windows-x64
+          path: MHACTraceBell-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-host-audition-evidence
+          path: |
+            audition/host-receipt.json
+            audition/dry.wav
+            audition/wet.wav
+            loom-audition/loom-receipt.json
+            loom-audition/*.wav
+            winters-audition/winters-receipt.json
+            winters-audition/*.wav
+            winters-audition/*.vstpreset
+            winters-audition/sdk-probe*.txt
+            afterimage-audition/afterimage-receipt-host.json
+            receipt-upgrade/receipt-upgrade.json
+            afterimage-depth/afterimage-depth.json
+            upgraded-chain/upgraded-chain.json
+            phase-balanced/phase-balanced.json
+            rotation/rotation.json
+            three-plugin/three-plugin.json
+            three-plugin/*.wav
+            session/session.json
+            session/MIDI/*.mid
+            session/Presets/*.vstpreset
+            session/Stems/*.wav
+            session/Comparisons/*.wav
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Palimpsest Shuttle shared SDK build and qualification
+        shell: pwsh
+        run: |
+          $src = 'tools/experimental/vst-acceleration/native-chain/palimpsest-shuttle'
+          if (Test-Path shuttle-delivery) { throw 'Stale Shuttle delivery directory' }
+          New-Item -ItemType Directory shuttle-delivery | Out-Null
+          py -3.12 "$src/shuttle_receipt.py" --self-test
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/test_shuttle_sdk_notices.py"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          cmake --build trace-bell-build --config Release --target MHACPalimpsestShuttle shuttle_sdk_probe shuttle_control_test shuttle_regression --parallel 2 2>&1 | Tee-Object shuttle-delivery/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          foreach ($target in @('shuttle_control_test','shuttle_regression')) {
+            $exe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter "$target.exe" | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+            if ($exe.Count -ne 1) { throw "Missing test $target" }
+            & $exe[0].FullName 2>&1 | Tee-Object "shuttle-delivery/$target.txt"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+          $bundles = @(Get-ChildItem trace-bell-build -Recurse -Directory -Filter 'MHACPalimpsestShuttle.vst3' | Where-Object { Test-Path (Join-Path $_.FullName 'Contents/x86_64-win/MHACPalimpsestShuttle.vst3') })
+          if ($bundles.Count -ne 1) { throw 'Expected one x64 Shuttle bundle' }
+          $validator = Get-ChildItem trace-bell-build -Recurse -File -Filter validator.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' } | Select-Object -First 1
+          if (-not $validator) { throw 'Validator missing' }
+          & $validator.FullName $bundles[0].FullName 2>&1 | Tee-Object shuttle-delivery/validator.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path shuttle-delivery/validator.txt -Pattern 'Result:\s+[1-9][0-9]* tests passed, 0 tests failed')) { throw 'Missing validator success' }
+          if (Select-String -Path shuttle-delivery/validator.txt -Pattern '^\s*ERROR:') { throw 'Validator explicit error' }
+          $probe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter shuttle_sdk_probe.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($probe.Count -ne 1) { throw 'Expected one Shuttle SDK probe' }
+          & $probe[0].FullName $bundles[0].FullName 2>&1 | Tee-Object shuttle-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          py -3.12 "$src/shuttle_receipt.py" shuttle-delivery/sdk-probe.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $probeDigest = (Get-FileHash shuttle-delivery/sdk-probe.txt -Algorithm SHA256).Hash
+          $module = Join-Path $bundles[0].FullName 'Contents/x86_64-win/MHACPalimpsestShuttle.vst3'
+          py -3.12 "$src/shuttle_host.py" --module $module --out shuttle-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item -Recurse $bundles[0].FullName shuttle-delivery/
+          py -3.12 "$src/shuttle_sdk_notices.py" trace-bell-delivery shuttle-delivery
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Copy-Item "$src/VST3.md" shuttle-delivery/
+          py -3.12 -c "from pathlib import Path; import hashlib,zipfile; r=Path('shuttle-delivery'); (r/'SHA256SUMS.txt').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.relative_to(r).as_posix()+'\n' for p in sorted(r.rglob('*')) if p.is_file())); z=zipfile.ZipFile('MHACPalimpsestShuttle-Windows-x64.zip','w',zipfile.ZIP_DEFLATED); [z.write(p,p.relative_to(r)) for p in sorted(r.rglob('*')) if p.is_file()]; z.close()"
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if ((Get-FileHash shuttle-delivery/sdk-probe.txt -Algorithm SHA256).Hash -ne $probeDigest) { throw 'Shuttle SDK transcript changed during packaging' }
+          py -3.12 "$src/shuttle_receipt.py" shuttle-delivery/sdk-probe.txt --zip MHACPalimpsestShuttle-Windows-x64.zip
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          Get-FileHash MHACPalimpsestShuttle-Windows-x64.zip -Algorithm SHA256
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-shuttle-build-evidence
+          path: shuttle-delivery/*.txt
+          if-no-files-found: ignore
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: MHACPalimpsestShuttle-Windows-x64
+          path: MHACPalimpsestShuttle-Windows-x64.zip
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Recover pinned Constellation chain artifacts
+        if: ${{ !cancelled() }}
+        id: constellation_packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          foreach ($id in @(15249403545,15251347207,15248002499)) {
+            curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o "constellation-$id.zip" "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/$id/zip"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+      - name: Exact Orbit Bank Shuttle host performance
+        if: ${{ !cancelled() && steps.constellation_packages.outcome == 'success' }}
+        shell: pwsh
+        run: |
+          py -3.12 tools/experimental/vst-acceleration/native-chain/constellation-chain/constellation_host.py --orbit constellation-15249403545.zip --bank constellation-15251347207.zip --shuttle constellation-15248002499.zip --out constellation-host
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-constellation-host-evidence
+          path: |
+            constellation-host/receipt.json
+            constellation-host/*.wav
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Recover exact pressure and key performance packages
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          foreach ($id in @(15268476929,15268772488,15248002499)) {
+            curl.exe --fail --silent --show-error --location -H "Authorization: Bearer $env:GH_TOKEN" -o "pressure-$id.zip" "https://api.github.com/repos/techrote/MachineHumanAudioCybersemiotics/actions/artifacts/$id/zip"
+            if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          }
+          py -3.12 tools/experimental/vst-acceleration/native-chain/pressure-key/preflight.py --orbit pressure-15268476929.zip --bank pressure-15268772488.zip --shuttle pressure-15248002499.zip --out pressure-key-host
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+      - name: Direct SDK pressure and auxiliary bus performance
+        shell: pwsh
+        run: |
+          cmake --build trace-bell-build --config Release --target pressure_key_sdk --parallel 2 2>&1 | Tee-Object pressure-key-host/build.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          $probe = @(Get-ChildItem trace-bell-build -Recurse -File -Filter pressure_key_sdk.exe | Where-Object { $_.FullName -match '[\\/]Release[\\/]' })
+          if ($probe.Count -ne 1) { throw 'Expected exactly one pressure-key SDK probe' }
+          & $probe[0].FullName pressure-key-host/modules/MHACOrbitLantern.vst3 pressure-key-host/modules/MHACHarmonicMemoryBank.vst3 pressure-key-host/modules/MHACPalimpsestShuttle.vst3 pressure-key-host 2>&1 | Tee-Object pressure-key-host/replay.txt
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if (-not (Select-String -Path pressure-key-host/replay.txt -SimpleMatch 'PRESSURE_KEY_SDK_PASS cases=12 renders=30 manual=6')) { throw 'Missing direct SDK completion' }
+          if (@(Select-String -Path pressure-key-host/replay.txt -Pattern '^PRESSURE_KEY_SDK_CASE ').Count -ne 12) { throw 'Missing case rows' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mhac-pressure-key-sdk-evidence
+          path: |
+            pressure-key-host/packages.json
+            pressure-key-host/*.txt
+            pressure-key-host/*.wav
+          if-no-files-found: ignore
+          retention-days: 7

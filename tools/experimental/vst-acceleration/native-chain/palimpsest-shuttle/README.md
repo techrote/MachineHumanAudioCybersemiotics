@@ -1,0 +1,21 @@
+# ACCEL-039 — Palimpsest Shuttle
+
+Refs #632 / Draft/HOLD #633. Base main 495a98ca12bae467a507031f04931aa4254b1866; acceleration parent ac43d777ad39320c18ac7404fe25c02bdc72a8ea. Original host-independent effect under the acceleration-owned native-chain path. Creative temporal quotation analogy, not formal MHAC implementation or evidence about listeners.
+
+Two overlapping reverse grains use a fixed nominal 80 ms even-length window, triangular complementary weights and a forward reference tap. Reverse continuously interpolates forward/reverse; Mix interpolates immediate dry/wet; Feedback maps 0–1000 to 0–0.65; Cross mixes same-channel and exchanged feedback. All four numeric controls are smoothed with a nominal 10 ms time constant; bypass is immediate and retains internal history. Feedback injection is convex (increasing feedback reduces first-pass input gain). The wet delays are creative time offsets, not a fixed host compensation latency. No live grain-size automation or time-stretch claim. Reset and prepare clear history, and belong outside real-time processing. No heap allocation, locking, I/O or trigonometry in process; finite clipping and tiny-value zeroing. State PS01: 13 bytes, four little-endian unsigned 16-bit 0–1000 controls plus one bypass byte; invalid decode is transactional. Only configuration, not audio history, is serialized. Default capacity 245808 bytes on tested Linux ABI, 32816-byte template option at 24 kHz; no CYD writes or target measurements.
+
+## Native build and audition
+
+```
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release --parallel 2
+ctest --test-dir build -C Release --output-on-failure
+```
+
+Run `shuttle_test render` in a writable directory to generate four original eight-second 48 kHz stereo PCM16 examples. On a multi-config Windows generator executables are typically in `build/Release`; Windows not yet executed. `shuttle_wav INPUT.wav OUTPUT.wav dry|forward|mirror|shuttle` processes existing canonical mono/stereo PCM16 RIFF (8–192 kHz); no extra chunks, no automatic gain normalization, output must not exist. Output is stereo and input-length; append silence to input to retain the full decay. Example: apply `shuttle` to the ACCEL-038 suite `Session/Comparisons/Dry.wav`. The included `suite-shuttle.wav` is an offline native DSP render, not a VST host render. Preset controls (mix/reverse/feedback/cross, 0–1000): forward 700/0/450/0; mirror 850/1000/250/0; shuttle 800/850/800/1000. Dry bypass preserves canonical stereo PCM16 exactly.
+
+## Executed 2026-11-27
+
+GCC 14.2 CMake Release CTest 1/1 PASS. GCC `-std=c++17 -O2 -Wall -Wextra -Werror` and Clang 17 `-std=c++17 -O1 -g -Wall -Wextra -Werror -fsanitize=address,undefined` both execute `shuttle_test render`: 2,197,500 checks each, including 661,484 non-render checks. Six rates (8/24/44.1/48/96/192 kHz), independent forward and reverse timeline oracle, exact variable partitions across automation, analytic exchanged feedback impulse and decay, range/invalid-state checks, 1,001 PS01 round trips with invalid bypass negatives. All four render WAVs byte-identical across compilers. Original dry peak 0.251831 FS, forward 0.183472, mirror 0.195068, shuttle 0.115387. Native CLI dry byte-identical, existing output and truncated input rejected; 576,000-frame ACCEL-038 dry reference (SHA256 561da1ad404f1154aabe670b13ebe169437c61571d411adf4d3670f802f8558d) transformed by both builds identically (SHA256 4b379e3c4f467ca2906e3a0a668998b12849e62f7bd5bf6996cce9c6ca798587). No subjective listening, real-time deadline, VST ABI or Windows claims.
+
+Previous exact parent Windows 46002829647 and integrity 46002829514 passed. Foundry current #749 at 70ac2a0cbcc2a4c8d63b6799494ce5283ec1ef8a Windows 46009505471 and #739 at 8aabd7dbf4de4761bc7b2b5faf39dc096cf27b76 Windows 46005349739 report success; no changes to those branches. Official Steinberg SDK v3.8.0_build_66 resolves to 9fad9770f2ae8542ab1a548a68c1ad1ac690abe0, root MIT license re-read. No SDK code consumed here; local clone still fails DNS. Next: thin VST3 adapter with distinct IDs and exact inherited SDK pin checks, official validator, direct host state/automation and Windows delivery. No new CI jobs, research edits, main merge or independent review claim.
